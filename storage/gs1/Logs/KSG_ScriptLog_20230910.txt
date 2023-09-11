@@ -23,3 +23,5 @@
 2023-09-10 20:50:33	Battle Start :1rule11Issue1
 2023-09-10 20:50:33	Battle Start :1rule11Issue1
 2023-09-10 20:50:33	Battle Start :1rule11Issue1
+2023-09-10 22:36:02	[UseItemSucc]	1969-12-31 18:00	Account:ScriptAutoTest	Name:testname	ItemName:testItem.
+2023-09-10 22:36:03	[1969-12-31 18:00:00] Register [Th› Luy÷n ß≠Íng] dungeon, templet mapid is [925].

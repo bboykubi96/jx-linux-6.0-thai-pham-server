@@ -28,3 +28,4 @@ jxser/server1/rolenamechangehis.ini
 jxser/server1/servershutdown_log
 *.log
 .vscode
+storage/
