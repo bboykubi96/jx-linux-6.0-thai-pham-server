@@ -15,7 +15,6 @@ tbGmRole.tbAccount =
 	["thaipham"] = 
 	{
 		"ngudoc3",
-		"hoason",
 	}
 	
 }
