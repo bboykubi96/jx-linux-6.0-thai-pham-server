@@ -1,0 +1,207 @@
+version: '3.1'
+
+volumes:
+  data.mysql:
+services:
+  # DB
+  mysql56:
+    restart: "always"
+    build:
+      context: ./
+      dockerfile: ./dockers/Dockerfile.mysql
+    image: mysql56
+    container_name: mysql56
+    tty: false
+    environment:
+      TZ: "/usr/share/zoneinfo/Asia/Ho_Chi_Minh"
+      MYSQL_ROOT_PASSWORD: '1234560123'
+    volumes:
+      - data.mysql:/var/lib/mysql
+    # healthcheck:
+    #   test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+    #   timeout: 20s
+    #   retries: 10
+    network_mode: "host"
+
+  # GODDESS
+  goddess:
+    restart: "no"
+    build:
+      context: ./
+      dockerfile: ./dockers/Dockerfile.goddess
+    image: goddess
+    container_name: goddess
+    tty: true
+    working_dir: /src/jxser/gateway/
+    volumes:
+      - ./jxser/gateway/:/src/jxser/gateway/
+      - ./storage/gateway/Logs/:/src/jxser/gateway/Logs/
+      - ./storage/gateway/roleback/:/src/jxser/gateway/roleback/
+      - "./settings/gateway/goddess.cfg:/src/jxser/gateway/goddess.cfg"
+    network_mode: "host"
+  
+  # BISHOP
+  bishop:
+    restart: "no"
+    build:
+      context: ./
+      dockerfile: ./dockers/Dockerfile.bishop
+    image: bishop
+    container_name: bishop
+    tty: true
+    working_dir: /src/jxser/gateway/
+    volumes:
+      - ./jxser/gateway/:/src/jxser/gateway/
+      - ./storage/gateway/Logs/:/src/jxser/gateway/Logs/
+      - ./storage/gateway/roleback/:/src/jxser/gateway/roleback/
+      - "./settings/gateway/bishop.cfg:/src/jxser/gateway/bishop.cfg"
+    network_mode: "host"
+
+  # S3RELAY
+  s3relay:
+    restart: "no"
+    build:
+      context: ./
+      dockerfile: ./dockers/Dockerfile.s3relay
+    image: s3relay
+    container_name: s3relay
+    tty: true
+    working_dir: /src/jxser/gateway/s3relay
+    volumes:
+      - ./jxser/gateway/:/src/jxser/gateway/
+      - ./storage/s3relay/Logs/:/src/jxser/gateway/s3relay/Logs/
+      - ./storage/s3relay/relay_log/:/src/jxser/gateway/s3relay/relay_log/
+      - ./storage/s3relay/RelayRunData/:/src/jxser/gateway/s3relay/RelayRunData/
+      - "./settings/gateway/relay_config.ini:/src/jxser/gateway/s3relay/relay_config.ini"
+      - "./settings/gateway/hostset.ini:/src/jxser/gateway/s3relay/settings/hostset.ini"
+    network_mode: "host"
+
+  # GS1
+  gs1:
+    restart: "no"
+    build:
+      context: ./
+      dockerfile: ./dockers/Dockerfile.jx_linux
+    image: jxlinux
+    container_name: gs1
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs1/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs1/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs1/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_01.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_01.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  
+  # GS2
+  gs2:
+    restart: "no"
+    image: jxlinux
+    container_name: gs2
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs2/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs2/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs2/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_02.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_02.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+
+  # GS3
+  gs3:
+    restart: "no"
+    image: jxlinux
+    container_name: gs3
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs3/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs3/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs3/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_03.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_03.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  # GS4
+  gs4:
+    restart: "no"
+    image: jxlinux
+    container_name: gs4
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs4/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs4/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs4/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_04.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_04.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  
+  # GS5
+  gs5:
+    restart: "no"
+    image: jxlinux
+    container_name: gs5
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs5/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs5/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs5/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_05.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_05.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  
+  # GS6
+  gs6:
+    restart: "no"
+    image: jxlinux
+    container_name: gs6
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs6/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs6/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs6/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_06.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_06.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  
+  # GS7
+  gs7:
+    restart: "no"
+    image: jxlinux
+    container_name: gs7
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs7/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs7/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs7/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_07.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_07.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
+  
+  # GS8
+  gs8:
+    restart: "no"
+    image: jxlinux
+    container_name: gs8
+    tty: true
+    working_dir: /src/jxser/server1/
+    volumes:
+      - ./jxser/server1/:/src/jxser/server1/
+      - ./storage/gs8/Logs/:/src/jxser/server1/Logs/
+      - ./storage/gs8/dulieu/:/src/jxser/server1/dulieu/
+      - ./storage/gs8/Guard_Logs/:/src/jxser/server1/Guard_Logs/
+      - "./settings/multi_gs/server/maps/worldset_08.ini:/src/jxser/server1/maps/worldset.ini"
+      - "./settings/multi_gs/server/servercfg_08.ini:/src/jxser/server1/servercfg.ini"
+    network_mode: "host"
