@@ -1,0 +1,14 @@
+IP May that: 192.168.1.1 (VM8)
+IP centos: 192.168.1.100
+IP win 7: 192.168.1.200
+
+D:\dev source
+Cai Git ngoai may that
+Cai Visual Code ngoai may that
+Client May That
+
+Bat Game
+Vao VMWin7 - > Buoc 1, Buoc 2, Buoc 3
+Tat Game
+Tab2 go lenh shutdown
+roi tat tab4,3,2,1 ok xong
