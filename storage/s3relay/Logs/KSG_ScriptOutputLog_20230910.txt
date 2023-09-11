@@ -285,3 +285,4 @@ CallFun phonglangdo\fengling_ferry.lua TaskContent
 CallFun leaguematch\leaguematch.lua TaskContent
 CallFun vuotai\challengeoftime.lua TaskContent
 CallFun thongbaohethong\announce.lua TaskContent
+CallFun leaguematch\leaguematch.lua TaskContent
