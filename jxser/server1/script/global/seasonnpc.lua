@@ -208,10 +208,10 @@ function make_round(nIdx)
 	Msg2Player("B筺 nh薾 頲 m閠"..tab_Flower[nIdx][2].." Li猲 Hoa ho祅");
 end;
     
--- 任务链的入口
+
 function tasklink_entence()
 
-_TaskLinkDebug() -- 对于任务链无法进行下去的 BUG 修复
+_TaskLinkDebug();
 
 local myTaskTimes = tl_gettaskstate(1) -- 玩家进行到的次数
 local myTaskLinks = tl_gettaskstate(2) -- 玩家进行到的链数
