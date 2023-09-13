@@ -6,15 +6,15 @@ tbGmRole = {};
 tbGmRole.nPak = curpack();
 tbGmRole.tbAccount = 
 {	
-	["123456"] = 
+	["thaipham1"] = 
 	{
 		"GameMaster",
 		"ThaiPham01",
 		"ThaiPham02",
 	},
-	["thaipham"] = 
+	["1"] = 
 	{
-		"ngudoc3",
+		"JXPÙCoin",
 	}
 	
 }

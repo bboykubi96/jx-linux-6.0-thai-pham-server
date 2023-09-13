@@ -1,8 +1,8 @@
 tbAccountGM = 
 { 
-	["1234567"] = 
+	["1"] = 
 	{ 
-		"NamThiªn" 
+		"JXPÙCoin" 
 	}, 
 	["123456"] = 
 	{ 
