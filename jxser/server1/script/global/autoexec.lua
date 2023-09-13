@@ -217,7 +217,7 @@ addnewtasknpc={
 {389,80,4,851,1577,3184,0,"Chñ d­îc ®iÕm",0,"\\script\\missions\\yandibaozang\\npc\\yaoshang.lua"},
 {389,80,4,851,1607,3178,0,"Chñ d­îc ®iÕm",0,"\\script\\missions\\yandibaozang\\npc\\yaoshang.lua"},
 
---NPC
+--NPC 2023
 --{1321,80,4,176,1420,3309,0,"B×nh B×nh C« N­¬ng",0,"\\script\\missions\\yandibaozang\\npc\\yandibaozang_main.lua"},
 --{1321,80,4,176,1664,3244,0,"B×nh B×nh C« N­¬ng",0,"\\script\\missions\\yandibaozang\\npc\\yandibaozang_main.lua"},
 --{1321,80,4,176,1559,2917,0,"B×nh B×nh C« N­¬ng",0,"\\script\\missions\\yandibaozang\\npc\\yandibaozang_main.lua"},
