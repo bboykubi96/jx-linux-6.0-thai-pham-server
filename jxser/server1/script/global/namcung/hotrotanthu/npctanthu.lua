@@ -1,5 +1,5 @@
-IncludeLib("SETTING")
-IncludeLib("TONG")
+IncludeLib("SETTING");
+IncludeLib("TONG");
 IncludeLib("RELAYLADDER");
 Include( "\\script\\item\\compound\\compound_header.lua" );
 Include( "\\script\\item\\compound\\atlas.lua" );
@@ -44,7 +44,7 @@ tbAllSkill = {
 		[5] = {20},
 		[6] = {11,19,271},
 		[7] = {21,273},
-		[9] = {318,319,321},
+		--[9] = {318,319,321},
 	},
 	tianwang = {
 		[1] = {29,30,34},
@@ -54,7 +54,7 @@ tbAllSkill = {
 		[5] = {40},
 		[6] = {42},
 		[7] = {32,36,41,324},
-		[9] = {322,323,325},
+		--[9] = {322,323,325},
 	},
 	tangmen = {
 		[1] = {45},
@@ -64,7 +64,7 @@ tbAllSkill = {
 		[5] = {345},
 		[6] = {349},
 		[7] = {48,58,249,341},
-		[9] = {302,339,342,351},
+		--[9] = {302,339,342,351},
 	},
 	wudu = {
 		[1] = {63,65},
@@ -84,7 +84,7 @@ tbAllSkill = {
 		[5] = {86},
 		[6] = {92},
 		[7] = {88,91,252,282},
-		[9] = {328,332,380},
+		--[9] = {328,332,380},
 	},
 	cuiyan = {
 		[1] = {99,102},
@@ -94,7 +94,7 @@ tbAllSkill = {
 		[5] = {100},
 		[6] = {109},
 		[7] = {108,111,114},
-		[9] = {336,337},
+		--[9] = {336,337},
 	},
 	gaibang = {
 		[1] = {119,122},
@@ -104,7 +104,7 @@ tbAllSkill = {
 		[5] = {277},
 		[6] = {125,128},
 		[7] = {130,360},
-		[9] = {357,359},
+		--[9] = {357,359},
 	},
 	tianren = {
 		[1] = {135,145},
@@ -114,7 +114,7 @@ tbAllSkill = {
 		[5] = {364},
 		[6] = {143},
 		[7] = {142,148,150},
-		[9] = {361,362,391},
+		--[9] = {361,362,391},
 	},
 	wudang = {
 		[1] = {153,155},
@@ -124,7 +124,7 @@ tbAllSkill = {
 		[5] = {160},
 		[6] = {157},
 		[7] = {165,166,267},
-		[9] = {365,368},
+		--[9] = {365,368},
 	},
 	kunlun = {
 		[1] = {169,179},
@@ -134,7 +134,7 @@ tbAllSkill = {
 		[5] = {175,181},
 		[6] = {90,176},
 		[7] = {182,275,630},
-		[9] = {372,375,394},
+		--[9] = {372,375,394},
 	},
 }
 
@@ -163,12 +163,12 @@ function main()
 		{"Ta muèn häc vâ c«ng", HoTroSkill},
 		--{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
 		--{"Ta muèn nhËn trang bÞ hoµng kim", hoangkim},
-		--{"Ta muèn th¨ng cÊp", HoTroLevel180},
+		{"Ta muèn th¨ng cÊp", HoTroLevel180},
 		--{"Ta cÇn ng©n l­îng", HoTroNganLuong},
 		--{"Ta muèn nhËn ChiÕu D¹ Ngäc S­ Tö", HoTroChieuDa},
 		--{"Ta muèn t¹o bang héi", BuildTong},
-		{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
-		{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
+		--{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
+		--{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
         		--{"Ta muèn m­în vò khÝ", MaiGap},
 		--{"Ta muèn chÕ t¹o trang bÞ HuyÒn Tinh", chetao},
 		--{"Ta muèn trang bÞ HuyÒn Tinh", dotim},		
@@ -457,7 +457,7 @@ function HoTroSkill()
 				for j=1, getn(tbAllSkill[szFaction][i]) do
 					if i ==9 then
 						if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
-							AddMagic(tbAllSkill[szFaction][i][j],20)
+							AddMagic(tbAllSkill[szFaction][i][j],1)
 						end
 					else
 						if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
@@ -1021,31 +1021,98 @@ tbitem  =
 		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 3, nExpiredTime = 10080, nBindState = -2},
 		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
-		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nExpiredTime=14400,nBindState = -2},
+		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nBindState = -2},
 	}
 function checkcode(strings)
-	if strings=="NAMCUNG"then
-		AddStackItem(100,4,417,1,1,0,0,0)
-		AddStackItem(100,4,417,1,1,0,0,0)
-		AddStackItem(100,4,417,1,1,0,0,0)
-		AddStackItem(100,4,417,1,1,0,0,0)
-		AddStackItem(100,4,417,1,1,0,0,0)
+	if strings=="TIENDONG"then
+		--AddStackItem(100,4,417,1,1,0,0,0)
+		--AddStackItem(100,4,417,1,1,0,0,0)
+		--AddStackItem(100,4,417,1,1,0,0,0)
+		--AddStackItem(100,4,417,1,1,0,0,0)
+		--AddStackItem(100,4,417,1,1,0,0,0)
 	end
-	if GetTask(3000)==1 then
+	if GetTask(3000)==100 then
 		Talk(1, "", "B¹n ®· nhËn råi mµ ");
 		return
 	end
-	if strings=="NAMCUNG"then
-		SetItemBindState(AddGoldItem(0,184,7*24*8), -2)
-		SetItemBindState(AddGoldItem(0,179), -2)
-		SetItemBindState(AddGoldItem(0,177), -2)
-		SetItemBindState(AddGoldItem(0,178), -2)
-		SetItemBindState(AddGoldItem(0,180), -2)
-		SetItemBindState(AddGoldItem(0,183), -2)
-		SetItemBindState(AddGoldItem(0,181), -2)
-		SetItemBindState(AddGoldItem(0,182), -2)
-		SetItemBindState(AddGoldItem(0,185), -2)
-		Msg2Player("B¹n nhËn ®­îc Trang BÞ Kim Phong!")
+	if strings=="NAMCUNG"then	
+		
+		local nLevel = GetLevel()
+		ST_LevelUp(50 - nLevel)
+
+		local nItemIndex =AddGoldItem(0,184);
+		local nExpiredTime = 7*60*24;
+		--SetSpecItemParam(nItemIndex, 1, nExpireTime);
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);--thoi han su dung
+		SyncItem(nItemIndex);--dong bo xuong lai client
+		SetItemBindState(nItemIndex, -2);--khoa vinh vien
+		SyncItem(nItemIndex);--dong bo xuong lai client
+
+		local nItemIndex =AddGoldItem(0,179);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,177);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,178);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,180);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,183);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,181);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,182);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		local nItemIndex =AddGoldItem(0,185);
+		local nExpiredTime = 7*60*24;
+		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
+		SyncItem(nItemIndex);
+		SetItemBindState(nItemIndex, -2);
+		SyncItem(nItemIndex);
+
+		--SetItemBindState(AddGoldItem(0,179), -2)
+		--SetItemBindState(AddGoldItem(0,177), -2)
+		--SetItemBindState(AddGoldItem(0,178), -2)
+		--SetItemBindState(AddGoldItem(0,180), -2)
+		--SetItemBindState(AddGoldItem(0,183), -2)
+		--SetItemBindState(AddGoldItem(0,181), -2)
+		--SetItemBindState(AddGoldItem(0,182), -2)
+		--SetItemBindState(AddGoldItem(0,185), -2)
+		Msg2Player("B¹n nhËn ®­îc Trang BÞ Kim Phong!");
 		tbAwardTemplet:GiveAwardByList(tbitem, "PhÇn th­ëng t©n thñ");
 		SetTask(3000,1)
 	else
