@@ -1,21 +1,21 @@
-IncludeLib("SETTING");
-IncludeLib("TONG");
+IncludeLib("SETTING")
+IncludeLib("TONG")
 IncludeLib("RELAYLADDER");
 Include( "\\script\\item\\compound\\compound_header.lua" );
 Include( "\\script\\item\\compound\\atlas.lua" );
-Include("\\script\\global\\×ÏÉ«¼°»Æ½ð×°±¸ÖýÔì.lua");
-Include("\\script\\global\\rename_head.lua");
-Include("\\script\\dailogsys\\dailogsay.lua");
-Include("\\script\\lib\\awardtemplet.lua");
-Include("\\script\\global\\fuyuan.lua");
-Include("\\script\\missions\\leaguematch\\npc\\officer.lua");
-Include("\\script\\lib\\log.lua");
-Include("\\script\\global\\gmrole.lua");
-Include("\\script\\global\\namcung\\hotrotanthu\\itemblue.lua");
-Include("\\script\\global\\namcung\\hotrotanthu\\duatop.lua");
+Include("\\script\\global\\×ÏÉ«¼°»Æ½ð×°±¸ÖýÔì.lua")
+Include("\\script\\global\\rename_head.lua")
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\global\\fuyuan.lua")
+Include("\\script\\missions\\leaguematch\\npc\\officer.lua")
+Include("\\script\\lib\\log.lua")
+Include("\\script\\global\\gmrole.lua")
+Include("\\script\\global\\namcung\\hotrotanthu\\itemblue.lua")
+Include("\\script\\global\\namcung\\hotrotanthu\\duatop.lua")
 Include("\\script\\tagnewplayer\\tbitemHK.lua");
 Include("\\script\\global\\namcung\\hotroitem.lua")
-szNpcName = "<color=yellow>Hç trî T©n thñ<color>: ";
+szNpcName = "<color=yellow>Hç trî T©n thñ<color>: "
 
 szPlayer = "§¹i HiÖp"
 if GetSex() == 1 then
@@ -139,53 +139,42 @@ tbAllSkill = {
 }
 
 function main()
-    dofile("script/global/hotrotanthu/npctanthu.lua");	
-	if tbGmRole:CheckAccountAndRoleName() == 1 then
-		local szTitle = "<npc><color=red>Hæ trî T©n Thñ<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com"
-		local tbOpt =
-		{
-			{"Ta muèn nhËn th­ëng theo cÊp ®é", topser},
-			{"Ta muèn vËt phÈm hæ trî ", vpht},
-			{"Ta muèn häc vâ c«ng", HoTroSkill},
-			{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
-			{"Ta muèn nhËn trang bÞ hoµng kim", hoangkim},
-			{"Ta muèn th¨ng cÊp", HoTroLevel180},
-			{"Ta cÇn ng©n l­îng", HoTroNganLuong},
-			{"Ta muèn nhËn ChiÕu D¹ Ngäc S­ Tö", HoTroChieuDa},
-			{"Ta muèn t¹o bang héi", BuildTong},
-			{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
-			{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
-			{"Ta muèn m­în vò khÝ", MaiGap},
-			{"Ta muèn chÕ t¹o trang bÞ HuyÒn Tinh", chetao},
-			{"Ta muèn trang bÞ HuyÒn Tinh", dotim},		
-			{"GÆp l¹i ng­¬i sau", Quit},
-		}
-		CreateNewSayEx(szTitle, tbOpt)			
-	else --menu nguoi binh thuong
-		Talk(1, "", "<color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com")
-		
-		local szTitle = "<npc><color=red>Hæ trî GM<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com"
-		local tbOpt =
-		{
-			{"Ta muèn nhËn th­ëng theo cÊp ®é", topser},
-			{"Ta muèn vËt phÈm hæ trî ", vpht},
-			{"Ta muèn häc vâ c«ng", HoTroSkill},
-			{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
-			{"Ta muèn nhËn trang bÞ hoµng kim", hoangkim},
-			{"Ta muèn th¨ng cÊp", HoTroLevel180},
-			{"Ta cÇn ng©n l­îng", HoTroNganLuong},
-			{"Ta muèn nhËn ChiÕu D¹ Ngäc S­ Tö", HoTroChieuDa},
-			--{"Ta muèn t¹o bang héi", BuildTong},
-			--{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
-			--{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
-			--{"Ta muèn m­în vò khÝ", MaiGap},
-			--{"Ta muèn chÕ t¹o trang bÞ HuyÒn Tinh", chetao},
-			--{"Ta muèn trang bÞ HuyÒn Tinh", dotim},		
-			{"GÆp l¹i ng­¬i sau", Quit},
-		}
-		CreateNewSayEx(szTitle, tbOpt)	
-
-	end
+   dofile("script/global/hotrotanthu/npctanthu.lua");
+--	local tbSay = {}
+	--tinsert(tbSay,"VËt phÈm hæ trî /vpht")
+	--tinsert(tbSay,"Ta muèn nhËn trang bÞ hoµng kim/hoangkim")
+	--tinsert(tbSay,"Ta muèn th¨ng cÊp 180/HoTroLevel180")
+	--tinsert(tbSay,"Ta cÇn ng©n l­îng/HoTroNganLuong")
+	--tinsert(tbSay,"Ta muèn m­în ChiÕu D¹ Ngäc S­ Tö/HoTroChieuDa")
+	--tinsert(tbSay,"Ta muèn t¹o bang héi/BuildTong")
+	--tinsert(tbSay,"Ta muèn tr¹ng th¸i S¸t thñ /ChuDo")
+	--tinsert(tbSay,"Ta muèn m­în trang bÞ xanh/MaiGap")
+	--tinsert(tbSay,"Ta muèn m­în vò khÝ/MaiGap")
+	--tinsert(tbSay,"Ta muèn häc vâ c«ng/HoTroSkill")
+--	tinsert(tbSay,"GÆp l¹i ta sau/Quit")
+	--Say(szNpcName.."ta ®­îc Háa Phông Thiªn Tö ph¸i xuèng ®©y hç trî cho b¸ t¸nh buæi ®Çu lËp nghiÖp. "..szPlayer.." cÇn g× cø gÆp ta.", getn(tbSay), tbSay)
+--end
+	local szTitle = "<npc>Hæ trî t©n thñ, hoan nghªnh c¸c anh hïng hµo kiÖt..."
+	local tbOpt =
+	{
+		--{"Ta muèn nhËn th­ëng theo cÊp ®é", topser},
+		{"NhËp code nhËn quµ", phanthuong},
+		--{"Ta muèn vËt phÈm hæ trî ", vpht},
+		{"Ta muèn häc vâ c«ng", HoTroSkill},
+		--{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
+		--{"Ta muèn nhËn trang bÞ hoµng kim", hoangkim},
+		--{"Ta muèn th¨ng cÊp", HoTroLevel180},
+		--{"Ta cÇn ng©n l­îng", HoTroNganLuong},
+		--{"Ta muèn nhËn ChiÕu D¹ Ngäc S­ Tö", HoTroChieuDa},
+		--{"Ta muèn t¹o bang héi", BuildTong},
+		{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
+		{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
+        		--{"Ta muèn m­în vò khÝ", MaiGap},
+		--{"Ta muèn chÕ t¹o trang bÞ HuyÒn Tinh", chetao},
+		--{"Ta muèn trang bÞ HuyÒn Tinh", dotim},		
+        	{"GÆp l¹i ng­¬i sau", Quit},
+	}
+	CreateNewSayEx(szTitle, tbOpt)
 end
 
 function trangbiblue()
@@ -1012,4 +1001,54 @@ AddItem(6,1,154,1,1,0,0)
 AddItem(6,1,154,1,2,0,0) 	
 AddItem(6,1,154,1,3,0,0) 	
 AddItem(6,1,154,1,4,0,0) 	
+end
+
+function HoTroTanThuScriptByYin()
+	Msg2Player( "Xin chµo ®¹i hiÖp, chóng t«i sÏ sím hç tr" );
+end
+
+function phanthuong()
+if CalcFreeItemCellCount() < 10 then
+		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
+		return 1;
+end
+AskClientForString("checkcode", "", 1, 100, "Xin nhËp code");
+end
+tbitem  =
+	{
+		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
+		[2]	={szName = "Håi thµnh phï (nhá)", tbProp = {6, 1, 1082,1,0,0}, nCount = 1, nExpiredTime = 43200, nBindState = -2},
+		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 3, nExpiredTime = 10080, nBindState = -2},
+		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
+		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
+		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nExpiredTime=14400,nBindState = -2},
+	}
+function checkcode(strings)
+	if strings=="NAMCUNG"then
+		AddStackItem(100,4,417,1,1,0,0,0)
+		AddStackItem(100,4,417,1,1,0,0,0)
+		AddStackItem(100,4,417,1,1,0,0,0)
+		AddStackItem(100,4,417,1,1,0,0,0)
+		AddStackItem(100,4,417,1,1,0,0,0)
+	end
+	if GetTask(3000)==1 then
+		Talk(1, "", "B¹n ®· nhËn råi mµ ");
+		return
+	end
+	if strings=="NAMCUNG"then
+		SetItemBindState(AddGoldItem(0,184,7*24*8), -2)
+		SetItemBindState(AddGoldItem(0,179), -2)
+		SetItemBindState(AddGoldItem(0,177), -2)
+		SetItemBindState(AddGoldItem(0,178), -2)
+		SetItemBindState(AddGoldItem(0,180), -2)
+		SetItemBindState(AddGoldItem(0,183), -2)
+		SetItemBindState(AddGoldItem(0,181), -2)
+		SetItemBindState(AddGoldItem(0,182), -2)
+		SetItemBindState(AddGoldItem(0,185), -2)
+		Msg2Player("B¹n nhËn ®­îc Trang BÞ Kim Phong!")
+		tbAwardTemplet:GiveAwardByList(tbitem, "PhÇn th­ëng t©n thñ");
+		SetTask(3000,1)
+	else
+		Talk(1, "", "Code sai");
+	end
 end

@@ -78,6 +78,7 @@ end
 function HoTroAdminScriptByYin()
 namcung2()
 end
+
 function HoTroTanThuScriptByYin()
 	Msg2Player( "Xin chµo ®¹i hiÖp, chóng t«i sÏ sím hç tr" );
 end
@@ -93,7 +94,7 @@ tbitem  =
 	{
 		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
 		[2]	={szName = "Håi thµnh phï (nhá)", tbProp = {6, 1, 1082,1,0,0}, nCount = 1, nExpiredTime = 43200, nBindState = -2},
-		[3]	={szName = "Phóc Duyªn Lé (Trung)", tbProp = {6, 1, 123,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
+		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 3, nExpiredTime = 10080, nBindState = -2},
 		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nExpiredTime=14400,nBindState = -2},
