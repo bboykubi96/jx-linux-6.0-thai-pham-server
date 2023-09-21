@@ -8,7 +8,13 @@ tbGmRole.tbAccount =
 {	
 	["thaipham1"] = 
 	{
-		"testtllll",
+		"testcaibang",
+		"testthiennhan",
+		"ThaiPham02",
+	},
+	["thaipham2"] = 
+	{
+		"testnpc",
 		"ThaiPham01",
 		"ThaiPham02",
 	},

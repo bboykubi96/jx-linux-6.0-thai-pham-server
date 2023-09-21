@@ -416,7 +416,7 @@ Thiªn C¬ C«n ®å phæ 	4	412	\spr\item\questkey\taskobj119.spr	341	1	1	S¸ch d¹y th
 Uyªn ¦¬ng ®ao. Khai Quang  biªn	4	414	\spr\item\questkey\taskobj119.spr	341	1	1	S¸ch d¹y thuËt chÕ t¹o sö dông Uyªn ­¬ng ®ao, ®­îc xem lµ "Vâ l©m chi b¶o",<enter> Cã thÓ dïng ®Ó t¨ng ®¼ng cÊp c¸c lo¹i Song ®ao.	1	0
 B¨ng Tµm V« Cùc T¬ 	4	415	\spr\item\questkey\bingcanwujisi.spr	371	1	1	Thiªn s¬n  B¨ng Tµm T¬, s¶n phÈm cùc hiÕm.<enter> cã thÓ dïng ®Ó t¨ng ®¼ng cÊp c¸c lo¹i y phôc, ¸o mò.	1	0
 Nam Minh Chi Tinh	4	416	\spr\item\questkey\nanmingzhijing.spr	372	1	1	Nh÷ng m¶nh thñy tinh cùc hiÕm, <enter> Cã thÓ lµm gi¶m ®¼ng cÊp y phôc, kh«i m·o	1	0
-TiÒn ®ång	4	417	\spr\item\tongqian.spr	373	1	1	Dïng ®Ó mua nh÷ng vËt phÈm ®Æc thï.	1	100
+TiÒn ®ång	4	417	\spr\item\tongqian.spr	373	1	1	Dïng ®Ó mua nh÷ng vËt phÈm ®Æc thï.	1	500
 Ch÷ "NguyÖt" 	4	418	\spr\item\questkey\zq_icon_005.spr	378	1	1	Mét m¶nh giÊy trong tËp th¬ cæ, trªn cã ch÷ "NguyÖt".	1	0
 Ch÷ "Minh" 	4	419	\spr\item\questkey\zq_icon_006.spr	378	1	1	Mét m¶nh giÊy trong tËp th¬ cæ, trªn cã ch÷ "Minh".	1	0
 Ch÷ "Thu" 	4	420	\spr\item\questkey\zq_icon_007.spr	378	1	1	Mét m¶nh giÊy trong tËp th¬ cæ, trªn cã ch÷ "Thu" 	1	0
