@@ -1,20 +1,24 @@
-IncludeLib("SETTING")
-Include("\\script\\dailogsys\\dailogsay.lua")
-Include("\\script\\lib\\awardtemplet.lua")
-Include("\\script\\global\\fuyuan.lua")
-Include("\\script\\traogiaithdnb\\thdnb7.lua")
+IncludeLib("SETTING");
+Include("\\script\\dailogsys\\dailogsay.lua");
+Include("\\script\\lib\\awardtemplet.lua");
+Include("\\script\\global\\fuyuan.lua");
+Include("\\script\\traogiaithdnb\\thdnb7.lua");
 --Include("\\script\\global\\writeaddressdialog.lua")
-Include("\\script\\missions\\leaguematch\\npc\\officer.lua")
-Include("\\script\\vng_event\\2012_vlnb\\main.lua")
-Include("\\script\\global\\lottery_gold.lua")
-Include("\\script\\global\\namcung\\hotroitem.lua")
+Include("\\script\\missions\\leaguematch\\npc\\officer.lua");
+Include("\\script\\vng_event\\2012_vlnb\\main.lua");
+Include("\\script\\global\\lottery_gold.lua");
+Include("\\script\\global\\namcung\\hotroitem.lua");
+Include("\\script\\global\\system\\hotroitem.lua");
+Include("\\script\\global\\repute_head.lua");
+Include("\\script\\misc\\league_cityinfo.lua");
 --Include("\\script\\global\\gm_tool\\")
-SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229}
+SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229};
+
 local tbFaction =
 {
 	[1] =
 	{
-		szShowName = "ThiÕu L©m",
+		szShowName = "ThiÕu L©m",--tbFaction[1]["szShowName"]
 		szFaction = "shaolin",
 		nShortFaction = "sl",
 		tbSkill = {318, 319, 321, 709, 1055, 1056, 1057},
@@ -335,6 +339,11 @@ local tbFactionSeries =
 	[5] = {9, 10},
 }
 
+--tbFreeItem
+--szName = sdfsdf
+--tbProp = {6,1,1781,1,0,0}
+--tbParam={60}
+
 local tbFreeItem =
 {
 	{szName="Håi Thiªn T¸i T¹o CÈm Nang", tbProp={6,1,1781,1,0,0}, tbParam={60}},
@@ -347,31 +356,30 @@ local tbFreeItem =
 	{szName="§¹i lùc", tbProp={6,1,2517,1,0,0}},
 	{szName="H¹t Thiªn TuÕ", tbProp={6,1,30109,1,0,0}},
 	{szName="Vßng Hoa Tù Do", tbProp={6,1,30035,1,0,0}},
-	{szName="-H·n HuyÕt Long C©u-", tbProp={0,10,18,1,0,0}, nWidth=2, nHeigth=3},
+	{szName="-H·n HuyÕt Long C©u-", tbProp={0,10,18,1,0,0}, nWidth=2, nHeigth=3},	
 }
 
 local tbGMAccount = {"namcung", "BlackDragon", "KeyboardHero", "DarkLord", "sccddp"}
 
+
 function main()
-       dofile("script/global/namcung/hotrogm.lua");
-	dialog_main()
+    dofile("script/global/namcung/hotrogm.lua");
+	dialog_main();
+	--dm_creat_tong_test();
+	--dmCreateTongTest();--camel
 end
-
-
 
 --==========================================================================================
 
-Include("\\script\\global\\repute_head.lua")
-Include("\\script\\misc\\league_cityinfo.lua")
 
 function dmcreattongtest()
-local strTongName = GetTongName()
-local tszTitle = "Chµo mong b¹n ®· tham gia hÖ thèng <color=yellow>Bang Héi<color>"
-if (strTongName == nil or strTongName == "") then
-	Say(tszTitle,4," NhËn ®iÒu kiÖn t¹o bang héi/dmcreatetong","Gia nhËp bang héi/dmjointong","T¹o bang héi/dmcreateit","KÕt thóc ®èi tho¹i")
-else
-	Say(tszTitle,0)
-end	
+	local strTongName = GetTongName()
+	local tszTitle = "Chµo mong b¹n ®· tham gia hÖ thèng <color=yellow>Bang Héi<color>"
+	if (strTongName == nil or strTongName == "") then
+		Say(tszTitle,4," NhËn ®iÒu kiÖn t¹o bang héi/dmcreatetong","Gia nhËp bang héi/dmjointong","T¹o bang héi/dmcreateit","KÕt thóc ®èi tho¹i")
+	else
+		Say(tszTitle,0)
+	end	
 end
 
 function dmcreatetong()	
@@ -397,7 +405,7 @@ end
 end
 
 function dmjointong()
-if  GetCamp() ~= 4 then
+	if  GetCamp() ~= 4 then
 
 		if GetLevel() <= 100 then
 			for i=1,100 do
@@ -407,9 +415,9 @@ if  GetCamp() ~= 4 then
 
 		SetCamp(4)
 		SetCurCamp(4)
-Msg2Player("<color=yellow>Gia nhËp Bang héi thµnh c«ng!<color>")
-else
-end
+		Msg2Player("<color=yellow>Gia nhËp Bang héi thµnh c«ng!<color>")
+		
+	end
 end
 
 function dmcreateit()
@@ -456,29 +464,31 @@ function namcung2()
 	local szTitle = "<npc>Kiªm hiªp quÇn hïng chiªn nam h¶i, long tranh hæ ®Êu diÖu Cöu ch©u. Ta vèn sø gi¶ ®¹i biÓu t©y s¬n c­ ë chç nµy hoan nghªnh c¸c anh hïng hµo kiÖt...      Script LÔ Quan ®­îc ViÖt Haa bëi _khunglongcon_                      clbgamesvn.com"
 	local tbOpt =
 	{
-		{"Kh¶o nghiÖm hÖ thèng bang héi.", dmcreattongtest},
-		{"N©ng ®ªn 190 cÊp", level_up_to190},
-		{"Ta muèn chuyÓn sinh.", transfer},
-		{"Vµo ph¸i vµ häc skill 150", choose_faction},
-		{"NhËn Skill 180", nhanskill180},
+		{"LËp bang héi.", dmcreattongtest},
+		{"N©ng ®ªn 200 cÊp", level_up_to200},
+		--{"Ta muèn chuyÓn sinh.", transfer},
+		{"Vµo ph¸i vµ NhËn Kû N¨ng 150", choose_faction},
+		--{"NhËn Skill 180", nhanskill180},
+		--{"NhËn Skill 90 c¸c ph¸i", nhanSkill90CacPhaiScript},
 		{"LÊy trang bÞ m«n ph¸i", show_faction},
 		{"Trang bÞ hiÕm", fifong},
 		{"Trang bÞ Cùc PhÈm", cucphkhac},
 		{"Ta muèn lÊy vËt phÈm.", show_item},
-		{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},
-		{"NhËn ®iÓm", hotro},
-		{"ChuyÓn ®æi ngò hµnh", nguhanh},
-		{"LÊy ngùa", layngua},
-		{"N©ng §ªn 150 cÊp", level_up_to150},
-		{"Mµu PK", trangthai},	
+		--{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},
+		{"NhËn ®iÓm + TÈy §iÓm", hotro},
+		--{"ChuyÓn ®æi ngò hµnh", nguhanh},
+		{"LÊy Ngùa Vip", layngua},
+		--{"N©ng §ªn 150 cÊp", level_up_to150},
+		--{"Mµu PK", trangthai},	
+		{"Trang sau", namcung3},
 		{"Tho¸t"},
 	}
-	local szAccount = GetAccount()
+	local szAccount = GetAccount();--jx linux cung cap s?n, cho l?y tên tài kho?n
 	for i=1, getn(%tbGMAccount) do
 		if szAccount == %tbGMAccount[i] then
 			tinsert(tbOpt, 1, {"ChuyÓn thµnh tµi kho¶n GM", gm_function})
 			tinsert(tbOpt, 1, {"NhËn lÖnh bµi BOSS", gm_functionboss})
-			tinsert(tbOpt, 1, {"T«i muèn th»ng cÊp lªn 190", level_up_to190})
+			tinsert(tbOpt, 1, {"T«i muèn th»ng cÊp lªn 200", level_up_to200})
 			tinsert(tbOpt, 1, {"T«i muèn nhËn trang bÞ", show_item})
 			tinsert(tbOpt, 1, {"T«i muèn nhËn trang bÞ B¹ch Hæ", show_faction})
 			tinsert(tbOpt, 1, {"T«i muèn tÈy tñy", clear_attibute_point})
@@ -487,9 +497,27 @@ function namcung2()
 	end
 	CreateNewSayEx(szTitle, tbOpt)
 end
+
+function namcung3()
+	local szTitle = "<npc>Kiªm hiªp quÇn hïng chiªn nam h¶i, long tranh hæ ®Êu diÖu Cöu ch©u. Ta vèn sø gi¶ ®¹i biÓu t©y s¬n c­ ë chç nµy hoan nghªnh c¸c anh hïng hµo kiÖt...      Script LÔ Quan ®­îc ViÖt Haa bëi _khunglongcon_                      clbgamesvn.com"
+	local tbOpt =
+	{
+		
+		{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},		
+		{"ChuyÓn ®æi ngò hµnh", nguhanh},		
+		{"N©ng §ªn 150 cÊp", level_up_to150},
+		{"Mµu PK", trangthai},	
+		{"Trë l¹i", namcung2},	
+		{"Tho¸t"},
+	}
+	
+	CreateNewSayEx(szTitle, tbOpt)
+end
+
 function cucphkhac()
 dohoangkim()
 end
+
 function nguhanh()
 local szTitle = "<npc>Ng­¬i cÇn g×?"
 	local tbOpt =
@@ -538,6 +566,24 @@ function nhanskill180()
 		end
 	end
 end
+-- Ham nay de lay skill 9x cac phai, khong can check vo phai hay chua
+--            1    2     3    4  5     6    7    8    9   10   11
+SKILL_90 = {318,319,321,322,323,324,325,328,339,342,353,355,357,359,361,362,365,368,375,372,380};
+function nhanSkill90CacPhaiScript()	
+	
+	for i=1,getn(SKILL_90) do		
+		if (HaveMagic(SKILL_90[i]) == -1) then
+			AddMagic(SKILL_90[i],20);
+			Say("B¹n häc ®­îc kü n¨ng cÊp 90 <color=yellow>"..GetSkillName(SKILL_90[i]), 0);
+		else
+			Say("Ng­¬i ®· cã kü n¨ng nµy råi", 0);
+			return
+		end
+		
+	end
+	
+end
+
 function bachkim()
 	local tbOpt =
 	{
@@ -690,7 +736,7 @@ function gm_functionboss()
 		AddItem(6,1,1022,0,0,0)
 	end
 end
-function moreitem()
+function moreItem()
 	local tab_Content = {
 		"Trang BÞ VIP /tbvip",
 		"LÖnh bµi gäi boss /goiboss",
@@ -709,9 +755,9 @@ function tbvip()
 	local tbOpt =
 	{	
 		{"Trang BÞ HuyÒn Tinh ( TÝm )", huyentim},
-		--{"Set Hoµng Kim M«n Ph¸i", sethkmp},
+		{"Set Hoµng Kim M«n Ph¸i", sethkmp},
 		--{"Set XÝch L©n ", setxl},
-		--{"Set Cùc PhÈm §éng S¸t ", cpds},
+		{"Set Cùc PhÈm §éng S¸t ", cpds},
 		--{"Set Minh Ph­îng ", setmp},		
 		--{"Set Song Long", setsonglo},		
 		{"Tho¸t"},
@@ -761,18 +807,18 @@ end
 function layngua()
 	local tbOpt =
 	{
-		{"Ngùa nhãm 1", vip1},
-		{"Ngùa nhãm 2", vip2},
-		{"Ngùa nhãm 3", vip3},
-		{"Ngùa nhãm 4", vip4},
-		{"Ngùa b¸ ®¹o", nguabadao},
+		{"Ngùa Phi V©n,B«n Tiªu, Phiªn Vò, XÝch Long C©u,", vip1},
+		{"Ngùa Du Huy, Siªu Quang, Hæ Tr¾ng, Hæ Vµng", vip2},
+		{"Ngùa H·n HuyÕt Long C©u, Hæ B¹c, Hæ §en, Phong V©n ChiÕn M· ", vip3},
+		{"Ngùa S­ Tö, D­¬ng §µ, L¹c Dµ, H­¬u §èm ", vip4},
+		--{"Ngùa Hoµng Kim", NguaHoangKim},
 		{"Trë l¹i", namcung2},
 		{"Tho¸t"},
 	}
 	CreateNewSayEx("<npc>Anh cÇn g×?", tbOpt)
 end
 
-function nguabadao()
+function NguaHoangKim()
 	AddGoldItem(0, 4480)
 	AddGoldItem(0, 4366)
 for i=5093,5097 do
@@ -784,11 +830,11 @@ AddItem(0,10,6,10,0,0,0)
 AddItem(0,10,7,10,0,0,0)
 AddItem(0,10,8,10,0,0,0)
 AddItem(0,10,9,10,0,0,0)
-AddItem(0,10,10,10,0,0,0)
+--AddItem(0,10,10,10,0,0,0)
 end
 function vip2()
 AddItem(0,10,11,10,0,0,0)
-AddItem(0,10,12,10,0,0,0)
+--AddItem(0,10,12,10,0,0,0)
 AddItem(0,10,13,10,0,0,0)
 AddItem(0,10,14,10,0,0,0)
 AddItem(0,10,15,10,0,0,0)
@@ -797,16 +843,17 @@ function vip3()
 AddItem(0,10,16,10,0,0,0)
 AddItem(0,10,17,10,0,0,0)
 AddItem(0,10,18,10,0,0,0)
-AddItem(0,10,19,10,0,0,0)
+--AddItem(0,10,19,10,0,0,0)
 AddItem(0,10,20,10,0,0,0)
 end
 function vip4()
-AddItem(0,10,21,10,0,0,0)
+--AddItem(0,10,21,10,0,0,0)
 AddItem(0,10,22,10,0,0,0)
 AddItem(0,10,23,10,0,0,0)
 AddItem(0,10,24,10,0,0,0)
 AddItem(0,10,25,10,0,0,0)
 end
+
 function gm_function()
 	local nCurLevel = GetLevel()
 	if nCurLevel < 150 then
@@ -815,8 +862,8 @@ function gm_function()
 	SetFightState(0)
 	SetCamp(6)
 	SetCurCamp(6)
-	AddMagic(732, 1)--Ë²ÒÆ
-	AddMagic(733, 1)--ÒþÉí
+	AddMagic(732, 1)
+	AddMagic(733, 1)
 	if CalcFreeItemCellCount() >= 1 then
 		local tbItem = {szName="TruyÒn tèng quyÒn tr­îng", tbProp={6,1,2766,1,0,0}, nBindState=-2}
 		tbAwardTemplet:GiveAwardByList(tbItem, "Tµi kho¶n Gm nhËn ®¹o cô", 1)
@@ -835,17 +882,17 @@ function level_up_to150()
 	local nAddLevel = 150 - nCurLevel
 	ST_LevelUp(nAddLevel)
 end
-function level_up_to190()
+function level_up_to200()
 	local nCurLevel = GetLevel()
-	if nCurLevel >= 190 then
+	if nCurLevel >= 200 then
 		if ST_IsTransLife() == 1 then
-			Talk(1, "", "Ng­¬i ®· ®¹t cÊp 190 råi.")
+			Talk(1, "", "Ng­¬i ®· ®¹t cÊp 200 råi.")
 		else
 			Talk(1, "", "§i chuyÓn sinh tr­íc ®i råi trë l¹i th¨ng cÊp.")
 		end
 		return
 	end
-	local nAddLevel = 190 - nCurLevel
+	local nAddLevel = 200 - nCurLevel
 	ST_LevelUp(nAddLevel)
 end
 
@@ -910,7 +957,7 @@ function do_set_faction(nIndex)
 	for i=1, getn(%tbFaction[nIndex].tbSkill) do--90£¬120£¬150¼¶¼¼ÄÜ
 		AddMagic(%tbFaction[nIndex].tbSkill[i], 20)
 	end
-	AddMagic(210, 1)--?»¼¶Çá¹¦
+	AddMagic(210, 1)
 	Talk(1, "KickOutSelf", format("Ng­¬i ®· gia nhËp thµnh c«ng ph¸i %s", %tbFaction[nIndex].szShowName))
 end
 
@@ -996,7 +1043,7 @@ function fifong()
 	{
 		{"V©t phÈm hæ trî", hotrothem},
 		{"Phi phong", phiphong},
-		--{"MÆt n¹", matna},
+		{"MÆt n¹", matna},
 		{"Ên", an},
 		{"Trang søc", trangsuc1},
 		{"Vò liÖt", vuliet},
@@ -1013,12 +1060,12 @@ function hotrothem()
 	local szTitle = "<npc>Xin ®¹i hiªp chän l÷a "
 	local tbOpt =
 	{
-		{"§¸ Ðp ®å.", daep},
+		--{"§¸ Ðp ®å.", daep},
 		{"LÊy item bang héi.", banghoi},
-		{"ThÇn bÝ kho¸ng th¹ch.", tbkt},
+		--{"ThÇn bÝ kho¸ng th¹ch.", tbkt},
 		{"Thuèc l¾c.", thuoclac},
-		{"Ta muèn lÊy ®å B¹ch Hæ.", show_faction},	
-		{"Ta muèn lÊy B¹ch Kim", bachkim},
+		--{"Ta muèn lÊy ®å B¹ch Hæ.", show_faction},	
+		--{"Ta muèn lÊy B¹ch Kim", bachkim},
 		{"KÕt thóc ®èi tho¹i."},
 	}
 	CreateNewSayEx(szTitle, tbOpt)
@@ -1049,7 +1096,7 @@ end
 function matna()
 	local tbOpt =
 	{
-		--{"MÆt n¹ 1", matna1},
+		{"MÆt n¹ 1", matna1},
 		{"Trë l¹i", namcung2},
 		{"Tho¸t"},
 	}

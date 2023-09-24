@@ -1,68 +1,65 @@
-Include("\\script\\dailogsys\\dailogsay.lua")
-Include("\\script\\lib\\awardtemplet.lua")
-Include("\\script\\activitysys\\functionlib.lua")
-Include("\\script\\lib\\log.lua")
-IncludeLib("SETTING")
-Include("\\script\\lib\\awardtemplet.lua")
-Include("\\script\\global\\fuyuan.lua")
-Include("\\script\\global\\gmrole.lua")
+Include("\\script\\dailogsys\\dailogsay.lua");
+Include("\\script\\lib\\awardtemplet.lua");
+Include("\\script\\activitysys\\functionlib.lua");
+Include("\\script\\lib\\log.lua");
+IncludeLib("SETTING");
+Include("\\script\\lib\\awardtemplet.lua");
+Include("\\script\\global\\fuyuan.lua");
+Include("\\script\\global\\gmrole.lua");
 Include("\\script\\global\\namcung\\hotrogm.lua")
-Include("\\script\\global\\namcung\\xephang\\top10_all.lua")
-Include("\\script\\task\\partner\\education\\swordking_people.lua")
-Include("\\script\\global\\namcung\\hotrotanthu\\doiraclayvk.lua")
+Include("\\script\\global\\namcung\\xephang\\top10_all.lua");
+Include("\\script\\task\\partner\\education\\swordking_people.lua");
+Include("\\script\\global\\namcung\\hotrotanthu\\doiraclayvk.lua");
 
-local tbGMAccount = {"123456", "NamCung", "tester", "DarkLord", "sccddp"}
+
 function main()
-dofile("script/global/namcung/namcung_say.lua");		
-		--	str = "Chµo mõng c¸c b¹n ®· tham gia thÕ giíi <color=red>Vâ L©m TruyÒn Kú<color> ®­îc ph¸t triÓn bëi <color=green>Vâ L©m TruyÒn Kú<color> mäi chi tiÕt xin liªn hÖ <color=green>https://www.facebook.com/groups/jxdocs<color> ®Ó nhËn ®­îc sù hæ trî khi cÇn thiÕt."
-		--AddGlobalCountNews(str, 1)
-local szAccount = GetAccount()
-	for i=1, getn(%tbGMAccount) do
-		if szAccount == %tbGMAccount[i] then
-			local szTitle = "<npc><color=red>Hæ trî GM<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com"
+	dofile("script/global/namcung/namcung_say.lua");	
+	
+	if tbGmRole:CheckAccountAndRoleName() == 1 then
+		local szTitle = "<npc><color=red>Hæ trî Test Server<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>"
 		local tbOpt =
-	{
-		{"Hæ trî Admin", HoTroAdminScriptByYin},
-		{"Hæ trî T©n Thñ", HoTroTanThuScriptByYin},
-		{"§æi tªn nh©n vËt", DoiTenNV},
-		--{"Gäi b¹n ®ång hµnh", partner_getdust1},
-		{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
-		--{"NhËp code nhËn quµ", phanthuong},
-		--{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
-		{"Hñy trang bÞ khãa", deltem},
-		{"Hñy VËt PhÈm",DisposeItem},
-		{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
-		{"§¨ng ký quyÒn h¹n GM", dkgm},
-		{"§æi r¸c lÊy vò khÝ ngÉu nhiªn", doirac},
-		{"Tho¸t"},
-	}
-		CreateNewSayEx(szTitle, tbOpt)		
-	else
-			Talk(1, "", "<color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com")
-			str = "Chµo mõng c¸c b¹n ®· tham gia thÕ giíi <color=red>Vâ L©m TruyÒn Kú<color> ®­îc ph¸t triÓn bëi <color=green>Vâ L©m TruyÒn Kú<color> mäi chi tiÕt xin liªn hÖ <color=green>https://www.facebook.com/groups/jxdocs<color> ®Ó nhËn ®­îc sù hæ trî khi cÇn thiÕt."
+		{
+			{"Hæ trî Test", HoTroAdminScriptByYin},
+			{"Hæ trî T©n Thñ", HoTroTanThuScriptByYin},
+			{"§æi tªn nh©n vËt", DoiTenNV},
+			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
+			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
+			--{"NhËp code nhËn quµ", phanthuong},
+			--{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
+			--{"Hñy trang bÞ khãa", deltem},
+			{"Hñy VËt PhÈm Kh«ng CÇn Khãa",DisposeItem},
+			{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
+			{"§¨ng ký quyÒn h¹n GM", dkgm},
+			{"§æi r¸c lÊy vò khÝ ngÉu nhiªn", doirac},
+			{"Tho¸t"},
+		}
+		CreateNewSayEx(szTitle, tbOpt)			
+	else --menu nguoi binh thuong
+		Talk(1, "", "<color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com")
+		str = "Chµo mõng c¸c b¹n ®· tham gia thÕ giíi <color=red>Vâ L©m TruyÒn Kú<color> ®­îc ph¸t triÓn bëi <color=green>Vâ L©m TruyÒn Kú<color> mäi chi tiÕt xin liªn hÖ <color=green>https://www.facebook.com/groups/jxdocs<color> ®Ó nhËn ®­îc sù hæ trî khi cÇn thiÕt."
 		AddGlobalCountNews(str, 2)
 		local szTitle = "<npc><color=red>Hæ trî GM<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com"
 		local tbOpt =
-	{
-		{"§¨ng ký quyÒn h¹n GM", dkgm},	
-		{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
-		{"Hæ trî Admin", HoTroAdminScriptByYin},
-		{"§æi tªn nh©n vËt", DoiTenNV},
-		--{"Gäi b¹n ®ång hµnh", partner_getdust1},
-		{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
-		--{"NhËp code nhËn quµ", phanthuong},
-		--{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
-		{"Hñy trang bÞ khãa", deltem},
-		{"Hñy VËt PhÈm",DisposeItem},
-		{"§æi r¸c lÊy vò khÝ ngÉu nhiªn", doirac},
-		{"Tho¸t"},
-	}
+		{
+			--{"§¨ng ký quyÒn h¹n GM", dkgm},	
+			--{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
+			{"Hæ trî Test", HoTroAdminScriptByYin},
+			{"§æi tªn nh©n vËt", DoiTenNV},
+			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
+			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
+			--{"NhËp code nhËn quµ", phanthuong},
+			---{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
+			--{"Hñy trang bÞ khãa", deltem},
+			{"Hñy VËt PhÈm Kh«ng CÇn Khãa",DisposeItem},
+			--{"§æi r¸c lÊy vò khÝ ngÉu nhiªn", doirac},
+			{"Tho¸t"},
+		}
 		CreateNewSayEx(szTitle, tbOpt)	
 
-end
-				return	
+	end
+	
 
-end			
+		
 end
 
 function dkgm9()
@@ -81,6 +78,7 @@ end
 function HoTroAdminScriptByYin()
 namcung2()
 end
+
 function HoTroTanThuScriptByYin()
 	Msg2Player( "Xin chµo ®¹i hiÖp, chóng t«i sÏ sím hç tr" );
 end
@@ -96,7 +94,7 @@ tbitem  =
 	{
 		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
 		[2]	={szName = "Håi thµnh phï (nhá)", tbProp = {6, 1, 1082,1,0,0}, nCount = 1, nExpiredTime = 43200, nBindState = -2},
-		[3]	={szName = "Phóc Duyªn Lé (Trung)", tbProp = {6, 1, 123,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
+		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 3, nExpiredTime = 10080, nBindState = -2},
 		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nExpiredTime=14400,nBindState = -2},
@@ -217,7 +215,7 @@ weapon_ring()
 end
 
 function DisposeItem()
-	GiveItemUI("Hñy vËt phÈm", "§¹i hiÖp h·y cÈn thËn trong viÖc hñy vËt phÈm!", "DisposeConfirm", "onCancel", 1);
+	GiveItemUI("Hñy vËt phÈm", "§¹i hiÖp xin h·y cÈn thËn trong viÖc hñy vËt phÈm!", "DisposeConfirm", "onCancel", 1);
 end
 
 function DisposeConfirm(nCount)
@@ -226,7 +224,7 @@ function DisposeConfirm(nCount)
 		local strItem = GetItemName(nItemIndex);
 		RemoveItemByIndex(nItemIndex);
 		Talk(1, "", "§¹i hiÖp cã thÓ s¾p xÕp l¹i r­¬ng chøa ®å råi!");
-		Msg2Player("§¹i hiÖp võa hñy vËt phÈm thµnh c«ng")
+		Msg2Player("§¹i hiÖp võa hñy vËt phÈm thµnh c«ng");
 		WriteLog(date("%Y%m%d %H%M%S").."\t".." GM Hñy Item "..GetAccount().."\t"..GetName().."\t".." Huû item "..strItem)
 	end
 end

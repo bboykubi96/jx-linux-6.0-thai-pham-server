@@ -16,17 +16,17 @@ function main()
 	dofile("script/global/namcung/namcung_say.lua");	
 	
 	if tbGmRole:CheckAccountAndRoleName() == 1 then
-		local szTitle = "<npc><color=red>Hæ trî GM<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter>Script GM By <color=green>Vâ L©m TruyÒn Kú<color> clbgamesvn.com"
+		local szTitle = "<npc><color=red>Hæ trî Test Server<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>"
 		local tbOpt =
 		{
-			{"Hæ trî Admin", HoTroAdminScriptByYin},
+			{"Hæ trî Test", HoTroAdminScriptByYin},
 			{"Hæ trî T©n Thñ", HoTroTanThuScriptByYin},
 			{"§æi tªn nh©n vËt", DoiTenNV},
 			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
 			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
 			--{"NhËp code nhËn quµ", phanthuong},
 			--{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
-			{"Hñy trang bÞ khãa", deltem},
+			--{"Hñy trang bÞ khãa", deltem},
 			{"Hñy VËt PhÈm Kh«ng CÇn Khãa",DisposeItem},
 			{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
 			{"§¨ng ký quyÒn h¹n GM", dkgm},
@@ -43,13 +43,13 @@ function main()
 		{
 			--{"§¨ng ký quyÒn h¹n GM", dkgm},	
 			--{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
-			--{"Hæ trî Admin", HoTroAdminScriptByYin},
+			{"Hæ trî Test", HoTroAdminScriptByYin},
 			{"§æi tªn nh©n vËt", DoiTenNV},
 			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
 			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
-			{"NhËp code nhËn quµ", phanthuong},
+			--{"NhËp code nhËn quµ", phanthuong},
 			---{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
-			{"Hñy trang bÞ khãa", deltem},
+			--{"Hñy trang bÞ khãa", deltem},
 			{"Hñy VËt PhÈm Kh«ng CÇn Khãa",DisposeItem},
 			--{"§æi r¸c lÊy vò khÝ ngÉu nhiªn", doirac},
 			{"Tho¸t"},
