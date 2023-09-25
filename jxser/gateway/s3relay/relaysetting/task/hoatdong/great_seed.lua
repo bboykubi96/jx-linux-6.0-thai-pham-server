@@ -97,7 +97,7 @@ end
 
 -- LLG_ALLINONE_TODO_20070802
 --
-function righttime_add();
+function righttime_add()
 	local nTime = tonumber(date("%H%M"));
 	if (nTime >= 1200 and nTime < 1230)  then
 		return 1;
@@ -105,7 +105,7 @@ function righttime_add();
 	return 0;
 end
 
-function goldenseedmap();
+function goldenseedmap()
 	local goldcity = random(1, 2);
 	gb_SetTask("QUA HUY HOANG", 1, goldcity);
 	local RowIndex = random(2, 41)
