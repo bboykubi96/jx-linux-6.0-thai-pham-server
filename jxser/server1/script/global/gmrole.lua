@@ -87,7 +87,7 @@ function tbGmRole:GMC_Menu()
 		{"LÊy §å HKMP theo ID(goldequip.txt)", g_AskClientStringEx, {"2", 0, 7000, "Th«ng sè hkmp", {self.LayDoHKMPTheoIDItemScript, {self}} }},
 		{"LÊy ngùa theo ID(horse.txt)", g_AskClientStringEx, {"6,10", 0, 1000, "Th«ng sè ngùa", {self.LayNguaTheoIDItemScript, {self}} }},
 		{"LÊy item theo ID(magicscript.txt)", g_AskClientStringEx, {"4257", 0, 10000, "Th«ng sè item", {self.LayItemTheoIDItemScript, {self}} }},		
-		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 256, "Th«ng sè item", {self.TaoItem, {self}} }},
+		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 10000, "Th«ng sè item", {self.TaoItem, {self}} }},
 		{"Há trî GM Test Server", HoTroGMTestServerScript},
 		{"Qu¶n lý gamer", QLG},
 		{"DÞch chuyÓn tøc thêi", g_AskClientStringEx, {"53,200,201", 0, 256, "Map,X,Y", {self.DenDD, {self}} }}, 
@@ -166,7 +166,7 @@ function tbGmRole:LayVatPham()
 		{"LÊy §å HKMP theo ID(goldequip.txt)", g_AskClientStringEx, {"2", 0, 7000, "Th«ng sè item", {self.LayDoHKMPTheoIDItemScript, {self}} }},
 		{"LÊy ngùa theo ID(horse.txt)", g_AskClientStringEx, {"6,10", 0, 1000, "Th«ng sè item", {self.LayNguaTheoIDItemScript, {self}} }},
 		{"LÊy item theo ID(magicscript.txt)", g_AskClientStringEx, {"4257", 0, 10000, "Th«ng sè item", {self.LayItemTheoIDItemScript, {self}} }},		
-		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 256, "Th«ng sè ITEM", {self.TaoItem, {self}} }},		
+		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 10000, "Th«ng sè ITEM", {self.TaoItem, {self}} }},		
 		--{"Trë l¹i", GMC_Menu},
 		{"KÕt Thóc Hç Trî"}
 	}
