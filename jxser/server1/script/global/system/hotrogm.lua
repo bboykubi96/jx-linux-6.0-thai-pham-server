@@ -461,26 +461,27 @@ end
 --==========================================================================================
 
 function namcung2()
-	local szTitle = "<npc>Kiªm hiªp quÇn hïng chiªn nam h¶i, long tranh hæ ®Êu diÖu Cöu ch©u. Ta vèn sø gi¶ ®¹i biÓu t©y s¬n c­ ë chç nµy hoan nghªnh c¸c anh hïng hµo kiÖt...      Script LÔ Quan ®­îc ViÖt Haa bëi _khunglongcon_                      clbgamesvn.com"
+	local szTitle = "<npc><enter><color=blue>Hello, There...Welcome to!<color><enter><color=green>Vâ L©m 1<color><color=yellow> - M¸y Chñ - Thiªn Long<color><enter>Can I help You?"
 	local tbOpt =
 	{
 		{"LËp bang héi.", dmcreattongtest},
-		{"N©ng ®ªn 200 cÊp", level_up_to200},
+		{"N©ng CÊp 200 cÊp", level_up_to200},
 		--{"Ta muèn chuyÓn sinh.", transfer},
-		{"Vµo ph¸i vµ NhËn Kû N¨ng 150", choose_faction},
+		{"Vµo ph¸i vµ Kû N¨ng 150", choose_faction},
 		--{"NhËn Skill 180", nhanskill180},
 		--{"NhËn Skill 90 c¸c ph¸i", nhanSkill90CacPhaiScript},
-		{"LÊy trang bÞ m«n ph¸i", show_faction},
-		{"Trang bÞ hiÕm", fifong},
-		{"Trang bÞ Cùc PhÈm", cucphkhac},
-		{"Ta muèn lÊy vËt phÈm.", show_item},
+		--{"LÊy trang bÞ m«n ph¸i", show_faction},
+		--{"Trang bÞ hiÕm", fifong},
+		{"Trang BÞ HKMP", sethkmp},
+		--{"Trang bÞ Cùc PhÈm", cucphkhac},
+		--{"Ta muèn lÊy vËt phÈm.", show_item},
 		--{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},
 		{"NhËn ®iÓm + TÈy §iÓm", hotro},
 		--{"ChuyÓn ®æi ngò hµnh", nguhanh},
 		{"LÊy Ngùa Vip", layngua},
 		--{"N©ng §ªn 150 cÊp", level_up_to150},
-		--{"Mµu PK", trangthai},	
-		{"Trang sau", namcung3},
+		{"Thay ®æi Mµu PK", trangthai},	
+		--{"Trang sau", namcung3},
 		{"Tho¸t"},
 	}
 	local szAccount = GetAccount();--jx linux cung cap s?n, cho l?y tên tài kho?n
@@ -490,7 +491,7 @@ function namcung2()
 			tinsert(tbOpt, 1, {"NhËn lÖnh bµi BOSS", gm_functionboss})
 			tinsert(tbOpt, 1, {"T«i muèn th»ng cÊp lªn 200", level_up_to200})
 			tinsert(tbOpt, 1, {"T«i muèn nhËn trang bÞ", show_item})
-			tinsert(tbOpt, 1, {"T«i muèn nhËn trang bÞ B¹ch Hæ", show_faction})
+			--tinsert(tbOpt, 1, {"T«i muèn nhËn trang bÞ B¹ch Hæ", show_faction})
 			tinsert(tbOpt, 1, {"T«i muèn tÈy tñy", clear_attibute_point})
 			break
 		end
@@ -504,8 +505,8 @@ function namcung3()
 	{
 		
 		{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},		
-		{"ChuyÓn ®æi ngò hµnh", nguhanh},		
-		{"N©ng §ªn 150 cÊp", level_up_to150},
+		--{"ChuyÓn ®æi ngò hµnh", nguhanh},		
+		--{"N©ng §ªn 150 cÊp", level_up_to150},
 		{"Mµu PK", trangthai},	
 		{"Trë l¹i", namcung2},	
 		{"Tho¸t"},
@@ -685,7 +686,7 @@ function hotro()
 		{"Trë l¹i", namcung2},
 		{"Tho¸t"},
 	}
-	CreateNewSayEx("<npc>Anh cÇn g×?", tbOpt)
+	CreateNewSayEx("<npc>B¹n cÇn g×?", tbOpt)
 end
 
 function pointkynang()
@@ -754,7 +755,7 @@ end;
 function tbvip()
 	local tbOpt =
 	{	
-		{"Trang BÞ HuyÒn Tinh ( TÝm )", huyentim},
+		--{"Trang BÞ HuyÒn Tinh ( TÝm )", huyentim},
 		{"Set Hoµng Kim M«n Ph¸i", sethkmp},
 		--{"Set XÝch L©n ", setxl},
 		{"Set Cùc PhÈm §éng S¸t ", cpds},
@@ -1041,12 +1042,12 @@ end
 function fifong()
 	local tbOpt =
 	{
-		{"V©t phÈm hæ trî", hotrothem},
-		{"Phi phong", phiphong},
-		{"MÆt n¹", matna},
-		{"Ên", an},
+		--{"V©t phÈm hæ trî", hotrothem},
+		--{"Phi phong", phiphong},
+		--{"MÆt n¹", matna},
+		--{"Ên", an},
 		{"Trang søc", trangsuc1},
-		{"Vò liÖt", vuliet},
+		--{"Vò liÖt", vuliet},
 		--{"Huynh ®Ö", huynhde},
 		--{"Cè s¬n", coson},
 		--{"D­¬ng thÇn", duongthan},
@@ -1221,7 +1222,6 @@ end
 ---Hoan kim mon phai.
 function sethkmp()
 	local tab_Content = {
-		"Rêi khái/no",
 		"ThiÕu L©m quyÒn/#sethkmp1(1)",
 		"ThiÕu L©m c«n/#sethkmp1(2)",
 		"ThiÕu L©m ®ao/#sethkmp1(3)",
@@ -1237,13 +1237,13 @@ function sethkmp()
 		"Ngò §éc ®ao/#sethkmp1(13)",
 		"Ngò §éc bïa/#sethkmp1(14)",
 		"Trang sau/sethkmp2",
+		"Rêi khái/no",
 		
 	}
-	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän chøc n¨ng mµ b¹n muèn", getn(tab_Content), tab_Content);
+	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän trang bÞ mµ b¹n muèn", getn(tab_Content), tab_Content);
 end
 function sethkmp2()
 	local tab_Content = {
-		"Rêi khái/no",
 		"§­êng M«n phi ®ao/#sethkmp1(15)",
 		"§­êng M«n tô tiÔn/#sethkmp1(16)",
 		"§­êng M«n phi tiªu/#sethkmp1(17)",
@@ -1258,8 +1258,10 @@ function sethkmp2()
 		"C«n L«n ®ao/#sethkmp1(26)",
 		"C«n L«n kiÕm/#sethkmp1(27)",
 		"C«n L«n bïa/#sethkmp1(28)",
+		"Trang tr­íc/sethkmp",
+		"Rêi khái/no",
 	}
-	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän chøc n¨ng mµ b¹n muèn", getn(tab_Content), tab_Content);
+	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän trang bÞ mµ b¹n muèn", getn(tab_Content), tab_Content);
 end
 function sethkmp1(nId)
 	for i=1,5 do AddGoldItem(0,5*nId+i-5) end

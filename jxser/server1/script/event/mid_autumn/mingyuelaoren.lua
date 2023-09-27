@@ -41,15 +41,8 @@ function cake_ex_gift(dtype)
 	Say("<#> A! X­a giê ta ch­a bao giê ®­îc ¨n b¸nh ngon nh­ vÇy! §©y lµ chót thµnh ý! Cã b¸nh ngon nhí quay l¹i tÆng cho ta nhÐ!", 1, "NhËn lÔ phÈm!/#take_ex_gift("..dtype..")")
 
 end
---ham doi thanh pham - minh nguyen tran NPC - chuot phai vo thanh pham
+
 function take_ex_gift(dtype)
-	local currentItemTotal = GetTask(EVENT_TRUNG_THU_ID) + 1;--0.1.2.3 1000
-	--khi vuot qua moc roi
-	if(currentItemTotal > EVENT_TRUNG_THU_MAX) then
-		Msg2Player("<#> B¹n nhËn tèi ®a råi "..currentItemTotal);
-		return
-	end
-	--khi chua dat moc, nhan qua binh thuong
 	local dpass = ConsumeEquiproomItem(1, 6, 1, dtype, -1)
 	if ( dpass ~= 1 ) then
 		print("delete item cake error dtype = "..dtype)
@@ -64,12 +57,6 @@ function take_ex_gift(dtype)
 		Msg2Player("<#> B¹n nhËn ®­îc "..tbCAKE2GIFT[dtype][2])
 		WriteLog(date("%y-%m-%d,%H:%M,").."ACCOUNT:"..GetAccount()..",NAME:"..GetName()..", give "..tbCAKE2GIFT[dtype][1].." in exchange for "..tbCAKE2GIFT[dtype][2])
 	end
-	SetTask(EVENT_TRUNG_THU_ID,currentItemTotal);
-	--khi dat moc
-	if(currentItemTotal = EVENT_TRUNG_THU_MAX) then
-		--
-		return
-	end
 end
 
 function shijin_ex_goldequip()
@@ -77,7 +64,7 @@ function shijin_ex_goldequip()
 	for i = 1, getn( tbSHIJIN2GOLDEQUIP ) do
 		base = base + tbSHIJIN2GOLDEQUIP[ i ][ 3 ]
 	end
-	base = 100 * base;--12% + 12%
+	base = 100 * base
 	
 	local sum = 0
 	local num = random(1, base)

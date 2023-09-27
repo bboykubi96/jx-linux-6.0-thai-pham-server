@@ -80,7 +80,7 @@ function tbGmRole:GMC_Menu()
 	w,x,y=GetWorldPos();--53 x=201, y 200
 	SubWorld = SubWorldID2Idx(w);
 	SubName=SubWorldName(SubWorld);
-	local szTitle = "<color=red>Hæ trî GM<color>: <color=orange>"..GetName().." <color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>C÷u Niªn T­¬ng Phïng<color>.<enter><color=Yellow>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <color><enter>Script GM By <color=orange>Vâ L©m TruyÒn Kú<color> - <color=green>https://www.facebook.com/groups/jxdocs<color><enter><color=red>VÞ TrÝ<color>:<color=orange>ID:<color><color=orange>"..w.."<color>-<color=red>"..SubName.."<color>-Täa ®é X/Y:<color=yellow> "..x.."<color>/<color=cyan>"..y.."<color>"
+	local szTitle = "<color=red>Hæ trî Test Game<color>: <color=orange>"..GetName().." <color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>Hµo KiÖt T¸i XuÊt, NhÊt Thèng Giang Hå<color>.<enter><color=Yellow>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <color><enter>Volam1.net<color=orange>M¸y Chñ - Thiªn Long<color> - <color=green><color><enter><color=red>VÞ TrÝ<color>:<color=orange>ID:<color><color=orange>"..w.."<color>-<color=red>"..SubName.."<color>-Täa ®é X/Y:<color=yellow> "..x.."<color>/<color=cyan>"..y.."<color>"
 	
 	local tbOpt =
 	{	

@@ -49,17 +49,17 @@ Hång Ly	0	10	4	\spr\item\equip\horse\horse002.spr	40	2	3	Lo¹i ngùa trung ®¼ng nh
 §¹i UyÓn H·n HuyÕt M· 	0	10	4	\spr\item\equip\horse\horse002.spr	40	2	3	Lo¹i §¹i UyÓn danh m· cùc quý hiÕm,ngh×n vµng khã mua.	4	25000	8	0	111	40%	40%	93	500	500	85	100	100	150	-100	-100										36	55										
 XÝch Ký 	0	10	4	\spr\item\equip\horse\horse002.spr	40	2	3	Còng chÝnh lµ Kú Ký,mét trong t¸m con danh m· cña Chu Môc V­¬ng.	4	50000	9	0	111	50%	50%	93	1000	1000	85	200	200	150	-200	-200										36	60										
 XÝch Ký 	0	10	4	\spr\item\equip\horse\horse002.spr	40	2	3	Còng chÝnh lµ Kú Ký,mét trong t¸m con danh m· cña Chu Môc V­¬ng.	4	50000	10	0	111	50%	50%	93	1000	1000	85	200	200	150	-200	-200										36	72										
-¤ V©n §¹p TuyÕt	0	10	5	\spr\item\equip\horse\horse010.spr	40	2	3	TuyÖt thÕ danh m·, chØ nh÷ng bËc v­¬ng gi¶ míi cã thÓ mua.	5	250000	1	0	111	60%	60%	93	1000	1000	85	200	200	150	200	200										36	80										
-XÝch Thè 	0	10	5	\spr\item\equip\horse\horse011.spr	40	2	3	Còng ®­îc xÕp vµo hµng "Thiªn h¹ ®Ö nhÊt m·".	5	250000	2	0	111	60%	60%	93	1000	1000	85	500	500	150	200	200										36	80										
-TuyÖt ¶nh	0	10	5	\spr\item\equip\horse\horse005.spr	40	2	3	TuyÖt thÕ danh m·, sung m·n b¸ khÝ, Tµo Th¸o ®· tõng cìi.	5	250000	3	0	111	60%	60%	93	1000	1000	85	200	200	150	500	500										36	80										
-§Ých L« 	0	10	5	\spr\item\equip\horse\horse008.spr	40	2	3	TuyÖt thÕ danh m·, truy phong ho¸n vò, ngµy ®i ngh×n dÆm.	5	250000	4	0	111	60%	60%	93	1000	1000	85	300	300	150	300	300										36	80										
-ChiÕu D¹ Ngäc S­ Tö 	0	10	5	\spr\item\equip\horse\horse012.spr	40	2	3	Lµ lo¹i "ThÇn c©u" cã søc m¹nh phi th­êng, c­ìi m©y ®¹p giã.	5	250000	5	0	111	60%	60%	93	1000	1000	85	200	200	150	200	200										36	80										
-¤ V©n §¹p TuyÕt	0	10	5	\spr\item\equip\horse\horse010.spr	40	2	3	TuyÖt thÕ danh m·, chØ nh÷ng bËc v­¬ng gi¶ míi cã thÓ mua.	5	250000	6	0	111	60%	60%	93	1000	1000	85	200	200	150	200	200										36	80										
-XÝch Thè 	0	10	5	\spr\item\equip\horse\horse011.spr	40	2	3	Còng ®­îc xÕp vµo hµng "Thiªn h¹ ®Ö nhÊt m·".	5	250000	7	0	111	60%	60%	93	1000	1000	85	500	500	150	200	200										36	80										
-TuyÖt ¶nh	0	10	5	\spr\item\equip\horse\horse005.spr	40	2	3	TuyÖt thÕ danh m·, sung m·n b¸ khÝ, Tµo Th¸o ®· tõng cìi.	5	250000	8	0	111	60%	60%	93	1000	1000	85	200	200	150	500	500										36	80										
-
-§Ých L« 	0	10	5	\spr\item\equip\horse\horse008.spr	40	2	3	TuyÖt thÕ danh m·, truy phong ho¸n vò, ngµy ®i ngh×n dÆm.	5	250000	9	0	111	60%	60%	93	1000	1000	85	300	300	150	300	300										36	80										
-ChiÕu D¹ Ngäc S­ Tö 	0	10	5	\spr\item\equip\horse\horse012.spr	40	2	3	Lµ lo¹i "ThÇn c©u" cã søc m¹nh phi th­êng, c­ìi m©y ®¹p giã.	5	250000	10	0	111	60%	60%	93	1000	1000	85	200	200	150	200	200										36	80										
+¤ V©n §¹p TuyÕt	0	10	5	\spr\item\equip\horse\horse010.spr	40	2	3	TuyÖt thÕ danh m·, chØ nh÷ng bËc v­¬ng gi¶ míi cã thÓ mua.	5	250000	1	0	111	80%	80%	93	1000	1000	85	200	200	150	200	200										36	80										
+XÝch Thè 	0	10	5	\spr\item\equip\horse\horse011.spr	40	2	3	Còng ®­îc xÕp vµo hµng "Thiªn h¹ ®Ö nhÊt m·".	5	250000	2	0	111	80%	80%	93	1000	1000	85	500	500	150	200	200										36	80										
+TuyÖt ¶nh	0	10	5	\spr\item\equip\horse\horse005.spr	40	2	3	TuyÖt thÕ danh m·, sung m·n b¸ khÝ, Tµo Th¸o ®· tõng cìi.	5	250000	3	0	111	80%	80%	93	1000	1000	85	200	200	150	500	500										36	80										
+§Ých L« 	0	10	5	\spr\item\equip\horse\horse008.spr	40	2	3	TuyÖt thÕ danh m·, truy phong ho¸n vò, ngµy ®i ngh×n dÆm.	5	250000	4	0	111	80%	80%	93	1000	1000	85	300	300	150	300	300										36	80										
+ChiÕu D¹ Ngäc S­ Tö 	0	10	5	\spr\item\equip\horse\horse012.spr	40	2	3	Lµ lo¹i "ThÇn c©u" cã søc m¹nh phi th­êng, c­ìi m©y ®¹p giã.	5	250000	5	0	111	100%	100%	93	1000	1000	85	200	200	150	200	200										36	80										
+¤ V©n §¹p TuyÕt	0	10	5	\spr\item\equip\horse\horse010.spr	40	2	3	TuyÖt thÕ danh m·, chØ nh÷ng bËc v­¬ng gi¶ míi cã thÓ mua.	5	250000	6	0	111	80%	80%	93	1000	1000	85	200	200	150	200	200										36	80										
+XÝch Thè 	0	10	5	\spr\item\equip\horse\horse011.spr	40	2	3	Còng ®­îc xÕp vµo hµng "Thiªn h¹ ®Ö nhÊt m·".	5	250000	7	0	111	80%	80%	93	1000	1000	85	500	500	150	200	200										36	80										
+TuyÖt ¶nh	0	10	5	\spr\item\equip\horse\horse005.spr	40	2	3	TuyÖt thÕ danh m·, sung m·n b¸ khÝ, Tµo Th¸o ®· tõng cìi.	5	250000	8	0	111	80%	80%	93	1000	1000	85	200	200	150	500	500										36	80										
+																																													
+§Ých L« 	0	10	5	\spr\item\equip\horse\horse008.spr	40	2	3	TuyÖt thÕ danh m·, truy phong ho¸n vò, ngµy ®i ngh×n dÆm.	5	250000	9	0	111	80%	80%	93	1000	1000	85	300	300	150	300	300										36	80										
+ChiÕu D¹ Ngäc S­ Tö 	0	10	5	\spr\item\equip\horse\horse012.spr	40	2	3	Lµ lo¹i "ThÇn c©u" cã søc m¹nh phi th­êng, c­ìi m©y ®¹p giã.	5	250000	10	0	111	100%	100%	93	1000	1000	85	200	200	150	200	200										36	80										
 B«n Tiªu	0	10	6	\spr\item\equip\horse\horse010.spr	40	2	3	Mét trong t¸m con danh c©u cña Chu Môc V­¬ng	5	250000	1	0	111	100%	100%	93	1000	1000	85	500	500	150	500	500	233	500	500							36	120										
 B«n Tiªu	0	10	6	\spr\item\equip\horse\horse010.spr	40	2	3	Mét trong t¸m con danh c©u cña Chu Môc V­¬ng	5	250000	2	0	111	100%	100%	93	1000	1000	85	500	500	150	500	500	233	500	500							36	120										
 B«n Tiªu	0	10	6	\spr\item\equip\horse\horse010.spr	40	2	3	Mét trong t¸m con danh c©u cña Chu Môc V­¬ng	5	250000	3	0	111	100%	100%	93	1000	1000	85	500	500	150	500	500	233	500	500							36	120										

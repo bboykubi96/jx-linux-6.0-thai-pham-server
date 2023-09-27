@@ -1,6 +1,6 @@
 npc_thai_pham = { 
-	{585,80,4,53,1549,3266,0,"CÈc GÁ Train",0,"\\script\\global\\namcung\\namcung_say.lua"},
-	{603,80,4,53,1546,3278,0,"Ng≠Íi Tuy’t",0,"\\script\\global\\namcung\\namcung_say.lua"},
+	--{585,80,4,53,1549,3266,0,"CÈc GÁ Train",0,"\\script\\global\\namcung\\namcung_say.lua"},
+	--{603,80,4,53,1546,3278,0,"Ng≠Íi Tuy’t",0,"\\script\\global\\namcung\\namcung_say.lua"},
 }
 
 

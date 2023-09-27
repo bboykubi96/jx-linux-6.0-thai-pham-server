@@ -163,12 +163,12 @@ function main()
 		{"Ta muèn häc vâ c«ng", HoTroSkill},
 		--{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
 		--{"Ta muèn nhËn trang bÞ hoµng kim", hoangkim},
-		{"Ta muèn th¨ng cÊp", HoTroLevel180},
+		--{"Ta muèn th¨ng cÊp", HoTroLevel180},
 		--{"Ta cÇn ng©n l­îng", HoTroNganLuong},
 		--{"Ta muèn nhËn ChiÕu D¹ Ngäc S­ Tö", HoTroChieuDa},
 		--{"Ta muèn t¹o bang héi", BuildTong},
 		--{"Ta muèn tr¹ng th¸i S¸t thñ", ChuDo},
-		--{"Ta muèn m­uèn trang bÞ xanh", MaiGap},
+		--{"Ta muèn trang bÞ xanh", MaiGap},
         		--{"Ta muèn m­în vò khÝ", MaiGap},
 		--{"Ta muèn chÕ t¹o trang bÞ HuyÒn Tinh", chetao},
 		--{"Ta muèn trang bÞ HuyÒn Tinh", dotim},		
@@ -1022,6 +1022,7 @@ tbitem  =
 		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nBindState = -2},
+		[7]	={szName="Tóc S­¬ng",tbProp={0,10,2,9,0,0},nCount=1,nBindState = -2},
 	}
 function checkcode(strings)
 	if strings=="TIENDONG"then
@@ -1031,7 +1032,7 @@ function checkcode(strings)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 	end
-	if GetTask(3000)==100 then
+	if GetTask(3000)==1 then
 		Talk(1, "", "B¹n ®· nhËn råi mµ ");
 		return
 	end
@@ -1049,56 +1050,56 @@ function checkcode(strings)
 		SyncItem(nItemIndex);--dong bo xuong lai client
 
 		local nItemIndex =AddGoldItem(0,179);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,177);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,178);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,180);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,183);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,181);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,182);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
 		SyncItem(nItemIndex);
 
 		local nItemIndex =AddGoldItem(0,185);
-		local nExpiredTime = 7*60*24;
+		local nExpiredTime = 14*60*24;
 		ITEM_SetExpiredTime(nItemIndex, nExpiredTime);
 		SyncItem(nItemIndex);
 		SetItemBindState(nItemIndex, -2);
