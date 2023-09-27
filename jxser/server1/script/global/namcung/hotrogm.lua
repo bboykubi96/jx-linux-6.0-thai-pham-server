@@ -13,7 +13,6 @@ Include("\\script\\global\\repute_head.lua");
 Include("\\script\\misc\\league_cityinfo.lua");
 Include("\\script\\global\\namcung\\hotrotanthu\\itemblue.lua");
 Include("\\script\\tagnewplayer\\tbitemHK.lua");
---Include("\\script\\global\\gm_tool\\")
 SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229};
 
 local tbFaction =
@@ -480,7 +479,7 @@ function namcung2()
 		--{"Trang bÞ Cùc PhÈm", cucphkhac},
 		--{"Ta muèn lÊy vËt phÈm.", show_item},
 		--{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},
-		{"NhËn ®iÓm + TÈy §iÓm", hotro},
+		{"TÈy Tñy, Thuèc lag TK, ThÇn Hµnh Phï", hotro},
 		--{"ChuyÓn ®æi ngò hµnh", nguhanh},
 		{"LÊy Ngùa Vip", layngua},
 		--{"N©ng §ªn 150 cÊp", level_up_to150},
@@ -684,6 +683,8 @@ function hotro()
 		{"TÈy ®iÓm", clear_attibute_point},
 		{"Danh väng,Phóc duyªn", danhvongphucduyen},
 		{"Tµi l·nh ®¹o", lanhdao},
+		{"ThÇn Hµnh Phï vµ Thæ §Þa Phï", thanhanhphu},
+		{"Thuèc lag Tèng Kim", thuoclagtongkim},
 		--{"§iÓm Kü N¨ng", pointkynang},
 		--{"§iÓm TiÒm N¨ng", pointtiemnang},
 		--{"B¸nh trung thu ", banhtrungthu},
@@ -691,6 +692,17 @@ function hotro()
 		{"Tho¸t"},
 	}
 	CreateNewSayEx("<npc>B¹n cÇn g×?", tbOpt)
+end
+
+function thanhanhphu()
+AddItem(6,1,1266,1,0,0)
+AddItem(6,1,438,1,0,0)
+end
+
+function thuoclagtongkim()
+AddStackItem(50,6,1,190,1,0,0)
+AddStackItem(50,6,1,157,1,0,0)
+AddStackItem(50,6,1,156,1,0,0)
 end
 
 function pointkynang()
@@ -721,13 +733,13 @@ end
 
 
 function tien()
-Earn(100000000)
+Earn(10000000)
 end
 
 function danhvongphucduyen()
-	AddRepute(100000);
+	AddRepute(500);
 	FuYuan_Start();
-	FuYuan_Add(100000);
+	FuYuan_Add(500);
 end
 function conghien()
 AddContribution(100000)
@@ -1716,5 +1728,5 @@ print(GetName()..sel)
 end
 
 function hoangkimmp()
-	hoangkimmpfull()
-	end
+hoangkimmpfull()
+end

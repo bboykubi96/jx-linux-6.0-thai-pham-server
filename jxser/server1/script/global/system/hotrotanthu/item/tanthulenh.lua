@@ -24,13 +24,13 @@ Include("\\script\\global\\namcung\\hotrotanthu\\duatop.lua")
 Include("\\script\\global\\Â·ÈË_ÎäÁÖÃË´«ÈË.lua")
 function main()
 		dofile("script/global/namcung/tanthulenh.lua");	
-local szTitle =  "<npc>Chµo mõng b¹n ®Õn víi thÕ giíi<color=red> Vâ L©m TruyÒn Kú <color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt ®· ®Õn víi <color=green>Vâ L©m TruyÒn Kú<color>...<enter>Bæn trang muèn mang ®Õn cho c¸c b¹n mét s©n ch¬i lµnh m¹nh vµ æn ®Þnh l©u dµi...!<enter>Mäi chi tiÕt th¾c m¾c xin c¸c nh©n sü ®ãng gãp t¹i <color=red>https://www.facebook.com/groups/jxdocs<color>.<enter>Chóc c¸c nh©n sü b«n tÈu giang hå vui vÎ t¹i <color=green>ThÕ Giíi ¶o<color>. Xin ch©n thµnh c¶m ¬n quý nh©n sü... !"
+local szTitle =  "<npc>Chµo mõng b¹n ®Õn víi thÕ giíi<color=red> Vâ L©m TruyÒn Kú <color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt ®· ®Õn víi <color=green>M¸y Chñ - Thiªn Long<color>...<enter>Bæn trang muèn mang ®Õn cho c¸c b¹n mét s©n ch¬i lµnh m¹nh vµ æn ®Þnh l©u dµi...!"
 		local tbOpt =
 	{
-		{"NhËn lÔ bao T©n thñ", lebao},	
-		{"NhËn th­ëng theo cÊp ®é", top10all},
+		--{"NhËn lÔ bao T©n thñ", lebao},	
+		--{"NhËn th­ëng theo cÊp ®é", top10all},
 		--{"NhËn th­ìng tÝch luy giê choi Online",tichluy},
-		{"Lµm nhiªm vô mçi ngµy", nhiemvu},
+		--{"Lµm nhiªm vô mçi ngµy", nhiemvu},
 		{"Tho¸t"},
 	}
 		CreateNewSayEx(szTitle, tbOpt)	

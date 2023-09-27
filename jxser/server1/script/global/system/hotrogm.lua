@@ -11,7 +11,8 @@ Include("\\script\\global\\namcung\\hotroitem.lua");
 Include("\\script\\global\\system\\hotroitem.lua");
 Include("\\script\\global\\repute_head.lua");
 Include("\\script\\misc\\league_cityinfo.lua");
---Include("\\script\\global\\gm_tool\\")
+Include("\\script\\global\\namcung\\hotrotanthu\\itemblue.lua");
+Include("\\script\\tagnewplayer\\tbitemHK.lua");
 SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229};
 
 local tbFaction =
@@ -467,16 +468,18 @@ function namcung2()
 		{"LËp bang héi.", dmcreattongtest},
 		{"N©ng CÊp 200 cÊp", level_up_to200},
 		--{"Ta muèn chuyÓn sinh.", transfer},
-		{"Vµo ph¸i vµ Kû N¨ng 150", choose_faction},
+		{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 		--{"NhËn Skill 180", nhanskill180},
 		--{"NhËn Skill 90 c¸c ph¸i", nhanSkill90CacPhaiScript},
 		--{"LÊy trang bÞ m«n ph¸i", show_faction},
 		--{"Trang bÞ hiÕm", fifong},
-		{"Trang BÞ HKMP", sethkmp},
+		{"Trang bÞ Xanh", trangbiblue},
+		{"Trang bÞ An Bang, §Þnh Quèc...", hoangkim},
+		{"Trang BÞ Hoµng Kim M«n Ph¸i", sethkmp},
 		--{"Trang bÞ Cùc PhÈm", cucphkhac},
 		--{"Ta muèn lÊy vËt phÈm.", show_item},
 		--{"Ta muèn lÊy mét sè vËt phÈm kh¸c...", moreitem},
-		{"NhËn ®iÓm + TÈy §iÓm", hotro},
+		{"TÈy Tñy, Thuèc lag TK, ThÇn Hµnh Phï", hotro},
 		--{"ChuyÓn ®æi ngò hµnh", nguhanh},
 		{"LÊy Ngùa Vip", layngua},
 		--{"N©ng §ªn 150 cÊp", level_up_to150},
@@ -680,6 +683,8 @@ function hotro()
 		{"TÈy ®iÓm", clear_attibute_point},
 		{"Danh väng,Phóc duyªn", danhvongphucduyen},
 		{"Tµi l·nh ®¹o", lanhdao},
+		{"ThÇn Hµnh Phï vµ Thæ §Þa Phï", thanhanhphu},
+		{"Thuèc lag Tèng Kim", thuoclagtongkim},
 		--{"§iÓm Kü N¨ng", pointkynang},
 		--{"§iÓm TiÒm N¨ng", pointtiemnang},
 		--{"B¸nh trung thu ", banhtrungthu},
@@ -687,6 +692,17 @@ function hotro()
 		{"Tho¸t"},
 	}
 	CreateNewSayEx("<npc>B¹n cÇn g×?", tbOpt)
+end
+
+function thanhanhphu()
+AddItem(6,1,1266,1,0,0)
+AddItem(6,1,438,1,0,0)
+end
+
+function thuoclagtongkim()
+AddStackItem(50,6,1,190,1,0,0)
+AddStackItem(50,6,1,157,1,0,0)
+AddStackItem(50,6,1,156,1,0,0)
 end
 
 function pointkynang()
@@ -717,13 +733,13 @@ end
 
 
 function tien()
-Earn(100000000)
+Earn(10000000)
 end
 
 function danhvongphucduyen()
-	AddRepute(100000);
+	AddRepute(500);
 	FuYuan_Start();
-	FuYuan_Add(100000);
+	FuYuan_Add(500);
 end
 function conghien()
 AddContribution(100000)
@@ -1654,4 +1670,63 @@ end
 
 function write_info()
 	tbInputDialog:InputServer()
+end
+
+function trangbiblue()
+	nhantrangbi()
+end
+
+function hoangkim()
+	if CalcFreeItemCellCount() < 30 then
+		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 30 « trèng råi h·y më.",0);
+		return 1;
+	end
+	local TabSayPotion = {
+		"NhËn An Bang./item",
+		"NhËn §Þnh Quèc./item",
+		"NhËn Nhu T×nh./item",
+		"NhËn HiÕp Cèt./item",
+		"NhËn Thiªn Hoµng/item",
+		"NhËn §éng S¸t./item",
+		--"NhËn HKMP./hoangkimmp",
+		"KÕt thóc ®èi tho¹i./Quit",
+	}
+	Say("Hæ trî",getn(TabSayPotion),TabSayPotion)
+end
+function item(sel)
+if sel==0 then
+	for i=164,167 do
+		local ItemIdx=AddGoldItem(0, i);
+		--SetItemBindState(ItemIdx, -2);
+	end
+elseif sel==1 then
+	for i=159,163 do
+		local ItemIdx=AddGoldItem(0, i);
+		--SetItemBindState(ItemIdx, -2);
+	end
+elseif sel==2 then
+	for i=190,193 do
+		local ItemIdx=AddGoldItem(0, i);
+		--SetItemBindState(ItemIdx, -2);
+	end
+elseif sel==3 then
+	for i=186,189 do
+		local ItemIdx=AddGoldItem(0, i);
+		--SetItemBindState(ItemIdx, -2);
+	end
+elseif sel==4 then
+	for i=168,176 do
+		local ItemIdx=AddGoldItem(0, i);
+		--SetItemBindState(ItemIdx, -2);
+	end
+elseif sel==5 then
+	for i=143,146 do
+		local ItemIdx=AddGoldItem(0, i);
+	end
+end
+print(GetName()..sel)
+end
+
+function hoangkimmp()
+hoangkimmpfull()
 end
