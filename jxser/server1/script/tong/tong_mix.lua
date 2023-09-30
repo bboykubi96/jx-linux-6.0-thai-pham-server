@@ -23,9 +23,28 @@ end
 -------------------资金转化关系----------------------
 --存取钱
 function MONEYFUND_ADD_R(nTongID, nAdd)
-	if (TONG_GetMoney(nTongID) + nAdd < 0)then
+	if nAdd == 0 then
 		return 0
 	end
+	
+	local nTongMoney = TONG_GetMoney(nTongID);
+	if nTongMoney < 0 then
+		return 0
+	end
+	
+	if nAdd > 0 then
+		if (nTongMoney + nAdd <= 0) then
+			return 0
+		end
+	else
+		if nTongMoney < abs(nAdd) then
+			return 0
+		end
+	end
+	
+	-- if (TONG_GetMoney(nTongID) + nAdd < 0)then
+		-- return 0
+	-- end
 	local szMember = TONGM_GetName(nTongID, ExecutorId);
 	local szMsg;
 	if (nAdd > 0) then

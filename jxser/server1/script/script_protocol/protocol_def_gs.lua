@@ -70,7 +70,15 @@ local Def =
 		"tbPlayerHandle:ProcessProtocol",
 		{OBJTYPE_NUMBER, OBJTYPE_TABLE},
 		
-	},	
+	},
+	-- Begin custom protocol
+	{
+		"emSCRIPT_PROTOCOL_LUCKY_TURNTABLE",
+		"\\script\\event\\luckyturntable\\luckyturntable_gs.lua",
+		"LuckyTurntable:ProtocolProcess",
+		{OBJTYPE_STRING, OBJTYPE_NUMBER, OBJTYPE_TABLE},
+	},
+	-- End custom protocol
 }
 
 ScriptProtocol:RegProtocolSet(Def)

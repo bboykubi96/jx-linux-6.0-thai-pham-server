@@ -1,0 +1,95 @@
+enum_core	string
+MESSAGE_BROADCAST_ANNOUCE_HEAD	C«ng bè
+MESSAGE_SYSTEM_HEAD	HÖ thèng
+SERVER_DISCONNECT_TO_AUTHSERVER	M¸y chñ mÊt kÕt nèi víi hÖ thèng chøng thùc. TiÕn hµnh b¶o tr× m¸y chñ...
+SERVER_RECONNECT_TO_AUTHSERVER	M¸y chñ ®ang mÊt kÕt nèi víi hÖ thèng chøng thùc! §ang tiÕn hµnh kÕt nèi l¹i...
+SERVER_RECONNECT_TO_AUTHSERVER_SUCCESS	KÕt nèi m¸y chñ chøng thùc thµnh c«ng!
+SERVER_DISCONNECT_TO_CHEATSERVER	M¸y chñ mÊt kÕt nèi víi hÖ thèng antihack. TiÕn hµnh b¶o tr× m¸y chñ...
+SERVER_RECONNECT_TO_CHEATSERVER	M¸y chñ ®ang mÊt kÕt nèi víi hÖ thèng antihack! §ang tiÕn hµnh kÕt nèi l¹i...
+SERVER_RECONNECT_TO_CHEATSERVER_SUCCESS	KÕt nèi m¸y antihack thµnh c«ng!
+DISCONNECT_TO_SERVER	MÊt kÕt nèi víi m¸y chñ!
+LICENSE_EXPIRED	GiÊy phÐp ®· hÕt h¹n!
+ACTION_TOO_FAST	Thao t¸c qu¸ nhanh! Thö l¹i sau %d mili gi©y!
+TEAM_CHANGE_CAPTAIN_DELAY	Vui lßng ®îi %d gi©y!
+TONG_FULL_MEMBER	Bang héi ®· ®ñ sè l­îng thµnh viªn tèi ®a!
+CAN_NOT_USE_IN_TONG_BATTLE_MAP	B¶n ®å hiÖn t¹i kh«ng thÓ sö dông chøc n¨ng nµy!
+FUNCTION_NOT_ACTIVATED	Chøc n¨ng ®ang t¹m khãa!
+NOT_ENOUGH_MONEY	Kh«ng ®ñ ng©n l­îng!
+PLAYER_STALL_COIN_DISABLED	Ch­c n¨ng bµy b¸n b»ng xu ®ang t¹m khãa!
+PLAYER_STALL_REFINING_DISABLED	Ch­c n¨ng bµy b¸n b»ng Tinh LuyÖn Th¹ch ®ang t¹m khãa!
+PLAYER_STALL_REPUTE_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm Danh Väng ®ang ®ang t¹m khãa!
+PLAYER_STALL_FUYUAN_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm Phóc Duyªn ®ang t¹m khãa!
+PLAYER_STALL_SONGJING_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm TÝch Lòy Tèng Kim ®ang t¹m khãa!
+PLAYER_STALL_HONOUR_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm Vinh Dù ®ang t¹m khãa!
+PLAYER_STALL_RESPECT_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm Uy Danh ®ang t¹m khãa!
+PLAYER_STALL_ENERGY_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm Tinh Lùc ®ang t¹m khãa!
+PLAYER_STALL_ARENA_CREDITS_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm TÝch Lòy Hu©n Ch­¬ng ®ang t¹m khãa!
+PLAYER_STALL_SELLER_FULL_COIN	Sè xu hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_REFINING	Sè Tinh LuyÖn Th¹ch hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_REPUTE	Sè ®iÓm Danh Väng hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_FUYUAN	Sè ®iÓm Phóc Duyªn hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_SONGJING	Sè ®iÓm TÝch Lòy Tèng Kim hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_HONOUR	Sè ®iÓm Vinh Dù hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_RESPECT	Sè ®iÓm Uy Danh hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_ENERGY	Sè ®iÓm Tinh Lùc hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_SELLER_FULL_ARENA_CREDITS	Sè ®iÓm TÝch Lòy Hu©n Ch­¬ng hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_NOT_ENOUGH_COIN	Kh«ng ®ñ xu!
+PLAYER_STALL_NOT_ENOUGH_REFINING	Kh«ng ®ñ Tinh LuyÖn Th¹ch!
+PLAYER_STALL_NOT_ENOUGH_REPUTE	Kh«ng ®ñ ®iÓm Danh Väng!
+PLAYER_STALL_NOT_ENOUGH_FUYUAN	Kh«ng ®ñ ®iÓm Phóc Duyªn!
+PLAYER_STALL_NOT_ENOUGH_SONGJING	Kh«ng ®ñ ®iÓm TÝch Lòy Tèng Kim!
+PLAYER_STALL_NOT_ENOUGH_HONOUR	Kh«ng ®ñ ®iÓm Vinh Dù!
+PLAYER_STALL_NOT_ENOUGH_RESPECT	Kh«ng ®ñ ®iÓm Uy Danh!
+PLAYER_STALL_NOT_ENOUGH_ENERGY	Kh«ng ®ñ ®iÓm Tinh Lùc!
+PLAYER_STALL_NOT_ENOUGH_ARENA_CREDITS	Kh«ng ®ñ ®iÓm TÝch Lòy Hu©n Ch­¬ng!
+PLAYER_STALL_REPUTE_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm Danh Väng ®ang cã vµ ®iÓm Danh Väng nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_FUYUAN_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm Phóc Duyªn ®ang cã vµ ®iÓm Phóc Duyªn nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_SONGJING_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm TÝch Lòy Tèng Kim ®ang cã vµ ®iÓm TÝch Lòy Tèng Kim nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_HONOUR_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm Vinh Dù ®ang cã vµ ®iÓm Vinh Dù nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_RESPECT_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm Uy Danh ®ang cã vµ ®iÓm Uy Danh nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_ENERGY_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm Tinh Lùc ®ang cã vµ ®iÓm Tinh Lùc nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_ARENA_CREDIT_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm TÝch Lòy Hu©n Ch­¬ng ®ang cã vµ ®iÓm TÝch Lòy Hu©n Ch­¬ng nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+PLAYER_STALL_GOLDCOIN_SCORE_DISABLED	Ch­c n¨ng bµy b¸n b»ng ®iÓm TÝch Lòy Hu©n Ch­¬ng ®ang t¹m khãa!
+PLAYER_STALL_SELLER_FULL_GOLDCOIN_SCORE	Sè ®iÓm TÝch Lòy Hu©n Ch­¬ng hiÖn t¹i cña ng­êi b¸n ®· v­ît giíi h¹n!
+PLAYER_STALL_NOT_ENOUGH_GOLDCOIN_SCORE	Kh«ng ®ñ ®iÓm TÝch Lòy Hu©n Ch­¬ng!
+PLAYER_STALL_GOLDCOIN_SCORE_ERROR	Giao dÞch bÞ hñy bá, xin h·y kiÓm tra tæng sè ®iÓm TÝch Lòy Hu©n Ch­¬ng ®ang cã vµ ®iÓm TÝch Lòy Hu©n Ch­¬ng nhËn ®­îc khi giao dÞch cã ph¶i v­ît giíi h¹n!
+CHAT_LIMIT_TIME_ERROR	Gñi tin qu¸ nhanh! Vui lßng ®îi %d gi©y
+PLAYER_STALL_EXCHANGE_CURRENCY_MONEY	B¸n b»ng Ng©n L­îng
+PLAYER_STALL_EXCHANGE_CURRENCY_COIN	B¸n b»ng xu
+PLAYER_STALL_EXCHANGE_CURRENCY_REFINING	B¸n b»ng Tinh LuyÖn Th¹ch
+PLAYER_STALL_EXCHANGE_CURRENCY_REPUTE	B¸n b»ng ®iÓm Danh Väng
+PLAYER_STALL_EXCHANGE_CURRENCY_FUYUAN	B¸n b»ng ®iÓm Phóc Duyªn
+PLAYER_STALL_EXCHANGE_CURRENCY_SONGJING	B¸n b»ng ®iÓm TÝch Lòy Tèng Kim
+PLAYER_STALL_EXCHANGE_CURRENCY_HONOUR	B¸n b»ng ®iÓm Vinh Dù
+PLAYER_STALL_EXCHANGE_CURRENCY_RESPECT	B¸n b»ng ®iÓm Uy Danh
+PLAYER_STALL_EXCHANGE_CURRENCY_ENERGY	B¸n b»ng ®iÓm Tinh Lùc
+PLAYER_STALL_EXCHANGE_CURRENCY_ARENA_CREDITS	B¸n b»ng ®iÓm TÝch Lòy Hu©n Ch­¬ng
+TONG_JOIN_NOT_ENOUGH_LEVEL	§¼ng cÊp %d míi ®­îc vµo bang!
+PLAYER_TRADE_CAN_NOT_EXCHANGE_SERVER	§ang trong tr¹ng th¸i diao dÞch, kh«ng thÓ thao t¸c!
+PLAYER_STALL_CAN_NOT_EXCHANGE_SERVER	§ang më cöa hµng, kh«ng thÓ thao t¸c!
+PLAYER_EXCHANGE_SERVER_DUPLICATE_ROLE	Exchange server duplicate!!!!
+PLAYER_TRANSFER_DUPLICATE_ROLE	Transfer role duplicate!!!!
+MSG_PLAYER_CHECK_TRADING_ERROR1	B¹n ®ang trong tr¹ng th¸i giao dÞch, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_CHECK_TRADING_ERROR2	%s ®ang trong tr¹ng th¸i giao dÞch, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_STALL_STATE_ERROR1	B¹n ®ang trong tr¹ng th¸i më cöa hµng, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_STALL_STATE_ERROR2	%s ®ang trong tr¹ng th¸i më cöa hµng, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_IS_OFFLINE_LIVE_ERROR1	B¹n ®ang trong tr¹ng th¸i ñy th¸c, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_IS_OFFLINE_LIVE_ERROR2	%s ®ang trong tr¹ng th¸i ñy th¸c, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_IS_EXCHANGE_SERVER_ERROR1	B¹n ®ang trong tr¹ng th¸i chuyÓn m¸y chñ, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_IS_EXCHANGE_SERVER_ERROR2	%s ®ang trong tr¹ng th¸i chuyÓn m¸y chñ, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_FOUND_AROUND_PLAYER_ERROR	Kh«ng t×m thÊy ng­êi ch¬i %s ë gÇn
+MSG_FIGHT_MODE_ERROR1	§ang trong tr¹ng th¸i chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_FIGHT_MODE_ERROR2	B¹n ®ang trong tr¹ng th¸i chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_FIGHT_MODE_ERROR3	%s ®ang trong tr¹ng th¸i chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_FIGHT_MODE_ERROR4	§ang trong tr¹ng th¸i phi chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_FIGHT_MODE_ERROR5	B¹n ®ang trong tr¹ng th¸i phi chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_FIGHT_MODE_ERROR6	%s ®ang trong tr¹ng th¸i phi chiÕn ®Êu, kh«ng thÓ thùc hiÖn
+MSG_PLAYER_OANTUTI_ERROR1	B¹n ®ang ch¬i O¼n Tï T× cïng ng­êi kh¸c, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_OANTUTI_ERROR2	%s ®ang ch¬i O¼n Tï T× cïng ng­êi kh¸c, kh«ng thÓ thùc hiÖn thao t¸c nµy
+MSG_PLAYER_OANTUTI_ERROR3	%s tõ chèi ch¬i O¼n Tï T×
+MSG_PLAYER_OANTUTI_ERROR4	%s ®ång ý ch¬i O¼n Tï T×
+MSG_OANTUTI_INPUT_MONEY	§èi ph­¬ng ®Æt vµo sè tiÒn %d l­îng
+MSG_OANTUTI_WIN_MONEY	B¹n ch¬i O¼n Tï T× th¾ng %d l­îng
+MSG_OANTUTI_LOST_MONEY	B¹n ch¬i O¼n Tï T× thua mÊt %d l­îng
+MSG_OANTUTI_INPUT_COIN	§èi ph­¬ng ®Æt vµo %d xu
+G_STRING_REPUTE	Danh Väng

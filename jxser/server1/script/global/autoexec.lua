@@ -357,8 +357,16 @@ Include("\\script\\activitysys\\functionlib.lua")
 Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\global\\namcung\\autoexec_namcung.lua");
 
+FIRST_INIT_ADD_NPC = 0
+
 function main()
-    dofile("script/global/autoexec.lua");
+    if FIRST_INIT_ADD_NPC ~= 0 then
+		print("[AutoExec] Loi!!! Da khoi tao npc truoc do!!!!");
+		return
+	end
+	
+	FIRST_INIT_ADD_NPC = 1;
+    -- dofile("script/global/autoexec.lua");
 	DynamicExecute("\\script\\missions\\tianchimijing\\floor1\\gamefloor1.lua","GameFloor1:Start")
 	DynamicExecute("\\script\\missions\\tianchimijing\\floor2\\gamefloor2.lua","GameFloor2:Start")
 	DynamicExecute("\\script\\missions\\tianchimijing\\floor3\\gamefloor3.lua","GameFloor3:Start")

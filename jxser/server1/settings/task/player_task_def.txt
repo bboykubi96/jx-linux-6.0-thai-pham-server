@@ -654,3 +654,11 @@ TASK_ID_FIRST	TASK_ID_LAST	TASK_NAME	SYNC_FLAG	CLIENT_FLAG	TASK_DESCRIBE
 4123		成就点数	1		
 4126	4150	成就系统数据	1		
 4164		古塔个人积分	1		
+4088		幸运转盘累计次数	1		
+4089		幸运转盘累计奖励是否领取	1		
+5998		Stall Currency Type	1		
+5997		Stall Currency Item Coin Value	1		
+5996		Stall Currency Item Refining Value	1	
+5992		Mask Feature	1	
+5991		FiFong Feature	1	
+5990		Seller Stall Currency Type	1	

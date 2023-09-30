@@ -4784,6 +4784,7 @@ Qu¶ cÇu tuyÕt	6	1	4209	\spr\item\jianzhong\mantou.spr	41	1	1	Cã thÓ nhÆt ®­îc t¹
 Nãn gi¸ng sinh	6	1	4210	\spr\item\christmas2006\xmascap.spr	41	1	1	Nãn gi¸ng sinh dïng ®Ó trang trÝ ng­êi tuyÕt.		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
 Kh¨n Quµng Cæ	6	1	4211	\spr\item\script\funv_jieri\200903\weijin.spr	41	1	1	Kh¨n choµng dïng ®Ó trang trÝ ng­êi tuyÕt.		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
 G¨ng Tay §¾p TuyÕt	6	1	4212	\spr\item\shoutao.spr	41	1	1	G¨ng tay ®Æc biÖt cã thÓ cho ng­¬i thªm sè lÇn ®¾p tuyÕt.		0	1	1	\script\item\activityitem.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
+ThÎ quay sè	6	1	4222	\spr\item\dazhuanpan\bozhuanka.spr	41	1	1	Tham gia tÝnh n¨ng vßng quay may m¾n hµng ngµy		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
 Trøng Phóc	6	1	4247	\spr\item\script\gold_luckyegg.spr	41	1	1	Mét qu¶ trøng chøa ®Çy linh khÝ, cã thÓ lµ cã linh vËt bªn trong. Qu¶ trøng vµng lÊp l¸nh, h·y dïng chïy ®Ëp ra xem bªn trong cã g× nµo.		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
 Tói Chïy Vµng	6	1	4251	\spr\item\script\spring2010\jixiangbao.spr	41	1	1	NhÊn chuét ph¶i sö dông, nhËn ®­îc 50 c¸i chïy vµng.		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
 Chïy §ång	6	1	4252	\spr\item\shengdan2010\yuandantongchui.spr	41	1	1	NhÊn chuét ph¶i sö dông, ®Ëp trøng nhËn phÇn th­ëng.		0	1	1	\script\item\noscript.lua	0	1	1	0	0		200	0	0	0	0	0	0	0	0	0
