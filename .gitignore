@@ -2,6 +2,9 @@ jxser/gateway/bishop.cfg
 jxser/gateway/goddess.cfg
 jxser/gateway/s3relay/relay_config.ini
 jxser/server1/servercfg.ini
+jxser/gateway/statdata.dat
+jxser/gateway/backupdaemon.ini
+jxser/gateway/updaemon.ini
 jxser/server1/Logs/
 jxser/server1/.log
 jxser/server1/gameserver.log
