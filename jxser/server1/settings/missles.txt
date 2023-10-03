@@ -400,20 +400,20 @@ MissleId	MissleName	MoveKind	FollowKind	ColFollowTarget	MissleHeight	CollidRange
 399	»ğÇ½ÊØÎÀ×Óµ¯	0	0	0	20	2	1	2	12	72	0	0	0	1	1	20	30	0	0	0	0	0	0	0	0	0	0	1				\spr\skill\ÌìÈÌ\mag_tr_02_ÍÆÉ½Ìîº£_a1.spr	31,1,2	\sound\skill\ÍÆÉ½Ìîº£.wav	\spr\skill\ÌìÈÌ\mag_tr_02_ÍÆÉ½Ìîº£_a2.spr	10,1,2				\sound\skill\sound_k038.wav				\spr\skill\ÌìÈÌ\mag_tr_02_ÍÆÉ½Ìîº£_b1.spr	31,1,2	\sound\skill\sound_k036.wav	\spr\skill\ÌìÈÌ\mag_tr_02_ÍÆÉ½Ìîº£_b2.spr	10,1,2					239	146	82	90
 400	Òõ²ÜµØ×¦°¼Ïİ	0	0	0	10	3	1	3	200	18	0	0	0	1	1	2	6	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\150\wu\wd_xingxiaoguli_c.spr	30,1,2																				140	207	156	90
 401	Òõ²ÜµØ×¦×¦×Ó	0	0	0	10	4	1	4	12	36	0	0	0	1	1	20	30	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\150\wu\wd_xingxiaoguli_c.spr	30,1,1					\spr\skill\150\wu\wd_xingxiaoguli_d.spr	10,1,1														140	207	156	90
-402	Qu¶ cÇu tuyÕt	1	0	1	4	1	0	1	0	16	31	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\others\Ñ©Çò.spr	88,8,1	\sound\skill\·ç»¨Ñ©ÔÂ.wav				\spr\skill\others\Ñ©Çò±¬Õ¨.spr	11,1,1	\sound\skill\sound_k040.wav													239	231	189	90
+402	N¾m TuyÕt	1	0	1	4	1	0	1	0	16	31	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\others\Ñ©Çò.spr	88,8,1	\sound\skill\·ç»¨Ñ©ÔÂ.wav				\spr\skill\others\Ñ©Çò±¬Õ¨.spr	11,1,1	\sound\skill\sound_k040.wav													239	231	189	90
 403	Ä¾ÈËÏï´óÕ¨µ¯×Óµ¯	0	0	0	320	1	1	2	10	36	0	-61480	1024	0	0	0	0	0	1	1	0	0	1	0	0	0	0	0				\spr\skill\150\tr\tr_150_jihuoliaoyuan_c.spr	13,1,1		\spr\skill\ÌìÈÌ\mag_bz_huo3_±¬Õ¨Ğ§¹û.spr	6,1,1		\spr\skill\ÌìÈÌ\mag_bz_huo3_±¬Õ¨Ğ§¹û.spr	6,1,1	\sound\skill\sound_k037.wav													156	211	255	90
-404	µôÇ®	0	0	0	30	0	0	0	0	24	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\obj\money\obj_money_05_fall.spr	15,1,3																				255	255	255	100
+404	Rít tiÒn	0	0	0	30	0	0	0	0	24	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\obj\money\obj_money_05_fall.spr	15,1,3																				255	255	255	100
 405	³¬¼¶ÂÒ»·»÷	0	0	1	15	3	1	3	13	1080	0	0	0	1	1	1	30	0	0	1	0	0	0	0	0	0	0	0				\spr\skill\tm\xj_×ÏÉ«ÏİÚå.spr	1080,1,1																				255	255	231	90
 406	³¬¼¶ÂÒ»·»÷±¬Õ¨	0	0	0	20	3	1	3	6	27	0	0	0	0	1	1	60	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1	\sound\skill\Åùö¨µ¯.wav	\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1				\sound\skill\sound_k038.wav													239	146	82	90
-407	È±Ê§Õ¼Î»1	0	0	0	20	3	1	3	6	27	0	0	0	0	1	1	60	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1	\sound\skill\Åùö¨µ¯.wav	\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1				\sound\skill\sound_k038.wav													239	146	82	90
+407	ThiÕu chiÕm vŞ 1	0	0	0	20	3	1	3	6	27	0	0	0	0	1	1	60	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1	\sound\skill\Åùö¨µ¯.wav	\spr\skill\tm\bz_×ÏÉ«ÏİÚå.spr	27,1,1				\sound\skill\sound_k038.wav													239	146	82	90
 408	³¬¼¶½£·É¾ªÌìÉËº¦	0	0	0	2	5	0	5	0	1	0	0	0	0	0	0	0	0	1	1	1	0	0	0	0	0	0	0																									255	255	255	90
-409	BOSSÓÃÔ­µØµĞ·½·¶Î§	0	0	0	2	14	1	14	0	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0																									255	255	231	90
+409	BOSS dïng ph¹m vi cò cña ®Şch	0	0	0	2	14	1	14	0	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0																									255	255	231	90
 410	³¬¼¶ÆúĞÄ·û	0	0	0	18	8	1	8	0	3	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0										\spr\skill\À¥ÂØ\kl_14_ÆúĞÄ·û.spr	20,1,1														255	219	99	90
-411	³¬¼¶½£·É¾ªÌì×Óµ¯	0	0	1	10	5	1	5	17	16	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\Îäµ±\wd_03_Ìì¼Ê¾ªÀ×.spr	17,1,1	\sound\skill\½£·É¾ªÌì.wav				\spr\skill\À¥ÂØ\Bz_dian3_±¬Õ¨.spr	8,1,1														255	255	231	90
+411	§¹n Siªu CÊp KiÕm Phi Kinh Thiªn	0	0	1	10	5	1	5	17	16	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\Îäµ±\wd_03_Ìì¼Ê¾ªÀ×.spr	17,1,1	\sound\skill\½£·É¾ªÌì.wav				\spr\skill\À¥ÂØ\Bz_dian3_±¬Õ¨.spr	8,1,1														255	255	231	90
 412	B¹ch Hång Qu¸n NhËt	1	0	1	10	1	0	1	0	20	20	0	0	1	0	0	0	0	1	1	1	0	0	0	0	1	0	0				\spr\skill\»ªÉ½\hs_°×ºç¹áÈÕ_×Óµ¯.spr	80,16,2	\sound\skill\sound_k029.wav				\spr\skill\»ªÉ½\hs_°×ºç¹áÈÕ_±»»÷.spr	16,1,1	\sound\skill\sound_k041.wav													156	211	255	90
 413	Kim Nh¹n Hoµnh Kh«ng	1	0	1	10	1	1	1	0	15	32	0	0	1	0	0	0	0	1	0	1	0	0	0	0	1	0	0				\spr\skill\»ªÉ½\½ğÑàºá¿Õ×Óµ¯.spr	80,16,1	\sound\skill\sound_k029.wav				\spr\skill\»ªÉ½\½ğÑãºá¿Õ±»»÷.spr	11,1,1	\sound\skill\sound_k041.wav													156	211	255	90
 414	Thiªn Th©n §¶o HuyÒn	0	0	1	18	2	1	2	10	39	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0				\spr\skill\»ªÉ½\ÌìÉğµ¹Ğü.spr	39,1,1																				156	211	255	90
-415	²ÔËÉÓ­¿Í1	1	0	1	10	1	0	1	10	15	32	0	0	1	0	0	0	0	1	0	1	0	0	0	1	1	0	0				\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_×Óµ¯À¶.spr	80,16,2					\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_±»»÷.spr	80,16,2														156	211	255	90
+415	Th­¬ng Tïng Nghªnh Kh¸ch 1	1	0	1	10	1	0	1	10	15	32	0	0	1	0	0	0	0	1	0	1	0	0	0	1	1	0	0				\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_×Óµ¯À¶.spr	80,16,2					\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_±»»÷.spr	80,16,2														156	211	255	90
 416	²ÔËÉÓ­¿Í2	1	0	1	10	1	0	1	10	15	32	0	0	1	0	0	0	0	1	0	1	0	0	0	1	1	0	0				\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_×Óµ¯ÂÌ.spr	80,16,2					\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_±»»÷.spr	80,16,2														156	211	255	90
 417	²ÔËÉÓ­¿Í3	1	0	1	10	1	0	1	10	15	32	0	0	1	0	0	0	0	1	0	1	0	0	0	1	1	0	0				\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_×Óµ¯Çà.spr	80,16,2					\spr\skill\»ªÉ½\hs_²ÔËÉÓ­¿Í_±»»÷.spr	80,16,2														156	211	255	90
 418	§o¹t MÖnh Liªn Hoµn Tam Tiªn KiÕm	5	0	1	10	1	0	1	0	24	30	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\»ªÉ½\¶áÃüÁ¬»·ÈıÏÉ½£×Óµ¯.spr	80,16,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav				\spr\skill\»ªÉ½\¶áÃüÁ¬»·ÈıÏÉ½£±»»÷.spr	27,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													239	231	189	90
@@ -426,17 +426,33 @@ MissleId	MissleName	MoveKind	FollowKind	ColFollowTarget	MissleHeight	CollidRange
 425	ThÇn Quang Toµn NhiÔu	0	0	0	10	1	1	1	1	2	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0																									140	207	156	90
 426	Ph¸ch Th¹ch Ph¸ Ngäc	5	0	1	10	1	1	3	9	15	25	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\»ªÉ½\hs_ÅüÊ¯ÆÆÓñ_×Óµ¯.spr	128,16,1					\spr\skill\»ªÉ½\½ğÑãºá¿Õ±»»÷.spr	20,1,1	\sound\skill\±ù±¬.wav													156	211	255	90
 427	Thanh V©n Tèng S¶ng	1	0	1	10	1	0	1	0	20	20	0	0	1	0	0	0	0	1	1	1	0	0	0	0	1	0	0				\spr\skill\»ªÉ½\hs_ÅüÊ¯ÆÆÓñ_×Óµ¯.spr	128,16,1					\spr\skill\»ªÉ½\½ğÑãºá¿Õ±»»÷.spr	20,1,1	\sound\skill\±ù±¬.wav													156	211	255	90
-428	¿Õ×Óµ¯ÎŞ¼«½£Æø	0	0	1	15	5	1	5	10	360	0	0	0	1	1	1	34	0	0	0	0	0	0	0	0	0	0	0																									255	255	231	90
-429	Ğé¼Ù×Óµ¯	0	0	1	15	1	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																									255	255	231	90
+428	Kh«ng Tö §¹n V« Cùc KiÕm Khİ	0	0	1	15	5	1	5	10	360	0	0	0	1	1	1	34	0	0	0	0	0	0	0	0	0	0	0																									255	255	231	90
+429	§¹n gi¶	0	0	1	15	1	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																									255	255	231	90
 430	Ph¸o	0	0	0	10	0	0	0	0	24	0	0	0	0	0	0	0		0	0	0	0	0	0	0	0	0	0				\spr\item\newyear2010\ĞÂÄêÅÚÖñ±¬Õ¨Ğ§¹û.spr	40,1,1																				255	255	255	100
 431	²ÊÁ«ÒıÂ·µÆ	0	0	1	10	1	0	1	5401	5400	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\npcres\event\npc050111011\npc050111011_st.spr	10,1,3																				255	255	231	90
-432	Ä¦Ú­ÎŞÁ¿boss	1	0	0	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\ÉÙÁÖ\sl_01_Ä¦Ú­ÎŞÁ¿.spr	80,16,1																				231	227	107	90
-433	¾Å¹¬·ÉĞÇboss	100	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\tm\¾Å¹¬·ÉĞÇ.spr	8,1,1	\sound\skill\sound_k040.wav				\spr\skill\tm\¾Å¹¬·ÉĞÇ.spr	8,1,1	\sound\skill\sound_k040.wav													239	231	189	90
-434	¾ÅÒõ°×¹Ç×¥boss	1	0	1	10	1	0	1	0	32	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\Îå¶¾½Ì\wdu_04_¾ÅÒõ°×¹Ç×¥.spr	8,1,1		\spr\skill\Îå¶¾½Ì\wdu_04_¾ÅÒõ°×¹Ç×¥ÏûÍö.spr	13,1,4																	239	146	82	90
-435	²»Ãğ²»¾øboss	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0				\spr\skill\¶ëáÒ\mag_em_04_²»Ãğ²»¾ø.spr	64,16,1	\sound\skill\²»Ãğ²»¾ø.wav				\spr\skill\¶ëáÒ\mag_em_bin4_±¬Õ¨Ğ§¹û.spr	6,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													156	211	255	90
-436	±Ìº£³±Éúboss	1	0	0	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\´äÑÌ\mag_cy_05_±Ìº£³±Éú_b.spr	48,16,1					\spr\skill\¶ëáÒ\mag_bz_bin1_±¬Õ¨Ğ§¹û.spr	14,1,1														156	211	255	90
-437	°ô´ò¶ñ¹·boss	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\Ø¤°ï\mag_gb_04_ÌìÏÂÎŞ¹·.spr	64,16,1	\sound\skill\ÌìÏÂÎŞ¹·.wav				\spr\skill\ÌìÈÌ\mag_bz_huo3_±¬Õ¨Ğ§¹û.spr	18,1,2														255	174	60	90
-438	ÁÒ»ğÇéÌìboss	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\ÌìÈÌ\mag_tr_01_²ĞÑôÈçÑ©.spr	48,16,1	\sound\skill\ÁÒ»ğÇéÌì.wav				\spr\skill\ÌìÈÌ\mag_bz_huo1_±¬Õ¨Ğ§¹û.spr	18,1,2	\sound\skill\sound_k037.wav													239	146	82	90
-439	ÎŞÎÒÎŞ½£boss	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0				\spr\skill\Îäµ±\wd_10_ÎŞÎÒÎŞ½£.spr	96,16,1																				255	255	231	90
-440	ÎåÀ×Õı·¨boss	1	0	1	10	1	0	1	0	32	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\À¥ÂØ\kl_05_ÎåÀ×Õı·¨.spr	5,1,2																				239	146	82	90
-441	ÓÄ»êÊÉÓ°boss	1	0	1	10	1	0	1	0	32	30	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\150\wu\wd_youhunshiying_c.spr	128,16,1	\sound\skill\ÓÄÚ¤÷¼÷Ã.wav						\sound\skill\ÆÕÍ¨±¬Õ¨.wav													140	207	156	90
+432	Boss Ma Ha V« L­îng	1	0	0	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\ÉÙÁÖ\sl_01_Ä¦Ú­ÎŞÁ¿.spr	80,16,1																				231	227	107	90
+433	Boss Cöu Cung Phi Tinh	100	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\tm\¾Å¹¬·ÉĞÇ.spr	8,1,1	\sound\skill\sound_k040.wav				\spr\skill\tm\¾Å¹¬·ÉĞÇ.spr	8,1,1	\sound\skill\sound_k040.wav													239	231	189	90
+434	BOSS Cöu ¢m B¹ch Cèt Tr¶o	1	0	1	10	1	0	1	0	32	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\Îå¶¾½Ì\wdu_04_¾ÅÒõ°×¹Ç×¥.spr	8,1,1		\spr\skill\Îå¶¾½Ì\wdu_04_¾ÅÒõ°×¹Ç×¥ÏûÍö.spr	13,1,4																	239	146	82	90
+435	Boss BÊt DiÖt BÊt TuyÖt	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	0	0	0	0	1	1	0	0				\spr\skill\¶ëáÒ\mag_em_04_²»Ãğ²»¾ø.spr	64,16,1	\sound\skill\²»Ãğ²»¾ø.wav				\spr\skill\¶ëáÒ\mag_em_bin4_±¬Õ¨Ğ§¹û.spr	6,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													156	211	255	90
+436	Boss Bİch H¶i TriÒu Sinh	1	0	0	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\´äÑÌ\mag_cy_05_±Ìº£³±Éú_b.spr	48,16,1					\spr\skill\¶ëáÒ\mag_bz_bin1_±¬Õ¨Ğ§¹û.spr	14,1,1														156	211	255	90
+437	Boss Bæng §¶ ¸c CÈu	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\Ø¤°ï\mag_gb_04_ÌìÏÂÎŞ¹·.spr	64,16,1	\sound\skill\ÌìÏÂÎŞ¹·.wav				\spr\skill\ÌìÈÌ\mag_bz_huo3_±¬Õ¨Ğ§¹û.spr	18,1,2														255	174	60	90
+438	Boss LiÖt Háa T×nh Thiªn	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\ÌìÈÌ\mag_tr_01_²ĞÑôÈçÑ©.spr	48,16,1	\sound\skill\ÁÒ»ğÇéÌì.wav				\spr\skill\ÌìÈÌ\mag_bz_huo1_±¬Õ¨Ğ§¹û.spr	18,1,2	\sound\skill\sound_k037.wav													239	146	82	90
+439	Boss V« Ng· V« KiÕm	1	0	1	10	1	0	1	0	32	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0				\spr\skill\Îäµ±\wd_10_ÎŞÎÒÎŞ½£.spr	96,16,1																				255	255	231	90
+440	Boss Ngò L«i Ch¸nh Ph¸p	1	0	1	10	1	0	1	0	32	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	0				\spr\skill\À¥ÂØ\kl_05_ÎåÀ×Õı·¨.spr	5,1,2																				239	146	82	90
+441	Boss U Hån PhÖ ¶nh	1	0	1	10	1	0	1	0	32	30	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\150\wu\wd_youhunshiying_c.spr	128,16,1	\sound\skill\ÓÄÚ¤÷¼÷Ã.wav						\sound\skill\ÆÕÍ¨±¬Õ¨.wav													140	207	156	90
+442	TriÒu Thiªn KhuyÕt	1	0	1	10	4	0	4	11	15	10	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\Õò±ßÚï·É¶Ü.spr	192,16,3	\sound\skill\¿ºÁúÎŞ»Ú.wav				\spr\skill\wuhuntang\Õò±ßÚï·É¶ÜÊÜ»÷.spr	12,1,1	\sound\skill\sound_k037.wav													255	255	255	100
+443	Thµnh ChiÕn B¹ch Hæ Tö §¹n	1	0	1	10	1	0	1	1	15	40	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\1502\tw\sl_150_daotian_zd.spr	16,16,1					\spr\skill\1502\tw\tw_150_daotian_bz.spr	3,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													239	231	189	90
+444	ThØnh Anh §Ò NhuÖ L÷	0	0	1	10	5	1	5	10	360	0	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0																									255	255	255	100
+445	Kü n¨ng ThØnh Anh §Ò NhuÖ L÷-Tö	0	0	1	10	6	1	9	1	360	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\ÇëÓ§ÌáÈñÂÃ×Óµ¯.spr	24,1,1																				255	255	255	100
+446	TrÊn Biªn Thïy	1	0	1	10	4	0	4	21	20	12	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\wuhuntang\³¯ÌìãÚ×Óµ¯.spr	160,16,3	\sound\skill\Å­À×Ö¸.wav				\spr\skill\wuhuntang\³¯ÌìãÚÊÜ»÷.spr	7,1,1	\sound\skill\sound_k040.wav													239	231	189	90
+447	Huy S­ DiÖt Lç	1	0	1	15	3	0	3	0	10	55	0	0	1	0	0	0	0	1	1	1	0	0	0	0	0	0	0				\spr\skill\wuhuntang\»ÓÊ¦ÃğÂ²×Óµ¯.spr	18,1,1	\sound\skill\¿ºÁúÎŞ»Ú.wav				\spr\skill\wuhuntang\»ÓÊ¦ÃğÂ²ÊÜ»÷.spr	7,1,1	\sound\skill\sound_k040.wav													156	211	255	90
+448	Huy S­ DiÖt Lç Ph©n T¸n	1	0	1	10	2	0	2	0	12	45	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\»ÓÊ¦ÃğÂ²×Ó×Óµ¯.spr	18,1,1	\sound\skill\¿ºÁúÎŞ»Ú.wav				\spr\skill\wuhuntang\»ÓÊ¦ÃğÂ²ÊÜ»÷.spr	7,1,1	\sound\skill\sound_k040.wav													156	211	255	90
+449	§o¹t cê	0	0	1	5	3	1	3	10	15	20	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\wuhuntang\¶áÕ¯ÑïÆì.spr	23,1,1	\sound\skill\ĞĞÁú²»Óê.wav				\spr\skill\wuhuntang\¶áÕ¯ÑïÆì±»»÷.spr	15,1,1	\sound\skill\sound_k037.wav													231	227	107	90
+450	Trİ Dòng Siªu Lu©n	0	0	0	18	1	0	1	0	5	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0																									255	219	99	90
+451	Phİ HuyÕt NhÉn	0	0	1	10	4	1	4	10	9	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\·ĞÑªÖ®ÈĞ.spr	12,1,1																				255	255	255	100
+452	Tr­êng Anh Huy Xİch	0	0	1	10	4	1	4	1	15	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\³¤Ó§»Ó³â.spr	96,1,1																				255	255	255	100
+453	S¸t th­¬ng H¸m S¬n Kİch	1	0	1	10	5	1	5	0	3	30	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0										\spr\skill\wuhuntang\º¶É½»÷.spr	12,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													255	255	255	100
+454	Né Ph¸ch Thiªn Nhai	0	0	1	10	4	1	4	1	12	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\¿ÊÒûĞÙÅ«Ñª·Éµ¶1.spr	12,1,2					\spr\skill\wuhuntang\¿ÊÒûĞÙÅ«ÑªÊÜ»÷.spr	11,1,2														255	255	255	100
+455	C¬ Xan Hå Lç Nhôc	1	0	1	10	4	1	4	1	4	30	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\²ù¼é³ıØú×Óµ¯·½Ïò.spr	240,16,1					\spr\skill\wuhuntang\Å­ÅüÌìÑÄ±»»÷.spr	16,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													255	255	255	100
+456	Kh¸t Èm Hung N« HuyÕt	1	0	1	10	4	1	4	1	4	40	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\¼¢²ÍºúÂ²Èâ×Óµ¯.spr	176,16,1					\spr\skill\wuhuntang\¼¢²ÍºúÂ²ÈâÊÜ»÷.spr	8,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													255	255	255	100
+457	Trõ Gian DiÖt NŞnh	1	0	1	10	4	1	4	1	5	60	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0				\spr\skill\wuhuntang\Å­ÅüÌìÑÄ×Óµ¯·½Ïò.spr	256,16,5					\spr\skill\wuhuntang\²ù¼é³ıØú±»»÷.spr	13,1,1	\sound\skill\µ¶½£´ÌÖĞÉù.wav													255	255	255	100

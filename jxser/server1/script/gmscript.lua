@@ -549,6 +549,22 @@ function AddSkills(Party,Level)
 			{1063,20},
 			{1065,20},
 		},
+		hs={--https://volammienphi.zing.vn/cam-nang/mon-phai/hoa-son.html
+			{1347,20},
+			{1372,20},
+			{1349,20},
+			{1374,20},
+			{1350,20},
+			{1375,20},
+			{1351,20},
+			{1376,20},
+			{1354,20},--Hi Di KiÕm Ph¸p
+			{1355,20},--thiªn th©n ®¶o huyÒn
+			{1379,20},
+			{1358,30},--tran phai 30
+			{1380,20},
+			{1360,20},			
+		},
 		tm={
 			{45,20},
 			{43,20},

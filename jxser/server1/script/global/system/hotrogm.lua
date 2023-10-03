@@ -22,12 +22,12 @@ local tbFaction =
 		szShowName = "ThiÕu L©m",--tbFaction[1]["szShowName"]
 		szFaction = "shaolin",
 		nShortFaction = "sl",
-		tbSkill = {318, 319, 321, 709, 1055, 1056, 1057},
+		tbSkill = {318, 319, 321, 709, 1055, 1056, 1057},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
 				szFaction = "ThiÕu L©m QuyÒn",
-				nFirstEquipId = 4863,
+				nFirstEquipId = 4863,--goldequip.txt
 				tbEquipName =
 				{
 					" Minh Ph­îng ch©u liªn", " Minh Ph­îng t¨ng m·o", " Minh Ph­îng th­îng giíi", " Minh Ph­îng hé uyÓn", " Minh Ph­îng yªu ®¸i",
@@ -36,7 +36,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "ThiÕu L©m C«n",
-				nFirstEquipId = 4873,
+				nFirstEquipId = 4873,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng ch©u liªn", "Minh Ph­îng t¨ng m·o", "Minh Ph­îng th­îng giíi", "Minh Ph­îng hé uyÓn", "Minh Ph­îng yªu ®¸i",
@@ -45,7 +45,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "ThiÕu L©m §ao",
-				nFirstEquipId = 4883,
+				nFirstEquipId = 4883,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng ch©u liªn", "Minh Ph­îng t¨ng m·o", "Minh Ph­îng th­îng giíi", "Minh Ph­îng hé uyÓn", "Minh Ph­îng yªu ®¸i",
@@ -59,12 +59,12 @@ local tbFaction =
 		szShowName = "Thiªn V­¬ng Bang",
 		szFaction = "tianwang",
 		nShortFaction = "tw",
-		tbSkill = {322, 325, 323, 708, 1058, 1059, 1060},
+		tbSkill = {322, 325, 323, 708, 1058, 1059, 1060},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
 				szFaction = "Thiªn V­¬ng Chïy",
-				nFirstEquipId = 4893,
+				nFirstEquipId = 4893,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng ®Þnh quang liªn", "Minh Ph­îng ®Þnh quang kh«i", "Minh Ph­îng ®Þnh quang th­îng giíi", "Minh Ph­îng ®Þnh quang thóc o¶n", "Minh Ph­îng ®Þnh quang yªu ®¸i",
@@ -73,7 +73,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Thiªn V­¬ng Th­¬ng",
-				nFirstEquipId = 4903,
+				nFirstEquipId = 4903,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng ngù phong liªn", "Minh Ph­îng ngù phong kh«i", "Minh Ph­îng ngù phong th­îng giíi", "Minh Ph­îng ngù phong thóc o¶n", "Minh Ph­îng ngù phong yªu ®¸i",
@@ -82,7 +82,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Thiªn V­¬ng §ao",
-				nFirstEquipId = 4913,
+				nFirstEquipId = 4913,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng biÓu phong liªn", "Minh Ph­îng biÓu phong kh«i", "Minh Ph­îng biÓu phong th­îng giíi", "Minh Ph­îng biÓu phong thóc o¶n", "Minh Ph­îng biÓu phong yªu ®¸i",
@@ -96,12 +96,12 @@ local tbFaction =
 		szShowName = "§­êng M«n",
 		szFaction = "tangmen",
 		nShortFaction = "tm",
-		tbSkill = {339, 302, 342, 710, 1069, 1070, 1071},
+		tbSkill = {339, 302, 342, 710, 1069, 1070, 1071},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
 				szFaction = "Phi §ao §­êng M«n",
-				nFirstEquipId = 4983,
+				nFirstEquipId = 4983,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng nÆc ¶nh h¹ng liªn", "Minh Ph­îng nÆc ¶nh qu¸n", "Minh Ph­îng nÆc ¶nh th­îng giíi", "Minh Ph­îng nÆc ¶nh hé uyÓn", "Minh Ph­îng nÆc ¶nh triÒn yªu",
@@ -110,7 +110,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Ná §­êng M«n",
-				nFirstEquipId = 4993,
+				nFirstEquipId = 4993,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng cùc quang h¹ng liªn", "Minh Ph­îng cùc quang qu¸n", "Minh Ph­îng cùc quang th­îng giíi", "Minh Ph­îng cùc quang hé uyÓn", "Minh Ph­îng cùc quang triÒn yªu",
@@ -119,7 +119,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Phi Tiªu §­êng M«n",
-				nFirstEquipId = 5003,
+				nFirstEquipId = 5003,--goldequip.txt
 				tbEquipName =
 				{
 					" Minh Ph­îng th­íc kim h¹ng liªn ", " Minh Ph­îng th­íc kim qu¸n ", " Minh Ph­îng th­íc kim th­îng giíi ", " Minh Ph­îng th­íc kim hé uyÓn ", " Minh Ph­îng th­íc kim triÒn yªu ",
@@ -130,7 +130,7 @@ local tbFaction =
 	},
 	[4] =
 	{
-		szShowName = "Ngò §éc Gi¸o",
+		szShowName = "Ngò §éc Gi¸o",--9x, 12x, 15x skills.txt
 		szFaction = "wudu",
 		nShortFaction = "wu",
 		tbSkill = {353, 355, 711, 1066, 1067},
@@ -138,7 +138,7 @@ local tbFaction =
 		{
 			{
 				szFaction = "Ngò §éc Ch­ëng",
-				nFirstEquipId = 4963,
+				nFirstEquipId = 4963,--goldequip.txt
 				tbEquipName =
 				{
 					" Minh Ph­îng ®éc sa h¹ng liªn ", " H¹ch Hæ ®éc sa ph¸t ®¸i ", " Minh Ph­îng ®éc sa th­îng giíi ", " Minh Ph­îng ®éc sa hé uyÓn ", " Minh Ph­îng ®éc sa yªu ®¸i ",
@@ -147,7 +147,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Ngò §éc §ao",
-				nFirstEquipId = 4973,
+				nFirstEquipId = 4973,--goldequip.txt
 				tbEquipName =
 				{
 					" Minh Ph­îng u linh h¹ng liªn ", " H¹ch Hæ u linh ph¸t ®¸i ", " Minh Ph­îng u linh th­îng giíi ", " Minh Ph­îng u linh hé uyÓn ", " Minh Ph­îng u linh yªu ®¸i ",
@@ -161,12 +161,12 @@ local tbFaction =
 		szShowName = "Nga Mi",
 		szFaction = "emei",
 		nShortFaction = "em",
-		tbSkill = {380, 328, 712, 1061, 1062, 1114},
+		tbSkill = {380, 328, 712, 1061, 1062, 1114},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
 				szFaction = "Nga Mi KiÕm",
-				nFirstEquipId = 4923,
+				nFirstEquipId = 4923,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng l­u v©n ch©u liªn", "Minh Ph­îng l­u v©n ph¸t ®¸i", "Minh Ph­îng l­u v©n th­îng giíi", "Minh Ph­îng l­u v©n hé uyÓn", "Minh Ph­îng l­u v©n yªu ®¸i ",
@@ -175,7 +175,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Nga Mi Ch­ëng",
-				nFirstEquipId = 4933,
+				nFirstEquipId = 4933,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng hµn ngäc ch©u liªn ", "Minh Ph­îng hµn ngäc ph¸t ®¸i", "Minh Ph­îng hµn ngäc th­îng giíi", "Minh Ph­îng hµn ngäc hé uyÓn", "Minh Ph­îng hµn ngäc yªu ®¸i",
@@ -189,12 +189,12 @@ local tbFaction =
 		szShowName = "Thóy Yªn",
 		szFaction = "cuiyan",
 		nShortFaction = "cy",
-		tbSkill = {336, 337, 713, 1063, 1065},
+		tbSkill = {336, 337, 713, 1063, 1065},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
 				szFaction = "Thóy Yªn §ao (Ngo¹i)",
-				nFirstEquipId = 4943,
+				nFirstEquipId = 4943,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
@@ -203,7 +203,7 @@ local tbFaction =
 			},
 			{
 				szFaction = "Thóy Yªn Song §ao (Néi)",
-				nFirstEquipId = 4953,
+				nFirstEquipId = 4953,--goldequip.txt
 				tbEquipName =
 				{
 					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
@@ -214,10 +214,39 @@ local tbFaction =
 	},
 	[7] =
 	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+			
+		},
+	},
+	[8] =
+	{
 		szShowName = "C¸i Bang",
 		szFaction = "gaibang",
 		nShortFaction = "gb",
-		tbSkill = {357, 359, 714, 1073, 1074},
+		tbSkill = {357, 359, 714, 1073, 1074},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -240,12 +269,12 @@ local tbFaction =
 			},
 		},
 	},
-	[8] =
+	[9] =
 	{
 		szShowName = "Thiªn NhÉn Gi¸o",
 		szFaction = "tianren",
 		nShortFaction = "tr",
-		tbSkill = {361, 362, 715, 1075, 1076},
+		tbSkill = {361, 362, 715, 1075, 1076},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -268,12 +297,12 @@ local tbFaction =
 			},
 		},
 	},
-	[9] =
+	[10] =
 	{
 		szShowName = "Vâ §ang",
 		szFaction = "wudang",
 		nShortFaction = "wd",
-		tbSkill = {365, 368, 716, 1078, 1079},
+		tbSkill = {365, 368, 716, 1078, 1079},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -296,12 +325,12 @@ local tbFaction =
 			},
 		},
 	},
-	[10] =
+	[11] =
 	{
 		szShowName = "C«n L«n",
 		szFaction = "kunlun",
 		nShortFaction = "kl",
-		tbSkill = {372, 375, 717, 1080, 1081},
+		tbSkill = {372, 375, 717, 1080, 1081},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -327,8 +356,8 @@ local tbFaction =
 }
 local tbEquipFreeCell =
 {
-	{2, 1}, {2, 2}, {1, 1}, {1, 2}, {2, 1}, --¾±´ø£¬¶¥´÷£¬ÉÏ½ä£¬»¤Íó£¬Ñü´ø
-	{2, 3}, {2, 4}, {2, 2}, {1, 2}, {1, 1}, --?¢Îï£¬ÎäÆ÷£¬Ñ¥×Ó£¬Ñü×¹£¬Ï¢½ä
+	{2, 1}, {2, 2}, {1, 1}, {1, 2}, {2, 1},
+	{2, 3}, {2, 4}, {2, 2}, {1, 2}, {1, 1},
 }
 
 local tbFactionSeries =
@@ -933,7 +962,7 @@ function check_faction()
 	end
 	return 1
 end
-
+--Hµm chän ph¸i ®Ó gia nhËp
 function choose_faction()
 	if check_faction() ~= 1 then
 		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i.")
@@ -945,11 +974,14 @@ function choose_faction()
 		local nIndex = %tbFactionSeries[nSeries][i]
 		tinsert(tbOpt, {%tbFaction[nIndex].szShowName, set_faction, {nIndex}})
 	end
+	if(nSeries == 3) then
+		tinsert(tbOpt, {%tbFaction[11].szShowName, set_faction, {11}});
+	end
 	tinsert(tbOpt, {"Trë vÒ", dialog_main})
 	tinsert(tbOpt, {"KOt thóc ®èi tho¹i."})
 	CreateNewSayEx("<npc>Mét khi gia nhËp m«n ph¸i kh«ng thÓ thay ®æi, h·y suy nghÜ kü.", tbOpt)
 end
-
+--Hµm x¸c nhËn gia nhËp ph¸i
 function set_faction(nIndex)
 	local szTitle = format("<npc>X¸c nhËn muèn gia nhËp m«n ph¸i ?<color=yellow>%s<color> m«n ph¸i?", %tbFaction[nIndex].szShowName)
 	local tbOpt =
@@ -961,20 +993,24 @@ function set_faction(nIndex)
 	CreateNewSayEx(szTitle, tbOpt)
 end
 
+--hµm xö lý khi ®· x¸c nhËn gia nhËp ph¸i
 function do_set_faction(nIndex)
 	if check_faction() ~= 1 then
 		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i.")
 		return
 	end
+	--index sÏ lµ index cã trong m¶ng tbFaction
 	local nResult = SetFaction(%tbFaction[nIndex].szFaction)
 	if nResult == 0 then
 		return
 	end
-	DynamicExecuteByPlayer(PlayerIndex, "\\script\\gmscript.lua", "AddSkills", %tbFaction[nIndex].nShortFaction, 0)
-	for i=1, getn(%tbFaction[nIndex].tbSkill) do--90£¬120£¬150¼¶¼¼ÄÜ
-		AddMagic(%tbFaction[nIndex].tbSkill[i], 20)
+	-- Thªm c¸c skill tõ 0x - 9x
+	DynamicExecuteByPlayer(PlayerIndex, "\\script\\gmscript.lua", "AddSkills", %tbFaction[nIndex].nShortFaction, 0);
+
+	for i=1, getn(%tbFaction[nIndex].tbSkill) do
+		AddMagic(%tbFaction[nIndex].tbSkill[i], 20); -- thªm skill 9x, 12x, 150x
 	end
-	AddMagic(210, 1)
+	AddMagic(210, 1); -- thªm khinh c«ng
 	Talk(1, "KickOutSelf", format("Ng­¬i ®· gia nhËp thµnh c«ng ph¸i %s", %tbFaction[nIndex].szShowName))
 end
 
