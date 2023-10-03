@@ -364,9 +364,9 @@ local tbFactionSeries =
 {
 	[1] = {1, 2},
 	[2] = {3, 4},
-	[3] = {5, 6,7},
-	[4] = {8, 9},
-	[5] = {10, 11},
+	[3] = {5, 6},
+	[4] = {7, 8},
+	[5] = {9, 10},
 }
 
 --tbFreeItem
@@ -973,6 +973,9 @@ function choose_faction()
 	for i=1, getn(%tbFactionSeries[nSeries]) do
 		local nIndex = %tbFactionSeries[nSeries][i]
 		tinsert(tbOpt, {%tbFaction[nIndex].szShowName, set_faction, {nIndex}})
+	end
+	if(nSeries == 3) then
+		tinsert(tbOpt, {%tbFaction[11].szShowName, set_faction, {11}});
 	end
 	tinsert(tbOpt, {"Trë vÒ", dialog_main})
 	tinsert(tbOpt, {"KOt thóc ®èi tho¹i."})

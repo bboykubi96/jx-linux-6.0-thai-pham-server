@@ -211,13 +211,13 @@ local tbFaction =
 				},
 			},
 		},
-	},
+	},	
 	[7] =
 	{
 		szShowName = "C¸i Bang",
 		szFaction = "gaibang",
 		nShortFaction = "gb",
-		tbSkill = {357, 359, 714, 1073, 1074},
+		tbSkill = {357, 359, 714, 1073, 1074},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -245,7 +245,7 @@ local tbFaction =
 		szShowName = "Thiªn NhÉn Gi¸o",
 		szFaction = "tianren",
 		nShortFaction = "tr",
-		tbSkill = {361, 362, 715, 1075, 1076},
+		tbSkill = {361, 362, 715, 1075, 1076},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -273,7 +273,7 @@ local tbFaction =
 		szShowName = "Vâ §ang",
 		szFaction = "wudang",
 		nShortFaction = "wd",
-		tbSkill = {365, 368, 716, 1078, 1079},
+		tbSkill = {365, 368, 716, 1078, 1079},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -301,7 +301,7 @@ local tbFaction =
 		szShowName = "C«n L«n",
 		szFaction = "kunlun",
 		nShortFaction = "kl",
-		tbSkill = {372, 375, 717, 1080, 1081},
+		tbSkill = {372, 375, 717, 1080, 1081},--9x, 12x, 15x skills.txt
 		tbEquip =
 		{
 			{
@@ -324,11 +324,40 @@ local tbFaction =
 			},
 		},
 	},
+	[11] =
+	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+			
+		},
+	},
 }
 local tbEquipFreeCell =
 {
-	{2, 1}, {2, 2}, {1, 1}, {1, 2}, {2, 1}, --¾±´ø£¬¶¥´÷£¬ÉÏ½ä£¬»¤Íó£¬Ñü´ø
-	{2, 3}, {2, 4}, {2, 2}, {1, 2}, {1, 1}, --?¢Îï£¬ÎäÆ÷£¬Ñ¥×Ó£¬Ñü×¹£¬Ï¢½ä
+	{2, 1}, {2, 2}, {1, 1}, {1, 2}, {2, 1}, 
+	{2, 3}, {2, 4}, {2, 2}, {1, 2}, {1, 1},
 }
 
 local tbFactionSeries =
@@ -945,6 +974,9 @@ function choose_faction()
 		local nIndex = %tbFactionSeries[nSeries][i]
 		tinsert(tbOpt, {%tbFaction[nIndex].szShowName, set_faction, {nIndex}})
 	end
+	if(nSeries == 3) then
+		tinsert(tbOpt, {%tbFaction[11].szShowName, set_faction, {11}});
+	end
 	tinsert(tbOpt, {"Trë vÒ", dialog_main})
 	tinsert(tbOpt, {"KOt thóc ®èi tho¹i."})
 	CreateNewSayEx("<npc>Mét khi gia nhËp m«n ph¸i kh«ng thÓ thay ®æi, h·y suy nghÜ kü.", tbOpt)
@@ -966,12 +998,26 @@ function do_set_faction(nIndex)
 		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i.")
 		return
 	end
-	local nResult = SetFaction(%tbFaction[nIndex].szFaction)
-	if nResult == 0 then
-		return
+	local nResult = SetFaction(%tbFaction[nIndex].szFaction);
+	if(nIndex == 11) then
+		SetLastFactionNumber(10);
+		local nResult = SetFaction("huashan");
+		if nResult == 0 then
+			Talk(1, "", "Gia nhËp m«n ph¸i thÊt b¹i." .. nIndex.. ":".. %tbFaction[nIndex].szFaction);
+			return
+		end
+	else 
+		local nResult = SetFaction(%tbFaction[nIndex].szFaction);
+		if nResult == 0 then
+			Talk(1, "", "Gia nhËp m«n ph¸i thÊt b¹i." .. nIndex.. ":".. %tbFaction[nIndex].szFaction);
+			return
+		end
 	end
-	DynamicExecuteByPlayer(PlayerIndex, "\\script\\gmscript.lua", "AddSkills", %tbFaction[nIndex].nShortFaction, 0)
-	for i=1, getn(%tbFaction[nIndex].tbSkill) do--90£¬120£¬150¼¶¼¼ÄÜ
+
+	
+	DynamicExecuteByPlayer(PlayerIndex, "\\script\\gmscript.lua", "AddSkills", %tbFaction[nIndex].nShortFaction, 0);
+	
+	for i=1, getn(%tbFaction[nIndex].tbSkill) do
 		AddMagic(%tbFaction[nIndex].tbSkill[i], 20)
 	end
 	AddMagic(210, 1)
@@ -1627,14 +1673,14 @@ function clear_skill()
 end
 
 function do_clear_skill()
-	local i = HaveMagic(210)		-- Çá¹¦ÁíÍâ²Ù×÷
-	local j = HaveMagic(400)		-- ¡°½Ù¸»¼ÃÆ¶¡±ÁíÍâ²Ù×÷
-	local n = RollbackSkill()		-- Çå³ý¼¼ÄÜ²¢·µ»ØËùÓÐ¼¼ÄÜ?ã£¨°üÀ¨Çá¹¦µÈÌØÊâ¼¼ÄÜ£?
+	local i = HaveMagic(210)	
+	local j = HaveMagic(400)
+	local n = RollbackSkill()		
 	local x = 0
-	if (i ~= -1) then i = 1; x = x + i end		-- ÕâÁ½¾äÅÐ¶ÏÊÇÅÅ³ý´ÓÎ´Ñ§¹ýÇá¹¦µÄÈË·µ»Ø-1´Ó¶øµ¼ÖÂµãÊý¼ÆËã´íÎóÇé¿ö
+	if (i ~= -1) then i = 1; x = x + i end		
 	if (j ~= -1) then x = x + j end
-	local rollback_point = n - x			-- °Ñ¼¼ÄÜµãµ±×ö¿ÕÏÐµãÊý·µ»¹£¬µ«ÏÈ?Û³ýÇá¹¦µ?
-	if (rollback_point + GetMagicPoint() < 0) then		-- Èç¹ûÏ´³ÉÁË¸ºÊý£¬Ôòµ±×÷0£¨ÎªÒÔºó¶à´ÎÏ´µã±£?ô£?
+	local rollback_point = n - x			
+	if (rollback_point + GetMagicPoint() < 0) then
 		 rollback_point = -1 * GetMagicPoint()
 	end
 	AddMagicPoint(rollback_point)
@@ -1655,14 +1701,14 @@ function clear_prop()
 end
 
 function do_clear_prop()
-	local base_str = {35,20,25,30,20}			-- ÎåÐÐÈËÎïµÄÌìÉúÊôÐÔÖµ
+	local base_str = {35,20,25,30,20}		
 	local base_dex = {25,35,25,20,15}
 	local base_vit = {25,20,25,30,25}
 	local base_eng = {15,25,25,20,40}
 	local player_series = GetSeries() + 1
 
 	local Utask88 = GetTask(88)
-	AddStrg(base_str[player_series] - GetStrg(1) + GetByte(Utask88, 1))			-- ½«ÒÑ·ÖÅäÇ±ÄÜÖØÖÃ£¨task(88)ÊÇÈÎÎñÖÐÖ±½Ó½±ÀøµÄÁ¦Á¿¡¢Éí·¨µÈ£©
+	AddStrg(base_str[player_series] - GetStrg(1) + GetByte(Utask88, 1))	
 	AddDex(base_dex[player_series] - GetDex(1) + GetByte(Utask88, 2))
 	AddVit(base_vit[player_series] - GetVit(1) + GetByte(Utask88, 3))
 	AddEng(base_eng[player_series] - GetEng(1) + GetByte(Utask88, 4))
