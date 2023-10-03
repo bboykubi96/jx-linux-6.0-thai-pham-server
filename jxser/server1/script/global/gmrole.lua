@@ -369,5 +369,5 @@ local szICode = lib:Split(szItem, ",");
 	end
 
 	nID=tonumber(szICode[1]);
-	AddGoldItem(nID);
+	AddGoldItem(0,nID);
 end

@@ -1001,11 +1001,13 @@ function do_set_faction(nIndex)
 	local nResult = SetFaction(%tbFaction[nIndex].szFaction);
 	if(nIndex == 11) then
 		SetLastFactionNumber(10);
-		local nResult = SetFaction("huashan");
-		if nResult == 0 then
-			Talk(1, "", "Gia nhËp m«n ph¸i thÊt b¹i." .. nIndex.. ":".. %tbFaction[nIndex].szFaction);
-			return
-		end
+		SetFaction("huashan");
+		SetLastFactionNumber(10)
+		SetCamp(3)
+		SetCurCamp(3)
+		SetRank(87)
+		SetSeries(2)		
+		SaveNow()	
 	else 
 		local nResult = SetFaction(%tbFaction[nIndex].szFaction);
 		if nResult == 0 then
