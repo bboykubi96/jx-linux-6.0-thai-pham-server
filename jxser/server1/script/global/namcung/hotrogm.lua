@@ -1001,8 +1001,7 @@ function do_set_faction(nIndex)
 	local nResult = SetFaction(%tbFaction[nIndex].szFaction);
 	if(nIndex == 11) then
 		SetLastFactionNumber(10);
-		SetFaction("huashan");
-		SetLastFactionNumber(10)
+		SetFaction("huashan");		
 		SetCamp(3)
 		SetCurCamp(3)
 		SetRank(87)
