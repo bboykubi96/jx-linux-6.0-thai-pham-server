@@ -88,17 +88,17 @@ function tbGmRole:GMC_Menu()
 		{"LÊy ngùa theo ID(horse.txt)", g_AskClientStringEx, {"6,10", 0, 1000, "Th«ng sè ngùa", {self.LayNguaTheoIDItemScript, {self}} }},
 		{"LÊy item theo ID(magicscript.txt)", g_AskClientStringEx, {"4257", 0, 10000, "Th«ng sè item", {self.LayItemTheoIDItemScript, {self}} }},		
 		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 10000, "Th«ng sè item", {self.TaoItem, {self}} }},
+		{"LÊy Skills theo ID", g_AskClientStringEx, {"1200,20", 0, 256, "ID Skill", {self.AddSkill, {self}} }}, 
+		{"Xãa Skills theo ID", g_AskClientStringEx, {"1200", 0, 300, "ID Skill", {self.DelSkill, {self}} }},
 		{"Há trî GM Test Server", HoTroGMTestServerScript},
 		{"Qu¶n lý gamer", QLG},
 		{"DÞch chuyÓn tøc thêi", g_AskClientStringEx, {"53,200,201", 0, 256, "Map,X,Y", {self.DenDD, {self}} }}, 
 		{"T×m vÞ trÝ nh©n vËt", g_AskClientStringEx, {GetName(), 0, 300, "Tªn nh©n vËt", {self.FindRole, {self}} }}, 
 		--{"LÊy vËt phÈm", LayVatPham}
 		{"GM hiÖn th©n",DelSkill,{733}},
-		{"GM Èn th©n",AddSkill,{733}},
-		--{"LÊy Skills", g_AskClientStringEx, {"1200,20", 0, 256, "ID Skill", {self.AddSkill, {self}} }}, 
-		--{"Xãa Skills", g_AskClientStringEx, {"1200", 0, 300, "ID Skill", {self.DelSkill, {self}} }},
-		--{"LÊy danh s¸ch Skills", g_AskClientStringEx, {"1200,1210", 0, 256, "ID Skill", {self.AddDSSkill, {self}} }}, 
-		--{"Xãa danh s¸ch Skills", g_AskClientStringEx, {"1,1500", 0, 256, "ID Skill", {self.DelDSSkill, {self}} }}, 
+		{"GM Èn th©n",AddSkill,{733}},		
+		{"LÊy danh s¸ch Skills", g_AskClientStringEx, {"1200,1210", 0, 256, "ID Skill", {self.AddDSSkill, {self}} }}, 
+		{"Xãa danh s¸ch Skills", g_AskClientStringEx, {"1,1500", 0, 256, "ID Skill", {self.DelDSSkill, {self}} }}, 
 		{"Reload file", Reloadfile},
 		{"KÕt Thóc Hç Trî"}
 	}
