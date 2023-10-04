@@ -728,6 +728,11 @@ AddItem(6,1,1266,1,0,0)
 AddItem(6,1,438,1,0,0)
 end
 
+function thanhanhphu()
+AddItem(6,1,2527,1,0,0)
+AddItem(6,1,2527,1,0,0)
+end
+
 function thuoclagtongkim()
 AddStackItem(50,6,1,190,1,0,0)
 AddStackItem(50,6,1,157,1,0,0)
