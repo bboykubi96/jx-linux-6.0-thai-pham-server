@@ -8,7 +8,7 @@ function TaskShedule()
 	TaskTime( 21, 50 );
 	TaskCountLimit( 0 );
 	-- 输出启动消息
-	OutputMsg("=====> [TongKim] Chien Truong Tong Kim 22:50 BAT DAU")
+	OutputMsg("=====> [TongKim] Chien Truong Tong Kim 21:50 BAT DAU")
 end
 
 function TaskContent()
