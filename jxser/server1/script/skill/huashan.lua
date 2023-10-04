@@ -40,7 +40,7 @@ SKILLS={
 		},
 		--missle_speed_v={{{1,20},{20,24}}},
 		--skill_attackradius={{{1,320},{20,384}}},
-		--skill_cost_v={{{1,10},{20,10}}},
+		skill_cost_v={{{1,2},{20,20}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
 	},
@@ -48,13 +48,13 @@ SKILLS={
 		addphysicsdamage_p={{{1,15},{20,75},{26,150},{32,220},{33,220}},{{1,-1},{2,-1}},{{1,0},{2,0}}},
 		deadlystrikeenhance_p={{{1,6},{20,26}},{{1,-1},{2,-1}}},
 --		deadlystrikeenhance_p={{{1,6},{20,36}},{{1,-1},{2,-1}}},
-		attackspeed_yan_v={{{1,6},{26,32},{31,32},{32,32}},{{1,-1},{2,-1}}},
-		attackspeed_v={{{1,6},{26,32},{31,32},{32,32}},{{1,-1},{2,-1}}},
-		manareplenish_v={{{1,-10000},{20,-10000}},{{1,-1},{2,-1}}},
-		manamax_yan_v={{{1,-1000},{20,-20000}},{{1,-1},{2,-1}}},
-		manamax_v={{{1,-1000},{20,-20000}},{{1,-1},{2,-1}}},
-		manareplenish_p={{{1,-200},{20,-200}},{{1,-1},{2,-1}}},
-		lifemax_yan_p={{{1,10},{25,30},{36,30}},{{1,-1},{2,-1}}},
+		--attackspeed_yan_v={{{1,6},{26,32},{31,32},{32,32}},{{1,-1},{2,-1}}},
+		--attackspeed_v={{{1,6},{26,32},{31,32},{32,32}},{{1,-1},{2,-1}}},
+		--manareplenish_v={{{1,-10000},{20,-10000}},{{1,-1},{2,-1}}},
+		--manamax_yan_v={{{1,-1000},{20,-20000}},{{1,-1},{2,-1}}},
+		--manamax_v={{{1,-1000},{20,-20000}},{{1,-1},{2,-1}}},
+		--manareplenish_p={{{1,-200},{20,-200}},{{1,-1},{2,-1}}},
+		--lifemax_yan_p={{{1,10},{25,30},{36,30}},{{1,-1},{2,-1}}},
 	},
 	yangwu_jianfa={ --ÑøÎá½£·¨
 		clearallcd={{{1,1},{25,2},{26,3},{27,3},{31,4},{32,4}},{{1,-1},{2,-1}}},
@@ -87,15 +87,9 @@ SKILLS={
 			[3]={{1,1},{20,70}}
 		},
 		skill_attackradius={{{1,384},{20,416}}},
-		--skill_cost_v={{{1,25},{20,35}}},
+		skill_cost_v={{{1,25},{20,35}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
-		skill_desc=
-			function(level)
-
-				local nMag = floor(Link(level,SKILLS.podao_pojian.candetonate1[3]))
-				return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> KiÕm Hoa Ho¸n Tinh<color>, <color=blue> B¨ng T­íc ViÖt Chi<color>, <color=blue> U Hån PhÖ ¶nh<color>,\n", nMag)
-			end,
 	},
 	podao_pojian={ --ÆÆµ¶ÆÆ½£Ê½
 		candetonate1={
@@ -420,8 +414,9 @@ SKILLS={
 		},
 	},
 	longraoshen={ --ÁúÈÅÉí
-		manareplenish_v={{{1,1},{20,22}},{{1,-1},{2,-1}}},
-		manamax_yan_p={{{1,35},{35,200},{36,200}},{{1,-1},{2,-1}}},
+		--manareplenish_v={{{1,1},{20,22}},{{1,-1},{2,-1}}},
+		addcoldmagic_v={{{1,20},{30,315}},{{1,60*18},{2,180*18}}},
+		--manamax_yan_p={{{1,35},{35,200},{36,200}},{{1,-1},{2,-1}}},
 	},
 	haina_baichuan={ --º£ÄÉ°Ù´¨
 		damage2addmana_p={{{1,1},{20,10}},{{1,-1},{20,-1}}},

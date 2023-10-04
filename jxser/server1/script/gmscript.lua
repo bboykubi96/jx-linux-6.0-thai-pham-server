@@ -550,20 +550,20 @@ function AddSkills(Party,Level)
 			{1065,20},
 		},
 		hs={--https://volammienphi.zing.vn/cam-nang/mon-phai/hoa-son.html
-			{1347,20},
-			{1372,20},
-			{1349,20},
-			{1374,20},
-			{1350,20},
-			{1375,20},
-			{1351,20},
-			{1376,20},
+			{1347,20},--b¹ch hång qu¸n nhËt
+			{1372,20},--thanh v©n tèng s¶ng
+			{1349,20},--kiÕm t«ng tæng quyÕt
+			{1374,20},--long nhiÔu th©n
+			{1350,20},--d­ìng ng« kiÕp ph¸p
+			{1375,20},--h¶i n¹p b¸ch xuyªn
+			{1351,20},--kim nh¹n hoµnh kh«ng
+			{1376,20},--long huyÒn kiÕm khÝ
 			{1354,20},--Hi Di KiÕm Ph¸p
 			{1355,20},--thiªn th©n ®¶o huyÒn
-			{1379,20},
-			{1358,30},--tran phai 30
-			{1380,20},
-			{1360,20},			
+			{1379,20},--khÝ qu¸n tr­êng hång
+			{1358,30},--tran phai 30-huyÔn nh·n v©n yªn
+			{1380,20},--ma vÊn kiÕm khÝ
+			{1360,20},--th­¬ng tïng nghªnh kh¸ch
 		},
 		tm={
 			{45,20},
