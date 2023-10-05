@@ -275,6 +275,7 @@ function gototown()
 		"m«n ph¸i/#gopos_step2(9)",
 		--"B¶n ®å cÊp 90/#gopos_step2lv90()",
 		--§æi tªn chiÕn tr­êng Tèng Kim - Modified By DinhHQ - 20120604
+		"§Êu tr­êng sinh tö/go_to_dau_truong_sinh_tu",
 		"ChiÕn tr­êng Tèng Kim/gopos_step2battle",
 		"ChiÕn tr­êng ThÊt Thµnh §¹i ChiÕn/gopos_sevencityfield"
 	}
@@ -718,6 +719,15 @@ function gopos_step3othermap(nIdx)
 	NewWorld(tab_OtherMap1[nIdx][1], tab_OtherMap1[nIdx][2], tab_OtherMap1[nIdx][3])
 	SetFightState(0);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_OtherMap1[nIdx][4].."!");
+	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	AddSkillState(963, 1, 0, 18*3)
+end
+
+
+function go_to_dau_truong_sinh_tu()
+	NewWorld(355, 1614, 3172)
+	SetFightState(1);
+	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> ®Êu tr­êng sinh tö!");
 	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
 	AddSkillState(963, 1, 0, 18*3)
 end
