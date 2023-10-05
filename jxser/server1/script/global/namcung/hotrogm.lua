@@ -214,35 +214,6 @@ local tbFaction =
 	},
 	[7] =
 	{
-		szShowName = "Hoa s¬n",
-		szFaction = "huashan",
-		nShortFaction = "hs",
-		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-			
-		},
-	},
-	[8] =
-	{
 		szShowName = "C¸i Bang",
 		szFaction = "gaibang",
 		nShortFaction = "gb",
@@ -269,7 +240,7 @@ local tbFaction =
 			},
 		},
 	},
-	[9] =
+	[8] =
 	{
 		szShowName = "Thiªn NhÉn Gi¸o",
 		szFaction = "tianren",
@@ -297,7 +268,7 @@ local tbFaction =
 			},
 		},
 	},
-	[10] =
+	[9] =
 	{
 		szShowName = "Vâ §ang",
 		szFaction = "wudang",
@@ -325,7 +296,7 @@ local tbFaction =
 			},
 		},
 	},
-	[11] =
+	[10] =
 	{
 		szShowName = "C«n L«n",
 		szFaction = "kunlun",
@@ -351,6 +322,35 @@ local tbFaction =
 					"Minh Ph­îng ng¹o s­¬ng ®¹o bµo", "Minh Ph­îng ng¹o s­¬ng kiÕm ", "Minh Ph­îng ng¹o s­¬ng ngoa ", "Minh Ph­îng ng¹o s­¬ng béi", "Minh Ph­îng ng¹o s­¬ng h¹ giíi",
 				},
 			},
+		},
+	},
+	[11] =
+	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+
 		},
 	},
 }
@@ -502,6 +502,7 @@ function namcung2()
 		--{"NhËn Skill 90 c¸c ph¸i", nhanSkill90CacPhaiScript},
 		--{"LÊy trang bÞ m«n ph¸i", show_faction},
 		--{"Trang bÞ hiÕm", fifong},
+		{"Tói M¸u Håi Thiªn T¸o T¹i §¬n", hoithientaotaodon},
 		{"Trang bÞ Xanh", trangbiblue},
 		{"Trang bÞ An Bang, §Þnh Quèc...", hoangkim},
 		{"Trang BÞ Hoµng Kim M«n Ph¸i", sethkmp},
@@ -728,7 +729,7 @@ AddItem(6,1,1266,1,0,0)
 AddItem(6,1,438,1,0,0)
 end
 
-function thanhanhphu()
+function hoithientaotaodon()
 AddItem(6,1,2527,1,0,0)
 AddItem(6,1,2527,1,0,0)
 end
@@ -997,17 +998,26 @@ function set_faction(nIndex)
 	}
 	CreateNewSayEx(szTitle, tbOpt)
 end
-
---hµm xö lý khi ®· x¸c nhËn gia nhËp ph¸i
 function do_set_faction(nIndex)
 	if check_faction() ~= 1 then
 		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i.")
 		return
 	end
-	--index sÏ lµ index cã trong m¶ng tbFaction
-	local nResult = SetFaction(%tbFaction[nIndex].szFaction)
-	if nResult == 0 then
-		return
+	local nResult = SetFaction(%tbFaction[nIndex].szFaction);
+	if(nIndex == 11) then
+		SetLastFactionNumber(10);
+		SetFaction("huashan");		
+		SetCamp(3)
+		SetCurCamp(3)
+		SetRank(87)
+		SetSeries(2)		
+		SaveNow()	
+	else 
+		local nResult = SetFaction(%tbFaction[nIndex].szFaction);
+		if nResult == 0 then
+			Talk(1, "", "Gia nhËp m«n ph¸i thÊt b¹i." .. nIndex.. ":".. %tbFaction[nIndex].szFaction);
+			return
+		end
 	end
 	-- Thªm c¸c skill tõ 0x - 9x
 	DynamicExecuteByPlayer(PlayerIndex, "\\script\\gmscript.lua", "AddSkills", %tbFaction[nIndex].nShortFaction, 0);
