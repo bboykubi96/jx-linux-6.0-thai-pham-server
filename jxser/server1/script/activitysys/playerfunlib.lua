@@ -546,7 +546,8 @@ function PlayerFunLib:ShowSubDailog(szNpcName, szTitle, pDailog)
 end
 
 function PlayerFunLib:AddExp(nExp, bFlag, szLogTitle, szAction)
-	
+	Add120SkillExp(nExp/10)
+	Clear120SkillExpLimit ()
 	nExp = lib:NumberParamTrans(nExp) 
 	local tbExp = {}
 	if bFlag == 1 then
@@ -557,9 +558,8 @@ function PlayerFunLib:AddExp(nExp, bFlag, szLogTitle, szAction)
 	szAction = szAction or ""
 	
 	tbAwardTemplet:Give(tbExp, 1, {szLogTitle, szAction})
+	
 end
-
-
 
 function PlayerFunLib:SetTongTask(szTaskId, nValue)
 	local szTongName, nTongID = GetTongName();

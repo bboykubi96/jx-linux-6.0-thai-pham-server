@@ -8,29 +8,29 @@ Include("\\script\\activitysys\\config\\32\\talkdailytask.lua")
 
 tbIndex = {}	-- 选中的坐标的Index
 tbPoint = {}	-- 当前被选择的坐标集合
-tbNpc = 
-{
-	[1] = 
-	{
-		nNpcId = 1685,  --npc Id
-		nLevel = 95,		-- 等级
+--tbNpc = 
+--{
+--	[1] = 
+--	{
+--		nNpcId = 1685,  --npc Id
+--		nLevel = 95,		-- 等级
 --		nSeries = 1,		-- 五行
-		bNoRevive = 1,			-- 不重生
-		szName = "c Th竚",		-- 名字
-		nIsboss = 1,
-		nCurCamp = 1,	--阵营 1宋 2金
-	},
-	[2] = 
-	{
-		nNpcId = 1686,  --npc Id
-		nLevel = 95,		-- 等级
+--		bNoRevive = 1,			-- 不重生
+--		szName = "c Th竚",		-- 名字
+--		nIsboss = 1,
+--		nCurCamp = 1,	--阵营 1宋 2金
+--	},
+--	[2] = 
+--	{
+--		nNpcId = 1686,  --npc Id
+--		nLevel = 95,		-- 等级
 --		nSeries = 1,		-- 五行
-		bNoRevive = 1,			-- 不重生
-		szName = "c Th竚",		-- 名字
-		nIsboss = 1,
-		nCurCamp = 2,	--阵营 1宋 2金
-	}
-}  
+--		bNoRevive = 1,			-- 不重生
+--		szName = "c Th竚",		-- 名字
+--		nIsboss = 1,
+--		nCurCamp = 2,	--阵营 1宋 2金
+--	}
+--}  
 
 
 function SelectPosition(nRandomCount)
@@ -49,41 +49,41 @@ function SelectPosition(nRandomCount)
 	end
 end
 
-function AddTeTan(nNowTimeCount)
-	if tbAppearTime[nNowTimeCount - RUNGAME_TIME] == 1 then
-		local nrandomCount = 0
-		-- 判定当前地图的Id
-		local nNowMapId = BT_GetGameData(GAME_MAPID)
-		if nNowMapId == 380 then
-			tbPoint = tbPoint_map380
-			nrandomCount = 10
-		elseif nNowMapId == 383 then
-			tbPoint = tbPoint_map383
-			nrandomCount = 20
-		else
-			return
-		end
-		s_area = BT_GetGameData(GAME_CAMP1AREA) 	-- GAME_CAMP1AREA 宋 GAME_CAMP1AREA 金
-		j_area = BT_GetGameData(GAME_CAMP2AREA)
+--function AddTeTan(nNowTimeCount)
+--	if tbAppearTime[nNowTimeCount - RUNGAME_TIME] == 1 then
+--		local nrandomCount = 0
+--		-- 判定当前地图的Id
+--		local nNowMapId = BT_GetGameData(GAME_MAPID)
+--		if nNowMapId == 380 then
+--			tbPoint = tbPoint_map380
+--			nrandomCount = 10
+--		elseif nNowMapId == 383 then
+--			tbPoint = tbPoint_map383
+--			nrandomCount = 20
+--		else
+--			return
+--		end
+--		s_area = BT_GetGameData(GAME_CAMP1AREA) 	-- GAME_CAMP1AREA 宋 GAME_CAMP1AREA 金
+--		j_area = BT_GetGameData(GAME_CAMP2AREA)
 		
-		Msg2MSAll(MISSIONID, "c Th竚 m韎  ti課 v祇 chi課 trng r錳, m鋓 ngi nhanh ch鉵g h祅h ng!");
+--		Msg2MSAll(MISSIONID, "c Th竚 m韎  ti課 v祇 chi課 trng r錳, m鋓 ngi nhanh ch鉵g h祅h ng!");
 		
-		SelectPosition(nrandomCount)
-		local tbPosition_s = tbPoint[s_area]
-		local tbPosition_j = tbPoint[j_area]
-		for i=1,4 do
-			local nIndex = tbIndex[i]
-			tbNpc.szName = "c Th竚"
-			basemission_CallNpc(tbNpc[1], nNowMapId, tbPosition_s[nIndex].x * 32, tbPosition_s[nIndex].y * 32)
-			local msg = format("T╪g th猰 T鑞g Kim c Th竚: X = %d Y = %d",tbPosition_s[nIndex].x,tbPosition_s[nIndex].y)
-			WriteLog(msg)
-			tbNpc.szName = "c Th竚"
-			basemission_CallNpc(tbNpc[2], nNowMapId, tbPosition_j[nIndex].x * 32, tbPosition_j[nIndex].y * 32)
-			local msg = format("T╪g th猰 Kim c Th竚 : X = %d Y = %d",tbPosition_j[nIndex].x,tbPosition_j[nIndex].y)
-			WriteLog(msg)
-		end
-	end
-end
+--		SelectPosition(nrandomCount)
+--		local tbPosition_s = tbPoint[s_area]
+--		local tbPosition_j = tbPoint[j_area]
+--		for i=1,4 do
+--			local nIndex = tbIndex[i]
+--			tbNpc.szName = "c Th竚"
+--			basemission_CallNpc(tbNpc[1], nNowMapId, tbPosition_s[nIndex].x * 32, tbPosition_s[nIndex].y * 32)
+--			local msg = format("T╪g th猰 T鑞g Kim c Th竚: X = %d Y = %d",tbPosition_s[nIndex].x,tbPosition_s[nIndex].y)
+--			WriteLog(msg)
+--			tbNpc.szName = "c Th竚"
+--			basemission_CallNpc(tbNpc[2], nNowMapId, tbPosition_j[nIndex].x * 32, tbPosition_j[nIndex].y * 32)
+--			local msg = format("T╪g th猰 Kim c Th竚 : X = %d Y = %d",tbPosition_j[nIndex].x,tbPosition_j[nIndex].y)
+--			WriteLog(msg)
+--		end
+--	end
+--end
 
 function OnTimer()
 	t = GetMissionV(MS_TIMER1) + 1;--计数器，统计当前定时器触发了多少次了

@@ -1,29 +1,21 @@
--- ====================== ÎÄ¼þÐÅÏ¢ ======================
-
--- ½£ÏÀÇéÔµÍøÂç°æÔ½ÄÏ°æ - Ç§ÇïÓ¢ÁÒ
--- ÎÄ¼þÃû¡¡£ºhead.lua
--- ´´½¨Õß¡¡£º×Ó·Çô~
--- ´´½¨Ê±¼ä£º2009-04-08 14:16:06
-
--- ======================================================
 
 Include("\\script\\lib\\pay.lua");
 
 TB_QIANQIU_YINGLIE0904 = {
 	-- C --
-	VERSION		= 20090428,--20090428,		-- ½â·Å»î¶¯°æ±¾
-	START		= 20090428,--20090428		-- Ç§ÇïÓ¢ÁÒ¿ªÊ¼Ê±¼ä
-	CLOSE		= 20090531,		-- Ç§ÇïÓ¢ÁÒ½áÊøÊ±¼ä
-	ItemEnd		= 20090601,		-- µÀ¾ß½áÊøÊ¹ÓÃÆÚ
+	VERSION		= 20090428,
+	START		= 20090428,
+	CLOSE		= 20090531,		
+	ItemEnd		= 20090601,		
 	
-	MAX_EXP		= 300000000,	-- ¾­ÑéÉÏÏÞ 3ÒÚ
-	PER_EXP		= 4000000,		-- Ã¿´Î¾­Ñé¸øÓë 4°ÙÍò
-	MAX_YAOBAO	= 4,			-- Ã¿Ìì×î¶à4¸öÒ½Ò©°ü
+	MAX_EXP		= 300000000,	
+	PER_EXP		= 4000000,		
+	MAX_YAOBAO	= 4,			
 	
 	-- TSK --
-	TSK_VERSION	= 1970,			-- ¼ÇÂ¼°æ±¾ºÅ
-	TSK_SJ_MAXEXP	= 1971,		-- ¼ÇÂ¼²Î¼ÓÇ§ÇïÓ¢ÁÒ»ñµÃ¾­Ñé
-	TSK_YIYAO_BAO	= 1972,		-- ¼ÇÂ¼Ã¿Ìì²Î¼Ó»ñµÃ×î¶àÒ½Ò©°ü
+	TSK_VERSION	= 1970,			
+	TSK_SJ_MAXEXP	= 1971,		
+	TSK_YIYAO_BAO	= 1972,		
 	
 }
 
@@ -169,32 +161,32 @@ function TB_QIANQIU_YINGLIE0904:add_rank_award(nrank)
 		end
 	end
 		
-	local nLiBaoCount = 0
-	for i = 1, 3 do
-		if CalcFreeItemCellCount() == 0 then
-			break
-		end
-		local n_itemidx = AddItem(6, 1, 2005, 1, 1, 0);
-		if (n_itemidx > 0) then
-			local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
-			ITEM_SetExpiredTime(n_itemidx, nExpiredDate);
-			SyncItem(n_itemidx);
-			nLiBaoCount = nLiBaoCount + 1;
-		end
-	end
+	--local nLiBaoCount = 0
+	--for i = 1, 3 do
+	--	if CalcFreeItemCellCount() == 0 then
+	--		break
+	--	end
+	--	local n_itemidx = AddItem(6, 1, 2005, 1, 1, 0);
+	--	if (n_itemidx > 0) then
+	--		local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
+	--		ITEM_SetExpiredTime(n_itemidx, nExpiredDate);
+	--		SyncItem(n_itemidx);
+	--		nLiBaoCount = nLiBaoCount + 1;
+		--end
+	--end
 	
-	if nLiBaoCount == 3 then
-		Msg2Player(format("NhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
-	else
-		Msg2Player(format("Do v× chç trèng hµnh trang kh«ng ®ñ, chØ nhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
-	end
+	--if nLiBaoCount == 3 then
+	--	Msg2Player(format("NhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
+	--else
+	--	Msg2Player(format("Do v× chç trèng hµnh trang kh«ng ®ñ, chØ nhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
+	--end
 end
 
 
 function TB_QIANQIU_YINGLIE0904:add_end_award(tb_player, b_win)
 	local game_level = BT_GetGameData(GAME_LEVEL);
 	local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
-	local tb_award = {tbProp = {6,1,2005,1,1,0}, szName = "Tèng Kim lÔ bao",  nCount = 1+b_win, nExpiredTime = nExpiredDate};
+	local tb_award --= {tbProp = {6,1,2005,1,1,0}, szName = "Tèng Kim lÔ bao",  nCount = 1+b_win, nExpiredTime = nExpiredDate};
 	 
 	if (game_level == 3) then
 		local old_player = PlayerIndex;
@@ -202,10 +194,10 @@ function TB_QIANQIU_YINGLIE0904:add_end_award(tb_player, b_win)
 			PlayerIndex = tb_player[i];
 			local player_total_point=BT_GetData(PL_TOTALPOINT) --»ñµÃ»ý·Ö
 			
-			if (player_total_point >= 6000 and self:check_right() == 1) then
-				tbAwardTemplet:GiveAwardByList(tb_award);
-				Msg2Player(format("Do v× ®iÓm tèng kim trªn 6000, nªn sÏ ®­îc th­ëng %d Tèng Kim lÔ bao", tb_award.nCount))
-			end
+			--if (player_total_point >= 6000 and self:check_right() == 1) then
+			--	tbAwardTemplet:GiveAwardByList(tb_award);
+			--	Msg2Player(format("Do v× ®iÓm tèng kim trªn 6000, nªn sÏ ®­îc th­ëng %d Tèng Kim lÔ bao", tb_award.nCount))
+			--end
 		end
 		PlayerIndex = old_player;
 	end

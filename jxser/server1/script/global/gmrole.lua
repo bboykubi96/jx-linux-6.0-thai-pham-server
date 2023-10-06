@@ -15,7 +15,7 @@ tbGmRole.tbAccount =
 	["3thangnhoc"] = 
 	{
 		"GameMaster",
-		"testthiennhan",
+		"testtongkim",
 		"ThaiPham02",
 	},
 	["thaipham2"] = 
