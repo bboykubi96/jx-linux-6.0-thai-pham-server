@@ -90,7 +90,7 @@ function IsServerOpen()
 	local nDate = tonumber(date("%Y%m%d"));--20231007
 	local nTime = tonumber(GetLocalDate("%H%M"));--2030
 	
-	if (SERVER_MODE =="OPEN" && nDate >= SERVER_OPEN_DATE and nTime >= SERVER_OPEN_HOUR ) then		
+	if (SERVER_MODE =="OPEN" and nDate >= SERVER_OPEN_DATE and nTime >= SERVER_OPEN_HOUR ) then		
 		print("Check IsOpen: Open nDate= " .. nDate .. "nTime: "..nTime);
 		return 1;		
 	else
