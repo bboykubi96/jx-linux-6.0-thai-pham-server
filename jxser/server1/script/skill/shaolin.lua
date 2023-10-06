@@ -50,7 +50,7 @@ SKILLS={
 		deadlystrikeenhance_p={{{1,5},{20,15,Conic}},{{1,-1},{2,-1}}}
 	},
 	shaolin_quanfa={ --…Ÿ¡÷»≠∑®
-		addphysicsdamage_p={{{1,25},{20,415}},{{1,-1},{2,-1}},{{1,9},{2,9}}},
+		--addphysicsdamage_p={{{1,25},{20,415}},{{1,-1},{2,-1}},{{1,9},{2,9}}},
 		addphysicsdamage_p={{{1,25},{20,215}},{{1,-1},{2,-1}},{{1,9},{2,9}}},
 		attackratingenhance_p={{{1,35},{20,275}},{{1,-1},{2,-1}}},
 		deadlystrikeenhance_p={{{1,6},{20,45,Conic}},{{1,-1},{2,-1}}}
