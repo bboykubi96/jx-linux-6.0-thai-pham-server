@@ -118,11 +118,10 @@ function KiemTraThoiGianHeThong()
 	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
 	local nCurDate = tonumber(date("%Y%m%d"));--20231007
 	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
-	if(isServerOpen) then 
-		
-		Msg2Player("Server Open: Open nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
+	if(isServerOpen == 1) then 		
+		Msg2Player("Server Status: Open nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
 	else
-		Msg2Player("Server Test: Open nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
+		Msg2Player("Server Status: Test nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
 	end
 
 end

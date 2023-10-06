@@ -1,8 +1,8 @@
 
 -- SYSTEM CONFIG 
-SERVER_MODE  = "TEST";--OPEN | TEST
-SERVER_OPEN_DATE = "20231007";--Y m d
-SERVER_OPEN_HOUR = "2030";--H M
+SERVER_MODE  = "OPEN";--OPEN | TEST
+SERVER_OPEN_DATE = 20231007;--number Y m d
+SERVER_OPEN_HOUR = 2030;--number H M
 --------------------------------------
 DEF_PRODUCT_REGION_CN		= 0;	
 DEF_PRODUCT_REGION_CN_IB	= 1;
@@ -91,10 +91,10 @@ function IsServerOpen()
 	local nTime = tonumber(GetLocalDate("%H%M"));--2030
 	
 	if (SERVER_MODE =="OPEN" and nDate >= SERVER_OPEN_DATE and nTime >= SERVER_OPEN_HOUR ) then		
-		print("Check IsOpen: Open nDate= " .. nDate .. "nTime: "..nTime);
+		print("Server Status: Open nDate= " .. nDate .. "nTime: "..nTime);
 		return 1;		
 	else
-		print("Check IsOpen: Test nDate= " .. nDate .. "nTime: "..nTime);
+		print("Server Status: Test nDate= " .. nDate .. "nTime: "..nTime);
 		return 0;
 	end
 end
