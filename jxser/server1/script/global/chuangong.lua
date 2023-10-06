@@ -1,12 +1,12 @@
-Include([[\script\global\ÌØÊâÓÃµØ\ÃÎ¾³\npc\Â·ÈË_ÅÑÉ®.lua]])
-Include("\\script\\item\\levelup_item.lua")
-Include("\\script\\global\\head_qianzhuang.lua")
-Include("\\script\\global\\systemconfig.lua")
+Include([[\script\global\ÌØÊâÓÃµØ\ÃÎ¾³\npc\Â·ÈË_ÅÑÉ®.lua]]);
+Include("\\script\\item\\levelup_item.lua");
+Include("\\script\\global\\head_qianzhuang.lua");
+Include("\\script\\global\\systemconfig.lua");
 IncludeLib("SETTING")
 
-TBMONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
-strimg = "<link=image[0,1]:\\spr\\npcres\\enemy\\enemy111\\enemy111_pst.spr>§éc C« KiÕm:<link>"
-function cg_getnextdate(oldday, num) --»ñµÃolddayµÄµÚnumÈÕµÄÈÕÆÚ£¬±ÈÈç060227µÄµÚ5ÈÕÎª060304
+TBMONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+strimg = "<link=image[0,1]:\\spr\\npcres\\enemy\\enemy111\\enemy111_pst.spr>§éc C« KiÕm:<link>";
+function cg_getnextdate(oldday, num)
 	local nDay = tonumber(oldday)
 	local nYear = floor(nDay / 10000)
 	local nMonth = floor((nDay - nYear * 10000) / 100)

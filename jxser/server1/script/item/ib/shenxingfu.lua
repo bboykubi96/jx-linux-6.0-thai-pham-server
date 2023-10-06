@@ -322,7 +322,6 @@ function gopos_step2town()
 	Say("ThÇn hµnh phï, ®i ®Õn n¬i ng­¬i muèn.", getn(tab_Content), tab_Content);
 end
 
---ÉñÐÐ·û£­£­£­£­µÚ¶þ²½
 function gopos_step2(nIdx)
 	local tab_Content = {};
 	for i = 1, getn(tab_RevivePos[nIdx]) do
@@ -332,7 +331,7 @@ function gopos_step2(nIdx)
 	Say("ThÇn hµnh phï, ®i ®Õn n¬i ng­¬i muèn.", getn(tab_Content), tab_Content);
 end;
 
---ÉñÐÐ·û£­£­£­£­µÚÈý²½
+
 function gopos_step3(nIdx, nSubIdx)
 	local file = [[\settings\RevivePos.ini]];
 	ini_loadfile(file, 0)
@@ -348,7 +347,7 @@ function gopos_step3(nIdx, nSubIdx)
 	NewWorld(tab_RevivePos[nIdx][nSubIdx][3], nPosX, nPosY)
 	SetFightState(0);
 	Msg2Player("Xin h·y ngåi yªn, chóng ta ®i<color=green> "..tab_RevivePos[nIdx][nSubIdx][1].." !");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end;
 
@@ -410,7 +409,7 @@ function gopos_step3lv90(nIdx)
 	NewWorld(tab_lv90map[nIdx][1], tab_lv90map[nIdx][2], tab_lv90map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Xin h·y ngåi yªn, chóng ta ®i<color=green> "..tab_lv90map[nIdx][4].." !");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 
@@ -441,7 +440,7 @@ function gopos_step3lv80(nIdx)
 	NewWorld(tab_lv80map[nIdx][1], tab_lv80map[nIdx][2], tab_lv80map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv80map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 70----------------------------
@@ -470,7 +469,7 @@ function gopos_step3lv70(nIdx)
 	NewWorld(tab_lv70map[nIdx][1], tab_lv70map[nIdx][2], tab_lv70map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv70map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 60----------------------------
@@ -500,7 +499,7 @@ function gopos_step3lv60(nIdx)
 	NewWorld(tab_lv60map[nIdx][1], tab_lv60map[nIdx][2], tab_lv60map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv60map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 50----------------------------
@@ -529,7 +528,7 @@ function gopos_step3lv50(nIdx)
 	NewWorld(tab_lv50map[nIdx][1], tab_lv50map[nIdx][2], tab_lv50map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv50map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 40----------------------------
@@ -557,7 +556,7 @@ function gopos_step3lv40(nIdx)
 	NewWorld(tab_lv40map[nIdx][1], tab_lv40map[nIdx][2], tab_lv40map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv40map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 30----------------------------
@@ -587,7 +586,7 @@ function gopos_step3lv30(nIdx)
 	NewWorld(tab_lv30map[nIdx][1], tab_lv30map[nIdx][2], tab_lv30map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv30map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 20----------------------------
@@ -614,7 +613,7 @@ function gopos_step3lv20(nIdx)
 	NewWorld(tab_lv20map[nIdx][1], tab_lv20map[nIdx][2], tab_lv20map[nIdx][3])
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_lv20map[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 ---------------------map luyen cong 10----------------------------
@@ -664,21 +663,21 @@ function DoRescriptFunc(nSel)
 	szstr = ""
 	if ( GetLevel() >= 40 and GetLevel() < 80 ) then
 		NewWorld( 323, tbsongjin_pos[1], tbsongjin_pos[2]);
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 		SetFightState(0);
 		DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
 		Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim S¬ CÊp" );
 	elseif ( GetLevel() >= 80 and GetLevel() < 120 ) then
 		NewWorld( 324, tbsongjin_pos[1], tbsongjin_pos[2]);
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 		SetFightState(0);
 		DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
 		Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Trung CÊp" );
 	else
 		NewWorld( 325, tbsongjin_pos[1], tbsongjin_pos[2]);
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 		SetFightState(0);
 		DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
@@ -719,15 +718,15 @@ function gopos_step3othermap(nIdx)
 	NewWorld(tab_OtherMap1[nIdx][1], tab_OtherMap1[nIdx][2], tab_OtherMap1[nIdx][3])
 	SetFightState(0);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> "..tab_OtherMap1[nIdx][4].."!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)
 end
 
 
 function go_to_dau_truong_sinh_tu()
-	NewWorld(355, 1614, 3172)
+	NewWorld(355, 1614, 3172);
 	SetFightState(1);
 	Msg2Player("Ngåi yªn! Chóng ta ®i<color=green> ®Êu tr­êng sinh tö!");
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
-	AddSkillState(963, 1, 0, 18*3)
+	SetProtectTime(18*3);
+	AddSkillState(963, 1, 0, 18*3);
 end

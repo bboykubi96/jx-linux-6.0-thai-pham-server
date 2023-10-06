@@ -5,24 +5,21 @@
 -- Desc			:   Ç§±¦¿âÈë¿Ú
 -------------------------------------------------------------------------
 
-Include("\\script\\task\\tollgate\\killbosshead.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
-Include("\\script\\task\\newtask\\newtask_head.lua")
-Include("\\script\\task\\tollgate\\messenger\\posthouse.lua") --°üº¬Íæ¼ÒÈÎÎñÊı¾İ±í¸ñµÄÀµ
+Include("\\script\\task\\tollgate\\killbosshead.lua");
+Include("\\script\\task\\newtask\\newtask_head.lua");
+Include("\\script\\task\\tollgate\\messenger\\posthouse.lua");
 Include("\\script\\event\\birthday_jieri\\200905\\message\\message.lua");
-
-Include("\\script\\task\\tollgate\\messenger\\qianbaoku\\messenger_baoxiangtask.lua")--¿ª±¦Ïä¹¤¾ßº¯Êı
-
+Include("\\script\\task\\tollgate\\messenger\\qianbaoku\\messenger_baoxiangtask.lua");
 Include("\\script\\lib\\common.lua");
-
-Include("\\script\\activitysys\\functionlib.lua")--ÒıÓÃlib:DoFunByPlayer
+Include("\\script\\activitysys\\functionlib.lua");
 
 function main()
 	local tbDialog =
 	{
-		  "TiÕp nhËn nhiÖm vô /ture_gettask", 
-                  "B¾t ®Çu nhiÖm vô /ture_try_starttask", 
-                  "TiÕp tôc nhiÖm vô /ture_continuetask", 
-                 "Rêi khái khu vùc/ture_movecity",
+		"TiÕp nhËn nhiÖm vô /ture_gettask", 
+        "B¾t ®Çu nhiÖm vô /ture_try_starttask", 
+        "TiÕp tôc nhiÖm vô /ture_continuetask", 
+        "Rêi khái khu vùc/ture_movecity",
 	  	"L¸t n÷a quay l¹i /no",
 	}
 --	if (tbBirthday0905:IsActDate() == 1) then
@@ -32,18 +29,18 @@ function main()
 end
 
 function ture_gettask()
-	local Uworld1204 = nt_getTask(1204)  --¼Ç¢¼Íæ¼ÒµÄÈÎÎñ±äÁ¿£¬Ã¿´ÎÈÎÎñ½áÊøÊ±Çå¿Õ
-	local Uworld1028 = nt_getTask(1028)  --ÈÎÎñÁ´ÈÎÎñ±äÁ¿
---
+	local Uworld1204 = nt_getTask(1204);
+	local Uworld1028 = nt_getTask(1028);
+
 	if ( GetLevel() < 120 ) then
 		Describe(DescLink_YiGuan..": ThËt xin lçi, ngµi tr­íc mÆt cÊp bËc kh«ng cã ®¹t tíi 120 cÊp yªu cÇu. Xin mêi ®¹t tíi cÊp bËc tíi t×m ta n÷a ®i.",1,"KÕt thóc ®èi tho¹i/no")	
 	elseif ( Uworld1204 ~= 0 )  then
 		Describe(DescLink_YiGuan..": ThËt xin lçi, ngµi tr­íc mÆt nhiÖm vô tİn sø kh«ng hoµn thµnh, kh«ng thÓ nhËn gièng nhau nhiÖm vô, xin mêi hoµn thµnh nhiÖm vô tr­íc, c¸m ¬n.",1,"KÕt thóc ®èi tho¹i/no")
-	elseif (  messenger_givetime() == 10 ) then  --²é¿´½ñÈÕÊÇ·ñ»¹ÓĞ¹Ø¿¨Ê±¼ä
+	elseif (  messenger_givetime() == 10 ) then 
 		Describe(DescLink_YiGuan..": thËt xin lçi, ngµi h«m nay ng­¬i ®· sö dông thêi gian tİn sø ®· hÕt, xin mêi ngµy mai trë l¹i.",1,"KÕt thóc ®èi tho¹i/no")
 	else	
-                nt_setTask( 1204,1 )
-		nt_setTask( 1203,10) --ÉèÖÃĞÅÊ¹ÈÎÎñµÄ²½Öè
+        nt_setTask( 1204,1 )
+		nt_setTask( 1203,10);
 	end
 end
 

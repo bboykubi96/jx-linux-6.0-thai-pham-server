@@ -2,6 +2,7 @@ Include("\\script\\dailogsys\\dailogsay.lua");
 Include("\\script\\activitysys\\functionlib.lua");
 Include("\\script\\global\\namcung\\hotrogm.lua");
 Include("\\script\\global\\namcung\\gmquanlyserver\\quanly.lua");
+Include("\\script\\global\\systemconfig.lua");
 tbGmRole = {};
 tbGmRole.nPak = curpack();
 tbGmRole.tbAccount = 
@@ -90,26 +91,40 @@ function tbGmRole:GMC_Menu()
 	
 	local tbOpt =
 	{	
+		{"KiÓm tra thêi gian hÖ thèng", KiemTraThoiGianHeThong},
+		{"Há trî GM Test Server", HoTroGMTestServerScript},
 		{"LÊy §å HKMP theo ID(goldequip.txt)", g_AskClientStringEx, {"2", 0, 7000, "Th«ng sè hkmp", {self.LayDoHKMPTheoIDItemScript, {self}} }},
 		{"LÊy ngùa theo ID(horse.txt)", g_AskClientStringEx, {"6,10", 0, 1000, "Th«ng sè ngùa", {self.LayNguaTheoIDItemScript, {self}} }},
 		{"LÊy item theo ID(magicscript.txt)", g_AskClientStringEx, {"4257", 0, 10000, "Th«ng sè item", {self.LayItemTheoIDItemScript, {self}} }},		
 		{"LÊy vËt phÈm theo ID", g_AskClientStringEx, {"0,10,9,1,0,0", 0, 10000, "Th«ng sè item", {self.TaoItem, {self}} }},
 		{"LÊy Skills theo ID", g_AskClientStringEx, {"1200,20", 0, 256, "ID Skill", {self.AddSkill, {self}} }}, 
-		{"Xãa Skills theo ID", g_AskClientStringEx, {"1200", 0, 300, "ID Skill", {self.DelSkill, {self}} }},
-		{"Há trî GM Test Server", HoTroGMTestServerScript},
+		{"Xãa Skills theo ID", g_AskClientStringEx, {"1200", 0, 300, "ID Skill", {self.DelSkill, {self}} }},		
 		{"Qu¶n lý gamer", QLG},
 		{"DÞch chuyÓn tøc thêi", g_AskClientStringEx, {"53,200,201", 0, 256, "Map,X,Y", {self.DenDD, {self}} }}, 
 		{"T×m vÞ trÝ nh©n vËt", g_AskClientStringEx, {GetName(), 0, 300, "Tªn nh©n vËt", {self.FindRole, {self}} }}, 
-		--{"LÊy vËt phÈm", LayVatPham}
+		{"LÊy vËt phÈm", LayVatPham}
 		{"GM hiÖn th©n",DelSkill,{733}},
 		{"GM Èn th©n",AddSkill,{733}},		
-		{"LÊy danh s¸ch Skills", g_AskClientStringEx, {"1200,1210", 0, 256, "ID Skill", {self.AddDSSkill, {self}} }}, 
-		{"Xãa danh s¸ch Skills", g_AskClientStringEx, {"1,1500", 0, 256, "ID Skill", {self.DelDSSkill, {self}} }}, 
+		--{"LÊy danh s¸ch Skills", g_AskClientStringEx, {"1200,1210", 0, 256, "ID Skill", {self.AddDSSkill, {self}} }}, 
+		--{"Xãa danh s¸ch Skills", g_AskClientStringEx, {"1,1500", 0, 256, "ID Skill", {self.DelDSSkill, {self}} }}, 
 		{"Reload file", Reloadfile},
 		{"KÕt Thóc Hç Trî"}
 	}
 
 	CreateNewSayEx(szTitle, tbOpt);
+end
+--Hµm kiÓm tra coi tíi thêi gian server open chua?
+function KiemTraThoiGianHeThong()
+	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
+	local nCurDate = tonumber(date("%Y%m%d"));--20231007
+	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
+	if(isServerOpen) then 
+		
+		Msg2Player("Server Open: Open nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
+	else
+		Msg2Player("Server Test: Open nCurDate= " .. nCurDate .. "nCurTime: "..nCurTime);
+	end
+
 end
 --=======================Quan ly gamer====================================
 function QLG() 
@@ -215,7 +230,7 @@ if nMapId == m then
 SetPos(x, y) 
 else 
 NewWorld(m, x, y)
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)  
 end 
 
@@ -231,7 +246,7 @@ if nMapId == m then
 SetPos(x, y) 
 else 
 NewWorld(m, x, y) 
-	SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
+	SetProtectTime(18*3);
 	AddSkillState(963, 1, 0, 18*3)  
 end 
 end

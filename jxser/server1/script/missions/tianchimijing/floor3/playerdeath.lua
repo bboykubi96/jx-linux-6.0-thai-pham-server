@@ -1,4 +1,4 @@
-Include("\\script\\missions\\tianchimijing\\floor_templet\\game.lua")
+Include("\\script\\missions\\tianchimijing\\floor_templet\\game.lua");
 
 function OnDeath(nNpcIndex)
 	local nLevel = GetLevel()
