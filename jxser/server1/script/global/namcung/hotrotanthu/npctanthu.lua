@@ -14,7 +14,8 @@ Include("\\script\\global\\gmrole.lua")
 Include("\\script\\global\\namcung\\hotrotanthu\\itemblue.lua")
 Include("\\script\\global\\namcung\\hotrotanthu\\duatop.lua")
 Include("\\script\\tagnewplayer\\tbitemHK.lua");
-Include("\\script\\global\\namcung\\hotroitem.lua")
+Include("\\script\\global\\namcung\\hotroitem.lua");
+Include("\\script\\global\\systemconfig.lua");
 szNpcName = "<color=yellow>Hç trî T©n thñ<color>: "
 
 szPlayer = "§¹i HiÖp"
@@ -158,7 +159,7 @@ function main()
 	local tbOpt =
 	{
 		--{"Ta muèn nhËn th­ëng theo cÊp ®é", topser},
-		{"NhËp code nhËn quµ", phanthuong},
+		{"NhËp code nhËn quµ", NhanCodeNhanQua},
 		--{"Ta muèn vËt phÈm hæ trî ", vpht},
 		{"Ta muèn häc vâ c«ng", HoTroSkill},
 		--{"Ta muèn nhËn trang bÞ Xanh", trangbiblue},
@@ -1006,13 +1007,21 @@ end
 function HoTroTanThuScriptByYin()
 	Msg2Player( "Xin chµo ®¹i hiÖp, chóng t«i sÏ sím hç tr" );
 end
+--HAM NHAP GIFT CODE
+function NhanCodeNhanQua()
+	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
+	local nCurDate = tonumber(date("%Y%m%d"));--20231007
+	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
+	if(isServerOpen == 0) then 		
+		Talk(1,"", "Th«ng b¸o: Ch­a tíi giê khai më m¸y chñ, §¹i hiÖp kh«ng thÓ nhËn quµ!");			
+		return
+	end
 
-function phanthuong()
-if CalcFreeItemCellCount() < 10 then
-		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
-		return 1;
-end
-AskClientForString("checkcode", "", 1, 100, "Xin nhËp code");
+	if CalcFreeItemCellCount() < 10 then
+			Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
+			return 1;
+	end
+	AskClientForString("NhanCodeNhanQuaCheckCode", "", 1, 100, "Xin nhËp code");
 end
 tbitem  =
 	{
@@ -1024,8 +1033,8 @@ tbitem  =
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nBindState = -2},
 		[7]	={szName="Tóc S­¬ng",tbProp={0,10,2,9,0,0},nCount=1,nBindState = -2},
 	}
-function checkcode(strings)
-	if strings=="TIENDONG"then
+function NhanCodeNhanQuaCheckCode(stringCode)
+	if stringCode=="TIENDONG"then
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
@@ -1036,7 +1045,7 @@ function checkcode(strings)
 		Talk(1, "", "B¹n ®· nhËn råi mµ ");
 		return
 	end
-	if strings=="NAMCUNG"then	
+	if stringCode == SERVER_OPEN_CODE then	
 		
 		local nLevel = GetLevel()
 		ST_LevelUp(50 - nLevel)

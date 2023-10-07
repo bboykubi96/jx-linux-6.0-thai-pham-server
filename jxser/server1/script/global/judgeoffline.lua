@@ -1,7 +1,6 @@
---ÓÃ»§Ñ¡ÔñÀëÏßÍĞ¹ÜÊ±µÄ½Å±¾
---2004.11.24
+
 Include("\\script\\global\\baijuwanhead.lua");
-Include("\\script\\global\\judgeoffline_limit.lua");		-- 2006Äê10ÔÂ30ÈÕ¼ÓÈëÏŞÖÆÔÚËùÓĞ³ÇÊĞ³µ·òÅÔºÍÌìÍõ°ïÍĞ¹ÜµÄ½Å±¾  by peres
+Include("\\script\\global\\judgeoffline_limit.lua");	
 Include("\\script\\item\\ib\\zimudai.lua");
 Include("\\script\\lib\\player.lua")
 Include("\\script\\trip\\define.lua")
@@ -140,13 +139,12 @@ function judgecontion()
 			Talk(1, "", "<#>V× ng­¬i kh«ng ph¶i lµ tµi kho¶n n¹p thÎ, cho nªn kh«ng thÓ sö dông tİnh n¨ng rêi m¹ng ñy th¸c, xin h·y n¹p thÎ råi sau ®ã sö dông tİnh n¨ng nµy nhĞ.");
 			return
 		end;
-		--beginoffline();
-		--ÓÃ»§Ê£ÓàµÄÊ±¼ä
+		--beginoffline();		
 		Say("<#>Thêi gian cßn l¹i ñy th¸c kinh nghiÖm B¹ch CÇu Hoµn cña b¹n lµ<color=red>0<color>phót. Ng­¬i cã thÓ sö dông §¹i B¹ch CÇu Hoµn §Æc BiÖt hoÆc lµ §¹i B¹ch CÇu Hoµn ®Ó t¨ng thêi gian ñy th¸c cña m×nh. <enter>hoÆc lµ chän<color=yellow> ñy th¸c rêi m¹ng miÔn phİ<color>, c¸i nµy chØ cã thÓ nhËn ®­îc mét chót İt kinh nghiÖm.",
 			3,
 			--"ñy th¸c miÔn phİ/beginoffline",
 			--"Rêi m¹ng nhËn th­ëng/offlineaward",
-			"HiÖn t¹i tİnh n¨ng ®ang ®ãng/donothing");
+			"HiÖn t¹i tİnh n¨ng ®ang ®ãng/donothing",
 			"§Ó ta suy nghÜ l¹i/donothing");
 	end
 end

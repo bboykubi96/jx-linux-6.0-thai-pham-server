@@ -3,6 +3,7 @@
 SERVER_MODE  = "OPEN";--OPEN | TEST
 SERVER_OPEN_DATE = 20231007;--number Y m d
 SERVER_OPEN_HOUR = 2030;--number H M
+SERVER_OPEN_CODE = "VOLAM1";
 --------------------------------------
 DEF_PRODUCT_REGION_CN		= 0;	
 DEF_PRODUCT_REGION_CN_IB	= 1;
