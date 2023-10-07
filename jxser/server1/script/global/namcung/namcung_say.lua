@@ -39,7 +39,7 @@ function main()
 		--Talk(1, "", "<color=red>Hæ trî Test Server<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>")
 		str = "Chµo mõng c¸c b¹n ®· tham gia thÕ giíi <color=red>Vâ L©m TruyÒn Kú<color> ®­îc ph¸t triÓn bëi team <color=green>Vâ L©m 1<color> mäi chi tiÕt xin liªn hÖ <color=green>FanPage Vâ L©m 1 - Server Dµnh cho ng­êi viÖt t¹i H¶i Ngo¹i<color> ®Ó nhËn ®­îc sù hæ trî khi cÇn thiÕt."
 		AddGlobalCountNews(str, 2)
-		local szTitle = "<npc><color=red>M¸y Chñ - Thiªn Long<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>"
+		local szTitle = "<npc><color=red>NhËp Code T©n Thñ<color>.<enter><color=yellow>VOLAM1<color>"
 		local tbOpt =
 		{
 			--{"§¨ng ký quyÒn h¹n GM", dkgm},	
