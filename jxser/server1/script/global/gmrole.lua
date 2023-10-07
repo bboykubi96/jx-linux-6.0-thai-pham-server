@@ -103,7 +103,7 @@ function tbGmRole:GMC_Menu()
 		{"DÞch chuyÓn tøc thêi", g_AskClientStringEx, {"53,200,201", 0, 256, "Map,X,Y", {self.DenDD, {self}} }}, 
 		{"T×m vÞ trÝ nh©n vËt", g_AskClientStringEx, {GetName(), 0, 300, "Tªn nh©n vËt", {self.FindRole, {self}} }}, 
 		{"LÊy vËt phÈm", LayVatPham},
-		{"GM hiÖn th©n",DelSkill,{733}},
+		{"GM hiÖn th©n",DelSkill,{732}},
 		{"GM Èn th©n",AddSkill,{733}},		
 		--{"LÊy danh s¸ch Skills", g_AskClientStringEx, {"1200,1210", 0, 256, "ID Skill", {self.AddDSSkill, {self}} }}, 
 		--{"Xãa danh s¸ch Skills", g_AskClientStringEx, {"1,1500", 0, 256, "ID Skill", {self.DelDSSkill, {self}} }}, 

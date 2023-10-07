@@ -250,9 +250,9 @@ end
 	local szTitle ="<npc>VÞ nµy "..GetPlayerSex().." xem ra ®· b«n ba giang hå ®­îc mét thêi gian dµi råi nhØ, cã muèn tham gia kh¶o nghiÖm nhiÖm vô liªn tôc cña ta kh«ng?"
 	local tbOpt =
 	{		
-		{"§­îc th«i! Ta kh«ng tin cã nhiÖm vô nµo lµm khã dÔ ®­îc ta.",Task_Confirm},
-		{"Ta muèn biÕt kh¶o nghiÖm cña ng­¬i nãi cã néi dung ra sao.",Task_Info},
-		{"Ta bËn råi, kh«ng r¶nh ngåi t¸n gÉu víi «ng.",Task_Exit},
+		--{"§­îc th«i! Ta kh«ng tin cã nhiÖm vô nµo lµm khã dÔ ®­îc ta.",Task_Confirm},
+		--{"Ta muèn biÕt kh¶o nghiÖm cña ng­¬i nãi cã néi dung ra sao.",Task_Info},
+		{"§ang ®ua Top kh«ng cho lµm D· TÈu ®©u Cu µ",Task_Exit},
 	}
 	CreateNewSayEx(szTitle, tbOpt)
 end

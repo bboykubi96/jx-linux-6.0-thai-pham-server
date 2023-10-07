@@ -27,7 +27,8 @@ function main()
 local szTitle =  "<npc>Chµo mõng b¹n ®Õn víi thÕ giíi<color=red> Vâ L©m TruyÒn Kú <color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt ®· ®Õn víi <color=green>M¸y Chñ - Thiªn Long<color>...<enter>Bæn trang muèn mang ®Õn cho c¸c b¹n mét s©n ch¬i lµnh m¹nh vµ æn ®Þnh l©u dµi...!"
 		local tbOpt =
 	{
-		--{"NhËn lÔ bao T©n thñ", lebao},	
+		--{"NhËn lÔ bao T©n thñ", lebao},
+		{"NhËn l¹i kü n¨ng hæ trî t©n thñ", hotrotanthu},	
 		--{"NhËn th­ëng theo cÊp ®é", top10all},
 		--{"NhËn th­ìng tÝch luy giê choi Online",tichluy},
 		--{"Lµm nhiªm vô mçi ngµy", nhiemvu},
@@ -87,3 +88,17 @@ function nhiemvu()
 VLMC_main()		
 end	
 
+function hotrotanthu()
+	if GetLevel()<70 then
+		AddSkillState(531,10,1,60*60*18)	--Ng«i sao
+		AddSkillState(461,1, 1,60*60*18)
+
+		AddSkillState(512,20,1,60*60*18)
+		AddSkillState(527,5,1,60*60*18)
+		AddSkillState(313,5,1,60*60*18)  	--Vong duoi chan
+		AddSkillState(314,12,1,60*60*18)	 --Vong duoi chan
+		AddSkillState(546,1,1,60*60*18)		 --Rong bay
+		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 69");
+		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn th­ëng t©n thñ");
+	end
+end
