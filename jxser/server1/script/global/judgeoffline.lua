@@ -144,8 +144,9 @@ function judgecontion()
 		--ÓÃ»§Ê£ÓàµÄÊ±¼ä
 		Say("<#>Thêi gian cßn l¹i ñy th¸c kinh nghiÖm B¹ch CÇu Hoµn cña b¹n lµ<color=red>0<color>phót. Ng­¬i cã thÓ sö dông §¹i B¹ch CÇu Hoµn §Æc BiÖt hoÆc lµ §¹i B¹ch CÇu Hoµn ®Ó t¨ng thêi gian ñy th¸c cña m×nh. <enter>hoÆc lµ chän<color=yellow> ñy th¸c rêi m¹ng miÔn phİ<color>, c¸i nµy chØ cã thÓ nhËn ®­îc mét chót İt kinh nghiÖm.",
 			3,
-			"ñy th¸c miÔn phİ/beginoffline",
-			"Rêi m¹ng nhËn th­ëng/offlineaward",
+			--"ñy th¸c miÔn phİ/beginoffline",
+			--"Rêi m¹ng nhËn th­ëng/offlineaward",
+			"HiÖn t¹i tİnh n¨ng ®ang ®ãng/donothing");
 			"§Ó ta suy nghÜ l¹i/donothing");
 	end
 end
