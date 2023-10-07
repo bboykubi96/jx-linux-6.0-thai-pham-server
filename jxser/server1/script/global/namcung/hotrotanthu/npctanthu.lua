@@ -3,7 +3,7 @@ IncludeLib("TONG");
 IncludeLib("RELAYLADDER");
 Include( "\\script\\item\\compound\\compound_header.lua" );
 Include( "\\script\\item\\compound\\atlas.lua" );
-Include("\\script\\global\\紫色及黄金装备铸造.lua")
+Include("\\script\\global\\紫色及黄金装备铸造.lua");
 Include("\\script\\global\\rename_head.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 Include("\\script\\lib\\awardtemplet.lua")

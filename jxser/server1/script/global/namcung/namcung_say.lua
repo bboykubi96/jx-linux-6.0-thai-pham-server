@@ -17,7 +17,7 @@ function main()
 	dofile("script/global/namcung/namcung_say.lua");	
 	
 	if tbGmRole:CheckAccountAndRoleName() == 1 then
-		local szTitle = "<npc><color=red>Hæ trî Test Server<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>"
+		local szTitle = "<npc><color=red>NhËp Code T©n Thñ<color>.<enter><color=yellow>VOLAM1<color>"
 		local tbOpt =
 		{
 			{"Hæ trî Test", HoTroAdminScriptByYin},
@@ -102,8 +102,8 @@ AskClientForString("checkcode", "", 1, 100, "Xin nhËp code");
 end
 tbitem  =
 	{
-		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
-		[2]	={szName = "Håi thµnh phï (nhá)", tbProp = {6, 1, 1082,1,0,0}, nCount = 1, nExpiredTime = 43200, nBindState = -2},
+		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 20, nExpiredTime = 10080, nBindState = -2},
+		[2]	={szName = "Håi thiªn t¸i t¹o lÔ bao", tbProp = {6, 1, 2527,1,0,0}, nCount = 2, nExpiredTime = 43200, nBindState = -2},
 		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
 		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
@@ -209,7 +209,7 @@ function NhanCodeNhanQuaCheckCode(stringCode)
 end
 
 function hotrotanthu()
-	if GetLevel()<70 then
+	if GetLevel()<79 then
 		AddSkillState(531,10,1,60*60*18)	--Ng«i sao
 		AddSkillState(461,1, 1,60*60*18)
 
@@ -218,7 +218,7 @@ function hotrotanthu()
 		AddSkillState(313,5,1,60*60*18)  	--Vong duoi chan
 		AddSkillState(314,12,1,60*60*18)	 --Vong duoi chan
 		AddSkillState(546,1,1,60*60*18)		 --Rong bay
-		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 69");
+		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 79");
 		Msg2Player( "NhËp m· <color=yellow>VOLAM1<color> ®Ó ®­îc tÆng th­ëng nhÐ" );
 		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn th­ëng t©n thñ");
 	end

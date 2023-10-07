@@ -9,7 +9,7 @@ tbGmRole.tbAccount =
 {	
 	["thaipham1"] = 
 	{
-		"HoaSon01",
+		"GameMaster01",
 		"testthiennhan",
 		"ThaiPham02",
 	},
@@ -25,10 +25,6 @@ tbGmRole.tbAccount =
 		"ThaiPham01",
 		"ThaiPham02",
 	},
-	["1"] = 
-	{
-		"JXPÙCoin",
-	}
 	
 }
 --table config

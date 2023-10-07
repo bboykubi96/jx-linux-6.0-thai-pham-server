@@ -407,8 +407,8 @@ function main()
 	add_npc_tinhnang();	--Npc ADD them NamCung
 	add_npc_thai_pham();
 	add_spreadernpc(spreadernpc);		--加载游戏推广员
-	add_killertasknpc(addkillertasknpc);
-	add_alltollgatenpc();   			--THEM Boss SAT THU
+	--add_killertasknpc(addkillertasknpc);
+	--add_alltollgatenpc();   			--THEM Boss SAT THU
 	add_allpartnernpc();     			--THEM NPC Ban Dong Hanh partner_head.lua
 	add_zhongqiunpc();				--THEM NPC add_zhongqiunpc.lua
 	cd_addsignnpc()				--THEM NPC cd_addsignnpc.lua
