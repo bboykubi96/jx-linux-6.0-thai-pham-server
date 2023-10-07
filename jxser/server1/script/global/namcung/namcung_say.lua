@@ -19,8 +19,7 @@ function main()
 		local szTitle = "<npc><color=red>Hæ trî Test Server<color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>M¸y Chñ <color=yellow>-Thiªn Long<color>.<enter>Hoan nghªnh c¸c anh hïng hµo kiÖt... ! <enter><color=green>Phiªn B¶n Th©n Ph¸p<enter><color=yellow>C©n B»ng M«n Ph¸i<color>"
 		local tbOpt =
 		{
-			{"Hæ trî Test", HoTroAdminScriptByYin},
-			{"Hæ trî T©n Thñ", HoTroTanThuScriptByYin},
+			{"Hç trî Test", HoTroAdminScriptByYin},			
 			{"§æi tªn nh©n vËt", DoiTenNV},
 			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
 			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
@@ -43,7 +42,7 @@ function main()
 		{
 			--{"§¨ng ký quyÒn h¹n GM", dkgm},	
 			--{"Xem Danh ng­êi ch¬i ®ang Online", dkgm9},
-			{"Hæ trî Test", HoTroAdminScriptByYin},
+			{"Hç trî Test", HoTroAdminScriptByYin},
 			{"§æi tªn nh©n vËt", DoiTenNV},
 			--{"Gäi b¹n ®ång hµnh", partner_getdust1},
 			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
@@ -143,6 +142,8 @@ function hotrotanthu()
 		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 50");
 		Msg2Player( "NhËp m· <color=yellow>NAMCUNG<color> ®Ó ®­îc tÆng th­ëng nhÐ" );
 		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn th­ëng t©n thñ");
+	else
+		Talk(1, "", "B¹n ®· v­ît qu¸ cÊp 50, kh«ng thÓ nhËn hç trî nµy");
 	end
 end
 
