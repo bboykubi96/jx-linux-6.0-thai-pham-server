@@ -1,15 +1,23 @@
---Á½ºşÇø °ÍÁêÏØ±±ÃÅ Õ½¶·×´Ì¬ÇĞ»»Trap
-
+Include("\\script\\global\\systemconfig.lua");
 function main(sel)
 
-if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÄÚ
-	SetPos(1631, 3096)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÍâ	
-	SetFightState(1)		-- ×ª»»ÎªÕ½¶·×´Ì¬
-else			       		-- Íæ¼Ò´¦ÓÚÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÍâ
-	SetPos(1628, 3100)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÄÚ	
-	SetFightState(0)		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
-end;
-	AddStation(10)			-- ¼ÇÂ¼½ÇÉ«Ôø¾­µ½¹ı°ÍÁêÏØ
-	SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
-end;
+	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
+	local nCurDate = tonumber(date("%Y%m%d"));--20231007
+	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
+	if(isServerOpen == 0) then 		
+		Talk(1, "","Th«ng b¸o: Ch­a tíi giê khai më m¸y chñ, §¹i hiÖp kh«ng thÓ ra ngoµi!");
+		SetPos(1620, 3187);	
+		return
+	end
+
+	if ( GetFightState() == 0 ) then	
+		SetPos(1631, 3096);	
+		SetFightState(1);	
+	else			       		
+		SetPos(1628, 3100);	
+		SetFightState(0);
+	end;
+	AddStation(10);	
+	SetProtectTime(18*3);
+	AddSkillState(963, 1, 0, 18*3); 
+end
