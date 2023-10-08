@@ -10,7 +10,7 @@ Include("\\script\\global\\namcung\\hotrogm.lua")
 Include("\\script\\global\\namcung\\xephang\\top10_all.lua");
 Include("\\script\\task\\partner\\education\\swordking_people.lua");
 Include("\\script\\global\\namcung\\hotrotanthu\\doiraclayvk.lua");
-Include("\\script\\global\\systemconfig.lua");
+
 
 
 function main()
@@ -85,15 +85,8 @@ function HoTroTanThuScriptByYin()
 	Msg2Player( "Xin chµo ®¹i hiÖp, chóng t«i sÏ sím hç tr" );
 end
 --HAM NHAP GIFT CODE
-function NhanCodeNhanQua()
-	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
-	local nCurDate = tonumber(date("%Y%m%d"));--20231007
-	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
-	if(isServerOpen == 0) then 		
-		Talk(1,"", "Th«ng b¸o: Ch­a tíi giê khai më m¸y chñ, §¹i hiÖp kh«ng thÓ nhËn quµ!");			
-		return
-	end
 
+function NhanCodeNhanQua()
 	if CalcFreeItemCellCount() < 10 then
 			Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
 			return 1;
@@ -110,7 +103,7 @@ tbitem  =
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nBindState = -2},
 		[7]	={szName="Tóc S­¬ng",tbProp={0,10,2,9,0,0},nCount=1,nBindState = -2},
 	}
-function NhanCodeNhanQuaCheckCode(stringCode)
+function checkcode(stringCode)
 	if strings=="TIENDONG"then
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
@@ -122,7 +115,7 @@ function NhanCodeNhanQuaCheckCode(stringCode)
 		Talk(1, "", "B¹n ®· nhËn råi mµ ");
 		return
 	end
-	if stringCode == SERVER_OPEN_CODE then
+	if strings=="VOLAM1"then
 
 		AddLeadExp(1000000000)
 		AddRepute(450)
