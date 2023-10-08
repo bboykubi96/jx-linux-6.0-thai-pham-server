@@ -210,14 +210,14 @@ end
 
 function hotrotanthu()
 	if GetLevel()<79 then
-		AddSkillState(531,10,1,60*60*18)	--Ng´i sao
-		AddSkillState(461,1, 1,60*60*18)
-
-		AddSkillState(512,20,1,60*60*18)
-		AddSkillState(527,20,1,60*60*18)
-		AddSkillState(313,20,1,60*60*18)  	--Vong duoi chan
-		AddSkillState(314,12,1,60*60*18)	 --Vong duoi chan
-		AddSkillState(546,1,1,60*60*18)		 --Rong bay
+		AddSkillState(531,10,1,1*60*24)	--Ng´i sao
+		AddSkillState(461,1, 1,1*60*24)
+		AddSkillState(314,50,1,1*60*24)
+		AddSkillState(512,20,1,1*60*24)
+		AddSkillState(527,5,1,1*60*24)
+		AddSkillState(313,5,1,1*60*24)  	--Vong duoi chan
+		AddSkillState(314,50,1,1*60*24)	 --Vong duoi chan
+		AddSkillState(546,1,1,1*60*24)		 --Rong bay
 		Talk(1, "", "Bπn sœ Æ≠Óc nhÀn hÊ trÓ k¸ n®ng nµy Æ’n c p 79");
 		Msg2Player( "NhÀp m∑ <color=yellow>VOLAM1<color> Æ” Æ≠Óc t∆ng th≠Îng nh–" );
 		tbAwardTemplet:GiveAwardByList(tbItem, "Ph«n th≠Îng t©n thÒ");
