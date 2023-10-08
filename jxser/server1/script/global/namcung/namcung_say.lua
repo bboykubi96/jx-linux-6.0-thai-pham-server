@@ -103,20 +103,21 @@ end
 tbitem  =
 	{
 		[1]	={szName = "Tiªn th¶o lé", tbProp = {6, 1, 71, 1,0,0}, nCount = 20, nExpiredTime = 10080, nBindState = -2},
-		[2]	={szName = "Håi thiªn t¸i t¹o lÔ bao", tbProp = {6, 1, 2527,1,0,0}, nCount = 2, nExpiredTime = 43200, nBindState = -2},
+		[2]	={szName = "Håi thµnh phï (nhá)", tbProp = {6, 1, 1082,1,0,0}, nCount = 1, nExpiredTime = 43200, nBindState = -2},
 		[3]	={szName = "Tiªn Th¶o Lé (§Æc BiÖt)", tbProp = {6, 1, 1181,1,0,0}, nCount = 5, nExpiredTime = 10080, nBindState = -2},
-		[4]	={szName = "M¶nh b¶n ®å s¬n hµ x· t¾c (1000 m¶nh)", tbProp = {6, 1, 2514,1,0,0}, nCount = 1, nExpiredTime = 10080, nBindState = -2},
+		[4]	={szName = "Håi thiªn t¸i t¹o lÔ bao", tbProp = {6, 1, 2527,1,0,0}, nCount = 2, nExpiredTime = 43200, nBindState = -2},
 		[5]	={szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nExpiredTime=43200,nBindState = -2},
 		[6]	={szName="T©n Thñ LÖnh",tbProp={6,1,4265,1,0,0},nCount=1,nBindState = -2},
 		[7]	={szName="Tóc S­¬ng",tbProp={0,10,2,9,0,0},nCount=1,nBindState = -2},
 	}
 	function NhanCodeNhanQuaCheckCode(stringCode)
-	if stringsCode=="TIENDONG"then
+	if stringsCode=="THODIAPHU"then
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
 		--AddStackItem(100,4,417,1,1,0,0,0)
+		SetItemBindState(AddItem(6,1,1082,1,0,0), -2)
 	end
 	if GetTask(3000)==1 then
 		Talk(1, "", "B¹n ®· nhËn råi mµ ");
@@ -210,14 +211,14 @@ end
 
 function hotrotanthu()
 	if GetLevel()<79 then
-		AddSkillState(531,10,1,1*60*24)	--Ng«i sao
-		AddSkillState(461,1, 1,1*60*24)
-		AddSkillState(314,50,1,1*60*24)
-		AddSkillState(512,20,1,1*60*24)
-		AddSkillState(527,5,1,1*60*24)
-		AddSkillState(313,5,1,1*60*24)  	--Vong duoi chan
-		AddSkillState(314,50,1,1*60*24)	 --Vong duoi chan
-		AddSkillState(546,1,1,1*60*24)		 --Rong bay
+		AddSkillState(531,10,1,60*60*24)	--Ng«i sao
+		AddSkillState(461,1, 1,60*60*24)
+		AddSkillState(314,50,1,60*60*24)
+		AddSkillState(512,20,1,60*60*24)
+		AddSkillState(527,5,1,60*60*24)
+		AddSkillState(313,5,1,60*60*24)  	--Vong duoi chan
+		AddSkillState(314,50,1,60*60*24)	 --Vong duoi chan
+		AddSkillState(546,1,1,60*60*24)		 --Rong bay
 		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 79");
 		Msg2Player( "NhËp m· <color=yellow>VOLAM1<color> ®Ó ®­îc tÆng th­ëng nhÐ" );
 		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn th­ëng t©n thñ");
