@@ -1129,3 +1129,4 @@ function NhanCodeNhanQuaCheckCode(stringCode)
 		Talk(1, "", "Code sai");
 	end
 end
+

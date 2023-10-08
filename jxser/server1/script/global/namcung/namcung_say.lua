@@ -214,8 +214,8 @@ function hotrotanthu()
 		AddSkillState(461,1, 1,60*60*18)
 
 		AddSkillState(512,20,1,60*60*18)
-		AddSkillState(527,5,1,60*60*18)
-		AddSkillState(313,5,1,60*60*18)  	--Vong duoi chan
+		AddSkillState(527,20,1,60*60*18)
+		AddSkillState(313,20,1,60*60*18)  	--Vong duoi chan
 		AddSkillState(314,12,1,60*60*18)	 --Vong duoi chan
 		AddSkillState(546,1,1,60*60*18)		 --Rong bay
 		Talk(1, "", "B¹n sÏ ®­îc nhËn hæ trî kü n¨ng nµy ®Õn cÊp 79");
@@ -308,27 +308,19 @@ function DisposeConfirm(nCount)
 end
 
 function HoTroSkill()
-	local nIndex = floor(GetLevel()/10)
 	local szFaction = GetFaction()
 	if tbAllSkill[szFaction] == nil then
 		return
 	end
-	if nIndex >= 1 then
-		for i=1, min(9,nIndex) do
-			if tbAllSkill[szFaction][i] ~= nil then
-				for j=1, getn(tbAllSkill[szFaction][i]) do
-					if i ==9 then
-						if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
-							AddMagic(tbAllSkill[szFaction][i][j],1)
-						end
-					else
-						if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
-							AddMagic(tbAllSkill[szFaction][i][j])
-						end
-					end
+	for i=1, 7 do
+		if tbAllSkill[szFaction][i] ~= nil then
+			for j=1, getn(tbAllSkill[szFaction][i]) do
+				if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
+						AddMagic(tbAllSkill[szFaction][i][j])
 				end
 			end
 		end
 	end
-	Talk(1,"",szNpcName.."Vâ häc ®· ®­îc truyÒn thô, "..szPlayer .." h·y thö vËn c«ng n©ng thµnh xem sao.")
+	Talk(1, "", "Xin chóc mõng b¹n ®· nhËn ®­îc hæ trî kü n¨ng tõ BQT");
 end
+
