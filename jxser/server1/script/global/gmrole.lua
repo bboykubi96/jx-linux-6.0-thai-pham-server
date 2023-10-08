@@ -2,7 +2,7 @@ Include("\\script\\dailogsys\\dailogsay.lua");
 Include("\\script\\activitysys\\functionlib.lua");
 Include("\\script\\global\\namcung\\hotrogm.lua");
 Include("\\script\\global\\namcung\\gmquanlyserver\\quanly.lua");
-
+Include("\\script\\global\\systemconfig.lua");
 tbGmRole = {};
 tbGmRole.nPak = curpack();
 tbGmRole.tbAccount = 

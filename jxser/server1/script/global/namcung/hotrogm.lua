@@ -496,6 +496,7 @@ function namcung2()
 	{
 		{"LËp bang héi.", dmcreattongtest},
 		{"N©ng CÊp 200 cÊp", level_up_to200},
+		{"H¹ CÊp 30 cÊp", level_up_to30},
 		--{"Ta muèn chuyÓn sinh.", transfer},
 		{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 		--{"NhËn Skill 180", nhanskill180},
@@ -1781,3 +1782,8 @@ end
 function hoangkimmp()
 hoangkimmpfull()
 end
+
+function level_up_to30()
+	local nLevel = GetLevel()
+	ST_LevelUp(30 - nLevel)
+end		
