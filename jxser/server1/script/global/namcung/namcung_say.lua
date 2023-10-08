@@ -49,6 +49,7 @@ function main()
 			{"NhËp code nhËn quµ", NhanCodeNhanQua},
 			{"NhËn kü n¨ng hæ trî t©n thñ.", hotrotanthu},
 			{"Ta muèn häc vâ c«ng", HoTroSkill},
+			--{"NH?N bÝ kÝp 9x", HoTroBiKip90},
 			---{"Gia nhËp ph¸i Hoa S¬n", dkgm3},
 			--{"Hñy trang bÞ khãa", deltem},
 			{"§æi tªn nh©n vËt", DoiTenNV},
@@ -313,7 +314,7 @@ function HoTroSkill()
 	if tbAllSkill[szFaction] == nil then
 		return
 	end
-	for i=1, 7 do
+	for i=1, 9 do
 		if tbAllSkill[szFaction][i] ~= nil then
 			for j=1, getn(tbAllSkill[szFaction][i]) do
 				if HaveMagic(tbAllSkill[szFaction][i][j]) == -1 then
@@ -325,3 +326,16 @@ function HoTroSkill()
 	Talk(1, "", "Xin chóc mõng b¹n ®· nhËn ®­îc hæ trî kü n¨ng tõ BQT");
 end
 
+function HoTroBiKip90()
+	local nFact = GetLastFactionNumber()
+	if nFact == nil or nFact < 0 or  nFact > 9 then
+		return
+	end
+	local szFaction = GetFaction()
+	if tbSkillBook90[szFaction] == nil then
+		return
+	end
+	for i=1, getn(tbSkillBook90[szFaction]) do
+		AddItem(6,1,tbSkillBook90[szFaction][i],1,0,0)
+	end
+end	
