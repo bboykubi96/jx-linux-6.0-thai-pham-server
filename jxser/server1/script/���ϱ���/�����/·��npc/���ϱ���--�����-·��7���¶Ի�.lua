@@ -1,10 +1,10 @@
-----Î÷ÄÏ±±Çø ½­½ò´å Â·ÈË7¹ùÓÂ¶Ô»°
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  t©y nam b¾c khu giang t©n th«n ng­êi ®i ®­êng 7 qu¸ch dòng ®èi tho¹i 
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main(sel)
-if allbrother_0801_CheckIsDialog(196) == 1 then
-		allbrother_0801_FindNpcTaskDialog(196)
-		return 0;
-	end
-Say("ThËt t×nh ta rÊt thİch Hång Mai nh­ng l¹i ng¹i ngïng kh«ng d¸m ngá lêi. NÕu Hång Mai hiÓu ®­îc lßng ta th× thËt diÔm phóc cho ta! Chñ tiÖm t¹p hãa ë bê s«ng cã ®å trang søc quı míi nhËp vÒ. Chi b»ng ta mua cho Hång Mai 1 chiÕc tr©m cµi tãc. C« Êy nhÊt ®Şnh sÏ rÊt thİch!",0)
+function main(sel) 
+if allbrother_0801_CheckIsDialog(196) == 1 then 
+allbrother_0801_FindNpcTaskDialog(196) 
+return 0; 
+end 
+Say("Qu¸ch dòng # thËt ra th× ta vÉn lu«n rÊt thİch hång mai , ch¼ng qua lµ ng­îng ngïng më miÖng , nÕu nh­ nµng cã thÓ hiÓu t©m ı cña ta nªn cã nhiÒu h¶o ®©y …… bê s«ng ®İch tiÖm t¹p hãa l·o b¶n kia mµ cã t©n tiÕn ®İch ®Çu søc , kh«ng b»ng cho hång mai mua mét tr©m cµi tãc , nµng nhÊt ®Şnh sÏ thİch . ",0) 
 
-end;
+end; 

@@ -1,6 +1,6 @@
--- Î÷É½´å ±ß³ÇÀË×Ó ¶Ô»°½Å±¾
--- ÀîÐÀ 2005-01-26
+-- script viet hoa By http://tranhba.com  t©y s¬n th«n bªn thµnh l·ng tö ®èi tho¹i ch©n vèn 
+-- script viet hoa By http://tranhba.com  lý h©n 2005-01-26 
 
-function main()
-	Talk(1,"","L·ng tö ®éc hµnh, nam, ®éc th©n.<enter>Vò khÝ chuyªn dïng: Binh khÝ ®éc m«n, dµi mét th­íc t¸m ph©n, réng 6 ph©n 6, th©n thÕ ch­a râ….")
-end;
+function main() 
+Talk(1,"","§éc hµnh l·ng tö , nam , ®éc th©n .<enter> chuyªn dông vò khÝ : ®éc m«n binh khÝ , tr­êng mét th­íc ba ph©n , chiÒu réng 6 ph©n 6, th©n thÕ kh«ng râ .") 
+end; 

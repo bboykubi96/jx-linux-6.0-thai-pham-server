@@ -19,9 +19,18 @@ allbrother_0801_tbLingPai =
 		{szName="ThÊt Tinh LÖnh", tbProp={6, 1, 1650, 1, 0, 0}, },
 	}
 
+	Include("\\script\\global\\g7vn\\g7configall.lua")
+	
 function allbrother_0801_main()
 	local nDate = tonumber(GetLocalDate("%y%m%d"))
 	
+	--dofile("script/event/springfestival08/allbrother/event.lua")
+	--dofile("script/global/g7vn/g7allconfig.lua")
+
+	if nhiemvutuhai == 0 then
+		Say("Tø h¶i giai huynh ®Ö t¹m thêi ch­a më")
+		return 0;
+	end
 	
 	if allbrother_0801_IsAct() ~= 1 then
 		Say(format("Xin lçi, <color=yellow>%s<color> ho¹t ®éng ®· kÕt thóc, ®a t¹ ®· tham gia ho¹t ®éng.",allbrother_0801_szActName), 0)

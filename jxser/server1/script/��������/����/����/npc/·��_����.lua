@@ -1,23 +1,23 @@
--- ¶ıº£ Â·ÈËNPC ´¬¼Ò£¨´äÑÌÃÅ30¼¶ÈÎÎñ£©
--- by£ºDan_Deng(2003-07-26)
+-- script viet hoa By http://tranhba.com  nhŞ h¶i ng­êi ®i ®­êng NPC thuyÒn nhµ # thóy khãi cöa 30 cÊp nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-26) 
 
-function main()
-	UTask_cy = GetTask(6)
-	if ((UTask_cy == 30*256+40) and (HaveItem(2) == 0)) then		--30¼¶ÈÎÎñ½øĞĞÖĞ
-		Talk(5,"L30_pay","H«m nay thËt lµ béi thu, ®¸nh b¾t ®­îc nhiÒu t«m c¸ qu¸! ","Ng­êi cã c¸ Ng©n TuyÕt kh«ng?","C¸ Ng©n TuyÕt? H«m nay ta b¾t ®­îc mÊy con.","Ng­êi cã thÓ b¸n cho ta mét İt ®­îc kh«ng?","Ng­¬i cÇn th× ta sÏ b¸n cho mét İt, nhiªu ®©y tİnh cho ng­¬i 1000 l­îng th«i.")
-	else
-		Talk(1,"","ThuyÒn Gia: §Ëp n­íc §¹i Lı uèn quanh, anh em ng¨n s«ng c¸ch nói, nói s«ng mu«n trïng xa c¸ch, muèn gÆp còng kh«ng thÓ gÆp ®­îc.")
---		Talk(1,"","´¬¼Ò£º³öº£²¶ÓãÄÇ¸ö°Ñ´¬º½°¡£¬·áÊÕ¹éÀ´ÄÇ¸ö°Ñ¼Ò·µ°¡£¡")
-	end
-end;
+function main() 
+UTask_cy = GetTask(6) 
+	if ((UTask_cy == 30*256+40) and (HaveItem(2) == 0)) then		-- script viet hoa By http://tranhba.com 30¼¶ÈÎÎñ½øĞĞÖĞ
+Talk(5,"L30_pay","H«m nay c¸ thËt ®óng lµ ®¹i phong thu a , bé liÔu mét m·n th­¬ng ®İch c¸ t«m ","Ngµi cã ng©n tuyÕt c¸ sao ?","Ng©n tuyÕt c¸ ? ta h«m nay ng­îc l¹i bé ®Õn mÊy c¸i .","Ngµi cã thÓ b¸n cho mét İt ta sao ?","NÕu ng­¬i muèn , vËy th× b¸n ng­¬i mét İt ®i . nh¹ , nh÷ng thø nµy coi nh­ ng­¬i 1000 l­îng b¹c tèt l¾m .") 
+else 
+Talk(1,"","ThuyÒn nhµ : §¹i Lı ®İch n­íc cong ®Şa ch¶y xu«i , c¸c huynh ®Ö c¸ch s¬n c¸ch n­íc , s¬n thñy v¹n nÆng , muèn gÆp còng khã .") 
+-- script viet hoa By http://tranhba.com  Talk(1,"","ThuyÒn nhµ # ra biÓn bé c¸ c¸i ®ã ®em thuyÒn hµng a , phong thu trë vÒ c¸i ®ã ®em nhµ ph¶n a #") 
+end 
+end; 
 
-function L30_pay()
-	if (GetCash() >= 1000) then
-		Pay(1000)
-		AddEventItem(2)
-		AddNote("Mua ®­îc c¸ Ng©n TuyÕt ")
-		Msg2Player("Mua ®­îc c¸ Ng©n TuyÕt cña thuyÒn gia ë NhÜ H¶i ")
-	else
-		Talk(1,"","Kh«ng cã tiÒn? VËy sao ®­îc chø?")
-	end
-end;
+function L30_pay() 
+if (GetCash() >= 1000) then 
+Pay(1000) 
+AddEventItem(2) 
+AddNote("Mua ®­îc ng©n tuyÕt c¸ ") 
+Msg2Player(" ë nhŞ h¶i thuyÒn nhµ chç mua ®­îc ng©n tuyÕt c¸ ") 
+else 
+Talk(1,"","Kh«ng cã tiÒn , vËy lµm sao mua ") 
+end 
+end; 

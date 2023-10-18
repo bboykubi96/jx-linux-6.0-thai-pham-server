@@ -1,19 +1,13 @@
---description: ÖĞÔ­ÄÏÇø ·üÅ£É½¶« Îäµ±ÅÉ³öÊ¦ÈÎÎñÖìÉ°
---author: yuanlan	
---date: 2003/5/26
+-- script viet hoa By http://tranhba.com description: Trung Nguyªn nam khu phôc bß S¬n §«ng ph¸i Vâ §­¬ng xuÊt s­ nhiÖm vô mùc ®á 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/5/26 
 
 
-function main()
+function main() 
 
-SetPropState();
-AddEventItem(137);
-Msg2Player("H¸i ®­îc Chu Sa  ");
-AddNote("T×m ®­îc Chu Sa  ë phİa §«ng Phôc Ng­u s¬n ")
+SetPropState(); 
+AddEventItem(137); 
+Msg2Player("H¸i ®­îc mùc ®á "); 
+AddNote(" ë phôc bß S¬n §«ng t×m ®­îc mùc ®á ") 
 
-end;
-	   	
-
-
-
-
-
+end; 

@@ -1,8 +1,7 @@
---ÖĞÔ­±±Çø ½ğ±ø´óÓª Ê¿±ø8¶Ô»°
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu qu©n Kim ®¹i doanh binh lİnh 8 ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("ThÕ giíi t­¬i ®Ñp ph­¬ng Nam, ch¼ng mÊy chèc còng r¬i vµo tay ng­êi Kim chóng ta th«i, hahaha!!",0)
+Say("Binh lİnh # nam ph­¬ng ®İch hoa hoa thÕ giíi , rÊt nhanh chİnh lµ chóng ta ®¹i kim quèc ®İch liÔu # c¸p c¸p c¸p c¸p #",0) 
 
-end;
-
+end; 

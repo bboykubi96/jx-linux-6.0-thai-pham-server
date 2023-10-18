@@ -1,4 +1,4 @@
---孟苍浪(583)，生于每天22：31，在204,1626,3379
+
 function main()
 	mapindex = SubWorldID2Idx(204)
 	if (mapindex < 0 ) then

@@ -1,23 +1,36 @@
-Include("\\script\\global\\systemconfig.lua");
-function main(sel)
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn T©y M«n tr¹ng th¸i chiÕn ®Êu thiÕt ®æi Trap 
 
-	local isServerOpen = IsServerOpen();-- ("\\script\\global\\systemconfig.lua");
-	local nCurDate = tonumber(date("%Y%m%d"));--20231007
-	local nCurTime = tonumber(GetLocalDate("%H%M"));--2030
-	if(isServerOpen == 0) then 		
-		Talk(1, "", "Th«ng b¸o: Ch­a tíi giê khai më m¸y chñ, §¹i hiÖp kh«ng thÓ ra ngoµi!");
-		SetPos(1620, 3187);	
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
+function main(sel) 
+
+	--dofile("script/global/g7vn/g7configall.lua")
+	local nDate = tonumber(date("%Y%m%d%H%M"))
+	if nDate <= ThoiGianHetHanDiemTP then
+		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chÝnh thøc khai më m¸y chñ");
+		SetPos(1542, 3116)
+		return 1
+	end
+	if check_faction()==1 then
+		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		SetPos(1542, 3116)
+		return 1
+	end;
+if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë trong thµnh 
+SetPos(1539, 3112) -- script viet hoa By http://tranhba.com  thiÕt trÝ ®i ra Trap ®iÓm , môc ®Ých ®iÓm ë ngoµi thµnh 
+SetFightState(1) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 
+else -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu tr¹ng th¸i chiÕn ®Êu , tøc ë ngoµi thµnh 
+SetPos(1542, 3116) -- script viet hoa By http://tranhba.com  thiÕt trÝ ®i ra Trap ®iÓm , môc ®Ých ®iÓm ë trong thµnh 
+SetFightState(0) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+end; 
+AddStation(10) -- script viet hoa By http://tranhba.com  ghi chÐp vai trß ®· tõng ®· ®Õn ba l¨ng huyÒn 
+SetProtectTime(18*3) -- script viet hoa By http://tranhba.com  ba gi©y b¶o vÖ thêi gian 
+AddSkillState(963, 1, 0, 18*3) 
+end;
+function check_faction()
+	local szCurFaction = GetFaction()
+	if szCurFaction ~= nil and szCurFaction ~= "" then
 		return
 	end
-
-	if ( GetFightState() == 0 ) then
-		SetPos(1539, 3112);		
-		SetFightState(1);		
-	else			       		
-		SetPos(1542, 3116);		
-		SetFightState(0);	
-	end;
-		AddStation(10);			
-		SetProtectTime(18*3);
-		AddSkillState(963, 1, 0, 18*3); 
-end;
+	return 1
+end

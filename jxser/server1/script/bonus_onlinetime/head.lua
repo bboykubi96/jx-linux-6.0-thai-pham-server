@@ -1,13 +1,13 @@
 Include("\\script\\lib\\awardtemplet.lua")
 
 --Start_Date = 20090623;
-BNCQ_End_Date = 20200220;	--½áÊø»î¶¯
+BNCQ_End_Date = 20110220;	--ket thuc ho¹t dong
 BNCQ_Start_Date = 20110127;
 BNCQ_OneDayTime = 60 * 24;
---BNCQ_OnlineAwardItem = "°ÙÄêÖì¹û"
+--BNCQ_OnlineAwardItem = "B¸ch niªn chu qu¶"
 
 
---tinhpn 20100724: °ÙÄêÖì¹û
+--tinhpn 20100724: Bach Nien Chu Qua
 BNCQ_TASKID_START_SERVERONLINE_TIME = 2778
 BNCQ_TASKID_GET_TIMES = 2779
 BNCQ_TASKID_ONLINE_TIME = 2780
@@ -17,7 +17,7 @@ BNCQ_TASKID_DAILY = 2781
 BNCQ_TASKID_BNCQ_USE_TIMES = 2782
 
 
-function OnlineAward_StartDate() --¼ì²é»î¶¯Ê±¼ä£¬ÔÚÏßÁì½±
+function OnlineAward_StartDate() --kiem tra thoi gian dien ra hoat dong online nhan thuong
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d"))
 	if (nCurDate >= BNCQ_Start_Date and nCurDate < BNCQ_End_Date) then
 		return 1

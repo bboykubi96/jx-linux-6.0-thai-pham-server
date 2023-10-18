@@ -1,8 +1,24 @@
+
+-- ====================== ÎÄ¼şĞÅÏ¢ ======================
+
+-- ½£ÏÀÇéÔµonline ÈÎÎñÏµÍ³¹¤¾ß½Å±¾
 -- Edited by peres
 -- 2005/07/29 PM 12:30
 
+-- ÑÌ»¨¡£ÄÇÒ»Ò¹µÄÑÌ»¨¡£
+-- Ëı¼ÇµÃËûÔÚ´óÓêµÄÈËÈºÖĞ£¬Õ¾ÔÚËıµÄ±³ºóÓµ±§×¡Ëı¡£
+-- ËûÎÂÅ¯µÄÆ¤·ô£¬ËûÊìÏ¤µÄÎ¶µÀ¡£ÑÌ»¨ÕÕÁÁËıµÄÑÛ¾¦¡£
+-- Ò»ÇĞÎŞ¿ÉÍì»Ø¡­¡­
+
+-- ======================================================
+
+-- Í¬°éÏµÍ³µÄÖ§³Ö
 IncludeLib("PARTNER");
+
+-- ÈÎÎñÏµÍ³¿âÖ§³Ö
 IncludeLib("TASKSYS");
+
+-- ¶ÁÈëÈÎÎñÏµÍ³Í·ÎÄ¼ş£¬°üº¬Ëæ»úÈÎÎñ
 Include("\\script\\task\\system\\task_main.lua");
 
 strTitle        = "<color=green>CÈm nang nhiÖm vô<color>:";
@@ -10,6 +26,7 @@ strTitle_Normal = strTitle.."B¹n muèn xem nhiÖm vô nµo?<enter>"
 strTitle_None   = strTitle.."B¹n hiÖn ch­a lµm nhiÖm vô nµo.";
 strPublic       = "<color=green>CÈm nang nhiÖm vô<color>:"
 
+-- ½« main() ¸Ä³É main_back ¼´¿É½«Õû¸ö¹¤¾ß½ûÓÃ
 function main_back()
 
 Say(strTitle.."B¹n muèn lµm nhiÖm vô nµo trong cÈm nang nhiÖm vô nµy kh«ng?",7,
@@ -25,6 +42,7 @@ return 1;
 
 end;
 
+-- Íæ¼ÒÑ¡Ôñ²é¿´ÊÂ¼ş£¬ÔÚÏÂÃæÁĞ³öËùÓĞÕıÔÚ½øĞĞµÄÊÂ¼ş¹©Íæ¼ÒÑ¡Ôñ
 function ShowEventMain()
 
 local i=0;
@@ -72,9 +90,11 @@ local i=0;
 
 end;
 
+
+-- Ã¶¾Ù³öµ±Ç°ÕıÔÚ½øĞĞµÄÊÂ¼ş
 function EnumEventList()
 
-local aryTask  = EnumTaskList();
+local aryTask  = EnumTaskList(); -- È¡µÃµ±Ç°ÕıÔÚ½øÕ¹µÄÈÎÎñ
 local aryEvent = {}
 local i=0;
 
@@ -90,6 +110,8 @@ local i=0;
 
 end;
 
+
+-- Ã¶¾Ù³öÒ»ÊÂ¼şËù°üº¬µÄÈÎÎñ£¬·µ»ØÒ»¸öÊı×é
 function EnumEventTask(nEventID)
 
 local aryTask = {};
@@ -114,12 +136,17 @@ local i=0;
 
 end;
 
+
+-- Ñ¡ÔñÊÖ¶¯¿ªÊ¼Ò»¸öÈÎÎñ
 function MenuStartTask()
 	AskClientForString("_StartTask", "", 1, 20, "NhËp sè thø tù hoÆc tªn nhiÖm vô:");
 end;
 
+
+-- »Øµ÷º¯Êı£¬ÊÖ¶¯¿ªÊ¼Ò»¸öĞÂÈÎÎñ
 function _StartTask(taskName)
 
+-- Èç¹ûÊÇÊı×ÖÔò°ÑËü±ä³ÉÈÎÎñÃû³Æ
 if tonumber(taskName)~=nil then
 	taskName = TaskName(taskName);
 end;
@@ -130,9 +157,11 @@ end;
 	
 end;
 
+
+-- Ëæ»úÑ¡ÔñÒ»¸öÍ¬°éËæ»úÈÎÎñ
 function MenuGetRandomTask()
 
-local partnerindex,partnerstate = PARTNER_GetCurPartner()
+local partnerindex,partnerstate = PARTNER_GetCurPartner()       -- »ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 local nResult = 0;
 
 	if partnerindex==0 or partnerstate==0 then
@@ -148,6 +177,8 @@ local nResult = 0;
 
 end;
 
+
+-- »Øµ÷º¯Êı£¬Çå¿ÕÒ»¸öÊÂ¼şËùÓĞÈÎÎñµÄ×´Ì¬£¬°üÀ¨ÁÙÊ±±äÁ¿
 function _ClearnTaskState(nEventID)
 
 local aryTask = EnumEventTask(nEventID);
@@ -164,22 +195,34 @@ if aryTask==nil then return end;
 
 end;
 
+
+
+-- µÃµ½Ò»¸öÈÎÎñËùĞèÒªµÄËùÓĞÎïÆ·
 function MenuGetTaskItem()
 	AskClientForString("_GetTaskItem", "", 1, 20, "Xin h·y nhËp mËt khÈu:");
 end;
 
+
+-- »Øµ÷º¯Êı£ºµÃµ½Ò»¸öÈÎÎñËùĞèÒªµÄËùÓĞÎïÆ·
 function _GetTaskItem(taskID, nIndex)
 
 local taskName = TaskName(taskID);
-	if tonumber(taskID)==9999 then taskName=TaskName(GetTask(1301)); 
-end;
 
+	-- Èç¹û´«ÈëµÄÊÇÌØÊâ×Ö·û 9999 µÄ»°ÔòÖ±½ÓÈ¡Ëæ»úÈÎÎñµ±Ç°µÄ
+	if tonumber(taskID)==9999 then taskName=TaskName(GetTask(1301)); end;
+
+-- ¼ì²é´ËÈÎÎñÊÇÕÒ»Æ½ğ×°±¸»¹ÊÇÕÒÆÕÍ¨ÎïÆ·
 local checkType = GetTaskCollectType(taskName);
+
+-- ÈÎÎñĞèÒªÑ°ÕÒµÄÎïÆ·ÁĞ±í
 local aryOrgCollect = {};
 
+-- ÈÎÎñËùÒªµÄÎïÆ·±àºÅ
 local w_Genre, w_Detail, w_Particular, w_Level, w_GoodsFive, w_GoodsNum, w_DelGoods, w_Quality = 0,0,0,0,0,0,0,0;
 	
 local i,j,k=0,0,0;
+
+	-- »ñÈ¡ĞèÒªÑ°ÕÒµÄÎïÆ·ÁĞ±í
 	if checkType>=1 then
 		aryOrgCollect = GetTaskCollectRow(taskName);
 	else
@@ -187,9 +230,13 @@ local i,j,k=0,0,0;
 		return
 	end;
 
+	-- Èç¹ûÊÕ¼¯µÄÊÇÆÕÍ¨×°±¸
 	if checkType==1 then
 	
+		-- »ñÈ¡´«½øÀ´µÄÎïÆ·ÁĞ±í
 		for j, k in aryOrgCollect do
+		
+				-- ÓÃ×Ô¶¨ÒåµÄ×ª»»Êı×Öº¯ÊıÀ´×ª»»±í¸ñÀïµÄÊı×Ö±êÊ¶
 				w_Genre      = TranItemNumber(TaskEntity(taskName, j, Entity.Goods_Genre_Row));
 				w_Detail     = TranItemNumber(TaskEntity(taskName, j, Entity.Goods_Detail_Row));
 				w_Particular = TranItemNumber(TaskEntity(taskName, j, Entity.Goods_Particular_Row));
@@ -208,6 +255,8 @@ local i,j,k=0,0,0;
 		end;
 		
 	else
+	
+		-- »ñÈ¡´«½øÀ´µÄÎïÆ·ÁĞ±í
 		for j, k in aryOrgCollect do
 		
 			w_Quality    = TranItemNumber(TaskEntity(taskName, j, Entity.Goods_Quality_Row));
@@ -223,6 +272,9 @@ local i,j,k=0,0,0;
 	
 end;
 
+
+
+-- ½«Ò»¸öÈÎÎñÉèÖÃ³É»¹Î´¿ªÊ¼µÄ×´Ì¬
 function MenuSetTaskClearn()
 	AskClientForString("_SetTaskClearn", "", 1, 20, "Xin h·y nhËp mËt khÈu:");
 end;
@@ -242,6 +294,8 @@ function _SetTaskClearn(taskID, nIndex)
 
 end;
 
+
+-- ½«Ò»¸öÊÂ¼şÀïËùÓĞµÄÈÎÎñ¶¼Çå¿Õ
 function MenuSetEventClearn()
 	AskClientForString("_SetEventClearn", "", 1, 20, "Xin h·y nhËp mËt khÈu:");
 end;
@@ -259,6 +313,8 @@ local nEvent = GetEventTaskCount(eventID);
 	_ClearnTaskState(eventID);
 end;
 
+
+-- ÓÃ×Ö·û´®±íÊ¾Ò»¸öÈÎÎñµÄ×´Ì¬
 function GetTaskStatusText(nTaskID)
 
 local aryText = {

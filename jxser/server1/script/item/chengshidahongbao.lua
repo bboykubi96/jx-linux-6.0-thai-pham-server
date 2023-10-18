@@ -9,7 +9,6 @@ end
 if(not MEM_HEAD) then
 	Include "/script/lib/mem.lua"
 end
-Include "/script/class/ktabfile.lua"
 
 ChengShi_GiftsTabfile = new(KTabFile,"/settings/item/chengshidahongbao.txt","CHENGSHI_GIFTS")
 ChengShi_BonusHongbao = new(KBonus)

@@ -2,7 +2,7 @@
 -- By: Dan_Deng(2003-09-16)
 Include( "\\script\\event\\teacherday\\teacherdayhead.lua" )
 Include( "\\script\\event\\teacherday\\medicine.lua" )
-Include("\\script\\config\\cfg_features.lua")
+
 OPTIONS = {}
 
 function refine()
@@ -10,7 +10,7 @@ function refine()
 end
 
 function main()
-	Say("TiÖm ta sèng nhê §iÓm Th­¬ng s¬n, trªn ®ã cã hµng ngµn lo¹i th¶o d­îc.",
+	Say("VÞ kh¸ch nµy mua mét Ýt thuèc phßng th©n ®i.",
 		getn(OPTIONS),
 		OPTIONS)
 end;
@@ -20,10 +20,20 @@ function yes()
 end
 
 if TEACHERSWITCH then
-	tinsert(OPTIONS, "Gióp ta cÊt d­îc töu/brew")
+	-- tinsert(OPTIONS, "°ïÎÒ·ÅÒ©¾Æ/brew")
 end
 tinsert(OPTIONS, "Giao dÞch/yes")
-if CFG_HONNGUYENLINHLO == 1 then
-	tinsert(OPTIONS, "Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
+--tinsert(OPTIONS, "Mua M¸u Nhanh/muamaucucnhanh2")
+tinsert(OPTIONS, "Kh«ng cÇn/Cancel")
+
+
+function muamaucucnhanh2()
+	local totalcount =CalcFreeItemCellCount();
+	if totalcount == 0 then 
+                                                                                  Say("<color=yellow>§¹i hiÖp ®· cã ®Çy r­¬ng m¸u.",0)
+		return
+	end	
+	for k=1,totalcount do 		
+	AddItem(1,2,0,5,0,0,0,0);
+	end
 end
-tinsert(OPTIONS, "Kh«ng giao dÞch/Cancel")

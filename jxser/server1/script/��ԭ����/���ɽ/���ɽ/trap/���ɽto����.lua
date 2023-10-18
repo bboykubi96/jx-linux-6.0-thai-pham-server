@@ -1,9 +1,9 @@
---中原南区 蜀冈山to扬州
---Trap ID：中原南区 58
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 nam khu th鬰 cng s琻 to Dng Ch﹗ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 nam khu 58 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(80, 1532, 2918);
+SetFightState(1); 
+NewWorld(80, 1532, 2918); 
 
 end;

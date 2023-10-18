@@ -1,8 +1,7 @@
---ÖĞÔ­±±Çø ËÎ±ø´óÓª ½«¾ü¶Ô»°
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu tèng binh ®¹i doanh t­íng qu©n ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Bå ®µo mü töu d¹ quang b«i, dôc Èm tú bµ m· th­îng th«i. Tóy ngäa sa tr­êng qu©n m¹c tiÕu, cæ lai chinh chiÕn kû nh©n håi?, trËn chiÕn lín nµy, kh«ng biÕt bao nhiªu ng­êi ph¶i chÕt n÷a?",0)
+Say("Ng« l©n t­íng qu©n #“ bå ®µo r­îu ngon d¹ quang chĞn , muèn uèng tú bµ lËp tøc thóc giôc . say n»m sa tr­êng qu©n chí c­êi , x­a nay chinh chiÕn mÊy ng­êi trë vÒ ? ” , s©n nµy ®¹i chiÕn , kh«ng biÕt l¹i muèn chÕt bao nhiªu ng­êi #",0) 
 
-end;
-
+end; 

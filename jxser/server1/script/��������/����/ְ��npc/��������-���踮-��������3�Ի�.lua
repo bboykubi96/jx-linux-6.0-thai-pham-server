@@ -1,8 +1,8 @@
---Î÷±±ÄÏÇø ·ïÏè¸® ³ÇÃÅÎÀ±ø3¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ cöa thµnh vÖ binh 3 ®èi tho¹i 
 
 Include("\\script\\global\\map_helper.lua")
-npc_name = "<#> VÖ binh Thµnh m«n"
+npc_name = "<#> cöa thµnh vÖ binh " 
 
-function default_talk()
-	Talk(1,"",npc_name.."<#>: §Õn Ph­îng T­êng ®õng quªn l¹i chç LiÔu L©m Töu Ph­êng th­ëng thøc T©y Phông Töu!")
+function default_talk() 
+Talk(1,"",npc_name.."<#>: ®i tíi ph­îng t­êng , còng ®õng quªn ®i liÔu l©m töu ph­êng nÕm thö mét chót bän ta n¬i nµy ®Ých t©y ph­îng r­îu . ") 
 end;

@@ -1,8 +1,8 @@
---¶«±±Çø\ÁÙÓå¹Ø\obj\Â·±ê_ÁÙÓå¹Øtoãê¾©.lua
---by lixin @20050916
+-- script viet hoa By http://tranhba.com  ®«ng b¾c khu \ tr­íc khi du quan \obj\ b¶ng chØ ®­êng _ tr­íc khi du quan to biÖn kinh .lua 
+-- script viet hoa By http://tranhba.com by lixin @20050916 
 
-function main(sel)
+function main(sel) 
 
-Say("§i ®Õn BiÖn Kinh. ", 0)
+Say("Tíi biÖn kinh . ", 0) 
 
 end;

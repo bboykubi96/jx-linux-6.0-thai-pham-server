@@ -5,11 +5,11 @@ Include("\\script\\global\\station.lua")
 Include("\\script\\missions\\autohang\\function.lua")
 ---------------------------------------------------------------
 function main(sel)
-	if (GetLevel() >= 50) then
-		Say("ë ®©y tuy kh«ng cã bÕu tµu nh­ng ta còng cã c¸ch ®­a ng­¬i ®i!", 2, "§i §µo Hoa ®¶o (6) /go_thd", "Kh«ng ngåi/OnCancel")
-	else
+	--if (GetLevel() >= 50) then
+		--Say("ë ®©y tuy kh«ng cã bÕu tµu nh­ng ta còng cã c¸ch ®­a ng­¬i ®i!", 2, "§i §µo Hoa ®¶o (6) /go_thd", "Kh«ng ngåi/OnCancel")
+	--else
 		Talk(1, "", "Kh«ng biÕt bao giê ë ®©y míi cã mét bÕn tµu!")
-	end
+	--end
 end;
 
 function  OnCancel()

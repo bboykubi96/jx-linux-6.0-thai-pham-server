@@ -1,5 +1,7 @@
-IncludeLib("SETTING");
-
+--ÌØÐ§ÏÉ²ÝÂ¶
+--8Ð¡Ê±¾­ÑéË«±¶
+IncludeLib("SETTING"); --ÔØÈëSETTING½Å±¾Ö¸Áî¿â
+Include("\\script\\global\\g7vn\\g7configall.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 function main(nItemIndex)
 --dofile("script/item/xiancaolu_special.lua")
@@ -12,7 +14,7 @@ function main(nItemIndex)
 		--return 1
 	end
 if GetSkillState(440)>=1 then
-Say("ThËt tham lam, Ngu Dèt trªn ng­êi ®· cã Tiªn Th¶o Lé råi, Kh«ng thÓ sö dông thªm.")
+Say("Trªn ng­êi ®· cã Tiªn Th¶o Lé, Kh«ng thÓ sö dông thªm.")
 		return 1
 end
 --	AddSkillState(440, 1, 1, 64800 * 8);

@@ -1,5 +1,5 @@
-IncludeLib("SETTING"); 
-
+IncludeLib("SETTING"); --ÔØÈëSETTING½Å±¾Ö¸Áî¿â
+Include("\\script\\global\\g7vn\\g7configall.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 TLL_TASK = 3920
 TLL_LIMIT= 8
@@ -18,7 +18,7 @@ function main()
 		return 1;
 	end
 if GetSkillState(440)>=1 then
-Say("ThËt tham lam, Ngu Dèt trªn ng­êi ®· cã Tiªn Th¶o Lé råi, Kh«ng thÓ sö dông thªm.")
+Say("Trªn ng­êi ®· cã Tiªn Th¶o Lé, Kh«ng thÓ sö dông thªm.")
 		return 1
 end
 
@@ -29,6 +29,9 @@ end
 		nUseTimes = nUseTimes + 1;
 		SetBitTask(TLL_TASK, 0, 8,  nUseTimes);
 		SetBitTask(TLL_TASK, 8, 24, nLastUseDate);
+
+
 	--AddSkillState(440, 1, 1, 64800);
-	PlayerFunLib:AddSkillState(440,2,3,64800,1)
+PlayerFunLib:AddSkillState(440,2,3,64800,1)
+
 end

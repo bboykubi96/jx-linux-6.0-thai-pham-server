@@ -1,13 +1,13 @@
---Î÷±±ÄÏÇø ·ïÏè¸® ²è¹İÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ qu¸n trµ l·o b¶n ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-i = random(0,1)
-if (i == 0) then
-Say("Trµ cã thÓ tu t©m d­ìng t¸nh, mét ngôm trµ xanh cã thÓ khiÕn con ng­êi quªn ®i thÕ tôc.",0)
-else
-Say("Trµ cña chóng ta næi tiÕng kh¾p n¬i.", 0)
-end;
+i = random(0,1) 
+if (i == 0) then 
+Say("Trµ ph­êng l·o b¶n # trµ nh­ng tu t©m , còng nh­ng nu«i tİnh , mét bÇu trµ xanh , cã thÓ ®Ó cho ng­êi tôc niÖm ®èn tiªu a . ",0) 
+else 
+Say("Trµ ph­êng l·o b¶n # vèn trµ ph­êng ®­îc ®Æt tªn víi v× phô cËn hØ m­a ®×nh , lui tíi trµ kh¸ch nèi liÒn kh«ng døt . ", 0) 
+end; 
 
 
 end;

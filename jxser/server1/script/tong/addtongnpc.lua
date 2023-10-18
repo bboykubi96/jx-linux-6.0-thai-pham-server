@@ -151,7 +151,7 @@ function add_tongnpc()
 	
 	add_citytong_npc();	--加帮会公共地图、模板地图npc
 	add_tongbuilding();	--加帮会公共地图建筑
-	add_jijiu();
+	-- add_jijiu();
 end
 
 
@@ -211,14 +211,14 @@ function add_tongbuilding()
 	end	
 end
 
-function add_jijiu()
-	for i=1,getn(jijiumap) do
-		SId = SubWorldID2Idx(jijiumap[i]);
-		if (SId >= 0) then
-			for j=1,getn(jijiu) do
-				npcindex = AddNpc(jijiu[j][1],1,SId,jijiu[j][2]*32,jijiu[j][3]*32,1,jijiu[j][5]);
-				SetNpcScript(npcindex, jijiu[j][4]);
-			end;
-		end;
-	end	
-end
+-- function add_jijiu()
+	-- for i=1,getn(jijiumap) do
+		-- SId = SubWorldID2Idx(jijiumap[i]);
+		-- if (SId >= 0) then
+			-- for j=1,getn(jijiu) do
+				-- npcindex = AddNpc(jijiu[j][1],1,SId,jijiu[j][2]*32,jijiu[j][3]*32,1,jijiu[j][5]);
+				-- SetNpcScript(npcindex, jijiu[j][4]);
+			-- end;
+		-- end;
+	-- end	
+-- end

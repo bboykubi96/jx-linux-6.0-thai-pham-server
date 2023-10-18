@@ -1,1 +1,1 @@
-Include("\\script\\missions\\challenge\\challengemanager.lua");
+Include("\\script\\missions\\challenge\\challengecamper.lua");

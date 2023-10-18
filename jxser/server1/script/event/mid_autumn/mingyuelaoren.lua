@@ -1,3 +1,8 @@
+--Ã÷ÔÂÀÏÈË¶Ô»°
+--ÔÂ±ı»»¶ÔÓ¦ÀñÆ·
+--mingyuelaoren.lua
+--2005-09-07
+
 
 tbCAKE2GIFT = {
 		[891] = { "<#> B¸nh trung thu nh©n ®Ëu ", "<#> 1 Tiªn Th¶o lé ",			{ 6, 1, 71, 1, 0, 0, 0 } },

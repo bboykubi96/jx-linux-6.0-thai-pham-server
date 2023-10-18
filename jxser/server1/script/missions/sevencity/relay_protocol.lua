@@ -1,4 +1,5 @@
 Include("\\script\\missions\\sevencity\\war.lua")
+Include("\\script\\global\\g7vn\\g7quanly.lua")
 
 RelayProtocol = {m_Step = 0}
 
@@ -73,14 +74,27 @@ function RelayProtocol:SyncViceroy(param, result)
 	local flag = buff:Pop()
 	local msg = nil
 	local city = MAP_INFO[mapid].CityName
+	local szFile = "\\dulieu\\bandbygm.dat"
 	if (flag == 1 and tong ~= "") then
 		msg = format("Bang héi <color=red>%s<color> ®· chiÕm lÜnh thµnh c«ng <color=red>%s<color> !",
 					tong,
 					city)
+
+	if city == "T­¬ng D­¬ng" then
+		server_setdata(szFile,"BANGHOI_TDLEBAO",tong,"150")
+		server_savedata(szFile);
+	end
+
 	elseif (tong ~= "") then
 		msg = format("<color=red>%s<color> thñ thµnh thµnh c«ng, tiÕp tôc chiÕm lÜnh <color=red>%s<color>!",
 					tong,
 					city)
+
+		if city == "T­¬ng D­¬ng" then
+			server_setdata(szFile,"BANGHOI_TDLEBAO",tong,"150")
+			server_savedata(szFile);
+		end
+
 	else
 		msg = format("<color=red>%s<color> kh«ng ng­êi chiÕm lÜnh.", city)
 	end

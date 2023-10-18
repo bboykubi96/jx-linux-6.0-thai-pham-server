@@ -1,24 +1,17 @@
---Á½ºşÇø ÌÒ»¨Ô´ Ìú½³¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu hoa ®µo nguyªn thî rÌn ®èi tho¹i 
 Include("\\script\\global\\×ÏÉ«¼°»Æ½ğ×°±¸ÖıÔì.lua")
 
-function main(sel)
+function main(sel) 
 
-Say("X­a nay anh hïng phèi mü töu, danh kiÕm phèi hiÖp sÜ, mét cµnh liÔu còng cã thÓ ®¶ th­¬ng ®­îc ng­êi, nh­ng ng­êi häc vâ ai l¹i kh«ng thİch cã mét thanh b¶o kiÕm s¾c bĞn chø? NÕu muèn chÕ t¹o trang bŞ HuyÒn Tinh hoÆc trang bŞ Hoµng Kim th× cã thÓ ®Õn t×m ta gi¸ c¶ ph¶i ch¨ng th«i!", 3, "Giao dŞch/yes", "chÕ t¹o/onFoundry", "Nh©n tiÖn ghĞ qua th«i/no");
+Say("Thî rÌn # tõ x­a r­îu ngon xøng anh hïng # danh kiÕm xøng hiÖp sÜ , mÆc dï mét chi liÔu con còng nh­ng giÕt ng­êi , nh­ng lµ ng­êi tËp vâ , cã ai sÏ kh«ng thİch b¶o kiÕm l­ìi dao s¾c bĞn ®©y ? ", 2,"Giao dŞch /yes","Kh«ng giao dŞch /no"); 
 
-end;
-
-
-function yes()
-Sale(40);  			--µ¯³ö½»Ò×¿ò
-end;
+end; 
 
 
-function no()
-end;
+function yes() 
+Sale(40); -- script viet hoa By http://tranhba.com  b¾n ra giao dŞch khu«ng 
+end; 
 
 
-
-
-
-
-
+function no() 
+end; 

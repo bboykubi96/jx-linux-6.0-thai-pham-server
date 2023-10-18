@@ -1,6 +1,6 @@
--- ´óÀí¡¡Ö°ÄÜ¡¡²è¹İÀÏ°å
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # chøc n¨ng # qu¸n trµ l·o b¶n 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(1,"","Kh¸ch quan! ThÊy d¸ng cña ng­êi ch¾c ®ang mÖt, ngåi xuèng uèng ly trµ gi¶i kh¸t ®i! ")
-end;
+function main() 
+Talk(1,"","Kh¸ch quan , xem ng­¬i rÊt mÖt mái ®İch d¸ng vÎ , ngåi xuèng uèng chĞn trµ mæ kh¸t ! ") 
+end; 

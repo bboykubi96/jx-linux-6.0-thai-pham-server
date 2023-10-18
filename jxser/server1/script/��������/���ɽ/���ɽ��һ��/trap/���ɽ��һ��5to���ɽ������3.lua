@@ -1,9 +1,9 @@
---西南南区 点苍山洞一层5to点苍山洞二层3
---Trap ID：西南南区 53
+-- script viet hoa By http://tranhba.com  t﹜ nam nam khu 觤 thng s琻 ng m閠 t莕g 5to 觤 thng s琻 ng t莕g hai 3 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam nam khu 53 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(172, 1625, 2745);
+SetFightState(1) 
+NewWorld(172, 1625, 2745); 
 
 end;

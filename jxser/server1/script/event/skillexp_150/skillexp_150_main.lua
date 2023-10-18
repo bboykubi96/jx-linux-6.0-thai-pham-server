@@ -16,7 +16,7 @@ Include("\\script\\vng_lib\\bittask_lib.lua")
 DAILY_CHANGE_MAX_VALUE = 30		-- Ã¿Ìì¶Ò»»ÉÏÏÞ 
 MAP_ID = 967		-- µØÍ¼id
 --By: Ngavn
-NDEL_PLAYEXP_PER = 10000000	-- Ã¿´Î¶Ò»»ÐèÒªÏûºÄµÄÍæ¼Ò¾­Ñé
+NDEL_PLAYEXP_PER = 30000000	-- Ã¿´Î¶Ò»»ÐèÒªÏûºÄµÄÍæ¼Ò¾­Ñé
 NADD_SKILLEXP_PER = 50		-- Ã¿´Î¶Ò»»¿ÉÒÔ»ñµÃµÄÊìÁ·¶È
 
 szScriptPath = "\\script\\event\\skillexp_150\\skillexp_150_main.lua"
@@ -99,6 +99,9 @@ function checkDailyTask(nSkillId)
 		nDayTime = tbVNG_BitTask_Lib:getBitTask(tbTrainSkill150.tbBIT_Fee_Use)
 	end
 	local nMaxValue =  tbTrainSkill150:GetMaxTask(nSkillId)
+	--local nMaxValue = solanhocskill150
+	Msg2Player("H«m nay cã thÓ tu luyÖn <color=pink>"..nMaxValue.." lÇn<color>")
+	Msg2Player("H«m nay ®· tu luyÖn ®­îc <color=yellow>"..nDayTime.." lÇn<color>")
 	if nDayTime < nMaxValue then
 		return 1
 	end
@@ -121,8 +124,12 @@ function addDailyTask_Free(nValue)
 	end
 end
 
--- npc ±»µã»÷Ö÷º¯Êý
+Include("\\script\\global\\g7vn\\g7configall.lua")
 function main()
+
+	--dofile("script/event/skillexp_150/skillexp_150_main.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
 	local nNpcIdx = GetLastDiagNpc()
 	local dwNpcId = GetNpcId(nNpcIdx)
 	local nSkillId = GetNpcParam(nNpcIdx, 1)
@@ -230,18 +237,18 @@ function getNeedPlayerExp(nSkillId, nNumber)
 	local nNeedPlayerExp = NDEL_PLAYEXP_PER
 	local nPlayerLevel = GetLevel()
 	
-	--By: NgaVN 30 lan doi dau tien thi Exp = 1000000, sau 20 lan sau Exp = 15000000
+	--By: NgaVN 30 lan doi dau tien thi Exp = 2000000, sau 20 lan sau Exp = 35000000
 	local nDayTime = tbVNG_BitTask_Lib:getBitTask(tbTrainSkill150.tbBIT_Free_Use) + tbVNG_BitTask_Lib:getBitTask(tbTrainSkill150.tbBIT_Fee_Use)
 	if nDayTime > DAILY_CHANGE_MAX_VALUE then
-		nNeedPlayerExp = 15000000
+		nNeedPlayerExp = 35000000
 	end
 	if(nNumber == 1 and nDayTime + 1 > DAILY_CHANGE_MAX_VALUE) then
-		nNeedPlayerExp = 15000000
+		nNeedPlayerExp = 35000000
 	end
 
 	local _, nRet = tbTrainSkill150:GetMaxTask(nSkillId)
 	if 	nRet == 1 then
-		nNeedPlayerExp = 15000000
+		nNeedPlayerExp = 35000000
 	end
 	-- 200¼¶ÌØÊâ´¦Àí
 	if nPlayerLevel >= 200 then		
@@ -270,7 +277,7 @@ function postMsg2Player(nSkillId)
 	if nPlayerLevel == 200 then
 		Msg2Player(format("Kü n¨ng cña ng­¬i <color=yellow> %s <color> ®é tu luyÖn ®­îc n©ng cao %d",szSkillName, nTotalExp))
 	else
-		Msg2Player(format("§· tiªu hao <color=yellow> %d <color> kinh nghiÖm ®Ó kü n¨ng <color=yellow> %s <color> ®ä tu luyÖn ®­îc n©ng cao <color=yellow> %d <color>",nNeedPlayerExp, szSkillName,nTotalExp))
+		Msg2Player(format("§· tiªu hao <color=yellow> %d <color> kinh nghiÖm ®Ó kü n¨ng <color=yellow> %s <color> ®é tu luyÖn ®­îc n©ng cao <color=yellow> %d <color>",nNeedPlayerExp, szSkillName,nTotalExp))
 	end
 end
 

@@ -1,7 +1,7 @@
--- ÌìÁúËÂËÂÇ°Ê¯±®
+-- script viet hoa By http://tranhba.com  thiªn long tù tù tr­íc bia ®¸ 
 
-function main(sel)
+function main(sel) 
 
-	Say("S¾c phong Thiªn Long ThiÒn Tù ", 0)
+Say("S¾c phong thiªn long thiÖn tù ", 0) 
 
 end;

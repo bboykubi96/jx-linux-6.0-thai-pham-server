@@ -2,7 +2,7 @@
 -- by£ºDan_Deng(2003-09-16)
 
 function main()
-	Say("Ngµy tr­íc Chu Môc V­¬ng cã 8 con tuÊn m· v« ®Şch thiªn h¹. §­¬ng thêi x­ng lµ 'B¸t C©u'. Con ngùa nµy cña ta lµ hËu thÕ cña mét trong 8 con thÇn m· ®ã! Cã thÓ ngµy ®i ngh×n dÆm! Lµ mét con 'thÇn m·' khã mµ t×m thÊy con thø hai. Mäi ng­êi h·y ®Õn xem ®i! Gi¸ cao cùc kú! Muèn mua th× ®õng tiÕc tiÒn. NÕu kh«ng lóc hèi hËn sÏ kh«ng kŞp!", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no")
+Say("M· phiÕn tö  n¨m ®ã chu môc v­¬ng cã t¸m thÊt thÇn tuÊn v« cïng ®İch tªn c©u , lóc x­ng “ t¸m tuÊn ” , ta ®©y con ngùa chİnh lµ n¨m ®ã t¸m tuÊn mét trong ®İch “ xİch kı ” thÇn c©u ®İch ®êi sau , cã thÓ ngµy ®i ngµn dËm , lµ mét thÊt kh«ng thÓ cã nhiÒu h¶o m· , tÊt c¶ mäi ng­êi tíi xem mét chót ®i , ng­êi tr¶ gi¸ cao ®­îc , muèn mua còng kh«ng cÇn kh«ng bá ®­îc b¹c , bá lì n÷a hèi hËn , coi nh­ kh«ng cßn kŞp råi ", 2,"Giao dŞch /yes","Kh«ng giao dŞch /no") 
 end;
 
 function yes()

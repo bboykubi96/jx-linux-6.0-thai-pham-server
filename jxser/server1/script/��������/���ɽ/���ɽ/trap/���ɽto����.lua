@@ -1,9 +1,9 @@
---Î÷ÄÏÄÏÇø µã²ÔÉ½to´óÀí¸®
---Trap ID£ºÎ÷ÄÏÄÏÇø 4
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §iÓm th­¬ng s¬n to §¹i Lı phñ 
+-- script viet hoa By http://tranhba.com Trap ID# t©y nam nam khu 4 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(162, 1280, 3266);
+SetFightState(1) 
+NewWorld(162, 1280, 3266); 
 
 end;

@@ -1,7 +1,7 @@
---Á½ºşÇø ÎäÁêÉ½Â·±ê3
+-- script viet hoa By http://tranhba.com  hai hå khu vò l¨ng ®­êng nói ngän 3 
 
-function main(sel)
+function main(sel) 
 
-Say("§i §¹i Tï ®éng.", 0)
+Say("§i th«ng ®¹i tï ®éng . ", 0) 
 
-end;
+end; 

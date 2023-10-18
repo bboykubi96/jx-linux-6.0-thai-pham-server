@@ -23,6 +23,10 @@ TOTALSEC_OF_DAY = 60 * 60 * 24; -- 1ÌìµÈÓÚ¶àÉÙÃë£¬ÓÃÓÚ°ÑÌìÊı×ª³ÉÃë
 COSTOFSIMGLEDIV = 1000000; --µ¥·½Àë»é»¨·Ñ
 
 function main(sel)
+if 1==1 then
+ Say("Chuc Nang Tam Dong")
+ return
+end
 	if (check_married() == 1) then
 		SetTask(67, SetBit(GetTask(67), 24, 0));
 		Msg2Player("<color=yellow>T×nh tr¹ng h«n phèi cña b¹n ®· thay ®æi<color>");
@@ -502,7 +506,7 @@ function female_yes()			-- Å®·½£º½ÓÊÜÌáÇ×
 		OtherPlayer_talk(His_ID, "Chóc mõng hai vŞ, d©y t¬ hång ®· th¾t chÆt mèi l­¬ng duyªn nµy råi!")
 		OtherPlayer_talk(Her_ID, "Chóc mõng hai vŞ, d©y t¬ hång ®· th¾t chÆt mèi l­¬ng duyªn nµy råi!")
 		AddGlobalCountNews("<#> chóng ta cïng chóc mõng"..His_Name.."<#> víi"..GetName().."<#> hai vŞ t©n nh©n vÜnh kÕt ®ång t©m, b¸ch niªn giai l·o!",3)
-		
+		Msg2SubWorld("<#> chóng ta cïng chóc mõng"..His_Name.."<#> víi"..GetName().."<#> hai vŞ t©n nh©n vÜnh kÕt ®ång t©m, b¸ch niªn giai l·o!")
 	end
 end
 
@@ -526,6 +530,7 @@ function present_ring(PlayerId)			-- ËÍ½äÖ¸£¨ÅĞ¶Ï¡¢ÖÃ±äÁ¿ÒÑÒÆÖÁ½á»é¹ı³ÌÖĞ£©
 		end
 	end
 	AddItem(0,3,0,item_level,random(0,4),5,p[1],p[2],p[3],p[4],p[5],p[6])
+	AddItem(6,1,18,1,0,0,0)			-- tam tam tuong anh phu
 	Msg2Player("NguyÖt L·o tÆng cho b¹n mét chiÕc nhÉn ")
 	PlayerIndex = OldPlayer
 end
@@ -575,7 +580,7 @@ function divorce()
 			Talk(1,"","Rèt cuéc ng­¬i muèn ly h«n víi ai? Ng­êi nµy vèn kh«ng ph¶i lµ ng­êi phèi ngÉu cña ng­¬i!")
 		end
 	else
-		Talk(1,"","NÕu nhÊt ®Şnh muèn ly h«n, ph¶i cïng vî ng­¬i ®Õn lµm thñ tôc ly h«n!")
+		Talk(1,"","NÕu nhÊt ®Şnh muèn ly h«n, ph¶i cïng phu qu©n ng­¬i ®Õn lµm thñ tôc ly h«n!")
 	end
 end
 

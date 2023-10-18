@@ -1,11 +1,11 @@
---西南北区 剑阁蜀道西南入口to剑阁蜀道经皇洞
---Trap ID：西南北区 19
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu ki誱 c竎 th鬰 o t﹜ nam nh藀 kh萿 to ki誱 c竎 th鬰 o tr秈 qua ho祅g ng 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 19 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(5, 1581, 3666);
+SetFightState(1) 
+NewWorld(5, 1581, 3666); 
 
-AddTermini(29)
+AddTermini(29) 
 
 end;

@@ -1,9 +1,9 @@
---西南南区 千寻塔一层2to千寻塔二层2
---Trap ID：西南南区 13
+-- script viet hoa By http://tranhba.com  t﹜ nam nam khu ng祅 t譵 th竝 m閠 t莕g 2to ng祅 t譵 th竝 t莕g hai 2 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam nam khu 13 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(165, 1586, 3289);
+SetFightState(1) 
+NewWorld(165, 1586, 3289); 
 
 end;

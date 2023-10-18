@@ -1,6 +1,7 @@
 -- ÉÙÁÖ Â·ÈËNPC ·½ÕÉĞşÒò 10¼¶ÈÎÎñ¡¢40¼¶ÈÎÎñ
 -- by£ºDan_Deng(2003-08-01)
 -- Update£ºDan_Deng(2003-10-27)ÖØĞ´ÖØ·µÊ¦ÃÅÈÎÎñ£¬²¢ÖØĞÂÕûÀí½Å±¾
+--Chuong mon thieu lam npc Phuong Truong Tu Nhan
 
 Include("\\script\\global\\skills_table.lua")
 Include([[\script\event\teachersday06_v\prize_qingyika.lua]]);
@@ -10,7 +11,10 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- ´øÒÕÍ¶Ê¦
 Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
-function main()
+function main_com()
+
+	--dofile("script/ÖĞÔ­±±Çø/ÉÙÁÖÅÉ/·½ÕÉìøÊÒ/npc/Â·ÈË_·½ÕÉĞşÒò.lua")
+
 	if (vt06_isactive() ~= 0) then
 		Say("T×m ta cã viÖc g×?", 2, "Muèn thØnh gi¸o ®¹i s­!/oldentence", "Mõng lÔ ¢n S­, t¹i h¹ ®· t×m ®ñ “ThÎ ¢n S­” vµ “ThÎ Cao §å”./vt06_prizeenter");
 		return

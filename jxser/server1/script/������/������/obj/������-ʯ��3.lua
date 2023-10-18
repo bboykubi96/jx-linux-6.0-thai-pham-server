@@ -1,7 +1,7 @@
---Á½ºşÇø °ÍÁêÏØ ÄÏÃÅÊ¯±®3
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn cöa nam bia ®¸ 3 
 
-function main(sel)
+function main(sel) 
 
-Say("Ba L¨ng huyÖn",  0);
+Say("Ba l¨ng huyÒn ", 0); 
 
-end;
+end; 

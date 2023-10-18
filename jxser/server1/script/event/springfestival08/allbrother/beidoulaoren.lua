@@ -24,7 +24,7 @@ function main()
 	tbDailog:AddOptEntry("LuyÖn tiªn ®an truyÒn c«ng", BeiDouChuanGong_main, {1});
 	tbDailog:AddOptEntry("T×m kiÕm B¾c §Èu Tr­êng Sinh ThuËt", beidou_translife_main);
 	--T¹m ®ãng kü n¨ng TS 4 - Modified By DinhHQ - 20111102
-	tbDailog:AddOptEntry("Ta muèn häc kü n¨ng ChiÕn ý Thiªn Thu", beidou_learn_specialskill);
+	--tbDailog:AddOptEntry("Ta muèn häc kü n¨ng ChiÕn ý Thiªn Thu", beidou_learn_specialskill);
 	
 	if tbXunMaShu0903:IsActDate() then
 		tbDailog:AddOptEntry("Ho¹t ®éng [B¶o r­¬ng thÇn bÝ]", tbXunMaShu0903.DialogMain_Box, {tbXunMaShu0903});

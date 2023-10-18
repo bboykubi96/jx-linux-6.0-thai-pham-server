@@ -16,16 +16,16 @@ function north_boatman_main(nId)
 	if (nDate >= jf0904_act_dateS) then
 		tinsert(tbBoatmanDialog, 2, "Ta ®Õn giao nhiÖm vô tiªu diÖt thñy tÆc/fullfill_shuizei_act");
 	end
-	Say(format("%s: Ng­¬i muèn ngåi thuyÒn ®Õn bê nam Phong L¨ng §é? §­a ta 200 l¹ng b¹c lµ ®­îc.", szNpcname), getn(tbBoatmanDialog), unpack(tbBoatmanDialog));
+	Say(format("%s: Ng­¬i muèn ngåi thuyÒn ®Õn bê nam Phong L¨ng §é? §­a ta 2000 l¹ng b¹c lµ ®­îc.", szNpcname), getn(tbBoatmanDialog), unpack(tbBoatmanDialog));
 end
 
 function tosouth(nId)
 	local tbMap 	= %tbNorth_Boatman_Info[nId].tbMap;
 	local szNpcname	= %tbNorth_Boatman_Info[nId].szNpcname;
 	
-	if( GetCash() >= 200 ) then
+	if( GetCash() >= 2000 ) then
 		NewWorld(unpack(tbMap));
-		Pay( 200 );
+		Pay( 2000 );
 		DisabledUseTownP(0);
 	else
 		Talk(1,"",format("%s: Kh«ng cã tiÒn sao ngåi thuyÒn ®­îc nhØ?", szNpcname));

@@ -1,23 +1,16 @@
---Á½ºşÇø ÄÏÔÀÕò ÔÓ»õµêÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn tiÖm t¹p hãa l·o b¶n ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Bæn tiÖm tuy nhá nh­ng thø g× còng cã. Kh¸ch quan muèn mua g×?", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no");
+Say("TiÖm t¹p hãa l·o b¶n # ®«ng t©y nam b¾c hµng , dÇu muèi t­¬ng dÊm trµ , ta chç nµy c¸i g× còng cã , ngµi muèn mua chót g× ? ", 2,"Giao dŞch /yes","Kh«ng giao dŞch /no"); 
 
-end;
-
-
-function yes()
-Sale(35);  			--µ¯³ö½»Ò×¿ò
-end;
+end; 
 
 
-function no()
-end;
+function yes() 
+Sale(35); -- script viet hoa By http://tranhba.com  b¾n ra giao dŞch khu«ng 
+end; 
 
 
-
-
-
-
-
+function no() 
+end; 

@@ -1,10 +1,24 @@
+
+-- ====================== ÎÄ¼şĞÅÏ¢ ======================
+
+-- ½£ÏÀÇéÔµonline ÈÎÎñÏµÍ³¹¤¾ß½Å±¾
 -- Edited by peres
 -- 2005/07/29 PM 12:30
 
+-- ÑÌ»¨¡£ÄÇÒ»Ò¹µÄÑÌ»¨¡£
+-- Ëı¼ÇµÃËûÔÚ´óÓêµÄÈËÈºÖĞ£¬Õ¾ÔÚËıµÄ±³ºóÓµ±§×¡Ëı¡£
+-- ËûÎÂÅ¯µÄÆ¤·ô£¬ËûÊìÏ¤µÄÎ¶µÀ¡£ÑÌ»¨ÕÕÁÁËıµÄÑÛ¾¦¡£
+-- Ò»ÇĞÎŞ¿ÉÍì»Ø¡­¡­
+
+-- ======================================================
+
+-- ÈÎÎñÏµÍ³¿âÖ§³Ö
 IncludeLib("TASKSYS");
 
+-- ¶ÁÈëÊı¾İ¶¨ÒåÍ·ÎÄ¼ş
 Include("\\script\\task\\system\\task_head.lua");
 
+-- ¶ÁÈë DEBUG Êä³ö´¦ÀíÎÄ¼ş
 Include("\\script\\task\\system\\task_debug.lua");
 
 strTitle        = "<color=green>CÈm nang nhiÖm vô<color>:";
@@ -24,6 +38,7 @@ return 1;
 
 end;
 
+-- Íæ¼ÒÑ¡Ôñ²é¿´ÊÂ¼ş£¬ÔÚÏÂÃæÁĞ³öËùÓĞÕıÔÚ½øĞĞµÄÊÂ¼ş¹©Íæ¼ÒÑ¡Ôñ
 function ShowEventMain()
 
 local i=0;
@@ -71,9 +86,11 @@ local i=0;
 
 end;
 
+
+-- Ã¶¾Ù³öµ±Ç°ÕıÔÚ½øĞĞµÄÊÂ¼ş
 function EnumEventList()
 
-local aryTask  = EnumTaskList(); 
+local aryTask  = EnumTaskList(); -- È¡µÃµ±Ç°ÕıÔÚ½øÕ¹µÄÈÎÎñ
 local aryEvent = {}
 local i=0;
 
@@ -89,6 +106,8 @@ local i=0;
 
 end;
 
+
+-- Ã¶¾Ù³öÒ»ÊÂ¼şËù°üº¬µÄÈÎÎñ£¬·µ»ØÒ»¸öÊı×é
 function EnumEventTask(nEventID)
 
 local aryTask = {};
@@ -113,6 +132,8 @@ local i=0;
 
 end;
 
+
+-- »Øµ÷º¯Êı£¬Çå¿ÕÒ»¸öÊÂ¼şËùÓĞÈÎÎñµÄ×´Ì¬£¬°üÀ¨ÁÙÊ±±äÁ¿
 function _ClearnTaskState(nEventID)
 
 local aryTask = EnumEventTask(nEventID);
@@ -129,6 +150,8 @@ if aryTask==nil then return end;
 
 end;
 
+
+-- ½«Ò»¸öÈÎÎñÉèÖÃ³É»¹Î´¿ªÊ¼µÄ×´Ì¬
 function MenuSetTaskClearn()
 	AskClientForString("_SetTaskClearn", "", 1, 20, "Xin h·y nhËp mËt khÈu:");
 end;
@@ -148,6 +171,8 @@ function _SetTaskClearn(taskID, nIndex)
 
 end;
 
+
+-- ½«Ò»¸öÊÂ¼şÀïËùÓĞµÄÈÎÎñ¶¼Çå¿Õ
 function MenuSetEventClearn()
 	AskClientForString("_SetEventClearn", "", 1, 20, "Xin h·y nhËp mËt khÈu:");
 end;
@@ -165,6 +190,8 @@ local nEvent = GetEventTaskCount(eventID);
 	_ClearnTaskState(eventID);
 end;
 
+
+-- ÓÃ×Ö·û´®±íÊ¾Ò»¸öÈÎÎñµÄ×´Ì¬
 function GetTaskStatusText(nTaskID)
 
 local aryText = {

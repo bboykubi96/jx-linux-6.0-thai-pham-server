@@ -10,7 +10,7 @@ function main()
 	end
 	local tbDailog = DailogClass:new(szNpcName)
 	tbDailog.szTitleMsg = "<#><npc>Ng­¬i muèn rêi khái NguyÖt Ca §¶o kh«ng?"
-	tbDailog:AddOptEntry("X¸c nhËn", leave_sure)
+--	tbDailog:AddOptEntry("X¸c nhËn", leave_sure)
 	tbDailog:Show() 
 end
 

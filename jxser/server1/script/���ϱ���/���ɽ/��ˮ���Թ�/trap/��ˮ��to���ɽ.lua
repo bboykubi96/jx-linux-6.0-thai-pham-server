@@ -1,11 +1,11 @@
---西南北区 响水洞to青城山
---Trap ID：西南北区 14
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu vang nc ng to n骾 Thanh Th祅h 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 14 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(21, 1712, 3872);
+SetFightState(1) 
+NewWorld(21, 1712, 3872); 
 
-AddTermini(39)
+AddTermini(39) 
 
 end;

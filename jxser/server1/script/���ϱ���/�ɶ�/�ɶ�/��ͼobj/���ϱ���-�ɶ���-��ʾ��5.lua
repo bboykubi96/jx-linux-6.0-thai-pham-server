@@ -1,7 +1,7 @@
---Î÷ÄÏ±±Çø ³É¶¼¸® ±±³ÇÃÅ¸æÊ¾ÅÆ5
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu thµnh ®« phñ b¾c thµnh cöa c¸o kú bµi 5 
 
-function main(sel)
+function main(sel) 
 
-ShowLadder(3, 1, 2, 3)
+ShowLadder(3, 1, 2, 3) 
 
 end;

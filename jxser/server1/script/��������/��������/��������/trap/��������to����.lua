@@ -1,9 +1,9 @@
---西北南区 剑阁西北to凤翔
---Trap ID：西北南区 23
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu ki誱 c竎 t﹜ b綾 to phng tng 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 23 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(1, 1218, 3394);
+SetFightState(1); 
+NewWorld(1, 1218, 3394); 
 
 end;

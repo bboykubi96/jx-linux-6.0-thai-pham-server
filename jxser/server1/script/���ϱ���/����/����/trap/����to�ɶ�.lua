@@ -1,9 +1,9 @@
---西南北区 唐门to成都
---Trap ID：西南北区 59
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu Л阯g m玭 to th祅h  
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 59 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(11, 3224, 5433);
+SetFightState(1) 
+NewWorld(11, 3224, 5433); 
 
 end;

@@ -7,7 +7,7 @@ Include("\\script\\lib\\log.lua")
 Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 IncludeLib("SETTING");
-
+--Tong kim dac tham
 MISSIONID = 20
 sf_aryItems = {
 	{ "Gia Bµo hoµn", {6,0,2,1,0,0}, 5 },
@@ -79,8 +79,8 @@ FILE_TRANSPORT2 = 	"\\script\\battles\\butcher\\transport.lua";
 
 --Npcµƒƒ£∞Â∫≈ID
 
-MAX_S_COUNT = 100;
-MAX_J_COUNT = 100;
+MAX_S_COUNT = 200;
+MAX_J_COUNT = 200;
 
 --◊Ó–°‘ –Ìµƒƒ≥“ª’Û”™µƒÕÊº“ ˝¡ø£¨»Áπ˚‘⁄’Ω∂∑÷–’Û”™µƒÕÊº“ ˝¡ø…Ÿ”⁄∏√ ˝ƒø‘Ú∏√’Û”™≈– ‰£¨Œﬁ¬€ª˝∑÷«Èøˆ»Á∫Œ
 MIN_PLAYER_COUNT_LIMIT = 0
@@ -186,19 +186,19 @@ function sf_winbouns(n_camp)
 		
 		--print(format("%d %d",player_total_point,JG_T_Value))
 		if(player_total_point >= 1000 and JG_T_Value < jg_ndate) then
-			local ItemIdx = AddItem(6,1,JUNGONGPAI,1,0,0);
+			--local ItemIdx = AddItem(6,1,JUNGONGPAI,1,0,0);
 			
-			local Tdate=FormatTime2Number(GetCurServerTime()+24*60*60)--¡Ï»°µƒµ⁄∂˛ÃÏ
-			Tdate=floor(Tdate/10000) --»°ƒÍ,‘¬,»’
-			nEndYear=floor(Tdate/10000)+2000
-			nEndMonthDay=floor(mod(Tdate,10000))
-			SetSpecItemParam(ItemIdx, 1,nEndYear);--…Ë÷√ŒÔ∆∑ƒÍ
-			SetSpecItemParam(ItemIdx, 2,nEndMonthDay);--…Ë÷√ŒÔ∆∑‘¬»’
-			SyncItem(ItemIdx)
-			SetItemBindState(ItemIdx, -2);-- ∞Û∂®
-			Msg2Player("Bπn nhÀn Æ≠Óc 1 Hu©n c´ng bµi TËng Kim")
-			WriteLog(format("[Chi’n tr≠Íng TËng Kim]\t%s\tName:%s\tAccount:%s\t 1000 Æi”m t›ch lÚy trÎ l™n sœ nhÀn Æ≠Óc 1 Hu©n c´ng bµi TËng Kim",
-					GetLocalDate("%y%m%d %X"), GetName(), GetAccount()));
+		--	local Tdate=FormatTime2Number(GetCurServerTime()+24*60*60)--¡Ï»°µƒµ⁄∂˛ÃÏ
+	--		Tdate=floor(Tdate/10000) --»°ƒÍ,‘¬,»’
+	--		nEndYear=floor(Tdate/10000)+2000
+		--	nEndMonthDay=floor(mod(Tdate,10000))
+		--	SetSpecItemParam(ItemIdx, 1,nEndYear);--…Ë÷√ŒÔ∆∑ƒÍ
+		--	SetSpecItemParam(ItemIdx, 2,nEndMonthDay);--…Ë÷√ŒÔ∆∑‘¬»’
+		--	SyncItem(ItemIdx)
+		--	SetItemBindState(ItemIdx, -2);-- ∞Û∂®
+		--	Msg2Player("Bπn nhÀn Æ≠Óc 1 Hu©n c´ng bµi TËng Kim")
+		--	WriteLog(format("[Chi’n tr≠Íng TËng Kim]\t%s\tName:%s\tAccount:%s\t 1000 Æi”m t›ch lÚy trÎ l™n sœ nhÀn Æ≠Óc 1 Hu©n c´ng bµi TËng Kim",
+		--			GetLocalDate("%y%m%d %X"), GetName(), GetAccount()));
 			if(JG_T_Value == (jg_ndate-1)) then --¡Ï»°¡À2¥Œ	
 				SetTask(JUNGONGPAI_Task_ID,jg_ndate);
 			elseif(JG_T_Value ~= jg_ndate) then --¡Ï»°¡À1¥Œ	
@@ -470,11 +470,10 @@ function sf_join(camp)
 			return
 		end
 	end
-
+--L2TH dieu chinh tai day
 if (result == 0) then
---		if (CalcItemCount(-1, 6, 1, 30083, -1) >= 1 and ConsumeEquiproomItem(1, 6, 1, 30083, 1) == 1) then		
-		if (GetCash() >= SONGJIN_SIGNUP_FEES) then
-		Pay(SONGJIN_SIGNUP_FEES)
+		--if (GetCash() >= SONGJIN_SIGNUP_FEES) then
+		Pay(SONGJIN_SIGNUP_FEES)		
 		BT_LeaveBattle() -- «Â≥˝ÕÊº“øÕªß∂Àµ±«∞µƒ≈≈√˚ ˝æ›
 		BT_ClearPlayerData()
 		SetTask(2435, 0);--±æ≥°ÀŒΩ“—æ≠¡Ï»°µƒ∞Ôª·π±œ◊∂»«Â¡„--by ¡Œ÷æ…Ω
@@ -484,12 +483,25 @@ if (result == 0) then
 		local nlevel = BT_GetGameData(GAME_LEVEL)
 		G_ACTIVITY:OnMessage("SignUpSongJin", PlayerIndex, nlevel)
 		tbLog:PlayerActionLog("TinhNangKey","BaoDanhTongKim")
-	else
-		local szMsg = "Xin lÁi, tham gia ÆÓt TËng Kim Æπi chi’n nµy, c«n ph∂i nÈp 3000 l≠Óng"
-		Say(szMsg, 0)
-		return 
-	end
+	
 end
+-- if (result == 0) then
+		-- if (CalcItemCount(-1, 6, 1, 30083, -1) >= 1 and ConsumeEquiproomItem(1, 6, 1, 30083, 1) == 1) then		
+		-- BT_LeaveBattle() -- «Â≥˝ÕÊº“øÕªß∂Àµ±«∞µƒ≈≈√˚ ˝æ›
+		-- BT_ClearPlayerData()
+		-- SetTask(2435, 0);--±æ≥°ÀŒΩ“—æ≠¡Ï»°µƒ∞Ôª·π±œ◊∂»«Â¡„--by ¡Œ÷æ…Ω
+		-- Msg2Player("Nhæc nhÎ: c„ th”  n ph›m ~ Î g„c tr∏i ph›a tr™n bµn ph›m Æ” xem tin t¯c chi’n s˘!");
+		-- BT_SetData(PL_ROUND,BT_GetGameData(GAME_ROUND))
+		-- tbLog:PlayerActionLog("EventChienThang042011","BaoDanhTongKim")	-- ±®√˚»’÷æ
+		-- local nlevel = BT_GetGameData(GAME_LEVEL)
+		-- G_ACTIVITY:OnMessage("SignUpSongJin", PlayerIndex, nlevel)
+		-- tbLog:PlayerActionLog("TinhNangKey","BaoDanhTongKim")
+	-- else
+		-- local szMsg = %BATTLE_STR_2
+		-- Say(szMsg, 0)
+		-- return 
+	-- end
+-- end
 
 gametime = floor(GetMSRestTime(MISSIONID, 40) / 18);
 AddMSPlayer(MISSIONID,camp);
@@ -633,17 +645,36 @@ function nt_getTask(nTaskID)
 	return GetTask(nTaskID)
 end
 
-function but_pop2home( camp )
+
+function but_pop2home(camp)
+local nTime = tonumber(GetLocalDate("%H%M"));							 
 	oldPlayerIndex = PlayerIndex
 	tbPlayer = { }
 	tbRMPlayer = {}
 	count = 0
 	count_remain = 0
 	idx = 0;
-	for i = 1 , 500 do 
+	for i = 1 , 350 do 
 		idx, pidx = GetNextPlayer( MISSIONID,idx, camp );
 		if( pidx > 0 ) then
 		 	PlayerIndex = pidx
+		--	local W,nx,ny = GetWorldPos();
+		--	local toadox=floor(nx/8)
+		--	local toadoy=floor(ny/16)
+		--		if GetFightState( ) >= 0 and GetTask(3060)==toadox and GetTask(3061)==toadoy and (GetTask(3062)+3==nTime) then
+		--			count = count + 1
+		-- 		tbPlayer[ count ] = pidx
+		--		--Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." 1")
+		--		else
+		--			if GetTask(3060)~=toadox or GetTask(3061)~=toadoy then
+		--				SetTask(3062,nTime)
+		--			end
+		--			SetTask(3060,toadox)
+		--			SetTask(3061,toadoy)
+					
+				--	Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." -1")
+				--	Msg2Player(""..GetTask(3060).."--"..GetTask(3061).."--"..GetTask(3062).." -2")
+			--	end
 		 	if ( GetFightState( ) == 0 and ( ( GetGameTime() - BT_GetData( PL_LASTDEATHTIME ) ) >= TIME_PLAYER_STAY ) ) then
 		 		count = count + 1
 		 		tbPlayer[ count ] = pidx
@@ -657,22 +688,42 @@ function but_pop2home( camp )
 	 	end;
 	end 
 
-	local mapfile = GetMapInfoFile(BT_GetGameData(GAME_MAPID))
-
+	local game_level = BT_GetGameData(GAME_LEVEL);
 	if ( count > 0 ) then
-		if ( camp == 1 ) then
-			area = BT_GetGameData(GAME_CAMP1AREA);
-		else
-			area = BT_GetGameData(GAME_CAMP2AREA);
-		end
-		npcfile = GetIniFileData(mapfile, "Area_"..area, tbNPCPOS[random(2)]);
 		for i = 1, count do
 			PlayerIndex = tbPlayer[ i ]
-			x,y = bt_getadata(npcfile)
-			SetPos(floor(x/32), floor(y/32))
-			SetFightState(1)
-			Msg2Player("<color=pink>Bπn kh´ng th” Î lπi hÀu doanh Æ≠Óc n˜a")
+		 	local l_curcamp = GetCurCamp();
+
+			SetTaskTemp(200,0);
+			SetLogoutRV(0);
+			SetCreateTeam(1);
+			SetDeathScript("");
+			SetFightState(0)
+			SetPunish(1)
+			ForbidChangePK(0);
+			SetPKFlag(0)
+ 
+			if (l_curcamp == 1) then
+				SetRevPos(tbGAME_SIGNMAP[game_level], 1)
+			--	NewWorld(bt_getsignpos(1))
+			NewWorld(968,1574,3174)
+			SetFightState(0)
+			DisabledUseTownP(0);
+			else	
+				SetRevPos(tbGAME_SIGNMAP[game_level], 2)
+				--NewWorld(bt_getsignpos(2))
+				NewWorld(968,1574,3174)
+			SetFightState(0)
+			DisabledUseTownP(0);
+			end;
+			
+			local camp = GetCamp();
+			SetCurCamp(camp);
+			
 		end
+	--local b = GetGameTime()
+	--SetTask(5863, b)
+	Talk(1, "", "Kh´ng Æ≠Óc treo acc qu∏ thÍi gian qui Æﬁnh trong Æπi doanh..")
 	end
 
 	if ( count_remain > 0 ) then
@@ -680,9 +731,11 @@ function but_pop2home( camp )
 			PlayerIndex = tbRMPlayer[ i ]
 			remain_time = TIME_PLAYER_STAY - ( GetGameTime() - BT_GetData( PL_LASTDEATHTIME ) )
 			if( remain_time > 0) then
-				Msg2Player("<color=pink>Bπn cﬂn c„ th” ¨ lπi "..remain_time.." gi©y")
+				Msg2Player("<color=white>ßπi hi÷p chÿ c„ th” Î lπi "..remain_time.." gi©y.")
 			end
 		end
 	end
 	PlayerIndex = oldPlayerIndex
 end
+
+

@@ -1,7 +1,11 @@
---ÖĞÔ­±±Çø ãê¾©¶«ÃÅ Õ½¶·×´Ì¬ÇĞ»»Trap
+--Bien kinh Dong
 
 function main(sel)
-
+if GetTask(5859)==1 then
+Say("§ang VËn Tiªu, Kh«ng ThÓ Vµo Thµnh")
+SetPos(1733, 3263)
+return 1	
+end
 if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÄÚ
 	SetPos(1727, 3255)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÍâ	
 	SetFightState(1)		-- ×ª»»ÎªÕ½¶·×´Ì¬
@@ -10,6 +14,4 @@ else			       		-- Íæ¼Ò´¦ÓÚÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÍâ
 	SetFightState(0)		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
 end;
 	AddStation(4)			-- ¼ÇÂ¼½ÇÉ«Ôø¾­µ½¹ıãê¾©¸®
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
 end;

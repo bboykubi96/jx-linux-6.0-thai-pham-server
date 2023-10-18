@@ -153,13 +153,14 @@ function bw_state_joined_in(Camp)
 	SetCreateTeam(0);
 	
 	--´ò¿ªPK¿ª¹Ø
-	if (Camp == 0) then
-		SetPKFlag(0)
-		ChangeOwnFeature(0, 0, -1, -1, -1, -1, -1)
-		Msg2Player("Träng tµi: Tr¹ng th¸i ®· ®­îc Èn");
-	else
-		SetPKFlag(1)
-	end;
+--	if (Camp == 0) then
+--		SetPKFlag(0)
+--		ChangeOwnFeature(0, 0, -1, -1, -1, -1, -1)
+--		Msg2Player("Träng tµi: Tr¹ng th¸i ®· ®­îc Èn");
+--	else
+--		SetPKFlag(1)
+--	end;\
+	SetPKFlag(2);
 	ForbidChangePK(1);
 	DisabledUseTownP(1)
 	
@@ -201,7 +202,7 @@ function OnShowKey()
 	local szCaptainName = {};
 	local szCaptainName = bw_getcaptains();
 	if (GetMissionV(MS_MAXMEMBERCOUNT) <= 1) then
-		Say("Ng­êi ®· ghi danh tham gia l«i ®µi, kh«ng cÇn biÕt sè lÇn tham gia, vÉn cã thÓ trùc tiÕp thi ®Êu.",0);
+		Say("Ng­êi ®· ghi danh tham gia l«i ®µi, kh«ng cÇn biÕt s?lÇn tham gia, vÉn c?th?trùc tiÕp thi ®Êu.",0);
 		SubWorld = OldSubWorld;
 		return
 	end
@@ -214,9 +215,9 @@ function OnShowKey()
 		key = GetMissionV(MS_TEAMKEY[2]);
 	end
 	if (key == 0) then
-		Say("C¸c h¹ kh«ng ë s©n thi ®Êu trung, ta kh«ng thÓ nãi ra sè thø tù thi ®Êu.",0)
+		Say("C¸c h?kh«ng ?s©n thi ®Êu trung, ta kh«ng th?nãi ra s?th?t?thi ®Êu.",0)
 	else
-		Say("Sè thø tù lµ<color=yellow> ["..key.."]<color><#>, Nhanh lªn, h·y nãi cho c¸c thµnh viªn trong ®éi, thµnh viªn cã sè thø tù chÝnh x¸c míi cã thÓ vµo thi ®Êu", 0);
+		Say("S?th?t?l?color=yellow> ["..key.."]<color><#>, Nhanh lªn, h·y nãi cho c¸c thµnh viªn trong ®éi, thµnh viªn c?s?th?t?chÝnh x¸c míi c?th?vµo thi ®Êu", 0);
 	end
 	SubWorld = OldSubWorld;
 end

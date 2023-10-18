@@ -1,29 +1,29 @@
---Î÷ÄÏ±±Çø ³É¶¼¸® ÑÃÃÅÃÅ¿Ú¸æÊ¾ÅÆ1
--- Update: Dan_Deng(2004-02-27) ÖØÐÂÉè¼ÆÈÎÎñ(³É¶¼É±Ò°Öí)
--- ¿ÉÖØ¸´ÈÎÎñ£¨ÖØ¸´ÖÜÆÚ£ºÏÖÊµÊ±¼ä1Ìì£©
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu thµnh ®« phñ nha m«n cöa c¸o kú bµi 1 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2004-02-27) lÇn n÷a thiÕt kÕ nhiÖm vô ( thµnh ®« giÕt heo rõng ) 
+-- script viet hoa By http://tranhba.com  nh­ng t¸i diÔn nhiÖm vô # t¸i diÔn chu kú # thùc tÕ thêi gian 1 ngµy # 
 
-function main(sel)
-	Uworld11 = GetTask(11)
-	Udate = tonumber(date("%Y%m%d"))						-- ÐèÒª×ª»»³ÉÊýÖµ²ÅÄÜÖ±½Ó½øÐÐ±È½Ï
-	if (GetSex() == 0) then			-- ÄÐÅ®ÄÚÈÝ²»Í¬
-		sexstr = "Tr¸ng sÜ "
-	else
-		sexstr = "N÷ hiÖp"
-	end
+function main(sel) 
+Uworld11 = GetTask(11) 
+Udate = tonumber(date("%Y%m%d")) -- script viet hoa By http://tranhba.com  cÇn chuyÓn ®æi thµnh trÞ sè míi cã thÓ trùc tiÕp tiÕn hµnh t­¬ng ®èi 
+if (GetSex() == 0) then -- script viet hoa By http://tranhba.com  nam n÷ néi dung bÊt ®ång 
+sexstr = " tr¸ng sÜ " 
+else 
+sexstr = " n÷ hiÖp " 
+end 
 
-	if (Uworld11 == 0) or ((Uworld11 > 255) and (Uworld11 < Udate)) then		-- ¿ÉÒÔ½ÓÈÎÎñ
-		Say("Th«ng c¸o: GÇn ®©y c¸c vïng ngo¹i « bÞ heo rõng quÊy nhiÔu, ph¸ ho¹i mïa mµng, thËt lµ phiÒn phøc, ®· treo gi¶i 500 l¹ng b¹c ®Ó t×m dòng sÜ diÖt bÇy heo rõng nµy. HÔ giÕt ®­îc bän chóng th× ®Õn nha m«n l·nh th­ëng.",2,"B¶ng niªm yÕt /W11_get","Kh«ng mµng /no")
-	elseif (Uworld11 <= 255) then		-- ÈÎÎñ½øÐÐÖÐ
-		Talk(1,"","Nha dÞch phñ Thµnh §«: "..sexstr..GetName().."NhiÒu hiÖp sÜ h¨ng h¸i v× d©n trõ ho¹, ®em l¹i sù yªn b×nh cho d©n chóng, chuÈn bÞ ®ãn nh÷ng tr¸ng sÜ chiÕn th¾ng trë vÒ. ")
-	else				-- Î´µ½ÖØ¸´Ê±¼ä
-		Talk(1,"","Nha dÞch phñ Thµnh §«: "..sexstr..GetName().."V× d©n trõ häa, ai diÖt ®­îc mèi ho¹ heo rõng ë 4 vïng, bæn phñ th­ëng ngay 500 l¹ng vµ biÓu d­¬ng hµnh ®éng nghÜa hiÖp. Bè c¸o. ")
-	end
-end;
+if (Uworld11 == 0) or ((Uworld11 > 255) and (Uworld11 < Udate)) then -- script viet hoa By http://tranhba.com  cã thÓ tiÕp nhËn vô 
+Say("Th«ng b¸o # gÇn nhÊt ë ngoµi thµnh cã heo rõng nhiÔu lo¹n , ph¸ h­ trang gi¸ , thËt lµ phiÒn to¸i , ®· treo gi¶i th­ëng 500 l­îng b¹c tr¾ng , t×m dòng sÜ tiªu diÖt nh÷ng thø nµy heo rõng . giÕt chÕt heo rõng ®Ých , cã thÓ tíi nha m«n dÉn t­ëng .",2,"Treo gi¶i th­ëng b¶ng /W11_get","Kh«ng cã trang gi¸ /no") 
+elseif (Uworld11 <= 255) then -- script viet hoa By http://tranhba.com  nhiÖm vô tiÕn hµnh trung 
+Talk(1,"","Thµnh ®« phñ nha dÞch : "..sexstr..GetName().." rÊt nhiÒu hiÖp sÜ vui lßng v× d©n trõ h¹i , cho ng­êi ta d©n mang ®Õn b×nh an , chuÈn bÞ nghªnh ®ãn chiÕn th¾ng trë vÒ tr¸ng sÜ . ") 
+else -- script viet hoa By http://tranhba.com  ch­a tíi t¸i diÔn thêi gian 
+Talk(1,"","Thµnh ®« phñ nha dÞch : "..sexstr..GetName().." v× d©n trõ h¹i , ng­êi nµo giÕt ®­îc 4 c¸i khu vùc ®Ých heo rõng , vèn phñ liÒn t­ëng th­ëng 500 hai , lµm khen ngîi hiÖp nghÜa ®Ých hµnh ®éng . ") 
+end 
+end; 
 
-function W11_get()
-	Talk(1,"","B¹n giËt lÊy b¶n th«ng c¸o, quyÕt t©m trõ h¹i gióp b¸ t¸nh!")
-	SetTask(11,1)
-end
+function W11_get() 
+Talk(1,"","Thµnh ®« phñ nha lµm # ngµy gÇn ®©y bèn giao bÞ heo rõng quÊy rÇy , khiÕn cho trang gi¸ hñy ­¬ng tè nöa , thËt lµ ghª tëm , hiÖn treo gi¶i th­ëng b¹c tr¾ng n¨m tr¨m l­îng , t×m kiÕm cã thÓ diÖt trõ ®¸m nµy heo rõng ®Ých dòng sÜ . phµm lµ giÕt chÕt heo rõng m­êi ®Çu ng­êi , lµ ®­îc ®Õn nha m«n chç nhËn lÊy th­ëng ng©n . ") 
+SetTask(11,1) 
+end 
 
-function no()
-end
+function no() 
+end 

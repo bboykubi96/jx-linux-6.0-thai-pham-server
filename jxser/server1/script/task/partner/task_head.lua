@@ -6,12 +6,12 @@
 -- 2005/09/09 PM 11:19
 
 -- 只有他和她两个人
--- 他们系爱
+-- 他们相爱
 -- 她记得
--- 他的手抚摩在她的皮肤上的微情
--- 他的亲吻像鸟群在天空⒂过
+-- 他的手抚摩在她的皮肤上的温情
+-- 他的亲吻像鸟群在天空掠过
 -- 他在她身体里面的暴戾和放纵
--- 他入睡时候的样子充Ⅹ纯真
+-- 他入睡时候的样子充满纯真
 -- 她记得，清晨她醒过来的一刻，他在她的身边
 -- 她睁着眼睛，看曙光透过窗帘一点一点地照射进来
 -- 她的心里因为幸福而疼痛
@@ -21,7 +21,7 @@
 -- 同伴系统的头文件
 IncludeLib("PARTNER")
 
--- 面向对象赖的支持
+-- 面向对象类的支持
 Include ("\\script\\lib\\mem.lua");
 
 -- 读入字符串处理文件
@@ -30,27 +30,27 @@ Include ("\\script\\task\\system\\task_string.lua");
 -- 读入奖励头文件
 Include ("\\script\\task\\partner\\task_award.lua");
 
-PARID_TASK_MASTER_001 = 3;      -- 记⒓侍郎之死的进展 ID
-PARID_TASK_MASTER_002 = 4;      -- 记⒓控蛇人之秘进展的 ID
-PARID_TASK_MASTER_003 = 5;      -- 记⒓珠宝商人进展的 ID
-PARID_TASK_MASTER_004 = 6;      -- 记⒓异族武士进展的 ID
-PARID_TASK_MASTER_005 = 14;     -- 记⒓隐藏任务进展的 ID
+PARID_TASK_MASTER_001 = 3;      -- 记录侍郎之死的进展 ID
+PARID_TASK_MASTER_002 = 4;      -- 记录控蛇人之秘进展的 ID
+PARID_TASK_MASTER_003 = 5;      -- 记录珠宝商人进展的 ID
+PARID_TASK_MASTER_004 = 6;      -- 记录异族武士进展的 ID
+PARID_TASK_MASTER_005 = 14;     -- 记录隐藏任务进展的 ID
 
-PARID_TASK_REWIND_001 = 30;     -- 记⒓侍郎之死修炼篇的进展 ID
-PARID_TASK_REWIND_002 = 31;     -- 记⒓控蛇人之秘修炼篇的进展 ID
-PARID_TASK_REWIND_003 = 32;     -- 记⒓珠宝商人修炼篇的进展 ID
-PARID_TASK_REWIND_004 = 33;     -- 记⒓异族武士修炼篇的进展 ID
+PARID_TASK_REWIND_001 = 30;     -- 记录侍郎之死修炼篇的进展 ID
+PARID_TASK_REWIND_002 = 31;     -- 记录控蛇人之秘修炼篇的进展 ID
+PARID_TASK_REWIND_003 = 32;     -- 记录珠宝商人修炼篇的进展 ID
+PARID_TASK_REWIND_004 = 33;     -- 记录异族武士修炼篇的进展 ID
 
 ARY_REWIND_DATE = {
-	[1] = 61, -- 记⒓侍郎之死修炼篇的开始日期
-	[3] = 62, -- 记⒓珠宝商人修炼篇的开始日期
-	[4] = 63, -- 记⒓异族武士修炼篇的开始日期
+	[1] = 61, -- 记录侍郎之死修炼篇的开始日期
+	[3] = 62, -- 记录珠宝商人修炼篇的开始日期
+	[4] = 63, -- 记录异族武士修炼篇的开始日期
 }
 
 ARY_REWIND_NUM = {
-	[1] = 64, -- 记⒓侍郎之死修炼篇的完成次数
-	[3] = 65, -- 记⒓珠宝商人修炼篇的完成次数
-	[4] = 66, -- 记⒓异族武士修炼篇的完成次数
+	[1] = 64, -- 记录侍郎之死修炼篇的完成次数
+	[3] = 65, -- 记录珠宝商人修炼篇的完成次数
+	[4] = 66, -- 记录异族武士修炼篇的完成次数
 }
 
 CProcess = {
@@ -66,9 +66,9 @@ CProcess = {
 	end,
 	
 	-- 执行任务的内容，不可重载
-	-- 传入参数：int:nMode 如果为 1 则表示兜人共同执行此任务
+	-- 传入参数：int:nMode 如果为 1 则表示多人共同执行此任务
 	-- 返回 0 则表示执行过程无内容，可以继续原来的脚本
-	-- 返回 1 则表示有内容，应该中断息面的脚本执行
+	-- 返回 1 则表示有内容，应该中断下面的脚本执行
 	doTaskEntity = function(self, nMode)
 		
 		local nPreservedPlayerIndex = PlayerIndex
@@ -80,30 +80,31 @@ CProcess = {
 		
 		if nMode==nil then nMode=0; end;
 		
-		if nMode==1 then
-			if (nMemCount == 0) then
-				nCondition = self:checkCondition();
-				nResult = self:taskEntity(nCondition);
-			else
-				for i = 1, nMemCount do -- 在这里开始循环遍历每个玩家
-					PlayerIndex = GetTeamMember(i);
-					-- 排除自己之外的所有玩家执行一遍
-					if PlayerIndex~=nPreservedPlayerIndex or nPreservedPlayerIndex==nil then
-						self:taskEntity(self:checkCondition());
-					end;
-				end;
-				PlayerIndex = nPreservedPlayerIndex; -- 循环结束后在这里归还主玩家 ID
+--		if nMode==1 then
+--			if (nMemCount == 0) then
+--				nCondition = self:checkCondition();
+--				nResult = self:taskEntity(nCondition);
+--			else
+--				for i = 1, nMemCount do -- 在这里开始循环遍历每个玩家
+--					PlayerIndex = GetTeamMember(i);
+--					-- 排除自己之外的所有玩家执行一遍
+--					if PlayerIndex~=nPreservedPlayerIndex or nPreservedPlayerIndex==nil then
+--						self:taskEntity(self:checkCondition());
+--					end;
+--				end;
+--				PlayerIndex = nPreservedPlayerIndex; -- 循环结束后在这里归还主玩家 ID
 				
 --				-- 先在这里对自己执行一遍
-				nResult = self:taskEntity(self:checkCondition());
-			end;
-		else
+--				nResult = self:taskEntity(self:checkCondition());
+--			end;
+--		else
+
 		nCondition = self:checkCondition();
 		nResult = self:taskEntity(nCondition);
 		return nResult;
 		
-		end;
-		return nResult;
+--		end;
+--		return nResult;
 	end,
 	
 };
@@ -173,11 +174,11 @@ end;
 -- 传入参数：int:nTask 第几个修炼任务
 function CheckRewindState(nTask)
 
-local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/寓/日
+local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/月/日
 local nOldDate = GetPartnerTask(ARY_REWIND_DATE[nTask]);
 local nTimes   = GetPartnerTask(ARY_REWIND_NUM[nTask]);
 
-	-- 如果时间不系同则可以做
+	-- 如果时间不相同则可以做
 	if nNowDate~=nOldDate then
 		return 1;
 	else
@@ -192,10 +193,10 @@ local nTimes   = GetPartnerTask(ARY_REWIND_NUM[nTask]);
 end;
 
 
--- 当符合条件后开始一次孝的修炼任务的处理
+-- 当符合条件后开始一次新的修炼任务的处理
 function SetRewindStart(nTask)
 
-local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/寓/日
+local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/月/日
 local nOldDate = GetPartnerTask(ARY_REWIND_DATE[nTask]);
 
 	if nNowDate~=nOldDate then
@@ -209,14 +210,14 @@ end;
 -- 完成一次修炼任务后调用此功能
 function SetRewindFinish(nTask)
 
-local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/寓/日
+local nNowDate = tonumber(date("%y")..date("%m")..date("%d")); -- 取得今天的时间，年/月/日
 local nTimes   = GetPartnerTask(ARY_REWIND_NUM[nTask]);
 local i=0;
 
 	SetPartnerTask(ARY_REWIND_DATE[nTask], nNowDate);
 	SetPartnerTask(ARY_REWIND_NUM[nTask], nTimes + 1);
 
-	-- 清空所有的奖励记⒓
+	-- 清空所有的奖励记录
 	for i=1, 10 do
 		SetTaskAwardState(ARY_REWIND_AWARD[nTask], i, 0);
 	end;

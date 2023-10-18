@@ -1,8 +1,8 @@
---中原北区 七杀洞to天忍教室内右2
---Trap ID：中原北区 4
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu th蕋 s竧 ng to ng祔 nh蒼 b猲 trong ph遪g h鋍 b猲 ph秈 2 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 4 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(48, 1591, 3098);
+NewWorld(48, 1591, 3098); 
 
 end;

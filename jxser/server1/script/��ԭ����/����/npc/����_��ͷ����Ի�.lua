@@ -9,6 +9,9 @@ Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 ---------------------------------------------------------------
 function main(sel)
+
+	--dofile("script/ÖÐÔ­ÄÏÇø/ÑïÖÝ/npc/ÑïÖÝ_ÂëÍ·´¬·ò¶Ô»°.lua")
+
 	local nNpcIndex = GetLastDiagNpc();
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M"))
 
@@ -25,9 +28,10 @@ function main(sel)
 		tbDailog:AddOptEntry("§i §µo Hoa §¶o (2) [ "..AEXP_TICKET.." l­îng]", go_thd)
 	end
 	G_TASK:OnMessage("NguyÖt Ca §¶o", tbDailog, "DialogWithNpc")
-	if check_showdialog_condition() then
+	--if check_showdialog_condition() then
 		tbDailog:AddOptEntry("§­a ta ®Õn NguyÖt Ca §¶o", goto_yuegedao)
-	end
+	--end
+
 	tbDailog:Show()
 end;
 
@@ -57,7 +61,7 @@ end
 
 function goto_yuegedao()
 	if CalcItemCount(3, 6, 1, 2908, -1) <= 0 then
-		Msg2Player("Ta kh«ng cã NguyÖt Ca LÖnh")
+		Msg2Player("Kh¸ch quan kh«ng cã NguyÖt Ca LÖnh µ?")
 		return
 	end
 	NewWorld(968, 1436, 3179)

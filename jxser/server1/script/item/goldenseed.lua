@@ -1,4 +1,5 @@
 IncludeLib("ITEM");
+Include("\\script\\lib\\awardtemplet.lua")
 --huihuangzhiguo_level
 MX_LANTERN_COUNT = 2;
 GOLDFRUIT_MX_COUNT = 365;
@@ -7,8 +8,8 @@ TASKMAXEAT = 2314;
 TASKEATCOUNT = 2322;
 
 function main(ItemIndex)
-	if (GetLevel() < 120) then
-		Say("<#> §é rÌn luyÖn cña ng­¬i ch­a ®ñ ®Ó ¨n qu¶ nµy.", 0)
+	if (GetLevel() < 80) then
+		Say("<#> §é rÌn luyÖn cña ng­¬i ch­a ®ñ cÊp 80 ®Ó ¨n qu¶ nµy.", 0)
 		return 1
 	end
 	local nDate = tonumber(GetLocalDate("%m%d"))
@@ -40,8 +41,19 @@ function main(ItemIndex)
 	
 	SetTask(TASKMAXEAT, GetTask(TASKMAXEAT) + 1)	--ÈçºÎ±£Ö¤´Ó1¿ªÊ¼¼ÆÊýÄØ£¿£¿
 	SetTask(TASKEATCOUNT, GetTask(TASKEATCOUNT) + 1)
-	local award_exp = 50000000
+	local award_exp = 10e6
+	
+--	tbAwardTemplet:GiveAwardByList({{szName = "TiÒn §ång",tbProp={4,417,1,1},nCount=10},}, "test", 1);
+--tbAwardTemplet:GiveAwardByList({{szName = "Thñy Tinh",tbProp={4,random(238,240),1,1},nCount=1},}, "test", 1);
+--		tbAwardTemplet:GiveAwardByList({{szName = "M¶nh GhÐp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=10},}, "test", 1);
+--	tbAwardTemplet:GiveAwardByList({{szName = "PhiÕu Bang Héi",tbProp={4,1623,1,1},nCount=5},}, "test", 1);
+--		tbAwardTemplet:GiveAwardByList({{szName = "Bã Cá",tbProp={6,1,4415,1,1},nCount=5},}, "test", 1);
+	--		tbAwardTemplet:GiveAwardByList({{szName = "Tinh Ngäc",tbProp={6,1,4409,1,1},nCount=5},}, "test", 1);
+--	for i=1,20 do
+	--tbAwardTemplet:GiveAwardByList({{szName = "M·nh Viªm §Õ",tbProp={6,1,random(4417,4421),1,1},nCount=1},}, "test", 1);
+	--end	
 	AddOwnExp(award_exp)
+	--Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông <color=yellow>Qu¶ Hoµng Kim<color> nhËn ®­îc <color=red>100 xu + 20 M·nh Viªm §Õ<color> ")
 	return 0
 end
 

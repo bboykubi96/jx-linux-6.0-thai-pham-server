@@ -1,7 +1,7 @@
---ÌìÁúËÂÍ¨Íùµã²ÔÉ½µÄÂ·±ê
+-- script viet hoa By http://tranhba.com  thiªn long tù ®i th«ng §iÓm th­¬ng s¬n ®İch b¶ng chØ ®­êng 
 
-function main(sel)
+function main(sel) 
 
-	Say("§i §iÓm Th­¬ng s¬n", 0)
+Say("# ®i §iÓm th­¬ng s¬n ", 0) 
 
 end;

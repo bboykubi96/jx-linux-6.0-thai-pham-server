@@ -1,14 +1,14 @@
--- script viet hoa By http://tranhba.com  ®Æc dß b¶o r­¬ng 
--- script viet hoa By http://tranhba.com  hiÓu b¶o 2014.2.14 
+--ÌØÌ½±¦Ïä
+--Ïş±¦ 2014.2.14
 
-function main(sel) 
-p=random(1,100); 
-if(p <= 30)then 
-AddItem(6,1,2311,1,0,0,0) -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - ngäc lon 
-end 
-
-for i=1,random(1,5) do 
-AddItem(6,1,2280,1,0,0,0) -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  ngÉu nhiªn ®­a tinh luyÖn th¹ch 
-end 
-return 0 
+function main(sel)
+	p=random(1,100);
+	if(p <= 30)then
+		AddItem(6,1,2311,1,0,0,0)  -----Óñ¹Ş
+	end
+	
+	for i=1,random(1,5) do
+		AddItem(6,1,2280,1,0,0,0)  ----Ëæ»úËÍ¾«Á¶Ê¯
+	end
+	return 0
 end

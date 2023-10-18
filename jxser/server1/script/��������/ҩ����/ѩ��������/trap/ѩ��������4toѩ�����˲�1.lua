@@ -1,9 +1,9 @@
---西北北区 雪豹洞二层4to雪豹洞八层1
---TrapID：西北北区 74
+-- script viet hoa By http://tranhba.com  t﹜ b綾 b綾 khu tuy誸 b竜 ng t莕g hai 4to tuy誸 b竜 ng t莕g t竚 1 
+-- script viet hoa By http://tranhba.com TrapID# t﹜ b綾 b綾 khu 74 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(152, 1675, 3365);
+SetFightState(1); 
+NewWorld(152, 1675, 3365); 
 
 end;

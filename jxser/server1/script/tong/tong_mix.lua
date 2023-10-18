@@ -1,9 +1,62 @@
 --tong_action.lua
 --°ï»á²Ù×÷£¬³ÌÐò·ÃÎÊµÄ½Ó¿Ú
+
+IncludeLib("TONG")
+
+st_soluongmem=120
+_SETTING_TONG_COUNT_MEMBER = 120
+
+function LimitMemberCountJoinTong_GSV(nTongID, nMemberID)
+	local nCount = TONG_GetMemberCount(nTongID, -1)
+	if nCount >= st_soluongmem then
+		TONG_ApplyKickMember(nTongID, nMemberID,3)
+		Msg2Tong(nTongID, "Sè L­îng thµnh viªn bang héi ®· v­ît qu¸ giíi h¹n cho phÐp kh«ng ThÓ tuyÓn thªm thµnh viªn.")
+		local nExt = nCount - (st_soluongmem-1) 
+		if nExt > 0 then
+			nMemberID = TONG_GetFirstMember(nTongID, 3);
+			for i=1,nExt do
+				TONG_ApplyKickMember(nTongID, nMemberID,3)
+				nMemberID = TONG_GetNextMember(nTongID, nMemberID, 3);
+			end
+		end
+	end
+	return 1
+
+	
+end
+
+function _TONG_MIX_DEBUG_Print_TABLE(_1)
+	print("\t_TONG_MIX_DEBUG_Print_TABLE ===========>")
+	if type(_1) == "table" then
+		for _k, _v in _1 do
+			if type(_v) == "table" then
+				_TONG_MIX_DEBUG_Print_TABLE(_v)
+			else
+				print("\t\t".._k.."=".._v)
+			end
+		end
+	end
+end
+
+function _TONG_MIX_DEBUG(_1, ...)
+	-- print("_TONG_MIX_DEBUG >> ".._1)
+	-- if type(arg) == "table" then 
+		-- _TONG_MIX_DEBUG_Print_TABLE(arg)
+	-- else
+		-- print("\t\t"..arg)
+	-- end
+end
+
 function DefFun2(n1, n2)
+
+	_TONG_MIX_DEBUG(1, n1, n2)
+	
 	return 1
 end
 function DefFun3(n1, n2, n3)
+
+	_TONG_MIX_DEBUG(2, n1, n2, n3)
+	
 	return 1
 end
 Include("\\script\\tong\\workshop\\workshop_setting.lua")
@@ -23,34 +76,23 @@ end
 -------------------×Ê½ð×ª»¯¹ØÏµ----------------------
 --´æÈ¡Ç®
 function MONEYFUND_ADD_R(nTongID, nAdd)
-	if nAdd == 0 then
+
+	_TONG_MIX_DEBUG(3, nTongID, nAdd)
+	
+	if (TONG_GetMoney(nTongID) + nAdd < 0)then
 		return 0
 	end
-	
-	local nTongMoney = TONG_GetMoney(nTongID);
-	if nTongMoney < 0 then
-		return 0
-	end
-	
-	if nAdd > 0 then
-		if (nTongMoney + nAdd <= 0) then
-			return 0
-		end
-	else
-		if nTongMoney < abs(nAdd) then
-			return 0
-		end
-	end
-	
-	-- if (TONG_GetMoney(nTongID) + nAdd < 0)then
-		-- return 0
-	-- end
 	local szMember = TONGM_GetName(nTongID, ExecutorId);
 	local szMsg;
 	if (nAdd > 0) then
-		szMsg = szMember.." ®· ®ãng gãp "..nAdd.." l­îng vµo ng©n quü bang héi"
+		szMsg = szMember.." ®· ®ãng gãp "..nAdd.." l­îng vµo ng©n qu¸ bang héi"
+		--szMsg = "Khong the thuc hien thao tac nay"
+		--return 0
 	else
-		szMsg = szMember.." ®· rót tõ ng©n quü bang héi"..(-nAdd).." l­îng"
+		szMsg = szMember.." ®· rót t?ng©n qu¸ bang héi "..(-nAdd).." l­îng"
+		--szMsg = "Khong the thuc hien thao tac nay"
+		--return 0
+
 	end	
 	Msg2Tong(nTongID, szMsg)
 	if (abs(nAdd) >= 1000000) then
@@ -60,6 +102,15 @@ function MONEYFUND_ADD_R(nTongID, nAdd)
 	return 1
 end
 function MONEYFUND_ADD_G_1(nTongID, nAdd)
+
+	-- _TONG_MIX_DEBUG(4, nTongID, nAdd)
+	-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
+	if (CheckGlobalTradeFlag() == 0) then
+		return 0
+	end
 	local nCash = GetCash()
 	if (nCash < nAdd)then
 		Msg2Player("Kh«ng ®ñ ng©n l­îng!")
@@ -70,21 +121,26 @@ function MONEYFUND_ADD_G_1(nTongID, nAdd)
 		Msg2Player("Ng©n l­îng n¹p vµo qu¸ nhiÒu!")
 		return 0
 	end
-	--ÏÈ¸¶Ç®ÔÙ¼Ó×Ê½ð
+	
 	if (nAdd > 0)then	--´æÇ®
 		if Pay(nAdd) ~= 1 then
 			return 0
 		end
 	else				--È¡Ç®
 		if nCash > nMax + nAdd then --È¡³öºó´óÓÚnMax
-			Msg2Player("Kh«ng thÓ rót ng©n l­îng! Sè ng©n l­îng trong hµnh trang sÏ v­ît møc cho phÐp!")
+			Msg2Player("Kh«ng ThÓ rót ng©n l­îng! S?ng©n l­îng trong hµnh trang s?v­ît møc cho phÐp!")
 			return 0
 		end
 	end
 	return 1
 end
 function MONEYFUND_ADD_G_2(nTongID, nAdd)
-	--ÏÈ¿Û×Ê½ðÔÙ¸øÇ®
+
+	-- _TONG_MIX_DEBUG(5, nTongID, nAdd)
+	-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	if (nAdd < 0)then
 		Earn(-nAdd)
 	end
@@ -93,6 +149,9 @@ end
 
 --°ï»á×Ê½ð×ª½¨Éè»ù½ð
 function MONEYFUND2BUILDFUND_R(nTongID, nOffer)
+
+	_TONG_MIX_DEBUG(6, nTongID, nOffer)
+	
 	if (TONG_GetMoney(nTongID) < nOffer)then
 		return 0
 	end
@@ -104,7 +163,7 @@ function MONEYFUND2BUILDFUND_R(nTongID, nOffer)
 	if (TONG_ApplyAddMoney(nTongID, -nOffer) == 1 and TONG_ApplyAddBuildFund(nTongID, nAdd) == 1)then
 		TONG_ApplyAddWeekBuildFund(nTongID, nAdd)
 		local szMember = TONGM_GetName(nTongID, ExecutorId);
-		local szMsg = szMember.." lµm cho"..nOffer.."Ng©n s¸ch bang chuyÓn "..nAdd.." v¹n l­îng vµo ng©n s¸ch kiÕn thiÕt"
+		local szMsg = szMember.." lµm cho "..nOffer.." Ng©n s¸ch bang chuyÓn "..nAdd.." v¹n l­îng vµo ng©n s¸ch kiÕn thiÕt"
 		TONG_ApplyAddTaskValue(nTongID, TONGTSK_MONEYFUND2BF, nAdd)
 		TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼
 		Msg2Tong(nTongID, szMsg);
@@ -114,6 +173,12 @@ function MONEYFUND2BUILDFUND_R(nTongID, nOffer)
 	return 0
 end
 function MONEYFUND2BUILDFUND_G_1(nTongID, nOffer)
+
+	-- _TONG_MIX_DEBUG(7, nTongID, nOffer)
+	-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	if (TONG_GetMoney(nTongID) < nOffer)then
 		Msg2Player("Ng©n s¸ch bang héi kh«ng ®ñ")
 		return 0
@@ -124,7 +189,7 @@ function MONEYFUND2BUILDFUND_G_1(nTongID, nOffer)
 	end
 	local nCurFund = TONG_GetWeekBuildFund(nTongID)
 	if (nCurFund + nOffer/COEF_CONTRIB_TO_VALUE > tongGetWeekBuildUpper(nTongID, TONG_GetBuildLevel(nTongID)))then
-		Msg2Player("Kh«ng thÓ chuyÓn ng©n, v× sÏ lµm ng©n s¸ch kiÕn thiÕt bang v­ît qu¸ giíi h¹n tuÇn!")
+		Msg2Player("Kh«ng ThÓ chuyÓn ng©n, vâ sØ lµm ng©n s¸ch kiÕn thiÕt bang v­ît qu¸ giíi h¹n tuÇn!")
 		return 0
 	end
 	return 1
@@ -133,10 +198,13 @@ MONEYFUND2BUILDFUND_G_2 = DefFun2
 
 --½¨Éè»ù½ð×ªÕ½±¸»ù½ð
 function BUILDFUND2WARFUND_R(nTongID, nOffer)
+
+	_TONG_MIX_DEBUG(8, nTongID, nOffer)
+	
 	if (TONG_GetBuildFund(nTongID) >= nOffer)then
 		if (TONG_ApplyAddBuildFund(nTongID, -nOffer) == 1 and TONG_ApplyAddWarBuildFund(nTongID, nOffer) == 1) then
 			local szMember = TONGM_GetName(nTongID, ExecutorId);
-			local szMsg = szMember.." lµm cho"..nOffer.." v¹n ng©n s¸ch kiÕn thiÕt chuyÓn sang ng©n s¸ch chiÕn bÞ."
+			local szMsg = szMember.." lµm cho "..nOffer.." v¹n ng©n s¸ch kiÕn thiÕt chuyÓn sang ng©n s¸ch chiÕn bÞ"
 			TONG_ApplyAddTaskValue(nTongID, TONGTSK_BF2WF, nOffer)	
 			TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼
 			Msg2Tong(nTongID, szMsg);
@@ -147,6 +215,12 @@ function BUILDFUND2WARFUND_R(nTongID, nOffer)
 	return 0
 end
 function BUILDFUND2WARFUND_G_1(nTongID, nOffer)
+
+	-- _TONG_MIX_DEBUG(9, nTongID, nOffer)
+	-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	if (TONG_GetBuildFund(nTongID) <  nOffer)then
 		Msg2Player("Ng©n s¸ch kiÕn thiÕt bang kh«ng ®ñ!")
 		return 0
@@ -157,6 +231,9 @@ BUILDFUND2WARFUND_G_2 = DefFun2
 
 --³ÉÔ±½ðÇ®×ª½¨Éè»ù½ð
 function MONEY2BUILDFUND_R(nTongID, nOffer)
+
+	_TONG_MIX_DEBUG(10, nTongID, nOffer)
+	
 	local nTotalBuildfundAdd = floor(nOffer / 10000)
 	local nBuildfundAdd = 0
 	local nStoredAdd = 0
@@ -190,6 +267,12 @@ function MONEY2BUILDFUND_R(nTongID, nOffer)
 	return 1
 end
 function MONEY2BUILDFUND_G_1(nTongID, nOffer)
+
+	-- _TONG_MIX_DEBUG(11, nTongID, nOffer)
+		-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	if (nOffer < 10000)then
 		Msg2Player("Mçi lÇn quyªn gãp tèi thiÓu lµ 1 v¹n l­îng!")
 		return 0
@@ -199,13 +282,13 @@ function MONEY2BUILDFUND_G_1(nTongID, nOffer)
 		return 0
 	end
 	if (TONGM_GetFigure(nTongID, GetName()) == TONG_RETIRE)then
-		Msg2Player("Èn sü kh«ng thÓ ®ãng gãp!")
+		Msg2Player("Èn sØ kh«ng ThÓ ®ãng gãp!")
 		return 0
 	end
 	local nContribution = floor(nOffer/COEF_CONTRIB_TO_VALUE)
 	local nWeekTotal = GetWeeklyOffer()
 	if (nWeekTotal + nContribution > MAX_WEEK_CONTRIBUTION)then
-		Msg2Player("Kh«ng thÓ ®ãng gãp, v× lµm cho ®iÓm cèng hiÕn tÝch lòy sÏ v­ît qu¸ giíi h¹n tuÇn!")
+		Msg2Player("Kh«ng ThÓ ®ãng gãp, v× lµm cho ®iÓm cèng hiÕn tÝch lòy sÏ v­ît qu¸ giíi h¹n tuÇn!")
 		return 0
 	end
 	Pay(nOffer)
@@ -221,6 +304,9 @@ MONEY2BUILDFUND_G_2 = DefFun2
 
 --³ÉÔ±¹±Ï×¶È×ª´¢±¸¹±Ï×¶È
 function CONTRIBUTION2STOREOFFER_R(nTongID, nExecutor, nOffer)
+
+	_TONG_MIX_DEBUG(12, nTongID, nExecutor, nOffer)
+	
 	-- if (TONG_ApplyAddStoredOffer(nTongID, nOffer) ~= 1)then
 	if (TONG_ContributeOffer(nTongID, nExecutor, nOffer) ~= 1) then
 		return 0
@@ -235,7 +321,12 @@ function CONTRIBUTION2STOREOFFER_R(nTongID, nExecutor, nOffer)
 	return 1
 end
 function CONTRIBUTION2STOREOFFER_G_1(nTongID, nExecutor, nOffer)
-	-- ¿Û³ý¹±Ï×¶ÈÊ±²»ÏòrelayÉêÇë£¬ÒòÎªrelayÒ²»áÖ´ÐÐÏàÓ¦½Å±¾º¯Êý wangbin 2009-4-13
+
+	-- _TONG_MIX_DEBUG(13, nTongID, nExecutor, nOffer)
+		-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	if (GetContribution() < nOffer or AddContribution(-nOffer, 0) ~= 1)then
 		Msg2Player("§iÓm cèng hiÕn kh«ng ®ñ!")
 		return 0
@@ -247,10 +338,13 @@ CONTRIBUTION2STOREOFFER_G_2 = DefFun3
 -- ´¢±¸¹±Ï×¶È×ª³ÉÔ±¹±Ï×¶È£¨Èº·¢£©
 g_szFigure = { "Toµn thÓ bang héi", "Bang chñ ", "Tr­ëng L·o", "§éi tr­ëng", "§Ö tö ", "Èn sü" }
 function STOREOFFER2CONTRIBUTION1_R(nTongID, nFigure, nOffer)
+
+	_TONG_MIX_DEBUG(14, nTongID, nFigure, nOffer)
+	
 	if (TONG_IsExist(nTongID) ~= 1)then
 		return 0
 	end
-	-- local nCounts = TONG_GetOnlineCount(nTongID, nFigure)
+	local nCounts = TONG_GetOnlineCount(nTongID, nFigure)
 	-- if (TONG_GetStoredOffer(nTongID) >= nCounts * nOffer)then
 		-- if (TONGM_ApplyAddOfferEx(nTongID, nFigure, nOffer) ~= 1)then		
 		--	return 0
@@ -260,7 +354,7 @@ function STOREOFFER2CONTRIBUTION1_R(nTongID, nFigure, nOffer)
 		-- end	
 	if (TONG_DistributeOfferToGroup(nTongID, nFigure, nOffer) == 1) then
 		local szMaster = TONGM_GetName(nTongID, ExecutorId);
-		local szMsg = szMaster.."Thµnh viªn trªn m¹ng"..g_szFigure[nFigure+2].."("..nCounts.." ng­êi) ®­îc ph©n ph¸t "..nOffer.." ®iÓm cèng hiÕn!"
+		local szMsg = szMaster.." Thµnh viªn trªn m¹ng "..g_szFigure[nFigure+2].."("..nCounts.." ng­êi) ®­îc ph©n ph¸t "..nOffer.." ®iÓm cèng hiÕn!"
 		TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼
 		Msg2Tong(nTongID, szMsg);
 		cTongLog:WriteInfTB("FUND", "storeoffer2contribution1", nTongID, {storeoffer2contribution = nOffer})
@@ -269,6 +363,12 @@ function STOREOFFER2CONTRIBUTION1_R(nTongID, nFigure, nOffer)
 	return 0
 end
 function STOREOFFER2CONTRIBUTION1_G_1(nTongID, nFigure, nOffer)
+
+	-- _TONG_MIX_DEBUG(15, nTongID, nFigure, nOffer)
+		-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0
+	
 	local nCounts = TONG_GetOnlineCount(nTongID, nFigure)
 	if (TONG_GetStoredOffer(nTongID) < nCounts * nOffer)then
 		Msg2Player("Ng©n s¸ch cèng hiÕn kh«ng ®ñ ®Ó ph¸t!")
@@ -280,6 +380,9 @@ STOREOFFER2CONTRIBUTION1_G_2 = DefFun3
 
 -- ´¢±¸¹±Ï×¶È×ª³ÉÔ±¹±Ï×¶È£¨µ¥ÈË£©
 function STOREOFFER2CONTRIBUTION2_R(nTongID, nMemberID, nOffer)
+
+	_TONG_MIX_DEBUG(16, nTongID, nMemberID, nOffer)
+	
 	if (TONGM_IsExist(nTongID, nMemberID) == 0)then
 		return 0
 	end
@@ -300,8 +403,14 @@ function STOREOFFER2CONTRIBUTION2_R(nTongID, nMemberID, nOffer)
 	return 0
 end
 function STOREOFFER2CONTRIBUTION2_G_1(nTongID, nMemberID, nOffer)
+
+	-- _TONG_MIX_DEBUG(17, nTongID, nMemberID, nOffer)
+	-- Msg2Player("TÝnh n¨ng nµy hiÖn ®ang t¹m ®ãng!")
+	-- print("\t@@return 0")
+	-- return 0 
+	
 	if (TONGM_IsExist(nTongID, nMemberID) == 0)then
-		Msg2Player("Ng©n s¸ch ®iÓm cèng hiÕn chØ cã thÓ ph¸t cho thµnh viªn trong bang!")
+		Msg2Player("Ng©n s¸ch ®iÓm cèng hiÕn ch­a cã ThÓ ph¸t cho thµnh viªn trong bang!")
 		return 0
 	end
 	if (TONG_GetStoredOffer(nTongID) < nOffer)then
@@ -314,13 +423,16 @@ STOREOFFER2CONTRIBUTION2_G_2 = DefFun3
 
 -- ³ÉÔ±±»Ìß³ö°ï»á
 function MEMBER_KICK_R(nTongID, nMemberID, nFlag)
+
+	_TONG_MIX_DEBUG(18, nTongID, nMemberID, nFlag)
+	
 	if (TONGM_IsExist(nTongID, nMemberID) ~= 1) then
 		return 0;
 	end
 	local nMemberFigure = TONGM_GetFigure(nTongID, nMemberID);
 	if (nMemberFigure == 0 or nMemberFigure == 1) then
 		local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
-		Msg2PlayerByName(szExecutorName, TB_TONG_FIGURE_NAME[nMemberFigure].." kh«ng thÓ bÞ trôc xuÊt!");
+		Msg2PlayerByName(szExecutorName, TB_TONG_FIGURE_NAME[nMemberFigure].." kh«ng ThÓ bÞ trôc xuÊt!");
 		return 0;
 	end
 	local nStoredBuildFund = TONG_GetStoredBuildFund(nTongID)
@@ -362,17 +474,20 @@ function MEMBER_KICK_R(nTongID, nMemberID, nFlag)
 	--°ï»á¿ÛÍêÁË
 	local szExcutor = TONGM_GetName(nTongID, ExecutorId);
 	local szMember = TONGM_GetName(nTongID, nMemberID);
-	local szMsg = szExcutor.." trôc xuÊt "..szMember.." trôc xuÊt khái bang héi, ng©n s¸ch kiÕn thiÕt dù tr÷ gi¶m"..nBuildDec..
-		" v¹n, ng©n s¸ch chiÕn bÞ gi¶m"..nWarBuildDec.." v¹n!"
+	local szMsg = szExcutor.." trôc xuÊt "..szMember.." trôc xuÊt khái bang héi, ng©n s¸ch kiÕn thiÕt dù trö gi¶m "..nBuildDec..
+		" v¹n, ng©n s¸ch chiÕn bÞ gi¶m "..nWarBuildDec.." v¹n!"
 	Msg2Tong(nTongID, szMsg)	
 	if (nStoredBuildFund < nBuildDec)then
-		Msg2Tong(nTongID, "Khi trôc xuÊt ng­êi ng©n s¸ch kiÕn thiÕt dù tr÷ kh«ng ®ñ, phÇn thiÕu hôt sÏ khÊu trõ vµo ng©n s¸ch kiÕn thiÕt!")	
+		Msg2Tong(nTongID, "Khi trôc xuÊt ng­êi ng©n s¸ch kiÕn thiÕt dù trö kh«ng ®ñ, phÇn thiÕu hôt sÏ khÊu trõ vµo ng©n s¸ch kiÕn thiÕt!")	
 	end
 	--TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼	
 	cTongLog:WriteInfTB("MEMBER", "kick", nTongID, {member = szMember, builddec = nBuildDec, warbuilddec = nWarBuildDec})
 	return 1
 end
 function MEMBER_KICK_G_1(nTongID, nMemberID, nFlag)
+
+	_TONG_MIX_DEBUG(19, nTongID, nMemberID, nFlag)
+	
 	
 	if (TONGM_IsExist(nTongID, nMemberID) ~= 1) then
 		return 0;
@@ -380,7 +495,7 @@ function MEMBER_KICK_G_1(nTongID, nMemberID, nFlag)
 	local nMemberFigure = TONGM_GetFigure(nTongID, nMemberID);
 	if (nMemberFigure == 0 or nMemberFigure == 1) then
 		local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
-		Msg2Player(TB_TONG_FIGURE_NAME[nMemberFigure].." kh«ng thÓ bÞ trôc xuÊt!");
+		Msg2Player(TB_TONG_FIGURE_NAME[nMemberFigure].." kh«ng ThÓ bÞ trôc xuÊt!");
 		return 0;
 	end
 	
@@ -412,19 +527,19 @@ function MEMBER_KICK_G_1(nTongID, nMemberID, nFlag)
 	local nBuildDec = floor(nOffer * 0.6)
 	local nWarBuildDec = floor(nOffer * 0.4)
 	if (nFlag == 1)then
-		Say("<#>Trôc xuÊt thµnh viªn sÏ khÊu trõ ng©n s¸ch kiÕn thiÕt dù tr÷ cña bang"..nBuildDec.." v¹n (nÕu ng©n s¸ch kiÕn thiÕt dù tr÷ kh«ng ®ñ sÏ trõ vµo ng©n s¸ch kiÕn thiÕt) vµ ng©n s¸ch chiÕn bÞ"..nWarBuildDec.." v¹n, cã ®ång ý kh«ng?", 
-			2, "Trôc xuÊt/#KickConfirm("..nTongID..","..nMemberID..")", "Hñy bá /#Cancel")
+		Say("<#>Trôc xuÊt thµnh viªn sÏ khÊu trõ ng©n s¸ch kiÕn thiÕt dù tr÷ cña bang "..nBuildDec.." v¹n (nÕu ng©n s¸ch kiÕn thiÕt d÷ tr÷ kh«ng ®ñ sÏ trõ vµo ng©n s¸ch kiÕn thiÕt) vÒ ng©n s¸ch chiÕn bÞ"..nWarBuildDec.." v¹n, cßn ®ång ?kh«ng?", 
+			2, "Trôc xuÊt/#KickConfirm("..nTongID..","..nMemberID..")", "Hñy b?/#Cancel")
 	elseif (nFlag == 2)then
 		--Õ½±¸»ù½ð²»¹»¼õ
 		if (nWarFund < nWarBuildDec)then
-			Msg2Player("Sau khi trôc xuÊt thµnh viªn, ng©n s¸ch chiÕn bÞ sÏ khÊu trõ thµnh sè ©m, t¹m thêi kh«ng thÓ trôc xuÊt thµnh viªn!")
+			Msg2Player("Sau khi trôc xuÊt thµnh viªn, ng©n s¸ch chiÕn bÞ sÏ khÊu trõ thµnh sÏ ©m, t¹m thêi kh«ng ThÓ trôc xuÊt thµnh viªn!")
 			return 0
 		end
 		--´¢±¸²»¹»¼õ
 		if (nStoredBuildFund < nBuildDec)then
 			--ÔÙ¼ÓÕ½±¸»¹ÊÇ²»¹»¼õ
 			if (nBuildFund < nBuildDec - nStoredBuildFund)then
-				Msg2Player("Sau khi trôc xuÊt thµnh viªn, ng©n s¸ch kiÕn thiÕt sÏ khÊu trõ thµnh sè ©m, t¹m thêi kh«ng thÓ trôc xuÊt thµnh viªn!")
+				Msg2Player("Sau khi trôc xuÊt thµnh viªn, ng©n s¸ch kiÕn thiÕt sÏ khÊu trõ thµnh sÏ ©m, t¹m thêi kh«ng ThÓ trôc xuÊt thµnh viªn!")
 				return 0
 			end
 		end	
@@ -435,6 +550,9 @@ function MEMBER_KICK_G_1(nTongID, nMemberID, nFlag)
 	return 0
 end
 function MEMBER_KICK_G_2(nTongID, nMemberID, nFlag)
+
+	_TONG_MIX_DEBUG(20, nTongID, nMemberID, nFlag)
+	
 	-- Ö±½ÓÔÚrelay¿Û³ý5%¹±Ï×¶È¡£ wangbin 2009-4-15
 	--×¢Òâµ±Ç°µÄPlayerIDÊÇ±»ÌßÕß
 	-- local nContribution = GetContribution()
@@ -443,11 +561,17 @@ function MEMBER_KICK_G_2(nTongID, nMemberID, nFlag)
 	return 1
 end
 function KickConfirm(nTongID, nMemberID)
+
+	_TONG_MIX_DEBUG(21, nTongID, nMemberID)
+	
 	TONG_ApplyKickMember(nTongID, nMemberID, 2)
 end
 
 -- ³ÉÔ±ÍËÒþ
 function MEMBER_RETIRE_R(nTongID, nMemberID, bRetireOrNot)
+
+	_TONG_MIX_DEBUG(22, nTongID, nMemberID, bRetireOrNot)
+	
 	local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
 	local szMemberName = TONGM_GetName(nTongID, nMemberID);
 	local nTodayDate = floor(GetSysCurrentTime() / (3600*24));
@@ -458,24 +582,24 @@ function MEMBER_RETIRE_R(nTongID, nMemberID, bRetireOrNot)
 			if (ExecutorId == nMemberID) then
 				szPerson = "B¹n ";
 			end
-			Msg2PlayerByName(szExecutorName, szPerson.." ®¶m nhiÖm chøc vô quan träng, kh«ng thÓ tho¸i Èn, chØ cã ®éi tr­ëng vµ bang chóng míi cã thÓ tho¸i Èn!");
+			Msg2PlayerByName(szExecutorName, szPerson.." ®¶m nhiÖm chøc vô quan träng, kh«ng ThÓ tho¸i Èn, chØ cã ®éi tr­ëng vµ bang chóng míi cã ThÓ tho¸i Èn!");
 			return 0;
 		end
 		local nRetiredMemberCount = TONG_GetMemberCount(nTongID, 4);
 		if (nRetiredMemberCount >= floor((TONG_GetMemberCount(nTongID) + nRetiredMemberCount) * TONGMEMBER_RETIRE_MAX_RATE)) then
-			Msg2PlayerByName(szExecutorName, "Tr­íc m¾t sè ng­êi tho¸i Èn cña bang ®· ®¹t giíi h¹n, kh«ng thÓ tiÕp tôc sö dông thao t¸c tho¸i Èn"..nRetiredMemberCount);
+			Msg2PlayerByName(szExecutorName, "Tr­íc m¾t sè ng­êi tho¸i Èn cña bang ®· ®¹t giíi h¹n, kh«ng ThÓ tiÕp tôc sö dông thao t¸c tho¸i Èn "..nRetiredMemberCount);
 			return 0;
 		end
 		local szMsg = ""
 		if (ExecutorId ~= nMemberID) then
 			if (TONGM_GetOnline(nTongID, nMemberID) == 1 or
 				nTodayDate - TONGM_GetLastOnlineDate(nTongID, nMemberID) < TONGMEMBER_RETIRE_REQUIRE_DAY) then
-					Msg2PlayerByName(szExecutorName, "ChØ cã thÓ cho tho¸i Èn ®èi víi thµnh viªn kh«ng lªn m¹ng tõ "..TONGMEMBER_RETIRE_REQUIRE_DAY.." ngµy trë lªn!");
+					Msg2PlayerByName(szExecutorName, "ChØ cã ThÓ cho tho¸i Èn ®èi víi thµnh viªn kh«ng lªn m¹ng tõ "..TONGMEMBER_RETIRE_REQUIRE_DAY.." ngµy trë lªn!");
 					return 0;
 			end
-			szMsg = szExecutorName.." vs "..szMemberName.."TiÕn hµnh thao t¸c tho¸i Èn"
+			szMsg = szExecutorName.." vs "..szMemberName.." TiÕn hµnh thao t¸c tho¸i Èn"
 		else
-			szMsg = szMemberName.."Tho¸i Èn khái bang héi"
+			szMsg = szMemberName.." Tho¸i Èn khái bang héi"
 		end
 		Msg2Tong(nTongID, szMsg);
 		TONGM_ApplySetRetireDate(nTongID, nMemberID, nTodayDate);
@@ -486,10 +610,10 @@ function MEMBER_RETIRE_R(nTongID, nMemberID, bRetireOrNot)
 			return 0;
 		end
 		if (nTodayDate - TONGM_GetRetireDate(nTongID, nMemberID) < TONGMEMBER_UNRETIRE_REQUIRE_DAY) then
-			Msg2PlayerByName(szExecutorName, "KÓ tõ ngµy tho¸i Èn"..TONGMEMBER_UNRETIRE_REQUIRE_DAY.." ngµy sau ngµy tho¸i Èn míi cã thÓ hñy bá tho¸i Èn!");
+			Msg2PlayerByName(szExecutorName, "KÓ tõ ngµy tho¸i Èn "..TONGMEMBER_UNRETIRE_REQUIRE_DAY.." ngµy sau ngµy tho¸i Èn míi cã ThÓ hñy bá tho¸i Èn!");
 			return 0;
 		end
-		Msg2PlayerByName(szExecutorName, "Hñy bá tho¸i Èn thµnh c«ng!");
+		Msg2PlayerByName(szExecutorName, " Hñy bá tho¸i Èn thµnh c«ng!");
 		TONGM_ApplySetRetireDate(nTongID, nMemberID, 0);
 		cTongLog:WriteInfTB("MEMBER", "unretire", nTongID, {member = szMemberName})
 	end
@@ -506,6 +630,14 @@ function MEMBER_RETIRE_R(nTongID, nMemberID, bRetireOrNot)
 	return 1;
 end
 function MEMBER_RETIRE_G_1(nTongID, nMemberID, bRetireOrNot)
+
+	_TONG_MIX_DEBUG(23, nTongID, nMemberID, bRetireOrNot)
+	
+	do 
+		Msg2Player("HiÖn t¹i tÝnh n¨ng tho¸i Èn ®ang t¹m ®ãng!");
+		return 0
+	end
+	
 	local nFigure = TONGM_GetFigure(nTongID, nMemberID);
 	if (bRetireOrNot == 1) then
 		local szMemberName = TONGM_GetName(nTongID, nMemberID);
@@ -514,13 +646,13 @@ function MEMBER_RETIRE_G_1(nTongID, nMemberID, bRetireOrNot)
 			if (GetTongMemberID() == nMemberID) then
 				szPerson = "B¹n ";
 			end
-			Msg2Player(szPerson.." ®¶m nhiÖm chøc vô quan träng, kh«ng thÓ tho¸i Èn, chØ cã ®éi tr­ëng vµ bang chóng míi cã thÓ tho¸i Èn!");
+			Msg2Player(szPerson.." ®¶m nhiÖm chøc vô quan träng, kh«ng ThÓ tho¸i Èn, chØ cã ®éi tr­ëng vµ bang chóng míi cã ThÓ tho¸i Èn!");
 			return 0;
 		end
 		local nRetiredMemberCount = TONG_GetMemberCount(nTongID, 4);
 		if (nRetiredMemberCount >= floor((TONG_GetMemberCount(nTongID) + nRetiredMemberCount) * TONGMEMBER_RETIRE_MAX_RATE)) then
-			Msg2Player("Tr­íc m¾t sè ng­êi tho¸i Èn cña bang ®· ®¹t giíi h¹n, kh«ng thÓ tiÕp tôc sö dông thao t¸c tho¸i Èn");
-			return 0;
+			Msg2Player("Tr­íc m¾t sè ng­êi tho¸i Èn cña bang ®· ®¹t giíi h¹n, kh«ng ThÓ tiÕp tôc sö dông thao t¸c tho¸i Èn");
+			return 0
 		end
 	else
 		if (nFigure ~= 4) then	-- ²»ÊÇÒþÊ¿²»ÔÊÐíÍËÒþ
@@ -532,20 +664,13 @@ end
 MEMBER_RETIRE_G_2 = DefFun3
 
 -- ³ÉÔ±ÉÏÏÂÏß
-function MEMBER_ONLINE_R(nTongID, nMemberID, bOnline)
-	-- ÉÏÏß
-	if (bOnline == 1) then
-	-- ÏÂÏß
-	else
-		local nTodayDate = floor(GetSysCurrentTime() / (3600*24));
-		TONGM_ApplySetLastOnlineDate(nTongID, nMemberID, nTodayDate);
-	end
-	return 1;
-end
-MEMBER_ONLINE_G_1 = DefFun3
-MEMBER_ONLINE_G_2 = DefFun3
+--MEMBER_ONLINE_G_1 = DefFun3
+--MEMBER_ONLINE_G_2 = DefFun3
 
 function MEMBER_REMOVE_R(nTongID, nMemberID)
+
+	_TONG_MIX_DEBUG(25, nTongID, nMemberID)
+	
 	--ÖÜÎ¬»¤Õ½±¸»ù½ð¸üÐÂ
 	local nTongLevel = TONG_GetBuildLevel(nTongID)
 	local szMember = TONGM_GetName(nTongID, nMemberID);
@@ -565,6 +690,27 @@ MEMBER_REMOVE_G_2 = DefFun2
 
 -- ³ÉÔ±¼ÓÈë°ï»á
 function MEMBER_ADD_R(nTongID, nMemberID, nOfferBring)
+
+	_TONG_MIX_DEBUG(26, nTongID, nMemberID, nOfferBring)
+	------------------------------------------------- Limit memberCount Join Tong ------------------------------------------------------
+	local a = TONG_GetMemberCount(nTongID, -1)
+	
+	
+	if a > _SETTING_TONG_COUNT_MEMBER then
+		local Old_ExecutorId = ExecutorId
+		ExecutorId = TONG_GetFirstMember(nTongID, 0);
+	
+		TONG_ApplyKickMember(nTongID, nMemberID, 3)
+		Msg2Tong(nTongID, "<color=fire>Thµnh viªn cña bang héi ®· ®¹t giíi h¹n hiÖn t¹i ".._SETTING_TONG_COUNT_MEMBER.." ng­êi, hÖ thèng tù ®Èy "..b.." ra khái bang héi! ¸p dông cho lÇn b¶o tr× tiÕp theo.")
+		TONG_ApplyDeleteMember(nTongID, nMemberID, 3)
+		
+		 GlobalExecute(format("dwf \\script\\tong\\tong_mix.lua LimitMemberCountJoinTong_GSV(%d, %d)", nTongID, nMemberID))
+		
+		ExecutorId = Old_ExecutorId
+		return 0
+	end
+
+	
 	local nBuildAdd = floor(nOfferBring * 0.6)
 	local nWarBuildAdd = floor(nOfferBring * 0.4)
 	TONG_ApplyAddStoredBuildFund(nTongID, nBuildAdd)
@@ -572,8 +718,8 @@ function MEMBER_ADD_R(nTongID, nMemberID, nOfferBring)
 	TONG_ApplyAddTaskValue(nTongID, TONGTSK_WEEK_BFADD, nBuildAdd)
 	TONG_ApplyAddTaskValue(nTongID, TONGTSK_WEEK_WFADD, nWarBuildAdd)
 	local szMember = TONGM_GetName(nTongID, nMemberID)
-	local szMsg = szMember.." gia nhËp bæn bang, ng©n s¸ch kiÕn thiÕt dù tr÷ bang héi t¨ng"..nBuildAdd..
-		" v¹n, ng©n s¸ch chiÕn bÞ t¨ng"..nWarBuildAdd.." v¹n!"
+	local szMsg = szMember.." gia nhËp bæn bang, ng©n s¸ch kiÕn thiÕt dù trö bang héi t¨ng "..nBuildAdd..
+		" v¹n, ng©n s¸ch chiÕn bÞ t¨ng "..nWarBuildAdd.." v¹n!"
 	Msg2Tong(nTongID, szMsg)
 	--TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼
 	local szExecutor = TONGM_GetName(nTongID, ExecutorId);
@@ -590,21 +736,47 @@ function MEMBER_ADD_R(nTongID, nMemberID, nOfferBring)
 	TONG_ApplySetPerStandFund(nTongID, nPerStandFund)
 	return 1
 end
-MEMBER_ADD_G_1 = DefFun3
-MEMBER_ADD_G_2 = DefFun3
+
+function TONG_ADDMEMBER_CHECK_ALLOW(nTongID, nMemberID, nOfferBring)
+	
+	local nCount = TONG_GetMemberCount(nTongID, -1)
+	if nCount >= st_soluongmem then
+		TONG_ApplyKickMember(nTongID, nMemberID,3)
+		Msg2Tong(nTongID, "Sè L­îng thµnh viªn bang héi ®· v­ît qu¸ giíi h¹n cho phÐp kh«ng ThÓ tuyÓn thªm thµnh viªn.")
+		local nExt = nCount - (st_soluongmem-1)  
+		if nExt > 0 then
+			nMemberID = TONG_GetFirstMember(nTongID, 3);
+			for i=1,nExt do
+				TONG_ApplyKickMember(nTongID, nMemberID,3)
+				nMemberID = TONG_GetNextMember(nTongID, nMemberID, 3);
+			end
+		end
+	end
+
+	
+	return 1
+end
+
+-- MEMBER_ADD_G_1 = DefFun3
+MEMBER_ADD_G_1 = TONG_ADDMEMBER_CHECK_ALLOW
+-- MEMBER_ADD_G_2 = DefFun3
+MEMBER_ADD_G_2 = TONG_ADDMEMBER_CHECK_ALLOW
 
 function MEMBER_SETFIGURE_R(nTongID, nMemberID, nFigure)
+
+	_TONG_MIX_DEBUG(27, nTongID, nMemberID, nFigure)
+	
 	if (nFigure == TONG_ELDER)then
 		if TONG_GetMemberCount(nTongID, TONG_ELDER) >= MAX_ELDER_COUNT then
 			if ExecutorId and ExecutorId ~= 0 then 
-				Msg2PlayerByName(TONGM_GetName(nTongID, ExecutorId), "Sè l­îng tr­ëng l·o ®· ®¹t giíi h¹n!");
+				Msg2PlayerByName(TONGM_GetName(nTongID, ExecutorId), "Sè L­îng tr­ëng l·o ®· ®¹t giíi h¹n!");
 			end	
 			return 0
 		end
 	elseif (nFigure == TONG_MANAGER)then
 		if TONG_GetMemberCount(nTongID, TONG_MANAGER) >= MAX_MANAGER_COUNT then
 			if ExecutorId and ExecutorId ~= 0 then 
-				Msg2PlayerByName(TONGM_GetName(nTongID, ExecutorId), "Sè l­îng ®éi tr­ëng ®· ®¹t giíi h¹n!");
+				Msg2PlayerByName(TONGM_GetName(nTongID, ExecutorId), "Sè L­îng ®éi tr­ëng ®· ®¹t giíi h¹n!");
 			end					
 			return 0	
 		end
@@ -618,6 +790,9 @@ MEMBER_SETFIGURE_G_2 = DefFun3
 
 -- ÉèÖÃµØÍ¼
 function MAP_SET_R(nTongID, nMapID)
+
+	_TONG_MIX_DEBUG(28, nTongID, nMapID)
+	
 	if (TONG_GetTongMap(nTongID) ~= 0)then
 		return 0
 	end
@@ -632,6 +807,9 @@ MAP_SET_G_1	= DefFun2
 MAP_SET_G_2	= DefFun2
 
 function GenParam(aInfo)
+
+	_TONG_MIX_DEBUG(29, aInfo)
+	
 	local i = aInfo[1]
 	aInfo[1] = i+1
 	local mapcopy = aDynMapCopy[i]
@@ -639,41 +817,57 @@ function GenParam(aInfo)
 end
 
 function EnterMap(nTongID, nMapCopy)
+
+	_TONG_MIX_DEBUG(30, nTongID, nMapCopy)
+	
 	if (GetFightState() ~= 0)then
-		Msg2Player("ChØ cã thÓ ®i vµo tõ khu vùc phi chiÕn ®Çu!")
+		Msg2Player("ChØ cã ThÓ ®i vµo tõ khu vùc phi chiÕn ®Çu!")
 		return
 	end
 	local pos = GetMapEnterPos(nMapCopy)
 	NewWorld(nMapCopy, pos.x, pos.y)
+
 end
 
 function CreatMap(nTongID, nMapCopy)
+
+	_TONG_MIX_DEBUG(31, nTongID, nMapCopy)
+	
 	TONG_ApplyCreatMap(nTongID, nMapCopy)
 end
 
 function BrowseMap(nTongID)
+
+	_TONG_MIX_DEBUG(32, nTongID)
+	
 	local aInfo = {1, "/#EnterMap("..nTongID..","}		
 	Say("<#>H·y chän b¶n ®å muèn xem", 8, GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),
 		GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),"Kh«ng xem n÷a!/#Cancel")
 end
 
 function SelectMap(nTongID)
+
+	_TONG_MIX_DEBUG(33, nTongID)
+	
 	local aInfo = {1, "/#CreatMap("..nTongID..","}		
-	Say("<#>QuÝ bang muèn x©y dùng bang ë ®©u?", 8, GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),
+	Say("<#>qu¸ bang muèn x©y dùng bang ?®©u?", 8, GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),
 		GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),GenParam(aInfo),"CÇn suy xÐt l¹i/#Cancel")
 end
 
 --µØÍ¼´´½¨ÉêÇë
 MAP_CREAT_R		= DefFun2
 function MAP_CREAT_G_1(nTongID, nMapCopy)
+
+	_TONG_MIX_DEBUG(34, nTongID, nMapCopy)
+	
 	local nTongMap = TONG_GetTongMap(nTongID) 
 	local nTongLevel = TONG_GetBuildLevel(nTongID)
 	if (nTongMap > DYNMAP_ID_BASE) then
-		Say("<#> QuÝ bang ®· cã khu vùc riªng!", 0)
+		Say("<#> qu¸ bang ®· c?khu vùc riªng!", 0)
 		return 0
 	elseif (nMapCopy == 0 and nTongLevel < 2) then
 		if(nTongMap > 0)then
-			Say("<#>Bang héi ®· cã khu vùc chung, khi ®¼ng cÊp kiÕn thiÕt ®¹t ®Õn 2 th× cã thÓ x©y dùng khu vùc ho¹t ®éng riªng!", 0)
+			Say("<#>Bang héi ®· cã khu vùc chung, khi ®¼ng cÊp kiÕn thiÕt ®¹t ®Õn 2 cã ThÓ x©y dùng khu vùc ho¹t ®éng riªng!", 0)
 			return 0
 		else
 			local nrand = mod(nTongID, 4) + 1
@@ -683,19 +877,19 @@ function MAP_CREAT_G_1(nTongID, nMapCopy)
 				gb_GetTask("TONG_PUBLIC_MAP", 3),
 				gb_GetTask("TONG_PUBLIC_MAP", 4),
 				}
-			Say("<#>HiÖn ®¼ng cÊp kiÕn thiÕt d­íi cÊp 2, chØ cã thÓ dïng khu vùc chung, h·y chän 1 khu vùc chung (nªn dïng khu vùc cã Ýt bang héi):  ", 6,
+			Say("<#>HiÖn ®¼ng cÊp kiÕn thiÕt d­íi cÊp 2, chØ cãThÓ dïng khu vùc chung, h·y chän 1 khu vùc chung (nªn dïng khu vùc cã Ýt bang héi):  ", 6,
 			"Lùa chän ngÉu nhiªn/#PublicMap("..nTongID..","..nrand..")", 
-			"Khu vùc chung 1 (®· cã "..aNum[1].." bang héi)/#PublicMap("..nTongID..",1)", 
-			"Khu vùc chung 2 (®· cã "..aNum[2].." bang héi)/#PublicMap("..nTongID..",2)",
-			"Khu vùc chung 3 (®· cã "..aNum[3].." bang héi)/#PublicMap("..nTongID..",3)", 
-			"Khu vùc chung 4 (®· cã "..aNum[4].." bang héi)/#PublicMap("..nTongID..",4)",
-			"Hñy bá /#Cancel"
+			"Khu vùc chung 1 (®· cã"..aNum[1].." bang héi)/#PublicMap("..nTongID..",1)", 
+			"Khu vùc chung 2 (®· cã"..aNum[2].." bang héi)/#PublicMap("..nTongID..",2)",
+			"Khu vùc chung 3 (®· cã"..aNum[3].." bang héi)/#PublicMap("..nTongID..",3)", 
+			"Khu vùc chung 4 (®· cã"..aNum[4].." bang héi)/#PublicMap("..nTongID..",4)",
+			"Hñy bá/#Cancel"
 			)
 			return 0
 		end
 	end
 	if (nMapCopy == 0) then
-		Say("<#>Bang héi hiÖn t¹i cã thÓ së h÷u khu vùc riªng, cã muèn thµnh lËp kh«ng?", 2, "Vµo xem thö/#BrowseMap("..nTongID..")", 
+		Say("<#>Bang héi hiÖn t¹i cã ThÓ së h÷u khu vùc riªng, cã muèn thµnh lËp kh«ng?", 2, "Vµo xem ThÓ #BrowseMap("..nTongID..")", 
 			"T¹o b¶n ®å/#SelectMap("..nTongID..")")
 		return 0
 	end
@@ -704,19 +898,25 @@ end
 MAP_CREAT_G_2	= DefFun2
 
 function PublicMap(nTongID, nSelect)
+
+	_TONG_MIX_DEBUG(35, nTongID, nSelect)
+	
 	gb_AppendTask("TONG_PUBLIC_MAP", nSelect, 1)
 	TONG_ApplySetTongMap(nTongID, aPublicMap[nSelect])
 end
 
 --µØÍ¼´´½¨³É¹¦
 function MAP_CREATED_R(nTongID, dwMapID, nMapCopy)
+
+	_TONG_MIX_DEBUG(36, nTongID, dwMapID, nMapCopy)
+	
 	--Ê×´Î´´½¨µÄÊ±ºò¹«¸æÒ»ÏÂ
 	if (TONG_GetTongMap(nTongID) < DYNMAP_ID_BASE and nMapCopy > 0)then
 		local mapname = aDynMapCopyName[nMapCopy]
 		if (mapname == nil)then
 			mapname = "Kh«ng biÕt n¬i nµo"
 		end
-		local szMsg = "Xin chóc mõng, quÝ bang ®· së h÷u khu vùc ho¹t ®éng riªng, bang chóng cã thÓ chän <§i vµo bæn bang> ®Ó b­íc vµo!"
+		local szMsg = "Xin chóc mõng, qu¸ bang ®· së h÷u khu vùc ho¹t ®éng riªng, bang chóng cã ThÓ chän <§i vµo bæn bang> ®Ó b­íc vµo!"
 		Msg2Tong(nTongID, szMsg)
 		TONG_ApplyAddHistoryRecord(nTongID, szMsg);	-- °ï»áÀúÊ·¼ÇÂ¼
 		TONG_ApplyAddEventRecord(nTongID, szMsg);	-- °ï»áÊÂ¼þ¼ÇÂ¼
@@ -727,6 +927,9 @@ end
 MAP_CREATED_G_1 = DefFun2
 --µØÍ¼´´½¨³É¹¦
 function MAP_CREATED_G_2(nTongID, nMapID, nMapCopy)
+
+	_TONG_MIX_DEBUG(37, nTongID, nMapID, nMapCopy)
+	
 	nMapIdx = SubWorldID2Idx(nMapID)
 	-- µØÍ¼²»ÔÚ´Ë·þÎñÆ÷
 	if nMapIdx < 0 or nMapCopy <= 0 then
@@ -772,7 +975,7 @@ function MAP_CREATED_G_2(nTongID, nMapID, nMapCopy)
 			SetNpcScript(nNpcIndex2, "\\script\\tong\\npc\\city_totempole.lua")
 			local nStuntID = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_ID)
 			local nCitySTID = tong_GetCityStuntID(nTongID)
-			if (nStuntID ~= 0 and nCitySTID ~= 0) then
+			if (nStuntID ~= 0 and nCitySTID ~= 0 and TB_STUNTID_INFO[nStuntID].skillid ~= nil) then
 				AddNpcSkillState(nNpcIndex1, TB_STUNTID_INFO[nStuntID].skillid, 1, 1, 18*60*60*24*30)
 				AddNpcSkillState(nNpcIndex2, TB_STUNTID_INFO[nCitySTID].skillid, 1, 1, 18*60*60*24*30)
 			end
@@ -782,6 +985,9 @@ end
 
 -- GameSvr°ï»áÄ£¿éÊÍ·Å
 function RELEASE_G()
+
+	_TONG_MIX_DEBUG(38)
+	
 	--´¦ÀíÊý¾Ý»º´æ
 	local nTongID = TONG_GetFirstTong()
 	while nTongID ~= 0 do
@@ -796,18 +1002,21 @@ end
 
 -- ½øÈë°ï»áµØÍ¼
 function ENTER_TONG_MAP_G(nTongID)
+
+	_TONG_MIX_DEBUG(39, nTongID)
+	
 	if (GetLevel() < 10) then
-		Msg2Player("Ng­êi ch¬i cÊp 10 trë lªn míi cã thÓ b­íc vµo l·nh ®Þa bang héi!");
+		Msg2Player("Ng­êi ch¬i cÊp 10 trë lªn míi cã ThÓ b­íc vµo l·nh ®Þa bang héi!");
 		return 0;
 	end
 	local dwSelfMapID = SubWorldIdx2ID(SubWorld);
 	if (GetFightState() == 1 or (IsCityMap(dwSelfMapID) ~= 1 and IsFreshmanMap(dwSelfMapID) ~= 1 and IsTongMap(dwSelfMapID) ~= 1)) then
-		Msg2Player("ChØ cã thÓ ®i vµo l·nh ®Þa bang héi tõ nh÷ng khu vùc phi chiÕn ®Êu!");
+		Msg2Player("ChØ câThÓ ®i vµo l·nh ®Þa bang héi tõ nh÷ng khu vùc phi chiÕn ®Êu!");
 		return 0;
 	end
 	local szTongName = TONG_GetName(nTongID);
 	if (szTongName == nil or szTongName == "") then
-		Msg2Player("Bang héi nµy kh«ng tån t¹i, kh«ng thÓ vµo khu vùc bang!");
+		Msg2Player("Bang héi nµy kh«ng tån t¹i, kh«ng ThÓ vµo khu vùc bang!");
 		return 0;
 	end
 	local _,SelfTong = GetTongName()
@@ -819,7 +1028,7 @@ function ENTER_TONG_MAP_G(nTongID)
 --	end
 	local dwTargetMapID = TONG_GetTongMap(nTongID);
 	if (dwTargetMapID <= 0) then
-		Msg2Player(szTongName.." Kh«ng cã khu vùc bang héi, kh«ng thÓ ®i vµo!");
+		Msg2Player(szTongName.." Kh«ng cã khu vùc bang héi, kh«ng ThÓ ®i vµo!");
 	 	return 0;
 	end
 	if (dwTargetMapID == dwSelfMapID) then
@@ -833,8 +1042,11 @@ end
 
 --ÉèÖÃµØÍ¼
 function CONFIGURE_TONG_MAP_G(nTongID)
+
+	_TONG_MIX_DEBUG(40, nTongID)
+	
 	if (TONG_GetTongMap(nTongID) < DYNMAP_ID_BASE) then
-		Msg2Player("Bang héi cã khu vùc riªng míi cã thÓ sö dông chøc n¨ng nµy!")
+		Msg2Player("Bang héi cã khu vùc riªng míi cã ThÓ sö dông chøc n¨ng nµy!")
 		return 0		
 	end
 	local ban = TONG_GetTongMapBan(nTongID)
@@ -845,12 +1057,15 @@ function CONFIGURE_TONG_MAP_G(nTongID)
 	if (ban ~= 0)then
 		ban = 1
 	end	
-	local szMsg = "Cã thÓ lùa chän cho phÐp hay ng¨n cÊm thµnh viªn bang héi kh¸c th©m nhËp, t×nh tr¹ng hiÖn t¹i lµ:"
-	Say(szMsg..szState[ban], 2, szBan[ban], "Hñy bá/#Cancel")
+	local szMsg = "CãThÓ lùa chän cho phÐp hay ng¨n cÊm thµnh viªn bang héi kh¸c th©m nhËp, t×nh tr¹ng hiÖn t¹i l?"
+	Say(szMsg..szState[ban], 2, szBan[ban], "Hñy b?#Cancel")
 	return 1
 end
 
 function SetTongMapBan(nTongID, bOpen)
+
+	_TONG_MIX_DEBUG(41, nTongID, bOpen)
+	
 	TONG_ApplySetTongMapBan(nTongID, bOpen)
 	local szExcutor = GetName();
 	local szState = {[0]="Cho phÐp",
@@ -863,6 +1078,9 @@ end
 MAP_BAN_R = DefFun2
 MAP_BAN_G_1 = DefFun2
 function MAP_BAN_G_2(nTongID, bBan)
+
+	_TONG_MIX_DEBUG(42, nTongID, bBan)
+	
 	local nMap = TONG_GetTongMap(nTongID)
 	if (nMap <= DYNMAP_ID_BASE)then
 		return 1
@@ -878,7 +1096,7 @@ function MAP_BAN_G_2(nTongID, bBan)
 				SetFightState(0)
 				local pos = GetMapEnterPos(nMapCopy)
 				SetPos(pos.x, pos.y)
-				Msg2Player("Khu vùc nµy ®· ®­îc thiÕp lËp cÊm ®Þa, kh«ng thÓ b­íc vµo!")
+				Msg2Player("Khu vùc nµy ®· ®­îc thiÕp lËp cÊm ®Þa, kh«ng ThÓ b­íc vµo!")
 			end
 			nPlayer = GetNextPlayerAtSW(nMap)
 		end
@@ -887,6 +1105,9 @@ function MAP_BAN_G_2(nTongID, bBan)
 end
 
 function CITY_OCCUPY_R(nOwner, nPreOwner, nCityMap)
+
+	_TONG_MIX_DEBUG(43, nOwner, nPreOwner, nCityMap)
+	
 	TONG_ApplySetOccupyCityDay(nOwner, TONG_GetDay(nOwner));
 	if (nPreOwner == 0)then
 		return 1
@@ -907,17 +1128,27 @@ end
 --TONGTSK_STUNT_ID = 1011
 --stunt¿ªÆô/ÉèÖÃ°ï»áÌØ¼¼
 function CONFIGURE_TONG_STUNT_G()
+
+	_TONG_MIX_DEBUG(44)
+	
 	local _, nTongID = GetTongName()
 	local nStuntID = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_ID)
+	
+	-- ¹Ø±ÕÁé²ÎÁ¦
+	if (nStuntID == 6) then
+		nStuntID = 0
+		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_ID, nStuntID)
+	end
+	
 	if (nStuntID == 0) then	--Ã»ÓÐ¿ªÆôÌØ¼¼
-		Describe("H·y lùa chän kü n¨ng ®Æc biÖt cho bang: ", 8,
-					TB_STUNTID_INFO[1].name.."/StuntConfirm",
-					TB_STUNTID_INFO[2].name.."/StuntConfirm",
-					TB_STUNTID_INFO[3].name.."/StuntConfirm",
-					TB_STUNTID_INFO[4].name.."/StuntConfirm",
-					TB_STUNTID_INFO[5].name.."/StuntConfirm",
-					TB_STUNTID_INFO[6].name.."/StuntConfirm",
-					TB_STUNTID_INFO[7].name.."/StuntConfirm",
+		Describe("H·y lùa chän kü n¨ng ®Æc biÖt cho bang: ", 7,
+					TB_STUNTID_INFO[1].name.."/#StuntConfirm(1)",
+					TB_STUNTID_INFO[2].name.."/#StuntConfirm(2)",
+					TB_STUNTID_INFO[3].name.."/#StuntConfirm(3)",
+					TB_STUNTID_INFO[4].name.."/#StuntConfirm(4)",
+					TB_STUNTID_INFO[5].name.."/#StuntConfirm(5)",
+--					TB_STUNTID_INFO[6].name.."/#StuntConfirm(6)",
+					TB_STUNTID_INFO[7].name.."/#StuntConfirm(7)",
 					"Chê ®îi thiÕt lËp/Cancel"		)
 	else
 		local szMsg = "Kü n¨ng hiÖn t¹i cña bang héi lµ: "..
@@ -933,7 +1164,11 @@ function CONFIGURE_TONG_STUNT_G()
 	end
 end
 
+
 function PAUSED_STUNT_G_1(nTongID)
+
+	_TONG_MIX_DEBUG(45, nTongID)
+	
 	local nPause = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_PAUSE)
 	local nswitch = 0
 	local szMsg = ""
@@ -941,13 +1176,16 @@ function PAUSED_STUNT_G_1(nTongID)
 		nPause = 0
 		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_PAUSE, nPause)
 	end
-	szMsg = "Tr¹ng th¸i kü n¨ng hiÖn t¹i cña bang lµ:  "..TB_STUNT_PAUSESTATE[nPause][1].."<enter>§­îc ®­a vµo b¶o tr× hµng tuÇn: "..TB_STUNT_PAUSESTATE[nPause][2]
+	szMsg = "Tr¹ng th¸i kü n¨ng hiÖn t¹i cña bang l?  "..TB_STUNT_PAUSESTATE[nPause][1].."<enter>§­îc ®­a vµo b¶o tr× hµng tuÇn: "..TB_STUNT_PAUSESTATE[nPause][2]
 	nswitch = TB_STUNT_PAUSESTATE[nPause][3]
-	Describe(szMsg.."<enter>Ng­¬i ®ång ý chø?", 2, "Më(®ãng)/#Paused_Stunt_Sure("..nTongID..","..nswitch..")", "Hñy bá/Cancel")
+	Describe(szMsg.."<enter>Ng­¬i ®ång ý chø", 2, "Më ®ãng/#Paused_Stunt_Sure("..nTongID..","..nswitch..")", "Hñy bë/OnCancel")
 	return 1
 end
 
 function Paused_Stunt_Sure(nTongID, nSwitch)
+
+	_TONG_MIX_DEBUG(46, nTongID, nSwitch)
+	
 	TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_PAUSE, nSwitch)
 	if (nSwitch == 1 or nSwitch == 3) then
 		Msg2Player("Tr¹ng th¸i kü n¨ng cña bang tuÇn sau sÏ ®æi thµnh:  "..TB_STUNT_PAUSESTATE[nSwitch][2])
@@ -956,83 +1194,107 @@ function Paused_Stunt_Sure(nTongID, nSwitch)
 	end
 end
 
-function StuntConfirm(nSel)
-	local nStuntID = nSel + 1
-	local szMsg = "Kü n¨ng ®­îc chän hiÖn t¹i lµ:"..
+function StuntConfirm(nStuntID)
+
+	_TONG_MIX_DEBUG(47, nStuntID)
+	
+	--local nStuntID = nSel + 1
+	local szMsg = "Kü n¨ng ®­îc chän hiÖn t¹i l?"..
 					"<enter><color=yellow>    "..TB_STUNTID_INFO[nStuntID].name.."<color>"..
 					"<enter>QuyÒn tiÕp nhËn kü n¨ng: "..
 					"<enter><color=yellow>    "..TB_STUNT_RIGHT_DS[TB_STUNTID_INFO[nStuntID].right].."<color>"..
-					"<enter>Chi phÝ b¶o tr× ®Æc kü:"..
-					"<enter><color=yellow>    "..(TB_STUNTID_INFO[nStuntID].consume).." v¹n tiÒn chiÕn  bÞ<color>"..
+					"<enter>Chi phÝ b¶o tr× ®Æc kü"..
+					"<enter><color=yellow>    "..(TB_STUNTID_INFO[nStuntID].consume).." v¹n tiÒn chiÕn  b?color>"..
 					"<enter>T¸c dông cña kü n¨ng ®Æc biÖt:"..
 					"<enter><color=yellow>    "..TB_STUNTID_INFO[nStuntID].describe.."<color>"
 	szMsg = szMsg ..getStuntHelp(nStuntID, TB_STUNTID_INFO[nStuntID].right, TB_STUNTID_INFO[nStuntID].cycle, TB_STUNTID_INFO[nStuntID].maxmem)
-	Describe(szMsg, 3, "§ång ý chän/#StuntSureConfirm("..nStuntID..")", "Trë vÒ/CONFIGURE_TONG_STUNT_G", "Rêi khái/OnCancel")
+	Describe(szMsg, 3, "§ång ?chän/#StuntSureConfirm("..nStuntID..")", "Tr?v?CONFIGURE_TONG_STUNT_G", "Rêi khái/OnCancel")
 end
 
 function getStuntHelp(nStuntID, nRight, nCycle, nMaxMem)
+
+	_TONG_MIX_DEBUG(48, nStuntID, nRight, nCycle, nMaxMem)
+	
 	local szMsg = ""
 	if (nRight == 1) then
-		szMsg = "<enter>Kü n¨ng hiÖn t¹i sÏ kÐo dµi trong mét tuÇn, trong kho¶ng thêi gian nµy chØ cã thÓ nhËn "..nMaxMem.." lÇn."
+		szMsg = "<enter>Kü n¨ng hiÖn t¹i sÏ kÐo dµi trong mét tuÇn, trong kho¶ng thêi gian nµy chØ cãThÓ nhËn "..nMaxMem.." lÇn."
 	else
-		szMsg = "<enter>Kü n¨ng hiÖn t¹i sÏ kÐo dµi trong mét tuÇn, trong kho¶ng thêi gian nµy chØ cã thÓ nhËn 1 lÇn kü n¨ng, chØ cho phÐp "..nMaxMem.." ng­êi nhËn."
+		szMsg = "<enter>Kü n¨ng hiÖn t¹i sÏ kÐo dµi trong mét tuÇn, trong kho¶ng thêi gian nµy chØ cãThÓ nhËn 1 lÇn kü n¨ng, chØ cho phÐp "..nMaxMem.." ng­êi nhËn."
 	end
 	return szMsg
 end
 
 function CHANGE_STUNT_G_1(nTongID)
+
+	_TONG_MIX_DEBUG(49, nTongID)
+	
 	local nStuntID = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_ID)
 	local nSwith = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_SWICTH)
 	if (nStuntID ~= 0) then	
-		local szMsg = "Kü n¨ng hiÖn t¹i cña bang héi lµ: "..TB_STUNTID_INFO[nStuntID].name
+		local szMsg = "Kü n¨ng hiÖn t¹i cña bang héi l? "..TB_STUNTID_INFO[nStuntID].name
 		if (nSwith ~= 0 and nSwith ~= nStuntID) then
-			szMsg = szMsg .."<enter>Kü n¨ng muèn thay ®æi lµ: "..TB_STUNTID_INFO[nSwith].name
+			szMsg = szMsg .."<enter>Kü n¨ng muèn thay ®æi l? "..TB_STUNTID_INFO[nSwith].name
 		else
-			szMsg = szMsg .."<enter>Kü n¨ng muèn thay ®æi lµ : [kh«ng cã]"
+			szMsg = szMsg .."<enter>Kü n¨ng muèn thay ®æi l?: [kh«ng cã]"
 		end
 		szMsg = szMsg ..getStuntHelp(nStuntID, TB_STUNTID_INFO[nStuntID].right, TB_STUNTID_INFO[nStuntID].cycle, TB_STUNTID_INFO[nStuntID].maxmem)
 		szMsg = szMsg.."<enter>Muèi thay ®æi sang kü n¨ng nµo?"
 		
-		Describe(szMsg, 8,
-					TB_STUNTID_INFO[1].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[2].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[3].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[4].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[5].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[6].name.."/ChangeStuntConfirm",
-					TB_STUNTID_INFO[7].name.."/ChangeStuntConfirm",
-					"Chê ®îi thiÕt lËp/Cancel"		)
+		Describe(szMsg, 7,
+					TB_STUNTID_INFO[1].name.."/#ChangeStuntConfirm(1)",
+					TB_STUNTID_INFO[2].name.."/#ChangeStuntConfirm(2)",
+					TB_STUNTID_INFO[3].name.."/#ChangeStuntConfirm(3)",
+					TB_STUNTID_INFO[4].name.."/#ChangeStuntConfirm(4)",
+					TB_STUNTID_INFO[5].name.."/#ChangeStuntConfirm(5)",
+--					TB_STUNTID_INFO[6].name.."/#ChangeStuntConfirm(6)",
+					TB_STUNTID_INFO[7].name.."/#ChangeStuntConfirm(7)",
+					"Ch?®îi thiÕt lËp/Cancel"		)
 	end
 	return 1
 end
 
-function ChangeStuntConfirm(nSel)
+function ChangeStuntConfirm(nStuntID)
+
+	_TONG_MIX_DEBUG(50, nStuntID)
+	
 	local _, nTongID = GetTongName()
-	local nStuntID = nSel + 1
-	local szMsg = "Kü n¨ng ®­îc chän hiÖn t¹i lµ:"..
+	--local nStuntID = nSel + 1
+	local szMsg = "Kü n¨ng ®­îc chän hiÖn t¹i l?"..
 					"<enter><color=yellow>    "..TB_STUNTID_INFO[nStuntID].name.."<color>"..
 					"<enter>QuyÒn tiÕp nhËn kü n¨ng: "..
 					"<enter><color=yellow>    "..TB_STUNT_RIGHT_DS[TB_STUNTID_INFO[nStuntID].right].."<color>"..
-					"<enter>Chi phÝ b¶o tr× ®Æc kü:"..
-					"<enter><color=yellow>    "..(TB_STUNTID_INFO[nStuntID].consume).." v¹n tiÒn chiÕn  bÞ<color>"..
+					"<enter>Chi phÝ b¶o tr× ®Æc kü"..
+					"<enter><color=yellow>    "..(TB_STUNTID_INFO[nStuntID].consume).." v¹n tiÒn chiÕn  b?color>"..
 					"<enter>T¸c dông cña kü n¨ng ®Æc biÖt:"..
 					"<enter><color=yellow>    "..TB_STUNTID_INFO[nStuntID].describe.."<color>";
 	szMsg = szMsg ..getStuntHelp(nStuntID, TB_STUNTID_INFO[nStuntID].right, TB_STUNTID_INFO[nStuntID].cycle, TB_STUNTID_INFO[nStuntID].maxmem)
-	Describe(szMsg, 3, "§ång ý chän/#StuntSureConfirm("..nStuntID..")", "Trë vÒ/#CHANGE_STUNT_G_1("..nTongID..")", "Rêi khái/OnCancel")
+	Describe(szMsg, 3, "§ång ?chän/#StuntSureConfirm("..nStuntID..")", "Trë vÒ#CHANGE_STUNT_G_1("..nTongID..")", "Rêi khái/OnCancel")
 end
 
 function StuntSureConfirm(nStuntID)
+
+	_TONG_MIX_DEBUG(51, nStuntID)
+	
 	local _, nTongID = GetTongName()
 	TONG_ApplySetStunt(nTongID, nStuntID)
 end
 
 function STUNT_SET_R(nTongID, nStuntID)
+
+	_TONG_MIX_DEBUG(52, nTongID, nStuntID)
+	
 	local szExecutorName = TONGM_GetName(nTongID, ExecutorId)
 	if (TONG_GetBuildLevel(nTongID) < 4) then
-		Msg2PlayerByName(szExecutorName, "Bang héi cÊp d­íi cÊp 4 kh«ng thÓ sö dông kü n¨ng ®Æc biÖt!");
+		Msg2PlayerByName(szExecutorName, "Bang héi cÊp d­íi cÊp 4 kh«ng ThÓ sö dông kü n¨ng ®Æc biÖt!");
 		return 0
 	end
 	local nOldStuntID = TONG_GetTaskValue(nTongID, TONGTSK_STUNT_ID)
+	-- ¹Ø±ÕÁé²ÎÁ¦
+	if (nOldStuntID == 6) then
+		nOldStuntID = 0
+		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_ID, nOldStuntID)
+	end
+	
 	-- Èç¹ûÔ­À´Ã»ÓÐÌØ¼¼£¬ÔòÎªÆô¶¯ÌØ¼¼£¨Á¢¼´ÉúÐ§£©£¬·ñÔòÎª¸ü¸ÄÌØ¼¼£¨Î¬»¤ºóÉúÐ§£©
 	if (nOldStuntID == 0) then
 		local nday = TONG_GetDay(nTongID);
@@ -1041,11 +1303,11 @@ function STUNT_SET_R(nTongID, nStuntID)
 		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_MEMLIMIT, TB_STUNTID_INFO[nStuntID].maxmem)
 		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_ENABLED, 1)
 		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_PAUSE, 3)
-		Msg2Tong(nTongID, "Kü n¨ng ®Æc biÖt ®­îc më, kü n¨ng lµ "..TB_STUNTID_INFO[nStuntID].name)
-		TONG_ApplyAddEventRecord(nTongID, "Kü n¨ng ®Æc biÖt ®­îc më, kü n¨ng lµ "..TB_STUNTID_INFO[nStuntID].name)
+		Msg2Tong(nTongID, "Kü n¨ng ®Æc biÖt ®­îc m? kü n¨ng l?"..TB_STUNTID_INFO[nStuntID].name)
+		TONG_ApplyAddEventRecord(nTongID, "Kü n¨ng ®Æc biÖt ®­îc m? kü n¨ng l?"..TB_STUNTID_INFO[nStuntID].name)
 	else
 		TONG_ApplySetTaskValue(nTongID, TONGTSK_STUNT_SWICTH, nStuntID)
-		Msg2PlayerByName(szExecutorName, "Sau mét tuÇn th× kü n¨ng sÏ ®æi thµnh "..TB_STUNTID_INFO[nStuntID].name..".")
+		Msg2PlayerByName(szExecutorName, "Sau mét tuÇn ThÓ kü n¨ng sÏ ®æi thµnh "..TB_STUNTID_INFO[nStuntID].name..".")
 		return 0
 	end
 	cTongLog:WriteInfTB("TONG", "setstunt", nTongID, {stuntid = nStuntID});
@@ -1054,6 +1316,9 @@ end
 STUNT_SET_G_1	= DefFun2
 
 function STUNT_SET_G_2(nTongID, nStuntID)
+
+	_TONG_MIX_DEBUG(53, nTongID, nStuntID)
+	
 	if (nStuntID ~= 0) then
 		for i = 1, getn(TONGTSK_TOTEMINDEX) do
 			local nNpcIndex = TONG_GetTaskValue(nTongID, TONGTSK_TOTEMINDEX[i])
@@ -1096,8 +1361,14 @@ MEMBER_RETIRE_C_1 = DefFun3
 MEMBER_RETIRE_C_2 = DefFun3
 MEMBER_ONLINE_C_1 = DefFun3
 MEMBER_ONLINE_C_2 = DefFun3
-MEMBER_ADD_C_1 = DefFun3
-MEMBER_ADD_C_2 = DefFun3
+
+
+
+
+-- MEMBER_ADD_C_1 = DefFun3
+MEMBER_ADD_C_1 = TONG_ADDMEMBER_CHECK_ALLOW
+-- MEMBER_ADD_C_2 = DefFun3
+MEMBER_ADD_C_2 = TONG_ADDMEMBER_CHECK_ALLOW
 MEMBER_SETFIGURE_C_1 = DefFun3
 MEMBER_SETFIGURE_C_2 = DefFun3
 STUNT_SET_C_1	= DefFun2
@@ -1111,6 +1382,9 @@ aPrompt= {"Cã muèn x©y dùng t¸c ph­êng nµy kh«ng?",
 "Cã ®ång ý ®iÒu chØnh ®¼ng cÊp sö dông t¸c ph­êng kh«ng?",
 }
 function GET_WORKSHOP_PROMPT(nTongID, nWorkshopID, nOpt)
+
+	_TONG_MIX_DEBUG(54, nTongID, nWorkshopID, nOpt)
+	
 	if (nOpt == 3)then
 		return "Sau khi ®ãng cöa, muèn kÝch ho¹t l¹i cÇn "..
 		wsGetOpenCost(nTongID, TWS_GetType(nTongID, nWorkshopID), 
@@ -1124,25 +1398,40 @@ end
 -------------------¹«¹²µÄÈ«·ÅÕâ¡£¡£¡£¡£¡£¡£¡£¡£¡£
 -- »ñÈ¡°ï»á½¨Éè»ù½ðÖÜÉÏÏÞ
 function GET_WEEKBUILD_THRESHOLD(nTongID)
+
+	_TONG_MIX_DEBUG(55, nTongID)
+	
 	return tongGetWeekBuildUpper(nTongID, TONG_GetBuildLevel(nTongID))
 end
 
 --ÖÜÀÛ»ý¹±Ï×¶ÈÉÏÏÞ
 function GET_WEEKLYOFFER_THRESHOLD()
+
+	_TONG_MIX_DEBUG(56)
+	
 	return MAX_WEEK_CONTRIBUTION
 end
 
 -- »ñÈ¡°ï»á×÷·»ÊýÁ¿ÉÏÏÞ	
 function GET_WORKSHOP_COUNT_THRESHOLD(nTongID)
+
+	_TONG_MIX_DEBUG(57, nTongID)
+	
 	return tongGetMaxWorkshopNum(nTongID, TONG_GetBuildLevel(nTongID))
 end	
 
 -- »ñÈ¡°ï»á×÷·»µÈ¼¶ÉÏÏÞ
 function GET_WORKSHOP_LEVEL_THRESHOLD(nTongID)
+
+	_TONG_MIX_DEBUG(58, nTongID)
+	
 	return tongGetWorkshopUpperLevel(nTongID, TONG_GetBuildLevel(nTongID))
 end
 
 function GET_WORKSHOP_DATA(nTongID, nWorkshopID, nFlag)
+
+	_TONG_MIX_DEBUG(59, nTongID, nWorkshopID, nFlag)
+	
 	if (nFlag == 0)then
 		return wsGetOpenCost(nTongID, TWS_GetType(nTongID, nWorkshopID), TWS_GetUseLevel(nTongID, nWorkshopID))
 	end
@@ -1151,4 +1440,7 @@ end
 
 -- È¡Ïû
 function Cancel()
+
+	_TONG_MIX_DEBUG(60)
+	
 end

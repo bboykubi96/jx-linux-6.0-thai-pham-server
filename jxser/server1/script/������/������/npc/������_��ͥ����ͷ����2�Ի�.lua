@@ -1,38 +1,38 @@
---Á½ºþÇø °ÍÁêÏØ ¶´Í¥ºþÂëÍ·´¬·ò2¶Ô»°
--- Update: Dan_Deng(2003-08-21) ½µµÍ³ö´åµÈ¼¶ÒªÇóÎª5¼¶
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn §éng ®×nh hå bÕn tµu thuyÒn phu 2 ®èi tho¹i 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) rít xuèng ra th«n cÊp bËc yªu cÇu v× 5 cÊp 
 
-function main(sel)
-Say("C¶ ®êi ta ®Òu sèng víi s«ng n­íc! §éng §×nh hå kh«ng chç nµo ta kh«ng biÕt! Kh¸ch quan muèn ®i ®©u?", 2, "§i Thiªn V­¬ng ®¶o /yes", "Kh«ng ngåi/no");
-end;
+function main(sel) 
+Say("ThuyÒn phu # cã c©u nãi ®Ých h¶o , kh¸o s¬n cËt s¬n , kh¸o thñy cËt thñy . c¸i nµy t¸m tr¨m dÆm §éng ®×nh hå , chÝnh lµ chóng ta c¸ d©n ®Ých ¸o c¬m cha mÑ . ng­¬i muèn ngåi thuyÒn sao ? ", 2,"§i Thiªn v­¬ng ®¶o /yes","Kh«ng ngåi /no"); 
+end; 
 
-function yes()
-if (GetLevel() >= 5) then						--µÈ¼¶´ïµ½Ê®¼¶
-	if (GetFaction() == "tianwang") then				--Èç¹ûÍæ¼ÒÊÇÌìÍõ°ïµÜ×Ó£¬×ø´¬²»ÊÕÇ®
-		Say("Huynh ®Ö cña Thiªn V­¬ng bang th× ®i thuyÒn miÔn phÝ!", 1, "Xin ®a t¹ /ok1")
-	else	
-		Say("N¬i ®ã hiÓm nguy l¾m! NÕu kh¸ch quan muèn ®i xin cho thªm Ýt tiÒn!", 1, "§­îc. /ok2")
-	end
-else		
-	Talk(1,"","Xin lçi! Ng­¬i ch­a ®Õn cÊp 5, kh«ng ®ñ søc ngåi thuyÒn ®©u!")
-end
-end;
+function yes() 
+if (GetLevel() >= 5) then -- script viet hoa By http://tranhba.com  cÊp bËc ®¹t tíi cÊp m­êi 
+if (GetFaction() == "tianwang") then -- script viet hoa By http://tranhba.com  nÕu nh­ nhµ ch¬i lµ Thiªn v­¬ng gióp ®Ö tö , ngåi thuyÒn kh«ng thu tiÒn 
+Say("ThuyÒn phu # nguyªn lai lµ Thiªn v­¬ng gióp ®Ých huynh ®Ö , h¶o thuyÕt # ngåi ta thuyÒn kh«ng cÇn tiÒn , ngåi xong #", 1,"§a t¹ /ok1") 
+else 
+Say("ThuyÒn phu # Thiªn v­¬ng ®¶o ? ng­êi b×nh th­êng cã thÓ ®Õn gÇn kh«ng ph¶i , muèn ®i lêi cña , ng­¬i nhiÒu l¾m cho chót b¹c . ", 1,"§­îc råi /ok2") 
+end 
+else 
+Say("ThuyÒn phu # thËt xin lçi , kh«ng tíi cÊp n¨m ®Ých tay míi kh«ng thÓ ngåi thuyÒn ra th«n . ", 0) 
+end 
+end; 
 
-function no()
-end;
-
-
-function ok1()
-NewWorld(59, 1425, 3472)
-SetFightState(0)								--×ª»»Îª·ÇÕ½¶·×´Ì¬
-end;
+function no() 
+end; 
 
 
-function ok2()
-if (GetCash() >= 100) then							--²Î¿¼Öµ
-	Pay(100)
-	NewWorld(59, 1425, 3472)
-	SetFightState(0)							--×ª»»Îª·ÇÕ½¶·×´Ì¬	
-else
-	Say("§­a ng­¬i ®i c«ng kh«ng vËy gia ®×nh ta chÕt ®ãi µ?", 0)		
-end
+function ok1() 
+NewWorld(59, 1425, 3472) 
+SetFightState(0) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+end; 
+
+
+function ok2() 
+if (GetCash() >= 100) then -- script viet hoa By http://tranhba.com  tham kh¶o trÞ gi¸ 
+Pay(100) 
+NewWorld(59, 1425, 3472) 
+SetFightState(0) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+else 
+Say("ThuyÒn phu # muèn ®i Thiªn v­¬ng ®¶o , kh«ng cã b¹c kh«ng thÓ ®­îc . ", 0) 
+end 
 end;

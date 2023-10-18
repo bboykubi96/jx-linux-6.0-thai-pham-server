@@ -1,11 +1,11 @@
---中原南区 荐菊洞4to灵谷洞5
---Trap ID：中原南区 36
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 nam khu ti課 c骳 ng 4to linh c鑓 ng 5 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 nam khu 36 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(94, 1591, 3194);
+SetFightState(1); 
+NewWorld(94, 1591, 3194); 
 
-AddTermini(135)
+AddTermini(135) 
 
 end;

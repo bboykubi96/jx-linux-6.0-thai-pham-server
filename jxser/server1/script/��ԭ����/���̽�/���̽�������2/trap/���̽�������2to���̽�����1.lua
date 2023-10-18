@@ -1,8 +1,8 @@
---中原北区 天忍教室内左2to天忍教室内1
---Trap ID：中原北区 30
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祔 nh蒼 b猲 trong ph遪g h鋍 b猲 tr竔 2to ng祔 nh蒼 b猲 trong ph遪g h鋍 1 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 30 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(46, 1639, 3075);
+NewWorld(46, 1639, 3075); 
 
 end;

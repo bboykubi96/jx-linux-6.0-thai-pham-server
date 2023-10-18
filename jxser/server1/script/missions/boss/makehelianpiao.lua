@@ -1,4 +1,4 @@
---何怜飘(568)，生于每天16：05，在19,3248,4278
+
 function main()
 	mapindex = SubWorldID2Idx(19)
 	if (mapindex < 0 ) then

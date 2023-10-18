@@ -1,9 +1,9 @@
---江南区 雁荡山to西山村
---Trap ID：江南区 13
+-- script viet hoa By http://tranhba.com  Giang Nam khu Nh筺 Хng s琻 to t﹜ s琻 th玭 
+-- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 13 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(175, 1595, 3240);
-SetFightState(0);
+NewWorld(175, 1595, 3240); 
+SetFightState(0); 
 
 end;

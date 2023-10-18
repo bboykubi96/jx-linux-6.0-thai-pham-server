@@ -1,8 +1,8 @@
---Î÷ÄÏÄÏÇø ´óÀí¸® Â·±ê Îå¶¾½ÌtoÎäÒÄÉ½
---by Suyu @20031029
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lı phñ b¶ng chØ ®­êng Ngò ®éc gi¸o to Vò di s¬n 
+-- script viet hoa By http://tranhba.com by Suyu @20031029 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Vò Di s¬n", 0)
+Say("§i Vò di s¬n ", 0) 
 
-end;
+end; 

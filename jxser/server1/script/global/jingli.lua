@@ -445,7 +445,16 @@ function JingliDlg:Check(player, potion, count_input)
 	end
 end
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function JingliDlg:Main(player)
+	
+	--dofile("script/global/g7vn/g7configall.lua")
+	if chetaohonnguyenlinhlo == 0 then
+		Say("Tİnh n¨ng luyÖn hçn nguyªn linh lé ch­a cho sö dông") 
+		return 0
+	end
+	
 	player:Say(
 		"V¹n vËt trªn thÕ gian ®Òu chøa linh khİ thiªn ®Şa, nÕu nh­ ng­¬i cã 'ngäc qu¸n' th× cã thÓ tiÕn hµnh thu thËp linh khİ ®­îc, sau khi thu thÊp 30 phót linh khİ cã thÓ chÕ luyÖn thµnh 'hçn nguyªn linh lé'! Sau khi sö dông linh lé nµy cã thÓ gia t¨ng tinh khİ néi lùc!? ",
 		3,

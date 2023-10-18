@@ -199,7 +199,11 @@ function EndMission()
 	SetMissionV(MS_STATE,3)
 	StopMissionTimer(MISSIONID, 39);
 	StopMissionTimer(MISSIONID ,40);
+	SetPunish(1);
 	
+	ForbidEnmity( 0 )
+	
+	SetPKFlag(0)
 	GameOver()
 	level = BT_GetGameData(GAME_LEVEL);
 	DeleteChannel("Phe Tèng"..szGAME_GAMELEVEL[level].."D¹ng thøc Cõu s¸t")

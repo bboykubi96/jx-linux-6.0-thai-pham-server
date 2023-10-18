@@ -1,23 +1,18 @@
--------------------------------------------------------------------------
--- FileName		:	lib_killlevel.lua
--- Author		:	xiaoyang
--- CreateTime	:	2005-03-31 10:42:00
--- Desc			:	×é¶ÓµÄËùÓÐÍæ¼ÒÈÎÎñ±äÁ¿½Ô¸Ä±äµÄÀµ
--------------------------------------------------------------------------
-
--- myTaskNumber £ºÐèÒª¸Ä±äµÄÈÎÎñ±äÁ¿±µºÅ
--- myOrgValue   £º·ûºÏÌõ¼þµÄÅÐ¶ÏÖµ
--- myTaskValue  £º¸Ä±äºóµÄ±äÁ¿Öµ
--- SetMemberTask µÄ·µ»ØÖµÈç¹ûÊÇ 0 ÔòÖ»¸Ä±ä²»×é¶ÓÍæ¼ÒµÄ±äÁ¿£¬´óÓÚ»òÕßµÈÓÚ 1 ÔòÎª¸Ä±äÁË×é¶ÓÍæ¼Ò±äÁ¿µÄÊýÁ¿
--- ÎÞ¢ÛÊÇµ¥ÈË»¹ÊÇ×é¶ÓÊ±¶¼Ã»ÓÐ¸Ä±äÍæ¼ÒµÄ±äÁ¿Ê±Ôò·µ»Ø 80
--- ¶øÈÎºÎÌõ¼þ¶¼²»¢ú×ãµÄÒì³£´¦ÀíÔò·µ»Ø 110
-
+--------------------------------***Heart*Doldly***-----------------------------------------
 Include("\\script\\task\\newtask\\newtask_head.lua")
 Include("\\script\\tong\\tong_award_head.lua")
-Include("\\script\\lib\\awardtemplet.lua");		-- ½±ÀøÄ£°å
+Include("\\script\\lib\\awardtemplet.lua");		
 Include("\\script\\task\\tollgate\\killer\\mibao_head.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
+Include("\\script\\task\\task_addplayerexp.lua")
 
+IncludeLib("FILESYS");
+IncludeLib("RELAYLADDER");	--ÅÅÐÐ°ñ
+Include("\\script\\event\\storm\\function.lua")	--Storm
+Include("\\script\\lib\\log.lua")
+Include("\\script\\activitysys\\g_activity.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
+-------------------------------------------------------------------------------------------------------
 function SetMemberTask(myTaskNumber,myOrgValue,myTaskValue,fnCallback, series)
 
 	local nPreservedPlayerIndex = PlayerIndex
@@ -25,7 +20,6 @@ function SetMemberTask(myTaskNumber,myOrgValue,myTaskValue,fnCallback, series)
 	local myMemberTask
 	local myChangeMember = 0
 	local Uworld1217 = nt_getTask(1217);
-	--Just the boss killer receive activity point - Modified By DinhHQ - 20120412
 	DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "shashourenwu")
 	if (nMemCount == 0 ) then
 		myMemberTask = GetTask(myTaskNumber)
@@ -36,14 +30,8 @@ function SetMemberTask(myTaskNumber,myOrgValue,myTaskValue,fnCallback, series)
 			
 			tongaward_killer()
 			nt_setTask(myTaskNumber,myTaskValue);
-			--Just the boss killer receive activity point - Modified By DinhHQ - 20120412
---			if myOrgValue >= 141 and myOrgValue <= 160 then --É±ËÀÆÕÍ¨90¼¶ºÍ¸ß¼¶É±ÊÖÈÎÎñµÄboss¼Ó»îÔ¾¶È
---				DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "shashourenwu")
---			end
-			
 			fnCallback()
 		end
-		
 	else
 		myMemberTask = GetTask(myTaskNumber)
 		if (myMemberTask == myOrgValue) then
@@ -52,105 +40,83 @@ function SetMemberTask(myTaskNumber,myOrgValue,myTaskValue,fnCallback, series)
 		for i = 1, nMemCount do
 			PlayerIndex = GetTeamMember(i)
 			myMemberTask = GetTask(myTaskNumber)
-			if (myMemberTask == myOrgValue) then	-- ·ûºÏÁËÌõ¼þµÄ¶ÓÓÑ²Å¸Ä±äÈÎÎñ±äÁ¿	
+			if (myMemberTask == myOrgValue) then	-- 
 				add_shashouling(myOrgValue, series)
 				
 				nt_setTask(TSKID_KILLERMAXCOUNT, GetTask(TSKID_KILLERMAXCOUNT) + 1);
 				
 				nt_setTask(myTaskNumber,myTaskValue)
 				myChangeMember = myChangeMember + 1
-				--Just the boss killer receive activity point - Modified By DinhHQ - 20120412
---				if myOrgValue >= 141 and myOrgValue <= 160 then --É±ËÀÆÕÍ¨90¼¶ºÍ¸ß¼¶É±ÊÖÈÎÎñµÄboss¼Ó»îÔ¾¶È
---					DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "shashourenwu")
---				end
-				
 				fnCallback();
 			end
-			
 		end
-		
 		PlayerIndex = nPreservedPlayerIndex;
-		
 	end
-	
-end;
+	local nTime = tonumber(GetLocalDate("%H%M"));
+	if (nTime>=0900 and nTime<=1100) or (nTime>=1200 and nTime<=1300) or (nTime>=1600 and nTime<=1700) or (nTime>=1800 and nTime<=1900) or (nTime>=2000 and nTime<=2100) or (nTime>=2200 and nTime<=2300) then
 
+	--	tbAwardTemplet:GiveAwardByList(tbAward, "PhÇn th­ëng Tiªu DiÖt S¸t Thñ");
+	--	Msg2SubWorld("<color=green>Chóc Mõng §éi Ngò <color=yellow>"..GetName().."<color> §· Hoµn Thµnh NhiÖm Vô S¸t Thñ.")	
+	--	WriteLogPro("dulieu/boss_satthu.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).." \t GietBoss\n");
+	end
+end;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function WriteLogPro(data,str)
+	local Data2 = openfile(""..data.."", "a+");
+	write(Data2,tostring(str));
+	closefile(Data2);
+end
 function add_shashouling(nvalue, series)
 	if ( nvalue >= 1 ) and ( nvalue<= 20  ) then
-		AddOwnExp(15000)
-		AddItem(6,1,399,20,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 20")
-	elseif ( nvalue >= 21 ) and ( nvalue<= 40  ) then
 		AddOwnExp(20000)
-		AddItem(6,1,399,30,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 30")
-	elseif ( nvalue >= 41 ) and ( nvalue<= 60  ) then
-		AddOwnExp(30000)
-		AddItem(6,1,399,40,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 40")
-	elseif ( nvalue >= 61 ) and ( nvalue<= 80  ) then
-		AddOwnExp(50000)
-		AddItem(6,1,399,50,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 50")
-	elseif ( nvalue >= 81 ) and ( nvalue<= 100  ) then
-		AddOwnExp(60000)
-		AddItem(6,1,399,60,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 60")
-	elseif ( nvalue >= 101 ) and ( nvalue<= 120  ) then
-		AddOwnExp(80000)
-		AddItem(6,1,399,70,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 70")
-	elseif ( nvalue >= 121 ) and ( nvalue<= 140  ) then
-		AddOwnExp(100000)
-		AddItem(6,1,399,80,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 80")
-	elseif ( nvalue >= 141 ) and ( nvalue<= 160  ) then
-		AddOwnExp(140000)
-		--Ö»ÓÐ×ö90¼¶ÉÏµÄ ²ÅÓÐ¿ÉÄÜÑ§Ï°120¼¶¼¼ÄÜ
-		AddExp_Skill_Extend(140000);
-		AddItem(6,1,399,90,series,0)
-		Msg2Player("Ng­¬i ®­îc mét s¸t thñ lÖnh cÊp 90")
-		tbAwardTemplet:GiveAwardByList({{szName = "S¸t thñ bÝ b¶o", tbProp = {6,1,2347,1,1,0}, nRate = 50}}, format("Get %s", "S¸t thñ bÝ b¶o"), 1)
-		jiefangri_award()	
-	end
-end
-
-function jiefangri_award()
-	local nLevel = 150
-	
-	if PlayerFunLib:CheckTotalLevel(nLevel, "", ">=") ~= 1 then
-		return
-	end
-
-	local tbItem = {
-		[1]={szName="Huy ch­¬ng chiÕn c«ng ",tbProp={6,1,2823,1,0,0},nExpiredTime=20110523},
-		[2]={szName="Bót ",tbProp={6,1,2825,1,0,0},nExpiredTime=20110523},
-		[3]={szName="Huy ch­¬ng ",tbProp={6,1,2826,1,0,0},nExpiredTime=20110523},
-	}
-	
-	local tbshashou = {
-		[1] = 2,
-		[2] = 1,
-		[3] = 2,
-	}	
-	local tbStartDate = {
-		[1] = 201104210000,
-		[2] = 201105020000,
-		[3] = 201105160000,
-		}
+		AddItem(6,1,399,20,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 20")
 		
-	local tbMaiDian = {
-		[1] = "jiefangri_shashouchanchuzhangongjiangzhang",
-		[2] = "jiefangri_shashouchanchuzhibi",
-		[3] = "jiefangri_shashouchanchujianzhang",
-		}	
-	local nEndDate = 201105230000
-	local ndate = tonumber(GetLocalDate("%Y%m%d%H%M"))
-	
-	for i=1,getn(tbStartDate) do
-		if ndate >= tbStartDate[i] and ndate <= nEndDate then
-			tbAwardTemplet:Give(tbItem[i], tbshashou[i], {"EventChienThang042011", "NhanDuocNguyenLieuTuBossSatThu"})
-			AddStatData(tbMaiDian[i], tbshashou[i])
-		end
+	elseif ( nvalue >= 21 ) and ( nvalue<= 30  ) then
+		AddOwnExp(30000)
+		AddItem(6,1,399,30,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 30")
+		
+	elseif ( nvalue >= 31 ) and ( nvalue<= 40  ) then
+		AddOwnExp(40000)
+		AddItem(6,1,399,40,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 40")
+		
+	elseif ( nvalue >= 41 ) and ( nvalue<= 50  ) then
+		AddOwnExp(60000)
+		AddItem(6,1,399,50,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 50")
+		
+	elseif ( nvalue >= 51 ) and ( nvalue<= 60  ) then
+	AddOwnExp(80000)
+		--tl_addPlayerExp(80000)
+		AddItem(6,1,399,60,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 60")
+		
+	elseif ( nvalue >= 61 ) and ( nvalue<= 70  ) then
+		AddOwnExp(100000)
+		AddItem(6,1,399,70,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 70")
+		
+	elseif ( nvalue >= 71 ) and ( nvalue<= 80  ) then
+		AddOwnExp(120000)
+		--AddItem(6,1,399,80,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 80")
+		
+	elseif ( nvalue >= 81 ) and ( nvalue<= 200  ) then
+		AddOwnExp(1e6)
+		AddExp_Skill_Extend(1e6);
+		--AddItem(6,1,399,90,series,0)
+		Msg2Player("B¹n nhËn ®­îc 1 s¸t thñ lÖnh cÊp 90")		
 	end
 end
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tbAward = {
+	[1] = {	
+	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
+	
+		--{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=1},	
+		
+			},
+}
+------------------------------------------------------------------------------------------------------------------------------------------------

@@ -11,7 +11,6 @@ tbjf0904_shuizei_exp =
 	[5]	= {nExp = 30, 	nRate = 0.05},
 };
 
-
 function join_shuizei_act()
 	if (0 == jf0904_shuizei_IsActtime()) then
 		Say("Kh«ng ph¶i lµ trong thêi gian ho¹t ®éng.", 0);
@@ -29,8 +28,8 @@ function join_shuizei_act()
 end
 
 function join_shuizei_act_cf()
-	if (GetLevel() < 50 or GetExtPoint(0) < 1) then
-		Say("§¹i hiÖp vÉn ch­a ®ñ cÊp 50 hoÆc vÉn ch­a nép thÎ, v× vËy kh«ng thÓ tham gia ho¹t ®éng", 0);
+	if GetLevel() < 80  then
+		Say("§¹i hiÖp vÉn ch­a ®ñ cÊp 80 hoÆc vÉn ch­a nép thÎ, v× vËy kh«ng thÓ tham gia ho¹t ®éng", 0);
 		return
 	end
 
@@ -60,6 +59,10 @@ end
 
 
 function give_shuizei_award_lingpai()
+	if (GetTask(jf0904_TSK_shuizei_FulfilTaskTime) <= 0) then
+		--Say("H«m nay kh«ng thÓ tr¶ thªm nhiÖm vô Tiªu diÖt thñy tÆc n÷a.", 0);
+	--	return
+	end
 	GiveItemUI("Giao truy c«ng lÖnh", "Xin mêi bá truy c«ng lÖnh vµo « bªn d­íi, mçi lÇn chØ ®­îc bá 1 c¸i.", "submit_zhuigongling", "no")
 end
 
@@ -94,9 +97,15 @@ function give_shuizei_award_exp()
 		end
 		ncurstep = ncurstep + tbjf0904_shuizei_exp[i].nRate * 100000;
 	end
-	
-	AddOwnExp(naddedexp * 1000000);
-	
+	--AddOwnExp(naddedexp * 1000000);
+	local rannnnn=random(1,3)
+	if rannnnn==1 then
+	AddOwnExp(5e6);
+	elseif rannnnn==2 then
+	AddOwnExp(7e6);
+	elseif rannnnn==3 then
+	AddOwnExp(10e6);
+	end
 end
 
 function jf0904_shuizei_IsActtime()

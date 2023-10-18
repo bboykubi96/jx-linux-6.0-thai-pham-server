@@ -4,6 +4,7 @@ Include("\\script\\misc\\eventsys\\type\\npc.lua")
 tbVnRingUpgrade = {}--tbActivityCompose:new()
 tbVnRingDowngrade = {}
 tbVnRingRefine = {}
+
 function tbVnRingUpgrade:SelectRing(strRingType)
 	local strRingName = tbRingName[strRingType]
 	tbOpt = {

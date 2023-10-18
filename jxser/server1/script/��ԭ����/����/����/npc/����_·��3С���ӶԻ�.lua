@@ -1,4 +1,4 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® Â·ÈË3Ğ¡µË×Ó¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢·ÈË3Ğ¡µË×Ó¶Ô»°
 
 
 Include("\\script\\activitysys\\g_activity.lua")
@@ -14,7 +14,7 @@ function main()
 	end
 
 	local tbDailog = DailogClass:new(szNpcName)
-	tbDailog.szTitleMsg = "<#><npc>TiÓu ®Æng tö: Ta ®· ¨n ch¸o víi khoai h¬n mét tuÇn råi. Gi¸ mµ ¨n ®­îc mét b÷a c¬m no nª nhØ?"
+	tbDailog.szTitleMsg = "<#><npc>TiÓu §Æng Tö:Ta ®· ¨n råi mét lÔ b¸i ®İch hång thù hi c¬m , nÕu nh­ cã thÓ ¨n mét b÷a ®¹i mÔ c¬m , kh«ng biÕt ®­îc cã mÊy h¶o."
 	
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog)
 	--µ¯³ö¶Ô»°¿ò

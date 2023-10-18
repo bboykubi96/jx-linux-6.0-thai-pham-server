@@ -45,7 +45,7 @@ function wlls_want2go(stationname)
 
 	local count = getn(tbCP_STATION[stationname]) - 1
 	local randnum = random(count)
-	Msg2Player("Ngåi yªn ch­a? Chóng ta ®i "..tbCP_STATION[stationname][count+1])
+	Msg2Player("Ngåi yªn ch­­a Chóng ta ®i "..tbCP_STATION[stationname][count+1])
 	NewWorld(stationname, tbCP_STATION[stationname][randnum][1], tbCP_STATION[stationname][randnum][2])
 	
 	SetLogoutRV(0);

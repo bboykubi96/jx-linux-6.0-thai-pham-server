@@ -1,6 +1,6 @@
--- ÁúÃÅÕò¡¡Â·ÈË¡¡Ã·Ïã
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  long m«n trÊn # ng­êi ®i ®­êng # mai h­¬ng 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(1,"","ChŞ cña ta chİnh lµ vî cña «ng chñ qu¸n trä Long M«n TrÊn. ChŞ Êy rÊt lîi h¹i, kh«ng ai d¸m ®ông ®Õn mét sîi tãc cña chŞ Êy")
-end;
+function main() 
+Talk(1,"","Tû tû ta chİnh lµ long m«n trÊn kh¸ch s¹n l·o b¶n ®İch vî . nµng nh­ng lîi h¹i , kh«ng ai d¸m ®éng nµng mét sîi tãc ") 
+end; 

@@ -13,17 +13,10 @@
 if not LTABFILE_HEAD then
 LTABFILE_HEAD = 1
 
-if not MEM_HEAD then
-	Include "/script/lib/mem.lua"
-end
+Include("\\script\\lib\\mem.lua")
+Include("\\script\\lib\\string.lua")
+Include("\\script\\class\\lerror.lua")
 
-if not STRING_HEAD then
-	Include "/script/lib/string.lua"
-end
-
-if not KERROR_HEAD then
-	Include "/script/class/lerror.lua"
-end
 
 --========类定义====================================--
 --类名：LTabFile

@@ -1,9 +1,9 @@
---Î÷±±ÄÏÇø ·ïÏè¸® ¶Ä³¡ÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ sßng b¹c l·o b¶n ®èi tho¹i 
 
---function main(sel)
+function main(sel) 
 
---Say("¶Ä³¡ÀÏ°å£º°³¿ªÕâ¸ö¶Ä³¡£¬Ö»ÊÇÎªÁË¸ø´ó¼Ò»ï¶ùÒ»¸öÃ»ÊÂË£Ë£µÄµØ·½£¬¿É²»ÊÇÎªÁË×¬Ç®¡£½øÀ´ÍæÍæ°É£¿",0)
+Say("Sßng b¹c l·o b¶n # ta ®©y khai c¸i nµy sßng b¹c , chØ lµ v× cho mäi ng­êi mµ mét kh«ng cã sao ®ïa bìn ®ïa bìn ®İch ®Şa ph­¬ng , còng kh«ng ph¶i lµ v× kiÕm tiÒn . ®i vµo vui ®ïa mét chót ®i ? ",0) 
 
---end;
+end; 
 
 Include("\\script\\global\\dicegame.lua");

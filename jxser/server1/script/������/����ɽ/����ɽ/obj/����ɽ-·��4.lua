@@ -1,7 +1,7 @@
---Á½ºşÇø ÎäÁêÉ½Â·±ê4
+-- script viet hoa By http://tranhba.com  hai hå khu vò l¨ng ®­êng nói ngän 4 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Phôc L­u ®éng.", 0)
+Say("§i th«ng phôc l­u ®éng . ", 0) 
 
-end;
+end; 

@@ -1,13 +1,20 @@
--- ÎÄ¼þÃû¡¡£ºzhizuochuangongwan.lua
--- ´´½¨Õß¡¡£ºzhongchaolong
--- ´´½¨Ê±¼ä£º2008-02-22 17:16:36
---ÖÆ×÷´«¹¦ÍèµÄ½Å±¾
 IncludeLib("SETTING");
 Include("\\script\\event\\BeiDouChuanGong\\lib\\compose.lua");
 Include("\\script\\event\\BeiDouChuanGong\\lib\\addaward.lua");
 Include("\\script\\task\\system\\task_string.lua");
 Include("\\script\\event\\BeiDouChuanGong\\head.lua")
+
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function BeiDouChuanGong_main(nStep)
+	
+	--dofile("script/event/beidouchuangong/zhizuochuangongwan.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+	if(bacdautruyencongthuat == 0) then
+		Say("B¾c ®Èu truyÒn c«ng thuËt t¹m thêi ch­a më.")
+		return 1;
+	end
+
 	local tbSay 
 	if nStep == 1 then
 		tbSay = 

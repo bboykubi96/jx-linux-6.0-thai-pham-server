@@ -1,22 +1,22 @@
--------------------------------------------------------------------------
--- FileName		:	enemy_shaolinkongji.lua
--- Author		:	xiaoyang
--- CreateTime	:	2004-12-25 15:07:27
--- Desc			:	Õ½¶·_ÉÙÁÖ¿Õ¼Å
--------------------------------------------------------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -
+-- script viet hoa By http://tranhba.com  FileName		:	enemy_shaolinkongji.lua
+-- script viet hoa By http://tranhba.com  Author		:	xiaoyang
+-- script viet hoa By http://tranhba.com  CreateTime	:	2004-12-25 15:07:27
+-- script viet hoa By http://tranhba.com  Desc			:	â###_Ðï¸#¿â#Å
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -
 Include("\\script\\task\\newtask\\newtask_head.lua")
 Include("\\script\\task\\newtask\\master\\lib_setmembertask.lua")
 
 function OnDeath()
 Uworld1002 = nt_getTask(1002)
 	if (Uworld1002 == 280 ) then
-		Talk(1,"Uworld1002_give","A Di §µ PhËt, ThÇn KhÝ ë ®©y, ThÝ chñ lÊy ®i.")
+		Talk(1,"Uworld1002_give","°#·#Ýã#ð##â©µ##ÄÐ#####£###Ä·Ì#°Ð.")
 	end
 end
 
 function zhongtask5()
 	AddOwnExp(600000)
-	Msg2Player("B¹n nhËn ®­îc hai bé Long KhÝ, h·y quay vÒ t×m Phã Nam B¨ng.")
+	Msg2Player("Ä·###·¸#²¿¸ó######Ì#âß##Ä#±ï.")
 
 end
 

@@ -1,11 +1,11 @@
---西南北区 雁石洞to长江源头
---Trap ID：西南北区 18
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu nh筺 th筩h ng to Trng giang ng鋘 ngu錸 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 18 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(9, 2478, 5691);
+SetFightState(1) 
+NewWorld(9, 2478, 5691); 
 
-AddTermini(22)
+AddTermini(22) 
 
 end;

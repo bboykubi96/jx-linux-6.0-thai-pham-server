@@ -1,18 +1,18 @@
---description: ÎäÁêÉ½ °×Ë®¶´µĞÈË1¡¡ÌìÍõ20¼¶ÈÎÎñ
---author: yuanlan	
---date: 2003/4/25
--- Update: Dan_Deng(2003-08-16)
+-- script viet hoa By http://tranhba.com description: vò l¨ng s¬n b¹ch n­íc ®éng ®Şch nh©n 1# Thiªn v­¬ng 20 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/4/25 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-16) 
 
-function OnDeath()
-	UTask_tw = GetTask(3)
+function OnDeath() 
+UTask_tw = GetTask(3) 
 	if (UTask_tw == 20*256+50) then
-		UTask_twtmp20 = SetBit(GetTaskTemp(10),1,1)
-		SetTaskTemp(10,UTask_twtmp20)
-		if (UTask_twtmp20 == 7) then		-- bin: 100 + 010
-			Msg2Player("§¸nh b¹i thæ phØ, d©n chóng trong th«n phô cËn tÆng mét l¸ cê gÊm ®Ó t¹ ¬n. ")
-			AddEventItem(92) 
---			SetTask(3, 28)
-			AddNote("T¹i B¹ch Thñy ®éng Vò L¨ng s¬n, ®¸nh b¹i 3 tªn cÇm ®©u b¨ng thæ phØ m¹o nhËn Thiªn V­¬ng bang, ®­îc d©n chóng phô cËn tÆng mét l¸ cê gÊm. ")
-		end
-	end
-end;
+UTask_twtmp20 = SetBit(GetTaskTemp(10),1,1) 
+SetTaskTemp(10,UTask_twtmp20) 
+		if (UTask_twtmp20 == 7) then		-- script viet hoa By http://tranhba.com  bin: 100 + 010
+Msg2Player("§¸nh b¹i thæ phØ , phô cËn th«n d©n ®­a ra mét DiÖn CÈm Kú lµm c¶m t¹ . ") 
+AddEventItem(92) 
+-- script viet hoa By http://tranhba.com  SetTask(3, 28) 
+AddNote(" ë Vò di s¬n b¹ch n­íc ®éng ®¸nh b¹i 3 tªn gi¶ m¹o Thiªn v­¬ng gióp ®Ö tö ®İch thæ phØ , lÊy ®­îc phô cËn th«n d©n ®­a cÈm kú . ") 
+end 
+end 
+end; 

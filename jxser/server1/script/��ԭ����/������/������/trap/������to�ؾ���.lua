@@ -1,8 +1,8 @@
---中原北区 少林派to藏经阁
---Trap ID：中原北区 49
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ph竔 Thi誹 l﹎ to t祅g kinh c竎 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 49 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(104, 1592, 3190);
+NewWorld(104, 1592, 3190); 
 
 end;

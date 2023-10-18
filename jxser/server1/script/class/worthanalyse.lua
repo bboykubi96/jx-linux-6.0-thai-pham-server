@@ -42,12 +42,9 @@
 if not WORTHANALYSE_HEAD then
 WORTHANALYSE_HEAD =1
 
-if not MEM_HEAD then
-	Include "/script/lib/mem.lua"
-end
-if not LERROR_HEAD then
-	Include "/script/class/lerror.lua"
-end
+Include("\\script\\lib\\mem.lua")
+Include("\\script\\class\\lerror.lua")
+
 
 --========类定义====================================--
 --类名：WorthAnalyse

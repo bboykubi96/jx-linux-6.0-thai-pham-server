@@ -1,5 +1,5 @@
---Î÷±±ÄÏÇø ·ïÏètoÇØÁê
---Trap ID£ºÎ÷±±ÄÏÇø 18
+-- script viet hoa By http://tranhba.com ##±±Ä### ###Ìto##¸ª
+-- script viet hoa By http://tranhba.com Trap ID#º##±±Ä### 18
 
 function main(sel)
 
@@ -7,7 +7,5 @@ SetFightState(1);
 NewWorld(7, 2235, 2847);
 
 AddTermini(3)
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
 
 end;

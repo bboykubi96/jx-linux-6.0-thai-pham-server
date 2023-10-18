@@ -3,8 +3,8 @@
 
 function main()
 	if (random(0,1) == 0) then
-		Talk(1,"","TiÓu th­ nhµ ta kh«ng nh÷ng t­íng m¹o xinh ®Ñp, mµ tİnh t×nh còng tèt, kh«ng gièng cha mét chót nµo. ")
-	else
-		Talk(1,"","TiÓu th­ th­êng gióp ®ì ng­êi nghÌo, cho nªn hay bŞ cha la m¾ng. ")
+Talk(1,"","Khi cöa hµng tiÓu nhŞ  tiÓu th­ nhµ ta kh«ng chØ cã t­íng m¹o h¶o , lßng d¹ còng tèt , cïng nµng cha mét chót còng kh«ng gièng . ") 
+else 
+Talk(1,"","Khi cöa hµng tiÓu nhŞ  tiÓu th­ th­êng tiÕp tÕ ng­êi nghÌo , kÕt qu¶ tæng bŞ cha nµng m¾ng . ") 
 	end
 end;

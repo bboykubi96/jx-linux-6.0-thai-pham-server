@@ -1,9 +1,9 @@
---中原北区 天忍教室内1to天忍教室内左2
---Trap ID：中原北区 29
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祔 nh蒼 b猲 trong ph遪g h鋍 1to ng祔 nh蒼 b猲 trong ph遪g h鋍 b猲 tr竔 2 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 29 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(47, 1589, 3200);
+SetFightState(1) 
+NewWorld(47, 1589, 3200); 
 
 end;

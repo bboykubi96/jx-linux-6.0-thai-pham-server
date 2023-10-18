@@ -1,7 +1,7 @@
---ÖĞÔ­±±Çø ·üÅ£É½Î÷ Â·±ê1£º·üÅ£É½Î÷->ãê¾©
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu phôc bß S¬n T©y b¶ng chØ ®­êng 1# phôc bß S¬n T©y -> biÖn kinh 
 
-function main(sel)
+function main(sel) 
 
-Say("Phôc Ng­u s¬n<---->BiÖn Kinh ", 0)
+Say("Phôc bß s¬n <——> biÖn kinh ", 0) 
 
-end;
+end; 

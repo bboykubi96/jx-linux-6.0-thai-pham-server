@@ -1,8 +1,8 @@
---中原北区 天忍教圣洞2to天忍教圣洞二层密室
---Trap ID：中原北区 67
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祔 nh蒼 d箉 th竛h ng 2to ng祔 nh蒼 d箉 th竛h ng t莕g hai m藅 th蕋 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 67 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(102, 1608, 3199);
+NewWorld(102, 1608, 3199); 
 
 end;

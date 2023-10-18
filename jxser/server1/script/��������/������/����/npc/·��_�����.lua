@@ -10,7 +10,7 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- 带艺投师
 Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
-function main()
+function main_com()
 	
 	local nNpcIndex = GetLastDiagNpc();
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M"))

@@ -1,40 +1,40 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË5ÓÎ¿Í¶Ô»°
---°ÍÁêÏØĞÂÊÖÈÎÎñ£º¹ÅÀÏÌ«µÄ±¦±´
---suyu
--- Update: Dan_Deng(2003-08-10)
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 5 du kh¸ch ®èi tho¹i 
+-- script viet hoa By http://tranhba.com  ba l¨ng huyÒn tay míi nhiÖm vô # cæ x­a qu¸ ®İch b¶o bèi 
+-- script viet hoa By http://tranhba.com suyu 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-10) 
 
-function main(sel)
-	UTask_world19 = GetTask(47);
-	if (UTask_world19 == 2) then
-		if HaveItem(183) == 1 then
-			Say("¤ « «! C¸i g× kia! B¹n trÎ cã bøc th­ ph¸p kia, cã thÓ nh­îng l¹i cho ta ®­îc kh«ng, gi¸ c¶ cã thÓ th­¬ng l­îng, bøc th­ ph¸p nµy lµ cña Ph¹m V¨n Chİnh C«ng næi tiÕng ®Êy!",2,"B¸n /yes","Kh«ng b¸n /no")
-		else
-			Talk(1,"","¤i!...Bao giê th× ta míi cã thÓ t×m ®­îc mét bøc th­ ph¸p quı nh­ thÕ nµy?")
-		end
-	else
-		i = random(0,3)
-		if (i == 0) then
-			Talk(1,"","§éng §×nh hå nµy cßn ®­îc gäi lµ 'V©n Méng Tr¹ch', phİa B¾c gi¸p Tr­êng Giang, Nam gi¸p bèn con s«ng T­¬ng, T­, Nguyªn, Phong, danh hiÖu lµ 'B¸t B¸ch Lı §éng §×nh Hå'. ")
-		elseif (i == 1) then
-			Talk(1,"","§éng §×nh hå réng mªnh m«ng, nói non chãt vãt, ®Æc ®iÓm lín nhÊt lµ ngoµi hå cã hå, trong hå cã nói,c¸ nhiÒu v« sè, lau sËy um tïm, n­íc trêi mét s¾c, h¶i ©u bay l­în. Xu©n thu tø quı lu«n thay ®æi. ")
-		elseif (i == 2) then
-			Talk(1,"","Du kh¸ch?Ph¹m V¨n Chİnh C«ng trong bµi 'Nh¹c d­¬ng lÇu kı' cã viÕt?'D÷ quan phu Ba L¨ng th¾ng tr¹ng,t¹i §éng §×nh nhÊt hå. Hµm viÔn s¬n, Th«n Tr­êng Giang, h¹o h¹o thang thang, hoµnh v« tÕ nhai?triÒu huy tŞch ©m, khİ t­îng v¹n thiªn',§éng §×nh hå nµy xøng ®¸ng ®­îc t«n lµ 'Thiªn h¹ ®Ö nhÊt §éng'!")
-		else
-			Talk(1,"","¤i!...Bao giê th× ta míi cã thÓ t×m ®­îc mét bøc th­ ph¸p quı nh­ thÕ nµy?")
-		end
-	end
-end;
+function main(sel) 
+UTask_world19 = GetTask(47); 
+if (UTask_world19 == 2) then 
+if HaveItem(183) == 1 then 
+Say("Du kh¸ch # oa a a , ®©y lµ c¸i g× # ng­êi tuæi trÎ trªn tay ng­¬i cÇm ch÷ vÏ cã thÓ hay kh«ng b¸n cho ta nha , gi¸ c¶ h¶o th­¬ng l­îng , ®©y lµ ph¹m v¨n ®ang c«ng ®İch mÆc b¶o nha #",2,"B¸n /yes","Kh«ng b¸n /no") 
+else 
+Talk(1,"","Du kh¸ch # ai …… ta khi nµo míi cã thÓ t×m ®­îc ph¹m v¨n ®ang c«ng ®İch mÆc b¶o ®©y ? ") 
+end 
+else 
+i = random(0,3) 
+if (i == 0) then 
+Talk(1,"","Du kh¸ch # ®éng nµy ®×nh hå l¹i gäi “ v©n méng tr¹ch ” , b¾c §¹i ®éi tr­ëng giang , nam nhËn t­¬ng # t­ # nguyªn # phong bèn n­íc , ®­îc x­ng “ t¸m tr¨m dÆm §éng ®×nh hå ” . ") 
+elseif (i == 1) then 
+Talk(1,"","Du kh¸ch # §éng ®×nh hå mªnh m«ng vu håi , s¬n loan ®ét ngét , ®Æc ®iÓm lín nhÊt lµ hå bªn ngoµi cã hå , trong hå cã nói , c¸ phµm ®iÓm mét c¸i , l« l¸ thanh thanh , trêi n­íc mét mµu , ©u lé t­êng bay . xu©n thu bèn lóc chi c¶nh bÊt ®ång , trong mét ngµy biÕn hãa v¹n thiªn . ") 
+elseif (i == 2) then 
+Talk(1,"","Du kh¸ch # ph¹m v¨n ®ang c«ng tõng ë # Nh¹c D­¬ng lÇu nhí # trung viÕt #“ d­ xem phu ba l¨ng th¾ng tr¹ng , ë §éng §×nh mét hå . hµm nói xa , nuèt Tr­êng giang , h¹o h¹o thang thang , hoµnh v« tËn nhai # h­íng huy tŞch ©m , khİ t­îng v¹n thiªn ” , c¸i nµy sãng biÕc v¹n kho¶nh ®İch §éng ®×nh hå thËt kh«ng hæ lµ “ ®Ö nhÊt thiªn h¹ hå ” a #") 
+else 
+Talk(1,"","Du kh¸ch # ai …… ta khi nµo míi cã thÓ t×m ®­îc ph¹m v¨n ®ang c«ng ®İch mÆc b¶o ®©y ? ") 
+end 
+end 
+end; 
 
-function yes()
+function yes() 
 	i = 100 * (random(0,5)+10)
-	Talk(2,"","NÕu ng­¬i ®· ®ång ı b¸n cho ta, th× kh«ng ®­îc ®æi ı ®Êy! §Ó xem ta cßn bao nhiªu tiÒn, 5, 10, 15, 20... ","Tèt råi, ®­a ng­¬i "..i.."ng©n l­îng.")
-	DelItem(183)
-	Earn(i)
-	SetTask(47, 3)
-	Msg2Player("§­a bøc th­ ph¸p cho ng­êi du kh¸ch, lÊy ®­îc "..i.."ng©n l­îng.")
-	AddNote("§­a bøc th­ ph¸p cho nguêi du kh¸ch, hoµn thµnh nhiÖm vô. ")
-end;
+Talk(2,"","Du kh¸ch # ng­¬i ®¸p øng b¸n cho ta , kh«ng muèn ®æi ı nga # ®Ó cho ta xem mét chót trªn ng­êi ta cßn cã bao nhiªu tiÒn , nhÊt ngò nhÊt thËp m­êi l¨m hai m­¬i ……","Tèt l¾m cho ng­¬i "..i.." l­îng b¹c tèt l¾m . ") 
+DelItem(183) 
+Earn(i) 
+SetTask(47, 3) 
+Msg2Player("§em ch÷ vÏ b¸n cho du kh¸ch , lÊy ®­îc "..i.." l­îng b¹c . ") 
+AddNote("§em ch÷ vÏ b¸n cho du kh¸ch , lÊy ®­îc "..i.." l­îng b¹c . ") 
+end; 
 
-function no()
-	Talk(1,"","Cã thÓ nghÜ l¹i kh«ng? Ta thËt lßng rÊt muèn cã bøc th­ ph¸p nµy. ")
-end;
+function no() 
+Talk(1,"","Du kh¸ch # van cÇu ng­¬i suy nghÜ mét chót n÷a , suy nghÜ thËt kü mét c¸i , ta thËt rÊt muèn bøc ch÷ nµy vÏ . ") 
+end; 

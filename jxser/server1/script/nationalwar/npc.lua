@@ -1,24 +1,29 @@
--- ÄÚ¸óÉĞÊé£ºÌì×ÓÏµÍ³Èë¿Ú
+-- ÄÚ¸óÉ?Êé£º??×ÓÏµÍ³Èë¿Ú
 -- By: wangbin(2009-5-24)
 
 Include("\\script\\nationalwar\\head.lua")
 Include( "\\script\\lib\\say.lua" )
 Include("\\script\\item\\tianziyuxi.lua")
 IncludeLib("ITEM")
+IncludeLib("LEAGUE")
+--Include("\\script\\global\\quanlygame\\thuonghoatdong.lua");
+
 
 function main()
+dofile("script/nationalwar/npc.lua")
+
 	Say("Néi c¸c th­îng th­ hÇu chØ",
-		7,
+		 5,
 		"Thiªn Tö ®¨ng c¬/nw_enthrone",
-		"Thiªn Tö ngù chØ/nw_emperororder",
-		"Quèc V­¬ng chiÕu th­/nw_kingorder",
-		"l·nh th­ìng/nw_accept",
-		"Lßng d©n lµ c¸n c©n chuÈn mùc/nw_comment",
-		"ThiÕt bót trùc th­ (sö kı)/nw_history",
+		 "Thiªn Tö ngù chØ/nw_emperororder",
+		 "Quèc V­¬ng chiÕu th­/nw_kingorder",
+		"NhËn LÖnh Bµi Quèc ChiÕn/nw_accept",
+		--"Lßng d©n lµ c¸n c©n chuÈn mùc/nw_comment",
+		--"Thi?t bót trùc th­ (sö k?)/nw_history",
 		"Ta chØ ®Õn ch¬i/Cancel")
 end
 
--- Ìì×ÓµÇ»ù
+-- ??×ÓµÇ»ù
 function nw_enthrone()
 	if (NW_IsEmperor() == 1) then
 		Say("LÔ ®¨ng c¬ ®· diÔn ra råi, lÏ nµo bÖ h¹ quªn råi?")
@@ -35,7 +40,7 @@ function nw_enthrone()
 			_, master = GetCityOwner(CITYIDX_LINAN)
 			side = 1
 		else
-			-- ½ğÓ®
+			-- ½?Ó®
 			_, master = GetCityOwner(CITYIDX_BIANJING)
 			side = 0
 		end
@@ -50,40 +55,40 @@ function nw_enthrone()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼
+-- ??×ÓÚÍÖ¼
 function nw_emperororder()
 	Say("Thiªn Tö ngù chØ",
-		7,
+		5,
 		"§Æt quèc hiÖu/nw_emperororder_setnationtitle",
 		"Kh¾p chèn mõng vui/nw_emperororder_congratulate",
 		"§¹i x¸ thiªn h¹/nw_emperororder_absolve",
 		"Thiªn Tö chiÕu th­/nw_emperororder_message",
-		"Quyªn tiÒn/nw_emperororder_levy",
-		"CÊm nãi/nw_emperororder_forbidtalkdlg",
+		--"Quyªn ti?n/nw_emperororder_levy",
+		--"CÊm n?i/nw_emperororder_forbidtalkdlg",
 		"Ta chØ ®Õn ch¬i/Cancel")
 end
 
--- ¹úÍõÚ¯Êé
+-- ¹úÍ?Ú¯Êé
 function nw_kingorder()
 	Say("Ng­êi ®øng ®Çu mét n­íc, cã quyÒn h¹n cao nhÊt",
-		3,
+		2,
 		"Phong ®¹i thÇn/nw_kingorder_instate",
-		"§iÒu chØnh thuÕ suÊt/nw_kingorder_taxdlg",
+		--"§i?u chØnh thu? suÊt/nw_kingorder_taxdlg",
 		"Kh«ng lµm g×./Cancel")
 end
 
--- ÁìÈ¡
+-- Á?È¡
 function nw_accept()
 	Say("Tr¸ng sü xuÊt trËn, giÕt ®Şch lËp c«ng",
-		5,
+		3,
 		"NhËn lÖnh bµi quèc chiÕn/nw_accept_token",
-		"NhËn phÇn th­ëng Hoµng §Õ/nw_accept_domainring",
+		--"NhËn phÇn th­ëng Hoµng §?/nw_accept_domainring",
 		"NhËn phÇn th­ëng Thiªn Tö/nw_accept_empirering",
 		"NhËn thiªn tö ngäc tû/nw_accept_empireseal",
 		"Ta chØ ghĞ qua xem/Cancel")
 end
 
--- ÁìÈ¡/¹úÕ½ÁîÅÆ
+-- Á?È¡/¹ú?½ÁîÅÆ
 function nw_accept_token()
 	city = GetCityArea()
 	if (city ~= CITYIDX_LINAN and city ~= CITYIDX_BIANJING) then
@@ -92,7 +97,7 @@ function nw_accept_token()
 	end
 	tong, master = GetCityOwner(city)
 	if (GetTong() ~= tong) then
-		Say("Nh×n ng­¬i kh«ng gièng nh­ thÇn d©n n­íc ta, lÏ nµo ng­¬i lµ gian tÕ cña ®Şch?")
+		Say("Nh×n ng­¬i kh«ng gièng nh­ thÇn d©n n­íc ta, lÏ nµo ng­¬i lµ gian t? cña ®?ch?")
 		return
 	end
 	if (master ~= GetName() and NW_GetDuty() == NWPOSITION_NONE) then
@@ -100,16 +105,26 @@ function nw_accept_token()
 		return
 	end
 	local free = CalcFreeItemCellCount()
-	if (free == 0) then
-		Say("Hµnh trang kh«ng ®ñ chç trèng, s¾p xÕp l¹i råi ®Õn nhËn l¹i.")
+	if (free < 55) then
+		Say("Hµnh trang kh«ng ®ñ 55 chç trèng, s¾p x?p l¹i råi ®?n nhËn l¹i.L­u ? chØ nhËn ®­îc 1 lÇn duy nhÊt.")
 		return
 	end
-	local count = 10
-	if (free < count) then
-		count = free
-	end
+	local nHour = tonumber(GetLocalDate("%H%M"))
+	local nWeek	= tonumber(date("%w"))
+                                                                                  if  nWeek ~= 1 or nHour < 1800 then
+																				  Say("LÖnh bµi chØ ®­îc sau 18h c¸c ngµy thø 2 hµng tuÇn..")
+                                                                                  return
+																				  end
+																				  	local nDate = tonumber(GetLocalDate("%d"))
+if ( GetTask(3017) == nDate ) then -- neu khac se	
+ Say("LÖnh bµi thiªn tö mçi trËn chØ cã thÓ nhËn 1 lÇn duy nhÊt 55 c¸i.")
+return
+end			
+if ( GetTask(3017) ~= nDate ) then -- neu khac se
+SetTask(3017, nDate); --set ngay 6
+end
 	local token = TAB_TOKEN[city]
-	for i = 1, count do
+	for i = 1, 55 do
 		local item = AddItem(token[1], token[2], token[3], 1, 0, 0)
 		if (item ~= 0) then
 			local timeout = GetLocalTime() + SECONDS_ONEDAY
@@ -117,10 +132,13 @@ function nw_accept_token()
 			SyncItem(item)
 		end
 	end
-	Say(format("§©y lµ <color=red>%d<color> quèc chiÕn lÖnh bµi. Cã thÓ nhËn thªm nÕu muèn.", count))
+	Say("§©y lµ <color=red>55<color> quèc chiÕn lÖnh bµi. ChØ ®­îc nhËn 1 lÇn duy nhÊt..")
+	local szNews = format("Quèc Chñ  <color=green>"..GetName().."<color=yellow> ®· nhËn thµnh c«ng 55 quèc chiÕn lÖnh bµi chuÈn bŞ cho ®¹i chiÕn Thiªn Tö s¾p tíi.");
+	AddGlobalNews(szNews);
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 end
 
--- ÁìÈ¡/ÁìÈ¡µÛ»Ê½±Àø
+-- Á?È¡/Á?È¡µÛ»Ê½±Àø
 function nw_accept_domainring()
 		
 	local nWeek = tonumber(GetLocalDate("%w"));	 
@@ -141,12 +159,12 @@ function nw_accept_domainring()
 	end
 
 	if nWiner == 1 and city ~= CITYIDX_BIANJING then
-		Say("PhÇn th­ëng dµnh cho ng­êi cã hïng t©m tr¸ng chİ dµnh l¹i giang s¬n, xin h·y ®Õn thµnh thŞ cña m×nh ®Ó lÜnh th­ëng!")
+		Say("PhÇn th­ëng dµnh cho ng­êi cã hïng t©m tr¸ng chê dµnh l¹i giang s¬n, xin h·y ®Õn thµnh thŞ cña m×nh ®Ó lÜnh th­ëng!")
 		return
 	end
 	
 	if nWiner == 2 and city ~= CITYIDX_LINAN then
-		Say("PhÇn th­ëng dµnh cho ng­êi cã hïng t©m tr¸ng chİ dµnh l¹i giang s¬n, xin h·y ®Õn thµnh thŞ cña m×nh ®Ó lÜnh th­ëng!")
+		Say("PhÇn th­ëng dµnh cho ng­êi cã hïng t©m tr¸ng chê dµnh l¹i giang s¬n, xin h·y ®Õn thµnh thŞ cña m×nh ®Ó lÜnh th­ëng!")
 		return
 	end
 	
@@ -190,7 +208,7 @@ function nw_accept_domainring()
 	end
 end
 
--- ÁìÈ¡/ÁìÈ¡Ìì×Ó½±Àø
+-- Á?È¡/Á?È¡??×Ó½±Àø
 function nw_accept_empirering()
 		
 	local nWeek = tonumber(GetLocalDate("%w"));	 
@@ -217,44 +235,17 @@ function nw_accept_empirering()
 		if nWeek == 1 and	nHour < 21	then	nWeek = 8;	end
 		local nExpiredDate = FormatTime2Date((8 - nWeek) * 24 * 60 *60 + GetCurServerTime());
 		
-		local itemHorse = AddItem(0,10,7,1,0,0)
-		if (itemHorse == 0) then
-			WriteLog(format("[NW]Failed to give emperor-ring[AddItem(0,10,7,1,0,0)] to %s", GetName()))
-			Say("Cã ®iÒu g× ®ã kh«ng æn, b¶o vËt t¹m thêi kh«ng thÓ giao cho ng­¬i ®­îc.")
-			return
-		end
-		WriteLog(format("[NW]Give king-ring[AddItem(0,10,7,1,0,0)] to %s", GetName()))
-		ITEM_SetExpiredTime(itemHorse, nExpiredDate, 120000)
-		SyncItem(itemHorse)
-		
-		-- ÒÑ¾­³É¹¦ÁìÈ¡µ½²¿·ÖÎïÆ·
+
 		NW_SetTask(NW_TASKNO_GETEMPIRERING, 1) 
-		
-		local itemBeijin = AddGoldItem(0,142)
-		if (itemBeijin == 0) then
-			WriteLog(format("[NW]Failed to give emperor-ring[AddGoldItem(0,142)] to %s", GetName()))
-			Say("Cã ®iÒu g× ®ã kh«ng æn, b¶o vËt t¹m thêi kh«ng thÓ giao cho ng­¬i ®­îc.")
-			return
-		end
-		WriteLog(format("[NW]Give king-ring[AddGoldItem(0,142)] to %s", GetName()))
-		ITEM_SetExpiredTime(itemBeijin, nExpiredDate, 120000)
-		SyncItem(itemBeijin)
-		
-		local itemYaDian = AddGoldItem(0,141)
-		if (itemYaDian == 0) then
-			WriteLog(format("[NW]Failed to give emperor-ring[AddGoldItem(0,141)] to %s", GetName()))
-			Say("Cã ®iÒu g× ®ã kh«ng æn, b¶o vËt t¹m thêi kh«ng thÓ giao cho ng­¬i ®­îc.")
-			return
-		end
-		WriteLog(format("[NW]Give king-ring[AddGoldItem(0,141)] to %s", GetName()))
-		ITEM_SetExpiredTime(itemYaDian, nExpiredDate, 120000)
-		SyncItem(itemYaDian)
-		
-		Say("PhÇn th­ëng cña bÖ h¹ lµ <color=red>V« danh giíi chØ, v« danh chØ hoµn, phiªn vò<color>.")
+                                 --              ThuongThienTu()
+		local szNews = format("Chóc Mõng Hoµng §Õ  <color=green>"..GetName().."<color=yellow> ®· nhËn thµnh c«ng phÇn th­ëng thiªn tö");
+	AddGlobalNews(szNews);
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 	end
+SaveNow()
 end
 
--- ÁìÈ¡/ÁìÈ¡Ìì×ÓÓñçô
+-- Á?È¡/Á?È¡??×ÓÓñçô
 function nw_accept_empireseal()
 	
 	local nWeek = tonumber(GetLocalDate("%w"));	 
@@ -268,11 +259,11 @@ function nw_accept_empireseal()
 	elseif (NW_GetTask(NW_TASKNO_GETEMPIRESEAL) ~= 0) then
 		Say("BÖ h¹ ®· nhËn <color=red>Thiªn Tö ngäc tû<color> råi.")
 	elseif (nWeek == 1 and nTime >= 120000 and nTime <= 223000) then
-		Say("ChiÕn sù cÊp b¸o, xin mêi bÖ h¹ chuÈn bŞ nghªnh chiÕn.")
+		Say("ChiÕn sù cÊp b¸o, xin mêi bÖ h¹ chuÈn bÖ nghªnh chiÕn.")
 	else
 		local free = CalcFreeItemCellCount()
 		if (free == 0) then
-			Say("Hµnh trang kh«ng ®ñ chç trèng, s¾p xÕp l¹i råi ®Õn nhËn l¹i.")
+			Say("Hµnh trang kh«ng ®ñ chç trèng, s¾p x?p l¹i råi ®?n nhËn l¹i.")
 			return
 		end
 		local itemidx = AddItem(6, 1, 2059, 1, 0, 0)
@@ -288,7 +279,7 @@ function nw_accept_empireseal()
 	end
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó
+-- ?ñ?ÄÊÇ¸Ë³Ó
 function nw_comment()
 	Say("Tuy r»ng quyÒn thÕ cña Thiªn Tö cao nh­ng còng kh«ng thÓ xem th­êng lßng d©n ®­îc.",
 		3,
@@ -297,7 +288,7 @@ function nw_comment()
 		"Kh«ng cã viÖc g×/Cancel")
 end
 
--- Ìú±ÊÖ±Êé
+-- ?ú±ÊÖ±Êé
 function nw_history()
 	Say("Hµo kiÖt tuy nhiÒu, nh­ng trong lŞch sö chØ l­u danh, tõ cæ chİ kim cã mÊy ng­êi?",
 		4,
@@ -307,7 +298,7 @@ function nw_history()
 		"Ta chØ ®Õn t­ëng niÖm mét lóc./Cancel")
 end
 
--- Ìì×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ
+-- ??×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ
 function nw_emperororder_setnationtitle()
 	if (NW_IsEmperor() ~= 1) then
 		Say("Quèc hiÖu chØ cã ®­¬ng kim Thiªn Tö míi lËp ®­îc.")
@@ -323,14 +314,14 @@ function nw_emperororder_setnationtitle()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ£ºµ¯³öÊäÈë¿ò
+-- ??×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ£ºµ¯³öÊäÈë¿?
 function nw_emperororder_inputtitle()
 --	AskClientForString(
 --		"nw_oninputnationtitle",
 --		"",
 --		1,
 --		NW_MAXLEN_NATIONTITLE,
---		"Çë±İÏÂÊäÈë¹úºÅ£º")
+--		"Çë±?ÏÂÊäÈë¹úºÅ£º")
 
 	Say(
 		"Xin mêi bÖ h¹ chän quèc hiÖu",
@@ -343,7 +334,7 @@ function nw_emperororder_inputtitle()
 		)
 end
 
--- Ìì×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ£º»Øµ÷º¯Êı
+-- ??×ÓÚÍÖ¼/ÉèÁ¢¹úºÅ£º»Øµ÷º¯Ê?
 function nw_oninputnationtitle(title)
 	if (NW_IsEmperor() ~= 1) then
 		Say("C¸c h¹ d¸m gi¶ m¹o ®­¬ng kim Thiªn Tö!")
@@ -364,14 +355,14 @@ function nw_oninputnationtitle(title)
 			"§Ó ta suy nghÜ thªm/Cancel")
 	else
 		local emperor = NW_GetEmperorName()
-		AddGlobalCountNews(format("[Thay ®æi chiªu thŞ] Thiªn Tö <color=red>%s<color> thay ®æi quèc hiÖu thµnh \"<color=red>%s<color>\".", emperor, title), 5)
+		AddGlobalCountNews(format("[Thay ®æi chiªu th­] Thiªn Tö <color=red>%s<color> thay ®æi quèc hiÖu thµnh \"<color=red>%s<color>\".", emperor, title), 5)
 		NW_SetNationTitle(title)
 		NW_SetTask(NW_TASKNO_NATIONALTITLE, 1)
 		Say("ThÇn lÜnh chØ.")
 	end
 end
 
---Ìì×ÓÚÍÖ¼/ÆÕÌìÍ¬Çì
+--??×ÓÚÍÖ¼/Æ???Í¬Ç?
 function nw_emperororder_congratulate()
 	if (NW_IsEmperor() ~= 1) then
 		Say("LÔ nghi ®ãn tiÕp ph¶i do Thiªn Tö chñ tr×!")
@@ -388,7 +379,7 @@ function nw_emperororder_congratulate()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/ÆÕÌìÍ¬Çì£ºÉè¶¨ºØ´Ê
+-- ??×ÓÚÍÖ¼/Æ???Í¬Ç?£ºÉè¶¨ºØ´Ê
 function nw_emperororder_congratulate_inputwords()
 	AskClientForString(
 		"nw_emperororder_congratulate_words",
@@ -398,7 +389,7 @@ function nw_emperororder_congratulate_inputwords()
 		"Xin mêi bÖ h¹ viÕt lêi chóc mõng:")
 end
 
--- Ìì×ÓÚÍÖ¼/ÆÕÌìÍ¬Çì£ºÉè¶¨ºØ´Ê
+-- ??×ÓÚÍÖ¼/Æ???Í¬Ç?£ºÉè¶¨ºØ´Ê
 function nw_emperororder_congratulate_words(words)
 	if (NW_IsEmperor() ~= 1) then
 		Say("C¸c h¹ d¸m gi¶ m¹o ®­¬ng kim Thiªn Tö!")
@@ -410,9 +401,9 @@ function nw_emperororder_congratulate_words(words)
 	elseif (len > NW_MAXLEN_CONGRATULATIONWORDS) then
 		Say("Lêi chóc dµi qu¸ sÏ lµm b¸ch tİnh rÊt khã nhí.")
 	elseif (NW_CheckText(words) ~= 1) then
-		Say("Lêi chóc cã tõ kh«ng hîp lı l¾m, xin bÖ h¹ h·y suy xĞt l¹i.")
+		Say("Lêi chóc cã tõ kh«ng hîp lÖ l¾m, xin bÖ h¹ h·y suy xÕt l¹i.")
 	else
-		-- ³ÖĞø30·ÖÖÓ
+		-- ³Ö?ø30·ÖÖÓ
 		NW_OpenCongratulation(words, 30)
 		NW_SetTask(NW_TASKNO_CONGRATULATION, GetCurServerTime())
 		AddGlobalCountNews(format("[Kh¾p chèn mõng vui] sÏ ®­îc ph¸t t¹i kªnh thÕ giíi\"<color=red>%s<color>\" chóc mõng thiªn tö ®Òu sÏ ®­îc phong th­ëng!", words), 10)
@@ -420,7 +411,7 @@ function nw_emperororder_congratulate_words(words)
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/´óÉâÌìÏÂ
+-- ??×ÓÚÍÖ¼/´óÉâ??ÏÂ
 function nw_emperororder_absolve()
 	if (NW_IsEmperor() ~= 1) then
 		if (NW_InEmperorTong() ~= 1 or NW_GetDuty() ~= NWPOSITION_MINISTER) then
@@ -438,7 +429,7 @@ function nw_emperororder_absolve()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/Ä¼¾è
+-- ??×ÓÚÍÖ¼/Ä¼¾è
 function nw_emperororder_levy()
 	if (NW_IsEmperor() ~= 1) then
 		Say("§©y lµ quyÒn h¹n thiªn tö")
@@ -454,7 +445,7 @@ function nw_emperororder_levy()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/Ìì×ÓÚ¯Êé
+-- ??×ÓÚÍÖ¼/??×ÓÚ¯Êé
 function nw_emperororder_message()
 	if (NW_IsEmperor() ~= 1) then
 		if (NW_InEmperorTong() ~= 1 or NW_GetDuty() ~= NWPOSITION_MINISTER) then
@@ -472,21 +463,21 @@ function nw_emperororder_message()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/Ìì×ÓÚ¯Êé£ºÊäÈëÄÚÈİ
+-- ??×ÓÚÍÖ¼/??×ÓÚ¯Êé£ºÊäÈëÄÚÈ?
 function nw_emperororder_inputmessage()
 	AskClientForString(
 		"nw_emperororder_onmessage",
 		"",
 		NW_MINLEN_MESSAGE,
 		NW_MAXLEN_MESSAGE,
-		"BÖ h¹ h¹ chiÕu th­:")
+		"BÖ h¹ h¹ chi?u th­:")
 end
 
--- Ìì×ÓÚÍÖ¼/Ìì×ÓÚ¯Êé£ºÄÚÈİ¼ì²é
+-- ??×ÓÚÍÖ¼/??×ÓÚ¯Êé£ºÄÚÈ?¼?²é
 function nw_emperororder_onmessage(msg)
 	local len = strlen(msg)
 	if (len < NW_MINLEN_MESSAGE or len > NW_MAXLEN_MESSAGE) then
-		Say("ChiÕu th­ lµ ph¸t ng«n cña Thiªn Tö, ng¾n qu¸ hay dµi qu¸ th× kh«ng thÓ biÓu ®¹t th¸nh ı.",
+		Say("ChiÕu th­ lµ ph¸t ng«n cña Thiªn Tö, ng¾n qu¸ hay dµi qu¸ th× kh«ng thÓ biÓu ®¹t th¸nh ?.",
 			2,
 			"Xin mêi nhËp l¹i/nw_emperororder_inputmessage",
 			"§Ó ta suy nghÜ l¹i/Cancel")
@@ -511,7 +502,7 @@ function nw_emperororder_onmessage(msg)
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/½ûÑÔ
+-- ??×ÓÚÍÖ¼/½ûÑÔ
 function nw_emperororder_forbidtalkdlg()
 	if (NW_IsEmperor() ~= 1) then
 		Say("C¸c h¹ d¸m gi¶ m¹o ®­¬ng kim Thiªn Tö!")
@@ -529,7 +520,7 @@ function nw_emperororder_forbidtalkdlg()
 	end
 end
 
--- Ìì×ÓÚÍÖ¼/½ûÑÔ£ºµ¯³öÊäÈë¿ò
+-- ??×ÓÚÍÖ¼/½ûÑÔ£ºµ¯³öÊäÈë¿?
 function nw_emperororder_forbidtalk()
 	AskClientForString(
 		"nw_emperororder_forbidtalk_input",
@@ -539,7 +530,7 @@ function nw_emperororder_forbidtalk()
 		"Xin mêi nhËp tªn cÇn cÊm nãi:")
 end
 
--- Ìì×ÓÚÍÖ¼/½ûÑÔ£ºÊäÈëÍæ¼ÒÃû×Ö
+-- ??×ÓÚÍÖ¼/½ûÑÔ£ºÊäÈëÍæ¼??û×Ö
 function nw_emperororder_forbidtalk_input(name)
 	NW_ForbidChat(name, 30)
 	local currtime = GetCurServerTime()
@@ -548,7 +539,7 @@ function nw_emperororder_forbidtalk_input(name)
 	Say(format("ThÇn lÜnh chØ: CÊm nãi <color=red>%s<color> trong vßng nöa giê.", name))
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/ÆÀÒéµ±½ñÌì×Ó
+-- ?ñ?ÄÊÇ¸Ë³Ó/ÆÀ?éµ±½ñ??×Ó
 function nw_comment_commit()
 	Say("C«ng ®¹o tù cã t¹i mçi ng­êi, Thiªn Tö tuy quyÒn cao uy nghiªm nh­ng còng kh«ng thÓ tù lõa dèi b¶n th©n.",
 		3,
@@ -557,7 +548,7 @@ function nw_comment_commit()
 		"Kh«ng cã viÖc g×/Cancel")
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/²éÑ¯ÆÀÒé½á¹û
+-- ?ñ?ÄÊÇ¸Ë³Ó/²éÑ¯ÆÀ?é½á¹û
 function nw_comment_query()
 	local emperor = NW_GetEmperorName()
 	if (emperor == "") then
@@ -572,11 +563,11 @@ function nw_comment_query()
 	elseif (value >= 1001) then
 		title = "Minh qu©n"
 	elseif (value >= 101) then
-		title = "H÷u vŞ"
+		title = "H÷u vâ"
 	elseif (value >= -100) then
 		title = "Thanh tŞnh"
 	elseif (value >= -1000) then
-		title = "V« vŞ"
+		title = "V« vâ"
 	elseif (value >= -3000) then
 		title = "Dung qu©n"
 	else
@@ -585,7 +576,7 @@ function nw_comment_query()
 	Say(format("§­¬ng kim Thiªn Tö lµ <color=yellow>%s<color>, thiÖn ¸c lµ <color=yellow>%d<color>, vÒ phİa <color=yellow>%s<color>.", emperor, value, title))
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/ÆÀÒéµ±½ñÌì×Ó/ËÌÑïÌì×Ó£º¸øÓè½çÃæ
+-- ?ñ?ÄÊÇ¸Ë³Ó/ÆÀ?éµ±½ñ??×Ó/Ë?Ñï??×Ó£º¸øÓè½ç?æ
 function nw_comment_celebratedlg()
 	local emperor = NW_GetEmperorName()
 	if (emperor == "") then
@@ -599,7 +590,7 @@ function nw_comment_celebratedlg()
 		"Cancel")
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/ÆÀÒéµ±½ñÌì×Ó/ËÌÑïÌì×Ó
+-- ?ñ?ÄÊÇ¸Ë³Ó/ÆÀ?éµ±½ñ??×Ó/Ë?Ñï??×Ó
 function nw_comment_celebrate(count)
 	local total_count = 0
 	for i = 1, count do
@@ -620,7 +611,7 @@ function nw_comment_celebrate(count)
 	nw_comment_query()
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/ÆÀÒéµ±½ñÌì×Ó/µ¯ÛÀÌì×Ó£º¸øÓè½çÃæ
+-- ?ñ?ÄÊÇ¸Ë³Ó/ÆÀ?éµ±½ñ??×Ó/µ¯ÛÀ??×Ó£º¸øÓè½ç?æ
 function nw_comment_criticizedlg()
 	local emperor = NW_GetEmperorName()
 	if (emperor == "") then
@@ -634,7 +625,7 @@ function nw_comment_criticizedlg()
 		"Cancel")
 end
 
--- ÃñĞÄÊÇ¸Ë³Ó/ÆÀÒéµ±½ñÌì×Ó/µ¯ÛÀÌì×Ó
+-- ?ñ?ÄÊÇ¸Ë³Ó/ÆÀ?éµ±½ñ??×Ó/µ¯ÛÀ??×Ó
 function nw_comment_criticize(count)
 	local total_count = 0
 	for i = 1, count do
@@ -659,9 +650,9 @@ tbHistoryScoreTitle =
 {
     [1] = {nValue = -3000, strTitle = "H«n qu©n"},
     [2] = {nValue = -1001, strTitle = "Dung qu©n"},
-    [3] = {nValue = -101, strTitle = "V« vŞ"},
+    [3] = {nValue = -101, strTitle = "V« vâ"},
     [4] = {nValue = 100, strTitle = "Thanh tŞnh"},
-    [5] = {nValue = 1000, strTitle = "H÷u vŞ"},
+    [5] = {nValue = 1000, strTitle = "H÷u vâ"},
     [6] = {nValue = 3000, strTitle = "Minh qu©n"},
     [7] = {nValue = 3000, strTitle = "Th¸nh Qu©n"},
 }
@@ -765,32 +756,32 @@ function history_page_gen(tb_pageinfo, str_parameter)
 	
     return strContent, tbOption;
 end
--- Ìú±ÊÖ±Êé/Ìì×ÓÊ·¼Ç
+-- ?ú±ÊÖ±Êé/??×ÓÊ·¼Ç
 function nw_history_emperor()
 	saypage(NW_EmperorHistoryCount(), 3, "history_page_gen", -1);
 end
 
--- Ìú±ÊÖ±Êé/ËÎ¹úÊ·¼Ç
+-- ?ú±ÊÖ±Êé/ËÎ¹úÊ·¼Ç
 function nw_history_song()
 	saypage(NW_EmperorHistoryCount(1), 3, "history_page_gen", 1);
 end
 
--- Ìú±ÊÖ±Êé/½ğ¹úÊ·¼Ç
+-- ?ú±ÊÖ±Êé/½?¹úÊ·¼Ç
 function nw_history_jin()
 	saypage(NW_EmperorHistoryCount(0), 3, "history_page_gen", 0);
 end
 
--- ¹úÍõÚ¯Êé/·Ö·â´ó³¼
+-- ¹úÍ?Ú¯Êé/·Ö·â´ó³¼
 function nw_kingorder_instate()
 	Say("Xin h·y bæ vµ miÔn nhiÖm ®¹i thÇn t¹i giao diÖn bang héi")
 end
 
--- ¹úÍõÚ¯Êé/µ÷ÕûË°ÂÊ¶Ô»°
+-- ¹úÍ?Ú¯Êé/µ÷?ûË°ÂÊ¶Ô»°
 function nw_kingorder_taxdlg()
 	city = GetCityArea()
 	tong, master = GetCityOwner(city)
 	if ((city ~= CITYIDX_LINAN and city ~= CITYIDX_BIANJING) or master ~= GetName()) then
-		Say("§Æt ®Şnh thuÕ suÊt kinh thµnh lµ ®Æc quyÒn cña quèc chñ.")
+		Say("§Æt ®¸nh thuÕ suÊt kinh thµnh lµ ®Æc quyÒn cña quèc chñ.")
 		return
 	end
 	Say("BÖ h¹ cã muèn ®Æt thuÕ suÊt míi kh«ng?",
@@ -799,7 +790,7 @@ function nw_kingorder_taxdlg()
 		"Kh«ng /Cancel")
 end
 
--- ¹úÍõÚ¯Êé/µ÷ÕûË°ÂÊ¶Ô»°
+-- ¹úÍ?Ú¯Êé/µ÷?ûË°ÂÊ¶Ô»°
 function nw_kingorder_tax()
 	city = GetCityArea()
 	OpenCityManageUI(city)

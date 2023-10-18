@@ -25,16 +25,51 @@ MS_TIMEACC_1MIN = 2
 MS_TIMEACC_20SEC = 3
 
 
-
-
 function fld_cancel()
 end
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function fld_wanttakeboat(addr)
 
+	--do Say("Theo lé tr×nh TOP 10 thÕ giíi ®¹t LV 100 míi më tİnh n¨ng nµy") return end
+	
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
+	if GetLevel() <80 then
+		Say("Ho¹t ®éng chØ giµnh cho c¸c ®¹i hiÖp cÊp 80 trë lªn.")
+		return 1
+	end
+	if(phonglangdo == 0) then
+		Say("Phong L¨ng §é t¹m thêi ch­a më.")
+		return 1;
+	end
+
+	local SoLanDiPLD = 2
+	local nDate = tonumber(GetLocalDate("%m%d"))
+	if ( GetTask(1408) ~= nDate ) then
+		SetTask(1408, nDate)
+		SetTask(1409, 0)
+	end
+
+	--Msg2Player("GetTask(1408): "..GetTask(1408))
+	--Msg2Player("GetTask(1409): "..GetTask(1409))
+
+	if ( GetTask(1409) >= SoLanDiPLD ) then
+		Say("Mçi ngµy chØ ®­îc tham gia "..SoLanDiPLD.." lÇn. Sè lÇn tha gia cña b¹n "..GetTask(1409).." lÇn h«m nay ®· ®ñ! Ngµy mai trë l¹i nhĞ!")
+		return 1
+	end
+	
 	-- Gia nhËp m«n ph¸i míi lªn thuyÒn Modified - by AnhHH - 20110724
 	if (GetLastFactionNumber() == -1)then
 		Talk(1,"","§¹i hiÖp ch­a gia nhËp m«n ph¸i kh«ng thÓ lªn thuyÒn")
+		return
+	end
+
+	if (GetLevel() < 80) then
+		Say("§¼ng cÊp d­íi 80 kh«ng thÓ tham gia ho¹t ®éng nµy")
 		return
 	end
 	
@@ -59,8 +94,9 @@ function fld_wanttakeboat(addr)
 		"§Ó ta suy nghÜ l¹i!/fld_cancel",
 			};
 	--§iÒu chØnh thêi gian phong l¨ng ®é tèn phİ - Modified by DinhHQ - 20110504
+	--Di phong lang do ton lenh bai thuy tac
 	if (check_new_shuizeitask() == 1) then
-		sz_msg = format("Mçi ngµy vµo lóc 10:00,14:00,16:00,18:00,20:00,cÇn ph¶i cã %s míi cã thÓ ®i tham gia Bê B¾c Phong L¨ng §é, sau khi thuËn lîi v­ît qua sÏ cã phÇn th­ëng", "LÖnh Bµi Thñy TÆc");
+		sz_msg = format("Mçi ngµy vµo lóc 23:00,cÇn ph¶i cã %s míi cã thÓ ®i tham gia Bê B¾c Phong L¨ng §é, sau khi thuËn lîi v­ît qua sÏ cã phÇn th­ëng", "LÖnh Bµi Thñy TÆc");
 		str = {	
 		format("Ta cã %s/use_suizeilingpai", "LÖnh Bµi Thñy TÆc"),
 		"§Ó ta suy nghÜ l¹i!/fld_cancel",
@@ -110,24 +146,29 @@ function fld_TakeBoat(plindex)
 	--20110405: Fix bug, ngoµi thêi gian 13h, 15h, 17h, 19h bÕn 2 3 cã thÓ pk cõu s¸t
 	if (check_new_shuizeitask() == 1) then
 		if ( BOATID ~= 1 ) then
-			SetTaskTemp(200,1);
-			ForbidEnmity(1);			
+		--	SetTaskTemp(200,0);--mac dinh la 1 chuyen ve 0
+		--	ForbidEnmity(0);	-- 0 cho phep cuu sat	 1 cam cuu sat mac dinh la 1
 		end		
 	end
-	SetCurCamp(1);	
+	SetCurCamp(1);	--chuyen mau thanh mau vang
+	SetTask(1409, GetTask(1409) + 1)--G7VN so lan di PLD trong ngay tang them 1
+	SetTaskTemp(200,1);--mac dinh la 1 chuyen ve 0
+	ForbidEnmity(0);	-- 0 cho phep cuu sat	 1 cam cuu sat mac dinh la 1
+--	SetPKFlag(0) --- chuyen PK chien dau
 --	if ( BOATID ~= 1 ) then
 --		ForbidEnmity(1);
 --		SetCurCamp(1);
 --	end
 	
 --	SetTaskTemp(200,1);
+
 	SetFightState(0)
 	posx, posy = fld_getadata(npcthiefpos)
 	posx = floor(posx/32)
 	posy = floor(posy/32)
 	AddMSPlayer(MISSIONID,1)
 	NewWorld(boatmapid, posx, posy)
-	Msg2Player("cßn"..t.." phót thuyÒn rêi bÕn, ®Õn bê B¾c Phong L¨ng §é")
+	Msg2Player("cßn "..t.." phót thuyÒn rêi bÕn, ®Õn bê B¾c Phong L¨ng §é")
 	DisabledUseTownP(1)	--ÏŞÖÆÆäÔÚ¶É´¬ÄÚÊ¹ÓÃ»Ø³Ç·û
 	SetRevPos(175,1);		--ÉèÖÃÖØÉúµãÔÚÎ÷É½´å
 	SetLogoutRV(1)
@@ -139,7 +180,7 @@ function fld_TakeBoat(plindex)
 end
 
 function fld_haveroom()
-	if (GetMSPlayerCount(MISSIONID, 1) >= 100 ) then
+	if (GetMSPlayerCount(MISSIONID, 1) >= 200 ) then
 		if (BOATID == 1) then
 			Say("Ng­¬i ®Õn trÔ råi! ThuyÒn ®· ®Çy råi, h·y chê chuyÕn sau ®i!", 0)
 			return 1
@@ -233,12 +274,13 @@ end;
 
 -- ·çÁê¶ÉÁîÅÆ½»¸¶½çÃæ
 function	use_lingpai()	--Ê¹ÓÃ·çÁê¶ÉÁîÅÆ
-	GiveItemUI( format("Giao diÖn giao phİ %s LÖnh Bµi", "LÖnh bµi Phong L¨ng §é"), format("Dïng 1 c¸i %s ®Æt vµo « trèng phİa d­íi. N?u ng­¬i lÊy nh÷ng thø r¸c r­ëi kh¸c ®Æt vµo, ta sÏ kh«ng thÌm nhËn", "LÖnh bµi Phong L¨ng §é"), "exchange_lingpai_1", "no" );
+	--GiveItemUI( format("Giao diÖn giao phİ %s LÖnh Bµi", "LÖnh bµi Phong L¨ng §é"), format("Dïng 1 c¸i %s ®Æt vµo « trèng phİa d­íi. NÕu ng­¬i lÊy nh÷ng thø r¸c r­ëi kh¸c ®Æt vµo, ta sÏ kh«ng thÌm nhËn", "LÖnh bµi Phong L¨ng §é"), "exchange_lingpai_1", "no" );
+	GiveItemUI("Nép LÖnh Bµo PLD", "Bá lÖnh Bµi Phong L¨ng §é Vµo §©y", "exchange_lingpai_1", "no", 1)
 end;
 
 function use_suizeilingpai()
 --Modified By DinhHQ - 20110930
-	GiveItemUI( format("Giao diÖn giao phİ %s LÖnh Bµi", "LÖnh Bµi Thñy TÆc"), format("Dïng 1 c¸i %s ®Æt vµo « trèng phİa d­íi. N?u ng­¬i lÊy nh÷ng thø r¸c r­ëi kh¸c ®Æt vµo, ta sÏ kh«ng thÌm nhËn", "LÖnh Bµi Thñy TÆc"), "exchange_lingpai_2", "no", 1 );
+	GiveItemUI( format("Giao diÖn giao phİ %s LÖnh Bµi", "LÖnh Bµi Thñy TÆc"), format("Dïng 1 c¸i %s ®Æt vµo « trèng phİa d­íi. NÕu ng­¬i lÊy nh÷ng thø r¸c r­ëi kh¸c ®Æt vµo, ta sÏ kh«ng thÌm nhËn", "LÖnh Bµi Thñy TÆc"), "exchange_lingpai_2", "no", 1 );
 end
 
 function exchange_lingpai_1(ncount)
@@ -304,12 +346,14 @@ end;
 function check_new_shuizeitask()
 	local nHour = tonumber(GetLocalDate("%H"));
 	--§iÒu chØnh thêi gian phong l¨ng ®é tèn phİ - Modified by DinhHQ - 20110504
+	--Di phong lang do ton lenh bai thuy tac
 	local tb_sptime = {
-		[10] = 1,
-		[14] = 1,
-		[16] = 1,
-		[18] = 1,
-		[20] = 1,
+		
+		[10] = 0,
+		[14] = 0,
+		[16] = 0,
+		[18] = 0,
+		[22] = 1,
 	};
 	if (tb_sptime[nHour] and tb_sptime[nHour] == 1) then
 		return 1

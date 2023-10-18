@@ -4,5 +4,5 @@ CurStation = 5;
 Include("\\script\\global\\station.lua")
 
 function main(sel)
-	CityStationCommon("Ng­¬i muèn ®i ®©u? §i xe cña ta, b¶o ®¶m võa nhanh võa tiÖn. ");
+	CityStationCommon("Xa Phu:  Ngµi nhµ muèn ®i ®©u ? Ngåi xe cña ta ®i, b¶o ®¶m võa nhanh l¹i tiÖn nghi.");
 end;

@@ -1,6 +1,6 @@
--- ´óÀí¡¡Ö°ÄÜ¡¡Óæ·ò2
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lý # chøc n¨ng # c¸ phu 2 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(14,"","Mét ngµy kh«ng h¸t ®iÖu T©y S¬n, cuéc sèng thËt v« vÞ! ","C¸ g× lµ c¸ mïa xu©n?","B¹ch Cung Ng­ lµ c¸ mïa xu©n! ","C¸ c¸ g× lµ c¸ mïa hÌ?","C¸ chÐp vµng lµ c¸ mïa hÌ! ","C¸ mïa thu lµ c¸ g×?","TiÓu Du Ng­ lµ c¸ mïa thu! ","C¸ mïa ®«ng lµ c¸ g×?","Th¹ch L« Ng­ lµ c¸ mïa ®«ng! ","C¸ g× ë trong n­íc?","Tû Môc Ng­ lµ c¸ trong n­íc! ","C¸ g× lµ c¸ trªn bê?","C¸ l« lµ c¸ trªn bê! ","§¸p rÊt hay! §¸p rÊt hay! Ha ha ha! ")
-end;
+function main() 
+Talk(14,"","Mét ngµy kh«ng h¸t t©y s¬n ®iÒu , cuéc sèng còng kh«ng vÞ , "," lo¹i nµo c¸ lµ mïa xu©n ®Ých c¸ ?","B¹ch cung c¸ lµ mïa xu©n ®Ých c¸ ","C¸i g× c¸ lµ mïa hÌ ®Ých c¸ ?","Kim ng­ lµ mïa hÌ ®Ých c¸ . ","C¸i g× c¸ lµ mïa thu c¸ ?","TiÓu c¸ léi lµ mïa thu c¸ ","C¸i g× c¸ lµ mïa ®«ng ®Ých c¸ ?","Th¹ch loa c¸ lµ mïa ®«ng ®Ých c¸ ! ","C¸i g× c¸ ë trong n­íc ?","So con m¾t c¸ ë trong n­íc ! ","C¸i g× c¸ ë trªn bê "," l­ c¸ lµ ë trªn bê ®Ých c¸ ","Tr¶ lêi ®Ých rÊt tèt , ha ha ha ! ") 
+end; 

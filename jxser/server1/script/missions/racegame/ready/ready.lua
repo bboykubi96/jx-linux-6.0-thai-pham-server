@@ -10,20 +10,20 @@ racegame_tbReadyMission = new(tbMission)
 
 racegame_tbReadyMission.nMissionId = 52 
 racegame_tbReadyMission.tbTimer =  {{90, 18*1}}
-racegame_tbReadyMission.nLatencyTime = 60     -- µÈ´ýÊ±¼ä60Ãë
-racegame_tbReadyMission.nSignUpTime = 50     -- 50Ãëºó²»ÄÜ±¨Ãû
-racegame_tbReadyMission.nMapId = 582     -- µØÍ¼Id
+racegame_tbReadyMission.nLatencyTime = 600     -- µÈ´ýÊ±¼ä60Ãë
+racegame_tbReadyMission.nSignUpTime = 590     -- 50Ãëºó²»ÄÜ±¨Ãû
+racegame_tbReadyMission.nMapId = 882     -- µØÍ¼Id
 racegame_tbReadyMission.nPlayerCountLimit = 120     -- ×î¶à120ÈË²Î¼Ó
 racegame_tbReadyMission.nLevelLimit	= 50
 racegame_tbReadyMission.tbWaitPos = 
 {
-	{1589, 3029},
-	{1595, 2964},
-	{1582, 2972},
-	{1562, 2946},
-	{1560, 2965},
-	{1558, 2989},
-	{1569, 3029},
+	{1517, 4198},
+	{1527, 4186},
+	{1517, 4181},
+	{1530, 4195},
+	{1528, 4168},
+	{1542, 4185},
+	{1545, 4169},
 }
 racegame_tbReadyMission.tbMissionV =
 {
@@ -42,7 +42,7 @@ function racegame_tbReadyMission:OnTimer()
 	local nTimerCount = GetMissionV(self.tbMissionV.SECOND_COUNTER)
 	
 	nTimerCount = nTimerCount + 1
-	local szMsg = format("Thêi gian cßn l¹i lµ <color=yellow>%d<color> gi©y.", self.nLatencyTime - nTimerCount)
+	local szMsg = format("C¸c tay ®ua chuÈn bÞ ch©m dÇu ¨n <color=yellow>%d<color> gi©y n÷a cuéc ®ua b¾t ®Çu.", self.nLatencyTime - nTimerCount)
 	
 	if nTimerCount >= self.nSignUpTime and GetMissionV(self.tbMissionV.MISSION_STATE) ~= 3 then
 		SetMissionV(self.tbMissionV.MISSION_STATE, 3)
@@ -88,7 +88,7 @@ function racegame_tbReadyMission:OnClose()
 			doFunByPlayer(tbPlayer[i], jiefang_0804_ResetTask)
 			local nPlayerMapId = doFunByPlayer(tbPlayer[i], GetTask, jiefang_0804_TSK_MapId)
 			if nPlayerMapId == 0 then
-				nPlayerMapId = 524
+				nPlayerMapId = 53
 			end
 			doFunByPlayer(tbPlayer[i], NewWorld, nPlayerMapId, racegame_tbMission.tbSignUpPos[1], racegame_tbMission.tbSignUpPos[2])
 			doFunByPlayer(tbPlayer[i], Msg2Player, "§­êng ®i phÝa tr­íc kh«ng th«ng, h·y ®îi cuéc ®ua sau.")
@@ -120,7 +120,7 @@ function racegame_tbReadyMission:OnPlayerJoin()
 		jiefang_0804_ResetTask()
 		local nPlayerMapId = GetTask(jiefang_0804_TSK_MapId)
 		if nPlayerMapId == 0 then
-			nPlayerMapId = 524
+			nPlayerMapId = 1
 		end
 		NewWorld(nPlayerMapId, racegame_tbMission.tbSignUpPos[1], racegame_tbMission.tbSignUpPos[2])
 		if nPlayerCount >= self.nPlayerCountLimit then
@@ -132,7 +132,6 @@ function racegame_tbReadyMission:OnPlayerJoin()
 		end
 		return 0
 	end
-	
 	ForbitSkill(1);
 	SetMoveSpeed(18);
 
@@ -159,6 +158,7 @@ function racegame_tbReadyMission:OnPlayerJoin()
 	ForbitTrade(0);
 	ForbidChangePK(1);
 	DisabledUseTownP(1);	--½ûÖ¹Ê¹ÓÃ»Ø³Ì£»
+bienhinhduangua()
 	
 	return 1;
 end
@@ -195,4 +195,19 @@ function racegame_tbReadyMission:OnLeave()
 	ForbidChangePK(0);
 	DisabledUseTownP(0);	--¹Ø±Õ½ûÖ¹Ê¹ÓÃ»Ø³Ì£»
 	
+end
+
+
+function bienhinhduangua()
+local s = random(1,3)
+
+if s==1 then
+ChangeOwnFeature(0,0,1477);
+end;
+if s==2 then
+ChangeOwnFeature(0,0,1478);
+end;
+if s==3 then
+ChangeOwnFeature(0,0,1479);
+end;
 end

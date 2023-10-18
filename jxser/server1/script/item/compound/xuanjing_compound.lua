@@ -21,8 +21,19 @@ end
 function genDesItemsInfo( arynNecessaryItemIdx )
 	local aryDesItemInfo = {};
 	local nLatestItemVer = ITEM_GetLatestItemVersion();
-	for i = 1, 10 do
-		aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 147, i, 0, 0, nil, nil, getCompoundParam() };
+	local rannnn=random(1,10)
+	if rannnn==1 then
+		for i = 1, 10 do
+			aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 147,3, 0, 0, nil, nil, getCompoundParam() };
+		end
+	elseif rannnn==2 or rannnn==3 then
+		for i = 1, 10 do
+			aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 147,2, 0, 0, nil, nil, getCompoundParam() };
+		end
+	else
+		for i = 1, 10 do
+			aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 147,1, 0, 0, nil, nil, getCompoundParam() };
+		end
 	end
 	return aryDesItemInfo;
 end

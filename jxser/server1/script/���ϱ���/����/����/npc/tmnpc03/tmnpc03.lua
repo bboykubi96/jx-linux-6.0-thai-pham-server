@@ -1,66 +1,66 @@
---description: ÌÆÃÅÆÕÍ¨µÜ×Ó Öñº£µÚÈı¹Ø
---author: yuanlan	
---date: 2003/3/10
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n b×nh th­êng ®Ö tö tróc h¶i cöa thø ba 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/10 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main()
-	if allbrother_0801_CheckIsDialog(10) == 1 then
-		allbrother_0801_FindNpcTaskDialog(10)
-		return 0;
-	end
-	UTask_tm = GetTask(2)
-	Uworld37 = GetByte(GetTask(37),1)
-	if (Uworld37 == 60) then					--ÈëÃÅÈÎÎñ
-		if (HaveItem(33) == 0) then
-			Talk(1,"","LÊy ®­îc gËy tróc mµu xanh råi ®Õn t×m ta!")
-		elseif (HaveItem(34) == 0) then
-			Talk(1,"","LÊy ®­îc gËy tróc mµu tr¾ng råi ®Õn t×m ta!")
-		else
-			Talk(1,"enroll_V3_Q1","§¸p ®óng 3 quÎ cña ta, th× cã thÓ lÊy ®­îc <color=Red>gËy tróc mµu tİm<color>. Nghe kü ®©y:")
-		end
-	elseif (Uworld37 == 80) then						--ÒÑ¾­¹ıÁËÈı¹Ø
-		if (HaveItem(35) == 1) then
-			Talk(1,"","Muèn qua ¶i thuËn lîi, ng­¬i ph¶i lÊy ®ñ 3 c©y tróc, sau ®ã ®­a cho ®ång m«n ë lèi ra.")
-		else
-			AddEventItem(35)
-			Talk(1,"","T¹i sao ng­¬i l¹i vøt gËy tróc trong rõng? Ta sÏ gióp ng­¬i nhÆt l¹i, ®õng vøt lung tung n÷a! ")
-		end
-	elseif (GetFaction() == "tangmen") then
-		Talk(1,"","Mäi ng­êi ®Òu lµ huynh ®Ö ®ång m«n, ng­¬i kh«ng cÇn x«ng vµo Tróc H¶i Tam Quan! ")
-	else
-		Talk(1,"","§õng ch¹y lung tung, coi chõng bŞ khØ c¾n!")
-	end
-end;
+function main() 
+if allbrother_0801_CheckIsDialog(10) == 1 then 
+allbrother_0801_FindNpcTaskDialog(10) 
+return 0; 
+end 
+UTask_tm = GetTask(2) 
+Uworld37 = GetByte(GetTask(37),1) 
+if (Uworld37 == 60) then -- script viet hoa By http://tranhba.com  nhËp m«n nhiÖm vô 
+if (HaveItem(33) == 0) then 
+Talk(1,"","B¾t ®­îc mµu xanh tróc tr­îng sau ®ã t×m ta !") 
+elseif (HaveItem(34) == 0) then 
+Talk(1,"","B¾t ®­îc mµu tr¾ng tróc tr­îng sau ®ã t×m ta !") 
+else 
+Talk(1,"enroll_V3_Q1","§¸p ®èi víi ta ®İch ba quÎ , liÒn cã thÓ lÊy ®­îc <color=Red> mµu tİm tróc tr­îng <color> , nghe râ rµng :") 
+end 
+elseif (Uworld37 == 80) then -- script viet hoa By http://tranhba.com  ®· qua ba quan 
+if (HaveItem(35) == 1) then 
+Talk(1,"","NÕu muèn thuËn lîi v­ît qua kiÓm tra , ng­¬i nhÊt ®Şnh ph¶i cÇm ®ñ ba chu«i tróc tr­îng , sau ®ã giao cho ng­êi ®i ra cöa .") 
+else 
+AddEventItem(35) 
+Talk(1,"","T¹i sao ®em tróc tr­îng nĞm lo¹n ë trong rõng c©y , ta gióp ng­¬i nhÆt trë l¹i , kh«ng muèn n÷a nĞm lo¹n liÔu ! ") 
+end 
+elseif (GetFaction() == "tangmen") then 
+Talk(1,"","Mäi ng­êi ®Òu lµ ®ång m«n huynh ®Ö , ng­¬i kh«ng cÇn vät vµo tróc h¶i ba quan ! ") 
+else 
+Talk(1,"","Kh«ng nªn ch¹y lo¹n , cÈn thËn bŞ con khØ c¾n !") 
+end 
+end; 
 
-function enroll_V3_Q1()
-	Say("QuÎ thø nhÊt lµ 'Chİnh Nam vµ Chİnh §«ng':", 3, "LiÖt Háa Oanh L«i /enroll_V3_Q2", "NghŞch nh­ n­íc löa /False1", "§æ dÇu vµo löa /False1")
-end;
+function enroll_V3_Q1() 
+Say("Thø nhÊt quÎ lµ “ ®ang nam cïng ch¸nh ®«ng :", 3, " liÖt háa oanh l«i /enroll_V3_Q2","N­íc löa kh«ng tha /False1","Qu¹t giã thæi löa /False1") 
+end; 
 
-function False1()
-	Talk(1,"","QuÎ thø nhÊt ®¸p sai råi, cã thÓ mÊy con khØ ®ã sÏ nãi cho ng­¬i biÕt.")
-end;
+function False1() 
+Talk(1,"","Thø nhÊt quÎ ®¸p sai lÇm råi , cã lÏ nh÷ng con khØ kia cöa sÏ nãi cho ng­¬i biÕt .") 
+end; 
 
-function enroll_V3_Q2()
-	Say("§óng råi! QuÎ thø 2 lµ '§«ng Nam vµ Chİnh B¾c':", 3, "Nói cao s«ng dµi /False2", "M­a giã khëi sinh /enroll_V3_Q3", "ThÕ nh­ vò b·o /False2")
-end;
+function enroll_V3_Q2() 
+Say("§óng råi , nghe kü , thø hai quÎ lµ “ ®«ng nam cïng chİnh b¾c ':", 3,"Nói cao n­íc tr­êng /False2","Phong sinh thñy khëi /enroll_V3_Q3", " l«i lÖ phong hµnh /False2") 
+end; 
 
-function False2()
-	Talk(1,"","Kh«ng ®óng! Sao kh«ng hái mÊy con khØ?")
-end;
+function False2() 
+Talk(1,"","Kh«ng ®óng , t¹i sao kh«ng ®i hái hái nh÷ng con khØ kia ®©y ?") 
+end; 
 
-function enroll_V3_Q3()
-	Say("§óng råi! QuÎ cuèi lµ 'T©y B¾c vµ T©y Nam':", 3, "Phong Hµnh Thñy Th­îng /False3", "Thiªn tai ®Şch häa /enroll_V3_prise", "Non s«ng gÊm vãc /False3")
-end;	
+function enroll_V3_Q3() 
+Say("Kh«ng tÖ , cuèi cïng mét quÎ lµ “ t©y b¾c cïng t©y nam ”#", 3,"ThŞnh hµnh n­íc th­îng /False3","Thiªn b¨ng ®Şa liÖt /enroll_V3_prise","S¬n thanh thñy tó /False3") 
+end; 
 
-function False3()
-	Talk(1,"","Sai råi! §õng t­ëng ng­¬i th«ng minh h¬n con khØ, kh«ng chõng nã biÕt nhiÒu h¬n ®Êy! ")
-end;
+function False3() 
+Talk(1,"","Sai lÇm råi , ®õng t­ëng r»ng ng­êi nhÊt ®Şnh so con khØ th«ng minh , nãi kh«ng chõng bän hä so ng­¬i biÕt ph¶i cßn nhiÒu h¬n ®©y ! ") 
+end; 
 
-function enroll_V3_prise()
-	Talk(1,"","3 quÎ ng­¬i ®Òu ®¸p ®óng, ®©y lµ gËy tróc mµu tİm cña ng­¬i. NÕu lÊy ®ñ 3 c©y gËy tróc giao cho ®ång m«n ë lèi ra, sÏ thuËn lîi qua ¶i.")
-	AddEventItem(35)
-	Msg2Player("T¹i ¶i thø 3 tr¶ lêi §­êng M«n tr¸ng ®inh c©u ®è vÒ 8 quÎ bãi, cã ®­îc gËy tróc tİm. ")
-	Uworld37 = SetByte(GetTask(37),1,80)
-	SetTask(37,Uworld37)
-	AddNote("T¹i ¶i thø 3 tr¶ lêi §­êng M«n tr¸ng ®inh c©u ®è vÒ 8 quÎ bãi, cã ®­îc gËy tróc tİm. ")
-end;	
+function enroll_V3_prise() 
+Talk(1,"","Ba quÎ ng­¬i tÊt c¶ ®Òu ®¸p ®óng råi , ®©y lµ ng­¬i muèn mµu tİm tróc tr­îng . nÕu nh­ ng­¬i ba chu«i tróc tr­îng ®Òu ®· cÇm ®ñ , còng cã thÓ ®i giao cho ng­êi ®i ra cöa , thuËn lîi qu¸ quan .") 
+AddEventItem(35) 
+Msg2Player(" ë cöa thø ba tr¶ lêi §­êng m«n tr¸ng ®inh 8 quÎ vÊn ®Ò , ®¹t ®­îc tö tróc tr­îng . ") 
+Uworld37 = SetByte(GetTask(37),1,80) 
+SetTask(37,Uworld37) 
+AddNote(" ë cöa thø ba tr¶ lêi §­êng m«n tr¸ng ®inh 8 quÎ vÊn ®Ò , ®¹t ®­îc tö tróc tr­îng . ") 
+end; 

@@ -2,23 +2,23 @@ Include("\\script\\lib\\pay.lua")
 IncludeLib("FILESYS")
 tbLANTERNS_NPC = {
 		{ 2, 	36, 280, 600,	"\\settings\\event\\zhongqiuhuodong\\huashan_lantern.txt",		"\\script\\event\\great_night\\lantern\\lantern.lua", "Hoa S¨n" },
-		{ 21,	37, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\qingcheng_lantern.txt",	"\\script\\event\\great_night\\lantern\\lantern.lua", "Thanh Thµnh S¨n" },
-		{ 167, 	38, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\diancang_lantern.txt",		"\\script\\event\\great_night\\lantern\\lantern.lua", "ßi”m Th≠¨ng s¨n" },
-		{ 193, 	39, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\wuyi_lantern.txt",			"\\script\\event\\great_night\\lantern\\lantern.lua", "VÚ Di s¨n" },
+		--{ 21,	37, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\qingcheng_lantern.txt",	"\\script\\event\\great_night\\lantern\\lantern.lua", "Thanh Thµnh S¨n" },
+		--{ 167, 	38, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\diancang_lantern.txt",		"\\script\\event\\great_night\\lantern\\lantern.lua", "ßi”m Th≠¨ng s¨n" },
+		--{ 193, 	39, 300, 600,	"\\settings\\event\\zhongqiuhuodong\\wuyi_lantern.txt",			"\\script\\event\\great_night\\lantern\\lantern.lua", "VÚ Di s¨n" },
 }
 
 tbLANTERN_ENTER_POS = {
 		[2] = { 	--huashan
 			{ 2287 ,4092 },
 			{ 2595, 3501 },
-			{ 2546, 3618 },
-			{ 2360, 3758 },
-			{ 2332, 3912 },
-			{ 2355, 4045 },
-			{ 2428, 4054 },
-			{ 2525, 4052 },
-			{ 2290, 4087 },
-			{ 2546, 4035 },
+			--{ 2546, 3618 },
+			--{ 2360, 3758 },
+			--{ 2332, 3912 },
+			--{ 2355, 4045 },
+			--{ 2428, 4054 },
+			--{ 2525, 4052 },
+			--{ 2290, 4087 },
+			--{ 2546, 4035 },
 		 },
 		[21] = { 	--qingchengshan
 			{ 2621, 4501 },
@@ -59,7 +59,7 @@ tbLANTERN_ENTER_POS = {
 }
 
 LANTERN_START	= 1900;
-LANTERN_END		= 2100;
+LANTERN_END		= 1945;
 
 function lantern_enter_lantern(area)
 	local tb_enter_pos = tbLANTERN_ENTER_POS[area]
@@ -129,7 +129,7 @@ function go_lanternplace()
 	
 	local ntime = tonumber(GetLocalDate("%H%M"));
 	if (ntime < LANTERN_START or ntime >= LANTERN_END) then
-		Say("Hoπt ÆÈng Hoa Æ®ng chÿ bæt Æ«u tı 19h:00 Æ’n 21h:00! Xin quay lπi sau nh–!", 0)
+		Say("Hoπt ÆÈng Hoa Æ®ng chÿ bæt Æ«u tı 19h:00 Æ’n 19h:45! Xin quay lπi sau nh–!", 0)
 		return 0;
 	end;
 	

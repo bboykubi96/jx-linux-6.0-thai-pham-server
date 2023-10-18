@@ -1,12 +1,12 @@
---ÖĞÔ­±±Çø ÌìÈÌ½Ì ÂôÒ©µÄµÜ×Ó¶Ô»°
--- Update: Dan_Deng(2003-08-21) ¼ÓÈëÂôµÀ¾ßÖ»Âô¸ø±¾°ï
+-- script viet hoa By http://tranhba.com ##¤#±±## ××Ì×#× ¢«ß##Ä###ã#¤#°
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) #ãÌ#¢«#µ####¢«##±#°#
 
 function main(sel)
 	Uworld30 = GetByte(GetTask(30),1)
 	if (GetFaction() == "tianren") or (Uworld30 == 127) then
-		Say("Y thuËt cña §¹i Kim chóng ta kh«ng thua kĞm g× nhµ Tèng, danh y, h¶o d­îc ®Òu kh«ng thiÕu… ", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no")
+		Say("##ãã#º#ß·#´ã#ğ#ó#Äß#£â¿Ğ²#±Ì###ó##Ğ###·#ß#²#Ğï##º·ß#ß²º##µ####", 2, "##ß#/yes", "²###ß#/no")
 	else
-		Talk(1,"","Gi¸o chñ cã lÖnh, thuèc cña bæn gi¸o chØ b¸n cho c¸c ®Ö tö trung thµnh.")
+		Talk(1,"","#×##ã#¸###±##×ß###Ä#¢«###ß³####ã.")
 	end
 end;
 

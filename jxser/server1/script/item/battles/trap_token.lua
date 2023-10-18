@@ -2,16 +2,19 @@ Include( "\\script\\item\\checkmapid.lua" )
 IncludeLib("SETTING")
 SJ_TRAPITEM_COUNT = 50
 function EatMedicine(nItemIdx)
+	
+	--dofile("script/item/battles/trap_token.lua")
+
 	local _,_,detail = GetItemProp(nItemIdx)
 	local n_param = tonumber(GetItemParam(nItemIdx,1)) + 1
 	local s_name = GetItemName(nItemIdx)
 	local n_curtime = GetGameTime();		--Ãë
 	local n_lasttime = GetTaskTemp(113);
 	
-	if (ST_IsRideHorse() == 1) then
-		Msg2Player("C­ìi ngùa kh«ng thÓ sö dông vËt phÈm nµy!")
-		return -1
-	end;
+	--if (ST_IsRideHorse() == 1) then
+	--	Msg2Player("C­ìi ngùa kh«ng thÓ sö dông vËt phÈm nµy!")
+	--	return -1
+	--end;
 	
 	if (n_curtime <= n_lasttime) then
 		Msg2Player("1 gi©y sau míi cã thÓ tiÕp tôc sö dông!")

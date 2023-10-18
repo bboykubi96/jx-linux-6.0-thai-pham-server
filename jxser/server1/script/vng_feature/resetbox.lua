@@ -11,14 +11,14 @@ function ResetBox:ShowDialog()
 	local tbOpt = {}
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d"))
 	self:CheckExpiredDate()
-	
+	tinsert(tbOpt, "§æi tªn nh©n vËt 50 xu/#doitennv()")
 	if (GetTask(self.TSK_TIME_ASSIGN) <= 0) then
 		tinsert(tbOpt ,"§¨ng ký xãa pass r­¬ng/#ResetBox:AssignResetBox()")
 	end
 	if (GetTask(self.TSK_TIME_ASSIGN) > 0) then
 		if (self:GetNextDate(GetTask(self.TSK_TIME_ASSIGN), 7) == nCurDate) then
 			tinsert(tbOpt ,"X¸c nhËn xãa pass r­¬ng/#ResetBox:ConfirmResetBox()")
-		end	
+		end
 		tinsert(tbOpt ,"Xem thêi gian hoµn thµnh xãa pass r­¬ng/#ResetBox:ShowTimeResetBox()")
 		tinsert(tbOpt, "Hñy xãa pass r­¬ng/#ResetBox:CancelResetBox()")
 	end
@@ -47,11 +47,30 @@ function ResetBox:ShowTimeResetBox()
 	Talk(1, "", "Pass r­¬ng sÏ ®­îc xãa vµo ngµy <color=yellow>" .. szDate  .. "<color>\nNÕu sau 24h ngµy <color=yellow>" .. szDate .. " <color>®¹i hiÖp kh«ng x¸c nhËn th× ®¨ng ký xo¸ pass r­¬ng sÏ bÞ hñy bá!")
 end
 
+function muabangxu(soxu)
+
+	local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
+	if (nCurTD < soxu) then
+		Say("Kh¸ch quan kh«ng mang ®ñ "..soxu.." TiÒn §ång!", 0)
+		return -1;
+	end
+
+	if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
+		Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
+		return -1;
+	end
+	
+	return 1;--du dieu kien mua
+
+end;
+
 function ResetBox:ConfirmResetBox()
-	GMCancleBoxPassword()
-	Msg2Player("§· më pass r­¬ng thµnh c«ng!")
-	SetTask(self.TSK_TIME_ASSIGN, 0)
-	self:WriteLogResetBox("Reset Pass R­¬ng - Thµnh C«ng Xãa Pass R­¬ng")
+	--if(muabangxu(500) == 1) then
+		GMCancleBoxPassword()
+		Msg2Player("§· më pass r­¬ng thµnh c«ng!")
+		SetTask(self.TSK_TIME_ASSIGN, 0)
+		self:WriteLogResetBox("Reset Pass R­¬ng - Thµnh C«ng Xãa Pass R­¬ng")
+	--end
 end
 
 function ResetBox:CheckExpiredDate()

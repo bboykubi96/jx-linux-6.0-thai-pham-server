@@ -4,7 +4,7 @@
 -- CreateTime	:	2005-07-04 14:17:15
 -- Desc			:  	¸÷´ó³ÇÊĞ³¤¸èÃÅÃÅÈË
 -------------------------------------------------------------------------
-Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
+Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
 Include("\\script\\task\\partner\\partner_head.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
 Include("\\script\\task\\partner\\reward\\partner_reward.lua") --°üº¬ÁË½»ĞŞÁ¶ÈÎÎñµÄ½Å±¾
 Include("\\script\\task\\partner\\reward\\partner_reward2.lua") 
@@ -14,24 +14,24 @@ Include("\\script\\task\\partner\\train\\partner_changgejindi.lua")
 
 function main()
 
-	Describe(DescLink_ChangGeMen..": Giang hå m­êi n¨m giã thæi lÖ, c­êi dµi khi ca khæ lµm ngät. N¨m ®ã cñi m«n chñ hiÖp nghÜa t¸n tµi, qu¶ng n¹p thiªn h¹ hµo kiÖt, ta tr­êng ca cöa ra sao chê thŞnh sù. Sau ®ã m«n chñ bŞ kim tÆc giÕt h¹i, chóng ta ng­êi trong còng ch­a tõng mét ngµy bu«ng tha cho thiªn h¹ th­¬ng sinh v× mÊy ®¶m nhiÖm tİn sø. H«m nay tr­êng ca håi sinh, chİnh lµ muèn cßn ng­êi trong thiªn h¹ mét c«ng ®¹o!",7, 
-                "NhËn nhiÖm vô gi¸o huÊn B¹n §ång Hµnh/Getpartner_education", 
-                "NhiÖm vô tu luyÖn B¹n §ång Hµnh/Getpartner_allpractice", 
-                "NhiÖm vô ®Æc thï B¹n §ång Hµnh/Getpartner_especial", 
-                "Thuª B¹n §ång Hµnh/Getpartner_paymoney", 
-                "Söa ®æi danh hiÖu ng­êi ch¬i/change_title", 
-                "§i Tr­êng Ca M«n CÊm §Şa/Goto_jindichangge", 
-                "Ta muèn ®i V©n Trung TrÊn cã chót chuyÖn./Goto_townyunzhong", 
-                "Ta ch¼ng qua ghĞ th¨m th«i./no")
+	Describe(DescLink_ChangGeMen.."£º½­ºşÊ®Äê·ç´µÀá£¬³¤Ğ¦µ±¸è¿à×öÌğ¡£µ±Äê²ñÃÅÖ÷ÏÀÒåÉ¢²Æ£¬¹ãÄÉÌìÏÂºÀ½Ü£¬ÎÒ³¤¸èÃÅÊÇºÎµÈµÄÊ¢ÊÂ¡£ºóÀ´²ñÃÅÖ÷±»½ğÔô²Ğº¦£¬ÎÒÃÅÖĞÈËÒ²´ÓÎŞÒ»ÈÕ·ÅÆúÌìÏÂ²ÔÉúÎª¼ºÈÎµÄĞÅÌõ¡£Èç½ñ³¤¸èÔÙÆğ£¬¾ÍÊÇÒª»¹ÌìÏÂÈËÒ»¸ö¹«µÀ£¡",7,
+		"ÁìÈ¡Í¬°éµÄ½ÌÓıÈÎÎñ/Getpartner_education",
+		"Í¬°éĞŞÁ·ÈÎÎñ/Getpartner_allpractice",
+		"Í¬°éÌØÊâÈÎÎñ/Getpartner_especial",
+		"Í¬°é¹ÍÓ¶/Getpartner_paymoney",
+		"¸ü¸ÄÍæ¼Ò³ÆºÅ/change_title",
+		"Ç°Íù³¤¸èÃÅ½ûµØ/Goto_jindichangge",
+		"ÎÒÏëÈ¥ÔÆÖĞ¹ÅÕò°ìĞ©ÊÂ/Goto_townyunzhong",
+		"Ã»Ê²Ã´£¬ÎÒÖ»ÊÇÀ´¿´¿´ÉÙÏÀÄã/no")
 end
 
 function Getpartner_allpractice()
-	Describe(DescLink_ChangGeMen..": Ng­¬i muèn lµm g× cïng b¹n ®ång hµnh tu luyÖn nhiÖm vô ? ",5, 
-               "Ta muèn mua B¹n §ång Hµnh tu luyÖn nhiÖm vô./Getpartner_practice", 
-               "Ta muèn ®ãng B¹n §ång Hµnh tu luyÖn nhiÖm vô./Getpartner_goonpractice", 
-               "Ta lµ tíi hñy bá B¹n §ång Hµnh tu luyÖn nhiÖm vô./Getpartner_finishpractice", 
-               "Ta muèn t×m hiÓu râ tu luyÖn nhiÖm vô B¹n §ång Hµnh./Getpartner_knowpractice", 
-               "Ta ch¼ng qua ghĞ th¨m ch¬i th«i./no")
+	Describe(DescLink_ChangGeMen.."£ºÄãÒª×öÊ²Ã´ÓëÍ¬°éĞŞÁ·Ïà¹ØµÄÊÂÇé£¿",5,
+		"ÎÒÏë¹ºÂòÍ¬°éµÄĞŞÁ·ÈÎÎñ/Getpartner_practice",
+		"ÎÒÏë½»Í¬°éĞŞÁ·ÈÎÎñ/Getpartner_goonpractice",
+		"ÎÒÊÇÀ´È¡ÏûÍ¬°éĞŞÁ·ÈÎÎñµÄ/Getpartner_finishpractice",
+		"ÎÒÏë½øÒ»²½ÁË½âĞŞÁ·ÈÎÎñ/Getpartner_knowpractice",
+		"Ã»Ê²Ã´£¬ÎÒÖ»ÊÇÀ´¿´¿´ÉÙÏÀÄã/no")	
 end
 
 function Getpartner_goonpractice()
@@ -45,23 +45,22 @@ function Getpartner_goonpractice()
 end
 
 function Getpartner_knowpractice()
-Describe(DescLink_ChangGeMen..":<color=yellow> NhiÖm vô b¹n ®ång hµnh tu luyÖn lµ cöa Tr­êng Ca v× thay vâ l©m diÖt trõ nguy h¹i mµ ban bè mét lo¹t nhiÖm vô. Khi ng­¬i mua tu luyÖn quyÓn trôc sau liÒn cã thÓ xóc ph¸t ®i t­¬ng øng ®Şa ph­¬ng  nhiÖm vô giÕt qu¸i. GiÕt tr¸ch quyÓn trôc tr­íc m¾t chia lµm <color=red>50 chØ, 100 chØ, cïng 150 chØ <color> ba lo¹i. Lóc míi b¾t ®Çu ng­¬i chØ cã thÓ mua ®­îc giÕt <color=red>50<color> chØ ®æ thõa quyÓn trôc, h¬n n÷a mçi ngµy nhiÒu nhÊt hoµn thµnh <color=red>5<color> lÇn. Hoµn thµnh sau nµy ng­¬i cïng b¹n ®ång hµnh ng­¬i sÏ lÊy ®­îc <color=red> phong phó håi b¸o <color>. §ång thêi, theo ng­¬i hoµn thµnh nhiÖm vô <color=red> sè lÇn <color> cµng nhiÒu, cöa tr­êng ca sÏ cho ng­¬i <color=red>Thanh Long Vâ SÜ , Thanh Long KiÕm S¸t<color> danh hiÖu. Theo nh÷ng thø nµy t­ c¸ch t¨ng lªn, ng­¬i ®em cã thÓ mua giÕt chÕt nhiÒu h¬n qu¸i vËt quyÓn trôc, ®ång thêi mçi ngµy hoµn thµnh sè lÇn còng ®em nhiÒu h¬n. §èi øng, lÊy ®­îc håi b¸o còng ®em cµng lóc cµng lín. <color>",2,
-                     "Trë vÒ/Getpartner_allpractice","Rêi khái/no")
+	Describe(DescLink_ChangGeMen.."£º<color=yellow>Í¬°éĞŞÁ·ÈÎÎñÊÇ³¤¸èÃÅÎªÁËÌæÎäÁÖ²ù³ıÎ£º¦¶ø·¢²¼µÄÒ»ÏµÁĞÈÎÎñ¡£µ±Äã¹ºÂòÁËĞŞÁ·¾íÖáºó¾Í¿ÉÒÔ´¥·¢È¥ÏàÓ¦µØ·½É±¹ÖµÄÈÎÎñ¡£É±¹Ö¾íÖáÄ¿Ç°·ÖÎª<color=red>50Ö»£¬100Ö»£¬ºÍ150Ö»<color>ÈıÖÖ¡£¿ªÊ¼µÄÊ±ºòÄãÖ»ÄÜ¹ºÂòµ½É±<color=red>50<color>Ö»¹ÖµÄ¾íÖá£¬¶øÇÒÃ¿Ìì×î¶àÍê³É<color=red>5<color>´Î¡£Íê³ÉÒÔºóÄãÓëÄãµÄÍ¬°é½«»áµÃµ½<color=red>·áºñµÄ»Ø±¨<color>¡£Í¬Ê±£¬Ëæ×ÅÄãÍê³ÉÈÎÎñµÄ<color=red>´ÎÊı<color>Ô½¶à£¬³¤¸èÃÅ½«»á¸øÓèÄã<color=red>¡°ÇàÁúÎäÊ¿¡±£¬¡°ÇàÁú½£É·¡±<color>µÄ³ÆºÅ¡£Ëæ×ÅÕâĞ©×Ê¸ñµÄÌáÉı£¬Äã½«¿ÉÒÔ¹ºÂòÉ±ËÀ¸ü¶à¹ÖÎïµÄ¾íÖá£¬Í¬Ê±Ã¿ÌìµÄÍê³É´ÎÊıÒ²½«¸ü¶à¡£¶ÔÓ¦µÄ£¬µÃµ½µÄ»Ø±¨Ò²½«Ô½À´Ô½´óÅ¶¡£<color>",2,"»ØÉÏÒ»²ã/Getpartner_allpractice","Àë¿ªÕâÀï/no")
 end
 
 function Getpartner_education()    --ÎÒÏë×öÁìÈ¡Í¬°éµÄ½ÌÓıÈÎÎñ
-	Describe(DescLink_ChangGeMen..": Tèt, nÕu nh­ ng­¬i nghÜ lµm tho¹i, nh­ vËy ®Õn V©n Trung TrÊn sau nµy t×m kiÕm Hoµng §å §Ö ®èi tho¹i, h¾n sÏ chØ dÉn cho ng­¬i.",2, 
-           "Tèt, ta ®· râ rµng. §Ó cho ta ®i V©n Trung TrÊn. /Goto_townyunzhong", 
-           "Cho ta suy nghÜ l¹i chót/no")
+	Describe(DescLink_ChangGeMen.."£ººÃµÄ£¬Èç¹ûÄãÏë×öµÄ»°£¬ÄÇÃ´µ½ÁËÔÆÖĞÒÔºóÕÒ½£»ÊµÄÍ½µÜ¶Ô»°£¬Ëû»á¸øÄãÖ¸ÒıµÄ¡£",2,
+		"ºÃµÄ£¬ÎÒÒÑ¾­Çå³şÁË¡£ÈÃÎÒÈ¥ÔÆÖĞÕò°É¡£/Goto_townyunzhong",
+		"ÈİÎÒÔÙÏëÏë/no")
 end
 
 
 function Getpartner_paymoney()
-	Describe(DescLink_ChangGeMen..": ThËt xin lçi, nhãm lín tinh nhuÖ vâ sÜ cßn ë trong khi huÊn luyÖn, tr­íc m¾t kh«ng cã cã thÓ cung ng­¬i thuª b¹n ®ång hµnh, xin mêi sau nµy trë l¹i. C¸m ¬n. ",1," KÕt thóc ®èi tho¹i/no")
+	Describe(DescLink_ChangGeMen.."£º¶Ô²»Æğ£¬´óÅú¾«ÈñµÄÎäÊ¿ÉĞÔÚÑµÁ·ÖĞ£¬Ä¿Ç°Ã»ÓĞ¿ÉÒÔ¹©Äã¹ÍÓ¶µÄÍ¬°é£¬ÇëÒÔºóÔÙÀ´¡£Ğ»Ğ»¡£",1,"½áÊø¶Ô»°/no")
 end
 
 function Getpartner_especial()
-	Describe(DescLink_ChangGeMen..": H¾c H¾c, nh÷ng thø kia kiÕm thuËt thÇn th«ng b¹n ®ång hµnh còng kh«ng ph¶i lµ dÔ dµng liÒn cã thÓ ®¹t ®­îc. Ng­¬i cÇn n÷a häc hái kinh nghiÖm, chót n÷a trë l¹i ®i. ",1,"KÕt thóc ®èi tho¹i /no")
+	Describe(DescLink_ChangGeMen.."£ººÙºÙ£¬ÄÇĞ©½£ÊõÍ¨ÉñµÄÍ¬°é¿É²»ÊÇÇáÒ×¾Í¿É»ñµÃ¡£ÄãĞèÒªÔÙÀúÁ·ÀúÁ·£¬³ÙĞ©ÔÙÀ´°É¡£",1,"½áÊø¶Ô»°/no")
 end
 
 function Goto_townyunzhong()
@@ -77,17 +76,17 @@ end
 
 function blackScreen()
 	if(GetGameTime() <= 1800) then
-		Say("Quan Ph­¬ng §Ò Kú : NÕu nh­ ng­¬i ®Õn V©n Trung TrÊn b¶n ®å bŞ ®en, xin h·y vµo <enter><color=yellow>http://jx.kingsoft.com/zt1/2ye/2005/09/08/64217.shtml<color> kÕ tiÕp thø ba tµi liÖu phiÕn. NÕu nh­ ®èi víi ®ång b¹n hÖ thèng cã bÊt kú ı kiÕn cïng ı t­ëng, mêi ®­îc <color=yellow>bbs.jx.kingsoft.com<color> ph¸t biÓu.",0);
+		Say("¹Ù·½ÌáÊ¾£º Èç¹ûÄãµÄÔÆÖĞµÀµØÍ¼ÊÇºÚÆÁ£¬ÇëÈ¥¹ÙÍø<enter><color=yellow>http://jx.kingsoft.com/zt1/2ye/2005/09/08/64217.shtml<color>ÏÂÔØµÚÈı×ÊÁÏÆ¬Ìå·ş×ÊÔ´°ü²¢¸üĞÂ¡£Èç¹û¶ÔÍ¬°éÏµÍ³ÓĞÈÎºÎÒâ¼ûºÍÏë·¨£¬Çëµ½<color=yellow>bbs.jx.kingsoft.com<color>·¢±í¡£",0);
 	end
 end
 
 function Getpartner_practice()
 	local Name = GetName()
-	Describe(DescLink_ChangGeMen..":"..Name.."§¹i nh©n, ng­¬i nghÜ mua lo¹i nµo tu luyÖn quyÓn trôc ®©y ? ",4, 
-            "GiÕt qu¸i 50 chØ /practice_kill50", 
-            "GiÕt qu¸i 100 chØ /practice_kill100", 
-            "GiÕt qu¸i 150 chØ /practice_kill150", 
-            "Chót n÷a ta trë l¹i/no")
+	Describe(DescLink_ChangGeMen.."£º"..Name.."´óÈË£¬ÄãÏë¹ºÂòÄÄÖÖĞŞÁ·¾íÖáÄØ£¿",4,
+	"É±¹Ö50Ö»/practice_kill50",
+	"É±¹Ö100Ö»/practice_kill100",
+	"É±¹Ö150Ö»/practice_kill150",
+	"³ÙĞ©ÔÙÀ´/no")
 end
 
 
@@ -111,7 +110,7 @@ end
 
 function practice_kill100()
 	if ( nt_getTask(1245) < 2 ) then
-		Describe(DescLink_ChangGeMen..": ThËt xin lçi, ngµi tr­íc m¾t danh hiÖu cßn kh«ng cã ®¹t tíi <color=red>Thanh Long Vâ SÜ<color> tíi c¶nh giíi, kh«ng c¸ch nµo mua giÕt <color=red>100<color> chØ tíi quyÓn trôc. Ph¶i lÊy gäi ®­îc Thanh Long Vâ SÜ, nhÊt ®Şnh ph¶i İt nhÊt ë <color=red>5<color> ngµy bªn trong hoµn thµnh mçi ngµy tÊt c¶ tu luyÖn nhiÖm vô. Mçi ngµy tÊt c¶ tu luyÖn nhiÖm vô sè lÇn v× <color=red>5<color> lÇn. ",2,"Trë vÒ/Getpartner_practice","KÕt thóc ®èi tho¹i/no")
+		Describe(DescLink_ChangGeMen.."£º¶Ô²»Æğ£¬ÄúÄ¿Ç°µÄ³ÆºÅ»¹Ã»ÓĞ´ïµ½<color=red>ÇàÁúÎäÊ¿<color>µÄ¾³½ç£¬ÎŞ·¨¹ºÂòÉ±<color=red>100<color>Ö»¹ÖµÄ¾íÖá¡£ÒªµÃµ½ÇàÁúÎäÊ¿µÄ³Æºô£¬±ØĞëÖÁÉÙÔÚ<color=red>5<color>ÌìÄÚÍê³ÉÃ¿ÌìËùÓĞµÄĞŞÁ·ÈÎÎñ¡£Ã¿ÌìËùÓĞµÄĞŞÁ·ÈÎÎñ´ÎÊıÎª<color=red>5<color>´Î¡£",2,"»ØÉÏÒ»²ã/Getpartner_practice","½áÊø¶Ô»°/no")
 	elseif ( nt_getTask(1245) >= 2 ) then
 		if ( SubWorldIdx2ID( SubWorld ) == 1 ) then
 			Sale(111)
@@ -133,7 +132,7 @@ end
 
 function practice_kill150()
 	if ( nt_getTask(1245) < 3 ) then
-		Describe(DescLink_ChangGeMen..": ThËt xin lçi, ngµi tr­íc m¾t danh hiÖu cßn kh«ng cã ®¹t tíi <color=red> Thanh Long kiÕm s¸t <color> ®İch c¶nh giíi, kh«ng c¸ch nµo mua <color=red>150<color> chØ ®æ thõa ®İch quyÓn trôc. Ph¶i lÊy gäi ®­îc Thanh Long kiÕm s¸t, nhÊt ®Şnh ph¶i İt nhÊt ë <color=red>20<color> ngµy bªn trong hoµn thµnh mçi ngµy tÊt c¶ tu luyÖn nhiÖm vô. Mçi ngµy tÊt c¶ tu luyÖn nhiÖm vô sè lÇn v× <color=red>5<color> lÇn. ",2,"Trë vÒ/Getpartner_practice","KÕt thóc ®èi tho¹i /no")
+		Describe(DescLink_ChangGeMen.."£º¶Ô²»Æğ£¬ÄúÄ¿Ç°µÄ³ÆºÅ»¹Ã»ÓĞ´ïµ½<color=red>ÇàÁú½£É·<color>µÄ¾³½ç£¬ÎŞ·¨¹ºÂòÉ±<color=red>150<color>Ö»¹ÖµÄ¾íÖá¡£ÒªµÃµ½ÇàÁú½£É·µÄ³Æºô£¬±ØĞëÖÁÉÙÔÚ<color=red>20<color>ÌìÄÚÍê³ÉÃ¿ÌìËùÓĞµÄĞŞÁ·ÈÎÎñ¡£Ã¿ÌìËùÓĞµÄĞŞÁ·ÈÎÎñ´ÎÊıÎª<color=red>5<color>´Î¡£",2,"»ØÉÏÒ»²ã/Getpartner_practice","½áÊø¶Ô»°/no")
 	elseif ( nt_getTask(1245) >= 3 ) then
 		if ( SubWorldIdx2ID( SubWorld ) == 1 ) then
 			Sale(112)
@@ -159,32 +158,32 @@ function Getpartner_finishpractice()
 	local NpcCount = PARTNER_Count()
 	
 	if ( NpcCount == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã mang b¹n ®ång hanh, kh«ng thÓ hñy nhiÖm vô ?")
+		Msg2Player("ÄãÃ»ÓĞ´øÍ¬°é£¬ÔõÃ´È¡ÏûÍ¬°éÈÎÎñ°¡£¿")
 	end
 	
 	if ( Uworld1237 ~= 0 ) then
 		if ( PARTNER_GetTaskValue(partnerindex, 2) ~= 0  )  then
-			RemovePlayerEvent(Uworld1237) --È¡Ïû¸ÃÊ¢¼ş
+			RemovePlayerEvent(Uworld1237) --È¡Ïû¸ÃÊÂ¼ş
 			nt_setTask(1237,0)
 			PARTNER_SetTaskValue(partnerindex,2,0) 
-			Msg2Player("Ng­¬i ®· hñy bá nhiÖm vô tu luyÖn.")
+			Msg2Player("ÄãÒÑ¾­È¡ÏûÁËµ±Ç°µÄĞŞÁ·ÈÎÎñ¡£")
 		elseif ( PARTNER_GetTaskValue(partnerindex, 2) == 0  ) then
 			local j = 0
 			for i=1, NpcCount do
 				if (PARTNER_GetTaskValue(i,2) ~= 0 ) then
-					Msg2Player("Ng­¬i mang theo lµm tu luyÖn nhiÖm vô lµ thø "..i.." sè b¹n ®ång hµnh. ")
+					Msg2Player("Äã´ø×Å×öĞŞÁ·ÈÎÎñµÄÊÇµÚ"..i.."ºÅÍ¬°é¡£")
 					j = j+1
 				end
 			end
 			if ( j == 0 ) then
-				RemovePlayerEvent(Uworld1237) --È¡Ïû¸ÃÊ¢¼ş
+				RemovePlayerEvent(Uworld1237) --È¡Ïû¸ÃÊÂ¼ş
 				nt_setTask(1237,0)
 				nt_setTask(1244,0)
-				Msg2Player("Ng­¬i ®· hñy bá nhiÖm vô tu luyÖn.")
+				Msg2Player("ÄãÒÑ¾­È¡ÏûÁËµ±Ç°µÄĞŞÁ·ÈÎÎñ¡£")
 			end
 		end
 	else
-		Describe(DescLink_ChangGeMen..": Ng­¬i kh«ng cã b¾t ®Çu tu luyÖn nhiÖm vô, thÕ nµo hñy bá ®©y ?",1,"KÕt thóc ®èi tho¹i/no")
+		Describe(DescLink_ChangGeMen.."£ºÄãÃ»ÓĞ¿ªÊ¼ĞŞÁ·ÈÎÎñ£¬ÔõÃ´È¡ÏûÄØ£¿",1,"½áÊø¶Ô»°/no")
 	end
 end
 

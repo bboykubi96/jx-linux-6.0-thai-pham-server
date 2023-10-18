@@ -75,7 +75,16 @@ function IsShopMap(nMapID)
 	end
 end
 
+Include("\\script\\global\\systemconfig.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 function main()
+		if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return
+	end
+	--dofile("script/shop/shop_checkmap.lua")
+	--dofile("script/global/systemconfig.lua")
+
 	if (CheckGlobalTradeFlag() == 0) then		-- È«¾Ö¾­¼ÃÏµÍ³½»Ò×¿ª¹Ø
 		return
 	end
@@ -84,6 +93,22 @@ function main()
 	if SYSCFG_SHOP_OPEN ~= 1 then
 		Msg2Player("<color=yellow>HiÖn t¹i Kú Tr©n C¸c vÉn ch­a më! <color>")
 		return 0
+	end
+
+	if SYSCFG_SHOP_OPENTYPE == 0 then
+		Say("Mua vËt phÈm kú tr©n c¸c ®Õn t×m gÆp <color=yellow>§¹i S­ L·o L·o T­¬ng D­¬ng (197/202) <color>")
+		return 0
+	end
+
+	if SYSCFG_SHOP_CLOSE_HOATDONG == 1 then
+		local day = tonumber(date("%w"))
+		local nHour = tonumber(GetLocalDate("%H%M"));
+		if (day == 5) then -- thu 6 hang tuan
+			if (nHour>=1800 and nHour<=2200) then
+				Say("Sau 22h Kú Tr©n C¸c míi më l¹i!")
+				return 0
+			end
+		end
 	end
 
 	if GetTripMode() == TRIP_MODE_SERVER then

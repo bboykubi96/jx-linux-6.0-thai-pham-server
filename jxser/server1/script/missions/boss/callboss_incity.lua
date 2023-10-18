@@ -1,4 +1,22 @@
 Include("\\script\\lib\\basic.lua");
+IncludeLib("SETTING")
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\global\\fuyuan.lua")
+Include("\\script\\missions\\leaguematch\\npc\\officer.lua")
+Include("\\script\\lib\\log.lua")
+Include("\\script\\global\\repute_head.lua")
+Include("\\script\\misc\\league_cityinfo.lua")
+--Include("\\script\\global\\hotrotanthu.lua")	--hç trî t©n thñ
+--Include("\\script\\global\\hotrothem.lua")	-- hç trî ®å xanh
+Include("\\script\\global\\repute_head.lua")
+Include("\\script\\misc\\league_cityinfo.lua")
+Include("\\script\\global\\platina_upgrade.lua")
+Include("\\script\\½­ÄÏÇø\\ÁÙ°²\\ÁÙ°²\\npc\\Ö°ÄÜ_ÉñÃØÉÌÈË.lua")
+--Include("\\script\\global\\tamhiep\\ephanche.lua")
+Include("\\script\\task\\metempsychosis\\npc_saodiseng.lua")
+Include("\\script\\activitysys\\playerfunlib.lua")
+
 QY_GOLDBOSS_DPOS_INFO = {
 					[739]	= {"V­¬ng T¸ ",		739, 	95,	341,	0,	"\\settings\\maps\\¶«±±Çø\\Ä®±±²ÝÔ­\\wangzuoboss.txt"},
 					[740]	= {"HuyÒn Gi¸c §¹i S­ ", 	740, 	95,	322, 	0, 	"\\settings\\maps\\¶«±±Çø\\³¤°×É½Â´\\xuanjuedashiboss.txt"},
@@ -28,6 +46,7 @@ function QY_MakeBoss_RandInCity(bossid, bosslvl, series, mapid, posx, posy, boss
 	local npcindex = AddNpcEx(bossid, bosslvl, series, mapidx, posx*32, posy*32, 1, bossname, 1)
 	if (npcindex > 0) then
 		SetNpcDeathScript(npcindex, "\\script\\missions\\boss\\bossdeath.lua");
+		--AddTimer(2*60*60* 18, "OnTimeout", npcindex);
 		WriteLog(date("%H:%M")..","..bossid..","..bosslvl..","..series..","..SubWorldIdx2ID(mapidx)..","..posx..","..posy..","..bossname)
 		AddGlobalNews(str)
 
@@ -54,12 +73,12 @@ function CallBossDown_Outter(bossid, str)
 	posx, posy = getadata(filepos)
 	local npcindex = AddNpcEx(bossid, bosslvl, series, mapidx, posx*32, posy*32, 1, bossname, 1)
 	SetNpcDeathScript(npcindex, "\\script\\missions\\boss\\bossdeath.lua");
+	--AddTimer(2*60*60* 18, "OnTimeout", npcindex);
 	AddGlobalNews(str)
 	WriteLog(date("%H:%M")..","..bossid..","..bosslvl..","..series..","..SubWorldIdx2ID(mapidx)..","..posx..","..posy..","..bossname)
 	local nHour = tonumber(date("%H"));
 	if (nHour == 19 and npcindex > 0) then
-		-- »Æ½ðBOSS¼ÆÊý
-		SetNpcParam(npcindex, 1, 1); -- ÊÇ·ñÊÇ19:30µÄ»Æ½ðBOSS
+		SetNpcParam(npcindex, 1, 1);
 		RemoteExecute("\\script\\mission\\boss\\bigboss.lua", "AddGoldBossCount", 0);
 	end
 end
@@ -84,18 +103,20 @@ QY_NEWBOSS_FIXURE_INFO = {
 }
 QY_NORMALBOSS_INFO	=
 {
-	[1]	= {n_level = 90, 	n_series = 1,	n_npcid = 523,	n_mapid = 25,	tb_coords = {{531,300}, {482,331}},	sz_name = "LiÔu Thanh Thanh"},
-	[2]	= {n_level = 90, 	n_series = 2, 	n_npcid = 513,	n_mapid = 13,	tb_coords = {{285,302}, {218,312}},	sz_name = "DiÖu Nh­ "},
-	[3]	= {n_level = 90, 	n_series = 4, 	n_npcid = 511,	n_mapid = 81,	tb_coords = {{219,210}, {232,191}},	sz_name = "Tr­¬ng T«ng ChÝnh"},
-	[4]	= {n_level = 90,	n_series = 1, 	n_npcid = 1358, n_mapid = 183,	tb_coords = {{204,214}, {183,167}},	sz_name = "T©y V­¬ng Tµ §éc"},
-	[5]	= {n_level = 90,	n_series = 2, 	n_npcid = 1360, n_mapid = 154,	tb_coords = {{39,107}, {69,82}}, 	sz_name = "Do·n Thanh V©n"},
-	[6]	= {n_level = 90,	n_series = 3, 	n_npcid = 1361, n_mapid = 115,	tb_coords = {{195,205},{180,176}},	sz_name = "H¾c Y S¸t Thñ"},
-	[7]	= {n_level = 90,	n_series = 0, 	n_npcid = 1356, n_mapid = 59, 	tb_coords = {{188,195},{237,192}}, 	sz_name = "Ng¹o Thiªn T­íng Qu©n"},
-	[8]	= {n_level = 90,	n_series = 3, 	n_npcid = 1362, n_mapid = 45, 	tb_coords = {{208,202},{199,192}}, 	sz_name = "ThËp Ph­¬ng C©u DiÖt"},
-	[9]	= {n_level = 90,	n_series = 4, 	n_npcid = 1364,	n_mapid = 131,	tb_coords = {{173,208},{202,190}}, 	sz_name = "Thanh Y Tö"},
-	[10]= {n_level = 90,	n_series = 0, 	n_npcid = 1355,	n_mapid = 103,	tb_coords = {{180,220},{199,180}}, 	sz_name = "TÞnh Th«ng"},
+	[1]	= {n_level = 90, 	n_series = 1,	n_npcid = 523,	n_mapid = 25,	tb_coords = {{531,300}, {482,331}},	sz_name = "§­êng M«n - LiÔu Thanh Thanh"},
+	[2]	= {n_level = 90, 	n_series = 2, 	n_npcid = 513,	n_mapid = 13,	tb_coords = {{285,302}, {218,312}},	sz_name = "Nga My - DiÖu Nh­ "},
+	[3]	= {n_level = 90, 	n_series = 4, 	n_npcid = 511,	n_mapid = 81,	tb_coords = {{219,210}, {232,191}},	sz_name = "Vâ §ang - Tr­¬ng T«ng ChÝnh"},
+	--[4]	= {n_level = 90,	n_series = 1, 	n_npcid = 1358, n_mapid = 183,	tb_coords = {{204,214}, {183,167}},	sz_name = "T©y V­¬ng Tµ §éc"},
+--	[5]	= {n_level = 90,	n_series = 2, 	n_npcid = 1360, n_mapid = 154,	tb_coords = {{39,107}, {69,82}}, 	sz_name = "Do·n Thanh V©n"},
+--	[6]	= {n_level = 90,	n_series = 3, 	n_npcid = 1361, n_mapid = 115,	tb_coords = {{195,205},{180,176}},	sz_name = "H¾c Y S¸t Thñ"},
+--	[7]	= {n_level = 90,	n_series = 0, 	n_npcid = 1356, n_mapid = 59, 	tb_coords = {{188,195},{237,192}}, 	sz_name = "Ng¹o Thiªn T­íng Qu©n"},
+--	[8]	= {n_level = 90,	n_series = 3, 	n_npcid = 1362, n_mapid = 45, 	tb_coords = {{208,202},{199,192}}, 	sz_name = "ThËp Ph­¬ng C©u DiÖt"},
+	--[9]	= {n_level = 90,	n_series = 4, 	n_npcid = 1364,	n_mapid = 131,	tb_coords = {{173,208},{202,190}}, 	sz_name = "Thanh Y Tö"},
+--	[10]= {n_level = 90,	n_series = 0, 	n_npcid = 1355,	n_mapid = 103,	tb_coords = {{180,220},{199,180}}, 	sz_name = "TÞnh Th«ng"},
 };
-
+function OnTimeout(nNpcIndex)
+DelNpc(nNpcIndex);
+end
 function CallBossDown_Fixure()
 	for i = 1, getn(QY_NORMALBOSS_INFO) do
 		local nlvl, nseries, nid, nmap, tb_coords, szname	= 	QY_NORMALBOSS_INFO[i].n_level, QY_NORMALBOSS_INFO[i].n_series,
@@ -107,7 +128,15 @@ function CallBossDown_Fixure()
 			local nIdx		= random(getn(tb_coords));
 			local nx, ny	= tb_coords[nIdx][1] * 8 * 32, tb_coords[nIdx][2] * 16 * 32;
 			
-			AddNpcEx(nid, nlvl, nseries, nworldidx, nx, ny, 1, szname, 1);
+		local npcindex =	AddNpcEx(nid, nlvl, nseries, nworldidx, nx, ny, 1, szname, 1);
+
+			--Msg2SubWorld(" <color=yellow>"..szname.."<color> <color=green>®· xuÊt hiÖn. c¸c §¹i HiÖp mau truy t×m vµ giÕt h¾n sÏ nhËn ®­îc nh÷ng phÇn th­ëng cã gi¸ trÞ.")
+			
+			SetNpcDeathScript(npcindex, "\\script\\missions\\boss\\bosstieudeath.lua");
+			AddTimer(60*60* 18, "OnTimeout", npcindex);--SetNpcTimer(npcindex, 40*60*18);--SetNpcTimer(npcindex, 5*30*60*18);
+			local szNews=" <color=yellow>"..szname.."<color> <color=green>®· xuÊt hiÖn. c¸c §¹i HiÖp mau truy t×m vµ giÕt h¾n sÏ nhËn ®­îc nh÷ng phÇn th­ëng cã gi¸ trÞ."
+			--AddGlobalNews(szNews);
+			LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 			WriteBossLog(format("%s:%s,%d,%d,%d", "BOSS tiÓu Hoµng Kim", szname, nmap, nx, ny));
 		end
 	end
@@ -118,7 +147,6 @@ function WriteBossLog(szLog)
 	WriteLog("[CALLBOSS FIXURE]\t"..GetLocalDate("%Y-%m-%d %H:%M:%S\t")..szLog);
 end;
 
------------- »¹ÊÇ·Ö¸îÏß----------------------------------------------
 function getadata(file)
 	local totalcount = GetTabFileHeight(file) - 1;
 	id = random(totalcount);

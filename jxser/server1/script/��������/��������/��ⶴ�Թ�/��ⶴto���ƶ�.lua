@@ -1,11 +1,11 @@
---西北南区 剑阁蜀道金光洞to剑阁蜀道锁云洞
---Trap ID：西北南区 11
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu ki誱 c竎 th鬰 o kim quang ng to ki誱 c竎 th鬰 o kh鉧 v﹏ ng 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 11 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(6, 1660, 3314);
+SetFightState(1); 
+NewWorld(6, 1660, 3314); 
 
-AddTermini(9)
+AddTermini(9) 
 
 end;

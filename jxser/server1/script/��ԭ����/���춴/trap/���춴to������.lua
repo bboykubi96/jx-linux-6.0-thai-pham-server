@@ -1,7 +1,7 @@
---中原北区 飞天洞to朱仙镇
---Trap Id：中原北区 78
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu bay tr猲 tr阨 ng to Chu ti猲 tr蕁 
+-- script viet hoa By http://tranhba.com Trap Id# Trung Nguy猲 b綾 khu 78 
 
-function main(sel)
-	SetFightState(1)
-	NewWorld(100, 1852, 3356);
-end;
+function main(sel) 
+SetFightState(1) 
+NewWorld(100, 1852, 3356); 
+end; 

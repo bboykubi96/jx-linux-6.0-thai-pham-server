@@ -1,16 +1,16 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® ¾ÆÂ¥ÀÏ°å¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¾Æ¢¥ÀÏ°å¶Ô»°
 
 function main(sel)
 
 i = random(0,1)
 
 if (i == 0) then
-Say("T­¬ng D­¬ng x­a nay lµ vïng ®Êt chiÕn tranh lo¹n l¹c. H»ng n¨m triÒu ®×nh ph¸i binh hïng trÊn gi÷ n¬i nµy. V× thÕ míi cã tªn gäi lµ yÕt hÇu cña Nam Tèng.", 0)
+Say("¤ng chñ töu lÇu:  T­¬ng D­¬ng chóng ta x­a nay binh gia tÊt tranh ®Êt, triÒu ®×nh hµng n¨m ®Òu ph¸i träng binh ®ãng ë cïng nµy , v× vËy míi cã danh x­ng lµ Nam Tèng YÕt HÇu. ", 0)
 return
 end;
 
 if (i == 1) then
-Say("R­îu cña qu©n ®ãng ë T­¬ng D­¬ng uèng phÇn lín ®Òu do tiÖm ta cung cÊp.Tuy chóng ta khong thÓ ra chiÕn tr­êng nh­ng cã thÓ gãp chót søc män còng tèt råi.", 0)
+Say("¤ng chñ töu lÇu:  T­¬ng D­¬ng ®ãng qu©n uèng r­îu ®Òu lµ do bæn lÇu cung cÊp nöa gi¸, mÆc dï chóng ta kh«ng thÓ ra chiÕn tr­êng, nh­ng lµ cã thÓ gäi lµ gãp 1 phÇn nhá søc lùc .", 0)
 end;
 
 

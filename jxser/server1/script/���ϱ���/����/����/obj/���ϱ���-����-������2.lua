@@ -1,7 +1,7 @@
---西南北区 唐门 后门传送门2
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu Л阯g m玭 c鯽 sau truy襫 t鑞g c鯽 2 
 
-function main(sel)
+function main(sel) 
 
-ReturnFromPortal();
+ReturnFromPortal(); 
 
 end;

@@ -1,8 +1,8 @@
---Î÷ÄÏ±±Çø ¼À×æÌütoÌÆÃÅ
---Trap ID£ºÎ÷ÄÏ±±Çø 47
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu giæ tæ thİnh to §­êng m«n 
+-- script viet hoa By http://tranhba.com Trap ID# t©y nam b¾c khu 47 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(25, 4115, 5090);
+NewWorld(25, 4115, 5090); 
 
 end;

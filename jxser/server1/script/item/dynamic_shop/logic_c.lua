@@ -29,7 +29,7 @@ function DynamicShop:RecvItem(nDynamicShopID, nRequestPage, tbItem)
 	
 		CoreDataChanged(136, nRequestPage, nCount);
 	else
-		Talk(1, "", "Trang cu鑙 r錳")
+		Talk(1, "", "最后一页了")
 	end
 
 end

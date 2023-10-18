@@ -1,11 +1,12 @@
+----------------***Heart*Doldly***----------------------
 IncludeLib("TASKSYS")
 Include("\\script\\global\\signet_head.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 IncludeLib("LEAGUE")
 Include("\\script\\lib\\droptemplet.lua")
---Œ‰¡÷»Ÿ”˛¡Ó µÙ¬‰
---honour
+-----------------------------------------------------------------------------
+
 DROPRATE_BOSS_HONOURRATE = {
 		["V≠¨ng T∏ "] = {350, 136},--739
 		["Huy“n Gi∏c ßπi S≠ "] = {350, 134},--740
@@ -16,17 +17,6 @@ DROPRATE_BOSS_HONOURRATE = {
 		["Hµ Nh©n Ng∑ "] = {350, 171},--
 		["ß¨n T≠ Nam"] = {350, 171},--746745
 		["Tuy“n C¨ Tˆ "] = {350, 144},--747
-		--["∫´√…"] = {},--748
-		["%ÃÏÕı%"] = {350, 250},--1193
-		["¬“ ¿”¢∫¿§≤èù"] = {350, 250},--1194
-		["◊∑√¸æ” ø"] = {350, 250},--1195
-		["…Òœ…“≤≤ªπ˝»Á¥À"] = {350, 250},--1196
-		["∂Ï’Ω—™"] = {350, 250},--1197
-		["∫˚µ˚±¥±¥"] = {350, 250},--1198
-		["”Ò∫£¬•§ŒŒÕ¸Œ“"] = {350, 250},--1199
-		["°·«Âœ„°©°∫ÃÏ»Ã°ª"] = {350, 250},--1200
-		["π≈µ¿∑Á"] = {350, 250},--1201
-		["»«ªµƒ≈Æ»À"] = {350, 250},--1202
 		["ßπi M∑ HÊ "] = {0, 250},
 		["Gia LuÀt Tﬁ Ly"] = {350, 130},--563
 		["Hoµn Nhan Tuy’t Y"] = {400, 130},--564
@@ -37,27 +27,40 @@ DROPRATE_BOSS_HONOURRATE = {
 		["Hµ Linh Phi™u"] = {400, 130},--568
 		["Lam Y Y"] = {250, 176},--582
 		["Mπnh Th≠¨ng L≠¨ng"] = {300, 180},--583
-		--[] = {},
-}
-HONOURID = {1257, 1294}
-SIGNET_DROPCOUNT = 10
-TSK_PLAYER_BOSSKILLED = 2598 -- ÕÊº“ª˜…±BOSS ˝¡øÕ≥º∆
---DC kinh nghi÷m boss HK - Modified By DinhHQ - 20111007
---KILLBOSSEXPAWARD = 20000000	-- ª˜…±bossΩ±¿¯
---KILLBOSSNEAREXPAWARD = 12000000	-- ª˜…±boss∏ΩΩ¸Ω±¿¯
-KILLBOSSEXPAWARD = 10000000
-KILLBOSSNEAREXPAWARD = 8000000
---Renew boss award - Modified by DinhHQ - 20120319
-local tbVnNewItemDropAward = {
-	{{szName="Phi tËc hoµn l‘ bao",tbProp={6,1,2520,1,0,0},nCount=1,nRate=60},},
-	{{szName="ßπi l˘c hoµn l‘ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=60},},
-	{{szName="Tˆ ThÒy Tinh",tbProp={4,239,1,1,0,0},nCount=1,nRate=80},},
-	{{szName="Lam ThÒy Tinh",tbProp={4,238,1,1,0,0},nCount=1,nRate=80},},
-	{{szName="LÙc ThÒy Tinh",tbProp={4,240,1,1,0,0},nCount=1,nRate=80},},
-	{{szName="Tinh HÂng B∂o Thπch",tbProp={4,353,1,1,0,0},nCount=1,nRate=80},},
-	{{szName="Ti™n Th∂o LÈ Æ∆c bi÷t",tbProp={6,1,1181,1,0,0},nCount=1,nRate=50},},		
 }
 
+HONOURID = {3022, 3022}
+SIGNET_DROPCOUNT = 20
+TSK_PLAYER_BOSSKILLED = 2598 
+KILLBOSSEXPAWARD = 20000000	--TÊ ßÈi Gi’t NhÀn ß≠Óc Kinh Nghi÷m
+KILLBOSSNEAREXPAWARD = 5000000	--Ng≠Íi Xung Quanh ß¯ng G«n Boss NhÀn ß≠Óc Kinh Nghi÷m
+
+--Ph«n Th≠Îng R¨i Ra Tı Boss Hoµng Kim
+local  _Message =  function (nItemIndex)
+	local handle = OB_Create()
+	local msg = format("<pic=44><color=red>VÀt ph»m <color=pink><%s><color=green><enter> vıa r¨i tı <color=yellow>Boss Hoµng Kim<color>" ,GetItemName(nItemIndex))
+	ObjBuffer:PushObject(handle, msg)
+	RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+	OB_Release(handle)
+end
+
+local tbVnNewItemDropAward = {
+	[1] = {
+--		{szName="Ng©n L≠Óng",nJxb=2000000,nCount=1},
+	--	{szName="Ti“n ßÂng",tbProp={4,417,1,1,0,0},nCount=30},
+
+	--	{szName="Qu’ Hoa Tˆu",tbProp={6,1,125,1,0,0},nCount=1,nRate=0.5},	
+			--		{szName="Thi™n S¨n B∂o LÈ",tbProp={6,1,72,1,0,0},nCount=1,nRate=1},	
+					{szName="L‘ Bao B› K›p",tbProp={6,1,4347,1,0,0},nCount=1,nRate=30},
+					{szName="ThÒy Tinh",tbProp={4,random(238,240),1,1},nCount=1,nRate=30},	
+					{szName="THBT",tbProp={4,353,1,1},nCount=1,nRate=10},	
+					{szName="M∑ Bµi Gh–p ThÛ C≠Ïi",tbProp={6,1,random(4529,4533),1,1},nCount=1,nRate=30},
+	},
+	[2] = {
+			{szName="ßπi L˘c Hoµn",tbProp={6,0,3,1,1},nCount=1},
+	{szName="Phi TËc Hoµn",tbProp={6,0,6,1,1},nCount=1},
+	},
+	}
 function OnDeath( nNpcIndex )
 	local x, y, world = GetNpcPos(nNpcIndex);
 	local maxcount = SIGNET_DROPCOUNT;
@@ -71,18 +74,19 @@ function OnDeath( nNpcIndex )
 	local nYear = tonumber(FormatTime2String("%Y", nCurtime))
 	local nMonth = tonumber(FormatTime2String("%m", nCurtime))
 	local nDay = tonumber(FormatTime2String("%d", nCurtime))
-	--B· ph«n th≠Îng vÀt ph»m khi ti™u di÷t boss - Modified by DinhHQ - 20111012
---	for i = 1, maxcount do
---		local nItemIdx = DropItem(world, x, y, PlayerIndex, 6, 1, 1094, 1, 0, 0, 0, 0, 0, 0, 0, 0);
---		SetSpecItemParam(nItemIdx, 1, nCurtime);
---		SetSpecItemParam(nItemIdx, 2, nYear)
---		SetSpecItemParam(nItemIdx, 3, nMonth)
---		SetSpecItemParam(nItemIdx, 4, nDay)
---		SyncItem(nItemIdx);
---	end;
-	--Renew boss award - Modified by DinhHQ - 20120319
-	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbVnNewItemDropAward,format("killed_%s",GetNpcName(nNpcIndex)))	
-	-- Œ‰¡÷»Ÿ”˛¡Ó≈∆µÙ¬‰
+	local tenboss=GetNpcName(nNpcIndex)
+--Earn(2000000)
+ tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbVnNewItemDropAward,format("killed_%s",GetNpcName(nNpcIndex)))
+ --	tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1},nCount=200},}, "test", 1);
+	
+	
+--local a1=random(1,3)
+--if a1==2 then 
+ 	--SetTask(2501,GetTask(2501)+30) -- th™m 30 Æi”m vinh d˘	
+--	tbAwardTemplet:GiveAwardByList({{szName = "Lb 10 Æi”m vinh d˘",tbProp={6,1,1257,1,1},nCount=1,nExpiredTime=3*24*60},}, "test", 1);
+	--Msg2SubWorld("<color=green>ChÛc mıng cao thÒ <color=yellow>"..GetName().."<color> Æ∑ 10Æ Vinh D˘ tı boss HKMP")
+--	end
+	
 	if (GetProductRegion() == "cn" or GetProductRegion() == "cn_ib") then
 		local szNpcName = GetNpcName(nNpcIndex);
 		if (DROPRATE_BOSS_HONOURRATE[szNpcName]) then
@@ -95,40 +99,45 @@ function OnDeath( nNpcIndex )
 		end;
 	end;
 	
-	-- ∏¯…±µÙBOSSµƒ»ÀªÚ∂”ŒÈΩ±¿¯
+---------------------------------------------Ph«n Th≠Îng TÊ ßÈi Gi’t Boss--------------------------------------------------------------------------------------------------------------------
 	local nTeamSize = GetTeamSize();
 	local szName;
-	
+
 	if (nTeamSize > 1) then
 		for i=1,nTeamSize do
 			if(doFunByPlayer(GetTeamMember(i), IsCaptain)==1)then
 				szName = doFunByPlayer(GetTeamMember(i), GetName);
 			end
-			doFunByPlayer(GetTeamMember(i), PlayerFunLib.AddExp, PlayerFunLib, KILLBOSSEXPAWARD, 0, format("%s ph«n th≠Îng","Kinh nghi÷m Æ∂ bπi BOSS hoµng kim"));
+			doFunByPlayer(GetTeamMember(i), PlayerFunLib.AddExp, PlayerFunLib, KILLBOSSEXPAWARD, 0, format("%s ph«n th≠Îng","Kinh nghi÷m TÊ ßÈi Gi’t BOSS hoµng kim"));
 		end
-	else -- “ª∏ˆ»À
+	else
 		szName = GetName();
+		local tbnvboss = {
+		--	{szName="Hµnh Hi÷p L÷nh",tbProp={6,1,2566,1,0,0},nCount=20},
+		--	{szName="Ti“n ßÂng Kh„a",tbProp={4,1495,1,1,0,0},nCount=20,nBindState = -2},
+	}
 		PlayerFunLib:AddExp(KILLBOSSEXPAWARD, 0, format("%s ph«n th≠Îng","Kinh nghi÷m Æ∂ bπi BOSS hoµng kim"));
+		--tbAwardTemplet:GiveAwardByList(tbnvboss, "Ph«n th≠Îng Ti™u Di÷t Boss C∏ Nh©n")
 	end
-	
+-----------------------------------------------------------------------------------------------Ph«n Th≠Îng Ng≠Íi Xung Quanh ß¯ng G«n Boss--------------------------------------------------------
 	local tbRoundPlayer, nCount = GetNpcAroundPlayerList(nNpcIndex, 20);
 	
 	for i=1,nCount do
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, KILLBOSSNEAREXPAWARD, 0, format("%s ph«n th≠Îng","Kinh nghi÷m Æ¯ng g«n lÛc BOSS hoµng kim bﬁ ti™u di÷t"));
+		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, KILLBOSSNEAREXPAWARD, 0, format("%s ph«n th≠Îng","Kinh nghi÷m ß¯ng Xung Quanh LÛc BOSS Hoµng Kim Bﬁ Ti™u Di÷t"));
 	end
 	
-	local szNews = format("ßπi hi÷p <color=yellow>%s<color> tπi <color=yellow>%s<color> Æ∑ ti™u di÷t thµnh c´ng <color=yellow>%s<color>!", szName, SubWorldName(SubWorld),GetNpcName(nNpcIndex));
+	local szNews = format("<color=green>ßπi Hi÷p <color><color=yellow>%s<color> tπi <color=yellow>%s<color> <color=blue> Æ∑ ti™u di÷t thµnh c´ng <color><color=yellow>%s<color> ", szName, SubWorldName(SubWorld),GetNpcName(nNpcIndex));
 	AddGlobalNews(szNews);
 	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-	
-	-- BOSSª˜…±Õ≥º∆
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- BOSS Xu t Hi÷n
 	local nCount = GetTask(TSK_PLAYER_BOSSKILLED);
 	nCount = nCount + 1;
 	SetTask(TSK_PLAYER_BOSSKILLED, nCount);
 	
-	if (GetNpcParam(nNpcIndex, 1) == 1) then --19:30µƒª∆ΩBOSS
-		-- ª∆ΩBOSSº∆ ˝
+	if (GetNpcParam(nNpcIndex, 1) == 1) then --19:30
+		
 		RemoteExecute("\\script\\mission\\boss\\bigboss.lua", "ReduceGoldBossCount", 0);
 	end
 end;
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

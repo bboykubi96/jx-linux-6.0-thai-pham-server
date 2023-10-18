@@ -1,8 +1,8 @@
---Î÷ÄÏÄÏÇø ´äÑÌÃÅtoÊØÓñÌü
---Trap ID£ºÎ÷ÄÏÄÏÇø 23
+-- script viet hoa By http://tranhba.com  t©y nam nam khu thóy khãi cöa to thñ ngäc thİnh 
+-- script viet hoa By http://tranhba.com Trap ID# t©y nam nam khu 23 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(160, 1596, 3208);
+NewWorld(160, 1596, 3208); 
 
 end;

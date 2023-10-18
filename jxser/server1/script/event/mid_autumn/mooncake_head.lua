@@ -3,8 +3,7 @@
 -- 2005-09-07 by steve
 
 IncludeLib("TIMER")
-EVENT_TRUNG_THU_ID = 105;
-EVENT_TRUNG_THU_MAX = 1000;
+
 -- 全局变量
 GBL_VAR_MOONCAKE_EXCHANGING		 = 801	-- 是否正在兑换材料
 GBL_VAR_MOONCAKE_MARTERIAL_TYPE	 = 802	-- 兑换材料的类别
@@ -53,9 +52,9 @@ tbl_cities = {
     [176] = "L﹎ An", 
 };
 
--- Nguyen Lieu
+-- 材料名字
 tbl_material = {
-    {"Tr鴑g ",		4,	522},--1: can trung, 0 tbl_mooncake_material
+    {"Tr鴑g ",		4,	522},
     {"H筺h nh﹏ ",	4,	525},
     {"u ph閚g ",	4,	526},
     {"C琺 d鮝",	4,	527},

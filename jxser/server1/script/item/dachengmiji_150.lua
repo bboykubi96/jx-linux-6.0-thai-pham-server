@@ -12,6 +12,9 @@
 Include("\\script\\task\\system\\task_string.lua")
 
 function main(nItemIdx) 
+
+--dofile("script/item/dachengmiji_150.lua")
+
 local n_fac = GetLastFactionNumber(); 
 if (n_fac < 0) then 
 Talk(1, "","GiËng nh≠ quy”n s∏ch nµy mi™u t∂ ch›nh lµ c∏c m´n ph∏i cao c p v‚ c´ng , ng≠¨i kh´ng bi’t b‰n h‰ huy“n c¨ "); 
@@ -34,6 +37,7 @@ local tb_90skill = {
 local tb_Desc = {}; 
 for i = 1, getn(tb_90skill[n_fac]) do 
 local skill = HaveMagic(tb_90skill[n_fac][i]); 
+
 if (skill ~= -1 and skill ~= 20) then 
 tinsert(tb_Desc, format("Th®ng c p ".."%s/#upgrade_skilllevel(%d)", GetSkillName(tb_90skill[n_fac][i]), tb_90skill[n_fac][i])); 
 end 
@@ -44,28 +48,23 @@ Talk(1, "","K¸ n®ng Æπt tÌi cao c p nh t ho∆c lµ cﬂn ch≠a h‰c .");
 return 1; 
 end 
 
-tinsert(tb_Desc, 1, " l˘a ch‰n c«n th®ng c p Æ›ch k¸ n®ng :"); 
+tinsert(tb_Desc, 1, "L˘a ch‰n k¸ n®ng c«n th®ng c p:"); 
 tinsert(tb_Desc,"K’t thÛc ÆËi thoπi /OnCancel"); 
 CreateTaskSay(tb_Desc); 
 return 1; 
 end 
 
 function upgrade_skilllevel(n_skillid) 
+
 if (HaveMagic(n_skillid) == -1 or HaveMagic(n_skillid) >= 20) then 
 return 
 end 
 
-if (ConsumeItem(3, 1, 6, 1, 3562, -1) == 1) then 
+if (ConsumeItem(3, 1, 6, 1, 30446, -1) == 1) then 
 AddMagic(n_skillid, 20); 
-WriteLog(format("[%s]\t%s\tAccount:%s\tName:%s\tUpGrade Skill:%d", 
-" Æπi thµnh b› tﬁch 150", 
-GetLocalDate("%Y-%m-%d %X"), 
-GetAccount(), 
-GetName(), 
-n_skillid )); 
+WriteLog(format("[%s]\t%s\tAccount:%s\tName:%s\tUpGrade Skill:%d",  " Æπi thµnh b› tﬁch 150",  GetLocalDate("%Y-%m-%d %X"),  GetAccount(),  GetName(),  n_skillid )); 
 end 
 end 
-
 
 function OnCancel() 
 end 

@@ -1,9 +1,9 @@
---西北南区 秦陵to凤翔
---Trap ID：西北南区 19
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu t莕 l╪g to phng tng 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 19 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(1, 1908, 3228);
+SetFightState(1); 
+NewWorld(1, 1908, 3228); 
 
 end;

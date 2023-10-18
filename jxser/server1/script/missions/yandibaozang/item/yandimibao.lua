@@ -1,9 +1,7 @@
 Include("\\script\\lib\\awardtemplet.lua")
-
---Giíi h¹n ®iÓm kinh nghiÖm mçi ngµy lµ 50triÖu khi sö dông c¸c lo¹i b¶o r­¬ng - Modified by DinhHQ - 20110428
 Include("\\script\\vng_event\\change_request_baoruong\\exp_award.lua")
 Include("\\script\\lib\\objbuffer_head.lua")
-
+----------------------------------------------------------------------------
 local  _Message =  function (nItemIndex)
 	local handle = OB_Create()
 	local msg = format("<color=green>Chóc mõng cao thñ <color=yellow>%s<color=green> ®· nhËn ®­îc <color=yellow><%s><color=green> tõ <color=yellow><Viªm §Õ BÝ B¶o><color>" ,GetName(),GetItemName(nItemIndex))
@@ -52,24 +50,27 @@ tbYdbz_Box_Award =
 					nRate = 3,
 		},		
 	},	
-	["chiakhoavang"] = 
-	{
-		{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.7},
-		{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.7},
-		{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.2},
-		{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.01},
-		{szName="B¶o R­¬ng Kim ¤ H¹ng Liªn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={1,0,0,0,0,0},nRate=0.004, CallBack = _Message},	
-		{szName="B¶o R­¬ng Kim ¤ Béi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={9,0,0,0,0,0}, nRate=0.004, CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Y",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.002, CallBack = _Message},		
-		{szName="B¶o R­¬ng Kim ¤ H¹ Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={10,0,0,0,0,0},nRate=0.002, CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Vò KhÝ",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.001, CallBack = _Message},		
+	["chiakhoavang"] = {
+		{szName="B¶o R­¬ng XÝch L©n H¹ng Liªn",tbProp={6,1,4671,1,0,0},nCount=1,tbParam={1,0,0,0,0,0},nRate=0.010, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Kh«i",tbProp={6,1,4672,1,0,0},nCount=1,tbParam={2,0,0,0,0,0},nRate=0.009, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Th­îng Giíi",tbProp={6,1,4673,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.003, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Hé UyÓn",tbProp={6,1,4674,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.008, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Yªu §¸i",tbProp={6,1,4675,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.007, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Kh¶i",tbProp={6,1,4676,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.004, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Vò KhÝ",tbProp={6,1,4677,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.001, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Hµi",tbProp={6,1,4678,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.006, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n Béi",tbProp={6,1,4679,1,0,0},nCount=1,tbParam={9,0,0,0,0,0},nRate=0.005, CallBack = _Message},
+		{szName="B¶o R­¬ng XÝch L©n H¹ Giíi",tbProp={6,1,4680,1,0,0},nCount=1,tbParam={10,0,0,0,0,0},nRate=0.002, CallBack = _Message},
+		{szName="§å Phæ Minh Ph­îng Liªn",tbProp={6,1,4581,1,0,0},nCount=1,nRate=0.0010},
+		{szName="§å Phæ Minh Ph­îng Kh«i",tbProp={6,1,4582,1,0,0},nCount=1, nRate=0.0009},
+		{szName="§å Phæ Minh Ph­îng Th­îng Giíi",tbProp={6,1,4583,1,0,0},nCount=1,nRate=0.0003},		
+		{szName="§å Phæ Minh Ph­îng Hé UyÓn",tbProp={6,1,4584,1,0,0},nCount=1,nRate=0.0008},
+		{szName="§å Phæ Minh Ph­îng Yªu §¸i",tbProp={6,1,4585,1,0,0},nCount=1,nRate=0.0007},
+		{szName="§å Phæ Minh Ph­îng Y",tbProp={6,1,4586,1,0,0},nCount=1,nRate=0.0004},
+		{szName="§å Phæ Minh Ph­îng KhÝ Giíi",tbProp={6,1,4587,1,0,0},nCount=1,nRate=0.0001},
+		{szName="§å Phæ Minh Ph­îng Hµi",tbProp={6,1,4588,1,0,0},nCount=1,nRate=0.0006},
+		{szName="§å Phæ Minh Ph­îng Béi",tbProp={6,1,4589,1,0,0},nCount=1,nRate=0.0005},
+		{szName="§å Phæ Minh Ph­îng H¹ Giíi",tbProp={6,1,4590,1,0,0},nCount=1,nRate=0.0002},		
 		{szName="Ch×a Khãa Nh­ ý",tbProp={6,1,2744,1,0,0},nCount=1,nRate=1.974,nExpiredTime=20160},
 		{szName="Ngäc Qu¸n",tbProp={6,1,2311,1,0,0},nCount=1,nRate=1},
 		{szName="Méc Nh©n LÖnh",tbProp={6,1,30105,1,0,0},nCount=2,nRate=3},
@@ -116,17 +117,6 @@ tbYdbz_Box_Award =
 					end,
 					nRate = 1,
 		},
-		{szName="Tö M·ng Chi B¶o (Nãn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={1,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (H¹ng Liªn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={0,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (GiÇy)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={7,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (Bao Tay)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={3,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (NhÉn Trªn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={2,0,0,0,0,0}, CallBack = _Message},
-		{szName="Th­¬ng Lang Th¹ch",tbProp={6,1,2712,1,0,0},nCount=1,nRate=0.01},
-		{szName="Hoµng Kim Ên (C­êng hãa)",tbProp={0,3211},nCount=1,nRate=0.15,nQuality = 1,nExpiredTime=10080,},
-		{szName="Hoµng Kim Ên (Nh­îc hãa)",tbProp={0,3221},nCount=1,nRate=0.15,nQuality = 1,nExpiredTime=10080,},
-		{szName="§å Phæ B¹ch Hæ H¹ng Liªn",tbProp={6,1,3178,1,0,0},nCount=1,nRate=0.008},
-		{szName="§å Phæ B¹ch Hæ Vò KhÝ",tbProp={6,1,3182,1,0,0},nCount=1,nRate=0.004},
-		{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.001},
 	},
 }
 
@@ -135,31 +125,19 @@ nHeight = 1
 nFreeItemCellLimit = 1
 
 function main(nIndexItem)
-	local tbKey1 = tbYdbz_Key_Require["chiakhoanhuy"]
-	local tbKey2 = tbYdbz_Key_Require["chiakhoavang"]
-	local nCount1 = CalcItemCount(3, tbKey1[1], tbKey1[2], tbKey1[3], -1) 
-	local nCount2 = CalcItemCount(3, tbKey2[1], tbKey2[2], tbKey2[3], -1) 
-	if nCount1 == 0 and nCount2 == 0 then
-		Say("CÇn ph¶i cã Ch×a Khãa Vµng hoÆc Ch×a Khãa Nh­ ý míi cã thÓ më ®­îc Viªm §Õ BÝ B¶o", 1, "§ãng/no")
+	local nDate = tonumber(GetLocalDate("%Y%m%d"));
+	if nDate ~= GetTask(3019) then
+		SetTask(3019,nDate)
+		SetTask(3020,0)
+	end
+	if GetTask(3020)>9 and nDate==GetTask(3019) then
+		Say("Mçi ngµy chØ sö dông ®­îc 10 r­¬ng")
 		return 1
 	end
-
-	if CountFreeRoomByWH(nWidth, nHeight, nFreeItemCellLimit) < nFreeItemCellLimit then
-		Say(format("§Ó b¶o ®¶m tµi s¶n cña ®¹i hiÖp, xin h·y ®Ó trèng %d %dx%d hµnh trang", nFreeItemCellLimit, nWidth, nHeight))
-		return 1
-	end	
-	local tbOpt = {}
-	if nCount1 ~= 0 then
-		tinsert(tbOpt,format("Sö dông Ch×a khãa nh­ ý/#VnYdbzBoxNewAward(%d, '%s')", nIndexItem, "chiakhoanhuy"))
-	end
-	if nCount2 ~= 0 then
-		tinsert(tbOpt,format("Sö dông Ch×a khãa vµng/#VnYdbzBoxNewAward(%d, '%s')", nIndexItem, "chiakhoavang"))
-	end
-	if getn(tbOpt) > 0 then
-		tinsert(tbOpt, "§ãng/Oncancel")
-		Say("Sö dông ch×a khãa ®Ó më r­¬ng:", getn(tbOpt), tbOpt)
-	end
-	return 1
+	AddOwnExp(1000000)
+	SetTask(3020,GetTask(3020)+1)
+	local nDate2 = tonumber(GetLocalDate("%Y%m%d"));
+	SetTask(3019,nDate2)
 end
 
 function Oncancel()end

@@ -10,9 +10,9 @@ local  _Message =  function (nItemIndex)
 end
 function main(nIdx)
 	local tbAward = {
-		{szName="Kim § L÷nh",tbProp={6,1,2349,1,0,0},nCount=1, nRate = 20, CallBack = %_Message},
-		{szName = "ßi”m Kinh Nghi÷m", nExp_tl=1, nCount = 500000000, nRate = 55},
-		{szName="M∆t nπ V≠¨ng Gi∂",tbProp={0,11, 561,1,0,0},nCount=1, nExpiredTime = 20160, nRate = 25, CallBack = %_Message},
+		--{szName="Kim § L÷nh",tbProp={6,1,2349,1,0,0},nCount=1, nRate = 20, CallBack = %_Message},
+		--{szName = "ßi”m Kinh Nghi÷m", nExp_tl=1, nCount = 50000000, nRate = 70},
+		--{szName ="M∆t nπ V≠¨ng Gi∂",tbProp={0,11, 561,1,0,0},nCount=1, nExpiredTime = 20160, nRate = 30, CallBack = %_Message},
 	}
 	local tbBitTask = {
 		nTaskID = 2912,

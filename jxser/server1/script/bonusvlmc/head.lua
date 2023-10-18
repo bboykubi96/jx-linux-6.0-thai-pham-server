@@ -1,6 +1,6 @@
 OneDayTime = 60 * 24
 VLMC_ID = "slaughterx13"
-VLMC_Name = "Vâ L©m TruyÒn Kú"
+VLMC_Name = "Minh Chñ - ThÈmTh¨ngY"
 GlbVar1 = 1252
 GlbVar2 = 1253
 nMinTimeActive = 1020 

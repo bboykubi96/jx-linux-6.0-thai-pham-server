@@ -1,30 +1,26 @@
--- ĞÂÈÎÎñÏµÍ³½ÌÑ§ÈÎÎñÖ÷ÒªNPC  £¨\ÓÎÏ·ÔËĞĞ×ÊÔ´\script\global\dragonfive.lua£©
--- ÏÂÒ»²½½øĞĞµ½ĞÂÊÖ´åÎäÊ¦´¦		 (\ÓÎÏ·ÔËĞĞ×ÊÔ´\script\global\¸÷ÅÉ½ÓÒıµÜ×Ó\Çá¹¦_ÎäÊ¦Ä£°æ.lua)
--- BY£ºXIAOYANG£¨2004-11-29£©
-Include("\\script\\dailogsys\\dailogsay.lua")
+--chuc nang long ngu edit by mcteam
+
 Include("\\script\\task\\newtask\\newtask_head.lua")
 Include("\\script\\task\\newtask\\branch\\branch_head.lua")
 Include("\\script\\task\\newtask\\master\\newtaskprize.lua")
 Include("\\script\\task\\newtask\\education_setnpcpos.lua")
 Include("\\script\\task\\partner\\master\\partner_mastertask.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 ---------------------------------ÁúÎå¶Ô»°-------------------------------------
 
 function Uworld1000_word()
-	--Say("Lo¹n thÕ phong v©n, binh khëi tø ph­¬ng, ta cã vµi nhiÖm vô ph¶i nhê ng­¬i gióp",0)
-	--Say("Lo¹n thÕ phong v©n, binh khëi tø ph­¬ng, ta cã vµi nhiÖm vô ph¶i nhê ng­¬i gióp",5,"Ta ®Õn nhËn nhiÖm vô S¬ nhËp/iwantdotask","Ta muèn bá nhiÖm vô s¬ nhËp/iwantkilltask","Ta ®Õn lµm nhiÖm vô Chİnh tuyÕn cÊp 20 trë lªn/iwantgetmastertask","Ta ®Õn xem giíi thiÖu vÒ nhiÖm vô /iwantseetask","Sau nµy h·y nãi/no")
-local szTitle = "<npc><enter>Lo¹n thÕ phong v©n, binh khëi tø ph­¬ng, ta cã vµi nhiÖm vô ph¶i nhê ng­¬i gióp !"
+	
+	--dofile("script/task/newtask/education/dragonfive.lua");
+	--dofile("script/global/g7vn/g7configall.lua")
+	if(dongmolongngu == 0) then
+		Say("Long Ngò t¹m thêi ch­a më.")
+		return 1;
+	end
 
-	local tbOpt =
-	{		
-		{"Ta ®Õn nhËn nhiÖm vô S¬ nhËp.", iwantdotask},
-		{"Ta muèn bá nhiÖm vô S¬ nhËp.", iwantkilltask},
-		{"Ta ®Õn lµm nhiÖm vô Chİnh tuyÕn cÊp 20 trë lªn.",iwantgetmastertask},
-		{"Ta ®Õn xem giíi thiÖu vÒ nhiÖm vô .", iwantseetask},
-		{"Sau nµy h·y nãi.", no},
-	}
-	CreateNewSayEx(szTitle, tbOpt)	
+	--Say("Lo¹n thÕ phong v©n, binh khëi tø ph­¬ng",0)
+	Say("Lo¹n thÕ phong v©n, binh khëi tø ph­¬ng, ta cã vµi nhiÖm vô ph¶i nhê ng­¬i gióp",5,"Ta ®Õn nhËn nhiÖm vô S¬ nhËp/iwantdotask","Ta muèn bá nhiÖm vô s¬ nhËp/iwantkilltask","Ta ®Õn lµm nhiÖm vô Chİnh tuyÕn cÊp 20 trë lªn/iwantgetmastertask","Ta ®Õn xem giíi thiÖu vÒ nhiÖm vô /iwantseetask","Sau nµy h·y nãi/no")
 end
-
 
 function iwantdotask()
 	Uworld1000 = nt_getTask(1000)

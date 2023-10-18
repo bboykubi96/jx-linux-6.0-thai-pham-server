@@ -7,15 +7,15 @@ Include("\\script\\missions\\citywar_city\\head.lua")
 function main()
 	ft = GetFightState();
 	if (ft == 0) then 
-		SetPos(1866,3547)
+		SetPos(1610,3237)
 		SetFightState(1)
 		bt_RankEffect(BT_GetData(PL_CURRANK))
 	else
 		if (GetCurCamp() ~= 2) then 
 			Msg2Player("Kh«ng thÓ ®i ®­îc, nÕu ®i sÏ ®Õn n¬i phôc kÝch cña ®Þch qu©n. ");
-			SetPos(1866,3547)
+			SetPos(1610,3237)
 		else
-			SetPos(1875,3571)
+			SetPos(1634,3274)
 			SetFightState(0)
 		end;
 	end;

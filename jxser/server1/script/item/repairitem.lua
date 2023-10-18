@@ -15,12 +15,12 @@ TTID_CostlyPrice= 107;
 -- 可镶嵌装备维修费用表
 ENCHASABLE_EQUIP_PRICE =
 {
-	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- 明1位置10级魔法属性的费用值
-	{ 100, 220, 360, 520, 700, 900, 1120, 1360, 1620, 1900 },		-- 暗1位置10级魔法属性的费用值
-	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- 明2位置10级魔法属性的费用值
-	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- 暗2位置10级魔法属性的费用值
-	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- 明3位置10级魔法属性的费用值
-	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- 暗3位置10级魔法属性的费用值
+	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },			-- 明1位置10级魔法属性的费用值
+	{ 10, 22, 36, 52, 70, 90, 112, 136, 162, 190 },		-- 暗1位置10级魔法属性的费用值
+	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },			-- 明2位置10级魔法属性的费用值
+	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- 暗2位置10级魔法属性的费用值
+	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- 明3位置10级魔法属性的费用值
+	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- 暗3位置10级魔法属性的费用值
 }
 
 -- RPGE_RESTORMAX = 25;
@@ -60,8 +60,8 @@ function repair_goldequip(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 	-- 黄金装备修理价格公式调整为：100*(装备等级^2)/每点耐久度
 	-- 越南版本的修理价格降10倍
 	nItemLevel = GetItemLevel(nItemIndex);
-	nCheapPrice = 10 * nItemLevel * nItemLevel * nFixDur;
-	nCostlyPrice = nCheapPrice * 3; -- 简修的三倍
+	nCheapPrice = 1 * nItemLevel * nItemLevel * nFixDur;
+	nCostlyPrice = nCheapPrice * 2; -- 简修的三倍
 
 	SetTaskTemp(TTID_LostDur, nLostDur);
 	SetTaskTemp(TTID_CheapPrice, nCheapPrice);
@@ -284,7 +284,7 @@ function get_repair_price(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 		end
 		nRepairPrice = nRepairPrice * ( nCurMaxDur - nCurDur )
 	end
-	return nRepairPrice;
+	return nRepairPrice/10;
 end;
 
 -- 维修装备 --

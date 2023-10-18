@@ -1,158 +1,158 @@
--- ´äÑÌ°ïÖúNPC
--- By: Dan_Deng(2003-11-21)
+-- script viet hoa By http://tranhba.com  thóy khãi trî gióp NPC 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2003-11-21) 
 
 Include("\\script\\global\\map_helper.lua")
 Include("\\script\\task\\newtask\\education\\dragonfive.lua")
-npc_name = "Ng¹o Mai"
-	
-function main(sel)
-	UTask_cy = GetTask(6)
-	player_faction = GetFaction()
-	if (player_faction == "cuiyan") then		-- ±¾ÃÅµÜ×Ó
-		RestoreLife()		-- ±¾ÃÅÃâ·ÑÖÎÁÆ
-		RestoreMana()
-		RestoreStamina()
-		Say(" Ta võa ra ®êi ®· bŞ vøt bá, may nhê Ch­ëng m«n cøu gióp. 18 n¨m nay lín lªn t¹i ®©y, tõng ngän c©y cäng cá ®Òu quen thuéc.",7,"§èi tho¹i víi Long Ngò /Uworld1000_word","T×m hiÓu ®iÓn cè bæn m«n/faction","T×m hiÓu c¸c vŞ tû muéi/member","T×m hiÓu nhiÖm vô /task_get","T×m hiÓu së tr­êng luyÖn c«ng/map_help","T×m hiÓu vâ nghÖ bæn m«n/skill_help","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 70*256) then				-- ±¾ÃÅ³öÊ¦
-		if (UTask_cy == 80*256) and (GetTask(1) == 70*256) and (HaveMagic(93) == -1) then		-- ĞŞÕı´äÑÌÖØ·µÃÅÅÉºóµÄÒ»¸öBUG£¬¼¼ÄÜ±ê¼ÇÎªÎ´Ñ§¡°´Èº½ÆÕ¶É¡±
-			Talk(1,""," T©m tr¹ng cña tû cã chót hçn lo¹n, ®õng lo l¾ng n÷a, b©y giê ®· tèt råi!")
-		else
-			Say(" S­ tû khã thÓ trë vÒ, lÇn nµy ®Õn th¨m tû muéi ta cã chuyÖn g× kh«ng?",6,"¤n l¹i chuyÖn n¨m x­a bæn m«n/faction","¤n l¹i c¸c tû muéi n¨m x­a/member","Ta cßn cã thÓ gióp g× kh«ng/task_get","T×m hiÓu së tr­êng luyÖn c«ng/map_help","T×m hiÓu vâ nghÖ bæn m«n/skill_help","Kh«ng hái n÷a!/nothing")
-		end
-	elseif (player_faction ~= "") then			-- ·Ç±¾ÃÅ³öÊ¦¡¢ÆäËüÃÅÅÉ£¨ÃÅÅÉ²»Îª¿Õ¼´Ö¸·ÇĞÂÊÖ£©
-		Say(" Xin hái ng­¬i ®Õn Thóy Yªn m«n ®Ó th¨m th©n hay th¨m b¹n? Cã g× kh«ng biÕt cø hái TiÓu muéi.",3,"T×m hiÓu quı ph¸i/faction","T×m hiÓu c¸c tû muéi Thóy Yªn/member","Kh«ng hái n÷a!/nothing")
-	else													-- ĞÂÊÖ
-		Say(" Tû ®Õn th¨m viÕng hay lµ b¸i s­? Cã g× kh«ng hiÓu cø hái muéi.",4,"T×m hiÓu quı ph¸i/faction","T×m hiÓu c¸c tû muéi Thóy Yªn/member","T×m hiÓu ®iÒu kiÖn nhËp m«n/task_get","Kh«ng hái n÷a!/nothing")
-	end
-end
+npc_name = " ng¹o mai " 
 
------------------ ÃÅÅÉ½éÉÜ²¿·İ ----------------------------
-function faction()
-	Say(" ThÕ Tû muèn muéi giíi thiÖu g× vÒ bæn m«n?",5,"Khëi nguyªn m«n ph¸i/F1","VŞ trİ ®Şa lı /F2","§Şa vŞ giang hå /F3","§Æc s¾c m«n ph¸i/F4","Kh«ng hái n÷a!/nothing")
-end
+function main(sel) 
+UTask_cy = GetTask(6) 
+player_faction = GetFaction() 
+if (player_faction == "cuiyan") then -- script viet hoa By http://tranhba.com  ®Ö tö bæn m«n 
+RestoreLife() -- script viet hoa By http://tranhba.com  bæn m«n miÔn phİ trŞ liÖu 
+RestoreMana() 
+RestoreStamina() 
+Say("Ta võa sanh ra liÒn bŞ vøt bá , may nhê ch­ëng m«n cøu ta , 18 n¨m ë chç nµy lín lªn , n¬i nµy c©y cèi ®Òu chİn tÊt liÔu .",7,"Cïng long n¨m ®èi tho¹i /Uworld1000_word","HiÓu râ bæn m«n ®iÓn cè /faction","HiÓu râ c¸c vŞ tû muéi /member","HiÓu râ nhiÖm vô /task_get","HiÓu râ luyÖn c«ng së tr­êng /map_help","HiÓu râ bæn m«n vâ nghÖ /skill_help","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 70*256) then -- script viet hoa By http://tranhba.com  bæn m«n xuÊt s­ 
+if (UTask_cy == 80*256) and (GetTask(1) == 70*256) and (HaveMagic(93) == -1) then -- script viet hoa By http://tranhba.com  tu ch¸nh thóy khãi trë l¹i m«n ph¸i sau ®İch mét BUG , kü n¨ng dÊu hiÖu v× ch­a häc “ tõ hµng phæ ®é ” 
+Talk(1,"","S­ tû lßng cña t×nh cã chót lo¹n , kh«ng cÇn lo l¾ng , b©y giê tèt l¾m !") 
+else 
+Say("S­ tû khã ®­îc trë l¹i , lÇn nµy tíi nh×n bän tû muéi cã chuyÖn g× kh«ng ?",6,"Nhí l¹i bæn m«n chuyÖn cò /faction","Nhí l¹i tr­íc kia bän tû muéi /member","Ta cßn cã thÓ gióp c¸i g× kh«ng ? /task_get","HiÓu râ luyÖn c«ng së tr­êng /map_help","HiÓu râ bæn m«n vâ nghÖ /skill_help","Kh«ng hái !/nothing") 
+end 
+elseif (player_faction ~= "") then -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ bæn m«n xuÊt s­ # kú tha m«n ph¸i # m«n ph¸i kh«ng v× v« İch tøc chØ kh«ng ph¶i lµ tay míi # 
+Say("Xin hái ng­¬i ®Õn thóy khãi cöa lµ dß h«n cßn lµ phãng h÷u ®©y ? cã c¸i g× kh«ng hiÓu liÒn hái ta .",3,"HiÓu râ quı ph¸i /faction","HiÓu râ thóy khãi c¸c vŞ tû muéi /member","Kh«ng hái !/nothing") 
+else -- script viet hoa By http://tranhba.com  tay míi 
+Say("Ng­¬i tíi ch¬i cßn lµ tíi b¸i s­ ? ",4,"HiÓu râ quı ph¸i /faction","HiÓu râ thóy khãi c¸c vŞ tû muéi /member","HiÓu râ nhËp m«n ®iÒu kiÖn /task_get","Kh«ng hái !/nothing") 
+end 
+end 
 
-function F1()
-	Say(" Tæ s­ s¸ng lËp m«n ph¸i do bŞ ®µn «ng phô b¹c, nªn Èn c­ ë biªn giíi V©n Nam, mét h«m trªn ®­êng ®i gÆp mÊy c« g¸i còng bŞ hÊt hñi ruång bá, nhí ®Õn ngµy x­a, sinh lßng tr¾c Èn nªn mang vÒ nu«i d­ìng vµ truyÒn d¹y vâ c«ng. Thuı Yªn cña chóng ta còng tõ ®ã mµ ®­îc s¸ng lËp.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - m«n ph¸i giíi thiÖu bé phËn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function faction() 
+Say("VËy ng­¬i muèn ta giíi thiÖu ph­¬ng diÖn nµo ®©y ?",5,"M«n ph¸i khëi nguyªn /F1","VŞ trİ ®Şa lı /F2","Giang hå ®Şa vŞ /F3","M«n ph¸i ®Æc s¾c /F4","Kh«ng hái !/nothing") 
+end 
 
-function F2()
-	Say(" N¬i ®©y n»m bªn bê NhÜ H¶i Th­¬ng S¬n §¹i Lı phong c¶nh h÷u t×nh.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function F1() 
+Say("S¸ng lËp m«n ph¸i tæ s­ bëi v× bŞ nam nh©n bŞ/cha/chŞu t×nh , cho nªn , Èn c­ ë V©n Nam biªn c¶nh , mét ngµy ë trªn ®­êng gÆp mÊy bŞ ng­îc ®·i ®İch c« g¸i , liÒn dÉn nu«i còng truyÒn thô vâ nghÖ , thóy khãi cöa còng v× vËy mµ s¸ng lËp .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function F3()
-	Say(" Bæn ph¸i vµ §­êng M«n ®­îc gäi lµ 'Vâ L©m NhŞ M«n', dùa vµo sù thÇn bİ mµ danh ®éng giang hå, lµ giÊc méng võa ®Ñp võa m¬ hå cña c¸c trang nam tö. §èi víi ng­êi ngoµi mµ nãi th× kh«ng ai cã thÓ nãi râ m«n ph¸i Thuı Yªn m«n chóng ta lµ thiªn ®­êng hay ®Şa ngôc.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function F2() 
+Say("N¬i nµy täa l¹c t¹i §¹i Lı nhŞ h¶i Th­¬ng S¬n , phong c¶nh xinh ®Ñp .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function F4()
-	Say(" Do ®Ö tö cña bæn ph¸i ai còng lµ nh÷ng tuyÖt s¾c giai nh©n, nªn khiÕn cho c¸c nam tö ®Òu rung ®éng ngay c¶ trong m¬ vÉn cßn thÌm muèn. Cho nªn s­ tæ s¸ng lËp m«n ph¸i ®· ®­a ra mét quy t¾c. V× ®Ó tr¸nh cho c¸c ®Ö tö cña Thuı yªn m«n kh«ng bŞ ®µn «ng lõa g¹t vµ ruång bá, phµm lµ nam tö muèn vµo Thuı Yªn m«n th× ph¶i cã vâ c«ng tuyÖt thÕ vµ ph¶i giao ra mét vËt quı hiÕm, ®ång thêi ®êi ®êi kh«ng ®­îc rêi khái Thuı Yªn M«n.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function F3() 
+Say("Bæn ph¸i cïng §­êng m«n ®­îc gäi lµ vâ l©m hai cöa , bëi v× thÇn bİ mµ danh chÊn giang hå , lµ nam tö ­íc m¬ ®Êt . ®èi víi ngo¹i nh©n , kh«ng ai biÕt thóy khãi lµ thiªn ®­êng cßn lµ ®Şa ngôc .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
------------------ ³ÉÔ±½éÉÜ²¿·İ ----------------------------
-function member()
-	Say(" ThÕ Tû muèn t×m hiÓu vÒ vŞ tû muéi nµo?",11,"Ch­ëng m«n Do·n Hµm Yªn/Myun","H¶i §­êng Sø Gi¶ LÖ Thu Thñy/Mli","ThñyTiªn Sø Gi¶ Yªn HiÓu Tr¸i/Myan","T­êng Vi Sø Gi¶ Hµ Mé TuyÕt /Mhe","Lª Hoa Sø Gi¶ Chung Linh Tó /Mzhong","Xu©n H­¬ng bµ bµ /Mchun","Nh­îc Lan/Mruo","Phong Tróc/Mfeng","TiÕu Cóc/Mxiao","Ng¹o Mai/Mao","Kh«ng hái n÷a!/nothing")
-end
+function F4() 
+Say("Bëi v× ®Ö tö bæn m«n ng­êi ng­êi ®Òu lµ tuyÖt s¾c giai nh©n , cho nªn , ®Ó cho rÊt nhiÒu nam tö còng ®éng t©m . v× vËy , s­ tæ ®Şnh bang quy , v× b¶o vÖ thóy khãi ®Ö tö , phµm lµ muèn vµo vµo thóy khãi ®İch nam tö còng ph¶i cã tuyÖt thÕ vâ c«ng , còng giao ra mét mãn hiÕm hoi tr©n b¶o , ®ång thêi ®êi thay mÆt kh«ng thÓ rêi ®i thóy khãi cöa .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Myun()
-	Say("Ch­ëng m«n Do·n Hµm Yªn   VŞ trİ: Thóy Yªn lÇu   Täa ®é: 35,75<enter> Do·n Ch­ëng m«n lín lªn t¹i Thuı Yªn m«n, sau nµy quen biÕt víi §­êng m«n §­êng NhÊt TrÇn, tr¶i qua nhiÒu gian khæ cuèi cïng sèng ®­îc víi nhau. HiÖn t¹i Thuı Yªn §­êng m«n ®­îc ng­êi ®êi ca th­ëng.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - thµnh viªn giíi thiÖu bé phËn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function member() 
+Say("VËy ng­¬i muèn biÕt ai ®ã ?",11,"Ch­ëng m«n duÉn ngËm khãi /Myun","H¶i ®­êng sø gi¶ ly thu thñy /Mli","Thñy tiªn sø gi¶ yªn hiÓu xinh ®Ñp /Myan","S¾c vi sø gi¶ hµ mé tuyÕt /Mhe"," lª hoa sø gi¶ chung linh tó /Mzhong","Xu©n h­¬ng bµ bµ /Mchun","NÕu lan /Mruo","Phong tróc /Mfeng","C­êi cóc /Mxiao","Ng¹o mai /Mao","Kh«ng hái !/nothing") 
+end 
 
-end
+function Myun() 
+Say("Ch­ëng m«n duÉn ngËm khãi vŞ trİ # thóy khãi l©u täa ®é : 35,75<enter> thuë nhá ë thóy khãi trong m«n lín lªn , biÕt §­êng m«n ®­êng mét trÇn , khiÕn nµng yªu h¾n . hai ng­êi v­ît qua nÆng nÒ khã kh¨n , rèt côc ®i tíi cïng nhau , sau §­êng m«n cïng thóy khãi cöa cïng chung tiÕn thèi , kÕt thµnh liÔu ®ång minh .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
 
-function Mli()
-	Say("H¶i §­êng Sø Gi¶ LÖ Thu Thñy<enter> LÖ s­ tû tİnh c¸ch cao ng¹o, rÊt ghĞt ®µn «ng, nªn mét mùc ph¶n ®èi ch­ëng m«n kÕt th©n cïng víi §­êng NhÊt TrÇn.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+end 
 
-function Myan()
-	Say("Thñy Tiªn Sø gi¶ Yªn HiÓu Tr¸i, VŞ trİ: Thñ Ngäc S¶nh, To¹ ®é: 43, 90<enter>tõ khi Yªn s­ tØ cßn nhá mÉu th©n bŞ phô th©n ruång bá, céng thªm bŞ bÖnh hiÓm nghÌo, bŞ ng­êi ta l¨ng nhôc mµ chÕt, t¹o ra mét vÕt th­¬ng s©u ®Ëm trong lßng tû Êy. Cho nªn tuy bÒ ngoµi yÓu ®iÖu, nh­ng néi t©m rÊt kiªn c­êng. ",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mli() 
+Say("H¶i ®­êng sø gi¶ ly thu thñy <enter> tİnh t×nh cao ng¹o , xem th­êng thiªn h¹ hÕt th¶y nam nh©n , cã chót cËy m¹nh kh«ng nãi ®¹o lı . bëi v× ph¶n ®èi duÉn ngËm khãi cïng ®­êng mét trÇn yªu nhau .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mhe()
-	Say("T­êng Vi Sø Gi¶ Hµ Mé TuyÕt. VŞ trİ t¹i s¶nh B¸ch Hoa. Täa ®é: 52, 85<enter> Hµ tû tû dŞu dµng linh ho¹t, tÊt c¶ c¸c tû muéi chóng ta ai còng ®Òu thİch tû Êy, nh­ng tªn D­¬ng Hå ë Thiªn V­¬ng bang v× thï nhµ nî n­íc g× ®ã mµ kh«ng ngã ngµng ®Õn Hµ tû tû. ThËt ®¸ng th­¬ng. ",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Myan() 
+Say("Thñy tiªn sø gi¶ yªn hiÓu xinh ®Ñp , vŞ trİ # thñ ngäc ®×nh , täa ®é #: 43, 90<enter> bÒ ngoµi v¨n nh­îc , néi t©m l¹i hÕt søc kiªn c­êng . khi cßn nhá kú mÉu bŞ kú phô di khİ , bÇn bÖnh chÊt thªm , bŞ ng­êi khi dÔ mµ chÕt . ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mzhong()
-	Say("Lª Hoa Sø Gi¶ Chung Linh Tó<enter>Chung muéi muéi nhá tuæi nhÊt, nh­ng lµ ng­êi cã tiÒn ®å nhÊt. Do cha mÑ cña muéi Êy bŞ giÆc Kim s¸t h¹i, ng­êi th©n bŞ l­u l¹c cho nªn rÊt c¨m thï giÆc Kim, chuyªn t©m luyÖn tËp vâ thuËt ®Ó ®îi ngµy b¸o thï cho cha mÑ.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mhe() 
+Say("S¾c vi sø gi¶ hµ mé tuyÕt . vŞ trİ # b¸ch hoa ®×nh . täa ®é : 52, 85<enter> tİnh t×nh «n nhu khĞo lĞo , yªu Thiªn v­¬ng gióp bªn ph¶i khiÕn cho d­¬ng hå , nh­ng lµ hai ng­êi tuæi t¸c chªnh lÖch c¸ch xa # d­¬ng hå so hµ mé tuyÕt ®¹i rÊt nhiÒu # , d­¬ng hå mÆc dï còng yªu nµng , nh­ng lµ d­¬ng hå kh«ng muèn bu«ng tha cho Thiªn v­¬ng gióp , cuèi cïng thø nhÊt sinh ë l¹i thóy khãi cöa , t­ t×nh nhi n÷ cïng sù nghiÖp ®Æt chung mét chç , d­¬ng hå lùa chän ng­êi sau , v× vËy d­¬ng hå thµnh hµ mé tuyÕt trong lßng vÜnh viÔn Èn ®au . . ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mchun()
-	Say("Xu©n H­¬ng bµ bµ   VŞ trİ: HËu hoa viÖn   Täa ®é: 40,74<enter> Xu©n H­¬ng bµ bµ lµ a hoµn cña ch­ëng m«n lËp ph¸i, bµ ta ®èi xö víi chóng ta v« cïng nh· nhÆn vµ th©n thiÕt.",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mzhong() 
+Say(" lª hoa sø gi¶ chung linh tó enter> nhá tuæi nhÊt , nh­ng lµ nhÊt cã tiÒn ®å . cha mÑ bŞ ng­êi Kim lµm h¹i , cöa n¸t nhµ tan , cho nªn s©u hËn ng­êi Kim ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mruo()
-	Say("Nh­îc Lan  VŞ trİ: Qu·ng tr­êng   Täa ®é: 48,84  Phô tr¸ch: Giao dŞch binh khİ ",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mchun() 
+Say("Xu©n h­¬ng bµ bµ vŞ trİ # sau v­ên hoa täa ®é : 40,74<enter> xu©n h­¬ng bµ bµ lµ ch­ëng m«n ®İch nha hoµn , nµng ®èi víi chóng ta ®Æc biÖt th©n thiÕt .",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mfeng()
-	Say("Phong Tróc   VŞ trİ: Qu·ng tr­êng   Täa ®é: 51,85   Phô tr¸ch: Giao dŞch trang bŞ ",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mruo() 
+Say("NÕu lan vŞ trİ # qu¶ng tr­êng täa ®é : 48,84 phô tr¸ch : giao dŞch binh khİ ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mxiao()
-	Say("TiÕu §µo   VŞ trİ: Qu·ng tr­êng   Täa ®é: 53,86   Phô tr¸ch: Giao dŞch d­îc phÈm",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mfeng() 
+Say("Phong tróc vŞ trİ # qu¶ng tr­êng täa ®é : 51,85 phô tr¸ch : giao dŞch trang bŞ ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function Mao()
-	Say("Ng¹o Mai    ®©y chİnh lµ ta! ",2,"T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+function Mxiao() 
+Say("C­êi ®µo vŞ trİ # qu¶ng tr­êng täa ®é : 53,86 phô tr¸ch : giao dŞch thuèc men ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
------------------ ÈÎÎñ½éÉÜ²¿·İ ----------------------------
-function task_get()
-	UTask_cy = GetTask(6)
-	if (UTask_cy < 10*256) then	-- Î´ÈëÃÅ
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô §¹i M¹n §µ La hoa, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_enroll","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 10*256) and (UTask_cy < 20*256) then
-		Say("<#> NhiÖm vô cña ng­¬i hiÖn giê lµ nhiÖm vô Thóy Vò Tr©m, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L10","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 20*256) and (UTask_cy < 30*256) then
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô §¹i M¹n §µ La hoa, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L20","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 30*256) and (UTask_cy < 40*256) then
-		Say("<#> NhiÖm vô hiÖn giê cña ng­¬i lµ Vò ı Nghª Th­êng. HiÖn ®· "..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L30","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 40*256) and (UTask_cy < 50*256) then
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô DiÖt ¸c B¸ §iÓm Th­¬ng S¬n, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L40","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 50*256) and (UTask_cy < 60*256) then
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô B¾t trém Thiªn TÇm Th¸p, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L50","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 60*256) and (UTask_cy < 70*256) then
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô Bİ mËt Mª cung cÊm ®Şa, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_L60","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	elseif (UTask_cy >= 70*256) and (UTask_cy < 80*256) then
-		Say("<#> Ng­¬i hiÖn ®ang tiÕp nhËn lµ nhiÖm vô Trïng ph¶n s­ m«n, hiÖn ®·"..UTask_cy.."<#>.",4,"TiÕp tôc t×m hiÓu nhiÖm vô hiÖn t¹i/T_return","T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	else
-		Say("<#> Ng­¬i b©y giê cã thÓ tù do ra vµo m«n ph¸i, t¹m thêi kh«ng cã nhiÖm vô míi, hiÖn ®·"..UTask_cy.."<#>.",3,"T×m hiÓu nh÷ng nhiÖm vô kh¸c/T_all","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-	end
-end
+function Mao() 
+Say("Ng¹o mai chİnh lµ ta ! ",2,"HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function T_all()
-	Say(" ThÕ Tû muèn t×m hiÓu nhiÖm vô nµo?",10,"NhiÖm vô nhËp m«n/T_enroll","NhiÖm vô Thóy Vò tr©m/T_L10","NhiÖm vô §¹i M¹n §µ La hoa/T_L20","NhiÖm vô Vò Y Nghª Th­êng/T_L30","NhiÖm vô §iÓm Th­¬ng s¬n diÖt trõ ¸c B¸ /T_L40","NhiÖm vô b¾t c­íp ë Thiªn TÇm Th¸p/T_L50","NhiÖm vô mª cung cÊm ®Şa/T_L60","NhiÖm vô trïng ph¶n s­ m«n/T_return","T×m hiÓu nh÷ng vÊn ®Ò kh¸c/main","Kh«ng hái n÷a!/nothing")
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - nhiÖm vô giíi thiÖu bé phËn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function task_get() 
+UTask_cy = GetTask(6) 
+if (UTask_cy < 10*256) then -- script viet hoa By http://tranhba.com  kh«ng/ch­a vµo cöa 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ ®¹i m¹n ®µ la hoa , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_enroll","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 10*256) and (UTask_cy < 20*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®İch nhiÖm vô lµ thóy m­a tr©m , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L10","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 20*256) and (UTask_cy < 30*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ ®¹i m¹n ®µ la hoa , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L20","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 30*256) and (UTask_cy < 40*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®İch nhiÖm vô lµ vò y nghª th­êng . b©y giê ®· # "..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L30","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 40*256) and (UTask_cy < 50*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ tiªu diÖt ¸c ph¸ch §iÓm th­¬ng s¬n , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L40","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 50*256) and (UTask_cy < 60*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ b¾t thiªn tµm th¸p ¨n trém , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L50","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 60*256) and (UTask_cy < 70*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ cÊm ®Şa mª cung bİ mËt , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_L60","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+elseif (UTask_cy >= 70*256) and (UTask_cy < 80*256) then 
+Say("<#> ng­¬i tr­íc m¾t ®ang nhËn ®İch nhiÖm vô lµ trë l¹i s­ m«n , b©y giê ®· #"..UTask_cy.."<#>.",4,"TiÕp tôc mæ tr­íc m¾t ®İch nhiÖm vô /T_return","HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+else 
+Say("<#> ng­¬i b©y giê cã thÓ tù do ra vµo m«n ph¸i , t¹m thêi kh«ng cã t©m ®İch nhiÖm vô , b©y giê ®· #"..UTask_cy.."<#>.",3,"HiÓu râ nh÷ng nhiÖm vô kh¸c /T_all","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
+end 
 
-function T_enroll()
-	Talk(1,"t_all","Muèn nhËp m«n häc vâ, chØ cÇn thuéc tİnh hÖ Thñy, ch­a nhËp ph¸i kh¸c vµ ®¼ng cÊp trªn 10, ®Õn bÊt kú T©n Thñ Th«n ®èi tho¹i víi Hoa sø cña bæn m«n. Sau ®ã lÇn l­ît hoµn thµnh 5 NhiÖm vô cña m«n ph¸i. SÏ häc ®­îc vâ c«ng,®­îc phong Danh hiÖu.Sau khi hoµn thµnh NhiÖm vô xuÊt s­ sÏ thµnh nghÖ xuÊt s­.")
-end
+function T_all() 
+Say("Ng­¬i nghÜ hiÓu râ nhiÖm vô g× ? ",10,"NhËp m«n nhiÖm vô /T_enroll","NhiÖm vô thóy m­a tr©m /T_L10","NhiÖm vô ®¹i m¹n ®µ la hoa /T_L20","NhiÖm vô vò y nghª th­êng /T_L30","NhiÖm vô tiªu trõ §iÓm th­¬ng s¬n ¸c ph¸ch /T_L40","NhiÖm vô b¾t thiªn tµm th¸p ¨n trém /T_L50","NhiÖm vô cÊm ®Şa mª cung /T_L60","NhiÖm vô trë l¹i s­ m«n /T_return","HiÓu râ nh÷ng vÊn ®Ò kh¸c /main","Kh«ng hái !/nothing") 
+end 
 
-function T_L10()
-	Talk(4,"t_all","Sau khi nhËp m«n, ®ång thêi ®¼ng cÊp ®¹t trªn cÊp 10, b¹n cã thÓ tiÕp nhËn nhiÖm vô Thóy Vò Tr©m. V­ît qua nhiÖm vô nµy b¹n ®­îc th¨ng lµm Tam PhÈm Hoa Sø, häc ®­îc <color=blue>Thóy Yªn §ao ph¸p vµ Thóy Yªn song ®ao<color>. ","B­íc 1: T¹i <color=blue>lÇu Thóy Yªn<color> t×m gÆp <color=blue>ch­ëng m«n Do·n Hµm Yªn<color> TiÕp nhËn nhiÖm vô ®Õn <color=blue>c¸nh rõng phİa ®«ng nam<color> t×m c©y <color=red> Thóy Vò tr©m<color> bŞ mÊt. ","B­íc 2: Trong khu rõng phİa ®«ng nam ®¸nh b¹i <color=blue>Háa hå<color> nhÆt vÒ c©y <color=red> Thóy Vò tr©m<color> ","B­íc 3: VÒ ®Õn <color=blue>lÇu Thóy Yªn<color> phôc mÖnh víi ch­ëng m«n <color=blue>Do·n Hµm Yªn<color>, giao <color=red> Thóy Vò tr©m<color> nhiÖm vô hoµn thµnh ")
-end
+function T_enroll() 
+Talk(1,"t_all","Muèn nhËp m«n häc vâ nghÖ , chØ cÇn thuéc tİnh lµ thñy hÖ , kh«ng gia nhËp nh÷ng m«n ph¸i kh¸c , cÊp bËc 10 cÊp trë lªn , ®Õn bè kú tay míi th«n cïng bæn m«n hoa khiÕn cho ®èi tho¹i . sau ®ã , theo thø tù hoµn thµnh 5 c¸ m«n ph¸i nhiÖm vô , ®em häc ®­îc vâ c«ng , phong danh hiÖu . hoµn thµnh xuÊt s­ nhiÖm vô sau , ®em thµnh tµi xuÊt s­ . ") 
+end 
 
-function T_L20()
-	Talk(4,"t_all","Sau khi hoµn thµnh nhiÖm vô Thóy Yªn tr©m vµ ®¼ng cÊp trªn 20, b¹n cã thÓ nhËn nhiÖm vô §¹i Man §µ La Hoa. V­ît qua nhiÖm vô nµy b¹n sÏ ®­îc phong lµ: <color=blue>NhŞ PhÈm Hoa Sø<color>, häc ®­îc <color=red>B¨ng T©m Tr¸i ¶nh<color> ","B­íc 1: Trong <color=blue>Thñ Ngäc s¶nh<color>, gÆp <color=blue>Yªn HiÓu Tr¸i<color> nhËn nhiÖm vô ®i ®Õn <color=blue>v¸ch nói phİa t©y b¾c<color> h¸i <color=red>10 b«ng hoa §¹i Man §µ La<color> ","B­íc 2: Khi h¸i hoa Man §µ La ë v¸ch nói t©y b¾c th× cÇn ph¶i cÈn thËn <color=blue>tr­íc khi ®éc tİnh ph¸t t¸n<color> ph¶i quay vÒ <color=blue>Thñ Ngäc s¶nh<color> gi¶i ®éc nÕu kh«ng chÊt ®éc sÏ ph¸t t¸n toµn th©n ","B­íc 3: H¸i ®­îc 10 ®ãa §¹i M¹n §µ La hoa, vÒ Thñ Ngäc s¶nh phôc mÖnh, hoµn thµnh nhiÖm vô.")
-end
+function T_L10() 
+Talk(4,"t_all","Sau khi nhËp m«n , cÊp bËc 10 cÊp trë lªn , ng­¬i cã thÓ tiÕp nhËn vô thóy m­a tr©m . hoµn thµnh nµy nhiÖm vô , ng­¬i th¨ng lµm tam phÈm hoa khiÕn cho , häc ®­îc <color=blue> thóy khãi ®ao ph¸p cïng thóy khãi song ®ao <color>. ","B­íc ®Çu tiªn : ë <color=blue> thóy khãi l©u <color> thÊy <color=blue> ch­ëng m«n duÉn ngËm khãi <color> tiÕp nhËn vô ®i <color=blue> ®«ng nam bªn rõng c©y <color> t×m <color=red> thóy m­a tr©m <color> . ","Thø 2 b­íc : ë ®«ng nam bªn rõng c©y ®¸nh b¹i <color=blue> löa hå color> cÇm trë vÒ <color=red> thóy m­a tr©m <color> ","Thø 3 b­íc : trë vÒ <color=blue> thóy khãi l©u <color> h­íng ch­ëng m«n phôc mÖnh <color=blue> duÉn ngËm khãi <color>, ®ãng <color=red> thóy m­a tr©m <color> nhiÖm vô hoµn thµnh ") 
+end 
 
-function T_L30()
-	Talk(7,"t_all","Sau khi hoµn thµnh nhiÖm vô §¹i Man §µ La Hoa vµ ®¼ng cÊp ®¹t trªn 30, b¹n cã thÓ tiÕp nhËn nhiÖm vô Vò Y Nghª Th­êng. V­ît qua nhiÖm vô nµy b¹n sÏ ®­îc phong lµ: NhÊt PhÈm Hoa Sø vµ sÏ ®­îc häc <color=blue>Vò §¶ Lª Hoa, Phï V©n T¶n TuyÕt<color>. ","B­íc 1: T¹i <color=blue>®iÖn B¸ch Hoa<color>, gÆp <color=blue>Hµ Mé TuyÕt<color> nhËn nhiÖm vô ®i ®Õn <color=blue>§oµn l·o n«ng<color> trong <color=blue> thµnh §¹i Lı<color> t×m hái bİ quyÕt trång <color=blue> Vò Y Nghª Th­êng<color> ","B­íc 2: §Õn thµnh §¹i Lı t×m ®Õn §oµn l·o n«ng ph¸t hiÖn «ng Êy ®au buån v× ®øa ch¸u g¸i bŞ bän thæ phØ trªn <color=blue>§iÓm Th­¬ng S¬n<color> b¾t ®i, bÌn ®i cøu <color=blue>ch¸u g¸i <color> «ng Êy tr­íc. ","B­íc 3: §Õn <color=blue>®éng thæ phØ ë §iÓm Th­¬ng s¬n<color>, ®¸nh b¹i <color=blue>tªn thñ lÜnh thæ phØ<color>, cøu tho¸t ®øa ch¸u cña §oµn l·o n«ng. ","B­íc 4: §­îc biÕt c¸ch trång Vò Y Nghª Th­êng cÇn ph¶i cã <color=blue>c¸ Ng©n TuyÕt<color> sèng trong <color=blue>NhÜ H¶i<color>, <color=red>Bİch Th­êng Ph­îng §iÖp<color> sèng c¹nh <color=blue>Hå ®iÖp TuyÒn<color>, vµ <color=red>con giun ®Êt ®á<color> ë gÇn <color=blue>V©n N«ng ®×nh<color>. ","B­íc 5: §Õn NhÜ H¶i t×m <color=blue>thuyÒn gia<color> mua <color=red>c¸ Ng©n TuyÕt<color>, ®Õn bê Hå §iÖp TuyÒn lÊy ®­îc Bİch Th­êng Ph­îng §iÖp, vµ ®µo lÊy giun ®Êt ®á gÇn N«ng V©n ®×nh ","B­íc 6: VÒ ®Õn <color=blue>B¸ch Hoa §iÖn<color> lÊy bİ quyÕt trång cÊy Vò Y Nghª Th­êng, nãi víi <color=blue>Hµ Mé TuyÕt<color>, ®ång thêi lÊy c¸ Ng©n TuyÕt, Bİch Th­êng Ph­îng §iÖp vµ giun ®Êt ®á giao cho c« Êy, nhiÖm vô hoµn thµnh. ")
-end
+function T_L20() 
+Talk(4,"t_all","Hoµn thµnh nhiÖm vô thóy khãi tr©m sau , cÊp bËc 20 trë lªn , ng­¬i cã thÓ tiÕp nhËn vô ®¹i m¹n ®µ la hoa . hoµn thµnh nµy nhiÖm vô ng­¬i ®em th¨ng lµm <color=blue> nhŞ phÈm hé hoa khiÕn cho color>, häc ®­îc <color=red> b¨ng t©m bªn tr¸i ¶nh <color> ","B­íc ®Çu tiªn : ë <color=blue> thñ ngäc ®×nh <color>, thÊy <color=blue> yªn hiÓu xinh ®Ñp <color> tiÕp nhËn vô ®i <color=blue> t©y b¾c bªn <color> h¸i <color=red>10 buéi c©y ®¹i m¹n ®µ la hoa <color> ","Thø 2 b­íc : h¸i hoa lóc ph¶i cÈn thËn <color=blue> ®éc tİnh ph¸t t¸c tr­íc <color> cÇn trë vÒ <color=blue> thñ ngäc ®×nh <color> gi¶i ®éc , nÕu kh«ng , ®éc tİnh ph¸t t¸n ®Õn toµn th©n ","Thø 3 b­íc : h¸i ®Õn 10 buéi c©y ®¹i m¹n ®µ la hoa , trë vÒ thñ ngäc ®×nh phôc mÖnh , hoµn thµnh nhiÖm vô ") 
+end 
 
-function T_L40()
-	Talk(5,"t_all","Hoµn thµnh nhiÖm vô ®ång thêi ®¼ng cÊp ®¹t 40, b¹n cã thÓ nhËn nhiÖm vô trõ ¸c b¸ §iÓm Th­¬ng S¬n. V­ît qua nhiÖm vô nµy b¹n sÏ trë thµnh Hoa Tiªn sø gi¶, ®­îc häc <color=blue>Hµn B¨ng Hé Th©n<color> ","B­íc 1: GÆp <color=blue>Yªn HiÓu Tr¸i<color> ë <color=blue>Thiªn §iÖn<color>, nhËn nhiÖm vô diÖt trõ <color=blue>¸c b¸<color> c­ìng ®o¹t thiÕu n÷ khĞt tiÕng trong <color=blue>thµnh §¹i Lı<color> ","B­íc 2: §Õn thµnh §¹i Lı, t×m <color=blue>tªn ¸c b¸<color>, ph¸t hiÖn ra mét <color=blue>lèi ®i bİ mËt xuèng lßng ®Êt<color> ë gãc v­ên. §i vµo mËt ®¹o ®¸nh b¹i <color=blue>trî thñ cña h¾n<color>, gi¶i cøu nh÷ng thiÕu n÷ trong mËt ®¹o, ®ång thêi biÕt tªn ¸c b¸ ®· b¾t vµi c« kh¸c lªn <color=blue>§iÓm Th­¬ng S¬n <color> råi. ","B­íc 3: §Õn <color=blue>§iÓm Th­¬ng s¬n ®éng<color>, ®¸nh b¹i <color=blue>trî thñ, hé viÖn, b¶o tiªu cña tªn ¸c b¸<color>, lÊy ®uîc <color=red>3 ch×a khãa më cöa<color>, cøu ®­îc nh÷ng <color=blue> thiÕu n÷<color> bŞ nhèt trong phßng tèi. ","B­íc 4: VÒ ®Õn <color=blue>Thiªn §iÖn Nga Mi<color>, gÆp Yªn HiÓu Tr¸i phôc mÖnh, nhiÖm vô hoµn thµnh. ")
-end
+function T_L30() 
+Talk(7,"t_all","Sau khi hoµn thµnh nhiÖm vô ®¹i m¹n ®µ la hoa cïng cÊp bËc 30, ng­¬i cã thÓ tiÕp nhËn vô vò y nghª th­êng . hoµn thµnh nµy nhiÖm vô ng­¬i ®em th¨ng lµm nhÊt phÈm hoa khiÕn cho , còng häc ®­îc <color=blue> vô ®¸nh lª hoa <color>. ","B­íc ®Çu tiªn : ë <color=blue> b¸ch hoa thİnh <color>, thÊy <color=blue> hµ mé tuyÕt <color> tiÕp nhËn vô ®i <color=blue># §oµn l·o n«ng <color> ë <color=blue> §¹i Lı color> t hiÓu râ lo¹i <color=blue> vò y nghª th­êng <color> ®İch bİ mËt ","Thø 2 b­íc : ®i §¹i Lı §oµn l·o n«ng chç ph¸t hiÖn th­¬ng thÕ cña h¾n t©m , bëi v× ch¸u g¸i bŞ <color=blue># §iÓm th­¬ng s¬n <color> ®İch c­êng ®¹o b¾t , ®i ngay cøu <color=blue> nµng <color> . ","Thø 3 b­íc : ®Õn <color=blue> §iÓm th­¬ng s¬n thæ phØ ®éng <color>, ®¸nh b¹i <color=blue> thæ phØ thñ lÜnh color>, cøu ra ch¸u g¸i . ","Thø 4 b­íc : biÕt lo¹i vò y nghª th­êng cÇn ph¶i cã <color=blue> ng©n tuyÕt c¸ <color> sinh tr­ëng ë <color=blue> nhŞ h¶i <color>, <color=red> bİch th­êng ph­îng ®iÖp <color> ë <color=blue> con b­ím tuyÒn bªn c¹nh <color>, cïng <color=red> hång con giun <color> ë <color=blue> v©n n«ng ®×nh phô cËn <color>. ","Thø 5 b­íc : ®Õn nhŞ h¶i t×m <color=blue> thuyÒn nhµ <color> mua <color=red> ng©n tuyÕt c¸ <color>, ®Õn con b­ím tuyÒn cÇm bİch th­êng ph­îng ®iÖp , ë n«ng v©n ®×nh ®µo con giun ","Thø 6 b­íc : ®i <color=blue> b¸ch hoa ®iÖn <color> cÇm lo¹i vò y nghª th­êng ®İch bİ tŞch , nãi cho <color=blue> hµ mé tuyÕt <color>, ®ång thêi , cÇm ng©n tuyÕt c¸ , bİch th­êng ph­îng ®iÖp cïng hång con giun cho nµng , hoµn thµnh . ") 
+end 
 
-function T_L50()
-	Talk(5,"t_all","Sau khi hoµn thµnh nhiÖm vô §iÓm Th­¬ng s¬n diÖt ¸c b¸ vµ ®¼ng cÊp ®¹t trªn 50, b¹n cã thÓ nhËn nhiÖm vô Thiªn TÇm Th¸p. V­ît qua nhiÖm vô nµy b¹n sÏ trë thµnh Hoa Tinh, häc ®­îc <color=blue>TuyÕt ¶nh <color> ","B­íc 1: GÆp <color=blue>ch­ëng m«n Do·n Hµm Yªn<color> ë <color=blue>Thóy Yªn LÇu<color>, tiÕp nhËn nhiÖm vô, trî gióp Sïng Th¸nh tù b¾t <color=blue> ®¹o tÆc<color> ®· lÊy trém <color=red>Vò §ång Quan ¢m<color> ","B­íc 2: §Õn <color=blue>Sïng Th¸nh tù<color> ®èi thäai <color=blue>H­ Viªn ph­¬ng tr­îng<color>, ®­îc biÕt bän c­íp ®· ch¹y vµo trong <color=blue>Thiªn TÇm Th¸p<color>. ","B­íc 3: §i vµo Thiªn TÇm Th¸p, mçi tÇng lÇu ®Òu b¸nh b¹i bän ®¹o tÆc, ®o¹t l¹i <color=red>Vò §ång Quan ¢m<color>. ","B­íc 4: VÒ ®Õn <color=blue>Thóy Yªn lÇu<color>, gÆp Do·n Hµm Yªn phôc mÖnh, nhiÖm vô hoµn thµnh. ")
-end
+function T_L40() 
+Talk(5,"t_all","Hoµn thµnh nhiÖm vô ®ång thêi cÊp bËc tíi 40 cÊp , ng­¬i cã thÓ tiÕp nhËn vô trõ §iÓm th­¬ng s¬n ¸c ph¸ch . hoµn thµnh nµy nhiÖm vô ng­¬i ®em th¨ng lµm hoa tiªn sø gi¶ , häc ®­îc <color=blue> hµn b¨ng hé th©n <color> ","B­íc ®Çu tiªn : thÊy <color=blue> yªn hiÓu xinh ®Ñp <color> ë <color=blue> ngµy ®iÖn <color>, tiÕp nhËn vô tiªu trõ <color=blue> ¸c ph¸ch color> ë <color=blue> §¹i Lı color> ","Thø 2 b­íc : ®Õn lín lı t×m <color=blue> ¸c ph¸ch <color>, ph¸t hiÖn mét c¸i <color=blue> ®­êng <color> tiÕn vµo mËt ®¹o ®¸nh b¹i <color=blue> trî thñ cña h¾n <color>, gi¶i cøu trong mËt ®¹o ®İch thiÕu n÷ , ®ång thêi biÕt ¸c ph¸ch b¾t mÊy c« n­¬ng th­îng <color=blue># §iÓm th­¬ng s¬n <color> . ","Thø 3 b­íc : ®Õn <color=blue># §iÓm th­¬ng s¬n #<color>, ®¸nh b¹i <color=blue> trî thñ , hé viÖn , hé vÖ <color>, b¾t ®­îc <color=red>3 c¸i ch×a khãa <color>, cøu ra <color=blue> thiÕu n÷ color> . ","Thø 4 b­íc : trë l¹i <color=blue> Nga Mi ngµy ®iÖn <color>, thÊy yªn hiÓu xinh ®Ñp phôc mÖnh , hoµn thµnh . ") 
+end 
 
-function T_L60()
-	Talk(6,"t_all","Sau khi hoµn thµnh nhiÖm vô Thiªn TÇm Th¸p vµ ®¼ng cÊp ®¹t ®Õn 50, ng­¬i cã thÓ tiÕp nhËn nhiÖm vô CÊm ®Şa mª cung. Hoµn thµnh nhiÖm vô nµy, ng­¬i ®uîc phong lµm Hoa Tiªn, thuËn lîi xuÊt s­.","B­íc 1: GÆp <color=blue>Xu©n H­¬ng bµ bµ<color> ë <color=blue>HËu Hoa Viªn<color>, tiÕp nhËn nhiÖm vô, ®Õn <color=blue>CÊm §Şa<color> t×m ra sù thËt vÒ lêi truyÒn m«n quy. ","B­íc 2: §Çu tiªn ë <color=blue>cÊm ®Şa mª cung<color> t×m ®­îc mét chiÕc <color=red>kh¨n lôa<color>, sau ®ã vµo ®Õn vïng cÊm ®Şa cuèi cïng lµ <color=blue>§o¹n Tr­êng Cèc<color> ","B­íc 3: ®èi tho¹i víi mét <color=blue>«ng l·o v« danh<color> trong §o¹n Tr­êng Cèc, nghe «ng Êy nãi vÒ nh÷ng chuyÖn cña vŞ s­ tæ lËp ph¸i, vµ cã ®­îc <color=red>bøc th­<color> ghi chĞp mäi viÖc ","B­íc 4: Sau khi trë l¹i <color=blue>HËu Hoa Viªn<color>, nãi cho Xu©n H­¬ng bµ bµ nghe nh÷ng ®iÒu m×nh ®· t×m ra. ","B­íc 5: §Õn lÇu <color=blue>Thóy Yªn<color> mang <color=red>th­<color> giao cho <color=blue>ch­ëng m«n<color>, nhiÖm vô hoµn thµnh ")
-end
+function T_L50() 
+Talk(5,"t_all","Hoµn thµnh nhiÖm vô §iÓm th­¬ng s¬n nhiÖm vô , th¶ cÊp bËc ®¹t tíi 50 cÊp trë lªn , ng­¬i cã thÓ tiÕp nhËn vô thiªn tµm th¸p . hoµn thµnh nµy nhiÖm vô ng­¬i ®em th¨ng lµm hoa tinh , häc ®­îc <color=blue> tuyÕt ¶nh <color> ","B­íc ®Çu tiªn : thÊy <color=blue> ch­ëng m«n duÉn ngËm khãi <color> ë <color=blue> thóy khãi l©u <color>, tiÕp nhËn vô , trî gióp sïng th¸nh tù b¾t <color=blue> ®¹o tÆc <color> ®¸nh c¾p <color=red> ng« ®ång Quan ¢m #<color> ","Thø 2 b­íc : ®Õn <color=blue> sïng th¸nh tù color> cïng <color=blue> h­ viªn ph­¬ng tr­îng ®èi tho¹i <color>, tiÕn vµo thiªn tµm th¸p , biÕt ®¹o tÆc tiÕn vµo <color=blue> thiªn tµm th¸p <color>. ","Thø 3 b­íc : tiÕn vµo thiªn tµm th¸p , mçi tÇng lÇu ®Òu ph¶i ®¸nh b¹i ®¹o tÆc , ®o¹t l¹i <color=red> ng« ®ång Quan ¢m #<color>. ","Thø 4 b­íc : trë vÒ <color=blue> thóy khãi l©u <color>, thÊy duÉn ngËm khãi phôc mÖnh , hoµn thµnh . ") 
+end 
 
-function T_return()
-	Talk(3,"t_all","Sau khi thµnh tµi xuèng nói, ®ång thêi ®¼ng cÊp ®· ®¹t trªn 60, b¹n cã thÓ trïng ph¶n s­ m«n. SÏ ®­îc th¨ng lµm Hoa ThÇn, häc ®­îc tuyÖt häc trÊn ph¸i <color=blue>Môc D· L­u Tinh, Bİch H¶i TriÒu Sinh, vµ B¨ng Cèt TuyÕt T©m <color> ","B­íc 1: Sau khi ®¹t ®¼ng cÊp qu¸ cÊp 60, gÆp <color=blue>Do·n Hµm Yªn<color> t¹i <color=blue> Phßng chİnh<color>, cÇu xin bµ cho quay vÒ Thóy Yªn ","B­íc 2: Giao n¹p <color=red>50000 l­îng b¹c<color>, trë vÒ Thóy Yªn m«n ")
-end
+function T_L60() 
+Talk(6,"t_all","Hoµn thµnh nhiÖm vô thiªn tµm th¸p sau , cÊp bËc ®¹t tíi 50 cÊp , ng­¬i cã thÓ tiÕp tôc nhËn cÊm ®Şa mª cung nhiÖm vô . hoµn thµnh nhiÖm vô sau , ng­¬i bŞ ®ãng cöa v× hoa tiªn , thuËn lîi xuÊt s­ ","B­íc ®Çu tiªn : thÊy <color=blue> xu©n h­¬ng bµ bµ color> ë <color=blue> sau v­ên hoa <color>, tiÕp nhËn vô ®i <color=blue> cÊm ®Şa <color> t×m ra m«n quy sù thËt . ","Thø 2 b­íc : ®Çu tiªn t¹i <color=blue> cÊm ®Şa mª cung <color> t×m ®­îc mét khèi <color=red> ti m¹t <color>, sau ®ã tiÕn vµo cÊm ®Şa cuèi cïng lµ <color=blue># ®o¹n tr­êng cèc <color> ","Thø 3 b­íc : cïng mét vŞ <color=blue> v« danh l·o gi¶ ®èi tho¹i <color> nghe h¾n nãi lËp ph¸i s­ tæ chuyÖn cña , ®¹t ®­îc <color=red> mét phong th¬ color> ghi chĞp tÊt c¶ mäi chuyÖn ","Thø 4 b­íc : trë vÒ <color=blue> sau v­ên hoa sau <color>, cïng xu©n h­¬ng bµ bµ nãi t×m ®­îc ®İch ®å . ","Thø 5 b­íc : ®Õn <color=blue> thóy khãi l©u <color> mang <color=red> tin/th¬ color> giao cho <color=blue> ch­ëng m«n <color>, nhiÖm vô hoµn thµnh ") 
+end 
 
------------------ ½áÊø ---------------------------
-function nothing()
-end
+function T_return() 
+Talk(3,"t_all","Thµnh míi sau khi xuèng nói , ®ång thêi cÊp bËc ®¹t tíi 60 cÊp , ng­¬i cã thÓ trë l¹i s­ m«n . ®em th¨ng lµm hoa thÇn , häc ®­îc tuyÖt häc <color=blue> môc d· sao r¬i , bİch sãng biÓn d©ng sinh , b¨ng cèt tuyÕt t©m <color> ","B­íc ®Çu tiªn : cÊp bËc v­ît qua 60 cÊp sau , thÊy <color=blue> duÉn ngËm khãi <color> ë <color=blue> ch¸nh thÊt <color>, xin/mêi nµng trë vÒ thóy khãi ","Thø 2 b­íc : ®ãng <color=red>50000 hai <color>, trë vÒ thóy khãi ") 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - kÕt thóc -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function nothing() 
+end 

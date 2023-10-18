@@ -1,4 +1,4 @@
--- ÁÙ°²¡¡Ö°ÄÜ¡¡ÉñÃØÉÌÈË
+-- ÁÙ°²¡¡Ö°ÄÜ¡¡ÉñÃØÉÌÈË than bi thuong nhan lam an
 -- By Li_Xin (2004-07-20)
 
 Include("\\script\\global\\shenmi_chapman.lua") 
@@ -14,19 +14,19 @@ function main()
 	
 	local tbDecOpp =
 	{
-		"<dec><npc>Ta cã ı tõ T©y Vùc xa x«i ®Õn Trung Nguyªn muèn mua mét sè ®Æc s¶n nh­ thñy tinh, kim nguyªn b¶o vµ ng©n phiÕu. NÕu nh­ ng­¬i cã nh÷ng vËt phÈm trªn th× ta còng cã 1 sè vËt phÈm quı muèn cïng ng­¬i ®æi.",
+		"<dec><npc>Ta tõ T©y Vùc xa x«i ®Õn Trung Nguyªn ®Ó thu thËp Thñy Tinh, Kim Nguyªn B¶o vµ Ng©n phiÕu. Ta s½n sµng ®æi c¸c b¶o vËt ®Ó ®­îc nh÷ng thø ®ã! Kh¸ch quan cã g× ®æi kh«ng?",
 		
-		--Change request 04/06/2011, ®ãng chÕ t¹o trang bŞ b¹ch kim - Modified by DinhHQ - 20110605
+		--Change request 04/06/2011, ®ãng ch?t¹o trang b?b¹ch kim - Modified by DinhHQ - 20110605
 		--"Ta muèn th¨ng cÊp cho trang bŞ B¹ch Kim nµy/upgrade_paltinaequip",
 		--"Ta muèn chÕ t¹o trang bŞ Hoµng Kim thµnh trang bŞ B¹ch Kim/upgrade_goldformplatina",
 		
-		--"ÎÒÏëÇëÄãÖØÖı°×½ğ×°±¸/recoin_platina_main",
-		"<#> Trao ®æi §å phæ vò khİ /get1",
-		"<#> Mua Kú tr©n dŞ b¶o/get2",
-		"<#> Xö lı <trang bŞ tæn h¹i>/deal_brokenequip",
-		--"ÎÒÏëÁË½â°×½ğ×°±¸²ğ½â/unweave_paltinaequip",
+		--"Ta muèn mêi/xin ng­¬i ®óc l¹i b¹ch kim trang bŞ/recoin_platina_main",
+		--"<#>Trao ®æi §å phæ vò khİ/get1",
+		--"<#>Mua Kú tr©n dŞ b¶o/get2",
+		"<#>Xö lı <trang bŞ tæn h¹i>/deal_brokenequip",
+		--"Ta muèn hiÓu râ b¹ch kim trang bŞ hãa gi¶i/unweave_paltinaequip",
 		"<#>Ta muèn ®æi b¶o r­¬ng/BaiBaoXiang_Give_UI",
-		"<#> Ta xem thö tr­íc ®·!/no",
+		"<#>Ta xem thö tr­íc ®·!/no",
 		
 	};
 	local ndate = tonumber(GetLocalDate("%y%m%d%H"))

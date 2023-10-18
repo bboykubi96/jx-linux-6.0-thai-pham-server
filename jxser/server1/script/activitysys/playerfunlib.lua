@@ -561,6 +561,8 @@ function PlayerFunLib:AddExp(nExp, bFlag, szLogTitle, szAction)
 	
 end
 
+
+
 function PlayerFunLib:SetTongTask(szTaskId, nValue)
 	local szTongName, nTongID = GetTongName();
 	szTaskId = getglobal(szTaskId)

@@ -6,7 +6,7 @@ Include("\\script\\missions\\huashanqunzhan\\huashanqunzhan.lua")
 
 local tbMissionData = 
 {
-	nLatencyTime		= 15,
+	nLatencyTime		= 5,
 }
 tbMissionData.tbMissionV =
 {
@@ -25,13 +25,15 @@ huashanqunzhan_tbReady = huashanqunzhan:new(tbMissionData, huashanqunzhan) --´Ó»
 
 huashanqunzhan_tbReady.tbWaitPos = 
 {
-	{1589, 3029},
-	{1595, 2964},
-	{1582, 2972},
-	{1562, 2946},
-	{1560, 2965},
-	{1558, 2989},
-	{1569, 3029},
+	{1562, 3198},
+	{1542, 3221},
+	{1566, 3248},
+	{1587, 3223},
+	{1565, 3212},
+	{1556, 3220},
+	{1566, 3229},
+	{1575, 3222},
+	{1566, 3220},
 }
 
 function huashanqunzhan_tbReady:OnInit()
@@ -76,6 +78,7 @@ function huashanqunzhan_tbReady:OnPlayerJoin()
 		Msg2Player("Kh«ng ®ñ ng©n l­îng.")
 		return Say("Kh«ng ®ñ ng©n l­îng.", 0)
 	end
+	--ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 1)
 	--ÉèÖÃÓë°ï»áÓÐ¹ØµÄ±äÁ¿£¬²»ÔÊÐíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
 	SetTaskTemp(200,1);
 	--ÉèÖÃ·ÇÕ½¶·×´Ì¬ 
@@ -102,7 +105,7 @@ function huashanqunzhan_tbReady:OnPlayerJoin()
 end
 
 function huashanqunzhan_tbReady:OnLeave()
-	
+	--ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 0)
 	--¹Ø±ÕÉèÖÃÓë°ï»áÓÐ¹ØµÄ±äÁ¿£¬²»ÔÊÐíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
 	SetTaskTemp(200,0);
 	--ÉèÖÃÕ½¶·×´Ì¬
@@ -122,7 +125,7 @@ function huashanqunzhan_tbReady:OnLeave()
 	--¹Ø±Õ½ûÖ¹½»Ò×;
 	DisabledStall(0);
 	ForbitTrade(0);
-	
+	RestoreOwnFeature();	
 	local nCamp = GetCamp();
 	SetCurCamp(nCamp);
 	
@@ -182,7 +185,8 @@ function huashanqunzhan_tbReady:OnClose()
 			end
 		else
 			local nX, nY = getadata("\\settings\\maps\\huashanqunzhan\\huashanjingji.txt")
-			doFunByPlayer(tbPlayer[i], NewWorld, self.tbRef.nMapId, nX, nY)	
+			doFunByPlayer(tbPlayer[i], NewWorld, self.tbRef.nMapId, nX, nY)
+			--doFunByPlayer(tbPlayer[i], ForbitSyncName, PIdx2NpcIdx(PlayerIndex), 0)	
 		end
 		
 	end
@@ -191,6 +195,7 @@ end
 function huashanqunzhan_tbReady:GotoReadyPlace()
 	local nRandId = random(1, getn(self.tbWaitPos))
 	NewWorld(self.nMapId, self.tbWaitPos[nRandId][1], self.tbWaitPos[nRandId][2])
+	--ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 1)
 end
 
 

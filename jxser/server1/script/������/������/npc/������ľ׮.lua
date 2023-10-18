@@ -1,6 +1,6 @@
---Á½ºşÇø °ÍÁêÏØ Ä¾×®ËÀÍö ĞÂÊÖ´åÁ·¼¶ÈÎÎñ(²»¿ÉÖØ¸´µÄÈÎÎñ)
--- Update: Dan_Deng(2003-08-09)
--- Update: Dan_Deng(2003-11-04)¸ÄÎªÄ£°å·½Ê½£¬È«·şÍ³Ò»µ÷ÓÃÒ»¸öº¯ÊıÒÔÀûÓÚÎ¬»¤¡¢À©Õ¹
+-- script viet hoa By http://tranhba.com ¸#º### °İ¸ª## Ä####µİ# #¢£#´#¸###Ì###(²#¿Ğ###´#ÄÌ###)
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-09)
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-11-04)#Ä##Ä#°###£###Ì###İ³ß###ã·ß###º¯£ıß¤µ#ãó######µ#â#
 
 Include("\\script\\global\\¸÷ÅÉ½ÓÒıµÜ×Ó\\Çá¹¦_Ä¾×®Ä£°å.lua")
 

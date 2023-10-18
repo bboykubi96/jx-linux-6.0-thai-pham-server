@@ -1,18 +1,25 @@
 -- »ªÉ½ÀÞÌ¨¶Ô»°
+
 Include("\\script\\task\\system\\task_string.lua");
+Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\missions\\huashanqunzhan\\high_grade\\ready\\readyclass.lua")
 Include("\\script\\missions\\huashanqunzhan\\mid_grade\\ready\\readyclass.lua")
 Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\lib\\progressbar.lua")
+IncludeLib("ITEM")
+Include("\\script\\vng_event\\change_request_baoruong\\exp_award.lua")
+Include("\\script\\lib\\objbuffer_head.lua")
+IncludeLib("LEAGUE")
+IncludeLib("TIMER")
+
+
 function huashanqunzhan_SignUpMain(nStep)
 	local tbSay = nil
 	local nPlayerLevel = GetLevel()
-	
 	local tbReadyMission = nil
-	if nPlayerLevel < 50 then
+	if nPlayerLevel < 80 or  nPlayerLevel>200 then
 		tbReadyMission = nil
-	elseif nPlayerLevel < 120 then
-		tbReadyMission = huashanqunzhan_tbReady_M
-	else
+	else--if nPlayerLevel >= 100 then
 		tbReadyMission = huashanqunzhan_tbReady_H
 	end
 	
@@ -21,22 +28,14 @@ function huashanqunzhan_SignUpMain(nStep)
 		if nState == 1 then
 			tbSay = 
 			{
-				format("<dec><npc>%s ®· b¾t ®Çu b¸o danh, phÝ b¸o danh lµ 10 v¹n l­îng, ®¹i hiÖp cã ®ång ý kh«ng?",tbReadyMission.tbRef.szMatchName),
+				format("<dec><npc>§Êu Tr­êng tö chiÕn b¾t ®Çu b¸o danh ®¹i hiÖp cã ®ång ý tham gia kh«ng?"),
 				 "B¸o danh tham gia/#huashanqunzhan_SignUpMain(2)",
 			}
 		elseif nState == 0 or nState == -1 then
 			local tbWorld = 
 			{
-				{"-","-","-"},
-				{"Ngµy", "Sè trËn", "Thêi gian"},
-				{"-","-","-"},
-				{"Thø 2 ®Õn thø 6", "2", "10:00 - 10:45"},
-				{"","", "22:00 - 22:45"},
-				{"-","-","-"},
-				{"","","10:00 - 10:45"},
-				{"Thø 7 vµ Chñ nhËt", "3", "15:00 - 15:45"},
-				{"","","22:00 - 22:45"},
-				{"-","-","-"},
+
+				{"TrËn ®Êu","Ch­a Tíi Giê","B¾t §Çu"},
 			}
 			local szMsg = nState == 0 and "TrËn ®Êu vÉn ch­a b¾t ®Çu." or "TrËn ®Êu ®ang ®­îc tiÕn hµnh."
 			tbSay = 
@@ -51,21 +50,16 @@ function huashanqunzhan_SignUpMain(nStep)
 			
 			tbSay = 
 			{
-				format("<dec><npc>TrËn %s ®· ph©n th¾ng b¹i, %s", tbMacthMission.szMatchName, szMsg),
+				format("<dec><npc>L«i §µi Lo¹n ChiÕn ®· ph©n th¾ng b¹i, %s", szMsg),
 				
 			}
 		elseif nState == nil then
 			tbSay = 
 			{
-				"<dec><npc>Ng­êi ch¬i cÊp trªn 50 ®· n¹p thÎ míi cã thÓ tham gia Hoa S¬n §¹i ChiÕn. CÊp tõ 50 ®Õn 119 cã thÓ tham gia Hoa S¬n §¹i ChiÕn trung cÊp; cÊp 120 trë lªn cã thÓ tham gia Hoa S¬n §¹i ChiÕn cao cÊp. Ng­¬i ch­a ®ñ ®¼ng cÊp ®Ó tham gia.",
+				"<dec><npc>Ng­êi ch¬i cÊp trªn 50 ®· n¹p thÎ míi cã thÓ tham gia §Êu Tr­êng. CÊp tõ 50 ®Õn 119 cã thÓ tham gia §Êu Tr­êng  trung cÊp; cÊp 120 trë lªn cã thÓ tham gia §Êu Tr­êng  cao cÊp. Ng­¬i ch­a ®ñ ®¼ng cÊp ®Ó tham gia.",
 			}
 		end		
-	elseif nStep == 2 then
-		if GetCash() < tbReadyMission.nMoney then
-			return Say(format("PhÝ b¸o danh lµ %d l­îng, ng©n l­îng trªn ng­êi kh«ng ®ñ.", tbReadyMission.nMoney), 0)
-		end
-		
-		
+	elseif nStep == 2 then			
 		if tbReadyMission == nil then
 			return Say("§¼ng cÊp ch­a ®ñ 50, kh«ng thÓ tham gia b¸o danh.", 0)
 		else
@@ -86,6 +80,10 @@ function huashanqunzhan_SignUpStep(tbMission)
 	local nState = tbMission:CheckMathState()
 	if nState == 1 then
 		tbMission:GotoReadyPlace()
+	local szNews = format("§¹i hiÖp <color=green>"..GetName().."<color> ®· vµo ®Êu tr­êng<color=yellow> §¹i ChiÕn Hoa S¬n <color=blue> (B¸o Danh 199/201 T­¬ng D­¬ng NPC Hoa S¬n L·o TÈu)");
+	AddGlobalNews(szNews);
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
+	--mautrogiup()
 	elseif nState == 0 then
 		Say("TrËn ®Êu vÉn ch­a b¾t ®Çu.", 0)
 	elseif nState == -1 then
@@ -97,33 +95,66 @@ function huashanqunzhan_SignUpStep(tbMission)
 		local szMsg				= szWinerName and format("Ng­êi chiÕn th¾ng: <color=yellow>%s<color>", szWinerName) or "TrËn nµy kh«ng cã Ng­êi chiÕn th¾ng"
 		local tbSay = 
 		{
-			format("<dec><npc>TrËn %s ®· ph©n th¾ng b¹i, %s", tbMacthMission.szMatchName, szMsg),
+			format("<dec><npc>TrËn L«i §µi ®· ph©n th¾ng b¹i, %s", szMsg),
 			"KÕt thóc ®èi tho¹i/OnCancel"
 		}
 		CreateTaskSay(tbSay)
 	end
 	
 end
+function mautrogiup()
+	local totalcount =CalcFreeItemCellCount();
+	if totalcount == 0 then 
+	return
+	end	
+	for k=1,totalcount do 		
+	AddItem(1,2,0,5,0,0,0,0);
+	end
+end
 
 function huashanqunzhan_GetAward()
-	if CalcFreeItemCellCount() < 20 then
-		return Say("Tói hµnh trang ®· ®Çy, h·y dän dÑp hµnh trang ®Ó b¶o ®¶m an toµn cho vËt phÈm.",0)
-	end
-	local tbAward = 
+--ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 0)	
+local  _Message =  function (nItemIndex)
+	local handle = OB_Create()
+	local msg = format("<color=yellow>Chóc mõng ®¹i cao thñ <color=green>%s<enter><color=yellow> <pic=26><pic=125>®· nhËn <color=pink><%s><color=yellow><enter>PhÇn th­ëng <color=green>< §Ö NhÊt §Êu Tr­êng ><color>" ,GetName(),GetItemName(nItemIndex))
+	ObjBuffer:PushObject(handle, msg)
+	RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+	OB_Release(handle)
+end
+	local tbAward =
 	{
-		{szName="Lam Thñy Tinh", tbProp={4, 238, 1, 1, 0, 0}, nCount = 2},
-		{szName="Lôc Thñy Tinh", tbProp={4, 240, 1, 1, 0, 0}, nCount = 2},
-		{szName="Tö Thñy Tinh", tbProp={4, 239, 1, 1, 0, 0}, nCount = 2},
-		{szName="Tinh Hång B¶o Th¹ch", tbProp={4, 353, 1, 1, 0, 0}, nCount = 12},
-		{szName="Vâ L©m MËt TÞch", tbProp={6, 1, 26, 1, 0, 0}},
-		{szName="TÈy Tñy Kinh", tbProp={6, 1, 22, 1, 0, 0}},
+		{szName="TiÒn ®ång",tbProp={4,417,1,0,0,0},nCount=50},
+		{szName="R­¬ng §å Xanh HiÕm",tbProp={6,1,4478,1,0,0},nCount=2},
+		{szName="LÖnh Bµi Gäi Boss",tbProp={6,1,4489,1,0,0},nCount=1,nRate=2},
+	}
+		local tbAward22 =
+	{
+		{szName="TiÒn ®ång",tbProp={4,417,1,0,0,0},nCount=100},
+		{szName="R­¬ng §å Xanh HiÕm",tbProp={6,1,4478,1,0,0},nCount=5},
+		{szName="LÖnh Bµi Gäi Boss",tbProp={6,1,4489,1,0,0},nCount=1,nRate=5},
 	}
 	local nCount = GetTask(huashanqunzhan.TSK_Winer)
 	
-	tinsert(tbAward, { nJxb = 90000 * nCount})
-	
-	tbAwardTemplet:GiveAwardByList(tbAward, "L«i §µi Hoa S¬n §¹i ChiÕn")
+	--tinsert(tbAward, { nJxb = 10000 * nCount})
+	 local nWeek	= tonumber(date("%w"))
+ if nWeek>=1 and nWeek<=5 then
+	tbAwardTemplet:GiveAwardByList(tbAward, "L«i §µi Sinh Tö")
+	else
+	tbAwardTemplet:GiveAwardByList(tbAward22, "L«i §µi Sinh Tö")
+	end
+		tbAwardTemplet:GiveAwardByList({{szName = "L¸ Cê §á ThiÕu Nhi",tbProp={6,1,4500,1,1},nCount=5},}, "test", 1);
 	SetTask(huashanqunzhan.TSK_Winer, 0)
+--	if GetSkillState(1658)>=1 or GetSkillState(1663)>=1 or GetSkillState(1662)>=1 then
+	--	RemoveSkillState(1658,20,3,559872000,1) 
+	--	RemoveSkillState(1663,20,3,559872000,1) 
+	--	RemoveSkillState(1662,20,3,559872000,1) 
+--	end
+--	if GetSkillState(1660)>=1 or GetSkillState(1661)>=1 or GetSkillState(1664)>=1 or GetSkillState(1665)>=1 then
+--		PlayerFunLib:AddSkillState(1546,20,3,18*60*60*23*1,1)
+---	else
+--		PlayerFunLib:AddSkillState(1546,20,3,18*60*60*23*1,1)
+--		PlayerFunLib:AddSkillState(1659,20,3,18*60*60*23*1,1)
+--	end
 end
 
 
@@ -171,4 +202,11 @@ function huashanqunzhan_drawtable(tbWord)
 		str = str.."<enter>"
 	end
 	return str
+end
+function OnTimer()
+local nHour = tonumber(GetLocalDate("%H%M"))
+if nHour < 1900 or nHour > 2040 then
+return
+end
+huashanqunzhan_SignUpMain(2)
 end

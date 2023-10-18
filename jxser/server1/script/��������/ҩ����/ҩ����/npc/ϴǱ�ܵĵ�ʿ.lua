@@ -1,4 +1,4 @@
--- Ï´Ç±ÄÜµÄµÀÊ¿.lua £¨Ò©Íõ¹È£¬õËµÀÈË£©
+--Dao nhan que
 -- By Dan_deng(2004-01-06)
 -- ±äÁ¿£ºGetTask(92): Ï´¹ıµÄ´ÎÊı£¨Ä¿Ç°×î¶à5´Î£©
 --			GetTaskTemp(8)£ºÔİ´æÏ´Ç±ÄÜ¼Û¸ñ
@@ -6,7 +6,18 @@
 -- Update: Dan_Deng(2004-05-24) Ãû¾Ô±¼»ğÈÎÎñ (Uworld76 = GetTask(76))
 -- Update: Dan_Deng(2004-05-27) Ğ¡¶ùÊ§×ÙÈÎÎñ (Uworld42 = GetTask(42))
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+
+	--dofile("script/Î÷±±±±Çø/Ò©Íõ¹È/Ò©Íõ¹È/npc/Ï´Ç±ÄÜµÄµÀÊ¿.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if daonhanque == 0 then
+	Say("Chøc n¨ng ®¹o nh©n quÌ ch­a më")
+	return
+	end
+
 	Uworld92 = GetTask(92)
 	Uworld76 = GetTask(76)
 	Uworld42 = GetTask(42)

@@ -9,9 +9,6 @@ if not tbDangBossDailog then
 	tbDangBossDailog = tbBaseClass:new()
 end
 
-
-
-
 function tbDangBossDailog:_init(tbTaskCtrl)
 	self.szClassName = "tbDangBossDailog"
 	self.tbTask = tbTaskCtrl

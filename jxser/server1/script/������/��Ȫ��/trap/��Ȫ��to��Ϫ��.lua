@@ -2,7 +2,7 @@
 --Trap ID£º½­ÄÏÇø 106
 
 function main(sel)
-	if (GetLevel() >= 5) then	
+	if (GetLevel() >= 80) then	
 		SetFightState(1);
 		NewWorld(198, 1522, 2955);
 		AddTermini(211)

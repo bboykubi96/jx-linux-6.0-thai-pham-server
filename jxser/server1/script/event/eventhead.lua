@@ -7,7 +7,7 @@
 --	ÊÐ³¡»î¶¯µÄÍ·ÎÄ¼þ£¬¸ÃÎÄ¼þ´æ´¢¸÷ÖÖÊÐ³¡»î¶¯µÄ¿ª¹Ø£¬
 --ÊÐ³¡»î¶¯µÄ¿ª¹Ø£¬ÔÚÕâÀï¿ØÖÆ¡£
 --
---ÓÎÏ·½Å±¾¡¤½£ÏÀÇéÔµÍø¢ç°æ
+--ÓÎÏ·½Å±¾¡¤½£ÏÀÇéÔµÍøÂç°æ
 --½ðÉ½Èí¼þ¹É·ÝÓÐÏÞ¹«Ë¾£¬copyright 1992-2005
 --==================================================--
 
@@ -22,7 +22,7 @@ EVENTHEAD_LUA = 1
 --¹¦ÄÜÐðÊö£º
 --	ÑéÖ¤µ±Ç°Ê±¼äÊÇ·ñÔÚÊÐ³¡»î¶¯Ê±¼äÄÚ
 --²ÎÊý£º
---	startt£ºÊÐ³¡»î¶¯ÆðÊ¢Ê±¼ä£¬ÎªÕûÊý£¬¾«È·µ½Ð¡Ê±£¬ÊÐ³¡
+--	startt£ºÊÐ³¡»î¶¯ÆðÊÂÊ±¼ä£¬ÎªÕûÊý£¬¾«È·µ½Ð¡Ê±£¬ÊÐ³¡
 --»î¶¯±ØÐë´ÓÄ³ÌìµÄÄ³Ê±0·ÖÆô¶¯£¬¸ñÊ½ÎªYYMMDDHH
 --	endt£ºÊÐ³¡»î¶¯µÄÖÕÖ¹Ê±¼ä£¬ÎªÕûÊý£¬¾«È·µ½ÏûÊ§£¬ÊÐ³¡
 --»î¶¯±ØÐëÔÚÄ³ÌìµÄÄ³Ê±0·ÖÖ®Ç°ÖÕÖ¹£¬¸ñÊ½ÎªYYMMDDHH
@@ -33,7 +33,7 @@ EVENTHEAD_LUA = 1
 function validateDate(startt,endt)
 	local now = tonumber(date("%y%m%d%H"))
 	if(now >= startt and now < endt) then
-		return 0
+		return 1
 	end
 	return nil
 end
@@ -61,17 +61,17 @@ end
 --	msg£ºÍ¼Æ¬ºó¸úµÄÎÄ±¾ÐÅÏ¢
 --==================================================--
 function LIGUAN_TAG(msg)
-	return "<link=image[0,20]:\\spr\\npcres\\passerby\\passerby181\\passerby181_pst.spr>LÔ Quan<link>"..msg
+	return "<link=image[0,20]:\\spr\\npcres\\passerby\\passerby181\\passerby181_pst.spr>LÔ quan <link>"..msg
 end
 
-DATESNEWBIELEVELUP = 05032400 --Ð¢ÊÖ·è¿ñ¾­Ñé·­±¶»î¶¯ÓÚ2005-3-24ÈÕ0µã0·ÖÆô¶¯
-DATEENEWBIELEVELUP = 19040100 --Ð¢ÊÖ·è¿ñ¾­Ñé·­±¶»î¶¯ÓÚ2005-4-1ÈÕ0µã0·Ö¹Ø±Õ
+DATESNEWBIELEVELUP = 05032400 --ÐÂÊÖ·è¿ñ¾­Ñé·­±¶»î¶¯ÓÚ2005-3-24ÈÕ0µã0·ÖÆô¶¯
+DATEENEWBIELEVELUP = 05040100 --ÐÂÊÖ·è¿ñ¾­Ñé·­±¶»î¶¯ÓÚ2005-4-1ÈÕ0µã0·Ö¹Ø±Õ
 
 DATESPLAYERLEVELUP = 05032600 --È«ÇøÉÁµç³å¼¶ÐÐ¶¯ÓÚ2004-3-24ÈÕ0Ê±0·ÖÆô¶¯(¿ªÆô)
-DATEEPLAYERLEVELUP = 19040300 --È«ÇøÉÁµç³å¼¶ÐÐ¶¯ÓÚ2004-4-1ÈÕ0Ê±0·Ö¹Ø±Õ(¿ªÆô)
+DATEEPLAYERLEVELUP = 05040300 --È«ÇøÉÁµç³å¼¶ÐÐ¶¯ÓÚ2004-4-1ÈÕ0Ê±0·Ö¹Ø±Õ(¿ªÆô)
 
 DATESKILLER = 05041200
-DATEEKILLER = 19042600
+DATEEKILLER = 05042600
 
 --update:2005-03-21
 YEARCARD_EX_XUANJING = 1 --½£ÍøÄê¿¨»î¶¯

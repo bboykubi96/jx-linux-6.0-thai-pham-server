@@ -4,7 +4,14 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\missions\\dungeon\\npcdialog.lua")
 Include("\\script\\missions\\dungeon\\dungeonmanager.lua")
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()	
+
+	--dofile("script/missions/dungeon/dungeons/shiliantang/jieyinren.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+	
+
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex)
 	if NpcName2Replace then
@@ -16,7 +23,9 @@ function main()
 	
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex)
 	
-	tbDailog:AddOptEntry("Ch›nh x∏c, xin Æπi nh©n h∑y d…n ta vµo.",enter_shiliantang)
+	if thiluyenduong == 1 then
+		tbDailog:AddOptEntry("Ch›nh x∏c, xin Æπi nh©n h∑y d…n ta vµo.",enter_shiliantang)
+	end
 	
 	--µØ≥ˆ∂‘ª∞øÚ
 	tbDailog:Show()

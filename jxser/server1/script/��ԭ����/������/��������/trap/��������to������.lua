@@ -1,8 +1,8 @@
---中原北区 少林密室to少林派
---Trap ID：中原北区 68
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu Thi誹 L﹎ m藅 th蕋 to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 68 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1346, 2661);
+NewWorld(103, 1346, 2661); 
 
 end;

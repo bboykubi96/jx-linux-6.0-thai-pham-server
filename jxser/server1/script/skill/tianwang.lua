@@ -1,7 +1,4 @@
---µ¸¥˙∫Ø ˝£¨”√”⁄º∆À„ººƒ‹ Ï¡∑∂»
---æﬂÃÂ∑Ω∑®£∫
---∏˘æ›1º∂ Ï¡∑∂»£¨…˝º∂º”ÀŸ∂»£¨º∂ ˝£¨÷ÿ∏¥…À∫¶¥Œ ˝£¨∑∂Œß£¨º∆À„≥ˆœ‡”¶µ»º∂ Ï¡∑∂»
--- SkillExp(i) = Exp1*a^(i-1)*time*range
+Include("\\script\\tyleskill.lua")
 function SkillExpFunc(Exp0,a,Level,Time,Range)
 	return floor(Exp0*(a^(Level-1))*Time*Range/2)
 end
@@ -106,11 +103,11 @@ SKILLS={
 		deadlystrike_p={{{1,8},{20,20}}},
 		addskilldamage1={
 			[1]={{1,325},{2,325}},
-			[3]={{1,1},{20,55},{25,95},{29,116}}
+			[3]={{1,1},{20,70},{25,95},{29,116}}
 		},
 		addskilldamage2={
 			[1]={{1,408},{2,408}},
-			[3]={{1,1},{20,55},{25,95},{29,116}}
+			[3]={{1,1},{20,70},{25,95},{29,116}}
 		},
 		addskilldamage3={
 			[1]={{1,1059},{2,1059}},
@@ -155,9 +152,9 @@ SKILLS={
 		skill_cost_v={{{1,10},{20,20}}}
 	},
 	jingxin_jue={ --æ≤–ƒæ˜
-		attackratingenhance_p={{{1,45},{20,400}},{{1,18*120},{20,18*180}}},
-		--attackratingenhance_p={{{1,90},{20,800}},{{1,18*120},{20,18*180}}},--√¸÷–∑≠±∂
-		ignoredefense_p={{{1,1},{2,1},{20,10},{30,15}},{{1,18},{2,18}}},--‘ˆº”‘Ï≥… ‹…À∏≈¬  Ù–‘
+		--attackratingenhance_p={{{1,45},{20,400}},{{1,18*120},{20,18*180}}},
+		attackratingenhance_p={{{1,90},{20,800}},{{1,18*120},{20,18*180}}},--√¸÷–∑≠±∂
+		item_reserve10={{{1,1},{2,1},{20,10},{30,15}},{{1,18},{2,18}}},--‘ˆº”‘Ï≥… ‹…À∏≈¬  Ù–‘
 		skill_cost_v={{{1,5},{20,20}}}
 	},
 	jinglei_zhan={ --æ™¿◊’∂
@@ -223,10 +220,11 @@ SKILLS={
 	},
 	tianwang_zhanyi={ --ÃÏÕı’Ω“‚
 		lifemax_p={{{1,21},{30,185}},{{1,-1},{30,-1}}},
-		--lifemax_yan_p={{{1,21},{35,160},{36,160}},{{1,-1},{30,-1}}},
+		lifemax_yan_p={{{1,21},{35,160},{36,160}},{{1,-1},{30,-1}}},
+		fastwalkrun_p={{{1,1},{30,1}},{{1,18*120},{20,18*180}}},--???????
 		deadlystrikeenhance_p={{{1,5},{30,45}},{{1,-1},{30,-1}}},
-		--attackspeed_v={{{1,5},{30,65}},{{1,-1},{30,-1}}},
-		skill_cost_v={{{1,10},{30,50}}}
+		attackspeed_v={{{1,5},{30,65}},{{1,-1},{30,-1}}},
+		skill_cost_v={{{1,10},{30,50}}},
 	},
 	pofeng_zhan={ --∆√∑Á’∂
 		physicsenhance_p={{{1,120},{20,275}}},
@@ -256,11 +254,11 @@ SKILLS={
 		skill_attackradius={{{1,66},{20,66}}},
 		skill_cost_v={{{1,8},{20,12}}}
 	},
-	duanhun_ci={ --∂œªÍ¥Ã
+	duanhun_ci={ --Æoπn hÂn th›ch
 		physicsenhance_p={{{1,25},{20,215}}},
 		seriesdamage_p={{{1,1},{20,50}}},
 		--stun_p={{{1,16},{20,35}},{{1,5},{20,18},{25,28},{26,29}}},
-		stun_p={{{1,16},{20,40},{30,60}},{{1,7},{20,27},{25,42},{26,43}}},
+		stun_p={{{1,16},{20,150},{30,250}},{{1,7},{20,27},{25,42},{26,43}}},
 		skill_param1_v={{{1,4},{5,12},{20,24},{28,31},{31,31}}},
 		skill_param2_v={{{1,18},{20,1},{21,1}}},
 		deadlystrike_p={{{1,4},{20,80}}},
@@ -294,13 +292,19 @@ SKILLS={
 		skill_attackradius={{{1,78},{20,78}}},
 		skill_cost_v={{{1,11},{20,45}}}
 	},
-	jinzhong_zhao={ --Ω÷”’÷
-		--sorbdamage_yan_p={{{1,2},{20,40}},{{1,18},{2,18}}},--‘ˆº”µ÷œ˚…À∫¶£®—Ù£©£¨1º∂2µ„£¨edited By LLX
+	jinzhong_zhao={ --kim chung tr∏o
+		sorbdamage_yan_p={{{1,2},{20,40}},{{1,18},{2,18}}},--‘ˆº”µ÷œ˚…À∫¶£®—Ù£©£¨1º∂2µ„£¨edited By LLX
+		sorbdamage_p={{{1,2},{20,40}},{{1,18},{2,18}}},--‘ˆº”µ÷œ˚…À∫¶£®—Ù£©£¨1º∂2µ„£¨edited By LLX
 		physicsres_p={{{1,12},{20,50}},{{1,18*120},{20,18*180}}},
 		poisonres_p={{{1,12},{20,49}},{{1,18*120},{20,18*180}}},
 		coldres_p={{{1,7},{20,45}},{{1,18*120},{20,18*180}}},
-		fireres_p={{{1,-5},{20,-20},{21,-25}},{{1,18*120},{20,18*180}}},
-		skill_cost_v={{{1,12},{20,40}}}
+		fireres_p={{{1,-5},{20,-15},{21,-15}},{{1,18*120},{20,18*180}}},
+		skill_cost_v={{{1,12},{20,40}}},
+		--fasthitrecover_v={{{1,1},{20,50},{30,60},{32,61}},{{1,18},{2,18}}},
+		--fastwalkrun_p={{{1,10},{20,30}},{{1,18},{2,18}}},
+		--allres_p={{{1,1},{20,20}},{{1,18*120},{30,18*180}}},
+		--deadlystrike_p={{{1,1},{20,20}}},
+		--skill_enhance = {{{1,10},{20,100}},{{1,18*60*3},{2,18*60*3}}},				--c´ng k›ch k¸ n®ng
 	},
 	chenglong_jue={ --≥À¡˙æ˜
 		physicsenhance_p={{{1,40},{20,495}}},
@@ -313,11 +317,11 @@ SKILLS={
 		deadlystrike_p={{{1,5},{20,40}}},
 		addskilldamage1={
 			[1]={{1,325},{2,325}},
-			[3]={{1,1},{20,60}}
+			[3]={{1,1},{20,90}}
 		},
 		addskilldamage2={
 			[1]={{1,408},{2,408}},
-			[3]={{1,1},{20,60}}
+			[3]={{1,1},{20,90}}
 		},
 		addskilldamage3={
 			[1]={{1,1059},{2,1059}},
@@ -333,35 +337,35 @@ SKILLS={
 		skill_cost_v={{{1,10},{20,16}}}
 	},
 	potian_zhan={ --∆∆ÃÏ’∂
-		physicsenhance_p={{{1,35},{15,150},{20,338}}},
+		physicsenhance_p={{{1,35},{15,150},{20,408}}},
 		seriesdamage_p={{{1,20},{15,20},{20,60},{21,62}}},
-		deadlystrike_p={{{1,4},{20,25}}},
+		deadlystrike_p={{{1,4},{20,30}}},
 		attackrating_p={{{1,35},{20,215}}},
 		missle_speed_v={{{1,30},{20,30}}},
 		missle_lifetime_v={{{1,4},{20,4}}},
 		skill_attackradius={{{1,90},{20,90}}},
 		skill_cost_v={{{1,15},{20,30}}},
 		addskillexp1={{{1,322},{2,322}},{{1,1},{20,1}},{{1,0},{2,0}}},
-		skill_skillexp_v={{	{1,SkillExpFunc(7280,1.25,1,2.5,1)},
-							{2,SkillExpFunc(7280,1.25,2,2.5,1)},
-							{3,SkillExpFunc(7280,1.25,3,2.5,1)},
-							{4,SkillExpFunc(7280,1.25,4,2.5,1)},
-							{5,SkillExpFunc(7280,1.25,5,2.5,1)},
-							{6,SkillExpFunc(7280,1.25,6,2.5,1)},
-							{7,SkillExpFunc(7280,1.25,7,2.5,1)},
-							{8,SkillExpFunc(7280,1.25,8,2.5,1)},
-							{9,SkillExpFunc(7280,1.25,9,2.5,1)},
-							{10,SkillExpFunc(7280,1.25,10,2.5,1)},
-							{11,SkillExpFunc(7280,1.25,11,2.5,1)},
-							{12,SkillExpFunc(7280,1.25,12,2.5,1)},
-							{13,SkillExpFunc(7280,1.25,13,2.5,1)},
-							{14,SkillExpFunc(7280,1.25,14,2.5,1)},
-							{15,SkillExpFunc(7280,1.25,15,2.5,1)},
-							{16,SkillExpFunc(7280,1.25,16,2.5,1)},
-							{17,SkillExpFunc(7280,1.25,17,2.5,1)},
-							{18,SkillExpFunc(7280,1.25,18,2.5,1)},
-							{19,SkillExpFunc(7280,1.25,19,2.5,1)},
-							{20,SkillExpFunc(7280,1.25,20,2.5,1)},
+		skill_skillexp_v={{	{1,SkillExpFunc(7280/tyle,1.25,1,2.5,1)},
+							{2,SkillExpFunc(7280/tyle,1.25,2,2.5,1)},
+							{3,SkillExpFunc(7280/tyle,1.25,3,2.5,1)},
+							{4,SkillExpFunc(7280/tyle,1.25,4,2.5,1)},
+							{5,SkillExpFunc(7280/tyle,1.25,5,2.5,1)},
+							{6,SkillExpFunc(7280/tyle,1.25,6,2.5,1)},
+							{7,SkillExpFunc(7280/tyle,1.25,7,2.5,1)},
+							{8,SkillExpFunc(7280/tyle,1.25,8,2.5,1)},
+							{9,SkillExpFunc(7280/tyle,1.25,9,2.5,1)},
+							{10,SkillExpFunc(7280/tyle,1.25,10,2.5,1)},
+							{11,SkillExpFunc(7280/tyle,1.25,11,2.5,1)},
+							{12,SkillExpFunc(7280/tyle,1.25,12,2.5,1)},
+							{13,SkillExpFunc(7280/tyle,1.25,13,2.5,1)},
+							{14,SkillExpFunc(7280/tyle,1.25,14,2.5,1)},
+							{15,SkillExpFunc(7280/tyle,1.25,15,2.5,1)},
+							{16,SkillExpFunc(7280/tyle,1.25,16,2.5,1)},
+							{17,SkillExpFunc(7280/tyle,1.25,17,2.5,1)},
+							{18,SkillExpFunc(7280/tyle,1.25,18,2.5,1)},
+							{19,SkillExpFunc(7280/tyle,1.25,19,2.5,1)},
+							{20,SkillExpFunc(7280/tyle,1.25,20,2.5,1)},
 							}},
 		addskilldamage1={
 			[1]={{1,1058},{2,1058}},
@@ -419,35 +423,35 @@ SKILLS={
 												}},	
 	},
 	zhuixing_zhuyue={ --◊∑–«÷‘¬
-		physicsenhance_p={{{1,50},{15,200},{20,381}}},
+		physicsenhance_p={{{1,50},{15,200},{20,471}}},
 		seriesdamage_p={{{1,20},{15,20},{20,60},{21,62}}},
 		attackrating_p={{{1,95},{20,360}}},
-		deadlystrike_p={{{1,4},{20,25}}},
+		deadlystrike_p={{{1,4},{20,30}}},
 		missle_speed_v={{{1,30},{20,30}}},
 		missle_lifetime_v={{{1,4},{20,4}}},
 		skill_attackradius={{{1,90},{20,90}}},
 		skill_cost_v={{{1,10},{20,65}}},
 		addskillexp1={{{1,323},{2,323}},{{1,1},{20,1}},{{1,0},{2,0}}},
-		skill_skillexp_v={{	{1,SkillExpFunc(6550,1.25,1,5,1)},
-							{2,SkillExpFunc(6550,1.25,2,5,1)},
-							{3,SkillExpFunc(6550,1.25,3,5,1)},
-							{4,SkillExpFunc(6550,1.25,4,5,1)},
-							{5,SkillExpFunc(6550,1.25,5,5,1)},
-							{6,SkillExpFunc(6550,1.25,6,5,1)},
-							{7,SkillExpFunc(6550,1.25,7,5,1)},
-							{8,SkillExpFunc(6550,1.25,8,5,1)},
-							{9,SkillExpFunc(6550,1.25,9,5,1)},
-							{10,SkillExpFunc(6550,1.25,10,5,1)},
-							{11,SkillExpFunc(6550,1.25,11,5,1)},
-							{12,SkillExpFunc(6550,1.25,12,5,1)},
-							{13,SkillExpFunc(6550,1.25,13,5,1)},
-							{14,SkillExpFunc(6550,1.25,14,5,1)},
-							{15,SkillExpFunc(6550,1.25,15,5,1)},
-							{16,SkillExpFunc(6550,1.25,16,5,1)},
-							{17,SkillExpFunc(6550,1.25,17,5,1)},
-							{18,SkillExpFunc(6550,1.25,18,5,1)},
-							{19,SkillExpFunc(6550,1.25,19,5,1)},
-							{20,SkillExpFunc(6550,1.25,20,5,1)},
+		skill_skillexp_v={{	{1,SkillExpFunc(6550/tyle,1.25,1,5,1)},
+							{2,SkillExpFunc(6550/tyle,1.25,2,5,1)},
+							{3,SkillExpFunc(6550/tyle,1.25,3,5,1)},
+							{4,SkillExpFunc(6550/tyle,1.25,4,5,1)},
+							{5,SkillExpFunc(6550/tyle,1.25,5,5,1)},
+							{6,SkillExpFunc(6550/tyle,1.25,6,5,1)},
+							{7,SkillExpFunc(6550/tyle,1.25,7,5,1)},
+							{8,SkillExpFunc(6550/tyle,1.25,8,5,1)},
+							{9,SkillExpFunc(6550/tyle,1.25,9,5,1)},
+							{10,SkillExpFunc(6550/tyle,1.25,10,5,1)},
+							{11,SkillExpFunc(6550/tyle,1.25,11,5,1)},
+							{12,SkillExpFunc(6550/tyle,1.25,12,5,1)},
+							{13,SkillExpFunc(6550/tyle,1.25,13,5,1)},
+							{14,SkillExpFunc(6550/tyle,1.25,14,5,1)},
+							{15,SkillExpFunc(6550/tyle,1.25,15,5,1)},
+							{16,SkillExpFunc(6550/tyle,1.25,16,5,1)},
+							{17,SkillExpFunc(6550/tyle,1.25,17,5,1)},
+							{18,SkillExpFunc(6550/tyle,1.25,18,5,1)},
+							{19,SkillExpFunc(6550/tyle,1.25,19,5,1)},
+							{20,SkillExpFunc(6550/tyle,1.25,20,5,1)},
 							}},
 		addskilldamage1={
 			[1]={{1,1060},{2,1060}},
@@ -497,7 +501,7 @@ SKILLS={
 												}},	
 	},
 	zhuifeng_jue={ --◊∑∑Áæ˜
-		physicsenhance_p={{{1,25},{15,140},{20,380}}},
+		physicsenhance_p={{{1,25},{15,140},{20,470}}},
 		seriesdamage_p={{{1,20},{15,20},{20,60},{21,62}}},
 		ignoredefense_p={{{1,12},{20,90},{21,94},{22,98},{23,99},{24,99}}},
 		colddamage_v={
@@ -509,26 +513,26 @@ SKILLS={
 		missle_lifetime_v={{{1,4},{20,4}}},
 		skill_attackradius={{{1,90},{20,90}}},
 		addskillexp1={{{1,325},{2,325}},{{1,1},{20,1}},{{1,0},{2,0}}},
-		skill_skillexp_v={{	{1,SkillExpFunc(7750,1.25,1,2.5,1)},
-							{2,SkillExpFunc(7750,1.25,2,2.5,1)},
-							{3,SkillExpFunc(7750,1.25,3,2.5,1)},
-							{4,SkillExpFunc(7750,1.25,4,2.5,1)},
-							{5,SkillExpFunc(7750,1.25,5,2.5,1)},
-							{6,SkillExpFunc(7750,1.25,6,2.5,1)},
-							{7,SkillExpFunc(7750,1.25,7,2.5,1)},
-							{8,SkillExpFunc(7750,1.25,8,2.5,1)},
-							{9,SkillExpFunc(7750,1.25,9,2.5,1)},
-							{10,SkillExpFunc(7750,1.25,10,2.5,1)},
-							{11,SkillExpFunc(7750,1.25,11,2.5,1)},
-							{12,SkillExpFunc(7750,1.25,12,2.5,1)},
-							{13,SkillExpFunc(7750,1.25,13,2.5,1)},
-							{14,SkillExpFunc(7750,1.25,14,2.5,1)},
-							{15,SkillExpFunc(7750,1.25,15,2.5,1)},
-							{16,SkillExpFunc(7750,1.25,16,2.5,1)},
-							{17,SkillExpFunc(7750,1.25,17,2.5,1)},
-							{18,SkillExpFunc(7750,1.25,18,2.5,1)},
-							{19,SkillExpFunc(7750,1.25,19,2.5,1)},
-							{20,SkillExpFunc(7750,1.25,20,2.5,1)},
+		skill_skillexp_v={{	{1,SkillExpFunc(7750/tyle,1.25,1,2.5,1)},
+							{2,SkillExpFunc(7750/tyle,1.25,2,2.5,1)},
+							{3,SkillExpFunc(7750/tyle,1.25,3,2.5,1)},
+							{4,SkillExpFunc(7750/tyle,1.25,4,2.5,1)},
+							{5,SkillExpFunc(7750/tyle,1.25,5,2.5,1)},
+							{6,SkillExpFunc(7750/tyle,1.25,6,2.5,1)},
+							{7,SkillExpFunc(7750/tyle,1.25,7,2.5,1)},
+							{8,SkillExpFunc(7750/tyle,1.25,8,2.5,1)},
+							{9,SkillExpFunc(7750/tyle,1.25,9,2.5,1)},
+							{10,SkillExpFunc(7750/tyle,1.25,10,2.5,1)},
+							{11,SkillExpFunc(7750/tyle,1.25,11,2.5,1)},
+							{12,SkillExpFunc(7750/tyle,1.25,12,2.5,1)},
+							{13,SkillExpFunc(7750/tyle,1.25,13,2.5,1)},
+							{14,SkillExpFunc(7750/tyle,1.25,14,2.5,1)},
+							{15,SkillExpFunc(7750/tyle,1.25,15,2.5,1)},
+							{16,SkillExpFunc(7750/tyle,1.25,16,2.5,1)},
+							{17,SkillExpFunc(7750/tyle,1.25,17,2.5,1)},
+							{18,SkillExpFunc(7750/tyle,1.25,18,2.5,1)},
+							{19,SkillExpFunc(7750/tyle,1.25,19,2.5,1)},
+							{20,SkillExpFunc(7750/tyle,1.25,20,2.5,1)},
 							}},
 		addskilldamage1={
 			[1]={{1,1059},{2,1059}},

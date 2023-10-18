@@ -1,8 +1,8 @@
---½ÓÈÎÎñµÄNpc
---¡¤²ÎÓëµÄÍæ¼ÒµÈ¼¶±ØÐë´óÓÚ40¼¶£»
---¡¤ËÎ·½µÄÍæ¼Ò±ØÐëÒªµ½ºâÉ½¶À¹Â½£´¦±¨Ãû£»
---¡¤½ð·½µÄÍæ¼Ò±ØÐëÒªµ½ãê¾©ÑÃÃÅ¿Ú½ð¹úÎä½«´¦±¨Ãû£»
---¡¤±¨ÃûÊ±ÐèÒª½»ÄÉÒ»¶¨µÄ½ðÇ®£»
+-- script viet hoa By http://tranhba.com #ãÌ####ÄNpc
+-- script viet hoa By http://tranhba.com ##²#ã##ÄÝ##ß#Ì##±###´ããó40####
+-- script viet hoa By http://tranhba.com #######ÄÝ##ß±###ß###º©Ð##µ#¢##´#±#·###
+-- script viet hoa By http://tranhba.com ###ð###ÄÝ##ß±###ß###·ª###··Å¿ó#ð#ó####´#±#·###
+-- script viet hoa By http://tranhba.com ##±#·#£±#Ìß###ÄÐß####Ä#ð####
 
 Include("\\script\\missions\\ËÎ½ðÕ½³¡PKÕ½\\ËÎ½ðÕ½³¡Í·ÎÄ¼þ.lua");
 
@@ -10,15 +10,15 @@ function main()
 
 local State = GetMissionV(1) 
 
---Î´¿ªÊ¼
+-- script viet hoa By http://tranhba.com #´¿#£#
 if (State == 0 ) then 
-	Say("§¹i qu©n cña ta vÉn ch­a xuÊt ph¸t! H·y t¹m thêi nghØ ng¬i ®îi tin nhÐ!",0);
+	Say("#ß´ã#####´³#######¤ý£±#ý###Ì#Å##!",0);
 	NewWorld(78,1768,3098)
 	SetFightState(1)
 	return
 end;
 
---Òì³£Çé¿öÖ±½ÓÍË³ö
+-- script viet hoa By http://tranhba.com ß×³##Ð¿##±#ãÝ#³#
 if (State > 2) then
 	NewWorld(78,1768,3098)
 	SetFightState(1)
@@ -27,28 +27,28 @@ end;
 
 
 local GroupV = GetTask(SJTASKVLAUE);
---Èç¹û¸ÃÍæ¼ÒÊÇÒÑ¾­±¨Ãû¹ýµÄ£¬¶ÏÏßÖØÁ¬½øÀ´µÄ£¬ÔòÈÓ½øÈ¥
+-- script viet hoa By http://tranhba.com Ì####·Ý##ß£#ß###±#·##ý#Ä########¸###µ´#Ä##¤ßÌã##Ì#
 result = CheckLastBattle(1, State);
 if (result == 1) then
 	return
 end
 
 if (result == 2) then
-	--´Ë¾ä»°ÊÇµÐ·½Íæ¼ÒÓë¶Ô·½µÄ±¨ÃûNpcµÄ¶Ô»°
-	Say("Ng­êi Kim bän ng­¬i, x©m l­îc giang s¬n, giÕt h¹i ®ång bµo ta! Ta thÒ quyÕt cïng bän ng­¬i mét mÊt mét cßn!",0)
+	-- script viet hoa By http://tranhba.com ´####°£#####Ý##ßã##¤###Ä±#·#Npc#Ä#¤#°
+	Say("Ä·#Ì#ðÌ########ß##Ð###Ð±º##ßÝ#°####ß£Äã#Ä··#Ð±##Ä·#µ#ß##!",0)
 end
 
 
---±¨ÃûÊ±ÆÚ
+-- script viet hoa By http://tranhba.com ±#·#£±#ó
 if (State == 1 or State == 2) then 
 	MSDIdx = PIdx2MSDIdx(1, PlayerIndex);
 	if (MSDIdx > 0) then 
 		nGroup = GetMSIdxGroup(1, MSDIdx);
  		
 	if ( nGroup == 1) then 
-    		Say("Quèc gia h­ng vong, hÊt phu h÷u tr¸ch! B©y giê lµ lóc ta vµ c¸c ng­¬i b¸o ¬n ®Êt n­íc!",0)
+    		Say("#ó#ß##Ý####ßã#¤ð####¤ó£##ß·#±######ó#Ä£±ºß¸#!",0)
   		else
-    		Say("Ng­êi Kim bän ng­¬i, x©m l­îc giang s¬n, giÕt h¹i ®ång bµo ta! Ta thÒ quyÕt cïng bän ng­¬i mét mÊt mét cßn!",0)
+    		Say("Ä·#Ì#ðÌ########ß##Ð###Ð±º##ßÝ#°####ß£Äã#Ä··#Ð±##Ä·#µ#ß##!",0)
   		end
 	
 		return
@@ -57,16 +57,16 @@ end;
 
 if (State == 1) then
 	if (GetMSPlayerCount(1,1) >= MAX_S_COUNT) then
-		Say("Qu©n lùc cña ta hiÖn giê ®· d­ søc tiªu diÖt Kim qu©n. Tr¸ng sÜ xin ®îi trËn sau nhÐ!", 0)
+		Say("#ß·##Ä##¸#Ä¿#°ß#####·ð#ð#ó###³£¿###Ì#¢ß#´#°Ð!", 0)
 	return
 	end;
 	
-	Say("Quèc gia h­ng vong, hÊt phu h÷u tr¸ch! B©y giê lµ lóc ta vµ c¸c ng­¬i b¸o ¬n ®Êt n­íc! ChØ cÇn ®¼ng cÊp trªn 40, ñng hé 3000 l­îng lµ cã thÓ x«ng pha giÕt ®Þch!",2,"Ta tham gia. /Yes", "§Ó ta suy nghÜ l¹i!/No");
+	Say("#ó#ß##Ý####ßã#¤ð####¤ó£##ß·#±######ó#Ä£±ºß¸######Ìß#´###40##ß¤Ð#####³#3000¸##ÝÄ#³###Ð±##!",2, "#ß²##ã. /Yes", "Ì·#ß####!/No");
 end;
 
---½»Õ½Ê±ÆÚ
+-- script viet hoa By http://tranhba.com ##â#£±#ó
 if (State == 2) then 
-	Say("TiÒn ph­¬ng ®ang diÔn ra chiÕn tranh, c¸c vÞ h­¬ng th©n xin t×m n¬i kh¸c l¸nh n¹n ",0);
+	Say("#°##âý##Ðóâ#âï############âß#·±##Ä####",0);
 	return 
 end;
 
@@ -78,22 +78,21 @@ if (GetMissionV(1) ~= 1) then
 end
 if (GetLevel() >= 40) then 
   if (Pay(MS_SIGN_MONEY) == 1) then
-  Msg2Player("Hoan nghªnh ng­¬i gia nhËp. c¸c Anh hïng §¹i Tèng, h·y nhanh chãng tiÕn ra chiÕn tr­êng. ");
+  Msg2Player("##ã#Ä·#Ä#ãÌ#####³¯#Äã##Û####¿×##Ì#â#³#°Ð!");
   V = GetMissionV(5);
   SetMissionV(5, V + 1);
   AddMSPlayer(1,1);
   SJ_JoinS();
   SetTask(SJKILLNPC,0);
   SetTask(SJKILLPK,0);
-  --CheckGoFight()
+  -- script viet hoa By http://tranhba.com CheckGoFight()
   return 
   end;
 end;
 
-Say("B¹n ch­a ®ñ 40 cÊp hoÆc kh«ng mang ®ñ tiÒn! ",0);
-
+Say("Ä·²###40###ßâ#·#ã#´#####",0);
 end;
 
 function No()
-Say("Mau vÒ suy nghÜ ®i! Thêi gian cßn l¹i kh«ng nhiÒu ®©u!",0);
+Say("¿×##Ì#######£±##²##µ¸#!",0);
 end;

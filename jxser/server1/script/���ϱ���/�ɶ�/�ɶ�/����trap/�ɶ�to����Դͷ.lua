@@ -1,12 +1,11 @@
---西南北区 成都to长江源头
---Trap ID：西南北区 48
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu th祅h  to Trng giang ng鋘 ngu錸 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 48 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(9, 2399, 5542);
+SetFightState(1); 
+NewWorld(9, 2399, 5542); 
 
-AddTermini(23);
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+AddTermini(23); 
+
 end;

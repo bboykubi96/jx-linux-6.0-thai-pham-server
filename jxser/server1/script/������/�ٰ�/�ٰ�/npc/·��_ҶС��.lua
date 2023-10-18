@@ -17,10 +17,10 @@ function main()
 
 	local tbDailog = DailogClass:new(szNpcName)
 	if (GetSex() == 0) then
-		tbDailog.szTitleMsg = "<npc>C«ng tö, tiÓu n÷ lµ ng­êi ch­a xuÊt c¸c, ng­êi cø theo ta hoµi nh­ vËy, rèt cuéc lµ cã ý g×? NÕu nh­ ®Ó cho mÉu n­¬ng ta biÕt ®­îc, th× rÊt phiÒn phøc."
+tbDailog.szTitleMsg = "<npc> C«ng tö  ta ch­a ra c¸c , nhÜ l·o lµ theo ch©n ta , rèt cuéc lµm g× giíi ? nÕu ®Ó cho ta n¨m biÕt , n¹i m¹t chí ®­îc . " 
 	else
-		tbDailog.szTitleMsg = "<npc>TiÓu muéi, muéi cã chuyÖn g× sao?"
+tbDailog.szTitleMsg = "<npc> Muéi tö , ng­¬i cã g× giíi chuyÖn sao ? " 
 	end
-	G_TASK:OnMessage("Thiªn NhÉn", tbDailog, "DialogWithNpc")
+G_TASK:OnMessage(" L¸ tiÓu ngäc ", tbDailog, "DialogWithNpc") 
 	tbDailog:Show()
 end;

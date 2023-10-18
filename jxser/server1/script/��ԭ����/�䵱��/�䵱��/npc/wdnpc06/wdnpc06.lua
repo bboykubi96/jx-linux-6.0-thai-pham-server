@@ -9,7 +9,7 @@ Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 
-function main()
+function main_com()
 	
 
 	local szTitleMsg = "<npc>G«n Æ©y ta c„ r t nhi“u vi÷c gi∂i quy’t, ng≠¨i Æ’n Æ©y c„ vi÷c g◊."

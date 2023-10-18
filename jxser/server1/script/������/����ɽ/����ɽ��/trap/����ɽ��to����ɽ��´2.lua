@@ -1,8 +1,8 @@
---东北区 长白山脚to长白山南麓2
---Trap ID：东北区 3
+-- script viet hoa By http://tranhba.com  ng b綾 khu Trng b筩h s琻 ch﹏ to Trng b筩h s琻 nam l閏 2 
+-- script viet hoa By http://tranhba.com Trap ID# ng b綾 khu 3 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(321, 1573, 3150);
-	AddTermini(199)
+function main(sel) 
+SetFightState(1); 
+NewWorld(321, 1573, 3150); 
+AddTermini(199) 
 end;

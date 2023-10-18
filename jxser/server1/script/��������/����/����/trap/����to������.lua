@@ -1,10 +1,9 @@
---Î÷ÄÏÄÏÇø ´óÀí¸®to´äÑÌÃÅ
---Trap ID£ºÎ÷ÄÏÄÏÇø 5
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lı phñ to thóy khãi cöa 
+-- script viet hoa By http://tranhba.com Trap ID# t©y nam nam khu 5 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(154, 120, 1838);
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+SetFightState(1); 
+NewWorld(154, 120, 1838); 
+
 end;

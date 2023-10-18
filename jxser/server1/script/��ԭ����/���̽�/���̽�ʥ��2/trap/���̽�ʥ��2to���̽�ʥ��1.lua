@@ -1,9 +1,9 @@
---中原北区 天忍教圣洞2to天忍教圣洞1
---Trap ID：中原北区 8
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祔 nh蒼 d箉 th竛h ng 2to ng祔 nh蒼 d箉 th竛h ng 1 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 8 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(51, 1767, 3189);
+SetFightState(1) 
+NewWorld(51, 1767, 3189); 
 
 end;

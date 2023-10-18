@@ -1,7 +1,7 @@
---Î÷ÄÏ±±Çø ³É¶¼¸® Â·±ê13£º³¤½­Ô´Í·->¶ëáÒÅÉ
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu thµnh ®« phñ b¶ng chØ ®­êng 13# Tr­êng giang ngän nguån -> ph¸i Nga Mi 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Nga Mi ph¸i", 0)
+Say("§i th«ng ph¸i Nga Mi ", 0) 
 
-end;
+end; 

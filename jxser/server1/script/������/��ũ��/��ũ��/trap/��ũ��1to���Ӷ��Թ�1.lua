@@ -1,8 +1,8 @@
---Á½ºşÇø ÉñÅ©¼Ü1toÑà×Ó¶´ÃÔ¹¬1
---TrapID£ºÁ½ºşÇø 37
+-- script viet hoa By http://tranhba.com  hai hå khu thÇn n«ng chiÕc 1to yÕn tö ®éng mª cung 1 
+-- script viet hoa By http://tranhba.com TrapID# hai hå khu 37 
 
-function main(sel)
-	SetFightState(1)
-	NewWorld(77, 1321, 3292);
-	AddTermini(50)
-end;
+function main(sel) 
+SetFightState(1) 
+NewWorld(77, 1321, 3292); 
+AddTermini(50) 
+end; 

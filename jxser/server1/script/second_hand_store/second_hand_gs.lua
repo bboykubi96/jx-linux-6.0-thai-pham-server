@@ -44,10 +44,10 @@ function SecondHandStore_Agent:SellGoodsToPlayer(szName, tbGoods)
 				lib:DoFunByPlayer(nPlayerIndex, tbAwardTemplet.GiveAwardByList, tbAwardTemplet, tbGoods, "buy second hand goods")
 				return 1
 			else
-				self:Msg2Player(szName, "Ng©n l­îng kh«ng ®ñ! ")
+				self:Msg2Player(szName, "TiÒn Vµng kh«ng ®ñ! ")
 			end	
 		else
-			self:Msg2Player(szName, "Hµnh trang kh«ng ®ñ chç trèng! ")
+			self:Msg2Player(szName, "Kho¶ng trèng trong tói kh«ng ®ñ! ")
 		end
 			
 			

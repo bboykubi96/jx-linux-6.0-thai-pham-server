@@ -1,7 +1,7 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·ÈË16¶ÄÍ½3¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ ng­êi ®i ®­êng 16 ®¸nh cuéc ®å 3 ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Sè tiÒn bŞ lÊy trém Êy lµ tiÒn mua l­¬ng thùc cho c¶ nhµ, giê ph¶i lµm sao ®©y?",0)
+Say("§¸nh cuéc ®å # thua nh÷ng tiÒn kia lµ ta ®©y nhµ n÷ nh©n cho ta ®©y mua th­íc tiÒn , c¸i nµy nh­ng tr¸ch b¹n ? ",0) 
 
 end;

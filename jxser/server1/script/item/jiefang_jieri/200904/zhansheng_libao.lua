@@ -1,11 +1,4 @@
--- ====================== ÎÄ¼þÐÅÏ¢ ======================
-
--- ½£ÏÀÇéÔµÍøÂç°æÔ½ÄÏÊÕ·Ñ°æ - Õ½Ê¤Àñ°ü
--- ÎÄ¼þÃû¡¡£ºzhansheng_libao.lua
--- ´´½¨Õß¡¡£º×Ó·Çô~
--- ´´½¨Ê±¼ä£º2009-04-14 14:08:44
-
--- ======================================================
+--Tong kim le bao phan thuong khi dat top 1,2,3 tong kim edit by mcteam
 
 Include("\\script\\lib\\pay.lua");
 Include("\\script\\lib\\awardtemplet.lua");
@@ -19,6 +12,7 @@ if not TB_QIANQIU_YINGLIE0904 then
 	Include("\\script\\event\\jiefang_jieri\\200904\\qianqiu_yinglie\\head.lua");
 end
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function main(nItemIdx)
 	local n_item_date = tonumber(FormatTime2String("%Y%m%d%H%M",ITEM_GetExpiredTime(nItemIdx)));
@@ -28,7 +22,14 @@ function main(nItemIdx)
 		return 0;
 	end
 	
---	TB_QIANQIU_YINGLIE0904:reset_task()
+	--TB_QIANQIU_YINGLIE0904:reset_task()
+
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
 	
 	if IsCharged() == 0 or GetLevel() < 50 then
 		Say("ChØ cã ng­êi ch¬i cÊp trªn 50 ®· n¹p thÎ míi cã thÓ sö dông.", 0)
@@ -41,20 +42,26 @@ function main(nItemIdx)
 	end
 	
 	local tb_award = {
-		{szName = "Khiªu chiÕn LÔ bao", tbProp = {6,1,2006,1,1,0}, nRate = 50},
-		{szName = "ThÇn bÝ kho¸ng th¹ch", tbProp = {6,1,398,1,0,0}, nRate = 0.05},
-		{szName = "Tö Thñy Tinh", tbProp = {4,239,1,1,1,0}, nRate = 0.2},
-		{szName = "Lôc Thñy Tinh", tbProp = {4,240,1,1,1,0}, nRate = 0.2},
-		{szName = "Lam Thñy Tinh", tbProp = {4,238,1,1,1,0}, nRate = 0.2},
-		{szName = "Tinh Hång B¶o Th¹ch", tbProp = {4,353,1,1,1,0}, nRate = 0.5},
-		{szName = "B¹ch Ch©n §¬n", tbProp = {6,1,1676,1,0,0}, nRate = 0.03, tbParam = {500000000}},
-		{szName = "HuyÕt Ch©n §¬n", tbProp = {6,1,1677,1,0,0}, nRate = 0.02, tbParam = {1000000000}},
-		{szName = "HuyÒn Ch©n §¬n", tbProp = {6,1,1678,1,0,0}, nRate = 0.01, tbParam = {1500000000}},
-		{szName = "An Bang B¨ng Tinh Th¹ch H¹ng Liªn", nQuality=1, tbProp = {0,164}, nRate = 0.01},
-		{szName = "An Bang Kª HuyÕt Th¹ch Giíi ChØ ", nQuality=1, tbProp = {0,167}, nRate = 0.02},
-		{szName = "An Bang Cóc Hoa Th¹ch ChØ hoµn", nQuality=1, tbProp = {0,165}, nRate = 0.02},
-		{szName = "An Bang §iÒn Hoµng Th¹ch Ngäc Béi", nQuality=1, tbProp = {0,166}, nRate = 0.02},
-		{szName = "Hai tr¨m v¹n ®iÓm kinh nghiÖm", nExp = 2000000, nRate = 48.72},
+		--{szName = "Khiªu chiÕn LÔ bao", tbProp = {6,1,2006,1,1,0}, nRate = 40},
+		{szName = "Bµn nh­îc t©m kinh", tbProp = {6,1,12,1,1,0}, nRate = 1},
+		{szName = "§iÓm kinh nghiÖm", nExp = 100000, nRate = 40},
+		{szName = "§iÓm kinh nghiÖm", nExp = 200000, nRate = 40},
+		{szName = "§iÓm kinh nghiÖm", nExp = 500000, nRate = 10},
+		--{szName = "ThÇn bÝ kho¸ng th¹ch", tbProp = {6,1,398,1,0,0}, nRate = 0.05},
+		{szName = "Tö Thñy Tinh", tbProp = {4,239,1,1,1,0}, nRate = 0.1},
+		{szName = "Lôc Thñy Tinh", tbProp = {4,240,1,1,1,0}, nRate = 0.1},
+		{szName = "Lam Thñy Tinh", tbProp = {4,238,1,1,1,0}, nRate = 0.1},
+		{szName = "Tinh Hång B¶o Th¹ch", tbProp = {4,353,1,1,1,0}, nRate = 0.1},
+		--{szName = "B¹ch Ch©n §¬n", tbProp = {6,1,1676,1,0,0}, nRate = 0.03, tbParam = {500000000}},
+		--{szName = "HuyÕt Ch©n §¬n", tbProp = {6,1,1677,1,0,0}, nRate = 0.02, tbParam = {1000000000}},
+		--{szName = "HuyÒn Ch©n §¬n", tbProp = {6,1,1678,1,0,0}, nRate = 0.01, tbParam = {1500000000}},
+		--{szName = "An Bang B¨ng Tinh Th¹ch H¹ng Liªn", nQuality=1, tbProp = {0,164}, nRate = 0.01},
+		--{szName = "An Bang Kª HuyÕt Th¹ch Giíi ChØ ", nQuality=1, tbProp = {0,167}, nRate = 0.02},
+		--{szName = "An Bang Cóc Hoa Th¹ch ChØ hoµn", nQuality=1, tbProp = {0,165}, nRate = 0.02},
+		--{szName = "An Bang §iÒn Hoµng Th¹ch Ngäc Béi", nQuality=1, tbProp = {0,166}, nRate = 0.02},
+		--{szName = "TiÒn ®ång", tbProp = {4, 417, 1, 1, 0, 0}, nRate = 1,nCount=10},
+		{szName = "Tói danh väng", tbProp={6,1,4338,1,0,0}, nCount=1, nRate=8},
+		{szName = "QuÕ hoa töu", tbProp={6,1,125,1,0,0}, nCount=1, nRate=0.1},
 	}
 	
 	local rtotal = 10000000
@@ -93,4 +100,6 @@ function main(nItemIdx)
 	SetBitTask(SONGJIN_LIBAO_TASK_NO, 8, 24, nLastUseDate);
 	
 	tbAwardTemplet:GiveAwardByList(tb_award[n_award_idx], "Tèng Kim lÔ bao");
+
+	--Msg2SubWorld("§¹i hiÖp <color=white>"..GetName().."<color> ®· sö dông Tèng Kim LÔ Bao nhËn ®­îc rÊt nhiÒu phÇn quµ hÊp dÉn.")
 end

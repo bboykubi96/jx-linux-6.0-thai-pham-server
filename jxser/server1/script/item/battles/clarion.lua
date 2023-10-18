@@ -4,6 +4,7 @@
 Include( "\\script\\item\\checkmapid.lua" )
 
 function EatMedicine()	-- Í¨¹ýÅÐ¶ÏÕ½³¡µÄµÈ¼¶ºÍÍæ¼ÒµÄÕóÓªÀ´¼ÓNPC
+	W, X, Y = GetWorldPos();
 	if (GetFightState() == 0) then
 		Say("Kh«ng thÓ sö dông trong t×nh tr¹ng phi chiÕn ®Êu!", 0)
 		return -1
@@ -37,7 +38,6 @@ function EatMedicine()	-- Í¨¹ýÅÐ¶ÏÕ½³¡µÄµÈ¼¶ºÍÍæ¼ÒµÄÕóÓªÀ´¼ÓNPC
 			SetMissionV(MS_CALLNPCCOUNT_J, GetMissionV(MS_CALLNPCCOUNT_J) + 1)		
 		end
 	end
-
 	if ( GetLevel() >= 40 and GetLevel() <= 79) then	-- ³õ¼¶Õ½³¡
 		if( GetCurCamp() == 1) then		-- ÕÙ»½ºÍÍæ¼ÒÍ¬Ò»ÕóÓªµÄNPC
 			CallSjNpc( 682, 50, W, X, Y, " Tèng binh");

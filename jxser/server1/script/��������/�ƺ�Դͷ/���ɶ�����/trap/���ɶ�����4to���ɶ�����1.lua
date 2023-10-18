@@ -1,30 +1,30 @@
---Î÷±±±±Çø ÁôÏÉ¶´¶þ²ã4toÁôÏÉ¶´Èý²ã1
---TrapID£ºÎ÷±±±±Çø 27
---»ÆºÓÔ´Í·ÃÔ¹¬ F2-F3 trap
--- by£ºDan_Deng(2003-07-31)
+-- script viet hoa By http://tranhba.com  t©y b¾c b¾c khu l­u tiªn ®éng tÇng hai 4to l­u tiªn ®éng tÇng ba 1 
+-- script viet hoa By http://tranhba.com TrapID# t©y b¾c b¾c khu 27 
+-- script viet hoa By http://tranhba.com  Hoµng Hµ ngän nguån mª cung F2-F3 trap 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-31) 
 
-function main(sel)
-	Talk(1,"L60_q2","B¹n nh×n thÊy mét c¬ quan, trªn cã kh¾c mÊy dßng ch÷: ")
---	AddTermini(47)		--ÕâÊÇÊ²Ã´¶«Î÷£¿
-end;
+function main(sel) 
+Talk(1,"L60_q2","Ng­¬i xem thÊy mét c¬ quan , phÝa trªn cã kh¾c mÊy hµng ch÷ :") 
+-- script viet hoa By http://tranhba.com  AddTermini(47) -- script viet hoa By http://tranhba.com  ®©y lµ vËt g× ? 
+end; 
 
-function L60_q2()
-	Say("Viªm §Õ vèn lµ thÇn Th¸i D­¬ng, còng lµ vÞ thÇn n«ng nghiÖp, «ng Êy b¶o mÆt trêi ph¸t ra ¸nh s¸ng, gióp cho ngò cèc sinh tr­ëng. Tõ ®ã con ng­êi trªn mÆt ®Êt kh«ng ph¶i lo miÕng c¬m manh ¸o, v× vËy mäi ng­êi t«n x­ng «ng lµ ThÇn N«ng thÞ. ThÇn N«ng thÞ cßn lµ vÞ thÇn vÒ y d­îc, «ng ®· v× ng­êi ta nÕm qua hµng tr¨m lo¹i cá, cuèi cïng tróng ®éc mµ chÕt. ThÇn Löa cã mét c« con g¸i, trong lóc ®i ch¬i ë §«ng h¶i ch¼ng may bÞ chÕt ®uèi, tõ ®ã biÕn thµnh mét con chim nhá, miÖng ngËm hßn ®¸ cµnh c©y th¶ vµo §«ng H¶i, muèn lÊp ®Çy biÓn lín. B¹n cã biÕt con chim nhá ®ã tªn g× kh«ng?",4,"Khoa Phô /L60_S2_wrong","Ngu C«ng /L60_S2_wrong","HËu NghÖ /L60_S2_wrong","Tinh VÖ /L60_S2_correct")
-end
+function L60_q2() 
+Say("Viªm ®Õ nguyªn lµ mÆt trêi thÇn , còng lµ mét vÞ n«ng nghiÖp thÇn , h¾n b¶o ®¶m bÇu trêi mÆt trêi ph¸t ra quang , trî gióp ngò cèc sinh tr­ëng . khi ®ã trªn ®Þa cÇu ng­êi cña kh«ng buån ¨n mÆc , v× vËy mäi ng­êi t«n x­ng h¾n lµ thÇn N«ng thÞ . thÇn N«ng thÞ còng lµ mét vÞ y d­îc thÇn , h¾n lµm ng­êi cöa nÕm trªn tr¨m lo¹i cá , cuèi cïng tróng ®éc mµ chÕt . löa thÇn cã mét c« g¸i , ®Õn §«ng h¶i ch¬i thêi ®iÓm bÊt h¹nh chÕt ch×m bá m×nh , tõ nay biÕn thµnh mét c¸i nhá ®iÓu , miÖng ngËm ®¸ bá vµo §«ng h¶i , muèn lÊp ®Çy biÓn réng . ng­¬i biÕt c¸i nµy tiÓu ®iÓu ®Ých tªn sao ? ",4,"Khen phô /L60_S2_wrong","Ngu c«ng /L60_S2_wrong","HËu NghÖ /L60_S2_wrong","Tinh vÖ /L60_S2_correct") 
+end 
 
-function L60_S2_correct()
-	UTask_kl = GetTask(9)
+function L60_S2_correct() 
+UTask_kl = GetTask(9) 
 	if (GetFaction() == "kunlun") and ((UTask_kl >= 70*256) or ((UTask_kl == 60*256+20) and (HaveItem(12) == 1))) then
---	if ((UTask_kl == 60*256+20) and (HaveItem(12) == 1)) then
-		Msg2Player("B¹n nhÊn vµo ®¸p ¸n thø t­, C¬ quan sÏ ®­a b¹n ®Õn tÇng thø ba. ")
-		SetFightState(1);
-		NewWorld(127, 1678, 2991);
+-- script viet hoa By http://tranhba.com 	if ((UTask_kl == 60*256+20) and (HaveItem(12) == 1)) then
+Msg2Player("Ng­¬i theo nh­ thø 4 c¸ c©u tr¶ lêi , c¬ quan sÏ dÉn ng­¬i ®Õn thø 3 tÇng . ") 
+SetFightState(1); 
+NewWorld(127, 1678, 2991); 
 
-	else
-		Msg2Player("B¹n Ên lo¹n x¹ vµo nh÷ng ký tù, nh­ng kh«ng thÊy ph¶n øng g× ")
-	end
-end;
+else 
+Msg2Player("Ng­¬i nhÊn lo¹n võa th«ng suèt , nh­ng lµ kh«ng cã g× ph¶n øng ") 
+end 
+end; 
 
-function L60_S2_wrong()
-	Msg2Player("B¹n Ên lo¹n x¹ vµo nh÷ng ký tù, nh­ng kh«ng thÊy ph¶n øng g× ")
-end;
+function L60_S2_wrong() 
+Msg2Player("Ng­¬i nhÊn lo¹n võa th«ng suèt , nh­ng lµ kh«ng cã g× ph¶n øng ") 
+end; 

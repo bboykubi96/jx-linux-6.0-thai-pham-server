@@ -1,7 +1,7 @@
---ÖĞÔ­ÄÏÇø µ¾Ïã´å ÌÆÊå¶Ô»°
+-- script viet hoa By http://tranhba.com  Trung Nguyªn nam khu ®¹o h­¬ng th«n §­êng thóc ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("N¨m nay m­a thuËn giã hßa,«ng trêi cßn gióp §¹i Tèng chóng ta.",0)
+Say("N¨m nay m­a thuËn giã hßa , l·o Thiªn gióp ta ®¹i tèng .",0) 
 
-end;
+end; 

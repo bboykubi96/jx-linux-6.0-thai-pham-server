@@ -1,8 +1,7 @@
---Á½ºþÇø ºâÉ½ÅÉ ºâÉ½µÜ×Ó1¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu ph¸i Hµnh S¬n Hµnh S¬n ®Ö tö 1 ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Ng­¬i®Õn gÆp minh chñ ph¶i kh«ng?Ngµi ë trong ®¹i ®×nh! ",0)
+Say("Hµnh S¬n ®Ö tö # ng­¬i lµ tíi b¸i pháng minh chñ sao ? h¾n ®ang ë trong ®¹i s¶nh . ",0) 
 
-end;
-
+end; 

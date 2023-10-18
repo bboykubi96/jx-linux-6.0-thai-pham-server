@@ -1,18 +1,18 @@
---Îå¶¾½Ì ÂôÒ©µÄµÜ×Ó¶Ô»°
--- Update: Dan_Deng(2003-08-21) ¼ÓÈëÂôµÀ¾ßÖ»Âô¸ø±¾°ï
+-- script viet hoa By http://tranhba.com  Ngò ®éc gi¸o b¸n thuèc ®Ých ®Ö tö ®èi tho¹i 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) gia nhËp b¸n ®¹o cô chØ b¸n cho bæn bang 
 
-function main(sel)
-	Uworld37 = GetByte(GetTask(37),2)
-	if (GetFaction() == "wudu") or (Uworld37 == 127) then
-		Say("C«ng phu cña bæn ph¸i mÆc dï lµ lÊy ®éc lµm chñ. Nh­ng mµ h¶o d­îc 'diÖu thñ håi xu©n' còng kh«ng thiÕu. Cã muèn xem thö kh«ng", 2, "Giao dÞch/yes", "Kh«ng giao dÞch/no")
-	else
-		Talk(1,"","Gi¸o chñ cã lÖnh: thuèc cña b¶n ph¸i kh«ng ®­îc b¸n cho ng­êi ngoµi")
-	end
-end;
+function main(sel) 
+Uworld37 = GetByte(GetTask(37),2) 
+if (GetFaction() == "wudu") or (Uworld37 == 127) then 
+Say("MÆc dï bæn ph¸i c«ng phu lÊy ®éc lµm chñ , nh­ng lµ diÖu thñ håi xu©n ®Ých h¶o d­îc còng kh«ng cã thiÕu , muèn thö nh×n mét chót sao ", 2,"Giao dÞch /yes","Kh«ng giao dÞch /no") 
+else 
+Talk(1,"","Gi¸o chñ cã lÖnh : ng­¬i thuèc kh«ng thÓ b¸n cho ngo¹i nh©n ") 
+end 
+end; 
 
-function yes()
-Sale(80)
-end;
+function yes() 
+Sale(80) 
+end; 
 
-function no()
-end;
+function no() 
+end; 

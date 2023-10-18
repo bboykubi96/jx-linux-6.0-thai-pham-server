@@ -1,7 +1,7 @@
---西南北区 唐门 广场传送门1
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu Л阯g m玭 qu秐g trng truy襫 t鑞g c鯽 1 
 
-function main(sel)
+function main(sel) 
 
-ReturnFromPortal();
+ReturnFromPortal(); 
 
 end;

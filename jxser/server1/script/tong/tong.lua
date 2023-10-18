@@ -9,6 +9,8 @@ if MODEL_GAMESERVER == 1 or MODEL_RELAY == 1 then
 Include("\\script\\tong\\tong_header.lua")
 Include("\\script\\tong\\workshop\\workshop_setting.lua")
 Include("\\script\\tong\\log.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+IncludeLib("ITEM")
 if MODEL_RELAY == 1 then
 	Include("\\script\\gb_taskfuncs.lua")
 else
@@ -522,11 +524,11 @@ function UPGRADE_R(nTongID)
 	TONG_ApplySetTaskValue(nTongID, TASKID_LAST_LEVELUP_DAY, TONG_GetDay(nTongID))
 
 	-- °ï»áÀúÊ·/ÊÂ¼þ¼ÇÂ¼¡¢Í¨Öª
-	local szRecord = "§¼ng cÊp kiÕn thiÕt bang héi t¨ng lªn "..(nCurLevel + 1).."cÊp";
+	local szRecord = "§¼ng cÊp kiÕn thiÕt bang héi t¨ng lªn "..(nCurLevel + 1).." cÊp";
 	local szRecordPlus;
 	local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
 	if (szExecutorName ~= "") then
-		szRecordPlus = szExecutorName.." lµm cho"..szRecord;
+		szRecordPlus = szExecutorName.." lµm cho "..szRecord;
 	else
 		szExecutorName = "";
 		szRecordPlus = szRecord;
@@ -659,7 +661,7 @@ function DEGRADE_R(nTongID)
 		nWorkshop = TWS_GetNextWorkshop(nTongID, nWorkshop)
 	end
 	-- °ï»áÀúÊ·/ÊÂ¼þ¼ÇÂ¼¡¢Í¨Öª
-	local szRecord = "§¼ng cÊp kiÕn thiÕt gi¶m xuèng "..(nCurLevel - 1).."cÊp";
+	local szRecord = "§¼ng cÊp kiÕn thiÕt gi¶m xuèng "..(nCurLevel - 1).." cÊp";
 	TONG_ApplyAddHistoryRecord(nTongID, szRecord);		-- °ï»áÀúÊ·¼ÇÂ¼
 	TONG_ApplyAddEventRecord(nTongID, szRecord);		-- °ï»áÊÂ¼þ¼ÇÂ¼
 	cTongLog:WriteInfTB("TONG", "degrade", nTongID, {buildlevel = (nCurLevel - 1), day = TONG_GetDay(nTongID)})
@@ -721,18 +723,18 @@ function TONGCLAIMWAR_R(nTongID, nDestTongID)
 	
 	local nCostMoneyFund = 0;	--µ¥Î»:Íò
 	if (nCurTimes == 1) then
-		nCostMoneyFund = 5000;
+		nCostMoneyFund = 1;
 	elseif (nCurTimes == 2) then
-		nCostMoneyFund = 2 * 5000;
+		nCostMoneyFund = 2 * 1;
 	elseif (nCurTimes == 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 4 * 1;
 	elseif (nCurTimes > 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 4 * 1;
 	end;
 	
-	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then	
-		Msg2Player("Bang héi tuyªn chiÕn cÇn giao nép"..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
-		return 0;
+	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*1000)) ~= 1) then	
+	--	Msg2Player("Bang héi tuyªn chiÕn cÇn giao nép"..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
+	--	return 0;
 	end;
 	
 	--ÐûÕ½³É¹¦ºó£¬´ÎÊý¼Ó1£¬´æÈë
@@ -746,6 +748,11 @@ function TONGCLAIMWAR_R(nTongID, nDestTongID)
 end
 
 function TONGCLAIMWAR_G_1(nTongID, nDestTongID)
+--	Open bang héi tuyªn chiÕn Modifiled NgaVN - 20111124
+--	do
+--		return
+--	end
+	
 	if (nTongID == nDestTongID) then
 		Msg2Player("Kh«ng thÓ tù tuyªn chiÕn bang héi chÝnh m×nh!");
 		return 0;
@@ -771,24 +778,32 @@ function DO_TONGCLAIMWAR_G_1(nTongID, nDestTongID)
 	nCurTimes = nTimes + 1;	
 	local nCostMoneyFund = 0;	--µ¥Î»:Íò
 	if (nCurTimes == 1) then
-		nCostMoneyFund = 5000;
+		nCostMoneyFund = 1;
 	elseif (nCurTimes == 2) then
-		nCostMoneyFund = 2 * 5000;
+		nCostMoneyFund = 2 * 1;
 	elseif (nCurTimes == 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 4 * 1;
 	elseif (nCurTimes > 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 4 * 1;
 	end;
-	
-	if (TONG_GetMoney(nTongID) < nCostMoneyFund * 10000) then
-		Msg2Player("Tuyªn chiÕn bang héi cÇn giao nép"..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
-		return 0;
+	if 1==1 then	
+	--	Say("T¹m Thêi §ãng Tuyªn ChiÕn!");
+	--	return 0;
 	end;	
 	
-	--ÔÚrelayÄÇÉèÖÃ
---	TONG_ApplySetTaskValue(nTongID, TONGTSK_CLAIMWAR_TIMES, nCurTimes);	
-
+	if (TONG_GetMoney(nTongID)<10000000) then	
+		Msg2Player("Bang héi tuyªn chiÕn cÇn giao nép 1000 v¹n lÊy tõ ng©n s¸ch!");
+		return 0;
+	end;
+	TONG_ApplyAddMoney(nTongID,-10000000)
+	
+	--ÐûÕ½³É¹¦ºó£¬´ÎÊý¼Ó1£¬´æÈë
 	TongClaimWar(nDestTongID);
+	
+--	local szDestTongName = GetTongNameByID(nDestTongID);
+--	local szTongMsg = "Bang chñ  ®· tuyªn chiÕn bang héi"..szDestTongName.." råi";
+--	Msg2Tong(nTongID, szTongMsg);
+--	TONG_ApplyAddEventRecord(nTongID, szTongMsg);
 	return 1;
 end
 
@@ -827,18 +842,32 @@ function CHANGECAMP_R(nTongID, nCamp)
 --		Msg2PlayerByName(szExecutorName, "¹¥³ÇÕ½½×¶Î²»ÄÜ¸Ä±ä°ï»áÕóÓª£¡");
 --		return 0;
 --	end
-	
-	local nCostMoneyFund = 100;	-- µ¥Î»£ºÍò Ó¦Ô½ÄÏÈËÒªÇó¸ÄÎª100W by Zhi Dong
-	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then
-		local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
-		Msg2PlayerByName(szExecutorName, "§æi phe c¸nh cho bang cÇn n¹p phÝ "..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
+	local nCostMoneyFund = 300;
+--	if TONG_GetBuildFund(nTongID) < 300 then
+	--		local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
+	--	Msg2PlayerByName(szExecutorName, "§æi phe c¸nh cho bang cÇn n¹p phÝ "..nCostMoneyFund.." ®iÓm kiÕn thiÕt lÊy tõ ng©n s¸ch!");
+	--	return 0;
+--	end
+if (TONG_GetMoney(nTongID)<1000000) then	
+		Say("§æi mµu bang héi cÇn giao nép 100 v¹n lÊy tõ ng©n s¸ch!");
 		return 0;
-	end
+	end;
+	TONG_ApplyAddMoney(nTongID,-1000000)
+	-- µ¥Î»£ºÍò Ó¦Ô½ÄÏÈËÒªÇó¸ÄÎª100W by Zhi Dong
+--	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then
+	--	local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
+	--	Msg2PlayerByName(szExecutorName, "§æi phe c¸nh cho bang cÇn n¹p phÝ "..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
+	--	return 0;
+--	end
+	--ConsumeEquiproomItem(1,6,1,4474,-1)
+	--TONG_ApplyAddBuildFund(nTongID,-nCostMoneyFund)
+	--SetTask(3029,GetTask(3029)-1)
 	Msg2Tong(nTongID, "Bang chñ thay ®æi phe ph¸i cña bæn bang! ");
 	cTongLog:WriteInfTB("TONG", "changecamp", nTongID, {camp = nCamp, camp_old = nCurCamp})
 	return 1;
 end
 function CHANGECAMP_G_1(nTongID, nCamp)
+	
 	local nCurCamp = TONG_GetCurCamp(nTongID);
 	if (nCurCamp == nCamp or
 		nCurCamp < 1 or
@@ -855,9 +884,22 @@ function CHANGECAMP_G_1(nTongID, nCamp)
 --		Msg2Player("¹¥³ÇÕ½½×¶Î²»ÄÜ¸Ä±ä°ï»áÕóÓª£¡");
 --		return 0;
 --	end
-	local nCostMoneyFund = 100; -- µ¥Î»£ºÍò Ó¦Ô½ÄÏÈËÒªÇó¸ÄÎª100W by Zhi Dong
-	if (TONG_GetMoney(nTongID) < nCostMoneyFund*10000) then
-		Msg2Player("§æi phe c¸nh cho bang cÇn n¹p phÝ "..nCostMoneyFund.." v¹n lÊy tõ ng©n s¸ch!");
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+	--local a, b = GetTask(5877), GetCurServerTime()
+	--local c = 30
+	
+--	if (b - a) < c then
+	--	Msg2Player("Trong vßng 30 gi©y sau khi thay ®æi phe ph¸i cña bang héi kh«ng ®­îc phÐp thay ®æi tiÕp, thêi gian lÇn kÕ: "..(c - (b - a)).." gi©y!")
+	--	return 0
+--	end
+	
+--	SetTask(5877, b)
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	-- local nCostMoneyFund = 100; -- µ¥Î»£ºÍò Ó¦Ô½ÄÏÈËÒªÇó¸ÄÎª100W by Zhi Dong
+	if (TONG_GetMoney(nTongID) < 1000000) then
+		Msg2Player("§æi phe c¸nh cho bang cÇn n¹p phÝ 100 v¹n lÊy tõ ng©n s¸ch!");
 		return 0;
 	end
 	return 1;
@@ -948,8 +990,8 @@ function Master_SelfCommend_Maintain(nTongID)
 		if (TONG_GetFirstMember(nTongID, 0) == tbForecontributiveness[1][1] or
 			SetTongMaster(nTongID, tbForecontributiveness[1][1]) == 1) then
 			local szMember = TONGM_GetName(nTongID, tbForecontributiveness[1][1]);
-			Msg2Tong(nTongID, "Bang chñ nhiÖm vÞ míi cña bang sÏ lµ "..tostring(szMember).."Sè ®iÓm tranh cö cña bang chñ míi lµ: "..tostring(tbForecontributiveness[1][2]));
-			TONG_ApplyAddHistoryRecord(nTongID, "Bang chñ nhiÖm vÞ míi cña bang sÏ lµ "..tostring(szMember).."Sè ®iÓm tranh cö cña bang chñ míi lµ: "..tostring(tbForecontributiveness[1][2]));
+			Msg2Tong(nTongID, "Bang chñ nhiÖm vÞ míi cña bang sÏ lµ "..tostring(szMember).." Sè ®iÓm tranh cö cña bang chñ míi lµ: "..tostring(tbForecontributiveness[1][2]));
+			TONG_ApplyAddHistoryRecord(nTongID, "Bang chñ nhiÖm vÞ míi cña bang sÏ lµ "..tostring(szMember).." Sè ®iÓm tranh cö cña bang chñ míi lµ: "..tostring(tbForecontributiveness[1][2]));
 		else
 			local tbMsg = {
 				masterid     = tbForecontributiveness[1][1]

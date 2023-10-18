@@ -124,18 +124,18 @@ function main(sel)
 	if NpcName2Replace then
 		szNpcName = NpcName2Replace(szNpcName)
 	end
-    Msg2Player(szNpcName)
+    --Msg2Player(szNpcName)
 	local tbDailog = DailogClass:new(szNpcName)
 	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex)
 	--µ¯³ö¶Ô»°¿ò
 	
-	tbDailog.szTitleMsg = npc_name.."<#>Tuy kh«ng ph¶i lµ ng­êi trong giang hå, nh­ng hµng ngµy ta thÊy c¸c ng­¬i qua l¹i rÊt nhiÒu lÇn. Kh«ng ph¶i kho¸c l¸c v× hoµn c¶nh c¸c ng­¬i ta hiÓu rÊt râ. "
+	tbDailog.szTitleMsg = npc_name.." <#>Tuy kh«ng ph¶i lµ ng­êi trong giang hå, nh­ng hµng ngµy ta thÊy c¸c ng­¬i qua l¹i rÊt nhiÒu lÇn. Kh«ng ph¶i kho¸c l¸c v× hoµn c¶nh c¸c ng­¬i ta hiÓu rÊt râ. "
 	
 	local mapid = SubWorldIdx2ID( SubWorld )
 	local camp = tbDEFENCE_RETURN[mapid][4]
 						
-	tbDailog:AddOptEntry("Tham gia Phong V©n LuËn KiÕm", CallRescrptFunc )
+	tbDailog:AddOptEntry("Tham gia Tèng Kim", CallRescrptFunc )
 	tbDailog:AddOptEntry("T×m hiÓu khu vùc luyÖn c«ng", map_help )
 	tbDailog:AddOptEntry("T×m hiÓu vâ nghÖ bæn m«n", skill_help )
 	tbDailog:AddOptEntry("T¸n gÉu", default_talk )
@@ -189,12 +189,54 @@ function cd_about_compose()
 end
 
 function CallRescrptFunc()
+	-- if ( GetLevel() < 40 ) then
+		-- Talk( 1, "", npc_name..": Tèng Kim lµ n¬i rÊt nguy hiÓm, ch­a ®¹t cÊp 40 kh«ng thÓ tham gia chiÕn tr­êng." );
+	-- else
+		-- Say ( npc_name..": Nh©n sè ®«ng sÏ chiÕm ­u thÕ, tuy nhiªn ®iÓm sè nhËn ®­îc sÏ Ýt h¬n, ng­¬i muèn ®Õn n¬i b¸o danh bªn nµo?", 3, "Vµo ®iÓm b¸o danh phe Vµng (T)/#DoRescriptFunc(1)", "Vµo ®iÓm b¸o danh phe TÝm (K)/#DoRescriptFunc(2)","§Ó ta suy nghÜ l¹i./no" );
+	-- end;
 	if ( GetLevel() < 40 ) then
-		Talk( 1, "", npc_name..": Phong V©n LuËn KiÕm lµ n¬i rÊt nguy hiÓm, ch­a ®¹t cÊp 40 kh«ng thÓ tham gia chiÕn tr­êng." );
+		Talk( 1, "", npc_name..": Tèng Kim lµ n¬i rÊt nguy hiÓm, ch­a ®¹t cÊp 40 kh«ng thÓ tham gia chiÕn tr­êng." );
 	else
-		Say ( npc_name..": Nh©n sè ®«ng sÏ chiÕm ­u thÕ, tuy nhiªn ®iÓm sè nhËn ®­îc sÏ Ýt h¬n, ng­¬i muèn ®Õn n¬i b¸o danh bªn nµo?", 3, "Vµo ®iÓm b¸o danh phe Tèng (T)/#DoRescriptFunc(1)", "Vµo ®iÓm b¸o danh phe Kim (K)/#DoRescriptFunc(2)","§Ó ta suy nghÜ l¹i./no" );
+		Say ( "Trong Tèng Kim, bªn lîi thÕ vÒ sè ng­êi tuy cã chiÕm ­u thÕ nh­ng sÏ nhËn ®­îc ®iÓm tÝch lòy Ýt h¬n, c¸c h¹ muèn chän b¸o danh bªn nµo?", 3, "Vµo ®iÓm b¸o danh phe Tèng /ToSong", "Vµo ®iÓm b¸o danh phe Kim /ToJin","§Ó ta suy nghÜ l¹i./no" );
 	end;
 end;
+
+
+function ToSong()	-- ½øÈëËÎ·½±¨Ãûµã	
+	if ( GetLevel() < 40 ) then
+		Talk( 1, "", "ChiÕn tr­êng Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 40 h·y vÒ luyÖn thªm råi h·y tÝnh." );
+	elseif ( GetLevel() >= 40 and GetLevel() < 80 ) then
+			NewWorld( 323, 1541, 3178);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim S¬ CÊp" );
+	elseif ( GetLevel() >= 80 and GetLevel() < 120 ) then
+			NewWorld( 324, 1541, 3178);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Trung CÊp" );
+	else
+			NewWorld( 325, 1541, 3178);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Cao CÊp" );
+	end
+end
+
+function ToJin()	-- ½øÈë½ð·½±¨Ãûµã
+	if ( GetLevel() < 40 ) then
+		Talk( 1, "", "ChiÕn tr­êng Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 40 h·y vÒ luyÖn thªm råi h·y tÝnh." );
+	elseif ( GetLevel() >= 40 and GetLevel() < 80 ) then
+			NewWorld( 323, 1570, 3085);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim S¬ CÊp" );
+	elseif ( GetLevel() >= 80 and GetLevel() < 120 ) then
+			NewWorld( 324, 1570, 3085);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Trung CÊp" );
+	else
+			NewWorld( 325, 1570, 3085);
+			DisabledUseTownP(0); -- ²»ÏÞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Cao CÊp" );
+	end
+end
 
 function DoRescriptFunc(nSel)
 	local tbsongjin_pos = {1608,3254};	--ËÎ·½×ø±êµã

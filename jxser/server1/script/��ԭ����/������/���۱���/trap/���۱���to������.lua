@@ -1,8 +1,8 @@
---中原北区 大雄宝殿to少林派
---Trap ID：中原北区 54
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu Чi h飊g b秓 甶謓 to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 54 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1690, 3111);
+NewWorld(103, 1690, 3111); 
 
 end;

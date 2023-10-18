@@ -5,11 +5,14 @@
 -- ´´½¨Ê±¼ä£º2011-07-15 14:34:59
 
 function main(nItemIndex)
-	local nTime = 15 * 60 *18
+if 1==1 then
+	return 1
+end
+	local nTime = 5 * 60 *18
 	local tbSkill = { 1121,256,259,257,}
 
 	for i=1,getn(tbSkill) do
-		AddSkillState(tbSkill[i], 1, 1, nTime)
+		AddSkillState(tbSkill[i], 1, 1, nTime,1)
 	end	
 	Msg2Player("Ng­¬i ®· sö dông" .. "¢m D­¬ng Ho¹t HuyÕt §¬n") 
 	return 

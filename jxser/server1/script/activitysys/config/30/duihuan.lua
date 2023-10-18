@@ -3,62 +3,39 @@ Include("\\script\\activitysys\\config\\30\\config.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\lib\\log.lua")
 Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\activitysys\\config\\30\\variables.lua")
 
 local szEventName = "Event_NhaGiaoVN"
-local nMaxAskNumber = 2000 -- ´ò°üÉÏ½»Ê±×î´ó¿ÉÖ§³ÖÊý
+local nMaxAskNumber = 2000 
 
 
-local tbBookPartAward = {
-	[20]={szName="Hoa Tri ¢n",tbProp={6,1,3043,1,0,0},nExpiredTime=20111201},
-	[40]={szName="Hoa Tri ¢n",tbProp={6,1,3043,1,0,0},nCount = 3,nExpiredTime=20111201},
-	[60]={szName="Hoa Tri ¢n",tbProp={6,1,3043,1,0,0},nCount = 4,nExpiredTime=20111201},
-	[80]={szName="Hoa Tri ¢n",tbProp={6,1,3043,1,0,0},nCount = 5,nExpiredTime=20111201},
-	[100]={szName="Hoa Tri ¢n",tbProp={6,1,3043,1,0,0},nCount = 7,nExpiredTime=20111201},
-	[200]={nExp_tl=1,nCount = 20000000,},
-	[300]={nExp_tl=1,nCount = 20000000,},
-	[400]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nExpiredTime=20111201},
-	[500]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nExpiredTime=20111201},
-	[600]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nExpiredTime=20111201},
-	[700]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 2,nExpiredTime=20111201},
-	[800]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 2,nExpiredTime=20111201},
-	[900]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 2,nExpiredTime=20111201},
-	[1000]={nExp_tl=1,nCount = 20000000,},
-	[1100]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 2,nExpiredTime=20111201},
-	[1200]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 3,nExpiredTime=20111201},
-	[1300]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 3,nExpiredTime=20111201},
-	[1400]={szName="Thiªn Vò Hån",tbProp={6,1,3044,1,0,0},nCount = 3,nExpiredTime=20111201},
-	[1500]={nExp_tl=1,nCount = 50000000,},
-	[1600]={nExp_tl=1,nCount = 60000000,},
-	[1700]={nExp_tl=1,nCount = 70000000,},
-	[1800]={nExp_tl=1,nCount = 80000000,},
-	[1900]={nExp_tl=1,nCount = 90000000,},
-	[2000]={nExp_tl=1,nCount = 100000000,},
-}
-local tbBookPartAwardLog ={
-	[20] = "SuDung20LanCuonSach",
-	[40] = "SuDung40LanCuonSach",
-	[60] = "SuDung60LanCuonSach",
-	[80] = "SuDung80LanCuonSach",
-	[100] = "SuDung100LanCuonSach", 
-	[200] = "SuDung200LanCuonSach",
-	[300] = "SuDung300LanCuonSach",
-	[400] = "SuDung400LanCuonSach",
-	[500] = "SuDung500LanCuonSach",
-	[600] = "SuDung600LanCuonSach", 
-	[700] = "SuDung700LanCuonSach",
-	[800] = "SuDung800LanCuonSach",
-	[900] = "SuDung900LanCuonSach",
-	[1000] = "SuDung1000LanCuonSach",
-	[1100] = "SuDung1100LanCuonSach", 
-	[1200] = "SuDung1200LanCuonSach",
-	[1300] = "SuDung1300LanCuonSach",
-	[1400] = "SuDung1400LanCuonSach",
-	[1500] = "SuDung1500LanCuonSach",
-	[1600] = "SuDung1600LanCuonSach", 
-	[1700] = "SuDung1700LanCuonSach",
-	[1800] = "SuDung1800LanCuonSach",
-	[1900] = "SuDung1900LanCuonSach",
-	[2000] = "SuDung2000LanCuonSach",
+local tbBookPartAward = 
+{
+	[100] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 15000000},},
+	[500] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 25000000}, },
+	[700] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 35000000}, },
+	[900] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 450000000}, },
+	[1000] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 550000000}, },
+	[1100] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 650000000}, },
+	[1200] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 750000000}, },
+	[1300] = 
+	{
+		{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 850000000},
+	},
+	[1400] = 
+	{
+		{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 950000000}, 
+	},
+	[1500] = 
+	{
+		{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 150000000}, 
+		{
+			{szName = "An Bang B¨ng Tinh Th¹ch H¹ng Liªn", tbProp = {0,164}, nQuality = 1, nCount=1,nRate=20},
+			{szName = "An Bang Cóc Hoa Th¹ch ChØ hoµn", tbProp = {0,165}, nQuality = 1, nCount=1,nRate=25},
+			{szName = "An Bang §iÒn Hoµng Th¹ch Ngäc Béi", tbProp = {0,166}, nQuality = 1, nCount=1,nRate=30},
+			{szName = "An Bang Kª HuyÕt Th¹ch Giíi ChØ", tbProp = {0,167}, nQuality = 1, nCount=1,nRate=25},
+		},
+	},
 }
 
 function pContributionAward(nCount)
@@ -70,57 +47,82 @@ function pContributionAward(nCount)
 	end
 end
 
-local tbBookAward = {
-	{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.02},
-	{szName="Kim ¤ Kim Bµi",tbProp={6,1,3001,1,0,0},nCount=1,nRate=0.05},
-	{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=0.05},
-	{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=0.05},
-	{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.1},
-	{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.05},
-	{szName="Kim Hoa Chi B¶o",tbProp={6,1,3002,1,0,0},nCount=1,nRate=0.05},
-	{szName="PhØ Thóy Chi B¶o",tbProp={6,1,3003,1,0,0},nCount=1,nRate=0.03},
-	{szName="Phong V©n Chi B¶o",tbProp={6,1,3004,1,0,0},nCount=1,nRate=0.001},
-	{szName="Thanh C©u Th¹ch",tbProp={6,1,2710,1,0,0},nCount=1,nRate=0.4},
-	{szName="V©n Léc Th¹ch",tbProp={6,1,2711,1,0,0},nCount=1,nRate=0.3},
-	{szName="Th­¬ng Lang Th¹ch",tbProp={6,1,2712,1,0,0},nCount=1,nRate=0.2},
-	{szName = "6000000 §iÓm Kinh NghiÖm", nExp=6000000,nRate=35},
-	{szName = "8000000 §iÓm Kinh NghiÖm", nExp=8000000,nRate=22},
-	{szName = "12000000 §iÓm Kinh NghiÖm", nExp=12000000,nRate=10},
-	{szName = "20000000 §iÓm Kinh NghiÖm", nExp=20000000,nRate=3},
-	{szName = "50000000 §iÓm Kinh NghiÖm", nExp=50000000,nRate=0.5},
-	{szName = "100000000 §iÓm Kinh NghiÖm", nExp=100000000,nRate=0.1},
-	{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=3},
-	{szName="Phi tèc hoµn lÔ bao",tbProp={6,1,2520,1,0,0},nCount=1,nRate=3},
-	{szName="Håi thiªn t¸i t¹o lÔ bao",tbProp={6,1,2527,1,0,0},nCount=1,nRate=2,nExpiredTime=43200},
-	{szName="Tèng Kim Chiªu Binh LÖnh",tbProp={6,1,30083,1,0,0},nCount=1,nRate=2,nExpiredTime=10080},
-	{szName="Ngäc Qu¸n",tbProp={6,1,2311,1,0,0},nCount=1,nRate=0.5,nExpiredTime=43200},
-	{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=2},
-	{szName="Ngäc Trïng LuyÖn",tbProp={6,1,30104,1,0,0},nCount=1,nRate=0.2,nExpiredTime=43200},
-	{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nCount=1,nRate=0.04,nExpiredTime=43200},
-	{szName="KÝch C«ng Trî Lùc Hoµn",tbProp={6,1,2952,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
-	{szName="¢m D­¬ng Ho¹t HuyÕt §¬n",tbProp={6,1,2953,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
-	{szName="Méc Nh©n LÖnh",tbProp={6,1,30105,1,0,0},nCount=5,nRate=9.664},
-	{szName="50000 §iÓm Cèng HiÕn Bang Héi",nCount=1,nRate=2, pFun = function() %pContributionAward(50000) end},
-	{szName="100000 §iÓm Cèng HiÕn Bang Héi",nCount=1,nRate=1, pFun = function() %pContributionAward(100000) end},
-	{szName="Tö M·ng Chi B¶o (Nãn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={1,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (§ai L­ng)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={4,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (Bao Tay)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={3,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (Ngäc Béi)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={8,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (¸o)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={5,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (GiÇy)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={7,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (H¹ng Liªn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={0,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (NhÉn Trªn)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.005,tbParam={2,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (NhÉn D­íi)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.005,tbParam={9,0,0,0,0,0}},
-	{szName="Tö M·ng Chi B¶o (Vò KhÝ)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.005,tbParam={6,0,0,0,0,0}},
+local tbBookAward = 
+{
+		{szName="Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=1,nRate=30},
+
+		{szName = "Cèng HiÕn LÔ bao",tbProp={6,1,30214,1,0,0},nCount=1,nRate=0.02},
+		{szName = "Cèng HiÕn §¹i LÔ bao",tbProp={6,1,30215,1,0,0},nCount=1,nRate=0.01},
+		{szName = "KiÕn ThiÕt LÔ Bao",tbProp={6,1,30216,1,0,0},nCount=1,nRate=0.02},
+		{szName = "KiÕn ThiÕt §¹i LÔ Bao",tbProp={6,1,30217,1,0,0},nCount=1,nRate=0.01},
+		{szName = "ChiÕn BÞ LÔ Bao",tbProp={6,1,30218,1,0,0},nCount=1,nRate=0.02},
+		{szName = "ChiÕn BÞ §¹i LÔ Bao",tbProp={6,1,30219,1,0,0},nCount=1,nRate=0.01},
+
+		{szName = "B¸ch qu¶ lé",tbProp={6,1,73,1,0,0},nCount=1,nRate=0.02},
+		{szName = "QuÕ hoa töu",tbProp={6,1,125,1,0,0},nCount=1,nRate=0.02},
+		{szName = "LÖnh bµi hoµn thµnh D· TÈu",tbProp={6,1,4336,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Kim tª",tbProp={4,979,1,1,0,0},nCount=1,nRate=0.1},
+		{szName = "HuyÒn tinh cÊp 8", tbProp={6,1,147,8,0,0},nCount=1, nRate =0.05},
+		{szName = "ThÇn bÝ kho¸ng th¹ch", tbProp={6,1,398,1,0,0},nCount=1, nRate =0.1},
+		{szName = "ThÊt tinh th¶o", tbProp={6,1,1673,1,0,0},nCount=1, nRate =0.1},
+		{szName = "B¸ch niªn thÊt tinh th¶o", tbProp={6,1,1674,1,0,0},nCount=1, nRate =0.1},
+		{szName = "Thiªn niªn thÊt tinh th¶o", tbProp={6,1,1675,1,0,0},nCount=1, nRate =0.1},
+		{szName = "B¾c ®Èu tr­êng sinh thuËt CST", tbProp={6,1,1390,1,0,0},nCount=1, nRate =0.01},
+		{szName = "Ch×a Khãa Nh­ ý", tbProp={6,1,2744,1,0,0},nCount=1, nRate =0.1},
+		{szName = "Ch×a Khãa Vµng", tbProp={6,1,30191,1,0,0},nCount=1, nRate =0.1},
+
+		{szName = "§iÓm Kinh NghiÖm", nExp=2000000,nRate=40},
+		{szName = "§iÓm Kinh NghiÖm", nExp=5000000,nRate=20},
+		{szName = "§iÓm Kinh NghiÖm", nExp=5000000,nRate=5},
+		{szName = "§iÓm Kinh NghiÖm", nExp=6000000,nRate=0.7},
+		{szName = "§iÓm Kinh NghiÖm", nExp=8000000,nRate=0.3},
+		{szName = "§iÓm Kinh NghiÖm", nExp=10000000,nRate=0.01},
+		{szName = "§iÓm Kinh NghiÖm", nExp=20000000,nRate=0.01},
+
+		{szName="M¶nh Tµng B¶o §å 1",tbProp={4,490,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 2",tbProp={4,491,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 3",tbProp={4,492,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 4",tbProp={4,493,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 5",tbProp={4,494,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 6",tbProp={4,495,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 7",tbProp={4,496,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 8",tbProp={4,497,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 9",tbProp={4,498,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 10",tbProp={4,499,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 11",tbProp={4,500,1,1,0,0},nCount=1,nRate=0.02},
+		{szName="M¶nh Tµng B¶o §å 12",tbProp={4,501,1,1,0,0},nCount=1,nRate=0.02},
+
+		{szName="Cöu Ch©u LÖnh",tbProp={6,1,30117,1,0,0},nCount=1,nRate=0.5,nExpiredTime=43200},
+		{szName="Ch×a Khãa ThÇn BÝ",tbProp={6,1,30182,1,0,0},nCount=1,nRate=0.02,nExpiredTime=43200},
+		
+		{szName = "Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nCount=1, nRate=0.2},
+		{szName = "Tiªn th¶o lé §Æc BiÖt",tbProp={6,1,1181,1,0,0},nCount=1, nRate=0.1},
+		{szName = "NÕn B¸t tr©n phóc nguyÖt", nRate = 0.5,   tbProp = {6, 1, 1817, 1, 0, 0}, nCount=0.1},	
+		{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0},nCount=1, nRate =0.01},
+		{szName = "Tö mÉu lÖnh",tbProp={6,1,1427,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Tinh hång b¶o th¹ch",					tbProp={4,353,1,1,0,0},nCount=1,nRate=0.2},
+		{szName = "Tö thñy tinh",								tbProp={4,239,1,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Lôc thñy tinh",								tbProp={4,240,1,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Lam thñy tinh",							tbProp={4,238,1,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Phóc duyªn lé tiÓu",tbProp={6,1,122,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Phóc duyªn lé trung",tbProp={6,1,123,1,0,0},nCount=1,nRate=0.1},
+		{szName = "Phóc duyªn lé ®¹i",tbProp={6,1,124,1,0,0},nCount=1,nRate=0.1},
+
+		{szName = "Vâ L©m MËt TÞch",	tbProp={6,1,26,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate = 0.1},
+		{szName = "TÈy Tñy Kinh",		tbProp={6,1,22,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate = 0.1},
+
+		{szName = "TÝn sø yªu bµi", tbProp={6,1,888,1,0,0},nCount=1, nRate =0.05},
+		{szName = "Cóc hoa th¹ch", tbProp={4,963,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "B¨ng th¹ch kÕt tinh", tbProp={4,967,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "B¨ng thiÒm t¬", tbProp={4,965,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "Kª huyÕt th¹ch", tbProp={4,966,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "M· n·o", tbProp={4,964,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "M¶nh thiªn th¹ch", tbProp={4,968,1,1,0,0},nCount=1, nRate =0.05},
+		{szName = "§iÒn hoµng th¹ch", tbProp={4,969,1,1,0,0},nCount=1, nRate =0.2},	
 }
 
-local tbBaizhiPartLog = {
+local tbBaizhiPartLog = 
+{
 	[500] = "NopVatPhamGiayTrang500Lan",
 	[1000] = "NopVatPhamGiayTrang1000Lan",
 	[1500] = "NopVatPhamGiayTrang1500Lan",
@@ -131,8 +133,8 @@ local tbBaizhiPartLog = {
 
 function pActivity:AddInitNpc()
 	local tbNpcPos = {
-		[1] = {176,1431,3287,},
-		[2] = {176,1428,3283,},
+		[1] = {78,1575,3258,},
+		[2] = {78,1569,3250,},
 	}
 	local tbNpc = {
 		[1] = {
@@ -208,24 +210,6 @@ function pActivity:CheckItemCount(nValue, nTarget)
 	return 1
 end
 
--- ÉÏ½»Êé±¾³É¹¦ºóÏà¹Ø²Ù×÷
---function pActivity:DoHandInBook(nCount, nTaskId)
---	local nPreCount = self:GetTask(nTaskId)
---	local nNowCount = nPreCount + nCount
---	
---	if self:CheckFreeCell(nTaskId, nCount) ~= 1 then
---		return 
---	end
---	tbAwardTemplet:Give(%tbBookAward, nCount, {%szEventName, "SuDungCuonSachNhanVatPham"})
---	for key,value in %tbBookPartAward do
---		if key > nPreCount and key <= nNowCount then
---			tbAwardTemplet:Give(value, 1, {%szEventName,%tbBookPartAwardLog[key]})
---		end
---	end
---	self:AddTask(nTaskId, nCount)
---end
-
--- ÉÏ½»°×Ö½³É¹¦ºóÏà¹Ø²Ù×÷
 function pActivity:DoHandInPaper(nCount, nTaskId)
 	local tbExp = {{nExp_tl=1,nCount = 1000000,},}
 	local nPreCount = self:GetTask(nTaskId)
@@ -240,7 +224,6 @@ function pActivity:DoHandInPaper(nCount, nTaskId)
 	self:AddTask(nTaskId, nCount)
 end
 
--- ÉÏ½»µÀ¾ß½×¶ÎÐÔ½±Àø
 function pActivity:GiveAward(nTaskId, nCount)
 	if nTaskId == %TSK_HandInBook then
 		self:DoHandInBook(nCount, nTaskId)
@@ -261,7 +244,6 @@ function pActivity:CheckFreeCell(nTaskId, nCount)
 	return 1
 end
 
--- È·¶¨ÉÏ½»µÀ¾ß
 function pActivity:SureHandIn(tbMaterial, nTaskId, nCount)
 	if nCount <= 0 then
 		return 
@@ -295,30 +277,6 @@ function pActivity:SureHandIn(tbMaterial, nTaskId, nCount)
 	self:GiveAward(nTaskId, nCount)
 end
 
--- ÉÏ½»Êé±¾
---function pActivity:HandInBook()
---	print("Giao nép Cuèn S¸ch")
---	local tbBook = {
---		[1]={szName="Cuèn S¸ch",tbProp={6,1,3042,1,0,0},},	
---	}
---	local nMaxCount = %nMaxBookCount + self:GetTask(%TSK_UsedTianyuhun) * %nPerTianyuhun - self:GetTask(%TSK_HandInBook)
---	if nMaxCount < 1 then
---		Say("HiÖn t¹i sè lÇn giao nép cña ng­¬i ®· ®¹t ®Õn giíi h¹n cao nhÊt, kh«ng thÓ giao nép ®­îc n÷a")
---		return 
---	end
---	print("nMaxCount = " .. nMaxCount)
---	print("nMaxAskNumber" .. %nMaxAskNumber)
---	nMaxCount = min(%nMaxAskNumber, nMaxCount)
---	local nItemCount = self:GetItemCount(tbBook)
---	nMaxCount = min(nMaxCount, nItemCount)
---	if self:CheckItemCount(nMaxCount, 1) ~= 1 then
---		return
---	end
---	g_AskClientNumberEx(0,nMaxCount, format("NhËp sè (0-%d)", nMaxCount), {self.SureHandIn, {self,tbBook,%TSK_HandInBook}})
---end
-
-
--- ÉÏ½»°×Ö½
 function pActivity:HandInPaper()
 	local tbPape = {
 		[1]={szName="GiÊy Tr¾ng",tbProp={6,1,3039,1,0,0},},	
@@ -337,29 +295,21 @@ function pActivity:HandInPaper()
 	g_AskClientNumberEx(0,nMaxCount, format("NhËp sè (0-%d)", nMaxCount), {self.SureHandIn, {self,tbPape,%TSK_HandInPaper}})
 end
 
--- ÁìÈ¡½ÌÊ¦½Ú¾­Ñé½±Àø
 function pActivity:TeacherAward()
-	local nStartTime = 20111120
+	local nStartTime = 20161127
 	if tonumber(GetLocalDate("%Y%m%d")) ~= nStartTime then
-		Say("ChØ cã thÓ vµo ngµy <color=yellow>  20/11/2011 <color> míi nhËn ®­îc phÇn th­ëng nµy, hiÖn t¹i kh«ng thÓ nhËn ®­îc")
+		Say("ChØ cã thÓ vµo ngµy <color=yellow>27/11<color> míi nhËn ®­îc phÇn th­ëng nµy, hiÖn t¹i kh«ng thÓ nhËn ®­îc")
 		return 
 	end
-	local tbTeacherEXP = { {nExp_tl=1,nCount = 100000000,}, }
+	local tbTeacherEXP = { {nExp_tl=1,nCount = 50000000,}, }
 	local tbTranslog = {strFolder = "201111_20Thang11/", nPromID = 16, nResult = 1}
 	tbAwardTemplet:Give(tbTeacherEXP,1,{%szEventName, "NhanPhanThuongTaiNPCDaiLaoSu", tbTranslog})
 	self:AddTask(%TSK_TeacherAward, 1)
 end
 
 local tbJinwu = {
-	[1]={szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},},
-	[2]={szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},},
-	[3]={szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},},
-	[4]={szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},},
-	[5]={szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},},
-	[6]={szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},},
-	[7]={szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},},
 }
--- ÁìÈ¡ÉÏ´ÎÊé±¾´ÎÊý³¬¹ý700Ê±µÄ½ðÎÚ½±Àø
+
 function pActivity:JinwuAward()
 	print("NhËn phÇn th­ëng ®å phæ Kim ¤")
 	local szTitle = "Xin h·y lùa chän §å Phæ mµ ng­¬i muèn nhËn:"
@@ -420,14 +370,34 @@ end
 
 function pActivity:UseBook()
 	self:AddTask(%TSK_HandInBook,1)	
+
+	local diemkn = 
+	{ 
+		{szName = "900.000 §iÓm Kinh NghiÖm", nExp=900000,nRate=100},
+	}
+	tbAwardTemplet:Give(diemkn,1,{%szEventName, "DiemKNMacDinh900000", "DiemKNMacDinh900000"})
+
 	local tbTranslog = {strFolder = "201111_20Thang11/", nPromID = 16, nResult = 1}
 	tbAwardTemplet:Give(%tbBookAward, nCount, {%szEventName, "SuDungCuonSachNhanVatPham", tbTranslog})
 	local nUseTime = self:GetTask(%TSK_HandInBook)
-	--print(nUseTime)
+	Msg2Player("§¹i hiÖp ®· sö dông cuèn s¸ch thø: "..nUseTime.."")
 	if %tbBookPartAward[nUseTime] then
-		tbAwardTemplet:Give(%tbBookPartAward[nUseTime], 1, {%szEventName,%tbBookPartAwardLog[nUseTime]})
-		tbVngTransLog:Write("201111_20Thang11/", 16, %tbBookPartAwardLog[nUseTime], "N/A", 1)
+		Msg2Player("PhÇn th­ëng sö dông cuèn s¸ch ®¹t mèc: "..nUseTime.."")
+		tbAwardTemplet:Give(%tbBookPartAward[nUseTime], 1, {%szEventName, "PhanThuongBookDatMoc", "PhanThuongBookDatMoc"})
 	end	
+end
+
+function pActivity:UseHopQuaNhaGiaoVietNam()
+	self:AddTask(%TSK_SuDungHopQua,1)
+	local nUseTime = self:GetTask(%TSK_SuDungHopQua)
+
+	local tbhopqua = 
+	{ 
+		{szName = "900 000 §iÓm Kinh NghiÖm", nExp=900000,nRate=100},
+	}
+	Msg2Player("Sö dông hép quµ thø: "..nUseTime.."")
+	local tbTranslog = {strFolder = "201111_20Thang11/", nPromID = 16, nResult = 1}
+	tbAwardTemplet:Give(tbhopqua,1,{%szEventName, "PhanThuongMoHopQuaNhaGiaoVietNam", tbTranslog})
 end
 
 pActivity.nPak = curpack()

@@ -1,9 +1,9 @@
--- ÌÆÃÅÕ½¶·¼À×æÌü ´«ËÍµã Àë¿ª.lua
--- By: Dan_Deng(2004-04-08)
+-- script viet hoa By http://tranhba.com  §­êng m«n chiÕn ®Êu giæ tæ thİnh truyÒn tèng ®iÓm rêi ®i .lua 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2004-04-08) 
 
-function main()
-	SetFightState(0)
-	NewWorld(36, 1592, 3193)		-- ËÍ»Ø¼À×æÌü£¨Õ½¶·Î´½áÊø£©
+function main() 
+SetFightState(0) 
+NewWorld(36, 1592, 3193) -- script viet hoa By http://tranhba.com  ®­a vÒ giæ tæ thİnh # chiÕn ®Êu ch­a kÕt thóc # 
 
---	talk(1,"","´«³öÉĞÎ´¶¨Î»£¬Ôİ²»¿ª·Å£¡")
-end
+-- script viet hoa By http://tranhba.com  talk(1,"","TruyÒn ra ch­a ®Şnh vŞ , t¹m kh«ng ra ®Ó #") 
+end 

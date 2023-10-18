@@ -1,30 +1,27 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Ò©µêÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ tiÖm thuèc l·o b¶n ®èi tho¹i 
 Include( "\\script\\event\\teacherday\\teacherdayhead.lua" )
 Include( "\\script\\event\\teacherday\\medicine.lua" )
-Include("\\script\\config\\cfg_features.lua")
 
--- Á¶ÖÆ»ìÔªÁéÂ¶
-function refine()
+-- script viet hoa By http://tranhba.com  luyÖn chÕ hçn nguyªn linh lé 
+function refine() 
 	DynamicExecute("\\script\\global\\jingli.lua", "dlg_entrance", PlayerIndex)
-end
+end 
 
-OPTIONS = {}
+OPTIONS = {} 
 
-function main(sel)
-	Say("Thuèc cña bæn tiÖm toµn lµ thø th­îng h¹ng, cã bÖnh trÞ bÖnh, kh«ng bÖnh c­êng th©n, cã muèn mua mét Ýt kh«ng? ",
-		getn(OPTIONS),
-		OPTIONS)
-end
+function main(sel) 
+Say("HiÖu Thuèc: ta ®©y n¬i nµy b¸n th¶o d­îc cã bÖnh ch÷a bÖnh # v« bÖnh d­ìng sinh . gièng nh­ c¸c ng­¬i lo¹i nµy ë vÕt ®ao th­îng kiÕm sèng ng­êi , cµng lµ c¸ch kh«ng ®­îc nh÷ng thø nµy m¹ng sèng ®Ých th¶o d­îc . ", 
+getn(OPTIONS), 
+OPTIONS) 
+end 
 
-function yes()
-	Sale(12) 		--µ¯³ö½»Ò×¿ò
-end;
+function yes() 
+Sale(12) -- script viet hoa By http://tranhba.com  b¾n ra giao dÞch khu«ng 
+end; 
 
-if TEACHERSWITCH then
-	tinsert(OPTIONS, "Gióp ta cÊt d­îc töu/brew")
-end
-tinsert(OPTIONS, "Giao dÞch/yes")
-if CFG_HONNGUYENLINHLO == 1 then
-	tinsert(OPTIONS, "Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
-end
-tinsert(OPTIONS, "Kh«ng giao dÞch/Cancel")
+if TEACHERSWITCH then 
+tinsert(OPTIONS,"Gióp h¾n cÊt thuèc r­îu /brew") 
+end 
+tinsert(OPTIONS,"Giao dÞch /yes") 
+tinsert(OPTIONS, " luyÖn chÕ hçn nguyªn linh lé /refine") 
+tinsert(OPTIONS,"Kh«ng giao dÞch /Cancel") 

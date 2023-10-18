@@ -14,7 +14,7 @@ TIME_FUYUAN_THRESHOLD2 = 4 * TIME_UNIT;			--福缘衰减开始时间 （4小时）
 FUYUAN_EXTRA = 2;								--奖励的福缘点
 TIMES_IN_DAY_EXTRA = 2;							--获取奖励所需一天领取福缘的次数
 
-FUYUAN_MAX_GAIN = 100;							--一次最兜可换取兜少点福缘
+FUYUAN_MAX_GAIN = 100;							--一次最多可换取多少点福缘
 
 
 --启动福缘积攒
@@ -116,10 +116,10 @@ function FuYuan_GetDepositTime()
 	--福缘积攒已被暂停
 	if( IsFuYuanPaused() == 1 ) then
 		if( GetTeamSize() > 1 ) then
-			return 0, 0;		--组队状态息不能继续福缘积攒，防止出现本人在挂机，队友代领福缘的异常出现时将本人暂停状态破坏
+			return 0, 0;		--组队状态下不能继续福缘积攒，防止出现本人在挂机，队友代领福缘的异常出现时将本人暂停状态破坏
 		else
 			nFYStartOnlineTime = nCurrentOnlineTime;	--只能换取暂停之前积攒的在线时间
-			FuYuan_Resume();	--继续福缘积攒,防止福缘Pause而未Resume就领取福缘的异常情况息导症的福缘积攒死锁
+			FuYuan_Resume();	--继续福缘积攒,防止福缘Pause而未Resume就领取福缘的异常情况下导致的福缘积攒死锁
 		end
 	end
 		
@@ -163,7 +163,7 @@ end
 function FuYuan_Add( value )
 	local nResult = FuYuan_Set( FuYuan_Get() + value );
 	if(  nResult == 1 ) then
-		Msg2Player( "<#>Ng礽 thu 頲 "..value.."<#> 甶觤 ph骳 duy猲 " );
+		Msg2Player( "<#> B筺 nh薾 頲 "..value.."<#> 甶觤 ph骳 duy猲" );
 	end
 	return nResult;
 end
@@ -172,7 +172,7 @@ end
 function FuYuan_Reduce( value )
 	local nResult = FuYuan_Set( FuYuan_Get() - value );
 	if(  nResult == 1 ) then
-		Msg2Player( "<#>Ng礽 ti猽 hao "..value.."<#> 甶觤 ph骳 duy猲." );
+		Msg2Player( "<#> B筺  t鑞"..value.."<#> 甶觤 ph骳 duy猲" );
 	end
 	return nResult;
 end

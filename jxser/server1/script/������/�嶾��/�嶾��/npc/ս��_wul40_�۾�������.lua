@@ -1,20 +1,20 @@
--- Îå¶¾½ğÉßÑªÌ¶ÃÔ¹¬ Õ½¶·NPC ÑÛ¾µÍõòşÉß01£¨Îå¶¾40¼¶ÈÎÎñ£©
--- by£ºDan_Deng(2003-08-05)
+-- script viet hoa By http://tranhba.com  n¨m ®éc kim m¸u r¾n ®µm mª cung chiÕn ®Êu NPC m¾t kiÕng v­¬ng m·ng xµ 01# n¨m ®éc 40 cÊp nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-08-05) 
 
-function OnDeath()
-	UTask_wu = GetTask(10)
-	if (UTask_wu == 40*256+10) and (HaveItem(143) == 0) and (random(0,99) < 60) then		-- ÔÚÈÎÎñÖĞ£¬°´»úÂÊ´ò³ö¡£
-		if (HaveItem(142) == 1) then
-			if (random(0,99) < 60) then
-				AddEventItem(143)
-				DelItem(142)
-				AddNote("B¾t lÊy Nh·n Kİnh v­¬ng M·ng Xµ ")
-				Msg2Player("B¹n l¹i dïng X¹ h­¬ng ®Ó khèng chÕ nã, vµ cuèi cïng còng ®· b¾t ®­îc ")
-			else
-				Msg2Player("B¹n thö dïng X¹ h­¬ng ®Ó b¾t Nh·n Kİnh v­¬ng M·ng Xµ, vµ ®· kh«ng cÈn thËn ®Ó nã ch¹y tho¸t ")
-			end
-		else
-			Msg2Player("KŞch ®éc cña Nh·n Kİnh v­¬ng M·ng Xµ kh«ng cã thø nµo s¸nh ®­îc. B¹n kh«ng cã thø X¹ h­¬ng ®Ó kh¾c chÕ nã th× v« ph­¬ng b¾t ®­îc nã ")
-		end
-	end
-end;
+function OnDeath() 
+UTask_wu = GetTask(10) 
+	if (UTask_wu == 40*256+10) and (HaveItem(143) == 0) and (random(0,99) < 60) then		-- script viet hoa By http://tranhba.com  ÔÚÈÎÎñÖĞ£¬°´»úÂÊ´ò³ö¡£
+if (HaveItem(142) == 1) then 
+if (random(0,99) < 60) then 
+AddEventItem(143) 
+DelItem(142) 
+AddNote("B¾t ®­îc m¾t kiÕng v­¬ng m·ng xµ ") 
+Msg2Player("Ng­¬i dïng x¹ h­¬ng tíi khèng chÕ nã cuèi cïng còng chép ®­îc ") 
+else 
+Msg2Player("Ng­¬i dïng thö x¹ h­¬ng tíi b¾t m¾t kiÕng v­¬ng m·ng xµ , nh­ng lµ kh«ng cÈn thËn bŞ h¾n ch¹y trèn ") 
+end 
+else 
+Msg2Player("M¾t kiÕng v­¬ng m·ng xµ ®İch kŞch ®éc kh«ng thÓ mæ , nÕu lµ kh«ng cã x¹ h­¬ng kh¾c chÕ nã lµ kh«ng c¸ch nµo b¾t l¹i ®İch ") 
+end 
+end 
+end; 

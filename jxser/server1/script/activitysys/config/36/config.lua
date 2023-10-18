@@ -23,7 +23,7 @@ tbConfig[2] = --一个细节
 	szName = "宋金积分超过1000",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {-2,"3"},
+	tbMessageParam = {-2,"2"},
 	tbCondition = 
 	{
 		{"lib:Include",	{"\\script\\huoyuedu\\huoyuedu.lua"} },

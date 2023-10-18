@@ -1,3 +1,4 @@
+--§ãng chøc n¨ng c¶nh kü tr­êng  edit by mcteam search key Talk(1,"","Chøc n¨ng c¶nh kü tr­êng ®ang t¹m ®ãng !")
 Include("\\script\\missions\\arena\\player.lua")
 Include("\\script\\global\\titlefuncs.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
@@ -71,9 +72,9 @@ end
 
 
 function main()
-	--§ãng chøc n¨ng c¶nh kü tr­êng  - Modified By NgaVN - 20120305
+	
 	do	
-		Talk(1,"","Chøc n¨ng ®ang t¹m ®ãng !")
+		Talk(1,"","Chøc n¨ng c¶nh kü tr­êng ®ang t¹m ®ãng !")
 		return
 	end	
 	local szTitle = "Chµo ®¹i hiÖp, bæn tù lµ Quan Viªn C¶nh Kü Tr­êng."	

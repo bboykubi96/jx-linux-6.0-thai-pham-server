@@ -5,12 +5,12 @@ function main(sel)
 i = random(0,1)
 
 if (i == 0) then
-Say("B©y giê lµm ¨n kh«ng khÊm kh¸, kh¸ch uèng trµ ngµy cµng Ýt ®i. ViÖc bu«n b¸n cña qu¸n trµ ta ®Òu dùa vµo l¸ng giÒng gióp ®ì, nÕu kh«ng th× ®· ®ãng cña tõ l©u!", 0)
+Say("Chñ qu¸n trµ:B©y giê thÕ ®¹o kh«ng c¶nh khÝ, ng­êi uèng trµ cµng ngµy cµng Ýt, qu¸n trµ ta ®©y lµm ¨n toµn dùa vµo nhai ph­êng l©n lý chiÕu cè, nÕu kh«ng ®· sím ®ãng cöa.", 0)
 return
 end;
 
 if (i == 1) then
-Say("Kh¸ch quan ®©y chót trµ chø! Trµ hoa cóc hay trµ hoa nhµi?", 0)
+Say("Chñ qu¸n trµ:Ngµi muèn uèng trµ t¸n chuyÖn sao ? Trµ hoa cóc hay lµ trµ hoa lµi ®©y ? ", 0)
 end;
 
 

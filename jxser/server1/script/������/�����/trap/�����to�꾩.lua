@@ -1,7 +1,7 @@
---东北区 临渝关to汴京
---Trap ID： 临渝关 1
+-- script viet hoa By http://tranhba.com  ng b綾 khu trc khi du quan to bi謓 kinh 
+-- script viet hoa By http://tranhba.com Trap ID# trc khi du quan 1 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(37, 2081, 2477);
+function main(sel) 
+SetFightState(1); 
+NewWorld(37, 2081, 2477); 
 end;

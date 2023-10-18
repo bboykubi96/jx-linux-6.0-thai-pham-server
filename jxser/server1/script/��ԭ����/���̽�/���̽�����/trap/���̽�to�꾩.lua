@@ -1,10 +1,10 @@
---中原北区 天忍教to汴京
---Trap ID：中原北区 39
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祔 nh蒼 d箉 to bi謓 kinh 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 39 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(37, 2205, 3162);
+SetFightState(1) 
+NewWorld(37, 2205, 3162); 
 
 
 end;

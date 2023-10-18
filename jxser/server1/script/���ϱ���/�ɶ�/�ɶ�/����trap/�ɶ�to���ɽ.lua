@@ -1,13 +1,11 @@
---西南北区 成都to青城山
---Trap ID：西南北区 56
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu th祅h  to n骾 Thanh Th祅h 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 56 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(21, 2621, 4501);
+SetFightState(1); 
+NewWorld(21, 2621, 4501); 
 
-AddTermini(25)
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+AddTermini(25) 
 
 end;

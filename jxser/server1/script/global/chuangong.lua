@@ -1,12 +1,12 @@
-Include([[\script\global\ÌØÊâÓÃµØ\ÃÎ¾³\npc\Â·ÈË_ÅÑÉ®.lua]]);
-Include("\\script\\item\\levelup_item.lua");
-Include("\\script\\global\\head_qianzhuang.lua");
-Include("\\script\\global\\systemconfig.lua");
+Include([[\script\global\ÌØÊâÓÃµØ\ÃÎ¾³\npc\Â·ÈË_ÅÑÉ®.lua]])
+Include("\\script\\item\\levelup_item.lua")
+Include("\\script\\global\\head_qianzhuang.lua")
+Include("\\script\\global\\systemconfig.lua")
 IncludeLib("SETTING")
 
-TBMONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-strimg = "<link=image[0,1]:\\spr\\npcres\\enemy\\enemy111\\enemy111_pst.spr>§éc C« KiÕm:<link>";
-function cg_getnextdate(oldday, num)
+TBMONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+strimg = "<link=image[0,1]:\\spr\\npcres\\enemy\\enemy111\\enemy111_pst.spr><link>"
+function cg_getnextdate(oldday, num) --»ñµÃolddayµÄµÚnumÈÕµÄÈÕÆÚ£¬±ÈÈç060227µÄµÚ5ÈÕÎª060304
 	local nDay = tonumber(oldday)
 	local nYear = floor(nDay / 10000)
 	local nMonth = floor((nDay - nYear * 10000) / 100)
@@ -27,30 +27,30 @@ end
 
 function chuangong_main()
 	-- VN_MODIFY_20060427
-	if (1) then 
-Say("HiÖu xuÊt sai.", 0) 
-return 
-end 
-
---if (gb_GetModule("TruyÒn c«ng") ~= 1) then 
-		--Say("Xin lçi! Chøc n¨ng truyÒn c«ng ®· ®ãng l¹i, thêi gian më l¹i xem trang chñ ®Ó biÕt thªm th«ng tin!", 0)
-		--return 
---end 
-if (GetTask(TV_LAST_APPLY_TIME) > 0) then 
-Say("§éc C« KiÕm :"..GetName().."§· l©u kh«ng gÆp, h«m nay t×m ta cã chuyÖn g× ? ",3, "Ta muèn hái th¨m liªn quan tíi truyÒn c«ng. /chuangong_info", "Ta muèn hñy bá lÇn truyÒn c«ng lÇn tr­íc !/cg_undo", "Ta ch¼ng qua lµ tíi b¸i kiÕn minh chñ ng­¬i mµ th«i./OnCancel") 
-else 
-Say("§éc C« KiÕm :"..GetName().."§· l©u kh«ng gÆp, h«m nay t×m ta cã chuyÖn g× ? ",2, "Ta muèn hái th¨m liªn quan tíi truyÒn c«ng./chuangong_info", "Ta ch¼ng qua lµ tíi b¸i kiÕn minh chñ ng­¬i mµ th«i. /OnCancel") 
-end
+	if (1) then
+		Say("Chøc n¨ng vÉn ch­a Më ra", 0)
+		return
+	end
+	
+	if (gb_GetModule("TruyÒn c«ng") ~= 1) then
+		Say("Xin lçi! Chøc n¨ng truyÒn c«ng ®· ®ãng l¹i, thêi gian më l¹i xem trang chñ ®Ó biÕt thªm th«ng tin!", 0)
+		return 
+	end
+	if (GetTask(TV_LAST_APPLY_TIME) > 0) then
+		Say(": "..GetName().."§· l©u kh«ng gÆp! H«m nay t×m ta cã viÖc g×?",3, "Ta muèn hái th¨m vÒ chuyÖn truyÒn c«ng./chuangong_info", "Ta muèn xin xãa bá truyÒn c«ng!/cg_undo", "ChØ lµ ®Õn th¨m Minh chñ!/OnCancel")
+	else
+		Say(": "..GetName().."§· l©u kh«ng gÆp! H«m nay t×m ta cã viÖc g×?",2, "Ta muèn hái th¨m vÒ chuyÖn truyÒn c«ng./chuangong_info", "ChØ lµ ®Õn th¨m Minh chñ!/OnCancel")
+	end
 end
 
 function chuangong_info()
-	--if (gb_GetModule("´«¹¦") ~= 1) then
-		--Say("Xin lçi! Chøc n¨ng truyÒn c«ng ®· ®ãng l¹i, thêi gian më l¹i xem trang chñ ®Ó biÕt thªm th«ng tin!", 0)
-		--return 
-	--end
+	if (gb_GetModule("TruyÒn c«ng") ~= 1) then
+		Say("Xin lçi! Chøc n¨ng truyÒn c«ng ®· ®ãng l¹i, thêi gian më l¹i xem trang chñ ®Ó biÕt thªm th«ng tin!", 0)
+		return 
+	end
 	local nowday = tonumber(date("%y%m%d"))
 	local applytime = GetTask(TV_LAST_APPLY_TIME)
-	if (applytime == 0) then 
+	if (applytime == 0) then
 		Describe(strimg.."Ng­êi cã ®¼ng cÊp tõ 100 ®Õn 160 cã thÓ chuyÓn c«ng lùc thµnh 1 viªn 'Nguyªn ThÇn §¬n', ng­êi tõ cÊp 10 trë xuèng, ch­a gia nhËp m«n ph¸i vµ ch­a b¸i s­ chØ cÇn uèng 1 viªn Nguyªn ThÇn ®¬n sÏ cãp ®­îc tinh lùc h¬n ng­êi. Ng­êi tõ 100~120 sau khi truyÒn c«ng kinh nghiÖm sÏ gi¶m 5%, ng­êi tõ 121~150 sau khi truyÒn c«ng kinh nghiÖm sÏ gi¶m 10%, Ng­êi tõ 150 trë lªn sÏ gi¶m 20%. <color=yellow>Suy nghÜ kü ch­a?<color>", 2, "Ta ngao du giang hå ®· l©u, muèn röa tay g¸c kiÕm!/chuangong_do", "§­¬ng nhiªn kh«ng ph¶i! ChØ lµ ®Õn hái th¨m 1 chót mµ th«i!./OnCancel");
 	elseif (nowday >= applytime ) then
 		Describe(strimg.."ChuÈn bŞ truyÒn c«ng! Ng­¬i quyÕt dŞnh ch­a? §· truyÒn lµ kh«ng thÓ rót l¹i ®©u ®ã!", 3, "§óng vËy! ı ta ®· quyÕt!./chuangong_dosure","Kh«ng! Tta muèn hñy bá truyÒn c«ng! /cg_undo", "§îi ta suy nghÜ thªm vµi ngµy./OnCancel");
@@ -65,12 +65,12 @@ function num2datestr(nday)
 	local year = floor(nday / 10000) + 2000
 	local month = mod( floor(nday / 100) , 100)
 	local day = mod(nday, 100)
-	return year.."n¨m"..month.."th¸ng "..day.."ngµy "
+	return year.."n¨m"..month.."nguyÖt "..day.."nhËt "
 end
 
 function cg_undo()
 	local nowday = GetTask(TV_LAST_APPLY_TIME)
-	if (nowday > 0) then 
+	if (nowday > 0) then
 		Describe(strimg.."Ta ®Õn"..num2datestr(nowday).."lµ cã thÓ truyÒn c«ng cho ng­¬i, cã thËt ng­¬i kh«ng muèn truyÒn c«ng kh«ng?",2,"Kh«ng! Ta kh«ng muèn truyÒn c«ng!/cg_undo_sure", "V©ng! Ta muèn truyÒn c«ng./OnCancel")
 	else
 		Describe(strimg.."Ng­¬i ch­a xin phĞp truyÒn c«ng, cÇn g× hñy bá!",1,"KÕt thóc ®èi tho¹i/OnCancel")
@@ -82,11 +82,10 @@ function cg_undo_sure()
 	Describe(strimg.."§­îc! Nguyªn liÖu nµy ta t¹m gi÷ l¹i, nÕu lÇn sau muèn truyÒn c«ng th× ®Õn ®©y!",1,"C¶m ¬n Minh chñ!/OnCancel")
 end
 
-
 function chuangong_do()
 	local nEndLevel = GetLevel()
 	local nRestExp = GetExp()
-	if (nEndLevel < 100) then 
+	if (nEndLevel < 100) then
 		Describe(strimg.."Huynh ®Ö! Theo c«ng lùc cña ng­¬i hiÖn nay kh«ng ®ñ ®Ó truyÒn c«ng. Muèn truyÒn c«ng ph¶i tõ <color=yellow>cÊp 100<color> trë lªn, ng­¬i cÇn ph¶i luyÖn thªm!",1,"Ta biÕt råi!/OnCancel")
 		return
 	end

@@ -1,8 +1,8 @@
---Î÷ÄÏÄÏÇø ´óÀí¸® Â·±ê ÁúÃÅÕòto»ÆºÓÔ´Í·
---by Suyu @20031029
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lı phñ b¶ng chØ ®­êng long m«n trÊn to Hoµng Hµ ngän nguån 
+-- script viet hoa By http://tranhba.com by Suyu @20031029 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Hoµng Hµ Nguyªn ®Çu", 0)
+Say("§i th«ng Hoµng Hµ ngän nguån ", 0) 
 
 end;

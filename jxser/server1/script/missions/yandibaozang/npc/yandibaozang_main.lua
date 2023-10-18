@@ -10,10 +10,15 @@ Include("\\script\\missions\\yandibaozang\\include.lua")
 Include("\\script\\missions\\yandibaozang\\npc\\golditem.lua")
 Include("\\script\\missions\\yandibaozang\\npc\\yandituteng.lua")
 Include("\\script\\missions\\yandibaozang\\yandiduihuan.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 --YDBZ_DATE_START = 13	--	¿ªÊ¼Ê±¼ä
 --YDBZ_DATE_END = 23		--	½áÊøÊ±¼ä
 ID_PRISONMAN = 96; 		-- ÅÐ¶ÏÊÇ·ñÔÚ×øÀÎµÄ ID
 function main()
+	if 1 == 1 then
+		Say("SÏ më trong thêi gian s¾p tíi.")
+		return
+	end
 --	Say("Chøc n¨ng ®ang ®­îc t¹m ®ãng",0)
 --	do return end
 --	if gb_GetModule("YANDIBAOZANG_TALK") ~= 1 then
@@ -22,20 +27,21 @@ function main()
 --	end
 	local tbarytalk = {
 	"<dec><npc>C¸ch ch¬i v­ît ¶i míi, néi dung míi, boss míi, b¶n ®å míi, v« vµn kú tr©n dÞ b¶o, rÊt thÝch hîp c¸c trang bÞ hoµng kim cña m«n ph¸i chØ cã t¹i b¶o tµng viªm ®Õ. C¸c h¹ ®· chuÈn bÞ ch­a?",
-	"Xem t×nh h×nh tæ ®éi/YDBZ_view_player",
---	"Ñ×µÛ»Æ½ðÍ¼Æ×¶Ò»»/YDBZ_golditem",
---	"Ñ×µÛÍ¼ÌÚ¶Ò»»/YDBZ_tradeYandiTuTeng",
---	"Ta muèn ®æi viªm ®Õ lÖnh kú/YDBZ_tradeYandiLingQi",
---	"Ta muèn ®æi huyÒn viªn lÖnh/YDBZ_tradeXuanYuanLing",
---	"ÎÒÒªÖØÖýÑ×µÛ»Æ½ð×°±¸/yandiduihuan_main",
---	"ÖØÖýÑ×µÛ»Æ½ð×°±¸ËµÃ÷/yandiduihuan_shuoming",
-	"Nguån gèc b¶o tµng viªm ®Õ/YDBZ_about",
-	"Ta chØ muèn d¹o ch¬i/NoChoice",
+	"Xem xÐt t×nh h×nh ®éi/YDBZ_view_player",
+	--"Xem häp thµnh t×nh huèng ®éi/YDBZ_golditem",
+	--"§å phæ hoµng kim viªn ®Õ/YDBZ_tradeYandiTuTeng",
+	--"Ta muèn ®æi viªn ®Õ kú lÖnh/YDBZ_tradeYandiLingQi",
+	--"Ta muèn ®æi huyÒn viªn lÖnh/YDBZ_tradeXuanYuanLing",
+	--"Ta muèn ®óc trang bÞ hoµng kim Viªn ®Õ/yandiduihuan_main",
+	--"HiÓu râ ®óc trang bÞ hoµng kim viªn ®Ð/yandiduihuan_shuoming",
+	"XuÊt xø cña Viªm ®Õ b¶o tµng/YDBZ_about",
+	"KÕt thóc ®èi tho¹i/NoChoice",
 	}
 	if YDBZ_check_ready_state() == 1 then
 		tinsert(tbarytalk,2,"B¸o danh tham gia/YDBZ_want_play")
 		tinsert(tbarytalk,3,"Thµnh viªn tham chiÕn/YDBZ_member_play")
 	end
+
 	CreateTaskSay(tbarytalk)
 end
 
@@ -202,7 +208,7 @@ function YDBZ_checkLimit()
 				nocount = nocount + 1
 				tbstr[3][nocount] = "<color=yellow>"..GetName().."<color>"
 				nsignweekday = 1
-		elseif (nday == noldday and ndaycount >= YDBZ_LIMIT_DAY_COUNT and (ndnumzimu + ndnumbeibao) == 0 )then
+		elseif (nday == noldday and ndaycount >= YDBZ_LIMIT_DAY_COUNT)then
 				nocount = nocount + 1
 				tbstr[3][nocount] = "<color=yellow>"..GetName().."<color>"
 				nsignweekday = 2
@@ -466,5 +472,6 @@ end
 function YDBZ_about()
 	-- Thay ®æi th«ng b¸o b¸o danh tham gia  tÝnh n¨ng Viªm §Õ -Modifiled by AnhHH - 20110802
 	Say(format("C¸ch ch¬i v­ît ¶i míi, néi dung míi, boss míi, b¶n ®å míi, v« vµn kú tr©n dÞ b¶o, rÊt thÝch hîp c¸c trang bÞ hoµng kim cña m«n ph¸i chØ cã t¹i b¶o tµng viªm ®Õ! <enter>Mçi ngµy %s, h·y ®Õn tr­íc 5 phót ®Ó b¸o danh ë B×nh B×nh c« n­¬ng.", "14:25, 16:25, 18:25, 20:25, 22:25"),0)
+
 	
 end

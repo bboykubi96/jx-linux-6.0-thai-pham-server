@@ -34,7 +34,7 @@ function main(nItemIdx)
 	for i = 1, getn(tb_90skill[n_fac]) do
 		local skill = HaveMagic(tb_90skill[n_fac][i]);
 		if (skill ~= -1 and skill ~= 20) then
-			tinsert(tb_Desc, format("N©ng c p".."%s/#upgrade_skilllevel(%d)", GetSkillName(tb_90skill[n_fac][i]), tb_90skill[n_fac][i]));
+			tinsert(tb_Desc, format("N©ng c p ".."%s/#upgrade_skilllevel(%d)", GetSkillName(tb_90skill[n_fac][i]), tb_90skill[n_fac][i]));
 		end
 	end
 	
@@ -50,6 +50,9 @@ function main(nItemIdx)
 end
 
 function upgrade_skilllevel(n_skillid)
+	if CalcEquiproomItemCount(6,1,2424,-1)<1 then
+	return 1
+	end
 	if (HaveMagic(n_skillid) == -1 or HaveMagic(n_skillid) >= 20) then
 		return	
 	end

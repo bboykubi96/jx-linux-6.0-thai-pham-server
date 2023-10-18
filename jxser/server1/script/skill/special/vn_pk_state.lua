@@ -2,13 +2,15 @@ Include("\\script\\skill\\head.lua")
 SKILLS=
 {
 	gongjizhuliwan={ --¹¥»÷ÖúÁ¦Íè
-		castspeed_v={{{1,10},{2,10}},{{1,-1},{2,-1}}},
-		castspeed_yan_v={{{1,10},{2,10}},{{1,-1},{2,-1}}},
-		addphysicsmagic_v={{{1,1000},{2,1000}},{{1,-1},{2,-1}}},
-		addpoisonmagic_v={{{1,200},{2,200}},{{1,-1},{2,-1}}},
-		addcoldmagic_v={{{1,1000},{2,1000}},{{1,-1},{2,-1}}},
-		addfiremagic_v={{{1,1000},{2,1000}},{{1,-1},{2,-1}}},
-		addlightingmagic_v={{{1,1000},{2,1000}},{{1,-1},{2,-1}}},
+		attackrating_v={{{1,1000},{2,1000}},{{1,-1},{2,-1}}},
+		castspeed_v={{{1,10},{2,10}},{{1,-1},{2,-1}}},  --Tèc ®é ®¸nh - néi c«ng: #d1+%
+		attackspeed_v={{{1,50},{2,50}},{{1,-1},{2,-1}}},  --Tèc ®é ®¸nh - ngo¹i c«ng: #d1+%
+		addphysicsdamage_v={{{1,50},{2,50}},{{1,-1},{2,-1}}},  --S¸t th­¬ng vËt lý - ngo¹i c«ng: #d1+ ®iÓm
+		addphysicsmagic_v={{{1,800},{2,800}},{{1,-1},{2,-1}}},  --S¸t th­¬ng vËt lý - néi c«ng: #d1+ ®iÓm
+		addpoisonmagic_v={{{1,50},{2,50}},{{1,-1},{2,-1}}},
+		addcoldmagic_v={{{1,800},{2,800}},{{1,-1},{2,-1}}},
+		addfiremagic_v={{{1,800},{2,800}},{{1,-1},{2,-1}}},
+		addlightingmagic_v={{{1,800},{2,800}},{{1,-1},{2,-1}}},
 		},
 	yinyanghuoxuedan={ --ÒõÑô»îÑªµ¤
 		allres_yan_p={{{1,25},{2,25}},{{1,-1},{2,-1}}},

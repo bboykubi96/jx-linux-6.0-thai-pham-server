@@ -1,41 +1,41 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË2¹ÅÀÏÌ«¶Ô»°
---°ÍÁêÏØĞÂÊÖÈÎÎñ£º¹ÅÀÏÌ«µÄ±¦±´
---suyu
--- Update: Dan_Deng(2003-08-09)
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 2 cæ x­a qu¸ ®óng tho¹i 
+-- script viet hoa By http://tranhba.com  ba l¨ng huyÒn tay míi nhiÖm vô # cæ x­a qu¸ ®İch b¶o bèi 
+-- script viet hoa By http://tranhba.com suyu 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-09) 
 
-function main(sel)
-	UTask_world19 = GetTask(47);
-	if ((UTask_world19 == 0) and (GetLevel() >= 6)) then		-- ÈÎÎñÆô¶¯
-		Say("Con trai l·o ®i ®¸nh c¸ 3 ngµy kh«ng thÊy vÒ. L·o giµ råi, kh«ng thÓ ®i t×m ®­îc. Ch¸u cã thÓ gióp l·o ra hå t×m nã ®­îc kh«ng?",2,"Gióp /yes","Kh«ng gióp /no")
-	elseif(UTask_world19 == 1) then
-		if(HaveItem(182) == 1) then
-			Talk(2, "", "§©y ch¼ng ph¶i lµ ngäc béi cña con l·o? LÏ nµo…lÏ nµo… huhuhu..., con cña l·o chÕt th¶m qu¸, thö hái mét bµ giµ nh­ l·o sÏ sèng sao ®©y……", "C¶m ¬n ch¸u ®· gióp l·o t×m ®­îc miÕng ngäc béi nµy, nh×n nã ta cã c¶m gi¸c con trai ta ®ang ë bªn c¹nh! Bøc th­ ph¸p nµy lµ cña gia truyÒn, l·o th× mét ch÷ còng kh«ng biÕt, th«i th× tÆng ch¸u vËy. Huhuhu……")
-			DelItem(182)
-			AddEventItem(183)
-			SetTask(47, 2)
-			AddNote("§em miÕng Ngäc Béi ®­a cho Cæ L·o Th¸i. ")
-			Msg2Player("§em miÕng Ngäc Béi ®­a cho Cæ L·o Th¸i. ")
-			AddRepute(4)		-- ¼ÓÉùÍû6µã
-			Msg2Player("Thanh thÕ giang hå cña b¹n t¨ng 4 ®iÓm ")
-		else
-			Talk(1,"","BÕn ®ß ë phİa §«ng thŞ trÊn, c¸c ng­ d©n th­êng cËp thuyÒn ë ®ã, nÕu chÊu thÊy nã th× nãi víi nã ta ë nhµ rÊt mong nã vÒ! Khô….khô…")
-		end
-	else				-- ·ÇÈÎÎñ¶Ô»°
-		if (random(0,1) == 0) then
-			Talk(1,"","C¸c ng­ d©n thËt lµ khæ! Ta cã hai ®øa con ®i ®¸nh c¸ trªn hå ®Òu bŞ sãng lín d×m chÕt. ")
-		else
-			Talk(1,"","§Õn ng­êi ®¸nh c¸ còng kh«ng cã c¸ mµ ¨n, kh«ng ®¸nh c¸ th× ngay c¶ ®Õn c¬m ¨n còng kh«ng cã!")
-		end
-	end
-end;
+function main(sel) 
+UTask_world19 = GetTask(47); 
+if ((UTask_world19 == 0) and (GetLevel() >= 6)) then -- script viet hoa By http://tranhba.com  nhiÖm vô khëi ®éng 
+Say("Cæ x­a qu¸ # ta tiÓu nhi tö ba ngµy tr­íc ®i ra ngoµi ®¸nh c¸ , ®Õn b©y giê vÉn ch­a vÒ , ta giµ råi , ®i kh«ng ®Æng . ng­¬i gióp ta ®Õn bªn hå ®i xem h¾n mét chót cã ph¶i lµ ®· trë l¹i hay kh«ng ®­îc chø ? ",2,"Gióp mét tay /yes","Kh«ng gióp /no") 
+elseif(UTask_world19 == 1) then 
+if(HaveItem(182) == 1) then 
+Talk(2, "","Cæ x­a qu¸ # ®©y kh«ng ph¶i lµ ta tiÓu nhi tö ®İch ngäc béi sao , ch¼ng lÏ …… ch¼ng lÏ …… « « « , con trai cña ta cöa bèn ®İch thËt thª th¶m nha , ®Ó cho ta ®©y c¸ l·o bµ tö sau nöa ®êi sèng thÕ nµo nha ……","Cæ x­a qu¸ # c¸m ¬n ng­¬i gióp mét tay t×m ®­îc khèi ngäc béi nµy , nh×n nã ta c¶m gi¸c ®­îc con trai ®ang ë bªn c¹nh ta …… , tê nµy ch÷ vÏ lµ gia truyÒn b¶o bèi , ta ®©y c¸ l·o th¸i bµ mét ch÷ còng kh«ng biÕt , sÏ ®­a cho ng­¬i ®i . « « « ……") 
+DelItem(182) 
+AddEventItem(183) 
+SetTask(47, 2) 
+AddNote("§em ngäc béi ®­a vÒ cho cæ x­a qu¸ . ") 
+Msg2Player("§em ngäc béi ®­a vÒ cho cæ x­a qu¸ . ") 
+AddRepute(4) -- script viet hoa By http://tranhba.com  thªm danh väng 6 ®iÓm 
+Msg2Player("Ng­¬i giang hå danh väng t¨ng lªn 4 ®iÓm ") 
+else 
+Talk(1,"","Cæ x­a qu¸ # bÕn tµu ®ang ë huyÖn thµnh ®İch phİa ®«ng , ®¸nh c¸ ng­êi cña nhµ còng tõ n¬i ®ã lªn bê , ng­¬i thÊy h¾n h·y cïng h¾n nãi mÑ nã ë chç nµy chê h¾n liÖt , ho khan mét c¸i ……") 
+end 
+else -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ nhiÖm vô ®èi tho¹i 
+if (random(0,1) == 0) then 
+Talk(1,"","Cæ x­a qu¸ # c¸ d©n khæ a # ta cã hai ®øa con trai ®Òu lµ ë hå th­îng ®¸nh c¸ ®İch thêi ®iÓm gÆp gì sãng giã chÕt ch×m . ") 
+else 
+Talk(1,"","Cæ x­a qu¸ # ®¸nh c¸ ng­êi cña nhµ kh«ng cã c¸ ¨n , kh«ng ®¸nh c¸ lêi cña ngay c¶ c¬m còng kh«ng cã ¨n #z") 
+end 
+end 
+end; 
 
-function yes()
-	Talk(1,"","Ch¸u thÊy ®Êy! Ta ®· giµ c¶ råi, quªn nãi cho chÊu biÕt con ta h×nh d¸ng thÕ nµo,khô khô……trªn cæ nã cã ®eo mét miÕng ngäc béi, rÊt dÔ nhËn ra. ")
-	SetTask(47, 1)
-	AddNote("TiÕp nhËn nhiÖm vô: Con trai cña Cæ L·o Th¸i ®i ®¸nh c¸ 3 ngµy kh«ng vÒ, gióp bµ l·o ra bÕn tµu t×m cËu ta. ")
-	Msg2Player("TiÕp nhËn nhiÖm vô: Con trai cña Cæ L·o Th¸i ®i ®¸nh c¸ 3 ngµy kh«ng vÒ, gióp bµ l·o ra bÕn tµu t×m cËu ta. ")
-end;
+function yes() 
+Talk(1,"","Cæ x­a qu¸ # ng­¬i xem ta còng l·o hå ®å , quªn nãi cho ng­¬i biÕt h¾n h×nh d¸ng g× , ho khan mét c¸i …… trªn cæ h¾n mang theo mét khèi ngäc béi , rÊt tèt nhËn ®İch . ") 
+SetTask(47, 1) 
+AddNote("NhËn ®­îc nhiÖm vô # cæ x­a qu¸ ®İch tiÓu nhi tö ®¸nh c¸ ba ngµy kh«ng trë vÒ , gióp nµng ®i huyÖn thµnh bÕn tµu phô cËn t×m mét chót . ") 
+Msg2Player("NhËn ®­îc nhiÖm vô # cæ x­a qu¸ ®İch tiÓu nhi tö ®¸nh c¸ ba ngµy kh«ng trë vÒ , gióp nµng ®i huyÖn thµnh bÕn tµu phô cËn t×m mét chót . ") 
+end; 
 
-function no()
-	Talk(1,"","ThËt lµ lµm phiÒn ch¸u qu¸. ")
-end;
+function no() 
+Talk(1,"","Cæ x­a qu¸ # ng­¬i cã chuyÖn lêi cña còng kh«ng lµm phiÒn ng­¬i . ") 
+end; 

@@ -1,5 +1,5 @@
--- ÃÎ¾³ µØÍ¼_´¢ÎïÏä.lua
+-- script viet hoa By http://tranhba.com  méng c¶nh b¶n ®å _ tr÷ vËt r­¬ng .lua 
 
-function main()
-	OpenBox();
-end
+function main() 
+OpenBox(); 
+end 

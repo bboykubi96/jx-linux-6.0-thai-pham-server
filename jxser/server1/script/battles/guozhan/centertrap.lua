@@ -15,6 +15,11 @@ function main()
 		end;
 	else
 		SetFightState(1)
+		SetPunish(0);
+	
+		ForbidEnmity( 1 )
+	
+		--SetPKFlag(1)
 	end;
 end;
 

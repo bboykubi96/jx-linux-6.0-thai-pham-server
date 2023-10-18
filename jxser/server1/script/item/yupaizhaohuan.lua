@@ -32,10 +32,10 @@ function main( nItemIdx )
 	--end
 	
 	--tinhpn 20100803: Patch ReQuest
-	-- if %checkOnlyUseInMap() ~= 1 then
-		-- Msg2Player("Kh«ng thÓ sö dông vËt phÈm nµy t¹i ®©y.")
-		-- return 1
-	-- end
+	if %checkOnlyUseInMap() ~= 1 then
+		Msg2Player("Kh«ng thÓ sö dông vËt phÈm nµy t¹i ®©y.")
+		return 1
+	end
 	
 	--tinhpn 20100720: forbid item
 	if (ForbidMap() == 1) then
@@ -64,6 +64,7 @@ function main( nItemIdx )
 		Say("H«m nay ®· sö dông 1 Ngäc Bµi råi! H·y ®îi ngµy mai míi cã thÓ tiÕp tôc sö dông!",0);
 		return 1;
 	end
+	
 end
 
 function GetDesc(nItem)

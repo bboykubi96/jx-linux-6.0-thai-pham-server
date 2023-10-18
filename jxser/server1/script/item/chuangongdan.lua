@@ -6,7 +6,14 @@ Include("\\script\\lib\\pay.lua");
 Include("\\script\\task\\task_addplayerexp.lua");
 Include("\\script\\event\\BeiDouChuanGong\\lib\\addaward.lua");
 Include("\\script\\event\\BeiDouChuanGong\\head.lua")
+
+Include("\\script\\event\\beidouchuangong\\head.lua")
+
 function main(nItemIndex)
+	
+	--dofile("script/item/chuangongdan.lua")
+	--dofile("script/event/beidouchuangong/head.lua")
+
 	local itemgenre, detailtype, parttype = GetItemProp(nItemIndex)
 	if (parttype == 30036 or parttype == 30037) then	
 			return 1

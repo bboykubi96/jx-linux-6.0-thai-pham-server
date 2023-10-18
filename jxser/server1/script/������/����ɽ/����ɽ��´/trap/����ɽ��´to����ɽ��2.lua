@@ -1,16 +1,16 @@
--- 东北区\长白山\长白山南麓\trap\长白山南麓to长白山脚2.lua
--- TrapId 2
--- by liukuo @20040915
+-- script viet hoa By http://tranhba.com  ng b綾 khu \ Trng b筩h s琻 \ Trng b筩h s琻 nam l閏 \trap\ Trng b筩h s琻 nam l閏 to Trng b筩h s琻 ch﹏ 2.lua 
+-- script viet hoa By http://tranhba.com  TrapId 2 
+-- script viet hoa By http://tranhba.com  by liukuo @20040915 
 
-function main(sel)
-	
-	local nSubWorldId = SubWorldIdx2ID(SubWorld);
-	if nSubWorldId == 921 or nSubWorldId == 922 then
-		local nW, nX, nY = RevID2WXY(GetPlayerRev());
-		NewWorld(nW, nX/32, nY/32);
-		return
-	end
-	
-	SetFightState(1);
-	NewWorld(320, 1562, 2981);
+function main(sel) 
+
+local nSubWorldId = SubWorldIdx2ID(SubWorld); 
+if nSubWorldId == 921 or nSubWorldId == 922 then 
+local nW, nX, nY = RevID2WXY(GetPlayerRev()); 
+NewWorld(nW, nX/32, nY/32); 
+return 
+end 
+
+SetFightState(1); 
+NewWorld(320, 1562, 2981); 
 end;

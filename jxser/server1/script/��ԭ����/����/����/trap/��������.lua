@@ -10,6 +10,4 @@ else			       		-- 玩家处于战斗状态，即在城外
 	SetFightState(0)		-- 转换为非战斗状态
 end;
 	AddStation(5)			-- 记录角色曾经到过襄阳府
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
 end;

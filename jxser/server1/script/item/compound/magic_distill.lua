@@ -65,7 +65,8 @@ end
 function genDesItemsInfo( arynNecessaryItemIdx )
 	local aryDesItemInfo = {};
 	local nLatestItemVer = ITEM_GetLatestItemVersion();
-	for i = 1, 10 do
+	local Tile =random(1,4)
+	for i = 1, 10 do--for i = 1, Tile do
 		aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 199 + g_nDistillMagicPos, i, g_nOreSeries, 0, { g_nDistillMagicID, 0, 0, 0, 0, 0 }, nil, getCompoundParam() };
 	end
 	return aryDesItemInfo;

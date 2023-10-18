@@ -67,7 +67,7 @@ function main()
 	end                                                                                              
         -- §Òn bï PQCH -Created By - AnhHH - 20110919
 	  if (DenBuPQCH2011:IsActive() == 1 and DenBuPQCH2011:CheckAccount() == 1) then
---			tinsert(tbOpt, "NhËn phÇn th­ëng Phó Quý CÈm H¹p/#DenBuPQCH2011:GetAward()")
+			tinsert(tbOpt, "NhËn phÇn th­ëng Phó Quý CÈm H¹p/#DenBuPQCH2011:GetAward()")
 	  end
         
 --        if tbVngEventThang6Reward:isActive() == 1 then

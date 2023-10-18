@@ -1,28 +1,28 @@
---ÉÙÁÖºóÉ½ÃÜÊÒ ÄÚÊÒ Ğ¡´°Ç°µÄ¶Ô»°
--- by£ºDan_Deng(2003-08-04)
+-- script viet hoa By http://tranhba.com  ThiÕu L©m phİa sau nói mËt thÊt néi thÊt cöa sæ nhá tr­íc ®İch ®èi tho¹i 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-08-04) 
 
-function main(sel)
-	UTask_sl = GetTask(7)
-	if (UTask_sl >= 40*256+20) and (UTask_sl < 50*256) then		-- ±ØĞëÔÚÈÎÎñÖĞ²ÅÄÜ½øÈë£¬²¢ÇÒÃ¿´Î½øÈë¶¼Òª»Ø´ğÎÊÌâ
-		Say("BÇn t¨ng ®ang bÕ quan tu luyÖn, nÕu cã muèn truyÒn lêi cho bän hä th× th«ng qua hai c©u khÈu quyÕt nµy! Nghe kü ®©y!",4,"¸n Ma Ni B¸t Mª Hång /L40_S2_wrong","Hång Bèi Mª Ma Ni ¸n /L40_S2_wrong","B¸t Mª Ni Hång ¸n Ma /L40_S2_wrong","¸n B¸t Ni Ma Mª Hång. /L40_S2_correct")
+function main(sel) 
+UTask_sl = GetTask(7) 
+	if (UTask_sl >= 40*256+20) and (UTask_sl < 50*256) then		-- script viet hoa By http://tranhba.com  ±ØĞëÔÚÈÎÎñÖĞ²ÅÄÜ½øÈë£¬²¢ÇÒÃ¿´Î½øÈë¶¼Òª»Ø´ğÎÊÌâ
+Say("BÇn t¨ng ®ang bÕ quan tu luyÖn , nÕu nh­ muèn truyÒn lêi cho bän h¾n , sÏ ph¶i th«ng qua hai c©u nµy khÈu quyÕt , nghe râ !",4,"§Êm bãp ni t¸m mª hång /L40_S2_wrong","Hång bèi mª ma ni theo nh­ /L40_S2_wrong","T¸m mª ni hång ®Êm bãp /L40_S2_wrong","Theo nh­ t¸m ni ma mª hång . /L40_S2_correct") 
 	elseif (UTask_sl == 40*256+50) then
-		Talk(3,"","KhÈu quyÕt quan träng thÕ nµy sao ng­¬i cã thÓ quªn ®­îc? Ta nãi l¹i mét lÇn h·y nhí kü ®ã!","C©u thø nhÊt lµ: ThÕ gian v« th­êng, Quèc Thæ Nguy Quú, c©u thø hai lµ: Tø §¹i Khæ Kh«ng, Ngò D­¬ng V« Ng·, c©u thø 3 lµ: Sanh DiÖt BiÕn Th¨ng, H­ Ngôy V« Chñ, c©u thø 4 lµ: T©m ThŞ ¸c Nguyªn, H×nh Vi Téi TÈu, c©u thø 5 lµ: Nh­ ThŞ Quan S¸t, Tiªm Ly Sinh Tö.","LÇn nµy ®õng quªn n÷a ®ã! §i ®i!")
-	else
-		Msg2Player("ThÇn t¨ng ®ang bÕ quan tËp luyÖn n¬i ®©y, xin ®õng lµm phiÒn ")
-	end
-end;
+Talk(3,"","Träng yÕu nh­ vËy ®İch khÈu quyÕt , ng­¬i lµm sao cã thÓ quªn , ta nãi l¹i lÇn n÷a , nhí !","C©u thø nhÊt lµ , thÕ sù v« th­êng , quèc thæ nguy hiÓm # c©u thø hai lµ , tø ®¹i khæ v« İch , n¨m ©m v« ng· # thø ba c©u lµ , sinh diÖt biÕn dŞ . dèi tr¸ v« chñ # thø t­ c©u # t©m lµ ¸c nguyªn , hµnh ®éng téi ®Õm # thø n¨m c©u # nh­ thÕ quan s¸t , tiÖm c¸ch sinh tö "," lÇn nµy kh«ng muèn n÷a quªn , ®i ®i !") 
+else 
+Msg2Player("ThÇn t¨ng ®ang bÕ quan tu luyÖn , xin kh«ng cÇn quÊy rÇy ") 
+end 
+end; 
 
-function L40_S2_correct()
-	Talk(9,"L50_step2","§Ö tö cÇu kiÕn S­ thóc tæ!","Cã chuyÖn g×?","Ch­ëng m«n ph¸i ®Ö tö ®Õn thØnh mêi hai vŞ S­ thóc tæ xuÊt quan, bµn c¸ch côc thÕ thiªn h¹.","Kh«ng TŞch: Thiªn h¹ hai ch÷ hai ng­êi chóng ta kh«ng hiÓu, ng­êi chuyÓn gióp 5 c©u nµy cho ch­ëng m«n, «ng ta sÏ hiÓu râ.","C©u thø nhÊt: ThÕ Gian V« Th­êng, Quèc Thæ Nguy Quú,","Kh«ng TŞch: C©u thø hai: Tø §¹i Khæ Kh«ng, Ngò D­¬ng V« Ng·,","C©u thø ba: Sinh DiÖt BiÕn Th¨ng, H­ Ngôy V« Chñ,","Kh«ng TŞch: C©u thø t­ lµ: T©m ThŞ ¸c Nguyªn, H×nh Vi Téi TÈu,","C©u thø n¨m lµ: Nh­ ThŞ Quan S¸t, Tiªm Ly Sinh Tö.")
-end;
+function L40_S2_correct() 
+Talk(9,"L50_step2","§Ö tö b¸i kiÕn s­ thóc tæ ","Ch­ëng m«n ph¸i ®Ö tö tíi xin/mêi hai vŞ s­ thóc tæ xuÊt quan , ®µm luËn chuyÖn thiªn h¹ ","Kh«ng tŞch # thiªn h¹ con trai , chóng ta kh«ng hiÓu , ng­¬i chuyÓn ®¹t cho ch­ëng m«n 5 c©u , h¾n sÏ hiÓu ","C©u thø nhÊt # thÕ sù v« th­êng , quèc thæ nguy hiÓm . ","Kh«ng tŞch # c©u thø hai # tø ®¹i khæ v« İch , n¨m ©m v« ng· ","Thø ba c©u # sinh diÖt biÕn dŞ . dèi tr¸ v« chñ ","Kh«ng tŞch # thø t­ c©u # t©m lµ ¸c nguyªn , hµnh ®éng téi ®Õm ","Thø n¨m c©u # nh­ thÕ quan s¸t , tiÖm c¸ch sinh tö ") 
+end; 
 
-function L40_S2_wrong()
-	Talk(1,"","Sau khi ®äc xong khÈu quyÕt c¶nh cöa nhá kh«ng lung lay chót nµo, cã ph¶i b¹n ®· niÖm sai kh«ng?")
-end;
+function L40_S2_wrong() 
+Talk(1,"","Häc xong khÈu quyÕt sau , cöa nhá kh«ng cã bÊt cø ®éng tÜnh g× , cã hay kh«ng ng­¬i ®äc sai lÇm råi ?") 
+end; 
 
-function L50_step2()
-	Talk(1,"","Thø tù cña n¨m c©u khÈu quyÕt nµy ph¶i nhí râ ®ã! §i ®i!")
+function L50_step2() 
+Talk(1,"","N¨m c©u khÈu quyÕt ®İch thø tù ph¶i nhí râ rµng , ®i ®i !") 
 	SetTask(7,40*256+50)
-	AddNote("GÆp TŞch DiÖt NhŞ T¨ng cÇu truyÒn ®¹t l¹i chØ thŞ cho ph­¬ng Tr­îng. ")
-	Msg2Player("GÆp TŞch DiÖt NhŞ T¨ng cÇu truyÒn ®¹t l¹i chØ thŞ cho ph­¬ng Tr­îng. ")
-end;
+AddNote("ThÊy tŞch diÖt hai t¨ng , cÇu xin truyÒn ®¹t cho ph­¬ng tr­îng ®İch chØ thŞ . ") 
+Msg2Player("ThÊy tŞch diÖt hai t¨ng , cÇu xin truyÒn ®¹t cho ph­¬ng tr­îng ®İch chØ thŞ . ") 
+end; 

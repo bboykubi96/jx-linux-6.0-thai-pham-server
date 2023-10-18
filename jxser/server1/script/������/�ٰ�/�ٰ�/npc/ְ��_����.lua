@@ -8,7 +8,7 @@ Include("\\script\\missions\\autohang\\function.lua")
 
 function main(sel)
 	if (GetLevel() >= 50) then
-		Say("ThuyÒn cña ta kh«ng ph¶i tÇm th­êng! Tõng chë qua ®¹i thÇn tÓ t­íng cña triÒu ®×nh! Muèn ®i ®©u ph¶i ®Æt tr­íc!", 3, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel", "<#> §i §µo Hoa ®¶o (1) ["..AEXP_TICKET.."<#> L­îng]/go_thd");
+		Say("ThuyÒn cña ta kh«ng ph¶i tÇm th­êng! Tõng chë qua ®¹i thÇn tÓ t­íng cña triÒu ®×nh! Muèn ®i ®©u ph¶i ®Æt tr­íc!", 3, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel", "<#>ÌÒ»¨µº["..AEXP_TICKET.."<#>Á½]/go_thd");
 	else
 		Say("ThuyÒn cña ta kh«ng ph¶i tÇm th­êng! Tõng chë qua ®¹i thÇn tÓ t­íng cña triÒu ®×nh! Muèn ®i ®©u ph¶i ®Æt tr­íc!", 2, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel")
 	end
@@ -23,6 +23,6 @@ function go_thd()
 	-- if (nRet == 1) then
 	--	Msg2Player("´¬·ò£º×î½üÈ¥ÌÒ»¨µºµÄÈË¿ÉÕæ¶à¡£ºÃ°É£¬Äã×øºÃà¶£¡")
 	if (nRet == -1) then
-		Talk(1,"","<#> Phİ ®i §µo Hoa ®¶o"..AEXP_TICKET.."<#> ng©n l­îng, ng­¬i tr¶ næi kh«ng?")
+		Talk(1,"","<#> Phµ ®i §µo Hoa ®¶o"..AEXP_TICKET.."<#> ng©n l­îng, ng­¬i tr¶ næi kh«ng?")
 	end
 end

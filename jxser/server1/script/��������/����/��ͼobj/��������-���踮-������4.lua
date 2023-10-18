@@ -1,7 +1,7 @@
---Î÷±±ÄÏÇø ·ïÏè¸® ÄÏÃÅæäÕ¾´«ËÍÃÅ4
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ cöa nam dŞch tr¹m truyÒn tèng cöa 4 
 
-function main(sel)
+function main(sel) 
 
-ReturnFromPortal();
+ReturnFromPortal(); 
 
 end;

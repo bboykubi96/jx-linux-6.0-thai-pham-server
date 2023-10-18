@@ -4,7 +4,7 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 tbVnHuyenVu = 
 {
 	nStartDate = 201205240000,
-	nEndDate = 202007232400,
+	nEndDate = 201207232400,
 	nExtPointID = 3,
 	nExtPointBit = 9,--n¹p code tõ web
 	nExtPointID2 = 3,
@@ -42,14 +42,14 @@ function tbVnHuyenVu:main()
 	if PlayerFunLib:CheckTotalLevel(150, "default", ">=") ~= 1 then
 		return
 	end
-	--if (tbExtPointLib:GetBitValue(self.nExtPointID3, self.nExtPointBit3) ~= 1) then
- 		--Talk(1,"","Xin lçi! §¹i hiÖp kh«ng ®ñ ®iÒu kiÖn nhËn th­ëng.")
- 		--return
- 	--end
-	--if (GetExtPoint(self.nExtPointID2) < 0) or (GetExtPoint(self.nExtPointID3) < 0) then
-	--	Talk(1,"","§¹i hiÖp ch­a thÓ nhËn th­ëng lóc nµy,  xin h·y  liªn hÖ Bang Qu¶n TrÞ")
-	--	return
-	--end	
+	if (tbExtPointLib:GetBitValue(self.nExtPointID3, self.nExtPointBit3) ~= 1) then
+ 		Talk(1,"","Xin lçi! §¹i hiÖp kh«ng ®ñ ®iÒu kiÖn nhËn th­ëng.")
+ 		return
+ 	end
+	if (GetExtPoint(self.nExtPointID2) < 0) or (GetExtPoint(self.nExtPointID3) < 0) then
+		Talk(1,"","§¹i hiÖp ch­a thÓ nhËn th­ëng lóc nµy,  xin h·y  liªn hÖ Bang Qu¶n TrÞ")
+		return
+	end	
 	
 	 if (tbExtPointLib:GetBitValue(self.nExtPointID4, self.nExtPointBit4) ~= 0 ) then
  		Talk(1,"","§¹i hiÖp ®· nhËn th­ëng råi")

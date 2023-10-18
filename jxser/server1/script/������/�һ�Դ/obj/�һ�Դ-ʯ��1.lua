@@ -1,7 +1,7 @@
---Á½ºşÇø ÌÒ»¨Ô´ ´å×ÓÈë¿ÚÊ¯±®1
+-- script viet hoa By http://tranhba.com  hai hå khu hoa ®µo nguyªn th«n nhËp khÈu bia ®¸ 1 
 
-function main(sel)
+function main(sel) 
 
-Say("§µo Hoa Nguyªn",  0);
+Say("Hoa ®µo nguyªn ", 0); 
 
-end;
+end; 

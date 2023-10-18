@@ -175,7 +175,16 @@ end
 	TV_LASTDEATHTIME = 2306	
 	TV_LASTDEATHMAPX = 2307
 	TV_LASTDEATHMAPY = 2308
-	
+	function mautrogiup2()
+local totalcount =CalcEquiproomItemCount(1,2,0,5);
+	if totalcount >= 40 then 
+	return
+	end	
+	local tong = 40-totalcount
+	for k=1,tong do 		
+	AddItem(1,2,0,5,0,0,0,0);
+	end
+end
 	function bt_CheckDeathValid()
 		local nowW, nowMapX , nowMapY = GetWorldPos();
 		if (nowMapX == GetTask(TV_LASTDEATHMAPX) and nowMapY == GetTask(TV_LASTDEATHMAPY)) then
@@ -183,6 +192,7 @@ end
 		else
 			SetTask(TV_LASTDEATHMAPX, nowMapX) 
 			SetTask(TV_LASTDEATHMAPY, nowMapY)
+			--mautrogiup2()
 			return 1
 		end
 		
@@ -241,7 +251,7 @@ end
 		{0,0,1,1,1},
 	};
 	
-	BALANCE_MAMCOUNT = 5;	--ËÎ½ðË«·½ÈËÊý²îµ÷ÕûÎª5ÈË
+	BALANCE_MAMCOUNT = 2;	--ËÎ½ðË«·½ÈËÊý²îµ÷ÕûÎª5ÈË
 	BALANCE_GUOZHAN_MAXCOUNT = 100; -- ¹úÕ½ËÎ½ð×î¶àÔÊÐíµÄµ¥±ßÈËÊý
 	TAB_RANKBONUS = {0, 1000, 3000, 6000,10000};
 	RANK_SKILL = 661;
@@ -331,11 +341,11 @@ function bt_getsignpos(camp)
 	
 	level = GetLevel();
 	
-	if (level < 80)  then
+	if (level < 70 and level>=40)  then
 		return tbGAME_SIGNMAP[1], tbSIGNMAP_POS[camp][1], tbSIGNMAP_POS[camp][2]
-	elseif (level < 120) then
+	elseif (level < 80 and level>=70) then
 		return tbGAME_SIGNMAP[2], tbSIGNMAP_POS[camp][1], tbSIGNMAP_POS[camp][2]
-	else
+	elseif level>=80 then
 		return tbGAME_SIGNMAP[3], tbSIGNMAP_POS[camp][1], tbSIGNMAP_POS[camp][2]
 	end
 end;
@@ -653,6 +663,12 @@ function sf_buildfightnpcdata()
 
 end
 ------------------------------------------------------------------------------------------
+function GetPureIP()
+local tbOwnIP = split(GetIP()," ")
+local szStr = tbOwnIP[1]
+return szStr
+end
+
 function GetIniFileData(mapfile, sect, key)
 	if (IniFile_Load(mapfile, mapfile) == 0) then 
 		print("Load IniFile Error!"..mapfile)
@@ -684,19 +700,20 @@ function bt_addtotalpoint(point)
 		return
 	end
 
-	local nWeekDay = tonumber(GetLocalDate("%w"));
+--	local nWeekDay = tonumber(GetLocalDate("%w"));
+	local nWeekDay = 1;
 	if nWeekDay ~= 2 and nWeekDay ~= 4 and nWeekDay ~= 6 then
-		point = BigBoss:AddSongJinPoint(point);	
-		point = TB_QIANQIU_YINGLIE0904:add_sj_point(point);
-		point = TB_QIANQIU_YINGLIE0904:add_sj_point_ex(point);
+	--	point = BigBoss:AddSongJinPoint(point);	
+	--	point = TB_QIANQIU_YINGLIE0904:add_sj_point(point);
+	--	point = TB_QIANQIU_YINGLIE0904:add_sj_point_ex(point);
 	else
 		local nHour = tonumber(GetLocalDate("%H%M"))
 		--DinhHQ
 		--20110406: kh«ng kÝch ho¹t hiÖu øng x2 x3 ®iÓm khi sö dông mÆt n¹  trong TK  Thiªn tö 
 		if( nHour < 2045 or nHour >= 2250)then
-			point = BigBoss:AddSongJinPoint(point);	
-			point = TB_QIANQIU_YINGLIE0904:add_sj_point(point);
-			point = TB_QIANQIU_YINGLIE0904:add_sj_point_ex(point);
+		--	point = BigBoss:AddSongJinPoint(point);	
+		--	point = TB_QIANQIU_YINGLIE0904:add_sj_point(point);
+		--	point = TB_QIANQIU_YINGLIE0904:add_sj_point_ex(point);
 		end
 	end
 	-- µ÷ÕûÕ½³¡Ó¢ÐÛÃæ¾ß
@@ -708,19 +725,23 @@ function bt_addtotalpoint(point)
 	--tinhpn 20100706: Vo Lam Minh Chu
 	local nHour = tonumber(date("%H%M"))
 	local nDate = tonumber(GetLocalDate("%y%m%d"))	
-	if (GetTask(TSK_Get2ExpTK) == nDate) then
-		if (nHour >= 2100 and nHour <= 2300) then
-			if nWeekDay ~= 2 and nWeekDay ~= 4 and nWeekDay ~= 6 then
-				point = point*2
-			end
+	--if (GetTask(TSK_Get2ExpTK) == nDate) then
+		if (nHour >= 2100 and nHour <= 2300)  then
+			--if nWeekDay ~= 2 and nWeekDay ~= 4 and nWeekDay ~= 6 then
+				point = point*random(2,4)
+		elseif (nHour>=1300 and nHour<=1405) then
+				point = point*random(2,4)
+			else
+			point = point*1
 		end
-	end
+	--end
 	
 	--tinhpn 20100804: IPBonus
 	local nDay = tonumber(date("%w"))
+	local nDay = 1
 	if nDay == 0 or nDay == 5 or nDay == 6  then
 		if (GetTask(TASKID_RECIEVE_BONUS_TK) == 1) then
-			point = floor(point*1.5)
+		--	point = floor(point*2)
 		end
 	end
 	point = Songjin_checkdoubleexp(point)
@@ -888,6 +909,13 @@ function bt_RankEffect(rank)
 	AddSkillState(RANK_SKILL, rank - 1, 0, 999999);
 	Msg2Player(TAB_RANKMSG[rank]);
 	BT_SetData(PL_CURRANK, rank);
+--		local W,nx,ny = GetWorldPos();
+--	local toadox=floor(nx/8)
+---	local toadoy=floor(ny/16)
+--	SetTask(3060,toadox)
+--	SetTask(3061,toadoy)
+--	local nTime = tonumber(GetLocalDate("%H%M"));
+	--SetTask(3062,nTime)
 end
 
 -------------------------½øÈëÕ½³¡Ê±¸³¸øÍæ¼ÒÏàÓ¦Í·ÏÎ ENDING----------------------------------
@@ -999,13 +1027,14 @@ function bt_pop2signmap()	--²»ÔÊÐíÍæ¼ÒÔÚºóÓªÍ£Áô5·ÖÖÓ£¬ÔÚ¶áÆìÄ£Ê½£¬ºÍÔªË§Ä£Ê½£¬É
 end
 
 function bt_getgn_awardtimes()
-	local nWeekDay = tonumber(GetLocalDate("%w"))
+	--local nWeekDay = tonumber(GetLocalDate("%w"))
+	local nWeekDay = 1
 	if nWeekDay == 2 or nWeekDay == 4 or nWeekDay == 6 then
 		local nHour = tonumber(GetLocalDate("%H%M"))
 		--DinhHQ
 		--20110409: kh«ng kÝch ho¹t hiÖu øng x4 ®iÓm tÝch lòy cña TK Thiªn Tö trong c¸c giê TK th­êng
 		if( nHour >= 2045 and nHour < 2250)then
-			return 4
+			return 1
 		end
 	end
 	if (GetMissionV(MS_HUANGZHIZHANG) == 0 or GetMissionV(MS_HAUNGZHIZHANG) == 1) then
@@ -1138,23 +1167,257 @@ function bt_reportworldresult(tbPlayer)
 	if (ncount <= 0) then
 		return 0;
 	else
-		if (ncount > 3) then
-			ncount = 3;
+		if (ncount > 10) then
+			ncount = 10;
 		end;
 	
-		local szParam = "Phong V©n LuËn KiÕm cao cÊp ®· kÕt thóc, Top"..ncount.." gåm: <enter>";
+		local szParam = "Tèng Kim cao cÊp ®· kÕt thóc, Top"..ncount.." gåm: <enter>";
 		for i = 1, ncount do
 			if (tbPlayer[i][1]) then
 				szParam = format("%s   XÕp h¹ng %d <color=green>%s<color>  %d<enter>",
 				szParam,i,safeshow(tbPlayer[i][1]),tbPlayer[i][3]);
 			end;
 		end;
+		for i = 1, ncount do
+			local szName = tbPlayer[i][1]
+			if szName ~= nil and szName ~= "" then
+				local nTopPlayerIdx = SearchPlayer(szName);
+				if (nTopPlayerIdx > 0) then
+				local nHour = tonumber(GetLocalDate("%H%M"))
+                            if (nHour > 2145 and nHour < 2250) then
+								--	doFunByPlayer(nTopPlayerIdx, AddAward,i)
+									--	else
+									--	doFunByPlayer(nTopPlayerIdx, AddAwardPhu,i)
+								end
+				end
+			end
+		end;
 		LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szParam , "", "")
 	end;
 end
 ---ÐÂ¼ÓÈëEnd
+Include("\\script\\lib\\awardtemplet.lua")
+function AddAward(nRank)
+	if not nRank then
+		return
+	end
+	local tbThuongTop = 
+	{
+		[1]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=50},
+		--	{szName="B«n Tiªu",tbProp={0,10,6,10,0,0,0},nCount=1,nExpiredTime=1*24*60},--30 diem
+--{szName="G¹o NÕp",tbProp={6,1,4454,1,0,0},nCount=10},	
+	--		{szName="S­ Tö",tbProp={0,4480},nCount=1,nQuality=1,nExpiredTime=1*24*60},
 
+		},
+		[2]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=40},
+		--	{szName="Phi V©n",tbProp={0,10,8,10,0,0,0},nCount=1,nExpiredTime=1*24*60},--30 diem
+	--{szName="G¹o NÕp",tbProp={6,1,4454,1,0,0},nCount=10},	
 
+		},
+		[3]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=30},
+--	{szName="G¹o NÕp",tbProp={6,1,4454,1,0,0},nCount=10},	
+
+		},
+		[4]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=30},
+
+		},
+		[5]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=20},
+
+		},
+		[6]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=20},
+
+		},
+		[7]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=20},
+
+		},
+		[8]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+
+			--			{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		},
+		[9]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+
+		},
+		[10]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+
+		},
+	}
+	local nHour = tonumber(GetLocalDate("%H%M"))
+	if (nHour > 2145 and nHour < 2250) then
+	--	if GetSkillState(1659)>=1 then
+	--	RemoveSkillState(1659,20,3,559872000,1) 
+	--	end
+		if nRank == 1 then
+		--	tbAwardTemplet:GiveAwardByList({{szName="XÝch Long C©u",tbProp={0,710},nCount=1,nQuality=1,nExpiredTime=1*24*60},}, "test", 1);
+
+		end
+		if nRank == 2 then
+
+		---	PlayerFunLib:AddSkillState(1644,20,3,18*60*60*23*1,1)
+		--	PlayerFunLib:AddSkillState(1675,20,3,18*60*60*23*1,1)
+		--	end
+		end
+		if nRank == 3 then
+
+		end
+		if nRank>=4 and nRank<=10 then
+	--	tbAwardTemplet:GiveAwardByList({{szName="TiÒn §ång",tbProp={4,417,1,1},nCount=10},}, "test", 1);
+		end
+	end
+	local slog = format("ThuongTop%dTongKim", nRank)
+	local tbAward = tbThuongTop[nRank]
+	if tbAward then
+		tbAwardTemplet:Give(tbAward, 1, {slog,slog})
+	end
+end
+
+function AddAwardPhu(nRank)
+	if not nRank then
+		return
+	end
+	local tbThuongTop = 
+	{
+		[1]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=30},
+			{szName="Phi V©n",tbProp={0,10,8,10,0,0,0},nCount=1,nExpiredTime=2*24*60},--30 diem
+		},
+		[2]={
+
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=30},
+		--	{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		{szName="Phi V©n",tbProp={0,10,8,10,0,0,0},nCount=1,nExpiredTime=1*24*60},--30 diem
+		},
+		[3]={
+
+		{szName="TiÒn §ång", tbProp={4,417,1},nCount=20},
+		--	{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		},
+		[4]={
+
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+		--	{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[5]={
+
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+		--				{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[6]={
+
+		{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+			--			{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[7]={
+
+		{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+			--			{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[8]={
+
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[9]={
+
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[10]={
+
+		{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+	}
+
+	local slog = format("ThuongTop%dTongKim", nRank)
+	local tbAward = tbThuongTop[nRank]
+	if tbAward then
+		tbAwardTemplet:Give(tbAward, 1, {slog,slog})
+	end
+end
+function AddAward23h(nRank)
+	if not nRank then
+		return
+	end
+	local tbThuongTop = 
+	{
+		[1]={
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=20},
+		--{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=50},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 2000000000},
+		--	{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		},
+		[2]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=40},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 1500000000},
+			{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+		--	{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		},
+		[3]={
+		--{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=30},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 1000000000},
+		{szName="TiÒn §ång", tbProp={4,417,1},nCount=5},
+		--	{szName="Lb 30 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=3,nExpiredTime=3*24*60},--30 diem
+		},
+		[4]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+		--{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+	--		{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+		--	{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[5]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+		--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+		--				{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[6]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+	--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+			--			{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[7]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+	--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+			--			{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[8]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+		--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[9]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+		--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+		[10]={
+	--	{szName="Tinh Ngäc",tbProp={6,1,4409,1,0,0},nCount=20},
+	--	{szName="§iÓm Kinh NghiÖm", nExp_tl = 500000000},
+	--	{szName="TiÒn §ång", tbProp={4,417,1},nCount=10},
+				--		{szName="Lb 10 ®iÓm vinh dù",tbProp={6,1,1257,1,0,0},nCount=1,nExpiredTime=3*24*60},--10 diem
+		},
+	}
+
+	local slog = format("ThuongTop%dTongKim", nRank)
+	local tbAward = tbThuongTop[nRank]
+	if tbAward then
+		tbAwardTemplet:Give(tbAward, 1, {slog,slog})
+	end
+end
 --by zero 2007-7-30 ·µ»Ø»ý·ÖÆ½ºâ±ÈÀý ËÎ£¬½ð
 function bonus_rate()
 	CAMP1CUN = GetMSPlayerCount(MISSIONID, 1)
@@ -1179,19 +1442,19 @@ function mar_addmissionpoint(totalpoint, nCurCamp)
 	--tinhpn 20100706: Vo Lam Minh Chu
 	local nHour = tonumber(date("%H%M"))
 	local nDate = tonumber(GetLocalDate("%y%m%d"))	
-	if (GetTask(TSK_Get2ExpTK) == nDate) then
-		if (nHour >= 2100 and nHour <= 2300) then
-			if nWeekDay ~= 2 and nWeekDay ~= 4 and nWeekDay ~= 6 then	
+	--if (GetTask(TSK_Get2ExpTK) == nDate) then
+		if (nHour >= 2100 and nHour <= 2300) or (nHour>=1300 and nHour<=1405) then
+			--if nWeekDay ~= 2 and nWeekDay ~= 4 and nWeekDay ~= 6 then	
 				totalpoint = totalpoint*2
-			end
+			--end
 		end
-	end
+	--end
 	
 	--tinhpn 20100804: IPBonus
 	local nDay = tonumber(date("%w"))
 	if nDay == 0 or nDay == 5 or nDay == 6  then
 		if (GetTask(TASKID_RECIEVE_BONUS_TK) == 1) then
-			totalpoint = floor(totalpoint*1.5)
+			totalpoint = floor(totalpoint*2)
 		end
 	end
 		

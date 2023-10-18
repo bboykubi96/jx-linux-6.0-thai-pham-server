@@ -1,15 +1,14 @@
+----------------***Heart*Doldly***----------------------
 Include("\\script\\lib\\objbuffer_head.lua")
 Include("\\script\\lib\\sharedata.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
---Fix bug missing lib - modified by DinhHQ - 20110425
 Include("\\script\\lib\\droptemplet.lua")
 IncludeLib("LEAGUE")
 
 BigBoss = {}
-
-BigBoss.TSK_PLAYER_BOSSKILLED = 2598; -- Íæ¼Ò»÷É±BOSSÊýÁ¿Í³¼Æ
-BigBoss.TSK_BIGBOSS_REWARD = 2661; -- ¼ÇÂ¼Íæ¼Òµ±ÌìÊÇ·ñÁì½±ºÍÁì½±ÀàÐÍ ÈÕÆÚ | »ñµÃ´³¹Ø·­±¶ | »ñµÃËÎ½ð·­±¶ |»ñµÃ¾­Ñé·­±¶½±Àø | ÊÇ·ñÁì½±
+BigBoss.TSK_PLAYER_BOSSKILLED = 2598; 
+BigBoss.TSK_BIGBOSS_REWARD = 2661; 
 BigBoss.CAN_GET_REWARD_BIT = 1;
 BigBoss.EXP_REWARD_BIT = 2;
 BigBoss.SONGJIN_REWARD_BIT = 3;
@@ -24,183 +23,91 @@ BigBoss.tbGlobalReward =
 	{szName="H«m nay trËn Tèng Kim 21:00, ®iÓm tÝch lòy sÏ ®­îc nh©n ®«i", nRate=25, pFun=function() PlayerFunLib:SetTaskBit(BigBoss.TSK_BIGBOSS_REWARD, BigBoss.SONGJIN_REWARD_BIT, 1); Msg2Player(format("§¹i hiÖp nhËn ®­îc phÇn th­ëng <color=yellow>%s<color>","H«m nay trËn Tèng Kim 21:00, ®iÓm tÝch lòy sÏ ®­îc nh©n ®«i"))end},
 	{szName="H«m nay v­ît ¶i ®ît 21:00, ®iÓm kinh nghiÖm sÏ ®­îc nh©n ®«i", nRate=25, pFun=function() PlayerFunLib:SetTaskBit(BigBoss.TSK_BIGBOSS_REWARD, BigBoss.CHUANGGUAN_REWARD_BIT, 1); Msg2Player(format("§¹i hiÖp nhËn ®­îc phÇn th­ëng <color=yellow>%s<color>","H«m nay v­ît ¶i ®ît 21:00, ®iÓm kinh nghiÖm sÏ ®­îc nh©n ®«i"))end},
 	{szName="Nh©n ®«i kinh nghiÖm khi ®¸nh qu¸i trong 1 giê", nRate=25, pFun=function() AddSkillState(967, 1, 1, 64800); PlayerFunLib:SetTaskBit(BigBoss.TSK_BIGBOSS_REWARD, BigBoss.EXP_REWARD_BIT, 1); Msg2Player(format("§¹i hiÖp nhËn ®­îc phÇn th­ëng <color=yellow>%s<color>","Nh©n ®«i kinh nghiÖm khi ®¸nh qu¸i trong 1 giê"))end},
-	{nExp = 10000000, nRate=25},
+	{nExp = 10000000000, nRate=25},
 }
 
 BigBoss.tbKillerReward = 
 {
-	{tbProp = {6,1,2127,1,0,0}, nCount=1, nExpiredTime=43200},
+	{tbProp = {6,1,3022,1,0,0}, nCount=10, nExpiredTime=43200},
 	{tbProp = {4,239,1,1,0,0}, nCount=10},
 	{tbProp = {4,238,1,1,0,0}, nCount=10},
 	{tbProp = {4,240,1,1,0,0}, nCount=10},
-	{tbProp = {4,353,1,1,0,0}, nCount=20},
+	{tbProp = {4,353,1,1,0,0}, nCount=10},
 	{tbProp = {0,11,450,1,0,0}, nCount=1, nExpiredTime=10080},
 	{tbProp = {6,1,907,1,0,0}, nCount=8, nExpiredTime=10080},
-	{tbProp = {6,1,1075,1,0,0}, nCount=8},
-	{tbProp = {6,1,2126,1,0,0}, nCount=1, nExpiredTime=10080},
+	{tbProp = {6,1,3022,1,0,0}, nCount=8},
+	{tbProp = {6,1,3022,1,0,0}, nCount=10, nExpiredTime=10080},
+	{tbProp = {6,1,2566,1,0,0}, nCount = 500},
 }
 
 BigBoss.tbNormalDrop = 
 {
 	{tbProp = {6,1,1075,1,0,0}, nCount=3},
-	{tbProp = {4,239,1,1,0,0}, nCount=20},
-	{tbProp = {4,238,1,1,0,0}, nCount=20},
-	{tbProp = {4,240,1,1,0,0}, nCount=20},
-	{tbProp = {4,353,1,1,0,0}, nCount=20},
+	{tbProp = {4,239,1,1,0,0}, nCount=10},
+	{tbProp = {4,238,1,1,0,0}, nCount=10},
+	{tbProp = {4,240,1,1,0,0}, nCount=10},
+	{tbProp = {4,353,1,1,0,0}, nCount=10},
 	{tbProp = {6,1,1672,1,0,0}, nCount=10},
 	{tbProp = {0,11,450,1,0,0}, nCount=1, nExpiredTime=10080},
 	{tbProp = {6,1,2115,1,0,0}, nCount=10},
-	{tbProp = {6,1,2117,1,0,0}, nCount=10},
+	{tbProp = {6,1,2219,1,0,0}, nCount=3},
 	{tbProp = {6,0,6,1,0,0}, nCount=20},
 	{tbProp = {6,0,3,1,0,0}, nCount=20},
-	{tbProp = {6,1,71,1,0,0}, nCount=20},
-	{tbProp = {6,1,1765,1,0,0}, nCount=10},
+	{tbProp = {6,1,3022,1,0,0}, nCount=10},
+	{tbProp = {6,1,3022,1,0,0}, nCount=10},
 	{tbProp = {6,1,26,1,0,0}, nCount=10},
 	{tbProp = {6,1,22,1,0,0}, nCount=10},
+	{tbProp = {6,1,2566,1,0,0}, nCount = 500},
 }
 
 --DC phÇn th­ëng boss §éc C« - Modified By DinhHQ - 20111010
 BigBoss.tbVngNewDropItem = {
 	[1] = {
-		[1]={{szName="§å Phæ Tö M·ng Kh«i",tbProp={6,1,2714,1,0,0},nCount=1,nRate=13},},
-		[2]={{szName="§å Phæ Tö M·ng Y",tbProp={6,1,2715,1,0,0},nCount=1,nRate=13},},
-		[3]={{szName="§å Phæ Tö M·ng Yªu §¸i",tbProp={6,1,2717,1,0,0},nCount=1,nRate=13},},
-		[4]={{szName="§å Phæ Tö M·ng Hé UyÓn",tbProp={6,1,2718,1,0,0},nCount=1,nRate=13},},
-		[5]={{szName="§å Phæ Tö M·ng H¹ng Liªn",tbProp={6,1,2719,1,0,0},nCount=1,nRate=13},},
-		[6]={{szName="§å Phæ Tö M·ng Béi",tbProp={6,1,2720,1,0,0},nCount=1,nRate=13},},
-		[7]={{szName="§å Phæ Tö M·ng Hµi",tbProp={6,1,2716,1,0,0},nCount=1,nRate=13},},
-		[8]={{szName="§å Phæ Tö M·ng Th­îng Giíi ChØ",tbProp={6,1,2721,1,0,0},nCount=1,nRate=8},},
-		[9]={{szName="§å Phæ Tö M·ng H¹ Giíi ChØ",tbProp={6,1,2722,1,0,0},nCount=1,nRate=8},},
-		[10]={{szName="§å Phæ Tö M·ng KhÝ Giíi",tbProp={6,1,2723,1,0,0},nCount=1,nRate=8},},
-		[11]={{szName="Tö M·ng LÖnh",tbProp={6,1,2350,1,0,0},nCount=1,nRate=10},},
-		[12]={{szName="Ch×a Khãa Nh­ ý",tbProp={6,1,2744,1,0,0},nCount=1,nRate=30},},
-		[13]={{szName="Phi tèc hoµn lÔ bao",tbProp={6,1,2520,1,0,0},nCount=1,nRate=60},},
-		[14]={{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=60},},
-		[15]={{szName="Thanh C©u LÖnh",tbProp={6,1,2369,1,0,0},nCount=1,nRate=15},},
-		[16]={{szName="V©n Léc LÖnh",tbProp={6,1,2353,1,0,0},nCount=1,nRate=20},},
-		[17]={{szName="Tö Thñy Tinh",tbProp={4,239,1,1,0,0},nCount=1,nRate=80},},
-		[18]={{szName="Lam Thñy Tinh",tbProp={4,238,1,1,0,0},nCount=1,nRate=80},},
-		[19]={{szName="Lôc Thñy Tinh",tbProp={4,240,1,1,0,0},nCount=1,nRate=80},},
-		[20]={{szName="Tinh Hång B¶o Th¹ch",tbProp={4,353,1,1,0,0},nCount=1,nRate=80},},
-		[21]={{szName="ThiÕt La H¸n",tbProp={6,1,23,1,0,0},nCount=2,nRate=80},},
-		[22]={{szName="Tiªn Th¶o Lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=1,nRate=30},},
-		[23]={{szName="Hçn Nguyªn Linh Lé",tbProp={6,1,2312,1,0,0},nCount=1,nRate=25},},
-		[24]={{szName="Hoµng Kim Ên (C­êng hãa)",tbProp={0,3209},nCount=1,nRate=20,nQuality = 1,nExpiredTime=20160,},},
-		[25]={{szName="Hoµng Kim Ên (Nh­îc hãa)",tbProp={0,3219},nCount=1,nRate=20,nQuality = 1,nExpiredTime=20160,},},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 6,nRate=0.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 5,nRate=1.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 4,nRate=2.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 3,nRate=3.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 2,nRate=4.5},
 	},
 	[2] = {
-		{szName="§å Phæ Tö M·ng Kh«i",tbProp={6,1,2714,1,0,0},nCount=1,nRate=12},
-		{szName="§å Phæ Tö M·ng Y",tbProp={6,1,2715,1,0,0},nCount=1,nRate=13},
-		{szName="§å Phæ Tö M·ng Yªu §¸i",tbProp={6,1,2717,1,0,0},nCount=1,nRate=14},
-		{szName="§å Phæ Tö M·ng Hé UyÓn",tbProp={6,1,2718,1,0,0},nCount=1,nRate=12},		
-		{szName="§å Phæ Tö M·ng Béi",tbProp={6,1,2720,1,0,0},nCount=1,nRate=12},		
-		{szName="§å Phæ Tö M·ng Hµi",tbProp={6,1,2716,1,0,0},nCount=1,nRate=13},
-		{szName="§å Phæ Tö M·ng H¹ng Liªn",tbProp={6,1,2719,1,0,0},nCount=1,nRate=11},
-		{szName="§å Phæ Tö M·ng Th­îng Giíi ChØ",tbProp={6,1,2721,1,0,0},nCount=1,nRate=5},
-		{szName="§å Phæ Tö M·ng H¹ Giíi ChØ",tbProp={6,1,2722,1,0,0},nCount=1,nRate=5},
-		{szName="§å Phæ Tö M·ng KhÝ Giíi",tbProp={6,1,2723,1,0,0},nCount=1,nRate=3},
-	},	
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 5,nRate=0.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 4,nRate=1.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 3,nRate=2.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 2,nRate=3.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 1,nRate=4.5},
+	},
 	[3] = {
-		{szName="Thiªn Linh §¬n",tbProp={6,1,3022,1,0,0},nCount = 30, nExpiredTime = 7 * 24 * 60},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 5,nRate=0.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 4,nRate=1.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 3,nRate=2.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 2,nRate=3.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 1,nRate=4.5},
 	},
 }
 
-BigBoss.tbVngNewDropEquip = 
-{
-	{szName="Tö M·ng V« T­¬ng Ch©u Liªn",tbProp={0,1825},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Tø Kh«ng PhËt Ch©u",tbProp={0,1835},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Thanh TÞnh H¹ng Liªn",tbProp={0,1845},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Sïng Minh Liªn",tbProp={0,1855},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng §Þnh H¶i H¹ng Liªn",tbProp={0,1865},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Tuyªn Uy H¹ng Liªn",tbProp={0,1875},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng XuÊt TrÇn Ch©u Liªn",tbProp={0,1885},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Méc TuyÕt Ch©u Liªn",tbProp={0,1895},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Thanh S­¬ng Ch©u Liªn",tbProp={0,1905},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng ThÕ H­¬ng Ch©u Liªn",tbProp={0,1915},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Thùc Cèt H¹ng Liªn",tbProp={0,1925},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Xuyªn T©m H¹ng Liªn",tbProp={0,1935},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Lang Nha H¹ng Liªn",tbProp={0,1945},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Thanh Vô H¹ng Liªn",tbProp={0,1955},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Phong S­¬ng H¹ng Liªn",tbProp={0,1965},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng MËt V©n H¹ng Liªn",tbProp={0,1975},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Háa V©n H¹ng Liªn",tbProp={0,1985},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Dung Kim H¹ng Khuyªn",tbProp={0,1995},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Liªu Nguyªn H¹ng Liªn",tbProp={0,2005},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Viªn Phï",tbProp={0,2015},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Vò Phï",tbProp={0,2025},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng §o¹n Thñy H¹ng Liªn",tbProp={0,2035},nCount=1,nRate=0.1,nQuality = 1,},
-	{szName="Tö M·ng TrÝch Tinh Phï",tbProp={0,2045},nCount=1,nRate=0.09,nQuality = 1,},
-	{szName="Tö M·ng V« T­¬ng Th­îng Giíi",tbProp={0,1827},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Tø Kh«ng Th­îng Giíi",tbProp={0,1837},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh TÞnh Th­îng Giíi",tbProp={0,1847},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Sïng Minh Th­îng Giíi",tbProp={0,1857},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng §Þnh H¶i Th­îng Giíi",tbProp={0,1867},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Tuyªn Uy Th­îng Giíi",tbProp={0,1877},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng XuÊt TrÇn Th­îng Giíi",tbProp={0,1887},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Méc TuyÕt Th­îng Giíi",tbProp={0,1897},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh S­¬ng Th­îng Giíi",tbProp={0,1907},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng ThÕ H­¬ng Th­îng Giíi",tbProp={0,1917},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thùc Cèt Th­îng Giíi",tbProp={0,1927},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Xuyªn T©m Th­îng Giíi",tbProp={0,1937},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Lang Nha Th­îng Giíi",tbProp={0,1947},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh Vô Th­îng Giíi",tbProp={0,1957},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Phong S­¬ng Th­îng Giíi",tbProp={0,1967},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng MËt V©n Th­îng Giíi",tbProp={0,1977},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Háa V©n Th­îng Giíi",tbProp={0,1987},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Dung Kim Th­îng Giíi",tbProp={0,1997},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Liªu Nguyªn Th­îng Giíi",tbProp={0,2007},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Viªn Th­îng Giíi",tbProp={0,2017},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Vò Th­îng Giíi",tbProp={0,2027},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng §o¹n Thñy Th­îng Giíi",tbProp={0,2037},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng TrÝch Tinh Th­îng Giíi",tbProp={0,2047},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng V« T­¬ng H¹ Giíi",tbProp={0,1834},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Tø Kh«ng H¹ Giíi",tbProp={0,1844},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh TÞnh H¹ Giíi",tbProp={0,1854},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Sïng Minh H¹ Giíi",tbProp={0,1864},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng §Þnh H¶i H¹ Giíi",tbProp={0,1874},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Tuyªn Uy H¹ Giíi",tbProp={0,1884},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng XuÊt TrÇn H¹ Giíi",tbProp={0,1894},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Méc TuyÕt H¹ Giíi",tbProp={0,1904},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh S­¬ng H¹ Giíi",tbProp={0,1914},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng ThÕ H­¬ng H¹ Giíi",tbProp={0,1924},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thùc Cèt H¹ Giíi",tbProp={0,1934},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Xuyªn T©m H¹ Giíi",tbProp={0,1944},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Lang Nha H¹ Giíi",tbProp={0,1954},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Thanh Vô H¹ Giíi",tbProp={0,1964},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Phong S­¬ng H¹ Giíi",tbProp={0,1974},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng MËt V©n H¹ Giíi",tbProp={0,1984},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Háa V©n H¹ Giíi",tbProp={0,1994},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Dung Kim H¹ Giíi",tbProp={0,2004},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Liªu Nguyªn H¹ Giíi",tbProp={0,2014},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Viªn H¹ Giíi",tbProp={0,2024},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Vò H¹ Giíi",tbProp={0,2034},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng §o¹n Thñy H¹ Giíi",tbProp={0,2044},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng TrÝch Tinh H¹ Giíi",tbProp={0,2054},nCount=1,nRate=0.075,nQuality = 1,},
-	{szName="Tö M·ng V« T­¬ng TriÒn Thñ",tbProp={0,1831},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Tø Kh«ng T¨ng C«n",tbProp={0,1841},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Thanh TÞnh Giíi §ao",tbProp={0,1851},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Sïng Minh Chïy",tbProp={0,1861},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng §Þnh H¶i Th­¬ng",tbProp={0,1871},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Tuyªn Uy B¶o §ao",tbProp={0,1881},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng XuÊt TrÇn KiÕm",tbProp={0,1891},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Méc TuyÕt TriÒn Thñ",tbProp={0,1901},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Thanh S­¬ng §ao",tbProp={0,1911},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng ThÕ H­¬ng Uyªn ¦¬ng §ao",tbProp={0,1921},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Thùc Cèt TriÒn Thñ",tbProp={0,1931},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Xuyªn T©m §ao",tbProp={0,1941},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Lang Nha Phi §ao",tbProp={0,1951},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Thanh Vô Tô TiÔn",tbProp={0,1961},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Phong S­¬ng Tiªu",tbProp={0,1971},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng MËt V©n TriÒn Thñ",tbProp={0,1981},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Háa V©n Tr­îng",tbProp={0,1991},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Dung Kim Th­¬ng",tbProp={0,2001},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Liªu Nguyªn §ao",tbProp={0,2011},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Viªn KiÕm",tbProp={0,2021},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng Ch©n Vò KiÕm",tbProp={0,2031},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng §o¹n Thñy §ao",tbProp={0,2041},nCount=1,nRate=0.05,nQuality = 1,},
-	{szName="Tö M·ng TrÝch Tinh KiÕm",tbProp={0,2051},nCount=1,nRate=0.05,nQuality = 1,},
+BigBoss.tbVngNewDropEquip = {
+	[1] = {
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 6,nRate=0.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 5,nRate=1.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 4,nRate=2.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 3,nRate=3.5},
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0}, nCount = 2,nRate=4.5},
+	},
+	[2] = {
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 5,nRate=0.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 4,nRate=1.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 3,nRate=2.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 2,nRate=3.5},
+		{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0}, nCount = 1,nRate=4.5},
+	},
+	[3] = {
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 5,nRate=0.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 4,nRate=1.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 3,nRate=2.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 2,nRate=3.5},
+		{szName="LÖnh Bµi XÝch L©n",tbProp={6,1,2370,1,0,0}, nCount = 1,nRate=4.5},
+	},
 }	
-
 
 function AddKillRecord_CallBack(Param, ResultHandle)
 	szName = BigBoss.CallBackParam[Param][1];
@@ -228,7 +135,7 @@ function AddKillRecord_CallBack(Param, ResultHandle)
 	
 	local nCount = 0;
 	
-	-- ±£Áô×îºÃ³É¼¨
+	
 	for i=1,getn(BigBoss.tbKillRecord) do
 		if (BigBoss.tbKillRecord[i] and BigBoss.tbKillRecord[i][1] == szName) then
 			nCount = nCount + 1;
@@ -265,7 +172,7 @@ function BigBossGlobalReward_CallBack(Param, ResultHandle)
 		if (OB_IsEmpty(ResultHandle) == 0) then
 			IsBigBossDead = ObjBuffer:PopObject(ResultHandle);
 			if (IsBigBossDead == 1) then
-				PlayerFunLib:AddTaskDaily(BigBoss.TSK_BIGBOSS_REWARD, 0);	-- ÖØÖÃ±äÁ¿,ÒÔ·ÀÒâÍâ
+				PlayerFunLib:AddTaskDaily(BigBoss.TSK_BIGBOSS_REWARD, 0);	
 				if (PlayerFunLib:CheckTaskBit(BigBoss.TSK_BIGBOSS_REWARD, BigBoss.CAN_GET_REWARD_BIT, 1, "H«m nay ®¹i hiÖp ®· nhËn th­ëng råi!") == 1) then
 					PlayerFunLib:SetTaskBit(BigBoss.TSK_BIGBOSS_REWARD, BigBoss.CAN_GET_REWARD_BIT, 0);
 					tbAwardTemplet:GiveAwardByList(BigBoss.tbGlobalReward, format("[%s] big boss global reward",date("%Y%m%d")));
@@ -274,17 +181,16 @@ function BigBossGlobalReward_CallBack(Param, ResultHandle)
 				Talk(1, "", format("H«m nay vÉn ch­a ®¸nh b¹i <color=red>%s<color>","§éc C« Thiªn Phong"));
 			end
 		end
-		--
 		PlayerIndex = OldPlayerIndex
 		BigBoss.CallBackParam[Param] = nil
 	end
 end
 
+-------------------------------------------------PhÇn Th­ëng Tæ §æi GiÕt Boss §éc C« Thiªn Phong-----------------------------------------------------------------------------------
 function BigBoss:BigBossDeath(nNpcIndex)
-	-- ¼ÇÂ¼Ê±¼ä
-	local nTime = tonumber(GetLocalDate("%H%M%S"))-194500; -- ËÀÍöÊ±¼ä - ÕÙ»½Ê±¼ä
 	
-	-- ¸ø×î¸ßÉËº¦µÄÈË»ò¶ÓÎé½±Àø
+	local nTime = tonumber(GetLocalDate("%H%M%S"))-194500; --Giê Boss XuÊt HiÖn
+	
 	local nTeamSize = GetTeamSize();
 	local szName;
 	
@@ -293,22 +199,28 @@ function BigBoss:BigBossDeath(nNpcIndex)
 			if(doFunByPlayer(GetTeamMember(i), IsCaptain)==1)then
 				szName = doFunByPlayer(GetTeamMember(i), GetName);
 			end
-			doFunByPlayer(GetTeamMember(i), PlayerFunLib.AddExp, PlayerFunLib, 100000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi cã c«ng kÝch m¹nh nhÊt vµo §éc C« Thiªn Phong"));
+			doFunByPlayer(GetTeamMember(i), PlayerFunLib.AddExp, PlayerFunLib, 20000000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi cã c«ng kÝch m¹nh nhÊt vµo §éc C« Thiªn Phong"));
 		end
-	else -- Ò»¸öÈË
+	else 
 		szName = GetName();
-		PlayerFunLib:AddExp(100000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi cã c«ng kÝch m¹nh nhÊt vµo §éc C« Thiªn Phong"));
+		local tbbossdc = {
+			{szName="Hµnh HiÖp LÖnh",tbProp={6,1,2566,1,0,0},nCount=500},
+			{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=50},
+			{szName="Xu Khãa",tbProp={4,1495,1,1,0,0},nCount=200,nBindState = -2},
+		}
+		PlayerFunLib:AddExp(20000000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi cã c«ng kÝch m¹nh nhÊt vµo §éc C« Thiªn Phong"));
+		tbAwardTemplet:GiveAwardByList(tbbossdc, "PhÇn th­ëng Tiªu DiÖt Boss C¸ Nh©n")
 	end
-	
+--------------------------------------------PhÇn Th­ëng Ng­êi Xung Quanh §øng GÇn Boss----------------------------------------------------------------------------------------------------------------
 	local tbRoundPlayer, nCount = GetNpcAroundPlayerList(nNpcIndex, 20);
 	
 	for i=1,nCount do
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 50000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi ®øng gÇn khi ®¶ b¹i §éc C« Thiªn Phong"));
+		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 5000000000, 0, format("%s phÇn th­ëng","PhÇn th­ëng kinh nghiÖm cho ng­êi ®øng gÇn khi §¸nh b¹i §éc C« Thiªn Phong"));
 	end
 	
-	--tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex, self.tbKillerReward, format("%s rít","§éc C« Thiªn Phong"), 1);
+	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex, self.tbKillerReward, format("%s rít","§éc C« Thiªn Phong"), 1);
 	
-	--tbDropTemplet:GiveAwardByList(nNpcIndex, -1, self.tbNormalDrop, format("%s rít","§éc C« Thiªn Phong"), 1);
+	tbDropTemplet:GiveAwardByList(nNpcIndex, -1, self.tbNormalDrop, format("%s rít","§éc C« Thiªn Phong"), 1);
 	
 	--DC PhÇn th­ëng - Modified By DinhHQ - 20111010
 	--item
@@ -316,12 +228,10 @@ function BigBoss:BigBossDeath(nNpcIndex)
 	--trang bÞ
 	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex, self.tbVngNewDropEquip, format("%s rít","§éc C« Thiªn Phong"), 1);
 	
-	-- BOSS»÷É±Í³¼Æ
 	local nCount = GetTask(self.TSK_PLAYER_BOSSKILLED);
 	nCount = nCount + 1;
 	SetTask(self.TSK_PLAYER_BOSSKILLED, nCount);
 	
-	-- BIGBOSSËÀÍö
 	local Handle = OB_Create()
 	if (Handle > 0) then
 		ObjBuffer:PushObject(Handle, 1)
@@ -329,50 +239,50 @@ function BigBoss:BigBossDeath(nNpcIndex)
 		OB_Release(Handle)
 	end
 	
-	local szNews = format("Tæ ®éi <color=yellow>%s<color> ®· tiªu diÖt thµnh c«ng  <color=yellow>§éc C« Thiªn Phong<color>, h·y nhanh chãng ®Õn lÔ quan nhËn th­ëng!",szName);
+	local szNews = format("Tæ §éi <color=yellow>%s<color> §· Tiªu DiÖt Thµnh C«ng  <color=yellow>§éc C« Thiªn Phong<color>, NhËn §­îc 20 Tû Kinh NghiÖm Ng­êi Xung Quanh §øng GÇn Boss NhËn §­îc 5 Tû Kinh NghiÖm H·y Nhanh Chãng §Õn VLMC Create By NhËn Th­ëng!",szName);
 	AddGlobalNews(szNews);
 	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 	
 	self:AddKillRecord(szName, nTime);
 end
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function BigBoss:RemoveSongJinBonus()
-	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	-- ÖØÖÃ±äÁ¿,ÒÔ·ÀÒâÍâ
+	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	
 	PlayerFunLib:SetTaskBit(self.TSK_BIGBOSS_REWARD, self.SONGJIN_REWARD_BIT, 0);
 end
 
 function BigBoss:RemoveChuangGuanBonus()
-	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	-- ÖØÖÃ±äÁ¿,ÒÔ·ÀÒâÍâ
+	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	
 	PlayerFunLib:SetTaskBit(self.TSK_BIGBOSS_REWARD, self.CHUANGGUAN_REWARD_BIT, 0);
 end
 
 function BigBoss:AddSongJinPoint(nBasePoint)
-	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	-- ÖØÖÃ±äÁ¿,ÒÔ·ÀÒâÍâ
+	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	
 	local nType = GetBit(PlayerFunLib:GetActivityTask(self.TSK_BIGBOSS_REWARD), self.SONGJIN_REWARD_BIT);
 	if (nType == 1) then
 		local nHour = tonumber(GetLocalDate("%H"));
-		if (nHour <= 22) then -- 21µãµÄËÎ½ð22:30½áÊø
+		if (nHour <= 22) then 
 			nBasePoint = nBasePoint * 2;
 		end
 		
 	end
 	--Lunar new year 2011 - Bobus award - Modified By DinhHQ - 20120103
 	local nNowDate = tonumber(GetLocalDate("%Y%m%d%H%M"))
-	if nNowDate >= 201201200000 and nNowDate < 201201252400 and nType ~= 1 then
+	if nNowDate >= 201701010000 and nNowDate < 202512312400 and nType ~= 1 then
 		nBasePoint = nBasePoint * 2;
 	end
 	return nBasePoint;
 end
 
 function BigBoss:AddChuangGuanPoint(nBasePoint)
-	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	-- ÖØÖÃ±äÁ¿,ÒÔ·ÀÒâÍâ
+	PlayerFunLib:AddTaskDaily(self.TSK_BIGBOSS_REWARD, 0);	
 	local nType = GetBit(PlayerFunLib:GetActivityTask(self.TSK_BIGBOSS_REWARD), self.CHUANGGUAN_REWARD_BIT);
 	if (nType == 1) then
 		nBasePoint = nBasePoint * 2;
 	end
 	--Lunar new year 2011 - Bobus award - Modified By DinhHQ - 20120103
 	local nNowDate = tonumber(GetLocalDate("%Y%m%d%H%M"))
-	if nNowDate >= 201201200000 and nNowDate < 201201252400 and nType ~= 1 then
+	if nNowDate >= 201701010000 and nNowDate < 202512312400 and nType ~= 1 then
 		nBasePoint = nBasePoint * 2;
 	end
 	return nBasePoint;

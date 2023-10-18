@@ -1,47 +1,33 @@
--- description	: NPCËÀÍö
--- author		: wangbin
--- datetime		: 2005-06-06
-
+IL("RELAYLADDER");
 Include("\\script\\missions\\challengeoftime\\include.lua")
 Include("\\script\\missions\\challengeoftime\\npc.lua")
-IL("RELAYLADDER");
-Include("\\script\\event\\storm\\function.lua")	--Storm
+Include("\\script\\event\\storm\\function.lua")
 Include("\\script\\event\\great_night\\huangzhizhang\\event.lua")
 Include("\\script\\activitysys\\g_activity.lua");
 Include("\\script\\activitysys\\functionlib.lua");
 Include("\\script\\lib\\common.lua");
-Include("\\script\\event\\change_destiny\\mission.lua");	-- ÄæÌì¸ÄÃü
-
---120¼¶¼¼ÄÜÐÞÁ¶
+Include("\\script\\event\\change_destiny\\mission.lua");
 Include("\\script\\task\\task_award_extend.lua")
--- Ô½ÄÏ×ÊÁÏÆ¬ÉúÈÕ»î¶¯
 Include("\\script\\event\\birthday_jieri\\200905\\class.lua");
--- ´³¹Ø»î¶¯Ã¿ÈÕÅÅÐÐ°ñ
 Include("\\script\\missions\\challengeoftime\\rank_perday.lua");
--- ´³¹Øµ÷Õû 2011.03.01
 Include("\\script\\lib\\awardtemplet.lua")
-
 Include("\\script\\missions\\challengeoftime\\doubleexp.lua")
---Phong V©n LÖnh Bµi tæ ®éi hæ trî t©n thñ - Modified By DinhHQ - 20110916
-Include("\\script\\activitysys\\config\\1005\\partysupport.lua")
-
+--------------------------------------------------------------------------
 function award_player(player, exp, objects, time)
 	local OldPlayerIndex = PlayerIndex;
 	PlayerIndex = player;
 	
-	--Storm Ôö¼Ó»ý·Ö
-	if(GetMissionV(VARV_MISSION_RESULT) == 1) then	--×îÖÕ½±Àø
+	if(GetMissionV(VARV_MISSION_RESULT) == 1) then
 		storm_addpoint(2, LIMIT_FINISH - time)
 	end
 
-	-- ½±Àø¾­Ñé
 	local experience = exp;
 	if (type(exp) == "function") then
 		experience = exp(time);
 	end	
 	if (experience ~= 0) then
 		local point = experience * 10000;
-		--¸øÓë120¼¼ÄÜÊìÁ·¶È
+		
 		AddExp_Skill_Extend(point);
 		if(greatnight_huang_event(3) == 1) then
 		elseif(greatnight_huang_event(3) == 2) then
@@ -50,10 +36,10 @@ function award_player(player, exp, objects, time)
 			point = point * 3;
 		else
 		end;
-		-- ÊÇ·ñ¶Ó³¤
+		
 		local name = GetMissionS(VARS_TEAM_NAME);
 		if (GetName() == name) then
-			point = point * (1 + 0.2);	--½±Àø¸ü¶à
+			point = point * (1 + 0.2);
 		end;
 		if (advanced()) then
 			point = point * 2;
@@ -62,36 +48,35 @@ function award_player(player, exp, objects, time)
 		point = BigBoss:AddChuangGuanPoint(point);
 		point = Chuangguan_checkdoubleexp(point)
 		AddOwnExp(point);
-		Msg2Player("<#>B¹n ®¹t ®­îc" .. point .. "®iÓm kinh nghiÖm.");
+		Msg2Player("<#>B¹n ®¹t ®­îc " .. point .. " ®iÓm kinh nghiÖm.");
+			--	if batch == 28  then
+		--	tbAwardTemplet:GiveAwardByList({{szName = "B¶o r­¬ng v­ît ¶i", tbProp ={ 6, 1, 2742, 1, 0, 0, 0, 0}, nCount=5, nExpiredTime=43200}}, format("Get %s", "Kim bµi v­ît ¶i"))
+		--	tbAwardTemplet:GiveAwardByList({{szName = "xu khoa", tbProp ={ 6, 1, 4893, 1, 0, 0, 0, 0}, nCount=1,nBindState = -2}}, format("Get %s", "Xu Khoa"))
+			--end
 	end
 	
-	-- ½±ÀøËæ»úÎïÆ·
 	if (objects ~= nil) then
 		award_random_object(objects, player);
 	end
 
-	-- »Ö¸´Íæ¼ÒË÷Òý
 	PlayerIndex = OldPlayerIndex;
 end
 
--- µôÂäÎïÆ·
 function drop_item(index, count)
 	local x, y, world = GetNpcPos(index);
 	if (count ~= 0) then
 		for i = 1, count do
-			-- µôÂäÎå»¨
 			DropItem(world, x, y, -1, 1, 2, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0);
 		end
 	end
-	-- µôÂäÀñÆ·ºÐ
+	
 	if ( random(1,100) <= 5 ) then
-		DropItem(world, x, y, -1, 6, 1, 1392, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+--		DropItem(world, x, y, -1, 6, 1, 1392, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+--		SetItemBindState(DropItem,-2)
 	end
 end
 
--- ½±Àø
 function award_batch_item(item, npc_index, time)
-	-- ¸øÃ¿¸ö¶ÓÔ±¾­ÑéºÍ½±Àø
 	local index = 0;
 	local player = 0;
 	while (1) do
@@ -103,12 +88,9 @@ function award_batch_item(item, npc_index, time)
 			break;
 		end	
 	end
-	
-	-- µôÂäÎïÆ·
 	drop_item(npc_index, item[2]);
 end
 
--- Åú´Î½±Àø
 function award_batch(batch, npc_index)
 	local map = current_npc_map();
 	award_batch_item(map[batch][2], npc_index, 0);
@@ -130,35 +112,81 @@ function award_batch(batch, npc_index)
 	else
 		n_level = 1
 	end
-	
 	G_ACTIVITY:OnMessage("Chuanguan", batch, tbAllPlayer, n_level);
-	
-	--Phong V©n LÖnh Bµi tæ ®éi hæ trî t©n thñ - Modified By DinhHQ - 20110916
-	tbPVLB_PtSpprt:COTAward(batch, tbAllPlayer)
-	
-	-- LLG_ALLINONE_TODO_20070802
 	award_batch_extend(batch)
 end
 
-
---½±ÀøµÄÀ©Õ¹º¯Êý£¬·½±ãÎ´À´ÆäËü»î¶¯µ÷ÓÃ¡£
---´¥·¢Ìõ¼þ£ºµ±±¾¹ØËùÓÐNPCËÀÍöºó£¬²¢¸øÓÚËùÓÐÍæ¼Ò»ù±¾½±Àøºó£¬½«±»µ÷ÓÃ¡£
---´ËÊ±µÄPlayerIndexÊÇ´òËÀ×îºóÒ»Ö»±¾¹Ø¹ÖµÄÈË 
---Èç¹ûÐèÒª¶ÔËùÒÔÍæ¼Ò½±ÀøÊ±£¬±ØÐëÊ¹ÓÃGetNextPlayerµÄ·½Ê½£¬Ò»Ò»»ñµÃ¡£
---by Romandou
---Change number of award - By DinhHQ - 20120312
 local tbAward_batch = 
 {
---	[10] = 1,
---	[20] = 2,
---	[28] = 2,
---	[29] = 3,
-	[15] = 2,
-	[28] = 2,
+	[1] = 1,
+	[2] = 1,
+	[3] = 1,
+	[4] = 1,
+	[5] = 1,
+	[6] = 1,
+       [7] = 1,
+	[8] = 1,
+	[9] = 1,
+	[10] = 1,
+	[11] = 1,
+	[12] = 1,
+       [13] = 1,
+	[14] = 1,
+	[15] = 1,
+	[16] = 1,
+	[17] = 1,
+	[18] = 1,
+       [19] = 1,
+	[20] = 1,
+	[21] = 1,
+	[22] = 1,
+	[23] = 1,
+       [24] = 1,
+	[25] = 1,
+	[26] = 1,
+	[27] = 1,
+	[28] = 1,
 }
-
-local tbPro = {szName="B¶o R­¬ng V­ît ¶i",tbProp={6, 1, 2742, 1, 0, 0},}
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--PhÇn Th­ëng Qua ¶i
+local tbPro= {
+--	{nExp_tl = 100000000},
+	--{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
+--	{szName="§¸ Linh Hån",tbProp={6,1,4905,1,0,0},nCount=1},	
+}
+--PhÇn Th­ëng Dµnh Cho §éi Tr­ëng
+tbAward_Personal = {
+	--{nExp_tl = 1e9},
+	--{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=5},
+}
+--PhÇn Th­ëng Dµnh Cho §éi Ngò
+tbAward_Teams = {
+	[1] = {	
+		{nExp_tl=5e6},	
+	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=2},
+--	{szName="D· TÈu Chi LÖnh",tbProp={6,1,4407,1,1,0},nCount=2},
+	--	{szName="M¶nh Ph«i TÝm",tbProp={4,1622,1,1},nCount=10},
+	--	{szName="M¶nh GhÐp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=2},
+		--	{szName="HuyÒn tinh Kho¸ng Th¹ch",tbProp={6,1,147,2,0},nCount=1},
+--		{szName="LÔ Bao TiÒn §ång",tbProp={6,1,4515,1,1,0},nCount=1},
+	--	{szName="Bã Cá",tbProp={6,1,4415,1,1,0},nCount=5},
+			
+	},
+	[2] = {
+		--	{szName = "Phóc Duyªn TiÓu",tbProp={6,1,122,1,0,0},nCount=1,nRate=5},
+		--	{szName = "Phóc Duyªn §¹i",tbProp={6,1,124,1,0,0},nCount=1,nRate=1},
+		--	{szName = "Tiªn Th¶o Lé",tbProp={6,1,71,1,0,0},nCount=1,nRate=5},
+		--	{szName = "Thiªn S¬n B¶o Lé",tbProp={6,1,72,1,0,0},nCount=1,nRate=5},
+		--	{szName = "Phi Phong",tbProp={6,1,15,1,0,0},nCount=1,nRate=5},
+		--	{szName = "Tinh Hång B¶o Th¹ch",tbProp={4,353,1,1},nCount=1,nRate=1},
+		--	{szName = "Lam Thñy Tinh",tbProp={4,238,1,1},nCount=1,nRate=1},
+		--	{szName = "Tö Thñy Tinh",tbProp={4,239,1,1},nCount=1,nRate=1},
+		--	{szName = "Lôc Thñy Tinh",tbProp={4,240,1,1},nCount=1,nRate=1},
+		--			{szName="HuyÒn Tinh Kho¸ng Th¹ch",tbProp={6,1,147,3,0},nCount=1,nRate=15},
+	--	{szName="HuyÒn Tinh Kho¸ng Th¹ch",tbProp={6,1,147,4,0},nCount=1,nRate=15},
+	},
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function award_batch_extend(batch)
 	award_batch_contribution(batch)
 	local nOldPlayer = PlayerIndex;
@@ -168,23 +196,36 @@ function award_batch_extend(batch)
 		index, player = GetNextPlayer(MISSION_MATCH, index, 0);
 		if (player > 0) then
 			PlayerIndex = player;
-			-- Ô½ÄÏÉúÈÕ»î¶¯Ê±¼äÌôÕ½ÈüµÄ¹ý¹ØÊý
 			SetTask(tbBirthday0905.tbTask.tsk_toll_cg_passcount, batch);
-			-- ´³¹Øµ÷Õû by wangjingjun 2011.03.01
-			if %tbAward_batch[batch] and GetMissionV(VARV_BATCH_MODEL) == 1 then
-				%tbPro.nCount = %tbAward_batch[batch]
-				tbAwardTemplet:GiveAwardByList(%tbPro, "chuangguan award", 1)
+			--Tu 10h Den 22h
+			--if %tbAward_batch[batch] and GetMissionV(VARV_BATCH_MODEL) == 1 then
+		--		%tbPro.nCount = %tbAward_batch[batch]
+			--	tbAwardTemplet:GiveAwardByList(%tbPro, "chuangguan award", 1)
+			if batch>=1 and batch<=4 then
+			tbAwardTemplet:GiveAwardByList({{nExp_tl=100000},}, "test", 1);
+			elseif batch>=5 and batch<=10 then
+				tbAwardTemplet:GiveAwardByList({{nExp_tl=200000},}, "test", 1);
+			elseif batch>=11 and batch<=15 then
+				tbAwardTemplet:GiveAwardByList({{nExp_tl=250000},}, "test", 1);
+			elseif batch>=16 and batch<=20 then
+				tbAwardTemplet:GiveAwardByList({{nExp_tl=300000},}, "test", 1);
+			elseif batch>=21 and batch<=25 then
+				tbAwardTemplet:GiveAwardByList({{nExp_tl=350000},}, "test", 1);
+			elseif batch>=26 and batch<=28 then
+				tbAwardTemplet:GiveAwardByList({{nExp_tl=450000},}, "test", 1);
 			end
-			-- Ð¡Äôß±³¾½±Àø
-			if GetMissionV(VARV_BATCH_MODEL) == 1 and batch == GetMissionV(VARV_XIAONIESHICHEN_BATCH) then
-				%tbPro.nCount = 1
-				tbAwardTemplet:GiveAwardByList(%tbPro, "xiaonieshichen awrad", 1)
-				
-				local nExpCount = 10000000
-				nExpCount = Chuangguan_checkdoubleexp(nExpCount)
-				tbAwardTemplet:GiveAwardByList({nExp_tl=1,nCount = nExpCount,}, "xiaonieshichen awrad", 1)
-			end
+			--	Add120SkillExp(300000)
+			--	Clear120SkillExpLimit ()
+			--end
+			--Tu 23h Den 9h
+			--if GetMissionV(VARV_BATCH_MODEL) == 1 and batch == GetMissionV(VARV_XIAONIESHICHEN_BATCH) then
+			--	%tbPro.nCount = 1
+			--	tbAwardTemplet:GiveAwardByList(%tbPro, "xiaonieshichen awrad", 1)
 			
+			--	local nExpCount = 10000000
+			--	nExpCount = Chuangguan_checkdoubleexp(nExpCount)
+			--	tbAwardTemplet:GiveAwardByList({nExp_tl=1,nCount = nExpCount,}, "xiaonieshichen awrad", 1)
+			--end
 		end
 		if (index == 0) then
 			break;
@@ -194,7 +235,7 @@ function award_batch_extend(batch)
 end
 
 function award_batch_worldcup(batch)
-	-- ÊÀ½ç±­»î¶¯µÄ´¦Àí
+	
 	if checkPayCardTime() ~= 1 then
 		return 
 	end;
@@ -221,7 +262,6 @@ function award_batch_worldcup(batch)
 	PlayerIndex = oldPlayer
 end
 
---¼Ó°ï»á¹±Ï×¶È
 function award_batch_contribution(batch)
 	local nOldPlayer = PlayerIndex;
 	local index = 0;
@@ -238,31 +278,26 @@ function award_batch_contribution(batch)
 	end
 	PlayerIndex = nOldPlayer;
 end
--- Í¨¹Ø½±Àø
+
 function award_success(npc_index, time)
 	local item = {};
 	if (advanced()) then
-		item = map_haward_success;	-- ¸ß¼¶±ÈÈüÍ¨¹Ø½±Àø
+		item = map_haward_success;
 	else
-		item = map_laward_success;	-- ³õ¼¶±ÈÈüÍ¨¹Ø½±Àø
+		item = map_laward_success;
 	end
 	award_batch_item(item, npc_index, time);	
 end
 
--- ±ÈÈüÊ¤Àû
 function success(npc_index)
-	-- Í³¼ÆÊ±¼ä
 	local time = GetMissionV(VARV_BOARD_TIMER);
 	time = time + INTERVAL_BOARD * 60 - floor(GetMSRestTime(MISSION_MATCH, TIMER_BOARD) / 18);
 	SetMissionV(VARV_BOARD_TIMER, time);
 	
-	-- ±ê¼ÇÎªÍ¨¹Ø
 	SetMissionV(VARV_MISSION_RESULT, 1);
 		
-	-- Í¨¹Ø½±Àø
 	award_success(npc_index, time);
 	
-	--local laddertime = LIMIT_FINISH - time;
 	local laddertime = time;
 	local teamname = GetMissionS(VARS_TEAM_NAME)
 	local nLeaderFaction = GetMissionS(VARS_TEAMLEADER_FACTION)
@@ -273,10 +308,6 @@ function success(npc_index)
 		LadderId = 10180;
 	end
 	
-	-- DEBUG
-	--print(format("team name:%s", teamname));
-			
-	-- ÅÅÐÐ°ñ
 	local bfind = 0
 	for i = 1, 10 do 
 		name , value = Ladder_GetLadderInfo(LadderId, i)
@@ -294,7 +325,7 @@ function success(npc_index)
 	end
    	
    	Ladder_NewLadder(DailyRankLadderId, teamname, -1 * laddertime, 1)
-	-- ¸üÐÂÃ¿ÌìµÄ³É¼¨
+	
 	if (advanced()) then
 		local nOldPlayer = PlayerIndex;
 		local index = 0;
@@ -323,13 +354,10 @@ function success(npc_index)
 		PlayerIndex = nOldPlayer;
 		
 	end
-	broadcast(GetMissionS(VARS_TEAM_NAME) .. "§éi ngò ®· th¾ng lîi hoµn thµnh nhiÖm vô ®óng thêi gian, ®· dông" .. floor(time / 60) .. "phót" .. mod(time, 60) .. "gi©y! Tr­íc ®ã"..laddertime.." gi©y");
-		
-	-- DEBUG
-	--print(format("used time: %d seconds", time));
 
-	-- Èç¹ûÓÃÊ±ÉÙÓÚ12·ÖÖÓ£¬´ÓÒþ²Ø¹Ø¿¨ÖÐËæ»úÑ¡È¡1¸ö¿ªÆô	
-	if (time < 20 * 60) then
+	broadcast(GetMissionS(VARS_TEAM_NAME) .. " §éi ngò ®· th¾ng lîi hoµn thµnh nhiÖm vô ®óng thêi gian, ®· dông" .. floor(time / 60) .. "phót" .. mod(time, 60) .. "gi©y! Tr­íc ®ã"..laddertime.." gi©y");
+	--Msg2SubWorld(GetMissionS(VARS_TEAM_NAME) .. " §éi ngò ®· th¾ng lîi hoµn thµnh nhiÖm vô ®óng thêi gian, PhÇn th­ëng: <color=cyan>2 G¹o NÕp + 2 R­¬ng M¶nh HKMP<color>")
+	if (time < 30 * 60) then
 		local map = map_lo_hidden_npc;
 		if (advanced()) then
 			map = map_hi_hidden_npc;
@@ -339,12 +367,11 @@ function success(npc_index)
 		Msg2MSAll(MISSION_MATCH, "<#>NhiÖm vô bÝ mËt ®· khái ®éng råi");
 		create_all_npc(map[index]);
 	else
-		-- Ìß»Ø±¨Ãûµã
 		kickout();
 	end
+	tbAwardTemplet:GiveAwardByList(tbAward_Personal,"PhÇn Th­ëng V­ît ¶i Dµnh Cho §éi Tr­ëng")
 end
 
--- Òþ²ØÈÎÎñ½±Àø
 function award_hidden_mission()
 	local index = 0;
 	local player = 0;
@@ -353,16 +380,25 @@ function award_hidden_mission()
 		index, player = GetNextPlayer(MISSION_MATCH, index, 0);
 		if (player > 0) then
 			award_random_object(map_random_awards, player);
-			-- Ô½ÄÏÉúÈÕ»î¶¯Ê±¼äÌôÕ½ÈüµÄ¹ý¹ØÊý
+			
 			PlayerIndex = player;
 			SetTask(tbBirthday0905.tbTask.tsk_toll_cg_passcount, 29);
 			
 			if GetMissionV(VARV_BATCH_MODEL) == 1 then
-				--Change feature award - Modified By DinhHQ - 20120326 
---				%tbPro.nCount = 3
---				tbAwardTemplet:GiveAwardByList(%tbPro, "chuangguan award", 1)
+				--%tbAward_Teams.nCount = 3
+				--tbAwardTemplet:GiveAwardByList(%tbAward_Teams, "chuangguan award", 1)
 			end
-			
+		--	Add120SkillExp(5000000)
+		--	Clear120SkillExpLimit ()
+		--	tbAwardTemplet:GiveAwardByList(tbAward_Teams, "PhÇn Th­ëng V­ît ¶i Dµnh Cho §éi Ngò")
+		--	local nIndex = AddItem(6,1,2742,1,0,0) ITEM_SetExpiredTime(nIndex, 1440) SyncItem(nIndex)  --B¶o R­¬ng V­ît ¶i
+		--	local a=random(1,50)
+		--if a==10 then
+
+		tbAwardTemplet:GiveAwardByList({{nExp_tl=5e6},}, "test", 1);
+	--	tbAwardTemplet:GiveAwardByList({{szName="LÖnh bµi gäi boss",tbProp={6,1,4489,1,1,0},nCount=3},}, "test", 1);
+	Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· v­ît thµnh c«ng 28 ¶i vµ nhËn ®­îc phÇn th­ëng.")
+--end
 		end
 		if (index == 0) then
 			break;
@@ -371,32 +407,28 @@ function award_hidden_mission()
 	PlayerIndex = OldPlayerIndex;
 end
 
--- Åú´Î½áÊø
 function batch_finish(index)
-	
 	if (GetMissionV(VARV_MISSION_RESULT) == 1) then
-		-- Òþ²ØÈÎÎñ½±Àø
+	
 		award_hidden_mission();
 		
 		if GetMissionV(VARV_BATCH_MODEL) == 1 and GetMissionV(VARV_BOARD_TIMER) <= CHUANGGUAN30_TIME_LIMIT  then
-			add_transfer_npc()
+		--	add_transfer_npc()
+		kickout();
 		else
-			-- Ìß»Ø±¨Ãûµã
 			kickout();
 		end
 	else
-		-- Í¨¸æ
 		local batch = GetMissionV(VARV_NPC_BATCH);
-		Msg2MSAll(MISSION_MATCH, GetMissionS(VARS_TEAM_NAME) .. "§éi ngò ®· tiªu diÖt toµn bé " .. batch .. "®¸m qu¸i!");
+		Msg2MSAll(MISSION_MATCH, GetMissionS(VARS_TEAM_NAME) .. " §éi ngò ®· tiªu diÖt toµn bé " .. batch .. " ®¸m qu¸i!");
+		--PhÇn Th­ëng KÕt Thóc Qu¸i Dµnh Cho Member Khi Qua Mçi ¶i
+		--local nIndex = AddItem(6,1,2742,1,0,0) ITEM_SetExpiredTime(nIndex, 1440) SyncItem(nIndex)  --B¶o R­¬ng V­ît ¶i
 		
-		-- ½±Àø
 		award_batch(batch, index);
     	
 		if (batch >= get_batch_count()) then
-			-- ½áÊø
 			success(index);
 		else
-			-- ²úÉúÏÂÒ»Åú¹Ö
 			batch = batch + 1;
 			SetMissionV(VARV_NPC_BATCH, batch);
 			create_batch_npc(batch);
@@ -404,7 +436,6 @@ function batch_finish(index)
 	end
 end
 
--- NPCËÀÍö½±Àø
 function NpcDeathAward(index)
 	local nNpcSettingIdx = GetNpcSettingIdx(index);
 	tbChangeDestiny:completeMission_NieShiChen(nNpcSettingIdx);
@@ -419,4 +450,11 @@ function OnDeath(index)
 			batch_finish(index);
 		end
 	end
+end
+local _Message =  function (nItemIndex)
+	local handle = OB_Create()
+	local msg = format("<pic=42><color=red>VËt phÈm <color=pink><%s><color=green><enter> võa r¬i tõ <color=yellow> BOSS V­ît ¶i<color>" ,GetItemName(nItemIndex))
+	ObjBuffer:PushObject(handle, msg)
+	RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+	OB_Release(handle)
 end

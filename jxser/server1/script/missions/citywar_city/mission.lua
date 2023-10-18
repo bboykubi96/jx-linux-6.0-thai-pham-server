@@ -24,7 +24,7 @@ function InitMission()
 		SetMissionV(MS_SYMBOLBEGIN + i - 1, 1);
 	end
 
-	--¼ÓÔØNPC
+	--Add Long trô
 	NpcId1 = AddNpc(STONENPCID1, STONELEVEL1, SubWorld, StonePos[1].x, StonePos[1].y, 1, GetGamerName(1)..StonePos[1].Name, 1);
 	NpcId2 = AddNpc(STONENPCID1, STONELEVEL1, SubWorld, StonePos[2].x, StonePos[2].y, 1, GetGamerName(1)..StonePos[2].Name, 1);
 	NpcId3 = AddNpc(STONENPCID1, STONELEVEL1, SubWorld, StonePos[3].x, StonePos[3].y, 1, GetGamerName(1)..StonePos[3].Name, 1);
@@ -42,8 +42,8 @@ function InitMission()
 	SetNpcDeathScript(NpcId2, "\\script\\missions\\citywar_city\\symboldeath2.lua");
 	SetNpcDeathScript(NpcId3, "\\script\\missions\\citywar_city\\symboldeath3.lua");
 	
-	
-	DoorId1 = AddNpc(DOORNPCID, DOORLEVEL, SubWorld, DoorPos[1].x, DoorPos[1].y, 1,	DoorPos[1].Name, 1);
+	--Add Cöa thµnh m«n
+	DoorId1 = AddNpc(DOORNPCID, DOORLEVEL, SubWorld, DoorPos[1].x, DoorPos[1].y, 1,DoorPos[1].Name, 1);
 	DoorId2 = AddNpc(DOORNPCID, DOORLEVEL, SubWorld, DoorPos[2].x, DoorPos[2].y, 1, DoorPos[2].Name, 1);
 	DoorId3 = AddNpc(DOORNPCID, DOORLEVEL, SubWorld, DoorPos[3].x, DoorPos[3].y, 1, DoorPos[3].Name, 1);
 
@@ -68,9 +68,12 @@ function InitMission()
 		local nDoctIdx = AddNpc(DOCTORNPCID, 1, SubWorld, DoctorPos[i][1],DoctorPos[i][2], 1, DoctorPos[i][3]);
 		SetNpcScript(nDoctIdx, "\\script\\missions\\citywar_city\\chengzhan_map\\yaoshang.lua");
 	end;
-	--°µµÀÊØÎÀ
-	local nAndaoIdx = AddNpc(48, 1, SubWorld, 1597 * 32, 3470 * 32, 1, "§Þa ®¹o vÖ thñ");
+	--Add MËt ®¹o
+	local nAndaoIdx = AddNpc(48, 1, SubWorld,1587*32,3089*32, 1, "§Þa ®¹o vÖ thñ");
 	SetNpcScript(nAndaoIdx, "\\script\\missions\\citywar_city\\chengzhan_map\\andaoshouwei.lua");
+	local nAndaoIdx = AddNpc(48, 1, SubWorld,1494*32,3191*32, 1, "§Þa ®¹o vÖ thñ");
+	SetNpcScript(nAndaoIdx, "\\script\\missions\\citywar_city\\chengzhan_map\\andaoshouwei.lua");
+
 	--´¢ÎïÏä
 	local nChuwuIdx = AddNpc(625, 1, SubWorld, 1534*32, 3240*32, 1, "R­¬ng chøa ®å");
 	SetNpcScript(nChuwuIdx, "\\script\\missions\\citywar_city\\chengzhan_map\\chuwuxiang.lua");
@@ -78,11 +81,13 @@ function InitMission()
 	SetNpcScript(nChuwuIdx, "\\script\\missions\\citywar_city\\chengzhan_map\\chuwuxiang.lua");
 	--¼ÓÔØNPC
 	
+	--ChÆn cöa thµnh
 	WriteLog("Thanh trõ ch­íng ng¹i");
 	for i = 1, getn(ObstaclePos) do 
 		CreateObstacle(ObstaclePos[i][1], ObstaclePos[i][2]);
 	end;
 
+	--Set phe thñ, phe c«ng
 	Tong2,Tong1 = GetCityWarBothSides(GetWarOfCity());
 	SetMissionS(1, Tong1);
 	SetMissionS(2, Tong2);
@@ -101,11 +106,14 @@ function InitMission()
 	ResetBonus()
 	--¼Æ·ÖÅÆÏÔÊ¾
 	
+	--Set random key
 	SetMissionV(MS_KEY, random(100000))
-	--´ò¿ª¼ÆÊ±Æ÷
+
+	--Set thêi gian task 12,13
 	StartMissionTimer(MISSIONID, 12, REPORTTIME);
 	StartMissionTimer(MISSIONID, 13, GAMETIME);
 	
+	--Set b¾t ®Çu b¸o danh
 	SetMissionV(MS_STATE, 1);--ÔÊÐí±¨ÃûÁË
 end;
 

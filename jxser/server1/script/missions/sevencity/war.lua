@@ -160,12 +160,12 @@ end
 function BattleWorld:StartSignup()
 	self.m_SignupList = {}
 	self.m_State = STATE_STARTSIGNUP
-	AddLocalCountNews("ThÊt thµnh ®¹i chiÕn b¾t ®Çu b¸o danh, xin mêi ch­ vŞ bang chñ h·y nhanh chãng b¸o danh, bang chiÕm thµnh kh«ng cÇn b¸o danh.", 5)
+	AddLocalCountNews("ThÊt thµnh ®¹i chiÕn b¾t ®Çu b¸o danh, xin mêi ch­ vŞ <color=red>Bang Chñ<color> h·y nhanh chãng b¸o danh t¹i xa phu c«ng thµnh (T­¬ng D¬ng 197/214), bang chiÕm thµnh kh«ng cÇn b¸o danh.", 5)
 end
 
 function BattleWorld:CloseSignup()
 	self.m_State = STATE_CLOSESIGNUP
-	AddLocalCountNews("B¸o danh thÊt thµnh ®¹i chiÕn ®· kÕt thóc", 3)
+	AddLocalCountNews("ThÊt thµnh ®¹i chiÕn ®· kÕt thóc b¸o danh 20h00 chuÈn bŞ 20h30 khai cuéc 21h30 kÕt thóc 21h45 nhËn th­ëng", 3)
 end
 
 function BattleWorld:LoadMap()
@@ -487,14 +487,14 @@ function BattleWorld:CheckMapPermission(player, err)
 	local msg = ""
 	if (self.m_State ~= STATE_PREPARING and self.m_State ~= STATE_STARTWAR) then
 		msg = "HiÖn t¹i kh«ng thÓ vµo chiÕn tr­êng."
-	elseif (player:GetLevel() < 90) then
-		msg = "<color=red>Ng­êi ch¬i cÊp 90 vµ cÊp 90 trë lªn<color> míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
+--	elseif (player:GetLevel() < 90) then
+	--	msg = "<color=red>Ng­êi ch¬i cÊp 90 vµ cÊp 90 trë lªn<color> míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
 	elseif (tong == nil or tong == "") then
 		msg = "Thµnh viªn bang héi míi cã thÓ tham gia thÊt thµnh ®¹i chiÕn."
 	elseif (self:CheckWarriorTongChange(player:GetName(), tong) == 1) then
 		msg = "Ng­¬i ®· ph¶n bang kh«ng thÓ tiÕn vµo chiÕn tr­êng."
-	elseif (player:GetJoinTongTime() < 24 * 60) then
-		msg = "Gia nhËp bang héi<color=red> 1 ngµy hoÆc 1 ngµy trë lªn míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
+--	elseif (player:GetJoinTongTime() <  1 * 60) then
+	--	msg = "Gia nhËp bang héi<color=red>  1 giê trë lªn míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
 	elseif (self.m_CityManager:IsViceroy(tong) == 0 and
 			self.m_SignupList[tong] == nil) then
 		msg = "Bang héi chiÕm thµnh hoÆc ®· b¸o danh míi cã thÓ tham gia thÊt thµnh ®¹i chiÕn"
@@ -980,6 +980,12 @@ function Monster:Down(killer)
 		self.m_NpcIndex = 0
 		local name = killer:GetName()
 		local tong = BattleWorld:GetWarriorTong(name)
+		if name==nil or name=="" then
+			name="Kh«ngTªn"
+		end
+		if tong==nil or tong=="" then
+			tong="Kh«ngTªn"
+		end
 		local msg = format("[%s] long trô bŞ bang héi %s %s ph¸ vì!",
 						MAP_INFO[self.m_MapId].Name,
 						tong,

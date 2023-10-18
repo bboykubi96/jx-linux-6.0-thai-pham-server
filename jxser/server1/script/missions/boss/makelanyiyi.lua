@@ -1,4 +1,4 @@
---蓝伊伊(582)，生于每天21：31，在181,1636,3073
+
 function main()
 	mapindex = SubWorldID2Idx(181)
 	if (mapindex < 0 ) then

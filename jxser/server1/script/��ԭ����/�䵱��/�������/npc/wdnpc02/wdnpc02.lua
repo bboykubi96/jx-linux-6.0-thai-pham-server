@@ -15,7 +15,7 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- 带艺投师
 --dinhhq: new lunar year 2011
 Include("\\script\\vng_event\\LunarYear2011\\npc\\mastergift.lua")
 
-function main()
+function main_com()
 	if tbVNG_LY2011:isActive() == 1 then
 		local tbSay = 
 			{

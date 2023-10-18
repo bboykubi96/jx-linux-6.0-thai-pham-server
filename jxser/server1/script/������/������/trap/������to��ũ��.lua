@@ -1,17 +1,40 @@
---Á½ºþÇø °ÍÁêÏØtoÉñÅ©¼Ü
---TrapID£ºÁ½ºþÇø 83
--- Update: Dan_Deng(2003-08-21) ½µµÍ³ö´åµÈ¼¶ÒªÇóÎª5¼¶
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn to thÇn n«ng chiÕc 
+-- script viet hoa By http://tranhba.com TrapID# hai hå khu 83 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) rít xuèng ra th«n cÊp bËc yªu cÇu v× 5 cÊp 
 
-function main(sel)
-if (GetLevel() >= 5) then						--µÈ¼¶´ïµ½Ê®¼¶
-	SetFightState(1);
-	NewWorld(74, 2040 ,3259)
-else
-	Talk(1,"","PhÝa tr­íc nguy hiÓm! Xin h·y quay vÒ rÌn luyÖn thªm!")
-	SetPos(1338, 3353)						--×ß³öTrapµã
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
+function main(sel) 
+
+	--dofile("script/global/g7vn/g7configall.lua")
+	local nDate = tonumber(date("%Y%m%d%H%M"))
+	if nDate <= ThoiGianHetHanDiemTP then
+		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chÝnh thøc khai më m¸y chñ");
+		SetPos(1338, 3353)
+		return 1
+	end
+	if check_faction()==1 then
+		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		SetPos(1338, 3353)
+		return 1
+	end;
+if (GetLevel() >= 5) then -- script viet hoa By http://tranhba.com  cÊp bËc ®¹t tíi cÊp m­êi 
+SetFightState(1); 
+NewWorld(74, 2040 ,3259) 
+else 
+Talk(1,"","ThËt xin lçi , kh«ng tíi cÊp n¨m ®Ých tay míi kh«ng thÓ ra th«n . ") 
+SetPos(1338, 3353) -- script viet hoa By http://tranhba.com  ®i ra Trap ®iÓm 
+end 
+
+AddTermini(46) 
+
+SetProtectTime(18*3) -- script viet hoa By http://tranhba.com  ba gi©y b¶o vÖ thêi gian 
+AddSkillState(963, 1, 0, 18*3) 
+end; 
+function check_faction()
+	local szCurFaction = GetFaction()
+	if szCurFaction ~= nil and szCurFaction ~= "" then
+		return
+	end
+	return 1
 end
-
-AddTermini(46)
-	SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
-end;

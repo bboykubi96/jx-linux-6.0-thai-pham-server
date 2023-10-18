@@ -1,7 +1,7 @@
---¡Ω∫˛«¯ Œ‰¡Í…Ω ¬∑±Í1£∫Œ‰¡Í…Ω->∞Õ¡Íœÿ
+-- script viet hoa By http://tranhba.com  hai hÂ khu vÚ l®ng s¨n b∂ng chÿ Æ≠Íng 1# vÚ l®ng s¨n -> ba l®ng huy“n 
 
-function main(sel)
+function main(sel) 
 
-Say("VÚ L®ng s¨n<---->Ba L®ng huy÷n", 0)
+Say("VÚ l®ng s¨n <óó> ba l®ng huy“n ", 0) 
 
-end;
+end; 

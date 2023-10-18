@@ -1,17 +1,16 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË8ÂŞ¼ÒÉô×Ó¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 8 La gia thÈm tö ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-i = random(0,1)
+i = random(0,1) 
 
-if (i == 0) then
-Say("Thêi thanh xu©n ta còng cã kha kh¸ nhan s¾c, nÕu lóc ®ã cã thÓ xuÊt gi¸ vµo nhµ giµu cã, th× cuéc sèng cã lÏ kh«ng cßn ph¶i lo n÷a. ",0)
-return
-end;
+if (i == 0) then 
+Say(" muèn ta lóc cßn trÎ còng rÊt cã s¾c ®Ñp , nÕu nh­ ban ®Çu cã thÓ g¶ vµo nhµ ng­êi cã tiÒn , kia kiÕp nÇy liÒn cã thÓ ¨n mÆc kh«ng buån . ",0) 
+return 
+end; 
 
-if (i == 1) then
-Say("¤i! Kh«ng ngê ta lÊy ph¶i mét ng­êi nghÌo tóng, c¶ ®êi ph¶i cùc khæ, ta thËt hèi hËn qu¸!",0)
-end;
+if (i == 1) then 
+Say(" ai ! kh«ng nghÜ tíi ta sÏ g¶ cho mét nghÌo rít mång t¬i , c¶ ®êi nhai khæ bŞ nghÌo , ta thËt lµ hèi hËn a . ",0) 
+end; 
 
-end;
-
+end; 

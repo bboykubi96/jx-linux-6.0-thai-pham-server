@@ -1,12 +1,7 @@
--- ÎÄ¼şÃû¡¡£ºtianzhibaoxiang.lua
--- ´´½¨Õß¡¡£ºwangjingjun
--- ÄÚÈİ¡¡¡¡£ºÌìÖ®±¦Ïä 
--- ´´½¨Ê±¼ä£º2011-10-01 01:12:36
-
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\lib\\progressbar.lua")
 
-local nProtectTime = 60  -- ÌìÖ®±¦Ïä¾ßÓĞ60Ãë±£»¤Ê±¼ä
+local nProtectTime = 60
 
 function main()
 --	print("ÌìÖ®±¦Ïä±»µã»÷")
@@ -17,7 +12,6 @@ function main()
 		Msg2Player("Ng­¬i kh«ng thÓ lÊy vËt phÈm cña ng­êi kh¸c")
 		return
 	end
-	--¿ªÆô½ø¶ÈÌõ
 	tbProgressBar:OpenByConfig(11, getbox, {nNpcIdx, dwNpcId},onbreak)
 
 end

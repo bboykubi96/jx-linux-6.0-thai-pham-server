@@ -1,7 +1,7 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·±ê4£ºÇØÁê->·ïÏè
+-- script viet hoa By http://tranhba.com ##±±Ä### ###Ì## ¢#±ª4#º##¸ª->###Ì
 
 function main(sel)
 
-Say("§i Ph­îng T­êng", 0)
+Say("Ý#Ýï###Ì", 0)
 
 end;

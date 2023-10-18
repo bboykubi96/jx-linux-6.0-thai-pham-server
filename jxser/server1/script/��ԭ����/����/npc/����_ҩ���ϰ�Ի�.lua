@@ -1,19 +1,21 @@
--- ÖĞÔ­ÄÏÇø ÑïÖİ¸® Ò©µêÀÏ°å¶Ô»°£¨Îå¶¾40¼¶ÈÎÎñ£©
--- Update£ºDan_Deng ¼ÓÈëÎå¶¾ÈÎÎñ£¨2003-10-12£©
-Include("\\script\\config\\cfg_features.lua")
 
--- Á¶ÖÆ»ìÔªÁéÂ¶
 function refine()
 	DynamicExecute("\\script\\global\\jingli.lua", "dlg_entrance", PlayerIndex)
 end
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+	
+	--dofile("script/ÖĞÔ­ÄÏÇø/ÑïÖİ/npc/ÑïÖİ_Ò©µêÀÏ°å¶Ô»°.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
 	UTask_wu = GetTask(10)
 	if (UTask_wu == 40*256+10) and (HaveItem(142) == 0) then 		--ÈÎÎñÖĞ
 		local tbSay = {}
 		tinsert(tbSay,"Mua ®­îc X¹ h­¬ng/L40_buy_yes")
 		tinsert(tbSay,"Giao dŞch/yes")
-		if CFG_HONNGUYENLINHLO == 1 then
+		if chetaohonnguyenlinhlo == 1 then
 			tinsert(tbSay,"Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
 		end
 		tinsert(tbSay,"Kh«ng giao dŞch/no")
@@ -21,7 +23,7 @@ function main()
 	else
 		local tbSay = {}
 		tinsert(tbSay,"Giao dŞch/yes")
-		if CFG_HONNGUYENLINHLO == 1 then
+		if chetaohonnguyenlinhlo == 1 then
 			tinsert(tbSay,"Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
 		end
 		tinsert(tbSay,"Kh«ng giao dŞch/no")

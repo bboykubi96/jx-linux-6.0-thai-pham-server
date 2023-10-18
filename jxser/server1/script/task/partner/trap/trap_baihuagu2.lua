@@ -1,24 +1,24 @@
 
--- script viet hoa By http://tranhba.com  ====================== #Ä###Å## ======================
+-- ====================== ÎÄ¼şĞÅÏ¢ ======================
 
--- script viet hoa By http://tranhba.com  ###µ#Ğ¤#online #Ğß###º#İ#°Ğ###Ğ#Å±#£#×#´#µİ#Ä## - ß#²#Ì###´####·1
--- script viet hoa By http://tranhba.com  Edited by peres
--- script viet hoa By http://tranhba.com  2005/09/09 PM 11:19
+-- ½£ÏÀÇéÔµonline ÇéÒå½­ºşÍ¬°é¾çÇé½Å±¾ÊµÌå´¦ÀíÎÄ¼ş - Òş²ØÈÎÎñ´¥·¢µã1
+-- Edited by peres
+-- 2005/09/09 PM 11:19
 
--- script viet hoa By http://tranhba.com  ##ã###ºİ#ı¸###Ì#
--- script viet hoa By http://tranhba.com  ##·##µ°#
--- script viet hoa By http://tranhba.com  #ı###·
--- script viet hoa By http://tranhba.com  ###Ä£###Ä#¤ó#ı#Ä###«Ğ##Ä#¢#Ğ
--- script viet hoa By http://tranhba.com  ###Ä######Ä#Ìº¤ó××¿â¢ã#ı
--- script viet hoa By http://tranhba.com  ##¤ó#ıĞİ×#µ#·##Ä±#×#ºİ#Å#ı
--- script viet hoa By http://tranhba.com  ##Ì##¯£±ºß#Ä#ï#ã³#¢ó´¿â#
--- script viet hoa By http://tranhba.com  #ı###·####³¿#ı###ıµ´#Äß#¿×####¤ó#ı#ÄĞİ±#
--- script viet hoa By http://tranhba.com  #ıâ##Å#Û####¿´£##©İ##ı´°¸±ß##·ß##·##ââĞ###µ´
--- script viet hoa By http://tranhba.com  #ı#Ä#Äµ#ßß###ß####×Ûİ´
+-- Ö»ÓĞËûºÍËıÁ½¸öÈË
+-- ËûÃÇÏà°®
+-- Ëı¼ÇµÃ
+-- ËûµÄÊÖ¸§Ä¦ÔÚËıµÄÆ¤·ôÉÏµÄÎÂÇé
+-- ËûµÄÇ×ÎÇÏñÄñÈºÔÚÌì¿ÕÂÓ¹ı
+-- ËûÔÚËıÉíÌåÀïÃæµÄ±©ìåºÍ·Å×İ
+-- ËûÈëË¯Ê±ºòµÄÑù×Ó³äÂú´¿Õæ
+-- Ëı¼ÇµÃ£¬Çå³¿ËıĞÑ¹ıÀ´µÄÒ»¿Ì£¬ËûÔÚËıµÄÉí±ß
+-- ËıÕö×ÅÑÛ¾¦£¬¿´Êï¹âÍ¸¹ı´°Á±Ò»µãÒ»µãµØÕÕÉä½øÀ´
+-- ËıµÄĞÄÀïÒòÎªĞÒ¸£¶øÌÛÍ´
 
--- script viet hoa By http://tranhba.com  ======================================================
+-- ======================================================
 
--- script viet hoa By http://tranhba.com  ######±ğ#Äİ#°Ğ###ĞÌ###£#×#´#µİ#Ä##
+-- ¸÷¸ö¼¶±ğµÄÍ¬°é¾çÇéÈÎÎñÊµÌå´¦ÀíÎÄ¼ş
 Include ("\\script\\task\\partner\\master\\partner_master_main_05.lua");
 
 function main()

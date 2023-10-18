@@ -1,3 +1,6 @@
+-- zuofanggongren.lua 
+-- ×÷·»¹¤ÈË½Å±¾
+-- 2005-09-07 by steve
 
 Include("\\script\\event\\mid_autumn\\mooncake_head.lua")
 IncludeLib("TIMER")
@@ -15,9 +18,9 @@ tbl_time_wait = {
 };
 
 tbl_finish_stat = {
-	[STAT_HUOMIAN_MAKING] = STAT_HUOMIAN_FINISH,
-	[STAT_BAOXIAN_MAKING] = STAT_BAOXIAN_FINISH,
-	[STAT_HONGKAO_MAKING] = STAT_HONGKAO_FINISH,
+	[STAT_HUOMIAN_MAKING] = STAT_HUOMIAN_FINISH,	-- ºÍÃæÍê³É
+	[STAT_BAOXIAN_MAKING] = STAT_BAOXIAN_FINISH,	-- °üÏÚÍê³É
+	[STAT_HONGKAO_MAKING] = STAT_HONGKAO_FINISH,	-- ºæ¿¾Íê³É
 };
 
 tbl_making_msg = {
@@ -25,6 +28,7 @@ tbl_making_msg = {
 	[STAT_HONGKAO_MAKING] = "<#> B¾t ®Çu <color=yellow>n­íng b¸nh<color>",
 };
 
+-- ²»Í¬ÀàĞÍµÄÔÂ±ı
 tbl_mooncake = {
 	"<#> B¸nh trung thu thËp cÈm ",
 	"<#> B¸nh Trung thu H¹nh nh©n",
@@ -40,10 +44,10 @@ tbl_mooncake_item = {
 	{6, 1, 894, 1, 0, 0, 188}, -- µ°»ÆÁ«ÈØÔÂ±ı,
 	{6, 1, 893, 1, 0, 0, 187}, -- µ°»Æ¶¹É³ÔÂ±ı,
 	{6, 1, 892, 1, 0, 0, 186}, -- Á«ÈØÔÂ±ı,
-	{6, 1, 891, 1, 0, 0, 185}, -- B¸nh Trung Thu §Ëu Xanh,
+	{6, 1, 891, 1, 0, 0, 185}, -- ¶¹É³ÔÂ±ı,
 };
 
-
+-- ÔÂ±ıÊÇ·ñĞèÒªµ½Ã÷ÔÂÕòÖĞµÄÃ÷ÔÂÀÏÈË´¦»»È¡½±Àø
 tbl_mooncake_exchangable = {
 	1, -- Ê²½õÔÂ±ı
 	1, -- ¹ûÈÊÔÂ±ı
@@ -53,26 +57,25 @@ tbl_mooncake_exchangable = {
 	1, -- ¶¹É³ÔÂ±ı
 };
 
-
-tbl_mooncake_material = {	
---   1  2  3  4  5  6  7  8
-	{0,	1, 1, 3, 4, 4, 1, 1},	--1 º4Ãæ·Û+4É°ÌÇ+¶¹É³+Á«ÈØ+ĞÓÈÊ+»¨Éú+3Ò¬Ë¿
-	{0, 1, 2, 0, 6, 6, 0, 0},	--2 ¹ûÈÊÔÂ±ı£º6Ãæ·Û+6É°ÌÇ+1ĞÓÈÊ+2»¨Éú
-	{2, 0, 0, 0, 5, 6, 2, 0},	--3 µ°»ÆÁ«ÈØÔÂ±ı£º5Ãæ·Û+6É°ÌÇ+2Á«ÈØ+2µ°
-	{2, 0, 0, 0, 6, 5, 0, 2},	--4 µ°»Æ¶¹É³ÔÂ±ı£º6Ãæ·Û+5É°ÌÇ+2¶¹É³+2µ°
-	{0, 0, 0, 0, 5, 8, 2, 0},	--5 Á«ÈØÔÂ±ı£º5Ãæ·Û+8É°ÌÇ+2Á«ÈØ
-	{0, 0, 0, 0, 8, 5, 0, 2},	--6  B¸nh Trung Thu §Ëu Xanh, ¶¹É³ÔÂ±ı£º8Ãæ·Û+5É°ÌÇ+2¶¹É³
+-- ÖÆ×÷²»Í¬ÀàĞÍµÄÔÂ±ıĞèÒªµÄ²ÄÁÏ
+tbl_mooncake_material = {
+	--µ° ĞÓÈÊ »¨Éú Ò¬Ë¿ Ãæ·Û É°ÌÇ Á«ÈØ ¶¹É³
+	{0,	1, 1, 3, 4, 4, 1, 1},	-- Ê²½õÔÂ±ı£º4Ãæ·Û+4É°ÌÇ+¶¹É³+Á«ÈØ+ĞÓÈÊ+»¨Éú+3Ò¬Ë¿
+	{0, 1, 2, 0, 6, 6, 0, 0},	-- ¹ûÈÊÔÂ±ı£º6Ãæ·Û+6É°ÌÇ+1ĞÓÈÊ+2»¨Éú
+	{2, 0, 0, 0, 5, 6, 2, 0},	-- µ°»ÆÁ«ÈØÔÂ±ı£º5Ãæ·Û+6É°ÌÇ+2Á«ÈØ+2µ°
+	{2, 0, 0, 0, 6, 5, 0, 2},	-- µ°»Æ¶¹É³ÔÂ±ı£º6Ãæ·Û+5É°ÌÇ+2¶¹É³+2µ°
+	{0, 0, 0, 0, 5, 8, 2, 0},	-- Á«ÈØÔÂ±ı£º5Ãæ·Û+8É°ÌÇ+2Á«ÈØ
+	{0, 0, 0, 0, 8, 5, 0, 2},	-- ¶¹É³ÔÂ±ı£º8Ãæ·Û+5É°ÌÇ+2¶¹É³
 };
 
-
+-- È·¶¨ÒªÖÆ×÷ÔÂ±ıµÄ¶Ô»°
 tbl_mooncake_talk = {
-	"<#> <color=red>B¸nh Trung Thu ThËp CÈm<color> cÇn cã:4 bét m×, 4 ®­êng c¸t, 1 ®Ëu xanh, 1 gãi bét sen, 1 h¹nh nh©n, 1 ®Ëu phéng, 3 c¬m dõa. Nghe nãi lo¹i c¬m dõa nµy chØ cã ë ph­¬ng Nam th«i, m¾c l¾m ®Êy! NÕu ®· vËy, ta sÏ cÈn  thËn, b¾t ®Çu chø?",
+	"<#> <color=red>B¸nh Trung Thu ThËp CÈm<color> cÇn cã: 4 bét m×, 4 ®­êng c¸t, 1 ®Ëu xanh, 1 gãi bét sen, 1 h¹nh nh©n, 1 ®Ëu phéng, 3 c¬m dõa. Nghe nãi lo¹i c¬m dõa nµy chØ cã ë ph­¬ng Nam th«i, m¾c l¾m ®Êy! NÕu ®· vËy, ta sÏ cÈn  thËn, b¾t ®Çu chø?",
 	"<#> <color=red>B¸nh Trung Thu H¹nh nh©n<color> cÇn cã: 6 bét m×, 6 ®­êng c¸t, 1 h¹nh nh©n, 2 ®Ëu phéng. §em mét İt ®Ëu phéng xay cho n¸t sau ®ã ®em bá vµo trong b¸nh trung thu, nh­ vËy míi táa ®­îc h­¬ng th¬m cña b¸nh tõ trong ra. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
 	"<#> <color=red>B¸nh Trung Thu Sen Trøng<color> cÇn cã: 5 bét m×, 6 ®­êng c¸t, 2 gãi bét sen, 2 trøng. CÇn hai trøng, mét trøng ta dïng lµm nh©n, trøng kia ta b«i lªn bÒ mÆt sau khi n­íng, c¸ch nöa tiÕng b«i lªn mét lÇn. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
 	"<#> <color=red>B¸nh Trung Thu §Ëu Trøng<color> cÇn cã: 6 bét m×, 5 ®­êng c¸t, 2 ®Ëu xanh, 2 trøng. Ng­¬i biÕt kh«ng vËy? CÇn hai trøng, mét trøng ta dïng lµm nh©n, trøng kia ta b«i lªn bÒ mÆt sau khi n­íng, c¸ch nöa tiÕng b«i lªn mét lÇn. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
 	"<#> <color=red>B¸nh Trung Thu Bét Sen<color> cÇn cã: 5 bét m×, 8 ®­êng c¸t, 2 gãi bét sen. Bİ quyÕt lµ ph¶i ®em nhôy cña h¹t sen bá ®i sau ®ã xay thµnh bét sen, ®ång thêi ph¶i trén ®Òu víi ®­êng c¸t, nh­ vËy míi lµm ra ®­îc b¸nh ngon. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
 	"<#> <color=red>B¸nh Trung Thu §Ëu Xanh<color> cÇn cã: 8 bét m×, 5 ®­êng c¸t, 2 ®Ëu xanh. §õng xem th­êng lo¹i b¸nh trung thu nµy, nh­ng muèn lµm ngon ph¶i cã bİ quyÕt ®ã, nh­ ®Ëu xanh ch¼ng h¹n sau khi ng©m xong ph¶i bá vá míi xay n¸t, nh­ vËy sÏ cã vŞ ngon. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
-	--"<#> <color=red>B¸nh Trung Thu §Ëu Xanh<color> cÇn cã: "..tbl_mooncake_material[6][5].." bét m×, 5 ®­êng c¸t, 2 ®Ëu xanh. §õng xem th­êng lo¹i b¸nh trung thu nµy, nh­ng muèn lµm ngon ph¶i cã bİ quyÕt ®ã, nh­ ®Ëu xanh ch¼ng h¹n sau khi ng©m xong ph¶i bá vá míi xay n¸t, nh­ vËy sÏ cã vŞ ngon. Kh«ng nãi nhiÒu n÷a, b¾t ®Çu chø?",
 };
 
 -- ²»Í¬ÔÂ±ı×´Ì¬µÄ¶Ô»°
@@ -195,10 +198,10 @@ function get_make_time()
 	return random(30, 60)
 end
 
-
+-- ÏûºÄÍæ¼ÒÉíÉÏµÄÔÂ±ıÔ­ÁÏ
 function consume_material(ltype)
 	local material_list = tbl_mooncake_material[ltype]
-	
+	-- ¼ì²éÔ­ÁÏÊÇ·ñ³ä×ã
 	for i = 1, getn(material_list) do
 		local want_count = material_list[i]
 		local material_item = tbl_material[i]

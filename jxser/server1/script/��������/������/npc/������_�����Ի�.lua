@@ -1,13 +1,13 @@
---Î÷±±ÄÏÇø ÓÀÀÖÕò Ìú½³¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu vÜnh nh¹c trÊn thî rÌn ®èi tho¹i 
 Include("\\script\\global\\global_tiejiang.lua")
 
-TIEJIANG_DIALOG = "<dec><npc>Muèn lo¹i vò khİ nµo? CÇn lo¹i nµo sÏ cã lo¹i ®ã!"
+TIEJIANG_DIALOG = "<dec><npc> nghÜ muèn c¸i g× vò khİ ? muèn c¸i g× cã c¸i ®ã !" 
 
-function main(sel)
-	tiejiang_village()
-end;
+function main(sel) 
+tiejiang_village() 
+end; 
 
 
-function yes()
-Sale(83);  			--µ¯³ö½»Ò×¿ò
-end;
+function yes() 
+Sale(83); -- script viet hoa By http://tranhba.com  b¾n ra giao dŞch khu«ng 
+end; 

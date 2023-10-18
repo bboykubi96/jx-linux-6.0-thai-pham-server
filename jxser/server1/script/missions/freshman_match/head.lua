@@ -1,3 +1,4 @@
+--KiÖt xuÊt liªn ®Êu edit by mcteam chua config
 IncludeLib("FILESYS")
 IncludeLib("RELAYLADDER")
 IncludeLib("TITLE")

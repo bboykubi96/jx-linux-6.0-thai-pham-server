@@ -14,6 +14,7 @@ CITYINFO_LEAGUEJOB			= 1 -- 职位，随意，不需要的数据
 CITYINFO_LEAGUETASK_BONUS	= 1	-- 城市信息的奖励记录(任务变量)
 CITYINFO_LEAGUETASK_GIFT	= 2	-- 城市信息的奖励记录(任务变量)
 CITYINFO_LEAGUETASK_DATE	= 3	-- 城市信息的奖励记录(任务变量)
+CITYINFO_LEAGUETASK_COUNT = 5
 
 CITYINFO_GLBVALUEID = {840, 841, 842, 843, 844, 845, 846}
 ---------------------------------------------------------------
@@ -146,6 +147,22 @@ function set_citybonus_task(nCityID, nTsk, nValue)
 	
 	-- 上锁，在回调中清除
 	--cityinfo_option_lock[nCityID] = 1 
+	SetGlbValue(CITYINFO_GLBVALUEID[nCityID], 1)
+	
+	LG_ApplySetLeagueTask(LEAGUETYPE_CITYINFO, strLeagueName, nTsk, nValue,
+							"\\script\\misc\\league_cityinfo.lua", "OnSetCityLeagueTask")	
+end;
+
+function add_citybonus_task(nCityID, nTsk, nValue)
+	local gtcu = get_citybonus_task(nCityID, nTsk)
+	nValue= gtcu + nValue
+	local strLeagueName = cityID2LeagueName(nCityID)
+	local leagueObj = LG_GetLeagueObj(LEAGUETYPE_CITYINFO, strLeagueName)
+	if (leagueObj == 0) then
+		debug_print("CityInfoLeague Not Found: "..nCityID)
+		return 0
+	end
+	
 	SetGlbValue(CITYINFO_GLBVALUEID[nCityID], 1)
 	
 	LG_ApplySetLeagueTask(LEAGUETYPE_CITYINFO, strLeagueName, nTsk, nValue,

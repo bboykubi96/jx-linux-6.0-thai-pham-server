@@ -3,7 +3,8 @@ Include("\\script\\task\\system\\task_string.lua");
 Include("\\script\\event\\change_destiny\\head.lua");
 
 function main()
-	return tbChangeDestiny:talk()
+	Say( "L·o phu h«m nay mÖt råi!", 0);
+	--return tbChangeDestiny:talk()
 end
 
 function callBack_giveZhenDan_sure(nCount)
@@ -17,7 +18,7 @@ function tbChangeDestiny:addNpc()
 --	if tonumber(GetLocalDate("%Y%m%d")) > self.nCloseDate then
 --		 return 
 --	end
-	-- L2TH OFF
+	
 	for i=1,getn(self.tbNpcPos) do
 		npcindex = AddNpc(self.nNpcResIdx, 1, SubWorldID2Idx(self.tbNpcPos[i][1]), self.tbNpcPos[i][2] * 32, self.tbNpcPos[i][3] * 32);
 		if npcindex > 0 then

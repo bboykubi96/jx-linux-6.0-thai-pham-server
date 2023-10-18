@@ -16,6 +16,11 @@ function main()
 		elseif (GetCurCamp() == 2) then
 			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
 			SetFightState(1)
+			SetPunish(0);
+	
+			ForbidEnmity( 1 )
+	
+			--SetPKFlag(1)
 		end;
 end;
 

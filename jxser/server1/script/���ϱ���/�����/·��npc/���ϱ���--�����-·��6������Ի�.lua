@@ -1,7 +1,7 @@
-----Î÷ÄÏ±±Çø ½­½ò´å Â·ÈË6»¢×ÓÄï¶Ô»°
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  t©y nam b¾c khu giang t©n th«n ng­êi ®i ®­êng 6 hæ tö mÑ ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Hång Mai qu¶ lµ mét c« g¸i hiÒn lµnh hiÕu thuËn! Ai c­íi ®­îc c« ta thËt cã phóc! C« n­¬ng tèt nh­ vËy, ta nhÊt ®Şnh ph¶i gióp c« Êy t×m ®­îc tÊm chång thËt tèt!",0)
+Say("Hæ tö mÑ # hång mai thËt lµ mét hiÕu thuËn ®İch c« n­¬ng a , ng­êi nµo c­íi nµng cho dï cã phóc khİ , tèt nh­ vËy ®İch c« n­¬ng , ta nhÊt ®Şnh ph¶i gióp nµng t×m tèt nhµ chång #",0) 
 
-end;
+end; 

@@ -76,9 +76,9 @@ TB_TOUSHI_HIERARCH			= {"Ch­ëng m«n", "Gi¸o chñ", "Bang chñ "};	-- ¸÷ÃÅÅÉ¶ÔÕÆÃÅµ
 TB_TOUSHI_ERR_MSG			= 							-- ´íÎóÌáÊ¾ÐÅÏ¢
 	{
 		[TOUSHI_UNKNOWN]		= "<dec><npc>Kh«ng thÓ lµm nh­ vËy ®­îc.",
-		[TOUSHI_LVLERR]			= "<dec><npc>HiÖn t¹i ng­¬i vÉn ch­a ®ñ {cÊp 120}, h·y ®i rÌn luyÖn thªm ®i!",
+		[TOUSHI_LVLERR]			= "<dec><npc>HiÖn t¹i ng­¬i vÉn ch­a ®ñ {cÊp 70}, h·y ®i rÌn luyÖn thªm ®i!",
 		[TOUSHI_FLAGERR]		= "<dec><npc>Muèn gia nhËp bæn bang, ch­ëng m«n cña ng­¬i ®· ®ång ý ch­a?",
-		[TOUSHI_LGERR]			= "<dec><npc>Muèn gia nhËp bæn bang, cÇn ph¶i {gi¶i t¸n quan hÖ chiÕn ®éi liªn ®Êu}.",
+		[TOUSHI_LGERR]			= "<dec><npc>CÇn ph¶i {gi¶i t¸n quan hÖ chiÕn ®éi liªn ®Êu} nÕu kh«ng gi¶i t¸n chiÕn ®éi ®­îc th× b¾t buéc ph¶i dïng 10 tói tÝch lòy tèng kim ®Ó vµo hµnh trang míi chuyÓn ®­îc.",
 		[TOUSHI_EQUIPERR]		= "<dec><npc>Muèn gia nhËp bæn bang, cÇn ph¶i cëi hÕt trang bÞ trªn ng­êi xuèng!",
 		[TOUSHI_REDOERR]		= "<dec><npc><sex> ®· chuyÓn thµnh c«ng sang m«n ph¸i míi.",
 		[TOUSHI_EQFACTERR]		= "<dec><npc>S­ phô cho phÐp ng­¬i xuèng nói t×m con ®­êng vâ häc míi, vµ còng hi väng ng­¬i cã ngµy hïng b¸ thiªn h¹",

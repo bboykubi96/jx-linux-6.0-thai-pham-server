@@ -1,26 +1,26 @@
---Á½ºşÇø ÄÏÔÀÕò ²èÌ¯ÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn trµ than l·o b¶n ®èi tho¹i 
 
-function main(sel)
-	if ( GetTask(1256) == 1 ) then
+function main(sel) 
+if ( GetTask(1256) == 1 ) then 
 		 SetTaskTemp(111,GetTaskTemp(111)+1)
-		 if ( GetTaskTemp(111) > 3 ) then
-		 	Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		 	SetTask(1256, 2);
-		 else
-		 	Talk(1,"","Ng­¬i ®Õn dß la tin tøc c¸i chÕt cña ThŞ Lang µh? Hµi, gÇn ®©y d­íi ch©n nói Hoµnh S¬n cã nhiÒu ng­êi chÕt l¾m. VŞ bé kho¸i Høa NhŞ Gia hay ®Õn qu¸n ta ¨n uèng còng chÕt mét c¸ch k× l¹, quan phñ ®Õn giê ch­a t×m ra thñ ph¹m n÷a, lµm ng­êi ta sî qu¸, kh«ng biÕt cã manh mèi míi ch­a? ta còng kh«ng râ n÷a, ng­¬i ®i hái thö ng­êi kh¸c xem sao.")
-		 end
-		 return
-	elseif ( GetTask(1256) == 2 ) then
-		Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		return
-	end;
-		 
-	i = random(0,2)
-	if (i == 0) then
-		Talk(1,"","Kh¸ch quan! §· ®Õn Hoµnh s¬n nhÊt ®Şnh ph¶i thö trµ V©n Vô ë chç chóng ta ®Êy. ")
-	elseif (i == 1) then
-		Talk(1,""," 'Danh s¬n danh thñy xuÊt danh trµ', trµ V©n Vô lµ ®Æc s¶n cña Hoµnh s¬n chóng ta tõ l©u ®· thµnh danh, sím ®· ®­îc liÖt vµo danh s¸ch cèng phÈm ®êi §­êng. ")
-	else
-		Talk(1,"","Mïi vŞ trµ V©n Vô rÊt nång, h­¬ng khİ ngµo ng¹t, tinh khiÕt mµ kh«ng nh¹t, nång mµ kh«ng ch¸t, pha lªn 1 Êm trµ, kh«ng chØ cã thÓ ®­îc gi¶i kh¸t mµ cßn cã thÓ gi¶i ®éc")
-	end
-end
+if ( GetTaskTemp(111) > 3 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u c¸ ng«i ®Òn bªn trong tíi s­ th¸i , ph¸p lùc v« biªn , ng­¬i ®i hái mét chót ®i .") 
+SetTask(1256, 2); 
+else 
+Talk(1,"","Ng­¬i tíi hái th¨m liªn quan tíi ng­êi chÕt tin tøc ®óng kh«ng ? # , gÇn nhÊt Hµnh S¬n d­íi ch©n cã rÊt nhiÒu ng­êi chÕt . kh«ng biÕt míi tiÕn triÓn sao , ng­¬i ®i hái mét chót ng­êi kh¸c ®i .") 
+end 
+return 
+elseif ( GetTask(1256) == 2 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u c¸ ng«i ®Òn bªn trong tíi s­ th¸i , ph¸p lùc v« biªn , ng­¬i ®i hái mét chót ®i .") 
+return 
+end; 
+
+i = random(0,2) 
+if (i == 0) then 
+Talk(1,"","Trµ than l·o b¶n # kh¸ch quan , ®i tíi Hµnh S¬n d­íi ch©n , nhÊt ®Şnh ph¶i nÕm thö mét chót chóng ta n¬i nµy m©y mï trµ . ") 
+elseif (i == 1) then 
+Talk(1,"","Trµ than l·o b¶n #“ danh s¬n tªn n­íc næi danh trµ ” , m©y mï trµ lµ chóng ta Hµnh S¬n ®İch ®Æc s¶n , cöu phô næi danh , ngay tõ lóc ®­êng thay mÆt liÒn bŞ liÖt vµo cèng phÈm . ") 
+else 
+Talk(1,"","Trµ than l·o b¶n # m©y mï trµ t­ vŞ thuÇn hËu , mïi th¬m nång nÆc , thuÇn mµ kh«ng ®¹m , nång mµ kh«ng s¸p . # th­îng mét bÇu , kh«ng chØ cã thÓ sinh t©n mæ ph¹p , vÉn cã thÓ tiªu thö gi¶i ®éc ®©y . ") 
+end 
+end 

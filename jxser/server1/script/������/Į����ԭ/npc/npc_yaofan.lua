@@ -1,13 +1,13 @@
--- Ä®±±²İÔ­ Ö°ÄÜ Ò©··
--- By: li_xin(2005-01-18)
+-- script viet hoa By http://tranhba.com  M¹c B¾c th¶o nguyªn chøc n¨ng thuèc phiÕn 
+-- script viet hoa By http://tranhba.com  By: li_xin(2005-01-18) 
 
-function main()
-	Say("¤ng chñ tiÖm thuèc: Tuy n¬i nµy lµ cùc B¾c nh­ng còng cã nh÷ng lo¹i d­îc quİ hiÕm do thiªn nhiªn ban tÆng, lÇn nµy ta ph¶i kiÕm l¹i chót ®Ønh, vŞ kh¸ch quan nµy anh muèn mua g×?", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no")
-end;
+function main() 
+Say("HiÖu Thuèc: mÆc dï n¬i ®©y lµ b¾c cùc , nh­ng lµ còng cã thiªn nhiªn tr©n quı d­îc liÖu , vŞ kh¸ch quan kia muèn mua g× ?", 2,"Giao dŞch /yes","Kh«ng giao dŞch /no") 
+end; 
 
-function yes()
-	Sale(100);  			--µ¯³ö½»Ò×¿ò
-end;
+function yes() 
+Sale(100); -- script viet hoa By http://tranhba.com  b¾n ra giao dŞch khu«ng 
+end; 
 
-function no()
-end;
+function no() 
+end; 

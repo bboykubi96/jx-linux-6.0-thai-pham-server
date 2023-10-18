@@ -1,12 +1,11 @@
--- Ä®±±²İÔ­ ±±ÃÅ Õ½¶·ÇĞ»»µã
+-- script viet hoa By http://tranhba.com  M¹c B¾c th¶o nguyªn b¾c m«n chiÕn ®Êu thiÕt ®æi ®iÓm 
 
-function main(sel)
-	if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬£¬¼´ÔÚÃÅÄÚ
-		SetPos(1299, 2465);		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚÃÅÍâ
-		SetFightState(1);		-- ×ª»»ÎªÕ½¶·×´Ì¬
-	else
-		SetPos(1296, 2469);		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚÃÅÄÚ	
-		SetFightState(0);		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
-	end;
-end;
-	
+function main(sel) 
+if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë bªn trong cöa 
+SetPos(1299, 2465); -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë ngoµi cöa 
+SetFightState(1); -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 
+else 
+SetPos(1296, 2469); -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë bªn trong cöa 
+SetFightState(0); -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+end; 
+end; 

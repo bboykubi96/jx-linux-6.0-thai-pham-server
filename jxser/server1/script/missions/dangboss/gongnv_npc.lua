@@ -6,13 +6,18 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\activitysys\\answer.lua")
 Include("\\script\\misc\\eventsys\\type\\npc.lua")
 --[DinhHQ]
-	--[20101216]:event ngu thai ket tinh
-	Include("\\script\\vng_event\\ngusackettinh\\npc\\nskt_gongnv.lua")
-	--[20110225]: 8/3/2011
-	Include("\\script\\vng_event\\20110225_8_thang_3\\npc\\gongnv.lua")
-	Include("\\script\\vng_feature\\top10\\vngtop10.lua")
+--[20101216]:event ngu thai ket tinh
+Include("\\script\\vng_event\\ngusackettinh\\npc\\nskt_gongnv.lua")
+--[20110225]: 8/3/2011
+Include("\\script\\vng_event\\20110225_8_thang_3\\npc\\gongnv.lua")
+Include("\\script\\vng_feature\\top10\\vngtop10.lua")	
+Include("\\script\\global\\g7vn\\g7configall.lua")
+	
 function main()
 	
+	--dofile("script/missions/dangboss/gongnv_npc.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex)
 	if NpcName2Replace then
@@ -33,7 +38,11 @@ function main()
 	end	
 	--end [DinhHQ]
 	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
+
+	if hoatdongdaungu == 1 then
 	tbDailog:AddOptEntry("Ho¹t ®éng ®Êu ng­u", tbDangBossDailog.Main, {tbDangBossDailog})
+	end
+
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog)
 	tbDailog:Show()
 

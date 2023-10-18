@@ -2,7 +2,7 @@ Include("\\script\\lib\\awardtemplet.lua")
 
 local tbAward = 
 {
-	{szName = "¢m D≠¨ng Hoπt Huy’t ß¨n", tbProp = {6,1,2953,1,0,0}, nCount = 5, nExpiredTime=4320},	
+	{szName = "¢m D≠¨ng Hoπt Huy’t ß¨n", tbProp = {6,1,2953,1,0,0}, nCount = 50},	
 }
 
 

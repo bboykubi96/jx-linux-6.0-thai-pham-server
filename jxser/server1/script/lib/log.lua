@@ -14,7 +14,6 @@ local tbFactionNumber2Name =
  [7]="Thiªn NhÉn Gi¸o",
  [8]="Vâ §ang ph¸i",
  [9]="C«n L«n ph¸i",
- [10]="Hoa S¬n",
 }
 
 function _WritePlayerLog(szTitle, szMsg)

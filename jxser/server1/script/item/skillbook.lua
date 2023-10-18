@@ -48,11 +48,7 @@ sbook_list =
 }
 
 function CheckIsCanGet150SkillTask()
-	-- §ãng skill 150 Banynavy
-	if 1>0 then
-		return
-	end
-	--Më nhiÖm vô nhËn kü n¨ng 150 - Modified By NgaVN - 20121207
+		--Më nhiÖm vô nhËn kü n¨ng 150 - Modified By NgaVN - 20121207
 	local nValue = GetTask(2885)
 	if nValue > 0 then
 		return
@@ -167,4 +163,4 @@ function main(sel)
 end
 
 --Më nhiÖm vô nhËn kü n¨ng 150 - Modified By NgaVN - 20121207
-if login_add then login_add(CheckIsCanGet150SkillTask, 2) end
+--if login_add then login_add(CheckIsCanGet150SkillTask, 2) end --off thong bao skill 150  L2TH

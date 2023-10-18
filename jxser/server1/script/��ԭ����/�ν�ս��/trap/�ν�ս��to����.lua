@@ -1,10 +1,10 @@
---中原北区 宋金战场to襄阳
---Trap ID：中原北区 44
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu t鑞g kim chi課 trng to tng dng 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 44 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(78, 1768, 3098);
+SetFightState(1) 
+NewWorld(78, 1768, 3098); 
 
 
 end;

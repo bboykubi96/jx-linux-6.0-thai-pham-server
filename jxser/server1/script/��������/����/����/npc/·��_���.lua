@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡°¢ä¿
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # ng­êi ®i ®­êng # a kú 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(5,"","Ta rÊt thİch nghe chuyÖn thÇn tiªn, tèi h«m qua, mÑ ta l¹i kÓ cho ta nghe mét c©u chuyÖn vÒ ' Kim NguyÖt L­îng' t¹i NhÜ H¶i.","Håi x­a, trªn trêi cã mét c« c«ng chóa rÊt lµ xinh ®Ñp, v× ng­ìng mé cuéc sèng cña nh©n gian mµ nµng Êy ®· xuèng phµm, ®Õn mét ng­ th«n bªn bê NhÜ H¶i, vµ thµnh th©n víi mét ng­ d©n.","Sau ®ã C«ng chóa bŞ b¾t vÒ thiªn cung, tr­íc khi vÒ trêi, bëi v× muèn gióp ng­ d©n cã cuéc sèng Êm no mÆc Êm mµ ®· th¶ g­¬ng b¸u cña m×nh xuèng biÓn, chiÕu râ tõng ®µn c¸ ®Ó cho d©n cã thÓ b¾t ®­îc nhiÒu c¸.","Tõ ®ã, g­¬ng b¸u trong biÓn ®· biÕn thµnh Kim NguyÖt L­îng, ph¸t ra ¸nh s¸ng, chiÕu s¸ng cho ng­êi ®¸nh c¸ tõ ®êi nµy sang ®êi kh¸c, ®ã lµ lai lŞch cña 'NhÜ H¶i NguyÖt'..","Hu hu hu! Ng­¬i nãi xem, c«ng chóa ®i råi, chång cña c«ng chóa cã ®au lßng kh«ng?")
-end
+function main() 
+Talk(5,"","Ta rÊt thİch nghe thÇn tiªn ®İch chuyÖn x­a , mÉu th©n ta cho ta nãi mét ë nhŞ h¶i ®İch kim tr¨ng s¸ng ®İch chuyÖn x­a .","Tr­íc kia , cã ë trªn trêi mét c«ng chóa rÊt ®Ñp , bëi v× h©m mé d©n gian ®İch cuéc sèng , nµng xuèng phµm , ®Õn nhŞ h¶i ®İch mét c¸ th«n , cïng mét c¸ d©n thµnh th©n ®İch . .","Sau ®ã , c«ng chóa bŞ b¾t håi thiªn cung , ë trë vÒ tr­íc , bëi v× muèn trî gióp c¸ d©n cã mét phong y ch©n thùc ®İch cuéc sèng , ®em m×nh ®İch b¶o kİnh bá vµo h¶i lı , chiÕu s¸ng mçi mét chç , ®Ó cho c¸ d©n b¾t ®­îc cµng nhiÒu h¬n c¸ ","Tõ nay , h¶i lı ®İch b¶o kİnh liÒn biÕn thµnh kim tr¨ng s¸ng , ph¸t ra ¸nh s¸ng , ®êi ®êi ®¹i ®¹i cho c¸ d©n chiÕu s¸ng , ®©y chİnh lµ nhŞ h¶i th¸ng ®İch lai lŞch ..","Ng­¬i nãi xem , c«ng chóa ®i råi , chång cña nµng ®au lßng sao ?") 
+end 

@@ -1,7 +1,7 @@
---江南区 雁荡山to龙泉村
---Trap ID：江南区 8
+-- script viet hoa By http://tranhba.com  Giang Nam khu Nh筺 Хng s琻 to long tuy襫 th玭 
+-- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 8 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(174, 1818, 3017);
-end;
+function main(sel) 
+SetFightState(1); 
+NewWorld(174, 1818, 3017); 
+end; 

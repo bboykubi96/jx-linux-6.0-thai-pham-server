@@ -10,8 +10,15 @@ Include("\\script\\activitysys\\npcdailog.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\lib\\log.lua")
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function bairen_dialog()
-	
+	--dofile("script/missions/bairenleitai/npc_enter.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+	if loidaihoangthanhtu == 0 then
+		Say("Chøc n¨ng l«i ®µi Hoµng Thµnh T­ t¹m thêi ch­a më");
+		return 1;
+	end
 	local tbOpt = {};
 	tinsert(tbOpt, {"Ta muèn vµo L«i §µi Hoµng Thµnh T­", onEnterHunbredArena});
 	tinsert(tbOpt, {"VÒ L«i §µi Hoµng Thµnh T­", onHelpHunbredArena})

@@ -1,11 +1,11 @@
---中原南区 蜀冈山4to灵谷洞4
---Trap ID：中原南区 27
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 nam khu th鬰 cng s琻 4to linh c鑓 ng 4 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 nam khu 27 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(94, 1751, 3107);
+SetFightState(1); 
+NewWorld(94, 1751, 3107); 
 
-AddTermini(144)
+AddTermini(144) 
 
 end;

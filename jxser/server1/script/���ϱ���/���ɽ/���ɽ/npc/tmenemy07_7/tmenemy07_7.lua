@@ -1,13 +1,13 @@
---description: ÌÆÃÅ40¼¶ÈÎÎñ Çà³ÇÉ½ÆÕÍ¨¹ÖÎï2
---author: yuanlan	
---date: 2003/3/12
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n 40 cÊp nhiÖm vô nói Thanh Thµnh b×nh th­êng qu¸i vËt 2 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/12 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 
-function OnDeath()
-	UTask_tm = GetTask(2);
-	if ((UTask_tm == 40*256+60) and (HaveItem(44) == 0)) then					--Ã»ÓÐó¸òÜµÄÆ¤
-		AddEventItem(44) 
-		Msg2Player("LÊy ®­îc gan r¾n ")
-		AddNote("LÊy ®­îc gan r¾n ")
-	end
-end;
+function OnDeath() 
+UTask_tm = GetTask(2); 
+	if ((UTask_tm == 40*256+60) and (HaveItem(44) == 0)) then					-- script viet hoa By http://tranhba.com Ã»ÓÐó¸òÜµÄÆ¤
+AddEventItem(44) 
+Msg2Player(" lÊy ®­îc r¾n ®éc ®Ých ®¶m ") 
+AddNote(" lÊy ®­îc r¾n ®éc ®Ých ®¶m ") 
+end 
+end; 

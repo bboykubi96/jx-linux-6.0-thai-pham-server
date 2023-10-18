@@ -12,14 +12,14 @@ function VLMC_main()
 	local str1 = "<#> Mét h¹t c¸t kh«ng thÓ lµm nªn sa m¹c. Tuy ta lµ ng­êi cã vâ c«ng c¸i thÕ trong thiªn h¹, nh­ng ®Ó thèng nhÊt vâ l©m th× cÇn cã sù ®ãng gãp c«ng søc cña c¸c anh hïng hµo kiÖt !";
 	local str2 = "<#> §êi sèng chØ lµ mét kho¶nh kh¾c nh­ng víi kho¶nh kh¾c Êy ng­êi ta cã thÓ lµm nªn nh÷ng viÖc vÜnh cöu !";
 	
-	if (GetTask(VLMC_Task_IsQuest) == 0) then
-		tinsert(tbOpp,"Ta ®Õn nhËn nhiÖm vô [Cøu khèn phß nguy]/AcceptQuest");
-	end
-	
-	if (GetTask(VLMC_Task_IsQuest) == 1 and GetTask(VLMC_Task_IsFinishQuest) ~= 1) then
-		tinsert(tbOpp,"Ta ®· hoµn thµnh nhiÖm vô [Cøu khèn phß nguy]/FinishQuest");
-		tinsert(tbOpp,"Xem chi tiÕt nhiÖm vô/ReviewQuest");
-	end
+--	if (GetTask(VLMC_Task_IsQuest) == 0) then
+--		tinsert(tbOpp,"Ta ®Õn nhËn nhiÖm vô [Cøu khèn phß nguy]/AcceptQuest");
+--	end
+--	
+--	if (GetTask(VLMC_Task_IsQuest) == 1 and GetTask(VLMC_Task_IsFinishQuest) ~= 1) then
+--		tinsert(tbOpp,"Ta ®· hoµn thµnh nhiÖm vô [Cøu khèn phß nguy]/FinishQuest");
+--		tinsert(tbOpp,"Xem chi tiÕt nhiÖm vô/ReviewQuest");
+--	end
 	
 	if (GetGlbValue(GlbVar1)== 1 and GetTask(TSK_Get2ExpTK)~= nCurrDate ) then
 		tinsert(tbOpp,"NhËn phÇn th­ëng nhËn ®«i ®iÓm kinh nghiÖm chiÕn tr­êng Tèng Kim/Get2xExpTK");

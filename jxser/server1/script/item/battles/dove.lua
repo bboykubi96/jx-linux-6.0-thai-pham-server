@@ -8,6 +8,7 @@ function EatMedicine()
 			return -1
 		end
 	end
+	W, X, Y = GetWorldPos();
 	nowmissionid = BT_GetData(PL_RULEID);	--获取当前MISSIONID
 	curcamp = GetCurCamp();
 	X = floor( X / 8 );

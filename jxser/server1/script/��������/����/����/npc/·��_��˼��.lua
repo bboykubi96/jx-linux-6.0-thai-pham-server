@@ -1,77 +1,77 @@
--- ´óÀí¡¡Â·ÈË¡¡¶ÎË¼³É
--- by£ºDan_Deng(2003-09-16)
--- update by xiaoyang(2004\4\22) ´äÑÌ90¼¶ÈÎÎñ
+-- script viet hoa By http://tranhba.com  §¹i Lý # ng­êi ®i ®­êng # ®o¹n t­ thµnh 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
+-- script viet hoa By http://tranhba.com  update by xiaoyang(2004\4\22) thóy khãi 90 cÊp nhiÖm vô 
 
 Include("\\script\\global\\repute_head.lua")
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main()
-	if allbrother_0801_CheckIsDialog(14) == 1 then
-		allbrother_0801_FindNpcTaskDialog(14)
-		return 0;
-	end
-	Uworld126 = GetTask(126)
-	Uworld36 = GetByte(GetTask(36),2)
-	if (Uworld126 < 10) and (GetLevel() >= 90) and (Uworld36 == 127) and (GetReputeLevel(GetRepute()) >= 5) and (GetFaction() ~="cuiyan") then
-		Talk(6,"Uworld126_get","Hõ.....","C«ng tö v× sao ph¶i thë ng¾n thë dµi nh­ vËy?","Tuæi trÎ ph¶i nu«i chÝ lín, y nh­ B¹ch h¹c, Thu Thñy qua råi.","Ch¼ng lÏ ý trung nh©n cña C¸c h¹ ®· mÊt.","Nµng sèng mµ tim nh­ ®· chÕt.","ChØ cÇn ng­êi thµnh t©m, chuyÖn g× còng thµnh. C¸c h¹ cã g× khã kh¨n, xin cø nãi ra.")
-	elseif (Uworld126 == 10) and (HaveItem(391) == 0) then
-		AddEventItem(391)
-		Msg2Player("NhËn l¹i th­ cña §oµn T­ Thµnh ")
-		if (GetSex() == 0) then
-			Talk(1,"","Muèn gÆp mü nh©n còng kh«ng cÇn ph¶i gÊp nh­ thÕ? Th­ cßn ch­a cÇm mµ.")
-		else
-			Talk(1,"","C« n­¬ng Êy quªn mang th­ vÒ.")
-		end
-	elseif (Uworld126 == 40) then
-		SetTask(126,45)
-		Talk(8,"Uworld126_jump","Kh«ng cÇn nãi n÷a!","§oµn c«ng tö! Ng­êi ®· cho LÖ Thu Thñy cuéc sèng giµu sang phó quý tËn h­ëng kh«ng hÕt, lo¹i ®µn bµ d÷ d»n nh­ thÕ cã thÓ t×m thªm 10 hay 100 ng­êi kh¸c n÷a, sao l¹i chuèc khæ vµo th©n.","Ng­¬i nãi nh­ thÕ nµo còng v« dông, xin c¸c h¹ h·y mau rêi khái ®©y ®i.","§oµn T­ Thµnh! Ng­¬i r­îu mêi kh«ng uèng mµ uèng r­îu ph¹t, l·o kh«ng cßn nhÉn n¹i n÷a, nÕu ng­¬i vÉn kh«ng tr¶ lêi, th× h·y ®Ó m¹ng l¹i ®©y.","Hõ! ","Hay cho tªn tiÓu tö nhµ ng­¬i! ","A.....","§oµn c«ng tö!")
-	elseif (Uworld126 == 45) then			-- Ã»´òÍêµÄ
-		Talk(1,"Uworld126_jump","Hõ! Ng­¬i tho¸t khái tay Hßa Th­îng th× còng kh«ng tho¸t khái miÕu nµy! Xem chiªu!")
-	elseif (Uworld126 == 50) then
-		Talk(8,"Uworld126_set","§oµn c«ng tö ng­êi kh«ng ph¶i lµ ®èi thñ cña «ng ta!","May nhê C¸c h¹ ®Õn kÞp thêi, t¹i h¹ cßn ®ì næi.","§èi phu¬ng tõ ®©u ®Õn?","Kh«ng râ n÷a! Cã lÏ lµ kÎ thï cña Thu Thuû trong giang hå.",".....Cã råi! Ta sÏ nèi dèi víi LÖ c« n­¬ng lµ ng­êi bÞ träng th­¬ng.","VËy h×nh nh­ lµ kh«ng hay l¾m.","H¹nh phóc c¶ ®êi, lÏ nµo khã kh¨n nµy kh«ng thÓ v­ît qua.","§oµn T­ Thµnh:.....§­îc! C¸c h¹ muèn thÕ nµo còng ®­îc §oµn mç xin nghe theo.")
-	elseif (Uworld126 == 70) then
-		Talk(3,"U126_70","ThÕ nµo! LÖ c« n­¬ng cã ®Õn th¨m huynh kh«ng?","C« Êy cã ghÐ th¨m, chóng ta nãi chuyÖn rÊt vui, ng­êi ®· gióp ta nhiÒu råi, xin c¶m ¬n!","Hµ tÊt ph¶i bËn t©m, chØ cÇn 2 ng­êi h¹nh phóc, chuyÖn nhá nµy cã ®¸ng lµ g×.")
-	elseif (Uworld126 > 10) and (Uworld126 < 50)then
-		Talk(1,"","Tr­íc ®©y lµ do ta sai! ThËt kh«ng biÕt lÊy g× c¶m ¬n ng­¬i!...")
-	else
-		Talk(2,"","§¹i Lý chóng ta vµ Tèng quèc, mçi n¨m ®Òu cèng n¹p cho Thiªn triÒu tr©u, lôa lµ, ngùa, x¹ h­¬ng, bß vµng.","Bän ng­êi Kim tham lam té cïng, cã cèng cho hä c¶ ®êi còng ch­a lµm võa lßng hä!")
-   end
-end;
+function main() 
+if allbrother_0801_CheckIsDialog(14) == 1 then 
+allbrother_0801_FindNpcTaskDialog(14) 
+return 0; 
+end 
+Uworld126 = GetTask(126) 
+Uworld36 = GetByte(GetTask(36),2) 
+if (Uworld126 < 10) and (GetLevel() >= 90) and (Uworld36 == 127) and (GetReputeLevel(GetRepute()) >= 5) and (GetFaction() ~="cuiyan") then 
+Talk(6,"Uworld126_get","Ai ....","C«ng tö v× sao thë dµi ?","Ng­êi tuæi trÎ ph¶i cã chÝ lín h­íng .","Ch¼ng lÏ c¸c h¹ ®Ých ý trung nh©n kh«ng cã ë ®©y .","Nµng vÉn cßn ë , nh­ng lµ , t©m ®· chÕt .","ChØ cÇn ng­¬i thµnh t©m thµnh ý , chuyÖn g× còng cã thÓ thµnh . c¸c h¹ cã c¸i g× khã kh¨n , cø viÖc nãi . .") 
+elseif (Uworld126 == 10) and (HaveItem(391) == 0) then 
+AddEventItem(391) 
+Msg2Player("NhËn ®­îc ®o¹n t­ thµnh tin/th¬ ") 
+if (GetSex() == 0) then 
+Talk(1,"","Muèn gÆp mü nh©n còng kh«ng cÇn véi v¶ nh­ vËy ®i ? tin/th¬ cßn kh«ng cã cÇm . ") 
+else 
+Talk(1,"","C« n­¬ng quªn mang tin ") 
+end 
+elseif (Uworld126 == 40) then 
+SetTask(126,45) 
+Talk(8,"Uworld126_jump","§õng b¶o lµ !","§oµn c«ng tö , ng­¬i ng­¬i ®· cho lÖ thu thñy h­ëng v« tËn ®Ých vinh hoa phó quý , n÷ nh©n nh­ vËy tïy tiÖn cã thÓ t×m 10 c¸ , 100 c¸ , hµ khæ lµm khã m×nh ®©y .","Nãi nh­ ng­¬i vËy còng kh«ng dïng , xin/mêi c¸c h¹ nhanh lªn mét chót rêi ®i n¬i nµy .","# ®o¹n t­ thµnh , ng­¬i mêi r­îu kh«ng ¨n ¨n ph¹t r­îu , ta kh«ng chÞu næi , nÕu nh­ ng­¬i cßn kh«ng tr¶ lêi , liÒn cho ta .","Hõ ","Cho ng­¬i tiÓu tö ! ","A .....","# §oµn c«ng tö ") 
+elseif (Uworld126 == 45) then -- script viet hoa By http://tranhba.com  kh«ng cã ®¸nh xong ®Ých 
+Talk(1,"Uworld126_jump","Ng­¬i cìi cho ra hßa th­îng tay cña , còng trèn kh«ng tho¸t c¸i nµy miÕu , xem chiªu !") 
+elseif (Uworld126 == 50) then 
+Talk(8,"Uworld126_set","§oµn c«ng tö kh«ng ph¶i lµ ®èi thñ cña h¾n !","May nhê ng­¬i tíi kÞp thêi , t¹i h¹ cßn cã thÓ chÞu ®ùng ®­îc .","§èi ph­¬ng tõ ®©u tíi ®©y ?","Kh«ng hiÓu , cã lÏ lµ thu thñy ®Ých ®Þch nh©n ","..... cã , ta ®em cïng lÖ c« n­¬ng nãi l¸o , nãi ng­¬i bÞ th­¬ng nÆng .","C¸i nµy gièng nh­ kh«ng ph¶i lµ rÊt tèt .","C¶ ®êi h¹nh phóc , ch¼ng lÏ khã kh¨n kh«ng thÓ qu¸ khø sao ? ","# ®o¹n t­ thµnh # h¶o , c¸c h¹ muèn thÕ nµo ®Òu ®­îc , §oµn mç nghe tõ . ") 
+elseif (Uworld126 == 70) then 
+Talk(3,"U126_70","Nh­ thÕ nµo ? lÖ c« n­¬ng tíi th¨m ng­¬i sao ?","Nµng tíi , chóng ta nãi chuyÖn rÊt vui vÎ , ng­¬i gióp ta rÊt nhiÒu , ®a t¹ !","CÇn g× ph¶i quan t©m , chØ cÇn 2 ng­êi h¹nh phóc , chuyÖn nhá coi lµ c¸i g× ?") 
+elseif (Uworld126 > 10) and (Uworld126 < 50)then 
+Talk(1,"","Tr­íc lµ ta sai lÇm råi , thËt kh«ng hiÓu thÕ nµo c¶m t¹ !...") 
+else 
+Talk(2,"","Chóng ta §¹i Lý cïng tèng n­íc , hµng n¨m còng cung phông cho thiªn triÒu , t¬ lôa , nÞnh bî , x¹ h­¬ng .","Bän ng­¬i ng­êi Kim nh­ vËy tham lam , c¸c ng­¬i cèng hiÕn bao nhiªu còng kh«ng ®ñ . ") 
+end 
+end; 
 
-function Uworld126_get()
-	if (GetCamp() == 0) and (GetTask(75) < 255) then		-- °×ÃûÎ´Ñ§Ò°ÇòÈ­µÄ£¬²»ÔÊÐí½ÓÈÎÎñ
-		if (GetSex() == 0) then
-			Talk(1,"","H¶o ý cña Huynh ®µi, T­ Thµnh xin ghi nhí!")
-		else
-			Talk(1,"","H¶o ý cña Huynh ®µi, T­ Thµnh xin ghi nhí!")
-		end
-	else
-		Say("ThËt kh«ng d¸m giÊu! N¨m x­a T¹i h¹ ®· phô c« ta, nay nghÜ l¹i hèi hËn ®· muén. Ta cã mét bøc th­, hy väng C¸c h¹ cã thÓ tËn tay giao cho Thóy Yªn m«n H¶i §­êng Sø Gi¶ LÖ Thu Thñy?",2,"ViÖc nµy cã khã g×! /Uworld126_yes","T¹i h¹ vÉn cßn cã viÖc, c¸c h¹ h·y ®i t×m ng­êi kh¸c ®i! /Uworld126_no")
-	end
-end
+function Uworld126_get() 
+if (GetCamp() == 0) and (GetTask(75) < 255) then -- script viet hoa By http://tranhba.com  b¹ch tªn ch­a häc d· cÇu quyÒn ®Ých , kh«ng cho phÐp tiÕp nhËn vô 
+if (GetSex() == 0) then 
+Talk(1,"","Huynh ®µi ®Ých h¶o ý , t­ thµnh nhí râ ") 
+else 
+Talk(1,"","Huynh ®µi ®Ých h¶o ý , t­ thµnh nhí râ ") 
+end 
+else 
+Say("Thùc kh«ng d¸m giÊu giÕm , tr­íc kia t¹i h¹ cã bÞ/cha/chÞu víi nµng , b©y giê hèi hËn ®· chËm . ta l¹i mét phong th­ , hy väng c¸c h¹ cã thÓ tù tay giao cho thóy khãi cöa lÖ thu thñy ",2,"ChuyÖn nµy cã khã kh¨n g× /Uworld126_yes","T¹i h¹ cßn cã viÖc , c¸c h¹ t×m ng­êi kh¸c ®i ! /Uworld126_no") 
+end 
+end 
 
-function Uworld126_yes()
-	AddEventItem(391)
-	SetTask(126,10)
-	Msg2Player("NhËn ®­îc th­ cña §oµn T­ Thµnh, ®Õn Thuý Yªn M«n H¶i Th­êng Sø Gi¶ LÖ Thu Thuû ")
-	AddNote("NhËn ®­îc th­ cña §oµn T­ Thµnh, ®Õn Thuý Yªn M«n H¶i Th­êng Sø Gi¶ LÖ Thu Thuû ")
-end
+function Uworld126_yes() 
+AddEventItem(391) 
+SetTask(126,10) 
+Msg2Player("NhËn ®­îc ®o¹n t­ thµnh tin/th¬ , ®Õn thóy khãi cöa thÊy lÖ thu thñy ") 
+AddNote("NhËn ®­îc ®o¹n t­ thµnh tin/th¬ , ®Õn thóy khãi cöa thÊy lÖ thu thñy ") 
+end 
 
-function Uworld126_no()
-end
+function Uworld126_no() 
+end 
 
-function Uworld126_jump()
-	SetFightState(1)
-	NewWorld(230,1613,3175)
-end
+function Uworld126_jump() 
+SetFightState(1) 
+NewWorld(230,1613,3175) 
+end 
 
-function Uworld126_set()
-	SetTask(126,60)
-	Msg2Player("LËp m­u lõa Thu Thñy ®Õn th¨m §oµn T­ Thµnh ")
-	AddNote("LËp m­u lõa Thu Thñy ®Õn th¨m §oµn T­ Thµnh ")
-end
+function Uworld126_set() 
+SetTask(126,60) 
+Msg2Player(" lõa g¹t thu thñy ®i xem ®o¹n t­ thµnh ") 
+AddNote(" lõa g¹t thu thñy ®i xem ®o¹n t­ thµnh ") 
+end 
 
-function U126_70()
-	Talk(1,"","§óng råi! Thu Thñy nãi Do·n Ch­ëng m«n muèn gÆp ng­¬i, kh«ng biÕt lµ chuyÖn g×?")
-	SetTask(126,80)
-	Msg2Player("Nghe ®­îc §oµn vµ LÖ nãi chuyÖn víi nhau, th× rÊt vui. Ng­êi h·y ®i xem thö Do·n Hµm Yªn cã viÖc g× mµ t×m ng­êi ")
-end
+function U126_70() 
+Talk(1,"","§óng råi , thu thñy nãi duÉn ch­ëng m«n gÆp nhau ng­¬i , kh«ng hiÓu cã chuyÖn g× ?") 
+SetTask(126,80) 
+Msg2Player("Nghe ®­îc ®o¹n cïng lÖ nãi chuyÖn , rÊt vui vÎ . ng­¬i nhanh ®i nh×n duÉn ngËm nh©n t×m ta cã chuyÖn g× ") 
+end 

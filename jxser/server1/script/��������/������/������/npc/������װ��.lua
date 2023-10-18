@@ -1,18 +1,18 @@
---´äÑÌÃÅ Âô×°±¸µÄµÜ×Ó¶Ô»°
--- Update: Dan_Deng(2003-08-21) ¼ÓÈëÂôµÀ¾ßÖ»Âô¸ø±¾°ï
+-- script viet hoa By http://tranhba.com  thóy khãi cöa b¸n trang bŞ ®İch ®Ö tö ®èi tho¹i 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) gia nhËp b¸n ®¹o cô chØ b¸n cho bæn bang 
 
-function main(sel)
-	Uworld36 = GetByte(GetTask(36),2)
-	if (GetFaction() == "cuiyan") or (Uworld36 == 127) then
-		Say("Muèn xem c¸c tû muéi tù tay dÖt v¶i kh«ng? Bªn ngoµi kh«ng mua ®­îc ®©u.", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no")
-	else
-		Talk(1,"","M«n chñ cã lÖnh, trang bŞ cña bæn m«n chØ b¸n cho Tû muéi ®ång m«n.")
-	end
-end;
+function main(sel) 
+Uworld36 = GetByte(GetTask(36),2) 
+if (GetFaction() == "cuiyan") or (Uworld36 == 127) then 
+Say("Muèn nh×n c¸c tû muéi v¸ y phôc sao ? bªn ngoµi kh«ng mua ®­îc .", 2,"Giao dŞch /yes","Kh«ng giao dŞch /no") 
+else 
+Talk(1,"","M«n chñ cã lÖnh , bæn m«n trang bŞ chØ b¸n cho ®ång m«n .") 
+end 
+end; 
 
-function yes()
-Sale(67)
-end;
+function yes() 
+Sale(67) 
+end; 
 
-function no()
-end;
+function no() 
+end; 

@@ -1,7 +1,7 @@
---Œ˜±±ƒœ«¯ ”¿¿÷’Ú ¬∑±Í1£∫”¿¿÷’Ú->∑ÔœË∏Æ
+-- script viet hoa By http://tranhba.com  t©y bæc nam khu v‹nh nhπc tr n b∂ng chÿ Æ≠Íng 1# v‹nh nhπc tr n -> ph≠Óng t≠Íng phÒ 
 
-function main(sel)
+function main(sel) 
 
-Say("V‹nh Lπc tr n<---->Ph≠Óng T≠Íng", 0)
+Say("V‹nh nhπc tr n <-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com > ph≠Óng t≠Íng ", 0) 
 
 end;

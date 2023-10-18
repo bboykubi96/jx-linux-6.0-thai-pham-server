@@ -1,13 +1,13 @@
--- ½­ÄÏÇø ÂÞÏüÉ½ Õ½¶·_ÔÆ²¿É½Ó¥.lua £¨ÏûÃð²É»¨ÔôÈÎÎñ£©
--- By: Dan_Deng(2004-05-28)
+-- script viet hoa By http://tranhba.com  Giang Nam khu la tiªu s¬n chiÕn ®Êu _ v©n bé s¬n ­ng .lua # tiªu diÖt h¸i hoa tÆc nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2004-05-28) 
 
-function OnDeath()
-	Uworld43 = GetTask(43)
-	if (Uworld43 >= 60) and (Uworld43 < 69) then			-- Ã»É±¹»10¸ö
+function OnDeath() 
+Uworld43 = GetTask(43) 
+if (Uworld43 >= 60) and (Uworld43 < 69) then -- script viet hoa By http://tranhba.com  kh«ng cã giÕt ®ñ 10 c¸ 
 		SetTask(43,Uworld43 + 1)
-		Msg2Player("B¹n giÕt ®­îc mét tªn V©n Bé s¬n ¦ng ")
-	elseif (Uworld43 == 69) or (Uworld43 == 70) then		-- ÒÑ¾­É±¹»10¸ö
-		SetTask(43,70)
-		Msg2Player("B¹n giÕt ®­îc m­êi mÊy tªn V©n Bé s¬n ¦ng, nh×n l¹i xem ¦ng chñ cã ph¶n øng g× kh«ng. ")
-	end
-end
+Msg2Player("Ng­¬i diÖt mét tªn v©n bé s¬n ­ng ") 
+elseif (Uworld43 == 69) or (Uworld43 == 70) then -- script viet hoa By http://tranhba.com  ®· giÕt ®ñ 10 c¸ 
+SetTask(43,70) 
+Msg2Player("Ng­¬i diÖt mét tªn v©n bé s¬n ­ng , xem mét chót ­ng chñ cã c¸i g× ph¶n øng . ") 
+end 
+end 

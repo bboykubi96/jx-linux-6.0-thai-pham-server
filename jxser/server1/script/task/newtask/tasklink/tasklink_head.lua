@@ -5,6 +5,8 @@
 Include("\\script\\global\\fuyuan.lua"); -- ÓÃÓÚÈ¡µÃ¸£ÔµµÄÎÄ¼þ
 Include("\\script\\task\\newtask\\newtask_head.lua"); -- ÐÂÈÎÎñÏµÍ³µÄÍ·ÎÄ¼þ£¬ÓÃÓÚÍ¬²½±äÁ¿
 
+Include("\\script\\task\\task_addplayerexp.lua")  --¸øÍæ¼ÒÀÛ¼Ó¾­ÑéµÄ¹«¹²º¯Êý
+
 IncludeLib("FILESYS");
 IncludeLib("BATTLE");
 
@@ -18,8 +20,11 @@ TL_UPLEVELEXP = "TaskLink_UpLevel"
 
 DEBUG_TASKVALUE = 1046;  -- ÓÃÓÚ×·²éË¢È¡Ïû»ú»á BUG µÄ±äÁ¿
 
-ID_TASKLINK_LIMITDATE = 2419;  -- ¼ÇÂ¼Ã¿ÌìÏÞÖÆµÄÈÕÆÚ
-ID_TASKLINK_LIMITNUM  = 2420;  -- ¼ÇÂ¼Ã¿ÌìÏÞÖÆµÄ´ÎÊý
+ID_TASKLINK_LIMITDATE 				= 2419;  -- ¼ÇÂ¼Ã¿ÌìÏÞÖÆµÄÈÕÆÚ
+ID_TASKLINK_LIMITNUM  				= 2420;  -- ¼ÇÂ¼Ã¿ÌìÏÞÖÆµÄ´ÎÊý
+ID_TASKLINK_LIMITCancelCount 	= 2797;  -- ¼ÇÂ¼Ã¿ÌìÈ¡ÏûµÄ´ÎÊý
+TSK_TASKLINK_SEANSONPOINT = 1825	--¼ÇÂ¼¾­Ñé×ª»¯µÄÒ°ÛÅ»ý·ÖÖµ
+TKS_TASKLINK_SPITEM	= 2690		-- ¼ÇÂ¼ÁìÈ¡Ò°ÛÅµÄÉñÃØ±¦ÏäÊ±ÈÎÎñ´ÎÊý
 
 -- ¶ÁÈ¡ÎÄ¼þÊ±µÄ×Ö·û´®¶¨Òå
 TL_BUYGOODS = "TaskLink_BuyGoods"
@@ -51,7 +56,7 @@ TabFile_Load("\\settings\\task\\tasklink_upground.txt",TL_UPGROUND)
 TabFile_Load("\\settings\\task\\tasklink_worldmaps.txt",TL_WORLDMAPS)
 TabFile_Load("\\settings\\task\\levellink.txt",TL_LEVELLINK) -- Ã¿¸öµÈ¼¶Ïà¶ÔÓ¦µÄ³õÊ¼µÈ¼¶
 TabFile_Load("\\settings\\task\\tasklink_mainlink.txt",TL_MAINTASKLEVEL) -- Ã¿¸öÈÎÎñÀàÐÍÔÚÏàÓ¦µÄµÈ¼¶ÀïÃæ³öÏÖµÄ¼¸ÂÊ
-TabFile_Load("\\settings\\npc\\player\\level_exp.txt",TL_UPLEVELEXP) -- Éý¼¶ËùÐèµÄ¾­Ñé±í
+-- TabFile_Load("\\settings\\npc\\player\\level_exp.txt",TL_UPLEVELEXP) -- Éý¼¶ËùÐèµÄ¾­Ñé±í
 
 TabFile_Load("\\settings\\task\\award_basic.txt",TL_AWARDBASIC)
 TabFile_Load("\\settings\\task\\award_link.txt",TL_AWARDLINK)
@@ -148,8 +153,10 @@ tl_savetasktablecol(myTaskID)
 		myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType"))
 		
 		if (myTaskValueType == 2) then -- Èç¹ûÊÇÕÇ¾­ÑéÖµ
+			local nCurExp = GetExp()
 			nt_setTask(1033,GetLevel())
-			nt_setTask(1034,GetExp())
+			nt_setTask(2574, floor(nCurExp/1e5))
+			nt_setTask(1034, mod(nCurExp,1e5))
 		elseif (myTaskValueType == 3) then -- Èç¹ûÊÇÕÇÉùÍû
 			nt_setTask(1026,GetRepute())
 		elseif (myTaskValueType == 4) then -- Èç¹ûÊÇÕÇ¸£Ôµ
@@ -363,9 +370,11 @@ local myTaskID = tl_gettasktablecol()
 	
 		myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType"))
 		myTaskValue = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericValue"))
-		
+		local n_transcount = ST_GetTransLifeCount();
 		if (myTaskValueType == 2) then
-			if (tl_countuplevelexp(nt_getTask(1033),nt_getTask(1034)) >= tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericValue"))) then
+			local n_level = nt_getTask(1033);
+			local n_exp = nt_getTask(2574) * 1e5 + nt_getTask(1034);
+			if (tl_countuplevelexp(n_level, n_exp, n_transcount) >= tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericValue"))) then
 				return 1
 			else
 				return 0
@@ -726,7 +735,8 @@ function tl_countuplevelexp(myOldLevel,myOldExp)
 local i
 local myLevel = GetLevel()
 local myExp = GetExp()
-local nNowExp = tonumber(TabFile_GetCell(TL_UPLEVELEXP,myLevel + 1,2)) -- µ±Ç°µÈ¼¶ËùÐèµÄ¾­Ñé
+local n_transcount = ST_GetTransLifeCount();
+local nNowExp = tl_getUpLevelExp(myLevel + 1, n_transcount) -- µ±Ç°µÈ¼¶ËùÐèµÄ¾­Ñé
 
 local myTotalExp = 0
 
@@ -734,7 +744,7 @@ if (myOldLevel<myLevel) then
 
 
 	for i=myOldLevel,myLevel do
-		myTotalExp = myTotalExp + tonumber(TabFile_GetCell(TL_UPLEVELEXP,i+1,2))
+		myTotalExp = myTotalExp + tl_getUpLevelExp(i + 1, n_transcount)
 	end
 	
 	myTotalExp = (myTotalExp - myOldExp) - (nNowExp - myExp)
@@ -884,7 +894,7 @@ local myWhen, myWhere, myWho, myWhy1, myWhy2, myWhat, myMainTalk
 			myTaskMainInfo = "1 c¸i <color=yellow>"..myTaskInfo1.."<color>"
 			myMainTalk = "H·y gióp ta ®i t×m mãn nµy: <color=yellow>"..myTaskMainInfo.."<color>.";
 		else		
-			myMainTalk = "H·y gióp ta ®i t×m mãn nµy: <color=yellow>"..myTaskInfo1.."<color>£¬<color=yellow>"..myTaskOrder.."<color>, nhá nhÊt: <color=yellow>"..myTaskInfo2.."<color>, lín nhÊt: <color=yellow>"..myTaskInfo3.."<color>.";
+			myMainTalk = "H·y gióp ta ®i t×m mãn nµy: <color=yellow>"..myTaskInfo1.."<color>, <color=yellow>"..myTaskOrder.."<color>, nhá nhÊt: <color=yellow>"..myTaskInfo2.."<color>, lín nhÊt: <color=yellow>"..myTaskInfo3.."<color>.";
 		end
 
 		myTaskMainInfo = myMainTalk
@@ -925,7 +935,7 @@ local myWhen, myWhere, myWho, myWhy1, myWhy2, myWhat, myMainTalk
 			myTaskInfo3 = "MËt chÝ "
 		end
 
-		myTaskMainInfo = "Ng­¬i h·y ®Õn <color=yellow>"..myTaskOrder.."<color> t×m gióp ta <color=yellow>"..myTaskInfo1.."<color> quyÓn <color=yellow> "..myTaskInfo3.." <color>¡£";
+		myTaskMainInfo = "Ng­¬i h·y ®Õn <color=yellow>"..myTaskOrder.."<color> t×m gióp ta <color=yellow>"..myTaskInfo1.."<color> quyÓn <color=yellow> "..myTaskInfo3.." <color>.";
 		
 	elseif (myTaskType == 5) then
 
@@ -976,40 +986,6 @@ local myWhen, myWhere, myWho, myWhy1, myWhy2, myWhat, myMainTalk
 	return myTaskMainInfo
  
 end
-
-
--- ÓÃÓÚÀÛ¼ÓÍæ¼Ò¾­ÑéµÄº¯Êý
-function tl_addPlayerExp(myExpValue)
-
-local myOwnExp = 0
-local myNeedExp = 0
-local myPayExp = 0
-
-	-- LLG_MODIFY_20060603
-	-- Ô¤·ÀËÀÑ­»·£¬×î¶àÉý100¼¶
-	--while (myExpValue>0) do
-	local i = 0;
-	for i = 0, 100 do
-		if (myExpValue <= 0) then
-			return
-		end
-		myOwnExp = GetExp()
-		myNeedExp = tonumber(TabFile_GetCell(TL_UPLEVELEXP, GetLevel()+1, 2)) - myOwnExp
-		
-		if (myExpValue<myNeedExp) then
-			AddOwnExp(myExpValue)
-			myExpValue = 0
-		else
-			myExpValue = myExpValue - myNeedExp
-			AddOwnExp(myNeedExp)
-		end
-		
-	end
-
-
-end
-
-
 
 -- ÓÃÓÚÈÎÎñÁ´ DEBUG ÐÅÏ¢´òÓ¡µÄ¹ý³Ì
 function tl_print(myPrintText)

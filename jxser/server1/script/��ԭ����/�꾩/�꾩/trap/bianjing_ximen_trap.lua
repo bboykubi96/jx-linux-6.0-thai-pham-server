@@ -16,6 +16,4 @@ function add_trap_bianjingximen()
 	for nx,tbp in tballpoint do
 		AddMapTrap(nMapID,floor(tbp[1]*32),floor(tbp[2]*32),szScriptfile)
 	end
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
 end

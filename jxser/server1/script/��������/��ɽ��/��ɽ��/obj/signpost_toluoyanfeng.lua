@@ -1,7 +1,7 @@
---»ªÉ½ÅÉÍ¨ÍùÂäÑã·åµÄÂ·±ê
+-- script viet hoa By http://tranhba.com  ph¸i Hoa s¬n ®i th«ng r¬i nh¹n ngän nói ®İch b¶ng chØ ®­êng 
 
-function main(sel)
+function main(sel) 
 
-	Say("§i L¹c Nh¹n Phong", 0)
+Say("§i th«ng r¬i nh¹n ngän nói ", 0) 
 
 end;

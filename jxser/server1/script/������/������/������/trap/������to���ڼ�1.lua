@@ -1,7 +1,7 @@
---Á½ºşÇø ÌìÍõ°ïto°ïÖÚ¼Ò1
+-- script viet hoa By http://tranhba.com  hai hå khu Thiªn v­¬ng gióp to bang chóng nhµ 1 
 
-function main(sel)
+function main(sel) 
 
--- NewWorld(63, x, y);
+-- script viet hoa By http://tranhba.com  NewWorld(63, x, y); 
 
 end;

@@ -1,11 +1,11 @@
---西南北区 白云洞to青城山
---Trap ID：西南北区 12
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu m﹜ tr緉g ng to n骾 Thanh Th祅h 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 12 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(21, 2852, 3887);
+SetFightState(1) 
+NewWorld(21, 2852, 3887); 
 
-AddTermini(30)
+AddTermini(30) 
 
 end;

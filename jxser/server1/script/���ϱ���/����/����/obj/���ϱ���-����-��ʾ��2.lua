@@ -1,7 +1,7 @@
---Î÷ÄÏ±±Çø ÌÆÃÅ Öñº£Èë¿Ú¸æÊ¾ÅÆ2
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu §­êng m«n tróc h¶i nhËp khÈu c¸o kú bµi 2 
 
-function main(sel)
+function main(sel) 
 
-Say("Thôc Nam Tróc h¶i", 0)
+Say("Thôc nam tróc h¶i ", 0) 
 
-end;
+end; 

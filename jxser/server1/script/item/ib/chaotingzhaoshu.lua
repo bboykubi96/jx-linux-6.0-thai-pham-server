@@ -1,4 +1,5 @@
-function main(nItemIdx) 
+function main(nItemIdx)
+--dofile("script/item/ib/chaotingzhaoshu.lua")
 if (GetPK() == 0) then 
 Say("Ngµi tr­íc mÆt PK trŞ gi¸ ®· v× 0 liÔu , kh«ng cÇn sö dông n÷a triÒu ®×nh x¸ s¸ch . ", 0); 
 Msg2Player("Ngµi tr­íc mÆt PK trŞ gi¸ ®· v× 0 liÔu , kh«ng cÇn sö dông n÷a triÒu ®×nh x¸ s¸ch . "); 

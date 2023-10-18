@@ -1,11 +1,11 @@
--- µ„≤‘…Ω∂Ò∞‘∂¥ ’Ω∂∑NPC £ø£ø£ø01£®¥‰—Ã√≈40º∂»ŒŒÒ£©
--- by£∫Dan_Deng(2003-07-26)
+-- script viet hoa By http://tranhba.com  ßi”m th≠¨ng s¨n ∏c ph∏ch ÆÈng chi’n Æ u NPC ? ? ? 01# thÛy kh„i cˆa 40 c p nhi÷m vÙ # 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-26) 
 
-function OnDeath()
-	UTask_cy = GetTask(6)
-	if (UTask_cy == 40*256+20) and (HaveItem(197) == 0) and (random(0,100) < 50) then			-- 50%µƒª˙¬ ≥…π¶
-		AddEventItem(197)
-		Msg2Player("L y Æ≠Óc ch◊a kho∏ ßÂng ")
-		AddNote("T◊m Æ≠Óc ch◊a kho∏ ßÂng ")
-	end
-end;
+function OnDeath() 
+UTask_cy = GetTask(6) 
+	if (UTask_cy == 40*256+20) and (HaveItem(197) == 0) and (random(0,100) < 50) then			-- script viet hoa By http://tranhba.com  50%µƒª˙¬ ≥…π¶
+AddEventItem(197) 
+Msg2Player("Bæt Æ≠Óc ÆÂng c∏i ch◊a kh„a ") 
+AddNote("T◊m ra ÆÂng c∏i ch◊a kh„a ") 
+end 
+end; 

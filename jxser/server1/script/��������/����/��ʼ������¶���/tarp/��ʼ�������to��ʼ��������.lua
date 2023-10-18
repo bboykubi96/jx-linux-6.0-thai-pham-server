@@ -1,8 +1,8 @@
---西北南区 秦始皇陵二层to秦始皇陵三层
---Trap ID：西北南区 192
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu T莕 Th駓 Ho祅g l╪g t莕g hai to T莕 Th駓 Ho祅g l╪g t莕g ba 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 192 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(207, 1595, 3205);
-	AddTermini(207)
+function main(sel) 
+SetFightState(1); 
+NewWorld(207, 1595, 3205); 
+AddTermini(207) 
 end;

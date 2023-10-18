@@ -67,80 +67,93 @@ MAX_CAMP2COUNT = 200;--¹¥³Ç·½°ï»á×î´ó¿ÉÒÔ²Î¼ÓµÄÈËÊı
 MAX_CAMP3COUNT = 50 ;--ÔÊĞíÊØ³Ç·½×î´ó¿ÉÒÔÒªÇóĞ­ÖúµÄÆäËü°ï»áÈËÊı
 MAX_CAMP4COUNT = 50 ;--ÔÊĞí¹¥³Ç·½×î´ó¿ÉÒÔÒªÇóĞ­ÖúµÄÆäËü°ï»áÈËÊı
 
---¹¥ÊØË«·½µÚÒ»´Î½ø³¡Ê±µÄ×ø±ê
-CS_CampPos1 = {221, 1533, 3211};--ÊØ·½
-CS_CampPos2 = {221, 1903, 3608};--¹¥·½
+--Move tõ trap hËu doanh vµo c«ng thµnh vµ l­u r­¬ng cho chÕt
+CS_CampPos1 = {221, 1280, 2912};			--phe thñ
+CS_CampPos2 = {221, 1632, 3280};			--phe c«ng
 
-STONENPCID1 = 528;	--Ê¯0±®µÄNpcÄ£°åID
-STONENPCID2 = 530;
-STONELEVEL1 = 10; 	--Ê¯±®µÈ¼¶ÊØ·½µÄÊ¯Öù
-STONELEVEL2 = 20;   --¹¥·½µÄÊ¯Öù
+STONENPCID1 = 528;				--ID NPC long trô thñ
+STONENPCID2 = 530;				--ID NPC long trô c«ng
+STONELEVEL1 = 10; 				--cÊp ®é long trô thñ
+STONELEVEL2 = 20;   				--cÊp ®ä long trô c«ng
 STONENAME = "Bia ®¸ ®Şnh thµnh ";
-DOORNPCID =  532;
-DOORLEVEL = 60;
-StonePos = 
+DOORNPCID =  532;					--ID NPC cöa thµnh
+DOORLEVEL = 60;					--cÊp ®é npc cöa thµnh
+
+StonePos = 					--Täa ®é vµ tªn c¸c long trô
 {
-{x = 55232, y = 104928, Name = "§Şnh Xuyªn Trô "},
-{x = 53152, y = 107040, Name = "LËp D­¬ng Trô "},
-{x = 50976, y = 108992, Name = "B×nh Giang Trô "},
+{x = 47232, y = 94592, Name = "§Şnh Xuyªn Trô "},		
+{x = 45312, y = 96800, Name = "LËp D­¬ng Trô "},
+{x = 43392, y = 98912, Name = "B×nh Giang Trô "},
 };
 
-
-DoorPos=
+DoorPos=						--täa ®é vµ tªn cöa thµnh
 {
-{x = 57472, y = 106944, Name="§Şnh Xuyªn m«n"},
-{x = 55296, y = 109088, Name="LËp D­¬ng m«n"},
-{x = 53184, y = 111136, Name="B×nh Giang m«n"},
+{x = 1542*32, y = 3024*32, Name="§Şnh Xuyªn m«n"},
+{x = 1478*32, y = 3087*32, Name="LËp D­¬ng m«n"},
+{x = 1414*32, y = 3149*32, Name="B×nh Giang m«n"},
 };
+--DoorPos=						--täa ®é vµ tªn cöa thµnh
+--{
+--{x = 49312, y = 96736, Name="§Şnh Xuyªn m«n"},
+--{x = 47264, y = 98752, Name="LËp D­¬ng m«n"},
+--{x = 45216, y = 100768, Name="B×nh Giang m«n"},
+--};
 
-DOCTORNPCID = 230;
-DoctorPos = 
+DOCTORNPCID = 230;				--ID NPC b¸n thuèc
+DoctorPos = 					--täa ®é vµ tªn b¸n thuèc
 {
-{49184,102592,"Tïy Qu©n d­îc Y"},
-{50048,103552,"Tïy Qu©n d­îc Y"},
-{48480,103616,"Tïy Qu©n d­îc Y"},
-{48928,104160,"Tïy Qu©n d­îc Y"},
-{61184,114176,"Tïy Qu©n d­îc Y"},
-{61600,114592,"Tïy Qu©n d­îc Y"},
-{60128,115168,"Tïy Qu©n d­îc Y"},
-{60672,115616,"Tïy Qu©n d­îc Y"},
+{41472,92576,"Tïy Qu©n d­îc Y"},
+{42272,93408,"Tïy Qu©n d­îc Y"},
+{53120,104832,"Tïy Qu©n d­îc Y"},
+{52640,104288,"Tïy Qu©n d­îc Y"},
+--{61184,114176,"Tïy Qu©n d­îc Y"},
+--{61600,114592,"Tïy Qu©n d­îc Y"},
+--{60128,115168,"Tïy Qu©n d­îc Y"},
+--{60672,115616,"Tïy Qu©n d­îc Y"},
 }
 
 --Ç°Á½¸öÊÇÍ¶Ê¯³µµÄ×ø±ê£¬ºóÁ½¸öÊÇÍ¶µãµÄ×ø±ê
-TscPos=
+TscPos=					--Toa do npc pha thanh
 {
-{58752, 107648, 58304, 106912},
-{58080, 107520, 57408, 106880},
-{57952, 108480, 57408, 107872},
+{50528,97216,50080,96480},
+{49920,97312,49248,96672},
+{49664,98112,49120,97504},
 
-{56736,109824, 56192, 109024},
-{55872,109728, 55232, 109056},
-{55904,110592, 55040, 109056},
+{48576,99360,48032,98560},
+{47776,99360,47136,98688},
+{47712,100192,46848,98656},
 
-{54560,111808, 53312, 111136},
-{53856,111776, 53120, 111104},
-{53888,112448, 53248, 111936},
+{46592,101248,45344,100576},
+{45856,101408,45120,100736},
+{45856,101984,45216,101472},
 };
 
 GccPos = 
 {
-{58048,107552 },
-{55936,109664 },
-{1675*32,3486*32},
+{49856,97344},
+{47808,99296},
+{45632,101184},
 };
 
-OuterPos = 
+OuterPos = 					
 {
-{222, 1613, 3185},
-{223, 1613, 3185},
+{222, 1613, 3185},					--täa ®é vµ map vÒ hËu doanh phe thñ
+{223, 1613, 3185},					--täa ®é vµ map vÒ hËu doanh phe c«ng
 }
 
-ObstaclePos = 
-{
-{1793*32, 3340*32},
-{1727*32, 3407*32},
-{1660*32, 3469*32},
 
+--ObstaclePos = 					--täa ®é chÆn khi ch­a ph¸ cöa thµnh m«n
+--{
+--{1543*32, 3023*32},					--cöa thµnh 1
+--{1479*32, 3086*32},					--cöa thµnh 2
+--{1415*32, 3148*32},					--cöa thµnh 3
+--}
+
+ObstaclePos = 					--täa ®é chÆn khi ch­a ph¸ cöa thµnh m«n
+{
+{49312, 96736},					--cöa thµnh 1
+{47264, 98752},					--cöa thµnh 2
+{45216,100768},					--cöa thµnh 3
 }
 
 ----------------Title Value-------------------------------------
@@ -375,9 +388,8 @@ function sf_onplayerleave()
 	RestoreOwnFeature()
 end
 
----------------------½øÈëÕ½³¡Ê±¸³¸øÍæ¼ÒÏàÓ¦Í·ÏÎ BEGIN------------------------------------------
+---------------------LÊy ®iÓm set danh hiÖu------------------------------------------
 function bt_JudgePLAddTitle()
---»ñµÃµ±Ç°µÄRank£¬Èç¹û»ı·Ö´ïµ½ÁËÏÂÒ»¼¶RankµÄÒªÇóÖµÔò¸ø¸ÃÍæ¼Ò¸ÃRank,Èç¹ûRankÖµÒÑ¾­´ïµ½ÉÏÏŞÔò²»¼Ó
 	local nCurRank = BT_GetData(PL_CURRANK)
 	if ( nCurRank >= getn(TAB_RANKBONUS)) then
 		return
@@ -393,8 +405,6 @@ function bt_JudgePLAddTitle()
 		end
 	end
 end
-
---¸øÓÚÍ·ÏÎ
 function bt_RankEffect(rank)
 	if (rank == 0) then
 		rank = 1
@@ -410,7 +420,7 @@ function bt_RankEffect(rank)
 	BT_SetData(PL_CURRANK, rank);
 end
 
--------------------------½øÈëÕ½³¡Ê±¸³¸øÍæ¼ÒÏàÓ¦Í·ÏÎ ENDING----------------------------------
+-------------------------add ®iÓm cèng hiÕn----------------------------------
 
 function bt_addtotalpoint(point)
 	if (point == 0) then

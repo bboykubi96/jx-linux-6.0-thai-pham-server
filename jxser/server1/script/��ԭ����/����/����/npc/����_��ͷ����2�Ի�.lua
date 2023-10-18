@@ -1,4 +1,4 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® ÂëÍ·´¬·ò2¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢ëÍ·´¬·ò2¶Ô»°
 --suyu
 --200306015
 
@@ -7,14 +7,14 @@ Include("\\script\\global\\station.lua")
 ---------------------------------------------------------------
 function main(sel)
 
-	Say("Sinh kÕ c¶ nhµ ta chØ dùa vµo chiÕc thuyÒn c¸ nµy, cã kh¸ch qua s«ng th× chë, kh«ng cã kh¸ch th× ®i b¾t c¸! Tİnh nh­ vËy còng chØ cã thÓ ®¾p ®æi qua ngµy!", 2, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel");
+	Say("ThuyÒn phu:  Chóng ta mét nhµ sinh kÕ toµn dùa vµo c¸i thuyÒn c¶ nµy, cã kh¸ch ng­êi qu¸ giang ®İch thêi ®iÓm liÒn t¸i kh¸ch , m·o ph¶i kh¸ch nh©n thêi ®iÓm liÒn bé c¸ , coi nh­ nh­ vËy , còng chØ cã thÓ miÔn c­ìng hå miÖng .", 2, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel");
 
 end;
 
 ---------------------------------------------------------------
 function  OnCancel()
 
-	Say("ChiÕc thuyÒn nµy nu«i c¶ nhµ ta, sao cã thÓ ®­a ng­¬i qua s«ng miÔn phİ ®­îc!",0)
+	Say("ThuyÒn phu:  Ta chØ tr«ng cËy vµo c¸i thuyÒn c¸ nµy nu«i c¶ gia ®×nh, sao cã thÓ miÔn phİ ®­a ng­¬i qu¸ giang !",0)
 
 end;
 

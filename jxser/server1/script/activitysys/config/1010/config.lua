@@ -22,13 +22,13 @@ tbConfig[2] =
 	nId = 2,
 	szMessageType = "NpcOnDeath",
 	szName = "B¶n ®å ®¸nh qu¸i nhËn Bét M×",
-	nStartDate = 201206030000,
-	nEndDate  = 201206302400,
+	nStartDate = nil,
+	nEndDate  = nil,
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"NpcFunLib:CheckInMap",	{"340,321,322,225,226,227,75"} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+		{"NpcFunLib:CheckNormalMonster",	{"10,20,30,40,50,60,70,80,90"} },
 	},
 	tbActition = 
 	{
@@ -47,11 +47,11 @@ tbConfig[3] = --Tèng kim 1000 ®iÓm
 	{
 		{"PlayerFunLib:CheckTask",	{"751",1000,"",">="} },
 		{"PlayerFunLib:CheckTask",	{"751",3000,"","<"} },
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{ITEM_MILK,10,EVENT_LOG_TITLE,"TongKim1000"} },		
+		{"PlayerFunLib:GetItem",	{ITEM_MILK,20,EVENT_LOG_TITLE,"TongKim1000"} },		
 	},
 }
 tbConfig[4] = --Tèng kim 3000 ®iÓm
@@ -65,11 +65,11 @@ tbConfig[4] = --Tèng kim 3000 ®iÓm
 	tbCondition = 
 	{
 		{"PlayerFunLib:CheckTask",	{"751",3000,"",">="} },
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{ITEM_MILK,30,EVENT_LOG_TITLE,"TongKim3000"} },		
+		{"PlayerFunLib:GetItem",	{ITEM_MILK,50,EVENT_LOG_TITLE,"TongKim3000"} },		
 	},
 }
 tbConfig[5] =		--V­ît ¶i 17
@@ -82,7 +82,7 @@ tbConfig[5] =		--V­ît ¶i 17
 	tbMessageParam = {"17"},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{	
@@ -99,11 +99,11 @@ tbConfig[6] =		--V­ît ¶i 17
 	tbMessageParam = {"28"},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{	
-		{"PlayerFunLib:GetItem",	{ITEM_MILK,10,EVENT_LOG_TITLE,"VuotAi28"} },		
+		{"PlayerFunLib:GetItem",	{ITEM_MILK,20,EVENT_LOG_TITLE,"VuotAi28"} },		
 	},
 }
 tbConfig[7] = --Thñy tÆc ®Çu lÜnh
@@ -117,11 +117,11 @@ tbConfig[7] = --Thñy tÆc ®Çu lÜnh
 	tbCondition = 
 	{
 		{"NpcFunLib:CheckBoatBoss",	{nil} },
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{ITEM_MILK,10,EVENT_LOG_TITLE,"TieuDietThuyTacDauLinh"} },				
+		{"PlayerFunLib:GetItem",	{ITEM_MILK,20,EVENT_LOG_TITLE,"TieuDietThuyTacDauLinh"} },				
 	},
 }
 tbConfig[8] = --thuû tÆc ®¹i ®Çu lÜnh
@@ -134,13 +134,13 @@ tbConfig[8] = --thuû tÆc ®¹i ®Çu lÜnh
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 		{"NpcFunLib:CheckId",	{"1692"} },
 		{"NpcFunLib:CheckInMap",	{"337,338,339"} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{ITEM_MILK,20,EVENT_LOG_TITLE,"TieuDietThuyTacDaiDauLinh"} },				
+		{"PlayerFunLib:GetItem",	{ITEM_MILK,50,EVENT_LOG_TITLE,"TieuDietThuyTacDaiDauLinh"} },				
 	},
 }
 tbConfig[9] = --Viªm ®Õ - v­ît ¶i thø 10
@@ -153,7 +153,7 @@ tbConfig[9] = --Viªm ®Õ - v­ît ¶i thø 10
 	tbMessageParam = {6},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{
@@ -171,7 +171,7 @@ tbConfig[10] = --Boss Hoµng Kim
 	tbCondition = 
 	{
 		{"NpcFunLib:CheckWorldBoss",	{nil} },
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
 	{
@@ -188,7 +188,7 @@ tbConfig[11] = --boss s¸t thñ
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 		{"NpcFunLib:CheckKillerdBoss",	{90} },
 	},
 	tbActition = 
@@ -202,16 +202,18 @@ tbConfig[12] = --Ò»¸öÏ¸½Ú
 	nId = 12,
 	szMessageType = "ClickNpc",
 	szName = "click npc name lingfan",
-	nStartDate = 201206030000,
-	nEndDate  = 201206302400,
-	tbMessageParam = {"Hµng rong"},
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Chñ TiÖm"},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"Mua nguyªn liÖu ghÐp b¸nh sinh nhËt",21} },
+		{"AddDialogOpt",	{"Mua B¬ ",13} },
+		{"AddDialogOpt",	{"Mua Tr¸i C©y",27} },
+		--{"AddDialogOpt",	{"Mua Chocolate",21} },
 	},
 }
 tbConfig[13] = --Ò»¸öÏ¸½Ú
@@ -219,13 +221,13 @@ tbConfig[13] = --Ò»¸öÏ¸½Ú
 	nId = 13,
 	szMessageType = "CreateCompose",
 	szName = "compose shijin",
-	nStartDate = 201206030000,
-	nEndDate  = 201206302400,
+	nStartDate = nil,
+	nEndDate  = nil,
 	tbMessageParam = {"Nguyªn LiÖu B¬",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
-		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},10000} }, --Mua nguyªn liÖu tèn 1v l­îng
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
+		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},150000} }, --Mua nguyªn liÖu tèn 1v l­îng
 	},
 	tbActition = 
 	{
@@ -237,16 +239,16 @@ tbConfig[14] = --§èi tho¹i Thî lµm b¸nh
 {
 	nId = 14,
 	szMessageType = "ClickNpc",
-	szName = "BÊm vµo Thî lµm b¸nh",
+	szName = "BÊm vµo Sø Gi¶ Ho¹t §éng",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"Thî Lµm B¸nh"},
+	tbMessageParam = {"Sø Gi¶ Ho¹t §éng"},
 	tbCondition = 
 	{
 	},
 	tbActition = 
 	{
-		{"SetDialogTitle",	{"<npc>§Õn thËt ®óng lóc, ta ®ang cã mét sè ho¹t ®éng cho ng­¬i "} },		
+		{"SetDialogTitle",	{"<npc>§Õn thËt ®óng lóc, ta ®ang cã mét sè ho¹t ®éng cho ng­¬i, tÊt c¶ c¸c nh©n sü vâ l©m cÊp 50 trë lªn ®Õn ®©y nhËn th­ëng trong thêi gian tõ 0h00 ngµy 21/06/2017 ®Õn 23h00 ngµy 21/06/2017 "} },		
 		{"AddDialogOpt",	{"Ho¹t ®éng lµm B¸nh Kem",15} },
 		{"AddDialogOpt",	{"Ho¹t ®éng NhËn th­ëng ",20} },
 	},
@@ -255,7 +257,7 @@ tbConfig[15] =
 {
 	nId = 15,
 	szMessageType = "CreateDialog",
-	szName = "§èi tho¹i víi Thî lµm b¸nh",
+	szName = "§èi tho¹i víi Sø Gi¶ Ho¹t §éng",
 	nStartDate = nil,
 	nEndDate  = nil,
 	tbMessageParam = {"<npc>Chç ta ®ang cã ho¹t ®éng lµm <color=red>B¸nh Kem <color>, ng­¬i muèn tham gia ho¹t ®éng nµo"},
@@ -264,11 +266,11 @@ tbConfig[15] =
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"Ta muèn ®æi Bét M×",26} },		
+		{"AddDialogOpt",	{"Ta muèn ®æi Bét M× lÊy §­êng",26} },		
 		{"AddDialogOpt",	{"Ta muèn lµm B¸nh Kem Th­êng",16} },		
-		{"AddDialogOpt",	{"Ta muèn lµm B¸nh Kem Chocolate",17} },		
-		{"AddDialogOpt",	{"Ta muèn Lµm B¸nh Kem Tr¸i C©y",18} },		
-		{"AddDialogOpt",	{"Ta muèn Lµm B¸nh Sinh NhËt Vâ L©m TruyÒn Kú",19} },		
+		--{"AddDialogOpt",	{"Ta muèn lµm B¸nh Kem Chocolate",17} },		
+		--{"AddDialogOpt",	{"Ta muèn Lµm B¸nh Kem Tr¸i C©y",18} },		
+		{"AddDialogOpt",	{"Ta muèn Lµm B¸nh Sinh NhËt Vâ L©m",19} },		
 	},
 }
 tbConfig[16] = 
@@ -281,11 +283,11 @@ tbConfig[16] =
 	tbMessageParam = {"B¸nh Kem Th­êng",1,1,1,0.02},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Bét M×",ITEM_FLOUR,2} },
 		{"AddOneMaterial",	{"Nguyªn liÖu §­êng",ITEM_ROAD,1} },
 		{"AddOneMaterial",	{"Nguyªn liÖu S÷a",ITEM_MILK,1} },
-		{"AddOneMaterial",	{"Nguyªn liÖu B¬",ITEM_BUTTER,2} },
+		{"AddOneMaterial",	{"Nguyªn liÖu B¬",ITEM_BUTTER,1} },
 	},
 	tbActition = 
 	{
@@ -302,7 +304,7 @@ tbConfig[17] =
 	tbMessageParam = {"B¸nh Kem Chocolate",1,1,1,0.02},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{120,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Bét M×",ITEM_FLOUR,2} },
 		{"AddOneMaterial",	{"Nguyªn liÖu §­êng",ITEM_ROAD,1} },
 		{"AddOneMaterial",	{"Nguyªn liÖu S÷a",ITEM_MILK,1} },
@@ -324,7 +326,7 @@ tbConfig[18] =
 	tbMessageParam = {"B¸nh Kem Tr¸i C©y",1,1,1,0.02},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{120,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Bét M×",ITEM_FLOUR,2} },
 		{"AddOneMaterial",	{"Nguyªn liÖu §­êng",ITEM_ROAD,1} },
 		{"AddOneMaterial",	{"Nguyªn liÖu S÷a",ITEM_MILK,1} },
@@ -340,19 +342,19 @@ tbConfig[19] =
 {
 	nId = 19,
 	szMessageType = "CreateCompose",
-	szName = "Ta muèn lµm B¸nh Sinh NhËt Vâ L©m TruyÒn Kú",
+	szName = "Ta muèn lµm B¸nh Sinh NhËt Vâ L©m",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"B¸nh Sinh NhËt Vâ L©m TruyÒn Kú",1,1,1,0.02},
+	tbMessageParam = {"B¸nh Sinh NhËt Vâ L©m",1,1,1,0.02},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Bét M×",ITEM_FLOUR,2} },
 		{"AddOneMaterial",	{"Nguyªn liÖu §­êng",ITEM_ROAD,1} },
-		{"AddOneMaterial",	{"Nguyªn liÖu S÷a",ITEM_MILK,1} },
-		{"AddOneMaterial",	{"Nguyªn liÖu B¬",ITEM_BUTTER,2} },
+		--{"AddOneMaterial",	{"Nguyªn liÖu S÷a",ITEM_MILK,1} },
+		--{"AddOneMaterial",	{"Nguyªn liÖu B¬",ITEM_BUTTER,2} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Tr¸i C©y",ITEM_FRUIT,1} },
-		{"AddOneMaterial",	{"Nguyªn liÖu Chocolate",ITEM_CHOCOLATE,1} },
+		--{"AddOneMaterial",	{"Nguyªn liÖu Chocolate",ITEM_CHOCOLATE,1} },
 	},
 	tbActition = 
 	{
@@ -369,14 +371,14 @@ tbConfig[20] =
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
-		{"ThisActivity:CheckAwardExp", {"NhËn th­ëng trong thêi gian tõ 0h00 ngµy 11/06/2012 ®Õn 24h00 ngµy 11/06/2012 "},},
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"ThisActivity:CheckAwardExp", {"NhËn th­ëng trong thêi gian tõ 0h00 ngµy 21/06/2017 ®Õn 23h00 ngµy 21/06/2017 "},},
 		{"tbVNG_BitTask_Lib:CheckBitTaskValue",	{tbBITTSK_GET_EXP,0,"Ng­¬i ®· nhËn phÇn th­ëng ho¹t ®éng råi, kh«ng thÓ nhËn thªm n÷a!","=="} },
 	},
 	tbActition = 
 	{
 		{"tbVNG_BitTask_Lib:setBitTask", {tbBITTSK_GET_EXP, 1}},
-		{"PlayerFunLib:AddExp",	{100e6,0,EVENT_LOG_TITLE,"Nhan100trExpTaiNpcThoLamBanh"} },
+		{"PlayerFunLib:AddExp",	{700000000,0,EVENT_LOG_TITLE,"Nhan200trExpTaiNpcThoLamBanh"} },
 	},
 }
 tbConfig[21] = --Ò»¸öÏ¸½Ú
@@ -384,17 +386,17 @@ tbConfig[21] = --Ò»¸öÏ¸½Ú
 	nId = 21,
 	szMessageType = "CreateCompose",
 	szName = "compose shijin",
-	nStartDate = 201206030000,
-	nEndDate  = 201206302400,
-	tbMessageParam = {"B¬",1,1,1,0.02,0,50},
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Chocolate",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
-		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},10000} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
+		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},70000} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{ITEM_BUTTER,1,EVENT_LOG_TITLE,"MuaNguyenLieuBotaiNpcHangRong"} },
+		{"PlayerFunLib:GetItem",	{ITEM_CHOCOLATE,1,EVENT_LOG_TITLE,"MuaNguyenLieuChocolatetaiNpcHangRong"} },
 	},
 }
 --Sö dông Item
@@ -408,7 +410,7 @@ tbConfig[22] =
 	tbMessageParam = {{tbProp={6,1,30210,1,0,0},}},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
 		--{"PlayerFunLib:CheckFreeBagCellWH",	{1, 1, 1,"default"} },
 		{"PlayerFunLib:CheckInMap",	{"11,1,37,,176,162,78,80,174,121,153,101,99,100,20,53", "ChØ cã thÓ sö dông t¹i c¸c thµnh thÞ vµ c¸c t©n thñ th«n."} },		
 		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_OFTEN_CAKE, 1000, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
@@ -416,7 +418,8 @@ tbConfig[22] =
 	tbActition = 
 	{		
 		{"tbVNG_BitTask_Lib:addTask", {tbBITTSK_LIMIT_USE_OFTEN_CAKE, 1}},
-		{"PlayerFunLib:AddExp",	{1e6,0,EVENT_LOG_TITLE,"SuDungBanhKemThuong"} },
+		{"PlayerFunLib:AddExp",	{450000,0,EVENT_LOG_TITLE,"SuDungBanhKemThuong"} },
+		--{"ThisActivity:UseBanhKemThuong",{tbBITTSK_LIMIT_USE_OFTEN_CAKE,1000}},
 	},
 }
 tbConfig[23] = 
@@ -429,16 +432,16 @@ tbConfig[23] =
 	tbMessageParam = {{tbProp={6,1,30211,1,0,0},}},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{120,"default",">="} },
 		{"PlayerFunLib:CheckFreeBagCellWH",	{1, 1, 1,"default"} },
 		{"PlayerFunLib:CheckInMap",	{"11,1,37,,176,162,78,80,174,121,153,101,99,100,20,53", "ChØ cã thÓ sö dông t¹i c¸c thµnh thÞ vµ c¸c t©n thñ th«n."} },		
-		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_CAKE, 1500, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
+		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_CAKE_CHOCOLATE, 1000, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
 	},
 	tbActition = 
 	{		
-		{"tbVNG_BitTask_Lib:addTask", {tbBITTSK_LIMIT_USE_CAKE, 1}},
-		{"PlayerFunLib:AddExp",	{12e6,0,EVENT_LOG_TITLE,"SuDungBanhChocolate"} },
-		{"ThisActivity:UseCake",{tbBITTSK_LIMIT_USE_CAKE,1500,2}},
+		{"tbVNG_BitTask_Lib:addTask", {tbBITTSK_LIMIT_USE_CAKE_CHOCOLATE, 1}},
+		{"PlayerFunLib:AddExp",	{6e6,0,EVENT_LOG_TITLE,"SuDungBanhChocolate"} },
+		{"ThisActivity:UseCakeChocolate",{tbBITTSK_LIMIT_USE_CAKE_CHOCOLATE,1000,2}},
 	},
 }
 tbConfig[24] = 
@@ -451,16 +454,16 @@ tbConfig[24] =
 	tbMessageParam = {{tbProp={6,1,30212,1,0,0},}},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{120,"default",">="} },
 		{"PlayerFunLib:CheckFreeBagCellWH",	{1, 1, 1,"default"} },
 		{"PlayerFunLib:CheckInMap",	{"11,1,37,,176,162,78,80,174,121,153,101,99,100,20,53", "ChØ cã thÓ sö dông t¹i c¸c thµnh thÞ vµ c¸c t©n thñ th«n"} },		
-		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_CAKE, 1500, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
+		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_CAKE, 1000, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
 	},
 	tbActition = 
 	{
 		{"tbVNG_BitTask_Lib:addTask", {tbBITTSK_LIMIT_USE_CAKE, 1}},
-		{"PlayerFunLib:AddExp",	{6e6,0,EVENT_LOG_TITLE,"SuDungBanhTraiCay"} },
-		{"ThisActivity:UseCake",{tbBITTSK_LIMIT_USE_CAKE,1500,1}},
+		{"PlayerFunLib:AddExp",	{12e6,0,EVENT_LOG_TITLE,"SuDungBanhTraiCay"} },
+		{"ThisActivity:UseCake",{tbBITTSK_LIMIT_USE_CAKE,1000,1}},
 	},
 }
 tbConfig[25] = 
@@ -473,16 +476,15 @@ tbConfig[25] =
 	tbMessageParam = {{tbProp={6,1,30213,1,0,0},}},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"default",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
 		{"PlayerFunLib:CheckFreeBagCellWH",	{1, 1, 1,"default"} },
-		{"PlayerFunLib:CheckInMap",	{"11,1,37,,176,162,78,80,174,121,153,101,99,100,20,53", "ChØ cã thÓ sö dông t¹i c¸c thµnh thÞ vµ c¸c t©n thñ th«n"} },		
-		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE, 200, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
+		{"tbVNG_BitTask_Lib:CheckBitTaskValue", {tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE, 1000, "Sö dông vËt phÈm qu¸ giíi h¹n, kh«ng thÓ sö dông thªm", "<"}},	
 	},
 	tbActition = 
 	{		
 		{"tbVNG_BitTask_Lib:addTask", {tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE, 1}},
-		{"PlayerFunLib:AddExp",	{6e6,0,EVENT_LOG_TITLE,"SuDungBanhSinhNhat"} },
-		{"ThisActivity:UseCakeBirthday",{tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE,200}},
+		{"PlayerFunLib:AddExp",	{400000,0,EVENT_LOG_TITLE,"SuDungBanhSinhNhat"} },
+		{"ThisActivity:UseCakeBirthday",{tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE,1000}},
 	},
 }
 tbConfig[26] = 
@@ -492,14 +494,105 @@ tbConfig[26] =
 	szName = "Ta muèn ®æi Bét M× thµnh §­êng",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"Bét M×",1,1,1,0.02},
+	tbMessageParam = {"§­êng",1,1,1,0.02},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{150,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
 		{"AddOneMaterial",	{"Nguyªn liÖu Bét M×",ITEM_FLOUR,5} },
 	},
 	tbActition = 
 	{
 		{"PlayerFunLib:GetItem",	{ITEM_ROAD,1,EVENT_LOG_TITLE,"DoiBotMi"} },
+	},
+}
+tbConfig[27] = --Ò»¸öÏ¸½Ú
+{
+	nId = 27,
+	szMessageType = "CreateCompose",
+	szName = "compose shijin",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Tr¸i C©y",1,1,1,0.02,0,50},
+	tbCondition = 
+	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
+		{"AddOneMaterial",	{"TiÒn §ång",ITEM_COIN,10} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_FRUIT,1,EVENT_LOG_TITLE,"MuaTraiCay"} },
+	},
+}
+
+tbConfig[28] = --Ò»¸öÏ¸½Ú
+{
+	nId = 28,
+	szMessageType = "CreateCompose",
+	szName = "§¹i thµnh BK 150 CÊp 15",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"§¹i thµnh BK 150 CÊp 15",1,1,1,0.02,0,1},
+	tbCondition = 
+	{
+		{"AddOneMaterial",	{"2 §¹i thµnh bÝ kÝp 150 cÊp 10",ITEM_DTBK150_10,2} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_DTBK150_15,1,EVENT_LOG_TITLE,"DoiDaiThanhBK150Cap15"} },
+	},
+}
+
+tbConfig[29] = --Ò»¸öÏ¸½Ú
+{
+	nId = 29,
+	szMessageType = "CreateCompose",
+	szName = "§¹i thµnh BK 150 CÊp 18",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"§¹i thµnh BK 150 CÊp 18",1,1,1,0.02,0,1},
+	tbCondition = 
+	{
+		{"AddOneMaterial",	{"4 §¹i thµnh bÝ kÝp 150 cÊp 10",ITEM_DTBK150_10,4} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_DTBK150_18,1,EVENT_LOG_TITLE,"DoiDaiThanhBK150Cap18"} },
+	},
+}
+
+tbConfig[30] = --Ò»¸öÏ¸½Ú
+{
+	nId = 30,
+	szMessageType = "ClickNpc",
+	szName = "click lingfan",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Chñ TiÖm"},
+	tbCondition = 
+	{
+	},
+	tbActition = 
+	{
+		--{"AddDialogOpt",	{"§æi ®¹i thµnh BK 150 CÊp 15 2 quyÓn cÊp 10",28} },
+		--{"AddDialogOpt",	{"§æi ®¹i thµnh BK 150 CÊp 18 4 quyÓn cÊp 10",29} },
+		--{"AddDialogOpt",	{"§æi ®¹i thµnh BK 150 CÊp 18 2 quyÓn cÊp 15",31} },
+	},
+}
+
+tbConfig[31] = --Ò»¸öÏ¸½Ú
+{
+	nId = 31,
+	szMessageType = "CreateCompose",
+	szName = "§¹i thµnh BK 150 CÊp 18",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"§¹i thµnh BK 150 CÊp 18",1,1,1,0.02,0,1},
+	tbCondition = 
+	{
+		{"AddOneMaterial",	{"2 §¹i thµnh bÝ kÝp 150 cÊp 15",ITEM_DTBK150_15,2} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_DTBK150_18,1,EVENT_LOG_TITLE,"DoiDaiThanhBK150Cap18"} },
 	},
 }

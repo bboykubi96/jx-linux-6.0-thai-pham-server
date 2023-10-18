@@ -44,7 +44,18 @@ for i=1,GiftsTabfile:getRow() do
 end
 GiftsTabfile:release()
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+
+	--dofile("script/item/shenmi_hongbao.lua");
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if(sudothanbidaihongbao == 0) then
+		Say("Chøc n¨ng ThÇn bÝ ®¹i hång bao t¹m thêi ch­a më.")
+		return 1;
+	end
+
 	if CalcFreeItemCellCount() < 6 then
 		Talk(1,"","Hµnh trang kh«ng ®ñ chç trèng, kh«ng thÓ më ®¹i hång bao.")
 		Msg2Player("Hµnh trang kh«ng ®ñ chç trèng, kh«ng thÓ më ®¹i hång bao.")

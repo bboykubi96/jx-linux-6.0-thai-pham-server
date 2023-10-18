@@ -13,7 +13,17 @@ IncludeLib("SETTING")
 TASKIDDAY 	= 2595;
 TASKIDEXP	= 2596;
 GETMAXEXP	= 150000000;	-- Ã¿Ìì¿ÉÒÔ»ñµÃµÄ¾­ÑéÉÏÏÞ
+
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main(sel)
+	
+	--dofile("script/global/g7vn/g7configall.lua")
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
+
 	exps={
 		{430,100},
 		{2960,90},

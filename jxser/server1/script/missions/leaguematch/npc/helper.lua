@@ -1,5 +1,6 @@
 Include( "\\script\\missions\\leaguematch\\head.lua" )
 Include( "\\script\\missions\\leaguematch\\npc\\head.lua" )
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function wlls_get_winrate()
 	local n_total	= GetTask(WLLS_TASKID_TOTAL)
@@ -28,11 +29,22 @@ WLLS_REG_TABLE	= {
 	{"tû lÖ th¾ng",	wlls_get_winrate,		{{nil,29}, {30,49}, {50,70}, {70,90}, {90,nil}},								"%"},
 }
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+	
+	--dofile("script/missions/leaguematch/npc/helper.lua");
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if(volamliendau == 0) then
+		Say("Liªn ®Êu t¹m thêi ch­a më.")
+		return
+	end
+
 	local n_ntype	= GetGlbValue(GLB_WLLS_NEXT)
 	if (WLLS_TAB[n_ntype].max_member <= 1) then
-		Say("HiÖn vâ l©m tû vâ theo h×nh thøc ®¬n ®Êu. Ta kh«ng thÓ gióp ng­¬i råi!", 0)
-		return
+	--	Say("HiÖn vâ l©m tû vâ theo h×nh thøc ®¬n ®Êu. Ta kh«ng thÓ gióp ng­¬i råi!", 0)
+	--	return
 	end
 	local n_lid = LG_GetLeagueObj(WLLS_REG_LGTYPE, GetName())
 	local tb_option	= {}

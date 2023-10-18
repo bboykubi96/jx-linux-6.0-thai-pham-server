@@ -1,11 +1,13 @@
 tbSHENGRILIHE_GIFT = {
-			{ "<#> S÷a t­¬i", 0.03, 975 },
-			{ "<#> Bét tinh", 0.47, 976 },
-			{ "<#> §­êng tinh", 0.47, 977 },
-			{ "<#> Trøng gµ", 0.03, 978 },
+			{ "<#> S÷a t­¬i", 0.20, 975 },
+			{ "<#> Bét tinh", 0.31, 976 },
+			{ "<#> §­êng tinh", 0.30, 977 },
+			{ "<#> Trøng gµ", 0.19, 978 },
 }
 
 function main()
+	--dofile("script/item/vitenambirthday/birthdaybox.lua")
+
 	local base = 0;
 	local sum = 0;
 	local gift_index = 0;

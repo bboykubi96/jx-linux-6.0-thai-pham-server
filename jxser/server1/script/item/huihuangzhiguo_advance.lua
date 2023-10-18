@@ -3,12 +3,12 @@ Include("\\script\\activitysys\\playerfunlib.lua");
 huihuangzhiguo_advance = {}
 
 huihuangzhiguo_advance.nDailyCountLimit = 5;
-huihuangzhiguo_advance.nLevelLimit = 120;
+huihuangzhiguo_advance.nLevelLimit = 100;
 huihuangzhiguo_advance.tbEXP =  --¹û×Ó¶ÔÓ¦¾­Ñé±í
 {
-	{15000000, "B¸ch Niªn Huy Hoµng qu¶"},
-	{23000000, "Thiªn Niªn Huy Hoµng qu¶"},
-	{30000000, "V¹n Niªn Huy Hoµng qu¶"},
+	{1500000, "B¸ch Niªn Huy Hoµng qu¶"},
+	{3000000, "Thiªn Niªn Huy Hoµng qu¶"},
+	{10000000, "V¹n Niªn Huy Hoµng qu¶"},
 };
 
 huihuangzhiguo_advance.tbZhenLuTSK =  --Ê¹ÓÃÕäÂ¶TSKIDºÍ¸øÓè¶ÔÓ¦ÎïÆ·±í

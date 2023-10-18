@@ -3,11 +3,24 @@
 Include( "\\script\\missions\\leaguematch\\head.lua" )
 Include( "\\script\\missions\\leaguematch\\npc\\head.lua" )
 Include("\\script\\lib\\log.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
 
---Ö÷¶Ô»°¿ò
 function main()
+
+	dofile("script/missions/leaguematch/npc/officer.lua");
+	dofile("script/global/g7vn/g7configall.lua")
+
+	if(volamliendau == 0) then
+		Say("Liªn ®Êu t¹m thêi ch­a më.")
+		return
+	end
+
 	local n_level = wlls_getcityinfo()
+	if n_level == 1 then
+		Say("Liªn ®Êu s¬ cÊp hiÖn ®ang t¹m dõng!.")
+		return
+	end
 	if (not wlls_CheckIsOpen(n_level)) then
 		return
 	end
@@ -18,6 +31,11 @@ function main()
 		local n_mytype = LG_GetLeagueTask(n_lid, WLLS_LGTASK_STYPE)
 		local n_mtype = LG_GetLeagueTask(n_lid, WLLS_LGTASK_MTYPE)
 		local n_mylevel = WLLS_TAB[n_mytype].match_type[n_mtype].level
+
+		--Msg2Player("§¼ng cÊp: "..GetLevel())
+		--Msg2Player("n_mylevel: "..n_mylevel)
+		--Msg2Player("n_level: "..n_level)
+
 		if (n_mylevel ~= n_level) then
 			wlls_descript("<enter>   C¸c h¹ ®· gia nhËp<color=red>"..WLLS_LEVEL_DESC[n_mylevel].."<color> Ta lµ <color=red>"..WLLS_LEVEL_DESC[n_level].."<color>, cã ph¶i ®· t×m nhÇm ng­êi?", wlls_add_option({}, "Kh«ng cã chuyÖn g× hÕt"))
 			return
@@ -38,11 +56,11 @@ function main()
 	local str = "<enter>  "..WLLS_TAB[n_next].text_main[n_level]
 	local str_des = WLLS_LEVEL_DESC[n_level]
 	local tb_option = {}
-	tb_option[getn(tb_option) + 1] = "Ta muèn ®Õn "..str_des.."héi tr­êng/wlls_want2signmap"
+	tb_option[getn(tb_option) + 1] = "Ta muèn ®Õn "..str_des.." héi tr­êng/wlls_want2signmap"
 	tb_option[getn(tb_option) + 1] = ""..str_des.." nhãm/wlls_mylg"
 	tb_option[getn(tb_option) + 1] = "Ta muèn l·nh phÇn th­ëng liªn ®Êu/wlls_wantaward"
-	tb_option[getn(tb_option) + 1] = "Ta muèn kiÓm tra ®iÓm Uy Danh/wlls_ShowRespect"
-	tb_option[getn(tb_option) + 1] = "§ãng hoÆc më nhËn kinh nghiÖm/wlls_show_expswitch"
+	--tb_option[getn(tb_option) + 1] = "Ta muèn kiÓm tra ®iÓm Uy Danh/wlls_ShowRespect"
+	--tb_option[getn(tb_option) + 1] = "§ãng hoÆc më nhËn kinh nghiÖm/wlls_show_expswitch"
 	wlls_descript(str, wlls_add_option(tb_option, "Ta chØ tiÖn ghĞ qua"))
 end
 
@@ -58,7 +76,8 @@ function wlls_wantaward()
 		tb_option[getn(tb_option)+1] = "Ta muèn l·nh gi¶i th­ëng danh hiÖu!/wlls_wantaward_title"
 	end
 	tb_option[getn(tb_option)+1] = "Ta muèn ®æi phÇn th­ëng danh dù/wlls_buy_honour"
-	tb_option[getn(tb_option)+1] = "Ta muèn mua phÇn th­ëng uy danh/wlls_buy_Respect"
+	--tb_option[getn(tb_option)+1] = "Ta muèn ®æi phÇn th­ëng danh dù new/wlls_buy_honournew"
+	--tb_option[getn(tb_option)+1] = "Ta muèn mua phÇn th­ëng uy danh/wlls_buy_Respect"
 	
 	tb_option[getn(tb_option)+1] = "Ta chØ tiÖn ghĞ qua/OnCancel"
 	wlls_descript(str, tb_option)
@@ -168,29 +187,53 @@ function wlls_wantaward_title()
 		end
 	end
 	
-	local nServerTime = GetCurServerTime()+ 1728000; --20*24*60*60
+	local nServerTime = GetCurServerTime()+ 1728000;
 	local nDate	= FormatTime2Number(nServerTime);
 	local nDay	= floor(mod(nDate,1000000) / 10000);
-	local nMon	= mod(floor(nDate / 1000000) , 100)
+	local nMon	= mod(floor(nDate / 1000000) , 100);
+	local nTime	= nMon * 1000000 + nDay * 10000;
 	
-	local nTime	= nMon * 1000000 + nDay * 10000	-- ³ÖĞøµ½ÏÂ½ìÁªÈü½áÊø
-	_M("Title_AddTitle", n_title, nTime)
+	--_M("Title_AddTitle", n_title, nTime)
 	
 	--Remove hµo quang VLMC nÕu cã tr­íc khi add hµo quang míi - Modified by DinhHQ - 20110524
 	if Title_GetActiveTitle() == 3000 then
-		Title_RemoveTitle(3000)		
+	--	Title_RemoveTitle(3000)		
 	end
 	if GetSkillState(1500) ~= -1 then
-		RemoveSkillState(1500)
+		--RemoveSkillState(1500)
 	end
-		
-	Title_AddTitle(n_title, 2, nTime)
-	Title_ActiveTitle(n_title)
+	 local ntime2 = 18*60*60*24*10
+	--Title_AddTitle(n_title, 2, nTime)
+--	Title_ActiveTitle(n_title)
+	if (FALSE(n_lid) or (n_rank ==1)) then
+		if GetSkillState(1682)>=1 then
+			Msg2Player("§¹i hiÖp ®· nhËn vßng s¸ng råi.")
+			return nil
+		end
+		PlayerFunLib:AddSkillState(1682,20,3,ntime2,1)
+	elseif (FALSE(n_lid) or (n_rank ==2)) then
+		if GetSkillState(1683)>=1 then
+			Msg2Player("§¹i hiÖp ®· nhËn vßng s¸ng råi.")
+			return nil
+		end
+		PlayerFunLib:AddSkillState(1683,20,3,ntime2,1)
+	elseif (FALSE(n_lid) or (n_rank ==3)) then
+		if GetSkillState(1684)>=1 then
+			Msg2Player("§¹i hiÖp ®· nhËn vßng s¸ng råi.")
+			return nil
+		end
+		PlayerFunLib:AddSkillState(1684,20,3,ntime2,1)
+	elseif (FALSE(n_lid) or (n_rank ==4)) then
+		if GetSkillState(1685)>=1 then
+			Msg2Player("§¹i hiÖp ®· nhËn vßng s¸ng råi.")
+			return nil
+		end
+		PlayerFunLib:AddSkillState(1685,20,3,ntime2,1)
+	end
 	
-	
-	SetTask(1122, n_title)	--µ±Ç°Íæ¼ÒÁìÈ¡µÄÊÇÄÄ¸öÍ·ÏÎID
-	local tb = {"Qu¸n qu©n", "¸ ", "H¹ng 3", "H¹ng 4"}
-	Msg2Player("Chóc mõng b¹n ®¹t ®­îc danh hiÖu <color=yellow>"..wlls_get_desc(1)..tb[n_rank].."<color>! Danh hiÖu nµy cã thÓ duy tr× trong <color=yellow>20<color> ngµy.")
+	--SetTask(1122, n_title)	--µ±Ç°Íæ¼ÒÁìÈ¡µÄÊÇÄÄ¸öÍ·ÏÎID
+	local tb = {"Qu¸n qu©n", "¸ qu©n", "H¹ng 3"}
+	Msg2Player("Chóc mõng b¹n ®¹t ®­îc danh hiÖu <color=yellow>"..wlls_get_desc(1)..tb[n_rank].."<color>! Danh hiÖu nµy cã thÓ duy tr× trong <color=yellow>10<color> ngµy.")
 end
 
 --×îÖÕÁìÈ¡ÅÅĞĞ½±Àø
@@ -514,7 +557,7 @@ function wlls_want2signmap()
 	--´«ËÍµ½±¨ÃûµãµØÍ¼
 	local n_signmap = wlls_get_mapid(1, n_mtype, n_group)
 	NewWorld(n_signmap, WLLS_MAPPOS_SIGN[1], WLLS_MAPPOS_SIGN[2])
-	Msg2Player("B¹n ®· ®Õn<color=yellow>"..wlls_get_desc(3, n_mtype, n_group).."<color>khu vùc thi ®Êu")
+	Msg2Player("B¹n ®· ®Õn <color=yellow>"..wlls_get_desc(3, n_mtype, n_group).."<color> khu vùc thi ®Êu")
 	tbLog:PlayerActionLog("TinhNangKey","BaoDanhThamGiaLienDau")
 end
 
@@ -561,7 +604,20 @@ function wlls_set_expswitch(b_exps)
 	Talk(1, "wlls_show_expswitch", "Thµnh c«ng"..iif(b_exps == 0, "më ", "§ãng").."phÇn th­ëng kinh nghiÖm liªn ®Êu!")
 end
 
---ÓÃÈÙÓş»»È¡ÉÌÆ·
+function wlls_buy_honournew()
+	if (CheckGlobalTradeFlag() == 0) then		-- È«¾Ö¾­¼ÃÏµÍ³½»Ò×¿ª¹Ø
+		return
+	end
+
+	Msg2Player("b¹n hiÖn ®ang cã <color=yellow>"..GetTask(WLLS_TASKID_HONOUR).."<color> ®iÓm vinh dù")
+	if (GetBoxLockState() == 0) then
+		Sale(180,11)
+	else
+		Say(wlls_npcname().."Xin më khãa r­¬ng tr­íc råi h·y mua! ", 0)
+	end
+end
+
+
 function wlls_buy_honour()
 	if (CheckGlobalTradeFlag() == 0) then		-- È«¾Ö¾­¼ÃÏµÍ³½»Ò×¿ª¹Ø
 		return
@@ -569,7 +625,9 @@ function wlls_buy_honour()
 
 	Msg2Player("b¹n hiÖn ®ang cã <color=yellow>"..GetTask(WLLS_TASKID_HONOUR).."<color> ®iÓm vinh dù")
 	if (GetBoxLockState() == 0) then
-		Sale(146,11) -- ÉÌµêµÄÈÙÓş»ı·Ö±àºÅÎª11
+		--Sale(146,11) -- ÉÌµêµÄÈÙÓş»ı·Ö±àºÅÎª11
+		Sale(173,11)--Sale(178,11)
+		---Sale(179,11)
 	else
 		Say(wlls_npcname().."Xin më khãa r­¬ng tr­íc råi h·y mua! ", 0)
 	end
@@ -595,7 +653,7 @@ function wlls_buy_Respect()
 	
 	Msg2Player("HiÖn t¹i ®¹i hiÖp cã ®iÓm uy danh lµ <color=yellow>"..GetRespect().."<color>")
 	if (GetBoxLockState() == 0) then
-		Sale(173,13) -- ÉÌµêµÄÈÙÓş»ı·Ö±àºÅÎª11
+		Sale(173,11) -- ÉÌµêµÄÈÙÓş»ı·Ö±àºÅÎª11
 	else
 		Say(wlls_npcname().."Xin më khãa r­¬ng tr­íc råi h·y mua! ", 0)
 	end

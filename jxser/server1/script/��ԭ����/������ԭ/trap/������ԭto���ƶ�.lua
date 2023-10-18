@@ -1,11 +1,11 @@
---西北南区 剑阁中原to锁云洞
---Trap ID：中原北区 25
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu ki誱 c竎 Trung Nguy猲 to kh鉧 v﹏ ng 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 25 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(6, 1464, 3127);
+SetFightState(1) 
+NewWorld(6, 1464, 3127); 
 
-AddTermini(116)
+AddTermini(116) 
 
 end;

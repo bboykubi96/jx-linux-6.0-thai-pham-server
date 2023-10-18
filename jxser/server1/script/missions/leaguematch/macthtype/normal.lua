@@ -48,7 +48,7 @@ end
 --	},
 tmp_help = {
 	{
-		"<t>Giíi thiÖu ",
+		"<t> Giíi thiÖu ",
 		{
 			"    Lo¹i h×nh Vâ l©m kiÖt xuÊt liªn ®Êu lÇn nµy lµ <color=red><s><color>, ng­êi tham gia ®¼ng cÊp ph¶i tõ <color=red>80-119<color>. Ng­êi ch¬i ®Õn gÆp <color=red>Sø gi¶ kiÖt xuÊt<color> b¸o danh thµnh lËp chiÕn ®éi, sau ®ã vµo Héi tr­êng liªn ®Êu KiÖt xuÊt tiÕn hµnh thi ®Êu",
 			"    Lo¹i h×nh Vâ l©m liªn ®Êu lÇn nµy lµ <color=red><s><color>, ng­êi than gia ®¼ng cÊp ph¶i tõ <color=red>120<color>. §Õn gÆp <color=red>Sø gi¶ liªn ®Êu<color>, b¸o danh thµnh lËp chiÕn ®éi, sau ®ã vµo Héi tr­êng vâ l©m liªn ®Êu tiÕn hµnh thi ®Êu",

@@ -31,49 +31,82 @@ function pActivity:UseMaterialBag()
 	
 end
 
-function pActivity:UseNewUniform()
-	
+function pActivity:UseNewUniform()-- su dung ao linh moi duoc 3 trieu 5
+
 	self:AddTask(%nIdx_USED_NEW_UNIFORM_COUNT,1)
-	
 	tbAwardTemplet:Give(%tbNewUniformAward, 1, {%EVENT_LOG_TITLE, "SuDungChiecAoLinhMoi"})
 
+	local nUsedCount = self:GetTask(%nIdx_USED_NEW_UNIFORM_COUNT)
+	Msg2Player("Ng­¬i ®· sö dông: <color=green>"..nUsedCount.." <color>lÇn")
 	
 end
 
-function pActivity:NewUniformExtraAward()
+function pActivity:UseNewUniformExp()-- su dung ao linh moi diem kinh nghiem 4 trieu 5
+	
+	self:AddTask(%nIdx_USED_NEW_UNIFORM_COUNT,1)	
+	tbAwardTemplet:Give(%tbNewUniformAwardExp, 1, {%EVENT_LOG_TITLE, "SuDungChiecAoLinhMoi(Exp)"})	
+
+	local nUsedCount = self:GetTask(%nIdx_USED_NEW_UNIFORM_COUNT)
+	Msg2Player("Ng­¬i ®· sö dông: <color=green>"..nUsedCount.." <color>lÇn")
+end
+
+
+function pActivity:NewUniformExtraAward()--Su dung ao linh moi dat moc
 	
 	local nUsedCount = self:GetTask(%nIdx_USED_NEW_UNIFORM_COUNT)
 
 	if %tbNewUniformExtraAward[nUsedCount] then
 		local szAction = format("SuDungChiecAoLinhMoi%dLan", nUsedCount)
-		local szMsg = format("Ng­¬i ®· sö dông %s%d lÇn, nhËn ®­îc phÇn th­ëng v­ît møc.",%tbITEM_NEW_UNIFORM.szName, nUsedCount)
-		Msg2Player(szMsg)
+		--local szMsg = format("Ng­¬i ®· sö dông %s%d lÇn, nhËn ®­îc phÇn th­ëng v­ît møc.",%tbITEM_NEW_UNIFORM.szName, nUsedCount)
+		--Msg2Player(szMsg)
 		tbAwardTemplet:Give(%tbNewUniformExtraAward[nUsedCount], 1, {%EVENT_LOG_TITLE, szAction})
+		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông vËt phÈm Event ®Õn mèc <color=yellow>"..nUsedCount.."<color>, nhËn ®­îc phÇn th­ëng nh­ ý")
+
+		if GetLevel() < 120 then
+			AddOwnExp(1000000000)
+		end
 	end
-	
-	
+
 end
 
-function pActivity:UsePatchedUniform()
+function pActivity:NewUniformExpExtraAward()	-- Su dung ao linh moi diem kn dat moc
+	local nUsedCount = self:GetTask(%nIdx_USED_NEW_UNIFORM_COUNT)
+	if %tbNewUniformExtraAward[nUsedCount] then
+		local szAction = format("SuDungChiecAoLinhMoi(Exp)%dLan", nUsedCount)
+		--local szMsg = format("Ng­¬i ®· sö dông %s%d lÇn, nhËn ®­îc phÇn th­ëng v­ît møc.",%tbITEM_NEW_UNIFORM_EXP.szName, nUsedCount)
+		--Msg2Player(szMsg)
+		tbAwardTemplet:Give(%tbNewUniformExtraAward[nUsedCount], 1, {%EVENT_LOG_TITLE, szAction})
+		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông vËt phÈm Event ®Õn mèc <color=yellow>"..nUsedCount.."<color>, nhËn ®­îc phÇn th­ëng nh­ ý")
+
+		if GetLevel() < 120 then
+			AddOwnExp(1000000000)
+		end
+	end	
+end
+
+function pActivity:UsePatchedUniform()--Su dung ao linh da sua
 	
 	tbAwardTemplet:Give(%tbPatchedUniformAward, 1)
 	self:AddTask(%nIdx_USED_PATCHED_UNIFORM_COUNT, 1)
 	
 	local nUsedCount = self:GetTask(%nIdx_USED_PATCHED_UNIFORM_COUNT)
-	if %tbPatchedUniformLog[nUsedCount] then
-		local szAction = format("SuDung%dLanAoLinhDaSua", nUsedCount)
-		%tbLog:PlayerAwardLog(%EVENT_LOG_TITLE, szAction)
-	end
+	Msg2Player("Ng­¬i ®· sö dông: <color=yellow>"..nUsedCount.." <color>lÇn")
+
+	--if %tbPatchedUniformLog[nUsedCount] then
+	--	local szAction = format("SuDung%dLanAoLinhDaSua", nUsedCount)
+	--	%tbLog:PlayerAwardLog(%EVENT_LOG_TITLE, szAction)
+	--end
 	
 end
 
-function pActivity:UseJade()
-	self:AddTask(%nIdx_MAX_NEW_UNIFORM_CAN_USE, %nJADE_INCREASE_MAX_COUNT)
-	self:AddTask(%nIdx_USED_JADE_COUNT,1)
+function pActivity:UseJade123()
+	--self:AddTask(%nIdx_MAX_NEW_UNIFORM_CAN_USE, %nJADE_INCREASE_MAX_COUNT)
+	--self:AddTask(%nIdx_USED_JADE_COUNT,1)
 	
-	local szMsg = format("Ng­¬i sö dông %s t¨ng thªm giíi h¹n %d lÇn.", %tbITEM_NEW_UNIFORM.szName, %nJADE_INCREASE_MAX_COUNT)
-	Msg2Player(szMsg)
-	
+	--local szMsg = format("Ng­¬i sö dông %s t¨ng thªm giíi h¹n %d lÇn.", %tbITEM_NEW_UNIFORM.szName, %nJADE_INCREASE_MAX_COUNT)
+	--Msg2Player(szMsg)
+	--Say("Mang vËt phÈm ®Õn gÆp NPC Thî May ®Ó hîp thµnh s¶n phÈm")
+	--return 1
 end
 
 pActivity.tbCompose = {}
@@ -182,19 +215,4 @@ function pActivity:Exchange(nGoldSelect, nMaterialSelect)
 	end
 	self.tbCompose[nKey]:ComposeDailog(1, nMaxCount)
 	
-end
-
-function pActivity:UseNewUniformExp()	
-	self:AddTask(%nIdx_USED_NEW_UNIFORM_COUNT,1)	
-	tbAwardTemplet:Give(%tbNewUniformAwardExp, 1, {%EVENT_LOG_TITLE, "SuDungChiecAoLinhMoi(Exp)"})	
-end
-
-function pActivity:NewUniformExpExtraAward()	
-	local nUsedCount = self:GetTask(%nIdx_USED_NEW_UNIFORM_COUNT)
-	if %tbNewUniformExtraAward[nUsedCount] then
-		local szAction = format("SuDungChiecAoLinhMoi(Exp)%dLan", nUsedCount)
-		local szMsg = format("Ng­¬i ®· sö dông %s%d lÇn, nhËn ®­îc phÇn th­ëng v­ît møc.",%tbITEM_NEW_UNIFORM_EXP.szName, nUsedCount)
-		Msg2Player(szMsg)
-		tbAwardTemplet:Give(%tbNewUniformExtraAward[nUsedCount], 1, {%EVENT_LOG_TITLE, szAction})
-	end	
 end

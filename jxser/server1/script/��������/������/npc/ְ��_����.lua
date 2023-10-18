@@ -1,18 +1,18 @@
---Î÷±±±±Çø ÁúÃÅÕò »ÆºÓÂëÍ·´¬·ò¶Ô»°
---suyu
---20031029
+-- script viet hoa By http://tranhba.com  t©y b¾c b¾c khu long m«n trÊn Hoµng Hµ bÕn tµu thuyÒn phu ®èi tho¹i 
+-- script viet hoa By http://tranhba.com suyu 
+-- script viet hoa By http://tranhba.com 20031029 
 
-CurWharf = 10;
+CurWharf = 10; 
 Include("\\script\\global\\station.lua")
 
-function main(sel)
-	if (GetLevel() >= 5) then		--µÈ¼¶´ïµ½Îå¼¶
-		Say("Chóng ta lµm c«ng ë trªn thuyÒn nµy th©t lµ cùc khæ! N¾ng ch¸y! Giã quËt! B©y giê l¹i gÆp sãng to giã lín, e r»ng sÏ kh«ng ai sèng sãt!", 2, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel")
-	else		
-		Talk(1,"","Bªn ngoµi lo¹n l¹c, xem ng­¬i trãi gµ kh«ng chÆt! Ra ngoµi th«n ta e kh«ng gi÷ ®­îc m¹ng ®©u!")
-	end
-end;
+function main(sel) 
+if (GetLevel() >= 5) then -- script viet hoa By http://tranhba.com  cÊp bËc ®¹t tíi cÊp n¨m 
+Say("Chóng ta ë n¬i nµy trªn thuyÒn lµm thî thËt rÊt khæ cùc # ngµy ph¬i giã thæi ®İch , b©y giê l¹i gÆp giã lín l·ng , sî r»ng còng kh«ng sèng ®­îc liÔu !", 2,"Ngåi thuyÒn /WharfFun","Kh«ng ngåi /OnCancel") 
+else 
+Talk(1,"","Bªn ngoµi qu¸ rèi lo¹n , xem ng­¬i tay trãi gµ kh«ng chÆc # võa ra th«n bªn ngoµi ta lo l¾ng ng­¬i liÒn ®Çu ng­êi khã gi÷ ®­îc liÔu !") 
+end 
+end; 
 
-function  OnCancel()
-   Talk(1,"","Kh«ng tiÒn kh«ng thÓ ngåi thuyÒn! ")
+function OnCancel() 
+Talk(1,"","Kh«ng cã tiÒn kh«ng thÓ ngåi ! ") 
 end;

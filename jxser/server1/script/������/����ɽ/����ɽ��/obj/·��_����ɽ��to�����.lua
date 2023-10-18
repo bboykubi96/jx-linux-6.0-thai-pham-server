@@ -1,8 +1,8 @@
---¶«±±Çø\³¤°×É½\³¤°×É½½Å\obj\Â·±ê_³¤°×É½½ÅtoÁÙÓå¹Ø.lua
---by lixin @20050915
+-- script viet hoa By http://tranhba.com  ®«ng b¾c khu \ Tr­êng b¹ch s¬n \ Tr­êng b¹ch s¬n ch©n \obj\ b¶ng chØ ®­êng _ Tr­êng b¹ch s¬n ch©n to tr­íc khi du quan .lua 
+-- script viet hoa By http://tranhba.com by lixin @20050915 
 
-function main(sel)
+function main(sel) 
 
-Say("§i L©m Du Quan", 0)
+Say("§i tr­íc khi du quan ", 0) 
 
 end;

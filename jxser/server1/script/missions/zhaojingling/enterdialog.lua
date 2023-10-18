@@ -109,7 +109,17 @@ local tbAllPaiMingAward =
 
 local szRemoteScript = "\\script\\event\\zhaojingling\\event.lua"
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function dialogmain()
+	--dofile("script/missions/zhaojingling/enterdialog.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if huanluyenmocnhan == 0 then
+		Say("Chøc n¨ng huÊn luyÖn méc nh©n t¹m ®ãng")
+		return
+	end
+
 	local tbOpt = {}
 	local szTitleMsg = "<npc>Chµng trai trÎ, ng­¬i muèn huÊn luyÖn n¨ng lùc ph¶n øng cña m×nh kh«ng? Thö t×m cµng nhiÒu <color=yellow> Méc Nh©n <color> nhĞ, sÏ nhËn ®­îc phÇn th­ëng"
 	local szTitleMsg = format("%s, mçi ngµy ng­¬i chØ cã <color=yellow>%d<color>lÇn c¬ héi cã thÓ tham gia miÔn phİ, cè g¾ng tËp luyÖn ®i nhĞ!", szTitleMsg, MAXGAMETIME)

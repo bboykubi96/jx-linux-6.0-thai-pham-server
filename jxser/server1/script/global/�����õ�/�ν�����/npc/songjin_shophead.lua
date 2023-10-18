@@ -198,6 +198,16 @@ function get_TTTCAward(nRank)
 			{nExp =300e6},
 			{nExp =200e6}								
 		};
+		if nRank==1 then
+		PlayerFunLib:AddSkillState(1689,20,3,18*60*60*24*5,1)
+		tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1},nCount=200,},}, "test", 1);
+	elseif nRank==2 then
+		PlayerFunLib:AddSkillState(1690,20,3,18*60*60*24*5,1)
+
+	elseif nRank==3 then
+		PlayerFunLib:AddSkillState(1691,20,3,18*60*60*24*5,1)
+
+	end
 	local szLog = format("PhÇn th­ëng Tèng Kim Thiªn Tö Tham ChiÕn h¹ng %d", nRank)
-	tbAwardTemplet:GiveAwardByList(tbExp[nRank], szLog)
+	--tbAwardTemplet:GiveAwardByList(tbExp[nRank], szLog)
 end

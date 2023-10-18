@@ -18,13 +18,13 @@ WLLS_DATA = {
 			ladder = 10221,
 			map = {
 				{396, 560, 397, "(1)"},
-				{398, 561, 399, "(2)"},
-				{400, 562, 401, "(3)"},
-				{402, 563, 403, "(4)"},
-				{404, 564, 405, "(5)"},
-				{406, 565, 407, "(6)"},
-				{408, 566, 409, "(7)"},
-				{410, 567, 411, "(8)"},
+				--{398, 561, 399, "(2)"},
+				--{400, 562, 401, "(3)"},
+				--{402, 563, 403, "(4)"},
+				--{404, 564, 405, "(5)"},
+				--{406, 565, 407, "(6)"},
+				--{408, 566, 409, "(7)"},
+				--{410, 567, 411, "(8)"},
 			},
 		},
 		{
@@ -33,13 +33,13 @@ WLLS_DATA = {
 			ladder = 10222,
 			map = {
 				{540, 570, 541, "(1)"},
-				{542, 571, 543, "(2)"},
-				{544, 572, 545, "(3)"},
-				{546, 573, 547, "(4)"},
-				{548, 574, 549, "(5)"},
-				{550, 575, 551, "(6)"},
-				{552, 576, 553, "(7)"},
-				{554, 577, 555, "(8)"},
+				--{542, 571, 543, "(2)"},
+				--{544, 572, 545, "(3)"},
+				--{546, 573, 547, "(4)"},
+				--{548, 574, 549, "(5)"},
+				--{550, 575, 551, "(6)"},
+				--{552, 576, 553, "(7)"},
+				--{554, 577, 555, "(8)"},
 			},
 		},
 	},
@@ -96,7 +96,7 @@ WLLS_DATA = {
 		local n_lid, n_mtype, n_job, str_lgname, n_memcount = wlls_lg_info()
 		if (FALSE(n_lid)) then
 			wlls_descript("<enter>    LÇn nµy "..str_des.."Khi <color=red>song ®Êu s­ ®å<color>, b¹n cã thÓ chän lËp chiÕn ®éi, còng cã thÓ gia nhËp chiÕn ®éi kh¸c. §éi tr­ëng gia nhËp ®éi viªn cÇn ph¶i lµ ®å ®Ö ch­a xuÊt s­ cña ®éi tr­ëng. Sau khi ®éi tr­ëng vµ ®å ®Ö tæ chøc ®éi xong, vµ "..str_des.."§èi tho¹i víi Quan viªn, chän '§éi thi ®Êu"..str_des.."cña t«i', chän nh÷ng ®éi h÷u gia nhËp trong ®éi m×nh lµ ®­îc. Thµnh viªn ®éi thi ®Êu nhiÒu nhÊt <color=red>2 ng­êi<color>",
-				"Ta muèn lËp"..str_des.."nhãm/wlls_want2create",
+				"Ta muèn lËp "..str_des.." nhãm/wlls_want2create",
 				"Ta chØ ®Õn xem th«i/OnCancel")
 			return
 		end

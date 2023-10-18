@@ -1,4 +1,4 @@
---钟灵秀(567)，生于每天00：05，在224,1889,2973
+
 function main()
 	mapindex = SubWorldID2Idx(224)
 	if (mapindex < 0 ) then

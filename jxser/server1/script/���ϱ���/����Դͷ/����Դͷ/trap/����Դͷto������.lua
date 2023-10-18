@@ -1,9 +1,9 @@
---西南北区 长江源头to峨嵋派
---Trap ID：西南北区 60
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu Trng giang ng鋘 ngu錸 to ph竔 Nga Mi 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 60 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(13, 1815, 5371);
+SetFightState(1) 
+NewWorld(13, 1815, 5371); 
 
 end;

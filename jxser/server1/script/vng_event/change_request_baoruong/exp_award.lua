@@ -1,63 +1,67 @@
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\vng_lib\\bittask_lib.lua")
 tbvng_ChestExpAward = {}
-tbvng_ChestExpAward.MAX_EXP_PER_DAY = 50
+tbvng_ChestExpAward.MAX_EXP_PER_DAY = 750
 tbvng_ChestExpAward.TSK_DAY = 2744
 --tbvng_ChestExpAward.TSK_EXP = 2742
+
+tbvng_ChestExpAward.MAX_TRONG_NGAY = 1000
+tbvng_ChestExpAward.TASK_TRONG_NGAY = 2745
+
 tbvng_ChestExpAward.tbBitTask = {
 	["Tèng Kim BÝ B¶o"] = {
 		nTaskID = 2705,
 		nStartBit = 1,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["B¶o r­¬ng v­ît ¶i"] = {
 		nTaskID = 2705,
 		nStartBit = 8,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["B¶o R­¬ng Thñy TÆc"] = {
 		nTaskID = 2705,
 		nStartBit = 15,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["TÝn Sø B¶o R­¬ng"] = {
 		nTaskID = 2705,
 		nStartBit = 22,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["Viªm §Õ BÝ B¶o"] = {
 		nTaskID = 2706,
 		nStartBit = 1,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["VÖ Trô LÔ Bao"] = {
 		nTaskID = 2706,
 		nStartBit = 8,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["C«ng Thµnh LÔ Bao (míi)"] = {
 		nTaskID = 2706,
 		nStartBit = 15,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["Thiªn Tr× BÝ B¶o"] = {
 		nTaskID = 3080,
 		nStartBit = 1,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 	["B¶o R­¬ng KiÕm Gia"] = {
 		nTaskID = 3080,
 		nStartBit = 9,
 		nBitCount = 7,
-		nMaxValue = 50,
+		nMaxValue = 500,
 	},
 }
 function tbvng_ChestExpAward:ExpAward(nValue, strItemName)
@@ -72,10 +76,11 @@ function tbvng_ChestExpAward:ExpAward(nValue, strItemName)
 		for key, val in self.tbBitTask do
 			%tbVNG_BitTask_Lib:setBitTask(val, 0)
 		end
+		SetTask(self.TASK_TRONG_NGAY, 0)
 	else
 		if %tbVNG_BitTask_Lib:isMaxBitTaskValue(tbBitTSK_Exp) == 1 then
 			Msg2Player(format("H«m nay ®· nhËn ®ñ <color=yellow>%d <color>triÖu kinh nghiÖm, kh«ng thÓ nhËn thªm.", self.MAX_EXP_PER_DAY))
-			return
+			return 1
 		end
 	end
 	
@@ -83,7 +88,17 @@ function tbvng_ChestExpAward:ExpAward(nValue, strItemName)
 	if (nTskExpValue + nValue/1e6) > self.MAX_EXP_PER_DAY then
 		nValue = (self.MAX_EXP_PER_DAY - nTskExpValue)*1e6
 	end
-	--SetTask(self.TSK_EXP, GetTask(self.TSK_EXP) + nValue/1e6)
+	
+	local dasudung = GetTask(self.TASK_TRONG_NGAY)
+	if dasudung >= self.MAX_TRONG_NGAY then
+		Msg2Player(format("H«m nay ®· nhËn ®ñ <color=yellow>%d <color> triÖu ®iÓm, kh«ng thÓ nhËn thªm.", self.MAX_TRONG_NGAY))
+		return 1
+	end
+	SetTask(self.TASK_TRONG_NGAY, GetTask(self.TASK_TRONG_NGAY) + nValue/1000000)
+	dasudung = GetTask(self.TASK_TRONG_NGAY)
+	Msg2Player("H«m nay ®· sö dông nhËn ®­îc : <color=pink>" .. dasudung .. "<color> triÖu ®iÓm kinh nghiÖm")
+
+	SetTask(self.TSK_EXP, GetTask(self.TSK_EXP) + nValue/1e6)
 	local nNextValue = nTskExpValue + nValue/1e6
 	%tbVNG_BitTask_Lib:setBitTask(tbBitTSK_Exp, nNextValue)
 	AddOwnExp(nValue)

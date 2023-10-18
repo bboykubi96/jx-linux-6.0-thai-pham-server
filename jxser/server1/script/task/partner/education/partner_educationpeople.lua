@@ -4,17 +4,17 @@
 -- CreateTime	:	2005-07-06 14:34:15
 -- Desc			:  	¸÷Í¬°é½ÌÓıÈÎÎñnpc¶Ô»°
 -------------------------------------------------------------------------
-Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
-Include("\\script\\task\\partner\\partner_problem.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
+Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
+Include("\\script\\task\\partner\\partner_problem.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
 Include("\\script\\task\\partner\\partner_head.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
 IncludeLib("PARTNER")
 
-partner_birthday={"Thö","Ng­u"," hæ ","Thá","Long","Xµ","M·","D­¬ng","HÇu","Kª","CÈu","Tr­ "} 
-partner_caimei ={"Bóa","KĞo","Bao"}
+partner_birthday={"Êó","Å£","»¢","ÍÃ","Áú","Éß","Âí","Ñò","ºï","¼¦","¹·","Öí"}
+partner_caimei  ={"Ê¯Í·","¼ô×Ó","²¼"}
 
 function partner_keepjiguan1(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã hîp c¸ch, cho ta ngoan ngo·n tr¶ lêi vÊn ®Ò b¹n ®ång hµnh ®i.")
+		Msg2Player("ÄãÃ»ºÏ¸ñ£¬¸øÎÒ¹Ô¹Ô»Ø´ğÍ¬°éÎÊÌâ°É¡£")
 		partner_edu(3,1,29,3,1228,2,1,1)
 	elseif ( nChange == 1 ) then
 		jiguan1_giveprize()
@@ -23,7 +23,7 @@ end
 
 function partner_keepjiguan2(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã hîp c¸ch, cho ta ngoan ngo·n tr¶ lêi vÊn ®Ò b¹n ®ång hµnh ®i")
+		Msg2Player("ÄãÃ»ºÏ¸ñ£¬¸øÎÒ¹Ô¹Ô»Ø´ğÍ¬°éÎÊÌâ°É¡£")
 		partner_edu(3,1,29,3,1228,4,1,2)
 	elseif ( nChange == 1 ) then
 		jiguan2_giveprize()
@@ -32,7 +32,7 @@ end
 
 function partner_keepjiguan3(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã hîp c¸ch, cho ta ngoan ngo·n tr¶ lêi vÊn ®Ò b¹n ®ång hµnh ®i.")
+		Msg2Player("ÄãÃ»ºÏ¸ñ£¬¸øÎÒ¹Ô¹Ô»Ø´ğÍ¬°éÎÊÌâ°É¡£")
 		partner_edu(3,1,29,3,1228,6,1,3)
 	elseif ( nChange == 1 ) then
 		jiguan3_giveprize()
@@ -41,7 +41,7 @@ end
 
 function partner_keepjiguan4(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã hîp c¸ch, cho ta ngoan ngo·n tr¶ lêi vÊn ®Ò b¹n ®ång hµnh ®i.")
+		Msg2Player("ÄãÃ»ºÏ¸ñ£¬¸øÎÒ¹Ô¹Ô»Ø´ğÍ¬°éÎÊÌâ°É¡£")
 		partner_edu(3,1,29,3,1228,8,1,4)
 	elseif ( nChange == 1 ) then
 		jiguan4_giveprize()
@@ -50,7 +50,7 @@ end
 
 function partner_keepzhuofeifan(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("Ng­¬i kh«ng cã hîp c¸ch, cho ta ngoan ngo·n tr¶ lêi vÊn ®Ò b¹n ®ång hµnh ®i.")
+		Msg2Player("ÄãÃ»ºÏ¸ñ£¬¸øÎÒ¹Ô¹Ô»Ø´ğÍ¬°éÎÊÌâ°É¡£")
 		partner_edu(3,1,29,3,1228,10,1,5)
 	elseif ( nChange == 1 ) then
 		zhuofeifan_giveprize()
@@ -59,16 +59,16 @@ end
 
 function partner_keepheishadizi(nChange)
 	if ( nChange == 0 ) then
-		Msg2Player("ThËt xin lçi, ng­¬i kh«ng tr¶ lêi chİnh x¸c, ta kh«ng thÓ nãi cho ng­¬i biÕt c¸i g× ")
+		Msg2Player("¶Ô²»Æğ£¬ÄãÃ»ÓĞ»Ø´ğÕıÈ·£¬ÎÒ²»ÄÜ¸æËßÄãÊ²Ã´¡£")
 	elseif ( nChange == 1 ) then
 		local Uworld1235 = nt_getTask(1235)
 			  nt_setTask(1235,Uworld1235-1)
-			if ( Uworld1235 - 1 <= 0 ) then 
-                               nt_setTask(1230,12) 
-                               Describe(DescLink_HeiShaDizi..": Kh«ng sai, b»ng h÷u, ng­¬i muèn bİ tŞch ®ang ë trªn tay cña ta ! ta lËp tøc ®em bİ tŞch ®­a ®Õn chç L·o S­, ng­¬i cã thÓ trë vÒ ®i t×m H¾c S¸t l·o s­ häc tËp ba ®o¹n ®¸nh. Cè g¾ng lªn ",1,"KÕt thóc ®èi tho¹i /heishadizi_chenggong") 
-                        else 
-                               Describe(DescLink_HeiShaDizi..": ThËt xin lçi b»ng h÷u, bİ tŞch kh«ng cã ë ®©y trong tay ta, ng­¬i h·y t×m ng­êi kh¸c ®i. BÊt qu¸ nh­ ng­¬i vËy cùc khæ ®¸p ®Ò, ta lµ h¼n cho ng­¬i chót t­ëng th­ëng.",2,"NhËn lÊy phÇn th­ëng /heishadizi_giveprize","KÕt thóc ®èi tho¹i /heishadizi_geiyujiangli") 
-                        end
+			  if ( Uworld1235 - 1 <= 0 ) then
+			  		nt_setTask(1230,12)
+					Describe(DescLink_HeiShaDizi.."£ºÃ»´í£¬ÅóÓÑ£¬ÄãÒªµÄÃØ¼®¾ÍÔÚÎÒµÄÊÖÉÏ£¡ÎÒÁ¢¿Ì½«ÃØ¼®ËÍµ½ÀÏÊ¦´¦£¬Äã¿ÉÒÔ»ØÈ¥ÕÒºÚÉ·ÀÏÊ¦Ñ§Ï°Èı¶Î»÷ÁË¡£¼ÓÓÍ",1,"½áÊø¶Ô»°/heishadizi_chenggong")
+			  else
+					Describe(DescLink_HeiShaDizi.."£º¶Ô²»Æğ°¡ÅóÓÑ£¬ÃØ¼®²»ÔÚÎÒÊÖÀï£¬Äã»¹ÊÇÕÒ±ğÈË°É¡£²»¹ıÄãÕâÑùĞÁ¿àµÄ´ğÌâ£¬ÎÒÊÇÓ¦¸Ã¸øÄãĞ©½±ÀøÅ¶¡£",2,"ÁìÈ¡½±Àø/heishadizi_giveprize","½áÊø¶Ô»°/heishadizi_geiyujiangli")
+			  end
 	end
 end
 
@@ -111,28 +111,33 @@ partner_keeponproblem = {
 
 
 
-----------------------------------------------------------¢¬Çµ¶Ô»°---------------------------------------------------
+----------------------------------------------------------Â¬Çà¶Ô»°---------------------------------------------------
 function pe_luqing()   
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	local Uworld1228 = nt_getTask(1228)                        --Í¬°é½ÌÓıÈÎÎñÌÆÓ°ÈÎÎñ±äÁ¿
 	local Uworld1229 = nt_getTask(1229)                        --Í¬°é½ÌÓıÈÎÎñ°×É·ÈÎÎñ±äÁ¿
 	local Uworld1230 = nt_getTask(1230)                        --Í¬°é½ÌÓıÈÎÎñºÚÉ·ÈÎÎñ±äÁ¿
-	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒ¢Ë®ÈÎÎñ±äÁ¿
+	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒÂË®ÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 and Uworld1227 == 20 and Uworld1228 == 20 and Uworld1229 == 20 and Uworld1230 == 20 and Uworld1231 == 20) then 
-              Describe(DescLink_LuQing..": MÊy ng­êi chóng ta gi¸o dôc còng kÕt thóc. Ng­¬i b©y giê cã thÓ ®i t×m kiÕm Hoµng ®Ö tö.",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( Uworld1226 == 10 ) and (Uworld1227 == 0) then 
-              Describe(DescLink_LuQing..": Nhµ ng­¬i lµ tíi lµm nhiÖm vô gi¸o dôc. Ta yªu c©u xİch ¶nh ng· bÖnh, ®ang ph¸t ®éng tu luyÖn c¸c vâ sÜ gióp mét tay t×m th¶o d­îc ®©y. Ng­¬i cã thÓ ë <color=red> bªn tr¸i xuèng nói trªn s¬n ®¹o <color> t×m ®­îc <color=red> ba nam mét n÷ <color> bèn vâ sÜ. Kia gióp ng­êi ®Çn ph¶i cã thÓ, nÕu nh­ ng­¬i cã thÓ gióp ta ®em trŞ liÖu xİch ¶nh ®İch th¶o d­îc <color=red> mang vÒ <color>, ta sÏ cho ng­¬i mét mÆt vâ sÜ lµm, cã thÓ mang cho ng­¬i rÊt nhiÒu chç tèt nga.<enter>" 
-            .."<color=green> nhiÖm vô t­ëng th­ëng : B¹n ®ång hµnh kü n¨ng kim c­¬ng kh«ng ph¸, L«i ®×nh tù gi¸p <color>",2,"B¾t ®Çu nhiÖm vô/luqing_findmedicin","KÕt thóc ®èi tho¹i /no") 
-       elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-             Describe(DescLink_LuQing..": Th¶o d­îc ng­¬i còng lÊy ®­îc ? thËt tèt qu¸, ngùa cña ta mµ ®­îc cøu råi. Tèt l¾m, ta sÏ nãi cho ng­¬i biÕt mét İt khiÕu m«n ®i :<enter>,tèt l¾m, ë chç nµy cña ta ng­¬i ®· häc kh«ng tíi nhiÒu thø h¬n, ®i t×m nh÷ng ng­êi kh¸c ®i.B¶o träng ! nh×n thÊy ta ®éc c« s­ huynh ®İch thêi ®iÓm , xin mêi thay ta th¨m hái h¾n.",2,"NhËn lÊy phÇn th­ëng /luqing_getprize","Sau nµy trë l¹i /no") 
-       elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) then 
-            Describe(DescLink_LuQing..": Kh«ng ph¶i lµ nãi cho ng­¬i biÕt sao, ng­¬i cã thÓ ë <color=red> bªn tr¸i xuèng nói trªn s¬n ®¹o <color> t×m ®­îc <color=red> ba nam mét n÷ <color> bèn vâ sÜ. Kia gióp ng­êi ®Çn ph¶i cã thÓ, nÕu nh­ ng­¬i cã thÓ gióp ta ®em trŞ liÖu xİch ¶nh ®İch th¶o d­îc <color=red> mang vÒ <color> , ta sÏ cho ng­¬i mét mÆt vâ sÜ lµm, cã thÓ mang cho ng­¬i rÊt nhiÒu chç tèt.",1, 
-            "KÕt thóc ®èi tho¹i /no") 
-       else 
-            Describe(DescLink_LuQing..": RÊt nhiÒu n¨m tr­íc ®éc c« s­ huynh ®øng ë giang hå cao nhÊt ngän nói kia trªn ®Ønh nói, ta nhí vâ l©m c¸c ®Ö tö nhÊt tÒ rót ra ba th­íc kiÕm phong ®èi víi h¾n thÒ hiÖu mÖnh , ®ã lµ mét thÇn tho¹i ®i. N¨m ngo¸i ta ngoµi ı muèn nhËn ®­îc mét phong tİn sø, h¾n nãi gÇn nhÊt Hµnh S¬n ®ang tuyÕt, trêi l¹nh nhanh h¬n kh«ng chŞu næi. RÊt muèn t×m ng­êi uèng r­îu, l¹i ph¸t gi¸c kh«ng cã ng­êi nµo nh­ng kh¸m céng Èm. H¾n nãi sÏ mét mùc «n trø kia vß hµnh tïng r­îu chê ta. A a, ®óng vËy, ta chç nµy lß löa thŞnh v­îng mÊy thËp niªn, v¸ch nói bªn ®İch ®ç quyªn còng khai c¸m ¬n mÊy thËp niªn, ta muèn n¨m x­a nh÷ng thø kia h©m mé suy nghÜ còng hãa lµm giã rĞt thæi vµo s­ huynh ®İch trong th©n thÓ liÔu ®i. Ta ®©y sÏ ph¶i ®i båi h¾n, còng kh«ng biÕt trªn ®­êng cã hay kh«ng b×nh tÜnh, thiªn h¹ lung tung ph¶i qu¸ l©u.<enter>",1,"KÕt thóc ®èi tho¹i /no") 
-       end
+	if ( Uworld1226 == 10  and  Uworld1227 == 20  and  Uworld1228 == 20  and  Uworld1229 == 20  and  Uworld1230 == 20  and  Uworld1231 == 20) then
+		Describe(DescLink_LuQing.."£ºÎÒÃÇ¼¸¸öÈËµÄ½ÌÓı¶¼½áÊøÁË¡£ÄãÏÖÔÚ¿ÉÒÔÈ¥ÕÒ½£»ÊÍ½µÜÁË¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 0 ) then  	  
+	--Â¬Çà´¦ÈÎÎñÃ»ÓĞ´¥·¢£¿£¿£¿£¿£¿Ã»ÓĞ°ÑÈÎÎñ½±Àø¸æËßÍæ¼Ò
+		Describe(DescLink_LuQing.."£ºÅ¶£¬ÄãÊÇÀ´×ö½ÌÓıÈÎÎñµÄ°¡¡£ÎÒµÄ°®¾Ô³àÓ°Éú²¡ÁË£¬Õı·¢¶¯ĞŞÁ¶µÄÎäÊ¿ÃÇ°ïÃ¦ÕÒ²İÒ©ÄØ¡£Äã¿ÉÒÔÔÚ<color=red>×ó±ßÏÂÉ½µÄÉ½µÀÉÏ<color>ÕÒµ½<color=red>ÈıÄĞÒ»Å®<color>ËÄ¸öÎäÊ¿¡£ÄÇ°ï¼Ò»ï±¿µÃ¿ÉÒÔ£¬Èç¹ûÄãÄÜ°ïÎÒ°ÑÖÎÁÆ³àÓ°µÄ²İÒ©<color=red>´ø»ØÀ´<color>£¬ÎÒ¾Í»á¸øÄãÒ»ÃæÎäÊ¿Áî£¬ÄÜ´ø¸øÄãºÜ´óµÄºÃ´¦Å¶¡£<enter>"
+		.."<color=green>ÈÎÎñ½±Àø£ºÍ¬°é¼¼ÄÜ'½ğ¸Õ²»ÆÆ'¡¢'À×öª»¤¼×'<color>",2,"¿ªÊ¼ÈÎÎñ/luqing_findmedicin","½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then  
+	--ÈÎÎñÒÑÍê³É
+		Describe(DescLink_LuQing.."£º²İÒ©Äã¶¼ÄÃµ½ÁË£¿Ì«ºÃÁË£¬ÎÒµÄÂí¶ùÓĞ¾ÈÁË¡£ºÃÁË£¬ÎÒÔÙ¸æËßÄãÒ»Ğ©ÇÏÃÅ°É£º<enter>"
+		.."<color=yellow>Í¬°é¾ÍÊÇÒ»¸öÅã°éÄã¹²Í¬´³µ´½­ºşµÄNPC¡£Í¬°é¿ÉÒÔ°ïÄã´ò¹ÖÁ·¼¶£¬ÔÚÄãºÍ±ğÈËPKÊ±ÖúÄãÒ»±ÛÖ®Á¦£¬»¹»áÅ¼¶û¸øÄãĞ©ÈÎÎñÀ´ÈÃÄã»ñµÃÒ»Ğ©Õä¹ó½±Àø£¬µ±È»ÔÚÄã¼ÅÄ¯µÄÊ±ºòÒ²¿ÉÒÔÊÔ×Å¸úÍ¬°éËµËµ»°£¬Ëµ²»¶¨»á³öÏÖÓĞÈ¤µÄÊÂÇé¡£Äã¿ÉÒÔÔÚÖ¸¶¨µÄNpC´¦½Óµ½¸÷ÖÖÍ¬°é»ñµÃÈÎÎñ£¬µ±ÄãÍê³ÉÁËÕâĞ©ÈÎÎñ¾Í¿ÉÒÔ»ñµÃÄãµÄÍ¬°éÁË¡£ÄãÖ»ÒªÔÚÍ¬°éµÄ¿ì½İÀ¸ÀïÕÒµ½¡°Í¬°éµÄ»ù±¾ÊôĞÔ¡±°´Å¥È»ºó×ó¼üµ¥»÷Ëü¾Í¿ÉÒÔÁË¡£µ±ÄãÓµÓĞ¶à¸öÍ¬°éµÄÊ±ºòÄãÖ»ÒªÔÚÍ¬°éÊôĞÔÃæ°åµÄÉÏ·½µãÑ¡ÄãÏëÒª²é¿´µÄÍ¬°éµÄ±êÇ©¾Í¿ÉÒÔÁË¡£<color><enter>"
+		.."ºÃÁË£¬ÔÚÎÒÕâÀïÄãÒÑ¾­Ñ§²»µ½¸ü¶àµÄ¶«Î÷£¬È¥ÕÒÆäËûÈË°É¡£±£ÖØ£¡¼ûµ½ÎÒ¶À¹ÂÊ¦ĞÖµÄÊ±ºò£¬Çë´úÎÒÎÊºòËû¡£",2,"ÁìÈ¡½±Àø/luqing_getprize","ÉÔºóÔÙÀ´/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) then  
+	--¸Õ½Óµ½Â¬Çà´¦ÈÎÎñ	
+		Describe(DescLink_LuQing.."£º²»ÊÇ¸æËßÄãÁËÂğ£¬Äã¿ÉÒÔÔÚ<color=red>×ó±ßÏÂÉ½µÄÉ½µÀÉÏ<color>ÕÒµ½<color=red>ÈıÄĞÒ»Å®<color>ËÄ¸öÎäÊ¿¡£ÄÇ°ï¼Ò»ï±¿µÃ¿ÉÒÔ£¬Èç¹ûÄãÄÜ°ïÎÒ°ÑÖÎÁÆ³àÓ°µÄ²İÒ©<color=red>´ø»ØÀ´<color>£¬ÎÒ¾Í»á¸øÄãÒ»ÃæÎäÊ¿Áî£¬ÄÜ´ø¸øÄãºÜ´óµÄºÃ´¦¡£",1,
+		"½áÊø¶Ô»°/no")	
+	else
+		Describe(DescLink_LuQing.."£ºĞí¶àÄêÇ°¶À¹ÂÊ¦ĞÖÕ¾ÔÚ½­ºş×î¸ßµÄÄÇ×ùÉ½·åÉÏ£¬ÎÒ¼ÇµÃÎäÁÖ×ÓµÜÃÇÆëÆë°Î³öÈı³ß½£·æ¶ÔËûÊÄËÀĞ§Ãü£¬ÄÇÊÇÒ»¸öÉñ»°°É¡£È¥ÄêÎÒÒâÍâÊÕµ½Ò»·âËûµÄĞÅ£¬ËûËµ×î½üºâÉ½ÕıÑ©£¬ÌìÀäµÃ¿ìÊÜ²»ÁËÁË¡£ºÜÏëÕÒ¸öÈËºÈ¾Æ£¬È´·¢¾õÃ»ÓĞË­¿É¿±¹²Òû¡£ËûËµ»áÒ»Ö±ÎÂ×ÅÄÇÌ³ºâËÉ¾ÆµÈÎÒ¡£ºÇºÇ£¬ÊÇ°¡£¬ÎÒÕâÀïÂ¯»ğÍúÊ¢ÁË¼¸Ê®Äê£¬É½ÑÂ±ßµÄ¶Å¾éÒ²¿ªĞ»ÁË¼¸Ê®Äê£¬ÎÒÏëÔçÄêÄÇĞ©ÏÛÄ½µÄË¼Ğ÷Ò²»¯×öº®·ç´µÈëÊ¦ĞÖµÄÉíÌåÀïÁË°É¡£ÎÒÕâ¾ÍÒªÈ¥ÅãËûÁË£¬Ò²²»ÖªÂ·ÉÏÊÇ·ñÆ½¾¸£¬ÌìÏÂ·×ÂÒµÃÌ«¾ÃÁË¡£<enter>",1,"½áÊø¶Ô»°/no")
+	end
 		
 end
 
@@ -141,17 +146,17 @@ function luqing_findmedicin()
 		nt_setTask(1227,10)
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,100 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+100
-		Msg2Player("L­ Thanh cho ng­¬i ®i bªn tr¸i ®­êng xuèng nói th­îng, n¬i ®ã cã ba nam mét n÷ bèn vŞ vâ sÜ.")
+		Msg2Player("Â¬ÇàÈÃÄãÈ¥×ó±ßÏÂÉ½µÄÂ·ÉÏ£¬ÄÇÀïÓĞÈıÄĞÒ»Å®ËÄÎ»ÎäÊ¿¡£")
 	end
 end
 
-function luqing_getprize()                                          --»ñµÃÔÚ¢¬Çµ´¦µÄ×Ü½±Àø
+function luqing_getprize()                                          --»ñµÃÔÚÂ¬Çà´¦µÄ×Ü½±Àø
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()   --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddSkill(partnerindex,0,549,1)                      --Ôö¼ÓÍ¬°é¿¹ĞÔ¼¼ÄÜ¡¶½ğ¸Õ²»ÆÆ¡·    
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc b¹n ®ång hµnh kü n¨ng ?Kim c­¬ng kh«ng ph¸?")
-		nt_setTask(1227,20)											--¢¬Çµ´¦µÄËùÓĞÈÎÎñÒÑ½áÊø
-		Msg2Player("Ng­¬i ®· hoµn thµnh ë L­ Thanh chç ta häc tËp, cã thÓ ®i H¾c b¹ch song s¸t, §­êng ?nh, thu y n­íc vî chång n¬i ®ã nh×n mét chót.")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶½ğ¸Õ²»ÆÆ¡·")
+		nt_setTask(1227,20)											--Â¬Çà´¦µÄËùÓĞÈÎÎñÒÑ½áÊø
+		Msg2Player("ÄãÒÑ¾­Íê³ÉÔÚÂ¬Çà´¦µÄÑ§Ï°£¬¿ÉÒÔÈ¥ºÚ°×Ë«É·£¬ÌÆÓ°¡¢ÇïÒÂË®·ò¸¾ÄÇÀïÇÆÇÆ¡£")
 	end
 end
 
@@ -159,22 +164,22 @@ end
 
 function pe_moxiaofeng()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),1) ~= 1 ) then 
-               Describe(DescLink_MoXiaoFeng..":<color=green>Phanh dª lµm thŞt bß th¶ lµm thó vui, sÏ tu mét uèng ba tr¨m chĞn. SÇm phu tö, ®an kh©u sinh, ®em vµo r­îu, qu©n sê dõng. Cïng qu©n ca mét khóc, xin mêi qu©n v× ta lãng tai nghe. Chu«ng ®ång hå cæ so¹n ngäc ch­a ®ñ ®¾t, chØ mong tr­êng say kh«ng phôc tØnh. X­a nay th¸nh hiÒn tÊt c¶ tŞch mŞch, duy cã uèng ng­êi l­u kú danh.<color><enter>" 
-             .." ®©y lµ §­êng triÒu ®¹i thi nh©n lı b¹ch ®İch kiÖt t¸c, say r­îu cuéc sèng, l­u danh d· sö. D­êng nµo thİch ı, ta chí c­êi phong nÕu cã thÓ thµnh tùu mét phen hoµi b·o, còng coi lµ kh«ng cã uæng ®Õn thÕ gian nµy ®i mét lÇn. C¸i g× ? ng­¬i lµ l« thanh l·o ®Çu kia t×m tíi muèn th¶o d­îc ®İch? Hõ hõ, muèn th¶o d­îc còng kh«ng ®¬n gi¶n nh­ vËy. Ta cã ba vÊn ®Ò, nÕu nh­ ng­¬i còng cã thÓ ®¸p ®èi víi, liÒn ®em trªn tay th¶o d­îc cho ng­¬i. §¸p kh«ng ®óng lêi cña, cöa ®Òu kh«ng cã.",2, 
-               "Ng­¬i cø hái /moxiaofeng_taskproblem", 
-               "Sau nµy l¹i tíi t×m ng­¬i ®i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),1) == 1 ) and ( GetBit(GetTask(1232),2) == 0 ) then 
-               Describe(DescLink_MoXiaoFeng..": §­îc råi, ta ®em ta chç nµy nhËn th­ëng cho ng­¬i . ",2,"NhËn lÊy phÇn th­ëng /moxiaofeng_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-                Describe(DescLink_MoXiaoFeng..": Ng­¬i ®· hoµn thµnh ë chóng ta bèn ng­êi ng­êi n¬i nµy tu hµnh, d­îc th¶o cÇm xong trë vÒ t×m L­ Thanh l·o ®Çu ®i.",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) then 
-                Describe(DescLink_MoXiaoFeng..": Uh, ta ®©y mét cöa ¶i ng­¬i ®· th«ng qua, ®i t×m phİa d­íi vâ sÜ ®i. Bän hä còng kh«ng ta nh­ vËy h¶o nãi chuyÖn, m×nh cÈn thËn.",1,"KÕt thóc ®èi tho¹i /no") 
-        else 
-               Describe(DescLink_MoXiaoFeng..": Chí c­êi ®iªn cuång chí c­êi phong, m­êi n¨m tËp kiÕm m­êi n¨m tïng. Th­ sinh ta ®· sím muèn kiÕm thö giang hå, kÑt long mét buæi s¸ng ph¶i cìi, vËy cßn kh«ng bay ®i cöu thiªn, thŞnh hµnh vò bé sao ? c¸p c¸p c¸p c¸p ha ha ..",1,"KÕt thóc ®èi tho¹i /no") 
-       end
+	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),1) ~= 1 ) then
+		Describe(DescLink_MoXiaoFeng.."£º<color=green>ÅëÑòÔ×Å£ÇÒÎªÀÖ£¬»áĞëÒ»ÒûÈı°Ù±­¡£á¯·ò×Ó£¬µ¤ÇğÉú£¬½«½ø¾Æ£¬¾ıÄªÍ£¡£Óë¾ı¸èÒ»Çú£¬Çë¾ıÎªÎÒ²à¶úÌı¡£ÖÓ¹ÄâÍÓñ²»×ã¹ó£¬µ«Ô¸³¤×í²»¸´ĞÑ¡£¹ÅÀ´Ê¥ÏÍ½Ô¼ÅÄ¯£¬Î©ÓĞÒûÕßÁôÆäÃû¡£<color><enter>"
+		.."ÕâÊÇÌÆ³¯´óÊ«ÈËÀî°×µÄ½Ü×÷£¬×í¾ÆÈËÉú£¬ÁôÃûÒ°Ê·¡£¶àÃ´µÄã«Òâ°¡£¬ÎÒÄªĞ¦·çÈôÄÜ³É¾ÍÒ»·¬±§¸º£¬Ò²ËãÃ»Í÷µ½ÕâÊÀ¼ä×ßÒ»Ôâ¡£Ê²Ã´£¿ÄãÊÇÂ¬ÇàÄÇÀÏÍ·ÕÒÀ´Òª²İÒ©µÄ£¿ºßºß£¬ÏëÒª²İÒ©¿ÉÃ»ÄÇÃ´¼òµ¥¡£ÎÒÓĞÈı¸öÎÊÌâ£¬Èç¹ûÄã¶¼ÄÜ´ğ¶Ô£¬¾Í°ÑÊÖÉÏµÄ²İÒ©¸øÄã¡£´ğ²»¶ÔµÄ»°£¬ÃÅ¶¼Ã»ÓĞ¡£",2,
+		"Ê²Ã´ÎÊÌâ£¿Äã¾¡¹ÜÎÊ/moxiaofeng_taskproblem",
+		"ÉÔºóÔÙÀ´ÕÒÄã°É/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),1) == 1 ) and ( GetBit(GetTask(1232),2) == 0 ) then
+		Describe(DescLink_MoXiaoFeng.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/moxiaofeng_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then
+		Describe(DescLink_MoXiaoFeng.."£ºÄãÒÑ¾­Íê³ÉÔÚÎÒÃÇËÄ¸öÈËÕâÀïµÄĞŞĞĞÁË£¬Ò©²İÄÃºÃ»ØÈ¥ÕÒÂ¬ÇàÀÏÍ·°É¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) then
+		Describe(DescLink_MoXiaoFeng.."£º¶÷£¬ÎÒÕâÒ»¹ØÄãÒÑ¾­Í¨¹ıÁË£¬È¥ÕÒÏÂÃæµÄÎäÊ¿°É¡£ËûÃÇ¿ÉÃ»ÎÒÕâÑùºÃ½²»°ÁË£¬×Ô¼ºĞ¡ĞÄ¡£",1,"½áÊø¶Ô»°/no")
+	else
+		Describe(DescLink_MoXiaoFeng.."£ºÄªĞ¦ñ²¿ñÄªĞ¦·ç£¬Ê®ÄêÏ°½£Ê®ÄêËÉ¡£ÊéÉúÎÒÔç¾ÍÏë½£ÊÔ½­ºşÁË£¬À§ÁúÒ»³¯µÃÍÑ£¬ÄÇ»¹²»·ÉÈ¥¾ÅÌì£¬·çĞĞÎè²½Âğ£¿¹ş¹ş¹ş¹ş¹ş¹ş¡­¡­",1,"½áÊø¶Ô»°/no")
+	end
 end
 
 function moxiaofeng_taskproblem()
@@ -187,104 +192,102 @@ function moxiaofeng_giveprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,430,1 )                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+430
 		nt_setTask(1232,SetBit(GetTask(1232),2,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç ta, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
-----------------------------------------------------------ÍÀ·òÅ£¢ú¢ú¶Ô»°-----------------------------------------
+----------------------------------------------------------ÍÀ·òÅ£ÂúÂú¶Ô»°-----------------------------------------
 function pe_niumanman()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÅ£¢ú¢úÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÅ£ÂúÂúÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),3) ~= 1 ) then 
-              Describe(DescLink_NiuManMan..": Ta lµ mét s¸t thñ, thu tiÒn b¸n m¹ng. Ng­¬i lµ muèn giÕt heo ®©y, hay lµ muèn giÕt ng­êi ? <enter>" 
-            .."A ? ng­¬i lµ cÇn d­îc liÖu ! Ta ngÊt, ng­êi tíi bÊt thiÖn kia ! Uh! §· nh­ vËy, vËy ng­¬i nhÊt ®Şnh ph¶i theo ta ch¬i mét trß ch¬i. Ch¬i bÊt qu¸ ta lêi cña ph¶i trë vÒ ®¸p vÊn ®Ò, <color=red> bÊt luËn ®¸p rÊt ®óng ®èi víi lçi ®Òu ph¶i sÏ cïng ta ch¬i <color>. Cho ®Õn <color=red> th¾ng <color> nhËn ta míi cã thÓ xuÊt quan. C¸i g× c¸i g× ? ta b¸ ®¹o ! LiÒn b¸ ®¹o, ng­¬i nãi ng­êi c¶ ®i.",3, 
-              "H¶o, b¾t ®Çu ®i /niumanman_startcaimei", 
-              "Nghe gi¶ng thuËt quy t¾c trß ch¬i/niumanman_guize", 
-              "Sau nµy l¹i tíi t×m ng­¬i ®i/no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),3) == 1 ) and ( GetBit(GetTask(1232),4) == 0 ) then 
-                Describe(DescLink_NiuManMan..": §­îc råi, ta ®em ta chç nµy nhËn th­ëng cho ng­¬i. ",2,"NhËn lÊy phÇn th­ëng /niumanman_giveprize","Sau nµy trë l¹i/no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-                Describe(DescLink_NiuManMan..": Ng­¬i ®· hoµn thµnh ë chóng ta bèn ng­êi ng­êi n¬i nµy tu hµnh, d­îc th¶o cÇm xong trë vÒ t×m L­ Thanh l·o ®Çu ®i . ",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),4) == 1 ) then 
-                Describe(DescLink_NiuManMan..": Uhm, ta ®©y mét cöa ¶i ng­¬i ®· th«ng qua, ®i t×m phİa d­íi vâ sÜ ®i. Bän hä ®iÓm tö còng kh«ng thiÓu, ng­¬i ph¶i cÈn thËn. ",1," KÕt thóc ®èi tho¹i /no") 
-        else 
-                Describe(DescLink_NiuManMan..": GiÕt mét ®ao, giÕt ng­êi còng lµ mét ®ao. Nh­ vËy thÕ nµo, nh©n hßa heo cã c¸i g× kh¸c nhau ? Thay v× giÕt heo, kh«ng b»ng giÕt chót heo chã kh«ng b»ng ng­êi cña. Ng­¬i nãi ®óng kh«ng ? tíi tíi tíi , chóng ta ch¬i c¸ trß ch¬i nh­ thÕ nµo ? ",2, 
-             "Ch¬i liÒn/niumanman_startcaimei", 
-             "Kh«ng r·nh kh«ng r·nh /no") 
-        end
+	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),3) ~= 1 ) then
+		Describe(DescLink_NiuManMan.."£ºÎÒÊÇÒ»¸öÉ±ÊÖ£¬ÊÕÇ®ÂôÃü¡£ÄãÊÇÒªÉ±ÖíÄØ£¬»¹ÊÇÒªÉ±ÈË£¿<enter>"
+		.."°¡£¿ÄãÊÇÒªÒ©²Ä£¡ÎÒÔÎ£¬À´Õß²»ÉÆÄÄ£¡¶÷£¡¼ÈÈ»Èç´Ë£¬ÄÇÄã±ØĞëÅãÎÒÍæÒ»¸öÓÎÏ·¡£Íæ²»¹ıÎÒµÄ»°¾ÍÒª»Ø´ğÎÊÌâ£¬<color=red>²»ÂÛ´ğµÃ¶Ô´í¶¼±ØĞëÔÙºÍÎÒÍæ<color>¡£Ö±µ½<color=red>Ó®<color>ÁËÎÒ²Å¿ÉÒÔ³ö¹Ø¡£Ê²Ã´Ê²Ã´£¿ÎÒ°ÔµÀ£¡¾Í°ÔµÀÁË£¬ÄãËµÕ¦Õû°É¡£",3,
+		"ºÃ°¡£¬¿ªÊ¼°É/niumanman_startcaimei",
+		"ÌıÅ£ÂúÂú½²ÊöÓÎÏ·¹æÔò/niumanman_guize",
+		"ÉÔºóÔÙÀ´ÕÒÄã°É/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),3) == 1 ) and ( GetBit(GetTask(1232),4) == 0 ) then
+		Describe(DescLink_NiuManMan.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/niumanman_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then
+		Describe(DescLink_NiuManMan.."£ºÄãÒÑ¾­Íê³ÉÔÚÎÒÃÇËÄ¸öÈËÕâÀïµÄĞŞĞĞÁË£¬Ò©²İÄÃºÃ»ØÈ¥ÕÒÂ¬ÇàÀÏÍ·°É¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),4) == 1 ) then
+		Describe(DescLink_NiuManMan.."£º¶÷£¬ÎÒÕâÒ»¹ØÄãÒÑ¾­Í¨¹ıÁË£¬È¥ÕÒÏÂÃæµÄÎäÊ¿°É¡£ËûÃÇµÄµã×ÓÒ²²»ÉÙ£¬ÄãÒªĞ¡ĞÄÅ¶£¬ºÙºÙ¡£",1,"½áÊø¶Ô»°/no")
+	else
+		Describe(DescLink_NiuManMan.."£ºÉ±ÖíÒ»µ¶£¬É±ÈËÒ²ÊÇÒ»µ¶¡£ÕâÑùµÄÊÀµÀ£¬ÈËºÍÖíÓĞÊ²Ã´Çø±ğ£¿ÓëÆäÉ±Öí£¬²»ÈçÉ±Ğ©Öí¹·²»ÈçµÄÈË¡£ÄãËµ¶Ô°É£¿À´À´À´£¬ÎÒÃÇÍæ¸öÓÎÏ·ÈçºÎ£¿",2,
+		"ºÃ°¡£¬Íæ¾ÍÍæ/niumanman_startcaimei",
+		"Ã»¿ÕÃ»¿Õ/no")
+	end
 end
 
 function niumanman_startcaimei()
-	Describe(DescLink_NiuManMan..": §­îc råi, nh­ vËy b©y giê ng­¬i lùa chän mét tæ sinh tiÕu b¾t ®Çu cïng ta tranh tµi ®i, hõ hõ. Thua ng­¬i !",3, 
-         "Ta lùa chän thö ng­u hæ thá long xµ c¸i nµy tæ/niumanman_bisai1", 
-         "Ta lùa chän m· dª hÇu gµ chã heo c¸i nµy tæ/niumanman_bisai2", 
-         "Chê chót trë l¹i ch¬i /no")
+	Describe(DescLink_NiuManMan.."£ººÃ°É£¬ÄÇÃ´ÏÖÔÚÄãÑ¡ÔñÒ»×éÉúĞ¤¿ªÊ¼ºÍÎÒ±ÈÈü°É£¬ºßºß¡£ÊäËÀÄã£¡",3,
+	"ÎÒÑ¡ÔñÊóÅ£»¢ÍÃÁúÉßÕâ×é/niumanman_bisai1",
+	"ÎÒÑ¡ÔñÂíÑòºï¼¦¹·ÖíÕâ×é/niumanman_bisai2",
+	"ÎÒ»¹ÊÇÔÙÔÍÄğÒ»ÏÂ£¬µÈÏÂÔÙÀ´Íæ/no")
 end
 
 function niumanman_guize()
-Describe(DescLink_NiuManMan..": Ta chç nµy cã <color=red> tö thö, xÊu xİ bß, dÇn hæ, m·o thá, thÇn long, tŞ xµ, ngä m·, kh«ng dª, th©n hÇu, dËu gµ, tuÊt chã, hîi heo <color> m­êi hai sinh tiÕu. Chóng ta tíi so lín nhá, cô thÓ quy t¾c lµ : Chóng ta ®em m­êi hai sinh tiÕu chia lµm hai tæ, tr­íc s¸u thö ng­u hæ thá long xµ lµm mét tæ. Sau s¸u m· dª hÇu gµ chã heo lµm mét tæ. Ng­¬i tïy ı chän lùa mét tæ tíi cïng ta so lín nhá. Tû nh­ ng­¬i lùa chän thö ng­u hæ thá long xµ c¸i nµy mét tæ, nh­ vËy nÕu nh­ ta ra c¸ hæ, ng­¬i ra c¸ thá, nh­ vËy ng­¬i so víi ta ®¹i. NÕu nh­ ta ra c¸ long, ng­¬i ra c¸ xµ, vËy th× ng­¬i ®¹i. Còng chİnh lµ dùa theo thø tù cµng ®øng hµng phİa sau cµng lín. BÊt qu¸ ®©y ng­êi cuèi cïng lµ so thø nhÊt nhá  tiÓu nh©n, còng chİnh lµ thö cã thÓ so víi xµ ®¹i. Chóng ta hai mét ng­êi ra mét sinh tiÕu, xem ai ®İch ®¹i. NÕu nh­ trung gian xuÊt hiÖn hai sinh tiÕu kh«ng ph¶i lµ tùa vµo cïng nhau t×nh huèng, nh­ ta ra c¸ hæ, ng­¬i ra c¸ xµ, nh­ vËy coi lµ ta th¾ng.?",2,
-                   "§· hiÓu, ®Ó cho ta trë vÒ/pe_niumanman",
-                   "Qu¸ khã kh¨n, kh«ng ch¬i /no")
+	Describe(DescLink_NiuManMan.."£ºÎÒÕâÀïÓĞ<color=red>×ÓÊó£¬³óÅ££¬Òú»¢£¬Ã®ÍÃ£¬³½Áú£¬ËÈÉß£¬ÎçÂí£¬Î´Ñò£¬Éêºï£¬ÓÏ¼¦£¬Ğç¹·£¬º¥Öí<color>Ê®¶şÉúĞ¤¡£ÎÒÃÇÀ´±È´óĞ¡£¬¾ßÌå¹æÔòÊÇ£ºÎÒÃÇ°ÑÊ®¶şÉúĞ¤·ÖÎªÁ½×é£¬Ç°Áù¸öÊóÅ£»¢ÍÃÁúÉßÎªÒ»×é¡£ºóÁù¸öÂíÑòºï¼¦¹·ÖíÎªÒ»×é¡£ÄãÈÎÒâÌôÑ¡Ò»×éÀ´ÓëÎÒ±È´óĞ¡¡£ÀıÈçÄãÑ¡ÔñÁËÊóÅ£»¢ÍÃÁúÉßÕâÒ»×é£¬ÄÇÃ´Èç¹ûÎÒ³ö¸ö»¢£¬Äã³ö¸öÍÃ£¬ÄÇÃ´Äã±ÈÎÒ´ó¡£Èç¹ûÎÒ³ö¸öÁú£¬Äã³ö¸öÉß£¬»¹ÊÇÄã´ó¡£Ò²¾ÍÊÇ°´ÕÕË³ĞòÔ½ÅÅºóÃæµÄÔ½´ó¡£²»¹ıÄØ×îºóÒ»¸öÊÇ±ÈµÚÒ»¸öĞ¡µÄ£¬Ò²¾ÍÊÇÊó»á±ÈÉß´ó¡£ÎÒÃÇÁ½Ò»ÈË³öÒ»¸öÉúĞ¤£¬¿´Ë­µÄ´ó¡£Èç¹ûÖĞ¼ä³öÏÖÁËÁ½¸öÉúĞ¤²»ÊÇ¿¿ÔÚÒ»ÆğµÄÇé¿ö£¬ÈçÎÒ³ö¸ö»¢£¬Äã³ö¸öÉß£¬ÄÇÃ´ËãÎÒÓ®¡£ÎÒÓ®ÁËÄã¾ÍÒª»Ø´ğÎÒÒ»¸öÎÊÌâ£¬²»ÂÛ´ğµÃ¶Ô´í£¬¶¼±ØĞëÓ®ÁËÓÎÏ·²ÅÄÜ´ÓÎÒÕâÀï³ö¹Ø¡£¶®ÁËÃ»£¿",2,"¶®ÁË,ÈÃÎÒ»ØÉÏÒ»²ã²Ëµ¥/pe_niumanman","Ì«ÄÑ,²»ÍæÁË/no")
 end
 
 function niumanman_bisai1()
 	SetTaskTemp(190,0)
 	local i = random (1,6)
 	SetTaskTemp(190,i)
-	Describe(DescLink_NiuManMan..": §­îc råi ®­îc råi , b¾t ®Çu chän b¾t ®Çu chän, c¸p c¸p c¸p c¸p, nhanh lªn mét chót nhanh lªn mét chót. Ng­¬i ra c¸i g× ? ",6, 
-      "Thö /niumanman_num1", 
-      "Ng­u /niumanman_num2", 
-      "Hæ /niumanman_num3", 
-      "Thá /niumanman_num4", 
-      "Long /niumanman_num5", 
-      "Xµ /niumanman_num6")
+	Describe(DescLink_NiuManMan.."£ººÃÀ²ºÃÀ²£¬¿ªÊ¼Ñ¡¿ªÊ¼Ñ¡£¬¹ş¹ş¹ş¹ş£¬¿ìµã¿ìµã¡£Äã³öÊ²Ã´£¿",6,
+	"Êó/niumanman_num1",
+	"Å£/niumanman_num2",
+	"»¢/niumanman_num3",
+	"ÍÃ/niumanman_num4",
+	"Áú/niumanman_num5",
+	"Éß/niumanman_num6")
 end
 
 function niumanman_bisai2()
 	SetTaskTemp(190,0)
 	local i = random (7,12)
 	SetTaskTemp(190,i)
-	Describe(DescLink_NiuManMan..": §­îc råi ®­îc råi, b¾t ®Çu chän b¾t ®Çu chän, c¸p c¸p c¸p c¸p, nhanh lªn mét chót nhanh lªn mét chót. Ng­¬i ra c¸i g× ? ",6, 
-       "M· /niumanman_num7", 
-       "D­¬ng /niumanman_num8", 
-       "HÇu /niumanman_num9", 
-       "Kª /niumanman_num10", 
-       "CÈu /niumanman_num11", 
-       "Tr­ /niumanman_num12")
+	Describe(DescLink_NiuManMan.."£ººÃÀ²ºÃÀ²£¬¿ªÊ¼Ñ¡¿ªÊ¼Ñ¡£¬¹ş¹ş¹ş¹ş£¬¿ìµã¿ìµã¡£Äã³öÊ²Ã´£¿",6,
+	"Âí/niumanman_num7",
+	"Ñò/niumanman_num8",
+	"ºï/niumanman_num9",
+	"¼¦/niumanman_num10",
+	"¹·/niumanman_num11",
+	"Öí/niumanman_num12")
 end
 
 function niumanman_bisaijieguo(partner_personnum)
 	local partner_systnum = GetTaskTemp(190)
-	if ( partner_personnum == 1 or partner_personnum == 7 ) then 
-               if ( partner_systnum == 6 or partner_systnum == 12 ) then 
-                    Describe(DescLink_NiuManMan..": Ta ra "..partner_birthday[partner_systnum]..", A ! Ng­¬i l¹i nh­ nµy lîi h¹i, thËt bŞ ng­¬i ®¸nh b¹i. §­îc råi, ng­¬i qua ta ®©y ®ãng. ",1," KÕt thóc ®èi tho¹i /niumanman_taskfinish") 
-               else 
-                    Describe(DescLink_NiuManMan..": ta ra "..partner_birthday[partner_systnum]..", H¾c h¾c, ng­¬i thua n÷a råi ! Tr¶ lêi vÊn ®Ò ®i.",1,"§­îc råi, ta tr¶ lêi /niumanman_shule") 
-               end 
-        else 
-              if ( partner_personnum == partner_systnum + 1 ) then 
-                    Describe(DescLink_NiuManMan..": Ta ra "..partner_birthday[partner_systnum]..", A ! ng­¬i l¹i nh­ nµy lîi h¹i, thËt bŞ ng­¬i ®¸nh b¹i. §­îc råi, ng­¬i qua ta ®©y ®ãng.",1,"KÕt thóc ®èi tho¹i /niumanman_taskfinish") 
-              else 
-                    Describe(DescLink_NiuManMan..": Ta ra "..partner_birthday[partner_systnum]..", H¾c h¾c, ng­¬i thua n÷a råi ! Tr¶ lêi vÊn ®Ò ®i. ",1,"§­îc råi, ta tr¶ lêi /niumanman_shule") 
-              end 
-        end
+	if ( partner_personnum == 1 or partner_personnum == 7 ) then
+		if ( partner_systnum == 6 or partner_systnum == 12 )  then
+			Describe(DescLink_NiuManMan.."£ºÎÒ³ö"..partner_birthday[partner_systnum]..",°¡£¡Äã¾¹Èç´ËÀ÷º¦£¬ÕæµÄ±»Äã´ò°ÜÁË¡£ºÃ°É£¬Äã¹ıÁËÎÒÕâ¹ØÁË¡£",1,"½áÊø¶Ô»°/niumanman_taskfinish")
+		else 
+			Describe(DescLink_NiuManMan.."£ºÎÒ³ö"..partner_birthday[partner_systnum]..",ºÙºÙ£¬ÄãÊäÀ²£¡»Ø´ğÎÊÌâ°É¡£",1,"ºÃ°É£¬ÎÒ»Ø´ğ/niumanman_shule")
+		end
+	else
+		if (  partner_personnum == partner_systnum + 1 ) then
+			Describe(DescLink_NiuManMan.."£ºÎÒ³ö"..partner_birthday[partner_systnum]..",°¡£¡Äã¾¹Èç´ËÀ÷º¦£¬ÕæµÄ±»Äã´ò°ÜÁË¡£ºÃ°É£¬Äã¹ıÁËÎÒÕâ¹ØÁË¡£",1,"½áÊø¶Ô»°/niumanman_taskfinish")
+		else
+			Describe(DescLink_NiuManMan.."£ºÎÒ³ö"..partner_birthday[partner_systnum]..",ºÙºÙ£¬ÄãÊäÀ²£¡»Ø´ğÎÊÌâ°É¡£",1,"ºÃ°É£¬ÎÒ»Ø´ğ/niumanman_shule")
+		end
+	end
 end
 
 function niumanman_taskfinish()
 	if ( nt_getTask(1226) == 10 ) and ( nt_getTask(1227) == 10 ) and ( GetBit(GetTask(1232),3) == 0 ) then
-		nt_setTask(1232,SetBit(GetTask(1232),3,1))  --Å£¢ú¢ú´¦ÈÎÎñÍê³É£¬µ«Î´ÁìÈ¡½±Àø
+		nt_setTask(1232,SetBit(GetTask(1232),3,1))  --Å£ÂúÂú´¦ÈÎÎñÍê³É£¬µ«Î´ÁìÈ¡½±Àø
 		niumanman_giveprize()
 	end
 end
 
 function niumanman_shule()
 	--µ÷ÓÃ¹«¹²ÎÊÌâ¿â£¬»Ø´ğÕıÈ·ÊıÒªÇóÎª1£¬ÎÊÌâÎªÎÊÌâ1~ÎÊÌâ20Ëæ»ú£¬Íæ¼ÒÎÊ´ğ·åÖµÎª100´Î£¬²»ÉèÖÃÍê³É×Ö½Ú
-	if ( partner_edu(1,1,29,1,0) == 10 ) then 
-             Describe(DescLink_NiuManMan..": L¹i bŞ ng­¬i ®¸p ®óng råi , h¶o , trë l¹i ch¬i trß ch¬i, ng­¬i cã thÓ th¾ng ta liÒn v­ît qua kiÓm tra",1,"Tíi th× tíi/niumanman_startcaimei") 
-        else 
-            Msg2Player("§¸p sai lÇm råi liÒn trë l¹i.") 
-        end
+	if ( partner_edu(1,1,29,1,0) == 10 ) then
+		Describe(DescLink_NiuManMan.."£º¾¹È»±»Äã´ğ¶ÔÁË£¬ºÃ£¬ÔÙÀ´ÍæÓÎÏ·£¬ÄãÄÜÓ®ÎÒ¾Í¹ı¹Ø¡£ºßºß¡£",1,"À´¾ÍÀ´/niumanman_startcaimei")
+	else
+		Msg2Player("´ğ´íÁË¾ÍÔÙÀ´¡£")
+	end
 end
 
 function niumanman_giveprize()
@@ -292,35 +295,34 @@ function niumanman_giveprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,430,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+430
 		PARTNER_AddSkill(partnerindex,0,553,1)                          --Ôö¼ÓÍ¬°é¿¹ĞÔ¼¼ÄÜ¡¶À×öª»¤¼×¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ?L«i ®×nh hé gi¸p ?") 
-                   nt_setTask(1232,SetBit(GetTask(1232),4,1)) -- ph¸t t­ëng xong 
-                Say("Ng­¬i ®· hoµn thµnh nhiÖm vô ta chç nµy, ®i nh÷ng ng­êi kh¸c n¬i ®ã ®i.",0)
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶À×öª»¤¼×¡·")
+		nt_setTask(1232,SetBit(GetTask(1232),4,1))  --·¢½±Íê±Ï
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
 ----------------------------------------------------------²É»¨¹«×ÓĞ¡¶¡¶Ô»°----------------------------------------------
 function pe_xiaoding()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),5) ~= 1 ) then 
-          Describe(DescLink_XiaoDing..":Ta lµ c«ng tö h¸i hoa, kh«ng ph¶i lµ khã d©y d­a c«ng tö. B¹n ®ång hµnh cña ta kh¼ng ®Şnh cho ng­¬i xÕp ®Æt rÊt ®©u bÉy rËp ®i, ®Õn ta chç nµy kh«ng cÇn. An t©m tr¶ lêi ®èi víi ba ®¹o ®Ò môc liÒn ®em th¶o d­îc cho ng­¬i.",2, 
-              "VÊn ®Ò g× ? Ng­¬i cø hái/xiaoding_taskproblem", 
-              "Sau nµy l¹i tíi t×m ng­¬i/no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),5) == 1 ) and ( GetBit(GetTask(1232),6) == 0 ) then 
-             Describe(DescLink_XiaoDing..": §­îc råi, ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i.",2,"NhËn lÊy phÇn th­ëng /xiaoding_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-             Describe(DescLink_XiaoDing..": Ng­¬i ®· hoµn thµnh ë chóng ta bèn ng­êi ng­êi n¬i nµy tu hµnh, d­îc th¶o cÇm xong trë vÒ t×m tiÖm l·o ®Çu ®i.",1,
-             "KÕt thóc ®èi tho¹i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),6) == 1 ) then 
-             Describe(DescLink_XiaoDing..": Uh, ta ®©y mét cöa ¶i ng­¬i ®· th«ng qua, ®i t×m h¬i thë mÆt ®İch vâ sÜ ®i. Bän hä còng kh«ng ta nh­ vËy h¶o nãi chuyÖn, m×nh cÈn thËn.",1,"KÕt thóc ®èi tho¹i /no") 
-       else 
-          if ( GetSex() == 0 ) then 
-              Describe(DescLink_XiaoDing..": Ai , ai ai , ai ai ai .. ta oan kia ? ®­îc x­ng c«ng tö h¸i hoa, l¹i mét ®ãa hoa còng kh«ng th¶i qu¸. Míi võa ë giang hå x«ng ra danh tiÕng, liÒn bŞ tr­êng ca cöa cøng r¾n ®­îc thu vµo cöa trong , qu¸ trø tèi t¨m kh«ng mÆt trêi , luyÖn c«ng tËp vâ ®İch ngµy . ®¹i hiÖp , ®Ñp trai , ng­¬i nhÊt ®Şnh ph¶i cøu ta ®i ra ngoµi a !",1,"KÕt thóc ®èi tho¹i /no") 
-         else 
-              Describe(DescLink_XiaoDing..": Ai , ai ai , ai ai ai .. ta oan kia ? ®­îc x­ng c«ng tö h¸i hoa, l¹i mét ®ãa hoa còng kh«ng th¶i qu¸. Míi võa ë giang hå x«ng ra danh tiÕng, liÒn bŞ tr­êng ca cöa cøng r¾n ®­îc thu vµo cöa trong , qu¸ trø tèi t¨m kh«ng mÆt trêi , luyÖn c«ng tËp vâ ®İch ngµy . mü n÷ , tû tû , ng­¬i nhÊt ®Şnh ph¶i cøu ta ®i ra ngoµi a !",1,"KÕt thóc ®èi tho¹i /no") 
-         end 
-    end
+	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),5) ~= 1 ) then
+		Describe(DescLink_XiaoDing.."£ºÎÒÊÇ²É»¨¹«×Ó£¬²»ÊÇÄÑ²ø¹«×Ó¡£ÎÒµÄÍ¬°éÃÇ¿Ï¶¨¸øÄãÉèÁËºÜ¶àÏİÚå°É£¬µ½ÎÒÕâÀï²»ĞèÒªÁË¡£°²ĞÄ»Ø´ğ¶ÔÈıµÀÌâÄ¿¾Í°Ñ²İÒ©¸øÄã¡£",2,
+		"Ê²Ã´ÎÊÌâ£¿Äã¾¡¹ÜÎÊ/xiaoding_taskproblem",
+		"ÉÔºóÔÙÀ´ÕÒÄã°É/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),5) == 1 ) and ( GetBit(GetTask(1232),6) == 0 ) then
+		Describe(DescLink_XiaoDing.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/xiaoding_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then
+		Describe(DescLink_XiaoDing.."£ºÄãÒÑ¾­Íê³ÉÔÚÎÒÃÇËÄ¸öÈËÕâÀïµÄĞŞĞĞÁË£¬Ò©²İÄÃºÃ»ØÈ¥ÕÒÂ¬ÇàÀÏÍ·°É¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),6) == 1 ) then
+		Describe(DescLink_XiaoDing.."£º¶÷£¬ÎÒÕâÒ»¹ØÄãÒÑ¾­Í¨¹ıÁË£¬È¥ÕÒÏÂÃæµÄÎäÊ¿°É¡£ËûÃÇ¿ÉÃ»ÎÒÕâÑùºÃ½²»°ÁË£¬×Ô¼ºĞ¡ĞÄ¡£",1,"½áÊø¶Ô»°/no")
+	else
+		if ( GetSex() == 0 ) then
+			Describe(DescLink_XiaoDing.."£º°¥£¬°¥°¥£¬°¥°¥°¥¡­¡­ÎÒÔ©ÄÄ£¿ºÅ³Æ²É»¨¹«×Ó£¬È´Ò»¶ä»¨¶¼Ã»²É¹ı¡£¸ÕÔÚ½­ºş´³³öÃûÍ·£¬¾Í±»³¤¸èÃÅÓ²ĞĞÊÕÈëÃÅÀï£¬¹ı×Å°µÎŞÌìÈÕ£¬Á·¹¦Ï°ÎäµÄÈÕ×Ó¡£´óÏÀ£¬Ë§¸ç£¬ÄãÒ»¶¨Òª¾ÈÎÒ³öÈ¥°¡£¡",1,"½áÊø¶Ô»°/no")
+		else
+			Describe(DescLink_XiaoDing.."£º°¥£¬°¥°¥£¬°¥°¥°¥¡­¡­ÎÒÔ©ÄÄ£¿ºÅ³Æ²É»¨¹«×Ó£¬È´Ò»¶ä»¨¶¼Ã»²É¹ı¡£¸ÕÔÚ½­ºş´³³öÃûÍ·£¬¾Í±»³¤¸èÃÅÓ²ĞĞÊÕÈëÃÅÀï£¬¹ı×Å°µÎŞÌìÈÕ£¬Á·¹¦Ï°ÎäµÄÈÕ×Ó¡£ÃÀÅ®£¬½ã½ã£¬ÄãÒ»¶¨Òª¾ÈÎÒ³öÈ¥°¡£¡",1,"½áÊø¶Ô»°/no")
+		end
+	end
 	
 end
 
@@ -334,78 +336,78 @@ function xiaoding_giveprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,430,1 )                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+430
 		nt_setTask(1232,SetBit(GetTask(1232),6,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç ta, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 ----------------------------------------------------------¿É°®Å®ÏÀÔÆÈ¸¶ù¶Ô»°---------------------------------------------
 function pe_yunqueer()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),7) ~= 1 ) then 
-            Describe(DescLink_YunQueEr..": ha ha , ng­¬i cïng chÕt giÕt heo ®İch c¸i ®ã ®Çu heo ba nãi chuyÖn nhiÒu kh«ng cã ? h¾n cã ph¶i hay kh«ng ®Ó cho ng­¬i còng sinh tiÕu ®İch lín nhá ? c¸i nµy kh«ng cã häc qu¸ s¸ch ®İch . bæn tiÓu th­ thuë nhá liÒn ®äc thuéc tø th­ ngò kinh , n¬i nµo lµ h¾n cã thÓ hÖ so . chóng ta tíi ch¬i cao cÊp còng mai trß ch¬i : ®¸ kĞo tö bè . hõ hõ ...... ng­¬i thua gièng nhau lµ ph¶i vÒ ®¸p bæn tiÓu th­ nãi ®İch vÊn ®Ò , nh­ thÕ nµo ? ",3, 
-            "B¾t ®Çu ®i/yunqueer_wenti", 
-            "Cho ta gi¶ng gi¶i mét h¬i thë quy t¾c /yunqueer_guize", 
-            "Sau nµy l¹i tíi t×m ng­¬i ®i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),7) == 1 ) and ( GetBit(GetTask(1232),8) == 0 ) then 
-                Describe(DescLink_YunQueEr..": §­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i. ",2,"NhËn lÊy phÇn th­ëng /yunqueer_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-                Describe(DescLink_YunQueEr..": Ng­¬i ®· hoµn thµnh ë chóng ta bèn ng­êi ng­êi n¬i nµy tu hµnh , d­îc th¶o cÇm xong trë vÒ t×m tiÖm l·o ®Çu ®i.",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),8) == 1 ) then 
-                Describe(DescLink_YunQueEr..": Uh, ta ®©y mét cöa ¶i ng­¬i ®· th«ng qua , ®i t×m h¬i thë mÆt ®İch vâ sÜ ®i. Bän hä còng kh«ng ta nh­ vËy h¶o nãi chuyÖn, m×nh cÈn thËn.",1,"KÕt thóc ®èi tho¹i /no") 
-        else 
-            if ( GetSex() == 0 ) then 
-                  Describe(DescLink_YunQueEr..": H× h×, ta ®ang cïng trªn c©y ®İch con chim nãi chuyÖn ®©y. Ng­¬i cã thÓ nghe hiÓu bän hä nãi g× ? bän hä nãi n¬i nµy rÊt ®Ñp , cã s¬n ®İch v©n hµ , cßn cã so v©n hµ ®Ñp h¬n ®İch v©n t­íc mµ ®©y. Ca ca mang ta ®i ra ngoµi ch¬i, cã ®­îc hay kh«ng ? ",1,"KÕt thóc ®èi tho¹i /no") 
-            else 
-                  Describe(DescLink_YunQueEr..": H× h×, ta ®ang cïng trªn c©y ®İch con chim nãi chuyÖn ®©y. Ng­¬i cã thÓ nghe hiÓu bän hä nãi g× ? bän hä nãi n¬i nµy rÊt ®Ñp , cã s¬n ®İch v©n hµ , cßn cã so v©n hµ ®Ñp h¬n ®İch v©n t­íc mµ ®©y. Tû tû mang ta ®i ra ngoµi ch¬i, cã ®­îc hay kh«ng ? ",1,"KÕt thóc ®èi tho¹i /no")
-            end 
-        end
+	if ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),7) ~= 1 ) then
+		Describe(DescLink_YunQueEr.."£º¹ş¹ş£¬Äã¸úËÀÉ±ÖíµÄÄÇ¸öÖíÍ·ÈıËµ¹ı»°Ã»£¿ËûÊÇ²»ÊÇÈÃÄã²ÂÉúĞ¤µÄ´óĞ¡£¿Õâ¸öÃ»¶Á¹ıÊéµÄ¡£±¾Ğ¡½ã×ÔÓ×¾ÍÊì¶ÁËÄÊéÎå¾­£¬ÄÄÀïÊÇËû¿ÉÒÔÏà±È¡£ÎÒÃÇÀ´Íæ¸ß¼¶µÄ²ÂÃ¶ÓÎÏ·£ºÊ¯Í·¼ô×Ó²¼¡£ºßºß......ÄãÊäÁËÒ»ÑùÊÇÒª»Ø´ğ±¾Ğ¡½ãÌáµÄÎÊÌâ£¬ÔõÃ´Ñù£¿",3,
+		"¿ªÊ¼°É/yunqueer_wenti",
+		"¸øÎÒ½²½âÒ»ÏÂ¹æÔò/yunqueer_guize",
+		"ÉÔºóÔÙÀ´ÕÒÄã°É/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),7) == 1 ) and ( GetBit(GetTask(1232),8) == 0 ) then
+		Describe(DescLink_YunQueEr.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/yunqueer_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),2) == 1 ) and ( GetBit(GetTask(1232),4) == 1 ) and ( GetBit(GetTask(1232),6) == 1 ) and ( GetBit(GetTask(1232),8) == 1 ) then
+		Describe(DescLink_YunQueEr.."£ºÄãÒÑ¾­Íê³ÉÔÚÎÒÃÇËÄ¸öÈËÕâÀïµÄĞŞĞĞÁË£¬Ò©²İÄÃºÃ»ØÈ¥ÕÒÂ¬ÇàÀÏÍ·°É¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1227 == 10 ) and ( GetBit(GetTask(1232),8) == 1 ) then
+		Describe(DescLink_YunQueEr.."£º¶÷£¬ÎÒÕâÒ»¹ØÄãÒÑ¾­Í¨¹ıÁË£¬È¥ÕÒÏÂÃæµÄÎäÊ¿°É¡£ËûÃÇ¿ÉÃ»ÎÒÕâÑùºÃ½²»°ÁË£¬×Ô¼ºĞ¡ĞÄ¡£",1,"½áÊø¶Ô»°/no")
+	else
+		if ( GetSex() == 0 ) then
+			Describe(DescLink_YunQueEr.."£ºÎûÎû£¬ÎÒÔÚºÍÊ÷ÉÏµÄÄñ¶ùËµ»°ÄØ¡£ÄãÄÜÌı¶®ËüÃÇËµÊ²Ã´Âğ£¿ËüÃÇËµÕâÀïºÜÃÀ£¬ÓĞÂşÉ½µÄÔÆÏ¼£¬»¹ÓĞ±ÈÔÆÏ¼¸üÆ¯ÁÁµÄÔÆÈ¸¶ùÄØ¡£¸ç¸ç´øÎÒ³öÈ¥ÍæÂï£¬ºÃ²»ºÃ£¿",1,"½áÊø¶Ô»°/no")
+		else
+			Describe(DescLink_YunQueEr.."£ºÎûÎû£¬ÎÒÔÚºÍÊ÷ÉÏµÄÄñ¶ùËµ»°ÄØ¡£ÄãÄÜÌı¶®ËüÃÇËµÊ²Ã´Âğ£¿ËüÃÇËµÕâÀïºÜÃÀ£¬ÓĞÂşÉ½µÄÔÆÏ¼£¬»¹ÓĞ±ÈÔÆÏ¼¸üÆ¯ÁÁµÄÔÆÈ¸¶ùÄØ¡£½ã½ã´øÎÒ³öÈ¥ÍæÂï£¬ºÃ²»ºÃ£¿",1,"½áÊø¶Ô»°/no")
+		end
+	end
 end
 
 function yunqueer_guize()
-	Describe(DescLink_YunQueEr..": Quy t¾c lµ nh­ vËy : ®¸ kĞo tö bè ®©y , ®¸ th¾ng kĞo tö , kĞo tö th¾ng bè , bè th¾ng ®¸. §· hiÓu kh«ng cã ? ng­¬i th¾ng ta liÒn v­ît qua kiÓm tra , kh«ng cã th¾ng ta hoÆc lµ ®¸nh ngang tay , tû nh­ ng­¬i ra kĞo tö ta còng ra kĞo tö , vËy còng coi lµ ta th¾ng. Hõ hõ. BÊt qu¸ ta th¾ng còng kh«ng ph¶i lµ khã kh¨n ng­¬i, ®¸p ®èi víi ta ba ®¹o ®Ò môc lµ tèt råi.",1,"Ta muèn trë vÒ/pe_yunqueer")
+	Describe(DescLink_YunQueEr.."£º¹æÔòÊÇÕâÑùµÎ£ºÊ¯Í·¼ô×Ó²¼ÄØ£¬Ê¯Í·Ó®¼ô×Ó£¬¼ô×ÓÓ®²¼£¬²¼Ó®Ê¯Í·¡£¶®ÁËÃ»£¿ÄãÓ®ÁËÎÒ¾Í¹ı¹Ø£¬Ã»Ó®ÎÒ»òÕß´ò³ÉÆ½ÊÖ£¬±ÈÈçÄã³ö¼ô×ÓÎÒÒ²³ö¼ô×Ó£¬ÄÇÒ²ËãÎÒÓ®¡£ºßºß¡£²»¹ıÎÒÓ®ÁËÒ²²»ÎªÄÑÄã£¬´ğ¶ÔÎÒÈıµÀÌâÄ¿¾ÍºÃÂï¡£",1,"ÎÒÒª·µ»ØÉÏÒ»²ã²Ëµ¥/pe_yunqueer")
 end
 
 function yunqueer_wenti()
-	Describe(DescLink_YunQueEr..": tíi tíi tíi , b¾t ®Çu vung quyÒn l¹c. Ng­¬i ra c¸i g× ? ",3, 
-	"Bóa/yunqueer_shitou", 
-        "KĞo/yunqueer_jianzi", 
-        "Bao/yunqueer_bu")
+	Describe(DescLink_YunQueEr.."£º À´À´À´£¬¿ªÊ¼»®È­¿©¡£Äã³öÊ²Ã´£¿",3,
+	"Ê¯Í·/yunqueer_shitou",
+	"¼ô×Ó/yunqueer_jianzi",
+	"²¼/yunqueer_bu")
 end
 
 function yunqueer_shitou()
 	local i = random(1,3)
-	if ( i ~= 2 ) then 
-            Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! Ta th¾ng n÷a råi , h× h× , tr¶ lêi vÊn ®Ò ®i ",1,"Tr¶ lêi vÊn ®Ò/yunqueer_problem") 
-       else 
-            Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! BŞ ng­¬i th¾ng n÷a råi , ®­îc råi. Coi nh­ ng­¬i qu¸ n÷a/råi . ",1,"Coi nh­ ng­¬i qu¸ quan /yunqueer_finish") 
-       end
+	if ( i ~= 2 ) then
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡ÎÒÓ®À²£¬ÎûÎû£¬»Ø´ğÎÊÌâ°É",1,"ºÃÂï£¬»Ø´ğÎÊÌâÂï/yunqueer_problem")
+	else
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡±»ÄãÓ®À²£¬ºÃ°É¡£ËãÄã¹ıÀ²¡£",1,"ºÃÂï£¬ËãÄã¹ı¹ØÁË/yunqueer_finish")
+	end
 end
 
 function yunqueer_jianzi()
 	local i = random(1,3)
-	if ( i ~= 3 ) then 
-             Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! Ta th¾ng n÷a råi , h× h× , tr¶ lêi vÊn ®Ò ®i ",1,"Tr¶ lêi vÊn ®Ò/yunqueer_problem") 
-       else 
-            Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! BŞ ng­¬i th¾ng n÷a råi , ®­îc råi. Coi nh­ ng­¬i qu¸ n÷a/råi . ",1,"Coi nh­ ng­¬i qu¸ quan /yunqueer_finish") 
-       end
+	if ( i ~= 3 ) then
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡ÎÒÓ®À²£¬ÎûÎû£¬»Ø´ğÎÊÌâ°É",1,"ºÃÂï£¬»Ø´ğÎÊÌâÂï/yunqueer_problem")
+	else
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡±»ÄãÓ®À²£¬ºÃ°É¡£ËãÄã¹ıÀ²¡£",1,"ºÃÂï£¬ËãÄã¹ı¹ØÁË/yunqueer_finish")
+	end
 end
 
 function yunqueer_bu()
 	local i = random(1,3)
 	if ( i ~= 1 ) then
-	   Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! Ta th¾ng n÷a råi , h× h× , tr¶ lêi vÊn ®Ò ®i ",1,"Tr¶ lêi vÊn ®Ò/yunqueer_problem") 
-       else 
-            Describe(DescLink_YunQueEr..": Ta ra "..partner_caimei[i]..", Ái nha ! BŞ ng­¬i th¾ng n÷a råi , ®­îc råi. Coi nh­ ng­¬i qu¸ n÷a/råi . ",1,"Coi nh­ ng­¬i qu¸ quan /yunqueer_finish") 
-       end
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡ÎÒÓ®À²£¬ÎûÎû£¬»Ø´ğÎÊÌâ°É",1,"ºÃÂï£¬»Ø´ğÎÊÌâÂï/yunqueer_problem")
+	else
+		Describe(DescLink_YunQueEr.."£ºÎÒ³ö"..partner_caimei[i]..",°¥Ñ½£¡±»ÄãÓ®À²£¬ºÃ°É¡£ËãÄã¹ıÀ²¡£",1,"ºÃÂï£¬ËãÄã¹ı¹ØÁË/yunqueer_finish")
+	end
 end
 
 function yunqueer_problem()
 	--µ÷ÓÃ¹«¹²ÎÊÌâ¿â£¬»Ø´ğÕıÈ·ÊıÒªÇóÎª3£¬ÎÊÌâÎªÎÊÌâ1~ÎÊÌâ20Ëæ»ú£¬Íæ¼ÒÎÊ´ğ·åÖµÎª100´Î£¬²»ÉèÖÃÍê³É×Ö½Ú
 	if  ( partner_edu(3,1,29,3,0) == 10 ) then
-		Msg2Player("Tèt, nç lùc liªn tôc vµ ®o¹n nµo cña nã. Hee hee.")
+		Msg2Player("ºÃ£¬ÔÙ½ÓÔÙÀ÷£¬²ÂÃ¶°É¡£ÎûÎû¡£")
 	else
-		Msg2Player("Thua còng kh«ng cÇn næi giËn, tiÕp tôc. H× h×.")
+		Msg2Player("ÊäÁËÒ²²»ÒªÆøÄÙ£¬¼ÌĞø²ÂÂï¡£ÎûÎû¡£")
 	end
 end
 
@@ -422,7 +424,7 @@ function yunqueer_giveprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,430,1 )                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+430
 		nt_setTask(1232,SetBit(GetTask(1232),8,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c n¬i ®ã ®i",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
@@ -432,116 +434,116 @@ end
 
 function pe_tangying()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	local Uworld1228 = nt_getTask(1228)                        --Í¬°é½ÌÓıÈÎÎñÌÆÓ°ÈÎÎñ±äÁ¿
 	local Uworld1229 = nt_getTask(1229)                        --Í¬°é½ÌÓıÈÎÎñ°×É·ÈÎÎñ±äÁ¿
 	local Uworld1230 = nt_getTask(1230)                        --Í¬°é½ÌÓıÈÎÎñºÚÉ·ÈÎÎñ±äÁ¿
-	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒ¢Ë®ÈÎÎñ±äÁ¿
+	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒÂË®ÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 and Uworld1227 == 20 and Uworld1228 == 20 and Uworld1229 == 20 and Uworld1230 == 20 and Uworld1231 == 20) then 
-                Describe(DescLink_TangYing..": MÊy ng­êi chóng ta gi¸o dôc còng kÕt thóc. Ng­¬i b©y giê cã thÓ ®i t×m kiÕm hoµng ®å ®Ö.",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( partner_getpartnerlevel(4) ~= 10 ) then 
-                return 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1228 == 0 ) then -- ®­êng ¶nh chç nhiÖm vô kh«ng cã xóc ph¸t ? ? ? ? ? kh«ng cã ®em nhiÖm vô t­ëng th­ëng nãi cho nhµ ch¬i 
-               Describe(DescLink_TangYing..": Ai , vËy ph¶i lµm sao b©y giê ®©y ? thu nghiªu ®øa nhá nµy qu¸ kh«ng nghe lêi.<enter>" 
-               .."ng­¬i lµ kiÕm hoµng ®å ®Ö giíi thiÖu tíi. VËy còng tèt , con trai cña ta ®­êng thu nghiªu bŞ trÊn trªn mét qu¸i nh©n ®i råi , ta b©y giê l¹i véi vµng th¶i chÕ mét lo¹i kú l¹ d­îc liÖu , hy väng ng­¬i cã thÓ thay ta ®em thu nghiªu cøu ra , ph¶i cã håi b¸o. C¸i ®ã qu¸i nh©n ®ang ë bªn ph¶i treo tiÓn n¬i ®ã thiÕt trİ mét c¸i kh«ng thÊy ®­îc kh«ng trung s¹n ®¹o , ng­¬i cÇn t×m ®­îc ®iÒu nµy, h¬n n÷a cøu ra con trai cña ta. Kia chç ë treo tiÓn bªn trªn sÏ cã mét viªn kú qu¸i c©y. Trªn cã cho phĞp ®©u kh«ng trung th¹ch s¬n , mçi ngän nói th­îng ®Òu ph¶i më ra mét c¬ quan , ng­êi m¸y sÏ hái ng­¬i chót vÊn ®Ò. Tãm l¹i v« cïng kh«ng dÔ dµng , ng­¬i ph¶i cÈn thËn.<enter>" 
-               .."<color=green> nhiÖm vô t­ëng th­ëng : ®ång b¹n kü n¨ng ' b¸ch ®éc bÊt x©m '?' ch©n háa kh¸ng lùc '<color>",2, 
-               "Ta tiÕp nhËn khiªu chiÕn /tangying_findchildren", 
-               "Ta cßn kh«ng cã lµm h¶o chuÈn bŞ ®©y /no") 
-
-       elseif ( Uworld1226 == 10 ) and ( Uworld1228 == 8191 ) then 
-              Describe(DescLink_TangYing..": Thu nghiªu chê h¬i thë sÏ trë l¹i ? thËt tèt qu¸ ! C¸m ¬n ng­¬i. Tèt l¾m , ta sÏ nãi cho ng­¬i biÕt mét İt khiÕu m«n ®i :<enter>" 
-              .."<color=yellow> khi ng­¬i xö vu chñ ®éng c«ng kİch tr¹ng th¸i th¶ ®Şch nh©n ë ®ång b¹n ®İch hµnh ®éng trong ph¹m vi lóc , nÕu nh­ lµ anh m·nh h×nh l­u manh h×nh hÌn yÕu h×nh ®İch ®ång b¹n , sÏ gÆp tù ®éng c«ng kİch nã, c¨n cø ®ång b¹n bÊt ®ång tİnh t×nh hµnh ®éng cña h¾n ph¹m vi cïng ph­¬ng thøc c«ng kİch còng sÏ kh«ng gièng nhau. Khi ng­¬i kh«ng muèn ®Ó cho ®ång b¹n cña ng­¬i ®i c«ng kİch ®Şch nh©n thêi ®iÓm, ng­¬i chØ cÇn ë ®ång b¹n ®İch kho¸i tiÖp lan trong t×m ®­îc c¸i nót sau ®ã bªn tr¸i kiÖn ®an kİch nã lµ ®­îc råi. NÕu nh­ ng­¬i muèn cho ®ång b¹n cña ng­¬i c«ng kİch lÇn n÷a ®Şch nh©n tho¹i, vËy ng­¬i liÒn cÇn ë ®ång b¹n ®İch kho¸i tiÖp lan trong t×m ®­îc c¸i nót còng ®iÓm kİch nã. Kh«ng muèn c¸i nµy ®ång b¹n lóc , ta ph¶i nh­ thÕ nµo gi¶i t¸n h¾n ®©y ? ng­¬i ®Çu tiªn muèn ë ®ång b¹n thuéc tİnh giíi mÆt t×m ®­îc gi¶i t¸n ®ång b¹n c¸i nót <color><enter>" 
-              .."Tèt l¾m , ë chç nµy cña ta ng­¬i ®· häc kh«ng tíi h¬n ®©u ®İch ®å, ®i t×m nh÷ng ng­êi kh¸c ®i. Thu nghiªu n­íc lµ cña ta l·o bµ , ng­¬i thÊy nµng lóc cÈn thËn mét chót , ngµn v¹n ®õng nãi cho nµng con trai nĞm qu¸ a , nÕu kh«ng buæi tèi ta sÏ bŞ giam ë cöa . nhê cËy nhê cËy . ",2,"NhËn lÊy phÇn th­ëng /tangying_getprize","Sau nµy trë l¹i /no") 
-
-      elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1228),1) == 1 ) then -- míi võa nhËn ®­îc ®­êng ¶nh chç nhiÖm vô 
-              Describe(DescLink_TangYing..": ®i <color=red> bªn ph¶i treo tiÓn <color> n¬i ®ã t×m ®­îc mét c¸i <color=red> tiÓu ?<color> , th«ng qua ng­êi m¸y trËn , ®em ta hµi tö tõ c¸i ®ã chÕt qu¸i vËt tr¸c phi phµm trong tay cøu ra . ",1, 
-              "KÕt thóc ®èi tho¹i /no") 
-      else 
-             Describe(DescLink_TangYing..": Nghe nãi b©y giê §­êng m«n ch­ëng m«n lµ ®­êng thï ? ®øa nhá nµy t©m tİnh hÑp hßi khİ l­îng cã h¹n , lµm g× ph¶i ba thôc ®Ö nhÊt gia ®İch chñ ®©y ? cã lÏ ®êi tr­íc ch­ëng m«n lµ xem thÊu ? ®êi , cè ı chän c¸ kh«ng biÕt tiÕn thñ h¹ng ng­êi thñ nhµ ®i . nh¾c tíi n¨m ®ã nÕu kh«ng ph¶i Nam Cung thiÕu hiÖp thµnh toµn , h«m nay ta ®­êng ¶nh ®· sím lµ kh« cèt mét cô . cã chót thŞnh ng­¬i kh«ng thÓ kh«ng tranh , råi l¹i tranh kh«ng thÓ tranh , cã thÓ thÊy ®­îc trªn ®êi sè m¹ng mét ®¹o , cuèi cïng tån c¸ may m¾n .. hy väng ngµy h÷u ta §­êng gia b¶o v­ît qua nh÷ng thø nµy phong khãi ®i. <enter>",1,"KÕt thóc ®èi tho¹i /no") 
-      end
+	if ( Uworld1226 == 10  and  Uworld1227 == 20  and  Uworld1228 == 20  and  Uworld1229 == 20  and  Uworld1230 == 20  and  Uworld1231 == 20) then
+		Describe(DescLink_TangYing.."£ºÎÒÃÇ¼¸¸öÈËµÄ½ÌÓı¶¼½áÊøÁË¡£ÄãÏÖÔÚ¿ÉÒÔÈ¥ÕÒ½£»ÊÍ½µÜÁË¡£",1,"½áÊø¶Ô»°/no")	
+	elseif ( partner_getpartnerlevel(4) ~= 10  ) then
+		return
+	elseif ( Uworld1226 == 10 ) and ( Uworld1228 == 0 ) then  	   --ÌÆÓ°´¦ÈÎÎñÃ»ÓĞ´¥·¢£¿£¿£¿£¿£¿Ã»ÓĞ°ÑÈÎÎñ½±Àø¸æËßÍæ¼Ò
+		Describe(DescLink_TangYing.."£º°¥£¬Õâ¿ÉÔõÃ´°ìÄØ£¿ÇïÒÂÕâº¢×ÓÌ«²»Ìı»°ÁË¡£<enter>"
+		.."Å¶£¬ÄãÊÇ½£»ÊÍ½µÜ½éÉÜÀ´µÄ¡£ÄÇºÃ°É£¬ÎÒµÄ¶ù×ÓÌÆÇïÒÂ±»Õò×ÓÉÏÒ»¸ö¹ÖÈËÂ°×ßÁË£¬ÎÒÏÖÔÚÓÖÃ¦×Å²ÉÖÆÒ»ÖÖÆæÌØÒ©²Ä£¬Ï£ÍûÄãÄÜÌæÎÒ°ÑÇïÒÂ¾È³öÀ´,±ØÓĞ»Ø±¨¡£ÄÇ¸ö¹ÖÈË¾ÍÔÚÓÒ±ßĞüÑÂÄÇÀïÉèÖÃÁËÒ»Ìõ¿´²»µ½Â·µÄ¿ÕÖĞÕ»µÀ£¬ÄãĞèÒªÕÒµ½ÕâÌõÂ·£¬²¢ÇÒ¾È³öÎÒµÄ¶ù×Ó¡£ÄÇÌõÂ·ËùÔÚµÄĞüÑÂ±ßÉÏ»áÓĞÒ»¿ÅÆæ¹ÖµÄÊ÷¡£Â·ÉÏÓĞĞí¶à¿ÕÖĞÊ¯É½£¬Ã¿×ùÉ½ÉÏ¶¼Òª¿ªÆôÒ»¸ö»ú¹Ø£¬»ú¹ØÈË»áÎÊÄãĞ©ÎÊÌâ¡£×ÜÖ®·Ç³£²»ÈİÒ×£¬ÄãÒªĞ¡ĞÄ°¡¡£<enter>"
+		.."<color=green>ÈÎÎñ½±Àø£ºÍ¬°é¼¼ÄÜ'°Ù¶¾²»ÇÖ'¡¢'Õæ»ğ¿¹Á¦'<color>",2,
+		"ÎÒ½ÓÊÜÌôÕ½/tangying_findchildren",
+		"ÎÒ»¹Ã»×öºÃ×¼±¸ÄØ/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1228 == 8191 ) then
+		Describe(DescLink_TangYing.."£ºÇïÒÂµÈÏÂ¾Í»ØÀ´Âğ£¿Ì«ºÃÁË£¡Ğ»Ğ»Äã¡£ºÃÁË£¬ÎÒÔÙ¸æËßÄãÒ»Ğ©ÇÏÃÅ°É£º<enter>"
+		.."<color=yellow>µ±Äã´¦ÓÚÖ÷¶¯¹¥»÷×´Ì¬ÇÒµĞÈËÔÚÍ¬°éµÄĞĞ¶¯·¶Î§ÄÚÊ±£¬Èç¹ûÊÇÓÂÃÍĞÍ¡¢Á÷Ã¥ĞÍ¡¢Å³ÈõĞÍµÄÍ¬°é£¬±ã»á×Ô¶¯¹¥»÷Ëü£¬¸ù¾İÍ¬°éµÄ²»Í¬ĞÔ¸ñËûµÄĞĞ¶¯·¶Î§¸ú¹¥»÷·½Ê½Ò²»á²»Ò»Ñù¡£µ±Äã²»ÏëÈÃÄãµÄÍ¬°éÈ¥¹¥»÷µĞÈËµÄÊ±ºò£¬ÄãÖ»ÒªÔÚÍ¬°éµÄ¿ì½İÀ¸ÀïÕÒµ½¡°½ö¸úËæ¡±°´Å¥È»ºó×ó¼üµ¥»÷Ëü¾Í¿ÉÒÔÁË¡£Èç¹ûÄãÏëÈÃÄãµÄÍ¬°éÔÙ´Î¹¥»÷µĞÈËµÄ»°£¬ÄÇÄã¾ÍĞèÒªÔÚÍ¬°éµÄ¿ì½İÀ¸ÀïÕÒµ½¡°Ö÷¶¯¹¥»÷¡±°´Å¥²¢µã»÷Ëü¡£²»ÏëÒªÕâ¸öÍ¬°éÊ±£¬ÎÒÒªÈçºÎ½âÉ¢ËûÄØ£¿ÄãÊ×ÏÈÒªÔÚÍ¬°éÊôĞÔ½çÃæÕÒµ½½âÉ¢Í¬°é°´Å¥£¬×ó¼üµã»÷ºóÏµÍ³»áÏòÄãÈ·ÈÏÊÇ·ñÕæµÄÒª½âÉ¢Í¬°é£¬ÕâÊ±ÄãµãÑ¡¡°ÊÇ¡±µÄ»°¾Í¿ÉÒÔ°Ñµ±Ç°Í¬°é½âÉ¢ÁË¡£<color><enter>"
+		.."ºÃÁË£¬ÔÚÎÒÕâÀïÄãÒÑ¾­Ñ§²»µ½¸ü¶àµÄ¶«Î÷£¬È¥ÕÒÆäËûÈË°É¡£ÇïÒÂË®ÊÇÎÒµÄÀÏÆÅ£¬Äã¼ûµ½ËıÊ±Ğ¡ĞÄµã£¬Ç§Íò±ğ¸æËßËı¶ù×Ó¶ª¹ı°¡£¬²»È»ÍíÉÏÎÒ»á±»¹ØÔÚÃÅ¿ÚµÄ¡£°İÍĞ°İÍĞ¡£",2,"ÁìÈ¡½±Àø/tangying_getprize","ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1228),1) == 1  ) then  --¸Õ½Óµ½ÌÆÓ°´¦ÈÎÎñ
+		Describe(DescLink_TangYing.."£ºÈ¥<color=red>ÓÒ±ßĞüÑÂ<color>ÄÇÀïÕÒµ½Ò»Ìõ<color=red>Ğ¡Â·<color>£¬Í¨¹ı»ú¹ØÈËÕó£¬°ÑÎÒº¢×Ó´ÓÄÇ¸öËÀ¹ÖÎï×¿·Ç·²ÊÖÀï¾È³öÀ´¡£",1,
+		"½áÊø¶Ô»°/no")	
+	else
+		Describe(DescLink_TangYing.."£ºÌıËµÏÖÔÚÌÆÃÅÕÆÃÅÊÇÌÆ³ğ£¿Õâº¢×ÓĞÄĞÔÏÁÕ­ÆøÁ¿ÓĞÏŞ£¬ÔõÃ´×öµÃ°ÍÊñµÚÒ»¼ÒµÄÖ÷ÄØ£¿»òĞíÇ°´úÕÆÃÅÊÇ¿´´©ÁËÂÒÊÀ£¬¹ÊÒâÑ¡¸ö²»Ë¼½øÈ¡Ö®±²ÊØ¼Ò°É¡£ËµÆğÀ´µ±ÄêÈô²»ÊÇÄÏ¹¬ÉÙÏÀ³ÉÈ«£¬Èç½ñÎÒÌÆÓ°ÔçÒÑÊÇ¿İ¹ÇÒ»¾ß¡£ÓĞĞ©ÊÂÄã²»ÄÜ²»Õù£¬È´ÓÖÕùÎŞ¿ÉÕù£¬¿É¼ûÊÀÉÏÃüÔËÒ»µÀ£¬ÖÕ¾¿´æ×Å¸ö½ÄĞÒ¡­¡­Ï£ÍûÌìÓÓÎÒÌÆ¼Ò±¤¶È¹ıÕâĞ©·çÑÌ°É¡£<enter>",1,"½áÊø¶Ô»°/no")
+	end
 	
 end
 
 function tangying_findchildren()
 	nt_setTask(1228,SetBit(GetTask(1228),1,1))  --ÈÎÎñÆô¶¯
-	Msg2Player("§­êng ¶nh cho ng­¬i ®i bªn ph¶i mét thÇn bİ trong lèi ®i cøu ra con h¾n ®­êng thu nghiªu.")
+	Msg2Player("ÌÆÓ°ÈÃÄãÈ¥ÓÒ±ßÒ»¸öÉñÃØµÄÍ¨µÀÀï¾È³öËûµÄ¶ù×ÓÌÆÇïÒÂ¡£")
 end
 
 function tangying_getprize()
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddSkill(partnerindex,0,550,1)                          --Ôö¼ÓÍ¬°é¿¹ĞÔ¼¼ÄÜ¡¶°Ù¶¾²»ÇÖ¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ? b¸ch ®éc bÊt x©m ?")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶°Ù¶¾²»ÇÖ¡·")
 		nt_setTask(1228,20)
-		Msg2Player("Ng­¬i ®· hoµn thµnh ë ®­êng ¶nh chç häc tËp, cã thÓ ®i H¾c b¹ch song s¸t, thu nghiªu n­íc, tiÖm n¬i ®ã nh×n mét chót .")
+		Msg2Player("ÄãÒÑ¾­Íê³ÉÔÚÌÆÓ°´¦µÄÑ§Ï°£¬¿ÉÒÔÈ¥ºÚ°×Ë«É·£¬ÇïÒÂË®£¬Â¬ÇàÄÇÀïÇÆÇÆ¡£")
 	end
 end
 
 ----------------------------------------------------------------»ú¹ØÈË¶Ô»°--------------------------------------------------
 
 function pe_jiguan1()
-	if ( GetBit(GetTask(1228),1) == 1 ) and ( GetBit(GetTask(1228),2) == 0 ) then 
-                  Describe(DescLink_JiGuanRen..": Nói nµy lµ ta ®©y c¬ quan l·o ®¹i khai <enter>" 
-                  .." nµy c©y lµ ta ®©y c¬ quan l·o ®¹i tµi <enter>" 
-                  .." nÕu muèn ®¸nh ta ®©y c¬ quan l·o ®¹i c¸i nµy qu¸ <enter>" 
-                  .." th× ph¶i cho ta ®©y c¬ quan l·o ®¹i c¶ hiÓu <enter>" 
-                  .." muèn hái ng­êi qu¸ qu¸ ®¬n gi¶n . tr¶ lêi ta ®©y c¬ quan l·o ®¹i mÊy ®¹o kh«ng hiÓu ®İch ph­¬ng ng«n ®Ò môc , kh«ng tr¶ lêi ®­îc sÏ ph¶i trõng ph¹t ng­¬i !",2, 
-                  "§¬n gi¶n, ta qua l¹i ®¸p/jiguanren_problem1", 
-                  "Lµm c¸i g×, tr­íc kh«ng ®Ó ı tíi ng­¬i/no") 
-        elseif ( GetBit(GetTask(1228),2) == 1 ) and ( GetBit(GetTask(1228),3) == 0 ) then 
-                 Describe(DescLink_JiGuanRen..": §­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i . ",2,"NhËn lÊy phÇn th­ëng /jiguan1_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        else 
-                Describe(DescLink_JiGuanRen..": Ta lµ mét ng­êi m¸y , y nha y nha nga.",1,"Ng­¬i lµ g× ng­êi m¸y a, ng­¬i lµ mét ng­êi ®iªn /no") 
-        end
+	if ( GetBit(GetTask(1228),1) == 1 ) and  ( GetBit(GetTask(1228),2) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£º´ËÉ½ÊÇ°³»ú¹ØÀÏ´ó¿ª<enter>"
+		.."            ´ËÊ÷ÊÇ°³»ú¹ØÀÏ´óÔÔ<enter>"
+		.."            ÒªÏë´ò°³»ú¹ØÀÏ´óÕâ¹ı<enter>"
+		.."            ¾ÍµÃ¸ø°³»ú¹ØÀÏ´óÕûÃ÷°×<enter>"
+		.."            ÒªÎÊÕ¦¹ıÌ«¼òµ¥ÁË¡£»Ø´ğ°³»ú¹ØÀÏ´ó¼¸µÀÅª²»¶®µÄ·½ÑÔÌâÄ¿£¬´ğ²»ÉÏÀ´¾ÍÒª³Í·£Äã£¡",2,
+		"¼òµ¥°¡£¬ÎÒÀ´»Ø´ğ/jiguanren_problem1",
+		"¸ãÊ²Ã´£¬ÏÈ²»ÀíÄãÁË/no")
+	elseif ( GetBit(GetTask(1228),2) == 1 ) and ( GetBit(GetTask(1228),3) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/jiguan1_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	else
+		Describe(DescLink_JiGuanRen.."£ºÎÒÊÇÒ»¸ö»ú¹ØÈË£¬ßŞÑ½ßŞÑ½Å¶¡£",1,"ÄãÊÇÉ¶»ú¹ØÈË°¡£¬ÄãÊÇ¸ö·è×Ó/no")
+	end
 end
 
 function pe_jiguan2()
-	if ( GetBit(GetTask(1228),1) == 1 ) and ( GetBit(GetTask(1228),4) == 0 ) then 
-                Describe(DescLink_JiGuanRen..":Nói nµy v× ta c¬ quan l·o , a l·o , a l·o l·o NhŞ khai <enter>" 
-              .."nµy c©y v× ta c¬ quan l·o a , l·o a , l·o NhŞ tµi <enter>" 
-              .."nÕu muèn ®¸nh ta c¬ quan l·o NhŞ c¸i nµy qu¸ <enter>" 
-              .."th× ph¶i cho ta c¬ quan l·o NhŞ , a hai , a hiÓu râ <enter>" 
-              .."muèn hái ng­êi qu¸ qu¸ ®¬n gi¶n. Tr¶ lêi ta c¬ quan l·o NhŞ mÊy ®¹o kh«ng hiÓu ®İch ph­¬ng ng«n ®Ò môc , kh«ng tr¶ lêi ®­îc sÏ ph¶i trõng ph¹t ng­¬i !",2, 
-             "§¬n gi¶n, ta qua l¹i ®¸p /jiguanren_problem2", 
-            "Lµm c¸i g×, tr­íc kh«ng ®Ó ı tíi ng­¬i /no") 
-       elseif ( GetBit(GetTask(1228),4) == 1 ) and ( GetBit(GetTask(1228),5) == 0 ) then 
-              Describe(DescLink_JiGuanRen..": §­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i.",2,"NhËn lÊy phÇn th­ëng /jiguan2_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-       else 
-              Describe(DescLink_JiGuanRen..": Ta lµ mét ng­êi m¸y , y nha y nha nga . ",1,"Ng­¬i lµ g× ng­êi m¸y a , ng­¬i lµ mét ng­êi ®iªn /no") 
-       end
+	if ( GetBit(GetTask(1228),1) == 1 ) and  ( GetBit(GetTask(1228),4) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£º´ËÉ½ÎªÎÒ»ú¹ØÀÏ£¬°¡ÀÏ£¬°¡ÀÏÀÏ¶ş¿ª<enter>"
+		.."            ´ËÊ÷ÎªÎÒ»ú¹ØÀÏ°¡£¬ÀÏ°¡£¬ÀÏ¶şÔÔ<enter>"
+		.."            ÒªÏë´òÎÒ»ú¹ØÀÏ¶şÕâ¹ı<enter>"
+		.."            ¾ÍµÃ¸øÎÒ»ú¹ØÀÏ¶ş£¬°¡¶ş£¬°¡ÅªÃ÷°×<enter>"
+		.."            ÒªÎÊÕ¦¹ıÌ«¼òµ¥ÁË¡£»Ø´ğÎÒ»ú¹ØÀÏ¶ş¼¸µÀÅª²»¶®µÄ·½ÑÔÌâÄ¿£¬´ğ²»ÉÏÀ´¾ÍÒª³Í·£Äã£¡",2,
+		"¼òµ¥°¡£¬ÎÒÀ´»Ø´ğ/jiguanren_problem2",
+		"¸ãÊ²Ã´£¬ÏÈ²»ÀíÄãÁË/no")
+	elseif ( GetBit(GetTask(1228),4) == 1 ) and ( GetBit(GetTask(1228),5) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/jiguan2_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	else
+		Describe(DescLink_JiGuanRen.."£ºÎÒÊÇÒ»¸ö»ú¹ØÈË£¬ßŞÑ½ßŞÑ½Å¶¡£",1,"ÄãÊÇÉ¶»ú¹ØÈË°¡£¬ÄãÊÇ¸ö·è×Ó/no")
+	end
 end
 
 function pe_jiguan3()
-	if ( GetBit(GetTask(1228),1) == 1 ) and ( GetBit(GetTask(1228),6) == 0 ) then 
-               Describe(DescLink_JiGuanRen..": nói nµy lµ c¬ quan l·o Tam khai <enter>" 
-              .."nµy c©y lµ c¬ quan l·o Tam lo¹i giät <enter>" 
-              .."nÕu muèn ®¸nh ta ®©y c¬ quan l·o Tam c¸i nµy qu¸ <enter>" 
-              .."th× ph¶i cho ta c¬ quan l·o Tam ®¸p hiÓu <enter>" 
-              .."muèn hái ng­êi qu¸ qu¸ ®¬n gi¶n. Tr¶ lêi c¬ quan l·o Tam mÊy ®¹o kh«ng hiÓu ®İch ph­¬ng ng«n ®Ò môc , kh«ng tr¶ lêi ®­îc sÏ ph¶i trõng ph¹t ng­¬i !",2, 
-               "§¬n gi¶n, ta qua l¹i ®¸p /jiguanren_problem3", 
-               "Lµm c¸i g×, tr­íc kh«ng ®Ó ı tíi ng­¬i /no") 
-        elseif ( GetBit(GetTask(1228),6) == 1 ) and ( GetBit(GetTask(1228),7) == 0 ) then 
-                Describe(DescLink_JiGuanRen..": §­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i.",2,"NhËn lÊy phÇn th­ëng /jiguan3_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        else 
-               Describe(DescLink_JiGuanRen..": Ta lµ mét ng­êi m¸y , y nha y nha nga.",1,"Ng­¬i lµ g× ng­êi m¸y, ng­¬i lµ mét ng­êi ®iªn /no") 
-        end
+	if ( GetBit(GetTask(1228),1) == 1 ) and  ( GetBit(GetTask(1228),6) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£º´ËÉ½ÊÇ»ú¹ØÀÏÈı¿ª<enter>"
+		.."            ´ËÊ÷ÊÇ»ú¹ØÀÏÈıÖÖµÎ<enter>"
+		.."            ÒªÏë´ò°³»ú¹ØÀÏÈıÕâ¹ı<enter>"
+		.."            ¾ÍµÃ¸øÎÒ»ú¹ØÀÏÈı´ğÃ÷°×<enter>"
+		.."            ÒªÎÊÕ¦¹ıÌ«¼òµ¥ÁË¡£»Ø´ğ»ú¹ØÀÏÈı¼¸µÀÅª²»¶®µÄ·½ÑÔÌâÄ¿£¬´ğ²»ÉÏÀ´¾ÍÒª³Í·£Äã£¡",2,
+		"¼òµ¥°¡£¬ÎÒÀ´»Ø´ğ/jiguanren_problem3",
+		"¸ãÊ²Ã´£¬ÏÈ²»ÀíÄãÁË/no")
+	elseif ( GetBit(GetTask(1228),6) == 1 ) and ( GetBit(GetTask(1228),7) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/jiguan3_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	else
+		Describe(DescLink_JiGuanRen.."£ºÎÒÊÇÒ»¸ö»ú¹ØÈË£¬ßŞÑ½ßŞÑ½Å¶¡£",1,"ÄãÊÇÉ¶»ú¹ØÈË°¡£¬ÄãÊÇ¸ö·è×Ó/no")
+	end
 end
 
 function pe_jiguan4()
-	if ( GetBit(GetTask(1228),1) == 1 ) and ( GetBit(GetTask(1228),8) == 0 ) then 
-                  Describe(DescLink_JiGuanRen..": nói nµy lµ ta ®©y c¬ quan l·o Tø khai <enter>" 
-                 .."nµy c©y lµ ta ®©y c¬ quan l·o Tø tµi <enter>" 
-                 .."nÕu muèn ®¸nh ta ®©y c¬ quan l·o Tø c¸i nµy qu¸ <enter>" 
-                 .."th× ph¶i cho ta ®©y c¬ quan l·o Tø c¶ hiÓu <enter>" 
-                 .."muèn hái ng­êi qu¸ qu¸ ®¬n gi¶n. Tr¶ lêi ta ®©y c¬ quan l·o ®¹i mÊy ®¹o kh«ng hiÓu ®İch ph­¬ng ng«n ®Ò môc , kh«ng tr¶ lêi ®­îc sÏ ph¶i trõng ph¹t ng­¬i !",2, 
-                 "§¬n gi¶n, ta qua l¹i ®¸p /jiguanren_problem4", 
-                 "Lµm c¸i g×, tr­íc kh«ng ®Ó ı tíi ng­¬i /no") 
-        elseif ( GetBit(GetTask(1228),8) == 1 ) and ( GetBit(GetTask(1228),9) == 0 ) then 
-                  Describe(DescLink_JiGuanRen..": §­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i.",2,"NhËn lÊy phÇn th­ëng /jiguan4_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        else 
-                  Describe(DescLink_JiGuanRen..": Ta lµ mét ng­êi m¸y , y nha y nha nga . ",1,"Ng­¬i lµ g× ng­êi m¸y µ , ng­¬i lµ mét ng­êi ®iªn /no") 
-        end
+	if  ( GetBit(GetTask(1228),1) == 1 ) and  ( GetBit(GetTask(1228),8) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£º´ËÉ½ÊÇ°³»ú¹ØÀÏËÄ¿ª<enter>"
+		.."            ´ËÊ÷ÊÇ°³»ú¹ØÀÏËÄÔÔ<enter>"
+		.."            ÒªÏë´ò°³»ú¹ØÀÏËÄÕâ¹ı<enter>"
+		.."            ¾ÍµÃ¸ø°³»ú¹ØÀÏËÄÕûÃ÷°×<enter>"
+		.."            ÒªÎÊÕ¦¹ıÌ«¼òµ¥ÁË¡£»Ø´ğ°³»ú¹ØÀÏ´ó¼¸µÀÅª²»¶®µÄ·½ÑÔÌâÄ¿£¬´ğ²»ÉÏÀ´¾ÍÒª³Í·£Äã£¡",2,
+		"¼òµ¥°¡£¬ÎÒÀ´»Ø´ğ/jiguanren_problem4",
+		"¸ãÊ²Ã´£¬ÏÈ²»ÀíÄãÁË/no")
+	elseif ( GetBit(GetTask(1228),8) == 1 ) and ( GetBit(GetTask(1228),9) == 0 ) then 
+		Describe(DescLink_JiGuanRen.."£ººÃ°É£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/jiguan4_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	else
+		Describe(DescLink_JiGuanRen.."£ºÎÒÊÇÒ»¸ö»ú¹ØÈË£¬ßŞÑ½ßŞÑ½Å¶¡£",1,"ÄãÊÇÉ¶»ú¹ØÈË°¡£¬ÄãÊÇ¸ö·è×Ó/no")
+	end
 end
 
 function jiguanren_problem1()
@@ -569,7 +571,7 @@ function jiguan1_giveprize ()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,800 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+800
 		nt_setTask(1228,SetBit(GetTask(1228),3,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
@@ -578,7 +580,7 @@ function jiguan2_giveprize ()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,800 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+800
 		nt_setTask(1228,SetBit(GetTask(1228),5,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
@@ -587,7 +589,7 @@ function jiguan3_giveprize ()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,800 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+800
 		nt_setTask(1228,SetBit(GetTask(1228),7,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
@@ -596,24 +598,24 @@ function jiguan4_giveprize ()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,800 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+800
 		nt_setTask(1228,SetBit(GetTask(1228),9,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
 -----------------------------------------------------------------×¿·Ç·²¶Ô»°---------------------------------------------------
 
 function pe_zhuofeifan()
-	if ( nt_getTask(1228) == 511 ) then 
-               Describe(DescLink_ZhuoFeiFan..": Ha ha ! mét kiÕm l¸ phong , ®i giang hå lÖ. Ta tr¸c phi phµm n¨m ®ã còng lµ trong chèn vâ l©m nhÊt ®¼ng mét ®İch cao thñ. C¸i g× ? ta lµ ai ? ®óng vËy , ta lµ ai a , ta , ta lµ ai ? ai nha , bÊt kÓ n÷a råi. Ng­¬i ph¶i cøu c¸i ®ã hång hµi nhi ? h¾n lµ Ng­u ma v­¬ng ®İch con trai , ®Ó kh«ng ph¶i ®İch. A ! ta nhí ra råi, ta lµ TÒ thiªn ®¹i th¸nh , ha ha ha , lªn trêi xuèng ®Êt thÇn ma ®Ö nhÊt mü hÇu v­¬ng. Uh, nÕu ng­¬i nhÊt ®Şnh ph¶i cøu h¾n , ta mü hÇu v­¬ng dÜ nhiªn cÊp cho ng­¬i mét c¸i c¬ héi , tíi tíi tíi , ®¸p ta <color=red> n¨m ®¹o <color> vÊn ®Ò tíi.",2, 
-              "Tíi th× tíi /zhuofeifan_problem", 
-              "C¸i nµy tr¸c phi phµm bÖnh thËt tèt nÆng , ta cßn lµ sau nµy trë l¹i ®i /no") 
-        elseif ( GetBit(GetTask(1228),11) == 1 )then 
-                Describe(DescLink_ZhuoFeiFan..": ng­¬i tíi t×m c¸ gäi ®­êng thu nghiªu ®İch ®øa trÎ ? ®­êng c¸i g× nghiªu a , ch­a tõng nghe qua . ng­¬i xem mét chót phİa sau nói hµi tö kia cã ph¶i hay kh«ng ng­¬i muèn t×m. Cæn ®¶n cæn ®¶n.",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( GetBit(GetTask(1228),10) == 1 ) and ( GetBit(GetTask(1228),11) == 0 ) then 
-               Describe(DescLink_ZhuoFeiFan..": hõ hõ , h«m nay lßng ta t×nh h¶o , chØ hái ng­¬i vÊn ®Ò . nÕu kh«ng tuyÖt ®èi ®em ng­¬i ®ång b¹n ®¸nh chÕt , h¾c h¾c . <color=yellow> ng­¬i biÕt sÏ cã c¸i g× trõng ph¹t ? ®ång b¹n sÏ kh«ng chÕt nh­ng lµ khi ®ång b¹n ®İch sinh m¹ng trŞ gi¸ lµ 0 lóc lµ tiÕn vµo tr¹ng th¸i h«n mª , tù ®éng thèi lui ra chiÕn ®Êu , ph¶i ®­îc qu¸ 5 phót sau míi cã thÓ lÇn n÷a cho gäi , h¬n n÷a ®ång b¹n kÕt thóc tr¹ng th¸i h«n mª sau , sinh m¹ng trŞ gi¸ kh«i phôc v× lín nhÊt trŞ gi¸ ®İch 100% . b©y giê biÕt ®i . <color> ®­îc råi , ta ®em ta chç nµy ®İch t­ëng th­ëng cho ng­¬i . ",2,"NhËn lÊy phÇn th­ëng /zhuofeifan_giveprize","Sau nµy trë l¹i /no") -- nhËn lÊy t­ëng th­ëng ? ? ? ? ? ? ? ? ? 
-        else  
-               Describe(DescLink_ZhuoFeiFan..":Ta lµ TÒ thiªn ®¹i th¸nh , ha ha ha. Tr¸c phi phµm ? tr¸c phi phµm lµ ai ? ",1,"Khi h¾n trªn ng­êi cña cã lÏ x¶y ra chuyÖn g× thŞnh t×nh /no") 
-        end
+	if ( nt_getTask(1228) == 511 ) then
+		Describe(DescLink_ZhuoFeiFan.."£º¹ş¹ş£¡Ò»½£ÂäÒ¶·ã£¬×ßÂí½­ºşÀá¡£ÎÒ×¿·Ç·²µ±ÄêÒ²ÊÇÎäÁÖÖĞÒ»µÈÒ»µÄ¸ßÊÖ¡£Ê²Ã´£¿ÎÒÊÇË­£¿¶Ô°¡£¬ÎÒÊÇË­°¡£¬ÎÒ£¬ÎÒÊÇË­£¿°¥Ñ½£¬²»¹ÜÀ²¡£ÄãÒª¾ÈÄÇ¸öºìº¢¶ù£¿ËûÊÇÅ£Ä§ÍõµÄ¶ù×Ó£¬·Å²»µÃµÄ¡£°¡£¡ÎÒÏëÆğÀ´ÁË£¬ÎÒÊÇÆëÌì´óÊ¥£¬¹ş¹ş¹ş£¬ÉÏÌìÈëµØÉñÄ§µÚÒ»µÄÃÀºïÍõ°¡¡£¶÷£¬¼ÈÈ»ÄãÒ»¶¨Òª¾ÈËû£¬ÎÒÃÀºïÍõµ±È»Òª¸øÄãÒ»¸ö»ú»á£¬À´À´À´£¬´ğÎÒ<color=red>ÎåµÀ<color>ÎÊÌâÀ´¡£",2,
+		"À´¾ÍÀ´/zhuofeifan_problem",
+		"Õâ×¿·Ç·²²¡µÃºÃÖØ£¬ÎÒ»¹ÊÇÉÔºóÔÙÀ´°É/no")
+	elseif ( GetBit(GetTask(1228),11) == 1 )then
+		Describe(DescLink_ZhuoFeiFan.."£ºÄãÀ´ÕÒ¸ö½ĞÌÆÇïÒÂµÄĞ¡º¢£¿ÌÇÊ²Ã´ÒÂ°¡£¬Ã»Ìı¹ı¡£Äã¿´¿´É½ºóÄÇ¸öº¢×ÓÊÇ²»ÊÇÄãÒªÕÒµÄ¡£¹öµ°¹öµ°¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( GetBit(GetTask(1228),10) == 1 ) and ( GetBit(GetTask(1228),11) == 0 ) then 
+		Describe(DescLink_ZhuoFeiFan.."£ººßºß£¬½ñÌìÎÒĞÄÇéºÃ£¬Ö»ÎÊÄãÎÊÌâ¡£·ñÔò¾ø¶Ô°ÑÄãÍ¬°é´òËÀ£¬ºÙºÙ¡£<color=yellow>ÄãÖªµÀ»áÓĞÊ²Ã´³Í·£Âğ£¿Í¬°é²»»áËÀµ«ÊÇµ±Í¬°éµÄÉúÃüÖµÎª0Ê±Ôò½øÈë»èÃÔ×´Ì¬£¬×Ô¶¯ÍË³öÕ½¶·£¬Òª¾­¹ı5·ÖÖÓºó²ÅÄÜÔÙ´ÎÕÙ»½£¬²¢ÇÒÍ¬°é½áÊø»èÃÔ×´Ì¬ºó£¬ÉúÃüÖµ»Ö¸´Îª×î´óÖµµÄ100%¡£ÏÖÔÚÖªµÀÁË°É¡£<color>ºÃÀ²£¬ÎÒ°ÑÎÒÕâÀïµÄ½±Àø¸øÄã¡£",2,"ÁìÈ¡½±Àø/zhuofeifan_giveprize","ÉÔºóÔÙÀ´/no")   --ÁìÈ¡½±Àø£¿£¿£¿£¿£¿£¿£¿£¿£¿
+	else
+		Describe(DescLink_ZhuoFeiFan.."£ºÎÒÊÇÆëÌì´óÊ¥£¬¹ş¹ş¹ş¡£×¿·Ç·²£¿×¿·Ç·²ÊÇË­£¿",1,"ÔÚËûµÄÉíÉÏÒ²Ğí·¢ÉúÁËÊ²Ã´ÊÂÇé/no")
+	end
 end
 
 function zhuofeifan_problem()
@@ -626,38 +628,38 @@ function zhuofeifan_giveprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,800 ,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+800
 		PARTNER_AddSkill(partnerindex,0,552,1)                          --Ôö¼ÓÍ¬°é¿¹ĞÔ¼¼ÄÜ¡¶Õæ»ğ¿¹Á¦¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc kü n¨ng b¹n ®ång hµnh ? ch©n háa kh¸ng lùc ?")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶Õæ»ğ¿¹Á¦¡·")
 		nt_setTask(1228,SetBit(GetTask(1228),11,1))  --·¢½±Íê±Ï
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
 
------------------------------------------------------------------ÌÆÇïÒ¢--------------------------------------------------------
+-----------------------------------------------------------------ÌÆÇïÒÂ--------------------------------------------------------
 
 function pe_tangqiuyi()
 	
-	if ( ( GetBit(GetTask(1228),12) == 1 ) and ( GetBit(GetTask(1228),13) == 0 ) ) then 
-               Describe(DescLink_TangQiuYi..": D¹, cho ng­¬i İt thø ch¬i ®i . ",2,"NhËn lÊy phÇn th­ëng /tangqiuyi_giveprize","Sau nµy trë l¹i /no") 
-        elseif ( GetBit(GetTask(1228),11) == 1 ) and ( GetBit(GetTask(1228),12) == 0 ) then 
-             if ( GetSex() == 0 ) then 
-                Describe(DescLink_TangQiuYi..": A , Tr¸c thóc thóc kh«ng båi thu nghiªu ch¬i n÷a råi , ng« ...... mÊt høng. §­îc råi , §¹i ca ca ta lÇn tr­íc ®i. Ng­¬i cã thÓ trë vÒ ®i nãi cho ta biÕt phô th©n. <color=red> n÷a cïng ta ®èi tho¹i ta ®­a ng­¬i mét İt ®å nga. <color>",1,"KÕt thóc ®èi tho¹i /tangqiuyi_finish") 
-             else 
-                Describe(DescLink_TangQiuYi..": A , Tr¸c thóc thóc kh«ng båi thu nghiªu ch¬i n÷a råi , ng« ...... mÊt høng. §­îc råi , §¹i tû tû ta lÇn tr­íc ®i. Ng­¬i cã thÓ trë vÒ ®i nãi cho ta biÕt phô th©n. <color=red> n÷a cïng ta ®èi tho¹i ta ®­a ng­¬i mét İt ®å nga . <color>",1,"KÕt thóc ®èi tho¹i /tangqiuyi_finish") 
-             end 
-        elseif ( GetBit(GetTask(1228),13) == 1 ) then 
-             if ( GetSex() == 0 ) then 
-                Describe(DescLink_TangQiuYi..": A , Tr¸c thóc thóc kh«ng båi thu nghiªu ch¬i n÷a råi , ng« ...... mÊt høng. §­îc råi , §¹i ca ca ta lÇn tr­íc ®i. Ng­¬i cã thÓ trë vÒ ®i nãi cho ta biÕt phô th©n. ",1,"KÕt thóc ®èi tho¹i /tangqiuyi_finish") 
-             else 
-                Describe(DescLink_TangQiuYi..": A , Tr¸c thóc thóc kh«ng båi thu nghiªu ch¬i n÷a råi , ng« ...... mÊt høng. §­îc råi , §¹i tû tû ta lÇn tr­íc ®i. Ng­¬i cã thÓ trë vÒ ®i nãi cho ta biÕt phô th©n . ",1,"KÕt thóc ®èi tho¹i /tangqiuyi_finish") 
-             end 
-      else 
-             Describe(DescLink_TangQiuYi..": Tr¸c thóc thóc nãi mang ta ®i bÇu trêi thÊy th­êng nga tû tû ®©y , ng­¬i kh«ng muèn s¶o n÷a/råi , ta sÏ kh«ng cïng ng­¬i ®i . ng­¬i ph¶i nãi cïng Tr¸c thóc thóc nãi ®i . ",1,"KÕt thóc ®èi tho¹i /no") 
-       end
+	if ( ( GetBit(GetTask(1228),12) == 1 )  and ( GetBit(GetTask(1228),13) == 0 ) ) then
+		Describe(DescLink_TangQiuYi.."£º¶÷¶÷£¬¸øÄãĞ©¶«Î÷Íæ°É¡£",2,"ÁìÈ¡½±Àø/tangqiuyi_giveprize","ÉÔºóÔÙÀ´/no")
+	elseif  ( GetBit(GetTask(1228),11) == 1 ) and ( GetBit(GetTask(1228),12) == 0 )  then 
+		if ( GetSex() == 0 ) then
+			Describe(DescLink_TangQiuYi.."£º°¡£¬×¿ÊåÊå²»ÅãÇïÒÂÍæÀ²£¬ßí......É¨ĞË¡£ºÃ°É£¬´ó¸ç¸çÎÒÂíÉÏ»ØÈ¥¡£Äã¿ÉÒÔ»ØÈ¥¸æËßÎÒ¸¸Ç×ÁË¡£<color=red>ÔÙ¸úÎÒ¶Ô»°ÎÒËÍÄãÒ»Ğ©¶«Î÷Å¶¡£<color>",1,"½áÊø¶Ô»°/tangqiuyi_finish")
+		else
+			Describe(DescLink_TangQiuYi.."£º°¡£¬×¿ÊåÊå²»ÅãÇïÒÂÍæÀ²£¬ßí......É¨ĞË¡£ºÃ°É£¬´ó½ã½ãÎÒÂíÉÏ»ØÈ¥¡£Äã¿ÉÒÔ»ØÈ¥¸æËßÎÒ¸¸Ç×ÁË¡£<color=red>ÔÙ¸úÎÒ¶Ô»°ÎÒËÍÄãÒ»Ğ©¶«Î÷Å¶¡£<color>",1,"½áÊø¶Ô»°/tangqiuyi_finish")		
+		end
+	elseif ( GetBit(GetTask(1228),13) == 1 ) then
+	  	if ( GetSex() == 0 ) then
+			Describe(DescLink_TangQiuYi.."£º°¡£¬×¿ÊåÊå²»ÅãÇïÒÂÍæÀ²£¬ßí......É¨ĞË¡£ºÃ°É£¬´ó¸ç¸çÎÒÂíÉÏ»ØÈ¥¡£Äã¿ÉÒÔ»ØÈ¥¸æËßÎÒ¸¸Ç×ÁË¡£",1,"½áÊø¶Ô»°/tangqiuyi_finish")
+		else
+			Describe(DescLink_TangQiuYi.."£º°¡£¬×¿ÊåÊå²»ÅãÇïÒÂÍæÀ²£¬ßí......É¨ĞË¡£ºÃ°É£¬´ó½ã½ãÎÒÂíÉÏ»ØÈ¥¡£Äã¿ÉÒÔ»ØÈ¥¸æËßÎÒ¸¸Ç×ÁË¡£",1,"½áÊø¶Ô»°/tangqiuyi_finish")		
+		end
+	else
+		Describe(DescLink_TangQiuYi.."£º×¿ÊåÊåËµ´øÎÒÈ¥ÌìÉÏ¼ûæÏ¶ğ½ã½ãÄØ£¬Äã²»Òª³³À²£¬ÎÒ²»»á¸úÄã×ßµÄ¡£ÄãÒªËµ¸ú×¿ÊåÊåËµÈ¥¡£",1,"½áÊø¶Ô»°/no")
+	end
 end
 
 function tangqiuyi_finish()
-	nt_setTask(1228,SetBit(GetTask(1228),12,1))  --ÌÆÇïÒ¢´¦ÈÎÎñÍê³É
+	nt_setTask(1228,SetBit(GetTask(1228),12,1))  --ÌÆÇïÒÂ´¦ÈÎÎñÍê³É
 end
 
 function tangqiuyi_giveprize()
@@ -680,77 +682,77 @@ end
 -----------------------------------------------------------------°×É·¶Ô»°------------------------------------------------------
 function pe_baisha()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	local Uworld1228 = nt_getTask(1228)                        --Í¬°é½ÌÓıÈÎÎñÌÆÓ°ÈÎÎñ±äÁ¿
 	local Uworld1229 = nt_getTask(1229)                        --Í¬°é½ÌÓıÈÎÎñ°×É·ÈÎÎñ±äÁ¿
 	local Uworld1230 = nt_getTask(1230)                        --Í¬°é½ÌÓıÈÎÎñºÚÉ·ÈÎÎñ±äÁ¿
-	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒ¢Ë®ÈÎÎñ±äÁ¿
+	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒÂË®ÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 and Uworld1227 == 20 and Uworld1228 == 20 and Uworld1229 == 20 and Uworld1230 == 20 and Uworld1231 == 20) then 
-                   Describe(DescLink_BaiSha..": MÊy ng­êi chóng ta ®İch gi¸o dôc còng kÕt thóc. Ng­¬i b©y giê cã thÓ ®i t×m kiÕm hoµng ®å ®Ö . ",1,"KÕt thóc ®èi tho¹i /no") 
-        elseif ( partner_getpartnerlevel(6) ~= 10 ) then 
-                 return 
-        elseif ( Uworld1226 == 10 ) and ( Uworld1229 == 0 ) then -- b¹ch s¸t chç nhiÖm vô kh«ng cã xóc ph¸t ? ? ? ? ? kh«ng cã ®em nhiÖm vô t­ëng th­ëng nãi cho nhµ ch¬i 
-            Describe(DescLink_BaiSha..": Bå ®µo r­îu ngon ngô quang chĞn <enter>" 
-            .." muèn uèng tú bµ th­îng thóc giôc <enter>" 
-            .." say n»m sa tr­êng qu©n chí c­êi <enter>" 
-           .." x­a nay chinh chiÕn mÊy ng­êi trë vÒ <enter>" 
-           .." lóc cßn trÎ tæng thİch n»m m¬ , häc cæ nh©n uèng Tr­êng giang , mét thanh c¶nh kiÕm mét chiÕc nhŞ hå bá ch¹y ®i b¾c t¾c nh×n ®¹i m¹c ngµy. §¸ng tiÕc nh÷ng thø kia giang hå ®İch m­a giã kh«ng cã ®ông ph¶i ta , n÷a ®¶o m¾t ng­êi còng l·o l¹c . giang hå lµ c¸c ng­¬i ng­êi tuæi trÎ ®İch liÔu , nÕu lµ kiÕm hoµng ®Ö tö ®Ó cho ng­¬i tíi , ta chung quy kh«ng thÓ gäi ng­¬i tay kh«ng trë vÒ. ? n¬i nµy <color=red> v©n trung trÊn ®İch nam ph­¬ng <color> cã hai n¬i ®Şa ph­¬ng , chia ra kªu lµ <color=red> ba ®¹o sÜ th¸p , T¹ qu¶ phô bµi ph­êng <color> . ta cã hai bÊt thµnh khİ ®İch ®å ®Ö ë n¬i nµo Èn c­ , ng­¬i ®i t×m bän hä , tù sÏ hái chót vÊn ®Ò tr¸ch khã kh¨n ng­¬i . nÕu ng­¬i cã thÓ qu¸ liÔu c¸i nµy hai quan , ta chç nµy ®İch ®å còng liÒn häc ®­îc kĞm kh«ng ®©u liÔu . <enter>" 
-          .."<color=green> nhiÖm vô t­ëng th­ëng : ®ång b¹n kü n¨ng ' b¨ng tuyÕt s¬ dung '<color>",2, 
-        "VËy chóng ta b©y giê b¾t ®Çu ®i /baisha_starttask", 
-       "KÕt thóc ®èi tho¹i /no") 
-
-       elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 ) and ( nt_getTask(1229) ~= 20 )then -- nhiÖm vô ®· hoµn thµnh 
-
-                 Describe(DescLink_BaiSha..": ®­îc råi , ta sÏ nãi cho ng­¬i biÕt mét İt khiÕu m«n :<enter>" 
-               .." ®ång b¹n ®İch lÊy h¬i thë thuéc tİnh lµ cã t­ chÊt ®İch :<color=red> sinh m¹ng , lùc l­îng , mÖnh trung , nĞ tr¸nh , ch¹y tèc , may m¾n <color>; mét thuéc tİnh ®İch t­ chÊt cµng cao ı nghÜa nªn thuéc tİnh ë th¨ng cÊp lóc t¨ng lªn ph¶i cµng ®©u , bÊt qu¸ cô thÓ t¨ng lªn ®©u thiÓu , <color=red> cïng t­ chÊt <color> ng­êi cña còng sÏ cã <color=red> chót İt bÊt ®ång <color> . nãi thİ dô nh­ ng­¬i cã hai ng­êi ®ång b¹n sinh m¹ng t­ chÊt ®Òu lµ 2 , kia khi h¾n cöa th¨ng cÊp ®İch thêi ®iÓm cã thÓ mét t¨ng lªn 50 ®iÓm sinh m¹ng trŞ gi¸ , mµ mét ng­êi kh¸c chØ t¨ng lªn 45 ®iÓm sinh m¹ng trŞ gi¸ . nh÷ng thø nµy cô thÓ t¨ng lªn trŞ sè ë ®ång b¹n <color=red>10 cÊp ?30 cÊp ?50 cÊp ?90 cÊp lóc sÏ xuÊt hiÖn mét İt ba ®éng . <color><enter>" 
-               .." tèt l¾m , ë chç nµy cña ta ng­¬i ®· häc kh«ng tíi h¬n ®©u ®İch ®å , ®i t×m nh÷ng ng­êi kh¸c ®i . huynh ®Ö ta h¾c s¸t còng kh«ng ph¶i lµ ®¾p ph¶i , bß ph¶i hÖ khi . ng­¬i nãi chuyÖn víi h¾n thêi ®iÓm giäng ngµn v¹n chí qu¸ lín , h¾n b©y giê cßn ®ang nhí kü l·o chñ nh©n tê nh­ méng tiªn sinh cïng Nam Cung tiÓu th­ ®©y . ",2," nhËn lÊy phÇn th­ëng /baisha_getprize","Sau nµy trë l¹i /no") 
-                
-       elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1229),1 ) == 1 ) then -- míi võa nhËn ®­îc b¹ch s¸t chç nhiÖm vô 
-              Describe(DescLink_BaiSha..": ë n¬i nµy v©n trung trÊn ®İch nam ph­¬ng cã hai n¬i ®Şa ph­¬ng , chia ra kªu lµ ba ®¹o sÜ th¸p , T¹ qu¶ phô bµi ph­êng . ta cã hai bÊt thµnh khİ ®İch ®å ®Ö ë n¬i nµo Èn c­ , ng­¬i ®i t×m bän hä , tù sÏ hái chót vÊn ®Ò tr¸ch khã kh¨n ng­¬i . nÕu ng­¬i cã thÓ qu¸ liÔu c¸i nµy hai quan , ta chç nµy ®İch ®å còng liÒn häc ®­îc kĞm kh«ng ®©u",1, 
-             "KÕt thóc ®èi tho¹i /no") 
-      else 
-             Describe(DescLink_BaiSha..": Ng­¬i cßn tíi n¬i nµy lµm c¸i g× ? x«ng x¸o giang hå ? t×m kiÕm ®ång b¹n ? ng­¬i l¹i biÕt giang hå lµ c¸i g× ®©y . l·o nh©n nãi võa vµo giang hå tuæi ngô thóc giôc , thóc giôc ®İch kh«ng chØ lµ nh©n m¹ng , cßn ng­¬i n÷a lßng cña a . th«i , nãi cïng ng­¬i nghe th× cã İch lîi g× ? muèn x«ng ®İch , chung quy ph¶i m×nh x«ng qua míi hiÓu ®­îc. Cã chót thŞnh cïng c¸i nµy v©n trung ®İch tuyÕt mét lo¹i hµng n¨m thæi qua. Lßng cña ta còng ®· cøng nh¾c. <enter>",1,"KÕt thóc ®èi tho¹i /no") 
-       end
+	if ( Uworld1226 == 10  and  Uworld1227 == 20  and  Uworld1228 == 20  and  Uworld1229 == 20  and  Uworld1230 == 20  and  Uworld1231 == 20) then
+		Describe(DescLink_BaiSha.."£ºÎÒÃÇ¼¸¸öÈËµÄ½ÌÓı¶¼½áÊøÁË¡£ÄãÏÖÔÚ¿ÉÒÔÈ¥ÕÒ½£»ÊÍ½µÜÁË¡£",1,"½áÊø¶Ô»°/no")	
+	elseif ( partner_getpartnerlevel(6) ~= 10  ) then
+		return
+	elseif ( Uworld1226 == 10 ) and ( Uworld1229 == 0 ) then  	   --°×É·´¦ÈÎÎñÃ»ÓĞ´¥·¢£¿£¿£¿£¿£¿Ã»ÓĞ°ÑÈÎÎñ½±Àø¸æËßÍæ¼Ò
+		Describe(DescLink_BaiSha.."£ºÆÏÌÑÃÀ¾ÆÔÂ¹â±­<enter>"
+		.."      ÓûÒûÅıÅÃÂíÉÏ´ß<enter>"
+		.."      ×íÎÔÉ³³¡¾ıÄªĞ¦<enter>"
+		.."      ¹ÅÀ´Õ÷Õ½¼¸ÈË»Ø<enter>"
+		.."ÄêÇáµÄÊ±ºò×Ü°®×öÃÎ£¬Ñ§¹ÅÈËÒûÂí³¤½­£¬Ò»°Ñ¹Â½£Ò»¼Ü¶şºú¾ÍÅÜÈ¥±±Èû¿´´óÄ®µÄÂäÈÕ¡£¿ÉÏ§ÄÇĞ©½­ºşµÄ·çÓêÃ»ÅöÉÏÎÒ£¬ÔÙ×ªÑÛÈËÒ²ÀÏ¿©¡£½­ºşÊÇÄãÃÇÄêÇáÈËµÄÁË£¬¼ÈÈ»ÊÇ½£»ÊµÜ×ÓÈÃÄãÀ´£¬ÎÒÖÕ¹é²»ÄÜ½ĞÄã¿ÕÊÖ»ØÈ¥µÄ¡£ÔÚÕâ<color=red>ÔÆÖĞÕòµÄÄÏ·½<color>ÓĞÁ½´¦µØ·½£¬·Ö±ğ»½×ö<color=red>ÈıµÀÊ¿Ëş£¬Ğ»¹Ñ¸¾ÅÆ·»<color>¡£ÎÒÓĞÁ½¸ö²»³ÉÆ÷µÄÍ½µÜÔÚÄÇÀïÒş¾Ó£¬ÄãÈ¥ÕÒËûÃÇ£¬×Ô»áÎÊĞ©ÎÊÌâÔğÄÑÄã¡£ÈôÄãÄÜ¹ıµÃÁËÕâÁ½¹Ø£¬ÎÒÕâÀïµÄ¶«Î÷Ò²¾ÍÑ§µÃ²î²»¶àÁË¡£<enter>"
+		.."<color=green>ÈÎÎñ½±Àø£ºÍ¬°é¼¼ÄÜ'±ùÑ©³õÈÚ'<color>",2,
+		"ºÃ°¡£¬ÄÇÎÒÃÇÏÖÔÚ¿ªÊ¼°É/baisha_starttask",
+		"½áÊø¶Ô»°/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 )  and ( nt_getTask(1229) ~= 20 )then  --ÈÎÎñÒÑÍê³É
+	
+		Describe(DescLink_BaiSha.."£ººÃ°É£¬ÎÒÔÙ¸æËßÄãÒ»Ğ©ÇÏÃÅ£º<enter>"
+		.."Í¬°éµÄÒÔÏÂÊôĞÔÊÇÓµÓĞ×ÊÖÊµÄ£º<color=red>ÉúÃü£¬Á¦Á¿£¬ÃüÖĞ£¬ÉÁ±Ü£¬ÅÜËÙ£¬ĞÒÔË<color>£»Ò»¸öÊôĞÔµÄ×ÊÖÊÔ½¸ßÒâÎ¶×Å¸ÃÊôĞÔÔÚÉı¼¶Ê±ÌáÉıµÃÔ½¶à£¬²»¹ı¾ßÌåÌáÉı¶àÉÙ£¬<color=red>Í¬Ò»×ÊÖÊ<color>µÄÈËÒ²»áÓĞ<color=red>ÉÙĞí²»Í¬<color>¡£±ÈÈçËµÄãÓĞÁ½¸öÍ¬°éÉúÃüµÄ×ÊÖÊ¶¼ÊÇ2£¬ÄÇÔÚËûÃÇÉı¼¶µÄÊ±ºò¿ÉÄÜÒ»¸öÌáÉıÁË50µãÉúÃüÖµ£¬¶øÁíÒ»¸öÖ»ÌáÉıÁË45µãÉúÃüÖµ¡£ÕâĞ©¾ßÌåÌáÉıµÄÊıÖµÔÚÍ¬°é<color=red>10¼¶¡¢30¼¶¡¢50¼¶¡¢90¼¶Ê±»á³öÏÖÒ»Ğ©²¨¶¯¡£<color><enter>"
+		.."ºÃÁË£¬ÔÚÎÒÕâÀïÄãÒÑ¾­Ñ§²»µ½¸ü¶àµÄ¶«Î÷£¬È¥ÕÒÆäËûÈË°É¡£ÎÒĞÖµÜºÚÉ·¿É²»ÊÇ¸ÇµÃ£¬Å£µÃÏàµ±¡£Äã¸úËûËµ»°Ê±ºòÉ¤ÃÅÇ§Íò±ğÌ«´ó£¬ËûÏÖÔÚ»¹ÔÚµë¼Ç×ÅÀÏÖ÷ÈËÕÅÈçÃÎÏÈÉúºÍÄÏ¹¬Ğ¡½ãÄØ¡£",2,"ÁìÈ¡½±Àø/baisha_getprize","ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( GetBit(GetTask(1229),1 ) == 1 ) then  --¸Õ½Óµ½°×É·´¦ÈÎÎñ
+		Describe(DescLink_BaiSha.."£ºÔÚÕâÔÆÖĞÕòµÄÄÏ·½ÓĞÁ½´¦µØ·½£¬·Ö±ğ»½×öÈıµÀÊ¿Ëş£¬Ğ»¹Ñ¸¾ÅÆ·»¡£ÎÒÓĞÁ½¸ö²»³ÉÆ÷µÄÍ½µÜÔÚÄÇÀïÒş¾Ó£¬ÄãÈ¥ÕÒËûÃÇ£¬×Ô»áÎÊĞ©ÎÊÌâÔğÄÑÄã¡£ÈôÄãÄÜ¹ıµÃÁËÕâÁ½¹Ø£¬ÎÒÕâÀïµÄ¶«Î÷Ò²¾ÍÑ§µÃ²î²»¶àÁË",1,
+		"½áÊø¶Ô»°/no")	
+	else
+		Describe(DescLink_BaiSha.."£ºÄã»¹À´ÕâÀï×öÊ²Ã´£¿´³µ´½­ºş£¿Ñ°ÕÒÍ¬°é£¿ÄãÓÖÖªµÀ½­ºşÊÇÊ²Ã´ÄØ¡£ÀÏÈËËµÒ»Èë½­ºşËêÔÂ´ß£¬´ßµÄ²»Ö»ÊÇÈËÃü£¬»¹ÓĞÄãµÄĞÄ°¡¡£°ÕÁË£¬ËµÓëÄãÌıÓÖÓĞºÎÓÃ£¿Òª´³µÄ£¬ÖÕ¹éµÃ×Ô¼º´³¹ı²ÅÃ÷°×¡£ÓĞĞ©ÊÂºÍÕâÔÆÖĞµÄÑ©Ò»°ãÄêÄêÆ®¹ı¡£ÎÒµÄĞÄÒ²ÒÑ¾­½©ËÀÁË¡£<enter>",1,"½áÊø¶Ô»°/no")
+	end
    
 end
 
 function baisha_starttask()
 	nt_setTask(1229,SetBit(GetTask(1229),1,1))  
-	Msg2Player("B¹ch s¸t cho ng­¬i ®i v©n trung trÊn phİa nam ®İch ba ®¹o sÜ th¸p cïng T¹ qu¶ phô bµi ph­êng t×m h¾n hai vŞ ®å ®Ö .")
+	Msg2Player("°×É·ÈÃÄãÈ¥ÔÆÖĞÕòÄÏÃæµÄÈıµÀÊ¿ËşºÍĞ»¹Ñ¸¾ÅÆ·»ÕÒËûµÄÁ½Î»Í½µÜ¡£")
 end
 
 function baisha_getprize()
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddSkill(partnerindex,0,551,1)                          --Ôö¼ÓÍ¬°é¿¹ĞÔ¼¼ÄÜ¡¶±ùÑ©³õÈÚ¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ? B¨ng tuyÕt s¬ dung ?")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶±ùÑ©³õÈÚ¡·")
 		nt_setTask(1229,20)
-		Msg2Player("B¹ch s¸t kh«ng cã g× cã thÓ d¹y ng­¬i, ®i h¾c s¸t, ®­êng ¶nh,thu nghiªu n­íc vî chång, cïng tiÖm n¬i ®ã xem mét chót ®i . ")
+		Msg2Player("°×É·Ã»ÓĞÊ²Ã´¿ÉÒÔ½ÌÄãµÄÁË£¬È¥ºÚÉ·£¬ÌÆÓ°¡¢ÇïÒÂË®·ò¸¾£¬ºÍÂ¬ÇàÄÇÀï¿´¿´°É¡£")
 	end
 end
 
 ---------------------------------------------------------------ÄĞµÜ×ÓÃÅÉñÇúÍò-------------------------------------------------
 
 function pe_menshenquwan()
-	if ( GetBit(GetTask(1229),1) == 1 ) and ( GetBit(GetTask(1229),2) == 0 ) then 
-              Describe(DescLink_QuWan..": Ng­¬i lµ s­ phã l·o nh©n gia «ng ta giíi thiÖu tíi . ®­îc råi , ta th¶ tr­íc nãi cho ng­¬i biÕt mét İt yÕu ®iÓm :<enter>" 
-             .." <color=red> ngò hµnh thuéc tİnh <color>:<color=yellow> biÓu hiÖn nªn ®ång b¹n ®İch ngò hµnh , bÊt ®ång ngò hµnh ®İch ®ång b¹n cã thÓ cã vâ c«ng cïng tuyÖt kû bÊt ®ång , ®ång thêi cã mét bé phËn ®İch phô thªm kü n¨ng còng sÏ cã ngò hµnh ®İch h¹n chÕ ;<color><enter>" 
-             .." <color=red> t­ chÊt <color>:<color=yellow> quyÕt ®Şnh ®ång b¹n ®İch thuéc tİnh ë th¨ng cÊp lóc cã thÓ t¨ng lªn ®©u thiÓu ®İch trŞ gi¸ . <color><enter>" 
-             .." <color=red> tinh lùc <color>:<color=yellow> thÇn bİ tiÒm chÊt , ngµy sau më ra ;<color><enter>" 
-            .." <color=red> tİnh t×nh <color>:<color=yellow> nªn ®ång b¹n ®İch tİnh t×nh , bÊt ®ång tİnh t×nh ®İch ®ång b¹n ph­¬ng thøc hµnh ®éng còng sÏ bÊt ®ång ; hiÖn h÷u ®İch tİnh t×nh ®æ thõa h×nh cã :<color><enter>" 
-            .." <color=red> anh m·nh h×nh <color>:<color=yellow> sÏ c«ng kİch c¸ch h¾n gÇn nhÊt ®İch ®èi thñ , còng kh«ng thi ? tù th©n tæn th­¬ng , cã kh¸ xa ®İch hµnh ®éng ph¹m vi . <color><enter>" 
-            .." <color=red> vÖ chñ h×nh <color>:<color=yellow> nhµ ch¬i môc tiªu c«ng kİch hoÆc bŞ c«ng kİch lóc , ®ång b¹n sÏ d­ lÊy hiÖp trî , còng kh«ng thi ? tù th©n tæn th­¬ng , mét lo¹i ®ang ®ïa nhµ phô cËn . <color><enter>" 
-            .." <color=red> l­u manh h×nh <color>:<color=yellow> sÏ c«ng kİch m¸u thiÓu ®İch ®èi thñ , khi tù th©n m¸u İt h¬n so víi 20% lóc võa ®¸nh võa ch¹y . <color><enter>" 
-           .." <color=red> hÌn yÕu h×nh <color>:<color=yellow> sÏ ngÉu nhiªn c«ng kİch ®èi thñ , bŞ c«ng kİch lóc sÏ võa ®¸nh võa ch¹y , sinh m¹ng İt h¬n so víi 20% lóc sÏ h¬n ®©u ®İch nĞ tr¸nh . <color><enter>" 
-           .." ®­îc råi , biÕt râ nh÷ng thø nµy sau nµy , ng­¬i tíi tr¶ lêi ta <color=red> ba <color> vÊn ®Ò , ®¸p ®óng råi míi cã thÓ qu¸ ta ®©y quan . ",2,"Tr¶ lêi vÊn ®Ò /quwan_problem","Tr­íc chuÈn bŞ mét h¬i thë ®i /no") 
-         elseif ( GetBit(GetTask(1229),1 ) == 1 ) and ( GetBit(GetTask(1229),2) == 1) and ( GetBit(GetTask(1229),3) ~= 1) then 
-           Describe(DescLink_QuWan..": ®­îc råi , ng­¬i ë ®©y ta chç nµy ®İch häc tËp ®· qu¸ quan . nhËn lÊy t­ëng th­ëng cña ng­¬i ®i . ",2,"NhËn lÊy phÇn th­ëng /quwan_getprize","Sau nµy trë l¹i /no") 
-            elseif ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 ) then 
-       Describe(DescLink_QuWan..": §­îc råi , ng­¬i tõ ta hßa thanh mµ n¬i nµy còng häc kh«ng tíi h¬n ®©u ®İch ®å . trë vÒ t×m s­ phã l·o nh©n gia «ng ta ®i. ",1,"KÕt thóc ®èi tho¹i /no") 
-           else 
-         Describe(DescLink_QuWan..": Ta dèc lßng ë n¬i nµy trong th¸p t×m kiÕm th­îng cæ ®İch b¶o bèi quû kİnh , håi l©u kh«ng cã trë vÒ ®i t×m s­ phã. Ng­¬i thÊy l·o nh©n gia «ng ta , xin mêi thay ta vÊn an . cßn cã Thanh nhi ...... nµng , ai , tİnh  chän , ng­¬i ®i ®i . ",1,"KÕt thóc ®èi tho¹i /no") 
-     end
+	if ( GetBit(GetTask(1229),1) == 1  ) and ( GetBit(GetTask(1229),2) == 0 ) then
+		Describe(DescLink_QuWan.."£ºÄãÊÇÊ¦¸µËûÀÏÈË¼Ò½éÉÜÀ´µÄ¡£ºÃ°É£¬ÎÒÇÒÏÈ¸æËßÄãÒ»Ğ©Òªµã£º<enter>"
+		.."	<color=red>ÎåĞĞÊôĞÔ<color>£º<color=yellow>ÏÔÊ¾¸ÃÍ¬°éµÄÎåĞĞ£¬²»Í¬ÎåĞĞµÄÍ¬°éËùÄÜÓµÓĞµÄÎä¹¦¸ú¾ø¼¼²»Í¬£¬Í¬Ê±ÓĞÒ»²¿·İµÄ¸½¼Ó¼¼ÄÜÒ²»áÓĞÎåĞĞµÄÏŞÖÆ£»<color><enter>"
+    	.."	<color=red>×ÊÖÊ<color>£º<color=yellow>¾ö¶¨Í¬°éµÄÊôĞÔÔÚÉı¼¶Ê±ËùÄÜÌáÉı¶àÉÙµÄÖµ¡£<color><enter>"
+		.." <color=red>¾«Á¦<color>£º<color=yellow>ÉñÃØÇ±ÖÊ£¬ÈÕºó¿ª·Å£»<color><enter>"
+        .." <color=red>ĞÔ¸ñ<color>£º<color=yellow>¸ÃÍ¬°éµÄĞÔ¸ñ£¬²»Í¬ĞÔ¸ñµÄÍ¬°éĞĞÎª·½Ê½Ò²»á²»Í¬£»ÏÖÓĞµÄĞÔ¸ñÀàĞÍÓĞ£º<color><enter>"
+		.."	  <color=red>ÓÂÃÍĞÍ<color>£º<color=yellow>»á¹¥»÷ÀëËû×î½üµÄ¶ÔÊÖ£¬²¢²»¿¼ÂÇ×ÔÉíËğÉË£¬ÓµÓĞ±È½ÏÔ¶µÄĞĞ¶¯·¶Î§¡£<color><enter>"
+		.."	  <color=red>ÎÀÖ÷ĞÍ<color>£º<color=yellow>Íæ¼Ò¹¥»÷Ä¿±ê»ò±»¹¥»÷Ê±£¬Í¬°é»áÓèÒÔĞ­Öú£¬²¢²»¿¼ÂÇ×ÔÉíËğÉË£¬Ò»°ãÔÚÍæ¼Ò¸½½ü¡£<color><enter>"
+		.."	  <color=red>Á÷Ã¥ĞÍ<color>£º<color=yellow>»á¹¥»÷ÑªÉÙµÄ¶ÔÊÖ£¬µ±×ÔÉíÑªÉÙÓÚ20%Ê±±ßÅÜ±ß´ò¡£<color><enter>"
+		.."	  <color=red>Å³ÈõĞÍ<color>£º<color=yellow>»áËæ»ú¹¥»÷¶ÔÊÖ£¬ÊÜµ½¹¥»÷Ê±»á±ßÅÜ±ß´ò£¬ÉúÃüÉÙÓÚ20%Ê±»á¸ü¶àµÄÉÁ¶ã¡£<color><enter>"
+    	.."ºÃÀ²£¬ÅªÇå³şÕâĞ©ÒÔºó£¬ÄãÀ´»Ø´ğÎÒ<color=red>Èı¸ö<color>ÎÊÌâ£¬´ğ¶ÔÁË²Å¿ÉÒÔ¹ıÎÒÕâ¹Ø¡£",2,"»Ø´ğÎÊÌâ/quwan_problem","ÏÈ×¼±¸Ò»ÏÂ°É/no")
+    elseif ( GetBit(GetTask(1229),1 ) == 1  ) and ( GetBit(GetTask(1229),2) == 1) and ( GetBit(GetTask(1229),3) ~= 1)  then
+    	Describe(DescLink_QuWan.."£ººÃÀ²£¬ÄãÔÚÎÒÕâÀïµÄÑ§Ï°ÒÑ¾­¹ı¹ØÁË¡£ÁìÈ¡ÄãµÄ½±Àø°É¡£",2,"ÁìÈ¡½±Àø/quwan_getprize","ÉÔºóÔÙÀ´/no")
+    elseif ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 )  then
+    	Describe(DescLink_QuWan.."£ººÃÀ²£¬Äã´ÓÎÒºÍÇå¶ùÕâÀï¶¼Ñ§²»µ½¸ü¶àµÄ¶«Î÷ÁË¡£»ØÈ¥ÕÒÊ¦¸µËûÀÏÈË¼Ò°É¡£",1,"½áÊø¶Ô»°/no")
+    else
+    	Describe(DescLink_QuWan.."£ºÎÒÇ±ĞÄÔÚÕâËşÀïÑ°ÕÒÉÏ¹ÅµÄ±¦±´¹í¾µ£¬Ğí¾ÃÃ»»ØÈ¥ÕÒ¹ıÊ¦¸µÁË¡£Äã¼ûµ½ËûÀÏÈË¼Ò£¬Çë´úÎÒÎÊºÃ¡£»¹ÓĞÇå¶ù......Ëı,°¥£¬ËãÁË£¬Äã×ß°É¡£",1,"½áÊø¶Ô»°/no")
+    end
 end
 
 function quwan_problem()
@@ -762,23 +764,23 @@ function quwan_getprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,2100,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+2100
 		nt_setTask(1229,SetBit(GetTask(1229),3,1))  
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
 --------------------------------------------------------------- Å®µÜ×ÓĞ»Çå¶ù--------------------------------------------------
 
 function pe_xieqinger()
-	if ( GetBit(GetTask(1229),1) == 1) and ( GetBit(GetTask(1229),4) == 0) then 
-             Describe(DescLink_XieQingEr..": Ai , mÑ a , ®Ó cho n÷ nhi h¬i thë tíi cïng ng­¬i ®i . <enter>" 
-        .." ng­¬i lµ ai ? nga , lµ s­ phã l·o nh©n gia «ng ta ®Ó cho ng­¬i tíi . ®­îc råi , ng­¬i th¶ tr¶ lêi ®èi víi ta ba vÊn ®Ò . <enter>",2,"Tr¶ lêi vÊn ®Ò /xieqinger_problem","Tr­íc chuÈn bŞ mét h¬i thë ®i /no") 
-        elseif ( GetBit(GetTask(1229),1 ) == 1 ) and ( GetBit(GetTask(1229),4) == 1) and ( GetBit(GetTask(1229),5) ~= 1) then 
-             Describe(DescLink_XieQingEr..": Ng­¬i ë ®©y ta chç nµy ®İch häc tËp ®· qu¸ quan . nhËn lÊy t­ëng th­ëng cña ng­¬i ®i . ",2,"NhËn lÊy phÇn th­ëng /xieqinger_getprize","Sau nµy trë l¹i /no") 
-        elseif ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 ) then 
-            Describe(DescLink_XieQingEr..": Ng­¬i tõ ta cïng s­ huynh n¬i nµy còng häc kh«ng tíi h¬n ®©u ®İch ®å . trë vÒ t×m s­ phã l·o nh©n gia «ng ta ®i . ",1,"KÕt thóc ®èi tho¹i /no") 
-       else 
-           Describe(DescLink_XieQingEr..": §óng vËy , mÑ ta lµ mét qu¶ phô , c¸i nµy ch¼ng lÏ chİnh lµ nh÷ng nam nh©n kia khi dÔ ta lı do ? nh÷ng n¨m nµy nÕu nh­ kh«ng cã s­ phã , s­ huynh , ta còng qu¸ kh«ng ngõng ®i ®İch . ",1," KÕt thóc ®èi tho¹i /no") 
-        end
+	if ( GetBit(GetTask(1229),1) == 1) and ( GetBit(GetTask(1229),4) == 0) then
+		Describe(DescLink_XieQingEr.."£º°¥£¬Äï°¡£¬ÈÃÅ®¶ùÏÂÀ´ÅãÄã°É¡£<enter>"
+		.."ÄãÊÇÊ²Ã´ÈË£¿Å¶£¬ÊÇÊ¦¸µËûÀÏÈË¼ÒÈÃÄãÀ´µÄ¡£ºÃ°É£¬ÄãÇÒ»Ø´ğ¶ÔÎÒÈı¸öÎÊÌâ¡£<enter>",2,"»Ø´ğÎÊÌâ/xieqinger_problem","ÏÈ×¼±¸Ò»ÏÂ°É/no")
+    elseif ( GetBit(GetTask(1229),1 ) == 1  ) and ( GetBit(GetTask(1229),4) == 1) and ( GetBit(GetTask(1229),5) ~= 1)  then
+    	Describe(DescLink_XieQingEr.."£ºÄãÔÚÎÒÕâÀïµÄÑ§Ï°ÒÑ¾­¹ı¹ØÁË¡£ÁìÈ¡ÄãµÄ½±Àø°É¡£",2,"ÁìÈ¡½±Àø/xieqinger_getprize","ÉÔºóÔÙÀ´/no")
+    elseif ( GetBit(GetTask(1229),3) == 1) and ( GetBit(GetTask(1229),5) == 1 )  then
+    	Describe(DescLink_XieQingEr.."£ºÄã´ÓÎÒºÍÊ¦ĞÖÕâÀï¶¼Ñ§²»µ½¸ü¶àµÄ¶«Î÷ÁË¡£»ØÈ¥ÕÒÊ¦¸µËûÀÏÈË¼Ò°É¡£",1,"½áÊø¶Ô»°/no")
+    else
+    	Describe(DescLink_XieQingEr.."£ºÊÇµÄ£¬ÎÒÄïÊÇ¸ö¹Ñ¸¾£¬ÕâÄÑµÀ¾ÍÊÇÄÇĞ©ÄĞÈËÆÛ¸ºÎÒµÄÀíÓÉÂğ£¿ÕâĞ©ÄêÈç¹ûÃ»ÓĞÊ¦¸µ£¬Ê¦ĞÖ£¬ÎÒÒ²¹ı²»ÏÂÈ¥ÁËµÄ¡£",1,"½áÊø¶Ô»°/no")
+    end
 end
 
 function xieqinger_problem()
@@ -790,7 +792,7 @@ function xieqinger_getprize()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,2100,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+2100
 		nt_setTask(1229,SetBit(GetTask(1229),5,1))  
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 
@@ -798,65 +800,66 @@ end
 function pe_heisha()
 
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	local Uworld1228 = nt_getTask(1228)                        --Í¬°é½ÌÓıÈÎÎñÌÆÓ°ÈÎÎñ±äÁ¿
 	local Uworld1229 = nt_getTask(1229)                        --Í¬°é½ÌÓıÈÎÎñ°×É·ÈÎÎñ±äÁ¿
 	local Uworld1230 = nt_getTask(1230)                        --Í¬°é½ÌÓıÈÎÎñºÚÉ·ÈÎÎñ±äÁ¿
-	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒ¢Ë®ÈÎÎñ±äÁ¿
+	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒÂË®ÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 and Uworld1227 == 20 and Uworld1228 == 20 and Uworld1229 == 20 and Uworld1230 == 20 and Uworld1231 == 20) then 
-            Describe(DescLink_HeiSha..": mÊy ng­êi chóng ta ®İch gi¸o dôc còng kÕt thóc . ng­¬i b©y giê cã thÓ ®i t×m kiÕm hoµng ®å ®Ö . ",1,"KÕt thóc ®èi tho¹i /no") 
-            elseif ( partner_getpartnerlevel(7) ~= 10 ) then 
-           return 
-       elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 0 ) then -- h¾c s¸t chç nhiÖm vô kh«ng cã xóc ph¸t ? ? ? ? ? kh«ng cã ®em nhiÖm vô t­ëng th­ëng nãi cho nhµ ch¬i 
-              Describe(DescLink_HeiSha..": nÕu nh­ l·o tö sinh ra sím mÊy n¨m , ®· sím ra trËn ®i giÕt quang kim chã ®¸p ®Òn nhµ n­íc , n¬i nµo ? ®Õn c¸c ng­¬i c¸i nµy gióp tiÓu quû . b©y giê l·o l¹c , chØ cã thÓ nÆc nu«i tèt h¬n vâ sÜ , còng coi lµ quèc gia ra mét phÇn lùc , chuéc chuéc lóc tuæi cßn trÎ ph¹m qu¸ lçi ®i . <enter>" 
-            .." kiÕm hoµng ®å ®Ö ? c¸i ®ã tÆc tiÓu tö , l¹i tíi kiÕm l·o phu ®İch tiÖn nghi . ng­¬i nÕu tíi , còng kh«ng thÓ ®Ó cho ng­¬i tay kh«ng trë vÒ . h¾n lµ muèn cho ®ång b¹n cña ng­¬i tíi häc l·o phu ®İch tuyÖt kû :<color=red> nam minh ba ®o¹n kİch <color> . muèn häc cã thÓ , l·o phu c¸i nµy ? vâ c«ng chiªu sè biÕn hãa ®©u b­ng , mçi mét chiªu ®Òu Èn giÊu v« cïng lo¹i biÕn hãa , ¸m hîp tinh ®å . ng­¬i muèn häc lêi cña chØ cã thÓ ®em ba ®o¹n kİch ph©n hñy ®i thµnh ba tÇng thø , trôc tÇng d¹y cho ng­¬i . häc ph¶i kh«ng häc ? <enter>" 
-             .."<color=green> nhiÖm vô t­ëng th­ëng : ®ång b¹n kü n¨ng ' nam minh ba ®o¹n kİch '<color>",2, 
-                "DÜ nhiªn muèn häc /heisha_starttask", 
-           "KÕt thóc ®èi tho¹i /no") 
-
-      elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 10 ) then -- míi võa nhËn ®­îc h¾c s¸t chç nhiÖm vô 
-           Describe(DescLink_HeiSha..": ®i t×m ®å ®Ö cña l·o phu cöa ®èi tho¹i nha , ng­¬i ng­êi b»ng ®Şa ngu xuÈn ®©y ? ",1, 
-         "KÕt thóc ®èi tho¹i /no") 
-
-      elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 12 ) then -- häc tËp ba ®o¹n kİch nhiÖm vô ®· hoµn thµnh 
-          Describe(DescLink_HeiSha..": d¹/õ , kü n¨ng còng ®· quen thuéc ®i . ®­îc råi , ta sÏ nãi cho ng­¬i biÕt mét İt khiÕu m«n , ®ång b¹n ®İch kü n¨ng chia lµm h¬i thë nhãm mÊy lo¹i :<enter>" 
-           .." <color=yellow>a) Vâ c«ng kü n¨ng : ®ång b¹n dïng ®Ó c«ng kİch ®Şch nh©n chiªu thøc , th«ng qua th¨ng cÊp ®¹t ®­îc ;<enter>" 
-         .." b) N¨m phßng kü n¨ng : ®èi víi phæ b¨ng l«i háa ®éc n¨m lo¹i kh¸ng tİnh tiÕn hµnh thªm ®­îc ®İch kü n¨ng , th«ng qua lµm gi¸o dôc nhiÖm vô ®¹t ®­îc ;<enter>" 
-         .." c) Phô thªm kü n¨ng : c¸c lo¹i thªm ®­îc cïng phô trî cïng víi mét İt ®Æc thï kü n¨ng , th«ng qua kü n¨ng s¸ch cïng kŞch t×nh nhiÖm vô ®¹t ®­îc ;<enter>" 
-         .." d) TuyÖt kû : th«ng qua kŞch t×nh nhiÖm vô ®¹t ®­îc ;<enter>" 
-         .." tèt l¾m , còng t©n khang ng­¬i. B©y giê ®· d¹y cho ng­¬i ®ang lµm gi¸o dôc nhiÖm vô ®ång b¹n nam minh ba ®o¹n kİch !<color>",2,"NhËn lÊy phÇn th­ëng /heisha_giveprize1","Sau nµy trë l¹i /no") 
-
-      elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 13 ) then -- ®· häc ®­îc ba ®o¹n kİch , b¾t ®Çu h¬i thë c¸ giai ®o¹n ®İch gi¸o dôc 
-         Describe(DescLink_HeiSha..":§­îc råi, nam minh ba ®o¹n kİch ®· d¹y cho ng­¬i, nh­ vËy ng­¬i biÕt nhËn h¬i thë tíi ph¶i nh­ thÕ nµo sö dông c¸i nµy phô thªm kü n¨ng trung ®İch c«ng kİch kü n¨ng ? ? ®Ó cho ta tíi nãi cho ng­¬i biÕt. <enter>" 
-         .." nh­ thÕ nµo , b©y giê biÕt ®i . b©y giê ®i bªn trong bao c¸t n¬i ®ã luyÖn tËp mét h¬i thë c«ng kİch ph­¬ng ph¸p ®i. Sau nµy tíi t×m ta n÷a . <color=red> nhí , ng­¬i ph¶i tù m×nh tù m×nh ®i ®¸nh , ®ång b¹n cña ng­¬i ®ang gi¸o dôc nhiÖm vô trung , h¾n vÉn ch­a cã hoµn toµn luyÖn thµnh c«ng phu , ®¸nh bao c¸t lµ kh«ng cã hiÖu qu¶ ®İch . <color><enter>",1,"KÕt thóc ®èi tho¹i /heisha_starttask3") 
-      elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 14 ) then 
-             Describe(DescLink_HeiSha..": b©y giê ®i bªn trong bao c¸t n¬i ®ã luyÖn tËp mét h¬i thë c«ng kİch ph­¬ng ph¸p ®i. sau nµy tíi t×m ta n÷a . <enter>",1,"KÕt thóc ®èi tho¹i /no") 
-             elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 15 ) then -- bao c¸t ®· ®¶ kİch hoµn , muèn ph¸t ra t­ëng th­ëng 
-            Describe(DescLink_HeiSha..": Ng­êi bao c¸t còng ®¸nh xong råi. RÊt tèt , b©y giê t­ëng th­ëng cho ng­¬i mét quyÓn nam minh ba ®o¹n kİch ®İch cÊp ba kü n¨ng s¸ch. LÊy ®­îc t­ëng th­ëng sau sÏ cïng ta ®èi tho¹i , ta cßn cã lêi nãi. ",2," NhËn lÊy phÇn th­ëng /heisha_giveprize2","Sau nµy trë l¹i /no") 
-
-     elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 16 ) then -- ®· thu ®­îc ba ®o¹n kİch ®İch kü n¨ng s¸ch 
-         Describe(DescLink_HeiSha..":<color=yellow> b©y giê d¹y ng­¬i cuèi cïng mét chót ®å . ®ång b¹n ®İch vâ c«ng kü n¨ng lµ dïng ®é thuÇn thôc tíi th¨ng cÊp ®İch , mµ nh÷ng thø kh¸c kü n¨ng toµn bé muèn th«ng qua sö dông hÖ øng ®İch kü n¨ng s¸ch nh¾c tíi th¨ng . n¬i nµy cÇn chó ı mét ®iÓm , nÕu nh­ phô thªm kü n¨ng cã vâ c«ng kü n¨ng , nh­ vËy cÇn th«ng qua sö dông kü n¨ng s¸ch t¨ng lªn cÊp bËc mµ kh«ng ph¶i lµ ®é thuÇn thôc . kü n¨ng s¸ch ®İch t¨ng lªn quy t¾c lµ : ng­¬i chØ cã thÓ häc tËp so ng­¬i muèn t¨ng lªn kü n¨ng tr­íc mÆt cÊp bËc cao 1 cÊp ®İch kü n¨ng s¸ch . tû nh­ ; hiÖn h÷u kü n¨ng v× 6 cÊp , ng­¬i chØ cã thÓ häc tËp 7 cÊp ®İch nªn kü n¨ng s¸ch ®em nªn kü n¨ng t¨ng lªn tíi 7 cÊp , kh«ng thÓ v­ît cÊp häc tËp . <color><enter>" 
-        .." ®­îc råi , ta chç nµy ®· kh«ng cã g× nh­ng d¹y cho ng­¬i liÔu. §©u b¶o träng , ®i nh÷ng ng­êi kh¸c n¬i ®ã nh×n mét chót ®i . ",1,"KÕt thóc ®èi tho¹i /heisha_finishtask") 
-     else 
-       Describe(DescLink_HeiSha..": C©y khèi, l·o chñ nh©n vî chång chÕt ë ®¹i m¹c n¨m Êy , l·o tö liÒn dêi ®Õn c¸i nµy v©n trung trÊn nhá trong qu¸ ®¹m cho ra ®iÓu ®İch cuéc sèng . nghe nãi bay V©n nhi bŞ cÈu nhËt ®İch kim quèc ngµy nhÉn tÆc mét ch­ëng ®¸nh h¬i thë s¬n tiÓn , lóc Êy khãc ®Õn c¸i ®ã th­¬ng t©m kia . gÇn nhÊt l¹i nghe nãi h¾n kh«ng cã chÕt , cßn t­ëng lµ liÔu c¸i g× ®iÓu vâ l©m kh¸ch s¹n ®İch ®Çu môc , ho khan , ®øa nhá nµy còng kh«ng tíi xem mét chót ta ®©y , h¾n h¾c thóc thóc còng tuæi mét xÊp dÇy n÷a råi . nhí n¨m ®ã khiªng h¾n ®uæi lang thêi ®iÓm c­êi cïng con gµ con tùa nh­ , b©y giê n÷a g¸nh chØ nİnh ph¶i Ğp vì ta ®©y b¶ vai l¹c . <enter>",1,"KÕt thóc ®èi tho¹i /no") 
-end
+	if ( Uworld1226 == 10  and  Uworld1227 == 20  and  Uworld1228 == 20  and  Uworld1229 == 20  and  Uworld1230 == 20  and  Uworld1231 == 20) then
+		Describe(DescLink_HeiSha.."£ºÎÒÃÇ¼¸¸öÈËµÄ½ÌÓı¶¼½áÊøÁË¡£ÄãÏÖÔÚ¿ÉÒÔÈ¥ÕÒ½£»ÊÍ½µÜÁË¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( partner_getpartnerlevel(7) ~= 10  ) then
+		return
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 0 ) then  	   --ºÚÉ·´¦ÈÎÎñÃ»ÓĞ´¥·¢£¿£¿£¿£¿£¿Ã»ÓĞ°ÑÈÎÎñ½±Àø¸æËßÍæ¼Ò
+		Describe(DescLink_HeiSha.."£ºÈç¹ûÀÏ×ÓÔçÉú¼¸Äê£¬Ôç¾ÍÉÏÕóÈ¥É±¹â½ğ¹·±¨Ğ§¼Ò¹úÁË£¬ÄÄÀïÂÖµ½ÄãÃÇÕâ°ïĞ¡¹í¡£ÏÖÔÚÀÏ¿©£¬Ö»ÄÜÅàÑøĞ©ºÃÎäÊ¿£¬Ò²ËãÎª¹ú¼Ò³öÒ»·İÁ¦£¬ÊêÊêÄêÇáÊ±ºò·¸µÄ¹ı´í°É¡£<enter>"
+		.."½£»ÊÍ½µÜ£¿ÄÇ¸öÔôĞ¡×Ó£¬ÓÖÀ´×¬ÀÏ·òµÄ±ãÒË¡£Äã¼ÈÈ»À´ÁË£¬×Ü²»ÄÜÈÃÄã¿ÕÊÖ»ØÈ¥µÄ¡£ËûÊÇÏëÈÃÄãµÄÍ¬°éÀ´Ñ§ÀÏ·òµÄ¾ø¼¼£º<color=red>ÄÏÚ¤Èı¶Î»÷<color>¡£ÒªÑ§¿ÉÒÔ£¬ÀÏ·òÕâÂ·Îä¹¦ÕĞÊı±ä»¯¶à¶Ë£¬Ã¿Ò»ÕĞ¶¼²ØÁËÎŞÇîÖÖ±ä»¯£¬°µºÏĞÇÍ¼¡£ÄãÒªÑ§µÄ»°Ö»ÄÜ½«Èı¶Î»÷·Ö²ğ³ÉÈı¸ö²ã´Î£¬Öğ²ã½Ì¸øÄã¡£Ñ§ÊÇ²»Ñ§£¿<enter>"
+		.."<color=green>ÈÎÎñ½±Àø£ºÍ¬°é¼¼ÄÜ'ÄÏÚ¤Èı¶Î»÷'<color>",2,
+		"µ±È»ÒªÑ§/heisha_starttask",
+		"½áÊø¶Ô»°/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 10 ) then  --¸Õ½Óµ½ºÚÉ·´¦ÈÎÎñ
+		Describe(DescLink_HeiSha.."£ºÈ¥ÕÒÀÏ·òµÄÍ½µÜÃÇ¶Ô»°Ñ½£¬ÄãÕ¦Æ¾µØ´ÀÄØ£¿",1,
+		"½áÊø¶Ô»°/no")	
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 12 )  then  --Ñ§Ï°Èı¶Î»÷ÈÎÎñÒÑÍê³É
+		Describe(DescLink_HeiSha.."£º¶÷£¬¼¼ÄÜ¶¼ÒÑ¾­ÊìÏ¤ÁË°É¡£ºÃÀ²£¬ÎÒÔÙ¸æËßÄãÒ»Ğ©ÇÏÃÅ£¬Í¬°éµÄ¼¼ÄÜ·ÖÎªÏÂÁĞ¼¸ÖÖ£º<enter>"
+		.." <color=yellow>a)	Îä¹¦¼¼ÄÜ£ºÍ¬°éÓÃÀ´¹¥»÷µĞÈËµÄÕĞÊ½£¬Í¨¹ıÉı¼¶»ñµÃ£»<enter>"
+		.."	b)	Îå·À¼¼ÄÜ£º¶ÔÆÕ±ùÀ×»ğ¶¾ÎåÖÖ¿¹ĞÔ½øĞĞ¼Ó³ÉµÄ¼¼ÄÜ£¬Í¨¹ı×ö½ÌÓıÈÎÎñ»ñµÃ£»<enter>"
+		.."	c)	¸½¼Ó¼¼ÄÜ£º¸÷ÖÖ¼Ó³ÉºÍ¸¨ÖúÒÔ¼°Ò»Ğ©ÌØÊâµÄ¼¼ÄÜ£¬Í¨¹ı¼¼ÄÜÊéºÍ¾çÇéÈÎÎñ»ñµÃ£»<enter>"
+		.."	d)	¾ø¼¼£ºÍ¨¹ı¾çÇéÈÎÎñ»ñµÃ£»<enter>"
+		.."ºÃÁË£¬Ò²ĞÁ¿àÄãÁË¡£ÏÖÔÚ¾Í½ÌÓı¸øÄãÕıÔÚ×ö½ÌÓıÈÎÎñµÄÍ¬°éÄÏÚ¤Èı¶Î»÷£¡<color>",2,"ÁìÈ¡½±Àø/heisha_giveprize1","ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 13 )  then  --ÒÑ¾­Ñ§µ½ÁËÈı¶Î»÷£¬¿ªÊ¼ÏÂ¸ö½×¶ÎµÄ½ÌÓı
+		Describe(DescLink_HeiSha.."£ººÃÀ²£¬ÄÏÚ¤Èı¶Î»÷ÒÑ¾­½Ì¸øÄãÁË£¬ÄÇÃ´ÄãÖªµÀ½ÓÏÂÀ´ÒªÈçºÎÊ¹ÓÃÕâ¸ö¸½¼Ó¼¼ÄÜÖĞµÄ¹¥»÷¼¼ÄÜÂğ£¿ÈÃÎÒÀ´¸æËßÄã¡£<enter>"
+		.."<color=yellow>ÔÚÎä¹¦¼¼ÄÜÀ¸µÄÏÂ·½ÓĞÎå¸ö³öÕĞ¸ñ£¬Ã¿Ò»¸ñ´ú±í×Å¸ÃÍ¬°éÓĞ20%µÄ¼¸ÂÊ»áÊ¹ÓÃ¸ñÀïµÄ¼¼ÄÜ£¬¸ñÄÚ¿É·ÅÈë¸ÃÍ¬°éËùÄÜÊ¹³öµÄÈÎÒâÖ÷¶¯¼¼ÄÜ¡£±ÈÈç£º¸ÃÍ¬°éµÄ³öÕĞ¸ñÀï·ÅÁËÈı¸ö¡°¼¼ÄÜA¡±ºÍÁ½¸ö¡°¼¼ÄÜB¡±ÄÇÃ´¸ÃÍ¬°éÊ¹³ö¡°¼¼ÄÜA¡±µÄ¼¸ÂÊÊÇ¾ÍÊÇ60%£¬Ê¹³ö¡°¼¼ÄÜB¡± µÄ¼¸ÂÊÊÇ¾ÍÊÇ40%¡£<color><enter>"
+		.."ÔõÃ´Ñù£¬ÏÖÔÚÖªµÀÁË°É¡£ÏÖÔÚÈ¥ÀïÃæµÄÉ³´üÄÇÀïÁ·Ï°Ò»ÏÂ¹¥»÷·½·¨°É¡£ÉÔºóÔÙÀ´ÕÒÎÒ¡£<color=red>¼Ç×¡£¬Äã±ØĞë×Ô¼ºÇ××ÔÈ¥´ò£¬ÄãµÄÍ¬°éÔÚ½ÌÓıÈÎÎñÖĞ£¬Ëû»¹Ã»ÓĞÍêÈ«Á·³É¹¦·ò£¬»÷´òÉ³´üÊÇÎŞĞ§µÄ¡£<color><enter>",1,"½áÊø¶Ô»°/heisha_starttask3")  
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 14 )  then      
+		 Describe(DescLink_HeiSha.."£ºÏÖÔÚÈ¥ÀïÃæµÄÉ³´üÄÇÀïÁ·Ï°Ò»ÏÂ¹¥»÷·½·¨°É¡£ÉÔºóÔÙÀ´ÕÒÎÒ¡£<enter>",1,"½áÊø¶Ô»°/no")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 15 )  then  --É³´üÒÑ´ò»÷Íê£¬Òª·¢·Å½±Àø
+		Describe(DescLink_HeiSha.."£ºÅ¶£¿É³´üÒ²»÷´òÍêÁËÂğ¡£ºÜºÃ£¬ÏÖÔÚ½±Àø¸øÄãÒ»±¾ÄÏÚ¤Èı¶Î»÷µÄÈı¼¶¼¼ÄÜÊé¡£µÃµ½½±ÀøºóÔÙÓëÎÒ¶Ô»°£¬ÎÒ»¹ÓĞ»°½²¡£",2,"ÁìÈ¡½±Àø/heisha_giveprize2","ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 16 )  then  --ÒÑ¾­»ñµÃÁËÈı¶Î»÷µÄ¼¼ÄÜÊé
+		Describe(DescLink_HeiSha.."£º<color=yellow>ÏÖÔÚ½ÌÄã×îºóÒ»µã¶«Î÷¡£Í¬°éµÄÎä¹¦¼¼ÄÜÊÇÓÃÊìÁ·¶ÈÀ´Éı¼¶µÄ£¬¶øÆäËüµÄ¼¼ÄÜÈ«²¿ÒªÍ¨¹ıÊ¹ÓÃÏàÓ¦µÄ¼¼ÄÜÊéÀ´ÌáÉı¡£ÕâÀïĞèÒª×¢ÒâÒ»µã£¬Èç¹û¸½¼Ó¼¼ÄÜÓĞÎä¹¦¼¼ÄÜ£¬ÄÇÃ´ĞèÒªÍ¨¹ıÊ¹ÓÃ¼¼ÄÜÊéÌáÉıµÈ¼¶¶ø·ÇÊìÁ·¶È¡£¼¼ÄÜÊéµÄÌáÉı¹æÔòÊÇ£ºÄãÖ»ÄÜÑ§Ï°±ÈÄãÒªÌáÉıµÄ¼¼ÄÜµ±Ç°µÈ¼¶¸ß1¼¶µÄ¼¼ÄÜÊé¡£±ÈÈç£»ÏÖÓĞ¼¼ÄÜÎª6¼¶£¬ÄãÖ»ÄÜÑ§Ï°7¼¶µÄ¸Ã¼¼ÄÜÊé°Ñ¸Ã¼¼ÄÜÌáÉıµ½7¼¶£¬²»ÄÜÔ½¼¶Ñ§Ï°¡£<color><enter>"
+		.."ºÃÀ²£¬ÎÒÕâÀïÒÑ¾­Ã»Ê²Ã´¿É½Ì¸øÄãµÄÁË¡£¶à±£ÖØ£¬È¥ÆäËûÈËÄÇÀïÇÆÇÆ°É¡£",1,"½áÊø¶Ô»°/heisha_finishtask")
+	else
+		Describe(DescLink_HeiSha.."£ºÀ±¿éÂèÂè£¬ÀÏÖ÷ÈË·òÆŞËÀÔÚ´óÄ®ÄÇÄê£¬ÀÏ×Ó¾Í°áµ½ÕâÔÆÖĞĞ¡ÕòÀï¹ıµ­µÃ³öÄñµÄÈÕ×ÓÁË¡£ÌıËµ·ÉÔÆ¶ù±»¹·ÈÕµÄ½ğ¹úÌìÈÌÔôÒ»ÕÆ´òÏÂÁËÉ½ÑÂ£¬µ±Ê±¿ŞµÃÄÇ¸öÉËĞÄÄÄ¡£×î½üÓÖÌıËµËûÃ»ËÀ£¬»¹µ±ÁËÊ²Ã´ÄñÎäÁÖ¿ÍÕ»µÄÍ·Ä¿£¬¿È£¬Õâº¢×ÓÒ²²»À´¿´¿´°³£¬ËûºÚÊåÊåÒ²Äê¼ÍÒ»´ó°ÑÀ²¡£Ïëµ±Äê¿¸×ÅËû¸ÏÀÇÊ±ºòĞ¦µÃ¸úÖ»Ğ¡¼¦ËÆµÄ£¬ÏÖÔÚÔÙ¿¸¿ÖÅÂµÃÑ¹¿å°³¼ç°ò¿©¡£<enter>",1,"½áÊø¶Ô»°/no")
+	end
    
 end
 
 function heisha_starttask()
-	Describe(DescLink_HeiSha..":Chµo ! L·o gia tö ta chİnh lµ thİch ng­êi s¶ng kho¸i. ? ta sau l­ng c¸i nµy phiÕn gi¸o vò trµng trong cã hai m­¬i tªn tinh nhuÖ vâ sÜ ®ang tu hµnh , trong bän hä <color=red> cã mét ng­êi <color> trªn ng­êi cña mang theo l·o phu ®İch ba ®o¹n kİch bİ tŞch . ng­¬i ®em ng­êi kia <color=red> t×m ra <color> , b¾t ®­îc bİ tŞch tíi t×m ta , ta sÏ d¹y cho ng­¬i tinh kh«ng chi nam minh ba ®o¹n kİch . ng­¬i thÊy kh¶ nghi ®İch liÒn cïng h¾n ®èi tho¹i , th¸m thİnh h­ thËt , tæng cã thÓ t×m tíi ®İch.",1,"KÕt thóc ®èi tho¹i /heisha_starttask2")
+	Describe(DescLink_HeiSha.."£ººÃ£¡ÀÏÒ¯×ÓÎÒ¾ÍÊÇÏ²»¶Ë¬¿ìÈË¡£ÔÚÎÒÉíºóÕâÆ¬Ğ£Îä³¡ÀïÓĞ¶şÊ®Ãû¾«ÈñÎäÊ¿ÕıÔÚĞŞĞĞ£¬ËûÃÇÖ®ÖĞ<color=red>ÓĞÒ»¸öÈË<color>µÄÉíÉÏ´ø×ÅÀÏ·òµÄÈı¶Î»÷ÃØ¼®¡£Äã°ÑÄÇ¸öÈË<color=red>ÕÒ³öÀ´<color>£¬ÄÃµ½ÃØ¼®À´ÕÒÎÒ£¬ÎÒ¾Í½Ì¸øÄãĞÇ¿ÕÖ®ÄÏÚ¤Èı¶Î»÷¡£Äã¿´µ½¿ÉÒÉµÄ¾ÍÓëËû¶Ô»°£¬Ì½ÌıĞéÊµ£¬×ÜÄÜÕÒµ½µÄ¡£",1,"½áÊø¶Ô»°/heisha_starttask2")
 end
 
 function heisha_starttask2()
 	local Uworld1235 = random(10,20)
 	nt_setTask(1235,Uworld1235)
 	nt_setTask(1230,10)
-	Msg2Player("L·o gia tö ®Ó cho ng­¬i tõ gi¸o vò trµng t×m ra mang theo h¾n bİ tŞch ®İch ®å ®Ö tíi .")
+	Msg2Player("ÀÏÒ¯×ÓÈÃÄã´ÓĞ£Îä³¡ÕÒ³öĞ¯´øËûÃØ¼®µÄÍ½µÜÀ´¡£")
 end
 
 function heisha_starttask3()
-	Msg2Player("L·o gia tö ®Ó cho ng­¬i ë tr­êng vò trµng trong ®¸nh bao c¸t. xem ra kh«ng ®¸nh nhÊt ®Şnh sè lÇn lµ ®ãng kh«ng ®­îc kĞm .")
+	Msg2Player("ÀÏÒ¯×ÓÈÃÄãÔÚĞ£Îä³¡Àï´òÉ³´ü¡£¿´À´²»´òÒ»¶¨´ÎÊıÊÇ½»²»ÁË²îÁË¡£")
 	nt_setTask(1230,14)  --µÚ2½×¶Î´òÉ³´ü
 end
 
@@ -864,9 +867,9 @@ function heisha_giveprize1()
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddSkill(partnerindex,2,621,2)                          --Ôö¼ÓÍ¬°é¸½¼Ó¼¼ÄÜ¡¶ÄÏÚ¤Èı¶Î»÷¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ? nam minh ba ®o¹n kİch ?")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶ÄÏÚ¤Èı¶Î»÷¡·")
 		nt_setTask(1230,13)   
-		Msg2Player("Ng­¬i thu ®­îc nam minh ba ®o¹n kİch. Cã thÓ sÏ cïng l·o gia tö ®èi tho¹i.")
+		Msg2Player("Äã»ñµÃÁËÄÏÚ¤Èı¶Î»÷¡£¿ÉÒÔÔÙÓëÀÏÒ¯×Ó¶Ô»°ÁË¡£")
 	end
 end
 
@@ -874,16 +877,16 @@ function heisha_giveprize2()
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		AddItem(6,1,884,3,0,0)												--Ôö¼ÓÍ¬°é¸½¼Ó¼¼ÄÜ¡¶ÄÏÚ¤Èı¶Î»÷¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ? nam minh ba ®o¹n kİch ? ®İch thø 3 cÊp kü n¨ng s¸ch")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶ÄÏÚ¤Èı¶Î»÷¡·µÄµÚ3¼¶¼¼ÄÜÊé")
 		PARTNER_AddExp(partnerindex,2600,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+2600
 		nt_setTask(1230,16)     
-		Msg2Player("Ng­¬i thu ®­îc nam minh ba ®o¹n kİch ®İch 3 cÊp kü n¨ng s¸ch. Cã thÓ sÏ cïng l·o gia tö ®èi tho¹i.")
+		Msg2Player("Äã»ñµÃÁËÄÏÚ¤Èı¶Î»÷µÄ3¼¶¼¼ÄÜÊé¡£¿ÉÒÔÔÙÓëÀÏÒ¯×Ó¶Ô»°ÁË¡£")
 	end
 end
 
 function heisha_finishtask()
 	nt_setTask(1230,20)
-	Msg2Player("Ng­¬i ®· hoµn thµnh ë h¾c s¸t chç ®İch häc tËp , cã thÓ ®i b¹ch s¸t , ®­êng ¶nh ? thu nghiªu n­íc vî chång cïng tiÖm n¬i ®ã nh×n mét chót.")
+	Msg2Player("ÄãÒÑ¾­Íê³ÉÔÚºÚÉ·´¦µÄÑ§Ï°£¬¿ÉÒÔÈ¥°×É·£¬ÌÆÓ°¡¢ÇïÒÂË®·ò¸¾ºÍÂ¬ÇàÄÇÀïÇÆÇÆ¡£")
 end
 
 -----------------------------------------------------------ºÚÉ·µÜ×Ó-----------------------------------------------------
@@ -891,15 +894,15 @@ end
 function pe_heishadizi()
 	local Uworld1226 = nt_getTask(1226)
 	local Uworld1230 = nt_getTask(1230)
-	if ( Uworld1226 == 10 ) and ( Uworld1230 == 11 ) then 
-               Describe(DescLink_HeiShaDizi..": tèt , cho ng­¬i mét phÇn nho nhá ı tø . ",1," Ph¸t ra phÇn th­ëng /heishadizi_giveprize") 
-         elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 10 ) then 
-               Describe(DescLink_HeiShaDizi..": Chµo , s­ phô ta ®Ó cho ng­¬i ®Õn t×m bİ tŞch. Ng­¬i cã thÓ t×m tíi ta ®ã lµ ®Ó m¾t ta , nÕu kh«ng nãi cho ng­¬i biÕt trªn ng­êi ta cã hay kh«ng vËy ta cßn coi lµ cao nh©n. §­¬ng nhiªn råi , ta l¹i kh«ng thÓ dÔ dµng nãi cho ng­¬i biÕt , nh­ vËy ta cßn coi lµ cao nh©n, cho nªn ®©y , ng­¬i cÇn tr¶ lêi ®èi víi ta n¬i nµy <color=red> mét ®¹o <color> ®Ò môc. Ta sÏ nãi cho ng­¬i biÕt ta rèt cuéc <color=red> cã hay kh«ng n¾m gi÷ bİ tŞch !<color>",2, 
-            "Ng­¬i ng­êi nµy thÕ nµo nh­ vËy ®©u danh ®­êng a , ®­îc råi b¾t ®Çu hái ®i /heishadizi_problem", 
-           "Quû tµi tin ng­¬i, ta kh«ng cÇn biÕt ng­¬i cã ph¶i hay kh«ng /no" ) 
-        else 
-         Describe(DescLink_HeiShaDizi..": b»ng h÷u , mêi ®i ra mét İt . chóng ta ë chç nµy luyÖn tËp th­îng thõa vâ thuËt , coi chõng ngé th­¬ng liÔu ng­¬i . ",1,"KÕt thóc ®èi tho¹i /no") 
-   end
+	if ( Uworld1226 == 10 ) and ( Uworld1230 == 11 ) then
+		Describe(DescLink_HeiShaDizi.."£ººÃµÄ£¬¸øÄãÒ»·İĞ¡Ğ¡µÄÒâË¼¡£",1,"·¢·Å½±Àø/heishadizi_giveprize")
+	elseif ( Uworld1226 == 10 ) and ( Uworld1230 == 10 ) then
+		Describe(DescLink_HeiShaDizi.."£ºÅ¶£¬ÎÒÊ¦¸¸ÈÃÄãÀ´ÕÒÃØ¼®¡£ÄãÄÜÕÒÉÏÎÒÄÇÊÇ¿´µÃÆğÎÒ£¬Òª²»¸æËßÄãÎÒÉíÉÏÓĞÃ»ÓĞÄÇÎÒ»¹Ëã¸ßÈËÂï¡£µ±È»À²£¬ÎÒÓÖ²»ÄÜÇáÒ×¸æËßÄã£¬ÄÇÑùÎÒ»¹Ëã¸ßÈËÂï£¬ËùÒÔÄØ£¬ÄãĞèÒª»Ø´ğ¶ÔÎÒÕâÀï<color=red>Ò»µÀ<color>ÌâÄ¿¡£ÎÒ¾Í¸æËßÄãÎÒµ½µ×<color=red>ÓĞÃ»ÓĞÕÆÎÕÃØ¼®£¡<color>",2,
+		"ÄãÕâÈËÔõÃ´ÕâÃ´¶àÃûÌÃ°¡£¬ºÃ°É¿ªÊ¼ÎÊ°É/heishadizi_problem",
+		"¹í²ÅĞÅÄã£¬ÎÒ²»ĞèÒªÖªµÀÄãÊÇ²»ÊÇ/no"	)
+	else
+		Describe(DescLink_HeiShaDizi.."£ºÅóÓÑ£¬Çë×ß¿ªÒ»Ğ©¡£ÎÒÃÇÔÚ´ËÁ·Ï°ÉÏ³ËÎäÊõ£¬µ±ĞÄÎóÉËÁËÄã¡£",1,"½áÊø¶Ô»°/no")
+	end
 end
 
 function heishadizi_problem()
@@ -908,7 +911,7 @@ end
 
 function heishadizi_geiyujiangli()
 	nt_setTask(1230,11)
-	Msg2Player("V« ng­¬i cïng bÊt kú mét c¸i nµo h¾c s¸t ®Ö tö ®èi tho¹i , ®Òu ®­a lÊy ®­îc mét phÇn tiÓu phÇn th­ëng .")
+	Msg2Player("ÎŞÂÛÄãÓëÈÎºÎÒ»¸öºÚÉ·µÜ×Ó¶Ô»°£¬¶¼½«µÃµ½Ò»·İĞ¡½±Àø¡£")
 end
 
 function heishadizi_giveprize()
@@ -921,7 +924,7 @@ end
 
 function heishadizi_chenggong()
 	nt_setTask(1230,12)
-	Msg2Player("Ng­¬i cã thÓ trë vÒ ®i t×m h¾c s¸t häc tËp nam minh ba ®o¹n ®¸nh .")
+	Msg2Player("Äã¿ÉÒÔ»ØÈ¥ÕÒºÚÉ·Ñ§Ï°ÄÏÚ¤Èı¶Î»÷ÁË¡£")
 end
 
 ---------------------------------------------------------Ğ£Îä³¡É³´ü¶Ô»°--------------------------------------------------
@@ -934,54 +937,54 @@ function pe_wuchangshadai()
 	end
 	
 	if ( Uworld1247 + 1 >= 30 ) and ( nt_getTask(1230) == 14 ) then
-		Msg2Player("Ng­¬i ®· thµnh c«ng n¾m gi÷ kü n¨ng ph­¬ng thøc c«ng kİch , cã thÓ trë vÒ ®i t×m h¾c s¸t nhËn lÊy phÇn th­ëng .")
+		Msg2Player("ÄãÒÑ¾­³É¹¦µÄÕÆÎÕÁË¼¼ÄÜ¹¥»÷·½Ê½£¬¿ÉÒÔ»ØÈ¥ÕÒºÚÉ·ÁìÈ¡½±ÀøÁË¡£")
 		nt_setTask(1230,15)
 	end
 end
 
 
-----------------------------------------------------------ÇïÒ¢Ë®¶Ô»°-----------------------------------------------------
+----------------------------------------------------------ÇïÒÂË®¶Ô»°-----------------------------------------------------
 
 function pe_qiuyishui()
 	local Uworld1226 = nt_getTask(1226)                        --Í¬°é½ÌÓıÈÎÎñ³¤¸èÃÅÈËÈÎÎñ±äÁ¿
-	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñ¢¬ÇµÈÎÎñ±äÁ¿
+	local Uworld1227 = nt_getTask(1227)                        --Í¬°é½ÌÓıÈÎÎñÂ¬ÇàÈÎÎñ±äÁ¿
 	local Uworld1228 = nt_getTask(1228)                        --Í¬°é½ÌÓıÈÎÎñÌÆÓ°ÈÎÎñ±äÁ¿
 	local Uworld1229 = nt_getTask(1229)                        --Í¬°é½ÌÓıÈÎÎñ°×É·ÈÎÎñ±äÁ¿
 	local Uworld1230 = nt_getTask(1230)                        --Í¬°é½ÌÓıÈÎÎñºÚÉ·ÈÎÎñ±äÁ¿
-	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒ¢Ë®ÈÎÎñ±äÁ¿
+	local Uworld1231 = nt_getTask(1231)                        --Í¬°é½ÌÓıÈÎÎñÇïÒÂË®ÈÎÎñ±äÁ¿
 	
-	if ( Uworld1226 == 10 and Uworld1227 == 20 and Uworld1228 == 20 and Uworld1229 == 20 and Uworld1230 == 20 and Uworld1231 == 20) then 
-             Describe(DescLink_QiuYiShui..": mÊy ng­êi chóng ta ®İch gi¸o dôc còng kÕt thóc. Ng­¬i b©y giê cã thÓ ®i t×m kiÕm hoµng ®å ®Ö.",1,"KÕt thóc ®èi tho¹i /no") 
-       elseif ( partner_getpartnerlevel(9) ~= 10 ) then 
-                      return 
-       elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 0 ) then -- thu nghiªu n­íc chç nhiÖm vô kh«ng cã xóc ph¸t ? ? ? ? ? kh«ng cã ®em nhiÖm vô t­ëng th­ëng nãi cho nhµ ch¬i 
-               Describe(DescLink_QiuYiShui..": ë n¬i nµy trong nói hÖ phu d¹y con , nÕu nh­ kh«ng ph¶i lµ h¾c s¸t c¸i ®ã l·o tiÓu tö ngµy ngµy mang theo mét ®¸m ®Ö kªu ®¸nh kªu giÕt , chØ nİnh ®Òu kh«ng nhí giang hå lµ d¹ng g× tö n÷a råi . <enter>"
-             .." ng­¬i lµ tíi häc tËp ? nÕu tíi , ta liÒn ®em m×nh vèn thŞnh còng truyÒn thô cho ng­¬i ®i . chñ yÕu lµ cïng ®ång b¹n <color=red> tu luyÖn nhiÖm vô <color> hÖ quan ®İch . <enter>" 
-             .." ®ång b¹n tu luyÖn nhiÖm vô cã thÓ th«ng qua ë c¸c thµnh phè ®İch tr­êng ca m«n nh©n chç <color=red> cÊu ? quyÓn trôc <color> ®¹t ®­îc. Tu luyÖn nhiÖm vô v× ë trß ch¬i thÕ giíi tïy ı trªn b¶n ®å lùa chän giÕt ®©u thiÓu con qu¸i vËt . mçi lÇn khëi ®éng mét tu luyÖn nhiÖm vô , khi sau khi hoµn thµnh khëi ®éng mét ng­êi kh¸c . mçi ngµy cã thÓ khëi ®éng <color=red> n¨m <color> tu luyÖn nhiÖm vô , kh«ng cã ®Êt khu h¹n chÕ . ng­¬i cã thÓ sö dông n¨m tê cïng ®Şa ®iÓm ®¸nh tr¸ch ®İch quyÓn trôc , còng cã thÓ sö dông n¨m bÊt ®ång ®Şa ®iÓm giÕt qu¸i quyÓn trôc . <color=red> ng­¬i cÇn t¨ng thªm chó ı ®Şa ph­¬ng lµ : mçi ngµy nhËn ®İch nhiÖm vô nhÊt ®Şnh ph¶i ë ngµy ®ã hoµn thµnh ngµy ®ã ®ãng , nÕu bŞ nh×n lµm thÊt b¹i <color> . ®­îc råi , h·y cïng ng­¬i nãi nh­ vËy ®©u , b©y giê ng­¬i ®i Long v­¬ng thai t×m mét gäi long t¸m ®İch nam nh©n , nãi lµ ta cho ng­¬i ®i ®İch . tõ h¾n n¬i nµy cÇm n¨m ®i Long v­¬ng thai ®¸nh c¸i céc gç<color=red><color><enter>" 
-             .."<color=green> nhiÖm vô t­ëng th­ëng : ®ång b¹n kü n¨ng ' l¨ng ba vi b­íc '<color>",2, 
-               "Tèt, ta biÕt/qiuyishui_starttask1", 
-              "Sau nµy trë l¹i /no") 
-
-       elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 18 ) then -- nhiÖm vô ®· hoµn thµnh 
-            Describe(DescLink_QiuYiShui..": tèt l¾m , ë chç nµy cña ta ng­¬i ®· häc kh«ng tíi h¬n ®©u ®İch ®å , nh×n cßn cã c¸i g× kh¸c ng­êi n¬i ®ã kh«ng cã ®i qua ®i. Ng­¬i nh×n thÊy ta tr­îng phu ®­êng ¶nh , xin mêi thay ta chuyÓn c¸o h¾n , ®Ó cho h¾n thËt tèt mang theo hµi tö , ®õng c¶ ngµy chØ ®å m×nh th¶i tµi luyÖn thuèc , vò tr­êng th­¬ng ®İch. Ta c¸i nµy s­¬ng ®· c¸m ¬n !",2,"NhËn lÊy phÇn th­ëng /qiuyishui_prize","Sau nµy trë l¹i /no") 
-
-       elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 10 ) then -- míi võa nhËn ®­îc thu nghiªu n­íc chç nhiÖm vô 
-            Describe(DescLink_QiuYiShui..": Kh«ng ph¶i nãi cho ng­¬i ®i Long v­¬ng thai ®¸nh c¸i céc gç ? ? Long v­¬ng thai ®ang ë b¶n ®å ®İch trung h¬i thë ph­¬ng . ",1,"KÕt thóc ®èi tho¹i /no") 
-       else 
-            Describe(DescLink_QiuYiShui..": Cho phĞp ®©u ng­êi hái ta v× sao ®Ó thóy khãi cöa ®İch §¹i s­ tû kh«ng lµm , cïng c¸ ®øa ngèc tíi ®©y trong nói t­ gi÷ mÊy thËp niªn . a a , ®­êng ¶nh c¸i nµy ®øa ngèc lµ cã phóc khİ nga . n¨m ®ã ngµy h¬i thë ®İch c« g¸i trong , ta còng kh«ng ra tr­íc ba ®i ? nh­ng quay ®Çu l¹i suy nghÜ mét chót , thËt mét chót ®Òu kh«ng hèi hËn . trªn giang hå phong tuyÕt ®¹i , nh÷ng thø kia n¨m ®ªm ? lu«n cã ng­êi ®µn «ng phông båi ta ®i , huèng chi ta cßn mét mùc thİch h¾n , coi nh­ h¾n ngu n÷a , còng lµ cña ta phóc khİ ®i . ®Òu nãi ng­êi trong giang hå , th©n bÊt do kû , cã thÓ ®i ra ngoµi , l·o Thiªn ®èi víi chóng ta ®ñ chiÕu cè liÔu . ",1,"KÕt thóc ®èi tho¹i /no") 
-        end
+	if ( Uworld1226 == 10  and  Uworld1227 == 20  and  Uworld1228 == 20  and  Uworld1229 == 20  and  Uworld1230 == 20  and  Uworld1231 == 20) then
+		Describe(DescLink_QiuYiShui.."£ºÎÒÃÇ¼¸¸öÈËµÄ½ÌÓı¶¼½áÊøÁË¡£ÄãÏÖÔÚ¿ÉÒÔÈ¥ÕÒ½£»ÊÍ½µÜÁË¡£",1,"½áÊø¶Ô»°/no")
+	elseif ( partner_getpartnerlevel(9) ~= 10  ) then
+		return
+	elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 0 ) then  	   --ÇïÒÂË®´¦ÈÎÎñÃ»ÓĞ´¥·¢£¿£¿£¿£¿£¿Ã»ÓĞ°ÑÈÎÎñ½±Àø¸æËßÍæ¼Ò
+		Describe(DescLink_QiuYiShui.."£ºÔÚÕâÉ½ÀïÏà·ò½Ì×Ó£¬Èç¹û²»ÊÇºÚÉ·ÄÇ¸öÀÏĞ¡×ÓÌìÌì´ø×ÅÒ»°ï×ÓµÜº°´òº°É±£¬¿ÖÅÂ¶¼²»¼ÇµÃ½­ºşÊÇÊ²Ã´Ñù×ÓÀ²¡£<enter>"
+		.."ÄãÊÇÀ´Ñ§Ï°µÄÂğ£¿¼ÈÈ»À´ÁË£¬ÎÒ¾Í½«×Ô¼ºµÄ±¾ÊÂ¶¼´«ÊÚ¸øÄãÁË°É¡£Ö÷ÒªÊÇÓëÍ¬°é<color=red>ĞŞÁ¶ÈÎÎñ<color>Ïà¹ØµÄ¡£<enter>"
+		.."Í¬°éĞŞÁ·ÈÎÎñ¿ÉÒÔÍ¨¹ıÔÚ¸÷¸ö³ÇÊĞµÄ³¤¸èÃÅÈË´¦<color=red>¹ºÂò¾íÖá<color>»ñµÃ¡£ĞŞÁ·ÈÎÎñÎªÔÚÓÎÏ·ÊÀ½çÈÎÒâµØÍ¼ÉÏÑ¡ÔñÉ±¶àÉÙÖ»¹ÖÎï¡£Ã¿´ÎÆô¶¯Ò»¸öĞŞÁ·ÈÎÎñ£¬µ±Íê³ÉºóÆô¶¯ÁíÒ»¸ö¡£Ã¿Ìì¿ÉÒÔÆô¶¯<color=red>Îå¸ö<color>ĞŞÁ·ÈÎÎñ£¬Ã»ÓĞµØÇøÏŞÖÆ¡£Äã¿ÉÒÔÊ¹ÓÃÎåÕÅÍ¬Ò»µØµã´ò¹ÖµÄ¾íÖá£¬Ò²¿ÉÒÔÊ¹ÓÃÎå¸ö²»Í¬µØµãÉ±¹ÖµÄ¾íÖá¡£<color=red>ÄãĞèÒª¼ÓÒÔ×¢ÒâµÄµØ·½ÊÇ£ºÃ¿Ìì½ÓµÄÈÎÎñ±ØĞëÔÚµ±ÌìÍê³Éµ±Ìì½»£¬·ñÔò±»¿´×öÊ§°Ü<color>¡£ºÃÀ²£¬¾Í¸úÄã½²ÕâÃ´¶à£¬ÏÖÔÚÄãÈ¥ÁúÍõÌ¨ÕÒÒ»¸ö½ĞÁú°ËµÄÄĞÈË£¬ËµÊÇÎÒÈÃÄãÈ¥µÄ¡£´ÓËûÕâÀïÄÃÎå¸öÈ¥ÁúÍõÌ¨´òÄ¾×®µÄ<color=red>Ãâ·Ñ<color>µÄĞŞÁ·ÈÎÎñ¾íÖá£¬×Ô¼º´òÒ»´ò¾ÍÃ÷°×À²¡£<color><enter>"
+		.."<color=green>ÈÎÎñ½±Àø£ºÍ¬°é¼¼ÄÜ'Áè²¨Î¢²½'<color>",2,
+		"ºÃµÄ£¬ÎÒÖªµÀÁË/qiuyishui_starttask1",
+		"ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 18 ) then --ÈÎÎñÒÑÍê³É
+		Describe(DescLink_QiuYiShui.."£ººÃÁË£¬ÔÚÎÒÕâÀïÄãÒÑ¾­Ñ§²»µ½¸ü¶àµÄ¶«Î÷£¬¿´»¹ÓĞÆäËûÊ²Ã´ÈËÄÇÀïÃ»È¥¹ı°É¡£Äã¼ûµ½ÎÒÕÉ·òÌÆÓ°£¬ÇëÌæÎÒ×ª¸æËû£¬ÈÃËûºÃºÃ´ø×Åº¢×Ó£¬±ğÕûÌìÖ»Í¼×Ô¼º²É²ÄÁ·Ò©£¬ÎèÂí³¤Ç¹µÄ¡£Å«¼ÒÕâÏáĞ»¹ıÁË£¡",2,"ÁìÈ¡½±Àø/qiuyishui_prize","ÉÔºóÔÙÀ´/no")
+		
+	elseif ( Uworld1226 == 10 ) and ( Uworld1231 == 10 ) then  --¸Õ½Óµ½ÇïÒÂË®´¦ÈÎÎñ
+		Describe(DescLink_QiuYiShui.."£º²»ÊÇËµÁËÈÃÄãÈ¥ÁúÍõÌ¨´òÄ¾×®Âğ£¿ÁúÍõÌ¨¾ÍÔÚµØÍ¼µÄÖĞÏÂ·½¡£",1,"½áÊø¶Ô»°/no")	
+	else
+		Describe(DescLink_QiuYiShui.."£ºĞí¶àÈËÎÊÎÒÎªºÎ·Å×Å´äÑÌÃÅµÄ´óÊ¦½ã²»×ö£¬ºÍ¸öÉµ¹ÏÀ´ÕâÉ½ÀïË¹ÊØÁË¼¸Ê®Äê¡£ºÇºÇ£¬ÌÆÓ°ÕâÉµ¹ÏÊÇÓĞ¸£ÆøÅ¶¡£µ±ÄêÌìÏÂµÄÅ®×ÓÀï£¬ÎÒÒ²²»³öÇ°Èı°É£¿¿É»Ø¹ıÍ·ÏëÏë£¬ÕæµÄÒ»µã¶¼²»ºó»Ú¡£½­ºşÉÏ·çÑ©´ó£¬ÄÇĞ©ÄêµÄÒ¹Â·×ÜÓĞ¸öÄĞÈËÅã×ÅÎÒ×ß£¬ºÎ¿öÎÒ»¹Ò»Ö±Ï²»¶×ÅËû£¬¾ÍËãËûÔÙÉµ£¬Ò²ÊÇÎÒµÄ¸£Æø°É¡£¶¼ËµÈËÔÚ½­ºş£¬Éí²»ÓÉ¼º£¬ÄÜÍÑÀë³öÀ´£¬ÀÏÌì¶ÔÎÒÃÇ×ã¹»¾ì¹ËÁË¡£",1,"½áÊø¶Ô»°/no")
+	end
 end
 
 function qiuyishui_starttask1()
 	nt_setTask(1231,10)
-	Msg2Player("Thu nghiªu n­íc cho ng­¬i ®i Long v­¬ng thai t×m mét gäi long t¸m ®İch nam nh©n .")  
+	Msg2Player("ÇïÒÂË®ÈÃÄãÈ¥ÁúÍõÌ¨ÕÒÒ»¸ö½ĞÁú°ËµÄÄĞÈË¡£")  
 end
 
 function qiuyishui_prize()
 	if ( partner_checkdo() == 10 ) then
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddSkill(partnerindex,2,629,1)                          --Ôö¼ÓÍ¬°é¸½¼Ó¼¼ÄÜ¡¶Áè²¨Î¢²½¡·
-		Msg2Player("Chóc mõng ng­¬i thu ®­îc ®ång b¹n kü n¨ng ? l¨ng ba vi bé ?")
+		Msg2Player("¹§Ï²Äã»ñµÃÁËÍ¬°é¼¼ÄÜ¡¶Áè²¨Î¢²½¡·")
 		nt_setTask(1231,20)
 	end
 end
@@ -989,28 +992,28 @@ end
 --------------------------------------------------------Áú°Ë¶Ô»°--------------------------------------------
 
 function pe_longba()
-	if ( nt_getTask(1231) == 10 ) and ( nt_getTask(1226) == 10 ) then 
-             Describe(DescLink_LongBa..": Ng­¬i lµ Thu tû giíi thiÖu tíi, ®­îc råi . ta chç nµy lµ cã chót quyÓn trôc nhiÖm vô , ta cho ng­¬i cÆn kÏ gi¶ng gi¶i mét h¬i thë :<enter>" 
-            .."<color=yellow> ng­¬i cã thÓ cÊu ? bÊt ®ång ®Şa ph­¬ng ®İch bÊt ®ång giÕt tr¸ch nhiÖm vô , còng cã thÓ cÊu ? cïng ®Şa ph­¬ng ®İch giÕt tr¸ch nhiÖm vô . ng­¬i cã thÓ v« h¹n cÊu ? quyÓn trôc , nh­ng mçi ngµy nhÊt ®©u chØ cã thÓ khëi ®éng còng hoµn thµnh 5 c¸i. QuyÓn trôc nhiÖm vô kinh nghiÖm t­ëng th­ëng lµ mÖt mái thªm ®İch , còng chİnh lµ nãi , ng­¬i lµm nhiÖm vô cµng ®©u , lÊy ®­îc t­ëng th­ëng còng liÒn cµng ®©u . cuèi cïng , ngµy ®ã lµm xong ®İch nhiÖm vô ph¶i nhí thİch ®¸ng ngµy ®ãng , nÕu kh«ng vÉn sÏ bŞ nh×n lµm nhiÖm vô thÊt b¹i . <color> chİnh lµ nh­ vËy ®©u liÔu , b©y giê ng­¬i nhËn lÊy mét quyÓn trôc nhiÖm vô ®i lµm lµm ®i . <color=red> nhí , ng­¬i ph¶i tù m×nh tù m×nh ®i ®¸nh , ®ång b¹n cña ng­¬i ®ang gi¸o dôc nhiÖm vô trung , h¾n vÉn ch­a cã hoµn toµn luyÖn thµnh c«ng phu , ®¸nh c¸i céc gç lµ kh«ng cã hiÖu qu¶ ®İch . <color>",3, 
-           "§óng vËy , ta muèn ®¹t ®­îc ®¸nh c¸i céc gç ®İch quyÓn trôc nhiÖm vô /longba_starttask1", 
-            "Ta quyÓn trôc mÊt , ta muèn n÷a nhËn lÊy mét /longba_starttask1", 
-            "Ta cßn lµ sau nµy trë l¹i ®i /no") 
-        elseif ( nt_getTask(1231) == 15 ) then 
-               Describe(DescLink_LongBa..": Tèt l¾m , ng­¬i qu¶ thËt ®· lµm xong quyÓn trôc nhiÖm vô , nhËn lÊy t­ëng th­ëng cña ng­¬i ®i . sÏ cïng ta ®èi tho¹i . ",2,"NhËn lÊy phÇn th­ëng /longba_getprize1","Sau nµy trë l¹i /no") 
-         elseif ( nt_getTask(1231) == 16 ) then 
-              Describe(DescLink_LongBa..": Ngµy ®em hµng ®¹i ®¶m nhiÖm víi t­ nh©n , ng­¬i trë l¹i tr¶ lêi ®èi víi ta n¨m vÊn ®Ò , liÒn cã thÓ trë vÒ t×m thu c« phôc mÖnh . ",1,"KÕt thóc ®èi tho¹i /longba_starttask2") 
-         elseif ( nt_getTask(1231) == 17 ) then 
-                Describe(DescLink_LongBa..": §­îc råi , ng­¬i ®· hoµn thµnh ta chç nµy ®İch ®èi tho¹i , dÉn hoµn t­ëng th­ëng trë vÒ ®i t×m thu c« ®i . ",1,"KÕt thóc ®èi tho¹i /longba_getprize2") 
-         elseif ( nt_getTask(1231) == 18 ) then 
-                  Describe(DescLink_LongBa..": Ta chç nµy ®İch nhiÖm vô ®· hoµn thµnh , ng­¬i trë vÒ t×m thu c« ®i . ",1,"KÕt thóc ®èi tho¹i /no") 
-         else 
-               Describe(DescLink_LongBa..": Long n¨m ? h¾n lµ ta håi l©u tr­íc kia mét huynh ®Ö . khi ®ã huynh ®Ö chóng ta chİn ng­êi lËp chİ ë trªn giang hå x«ng ra lén mét c¸i thŞnh nghiÖp , ai cã thÓ nghÜ tíi sau ®ã x¶y ra nh­ vËy mét mãn thŞnh t×nh ®©y ? ",1,"KÕt thóc ®èi tho¹i /no") 
-         end
+	if ( nt_getTask(1231) == 10  ) and ( nt_getTask(1226) == 10 ) then
+		Describe(DescLink_LongBa.."£ºÄãÊÇÇï½ã½éÉÜÀ´µÄÂğ£¬ºÃ°É¡£ÎÒÕâÀïÊÇÓĞĞ©¾íÖáÈÎÎñ£¬ÎÒ¸øÄãÏêÏ¸½²½âÒ»ÏÂ£º<enter>"
+		.."<color=yellow>Äã¿ÉÒÔ¹ºÂò²»Í¬µØ·½µÄ²»Í¬É±¹ÖÈÎÎñ£¬Ò²¿ÉÒÔ¹ºÂòÍ¬Ò»µØ·½µÄÉ±¹ÖÈÎÎñ¡£Äã¿ÉÒÔÎŞÏŞ¹ºÂò¾íÖá£¬µ«Ã¿Ìì×î¶àÖ»ÄÜÆô¶¯²¢Íê³É5¸ö¡£¾íÖáÈÎÎñµÄ¾­Ñé½±ÀøÊÇÀÛ¼ÓµÄ£¬Ò²¾ÍÊÇ½²£¬Äã×öµÄÈÎÎñÔ½¶à£¬µÃµ½µÄ½±ÀøÒ²¾ÍÔ½¶à¡£×îºó£¬µ±Ìì×öÍêµÄÈÎÎñÒª¼ÇµÃµ±Ìì½»£¬·ñÔòÈÔÈ»»á±»¿´×öÈÎÎñÊ§°Ü¡£<color>¾ÍÊÇÕâÃ´¶àÁË£¬ÏÖÔÚÄãÁìÈ¡Ò»¸ö¾íÖáÈÎÎñÈ¥×ö×ö°É¡£<color=red>¼Ç×¡£¬Äã±ØĞë×Ô¼ºÇ××ÔÈ¥´ò£¬ÄãµÄÍ¬°éÔÚ½ÌÓıÈÎÎñÖĞ£¬Ëû»¹Ã»ÓĞÍêÈ«Á·³É¹¦·ò£¬»÷´òÄ¾×®ÊÇÎŞĞ§µÄ¡£<color>",3,
+		"ÊÇµÄ£¬ÎÒÒª»ñµÃ´òÄ¾×®µÄ¾íÖáÈÎÎñ/longba_starttask1",
+		"ÎÒµÄ¾íÖá¶ªÁË£¬ÎÒÏëÔÙÁìÈ¡Ò»¸ö/longba_starttask1",
+		"ÎÒ»¹ÊÇÉÔºóÔÙÀ´°É/no")
+	elseif ( nt_getTask(1231) == 15 ) then
+		Describe(DescLink_LongBa.."£ººÃÁË£¬ÄãÈ·ÊµÒÑ¾­×öÍêÁË¾íÖáÈÎÎñ£¬ÁìÈ¡ÄãµÄ½±Àø°É¡£ÔÙÓëÎÒ¶Ô»°¡£",2,"ÁìÈ¡½±Àø/longba_getprize1","ÉÔºóÔÙÀ´/no")
+	elseif ( nt_getTask(1231) == 16 ) then
+		Describe(DescLink_LongBa.."£ºÌì½«½µ´óÈÎÓÚË¹ÈË£¬ÄãÔÙÀ´»Ø´ğ¶ÔÎÒÎå¸öÎÊÌâ£¬¾Í¿ÉÒÔ»ØÈ¥ÕÒÇï¹Ã¸´ÃüÁË¡£",1,"½áÊø¶Ô»°/longba_starttask2")
+	elseif ( nt_getTask(1231) == 17 ) then
+		Describe(DescLink_LongBa.."£ººÃÀ²£¬ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄ¶Ô»°£¬ÁìÍê½±Àø¾Í»ØÈ¥ÕÒÇï¹Ã°É¡£",1,"½áÊø¶Ô»°/longba_getprize2")
+	elseif ( nt_getTask(1231) == 18 ) then
+		Describe(DescLink_LongBa.."£ºÎÒÕâÀïµÄÈÎÎñÒÑ¾­Íê³ÉÁË£¬Äã»ØÈ¥ÕÒÇï¹Ã°É¡£",1,"½áÊø¶Ô»°/no")
+	else
+		Describe(DescLink_LongBa.."£ºÁúÎå£¿ËûÊÇÎÒĞí¾ÃÒÔÇ°µÄÒ»¸öĞÖµÜ¡£ÄÇÊ±ºòÎÒÃÇĞÖµÜ¾ÅÈËÁ¢Ö¾ÔÚ½­ºşÉÏ´³³öÒ»·­ÊÂÒµ£¬Ë­ÄÜÏëµ½ºóÀ´·¢ÉúÁËÄÇÑùÒ»¼şÊÂÇéÄØ£¿",1,"½áÊø¶Ô»°/no")
+	end
 end
 
 function longba_starttask1()
 	AddItem(6,1,829,0,0,0)
-	Msg2Player("Ng­¬i thu ®­îc mét ®¸nh c¸i céc gç ®İch quyÓn trôc. xin kŞp thêi më ra còng hoµn thµnh nã.")	
+	Msg2Player("Äã»ñµÃÁËÒ»¸ö´òÄ¾×®µÄ¾íÖá¡£Çë¼°Ê±´ò¿ª²¢Íê³ÉËü¡£")	
 end
 
 function longba_getprize1()
@@ -1032,7 +1035,7 @@ function longba_getprize1()
 		local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 		PARTNER_AddExp(partnerindex,4500,1)                   			--¸øµ±Ç°Í¬°éÔö¼Ó¾­Ñé£¬+4500
 		nt_setTask(1231,18)
-		Say("Ng­¬i ®· hoµn thµnh nhiÖm vô chç nµy, ®i nh÷ng ng­êi kh¸c ®i.",0)
+		Say("ÄãÒÑ¾­Íê³ÉÁËÎÒÕâÀïµÄÈÎÎñ£¬È¥ÆäËûÈËÄÇÀï°É¡£",0)
 	end
 end
 --------------------------------------------------------¾íÖáÆô¶¯-------------------------------------------
@@ -1040,13 +1043,13 @@ end
 function pe_juanzhouqidong()
 	if ( nt_getTask(1231) == 10 ) and ( nt_getTask(1226) == 10 ) and ( nt_getTask(1243)  == 0 ) then
 		nt_setTask(1243,10) --¾íÖá±»Æô¶¯
-		Msg2Player("Ng­¬i ®· khëi ®éng ®¸nh c¸i céc gç 30 lÇn quyÓn trôc nhiÖm vô .")
+		Msg2Player("ÄãÒÑ¾­Æô¶¯ÁË´òÄ¾×®30´ÎµÄ¾íÖáÈÎÎñ¡£")
 	elseif ( nt_getTask(1231) == 10 ) and ( nt_getTask(1226) == 10 ) and ( nt_getTask(1243) >= 10 and  nt_getTask(1243) < 40 ) then
-		Msg2Player("Ng­¬i ®· ®ang lµm ®¸nh c¸i céc gç nhiÖm vô, xin mêi tiÕp tôc cè g¾ng lªn .")
+		Msg2Player("ÄãÒÑ¾­ÔÚ×ö´òÄ¾×®ÈÎÎñÁË£¬Çë¼ÌĞø¼ÓÓÍ¡£")
 	elseif ( nt_getTask(1231) == 15 )then
-		Msg2Player("Ng­¬i ®· hoµn thµnh ®¸nh c¸i céc gç nhiÖm vô , xin mêi ®i cïng long t¸m ®èi tho¹i.")
+		Msg2Player("ÄãÒÑ¾­Íê³ÉÁË´òÄ¾×®ÈÎÎñ£¬ÇëÈ¥ÓëÁú°Ë¶Ô»°¡£")
 	else
-		Msg2Player("ThËt xin lçi, ®©y lµ ®Æc thï nhiÖm vô ®¹o cô , ng­¬i cÇm kh«ng cã bÊt cø t¸c dông g×.")
+		Msg2Player("¶Ô²»Æğ£¬ÕâÊÇÌØÊâÈÎÎñµÄµÀ¾ß£¬ÄãÄÃÁËÃ»ÓĞÈÎºÎ×÷ÓÃ¡£")
 	end
 end	
 
@@ -1055,23 +1058,23 @@ end
 function pe_liangongmuzhuang()
 	local Uworld1243 = nt_getTask(1243)
 	if   ( nt_getTask(1231) == 15 ) then
-		Msg2Player("Ng­¬i ®· hoµn thµnh ®¸nh c¸i céc gç nhiÖm vô , xin mêi ®i cïng long t¸m ®èi tho¹i")
+		Msg2Player("ÄãÒÑ¾­Íê³ÉÁË´òÄ¾×®ÈÎÎñ£¬ÇëÈ¥ÓëÁú°Ë¶Ô»°¡£")
 	elseif ( nt_getTask(1231) == 10 ) and ( nt_getTask(1226) == 10 ) and ( Uworld1243 >= 10 and  Uworld1243 < 40 ) then
 		nt_setTask(1243,Uworld1243+1)
 	elseif ( nt_getTask(1231) == 10 ) and ( nt_getTask(1226) == 10 ) and ( nt_getTask(1243) >= 40 ) then
 		nt_setTask(1231,15)
-		Msg2Player("Ng­¬i ®· hoµn thµnh ®¸nh c¸i céc gç nhiÖm vô , xin mêi ®i cïng long t¸m ®èi tho¹i")
+		Msg2Player("ÄãÒÑ¾­Íê³ÉÁË´òÄ¾×®ÈÎÎñ£¬ÇëÈ¥ÓëÁú°Ë¶Ô»°¡£")
 	else
 		if ( GetSex() == 0 ) then
-			Msg2Player("§Ñp trai, ta ng­¬i kh«ng thï kh«ng o¸n , nhÜ l·o ®¸nh ta kiÒn ?")
+			Msg2Player("Ë§¸ç£¬ÄãÎÒÎŞÔ©ÎŞ³ğ£¬ÄãÀÏ´òÎÒ¸ÉÂğ£¿")
 		else
-			Msg2Player("Mü n÷, ta ng­¬i kh«ng thï kh«ng o¸n, nhÜ l·o ®¸nh ta kiÒn ?")
+			Msg2Player("ÃÀÅ®£¬ÄãÎÒÎŞÔ©ÎŞ³ğ£¬ÄãÀÏ´òÎÒ¸ÉÂğ£¿")
 		end
 	end
 end
 
 
-------------------------------------------------------Å£¢ú¢úµÄÎÊ´ğÌâ---------------------------------------
+------------------------------------------------------Å£ÂúÂúµÄÎÊ´ğÌâ---------------------------------------
 function niumanman_num1()
 	niumanman_bisaijieguo(1)
 end
@@ -1113,16 +1116,16 @@ function partner_getpartnerlevel(partnerlevel)
 	local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 	local NpcCount = PARTNER_Count()
 	if ( NpcCount == 0 ) then
-		Msg2Player("Ng­¬i tr­íc mÆt kh«ng cã b¹n ®ång hµnh, kh«ng thÓ tiÕp tôc nhiÖm vô gi¸o dôc. Xin mêi nhËn lÊy b¹n ®ång hµnh.")
+		Msg2Player("Äãµ±Ç°Ã»ÓĞÍ¬°é£¬²»ÄÜ¼ÌĞø½ÌÓıÈÎÎñÁË¡£ÇëÏÈÁìÈ¡Í¬°é¡£")
 		return
 	elseif ( PARTNER_GetLevel(partnerindex) < partnerlevel ) then
-		Msg2Player("B¹n ®ång hµnh cña ng­¬i ko ®ñ "..partnerlevel.." cÊp, vÉn kh«ng thÓ lµm ta nhiÖm vô")
+		Msg2Player("ÄãµÄÍ¬°é²»Âú"..partnerlevel.."¼¶£¬»¹²»ÄÜ×öÎÒÕâÀïµÄÈÎÎñ¡£")
 		return
 	elseif ( PARTNER_GetTaskValue(partnerindex, 1) ~= 1 ) then
-		Msg2Player("C¸i nµy ®ång b¹n còng kh«ng ph¶i lµ ng­¬i mang theo ®Ó lµm ®ång b¹n gi¸o dôc nhiÖm vô c¸i ®ã b¹n ®ång hµnh, xin mêi ®em chİnh x¸c ®ång b¹n cho gäi ra tíi .")  
+		Msg2Player("Õâ¸öÍ¬°é²¢²»ÊÇÄã´ø×ÅÀ´×öÍ¬°é½ÌÓıÈÎÎñµÄÄÇ¸öÍ¬°é£¬Çë½«ÕıÈ·Í¬°éÕÙ»½³öÀ´¡£")  
 		return
 	elseif ( partnerstate == 0 ) then
-		Msg2Player("Ng­¬i tr­íc mÆt kh«ng cã cho gäi ra ®ång b¹n tíi, kh«ng thÓ tiÕp tôc gi¸o dôc nhiÖm vô. xin mêi tr­íc cho gäi ra lµm gi¸o dôc nhiÖm vô ®ång b¹n .") 
+		Msg2Player("Äãµ±Ç°Ã»ÓĞÕÙ»½³öÍ¬°éÀ´£¬²»ÄÜ¼ÌĞø½ÌÓıÈÎÎñÁË¡£ÇëÏÈÕÙ»½³ö×ö½ÌÓıÈÎÎñµÄÍ¬°é¡£") 
 		return
 	else
 		return 10
@@ -1133,16 +1136,16 @@ function partner_checkdo()
 	local partnerindex,partnerstate = PARTNER_GetCurPartner()       --»ñµÃÕÙ»½³öÍ¬°éµÄindex,Í¬°é×´Ì¬ÎªÕÙ³ö»òÎª²»ÕÙ³ö
 	local NpcCount = PARTNER_Count()
 	if ( PARTNER_GetTaskValue(partnerindex, 1) ~= 1 ) then
-	Msg2Player("C¸i nµy ®ång b¹n còng kh«ng ph¶i lµ ng­¬i mang theo ®Ó lµm ®ång b¹n gi¸o dôc nhiÖm vô c¸i ®ã b¹n ®ång hµnh, xin mêi ®em chİnh x¸c ®ång b¹n cho gäi ra tíi .")  
+		Msg2Player("Õâ¸öÍ¬°é²¢²»ÊÇÄã´ø×ÅÀ´×öÍ¬°é½ÌÓıÈÎÎñµÄÄÇ¸öÍ¬°é£¬Çë½«ÕıÈ·Í¬°éÕÙ»½³öÀ´¡£")  
 		for i=1,NpcCount do 
 			if ( PARTNER_GetTaskValue(i, 1) == 1 ) then
-				Msg2Player("Ng­¬i ®ang lµm ®ång b¹n gi¸o dôc nhiÖm vô lµ thø "..i.." sè ®ång b¹n . ")
+				Msg2Player("ÄãÕıÔÚ×öÍ¬°é½ÌÓıÈÎÎñµÄÊÇµÚ"..i.."ºÅÍ¬°é¡£")
 			end
 		end
 	elseif ( NpcCount == 0 ) then
-		Msg2Player("Ng­¬i tr­íc mÆt kh«ng cã b¹n ®ång hµnh, kh«ng ®­îc nhËn th­ëng. ")
+		Msg2Player("Äãµ±Ç°Ã»ÓĞÍ¬°é£¬ÁìÈ¡²»ÁË½±ÀøÅ¶¡£")
 	elseif ( partnerstate == 0 ) then
-		Msg2Player("Ng­¬i tr­íc mÆt kh«ng cã cho gäi ra ®ång b¹n tíi,  kh«ng ®­îc nhËn th­ëng.") 
+		Msg2Player("Äãµ±Ç°Ã»ÓĞÕÙ»½³öÍ¬°éÀ´£¬ÁìÈ¡²»ÁË½±ÀøÅ¶¡£") 
 	else
 		return 10
 	end

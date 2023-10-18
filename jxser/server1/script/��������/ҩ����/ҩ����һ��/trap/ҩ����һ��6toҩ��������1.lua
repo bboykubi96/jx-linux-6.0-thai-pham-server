@@ -1,10 +1,10 @@
---西北北区 药王洞一层6to药王洞三层1
---TrapID：西北北区 93
+-- script viet hoa By http://tranhba.com  t﹜ b綾 b綾 khu dc vng ng m閠 t莕g 6to dc vng ng t莕g ba 1 
+-- script viet hoa By http://tranhba.com TrapID# t﹜ b綾 b綾 khu 93 
 
-function main(sel)
+function main(sel) 
 
-	SetFightState(1);
-	NewWorld(143, 1686, 3262);
-	AddTermini(208)
+SetFightState(1); 
+NewWorld(143, 1686, 3262); 
+AddTermini(208) 
 
 end;

@@ -1,5 +1,6 @@
 -- 龙门镇　路人　孙家嫂子
 -- by：Dan_Deng(2003-09-16)
+--Nhiem vu cuu Tieu Quyen NPC Ton Gia Tau Tu
 
 Include("\\script\\global\\repute_head.lua")
 

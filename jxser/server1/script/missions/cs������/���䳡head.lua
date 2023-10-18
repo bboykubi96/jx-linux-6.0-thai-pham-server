@@ -1,33 +1,33 @@
 
---ÍË³öÓÎÏ·ºóµÄÖØÉúµãID,Ò²¾ÍÊÇ±¨ÃûµÄÄÇ¸öµØ·½°É
-CS_RevId = 80;
-CS_RevData = 36;
+-- script viet hoa By http://tranhba.com  thèi lui ra trß ch¬i sau ®İch sèng l¹i ®iÓm ID, còng chİnh lµ ghi danh ®İch chç ®ã ®i 
+CS_RevId = 80; 
+CS_RevData = 36; 
 
---Àë¿ª±¾´ÎÓÎÏ·ºóµÄÎ»ÖÃworldid, x, y,Ò»°ã¾ÍÊÇ±¨Ãûµã
---CS_LeavePos = {20, 3546, 6226};
+-- script viet hoa By http://tranhba.com  rêi ®i lÇn nµy trß ch¬i sau ®İch vŞ trİ worldid, x, y, mét lo¹i chİnh lµ ghi danh ®iÓm 
+-- script viet hoa By http://tranhba.com CS_LeavePos = {20, 3546, 6226}; 
 
---»á³¡ÍâµÄÎ»ÖÃ
-CS_OuterPos = {209, 1548, 3297};
-
-
---¼ÓÈëË«·½ÕóÓªÊ±µÄÎ»ÖÃ
-CS_CampPos0 = {209, 1631, 3203};   	--°×É«
-CS_CampPos1 = {209, 1608, 3167}; 	--»ÆÉ«
-CS_CampPos2 = {209, 1674, 3246}; 	--ºìÉ«
+-- script viet hoa By http://tranhba.com  bªn ngoµi héi tr­êng ®İch vŞ trİ 
+CS_OuterPos = {209, 1548, 3297}; 
 
 
---ÓÎÏ·µÄÃ¿Ò»ÕóÓªµÄ×î´óÈËÊı
-MAX_MEMBER_COUNT = 20;
+-- script viet hoa By http://tranhba.com  gia nhËp song ph­¬ng trËn doanh lóc ®İch vŞ trİ 
+CS_CampPos0 = {209, 1631, 3203}; -- script viet hoa By http://tranhba.com  mµu tr¾ng 
+CS_CampPos1 = {209, 1608, 3167}; -- script viet hoa By http://tranhba.com  mµu vµng 
+CS_CampPos2 = {209, 1674, 3246}; -- script viet hoa By http://tranhba.com  mµu ®á 
+
+
+-- script viet hoa By http://tranhba.com  trß ch¬i mçi mét trËn doanh ®İch lín nhÊt nh©n sè 
+MAX_MEMBER_COUNT = 20; 
 
 
 
-MS_CAMP1 = 1; --Ë«·½µÄÕóÓªºÅ
-MS_CAMP2 = 2;
+MS_CAMP1 = 1; -- script viet hoa By http://tranhba.com  song ph­¬ng trËn doanh sè 
+MS_CAMP2 = 2; 
 
-MS_SIGN_MONEY = 5000; --±¨Ãû·Ñ
-MS_WIN_MONEY = 3000; -- Ã¿´ÎÊ¤ÀûÊ±£¬»ñµÃµÄÊÕÈë
+MS_SIGN_MONEY = 5000; -- script viet hoa By http://tranhba.com  tiÒn ghi danh 
+MS_WIN_MONEY = 3000; -- script viet hoa By http://tranhba.com  mçi lÇn th¾ng lîi lóc , ®¹t ®­îc ®İch thu vµo 
 
 
-function GetLeavePos()
-	return GetTask(300), GetTask(301), GetTask(302);
-end;
+function GetLeavePos() 
+return GetTask(300), GetTask(301), GetTask(302); 
+end; 

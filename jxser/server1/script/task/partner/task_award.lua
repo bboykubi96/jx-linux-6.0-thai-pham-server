@@ -6,12 +6,12 @@
 -- 2005/09/09 PM 11:19
 
 -- Ö»ÓĞËûºÍËıÁ½¸öÈË
--- ËûÃÇÏµ°®
+-- ËûÃÇÏà°®
 -- Ëı¼ÇµÃ
--- ËûµÄÊÖ¸§Ä¦ÔÚËıµÄÆ¤·ôÉÏµÄÎ¢Çé
--- ËûµÄÇ×ÎÇÏñÄñÈºÔÚÌì¿Õ¢Ó¹ı
+-- ËûµÄÊÖ¸§Ä¦ÔÚËıµÄÆ¤·ôÉÏµÄÎÂÇé
+-- ËûµÄÇ×ÎÇÏñÄñÈºÔÚÌì¿ÕÂÓ¹ı
 -- ËûÔÚËıÉíÌåÀïÃæµÄ±©ìåºÍ·Å×İ
--- ËûÈëË¯Ê±ºòµÄÑù×Ó³ä¢ú´¿Õæ
+-- ËûÈëË¯Ê±ºòµÄÑù×Ó³äÂú´¿Õæ
 -- Ëı¼ÇµÃ£¬Çå³¿ËıĞÑ¹ıÀ´µÄÒ»¿Ì£¬ËûÔÚËıµÄÉí±ß
 -- ËıÕö×ÅÑÛ¾¦£¬¿´Êï¹âÍ¸¹ı´°Á±Ò»µãÒ»µãµØÕÕÉä½øÀ´
 -- ËıµÄĞÄÀïÒòÎªĞÒ¸£¶øÌÛÍ´
@@ -24,11 +24,11 @@ IncludeLib("PARTNER");
 -- ¶ÁÈë DEBUG Êä³ö´¦ÀíÎÄ¼ş
 Include("\\script\\task\\system\\task_debug.lua");
 
--- ÔØÈë»Ô»ÍÖ®Õ¢µÄÍ·ÎÄ¼ş
+-- ÔØÈë»Ô»ÍÖ®ÕÂµÄÍ·ÎÄ¼ş
 Include("\\script\\event\\great_night\\huangzhizhang\\event.lua");
 
 Include([[\script\tong\tong_award_head.lua]]);--°ï»áÖÜÄ¿±ê¹±Ï×¶ÈbyÖ¾É½
--- ¼Ç¢¼¾çÇéÆª½±Àø·¢·ÅµÄ ID
+-- ¼ÇÂ¼¾çÇéÆª½±Àø·¢·ÅµÄ ID
 
 ARY_MASTER_AWARD = {
 	[1] = 50,
@@ -38,7 +38,7 @@ ARY_MASTER_AWARD = {
 	[5] = 54,
 }
 
--- ¼Ç¢¼ĞŞÁ¶Æª½±Àø·¢·ÅµÄ ID
+-- ¼ÇÂ¼ĞŞÁ¶Æª½±Àø·¢·ÅµÄ ID
 ARY_REWIND_AWARD = {
 	[1] = 55,
 	[3] = 56,
@@ -434,7 +434,7 @@ aryRewindAward = {
 	end,
 }
 
--- select_item:·µ»ØÖµÎª1±íÊ¾½±ÀøËæ»ú1¼¶¼¼ÄÜÊé£¬Îª2±íÊ¾Ëæ»ú½±Àø¼¼ÄÜÊé£¬Îª3±íÊ¾10%¼¸¢Ê½±ÀøËæ»ú¼¼ÄÜÊé
+-- select_item:·µ»ØÖµÎª1±íÊ¾½±ÀøËæ»ú1¼¶¼¼ÄÜÊé£¬Îª2±íÊ¾Ëæ»ú½±Àø¼¼ÄÜÊé£¬Îª3±íÊ¾10%¼¸ÂÊ½±ÀøËæ»ú¼¼ÄÜÊé
 function skillbook_select(select_item)
 		local i = random(199,599)
 		local SKILLBOOK_LEVEL = floor(i/100)
@@ -442,15 +442,15 @@ function skillbook_select(select_item)
 		local SKILLBOOK_NAME = ARY_SKILLBOOK[random(1,j)]
 		if ( select_item == 1 ) then
 			AddItem(6,1,SKILLBOOK_NAME,1,0,0)
-			Msg2Player("<color=yellow>Ng­¬i lÊy ®­îc mét quyÓn s¸ch b¹n ®ång hµnh kü n¨ng!<color>");
+			Msg2Player("<color=yellow>ÄãµÃµ½ÁËÒ»±¾Í¬°é¼¼ÄÜÊé£¡<color>");
 		elseif ( select_item == 2 ) then
 			AddItem(6,1,SKILLBOOK_NAME,SKILLBOOK_LEVEL,0,0)
-			Msg2Player("<color=yellow>Ng­¬i lÊy ®­îc mét quyÓn s¸ch b¹n ®ång hµnh kü n¨ng!<color>");
+			Msg2Player("<color=yellow>ÄãµÃµ½ÁËÒ»±¾Í¬°é¼¼ÄÜÊé£¡<color>");
 		elseif ( select_item == 3 ) then
 			local w = random(1,100)
 			if ( w <= 30 ) then
 				AddItem(6,1,SKILLBOOK_NAME,SKILLBOOK_LEVEL,0,0)
-				Msg2Player("<color=yellow>Ng­¬i lÊy ®­îc mét quyÓn s¸ch b¹n ®ång hµnh kü n¨ng!<color>");
+				Msg2Player("<color=yellow>ÄãµÃµ½ÁËÒ»±¾Í¬°é¼¼ÄÜÊé£¡<color>");
 			end
 		end;
 end

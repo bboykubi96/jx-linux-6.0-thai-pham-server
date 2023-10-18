@@ -11,9 +11,24 @@ Include("\\script\\event\\storm\\logout.lua")	--Storm
 Include("\\script\\misc\\vngpromotion\\ipbonus\\ipbonus_2_head.lua");
 Include("\\script\\global\\playerlist.lua")
 Include("\\script\\global\\logout_head.lua")
-Include("\\script\\global\\namcung\\logout\\logout.lua")
+--Include("\\script\\t9team\\t9_hwid_head.lua")
+
+Include("\\script\\global\\g7vn\\limitaccountperip.lua");
+Include("\\script\\global\\quanlygame\\sukien\\vantieubanghoi\\vantieubanghoi.lua")
 function main()
-logout()
+dofile("script/global/logout.lua")
+	LimitAccountPerIP:Logout()
+--	dologouttk()
+	if GetTask(5859) > 0 then
+			local nHour = tonumber(GetLocalDate("%H%M"))
+		if nHour >= 2000 and nHour <= 2030 then
+	AddTieuBang()
+	end
+	SetTask(5859,0)
+	DisabledUseTownP(0);
+	RestoreOwnFeature();
+	Msg2SubWorld("<color=yellow>Bang ChÒ "..GetName().." ß∑ Out Game, Ti™u Bang HÈi Sœ  Xu t Hi÷n Î ßi”m Xu t Ph∏t.")	
+	end
 	if IsIPBonus() == 1 then
 		IpBonus_Close()
 	end;
@@ -29,6 +44,13 @@ logout()
 		messenger_livegame()
 	end
 	
+
+	local W,X,Y = GetWorldPos();
+	local nMapId = W;	
+	if ( nMapId == 325 ) or ( nMapId == 977 ) or ( nMapId == 380 ) or ( nMapId == 900 ) then
+	--	player2hwidout()
+	end
+
 	storm_logout()	--Storm
 	PlayerList:DelPlayer(PlayerIndex)
 end
@@ -41,3 +63,6 @@ function RemoveExchange()
 	end
 	PlayerList:DelPlayer(PlayerIndex)
 end
+
+
+

@@ -39,8 +39,8 @@ function OnNewWorld(szParam)
 	
 	local mm = ceil(( WLLS_TIMER_PREP_TOTAL - GetGlbValue(GLB_WLLS_TIME)) * WLLS_TIMER_PREP_FREQ / 60 )
 	local str_des = wlls_get_desc(3)
-	Msg2Player("B¹n ®· vµo"..str_des.." chuÈn bÞ, thi ®Êu sau <color=yellow>"..mm.."<color>phót sau b¾t ®Çu")
-	Msg2MSAll(WLLS_MSID_SCHEDULE, "<color=yellow>chiÕn ®éi ["..str_lgname.."] cña"..GetName().."®· vµo"..str_des.."khu vùc chuÈn bÞ.")
+	Msg2Player("B¹n ®· vµo <color=green>"..str_des.."<color> chuÈn bÞ, thi ®Êu sau <color=yellow>"..mm.."<color> phót sau b¾t ®Çu")
+	Msg2MSAll(WLLS_MSID_SCHEDULE, "<color=yellow>chiÕn ®éi ["..str_lgname.."] <color> cña "..GetName().." ®· vµo "..str_des.." khu vùc chuÈn bÞ.")
 	OnNewWorldDefault(szParam)
 end
 

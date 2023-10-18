@@ -1,11 +1,11 @@
--- ÎäÒÄÉ½Óñ»ª¶´ÃÔ¹¬ Õ½¶·NPC Á÷¿Ü01£¨Îå¶¾50¼¶ÈÎÎñ£©
--- by£ºDan_Deng(2003-08-05)
+-- script viet hoa By http://tranhba.com  Vò di s¬n ngäc hoa ®éng mª cung chiÕn ®Êu NPC l­u khÊu 01# n¨m ®éc 50 cÊp nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-08-05) 
 
-function OnDeath()
-	UTask_wu = GetTask(10)
+function OnDeath() 
+UTask_wu = GetTask(10) 
 	if (UTask_wu == 50*256+10) then
 		SetTask(10,50*256+20)
-		AddNote("L¹i ®i lªn nói La Tiªu ®Ó ®¸nh b¹i bän c­êng ®¹o, lÊy l¹i Ngäc San H« ")
-		Msg2Player("B¾t ®­îc tªn ®Çu lÜnh, míi biÕt ®­îc lµ Ngäc San H« ®· bŞ bän c­êng ®¹o Vò Di s¬n c­íp ®i, chóng vµ bän c­íp ë La Tiªu cã quan hÖ víi nhau ")
-	end
-end;
+AddNote("§i la tiªu s¬n ®¸nh b¹i c­êng ®¹o , cÇm trë vÒ ngäc san h« ") 
+Msg2Player("B¾t ®­îc ®Çu lÜnh , míi trë l¹i ngäc san h« bŞ Vò di s¬n ®İch c­êng ®¹o ®o¹t ®i , bän hä cïng ë la tiªu ®İch c­êng ®¹o lµ mét phe ") 
+end 
+end; 

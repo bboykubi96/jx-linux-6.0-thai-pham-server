@@ -1,8 +1,8 @@
---ÖĞÔ­±±Çø ÌúËşÃÔ¹¬2toÌúËşÃÔ¹¬1
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu thiÕt th¸p mª cung 2to thiÕt th¸p mª cung 1 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(38, 1702, 3134);
+SetFightState(1) 
+NewWorld(38, 1702, 3134); 
 
 end;

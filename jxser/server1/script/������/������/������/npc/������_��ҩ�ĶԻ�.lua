@@ -1,12 +1,12 @@
---Á½ºşÇø ÌìÍõ°ï ÂôÒ©µÄ°ïÖÚ¶Ô»°
--- Update: Dan_Deng(2003-08-21) ¼ÓÈëÂôµÀ¾ßÖ»Âô¸ø±¾°ï
+-- script viet hoa By http://tranhba.com ¸#º### ××İâ°# ¢«ß##Ä°##ó#¤#°
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-21) #ãÌ#¢«#µ####¢«##±#°#
 
 function main(sel)
 	Uworld38 = GetByte(GetTask(38),1)
 	if (GetFaction() == "tianwang") or (Uworld38 == 127) then
-		Say("C¸c d­îc lŞªu nµy lµ sèng ë trªn ®¶o tù sinh tù lín, cÇm m¸u d­ìng khİ cùc kú h÷u hiÖu", 2, "Giao dŞch/yes", "Kh«ng giao dŞch/no")
+		Say("××İâ°##ó#ºâ©##ß###£#¤Û#ºĞ#İ¸Ğóİ¸³##Ä############±###ã#####", 2, "##ß#/yes", "²###ß#/no")
 	else
-		Talk(1,"","Bang chñ cã lÖnh: D­îc phÈm cña bæn bang chØ b¸n cho huynh ®Ö ®ång m«n")
+		Talk(1,"","°###ã#¸##º±#°#±#####¢«##İ#·Å####")
 	end
 end;
 

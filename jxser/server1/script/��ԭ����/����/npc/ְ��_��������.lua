@@ -1,9 +1,9 @@
--- ÑïÖİ¡¡Ö°ÄÜ¡¡ÉñÃØÉÌÈË
+-- ÑïÖİ¡¡Ö°ÄÜ¡¡ÉñÃØÉÌÈË --Than bi thuong nhan duong chau
 -- By Li_Xin (2004-08-17)
 -- By Ren Bin (2004-12-15) Ôö¼ÓÇ§Ææ°Ù¹Ö¶¯ÎïĞãµÄ»î¶¯Èë¿Ú
 
-
-
+Include("\\script\\task\\system\\task_string.lua")
+Include("\\script\\lib\\gb_taskfuncs.lua");
 Include("\\script\\global\\shenmi_chapman.lua") 
 Include( "\\script\\global\\mask_ani.lua" )
 Include( "\\script\\global\\weapon_ring.lua" )
@@ -20,11 +20,12 @@ function main()
 --		"<#>¹ºÂòÊ¥µ®½ÚÈÕÃæ¾ß/chr_buy",
 --		"<#>ÎäÆ÷»»½äÖ¸/weapon_ring",
 		"<#> Ta xem thö tr­íc ®·!/no",
-		"<#>Ta muèn ®æi b¶o r­¬ng/BaiBaoXiang_Give_UI"
+--		"<#>Ta muèn ®æi b¶o r­¬ng/BaiBaoXiang_Give_UI"
 	};
 	local ndate = tonumber(GetLocalDate("%y%m%d%H"))
 	
-	Say(str[1],4,str[5],str[2],str[3],str[4])
+	--Say(str[1],2,str[2],str[3])
+	CreateTaskSay(str);
 	
 end;
 

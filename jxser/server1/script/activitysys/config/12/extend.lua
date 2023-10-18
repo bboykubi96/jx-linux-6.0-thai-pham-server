@@ -12,11 +12,25 @@ pActivity.nTaskCount = 0
 pActivity.tbWinners = {}
 
 local MAX_TASK_COUNT = 20
+function pActivity:AddInitNpc()
+	--self:AddAmbienceNpc()
 
+end
+function pActivity:AddAmbienceNpc()
+	Include("\\script\\activitysys\\config\\12\\ambience_npc.lua")
+	DynamicExecute("\\script\\activitysys\\config\\12\\ambience.lua","tbAmbience:CreateNpc",tbAmbienceNpc)
+end
 function pActivity:GiveTask()
 
 	local szName = GetName()
-	
+	local nTime = tonumber(GetLocalDate("%H"));
+		 local nWeek	= tonumber(date("%w"))
+	if nTime==9 or nTime ==11 or nTime ==13 or nTime ==15 or nTime ==17 or nTime ==19 or nTime ==21 or nTime ==23 then
+	--	return Talk(1, "", "ChiÕn tr­êng ®ang diÔn ra, c¸c h¹ h·y t¹m l¸nh...")
+	end
+	if GetLevel()<80 then
+	 return Talk(1, "", "CÊp 80 trë lªn míi cã thÓ vËn tiªu ®­îc.")
+	end
 	if self.nTaskCount >= %MAX_TASK_COUNT then
 		return Talk(1, "", "Ng­êi ®i chuyÓn hµng nhiÒu qu¸, xin ®¹i hiÖp h·y chê ®îi.")
 	end
@@ -42,11 +56,11 @@ function pActivity:GiveTask()
 	pTask.szPlayerName = szName
 	pTask.nState = 0
 	local nMapId = GetWorldPos()
-	local szNpcName = format("%s Xe Ngùa", szName)
+	local szNpcName = format("%s hµng bu«n lËu", szName)
 
 	DynamicExecute("\\script\\activitysys\\config\\12\\carriage.lua", "add_carriage", nMapId, pTask.nId, szNpcName, GetCurCamp())
 	self:AddEscortTask(pTask.nId, pTask)	
-
+	Msg2SubWorld("<color=green>Cao thñ <color=yellow>"..GetName().."<color=blue> §· nhËn chuyÕn hµng lËu tõ<color=yellow> L©m Tiªu §Çu<color=green> b¾t ®Çu di chuyÓn")
 	return 
 end
 
@@ -125,11 +139,12 @@ function pActivity:CheckCamp(nCamp, szFailMsg)
 end
 
 function pActivity:ServerStart()
-	local tbNpcId = {1607, 1608, 1609}
+	--local tbNpcId = {1112, 1113, 1114, 1566, 520, 593, 1608}
+                   local tbNpcId = {1608, 1608, 1608}
 	
 	for i=1,getn(%MOSTER_POS) do
 		local nIndex = random(1, 3)
-		NpcFunLib:AddFightNpc({szName="GiÆc Cá",nNpcId=tbNpcId[nIndex],nLevel=95,bNoRevive=0},{%MOSTER_POS[i]})
+		NpcFunLib:AddFightNpc({szName="S¬n tÆc",nNpcId=tbNpcId[nIndex],nLevel=95,bNoRevive=0},{%MOSTER_POS[i]})
 	end
 	
 end
@@ -137,25 +152,39 @@ end
 
 function pActivity:GiveAward()
 	
-	local tbAward = {
-		[1]={nExp_tl=40e6},
-		[2]={szName="Hçn Nguyªn Linh Lé",tbProp={6,1,2312,1,0,0},nCount=1},
+	local tbAward = {			
+	{szName="Kim Nguyªn B¶o",tbProp={4,343,1,1,0,0},nCount=1},
+		{szName="D· TÈu Chi LÖnh",tbProp={6,1,4407,1,1,0},nCount=5},
+	--	{szName="Cµn Kh«n T¹o Hãa §an (®¹i) ",tbProp={6,1,215,1,1},nCount=500},
+	--	{szName="Tói Quµ Sù KiÖn",tbProp={6,1,30324,1,1,0},nCount=20},
+	--	{szName="M·nh ®å Phôc Hy",tbProp={6,1,4419,1,1,0},nCount=1},
+	--	{szName="D©y Thõng",tbProp={6,1,4416,1,1,0},nCount=1},
+	--	{szName="Bã Cá",tbProp={6,1,4415,1,1,0},nCount=1},
+--{szName="TÝn VËt TÝn Sø",tbProp={6,1,4426,1,1,0},nCount=1},
+
 	}
+	--Earn(100); --50 van	
+
 	tbAwardTemplet:Give(tbAward, 1, {%EVENT_LOG_TITLE, "NhËn phÇn th­ëng tõ Th­¬ng Bu«n"})
-	
+	tbAwardTemplet:GiveAwardByList({{nExp_tl = 1000000}}, "test", 1);
+	str = "<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color=blue> Hoµn thµnh nhiÖm vô vËn tiªu vµ nhËn ®­îc phÇn th­ëng"
+	AddGlobalCountNews(str, 2)
+	Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color=blue> §· hoµn thµnh chuyÕn bu«n lËu thµnh c«ng t¹i<color=yellow> Ba l¨ng HuyÖn")
+	--Msg2SubWorld("PhÇn th­ëng: <color=green>NL Event")		
 end
+
 
 local tbFormula = {
 	nWidth = 0,
 	nHeight = 0,
-	szComposeTitle = "Hçn Nguyªn Linh Lé",
-	szFailMsg = "Ng­¬i kh«ng cã Hçn Nguyªn Linh Lé"
+	szComposeTitle = "Kim Nguyªn B¶o",
+	szFailMsg = "Ch­a cã 1 Kim Nguyªn B¶o cho ta!"
 }
 
 tbFormula.tbMaterial = {
 	{
-	szName="Hçn Nguyªn Linh Lé",
-	tbProp={6,1,2312,1,0,0},
+	szName="Kim Nguyªn B¶o",
+	tbProp={4,343,1,1},
 	nCount=1,
 	pBindLimit = function(tbItem, nItemIndex)
 		if GetItemBindState(nItemIndex) == 0 then
@@ -165,6 +194,4 @@ tbFormula.tbMaterial = {
 	},
 }
 	
-pActivity.pCompose = tbActivityCompose:new(tbFormula, "Giao Hçn Nguyªn Linh Lé")
-
-
+pActivity.pCompose = tbActivityCompose:new(tbFormula, "Kim Nguyªn B¶o")
