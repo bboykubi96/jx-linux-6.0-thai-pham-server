@@ -1,19 +1,39 @@
-Name	Feature	Price
-Sa Di GiÌi C´ 	0	500
-PhÔ Dung M∑o	1	500
-T˙ L´ m∑o	2	500
-TrÛc Lπp	6	500
-Nh©n B◊ Di÷n Tr∏o	7	500
-Tu La Ph∏t k’t	8	500
-Phi Y’n Qu∏n	9	500
-Anh Lπc Qu∏n	10	500
-Th´ng Thi™n Ph∏t Qu∏n	11	500
-Thi’t Kh´i	12	500
-Ng©n Kh´i	13	500
-Y”m NhÀt kh´i	14	500
-Ph∏ BË C©n	15	500
-Song T«ng L≠u Ly Hoµn	16	500
-Tr›ch Tinh hoµn	17	500
-BË C©n	18	500
-Chu KhÎi Qu∏n	19	500
-§ Tµm M∑o	20	500
+Name	Feature	Price	nGenre	nDetail	nParticular
+Ki”u 1	0	1	0	7	-1
+Ki”u 2	1	1	0	7	-1
+Ki”u 3	2	1	0	7	-1
+Ki”u 4	3	1	0	7	-1
+Ki”u 5	4	1	0	7	-1
+Ki”u 6	5	1	0	7	-1
+Ki”u 7	6	1	0	7	-1
+Ki”u 8	7	1	0	7	-1
+Ki”u 9	8	1	0	7	-1
+Ki”u 10	9	1	0	7	-1
+Ki”u 11	10	1	0	7	-1
+Ki”u 12	11	1	0	7	-1
+Ki”u 13	12	1	0	7	-1
+Ki”u 14	13	1	0	7	-1
+Ki”u 15	14	1	0	7	-1
+Ki”u 16	15	1	0	7	-1
+Ki”u 17	16	1	0	7	-1
+Ki”u 18	17	1	0	7	-1
+Ki”u 19	18	1	0	7	-1
+Ki”u 20	19	1	0	7	-1
+Ki”u 21	20	1	0	7	-1
+Ki”u 22	21	1	0	7	-1
+Ki”u 23	22	1	0	7	-1
+Ki”u 24	23	1	0	7	-1
+Ki”u 25	24	1	0	7	-1
+Ki”u 26	25	1	0	7	-1
+Ki”u 27	26	1	0	7	-1
+Ki”u 28	27	1	0	7	-1
+Ki”u 29	28	1	0	7	-1
+Ki”u 30	29	1	0	7	-1
+Ki”u 31	32	2	0	7	-1
+Ki”u 32	33	2	0	7	-1
+Ki”u 33	34	2	0	7	-1
+Ki”u 34	35	2	0	7	-1
+Ki”u 35	36	2	0	7	-1
+Ki”u 36	37	2	0	7	-1
+Ki”u 37	39	2	0	7	-1
+Ki”u 38	42	2	0	7	-1

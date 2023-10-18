@@ -3,9 +3,9 @@ Th«n b› kho∏ng thπch		6	1	398			100000000
 Lam ThÒy Tinh		4	238	1			50000000		
 Tˆ ThÒy Tinh		4	239	1			50000000		
 LÙc ThÒy Tinh		4	240	1			50000000		
-PhÛc Duy™n LÈ (Ti”u)		6	1	122			600000		
-PhÛc Duy™n LÈ (Trung)		6	1	123			1200000		
-PhÛc Duy™n LÈ (ßπi)		6	1	124			3000000		
+PhÛc Duy™n LÈ (Ti”u) 		6	1	122			600000		
+PhÛc Duy™n LÈ (Trung) 		6	1	123			1200000		
+PhÛc Duy™n LÈ (ßπi) 		6	1	124			3000000		
 V‚ L©m MÀt Tﬁch		6	1	26			350000000		
 TÙ Ti‘n thuÀt. Bπo VÚ L™ Hoa		6	1	27			50000000		
 H∑m T‹nh thuÀt.Loπn Hoµn K›ch		6	1	28			10000000		
@@ -35,8 +35,8 @@ Thi’u L©m Quy“n Ph∏p. Quy”n 1		6	1	56			20000000
 Thi’u L©m C´n ph∏p. Quy”n 2		6	1	57			20000000		
 Thi’u L©m ßao ph∏p. Quy”n 3		6	1	58			30000000		
 PhÊ ßÈ MÀt Tﬁch		6	1	59			10000000		
-T»y TÒy Kinh		6	1	22			50000000		
-Kim T™		4	979	1			20000000		
+T»y TÒy Kinh		6	1	22			50000000	
+Kim T™		4	979	1			20000000	
 Huy“n Tinh Kho∏ng Thπch 		6	1	147				\script\item\itemvalue\ore.lua	
 Huy“n Thi’t kho∏ng		6	1	200				\script\item\itemvalue\ore.lua	
 MÀt Ng©n kho∏ng		6	1	201				\script\item\itemvalue\ore.lua	
@@ -47,16 +47,14 @@ Chung NhÚ thπch		6	1	205				\script\item\itemvalue\ore.lua
 Trang bﬁ th´ng th≠Íng	0	0						\script\item\itemvalue\equip_normal.lua	
 Trang bﬁ Hoµng Kim	1	0						\script\item\itemvalue\equip_gold.lua	
 Trang bﬁ c„ th” kh∂m nπm	2	0						\script\item\itemvalue\equip_enchasable.lua	
-Tr n Bang Thπch [c p 1]		6	1	1019	1		1000000		
-Tr n Bang Thπch [c p 2]		6	1	1019	2		2000000		
-Tr n Bang Thπch [c p 3]		6	1	1019	3		5000000		
-Tr n Bang Thπch [c p 4]		6	1	1019	4		10000000		
-Tr n Bang Thπch [c p 5]		6	1	1019	5		20000000		
-Tr n Bang Thπch [c p 6]		6	1	1019	6		50000000		
-Tr n Bang Thπch [c p 7]		6	1	1019	7		100000000		
-Tr n Bang Thπch [c p 8]		6	1	1019	8		200000000		
-Tr n Bang Thπch [c p 9]		6	1	1019	9		400000000		
-Tr n Bang Thπch [c p 10]		6	1	1019	10		700000000		
+Tr n bang chi thπch c p 1		6	1	1019	1		1000000		
+Tr n bang chi thπch c p 2		6	1	1019	2		2000000		
+Tr n bang chi thπch c p 3		6	1	1019	3		5000000		
+Tr n bang chi thπch c p 4		6	1	1019	4		10000000		
+Tr n bang chi thπch c p 5		6	1	1019	5		20000000		
+Tr n bang chi thπch c p 6		6	1	1019	6		50000000		
+Tr n bang chi thπch c p 7		6	1	1019	7		100000000		
+Tr n bang chi thπch c p 8		6	1	1019	8		200000000		
+Tr n bang chi thπch c p 9		6	1	1019	9		400000000		
+Tr n bang chi thπch c p 10		6	1	1019	10		700000000		
 PhÙng Hoµng  n		6	1	1105	1		3000000		
-Huy“n Kim		6	1	3151				\script\item\itemvalue\fantasygold.lua	
-Huy“n Kim Chi Tinh		6	1	3152				\script\item\itemvalue\fantasygoldessence.lua	

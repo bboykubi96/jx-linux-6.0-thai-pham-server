@@ -1,24 +1,38 @@
 Id	Title	Time	EVENT_MOVE	EVENT_ATTACK	EVENT_SITE	EVENT_RIDE	EVENT_USEITEM	EVENT_ARRANGEITEM	EVENT_DROPITEM	EVENT_CHANGEEQUIP	EVENT_TRADE	EVENT_CHANGEFIGHTSTATE	EVENT_ATTACKED	EVENT_DEATH	EVENT_REVIVE	EVENT_BUYITEM	EVENT_SELLITEM	EVENT_TALK	comment
-1	§ang thu thËp…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Qu¶ Huy Hoµng
-2	§ang thu thËp…	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Qu¶ Hoµng Kim
-3	§ang thu thËp…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Qu¶ Huy Hoµng
-4	§ang nhÆt…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Hép b¸nh ch­ng
-5	§ang më…	10	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Më thuèc
-6	B¾t ®Çu lÊy n­íc...	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	TiÕt trång c©y 2011, lÊy n­íc
-7	§ang thu thËp…	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Bôi Hoa Lan Rõng
-8	§ang ¨n...	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Thá 
-9	§ang trŞ liÖu	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	NhiÖm vô cÊp 150 C¸i Bang
-10	§ang l·nh ngé	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	§é tu luyÖn kü n¨ng cÊp 150
-11	§ang më…	6	1	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	R­¬ng Thiªn Chi
-12	§ang më…	0	1	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	Bao Hçn Nguyªn Linh Lé
-13	§ang nhÆt…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Thu thËp 3 gi©y
-14	§ang th¨ng cÊp…	2	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	2 gi©y th¨ng cÊp
-15	§ang n©ng cÊp…	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	N©ng cÊp AB DQ
-16	§ang trung luyÖn…	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Trïng luyÖn trang bŞ
-17	§ang t¸ch…	4	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	T¸ch trang bŞ AB DQ
-18	§ang më r­¬ng…	20	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Më r­¬ng thÇn bİ
-19	§ang më …	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	ÑÌ»¨±¬Öñ
-20	§ang thao t¸c …	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	ÑÌ»¨±¬Öñ
-21	§ang c©u c¸...	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	C©u c¸
-22	§ang ®µo...	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	§µo b¶o vËt
-1000	§ang thu ho¹ch…	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	ho¹t ®éng thu thËp Ng«i Sao H¹nh Phóc
+1	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	»Ô»ÍÖ®¹û
+2	§ang H¸i Qu¶…	30	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	»Æ½ğÖ®¹û
+3	§ang thùc hiÖn…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	»Ô»ÍÖ®¹û
+4	§ang thùc hiÖn…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	ôÕ×ÓÏä
+5	§ang thùc hiÖn…	10	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	¿ªÒ©
+6	§ang thùc hiÖn…	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2011ÄêÖ²Ê÷½Ú´òË®
+7	§ang thùc hiÖn…	4	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2011Äê7ÔÂ»î¶¯
+8	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	Ñ×µÛ±¦²Ø´ò¿ªÃØ±¦
+9	§ang thùc hiÖn…	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	150¼¶¼¼ÄÜØ¤°ïÈÎÎñ
+10	§ang thùc hiÖn…	5	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	150¼¶¼¼ÄÜÊìÁ·¶È
+11	§ang thùc hiÖn…	6	1	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	ÌìÖ®±¦Ïä
+12	§ang thùc hiÖn…	0	1	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	»ìÔªÁéÂ¶°ü
+13	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	3ÃëÊ°È¡
+14	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2012ÖĞÇï¹úÇì»î¶¯Ê³ÓÃÉñÆæµÄÔÂ±ı
+15	§ang thùc hiÖn…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2012Äê11ÔÂ»î¶¯ÔîÌ¨¶ÁÌõëçÖÆÀ°Èâ
+16	§ang thùc hiÖn…	2	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+17	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+18	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+19	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÎåÔÂ»î¶¯
+20	§ang thùc hiÖn…	90	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÎåÔÂ»î¶¯
+21	§ang thùc hiÖn…	90	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+22	§ang thùc hiÖn…	3	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+23	§ang thùc hiÖn…	60	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+24	§ang thùc hiÖn…	25	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+25	§ang thùc hiÖn…	30	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+26	§ang thùc hiÖn…	20	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013Äê¶ËÎç»î¶¯
+27	§ang thùc hiÖn…	30	1	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	ÌìÖ®±¦Ïä
+28	§ang thùc hiÖn…	90	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÎåÔÂ»î¶¯
+29	§ang thùc hiÖn…	6	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+30	§ang thùc hiÖn…	7	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+31	§ang thùc hiÖn…	8	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+32	§ang thùc hiÖn…	9	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+33	§ang thùc hiÖn…	10	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+34	§ang thùc hiÖn…	11	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+35	§ang thùc hiÖn…	12	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+36	§ang thùc hiÖn…	13	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı
+37	§ang thùc hiÖn…	14	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	2013ÄêÔªÏü»î¶¯µãµÆÁı

@@ -4,8 +4,6 @@ NgÉu nhiªn_MËt §å_Thu thËp D­îc hoµn 	5000
 NgÉu nhiªn_MËt §å_Thu thËp S¸t Thñ Gi¶n	5000
 NgÉu nhiªn_MËt §å_Thu thËp Kho¸ng Th¹ch	5000
 NgÉu nhiªn_MËt §å_Thu thËp Hoa hång	5000
-NgÉu nhiªn_MËt §å_Thu thËp §Şnh Quèc §å Phæ 	1000
-NgÉu nhiªn_MËt §å_Thu thËp An Bang §å Phæ 	1000
 NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (§­êng M«n) 	1000
 NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (Ngò §éc) 	1000
 NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (Nga Mi) 	1000
@@ -19,9 +17,6 @@ NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng Thiªn V­¬ng	1000
 NgÉu nhiªn_MËt §å_Thu thËp mét bé Thiªn Hoµng 	2000
 NgÉu nhiªn_MËt §å_Thu thËp mét bé Kim Phong	2000
 NgÉu nhiªn_MËt §å_Thu thËp Tµng B¶o §å To¸i PhiÕn 	2000
-NgÉu nhiªn_MËt §å_Thu thËp toµn bé §Şnh Quèc 	100
-NgÉu nhiªn_MËt §å_Thu thËp mét béHiÖp Cèt	100
-NgÉu nhiªn_MËt §å_Thu thËp mét béNhu T×nh	100
 NgÉu nhiªn_MËt §å_Thu thËp HuyÒn ThiÕt KiÕm	10000
 NgÉu nhiªn_MËt §å_Thu thËp §¹i Phong §ao	10000
 NgÉu nhiªn_MËt §å_Thu thËp Kim C« Bæng	10000

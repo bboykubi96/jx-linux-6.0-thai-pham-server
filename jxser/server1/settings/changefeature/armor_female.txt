@@ -1,17 +1,66 @@
-Name	Feature	Price
-Sa Ni phÙc	0	600
-Nguy÷n Bπch cµ sa	1	600
-Th t B∂o cµ sa 	2	600
-Linh Xµ y	6	600
-HÊ B◊ y	7	600
-Cˆu V‹ Bπch HÂ trang	8	600
-C»m Sam	9	600
-Thanh La sam	10	600
-Tr«m H≠¨ng sam	11	600
-Kh∂m Thi’t n˜ gi∏p	12	600
-X›ch Nhπn gi∏p	13	600
-T›ch Lﬁch Kim PhÙng gi∏p	14	600
-Ph∏ Ma y	15	600
-Bπch ßi÷p qu«n	18	600
-Nguy÷t Hoa qu«n	19	600
-L≠u Ti™n Qu«n	20	600
+Name	Feature	Price	nGenre	nDetail	nParticular
+Ki”u 1	0	2	0	2	-1
+Ki”u 2	1	2	0	2	-1
+Ki”u 3	2	2	0	2	-1
+Ki”u 4	3	2	0	2	-1
+Ki”u 5	4	2	0	2	-1
+Ki”u 6	5	2	0	2	-1
+Ki”u 7	6	2	0	2	-1
+Ki”u 8	7	2	0	2	-1
+Ki”u 9	8	1	0	2	-1
+Ki”u 10	9	1	0	2	-1
+Ki”u 11	10	1	0	2	-1
+Ki”u 12	11	1	0	2	-1
+Ki”u 13	12	1	0	2	-1
+Ki”u 14	13	1	0	2	-1
+Ki”u 15	14	1	0	2	-1
+Ki”u 16	15	1	0	2	-1
+Ki”u 17	16	1	0	2	-1
+Ki”u 18	17	1	0	2	-1
+Ki”u 19	18	1	0	2	-1
+Ki”u 20	19	1	0	2	-1
+Ki”u 21	20	1	0	2	-1
+Ki”u 22	21	1	0	2	-1
+Ki”u 23	22	1	0	2	-1
+Ki”u 24	23	1	0	2	-1
+Ki”u 25	24	1	0	2	-1
+Ki”u 26	25	1	0	2	-1
+Ki”u 27	26	1	0	2	-1
+Ki”u 28	27	1	0	2	-1
+Ki”u 29	28	1	0	2	-1
+Ki”u 30	29	1	0	2	-1
+Ki”u 31	30	1	0	2	-1
+Ki”u 32	31	1	0	2	-1
+Ki”u 33	32	1	0	2	-1
+Ki”u 34	33	1	0	2	-1
+Ki”u 35	34	1	0	2	-1
+Ki”u 36	35	1	0	2	-1
+Ki”u 37	36	1	0	2	-1
+Ki”u 38	37	1	0	2	-1
+Ki”u 39	38	1	0	2	-1
+Ki”u 40	39	1	0	2	-1
+Ki”u 41	40	1	0	2	-1
+Ki”u 42	41	1	0	2	-1
+Ki”u 43	42	2	0	2	-1
+Ki”u 44	43	2	0	2	-1
+Ki”u 45	44	2	0	2	-1
+Ki”u 46	45	2	0	2	-1
+Ki”u 47	46	2	0	2	-1
+Ki”u 48	47	2	0	2	-1
+Ki”u 49	48	2	0	2	-1
+Ki”u 50	49	2	0	2	-1
+Ki”u 51	50	2	0	2	-1
+Ki”u 52	51	2	0	2	-1
+Ki”u 53	52	2	0	2	-1
+Ki”u 54	53	2	0	2	-1
+Ki”u 56	55	2	0	2	-1
+Ki”u 57	56	2	0	2	-1
+Ki”u 58	57	2	0	2	-1
+Ki”u 59	58	2	0	2	-1
+Ki”u 60	59	2	0	2	-1
+Ki”u 61	60	2	0	2	-1
+Ki”u 62	61	2	0	2	-1
+Ki”u 63	62	2	0	2	-1
+Ki”u 64	63	2	0	2	-1
+Ki”u 66	65	2	0	2	-1
+Ki”u 69	68	2	0	2	-1

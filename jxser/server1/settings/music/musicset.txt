@@ -247,4 +247,3 @@ Map ID	MusicFile1	Volume1	StartTime1	EndTime1	CycleRandom1	MusicFile2	Volume2	St
 384	\Music\Music001.mp3	93	0	155519
 385	\Music\Music001.mp3	93	0	155519
 386	\Music\Music001.mp3	93	0	155519
-987	\Music\Music211.mp3	93	0	155519

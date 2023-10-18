@@ -975,10 +975,3 @@ boss156	boss156_st01.spr	boss156_st01.spr	boss156_st02.spr	boss156_wlk.spr	boss1
 boss157	boss157_st01.spr	boss157_st01.spr	boss157_st02.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_bat.spr	boss157_die.spr	boss157_at01.spr	boss157_at02.spr	boss157_at02.spr	boss157_st02.spr	boss157_wlk.spr
 boss158	boss158_st01.spr	boss158_st01.spr	boss158_st02.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_bat.spr	boss158_die.spr	boss158_at01.spr	boss158_at02.spr	boss158_at02.spr	boss158_st02.spr	boss158_wlk.spr
 boss159	boss159_st01.spr	boss159_st01.spr	boss159_st02.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_bat.spr	boss159_die.spr	boss159_at01.spr	boss159_at02.spr	boss159_at02.spr	boss159_st02.spr	boss159_wlk.spr
-passerby389_jin	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr
-passerby389_mu	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr
-passerby389_shui	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr
-passerby389_huo	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr
-passerby389_tu	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr
-passerby389	passerby389_st01.spr	passerby389_st01.spr	passerby389_st01.spr											
-passerby390	passerby390_st01.spr	passerby390_st01.spr	passerby390_st01.spr											

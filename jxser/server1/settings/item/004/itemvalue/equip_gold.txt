@@ -1,144 +1,144 @@
 NAME	GENRE	INDEX	VALUE
-Méng Long ChÝnh Hång T¨ng M·o	0	1	100000
-Méng Long Kim Ti ChÝnh Hång Cµ Sa	0	2	700000000
-Méng Long HuyÒn Ti Ph¸t ®¸i	0	3	300000
+Méng Long ChÝnh Hång T¨ng M·o	0	1	700000000
+Méng Long Kim Ti ChÝnh Hång Cµ Sa	0	2	1200000000
+Méng Long HuyÒn Ti Ph¸t ®¸i	0	3	1500000000
 Méng Long PhËt Ph¸p HuyÒn Béi	0	4	400000
-Méng Long Tö Kim B¸t Nh·Giíi	0	5	2400000000
+Méng Long §¹t Ma T¨ng hµi	0	5	1000000000
 Phôc Ma Tö Kim C«n	0	6	800000000
-Phôc Ma V« L­îng Kim C­¬ng UyÓn	0	7	2400000000
-Phôc Ma ¤ Kim NhuyÔn §iÒu	0	8	1000000000
+Phôc Ma HuyÒn Hoµng Cµ Sa	0	7	700000
+Phôc Ma ¤ Kim NhuyÔn §iÒu	0	8	1200000000
 Phôc Ma PhËt T©m NhuyÔn KhÊu	0	9	900000
-Phôc Ma Phæ §é T¨ng hµi	0	10	1000000
+Phôc Ma Phæ §é T¨ng hµi	0	10	1200000000
 Tø Kh«ng Gi¸ng Ma Giíi ®ao	0	11	2400000000
-Tø Kh«ng §¹t Ma T¨ng Hµi	0	12	2400000000
+Tø Kh«ng Tö Kim Cµ Sa	0	12	120000
 Tø Kh«ng Hé ph¸p Yªu ®¸i	0	13	1800000000
 Tø Kh«ng NhuyÔn B× Hé UyÓn	0	14	1800000000
 Tø Kh«ng Giíi LuËt Ph¸p giíi	0	15	150000
 H¸m Thiªn Kim Hoµn §¹i Nh·n ThÇn Chïy	0	16	6000000000
-H¸m Thiªn Vò ThÇn T­¬ng Kim Gi¸p	0	17	2400000000
+H¸m Thiªn Vò ThÇn T­¬ng Kim Gi¸p	0	17	170000
 H¸m Thiªn Uy Vò Thóc yªu ®¸i	0	18	2400000000
 H¸m Thiªn Hæ ®Çu KhÈn Thóc UyÓn	0	19	190000
-H¸m Thiªn Thõa Long ChiÕn Ngoa	0	20	200000
+H¸m Thiªn Thõa Long ChiÕn Ngoa	0	20	2000000000
 KÕ NghiÖp B«n L«i Toµn Long th­¬ng	0	21	6000000000
-KÕ NghiÖp HuyÒn Vò Hoµng Kim Kh¶i	0	22	1500000000
-KÕ NghiÖp B¹ch Hæ V« Song khÊu	0	23	230000
+KÕ NghiÖp HuyÒn Vò Hoµng Kim Kh¶i	0	22	2000000000
+KÕ NghiÖp B¹ch Hæ V« Song khÊu	0	23	2000000000
 KÕ NghiÖp HáaV©n Kú L©n Thñ 	0	24	240000
-KÕ NghiÖp Chu T­íc L¨ng V©n Ngoa	0	25	2400000000
+KÕ NghiÖp Chu T­íc L¨ng V©n Ngoa	0	25	250000
 Ngù Long L­îng Ng©n B¶o ®ao	0	26	1500000000
-Ngù Long ChiÕn ThÇn Phi Qu¶i gi¸p	0	27	1800000000
+Ngù Long ChiÕn ThÇn Phi Qu¶i gi¸p	0	27	2000000000
 Ngù Long Thiªn M«n Thóc Yªu hoµn	0	28	1500000000
-Ngù Long TÊn Phong Ph¸t C¬	0	29	2400000000
+Ngù Long TÊn Phong Hé yÓn	0	29	290000
 Ngù Long TuyÖt MÖnh ChØ hoµn	0	30	300000
 V« Gian û Thiªn KiÕm	0	31	2000000000
-V« Gian Thanh Phong NhuyÔn KÞch	0	32	2400000000
-V« Gian PhÊt V©n Ti ®¸i	0	33	1500000000
-V« Gian CÇm VËn Hé UyÓn	0	34	1500000000
+V« Gian Thanh Phong Truy Y	0	32	320000
+V« Gian PhÊt V©n Ti ®¸i	0	33	1800000000
+V« Gian CÇm VËn Hé UyÓn	0	34	1800000000
 V« Gian B¹ch Ngäc Bµn ChØ 	0	35	350000
-V« Ma Ma Ni qu¸n	0	36	1500000000
-V« YÓm Thu Thñy L­u Quang §¸i	0	37	2400000000
+V« Ma Ma Ni qu¸n	0	36	1800000000
+V« Ma Tö Kh©m Cµ Sa	0	37	370000
 V« Ma B¨ng Tinh ChØ Hoµn	0	38	380000
 V« Ma TÈy T­îng Ngäc KhÊu 	0	39	700000000
-V« Ma Hång Truy NhuyÔn Th¸p hµi	0	40	1000000000
-V« TrÇn Ngäc N÷ Tè T©m qu¸n	0	41	410000
+V« Ma Hång Truy NhuyÔn Th¸p hµi	0	40	1800000000
+V« TrÇn Ngäc N÷ Tè T©m qu¸n	0	41	1200000000
 V« TrÇn Thanh T©m H­íng ThiÖn Ch©u	0	42	800000000
 V« TrÇn Tõ Bi Ngäc Ban ChØ 	0	43	430000
-V« TrÇn TÞnh ¶nh L­u T«	0	44	2400000000
-V« TrÇn PhËt Quang ChØ Hoµn	0	45	1200000000
+V« TrÇn PhËt T©m Tõ H÷u Yªu Phèi	0	44	440000
+V« TrÇn PhËt Quang ChØ Hoµn	0	45	1500000000
 Tª Hoµng Phông Nghi ®ao	0	46	2400000000
-Thª Hoµng HuÖ T©m Tr­êng Sinh KhÊu	0	47	2400000000
-Tª Hoµng Phong TuyÕt B¹ch V©n Thóc §¸i	0	48	1500000000
-Tª Hoµng B¨ng Tung CÈm uyÓn	0	49	1500000000
+Tª Hoµng TuÖ T©m Khinh Sa Y	0	47	470000
+Tª Hoµng Phong TuyÕt B¹ch V©n Thóc §¸i	0	48	1800000000
+Tª Hoµng B¨ng Tung CÈm uyÓn	0	49	1800000000
 Tª Hoµng Thóy Ngäc ChØ Hoµn	0	50	500000
 BÝch H¶i Uyªn ¦¬ng Liªn Hoµn ®ao	0	51	800000000
-BÝch H¶i Hoµn Ch©u Tuyªn Thanh C©n	0	52	2400000000
-BÝch H¶i Hång Linh Kim Ti ®¸i	0	53	800000000
-BÝch H¶i Hång L¨ng Ba	0	54	500000000
+BÝch H¶i Hoµn Ch©u Vò Liªn	0	52	520000
+BÝch H¶i Hång Linh Kim Ti ®¸i	0	53	1000000000
+BÝch H¶i Hång L¨ng Ba	0	54	800000000
 BÝch H¶i Khiªn TÕ ChØ hoµn	0	55	550000
 U Lung Kim Xµ Ph¸t ®¸i	0	56	600000000
-U Lung XÝch H¹t ChØ Hoµn	0	57	2400000000
-U Lung Thanh Ng« TriÒn yªu	0	58	1200000000
+U Lung XÝch YÕt MËt trang	0	57	570000
+U Lung Thanh Ng« TriÒn yªu	0	58	1500000000
 U Lung Ng©n ThÒm Hé UyÓn	0	59	590000
-U Lung MÆc Thï NhuyÔn Lý 	0	60	400000000
+U Lung MÆc Thï NhuyÔn Lý 	0	60	800000000
 Minh ¶o Tµ S¸t §éc NhËn	0	61	1500000000
-Minh ¶o U §éc ¸m Y	0	62	620000
+Minh ¶o U §éc ¸m Y	0	62	1000000000
 Minh ¶o §éc YÕt ChØ Hoµn	0	63	630000
 Minh ¶o Hñ Cèt Hé uyÓn	0	64	1500000000
-Minh Hoan Song Hoµn Xµ KhÊu	0	65	2400000000
-Chó Ph­îc Ph¸ gi¸p ®Çu hoµn	0	66	650000000
+Minh ¶o Song Hoµn Xµ Hµi	0	65	650000
+Chó Ph­îc Ph¸ gi¸p ®Çu hoµn	0	66	1000000000
 Chó Ph­îc DiÖt L«i C¶nh Phï 	0	67	800000000
 Chó Ph­îc U ¶o ChØ Hoµn	0	68	680000
 Chó Ph­îc Xuyªn T©m §éc UyÓn	0	69	800000000
-Chó Phäc Thùc Cèt Ngäc Béi	0	70	2400000000
+Chó Ph­îc B¨ng Háa Thùc Cèt Ngoa	0	70	700000
 B¨ng Hµn §¬n ChØ Phi §ao	0	71	1500000000
-B¨ng Hµn HuyÒn Y Thóc Gi¸p	0	72	800000000
-B¨ng Hµn T©m TiÔn Yªu KhÊu	0	73	1200000000
+B¨ng Hµn HuyÒn Y Thóc Gi¸p	0	72	1000000000
+B¨ng Hµn T©m TiÔn Yªu KhÊu	0	73	1500000000
 B¨ng Hµn HuyÒn Thiªn B¨ng Háa Béi	0	74	740000
-B¨ng Hµn NguyÖt ¶nh Ngoa	0	75	2400000000
+B¨ng Hµn NguyÖt ¶nh Ngoa	0	75	750000
 Thiªn Quang Hoa Vò M¹n Thiªn	0	76	1800000000
-Thiªn Quang §Þnh T©m Ng­ng ThÇn Phï 	0	77	1200000000
+Thiªn Quang §Þnh T©m Ng­ng ThÇn Phï 	0	77	1500000000
 Thiªn Quang S©m La Thóc §¸i	0	78	1500000000
-Thiªn Quang §Þa Hµnh Thiªn Lý Ngoa	0	79	2400000000
+Thiªn Quang Song B¹o Hµn ThiÕt Tr¹c	0	79	790000
 Thiªn Quang Thóc Thiªn Ph­îc §Þa Hoµn	0	80	800000
 S©m Hoang Phi Tinh §o¹t Hån	0	81	1200000000
-S©m Hoang KimTiÒn Liªn Hoµn Gi¸p	0	82	2400000000
-S©m Hoang Hån Gi¶o Yªu Thóc	0	83	1200000000
+S©m Hoang KimTiÒn Liªn Hoµn Gi¸p	0	82	820000
+S©m Hoang Hån Gi¶o Yªu Thóc	0	83	1500000000
 S©m Hoang HuyÒn ThiÕt T­¬ng Ngäc Béi	0	84	840000
-S©m Hoang Tinh VÉn Phi Lý 	0	85	850000
-§Þa Ph¸ch Ngò hµnh Liªn Hoµn Qu¸n	0	86	860000
+S©m Hoang Tinh VÉn Phi Lý 	0	85	1200000000
+§Þa Ph¸ch Ngò hµnh Liªn Hoµn Qu¸n	0	86	1000000000
 §Þa Ph¸ch H¾c DiÖm Xung Thiªn Liªn	0	87	800000000
 §Þa Ph¸ch TÝch LÞch L«i Háa Giíi	0	88	880000
-§Þa Ph¸ch KhÊu T©m tr¹c	0	89	1200000000
-§Þa Ph¸ch Phong Hµn Thóc Yªu.	0	90	2400000000
-§ång Cõu Ngù Long Ngäc Béi	0	91	2400000000
-§ång Cõu Gi¸ng Long C¸i Y	0	92	600000000
-§ång Cõu TiÒm Long Yªu §¸i	0	93	930000
+§Þa Ph¸ch KhÊu T©m tr¹c	0	89	1000000000
+§Þa Ph¸ch §Þa Hµnh Thiªn Lý Ngoa	0	90	900000
+§ång Cõu Phi Long §Çu hoµn	0	91	910000
+§ång Cõu Gi¸ng Long C¸i Y	0	92	1500000000
+§ång Cõu TiÒm Long Yªu §¸i	0	93	1500000000
 §ång Cõu Kh¸ng Long Hé UyÓn	0	94	1200000000
 §ång Cõu KiÕn Long Ban ChØ 	0	95	950000
 §Þch Kh¸i Lôc Ngäc Tr­îng	0	96	3500000000
-§Þch Kh¸i Cöu §¹i C¸i Y	0	97	2400000000
+§Þch Kh¸i Cöu §¹i C¸i Y	0	97	970000
 §Þch Kh¸i TriÒn M·ng yªu ®¸i	0	98	1800000000
-§Þch Kh¸i CÈu TÝch B× Hé uyÓn	0	99	900000000
+§Þch Kh¸i CÈu TÝch B× Hé uyÓn	0	99	1200000000
 §Þch Kh¸i Th¶o Gian Th¹ch giíi	0	100	1000000
 Ma S¸t Quû Cèc U Minh Th­¬ng	0	101	2000000000
-Ma S¸t Tµn D­¬ng ¶nh HuyÕt Gi¸p	0	102	800000000
-Ma S¸t XÝch Ký Táa Yªu KhÊu	0	103	1200000000
-Ma S¸t Cö Háa Liªu Thiªn Hoµn	0	104	2400000000
+Ma S¸t Tµn D­¬ng ¶nh HuyÕt Gi¸p	0	102	1200000000
+Ma S¸t XÝch Ký Táa Yªu KhÊu	0	103	1500000000
+Ma S¸t Cö Háa Liªu Thiªn uyÓn	0	104	1040000
 Ma S¸t V©n Long Thæ Ch©u giíi	0	105	1050000
-Ma Hoµng Kim Gi¸p Kh«i	0	106	500000000
+Ma Hoµng Kim Gi¸p Kh«i	0	106	1200000000
 Ma Hoµng ¸n XuÊt Hæ H¹ng Khuyªn	0	107	800000000
-Ma Hoµng Khª Cèc Thóc yªu ®¸i	0	108	1080000
+Ma Hoµng Khª Cèc Thóc yªu ®¸i	0	108	1000000000
 Ma Hoµng HuyÕt Y Thó Tr¹c	0	109	1090000
-Ma Hoµng Dung Kim §o¹n NhËt Giíi	0	110	2400000000
+Ma Hoµng §¨ng §¹p Ngoa	0	110	1100000
 Ma ThÞ LiÖt DiÖm Qu¸n MiÖn	0	111	1500000000
-Ma ThÞ LÖ Ma PhÖ T©m §¸i	0	112	2400000000
+Ma ThÞ LÖ Ma PhÖ T©m Liªn	0	112	1120000
 Ma ThÞ NghiÖp Háa U Minh Giíi	0	113	1130000
-Ma ThÞ HuyÕt Ngäc ThÊt S¸t Béi	0	114	1140000
+Ma ThÞ HuyÕt Ngäc ThÊt S¸t Béi	0	114	1000000000
 Ma ThÞ s¬n  H¶i Phi Hång Lý 	0	115	500000000
-L¨ng Nh¹c Th¸i Cùc KiÕm	0	116	1500000000
-L¨ng Nh¹c V« Ng· Thóc §¸i	0	117	2400000000
-L¨ng Nh¹c Né L«i Giíi	0	118	1500000000
-L¨ng Nh¹c V« Cùc HuyÒn Ngäc Béi	0	119	1500000000
+L¨ng Nh¹c Th¸i Cùc Qu¸n	0	116	1500000000
+L¨ng Nh¹c V« Ng· ®¹o bµo	0	117	1170000
+L¨ng Nh¹c Né L«i Thóc yªu	0	118	1500000000
+L¨ng Nh¹c V« Cùc HuyÒn Ngäc Béi	0	119	1800000000
 L¨ng Nh¹c Thiªn §Þa HuyÒn Hoµng giíi	0	120	1200000
 CËp Phong Ch©n Vò KiÕm	0	121	6000000000
-CËp Phong Tam Thanh Phï 	0	122	1200000000
-CËp Phong HuyÒn Ti Tam §o¹n cÈm	0	123	2400000000
-CËp Phong Thóy Ngäc HuyÒn Hoµng UyÓn	0	124	2400000000
+CËp Phong Tam Thanh Phï 	0	122	2000000000
+CËp Phong HuyÒn Ti Tam §o¹n cÈm	0	123	1500000000
+CËp Phong Thóy Ngäc HuyÒn Hoµng Béi	0	124	1240000
 CËp Phong Thanh Tïng Ph¸p giíi	0	125	1250000
 S­¬ng Tinh Thiªn Niªn Hµn ThiÕt	0	126	1500000000
-S­¬ng Tinh L­u Tinh C¶n NguyÖt KhÊu	0	127	2400000000
-S­¬ng Tinh Thanh Phong Lò ®¸i	0	128	1200000000
-S­¬ng Tinh Thiªn Tinh B¨ng Tinh thñ 	0	129	1500000000
+S­¬ng Tinh Ng¹o S­¬ng ®¹o bµo	0	127	1270000
+S­¬ng Tinh Thanh Phong Lò ®¸i	0	128	1500000000
+S­¬ng Tinh Thiªn Tinh B¨ng Tinh thñ 	0	129	1800000000
 S­¬ng Tinh Phong B¹o chØ hoµn	0	130	1300000
-L«i Khung Hµn Tung B¨ng B¹ch quan	0	131	1310000
-L«i Khung Thiªn §Þa Hé phï 	0	132	700000000
-L«i Khung Phong L«i Thanh CÈm ®¸i	0	133	800000000
-L«i Khung Linh Ngäc UÈn L«i UyÓn	0	134	2400000000
+L«i Khung Hµn Tung B¨ng B¹ch quan	0	131	900000000
+L«i Khung Thiªn §Þa Hé phï 	0	132	800000000
+L«i Khung Phong L«i Thanh CÈm ®¸i	0	133	1500000000
+L«i Khung Linh Ngäc UÈn L«i	0	134	1340000
 L«i Khung Cöu Thiªn DÉn L«i giíi	0	135	1350000
 Vô ¶o B¾c Minh §¹o qu¸n	0	136	400000000
-Vô Hoan Th¸i Uyªn Ch©n Vò Liªn	0	137	2400000000
+Vô ¶o Ki B¸n phï chó 	0	137	1370000
 Vô ¶o Thóc T©m chØ hoµn	0	138	1380000
-Vô ¶o Thanh ¶nh HuyÒn Ngäc Béi	0	139	1390000
-Vô ¶o Tung Phong TuyÕt ¶nh ngoa	0	140	1400000
+Vô ¶o Thanh ¶nh HuyÒn Ngäc Béi	0	139	800000000
+Vô ¶o Tung Phong TuyÕt ¶nh ngoa	0	140	1200000000
 V« Danh ChØ Hoµn	0	141	1410000
 V« Danh Giíi ChØ 	0	142	1420000
 §éng S¸t B¹ch Kim §iªu Long Giíi	0	143	1430000
@@ -157,15 +157,15 @@ V« Danh Giíi ChØ 	0	142	1420000
 §Þnh Quèc Hé uyÓn	0	156	1560000
 §Þnh Quèc ChiÕn ngoa	0	157	1570000
 §Þnh Quèc Ban chØ 	0	158	1580000
- §å phæ Hoµng Kim - §Þnh Quèc Thanh Sa Tr­êng Sam	0	159	200000000
- §å phæ Hoµng Kim - §Þnh Quèc ¤ Sa Ph¸t Qu¸n	0	160	300000000
- §å phæ Hoµng Kim - §Þnh Quèc XÝch Quyªn NhuyÔn Ngoa	0	161	80000000
- §å phæ Hoµng Kim - §Þnh Quèc Tö §»ng Hé uyÓn	0	162	100000000
- §å phæ Hoµng Kim - §Þnh Quèc Ng©n Tµm Yªu ®¸i	0	163	80000000
- §å phæ Hoµng Kim - An Bang B¨ng Tinh Th¹ch H¹ng Liªn	0	164	350000000
- §å phæ Hoµng Kim - An Bang Cóc Hoa Th¹ch ChØ hoµn	0	165	250000000
- §å phæ Hoµng Kim - An Bang §iÒn Hoµng Th¹ch Ngäc Béi	0	166	250000000
- §å phæ Hoµng Kim - An Bang Kª HuyÕt Th¹ch Giíi ChØ 	0	167	250000000
+§Þnh Quèc Thanh Sa Tr­êng Sam	0	159	200000000
+§Þnh Quèc ¤ Sa Ph¸t Qu¸n	0	160	300000000
+§Þnh Quèc XÝch Quyªn NhuyÔn Ngoa	0	161	80000000
+§Þnh Quèc Tö §»ng Hé uyÓn	0	162	100000000
+§Þnh Quèc Ng©n Tµm Yªu ®¸i	0	163	80000000
+An Bang B¨ng Tinh Th¹ch H¹ng Liªn	0	164	350000000
+An Bang Cóc Hoa Th¹ch ChØ hoµn	0	165	250000000
+An Bang §iÒn Hoµng Th¹ch Ngäc Béi	0	166	250000000
+An Bang Kª HuyÕt Th¹ch Giíi ChØ 	0	167	250000000
 Thiªn Hoµng Long Long §µi	0	168	1680000
 Thiªn Hoµng Long B¹ch Long Tøc	0	169	1690000
 Thiªn Hoµng Long TrÊn Minh Liªn	0	170	1700000
