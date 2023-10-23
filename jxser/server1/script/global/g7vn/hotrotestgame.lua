@@ -17,7 +17,7 @@ Include("\\script\\global\\tieungao\\lenhbaihotro.lua")
 Include("\\script\\global\\tieungao\\thorentieungao.lua")
 Include("\\script\\global\\tieungao\\dotim.lua")
 
-local tbGMAccount = {"boquyx123","kimluyen2002","","","","",""} TENADMIN ={{"CuuTuoc",99},{"ADMIN02",99},{"",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1","kimluyen2002","","","","",""} TENADMIN ={{"testthiennhan",99},{"ADMIN02",99},{"",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
 
 
 function main()
@@ -45,6 +45,7 @@ end
 	--	{"NhËn §å Test", tbhoangkimbk},
 	--{"NhËn M¶nh Tµng B¶o §å", layevent},
 {"NhËn cÊp 190.", NhanDiemKinhNghiem},
+{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 	{"NhËn Set HKMP ", sethkmp},
 	{"Xãa Hµnh Trang ", ClearBagCell},
 --	{"Hép Trang BÞ Xanh", nhanmanhthienthach},
@@ -91,7 +92,7 @@ end
 		--{"NhËp CODE T©n Thñ", CODEVIP},	---- code pha thien tram
 		--{"NhËn th­ëng ®¹t mèc cÊp 30,40,50,60,90 ... ", gmnhanthuongdatmoc},
 	--	{"§iÒu kiÖn thµnh lËp Bang Héi.", gmlapbanghoi},
-		--{"Hñy trang bÞ khãa", DisposeItem},	
+		{"Hñy trang bÞ khãa", DisposeItem},	
 		--{"Mµu PK", doimau},	
 		{"KÕt thóc ®èi tho¹i. ", End},
 	}

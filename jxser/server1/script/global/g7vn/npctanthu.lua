@@ -90,6 +90,13 @@ local tbFaction =
 		nShortFaction = "kl",
 		tbSkill = {372, 375, 717},
 	},
+	[11] =
+	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},
+	},
 }
 local tbFactionSeries =
 {

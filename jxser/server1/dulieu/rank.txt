@@ -1,0 +1,11 @@
+[Rank]
+Thuyyen	=1
+testcbbbb	=2
+testtongkim	=3
+testtkkkkwww	=4
+qwewqeqqeq	=5
+testTVB	=6
+testthiennhan	=7
+TLtest	=8
+ngamitestt	=9
+HoaSon01	=10

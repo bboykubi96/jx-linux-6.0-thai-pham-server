@@ -1,0 +1,3 @@
+Name	TransLife	CurrentLevel	CurrentExp	CurrentExpPercent
+testthiennhan	0	190	0	0
+HoaSon01	0	75	0	0

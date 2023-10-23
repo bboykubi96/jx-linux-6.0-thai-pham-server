@@ -43,7 +43,7 @@ IncludeLib("ITEM")
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"trinhthaipham", "cuckold010203","kimluyen2002","quycan1","","",""} TENADMIN ={{"VâÙL©mÙHoµiÙNiÖm",99},{"GameMaster",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1", "cuckold010203","kimluyen2002","quycan1","","",""} TENADMIN ={{"testthiennhan",99},{"GameMaster",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 
@@ -80,25 +80,29 @@ local nW, nX, nY = GetWorldPos()
 local szAccount = GetAccount()
 	for i=1, getn(%tbGMAccount) do
 		if szAccount == %tbGMAccount[i] then
-			local szTitle = LENHBAI_ADMIN.."Xin Chµo:<color=violet> "..GetName().." ...!\n<color><color=green>§· Tham Gia T¹i ThÕ Giíi Vâ L©m TruyÒn Kú...!\n                                                     <bclr=violet> * * * * * * * * Vâ * L©m * TruyÒn * Kú * * * * * * * * \n* * * * * * * * * * <bclr>Chóc<color=yellow> "..myplayersex().." <color>Ch¬i Games Vui VÎ...!<color>\n<color=blue>Chøc N¨ng Qu¶n Lý <color=yellow>SERVER<color> ChØ Cã <color=pink>ADMIN<color> Míi §­îc Sö Dông<color>"
+			SetTaskTemp(200,0)
+			w,x,y=GetWorldPos()
+			SubWorld = SubWorldID2Idx(w)
+			SubName=SubWorldName(SubWorld)
+			local szTitle = LENHBAI_ADMIN.."<npc><color>: <color=orange>"..GetName().." <color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>VÞ TrÝ<color>:<color=orange>ID:<color><color=orange>"..w.."<color>-<color=red>"..SubName.."<color>-Täa ®é X/Y:<color=yellow> "..x.."<color>/<color=cyan>"..y.."<color>"
 			local tbOpt = {
 					{"Qu¶n Lý Chøc N¨ng GM", ChucNang_Admin},
 					{"Chøc N¨ng Qu¶n Lý GM",ChucNangQuanLyGM},
-						--					{"Chøc N¨ng Më Khãa IP",GioiHanIP},
-										--		{"Chøc N¨ng Ch½n LÎ",quanlychanle},
-													{"ADM Move=>CTC...",vitri_congthanh},
-			--	{"Lay manh ep",testcodeadmin},
+					{"Chøc N¨ng Më Khãa IP",GioiHanIP},
+					{"Chøc N¨ng Ch½n LÎ",quanlychanle},
+					{"ADM Move=>CTC...",vitri_congthanh},
+					{"Lay manh ep",testcodeadmin},
 					{"Reload",ReLoadScript},
 					{"Reload All Gs", Bil_ReLoadScript_MultiGamerSVWithLinkInput},
-						{"Xo¸ Hµnh Trang",ClearBagCell},
+					{"Xo¸ Hµnh Trang",ClearBagCell},
 			--			{"NhËn c¸c vËt phÈm Ðp trang bÞ TÝm", NhanPhiPhong},
-						{"LÊy §å Xanh",laydoxanh},
-			--			{"Xo¸ XÕp H¹ng",XoaXepHang},
-				{"RESET EVENT",resetevent},
-			--	{"Test NPC",call_npc1_test},
-			--		{"LÊy Ph«i §å TÝm",LayThienThach},
-				--	{"Gäi Boss §éc C«",BossMoDungToan},
-	--			{"Test vßng s¸ng",nhanvongsang},
+					{"LÊy §å Xanh",laydoxanh},
+					{"Xo¸ XÕp H¹ng",XoaXepHang},
+					{"RESET EVENT",resetevent},
+					{"Test NPC",call_npc1_test},
+					{"LÊy Ph«i §å TÝm",LayThienThach},
+					{"Gäi Boss §éc C«",BossMoDungToan},
+					{"Test vßng s¸ng",nhanvongsang},
 			
 				--	{"KÕt Thóc §èi Tho¹i",},
 					{"KÕt Thóc §èi Tho¹i",},
@@ -858,7 +862,7 @@ function CheckPassGM()
 	if GetTaskTemp(57) == 1 then
 		ChucNangGM()
 	else
-		AskClientForString("MOCHUCNANGGM","",1,999999999,"NhËp MËt KhÈu")
+		AskClientForString("MOCHUCNANGGM","",1,999999999,"MK 19992000")
 	end
 end
 function MOCHUCNANGGM(nVar)
@@ -885,19 +889,19 @@ function ChucNangGM()
 		{"N©ng §iÓm Kinh NghiÖm", diemexp},
 		{"NhËn §iÓm - Vßng S¸ng", hotro},
 	--	{"Gäi Siªu Boss", CallBossad},
-		--{"NhËn Trang BÞ", dohoangkim},
-	--	{"NhËn Trang BÞ Maxop", dohoangkimmax},
-		--{"Thó C­ìi - Ngo¹i Trang", fifong},
-		--{"Ta Muèn LÊy VËt PhÈm - Giíi ChØ", show_item},
+		{"NhËn Trang BÞ", dohoangkim},
+		{"NhËn Trang BÞ Maxop", dohoangkimmax},
+		{"Thó C­ìi - Ngo¹i Trang", fifong},
+		{"Ta Muèn LÊy VËt PhÈm - Giíi ChØ", show_item},
 		{"Thay §æi Tr¹ng Th¸i", trangthai},
 	--	{"Më §ua Ngùa", MoDuaNgua},
 		{"Më Hoa S¬n Lo¹n ChiÕn", hosonloanchienttt},
-	{"Admin BiÕn H×nh", AdminBienHinh},
-		--{"", MoTieuBangChien},
-		--{"NhËn Skill", nhanskill},
+		{"Admin BiÕn H×nh", AdminBienHinh},
+		{"Më Tiªu Bang ChiÕn", MoTieuBangChien},
+		{"NhËn Skill", nhanskill},
 		--{"Trang BÞ H¾c ThÇn - Long T­¬ng",TrangBiHiem},
 		--{"LÊy Nguyªn LiÖu Kho¸ng Th¹ch",khoangth},
-		--{"Hoµng Kim M«n Ph¸i - §å Xanh - §å TÝm", hkmpdoxanh},
+		{"Hoµng Kim M«n Ph¸i - §å Xanh - §å TÝm", hkmpdoxanh},
 		{"Tho¸t",},
 	}
 	if GetAccount() == "kimluyen2002" then

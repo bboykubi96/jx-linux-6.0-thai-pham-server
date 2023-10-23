@@ -13,7 +13,7 @@ SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229,1370}; DIEMVIP = 
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"", "boquyx123","thienkim","linhlinhnb","bachvanphi","",""} TENADMIN ={{"AdminTranster",99},{"EmXinhGai",99},{"AdminMaster",99},{"BladeMaster",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"", "thaipham1","thienkim","linhlinhnb","bachvanphi","",""} TENADMIN ={{"testthiennhan",99},{"EmXinhGai",99},{"AdminMaster",99},{"BladeMaster",99},{"",99},{"",99},{"",99},{"",99}}
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 

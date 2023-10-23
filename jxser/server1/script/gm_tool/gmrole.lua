@@ -6,25 +6,23 @@ tbGmRole = {}
 tbGmRole.nPak = curpack()
 tbGmRole.tbAccount = 
 {
-	["boquyx1234"] = 
+	["thaipham1"] = 
 	{
-		"ThichDuThu"
+		"GameMaster01",
+		"testthiennhan",
+		"ThaiPham02",
 	},
-	["admin10"] = 
+	["3thangnhoc"] = 
 	{
-		"VoLamCuuLong"
+		"GameMaster",
+		"testtongkim",
+		"ThaiPham02",
 	},
-		["admin93"] = 
+	["thaipham2"] = 
 	{
-		"ADÙ9ÙDragonÙ"
-	},
-		["ngocbeokaka12"] = 
-	{
-		"ÙÙBÐoÙÙ"
-	},
-			["admin79"] = 
-	{
-		"GameMaster"
+		"testnpc",
+		"ThaiPham01",
+		"ThaiPham02",
 	},
 }
 tbGmRole.tbSkill = 

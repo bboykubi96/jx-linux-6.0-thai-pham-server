@@ -18,8 +18,8 @@ npchotrotanthu =
 --{1849,80,4,121,1953,4507,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--long mon
 --{1849,80,4,153,1630,3237,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--thach co
 --{1849,80,4,174,1625,3202,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--long tuyen thon
-				--	     --{1849,1,4,53,1606,3210,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua",},   --1577
-				--		    --{1849,1,4,53,1627,3218,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua",},   --1577
+--{1849,1,4,53,1606,3210,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua",},   --1577
+{1849,1,4,53,1627,3184,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua",},   --1577
 				--			  --{1849,1,4,53,1591,3223,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua",},   --1577
                 --     {1617,2,4,78,1577,3211,0,"NhËp Code Vip",0,"\\script\\global\\bil4i3n\\bil4i3n_tanthuquan.lua",},
 		--  {227,2,4,78,1579,3237,0,"HÖ Thèng §Êu Gi¸",0,"\\script \\global\\quanlygame\\daugia\\hethongdaugia.lua",},
@@ -31,8 +31,8 @@ npchotrotanthu =
  --{85,2,4,78,1586,3208,0,"L« §Ò Phu Nh©n",0,"\\script\\global\\bet\\betnpc.lua",},
  --{50,2,4,78,1600,3223,0,"Th­ëng C«ng Thµnh",0,"\\script\\global\\quanlygame\\tongquan.lua",},
 -- {85,2,4,53,1598,3180,0,"Sø Gi¶ HuyÕt ChiÕn",0,"\\script\\global\\g7vn\\vongsanghuyetchien.lua",},
--- {718,2,4,53,1632,3181,0,"H­íng DÉn T©n Thñ",0,"\\script\\global\\quanlygame\\huongdan.lua",},
---{736,1,4,53,1622,3191,0,"Hç Trî TEST GAME",0,"\\script\\global\\g7vn\\hotrotestgame.lua",},
+--{718,2,4,53,1632,3181,0,"H­íng DÉn T©n Thñ",0,"\\script\\global\\quanlygame\\huongdan.lua",},
+{736,1,4,53,1622,3191,0,"Hç Trî TEST GAME",0,"\\script\\global\\g7vn\\hotrotestgame.lua",},
 {76,1,4,53,1633,3172,0,"ThÈm C©u",0,"\\script\\Á½ºþÇø\\ÄÏÔÀÕò\\npc\\Â·ÈË_Éò¾Ô.lua",},
 --/home/jxser/server1/script/Á½ºþÇø/ÄÏÔÀÕò/npc/Â·ÈË_Éò¾Ô.lua
 	--	{627,1,4,325,1541,3157,0,"Lo¹n ChiÕn Giang Hå",0,"\\script\\missions\\dangboss\\gongnv_npc.lua",},
