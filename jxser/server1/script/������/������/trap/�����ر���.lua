@@ -11,11 +11,11 @@ local zDate = tonumber(date("%Y%m%d%H%M"))
 		SetPos(1628, 3100)
 		return 1
 	end
-	if check_faction()==1 then
-		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-		SetPos(1628, 3100)
-		return 1
-	end;
+	--if check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		--SetPos(1628, 3100)
+		--return 1
+	--end;
 
 	if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë trong thµnh 
 		SetPos(1631, 3096) -- script viet hoa By http://tranhba.com  thiÕt trÝ ®i ra Trap ®iÓm , môc ®Ých ®iÓm ë ngoµi thµnh 

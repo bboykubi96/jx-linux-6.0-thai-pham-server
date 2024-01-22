@@ -40,7 +40,7 @@ SKILLS={
 		autoattackskill={{{1,1320*256 + 1},{20,1320*256 + 20}},{{1,-1},{20,-1}},{{1,1*18*256 + 1},{20,1*18*256 + 1}}},
 		skill_desc=
 			function(level)
-				return "Khi tróng ®Şch c?color=orange>1%<color>t?l?kİch ho¹t<color=orange>b?qua kh¸ng tÊt c?cña ®èi ph­¬ng 100%<color>hiÖu øng, duy tr?1 gi©y\n"
+				return "Khi tróng ®Şch cã<color=orange>1%<color>tØ lÖ kİch ho¹t<color=orange>bá qua kh¸ng tÊt c¶ cña ®èi ph­¬ng 100%<color>hiÖu øng, duy tr× 1 gi©y\n"
 			end,
 					},
 	yuenan1_duzhu={ --Ô½ÄÏ1ºÅ¼¼ÄÜ¾ßÌåĞ§¹û£¬3ÃëÄÚºöÂÔÈ«¿¹100%£¬³ÖĞø1Ãë
@@ -55,7 +55,7 @@ SKILLS={
 		autodeathskill={{{1,1322*256 + 1},{20,1322*256 + 20}},{{1,-1},{20,-1}},{{10,50},{20,50}}},
 		skill_desc=
 			function(level)
-				return "Sau khi chÕt c?color=orange>50%<color>t?l?lµm cho k?n¨ng c«ng kİch cña nh©n vËt xung quanh gi¶m ®i<color=orange>45%<color>hiÖu øng, duy tr?color=orange>10<color>gi©y\n"
+				return "Sau khi chÕt cã<color=orange>50%<color>tØ lÖ lµm cho kÜ n¨ng c«ng kİch cña nh©n vËt xung quanh gi¶m ®i<color=orange>45%<color>hiÖu øng, duy tr×<color=orange>10<color>gi©y\n"
 			end,
 					},
 	yuenan2_duzhu={ --Ô½ÄÏ2ºÅ¼¼ÄÜ¾ßÌåĞ§¹û£¬¼¼ÄÜ¹¥»÷½µµÍ45%£¬³ÖĞø10Ãë
@@ -75,7 +75,7 @@ SKILLS={
 				local nMag = floor(Link(level,SKILLS.yuenan4_duzhu.addcoldmagic_v[1]))
 				local nPois = floor(Link(level,SKILLS.yuenan4_duzhu.addpoisonmagic_v[1]))
 				local nAtk = floor(Link(level,SKILLS.yuenan4_duzhu.addphysicsdamage_v[1]))
-				return format("Khi sinh lùc thÊp h¬n 25%% n©ng cao c«ng kİch néi c«ng<color=orange>%d<color>®iÓm, \n®éc c«ng s¸t th­¬ng<color=orange>%d<color>®iÓm, \nn©ng cao ph?®iÓm<color=orange>%d<color>®iÓm\n", nMag, nPois, nAtk)
+				return format("Khi sinh lùc thÊp h¬n 25%% n©ng cao c«ng kİch néi c«ng<color=orange>%d<color>®iÓm, \n®éc c«ng s¸t th­¬ng<color=orange>%d<color>®iÓm, \nn©ng cao phæ ®iÓm<color=orange>%d<color>®iÓm\n", nMag, nPois, nAtk)
 			end,
 					},
 	yuenan4_duzhu={ --Ôö¼Ó2000ÄÚ¹¦ÉËº¦£¬100ÆÕµãÉËº¦£¬³ÖĞø10Ãë
@@ -131,7 +131,7 @@ SKILLS={
 		missle_hitcount={{{1,8},{20,8}}},
 		skill_desc=
 			function(level)
-				return "Lµm cho xung quanh nhiÒu nhÊt<color=orange>8<color>ng­êi kh«ng th?s?dông k?n¨ng, duy tr?color=orange>5<color>gi©y, 2 phót c?th?s?dông 1 lÇn\n"
+				return "Lµm cho xung quanh nhiÒu nhÊt<color=orange>8<color>ng­êi kh«ng thÓ sö dông kÜ n¨ng, duy tr×<color=orange>5<color>gi©y, 2 phót cã thÓ sö dông 1 lÇn\n"
 			end,
 					},
 					
@@ -139,7 +139,7 @@ SKILLS={
 		autoattackskill={{{1,1330*256 + 1},{20,1330*256 + 20}},{{1,-1},{20,-1}},{{1,1*18*256 + 1},{20,1*18*256 + 1}}},
 		skill_desc=
 			function(level)
-				return "Khi tróng ®Şch, c?color=orange>1%<color>t?l?lµm cho ®Şch tæn thÊt<color=orange>50%<color>l­îng m¸u\n"
+				return "Khi tróng ®Şch, cã<color=orange>1%<color>tØ lÖ lµm cho ®Şch tæn thÊt<color=orange>50%<color>l­îng m¸u\n"
 			end,
 					},
 	yuenan9_duzhu={ --Ô½ÄÏ9ºÅ¼¼ÄÜ¾ßÌåĞ§¹û£¬Ê¹µĞÈËÊ§È¥50%ÑªÁ¿ÉÏÏŞ²¢Ê§È¥3000ÑªÁ¿

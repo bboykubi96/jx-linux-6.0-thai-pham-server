@@ -90,10 +90,10 @@ SetTask(3077,0)
 		return 1
 	end;
 	
-	if (GetLevel() < 5) or check_faction()==1 then
-		Say("Ng­êi ch¬i ph¶i ®¹t ®¼ng cÊp 5 trë lªn + ®· gia nhËp m«n ph¸i míi cã thÓ sö dông thÇn hµnh phï.", 0);
-		return 1
-	end;
+	--if (GetLevel() < 5) or check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i ®¹t ®¼ng cÊp 5 trë lªn + ®· gia nhËp m«n ph¸i míi cã thÓ sö dông thÇn hµnh phï.", 0);
+		--return 1
+	--end;
 
 	local PK_value = GetPK()
 	if PK_value == 10 then

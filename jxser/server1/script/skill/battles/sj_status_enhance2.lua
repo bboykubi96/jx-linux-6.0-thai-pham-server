@@ -3,10 +3,8 @@
 
 Include("\\script\\skill\\param2string.lua")
 
--- DEFAULT_ENHANCE_TIME = 30*18;	-- 默认状态量提高状态维持时间（30秒），可根据具体使用需要在调用AddSkillState时指定时间
-DEFAULT_ENHANCE_TIME = 600*18;	-- th阨 gian t錸 t筰 skill t?nh b籲g ph髏
--- VALUE_ENHANCE_PER_LEVEL = 100;	-- 一级技能对应的状态量持续增加
-VALUE_ENHANCE_PER_LEVEL = 50;	-- t鑓  h錳 n vi. /1
+DEFAULT_ENHANCE_TIME = 30*18;	-- 默认状态量提高状态维持时间（30秒），可根据具体使用需要在调用AddSkillState时指定时间
+VALUE_ENHANCE_PER_LEVEL = 100;	-- 一级技能对应的状态量持续增加
 
 function GetSkillLevelData(levelname, data, level)
 		if (levelname == "lifereplenish_v") then

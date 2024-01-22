@@ -18,11 +18,11 @@ return Param1..","..Param2..","..Param3
 end;
 
 function Getlifereplenish_v(level)
-result = floor(level/2)+1
+result = floor(level/2)+500
 return Param2String(result,20,0)
 end;
 
 function Getmanareplenish_v(level)
-result = floor(level/3)+1
+result = floor(level/3)+500
 return Param2String(result,25,0)
 end;

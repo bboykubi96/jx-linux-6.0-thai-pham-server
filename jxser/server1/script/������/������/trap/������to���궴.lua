@@ -11,10 +11,10 @@ function main(sel)
 		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chÝnh thøc khai më m¸y chñ");
 		return 1
 	end
-	if check_faction()==1 then
-		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-		return 1
-	end;
+	--if check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		--return 1
+	--end;
 SetFightState(1); 
 NewWorld(199, 1644 ,2906) 
 AddTermini(218) 
