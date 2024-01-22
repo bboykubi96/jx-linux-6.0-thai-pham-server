@@ -23,7 +23,7 @@ spreadernpc = {
 --{736,80,4,153,1630,3237,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--thach co
 --{736,80,4,174,1625,3202,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--long tuyen thon
 --{736,80,4,595,1649,3278,0,"Hç Trî T©n Thñ",0,"\\script\\global\\g7vn\\g7hotrotanthu.lua"},	--long tuyen thon
---{1442,80,4,99,1624,3219,0,"Hoa S¬n Èn SÜ",0,"\\script\\global\\quanlygame\\npchuashan.lua"},---hoa son
+{1442,80,4,53,1624,3219,0,"Hoa S¬n Èn SÜ",0,"\\script\\global\\quanlygame\\npchuashan.lua"},---hoa son
 --{1374,80,4,324,1524,3171,0,"Hoa S¬n L·o TÈu",0,"\\script\\missions\\hsbattle\\hsbattlemanager.lua"},---hoa son
 --{1374,80,4,324,1573,3090,0,"Hoa S¬n L·o TÈu",0,"\\script\\missions\\hsbattle\\hsbattlemanager.lua"},---hoa son
 --{1374,80,4,37,1742,3064,0,"Hoa S¬n L·o TÈu",0,"\\script\\missions\\hsbattle\\hsbattlemanager.lua"},---hoa son
