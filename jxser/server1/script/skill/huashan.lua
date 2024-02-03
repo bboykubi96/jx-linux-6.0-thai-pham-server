@@ -12,12 +12,12 @@ SKILLS={
 	baihong_guanri={ --Bach Hong quan Nhat
 		skill_cost_v={{{1,5},{20,10}}},
 		physicsenhance_p={
-			[1]={{1,70},{20,95}},
+			[1]={{1,30},{20,100}},
 		},
 		seriesdamage_p={{{1,20},{20,30}}},
 		colddamage_v={
-			[1]={{1,100},{20,200}},
-			[3]={{1,120},{20,210}}
+			[1]={{1,10},{20,80}},
+			[3]={{1,20},{20,100}}
 		},
 		reduceskillcd1={
 			[1]={{1,1368},{2,1368}},
@@ -29,24 +29,24 @@ SKILLS={
 		},
 		addskilldamage1={
 			[1]={{1,1351},{2,1351}},
-			[3]={{1,2},{20,20},{31,30}}
+			[3]={{1,2},{20,30},{31,30}}
 		},
 		addskilldamage2={
 			[1]={{1,1355},{2,1355}},
-			[3]={{1,3},{20,21},{31,35}}
+			[3]={{1,3},{20,30},{31,35}}
 		},
 		addskilldamage3={
 			[1]={{1,1360},{2,1360}},
-			[3]={{1,4},{20,24},{31,36}}
+			[3]={{1,4},{20,30},{31,36}}
 		},
-		addskilldamage4={
-			[1]={{1,1363},{2,1363}},
-			[3]={{1,5},{20,25},{31,37}}
-		},
-		addskilldamage5={
-			[1]={{1,1368},{2,1368}},
-			[3]={{1,6},{20,28},{31,40}}
-		},
+		--addskilldamage4={
+		--	[1]={{1,1363},{2,1363}},
+		--	[3]={{1,5},{20,25},{31,37}}
+		--},
+		--addskilldamage5={
+		--	[1]={{1,1368},{2,1368}},
+		--	[3]={{1,6},{20,28},{31,40}}
+		--},
 		--missle_speed_v={{{1,20},{20,24}}},
 		--skill_attackradius={{{1,320},{20,384}}},
 		skill_cost_v={{{1,5},{20,15}}},
@@ -54,33 +54,33 @@ SKILLS={
 		skill_showevent={{{1,1},{10,1},{20,1}}},
 	},
 	jianzong_zongjue={ --Kiem Tong Tong Quyet
-		addphysicsdamage_p={{{1,25},{20,75},{26,150},{32,220},{33,220}},{{1,-1},{2,-1}},{{1,0},{2,0}}},
-		deadlystrikeenhance_p={{{1,6},{20,26}},{{1,-1},{2,-1}}},
+		addphysicsdamage_p={{{1,15},{20,195},{26,250},{32,360},{33,370}},{{1,-1},{2,-1}},{{1,0},{2,0}}},
+		deadlystrikeenhance_p={{{1,1},{20,20}},{{1,-1},{2,-1}}},
 --		deadlystrikeenhance_p={{{1,6},{20,36}},{{1,-1},{2,-1}}},
 		--attackspeed_yan_v={{{1,10},{26,45},{31,50},{32,52}},{{1,-1},{2,-1}}},
-		attackspeed_v={{{1,10},{20,50},{25,55},{30,55}},{{1,-1},{2,-1}}},
-		fatallystrikeres_p={{{1,1},{20,10}},{{1,18},{2,18}}},
-		manareplenish_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
-		manamax_yan_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
-		manamax_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
-		manareplenish_p={{{1,2},{20,10}},{{1,-1},{2,-1}}},
+		--attackspeed_v={{{1,10},{20,50},{25,55},{30,55}},{{1,-1},{2,-1}}},
+		--fatallystrikeres_p={{{1,1},{20,10}},{{1,18},{2,18}}},
+		--manareplenish_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
+		--manamax_yan_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
+		--manamax_v={{{1,1},{20,5}},{{1,-1},{2,-1}}},
+		--manareplenish_p={{{1,2},{20,10}},{{1,-1},{2,-1}}},
 --		lifemax_yan_p={{{1,10},{25,20},{36,30}},{{1,-1},{2,-1}}},
-		lifemax_p={{{1,10},{25,20},{36,30}},{{1,-1},{2,-1}}},
+		--lifemax_p={{{1,10},{25,20},{36,30}},{{1,-1},{2,-1}}},
 	},
 	yangwu_jianfa={ --Duong Ngo Kiem Phap
 		clearallcd={{{1,1},{25,2},{26,3},{27,3},{31,4},{32,4}},{{1,-1},{2,-1}}},
-		deadlystrikeenhance_p={{{1,2},{30,15},{31,18},{32,20}},{{1,-1},{2,-1}}},
+		deadlystrikeenhance_p={{{1,2},{30,30},{31,31},{32,32}},{{1,-1},{2,-1}}},
 	},
 	jinyan_hengkong={ --Kim Nhan Hoanh Khong
-		skill_cost_v={{{1,10},{20,20}}},
+		skill_cost_v={{{1,20},{20,40}}},
 		seriesdamage_p={{{1,10},{20,50},{21,52}}},
 		colddamage_v={
-			[1]={{1,135},{20,450}},
-			[3]={{1,145},{20,550}}
+			[1]={{1,30},{20,135}},
+			[3]={{1,50},{20,185}}
 		},
-		deadlystrike_p={{{1,6},{20,40}},{{1,-1},{2,-1}}},
+		--deadlystrike_p={{{1,6},{20,40}},{{1,-1},{2,-1}}},
 		physicsenhance_p={
-			[1]={{1,30},{20,320},{26,420},{32,530},{33,540}},
+			[1]={{1,30},{20,180},{26,220},{32,330},{33,340}},
 		},
 		reduceskillcd1={
 			[1]={{1,1363},{2,1363}},
@@ -92,30 +92,30 @@ SKILLS={
 		},
 		addskilldamage1={
 			[1]={{1,1355},{2,1355}},
-			[3]={{1,5},{20,30},{21,40}}
+			[3]={{1,5},{20,50},{21,40}}
 		},
 		addskilldamage2={
 			[1]={{1,1360},{2,1360}},
-			[3]={{1,6},{20,32},{21,43}}
+			[3]={{1,6},{20,50},{21,43}}
 		},
-		addskilldamage3={
-			[1]={{1,1363},{2,1363}},
-			[3]={{1,7},{20,35},{21,45}}
-		},
-		addskilldamage4={
-			[1]={{1,1368},{2,1368}},
-			[3]={{1,7},{20,47}}
-		},
+		--addskilldamage3={
+		--	[1]={{1,1363},{2,1363}},
+		--	[3]={{1,7},{20,35},{21,45}}
+		--},
+		--addskilldamage4={
+		--	[1]={{1,1368},{2,1368}},
+		--	[3]={{1,7},{20,47}}
+		--},
 		skill_attackradius={{{1,384},{20,416}}},
 		skill_cost_v={{{1,25},{20,25}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
-		skill_desc=
-			function(level)
+		--skill_desc=
+		--	function(level)
 
-				local nMag = floor(Link(level,SKILLS.podao_pojian.candetonate1[3]))
-				return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> KiÕm Hoa Ho¸n Tinh<color>, <color=blue> B¨ng T­íc ViÖt Chi<color>, <color=blue> U Hån PhÖ ¶nh<color>,\n", nMag)
-			end,
+		--		local nMag = floor(Link(level,SKILLS.podao_pojian.candetonate1[3]))
+		--		return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> KiÕm Hoa Ho¸n Tinh<color>, <color=blue> B¨ng T­íc ViÖt Chi<color>, <color=blue> U Hån PhÖ ¶nh<color>,\n", nMag)
+		--	end,
 	},
 	podao_pojian={ --ÆÆµ¶ÆÆ½£Ê½
 		candetonate1={
@@ -134,8 +134,8 @@ SKILLS={
 		skill_showevent={{{1,1},{10,1},{20,1}}},
 	},
 	xiyi_jianfa={ --Hi Di Kiem Phap
-		addphysicsdamage_p={{{1,35},{20,145},{26,185},{32,245},{33,245}},{{1,-1},{2,-1}},{{1,0},{2,0}}},
-		--deadlystrikeenhance_p={{{1,6},{20,36}},{{1,-1},{2,-1}}},
+		addphysicsdamage_p={{{1,10},{20,145},{26,185},{32,245},{33,245}},{{1,-1},{2,-1}},{{1,0},{2,0}}},
+		deadlystrikeenhance_p={{{1,1},{20,20}},{{1,-1},{2,-1}}},
 	},
 	tianshen_daoxuan={ --Thien Than Dao Huyen
 		seriesdamage_p={{{1,5},{20,30}}},
@@ -167,12 +167,12 @@ SKILLS={
 		--skill_attackradius={{{1,384},{20,416}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
-		skill_desc=
-			function(level)
+		--skill_desc=
+		--	function(level)
 
-				local nMag = floor(Link(level,SKILLS.pogun_poqiang.candetonate1[3]))
-				return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> Bçng Huýnh L­îc §Þa<color>, <color=blue>Giang H¶i Né Lan<color>,\n", nMag)
-			end,
+			--	local nMag = floor(Link(level,SKILLS.pogun_poqiang.candetonate1[3]))
+			--	return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> Bçng Huýnh L­îc §Þa<color>, <color=blue>Giang H¶i Né Lan<color>,\n", nMag)
+			--end,
 	},
 	pogun_poqiang={ --ÆÆ³¤±øÊ½
 		candetonate1={
@@ -188,28 +188,31 @@ SKILLS={
 		
 	},
 	huanyan_yunyan={ --Huyen Nhan Van Yen
-		skill_cost_v={{{1,30},{30,200}}},
-		freezetimereduce_p={{{1,5},{30,40}},{{1,60*18},{2,180*18}}},
-		--addcolddamage_v={{{1,150},{30,375}},{{1,60*18},{2,180*18}}},
-		coldenhance_p={{{1,8},{32,39},{33,39}},{{1,60*18},{2,180*18}}},
+		--skill_cost_v={{{1,30},{30,200}}},
+		--freezetimereduce_p={{{1,5},{30,40}},{{1,60*18},{2,180*18}}},
+		addcolddamage_v={{{1,10},{30,100}},{{1,60*18},{2,180*18}}},
+		addcoldmagic_v={{{1,20},{30,325}},{{1,60*18},{2,180*18}}},
+		attackspeed_v={{{1,12},{30,65},{33,75},{35,90},{38,95},{41,100}},{{1,-1},{2,-1}}},
+		castspeed_v={{{1,12},{30,65},{33,75},{35,90},{38,95},{41,100}},{{1,-1},{2,-1}}},
+		--coldenhance_p={{{1,8},{32,39},{33,39}},{{1,60*18},{2,180*18}}},
 --		lifemax_yan_p={{{1,10},{25,35},{36,55},{37,55}},{{1,60*18},{2,180*18}}},
-		lifemax_p={{{1,10},{25,105},{35,155},{37,160}},{{1,60*18},{2,180*18}}},
-		walkrunshadow={
-			[1]={{1,1},{20,1}},
-			[2]={{1,60*18},{20,180*18}}
-		},
-		fastwalkrun_p={{{1,9},{30,60}},{{1,60*18},{2,180*18}}}
+		lifemax_p={{{1,10},{20,21},{35,21},{37,21}},{{1,60*18},{2,180*18}}},
+		--walkrunshadow={
+		--	[1]={{1,1},{20,1}},
+		--	[2]={{1,60*18},{20,180*18}}
+		--},
+		--fastwalkrun_p={{{1,9},{30,60}},{{1,60*18},{2,180*18}}}
 	},
 	cangsong_yingke={ --Thuong Tung Nghenh khach
-		skill_cost_v={{{1,30},{20,35}}},
-		seriesdamage_p={{{1,0},{20,50},{21,52}}},
+		skill_cost_v={{{1,30},{20,50}}},
+		seriesdamage_p={{{1,10},{20,50},{21,52}}},
 		colddamage_v={
 			[1]={{1,10},{20,100},{21,110}},
 			[3]={{1,10},{20,150},{21,160}}
 		},
 		deadlystrike_p={{{1,10},{20,38},{21,38}},{{1,-1},{2,-1}}},
 		physicsenhance_p={
-			[1]={{1,10},{20,120},{21,130}},
+			[1]={{1,1},{20,100},{21,110}},
 		},
 		reduceskillcd1={
 			[1]={{1,1363},{2,1363}},
@@ -225,17 +228,17 @@ SKILLS={
 		},
 		addskilldamage2={
 			[1]={{1,1368},{2,1368}},
-			[3]={{1,18},{20,40}}
+			[3]={{1,18},{20,70}}
 		},
 		--skill_attackradius={{{1,384},{20,416}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
-		skill_desc=
-			function(level)
+		--skill_desc=
+		--	function(level)
 
-				local nMag = floor(Link(level,SKILLS.poanqi_pozhang.candetonate1[3]))
-				return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> V« ¶nh Xuyªn<color>, <color=blue> ThiÕt Liªn Tø S¸t<color>, <color=blue> Cµn Kh«n NhÊt TrÞch<color>,\n", nMag)
-			end,
+		--		local nMag = floor(Link(level,SKILLS.poanqi_pozhang.candetonate1[3]))
+		--		return format("Gì ®å trªn ng­êi <color=orange>%d<color> trong ph¹m vi mµn h×nh<color=blue> V« ¶nh Xuyªn<color>, <color=blue> ThiÕt Liªn Tø S¸t<color>, <color=blue> Cµn Kh«n NhÊt TrÞch<color>,\n", nMag)
+		--	end,
 	},
 	poanqi_pozhang={ --ÆÆÌÆÃÅ
 		candetonate1={
@@ -300,9 +303,9 @@ SKILLS={
 	duoming_start={ --Doat Menh Lien Hoan 3 Kiem 120
 		skill_cost_v={{{1,5},{20,25}}},
 		autoreplyskill={{{1,(1*65536 + 1363)*256 + 1},{20,(1*65536 + 1363)*256 + 5},{21,(1*65536 + 1363)*256 + 6}},{{1,10*60*18},{20,10*60*18}},{{1,15*18*256 + 1},{20,15*18*256 + 3},{31,15*18*256 + 3},{32,15*18*256 + 3}}},
-		manareplenish_v={{{1,-1},{20,-10},{22,-11}},{{1,10*60*18},{2,10*60*18}}},
---		autoattackskill={{{1,1},{20,20},{21,21}}},	
-		manareplenish_p={{{1,-200},{20,-200}},{{1,10*60*18},{2,10*60*18}}},
+		--manareplenish_v={{{1,-1},{20,-10},{22,-11}},{{1,10*60*18},{2,10*60*18}}},
+		autoattackskill={{{1,1},{20,20},{21,21}}},	
+		--manareplenish_p={{{1,-200},{20,-200}},{{1,10*60*18},{2,10*60*18}}},
 		skill_skillexp_v={{	{1,SkillExpFunc(5000,1.25,1,3,1)},
 							{2,SkillExpFunc(5000,1.15,2,3,1)},
 							{3,SkillExpFunc(5000,1.16,3,3,1)},
@@ -355,7 +358,7 @@ SKILLS={
 				local nMag =  floor(Link(level,SKILLS.zixia_jianqi.autorescueskill[3]) - 5*18*256)
 				local nPois = floor(Link(level,SKILLS.zixia_xiaoguo.lifereplenish_v[1]))
 				local nTime = floor(Link(level,SKILLS.zixia_xiaoguo.lifereplenish_v[2])/18)
-				return format(" Sinh mÖnh thÊp h¬n 25%% trong chíp m¾t cã <color=orange>%d%%<color> phôc håi %d m¸u ngay lËp tøc, kÐo dµi phôc håi trong %d gi©y.\n", nMag, nPois, nTime)
+				return format(" Sinh mÖnh thÊp h¬n <color=orange>25%%<color> trong chíp m¾t cã <color=orange>%d%%<color> phôc håi %d m¸u ngay lËp tøc, kÐo dµi phôc håi trong %d gi©y.\n", nMag, nPois, nTime)	
 			end,
 	},
 	zixia_xiaoguo={ --×ÏÏ¼½£ÆøµÄÐ§¹û
@@ -437,10 +440,10 @@ SKILLS={
 	
 		qingfeng_songshuang={ --Thanh Van Tong sang
 			seriesdamage_p={{{1,10},{20,40}}},
-			skill_cost_v={{{1,5},{20,43},{26,50}}},
+			skill_cost_v={{{1,10},{20,30},{26,50}}},
 			colddamage_v={
-				[1]={{1,150},{20,350}},
-				[3]={{1,160},{20,360}}
+				[1]={{1,10},{20,320}},
+				[3]={{1,20},{20,350}}
 			},
 			addskilldamage1={
 				[1]={{1,1380},{2,1380}},
@@ -461,39 +464,49 @@ SKILLS={
 		},
 	},
 	longraoshen={ --Long Nhieu Tam Than
-		manareplenish_v={{{1,5},{20,15}},{{1,-1},{2,-1}}},
+		--manareplenish_v={{{1,5},{20,15}},{{1,-1},{2,-1}}},
+		addcoldmagic_v={{{1,20},{20,250}},{{1,60*18},{2,180*18}}},
 --		manamax_yan_p={{{1,25},{20,75},{35,85},{36,90}},{{1,-1},{2,-1}}},
-		manamax_p={{{1,25},{20,75},{35,85},{36,90}},{{1,-1},{2,-1}}},		
+		--manamax_p={{{1,25},{20,75},{35,85},{36,90}},{{1,-1},{2,-1}}},		
 	},
 	haina_baichuan={ --Hai Bach Nap Xuyen
-		damage2addmana_p={{{1,5},{20,25}},{{1,-1},{20,-1}}},
+		skill_enhance={{{1,1},{20,20}},{{1,-1},{20,-1}}},
+		fastwalkrun_p={{{1,20},{20,56}},{{1,18},{2,18}}}
+
 	},
 	longxuan_jianqi2={ --ÁúÐý½£Æø2
 		candetonate1={
 			[1]={{1,421*256+0},{2,421*256+0}},
 			[3]={{1,360},{26,360},{31,360},{32,360}},
 		},
+		allres_p={{{1,1},{20,20}},{{1,18},{2,18}}},
+		lifemax_p={{{1,1},{15,15},{20,20},{31,31},{32,32}},{{1,18},{2,18}}},
 	},
 	longxuan_jianqi1={ --ÁúÐý½£Æø1
---		sorbdamage_yan_p={{{1,10},{15,8},{32,25}},{{1,18},{2,18}}},
+		sorbdamage_p={{{1,1},{20,10},{32,25}},{{1,18},{2,18}}},
 		anti_do_hurt_p={{{1,1},{15,3},{20,5},{31,5},{32,5}},{{1,18},{2,18}}},
-		lifemax_p={{{1,5},{15,25},{20,30},{31,30},{32,30}},{{1,10},{31,18},{32,18}}},
---		lifemax_yan_p={{{1,5},{15,10},{25,15},{31,20},{32,20}},{{1,10},{31,18},{32,18}}},
-		--lifereplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
-		--manareplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
+		--lifemax_p={{{1,5},{15,25},{20,30},{31,30},{32,30}},{{1,10},{31,18},{32,18}}},
+		--lifemax_yan_p={{{1,5},{15,10},{25,15},{31,20},{32,20}},{{1,10},{31,18},{32,18}}},
+		--allres_p={{{1,1},{20,20}},{{1,18},{2,18}}},
+		--lifemax_p={{{1,1},{15,15},{20,20},{31,31},{32,32}},{{1,18},{2,18}}},
+		skill_enhance={{{1,1},{20,10}},{{1,-1},{20,-1}}},
+		lifereplenish_v={{{1,1},{20,10},{25,12},{26,13}},{{1,18},{2,18}}},
+		manareplenish_v={{{1,1},{20,5},{25,7},{26,18}},{{1,18},{2,18}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
-		skill_cost_v={{{1,30},{20,400},{26,500},{31,800},{32,800}}},
+		skill_cost_v={{{1,20},{20,200},{26,300},{31,400},{32,410}}},
 		skill_desc=
 			function(level)
 
 				local nMag = floor(Link(level,SKILLS.longxuan2.colddamage_v[3]))
 				local nPois = format("%.2f", (floor(Link(level,SKILLS.longxuan2.frozen_action[2])*100/18 )/100))
 				return format("KhÝ tr­êng bïng næ t¹o thµnh <color=orange>%d<color> ®iÓm s¸t th­¬ng thuéc tÝnh b¨ng, ®ång thêi lµm kÎ ®Þch ®øng yªn trong <color=orange>%.2f<color> gi©y,\n", nMag, nPois)
+		
 			end,
+		
 		addskilldamage1={
 				[1]={{1,1382},{2,1382}},
-				[3]={{1,1},{20,60},{31,70}}
+				[3]={{1,1},{20,50},{31,70}}
 			},
 	},
 	qizhen_shanhe={ --Khi Chan Son ha
@@ -502,8 +515,13 @@ SKILLS={
 		fatallystrikeenhance_p={{{1,5},{20,10},{25,12},{33,15}},{{1,-1},{2,-1}}},
 	},
 	qiguan_changhong={ --Khi Quang truong hong
-		lifereplenish_v={{{1,50},{20,1000}},{{1,8},{2,8}}},
-		skill_cost_v={{{1,21},{20,100}}}
+		--lifereplenish_v={{{1,50},{20,1000}},{{1,8},{2,8}}},
+		--skill_cost_v={{{1,21},{20,100}}}
+		addcoldmagic_v={{{1,20},{20,400}},{{1,60*18},{2,180*18}}},
+		addskilldamage1={
+			[1]={{1,1382},{2,1382}},
+			[3]={{1,1},{20,50},{31,70}}
+		},
 	},
 	moyun_jianqi2={ --Ä¦ÔÆ½£Æø2
 		candetonate1={
@@ -572,14 +590,16 @@ SKILLS={
 			},
 	},
 	shenguang_xuanrao={ --Ma Van Kiem Khi
-		fastwalkrun_p={{{1,-5},{15,-20},{20,-50},{32,-75},{33,-75}},{{1,18},{2,18}}},
-		skill_enhance={
-			[1]={{1,-5},{15,-25},{20,-85},{33,-135},{34,-135}},
-			[2]={{1,18},{20,18}},
-			[3]={},
-			},
+		fastwalkrun_p={{{1,-5},{15,-20},{20,-30},{32,-45},{33,-46}},{{1,18},{2,18}}},
+		--skill_enhance={
+		--	[1]={{1,-5},{15,-25},{20,-85},{33,-135},{34,-135}},
+		--	[2]={{1,18},{20,18}},
+		--	[3]={},
+		--	},
+		lifereplenish_v={{{1,-1},{15,-4},{25,-15},{26,-15}},{{1,18},{2,18}}},
+		manareplenish_v={{{1,-1},{15,-4},{25,-15},{26,-15}},{{1,18},{2,18}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
-		skill_showevent={{{1,1},{10,1},{20,1}}},
+		--skill_showevent={{{1,1},{10,1},{20,1}}},
 		skill_cost_v={{{1,30},{20,400},{26,500},{31,800},{32,800}}},
 		skill_desc=
 			function(level)
@@ -650,11 +670,12 @@ SKILLS={
 	},
 	new_wuji={ --Ð¢ÎÞ¼«½£Æø£¬ÉÏÃæµÄÎÞ¼«½£Æø×÷·Ï
 --		sorbdamage_yan_p={{{1,10},{15,25},{32,80}},{{1,18},{2,18}}},
+		allres_p={{{1,1},{20,10}},{{1,18},{2,18}}},
 		anti_do_hurt_p={{{1,1},{15,5},{20,10},{31,20},{32,21}},{{1,18},{2,18}}},
-		lifemax_p={{{1,5},{15,25},{20,80},{31,100},{32,100}},{{1,10},{31,18},{32,18}}},
+		lifemax_p={{{1,1},{15,5},{20,10},{31,15},{32,16}},{{1,18},{2,18}}},
 --		lifemax_yan_p={{{1,5},{15,20},{25,60},{31,70},{32,70}},{{1,10},{31,18},{32,18}}},
-		lifereplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
-		manareplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
+		--lifereplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
+		--manareplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
 		skill_cost_v={{{1,30},{20,400},{26,500},{31,800},{32,800}}},
@@ -669,8 +690,8 @@ SKILLS={
 	longxuan2={ --ÁúÐý2
 		seriesdamage_p={{{1,20},{15,20},{20,60},{21,62}}},
 		colddamage_v={
-			[1]={{1,40},{25,2416},{28,2916}},
-			[3]={{1,40},{25,2416},{28,2916}}
+			[1]={{1,40},{25,500},{28,600}},
+			[3]={{1,40},{25,500},{28,600}}
 		},
 		frozen_action=
 			{

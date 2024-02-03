@@ -60,7 +60,8 @@ end
 	--	{"§çi Tªn Nh©n VËt Game", DoiTenNV},
 	--	{"Thay §æi Mµu PK.", trangthai1},
 	--	{"Thay §æi Giíi TÝnh", chuyen_gt},
-	--	{"TÈy tñy Nh©n VËt + Gi¶m PK.",TayTuyFree},
+	--{"TÈy tñy Nh©n VËt + Gi¶m PK.",TayTuyFree},
+	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
 	--	{"Chøc Hç Trî Kh¸c", MenuFree},
 {"NhËn Trang BÞ  Cùc PhÈm", NhanDoHoTroTanThu},
 	{"NhËn Ngùa ChiÕu D¹ + Phi V©n + B«n Tiªu", NhanNguaVip},
@@ -714,6 +715,16 @@ if CalcFreeItemCellCount() >= 10 then
 	else
 			Talk(1,"","<color=green> H·y §Ó Trèng 10 ¤ Råi NhËn Th­ëng...!")
 	end
+end
+--=============tÈy tñy============
+function clear_attibute_point()
+	local tbOpt =
+	{
+		{"1. TÈy ®iÓm kü n¨ng.", clear_skill},
+		{"2. TÈy ®iÓm tiÒm n¨ng.", clear_prop},
+		{"3. KÕt thóc."},
+	}
+	CreateNewSayEx("<npc>H·y chän hç trî cÇn tÈy tñy.", tbOpt)
 end
 function laynhacvuongkiem()
 if CalcFreeItemCellCount() >= 5 then

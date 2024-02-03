@@ -7,29 +7,30 @@ Include("\\script\\misc\\league_cityinfo.lua")
 Include("\\script\\global\\g7vn\\chuyenmonphai.lua")
 
 
+
 function main()
-	local szTitle = "Xin chµo <color=red>"..GetName().."<color> ! §¹i HiÖp muèn gia nhËp <color=fire>Hoa S¬n<color> hay kh«ng?"
+	local szTitle = "Xin chµo <color=red>"..GetName().."<color> ! BÊt kÓ ng­¬i thuéc ngò hµnh nµo, ng­¬i cã muèn gia nhËp <color=fire>Tiªu Dao<color> hay kh«ng?"
 	local tbOpt=
 	{
 		--"§Õn ph¸i/go_tieudao",
-		"Gia nhËp Hoa S¬n/HoaSonPhai",
-		--"Gia nhËp Tiªu Dao vµ häc ®Õn max skill 180/join_hoason",
+		"Gia nhËp Tiªu Dao/TieuDaoPhai",
+		--"Gia nhËp Tiªu Dao vµ häc ®Õn max skill 180/join_tieudao",
 		"KÕt thóc ®èi tho¹i./no",
 	}
 	Say(szTitle, getn(tbOpt), tbOpt)
 end
 
-function go_hoason()
-	Msg2Player("Ngåi yªn, chóng ta ®Õn <color=yellow>Hoa S¬n ph¸i<color>")
+function go_tieudao()
+	Msg2Player("Ngåi yªn, chóng ta ®Õn <color=yellow>Tiªu Dao ph¸i<color>")
 	NewWorld(1046, 1641, 3288)
 end
 
 
-function HoaSonPhai()
+function TieuDaoPhai()
 	local FactionNumber = GetLastFactionNumber()
 	local nSeries = GetSeries()
-	if nSeries ~= 2 then
-		Talk(1, "", "ChØ cã nh©n vËt hÖ Thñy míi cã thÓ gia nhËp Hoa S¬n")
+	if nSeries ~= 4 then
+		Talk(1, "", "ChØ cã nh©n vËt hÖ Thæ míi cã thÓ gia nhËp Tiªu Dao")
 		return
 	end
 	if FactionNumber >= 0 then
@@ -40,43 +41,50 @@ function HoaSonPhai()
 		Talk(1, "", "H·y tù luyÖn tËp thªm ®Õn cÊp 10 råi quay l¹i ®©y.")
 		return
 	end
-	SetFaction("huashan");
+	SetFaction("xiaoyao");
 	SetCamp(3);
 	SetCurCamp(3);
-	SetSeries(2)
-	SetRank(87);
+	SetSeries(4)
+	SetRank(98);
 	--nt_setTask(137,71)
-	SetTask(169,10*256);
-	SetLastFactionNumber(10);
+	SetTask(4464,10*256);
+	SetLastFactionNumber(12);
 	--add_xy(GetLevel())
 	--Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
 	---AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
 	--AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
 	--Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	AddMagic(1347,0) --Skill Hoa son
-		AddMagic(1372,0) --Skill Hoa son
-		AddMagic(1349,0) --Skill Hoa son
-		AddMagic(1374,0) --Skill Hoa son
-		AddMagic(1350,0) --Skill Hoa son
-		AddMagic(1375,0) --Skill Hoa son
-		AddMagic(1351,0) --Skill Hoa son
-		AddMagic(1376,0) --Skill Hoa son
-		AddMagic(1354,0) --Skill Hoa son
-		AddMagic(1355,0) --Skill Hoa son
-		AddMagic(1379,0) --Skill Hoa son
-		AddMagic(1378,0) --Skill Hoa son
-		AddMagic(1358,0) --Skill Hoa son
-		AddMagic(1380,20) --Skill Hoa son
-		AddMagic(1360,20) --Skill Hoa son --------Doc Co Cuu Kiem
-		AddMagic(1364,20) --Skill Hoa son --------Doc Co Cuu Kiem
-   		AddMagic(1382, 20)
-   		AddMagic(1365, 20)
-   		AddMagic(1369, 20)
-   		AddMagic(1384, 20)
+	AddMagic(1881,0)-- level 10
+	AddMagic(1905,0)-- level 10
+
+	AddMagic(1882,0)-- level 20
+	AddMagic(1906,0)-- level 20
+
+	AddMagic(1883,0)-- level 30
+
+	AddMagic(1885,0)-- level 40
+	AddMagic(1907,0)-- level 40
+
+	AddMagic(1887,0)-- level 50
+	AddMagic(1909,0)-- level 50
+
+	AddMagic(1888,0)-- level 60
+	AddMagic(1889,0)-- level 60
+     AddMagic(1890,0)-- level 60
+
+	AddMagic(1891,20)---- level 90
+	AddMagic(1910,20)---- level 90
+
+	AddMagic(1894,20)---- level 120
+
+	AddMagic(1896,20)---- level 150
+	AddMagic(1911,20)---- level 150
+
+	AddMagic(1901,20)---- level 180
 	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
 end
 
-function join_hoason()
+function join_tieudao()
 	local FactionNumber = GetLastFactionNumber()
 	if FactionNumber >= 0 then
 		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i kh¸c råi.")

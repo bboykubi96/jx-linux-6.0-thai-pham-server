@@ -414,14 +414,14 @@ local zDate = tonumber(date("%Y%m%d%H%M"))
 	--	SetPos(1628, 3100)
 		return 1
 	end
-	if check_faction()==1 then
-		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+	--if check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
 	--	SetPos(1628, 3100)
-		return 1
-	end;
+		--return 1
+	--end;
 	if GetExp()<0 then
---		Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
-	--	return 1
+		Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
+		return 1
 	end
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex)
@@ -458,14 +458,14 @@ local zDate = tonumber(date("%Y%m%d%H%M"))
 	--	SetPos(1628, 3100)
 		return 1
 	end
-	if check_faction()==1 then
-		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+	--if check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
 	--	SetPos(1628, 3100)
-		return 1
-	end;				-- ¼¼ÄÜ¸üÐÂ¡¢ÃÅÅÉ¼Ó±êÊ¶£¨2004-05-31£©
+		--return 1
+	--end;				-- ¼¼ÄÜ¸üÐÂ¡¢ÃÅÅÉ¼Ó±êÊ¶£¨2004-05-31£©
 	if GetExp()<0 then
-	--	Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
-	--	return 1
+		Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
+		return 1
 	end
 if GetTask(5859)==1 then
 return Say("§ang VËn Tiªu Xin §õng GÆp Ta")

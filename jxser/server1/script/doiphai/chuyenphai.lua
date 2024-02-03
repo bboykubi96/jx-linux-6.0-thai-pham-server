@@ -11,7 +11,7 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua");
 Include("\\script\\lib\\gb_modulefuncs.lua");
 Include("\\script\\global\\skills_table.lua")
 
---Include("\\script\\doiphai\\monphai\\hoason.lua")
+Include("\\script\\doiphai\\monphai\\hoason.lua")
 Include("\\script\\doiphai\\monphai\\thienvuong.lua")
 Include("\\script\\doiphai\\monphai\\thieulam.lua")
 Include("\\script\\doiphai\\monphai\\duongmon.lua")

@@ -74,7 +74,7 @@ function dialog_mainTN()
 	--	{"Hç trî Trang BÞ M«n Ph¸i.",sethkmp},
 		{"Hç trî Ngùa.",ngua},
 	--	{"Hç trî Vßng S¸ng.",vongsang},
-	--	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
+		{"TÈy tñy Nh©n VËt.",clear_attibute_point},
 	--	{"Thµnh lËp bang héi",dmcreattongtest},
 		{"Tho¸t."},
 	}
