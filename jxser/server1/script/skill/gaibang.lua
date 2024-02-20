@@ -11,8 +11,8 @@ end
 SKILLS={
 	--Ø¤°ï
 	gaibang_bangfa={ --Ø¤°ï°ô·¨
-		addphysicsdamage_p={{{1,10},{20,150}},{{1,-1},{2,-1}},{{1,2},{2,2}}},
-		deadlystrikeenhance_p={{{1,2},{20,30,Conic}},{{1,-1},{2,-1}}}
+		addphysicsdamage_p={{{1,10},{20,250}},{{1,-1},{2,-1}},{{1,2},{2,2}}},
+		deadlystrikeenhance_p={{{1,2},{20,25,Conic}},{{1,-1},{2,-1}}}
 	},
 	gaibang_zhangfa={ --Ø¤°ïÕÆ·¨
 		addfiremagic_v={{{1,25},{20,375}},{{1,-1},{2,-1}}}
@@ -104,11 +104,10 @@ SKILLS={
 		allres_p={{{1,1},{30,30}},{{1,18*120},{30,18*180}}},
 		addfiremagic_v={{{1,10},{30,215}},{{1,18*120},{30,18*180}}},
 		addfiredamage_v={{{1,10},{30,175}},{{1,18*120},{30,18*180}}},
-		deadlystrikeenhance_p={{{1,5},{20,30,Conic}},{{1,18*120},{30,18*180}}},
-		lifemax_p={{{1,21},{35,20},{36,20}},{{1,-1},{30,-1}}},
-		skill_cost_v={{{1,50},{20,100}}}
-		
-	
+		deadlystrikeenhance_p={{{1,5},{30,43,Conic}},{{1,18*120},{30,18*180}}},
+		lifemax_p={{{1,21},{30,20},{36,20}},{{1,-1},{30,-1}},{{1,18*120},{30,18*180}}},
+		skill_cost_v={{{1,50},{30,120}}},
+		returnres_p={{{1,10},{30,31}},{{1,18*120},{30,18*180}}},
 
 	},
 	kanglong_youhui={ --¿ºÁúÓÐ»Ú//Î´Íê£¬´ýÐø
@@ -346,7 +345,7 @@ SKILLS={
 												}},	
 	},
 	gaibang120={ --Ø¤°ï120¼¶¼¼ÄÜ
-		autoattackskill={{{1,720*256 + 1},{20,720*256 + 20},{21,720*256 + 21}},{{1,-1},{20,-1}},{{1,12*18*256 + 1},{15,12*18*256 + 5},{20,12*18*256 + 6},{21,12*18*256 + 6}}},
+		autoattackskill={{{1,720*256 + 1},{20,720*256 + 20},{21,720*256 + 21}},{{1,-1},{20,-1}},{{1,12*18*256 + 1},{20,12*18*256 + 6},{21,12*18*256 + 6}}},
 		skill_desc=
 			function(level)
 				return "X¸c suÊt <color=orange>"..floor(Link(level,SKILLS.gaibang120.autoattackskill[3]) - 12*18*256).."%<color> g©y ho¹i th­¬ng \n"..
@@ -354,7 +353,7 @@ SKILLS={
 				"%<color> PTVL, gi¶m <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.fireres_p[1]))..
 				"%<color>,\n ®ång thêi lµm gi¶m gi¸ trÞ phßng thñ vËt lý lín nhÊt <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.physicsresmax_p[1]))..
 				"%<color>,gi¶m gi¸ trÞ phßng háa lín nhÊt <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.fireresmax_p[1]))..
-				"%<color> kh¸ng háa \n ®ång thêi ph¶n ®ßn khi bÞ tÊn c«ng tÇm xa gi¶m <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.rangedamagereturn_p[1]))..
+				"%<color>, gi¶m tèc ®é di chuyÓn <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.fastwalkrun_p[1])).."%<color> kh¸ng háa \n ®ång thêi ph¶n ®ßn khi bÞ tÊn c«ng tÇm xa gi¶m <color=orange>"..floor(-Link(level,SKILLS.gaibang120zuzhou.rangedamagereturn_p[1]))..
 				"%<color> tèc ®é di chuyÓn trong <color=orange>"..floor(Link(level,SKILLS.gaibang120zuzhou.physicsres_p[2]) / 18).." gi©y<color>\n"..
 				"Trong vßng <color=orange>"..floor((Link(level,SKILLS.gaibang120.autoattackskill[3]) / (18*256))).." gi©y<color> sau míi cã thÓ thi triÓn tiÕp"
 			end,
@@ -373,7 +372,6 @@ SKILLS={
 							{13,174942148},
 							{14,225669421},
 							{15,274418181},
-
 							{16,344618181},
 							{17,425738181},
 							{18,517778181},
@@ -388,6 +386,7 @@ SKILLS={
 		fireresmax_p={{{1,-1},{15,-2},{20,-12},{21,-12}},{{1,3*18},{15,8*18},{20,9*18},{21,9*18}}},
 		--meleedamagereturn_p={{{1,-4},{15,-16},{20,-20},{21,-20}},{{1,3*18},{15,8*18},{20,9*18},{21,9*18}}},
 		rangedamagereturn_p={{{1,-4},{15,-25},{20,-30},{21,-30}},{{1,3*18},{15,8*18},{20,9*18},{21,9*18}}},
+		fastwalkrun_p={{{1,-9},{23,-50}},{{1,3*18},{15,8*18},{20,9*18},{21,9*18}}},--Ôö¼Ó½µÅÜËÙ
 	},
 }
 -----------------------------------------------

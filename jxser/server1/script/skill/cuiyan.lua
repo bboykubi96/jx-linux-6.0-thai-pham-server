@@ -37,11 +37,11 @@ SKILLS={
 		skill_cost_v={{{1,10},{20,10}}}
 	},
 	cuiyan_daofa={ --´äÑÌµ¶·¨
-		addphysicsdamage_p={{{1,45},{20,215}},{{1,-1},{2,-1}},{{1,1},{2,1}}},
-		deadlystrikeenhance_p={{{1,6},{20,35,Conic}},{{1,-1},{2,-1}}}
+		addphysicsdamage_p={{{1,45},{20,315}},{{1,-1},{2,-1}},{{1,1},{2,1}}},
+		deadlystrikeenhance_p={{{1,6},{20,45,Conic}},{{1,-1},{2,-1}}}
 	},
 	cuiyan_shuangdao={ --´äÑÌË«µ¶
-		addcoldmagic_v={{{1,20},{20,215}},{{1,-1},{2,-1}}}
+		addcoldmagic_v={{{1,20},{20,375}},{{1,-1},{2,-1}}}
 	},
 	huti_hanbing={ --»¤Ìåº®±ù
 		meleedamagereturn_p={{{1,5},{20,20}},{{1,18*120},{20,18*120}}},

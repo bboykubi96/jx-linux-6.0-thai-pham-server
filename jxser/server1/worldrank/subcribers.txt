@@ -1,3 +1,14 @@
 Name	TransLife	CurrentLevel	CurrentExp	CurrentExpPercent
+conlon	0	190	0	0
+qwewqeqweq	0	190	0	0
+thuyyennn	0	190	0	0
+ngamiiii	0	190	0	0
+vodang	0	190	0	0
 testthiennhan	0	190	7e-09	0
+thiennhan	0	190	0	0
+ngudocvuong	0	190	0	0
+thieulamtest	0	190	0	0
+qweqweq	0	190	0	0
 HoaSon01	0	75	0	0
+testtvb	0	190	0	0
+qwewqeqwq	0	190	0	0

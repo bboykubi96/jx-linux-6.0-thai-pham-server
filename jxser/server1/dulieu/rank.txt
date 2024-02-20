@@ -1,12 +1,15 @@
 [Rank]
 Thuyyen	=1
 testthiennhan	=2
-GameMaster	=3
-GameMaster001	=4
-	=5
-	=6
-	=7
-	=8
-	=9
-	=10
-HoaSon01	=11
+ngudocvuong	=3
+thuyyennn	=4
+qwewqeqweq	=5
+thiennhan	=6
+thieulamtest	=7
+testtvb	=8
+qweqweq	=9
+ngamiiii	=10
+conlon	=11
+vodang	=12
+qwewqeqwq	=13
+HoaSon01	=14
