@@ -1,15 +1,16 @@
 [Rank]
 Thuyyen	=1
-testthiennhan	=2
-ngudocvuong	=3
-thuyyennn	=4
-qwewqeqweq	=5
-thiennhan	=6
-thieulamtest	=7
-testtvb	=8
-qweqweq	=9
+thuyyennn	=2
+qwewqeqweq	=3
+thiennhan	=4
+thieulamtest	=5
+testtvb	=6
+qweqweq	=7
+ngudocvuong	=8
+testthiennhan	=9
 ngamiiii	=10
 conlon	=11
-vodang	=12
-qwewqeqwq	=13
-HoaSon01	=14
+hoasonn	=12
+vodang	=13
+qwewqeqwq	=14
+HoaSon01	=15

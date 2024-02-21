@@ -43,7 +43,7 @@ IncludeLib("ITEM")
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"thaipham1", "cuckold010203","kimluyen2002","quycan1","","",""} TENADMIN ={{"testthiennhan",99},{"GameMaster",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1", "testgame4","kimluyen2002","quycan1","","",""} TENADMIN ={{"testthiennhan",99},{"hoasonn",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 

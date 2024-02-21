@@ -289,7 +289,9 @@ end
 	TaskManager:ResetUseGroup()
 	LoginDelaySync(1)  -- 1 表示需要延时同步数据, 0 表示不需要
 	
-	if GetLevel()>=60 then
+	if HaveCommonItem(6,1,16)<1 then
+		AddItem(6,1,16,1,0,0,0)
+	--if GetLevel()>=60 then
 	--RemoveSkillState(1512,20,3,559872000,1) 
 	--RemoveSkillState(1679,20,3,559872000,1) 
 	end

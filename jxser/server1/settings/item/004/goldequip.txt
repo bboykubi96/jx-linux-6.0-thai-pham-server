@@ -6270,3 +6270,8 @@ D· TÈu Méc Bµi	0	13	0	\spr\item\script\wuxingyin_3.spr	37	1	1	<color=Yellow>Lo¹i
 D· TÈu Méc Bµi	0	13	0	\spr\item\script\wuxingyin_3.spr	37	1	1	<color=Yellow>Lo¹i b¶o vËt chØ nh÷ng Cao Thñ hoµn thµnh D· TÈu.<color>	3		4	0	99	40	40																			36	80																								19200		
 D· TÈu Méc Bµi	0	13	0	\spr\item\script\wuxingyin_3.spr	37	1	1	<color=Yellow>Lo¹i b¶o vËt chØ nh÷ng Cao Thñ hoµn thµnh D· TÈu.<color>	3		4	0	100	40	40																			36	80																								19200		
 D· TÈu Méc Bµi	0	13	0	\spr\item\script\wuxingyin_3.spr	37	1	1	<color=Yellow>Lo¹i b¶o vËt chØ nh÷ng Cao Thñ hoµn thµnh D· TÈu.<color>	3		4	0	91	40	40	92	40	40	93	40	40	94	40	40	95	40	40	96	40	40				36	80																								19200		
+§éc C« ThÇn Long Cöu KiÕm	0	0	0	\spr\item\equip\closeweapon\obj-sword24.spr	9	1	3	Trang bÞ Hoµng Kim	0	49999	10	0	28	46	46	29	86	86	167	0	0	31	99	99										36	99	32	110	39	10							2	43	48	71	113	4084	500									
+§éc C« Tæng QuyÕt Vò Gi¸p	0	2	3	\spr\item\equip\armor\obj-ma-cloth11-3.spr	23	2	3	Trang bÞ Hoµng Kim	4	49999	10	0	30	720	720	31	90	90																36	90	32	260	39	10							2	306	4111	317			500									
+§éc C« B¹ch Hång Qu¸n §¸i	0	6	0	\spr\item\equip\sash\obj-sash10.spr	33	2	1	Trang bÞ Hoµng Kim	3	49999	10	0	30	160	160	31	80	80																36	85	32	135	39	10							418	309	196	307	6	425	500									
+§éc C« Long HuyÒn Hé UyÓn	0	8	1	\spr\item\equip\bangle\obj-bangle17.spr	34	1	2	Trang bÞ Hoµng Kim	1	49999	10	0	30	135	135	31	80	80																36	95	32	110	39	10							2	329	439	307	6	328	500									
+§éc C« NhuyÔn Long Ph¸t Giíi	0	3	0	\spr\item\equip\ring\obj-ring01.spr	37	1	1	Trang bÞ Hoµng Kim	2	49999	10	0																						36	80	39	10									129	130					500									

@@ -22,7 +22,7 @@ Include("\\data\\code100k.lua")
 Include("\\data\\codevip.lua")
 Include("\\script\\tong\\tong_award_head.lua");
 
-local tbGMAccount = {"thaipham1","kimluyen2002","cuckold010203","","","",""} TENADMIN ={{"testthiennhan",99},{"GAMEMASTER",99},{"GameMaster",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1","testgame4","cuckold010203","","","",""} TENADMIN ={{"testthiennhan",99},{"hoasonn",99},{"GameMaster",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
 
 function main()
 	
