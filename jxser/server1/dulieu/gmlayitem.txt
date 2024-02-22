@@ -49,3 +49,16 @@
 [IP : 192.168.1.2 : 64708 ] - Thêi gian : 02/21/2024_02:14:04  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4804
 [IP : 192.168.1.2 : 64708 ] - Thêi gian : 02/21/2024_02:14:26  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4784
 [IP : 192.168.1.2 : 64708 ] - Thêi gian : 02/21/2024_02:14:47  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4744
+[IP : 192.168.1.2 : 54158 ] - Thêi gian : 02/21/2024_13:57:36  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6277
+[IP : 192.168.1.2 : 54257 ] - Thêi gian : 02/21/2024_15:24:57  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6277
+[IP : 192.168.1.2 : 54372 ] - Thêi gian : 02/21/2024_16:49:12  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6273
+[IP : 192.168.1.2 : 54372 ] - Thêi gian : 02/21/2024_16:50:03  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6278
+[IP : 192.168.1.2 : 54372 ] - Thêi gian : 02/21/2024_16:51:36  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6279
+[IP : 192.168.1.2 : 54377 ] - Thêi gian : 02/21/2024_16:53:35  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6280
+[IP : 192.168.1.2 : 54377 ] - Thêi gian : 02/21/2024_16:54:06  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6281
+[IP : 192.168.1.2 : 54377 ] - Thêi gian : 02/21/2024_16:54:26  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6283
+[IP : 192.168.1.2 : 54377 ] - Thêi gian : 02/21/2024_16:54:46  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6282
+[IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:53:32  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4379
+[IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:53:50  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4739
+[IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:54:06  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4738
+[IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:54:30  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4768
