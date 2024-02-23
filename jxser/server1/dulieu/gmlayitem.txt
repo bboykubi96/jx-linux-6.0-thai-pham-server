@@ -62,3 +62,7 @@
 [IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:53:50  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4739
 [IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:54:06  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4738
 [IP : 192.168.1.2 : 58546 ] - Thêi gian : 02/22/2024_02:54:30  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 4768
+[IP : 192.168.1.2 : 58503 ] - Thêi gian : 02/23/2024_02:32:29  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6279
+[IP : 192.168.1.2 : 58503 ] - Thêi gian : 02/23/2024_02:32:46  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6281
+[IP : 192.168.1.2 : 58503 ] - Thêi gian : 02/23/2024_02:33:29  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6282
+[IP : 192.168.1.2 : 58503 ] - Thêi gian : 02/23/2024_02:35:07  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6277
