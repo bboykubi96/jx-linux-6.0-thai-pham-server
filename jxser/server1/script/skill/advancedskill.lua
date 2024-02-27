@@ -168,6 +168,29 @@ SKILLS=
 			{{1,5*18 },{20,15*18}}
 		},
 								},
+	xy_adskill ={ --åÐÒ£½ø½×¼¼ÄÜ
+		skill_desc=
+			function(level)
+				return "<color=water>Tr¹ng th¸i [B¾c Minh Chi Gi¸p]:<color> Phãng thÝch líp gi¸p néi lùc cùc ®¹i <color=orange>"..floor(Link(level,SKILLS.xy_adskill.staticmagicshield_p[1])/100)..
+				" lÇn <color> th­¬ng tæn ch©n khÝ hé thuÉn \nHé thuÉn mçi <color=orange>"..floor(Link(level,SKILLS.xy_adskill.staticmagicshield_p[2])/18+1)..
+				" gi©y<color> ®æi míi 1 lÇn, liªn tôc <color=orange>"..floor(Link(level,SKILLS.xy_adskill.fastwalkrun_p[2])/18).." gi©y<color>\n\n"
+			end,
+		autoreplyskill=
+		{
+			{{1,1902 * 256 + 1,LineWith8Byte},{20,1902 * 256 + 20,LineWith8Byte}},
+			{{1,-1 },{20,-1 }},
+			{{1,30*18*256 + 1,LineWith8Byte},{30,30*18*256 + 10,LineWith8Byte},{31,30*18*256 + 10,LineWith8Byte}}
+		},
+		fastwalkrun_p={{{1,0},{20,0}},{{1,5*18},{20,10*18},{21,10*18}}},
+		skill_eventskilllevel={{{1,1},{20,20}}},
+		autocastskill = {
+			{{1,1903*256 + 1},{20,1903*256 + 20}},--Ä¿±ê¼¼ÄÜid * 256 + µÈ¼¶
+			{{1,-1},{20,-1}},-- Îª1±íÊ¾ËãCD£¬²»ËãCDÌî-1
+			{{1, (1*18*256 + 100)},{20, (1*18*256 + 100)}},-- ¼ä¸ôÖ¡Êý * 256 + ·¢¶¯¼¸ÂÊ
+		},
+		staticmagicshield_p={{{1,100},{20,1000},{21,1050}},{{1,17},{20,17}}},
+	},
+
 }
 -----------------------------------------------
 --¸ù¾Ý2¸öµã£¬ÇóÏßÐÎº¯Êýf(x)=k*x+b

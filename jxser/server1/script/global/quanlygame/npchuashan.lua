@@ -46,9 +46,9 @@ function HoaSonPhai()
 	SetSeries(2)
 	SetRank(87);
 	--nt_setTask(137,71)
-	SetTask(169,10*256);
+	SetTask(169,10);
 	SetLastFactionNumber(10);
-	--add_xy(GetLevel())
+	--add_hs(GetLevel())
 	--Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
 	---AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
 	--AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")

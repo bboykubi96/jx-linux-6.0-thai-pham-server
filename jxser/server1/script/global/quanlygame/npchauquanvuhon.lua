@@ -54,7 +54,7 @@ function join_vuhon_sure()
 	SetCurCamp(1);
 	SetRank(90);
 	SetLastFactionNumber(11);
-	SetTask(4406,10*256);
+	SetTask(4406,10);
 	--add_wh(GetLevel())
 	AddMagic(1972,0) --phô trî thuÉn
 	AddMagic(1974,0) -- phô trî ®ao

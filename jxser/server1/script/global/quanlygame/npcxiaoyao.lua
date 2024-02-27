@@ -47,40 +47,48 @@ function TieuDaoPhai()
 	SetSeries(4)
 	SetRank(98);
 	--nt_setTask(137,71)
-	SetTask(4464,10*256);
+	SetTask(4464,10);
 	SetLastFactionNumber(12);
 	--add_xy(GetLevel())
-	--Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
-	---AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
-	--AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	--Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
+	Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
+	--AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
+	AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
+	Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
+	
 	AddMagic(1881,0)-- level 10
 	AddMagic(1905,0)-- level 10
 
 	AddMagic(1882,0)-- level 20
 	AddMagic(1906,0)-- level 20
 
-	AddMagic(1883,0)-- level 30
+	--AddMagic(1883,0)-- level 30
+	AddMagic(1909,0)-- level 30
+	AddMagic(1887,0)-- level 30
 
 	AddMagic(1885,0)-- level 40
-	AddMagic(1907,0)-- level 40
+	--AddMagic(1907,0)-- level 40
 
-	AddMagic(1887,0)-- level 50
-	AddMagic(1909,0)-- level 50
+	--AddMagic(1887,0)-- level 50
+	--AddMagic(1909,0)-- level 50
+	AddMagic(1883,0)-- level 50
+	AddMagic(1907,0)-- level 50
 
 	AddMagic(1888,0)-- level 60
 	AddMagic(1889,0)-- level 60
-     AddMagic(1890,0)-- level 60
+    AddMagic(1890,0)-- level 60
+	AddMagic(1910,0)---- level 60 (mai hoa tam long skill 90 old)
+	--AddMagic(1896,0)---- level 150 (thay the skill 60)
 
 	AddMagic(1891,20)---- level 90
-	AddMagic(1910,20)---- level 90
+	--AddMagic(1910,20)---- level 90
+	AddMagic(1911,20)---- level 90 (skill 150 old) 
 
 	AddMagic(1894,20)---- level 120
 
-	AddMagic(1896,20)---- level 150
-	AddMagic(1911,20)---- level 150
+	--AddMagic(1896,20)---- level 150
+	--AddMagic(1911,20)---- level 150
 
-	AddMagic(1901,20)---- level 180
+	--AddMagic(1901,20)---- level 180
 	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
 end
 
@@ -106,6 +114,12 @@ function join_tieudao_sure()
 	SetRank(98);
 	SetSeries(4);
 	SetLastFactionNumber(12);
+	--add_xy(GetLevel())
+	Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
+	AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
+	Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
+	--AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
+
 	AddMagic(1881,0)-- level 10
 	AddMagic(1905,0)-- level 10
 
