@@ -46,7 +46,7 @@ npchotrotanthu =
 {625,2,4,333,1314,2886,0,"R­¬ng Chøa",0,"\\script\\global\\quanlygame\\ruongchua1.lua",},
 {625,2,4,333,1541,3212,0,"R­¬ng Chøa",0,"\\script\\global\\quanlygame\\ruongchua.lua",},
 
-
+{415,1,4,53,1661,3252,0,"Bao C¸t",0,"\\script\\task\\partner\\education\\partner_xiaowushadai.lua"},
 {1571,2,4,53,1622,3181,0,"NPC Bang Héi",0,"\\script\\global\\quanlygame\\npcbanghoi.lua",},
                    --   {309,14,4,53,1562,3239,0,"L«i §µi C¸ C­îc",0,"\\script\\missions\\bw\\bwmanager.lua",},
 					  

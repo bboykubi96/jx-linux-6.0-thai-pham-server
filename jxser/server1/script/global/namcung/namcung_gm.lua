@@ -1252,7 +1252,7 @@ function clear_prop()
 end
 
 function do_clear_prop()
-	local base_str = {35,20,25,30,20}			-- 五行人物的天生属性值
+	local base_str = {35,20,25,30,20}			
 	local base_dex = {25,35,25,20,15}
 	local base_vit = {25,20,25,30,25}
 	local base_eng = {15,25,25,20,40}

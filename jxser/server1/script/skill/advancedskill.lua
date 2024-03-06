@@ -168,7 +168,7 @@ SKILLS=
 			{{1,5*18 },{20,15*18}}
 		},
 								},
-	xy_adskill ={ --åÐÒ£½ø½×¼¼ÄÜ
+	xy_adskill ={ 
 		skill_desc=
 			function(level)
 				return "<color=water>Tr¹ng th¸i [B¾c Minh Chi Gi¸p]:<color> Phãng thÝch líp gi¸p néi lùc cùc ®¹i <color=orange>"..floor(Link(level,SKILLS.xy_adskill.staticmagicshield_p[1])/100)..

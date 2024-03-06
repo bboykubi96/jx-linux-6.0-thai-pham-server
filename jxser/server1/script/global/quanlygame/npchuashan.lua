@@ -53,26 +53,29 @@ function HoaSonPhai()
 	---AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
 	--AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
 	--Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	AddMagic(1347,0) --Skill Hoa son
+	
+		AddMagic(1347,0) --Skill Hoa son
 		AddMagic(1372,0) --Skill Hoa son
 		AddMagic(1349,0) --Skill Hoa son
 		AddMagic(1374,0) --Skill Hoa son
-		AddMagic(1350,0) --Skill Hoa son
+		--AddMagic(1350,0) --duong ngo kiem phap
 		AddMagic(1375,0) --Skill Hoa son
 		AddMagic(1351,0) --Skill Hoa son
 		AddMagic(1376,0) --Skill Hoa son
 		AddMagic(1354,0) --Skill Hoa son
 		AddMagic(1355,0) --Skill Hoa son
 		AddMagic(1379,0) --Skill Hoa son
-		AddMagic(1378,0) --Skill Hoa son
+		AddMagic(1380,0) --ma van kiem khi
+		AddMagic(1369, 0) --cuu kiem hop nhat
+		--AddMagic(1378,0) --khi chan son ha
 		AddMagic(1358,0) --Skill Hoa son
-		AddMagic(1380,20) --Skill Hoa son
+		--AddMagic(1380,0) --ma van kiem khi
 		AddMagic(1360,20) --Skill Hoa son --------Doc Co Cuu Kiem
-		AddMagic(1364,20) --Skill Hoa son --------Doc Co Cuu Kiem
+		--AddMagic(1364,20) --doat menh lien hoan kiem
    		AddMagic(1382, 20)
    		AddMagic(1365, 20)
-   		AddMagic(1369, 20)
-   		AddMagic(1384, 20)
+   		--AddMagic(1384, 20) -- than quang toan nhieu
+		AddMagic(210, 1)
 	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
 end
 
