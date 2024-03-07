@@ -1192,24 +1192,34 @@ end
 function sethkmp2()
 	local tab_Content = {
 		"Rêi khái/no",
-	--	"Hoa S¬n/#sethkmpche1()",
-		"§­êng M«n phi ®ao/#sethkmp1(15)",
-		"§­êng M«n tô tiÔn/#sethkmp1(16)",
-		"§­êng M«n phi tiªu/#sethkmp1(17)",
-		"§­êng M«n bÉy/#sethkmp1(18)",
-		"C¸i Bang rång/#sethkmp1(19)",
-		"C¸i Bang bæng/#sethkmp1(20)",
-		"Thiªn NhÉn kÝch/#sethkmp1(21)",
-		"Thiªn NhÉn bïa/#sethkmp1(22)",
-		"Thiªn NhÉn ®ao/#sethkmpche()",
-		"Vâ §ang khÝ /#sethkmp1(24)",
-		"Vâ §ang kiÕm/#sethkmp1(25)",
-		"C«n L«n ®ao/#sethkmp1(26)",
-		"C«n L«n kiÕm/#sethkmp1(27)",
-		"C«n L«n bïa/#sethkmp1(28)",
+		"Hoa S¬n KiÕm/#sethkmphskiem(15)",
+		"Hoa S¬n KhÝ T«ng /#sethkmphskiemtong(16)",
+		"§­êng M«n phi ®ao/#sethkmp1(17)",
+		"§­êng M«n tô tiÔn/#sethkmp1(18)",
+		"§­êng M«n phi tiªu/#sethkmp1(19)",
+		"§­êng M«n bÉy/#sethkmp1(20)",
+		"C¸i Bang rång/#sethkmp1(21)",
+		"C¸i Bang bæng/#sethkmp1(22)",
+		"Thiªn NhÉn kÝch/#sethkmp1(23)",
+		"Thiªn NhÉn bïa/#sethkmp1(24)",
+		"Thiªn NhÉn ®ao/#sethkmpche(25)",
+		"Vâ §ang khÝ /#sethkmp1(26)",
+		"Vâ §ang kiÕm/#sethkmp1(27)",
+		"Trang sau/sethkmp3",
 	}
 	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän chøc n¨ng mµ b¹n muèn", getn(tab_Content), tab_Content);
 end
+
+function sethkmp3()
+	local tab_Content = {
+		"Rêi khái/no",
+		"C«n L«n ®ao/#sethkmp1(28)",
+		"C«n L«n kiÕm/#sethkmp1(29)",
+		"C«n L«n bïa/#sethkmp1(30)",
+	}
+	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän chøc n¨ng mµ b¹n muèn", getn(tab_Content), tab_Content);
+end
+
 function sethkmp1(nId)
 	for i=1,5 do AddGoldItem(0,5*nId+i-5) end
 end
@@ -1230,12 +1240,31 @@ if  nCount_muaban >= 200  then
 
 end
 
+function sethkmphskiem()
+	local Index = AddGoldItem(0,6272) SyncItem(Index)
+	local Index = AddGoldItem(0,6273) SyncItem(Index)
+	local Index = AddGoldItem(0,6274) SyncItem(Index)
+	local Index = AddGoldItem(0,6275) SyncItem(Index)
+	local Index = AddGoldItem(0,6276) SyncItem(Index)
+
+end
+
+function sethkmphskiemtong()
+	local Index = AddGoldItem(0,6278) SyncItem(Index)
+	local Index = AddGoldItem(0,6279) SyncItem(Index)
+	local Index = AddGoldItem(0,6280) SyncItem(Index)
+	local Index = AddGoldItem(0,6281) SyncItem(Index)
+	local Index = AddGoldItem(0,6282) SyncItem(Index)
+
+end
+
 function sethkmpche()
-	local Index = AddGoldItem(0,790) SyncItem(Index)
+	--local Index = AddGoldItem(0,790) SyncItem(Index)
 	local Index = AddGoldItem(0,111) SyncItem(Index)
 	local Index = AddGoldItem(0,112) SyncItem(Index)
 	local Index = AddGoldItem(0,113) SyncItem(Index)
 	local Index = AddGoldItem(0,114) SyncItem(Index)
+	local Index = AddGoldItem(0,115) SyncItem(Index)
 
 end
 -------------------------------------------------code cua quy ----------------------------------

@@ -2,7 +2,7 @@
 IncludeLib("FILESYS");
 IncludeLib("RELAYLADDER");	--ÅÅÐÐ°ñ
 Include("\\script\\task\\newtask\\tasklink\\tasklink_head.lua"); -- ÈÎÎñÁ´µÄÍ·ÎÄ¼þ
-Include("\\script\\task\\newtask\\tasklink\\tasklink_award.lua"); -- ÈÎÎñÁ´µÄ½±ÀøÍ·ÎÄ¼þ
+Include("\\script\\task\\newtask\\tasklink\\tasklink_award.lua"); -- ÈÎÎñÁ´µÄ½±ÀøÍ·ÎÄ¼�
 Include("\\script\\event\\storm\\function.lua")	--Storm
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\lib\\log.lua")

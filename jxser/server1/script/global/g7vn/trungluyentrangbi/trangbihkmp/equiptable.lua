@@ -140,11 +140,11 @@ tbEquip_Hkmp1 = {
 	{szName="Vô ¶o Thóc T©m chØ hoµn",tbProp={0,138,},nQuality=1,},
 	{szName="Vô ¶o Thanh ¶nh HuyÒn Ngäc Béi",tbProp={0,139,},nQuality=1,},
 	{szName="Vô ¶o Tung Phong TuyÕt ¶nh ngoa",tbProp={0,140,},nQuality=1,},
-	{szName="Ph¸ Ngäc ThÇn Uy Vò KiÕm",tbProp={0,681,},nQuality=1,},
-	{szName="Ph¸ Ngäc T­¬ng Sinh Phï ",tbProp={0,682,},nQuality=1,},
-	{szName="Ph¸ Ngäc §o¹n cÈm Yªu §¸i",tbProp={0,683,},nQuality=1,},
-	{szName="Ph¸ Ngäc Thóy Ngäc HuyÒn Hoµng Béi",tbProp={0,684,},nQuality=1,},
-	{szName="Ph¸ Ngäc Thanh Tïng Ph¸p giíi",tbProp={0,685,},nQuality=1,},
+	{szName="§éc C« ThÇn Long Cöu KiÕm",tbProp={0,6272,},nQuality=1,},
+	{szName="§éc C« Tæng QuyÕt Vò Gi¸p",tbProp={0,6273,},nQuality=1,},
+	{szName="§éc C« B¹ch Hång Qu¸n §¸i",tbProp={0,6274,},nQuality=1,},
+	{szName="§éc C« Long HuyÒn Hé UyÓn",tbProp={0,6275,},nQuality=1,},
+	{szName="§éc C« NhuyÔn Long Ph¸t Giíi",tbProp={0,6276,},nQuality=1,},
 	},
 }
 

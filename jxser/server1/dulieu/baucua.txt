@@ -1965,3 +1965,17 @@ KÕt qu¶ bÇu cua lÇn nµy Gµ - T«m - Gµ
 KÕt qu¶ bÇu cua lÇn nµy C¸ - C¸ - T«m
 KÕt qu¶ bÇu cua lÇn nµy T«m - T«m - T«m
 KÕt qu¶ bÇu cua lÇn nµy Gµ - T«m - Nai
+KÕt qu¶ bÇu cua lÇn nµy Nai - Nai - C¸
+KÕt qu¶ bÇu cua lÇn nµy Nai - Gµ - Cua
+KÕt qu¶ bÇu cua lÇn nµy Cua - Cua - C¸
+KÕt qu¶ bÇu cua lÇn nµy T«m - Gµ - Cua
+KÕt qu¶ bÇu cua lÇn nµy Cua - C¸ - Cua
+KÕt qu¶ bÇu cua lÇn nµy C¸ - Cua - BÇu
+KÕt qu¶ bÇu cua lÇn nµy Cua - Cua - BÇu
+KÕt qu¶ bÇu cua lÇn nµy C¸ - Nai - C¸
+KÕt qu¶ bÇu cua lÇn nµy Nai - T«m - Gµ
+KÕt qu¶ bÇu cua lÇn nµy T«m - T«m - BÇu
+KÕt qu¶ bÇu cua lÇn nµy Nai - BÇu - Gµ
+KÕt qu¶ bÇu cua lÇn nµy T«m - T«m - T«m
+KÕt qu¶ bÇu cua lÇn nµy Gµ - Cua - Cua
+KÕt qu¶ bÇu cua lÇn nµy T«m - Gµ - Cua
