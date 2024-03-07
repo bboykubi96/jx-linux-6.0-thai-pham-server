@@ -113,3 +113,17 @@
 [IP : 192.168.1.2 : 53674 ] - Thêi gian : 03/05/2024_23:27:46  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6293
 [IP : 192.168.1.2 : 53680 ] - Thêi gian : 03/05/2024_23:29:36  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6283
 [IP : 192.168.1.2 : 53846 ] - Thêi gian : 03/05/2024_23:52:54  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 690
+[IP : 192.168.1.2 : 56537 ] - Thêi gian : 03/07/2024_02:07:36  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 703
+[IP : 192.168.1.2 : 56537 ] - Thêi gian : 03/07/2024_02:07:47  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 704
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:39:04  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6284
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:40:56  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6285
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:08  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6286
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:17  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6287
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:24  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6288
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:31  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6289
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:50  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6290
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:41:58  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6291
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:42:05  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6292
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:42:13  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6293
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:42:19  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6294
+[IP : 192.168.1.2 : 56720 ] - Thêi gian : 03/07/2024_02:42:26  - Tµi kho¶n [ testgame4] - Nh©n vËt : [hoasonn ] lÊy item gold 6295
