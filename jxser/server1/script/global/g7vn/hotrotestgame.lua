@@ -1181,9 +1181,8 @@ function sethkmp()
 		"Nga My buff/#sethkmp1(9)",
 		"Thóy Yªn ®ao/#sethkmp1(10)",
 		"Thóy Yªn song ®ao/#sethkmp1(11)",
-		"Ngò §éc ch­ëng/#sethkmp1(12)",
-		"Ngò §éc ®ao/#sethkmp1(13)",
-		"Ngò §éc bïa/#sethkmp1(14)",
+		"Hoa S¬n KiÕm/#sethkmphskiem()",
+		"Hoa S¬n KhÝ T«ng /#sethkmphskiemtong()",
 		"Trang sau/sethkmp2",
 		
 	}
@@ -1192,8 +1191,9 @@ end
 function sethkmp2()
 	local tab_Content = {
 		"Rêi khái/no",
-		"Hoa S¬n KiÕm/#sethkmphskiem()",
-		"Hoa S¬n KhÝ T«ng /#sethkmphskiemtong()",
+		"Ngò §éc ch­ëng/#sethkmp1(12)",
+		"Ngò §éc ®ao/#sethkmp1(13)",
+		"Ngò §éc bïa/#sethkmp1(14)",
 		"§­êng M«n phi ®ao/#sethkmp1(15)",
 		"§­êng M«n tô tiÔn/#sethkmp1(16)",
 		"§­êng M«n phi tiªu/#sethkmp1(17)",
@@ -1216,6 +1216,9 @@ function sethkmp3()
 		"C«n L«n ®ao/#sethkmp1(26)",
 		"C«n L«n kiÕm/#sethkmp1(27)",
 		"C«n L«n bïa/#sethkmp1(28)",
+		"Tiªu Dao CÇm/#sethkmptieudaocam()",
+		"Tieu Dao KiÕm/#sethkmptieudaokiem()",
+
 	}
 	Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y chän chøc n¨ng mµ b¹n muèn", getn(tab_Content), tab_Content);
 end
@@ -1237,6 +1240,24 @@ if  nCount_muaban >= 200  then
 		Say("<#> Trao ®æi vËt phÈm cÇn cã <color=yellow>200 TiÒn §ång <color>, cã ®ñ tiÒn råi ®Õn nhÐ!"..nCount_muaban, 0)
 	end
 	
+
+end
+
+function sethkmptieudaocam()
+	local Index = AddGoldItem(0,6284) SyncItem(Index)
+	local Index = AddGoldItem(0,6285) SyncItem(Index)
+	local Index = AddGoldItem(0,6286) SyncItem(Index)
+	local Index = AddGoldItem(0,6287) SyncItem(Index)
+	local Index = AddGoldItem(0,6288) SyncItem(Index)
+
+end
+
+function sethkmptieudaokiem()
+	local Index = AddGoldItem(0,6290) SyncItem(Index)
+	local Index = AddGoldItem(0,6291) SyncItem(Index)
+	local Index = AddGoldItem(0,6292) SyncItem(Index)
+	local Index = AddGoldItem(0,6293) SyncItem(Index)
+	local Index = AddGoldItem(0,6294) SyncItem(Index)
 
 end
 

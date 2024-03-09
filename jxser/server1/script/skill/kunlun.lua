@@ -144,7 +144,7 @@ SKILLS={
 		skill_attackradius={{{1,448},{20,480},{21,480}}},
 		skill_cost_v={{{1,50},{20,90}}}
 	},
-	shuangao_kunlun={ --Ëª°ÁÀ¥ÂØ
+	shuangao_kunlun={ --suong ngao con lon
 		deadlystrikeenhance_p={{{1,6},{30,15,Conic}},{{1,-1},{2,-1}}},
 		castspeed_v={{{1,25},{30,65},{34,93},{35,100},{36,102}},{{1,-1},{30,-1}}},
 		attackspeed_v={{{1,25},{20,65},{30,85},{35,118},{38,124},{39,126}},{{1,-1},{30,-1}}},
