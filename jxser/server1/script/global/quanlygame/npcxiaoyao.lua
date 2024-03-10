@@ -47,7 +47,8 @@ function TieuDaoPhai()
 	SetSeries(4)
 	SetRank(98);
 	--nt_setTask(137,71)
-	SetTask(4464,10);
+	SetTask(13,10*256); 
+	--SetTask(4464,10);
 	SetLastFactionNumber(12);
 	--add_xy(GetLevel())
 	Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())

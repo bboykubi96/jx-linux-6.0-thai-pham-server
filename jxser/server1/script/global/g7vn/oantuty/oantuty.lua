@@ -223,23 +223,23 @@ function tbAloneScriptGame:SystemResult(tbTeam)
 	end
 end
 
-function OnTimer()
-	local nCurTime = GetCurServerTime();
-	local szPlayerName = GetName();
-	local nTime = (tbAloneScriptGame.TotalTime[szPlayerName]+10)-nCurTime
-	print(nTime)
-	if nTime <= 0 then
-		if (tbAloneScriptGame.StateGame[szPlayerName] == 2) or (tbAloneScriptGame.StateGame[szPlayerName] == 3) then
-			local nCount = tbAloneScriptGame.WatingBet[szPlayerName];
-			tbAwardTemplet:GiveAwardByList({tbProp={4,417,1,1,0,0},nCount=nCount},1)
+--function OnTimer()
+--	local nCurTime = GetCurServerTime();
+--	local szPlayerName = GetName();
+	--local nTime = (tbAloneScriptGame.TotalTime[szPlayerName]+10)-nCurTime
+--	print(nTime)
+--	if nTime <= 0 then
+--		if (tbAloneScriptGame.StateGame[szPlayerName] == 2) or (tbAloneScriptGame.StateGame[szPlayerName] == 3) then
+--			local nCount = tbAloneScriptGame.WatingBet[szPlayerName];
+--			tbAwardTemplet:GiveAwardByList({tbProp={4,417,1,1,0,0},nCount=nCount},1)
 			--for i = 1, nCount do
 			--	AddItem(4,417,1,0,0,0);
 			--end
-			Msg2Player(format("O¼n tï x× bÞ hñy, b¹n nhËn l¹i ®­îc %d TiÒn §ång", nCount))
-		end
-		tbAloneScriptGame.WatingBet[szPlayerName] = 0;
-		tbAloneScriptGame.TotalTime[szPlayerName] = 0;
-		tbAloneScriptGame.StateGame[szPlayerName] = 0;
-		StopTimer(TIMERID)
-	end
-end
+--			Msg2Player(format("O¼n tï x× bÞ hñy, b¹n nhËn l¹i ®­îc %d TiÒn §ång", nCount))
+--		end
+--		tbAloneScriptGame.WatingBet[szPlayerName] = 0;
+--		tbAloneScriptGame.TotalTime[szPlayerName] = 0;
+--		tbAloneScriptGame.StateGame[szPlayerName] = 0;
+--		StopTimer(TIMERID)
+--	end
+--end

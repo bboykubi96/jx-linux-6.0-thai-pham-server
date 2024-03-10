@@ -1,10 +1,6 @@
 IncludeLib("SETTING")
-
 Include( "\\script\\task\\system\\task_string.lua" );
-
--
 Include("\\script\\activitysys\\npcdailog.lua")
-
 Include("\\script\\misc\\daiyitoushi\\toushi_head.lua");
 Include("\\script\\misc\\daiyitoushi\\toushi_resetbase.lua");
 Include("\\script\\misc\\daiyitoushi\\toushi_function.lua");

@@ -45,8 +45,9 @@ function HoaSonPhai()
 	SetCurCamp(3);
 	SetSeries(2)
 	SetRank(87);
-	--nt_setTask(137,71)
-	SetTask(169,10);
+	--nt_setTask(137,71);
+	--SetTask(169,10);
+	SetTask(11,10*256); 
 	SetLastFactionNumber(10);
 	--add_hs(GetLevel())
 	--Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vÞ s­ huynh, mong h·y chiÕu cè!",GetName())
@@ -76,7 +77,7 @@ function HoaSonPhai()
    		AddMagic(1365, 20)
    		--AddMagic(1384, 20) -- than quang toan nhieu
 		AddMagic(210, 1)
-	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
+	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Hoa S¬n<color>")
 end
 
 function join_hoason()

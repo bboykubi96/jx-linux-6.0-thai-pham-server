@@ -144,7 +144,7 @@ if HaveMagic(361)~=-1 then
 --	ST_LevelUp(nAddLevel)
 	--end
 if GetTask(4990)<1 then
-		local nAddLevel =75 - GetLevel()
+		local nAddLevel =30 - GetLevel()
 		ST_LevelUp(nAddLevel)
 		SetTask(4990,1)
 		local tbAwardgift = {
@@ -327,19 +327,18 @@ end
 			end
 		end 
 	end
-	if (GetInfo("hwidcount") > 8) then
-OfflineLive(PlayerIndex)
-KickOutSelf()
-return
+	--	if (GetInfo("hwidcount") > 8) then
+	--		OfflineLive(PlayerIndex)
+	--		KickOutSelf()
+	--		return
+	--	end
+	--	if (GetInfo("iplan") > 16) then
+	--		OfflineLive(PlayerIndex)
+	--		KickOutSelf()
+	--		return
+	--	end
+	--end
 end
-
-if (GetInfo("iplan") > 16) then
-OfflineLive(PlayerIndex)
-KickOutSelf()
-return
-end
-end
-
 -------------------------------------------
 
 function main_delaysync(nStep)	

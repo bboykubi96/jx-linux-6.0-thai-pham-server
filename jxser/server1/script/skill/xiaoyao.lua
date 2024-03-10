@@ -104,7 +104,7 @@ SKILLS={
 		skill_cost_v={{{1,15},{20,40}}}
 	},
 
-	yinanbaima={ --Òø°°°×Âí
+	yinanbaima={ --ngan yen bach ma
 		fastwalkrun_p={{{1,22},{20,60}},{{1,-1},{20,-1}}},
 	},
 
