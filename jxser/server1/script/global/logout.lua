@@ -12,10 +12,13 @@ Include("\\script\\misc\\vngpromotion\\ipbonus\\ipbonus_2_head.lua");
 Include("\\script\\global\\playerlist.lua")
 Include("\\script\\global\\logout_head.lua")
 --Include("\\script\\t9team\\t9_hwid_head.lua")
+Include("\\script\\miniskill\\init_miniskill.lua")
 
 Include("\\script\\global\\g7vn\\limitaccountperip.lua");
 Include("\\script\\global\\quanlygame\\sukien\\vantieubanghoi\\vantieubanghoi.lua")
+
 function main()
+	del_timer_mns()
 dofile("script/global/logout.lua")
 	LimitAccountPerIP:Logout()
 --	dologouttk()

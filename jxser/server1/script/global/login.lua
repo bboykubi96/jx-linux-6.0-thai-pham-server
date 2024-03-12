@@ -34,6 +34,8 @@ Include("\\script\\global\\topall.lua")
 Include("\\script\\activitysys\\g_activity.lua")	
 Include("\\script\\global\\g7vn\\g7quanly.lua")
 Include("\\script\\global\\g7vn\\g7tichluyvip.lua")
+Include("\\script\\miniskill\\init_miniskill.lua")	
+
 IncludeLib("TITLE");
 if (GetProductRegion() ~= "vn") then
 	Include("\\script\\global\\chuangong_login.lua")
@@ -338,6 +340,7 @@ end
 	--		return
 	--	end
 	--end
+	add_timer_mns()
 end
 -------------------------------------------
 
