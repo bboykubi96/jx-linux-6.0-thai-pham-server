@@ -20,7 +20,7 @@ Include("\\script\\vng_lib\\files_lib.lua")
 -----------------------
 
 Include("\\script\\global\\login_old.lua")	
-Include("\\script\\missions\\leaguematch\\wlls_login.lua")	--WLLSŒ‰¡÷¡™»¸
+Include("\\script\\missions\\leaguematch\\wlls_login.lua")	
 Include("\\script\\misc\\extpoint_loginmsg\\login_msg.lua")
 Include("\\script\\global\\offline_login.lua")	
 Include("\\script\\global\\recordplayerinfo.lua")
