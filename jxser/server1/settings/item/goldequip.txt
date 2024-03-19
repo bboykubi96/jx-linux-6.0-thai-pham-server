@@ -214,10 +214,10 @@ Duy™n Qu©n	0	3	0	\spr\item\equip\ring\obj-ring06.spr	37	1	1	"ThÒ th¯ hoa tÔng l∑
 [Hoµn M¸] An Bang K™ Huy’t Thπch GiÌi Chÿ	0	3	0	\Spr\item\equip\ring\obj-ring06.spr	37	1	1	Trang bﬁ Hoµng Kim	3	49999	8	0																						36	80											6	311	431				34									
 Vinh Di÷u Chi Y	0	2	9	\Spr\item\equip\armor\obj-ma-cloth11-3.spr	22	2	3	"BÈ hoµng kim WC 2010.<enter> Vinh Di÷u Chi Y, DÚng T©m V÷ ßπo<color>"	0	49999	10	0	30	720	720	31	100	100																36	60											434	405	435				42									
 Tinh Chu»n Chi Ngoa	0	5	1	\spr\item\equip\boots\obj-shoes05.spr	26	2	2	"BÈ hoµng kim WC 2010.<enter>Tinh Chu»n Chi Ngoa,  ti™u di™u t¯ h∂i<color>"	0	49999	10	0	30	160	160	31	100	100																36	60											436	400	412				42									
-An Bang B®ng Tinh Thπch Hπng Li™n	0	4	0	\Spr\item\equip\nick\obj-neck07.spr	36	2	1	Trang bﬁ Hoµng Kim	4	49999	10	0																						36	85											550						34									
-An Bang CÛc hoa Thπch chÿ hoµn	0	3	0	\Spr\item\equip\ring\obj-ring07.spr	37	1	1	Trang bﬁ Hoµng Kim	2	49999	8	0																						36	80											551	552					34									
-An Bang ßi“n Hoµng thπch ng‰c bÈi	0	9	1	\Spr\item\equip\waist\obj-waist18.spr	36	1	2	Trang bﬁ Hoµng Kim	1	49999	8	0																						36	75											551	553					34									
-An Bang K™ Huy’t Thπch GiÌi Chÿ	0	3	0	\Spr\item\equip\ring\obj-ring06.spr	37	1	1	Trang bﬁ Hoµng Kim	3	49999	8	0																						36	80											551	554					34									
+(Ti”u) An Bang B®ng Tinh Thπch Hπng Li™n	0	4	0	\Spr\item\equip\nick\obj-neck07.spr	36	2	1	Trang bﬁ Hoµng Kim	4	49999	10	0																						36	85											550						34									
+(Ti”u) An Bang CÛc hoa Thπch chÿ hoµn	0	3	0	\Spr\item\equip\ring\obj-ring07.spr	37	1	1	Trang bﬁ Hoµng Kim	2	49999	8	0																						36	80											551	552					34									
+(Ti”u) An Bang ßi“n Hoµng thπch ng‰c bÈi	0	9	1	\Spr\item\equip\waist\obj-waist18.spr	36	1	2	Trang bﬁ Hoµng Kim	1	49999	8	0																						36	75											551	553					34									
+(Ti”u) An Bang K™ Huy’t Thπch GiÌi Chÿ	0	3	0	\Spr\item\equip\ring\obj-ring06.spr	37	1	1	Trang bﬁ Hoµng Kim	3	49999	8	0																						36	80											551	554					34									
 [ßﬁnh thÍi] MÈng Long Ch›nh Hoµng T®ng M∑o	0	7	0	\spr\item\equip\cap\obj-ma-cap03-3.spr	28	2	2	Trang bﬁ Hoµng Kim	1	49999	10	0	30	360	360	31	85	85																36	90	32	160	39	0							2	171	323	173	6	155										
 [ßﬁnh thÍi] MÈng Long Kim Ty Ch›nh HÂng Cµ Sa	0	2	0	\spr\item\equip\armor\obj-ma-cloth03-3.spr	22	2	3	Trang bﬁ Hoµng Kim	2	49999	10	0	30	720	720	31	90	90																36	99	32	260	39	0							409	490	491	492	493	494										
 [ßﬁnh thÍi] Huy“n Thi’t Ph∏t ß∏i	0	6	0	\spr\item\equip\sash\obj-sash06.spr	33	2	1	Trang bﬁ Hoµng Kim	0	49999	10	0	30	160	160	31	80	80																36	95	32	135	39	0							418	309	172	311	416	417										

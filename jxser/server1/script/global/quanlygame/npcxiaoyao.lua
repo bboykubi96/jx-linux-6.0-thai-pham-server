@@ -8,54 +8,49 @@ Include("\\script\\global\\g7vn\\chuyenmonphai.lua")
 
 
 
-function main()
-	local szTitle = "Xin chµo <color=red>"..GetName().."<color> ! BÊt kÓ ng­¬i thuéc ngò hµnh nµo, ng­¬i cã muèn gia nhËp <color=fire>Tiªu Dao<color> hay kh«ng?"
-	local tbOpt=
+function main() 
+dofile("script/global/quanlygame/npcxiaoyao.lua");
+	local szTitle = "<npc>LÇn nµy ph¸i <color=blue>Tiªu Dao<color> sÎ ®­a tuyÖt kØ vâ l©m ®i tung hoµnh thiªn h¹."
+	local tbOpt =
 	{
-		--"§Õn ph¸i/go_tieudao",
-		"Gia nhËp Tiªu Dao/TieuDaoPhai",
-		--"Gia nhËp Tiªu Dao vµ häc ®Õn max skill 180/join_tieudao",
-		"KÕt thóc ®èi tho¹i./no",
+		{"Gia NhËp Tiªu Dao Ph¸i", xingianhap},
+		--{"ChuyÓn Qua Ph¸i Kh¸c", chuyenphaikhac},
+		{"KÕt thóc ®èi tho¹i"},
 	}
-	Say(szTitle, getn(tbOpt), tbOpt)
-end
-
-function go_tieudao()
-	Msg2Player("Ngåi yªn, chóng ta ®Õn <color=yellow>Tiªu Dao ph¸i<color>")
-	NewWorld(1046, 1641, 3288)
-end
-
-
-function TieuDaoPhai()
-	local FactionNumber = GetLastFactionNumber()
-	local nSeries = GetSeries()
-	if nSeries ~= 4 then
-		Talk(1, "", "ChØ cã nh©n vËt hÖ Thæ míi cã thÓ gia nhËp Tiªu Dao")
-		return
-	end
-	if FactionNumber >= 0 then
-		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i råi.")
-		return
-	end
-	if GetLevel()<10 then
-		Talk(1, "", "H·y tù luyÖn tËp thªm ®Õn cÊp 10 råi quay l¹i ®©y.")
-		return
-	end
-	SetFaction("xiaoyao");
-	SetCamp(3);
-	SetCurCamp(3);
-	SetSeries(4)
-	SetRank(98);
-	--nt_setTask(137,71)
-	SetTask(13,10*256); 
-	--SetTask(4464,10);
-	SetLastFactionNumber(12);
-	--add_xy(GetLevel())
-	Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vŞ s­ huynh, mong h·y chiÕu cè!",GetName())
-	--AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
-	AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
 	
+	CreateNewSayEx(szTitle, tbOpt)	
+end
+
+
+
+
+
+function xingianhap()
+if (GetCamp() == 0) and (GetSeries() == 4) and (GetLevel() >= 10) and  (GetTask(169) ~= 12) then		
+Say("<color=red>Tiªu Dao KiÕm Kh¸ch<color>: Ph¸i <color=cyan>Tiªu Dao<color> dïng KiÕm Ph¸p vµ CÇm lµm Vò Khİ, lµ 1 trong nh÷ng tuyÖt kØ vâ c«ng trong thiªn h¹!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
+elseif (GetCamp() == 0) and (GetSeries() ~= 4) and (GetLevel() >= 199) and (GetSex() == 0) and  (GetTask(169) ~= 12) then
+Say("<color=white>ChØ cã ng­êi míi tao nh©n vËt lµ hÖ Thæ míi cã thÓ gia nhËp Tiªu Dao ph¸i")
+elseif (GetTask(169) >= 12)  then
+local szTitle = "<npc>Ng­¬i ®· gia nhËp mèn ph¸i råi quay l¹i lµm chi n÷a, mau ®i ®i ?  "
+	local tbOpt =
+	{
+		--{"PhiÒn l·o cho ta mét vĞ",vep},
+		{"KÕt thóc ®èi tho¹i."},
+	}
+	
+	CreateNewSayEx(szTitle, tbOpt)
+else
+Talk(1,"","Ng­¬i ph¶i t¹o nh©n vËt hÖ thæ míi cã thÓ gia nhËp Tiªu Dao ph¸i.")	
+end
+end
+
+
+function go() 
+local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
+	--if(nSilverCount < 200) then -- gia xu
+--Say("<color=white>ThËt xin lçi hoa s¬n ta lµ 1 ph¸i Èn chøa nhiÒu tuyÖt kü bİ mËt cã uy lùc m¹nh mÏ triÖt tiªu c¸c ph¸i trong chèn giang hå.VŞ ®¹i hiÖp ®©y muèn gia nhËp ph¸i ta cÇn ®ãng lÖ phİ 200xu.")
+--	return 
+--	end
 	AddMagic(1881,0)-- level 10
 	AddMagic(1905,0)-- level 10
 
@@ -80,73 +75,134 @@ function TieuDaoPhai()
 	AddMagic(1910,0)---- level 60 (mai hoa tam long skill 90 old)
 	--AddMagic(1896,0)---- level 150 (thay the skill 60)
 
-	AddMagic(1891,20)---- level 90
+	--AddMagic(1891,20)---- level 90
 	--AddMagic(1910,20)---- level 90
-	AddMagic(1911,20)---- level 90 (skill 150 old) 
+	--AddMagic(1911,20)---- level 90 (skill 150 old) 
 
-	AddMagic(1894,20)---- level 120
+	--AddMagic(1894,20)---- level 120
 
 	--AddMagic(1896,20)---- level 150
 	--AddMagic(1911,20)---- level 150
 
 	--AddMagic(1901,20)---- level 180
-	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
+   --AddMagic(210, 1)
+   SetTask(169,12)
+   SetFaction("wudang");
+   SetFaction("kunlun");
+   SetFaction("xiaoyao");
+		SetLastFactionNumber(12)
+		SetCamp(3)
+		SetCurCamp(3)
+		SetRank(9)
+SetSeries(4)
+--ConsumeEquiproomItem(200,4,417,1,1)
+SaveNow()		
+Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=cyan> Gia nhËp thµnh c«ng <color=yellow>Tiªu Dao Ph¸i !!!")
+	--local hoason = "script/global/bil4i3n/bil4i3n_log/Mua_Hoa_Son.log"
+	--local hoason1 = openfile(hoason, "a");
+	--write(hoason1, format(""..date("%d-%m-%Y").."   -   [%d:%d]   \tTai Khoan: %s   -   Ten: %s   -   Dung 200 Xu Mua Phai Hoa Son\n",GetLocalDate("%H"), GetLocalDate("%M"), GetAccount(), GetName()))
+	-- closefile(hoason1)
+	 KickOutSelf()
+end 
+
+
+
+function vep() 
+Msg2Player("Ngêi yªn, chóng ta ®i Hoa S¬n ph¸i")
+end 
+
+function no() 
+end 
+
+
+
+function chuyenphaikhac()
+	local bFlag			= GetTask(TSK_TOUSHI_FLAG);				-- »ñµÃ×ªÍ¶Ê¦ÃÅµÄ±ê¼Ç
+	local nMyFacNumb	= GetLastFactionNumber();				-- »ñµÃÔ­ÃÅÅÉID
+	local nSex			= GetSex();								-- ½ÇÉ«ĞÔ±ğ
+	local nLastChange   = GetTask(TSK_LAST_CHANGE_FACTION)      -- ÉÏ´Î×ªÍ¶Ê¦ÃÅ±ê¼Ç
+	local nCurTime      = tonumber( GetCurServerTime() );
+		if (CalcItemCount(2,0,-1,-1,-1) > 0) then
+			return Say("Muèn chuyÓn m«n ph¸i cÇn cëi bá hÕt trang bŞ trªn ng­êi.",0);
+
+		end
+if GetLastFactionNumber() ~= 10 then
+Say("ChØ cã ph¸i hoa s¬n míi chuyÓn sang ph¸i kh¸c ®­îc",0);
+return
+else
+batdauhoasonok()
+end
 end
 
-function join_tieudao()
-	local FactionNumber = GetLastFactionNumber()
-	if FactionNumber >= 0 then
-		Talk(1, "", "Ng­¬i ®· gia nhËp m«n ph¸i kh¸c råi.")
+
+
+
+function batdauhoasonok()
+	if GetLevel() < 200 then
+		Talk(1, "", "CÊp 200 trë lªn míi cã thÓ chuyÓn sang ph¸i kh¸c.")
 		return
 	end
-	local szTitle = "<color=red>"..GetName().."<color> ng­¬i cã ch¾c ch¾n muèn gia nhËp ph¸i <color=fire>Tiªu Dao<color> hay kh«ng?"
-	local tbOpt ={
-			"X¸c nhËn!/join_tieudao_sure",
-			"Kh«ng./no",
-		}
-	Say(szTitle, getn(tbOpt), tbOpt)
+	SetFaction("emei")       			--Íæ¼Ò¼ÓÈëÃÅÅÉ
+	SetCamp(1)
+	SetCurCamp(1)
+	SetSeries(2)
+	SetLastFactionNumber(4)
+	SetRank(63)
+	--local i = HaveMagic(210)		-- Çá¹¦ÁíÍâ²Ù×÷
+	local j = HaveMagic(400)		-- ¡°½Ù¸»¼ÃÆ¶¡±ÁíÍâ²Ù×÷
+	local n = RollbackSkill()		-- Çå³ı¼¼ÄÜ²¢·µ»ØËùÓĞ¼¼ÄÜ?ã£¨°üÀ¨Çá¹¦µÈÌØÊâ¼¼ÄÜ£?
+	local x = 0
+	if (i ~= -1) then i = 1; x = x + i end		-- ÕâÁ½¾äÅĞ¶ÏÊÇÅÅ³ı´ÓÎ´Ñ§¹ıÇá¹¦µÄÈË·µ»Ø-1´Ó¶øµ¼ÖÂµãÊı¼ÆËã´íÎóÇé¿ö
+	if (j ~= -1) then x = x + j end
+	local rollback_point = n - x			-- °Ñ¼¼ÄÜµãµ±×ö¿ÕÏĞµãÊı·µ»¹£¬µ«ÏÈ?Û³ıÇá¹¦µ?
+	if (rollback_point + GetMagicPoint() < 0) then		-- Èç¹ûÏ´³ÉÁË¸ºÊı£¬Ôòµ±×÷0£¨ÎªÒÔºó¶à´ÎÏ´µã±£?ô£?
+		 rollback_point = -1 * GetMagicPoint()
+	end
+	AddMagicPoint(rollback_point)
+	--if (i ~= -1) then AddMagic(210, i) end			-- Èç¹ûÑ§¹uÇá¹¦Ô?¼Ó»ØÔ­ÓĞµÈ¼¶
+	if (j ~= -1) then AddMagic(400, j) end			-- Èç¹ûÑ§¹u¡°½Ù¸»¼AÆ¶¡±Í¬Ñù´¦Àí
+	Msg2Player("TÈy tñy thµnh c«ng! Ng­¬i ca "..rollback_point.." ®iÓm kü n¨ng ®Ó ph©n phèi l¹i.")
+		DelMagic(1347) --Skill Hoa son
+		DelMagic(1349) --Skill Hoa son
+		DelMagic(1374) --Skill Hoa son
+		DelMagic(1350) --Skill Hoa son
+		DelMagic(1375) --Skill Hoa son
+		DelMagic(1351) --Skill Hoa son
+		DelMagic(1354) --Skill Hoa son
+		DelMagic(1378) --Skill Hoa son
+		DelMagic(1355) --Skill Hoa son
+		DelMagic(1379) --Skill Hoa son
+		DelMagic(1358) --Skill Hoa son
+		DelMagic(1360) --Skill Hoa son
+		DelMagic(1365,20) --Skill Hoa son
+	DelMagic(1368) --Skill Hoa son --------Doc Co Cuu Kiem
+	DelMagic(1364) --Skill Hoa son --------Doc Co Cuu Kiem
+   DelMagic(1369)
+   DelMagic(210)
+if GetLastFactionNumber() == 4 then
+AddMagic(85)
+AddMagic(80)
+AddMagic(77)
+AddMagic(79)
+AddMagic(93)
+AddMagic(385)
+AddMagic(82)
+AddMagic(89)
+AddMagic(86)
+AddMagic(92)
+AddMagic(252)
+AddMagic(88)
+AddMagic(91)
+AddMagic(282)
+AddMagic(332)
+AddMagic(328,20)
+AddMagic(380,20)
+AddMagic(712,20)
+AddMagic(210, 1)
+ChuyenPhaiMenu()
+SaveNow()
+end
 end
 
------------------------------------------------------------------------------------------------------------
-function join_tieudao_sure()
-	SetFaction("xiaoyao");
-	SetCamp(3);
-	SetCurCamp(4);
-	SetRank(98);
-	SetSeries(4);
-	SetLastFactionNumber(12);
-	--add_xy(GetLevel())
-	Msg2Faction("%s tõ h«m nay vµo ph¸i Tiªu Dao, nay ®Õn b¸i kiÕn c¸c vŞ s­ huynh, mong h·y chiÕu cè!",GetName())
-	AddNote("NhËp ph¸i Tiªu Dao nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	Msg2Player("Chóc mõng ng­¬i ®· gia nhËp ph¸i Tiªu Dao, nhËn danh hiÖu Tiªn §¶o C­ SÜ")
-	--AddItem(0,0,7,1,0,0) AddItem(0,0,8,1,0,0)
 
-	AddMagic(1881,0)-- level 10
-	AddMagic(1905,0)-- level 10
 
-	AddMagic(1882,0)-- level 20
-	AddMagic(1906,0)-- level 20
-
-	AddMagic(1883,0)-- level 30
-
-	AddMagic(1885,0)-- level 40
-	AddMagic(1907,0)-- level 40
-
-	AddMagic(1887,0)-- level 50
-	AddMagic(1909,0)-- level 50
-
-	AddMagic(1888,0)-- level 60
-	AddMagic(1889,0)-- level 60
-     AddMagic(1890,0)-- level 60
-
-	AddMagic(1891,20)---- level 90
-	AddMagic(1910,20)---- level 90
-
-	AddMagic(1894,20)---- level 120
-
-	AddMagic(1896,20)---- level 150
-	AddMagic(1911,20)---- level 150
-
-	AddMagic(1901,20)---- level 180
-	Talk(1, "KickOutSelf", "Ng­¬i ®· gia nhËp thµnh c«ng ph¸i <color=fire>Tiªu Dao<color>")
-end

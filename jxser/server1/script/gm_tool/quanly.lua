@@ -370,6 +370,8 @@ function InputNamePlayer(nVar)
 			elseif Faction == 8 then zFaction = "Vâ §ang" 
 			elseif Faction == 9 then zFaction = "C«n L«n" 
 			elseif Faction == 10 then zFaction = "Hoa S¬n"
+			elseif Faction == 11 then zFaction = "Vò Hån"
+			elseif Faction == 12 then zFaction = "Tiªu Dao"
 			end
 			PlayerIndex = gmrole;
 			local zMsgTalk = format("<color=Green>Th«ng tin nh©n vËt<color> :Tªn nh©n vËt :<color=orange> %s<color> --- ID Tµi kho¶n : <color=red>( %s ) <color>\nGiíi tÝnh:<color=Red> %s <color>- M«n Ph¸i :<color=Yellow> %s<color>\nCÊp ®é: <color=red>%d<color>\nMap:<color=orange> %d <color>- täa ®é:<color=green> [%d,%d] ",nVar,zAccount,sex,zFaction,CurLevel,nMap,floor(nX/8),floor(nY/16));

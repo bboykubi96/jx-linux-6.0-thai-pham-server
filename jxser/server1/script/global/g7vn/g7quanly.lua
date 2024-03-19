@@ -372,6 +372,8 @@ function KiemTraTTNVOK(nVar)
 		elseif Faction == 8 then zFaction = "Vâ §ang" 
 		elseif Faction == 9 then zFaction = "C«n L«n" 
 		elseif Faction == 10 then zFaction = "Hoa S¬n"
+		elseif Faction == 11 then zFaction = "Vò Hån"
+		elseif Faction == 12 then zFaction = "Tiªu Dao"
 		end
 		--local zIPClient = "KhongXacDinh"
 		

@@ -40,7 +40,7 @@ elseif n_fac == 2 then
 		"NhiÕp Hån Lo¹n T©m/DuongMonPhiDao",
 		"B¹o Vò Lª Hoa/DuongMonNo",
 		"Cöu Cung Phi Tinh/DuongMonTieu",
---		"Lo¹n Hoµn KÝch/DuongMonBay",
+		"Lo¹n Hoµn KÝch/DuongMonBay",
 		"Th«i/No") return 1;
 ----------------------------------------------------------------------------------
 elseif n_fac == 3 then
@@ -91,9 +91,21 @@ elseif n_fac == 9 then
 -------------------------------------------------------------------------------------------------------
 elseif n_fac == 10 then
 		Say("<bclr=violet>"..myplayersex().." Muèn Chän Kü N¨ng Nµo",3,
-	--	"Hoa S¬n KiÕm/HoaSonKiem",
-	--	"Hoa S¬n KhÝ/HoaSonKhi",
+		"Hoa S¬n KiÕm/HoaSonKiem",
+		"Hoa S¬n KhÝ/HoaSonKhi",
 		"Th«i/No") return 1;
+----------------------------------------------------------------------------------------------------
+elseif n_fac == 11 then
+		Say("<bclr=violet>"..myplayersex().." Muèn Chän Kü N¨ng Nµo",3,
+		"Hoa S¬n KiÕm/HoaSonKiem",
+		"Hoa S¬n KhÝ/HoaSonKhi",
+		"Th«i/No") return 1;
+-----------------------------------------------------------------------------------------
+elseif n_fac == 12 then
+	Say("<bclr=violet>"..myplayersex().." Muèn Chän Kü N¨ng Nµo",3,
+	"Tiªu Dao KiÕm/Tieudaokiem",
+	"Tiªu Dao CÇm/Tieudaocam",
+	"Th«i/No") return 1;
 	else
 		Talk(1,"","<bclr=violet>"..myplayersex().." §· Nghiªn Cøu M·i Mµ Kh«ng LÜnh Héi §­îc G×") return 1
 	end
@@ -495,14 +507,14 @@ function HoaSonKiem()
 if CalcEquiproomItemCount(6,1,2426,-1)<1 then
 	return 1
 	end
-	if HaveMagic(1364) >= 0 then
+	if HaveMagic(1360) >= 0 then
 		Talk(1,"","<bclr=violet>"..myplayersex().." §· Häc Kü N¨ng Nµy Råi Kh«ng ThÓ Häc N÷a")
 		return 1;
 	end
-	AddMagic(1364,1)
+	AddMagic(1360,1)
 	SetTask(KyNang90,1)
 	ConsumeEquiproomItem(1,6,1,2426,-1)
-	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng §o¹t MÖnh Liªn Hoµn Tam Liªn KÝch")
+	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng Th­¬ng Tïng Ng©n Kh¸ch")
 end
 
 function HoaSonKhi()
@@ -516,6 +528,34 @@ if CalcEquiproomItemCount(6,1,2426,-1)<1 then
 	AddMagic(1382,1)
 	SetTask(KyNang90,1)
 	ConsumeEquiproomItem(1,6,1,2426,-1)
-	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng Ng¹o TuyÕt Tiªu Phong")
+	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng Ph¸ch Th¹ch Ph¸ Ngäc")
 end
+
+function Tieudaokiem()
+if CalcEquiproomItemCount(6,1,2426,-1)<1 then
+	return 1
+	end
+	if HaveMagic(1891) >= 0 then
+		Talk(1,"","<bclr=violet>"..myplayersex().." §· Häc Kü N¨ng Nµy Råi Kh«ng ThÓ Häc N÷a")
+		return 1;
+	end
+	AddMagic(1891,1)
+	SetTask(KyNang90,1)
+	ConsumeEquiproomItem(1,6,1,2426,-1)
+	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng KiÕm QuyÕt Phï V©n")
+end	
+
+function Tieudaocam()
+if CalcEquiproomItemCount(6,1,2426,-1)<1 then
+	return 1
+	end
+	if HaveMagic(1911) >= 0 then
+		Talk(1,"","<bclr=violet>"..myplayersex().." §· Häc Kü N¨ng Nµy Råi Kh«ng ThÓ Häc N÷a")
+		return 1;
+	end
+	AddMagic(1911,1)
+	SetTask(KyNang90,1)
+	ConsumeEquiproomItem(1,6,1,2426,-1)
+	Msg2Player("<color=green>Chóc Mõng  §· Häc §­îc Kü N¨ng Mai Hoa Tam Léng")
+end	
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

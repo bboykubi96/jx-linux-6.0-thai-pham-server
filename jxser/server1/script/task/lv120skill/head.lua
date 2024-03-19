@@ -115,7 +115,7 @@ DIALOG_UI_TEXT =			-- ¶Ô»°UIÏÔÊ¾
 
 LV120SKILL_LIST =			-- 120¼¶¼¼ÄÜÁÐ±í
 {
-	[0] = {709, 1, 0, 120, "Kü n¨ng cÊp 120", "§¹i Thõa Nh­ Lai Chó"},	-- ÉÙÁÖ
+	[0] = {709, 1, 0, 120, "Kü n¨ng cÊp 120",	"§¹i Thõa Nh­ Lai Chó"},	-- ÉÙÁÖ
 	[1] = {708, 1, 1, 120, "Kü n¨ng cÊp 120",	"§¶o H­ Thiªn"},		-- ÌìÍõ
 	[2] = {710, 1, 2, 120, "Kü n¨ng cÊp 120",	"Mª ¶nh Tung"},		-- ÌÆÃÅ
 	[3] = {711, 1, 3, 120, "Kü n¨ng cÊp 120",	"HÊp Tinh YÓm"},		-- Îå¶¾
@@ -125,6 +125,9 @@ LV120SKILL_LIST =			-- 120¼¶¼¼ÄÜÁÐ±í
 	[7] = {715, 1, 7, 120, "Kü n¨ng cÊp 120",	"Ma ¢m PhÖ Ph¸ch"},	-- ÌìÈÌ
 	[8] = {716, 1, 8, 120, "Kü n¨ng cÊp 120",	"XuÊt ø BÊt NhiÔm"},	-- Îäµ±
 	[9] = {717, 1, 9, 120, "Kü n¨ng cÊp 120",	"L­ìng Nghi Ch©n KhÝ"},	-- À¥ÂØ
+	[10] = {1365, 1, 10, 120, "Kü n¨ng cÊp 120",	"Tö Hµ KiÕm KhÝ"},	-- hoa son
+	[11] = {1984, 1, 11, 120, "Kü n¨ng cÊp 120",	"Trung Vò L­u Phong"},	-- vuhon
+	[12] = {1894, 1, 12, 120, "Kü n¨ng cÊp 120",	"§¹m ChÝch Tr× Th­¬ng"},	-- tieudao
 }
 
 g_DescTable = {}		-- È«¾ÖÁÙÊ±¶Ô»°×Ö·û´®Êý×é

@@ -2836,13 +2836,100 @@ local tbFaction =
 			},
 		},
 	},
+	[11] =
+	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+
+		},
+	},	
+	[12] =
+	{
+		szShowName = "Vò Hån",
+		szFaction = "wuhun",
+		nShortFaction = "wh",
+		tbSkill = {1984, },--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+
+		},
+	},
+	[13] =
+	{
+		szShowName = "Tiªu Dao",
+		szFaction = "xiaoyao",
+		nShortFaction = "xy",
+		tbSkill = {1894, },--9x, 12x, 15x skills.txt
+		tbEquip =
+		{
+			{
+				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
+				nFirstEquipId = 4793,
+				tbEquipName =
+				{
+					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
+					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
+				},
+			},
+			{
+				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
+				nFirstEquipId = 4803,
+				tbEquipName =
+				{
+					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
+					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
+				},
+			}
+
+		},
+	},
 }
 
 local tbFactionSeries =
 {
 [1] = {1, 2},
 [2] = {3, 4},
-[3] = {5, 6},
+[3] = {5, 6, 11},
 [4] = {7, 8},
 [5] = {9, 10},
 }

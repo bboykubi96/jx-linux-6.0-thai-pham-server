@@ -457,6 +457,28 @@ SetRevPos(131,57)
 Msg2Player("Chóc Mõng Ng­êi §· Gia NhËp Ph¸i C«n L«n §­îc Trë Thµnh PhÊt TrÇn §Ö Tö")
 end
 
+function TieuDaoPhai()
+SetFaction("xiaoyao")
+SetLastFactionNumber(12)
+SetTask(12,10*256);
+SetCamp(3) SetCurCamp(3)
+add_xy(nAddSkill) SetRank(9)
+SetRevPos(131,57)
+--NewWorld(131, 1582, 3175)
+Msg2Player("Chóc Mõng Ng­êi §· Gia NhËp Ph¸i Tiªu Dao §­îc Trë Thµnh PhÊt TrÇn §Ö Tö")
+end
+
+function vuhon()
+SetFaction("kunlun")
+SetLastFactionNumber(11)
+SetTask(10,10*256);
+SetCamp(1) SetCurCamp(1)
+add_wh(nAddSkill) SetRank(90)
+SetRevPos(131,57)
+--NewWorld(131, 1582, 3175)
+Msg2Player("Chóc Mõng Ng­êi §· Gia NhËp Ph¸i Vò Hån §­îc Trë Thµnh PhÊt TrÇn §Ö Tö")
+end
+
 function HoaSonPhai()
 	if (GetSex() == 0) then
 		SetFaction("huashan")

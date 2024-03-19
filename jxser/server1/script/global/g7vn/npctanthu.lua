@@ -97,14 +97,28 @@ local tbFaction =
 		nShortFaction = "hs",
 		tbSkill = {1364, 1382, 1365, 1369, 1384},
 	},
+	[12] =
+	{
+		szShowName = "Vò Hån",
+		szFaction = "wuhun",
+		nShortFaction = "wh",
+		tbSkill = {1984, },
+	},
+	[13] =
+	{
+		szShowName = "Tiªu Dao",
+		szFaction = "xiaoyao",
+		nShortFaction = "xy",
+		tbSkill = {1894, },
+	},
 }
 local tbFactionSeries =
 {
 	[1] = {1, 2},
 	[2] = {3, 4},
-	[3] = {5, 6},
-	[4] = {7, 8},
-	[5] = {9, 10},
+	[3] = {5, 6, 11},
+	[4] = {7, 8, 12},
+	[5] = {9, 10, 13},
 }
 
 
@@ -362,6 +376,18 @@ AddMagic(1368,20)
 AddMagic(1369,20)
 AddMagic(210, 1)
 Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Hoa S¬n.")
+elseif GetLastFactionNumber() == 11 then
+AddMagic(1963,20)
+AddMagic(1987,20)
+AddMagic(1984,20)
+AddMagic(210, 1)
+Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Vò Hån.")
+elseif GetLastFactionNumber() == 12 then
+AddMagic(1891,20)
+AddMagic(1911,20)
+AddMagic(1894,20)
+AddMagic(210, 1)
+Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Tiªu Dao.")
 end
 else
 Talk(1, "", "Ng­¬i ®· nhËn råi kh«ng thÓ nhËn n÷a.")
@@ -454,6 +480,18 @@ AddMagic(1368,20)
 AddMagic(1369,20)
 AddMagic(210, 1)
 Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Hoa S¬n.")
+elseif GetLastFactionNumber() == 11 then
+AddMagic(1963,20)
+AddMagic(1987,20)
+AddMagic(1984,20)
+AddMagic(210, 1)
+Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Vò Hån.")
+elseif GetLastFactionNumber() == 12 then
+AddMagic(1891,20)
+AddMagic(1911,20)
+AddMagic(1894,20)
+AddMagic(210, 1)
+Talk(1,"","Chóc mõng b¹n ®· häc ®­îc tuyÖt kü cña Tiªu Dao.")
 end
 else
 Talk(1, "", "Ng­¬i ®· nhËn råi kh«ng thÓ nhËn n÷a.")

@@ -431,8 +431,12 @@ return 7
 elseif (GetTask(9) >= 10*256) and (GetTask(9) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
 return 9 
 -----------------------Hoa Son
-elseif (GetTask(11) >= 10*256) and (GetTask(9) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
+elseif (GetTask(11) >= 10*256) and (GetTask(11) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
 return 11 
+elseif (GetTask(12) >= 10*256) and (GetTask(12) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
+return 12
+elseif (GetTask(13) >= 10*256) and (GetTask(13) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
+return 13 
 ----------------------------------
 elseif (GetTask(5) >= 10*256) and (GetTask(5) ~= 75*256) then -- script viet hoa By http://tranhba.com  Vâ §­¬ng hoÆc m«n ph¸i nµy xuÊt s­ 
 return 8

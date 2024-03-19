@@ -44,31 +44,29 @@ end
 		--{"NhËn ®Òn bï 8 TTL ®Æc biÖt sù cè 26-12", g7denbu8TTL},	
 	--	{"NhËn §å Test", tbhoangkimbk},
 	--{"NhËn M¶nh Tµng B¶o §å", layevent},
-{"NhËn cÊp 190.", NhanDiemKinhNghiem},
-{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
+	{"NhËn cÊp 200.", Nhancap200},
+--{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 	{"NhËn Set HKMP ", sethkmp},
 	{"Xãa Hµnh Trang ", ClearBagCell},
 --	{"Hép Trang BŞ Xanh", nhanmanhthienthach},
 		{"NhËn TiÒn §ång + TiÒn V¹n", LayTienDOngtest},
 	--		{"NhËn HuyÒn Tinh Kho¸ng Th¹ch", NhanPhiPhong},
-{"NhËn NhÊt Kû + VLMT + TTK.", NhanChienCo},
-{"NhËn LÖnh Bµi + Phi Tèc + ChiÕn Cæ", layhongngoc},
+--{"NhËn NhÊt Kû + VLMT + TTK.", Nhannhatky},
+	{"NhËn LÖnh Bµi + Phi Tèc + ChiÕn Cæ", layhongngoc},
 	--{"NhËn Phóc Duyªn", NhanDoLongDao},
-		--{"NhËn §å Hç Trî T©n Thñ", NhanDoHoTroTanThu},
 	--	{"NhËn Hç Trî T©n Thñ", NhanHoTroThienKiem},
-		--{"NhËn VËt PhÈm Hæ Trî", NhanDoHoTroTanThu},
 	--	{"§çi Tªn Nh©n VËt Game", DoiTenNV},
 	--	{"Thay §æi Mµu PK.", trangthai1},
 	--	{"Thay §æi Giíi Tİnh", chuyen_gt},
 	--{"TÈy tñy Nh©n VËt + Gi¶m PK.",TayTuyFree},
 	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
 	--	{"Chøc Hç Trî Kh¸c", MenuFree},
-{"NhËn Trang BŞ  Cùc PhÈm", NhanDoHoTroTanThu},
+	{"NhËn Trang BŞ AB,DQ MAX", NhanDoHoTroTanThu},
 	{"NhËn Ngùa ChiÕu D¹ + Phi V©n + B«n Tiªu", NhanNguaVip},
 
 	
 
-	{"NhËn bİ kİp 12x", baoruonghkmpmax},
+	{"NhËn bİ kİp 9x, 12x", bikip90120},
 --	{"NhËn NhÉn Kim Quang", nhannhankimquang},
 --		{"NhËn Siªu Quang", NhanPhienVu},
 	
@@ -79,7 +77,7 @@ end
 	--{"NhËn B¶o R­¬ng Vò Khİ HKMP Maxx", laybaoruongmax},
 {"NhËn Nh¹c V­¬ng KiÕm LÔ Bao", laynhacvuongkiem},
 
---	{"NhËn Thñy Tinh + THBT ", NhanTinhNgoc},
+	{"NhËn Thñy Tinh + THBT ", NhanTinhNgoc},
 --	{"NhËn Phi V©n Th¹ch ", NhanDaiTinhNgoc},
 	--{"NhËn M·nh §å Viªm §Õ ", NhanManhViemDe},
 	--{"NhËn M·nh §å HKMP", NhanManhDoHKMP},
@@ -645,16 +643,16 @@ function phiphung()
 		AddQualityItem(2,0,5,3,10,3,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,5,3,10,4,0,-1,-1,-1,-1,-1,-1)
 end
-function NhanChienCo()
+function Nhannhatky()
  if CalcFreeItemCellCount()<10 then 
 	Say("Hµnh trang ko ®ñ 10 « trèng")
 	return
  end
 
 		local tbAwardcc={
-	{szName="Hép Quµ Xanh", tbProp={6,1,2126,1,0,0},nCount = 1},
-	{szName="Hép Quµ Xanh", tbProp={6,1,22,1,0,0},nCount = 16},
-	{szName="Hé Tiªu LÖnh", tbProp={6,1,26,1,0,0},nCount = 16},
+	{szName="NhÊt Kû", tbProp={6,1,2126,1,0,0},nCount = 1},
+	{szName="TÈy Tñy Kinh", tbProp={6,1,22,1,0,0},nCount = 16},
+	{szName="Vâ L©m MËt TŞch", tbProp={6,1,26,1,0,0},nCount = 16},
 }
 tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
 end
@@ -701,7 +699,7 @@ tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
 			Talk(1,"","<color=green> H·y §Ó Trèng 5 ¤ Råi NhËn Th­ëng...!")
 	end
 end
-function baoruonghkmpmax()
+function bikip90120()
 if CalcFreeItemCellCount() >= 10 then
 
 	local Index = AddItem(6,1,1125,0,0,0,0) SetItemBindState(Index, -2)--bk 120
@@ -749,9 +747,9 @@ end
 function layhongngoc()
 	if CalcFreeItemCellCount() >= 10 then
 	local tbAwardcc={
-	{szName="LÖnh bµi", tbProp={6,1,156,1,0,0},nCount = 100},
+	{szName="ChiÕn Cæ", tbProp={6,1,156,1,0,0},nCount = 100},
 	{szName="LÖnh bµi", tbProp={6,1,157,1,0,0},nCount = 100},
-	{szName="LÖnh bµi", tbProp={6,1,190,1,0,0},nCount = 100},
+	{szName="Phi Tèc", tbProp={6,1,190,1,0,0},nCount = 100},
 }
 tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
 	else
@@ -762,7 +760,7 @@ function LayTienDOngtest()
 	if (CalcEquiproomItemCount(4,417,1,-1)>=2000) then
 		Talk(1, "", "TiÒn ®ång trong tói ng­¬i dïng ch­a hÕt th× lÊy lµm g× cho nhiÒu.")
 	else
-		Earn(100000000)
+		Earn(10000000)
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
@@ -835,10 +833,10 @@ end
 function NhanTinhNgoc()
 	if CalcFreeItemCellCount() >= 10 then
 		local tbAwardcc={
-{szName="Thñy tinh", tbProp={4,238,1,1},nCount = 100},
-{szName="Thñy tinh", tbProp={4,239,1,1},nCount = 100},
-{szName="Thñy tinh", tbProp={4,240,1,1},nCount = 100},
-{szName="THBT", tbProp={4,353,1,1},nCount = 100},
+{szName="Thñy tinh", tbProp={4,238,1,1},nCount = 1},
+{szName="Thñy tinh", tbProp={4,239,1,1},nCount = 1},
+{szName="Thñy tinh", tbProp={4,240,1,1},nCount = 1},
+{szName="THBT", tbProp={4,353,1,1},nCount = 6},
 
 }
 tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
@@ -896,11 +894,11 @@ local tbSay = {
 --"NhËn Trang BŞ §å Xanh./trangbixanh",
 --"NhËn Lb T©n Thñ + Skill ThiÕu + Ngùa./NhanHoTroTanThu",
 --"NhËn 1 Mãn HKMP Lùa Chän./hkmpvip1",
---NhËn 1 Set Kim Quang Lùa Chän./SetKimQuang",
-"NhËn Set An Bang Max./NhanAnBangTieu",
-"NhËn Set Nhu T×nh Max./Nhannhutinhtanthu",
-"NhËn Set §Şnh Quèc Max./Nhandinhquoctanthu",
-"NhËn Set HiÖp Cèt Max./Nhanhiepcottanthu",
+"NhËn 1 Set Kim Quang ./SetKimQuang",
+"NhËn Set An Bang (Cùc PhÈm)./NhanAnBangcucpham",
+"NhËn Set Nhu T×nh (Cùc PhÈm)./Nhannhutinhtanthu",
+"NhËn Set §Şnh Quèc (Cùc PhÈm)./Nhandinhquoccucpham",
+"NhËn Set HiÖp Cèt (Cùc PhÈm)./Nhanhiepcotcucpham",
 "Th«i ta kh«ng muèn n÷a./no"
 }
 Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
@@ -912,64 +910,65 @@ if (CountFreeRoomByWH(3,4,1) < 1) then
 		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x4 « trèng");
 		return 1;
 	end
-	local Index = AddGoldItem(0,194) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,195) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,196) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
---	local Index = AddGoldItem(0,197) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,198) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,199) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,200) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,201) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
---	local Index = AddGoldItem(0,202) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,194) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,195) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,196) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,197) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,198) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,199) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,200) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,201) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,202) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,203) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
 Msg2Player("NhËn ®­îc bé trang bŞ Kim Quang VIP.")
 end
 
-function NhanAnBangTieu()
+function NhanAnBangcucpham()
 if (CountFreeRoomByWH(3,3,1) < 1) then
 		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
 		return 1;
 	end
-	local Index = AddGoldItem(0,408) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,409) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,410) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,411) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-Msg2Player("NhËn ®­îc bé trang søc An Bang Hoµn Mü.")
+	local Index = AddGoldItem(0,408) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,409) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,410) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,411) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+Msg2Player("NhËn ®­îc bé trang søc An Bang Cùc PhÈm.")
 end
 
-function Nhannhutinhtanthu()
+function Nhannhutinhcucpham()
 if (CountFreeRoomByWH(3,3,1) < 1) then
 		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
 		return 1;
 	end
-	local Index = AddGoldItem(0,416) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,417) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,418) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,419) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,416) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,417) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,418) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,419) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
 Msg2Player("NhËn ®­îc bé trang bŞ Nhu T×nh.")
 end
 
-function Nhandinhquoctanthu()
+function Nhandinhquoccucpham()
 if (CountFreeRoomByWH(3,3,1) < 1) then
 		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
 		return 1;
 	end
-	local Index = AddGoldItem(0,403) SyncItem(Index) SetItemBindState(Index, -2)-- DQ Tieu
-	local Index = AddGoldItem(0,404) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,405) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,406) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,407) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,403) SyncItem(Index) --SetItemBindState(Index, -2)-- DQ Tieu
+	local Index = AddGoldItem(0,404) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,405) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,406) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,407) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
 Msg2Player("NhËn ®­îc Trang BŞ §Şnh Quèc!")
 end
 
-function Nhanhiepcottanthu()
+function Nhanhiepcotcucpham()
 if (CountFreeRoomByWH(3,3,1) < 1) then
 		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
 		return 1;
 	end
-	local Index = AddGoldItem(0,412) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,413) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,414) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,415) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,412) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,413) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,414) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
+	local Index = AddGoldItem(0,415) SyncItem(Index) --SetItemBindState(Index, -2)-- an bang
 Msg2Player("NhËn ®­îc Trang BŞ HiÖp Cèt!")
 end
 
@@ -1042,9 +1041,9 @@ function NhanPhienVu()
 local Index = AddItem(0,10,13,10,0,0,0) -- Phi Van
 end
 -------------------------------------------------code cua quy ----------------------------------
-function NhanDiemKinhNghiem()
-	if GetLevel()<190 then
-			local nAddLevel =190 - GetLevel()
+function Nhancap200()
+	if GetLevel()<200 then
+			local nAddLevel =200 - GetLevel()
 
 		ST_LevelUp(nAddLevel)
 

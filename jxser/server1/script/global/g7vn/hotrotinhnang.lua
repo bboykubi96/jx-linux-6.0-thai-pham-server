@@ -2495,6 +2495,27 @@ local tbFaction =
 		nShortFaction = "kl",
 		tbSkill = {372, 375, 717, 1080, 1081},
 	},
+	[11] =
+	{
+		szShowName = "Hoa s¬n",
+		szFaction = "huashan",
+		nShortFaction = "hs",
+		tbSkill = {1364, 1382, 1365, 1369, 1384},
+	},
+	[12] =
+	{
+		szShowName = "Vò Hån",
+		szFaction = "wuhun",
+		nShortFaction = "wh",
+		tbSkill = {1984, },
+	},
+	[13] =
+	{
+		szShowName = "Tiªu Dao",
+		szFaction = "xiaoyao",
+		nShortFaction = "xy",
+		tbSkill = {1894, },
+	},
 }
 
 local tbEquipFreeCell =
@@ -2508,9 +2529,9 @@ local tbFactionSeries =
 {
 	[1] = {1, 2},
 	[2] = {3, 4},
-	[3] = {5, 6},
-	[4] = {7, 8},
-	[5] = {9, 10},
+	[3] = {5, 6, 11},
+	[4] = {7, 8, 12},
+	[5] = {9, 10, 13},
 }
 
 function check_faction()
