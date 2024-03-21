@@ -5052,10 +5052,10 @@ LÔ Bao TiÒn V¹n	6	1	4515	\spr\item\twzhuanyun\zhuanyunbao_small.spr	449	1	1	Më r
 LÔ Bao TiÒn V¹n	6	1	4516	\spr\item\twzhuanyun\zhuanyunbao_small.spr	449	1	1	Më ra nhËn ®­îc 5-10 V¹n L­îng.			1	0	\script\global\g7vn\item\lebaotiendong3.lua	0	1	1	0	0		50	0	0	0	0	0	0	0	0	0
 B¶o R­¬ng §å Xanh	6	1	4517	\spr\item\script\item_baihubaoxiang.spr	41	1	1	Më ra ngÉu nhiªn nhËn 1 trong 6 lo¹i hép ®å xanh.		0	1	0	\script\global\g7vn\item\ruongdoxanh6.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
 B¶o R­¬ng BÝ B¶o	6	1	4518	\spr\vng\item\xichlanchibao.spr	387	1	1	"R­¬ng b¸u, bªn trong cã chøa phÇn th­ëng."		0	1	0	\script\global\g7vn\item\ruongbibao.lua	0	1	1	0	0		50	0	0	0	0	0	0	0	0	0
-R­¬ng Trang BÞ HiÖp Cèt	6	1	4519	\spr\vng\item\130320_event_cuoi_thang_3\ruongbac.spr	387	1	1	Bªn trong chøa 1 trang bÞ HiÖp Cèt			1	0	\script\global\g7vn\item\trangbi\ruonghiepcot.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
-R­¬ng Trang BÞ §Þnh Quèc	6	1	4520	\spr\vng\item\130320_event_cuoi_thang_3\ruongbac.spr	387	1	1	Bªn trong chøa 1 trang bÞ §Þnh Quèc			1	0	\script\global\g7vn\item\trangbi\ruongdinhquoc.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
-R­¬ng Trang BÞ Nhu T×nh	6	1	4521	\spr\vng\item\130320_event_cuoi_thang_3\ruongbac.spr	387	1	1	Bªn trong chøa 1 trang bÞ Nhu T×nh			1	0	\script\global\g7vn\item\trangbi\ruongnhutinh.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
-R­¬ng Trang BÞ An Bang	6	1	4522	\spr\vng\item\130320_event_cuoi_thang_3\ruongbac.spr	387	1	1	Bªn trong chøa 1 trang bÞ An Bang			1	0	\script\global\g7vn\item\trangbi\ruonganbang.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
+R­¬ng Trang BÞ HiÖp Cèt	6	1	4519	\spr\item\ruonghk\ruonghiepcot.spr	387	1	1	Bªn trong chøa 1 trang bÞ HiÖp Cèt			1	0	\script\global\g7vn\item\trangbi\ruonghiepcot.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
+R­¬ng Trang BÞ §Þnh Quèc	6	1	4520	\spr\item\ruonghk\ruongdinhquoc.spr	387	1	1	Bªn trong chøa 1 trang bÞ §Þnh Quèc			1	0	\script\global\g7vn\item\trangbi\ruongdinhquoc.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
+R­¬ng Trang BÞ Nhu T×nh	6	1	4521	\spr\item\ruonghk\ruongnhutinh.spr	387	1	1	Bªn trong chøa 1 trang bÞ Nhu T×nh			1	0	\script\global\g7vn\item\trangbi\ruongnhutinh.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
+R­¬ng Trang BÞ An Bang	6	1	4522	\spr\item\ruonghk\ruonganbang.spr	387	1	1	Bªn trong chøa 1 trang bÞ An Bang			1	0	\script\global\g7vn\item\trangbi\ruonganbang.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
 R­¬ng Trang BÞ HKMP	6	1	4523	\spr\vng\item\130320_event_cuoi_thang_3\ruongbac.spr	387	1	1	Bªn trong chøa 1 trang bÞ HKMP			1	0	\script\global\g7vn\item\trangbi\ruonghkmp.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
 Ph¸o tiÓu	6	1	4524	\spr\item\script\spring2007\bianpao_small.spr	462	1	1	1 trong 3 lo¹i nguyªn liÖu ghÐp Phong Ph¸o			1	1	\script\item\noscript.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0
 Ph¸o trung	6	1	4525	\spr\item\script\spring2007\bianpao_middle.spr	462	1	2	2 trong 3 lo¹i nguyªn liÖu ghÐp Phong Ph¸o			1	1	\script\item\noscript.lua	0	1	1	0	0		500	0	0	0	0	0	0	0	0	0

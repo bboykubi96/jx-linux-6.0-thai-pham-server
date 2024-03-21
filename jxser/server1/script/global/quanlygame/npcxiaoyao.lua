@@ -10,7 +10,7 @@ Include("\\script\\global\\g7vn\\chuyenmonphai.lua")
 
 function main() 
 dofile("script/global/quanlygame/npcxiaoyao.lua");
-	local szTitle = "<npc>LÇn nµy ph¸i <color=blue>Tiªu Dao<color> sÎ ®­a tuyÖt kØ vâ l©m ®i tung hoµnh thiªn h¹."
+	local szTitle = "<npc>LÇn nµy ph¸i <color=yellow>Tiªu Dao<color> sÎ ®­a tuyÖt kØ vâ l©m ®i tung hoµnh thiªn h¹."
 	local tbOpt =
 	{
 		{"Gia NhËp Tiªu Dao Ph¸i", xingianhap},
@@ -27,7 +27,7 @@ end
 
 function xingianhap()
 if (GetCamp() == 0) and (GetSeries() == 4) and (GetLevel() >= 10) and  (GetTask(169) ~= 12) then		
-Say("<color=red>Tiªu Dao KiÕm Kh¸ch<color>: Ph¸i <color=cyan>Tiªu Dao<color> dïng KiÕm Ph¸p vµ CÇm lµm Vò KhÝ, lµ 1 trong nh÷ng tuyÖt kØ vâ c«ng trong thiªn h¹!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
+Say("<color=red>Tiªu Dao MËt Sø<color>: Ph¸i <color=cyan>Tiªu Dao<color> dïng KiÕm Ph¸p vµ CÇm lµm Vò KhÝ, lµ 1 trong nh÷ng tuyÖt kØ vâ c«ng trong thiªn h¹!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
 elseif (GetCamp() == 0) and (GetSeries() ~= 4) and (GetLevel() >= 199) and (GetSex() == 0) and  (GetTask(169) ~= 12) then
 Say("<color=white>ChØ cã ng­êi míi tao nh©n vËt lµ hÖ Thæ míi cã thÓ gia nhËp Tiªu Dao ph¸i")
 elseif (GetTask(169) >= 12)  then

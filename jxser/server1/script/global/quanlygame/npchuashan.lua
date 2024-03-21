@@ -27,7 +27,7 @@ end
 
 function xingianhap()
 if (GetCamp() == 0) and (GetSeries() == 2) and (GetLevel() >= 10) and  (GetTask(169) ~= 10) then		
-Say("<color=red>Hoa S¬n NhÞ L·o<color>: Ph¸i <color=cyan>Hoa S¬n<color> ta ®· kh«ng tham gia giang hå h¬n 10 n¨m nay, lÇn nµy t¸i xuÊt ¾t sÏ khiÕn bän giang hå tµ ph¸i ph¶i khiÕp sî mét phen!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
+Say("<color=red>Hoa S¬n KiÕm Kh¸ch<color>: Ph¸i <color=cyan>Hoa S¬n<color> ta ®· kh«ng tham gia giang hå h¬n 10 n¨m nay, lÇn nµy t¸i xuÊt ¾t sÏ khiÕn bän giang hå tµ ph¸i ph¶i khiÕp sî mét phen!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
 elseif (GetCamp() == 0) and (GetSeries() ~= 2) and (GetLevel() >= 199) and (GetSex() == 0) and  (GetTask(169) ~= 10) then
 Say("<color=white>ChØ cã ng­êi míi tao nh©n vËt lµ hÖ thñy míi cã thÓ gia nhËp hoa s¬n ph¸i")
 elseif (GetTask(169) >= 10)  then
@@ -74,7 +74,8 @@ local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
    		--AddMagic(1384, 20) -- than quang toan nhieu
    --AddMagic(210, 1)
    SetTask(169,10)
-   SetFaction("emei")
+   SetFaction("emei");
+   SetFaction("cuiyan")
    SetFaction("huashan");  
 		SetLastFactionNumber(10)
 		SetCamp(3)

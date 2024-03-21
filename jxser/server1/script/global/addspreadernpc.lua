@@ -29,9 +29,9 @@ spreadernpc = {
 --{1374,80,4,37,1742,3064,0,"Hoa S¬n L·o TÈu",0,"\\script\\missions\\hsbattle\\hsbattlemanager.lua"},---hoa son
 --{1374,80,4,78,1607,3232,0,"Hoa S¬n L·o TÈu",0,"\\script\\missions\\hsbattle\\hsbattlemanager.lua"},---hoa son
 
-{1442,80,4,53,1632,3191,0,"Hoa S¬n Èn SÜ",0,"\\script\\global\\quanlygame\\npchuashan.lua"},---hoa son
-{1442,80,4,53,1624,3166,0,"Tiªu Dao KiÕm Kh¸ch",0,"\\script\\global\\quanlygame\\npcxiaoyao.lua"},---hoa son
-{1442,80,4,53,1618,3170,0,"HËu Qu©n Vò Hån",0,"\\script\\global\\quanlygame\\npchauquanvuhon.lua"},---hoa son
+{1442,80,4,53,1632,3191,0,"Hoa S¬n KiÕm Kh¸ch",0,"\\script\\global\\quanlygame\\npchuashan.lua"},---hoa son
+{1420,80,4,53,1624,3166,0,"Tiªu Dao MËt Sø",0,"\\script\\global\\quanlygame\\npcxiaoyao.lua"},---tieu dao npc 1420
+--{1442,80,4,53,1618,3170,0,"HËu Qu©n Vò Hån",0,"\\script\\global\\quanlygame\\npchauquanvuhon.lua"},---hoa son
 
 
 
