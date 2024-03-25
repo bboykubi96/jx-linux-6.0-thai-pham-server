@@ -19,31 +19,35 @@ dofile("script/global/g7vn/baoruonghk/caibang.lua")
 if CalcFreeItemCellCount() < 20 then
 		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 20 « trèng!")
 		return 1;
-end
-if CalcEquiproomItemCount(6,1,4294,-1) < 1 then
-Talk(1, "", "Bug h¶? Chim Cót!!!!")
-		return 1;
-end
-local a = random(1,15)
-if a==1 or a==2 then
+	end
+--if CalcEquiproomItemCount(6,1,4294,-1) < 1 then
+--Talk(1, "", "Bug h¶? Chim Cót!!!!")
+--		return 1;
+--end
+local a = random(1,17)
+if a==1 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,91},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 --Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §ång Cõu Phi Long §Çu hoµn.")
 end
-if a==3 or a==4 then
+if a==2 or a==3 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,92},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 --Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §ång Cõu Gi¸ng Long C¸i Y.")
 end
-if a==5 or a==6 then
+if a==4 or a==5 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,93},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 --Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §ång Cõu TiÒm Long Yªu §¸i.")
 end
-if a==7 then
-tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,99},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
---Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §Þch Kh¸i CÈu TÝch B× Hé uyÓn.")
+if a==6 then
+tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,94},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
+--Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §ång Cõu Kh¸ng Long Hé UyÓn.")
 end
-if a==8 or a==9 then
+if a==7 or a==8 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,95},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 ----Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §ång Cõu KiÕn Long Ban ChØ.")
+end
+if a==9 then
+tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,96},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
+----Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §Þch Kh¸i Lôc Ngäc Tr­îng.")
 end
 if a==10 or a==11 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,97},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
@@ -54,11 +58,15 @@ tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,98},nQuality=1,nCount=1,C
 ----Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §Þch Kh¸i TriÒn M·ng yªu ®¸i.")
 end
 if a==14 or a==15 then
+tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,99},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
+----Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §Þch Kh¸i CÈu TÝch B× Hé uyÓn.")
+end
+if a==16 or a==17 then
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,100},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 ----Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> §Þch Kh¸i Th¶o Gian Th¹ch giíi.")
 end
 
-ConsumeEquiproomItem(1, 6,1, 4294,-1)
+--ConsumeEquiproomItem(1, 6,1, 4294,-1)
 end
 
 _Message = function (nItemIdx)
