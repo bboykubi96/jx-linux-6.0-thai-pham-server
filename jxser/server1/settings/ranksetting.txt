@@ -80,8 +80,8 @@ RANKID	RANKSTR	FACTION
 79	TrÊn Bang Nguyªn So¸i	8
 80	U Minh Quû V­¬ng	9
 81	Th¸nh Gi¸o Tr­ëng L·o	10
-82	H¹ng 1	11
-83	H¹ng 2	11
+82	V« L­îng Thiªn T«n	11
+83	Thiªn S¬n Tr­ëng L·o	12
 84	H¹ng 3	11
 85	H¹ng 4	11
 86	H¹ng 5	11

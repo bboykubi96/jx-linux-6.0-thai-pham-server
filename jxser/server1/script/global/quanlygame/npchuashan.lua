@@ -80,7 +80,7 @@ local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
 		SetLastFactionNumber(10)
 		SetCamp(3)
 		SetCurCamp(3)
-		SetRank(87)
+		SetRank(82)
 SetSeries(2)
 --ConsumeEquiproomItem(200,4,417,1,1)
 SaveNow()		

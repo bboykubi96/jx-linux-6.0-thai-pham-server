@@ -2477,6 +2477,7 @@ tinsert(tbSay,"Thiªn NhÉn./xunghieu8")
 tinsert(tbSay,"Vâ §ang./xunghieu9")
 tinsert(tbSay,"C«n L«n./xunghieu10")
 tinsert(tbSay,"Hoa S¬n./xunghieu11")
+tinsert(tbSay,"Tiªu Dao./xunghieu12")
 tinsert(tbSay,"Tho¸t/no")
 tinsert(tbSay,"Trë l¹i")
 Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y chän M«n Ph¸i  !", getn(tbSay), tbSay)
@@ -2520,11 +2521,15 @@ Msg2Player("B¹n ®­îc x­ng hiÖu: HuyÒn Vâ Ch©n Nh©n.")
 end
 function xunghieu10()
 SetRank(75)
-Msg2Player("B¹n ®­îc x­ng hiÖu: Hé Ph¸i Ch©n Qu©n.")
+Msg2Player("B¹n ®­îc x­ng hiÖu: Hé Ph¸p Ch©n Qu©n.")
 end
 function xunghieu11()
 SetRank(89)
 Msg2Player("B¹n ®­îc x­ng hiÖu: V« L­îng Thiªn T«n.")
+end
+function xunghieu12()
+SetRank(87)
+Msg2Player("B¹n ®­îc x­ng hiÖu: Thiªn S¬n Tr­ëng L·o.")
 end
 -----------------------------------------------------------------------------------------------
 local tbFaction =

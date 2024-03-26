@@ -144,9 +144,9 @@ if HaveMagic(361)~=-1 then
 --	if GetLevel()<150 then
 --	local nAddLevel =150 - GetLevel()
 --	ST_LevelUp(nAddLevel)
-	--end
+	--end--
 if GetTask(4990)<1 then
-		local nAddLevel =30 - GetLevel()
+		local nAddLevel =10 - GetLevel()
 		ST_LevelUp(nAddLevel)
 		SetTask(4990,1)
 		local tbAwardgift = {

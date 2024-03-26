@@ -141,16 +141,18 @@ DelMagic(1003,20)
 DelMagic(1310,20)
 Msg2Player("B¹n §· Xãa Kü N¨ng GM Thµnh C«ng")
 end
+
 function nhanvongsang1()
-	if GetLevel()>=80 then
+	if GetLevel()>=79 then
 		Say("ChØ nhËn ®­îc ®Õn cÊp 80")
 		return
 	end
-	if GetSkillState(1512)>=1 then
-		RemoveSkillState(1512,20,3,559872000,1) 
+	if GetSkillState(1995)>=1 then
+		RemoveSkillState(1995,20,3,559872000,0) 
 	end
-		PlayerFunLib:AddSkillState(1512,20,3,18*60*60*24*60,1)
+		PlayerFunLib:AddSkillState(1995,20,3,18*60*60*24*60,0)
 end
+
 function trangthai1()
 	local tbOpt =
 	{

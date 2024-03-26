@@ -92,7 +92,7 @@ MissleId	MissleName	MoveKind	FollowKind	ColFollowTarget	MissleHeight	CollidRange
 91	N­íc ®éc 	1	0	0	10	1	0	1	0	15	20	0	0	0	0	0	0		1	1	0	0	0	0	0	0	0	0				\spr\skill\NPC\mag_npc_¶¾Ë®.spr	"64,16,1"		\spr\skill\NPC\mag_npc_¶¾Ë®ÏûÊ§.spr	"30,1,2"																	107	32	115	90
 92	Vßng trßn hç trî ®ång ®éi	0	0	0	2	10	1	10	0	2	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0																									255	255	255	0
 93	B¾n tªn 	1	0	0	10	1	0	1	0	15	20	0	0	0	0	0	0		1	1	0	0	0	0	0	0	0	0				\spr\skill\NPC\mag_npc_¼ý.spr	"16,16,1"																				255	247	214	90
-94	Vßng trßn g©y s¸t th­¬ng 	0	0	0	2	8	0	12	0	2	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0										\spr\skill\Îå¶¾½Ì\bz_du1_±¬Õ¨.spr	"6,1,1"														255	255	255	0
+94	Vßng trßn g©y s¸t th­¬ng 	0	0	0	2	5	0	10	0	2	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0										\spr\skill\Îå¶¾½Ì\bz_du1_±¬Õ¨.spr	"6,1,1"														255	255	255	0
 95	Nh©n KiÕm Hîp NhÊt 11	0	0	1	20	1	0	1	0	10	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0				\spr\skill\Îäµ±\wd_09_ÈË½£ºÏÒ»½£.spr	"11,1,1"					\spr\skill\Îäµ±\Bz_dian1_±¬Õ¨.spr	"8,1,1"														255	255	255	90
 96	B¹o Vò Lª Hoa	0	0	1	15	1	0	1	17	90	0	0	0	1	1	1	16	0	0	0	0	0	1	0	0	0	0	0				\spr\skill\ÌÆÃÅ\tm_07_Ð¡Àî·Éµ¶.spr	"90,1,1"	\sound\skill\°þ¼«¶ø¸´.wav																			255	255	231	90
 97	C«ng kÝch C«n bæng 	1	0	1	10	1	0	1	0	3	30	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0										\spr\skill\²¹³ä\¹÷°ô±¬Õ¨.spr	"4,1,2"	\sound\skill\µ¶½£´ÌÖÐÉù.wav										\spr\skill\²¹³ä\µ¶½£±¬Õ¨.spr	"4,1,1"		181	203	255	0
