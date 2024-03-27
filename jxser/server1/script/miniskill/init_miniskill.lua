@@ -33,7 +33,7 @@ function check_skill()
 			[12] = {1920},
 	}
 
-	local medicine = {440, 258, 261, 450, 441} -- ThuËc
+	local medicine = {966, 979, 1995, 440, 441, 442, 258, 261, 450, } -- ThuËc
 	local debuff_skill = {	73, 64, 69, 70, 67, 356, 72, 390, 719, 203, -- 5D -- skill c„ hπi
 			349, 351, -- DM
 			136, 137, 140, 364, 143, 391, 723, -- TN
@@ -75,8 +75,8 @@ function check_skill()
 	end
 	
 	local max_faction_num = 13 -- chÿnh v“ 10 n’u chÿ ch¨i 10 ph∏i
-	local max_buff_allow = 15 -- 
-	local max_buff_and_debuff_allow = 10 -- 
+	local max_buff_allow = 10 -- 
+	local max_buff_and_debuff_allow = 20 -- 
 	for j =1, max_faction_num do
 		if skill_team[j] and j~=faction_id+1 then
 			for i = 1, getn(skill_team[j]) do

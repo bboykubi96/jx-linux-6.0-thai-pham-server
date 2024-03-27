@@ -148,11 +148,11 @@ function nhanvongsang1()
 		return
 	end
 	if GetSkillState(1995)>=1 then
-		RemoveSkillState(1995,20,3,559872000,0) 
+		RemoveSkillState(1995,20,3,1555200,0) --559872000 (old number)
 	end
-		PlayerFunLib:AddSkillState(1995,20,3,18*60*60*24*60,0)
+		PlayerFunLib:AddSkillState(1995,20,3,18*60*60*24,0)
 end
-
+ 
 function trangthai1()
 	local tbOpt =
 	{
