@@ -6,7 +6,7 @@ Say("Thuèc nhËp khÈu trŞ b¸ch bÖnh !", 3,"Giao dŞch /yes","Mua M¸u Nhanh (1 L­în
 end; 
 
 function yes() 
-Sale(12);  			--µ¯³ö½»Ò×¿ò
+Sale(12);  			--µ¯³ö½»Ò×
 end; 
 
 function no() 
