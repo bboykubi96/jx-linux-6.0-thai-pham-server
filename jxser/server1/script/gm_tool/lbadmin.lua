@@ -501,14 +501,14 @@ end
 		{"NhËn Th­ëng C«ng Thµnh ChiÕn",nhanthuongcongthanhchien},
 		{"NhËn Th­ëng Thiªn Tö",nhanthuongthientu},
 		{"NhËn LÔ Bao Nh¹c V­¬ng KiÕm",NhanTinVatMonPhai},
-	--	{"NhËn Ph¸t Th­ëng Top CÊp ",nhanthuongphattop},
+		--{"NhËn Ph¸t Th­ëng Top CÊp ",nhanthuongphattop},
 		--{"NhËn TuÖ Thanh + Duyªn Qu©n ",TueThanhDuyenQuan},
-		{"NhËn §Õ hoµng chi giíi + Cµn Kh«n Giíi ChØ + Thiªn Tö Chi Giíi ",CanKhonHoangDe},
+		--{"NhËn §Õ hoµng chi giíi + Cµn Kh«n Giíi ChØ + Thiªn Tö Chi Giíi ",CanKhonHoangDe},
 		{"NhËn Cµn Kh«n Song TuyÖt Béi",NhanCanKhonSongTuyetBoi},
 		--{"Set M·nh S­ Theo Ngµy",NhanDoVat},				
 	--	{"NhËn MÆt ChiÕn Tr­êng V­¬ng Gi¶",MatNaTheoNgay},
 		--{"NhËn MÆt N¹ 3 CÊp Theo Ngµy",MatNaTheoNgay3},
-		--{"Phi Phong V« Cùc( §¹i Th¸nh)",VoCucDaiThanh},
+		{"Phi Phong V« Cùc( §¹i Th¸nh)",VoCucDaiThanh},
 		--{"T©n NhËm Hµnh Ên Gi¸m (H¹)",TanNhamHa},
 		--{"T©n NhËm Hµnh Ên Gi¸m (Trung)",TanNhamTrung},
 		--{"T©n NhËm Hµnh Ên Gi¸m (Th­îng)",TanNhamThuong},
@@ -519,7 +519,7 @@ end
 		--{"NhÉn 5 NhÉn Max",CanKhonLuaChonMax},
 		--{"NhËn Nhat ky 7 ngay",NhanTinVatMonPhai},
 		--{"NhÉn Nguyªn LiÖu Test",NhanNguyenLieuTest},
-		--{"NhÉn 5000 HHL",HHL5000},
+		{"NhÉn 5000 HHL",HHL5000},
 		{"Tho¸t"},	
 	}
 	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Chän Chøc N¨ng CÇn Hç Trî<bclr>", tbOpt)
@@ -889,8 +889,8 @@ function ChucNangGM()
 		{"N©ng §iÓm Kinh NghiÖm", diemexp},
 		{"NhËn §iÓm - Vßng S¸ng", hotro},
 	--	{"Gäi Siªu Boss", CallBossad},
-		{"NhËn Trang BÞ", dohoangkim},
-		{"NhËn Trang BÞ Maxop", dohoangkimmax},
+		--{"NhËn Trang BÞ", dohoangkim},
+		--{"NhËn Trang BÞ Maxop", dohoangkimmax},
 		{"Thó C­ìi - Ngo¹i Trang", fifong},
 		{"Ta Muèn LÊy VËt PhÈm - Giíi ChØ", show_item},
 		{"Thay §æi Tr¹ng Th¸i", trangthai},
@@ -904,20 +904,20 @@ function ChucNangGM()
 		{"Hoµng Kim M«n Ph¸i - §å Xanh - §å TÝm", hkmpdoxanh},
 		{"Tho¸t",},
 	}
-	if GetAccount() == "kimluyen2002" then
-	--	tinsert(tbOpt, 2, {"LÊy §å Theo ID", LayDoTheoID}) 
-	tinsert(tbOpt, 4, {"LÊy Xu", layxuadmin}) 
-	tinsert(tbOpt, 4, {"LÊy §å Test", laydotesst}) 
+	if GetAccount() == "testgame4" then
+	--tinsert(tbOpt, 2, {"LÊy §å Theo ID", LayDoTheoID}) 
+	--tinsert(tbOpt, 4, {"LÊy Xu", layxuadmin}) 
+	--tinsert(tbOpt, 4, {"LÊy §å Test", laydotesst}) 
 	end
 	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Chän Chøc N¨ng CÇn Hç Trî<bclr>", tbOpt)
 end
 function laydotesst()
 for i=747,770 do
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,i,1,1,0,0},nCount=50,},}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,i,1,1,0,0},nCount=10,},}, "test", 1);
 end
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,238,1,1,0,0},nCount=50,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,239,1,1,0,0},nCount=50,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,240,1,1,0,0},nCount=50,},}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,238,1,1,0,0},nCount=10,},}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,239,1,1,0,0},nCount=10,},}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,240,1,1,0,0},nCount=10,},}, "test", 1);
 --tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={6,1,398,1,1},nCount=10,},}, "test", 1);
 end
 function layxuadmin()
@@ -967,6 +967,7 @@ function layvatpham()
 		{"LÊy VËt PhÈm Queskey", TaoItemQK},
 		{"LÊy VËt PhÈm Magic_han sd", TaoItemhsd},
 		{"LÊy VËt PhÈm Goldequip..", Glodequip},
+		{"Tho¸t",},
 	}
 	CreateNewSayEx("<npc>Xin Mêi Chän Chøc N¨ng", tbOpt)
 end
@@ -1059,16 +1060,16 @@ local nGiay = tonumber(GetLocalDate("%S"));
 local nW, nX, nY = GetWorldPos() 
 local nIdPlay = PlayerIndex 
 local tbSay = {}
---	tinsert(tbSay,"ADM Move=>CTC.../vitri_congthanh")
-	tinsert(tbSay,"Th«ng tin ng­êi ch¬i./Show")
+	tinsert(tbSay,"ADM Move=>CTC.../vitri_congthanh")
+	--tinsert(tbSay,"Th«ng tin ng­êi ch¬i./Show")
 --	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i./luachonid1")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp ID/luachonid1")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp Tªn NhËn VËt/luachonid2")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp Tµi Kho¶n/luachonid3")
 --	tinsert(tbSay,"HÖ Thèng Pet/Pet")
 	tinsert(tbSay,"LÊy Täa §é/toado1")
---	tinsert(tbSay,"Th«ng B¸o B¶o Tr×/OnTimer")
---	tinsert(tbSay,"LÊy ID Vßng S¸ng/kiemtra_spr")
+	tinsert(tbSay,"Th«ng B¸o B¶o Tr×/OnTimer")
+	--tinsert(tbSay,"LÊy ID Vßng S¸ng/kiemtra_spr")
 	tinsert(tbSay,"Chat ADM....!/GmNhapTinBao")
 --	tinsert(tbSay,"Chat GM....!/Gm")
 	tinsert(tbSay,"Tho¸t/no")
@@ -2421,9 +2422,9 @@ end
 ----------------------------------------------------------------------------------------------------------------
 function fifong()
 	local tab_Content = {
-		"Phi phong/PhiPhong",
-		"Ngò Hµnh Ên/NguHanhAn",
-		"Trang søc/TrangSuc",
+		--"Phi phong/PhiPhong", --trang bi hkmp Thieu lam (sai)
+		--"Ngò Hµnh Ên/NguHanhAn", --trang bi hkmp  tvb, nm (sai)
+		--"Trang søc/TrangSuc",
 		"LÊy Ngùa/Ngua",
 		"Tho¸t./no",
 		"Trë l¹i"
@@ -2457,7 +2458,7 @@ local tab_Content =
 "Ngùa nhãm 3./vip3",
 "Ngùa nhãm 4./vip4",
 "Ngùa nhãm 5./vip5",
-"S­ tö hoµng kim./sutu",
+--"S­ tö hoµng kim./sutu",
 "Tho¸t./no",
 "Trë l¹i"
 }
@@ -5646,9 +5647,9 @@ function HKMPKoHan()
 AskClientForNumber("HKMPKoHan1",1,10000,"ID")
 end
 function HKMPKoHan1(num)
-for i=1,20 do
+--for i=1,20 do
 tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1},}, "test", 1);
-end
+--end
  logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
 end
 
@@ -5665,9 +5666,9 @@ function HKMP3Ngay()
 AskClientForNumber("HKMP3Ngay1",1,10000,"ID")
 end
 function HKMP3Ngay1(num)
-for i=1,6 do
+--for i=1,6 do
 tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=4320},}, "test", 1);
-end
+--end
  logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
 end
 

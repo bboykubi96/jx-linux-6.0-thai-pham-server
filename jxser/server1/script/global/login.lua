@@ -146,7 +146,7 @@ if HaveMagic(361)~=-1 then
 --	ST_LevelUp(nAddLevel)
 	--end--
 if GetTask(4990)<1 then
-		local nAddLevel =10 - GetLevel()
+		local nAddLevel =1 - GetLevel()
 		ST_LevelUp(nAddLevel)
 		SetTask(4990,1)
 		local tbAwardgift = {
@@ -222,8 +222,8 @@ end
 	--SetTask(4000,1)
 --	AddLeadExp(999999999)
 	end
-	if GetLevel() < 10 then
-		n = 10 - GetLevel()
+	if GetLevel() < 1 then
+		n = 1 - GetLevel()
 		for i=1,n do
 			AddOwnExp(1000000)
 		end
@@ -246,7 +246,7 @@ end
 	--end
 	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-		--Msg2SubWorld("<color=yellow>i hi謕<color><color=green> "..GetName().."<color>  online !.")
+		Msg2SubWorld("<color=yellow>i hi謕<color><color=green> "..GetName().."<color>  online !.")
 		 local tiendong =CalcItemCount(3,4,417,1,1) +  CalcItemCount(4,4,417,1,1) + CalcItemCount(9,4,417,1,1) + CalcItemCount(10,4,417,1,1)
 		 local kimnguyenbao =CalcItemCount(3,4,343,1,1) +  CalcItemCount(4,4,343,1,1) + CalcItemCount(9,4,343,1,1) + CalcItemCount(10,4,343,1,1)
 	logplayer("dulieu/thongtintaikhoan-nhanvat.txt",format("[IP : %s ] - Th阨 gian : %s  - T礽 kho秐 [ %s] - Nh﹏ v藅 : [%s ] - Ti襫 уng : [%s] - KNB : [%s]        ng nh藀 th祅h c玭g ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),tiendong,kimnguyenbao))
@@ -291,12 +291,12 @@ end
 	TaskManager:ResetUseGroup()
 	LoginDelaySync(1)  -- 1 表示需要延时同步数据, 0 表示不需要
 	
-	if HaveCommonItem(6,1,16)<1 then
-		AddItem(6,1,16,1,0,0,0)
+	--if HaveCommonItem(6,1,16)<1 then
+	--	AddItem(6,1,16,1,0,0,0)
 	--if GetLevel()>=60 then
 	--RemoveSkillState(1512,20,3,559872000,1) 
 	--RemoveSkillState(1679,20,3,559872000,1) 
-	end
+	--end
 	
 		if GetSkillState(1682)>=1 then
 		 local ntime2 = 18*60*60*24*10
