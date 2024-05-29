@@ -509,8 +509,8 @@ end
 function chetaoBachKim()
 	local tbOpt =
 	{
-		{"Ch’ tπo Trang Bﬁ Bπch Kim (th≠Íng).", platina_main},
-		{"Ch’ tπo Trang Bﬁ Bπch Kim (Æ∆c bi÷t).", dialog_mainBK},
+		{"Ch’ tπo Trang Bﬁ Bπch Kim.", platina_main},
+		--{"Ch’ tπo Trang Bﬁ Bπch Kim (Æ∆c bi÷t).", dialog_mainBK},
 		{"Nguy™n li÷u ch’ tπo trang bﬁ Bπch Kim.", nguyenlieuBK},
 		{"Tho∏t"},
 	}

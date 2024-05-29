@@ -8,8 +8,8 @@ TASKID_ZMD_EXPIRE_TIME	=	2558;					-- ×ÓÄ¸´üÓĞĞ§ÈÕÆÚÈÎÎñ±äÁ¿
 
 
 function main(nItemIdx)
-	local szMsg = "<#>Tói tö mÉu cã thêi h¹n sö dông lµ: <color=yellow>"..zmd_get_expire_date().."<color>";
-	Say(szMsg, 2, "N¹p 1 tuÇn/#recharge("..nItemIdx..")", "Hñy bá /cancel");
+	local szMsg = "<#>KiÓm tra tr­íc khi sö dông Tói tö mÉu : <color=yellow>"..zmd_get_expire_date().."<color>";
+	Say(szMsg, 2, "Më tói Tö MÉu/#recharge("..nItemIdx..")", "Hñy bá /cancel");
 	return 1;
 end
 

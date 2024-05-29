@@ -45,6 +45,7 @@ end
 	--	{"NhËn §å Test", tbhoangkimbk},
 	--{"NhËn M¶nh Tµng B¶o §å", layevent},
 	{"NhËn cÊp 200.", Nhancap200},
+	{"ChÕ t¹o trang bÞ b¹ch kim", chetaoBachKim},
 --{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 	{"NhËn Set HKMP ", sethkmp},
 	{"Xãa Hµnh Trang ", ClearBagCell},
@@ -760,7 +761,7 @@ function LayTienDOngtest()
 	if (CalcEquiproomItemCount(4,417,1,-1)>=2000) then
 		Talk(1, "", "TiÒn ®ång trong tói ng­¬i dïng ch­a hÕt th× lÊy lµm g× cho nhiÒu.")
 	else
-		Earn(10000000)
+		Earn(100000000)
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong

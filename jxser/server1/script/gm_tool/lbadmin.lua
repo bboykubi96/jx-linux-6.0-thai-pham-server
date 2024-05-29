@@ -883,6 +883,7 @@ function ChucNangGM()
 		{"NhËn Hç Trî Game",HoTroGameLuaChon},
 		--{"Hñy VËt PhÈm",DisposeItem},
 		{"Chøc N¨ng LÊy §å Theo ID",LayDoTheoID},
+		{"LÊy §å TÝm Max OPT",laydotimmaxopt},
 		{"LÊy VËt PhÈm.....", layvatpham},		
 	--	{"Chøc N¨ng Bang Héi",BangHoi},
 		{"Qu¶n Lý Gamer", thongtingamer},
@@ -5737,3 +5738,505 @@ function logplayer(zFile,szMsg)
   closefile(handle);
  end
 ---------------------------------------------------------------------------------
+
+----LÊy §å TÝm MaxOpt-----------------------------------------
+tbDoTimMaxOpt =
+{
+[1]=
+{
+szName = "D©y ChuyÒn",
+tbEquip =
+{
+{"Toµn th¹ch h¹ng liªn",0,4,0},
+{"Lôc PhØ Thóy Hé Th©n phï ",0,4,1},
+}
+},
+[2]=
+{
+szName = "Gi¸p",
+tbEquip =
+{
+{"ThÊt B¶o Cµ Sa",0,2,0},
+{"Ch©n Vò Th¸nh Y",0,2,1},
+{"Thiªn NhÉn MËt Trang",0,2,2},
+{"Gi¸ng Sa Bµo",0,2,3},
+{"§­êng Nghª gi¸p",0,2,4},
+{"V¹n L­u Quy T«ng Y",0,2,5},
+{"TuyÒn Long bµo",0,2,6},
+{"Long Tiªu ®¹o Y",0,2,8},
+{"Cöu VÜ B¹ch Hå trang",0,2,9},
+{"TrÇm H­¬ng sam",0,2,10},
+{"TÝch LÞch Kim Phông gi¸p",0,2,11},
+{"V¹n Chóng TÒ T©m Y",0,2,12},
+{"L­u Tiªn QuÇn",0,2,13},
+}
+},
+[3]=
+{
+szName = "§ai L­ng",
+tbEquip =
+{
+{"Thiªn Tµm Yªu §¸i",0,6,0},
+{"B¹ch Kim Yªu §¸i",0,6,1},
+}
+},
+[4]=
+{
+szName = "Giµy",
+tbEquip =
+{
+{"Cöu TiÕt X­¬ng VÜ Ngoa",0,5,0},
+{"Thiªn Tµm Ngoa",0,5,1},
+{"Kim Lò hµi",0,5,2},
+{"Phi Phông Ngoa",0,5,3},
+}
+},
+[5]=
+{
+szName = "Bao Tay",
+tbEquip =
+{
+{"Long Phông HuyÕt Ngäc Tr¹c",0,8,0},
+{"Thiªn Tµm Hé UyÓn",0,8,1},
+}
+},
+[6]=
+{
+szName = "Nãn",
+tbEquip =
+{
+{"Tú L« m·o",0,7,0},
+{"Ngò l·o qu¸n",0,7,1},
+{"Tu La Ph¸t kÕt",0,7,2},
+{"Th«ng Thiªn Ph¸t Qu¸n",0,7,3},
+{"YÓm NhËt kh«i",0,7,4},
+{"TrÝch Tinh hoµn",0,7,5},
+{"¤ Tµm M·o",0,7,6},
+{"Quan ¢m Ph¸t Qu¸n",0,7,7},
+{"¢m D­¬ng V« Cùc qu¸n",0,7,8},
+{"HuyÒn Tª DiÖn Tr¸o",0,7,9},
+{"Long HuyÕt §Çu hoµn",0,7,10},
+{"Long L©n Kh«i",0,7,11},
+{"Thanh Tinh Thoa",0,7,12},
+{"Kim Phông TriÓn SÝ ",0,7,13},
+}
+},
+[7]=
+{
+szName = "Ngäc Béi",
+tbEquip =
+{
+{"Long Tiªn H­¬ng Nang",0,9,0},
+{"D­¬ng Chi B¹ch Ngäc",0,9,1},
+}
+},
+[8]=
+{
+szName = "NhÉn",
+tbEquip =
+{
+{"Toµn Th¹ch Giíi ChØ ",0,3,0},
+}
+},
+[9]=
+{
+szName = "Vò KhÝ CËn ChiÕn",
+tbEquip =
+{
+{"HuyÒn ThiÕt KiÕm",0,0,0},
+{"§¹i Phong §ao",0,0,1},
+{"Kim C« Bæng",0,0,2},
+{"Ph¸ Thiªn KÝch",0,0,3},
+{"Ph¸ Thiªn chïy",0,0,4},
+{"Th«n NhËt Tr·m",0,0,5},
+}
+},
+[10]=
+{
+szName = "Vò KhÝ TÇm Xa",
+tbEquip =
+{
+{"B¸ V­¬ng Tiªu",0,1,0},
+{"To¸i NguyÖt §ao",0,1,1},
+{"Khæng T­íc Linh",0,1,2},
+}
+},
+}
+--------------------------------------------------DONG HIEN AN------------------------------------------------------------------------------
+tbHienAnKim =
+{
+[1]=
+{
+szDong = "Dßng HiÖn",
+tbThuottinh =
+{
+{"Sinh lùc t¨ng",150},
+{"Néi lùc t¨ng",160},
+{"T¨ng thÓ lùc",170},
+{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",10},
+{"T¨ng tèc ®é xuÊt chiªu Ngo¹i c«ng",30},
+{"T¨ng chÝnh x¸c",20},
+}
+},
+[2]=
+{
+szDong = "Dßng Èn",
+tbThuottinh =
+{
+{"Phßng ®éc t¨ng",290},
+{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",220},
+{"Søc m¹nh t¨ng",210},
+{"ChuyÓn hãa s¸t th­¬ng thµnh Néi lùc",270},
+}
+},
+}
+tbHienAnMoc =
+{
+[1]=
+{
+szDong = "Dßng HiÖn",
+tbThuottinh =
+{
+{"Sinh lùc t¨ng",150},
+{"Néi lùc t¨ng",160},
+{"T¨ng thÓ lùc",170},
+{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",10},
+{"T¨ng tèc ®é xuÊt chiªu Ngo¹i c«ng",30},
+{"T¨ng chÝnh x¸c",20},
+}
+},
+[2]=
+{
+szDong = "Dßng Èn",
+tbThuottinh =
+{
+{"Phßng L«i t¨ng ",320},
+{"Gi¶m thêi gian tróng ®éc",380},
+{"Chèng cho¸ng",340},
+{"ChuyÓn hãa s¸t th­¬ng thµnh Néi lùc",270},
+}
+},
+}
+tbHe =
+{
+[1]=
+{
+szhe = "Kim",
+},
+[2]=
+{
+szhe = "Méc",
+},
+[3]=
+{
+szhe = "Thñy",
+},
+[4]=
+{
+szhe = "Háa",
+},
+[5]=
+{
+szhe = "Thæ",
+},
+}
+----------------------------------------------------HET-----------------------------------------------------------------------
+function laydotimmaxopt()
+local tbOpt = {}
+for i=1, getn(tbDoTimMaxOpt) do
+tinsert(tbOpt, {tbDoTimMaxOpt[i].szName, laydotimmaxopt1, {i}}) 
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>Trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmaxopt1(nType)
+local tbEquip = %tbDoTimMaxOpt[nType]["tbEquip"]
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local tbOpt = {}
+for i=1, getn(tbEquip) do
+tinsert(tbOpt, {tbEquip[i][1], laydotimmaxopt2, {i, nType}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmaxopt2(nIndex, nType)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local tbOpt = {}
+tinsert(tbOpt, {"Kim", laydotimkim, {nIndex, nType, 0}})
+tinsert(tbOpt, {"Méc", laydotimkim, {nIndex, nType, 1}})
+tinsert(tbOpt, {"Thñy", laydotimmaxopt3, {nIndex, nType, 2}})
+tinsert(tbOpt, {"Háa", laydotimmaxopt3, {nIndex, nType, 3}})
+tinsert(tbOpt, {"Thæ ", laydotimmaxopt3, {nIndex, nType, 4}})
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim(nIndex, nType, nSeries)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nSeries.." <color>.")
+if nSeries == 0 then 
+local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim1, {nIndex, nType, nSeries, i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+if nSeries == 1 then
+local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
+local nHeChon = "Méc"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc1, {nIndex, nType, nSeries, i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+end
+----------------------------KIM-------------------------------------------------------
+function laydotimkim1(nIndex, nType, nSeries, nHien1)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctth1.." <color>.")
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim2, {nIndex, nType, nSeries, nHien1, i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh Èn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim2(nIndex, nType, nSeries, nHien1, nAn1)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctta1.." <color>.")
+local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim3, {nIndex, nType, nSeries, nHien1, nAn1,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim3(nIndex, nType, nSeries, nHien1, nAn1,nHien2)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
+local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim4, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim4(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
+local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim5, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim5(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
+local nctth3 = %tbHienAnKim[1]["tbThuottinh"][nHien3][1]
+local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim6, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimkim6(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3 )
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
+local nctth3 = %tbHienAnKim[1]["tbThuottinh"][nHien3][1]
+local nctta3 = %tbHienAnKim[2]["tbThuottinh"][nAn3][1]
+local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
+local nHeChon = "Kim"
+local tbOpt = {}
+tinsert(tbOpt, {"Tao Do", laydotimmaxopt10, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3}})
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow>"..nctta3.."<color>", tbOpt)
+end
+--------------------------------------------MoC-----------------------
+function laydotimmoc1(nIndex, nType, nSeries, nHien1)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctth1.." <color>.")
+local nHeChon = "M«c"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc2, {nIndex, nType, nSeries, nHien1, i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh Èn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmoc2(nIndex, nType, nSeries, nHien1, nAn1)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctta1.." <color>.")
+local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
+local nHeChon = "M«c"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc3, {nIndex, nType, nSeries, nHien1, nAn1,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmoc3(nIndex, nType, nSeries, nHien1, nAn1,nHien2)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
+local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
+local nHeChon = "M«c"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc4, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmoc4(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
+local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
+local nHeChon = "M«c"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc5, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmoc5(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3)
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
+local nctth3 = %tbHienAnMoc[1]["tbThuottinh"][nHien3][1]
+local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
+local nHeChon = "M«c"
+local tbOpt = {}
+for i=1, getn(tbThuottinh) do
+tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc6, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,i}})
+end
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
+end
+function laydotimmoc6(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3 )
+local ncName = %tbDoTimMaxOpt[nType]["szName"]
+local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
+local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
+local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
+local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
+local nctth3 = %tbHienAnMoc[1]["tbThuottinh"][nHien3][1]
+local nctta3 = %tbHienAnMoc[2]["tbThuottinh"][nAn3][1]
+local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
+local nHeChon = "M«c"
+local tbOpt = {}
+tinsert(tbOpt, {"Tao Do", laydotimmaxopt10, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3}})
+tinsert(tbOpt, {"Tho¸t."})
+CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow>"..nctta3.."<color>", tbOpt)
+end
+tbDoHe =
+{
+[0]=
+{
+szDohe = "%tbHienAnKim",
+},
+[1]=
+{
+szDohe = "%tbHienAnMoc",
+},
+[2]=
+{
+szDohe = "tbHienAnThuy",
+},
+[3]=
+{
+szDohe = "tbHienAnHoa",
+},
+[4]=
+{
+szDohe = "tbHienAnTho",
+},
+}
+-----------------END MOC--------------
+function laydotimmaxopt10(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3)
+local tbEquipSelect = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
+local tbChon1 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][2])
+local tbChon2 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][3])
+local tbChon3 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][4])
+local nch1, nca1, nch2, nca2, nch3, nca3
+local tbHienAn
+if nSeries == 0 then
+    tbHienAn = {tbThuottinh = {}} 
+    if tbHienAnKim then
+        tbHienAn = tbHienAnKim
+    end
+elseif nSeries == 1 then
+    tbHienAn = {tbThuottinh = {}} 
+    if tbHienAnMoc then
+        tbHienAn = tbHienAnMoc
+    end
+end
+if tbHienAn then
+    nch1 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien1] and tbHienAn[1]["tbThuottinh"][nHien1][2] or nil
+    nca1 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn1] and tbHienAn[2]["tbThuottinh"][nAn1][2] or nil
+    nch2 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien2] and tbHienAn[1]["tbThuottinh"][nHien2][2] or nil
+    nca2 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn2] and tbHienAn[2]["tbThuottinh"][nAn2][2] or nil
+    nch3 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien3] and tbHienAn[1]["tbThuottinh"][nHien3][2] or nil
+    nca3 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn3] and tbHienAn[2]["tbThuottinh"][nAn3][2] or nil
+else
+    nch1, nca1, nch2, nca2, nch3, nca3 = nil, nil, nil, nil, nil, nil
+end
+AddQualityItem(2, tbChon1, tbChon2, tbChon3, 10, nSeries, 0, nch1, nca1, nch2, nca2, nch3, nca3)
+Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..tbEquipSelect.." <color>.")
+end
+	
