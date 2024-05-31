@@ -1,8 +1,8 @@
---中原北区 达摩堂to少林派
---Trap ID：中原北区 52
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu Чt Ma 阯g to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 52 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1687, 3023);
+NewWorld(103, 1687, 3023); 
 
 end;

@@ -1,14 +1,19 @@
+--Nhiem vu hai thuoc, co gai hai thuoc
 --Î÷ÄÏ±±Çø ³É¶¼¸® ²ÉÒ©ÉÙÅ®¶Ô»°£¨¡°²É¼¯Ò©²Ä¡±ÈÎÎñ£©
 -- Update: Xiao_Yang(2004-04-26)£¨Ôö¼Ó¡°²É¼¯Ò©²ÄÈÎÎñ¡±£©
-
+Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\global\\repute_head.lua")
 
 function main(sel)
+
+	--dofile("script/Î÷ÄÏ±±Çø/³É¶¼/³É¶¼/Ö°ÄÜnpc/Î÷ÄÏ±±Çø-³É¶¼¸®--²ÉÒ©ÉÙÅ®¶Ô»°.lua")
+
 	Uworld132 = GetTask(132)
 	Uworld133 = GetByte(GetTask(133),1)
+
 	if (Uworld132 == 10) and (HaveItem(112) == 1) and (HaveItem(113) ==1) and (HaveItem(114) ==1) and (HaveItem(115) ==1) and (HaveItem(116) ==1) then
 		Talk(2,"Uworld132_finish","TiÓu c« n­¬ng! Nh÷ng thø c« cÇn ®Òu ë chç ta","ThËt µ! C¶m ¬n ng­¬i nhiÒu l¾m!")
-	elseif (GetLevel() >= 20) and (GetReputeLevel(GetRepute()) >= 2) and ((Uworld132 < 10) or ((GetGameTime() > Uworld132) and (Uworld132 > 255))) then		-- ¡°²É¼¯Ò©²Ä¡±ÈÎÎñÔÊÐíÆô¶¯
+	elseif (GetLevel() >= 20) and (GetRepute() >= 2) and ((Uworld132 < 10) or ((GetGameTime() > Uworld132) and (Uworld132 > 255))) then		-- ¡°²É¼¯Ò©²Ä¡±ÈÎÎñÔÊÐíÆô¶¯
 		if (Uworld133 >= 5) then
 			SetTask(133,0)
 		end
@@ -61,11 +66,14 @@ function Uworld132_finish()
 		Uworld133 = 1
 	end
 	AddRepute(Uworld133)
-	Msg2Player("B¹n ®¹t ®­îc"..Uworld133.."®iÓm danh väng")
+	Msg2SubWorld("§¹i hiÖp <color=green>"..GetName().."<color> ra tay gióp ®ì C« G¸i H¸i Thuèc ®¹t ®­îc "..Uworld133.." ®iÓm danh väng vµ phÇn th­ëng hÊp dÉn")
 	if (Uworld133 >= 5)then
 		SetTask(133,0)
 		AddRepute(10)
-		Msg2Player("V× ®· nhiÒu lÇn ra tay gióp ®ì, b¹n ®­îc thªm 10 ®iÓm th­ëng thanh thÕ n÷a! ")
+		Msg2SubWorld("§¹i hiÖp <color=green>"..GetName().."<color> ®· nhiÒu lÇn ra tay gióp ®ì C« G¸i H¸i Thuèc, ®­îc thªm 10 ®iÓm danh väng n÷a! ")
+		--tbAwardTemplet:GiveAwardByList({nExp_tl = 45000000}, "PhÇn th­ëng kinh nghiÖm khi hoµn thµnh nhiÖm vô D· TÈu h»ng ngµy")
+		--local tbItem = {szName = "H¹t gièng hoa hång",tbProp={6,1,30156,1,0,0},nCount=5}
+		--tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn th­ëng 5 hat giong HH hoµn thµnh nhiÖm vô D· TÈu 40 h»ng ngµy");
 	else
 		Uworld133 = SetByte(Uworld133,2,Cur_date)
 		SetTask(133,Uworld133)

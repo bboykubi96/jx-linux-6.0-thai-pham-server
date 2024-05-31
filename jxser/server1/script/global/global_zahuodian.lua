@@ -2,10 +2,9 @@
 function store_sel_extend()
 	local tbOpp = { 
 			"Giao dŞch/yes",
-			--"Ho¹t ®éng cöa hµng /HuoDongyes", 
 			"Kh«ng giao dŞch/no"		};
 	local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	if (nDate >= 20070202 and nDate <= 20200225) then
+	if (nDate >= 20070202 and nDate <= 20070225) then
 		tinsert(tbOpp, 1, "Mua thiÖp chóc TÕt/BuySpringFestival07Card");
 	end;
 	
@@ -18,7 +17,6 @@ end;
 function store_sel_village_extend()
 	local tbOpp = {
 			"Giao dŞch/yes",
-		--"Ho¹t ®éng cöa hµng /HuoDongyes",
 		"Ta ®Õn nhËn nhiÖm vô S¬ nhËp/zboss",
 		"Th«i kh«ng cÇn ®©u/no",
 			};
@@ -36,6 +34,3 @@ end;
 function buy_collect_juanzhou()
 	Sale(165);
 end;
-function HuoDongyes() 
-Sale(179); 
-end; 

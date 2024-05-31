@@ -1,4 +1,4 @@
---耶律辟离(563)，生于每天23：05，在226,1724,3227
+
 function main()
 	mapindex = SubWorldID2Idx(226)
 	if (mapindex < 0 ) then

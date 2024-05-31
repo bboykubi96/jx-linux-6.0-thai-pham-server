@@ -1,4 +1,4 @@
-nItemExpiredTime = 20110901
+nItemExpiredTime = 20180903
 nRedRoseMaxCount = 2000
 nPromotionID = 8
 strTranLogFolder = "201108_EventVuLanBaoHieu/"

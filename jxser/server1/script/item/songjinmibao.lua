@@ -21,115 +21,96 @@ tbSJNewAward =
 {	
 	["chiakhoanhuy"] = 
 	{
-		{szName="§iÓm kinh nghiÖm 1", 
+		{szName = "TÈy tñy kinh",	tbProp = {6,1,22,1,0,0},nCount=1,nRate=0.05},
+		{szName = "Vâ L©m mËt tÞch",	tbProp = {6,1,26,1,0,0},nCount=1,nRate=0.01},
+		{szName = "Tiªn Th¶o Lé",	tbProp = {6,1,71,1,0,0},nCount=1,nRate=20.18,nCount=1},
+		{szName = "Phóc duyªn lé §¹i",	tbProp = {6,1,124,1,0,0},nCount=1,nRate=8,nCount=1},
+		{szName = "Phóc duyªn lé Trung",	tbProp = {6,1,123,1,0,0},nCount=1,nRate=10,nCount=1},
+		{szName = "Phóc duyªn lé TiÓu",	tbProp = {6,1,122,1,0,0},nCount=1,nRate=12,nCount=2},
+		{szName = "BÝ kÝp 90",	tbProp = {6,1,random(27,28),5,0,0},nCount=1,nRate=0.05},
+		{szName = "BÝ kÝp 90",tbProp={6,1,random(33,43),1,0,0},nCount=1,nRate=0.05},
+		{szName = "BÝ kÝp 90",tbProp={6,1,random(45,49),1,0,0},nCount=1,nRate=0.05},
+		{szName = "§iÓm kinh nghiÖm 1", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(1000000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 52,
+					nRate = 20,
 		},
 		{szName="§iÓm kinh nghiÖm 2", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(2000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(1500000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 30,
+					nRate = 20,
 		},
 		{szName="§iÓm kinh nghiÖm 3", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(3000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(1700000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 10,
+					nRate = 1,
 		},
 		{szName="§iÓm kinh nghiÖm 4", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(4000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(1900000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 5,
+					nRate = 1,
 		},
 		{szName="§iÓm kinh nghiÖm 5", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(5000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(2000000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 3,
+					nRate = 1,
 		},		
 	},	
 	["chiakhoavang"] = 
 	{
-		{szName="§å Phæ B¹ch Hæ Yªu §¸i",tbProp={6,1,3176,1,0,0},nCount=1,nRate=0.008},
-		{szName="§å Phæ B¹ch Hæ Th­îng Giíi",tbProp={6,1,3180,1,0,0},nCount=1,nRate=0.008},
-		{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.005},
-		{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=2},
-		{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.5},
-		{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.5},
-		{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.2},
-		{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.02},
-		{szName="B¶o R­¬ng Kim ¤ H¹ Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={10,0,0,0,0,0},nRate=0.01,CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Th­îng Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.01,CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Hµi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.01,CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Yªu §¸i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.01,CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Hé UyÓn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.01,CallBack = _Message},
-		{szName="B¶o R­¬ng Kim ¤ Vò KhÝ",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.005,CallBack = _Message},
-		{szName="Tèng Kim Chiªu Binh LÔ Bao",tbProp={6,1,30084,1,0,0},nCount=1,nRate=2,nExpiredTime=10080},
-		{szName="Håi thiªn t¸i t¹o lÔ bao",tbProp={6,1,2527,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
-		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nCount=1,nRate=0.01,nExpiredTime=43200},
-		{szName="PhØ Thóy Chi B¶o",tbProp={6,1,3003,1,0,0},nCount=1,nRate=0.129},
-		{szName="Tiªu Diªu T¸n",tbProp={6,1,2831,1,0,0},nCount=1,nRate=2,nExpiredTime=20160},
-		{szName="§iÓm kinh nghiÖm 1", 
+		--{szName = "Ngò Hµnh Kú Th¹ch",		tbProp = {6,1,2125,1,0,0},nCount=5,nRate=25},
+		--{szName = "Tiªn Th¶o Lé",	tbProp = {6,1,1181,1,0,0},nCount=1,nRate=5,nCount=3},
+		--{szName = "B«n Tiªu",		tbProp = {0,10,6,1,5,0},nCount=1,nRate=1},
+		{szName = "Tèng Kim Chiªu Binh LÔ Bao",tbProp={6,1,30084,1,0,0},nCount=1,nRate=1,nExpiredTime=10080},
+		{szName = "Håi thiªn t¸i t¹o lÔ bao",tbProp={6,1,2527,1,0,0},nCount=3,nRate=1,nExpiredTime=20160},
+		{szName = "§iÓm kinh nghiÖm 1", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(3000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(15000000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 33,
+					nRate = 50,
 		},
 		{szName="§iÓm kinh nghiÖm 2", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(5000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(25000000, "Tèng Kim BÝ B¶o")
 					end,
-					nRate = 25,
+					nRate = 28,
 		},
 		{szName="§iÓm kinh nghiÖm 3", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(8000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(30000000, "Tèng Kim BÝ B¶o")
 					end,
 					nRate = 10,
 		},
 		{szName="§iÓm kinh nghiÖm 4", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(10000000, "Tèng Kim BÝ B¶o")
+						%tbvng_ChestExpAward:ExpAward(40000000, "Tèng Kim BÝ B¶o")
 					end,
 					nRate = 5,
 		},
 		{szName="§iÓm kinh nghiÖm 5", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(15000000, "Tèng Kim BÝ B¶o")
-					end,
-					nRate = 3,
-		},
-		{szName="§iÓm kinh nghiÖm 6", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(20000000, "Tèng Kim BÝ B¶o")
-					end,
-					nRate = 2,
-		},
-		{szName="§iÓm kinh nghiÖm 7", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(50000000, "Tèng Kim BÝ B¶o")
 					end,
 					nRate = 1,
 		},
-		{szName="Tö M·ng Chi B¶o (¸o)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={5,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (Ngäc Béi)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={8,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (NhÉn D­íi)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.02,tbParam={9,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (§ai L­ng)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={4,0,0,0,0,0}, CallBack = _Message},
-		{szName="Tö M·ng Chi B¶o (Vò KhÝ)",tbProp={6,1,30140,1,0,0},nCount=1,nRate=0.01,tbParam={6,0,0,0,0,0}, CallBack = _Message},	
-		{szName="Phi phong Kinh L«i (DÞch chuyÓn tøc thêi)",tbProp={0,3470},nCount=1,nRate=0.05,nQuality = 1,nExpiredTime=10080,},
-		{szName="Phi phong Kinh L«i (X¸c suÊt hãa gi¶i s¸t th­¬ng)",tbProp={0,3471},nCount=1,nRate=0.05,nQuality = 1,nExpiredTime=10080,},
-		{szName="Phi phong Kinh L«i ( Träng kÝch )",tbProp={0,3472},nCount=1,nRate=0.05,nQuality = 1,nExpiredTime=10080,},
-		{szName="Qu¶ Hoµng Kim",tbProp={6,1,907,1,0,0},nCount=1,nRate=0.335,nExpiredTime=43200},
+		{szName="§iÓm kinh nghiÖm 6", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(80000000, "Tèng Kim BÝ B¶o")
+					end,
+					nRate = 1,
+		},
+		{szName="§iÓm kinh nghiÖm 7", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(100000000, "Tèng Kim BÝ B¶o")
+					end,
+					nRate = 0.5,
+		},
+		{szName="Qu¶ Hoµng Kim",tbProp={6,1,907,1,0,0},nCount=3,nRate=1,nExpiredTime=43200},
 	},	
 }
 
@@ -137,7 +118,39 @@ nWidth = 1
 nHeight = 1
 nFreeItemCellLimit = 1
 
-function main(nIndexItem)
+function main()
+	local SLSD5LoaiBaoRuong = 20
+	local nDate = tonumber(GetLocalDate("%m%d"))
+	if ( GetTask(1408) ~= nDate ) then
+		SetTask(1408, nDate)
+		SetTask(1409, 0)
+	end
+	if ( GetTask(1409) >= SLSD5LoaiBaoRuong ) then
+		Say("H«m nay ®¹i hiÖp ®· sö dông "..SLSD5LoaiBaoRuong.." b¶o r­¬ng c¸c lo¹i, vâ c«ng th¨ng tiÕn qu¸ nhanh dÔ g©y t¸c dông ph¶n nghÞch, ngµy mai h·y tiÕp tôc vËy.")
+		return 1
+	end
+		tbAwardTemplet:GiveAwardByList({{nExp_tl = 50e6}}, "test", 1);
+		return 0
+end
+function main1(nIndexItem)
+
+	if GetLevel() < 80 then
+		Say("§¼ng cÊp 80 trë lªn míi cã thÓ sö dông")
+		return 1
+	end
+
+	local SLSD5LoaiBaoRuong = 5
+	local nDate = tonumber(GetLocalDate("%m%d"))
+	if ( GetTask(1406) ~= nDate ) then
+		SetTask(1406, nDate)
+		SetTask(1407, 0)
+	end
+
+	if ( GetTask(1407) >= SLSD5LoaiBaoRuong ) then
+		Say("H«m nay ®¹i hiÖp ®· sö dông "..SLSD5LoaiBaoRuong.." b¶o r­¬ng c¸c lo¹i, vâ c«ng th¨ng tiÕn qu¸ nhanh dÔ g©y t¸c dông ph¶n nghÞch, ngµy mai h·y tiÕp tôc vËy.")
+		return 1
+	end
+
 	local tbKey1 = tbSJ_Key_Require["chiakhoanhuy"]
 	local tbKey2 = tbSJ_Key_Require["chiakhoavang"]
 	local nCount1 = CalcItemCount(3, tbKey1[1], tbKey1[2], tbKey1[3], -1) 
@@ -172,6 +185,7 @@ function VnSJBoxNewAward(nItemIdx, strKeyType)
 	if not tbKey or not tbAward then
 		return
 	end
+
 	if ConsumeItem(3, 1, tbKey[1], tbKey[2], tbKey[3], -1) ~= 1 then
 		Say("CÇn ph¶i cã Ch×a Khãa Vµng hoÆc Ch×a Khãa Nh­ ý míi cã thÓ më ®­îc Tèng Kim BÝ B¶o", 1, "§ãng/no")
 		return
@@ -183,4 +197,6 @@ function VnSJBoxNewAward(nItemIdx, strKeyType)
 	end
 	tbAwardTemplet:Give(tbAward, 1, {"SongJin", "use songjingmibao"})	
 	AddStatData("baoxiangxiaohao_kaisongjinmibao", 1)	
+	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> më Tèng Kim BÝ B¶o b»ng ch×a khãa nh­ ý <color=yellow>nhËn ®­îc nhiÒu phÇn th­ëng")
+	SetTask(1407, GetTask(1407) + 1)
 end

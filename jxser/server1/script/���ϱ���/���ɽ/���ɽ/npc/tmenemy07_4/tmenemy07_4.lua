@@ -1,11 +1,11 @@
---description: ÌÆÃÅ40¼¶ÈÎÎñ Çà³ÇÉ½ÎåÖÖÌØÉ«¹ÖÎï£¨¹¢×ÓÆæ³èÎï4£©
---author: yuanlan
---date: 2003/3/12
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n 40 cÊp nhiÖm vô nói Thanh Thµnh n¨m lo¹i ®Æc s¾c qu¸i vËt # c¶nh tö kú sñng vËt 4# 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/12 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 
-function OnDeath()
-	UTask_tm = GetTask(2)
+function OnDeath() 
+UTask_tm = GetTask(2) 
 	if (UTask_tm == 40*256+20) then
-		SetTaskTemp(4,SetBit(GetTaskTemp(4),4,1))		-- Ö»ÒªÔÚÈÎÎñÖĞ£¬¾ÍÇ¿ÆÈÉèÖÃÁÙÊ±±äÁ¿µÚ4Î»
-	end
-end;
+SetTaskTemp(4,SetBit(GetTaskTemp(4),4,1)) -- script viet hoa By http://tranhba.com  chØ cÇn ë nhiÖm vô trung , liÒn c­ìng b¸ch thiÕt trİ t¹m thêi thay ®æi l­îng thø 4 vŞ 
+end 
+end; 

@@ -5,7 +5,7 @@
 -- Desc			:  	Í¬°éÏµÍ³ÎÊÌâ¼¯ºÏ
 -------------------------------------------------------------------------
 IncludeLib( "FILESYS" );
-Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
+Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
 TabFile_Load("\\settings\\task\\partner\\problem\\partner_allproblem.txt","allproblem") --µ÷ÓÃÎÊÌâºÍ´ð°¸
 Include("\\script\\task\\partner\\partner_head.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
 
@@ -15,8 +15,8 @@ Include("\\script\\task\\partner\\partner_head.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
 --numbmin£º   	»Ø´ðÎÊÌâµÄÌâºÅ×îÐ¡Öµ
 --numbmax£º   	»Ø´ðÎÊÌâµÄÌâºÅ×î´óÖµ
 --numblength£º	»Ø´ðÎÊÌâÊ±ÔÊÐí³ö´íµÄ×î´ó´ÎÊý
---taskvalue£º 	»Ø´ðÎÊÌâºóÉèÖÃ×Ö½Ú¿ª¹ØµÄÏµ¹Ø±äÁ¿
---taskbyte£º    »Ø´ðÎÊÌâ¢ú×ã´ð¶ÔÊýÄ¿ÒªÇóºóÉèÖÃ×Ö½Ú¿ª¹ØµÄ×Ö½ÚÎ»Êý
+--taskvalue£º 	»Ø´ðÎÊÌâºóÉèÖÃ×Ö½Ú¿ª¹ØµÄÏà¹Ø±äÁ¿
+--taskbyte£º    »Ø´ðÎÊÌâÂú×ã´ð¶ÔÊýÄ¿ÒªÇóºóÉèÖÃ×Ö½Ú¿ª¹ØµÄ×Ö½ÚÎ»Êý
 --prblemchange  Îª1Ê±£¬ÔòÔÚÎÊÌâÍêÈ«´ð¶ÔµÄÊ±ºò½øÐÐ»Øµ÷ 
 --prblemchange  Îª2Ê±£¬ÔòÔÚÎÊÌâ»Ø´ðÃ»ÓÐ´ïµ½ÒªÇóÊ±½øÐÐ»Øµ÷
 --prblemchange  Îª3»òÕßÈÎÒâ>=3 µÄÊý×Ö£¬ÔòÎÊÌâ²»»áÔÚ¹æ¶¨´ÎÊýÄÚÖÐ¶Ï
@@ -34,13 +34,13 @@ partner_keeponproblem ={}
 
 function partner_edu(pronumb,numbmin,numbmax,numblength,taskvalue,taskbyte,problemchange,keepon)   
 	nt_setTask(1233,0)                     --È¥³ýµô´ð¶Ô´ÎÊý
-	SetTaskTemp(182,0)         			   --ÁÙÊ±±äÁ¿182¼Ç¢¼ÎÊÌâµÄÌâºÅ	
-	SetTaskTemp(183,0)         			   --ÁÙÊ±±äÁ¿183¼Ç¢¼ÎÊÌâµÄ´ð¶Ô´ÎÊý			
-	SetTaskTemp(184,0)         			   --ÁÙÊ±±äÁ¿184¼Ç¢¼ÎÊÌâµÄÌâºÅ×îÐ¡Öµ			
-	SetTaskTemp(185,0)         			   --ÁÙÊ±±äÁ¿185¼Ç¢¼ÎÊÌâµÄÌâºÅ×î´óÖµ			
-	SetTaskTemp(186,0)        			   --ÁÙÊ±±äÁ¿186¼Ç¢¼ÎÊÌâµÄ»Ø´ð´ÎÊý			
-	SetTaskTemp(187,0)         			   --ÁÙÊ±±äÁ¿187¼Ç¢¼ÎÊÌâµÄ¿ª¹ØÈÎÎñ±äÁ¿			
-	SetTaskTemp(188,0)         			   --ÁÙÊ±±äÁ¿188¼Ç¢¼ÎÊÌâµÄ¿ª¹Ø×Ö½Ú		
+	SetTaskTemp(182,0)         			   --ÁÙÊ±±äÁ¿182¼ÇÂ¼ÎÊÌâµÄÌâºÅ	
+	SetTaskTemp(183,0)         			   --ÁÙÊ±±äÁ¿183¼ÇÂ¼ÎÊÌâµÄ´ð¶Ô´ÎÊý			
+	SetTaskTemp(184,0)         			   --ÁÙÊ±±äÁ¿184¼ÇÂ¼ÎÊÌâµÄÌâºÅ×îÐ¡Öµ			
+	SetTaskTemp(185,0)         			   --ÁÙÊ±±äÁ¿185¼ÇÂ¼ÎÊÌâµÄÌâºÅ×î´óÖµ			
+	SetTaskTemp(186,0)        			   --ÁÙÊ±±äÁ¿186¼ÇÂ¼ÎÊÌâµÄ»Ø´ð´ÎÊý			
+	SetTaskTemp(187,0)         			   --ÁÙÊ±±äÁ¿187¼ÇÂ¼ÎÊÌâµÄ¿ª¹ØÈÎÎñ±äÁ¿			
+	SetTaskTemp(188,0)         			   --ÁÙÊ±±äÁ¿188¼ÇÂ¼ÎÊÌâµÄ¿ª¹Ø×Ö½Ú		
 	SetTaskTemp(190,0) 	
 	SetTaskTemp(191,0) 
 	partner_eduproblem(pronumb,numbmin,numbmax,numblength,taskvalue,taskbyte,problemchange,keepon) 
@@ -49,7 +49,7 @@ end
 function partner_eduproblem(pronumb,numbmin,numbmax,numblength,taskvalue,taskbyte,problemchange,keepon)   
 	
 	if ( numblength == 0 ) then
-		Msg2Player("ThËt xin lçi, ng­¬i ®· ®¹t ®Õn tr¶ lêi vÊn ®Ò sai lÇm th­îng h¹n, xin thö l¹i lÇn n÷a.")
+		Msg2Player("¶Ô²»Æð£¬ÄãÒÑ¾­´ïµ½ÁË»Ø´ðÎÊÌâ´íÎóµÄÉÏÏÞ£¬ÇëÖØÐÂÀ´¹ý¡£")
 		nt_setTask(1233,0)                                                --´ïµ½´ð´í¼«ÏÞ£¬È¥³ýµô´ð¶Ô´ÎÊý
 		if (keepon ~= nil and keepon >= 1 and keepon <= getn(partner_keeponproblem)) then
 			partner_keeponproblem[keepon](0)
@@ -59,15 +59,15 @@ function partner_eduproblem(pronumb,numbmin,numbmax,numblength,taskvalue,taskbyt
 	
 	local partner_problemnumber = random(numbmin,numbmax)                 --ÔÚÌá¹©µÄÌâºÅ·¶Î§ÄÚËæ»ú³öÌâ
 	
-	SetTaskTemp(182,partner_problemnumber)         --ÁÙÊ±±äÁ¿182¼Ç¢¼ÎÊÌâµÄÌâºÅ	
-	SetTaskTemp(183,pronumb)         			   --ÁÙÊ±±äÁ¿183¼Ç¢¼ÎÊÌâµÄ´ð¶Ô´ÎÊý			
-	SetTaskTemp(184,numbmin)         			   --ÁÙÊ±±äÁ¿184¼Ç¢¼ÎÊÌâµÄÌâºÅ×îÐ¡Öµ			
-	SetTaskTemp(185,numbmax)         			   --ÁÙÊ±±äÁ¿185¼Ç¢¼ÎÊÌâµÄÌâºÅ×î´óÖµ			
-	SetTaskTemp(186,numblength)        			   --ÁÙÊ±±äÁ¿186¼Ç¢¼ÎÊÌâµÄ»Ø´ð´ÎÊý			
-	SetTaskTemp(187,taskvalue)         			   --ÁÙÊ±±äÁ¿187¼Ç¢¼ÎÊÌâµÄ¿ª¹ØÈÎÎñ±äÁ¿			
-	SetTaskTemp(188,taskbyte)         			   --ÁÙÊ±±äÁ¿188¼Ç¢¼ÎÊÌâµÄ¿ª¹Ø×Ö½Ú		
-	SetTaskTemp(190,problemchange) 	               --ÁÙÊ±±äÁ¿190¼Ç¢¼ÎÊÌâ´ð¶Ô´ð´íÊ±µÄ»Øµ÷º¯Êý	
-	SetTaskTemp(191,keepon)                        --ÁÙÊ±±äÁ¿191¼Ç¢¼Èç¹û»Øµ÷µÄ»°£¬»Øµ÷º¯ÊýËùÔÚÊý×éµÄÎ»ÖÃ
+	SetTaskTemp(182,partner_problemnumber)         --ÁÙÊ±±äÁ¿182¼ÇÂ¼ÎÊÌâµÄÌâºÅ	
+	SetTaskTemp(183,pronumb)         			   --ÁÙÊ±±äÁ¿183¼ÇÂ¼ÎÊÌâµÄ´ð¶Ô´ÎÊý			
+	SetTaskTemp(184,numbmin)         			   --ÁÙÊ±±äÁ¿184¼ÇÂ¼ÎÊÌâµÄÌâºÅ×îÐ¡Öµ			
+	SetTaskTemp(185,numbmax)         			   --ÁÙÊ±±äÁ¿185¼ÇÂ¼ÎÊÌâµÄÌâºÅ×î´óÖµ			
+	SetTaskTemp(186,numblength)        			   --ÁÙÊ±±äÁ¿186¼ÇÂ¼ÎÊÌâµÄ»Ø´ð´ÎÊý			
+	SetTaskTemp(187,taskvalue)         			   --ÁÙÊ±±äÁ¿187¼ÇÂ¼ÎÊÌâµÄ¿ª¹ØÈÎÎñ±äÁ¿			
+	SetTaskTemp(188,taskbyte)         			   --ÁÙÊ±±äÁ¿188¼ÇÂ¼ÎÊÌâµÄ¿ª¹Ø×Ö½Ú		
+	SetTaskTemp(190,problemchange) 	               --ÁÙÊ±±äÁ¿190¼ÇÂ¼ÎÊÌâ´ð¶Ô´ð´íÊ±µÄ»Øµ÷º¯Êý	
+	SetTaskTemp(191,keepon)                        --ÁÙÊ±±äÁ¿191¼ÇÂ¼Èç¹û»Øµ÷µÄ»°£¬»Øµ÷º¯ÊýËùÔÚÊý×éµÄÎ»ÖÃ
 	partner_p(partner_problemnumber) 	
 		
 end
@@ -83,9 +83,9 @@ function partner_p(partner_problemnumber)
 			local problem_c = TabFile_GetCell( "allproblem" ,i , "channelC")
 			Describe(DescLink_TongBanJiaoYu.."£º"
 			..problem_content.."?<enter>"
-			.."A:"..problem_a.."<enter>"
-			.."B:"..problem_b.."<enter>"
-			.."C:"..problem_c,3,
+			.."A£º"..problem_a.."<enter>"
+			.."B£º"..problem_b.."<enter>"
+			.."C£º"..problem_c,3,
 			"A/partner_problema",
 			"B/partner_problemb",
 			"C/partner_problemc")
@@ -111,17 +111,17 @@ function partner_problem(nAnswer)
 	SetTaskTemp(186,Uworld186-1) 											  --ÔÊÐí»Ø´ðµÄ´ÎÊý-1
 	
 	for i=1,getn(partner_answer[nAnswer]) do                                        --ÔÚÌâ¿âAÖÐÑ¡ÔñÌâºÅ
-		if ( GetTaskTemp(182) == partner_answer[nAnswer][i] ) then                    --Èç¹ûÌâ¿âAµÄÕýÈ·´ð°¸µÄÌâºÃÓÐÓë¸ø³öÌâºÅÒ»Ö¢µÄ
+		if ( GetTaskTemp(182) == partner_answer[nAnswer][i] ) then                    --Èç¹ûÌâ¿âAµÄÕýÈ·´ð°¸µÄÌâºÃÓÐÓë¸ø³öÌâºÅÒ»ÖÂµÄ
 			j = j+1
 			local Uworld1233 = nt_getTask(1233)
 			nt_setTask(1233,Uworld1233+1)                                     --¸ø´ð¶ÔÌâÊý+1
-			Msg2Player("Chóc mõng ngµi ®¸p ®óng råi!")
+			Msg2Player("¹§Ï²Äú´ð¶ÔÁËÕâµÀÌâÄ¿£¡")
 			
-			if (   GetTaskTemp(183)  == nt_getTask(1233) ) then				  --µ±Íæ¼ÒÔÚÔÊÐí´ÎÊýÄÚ´ð¶ÔÁËÏµÓ¦´ÎÊýÔò	  
+			if (   GetTaskTemp(183)  == nt_getTask(1233) ) then				  --µ±Íæ¼ÒÔÚÔÊÐí´ÎÊýÄÚ´ð¶ÔÁËÏàÓ¦´ÎÊýÔò	  
 				if ( GetTaskTemp(187) ~= 0 ) then							  --Èç¹ûÈÎÎñ±äÁ¿Îª0£¬Ôò²»ÉèÖÃÍê³É×´Ì¬	
-					nt_setTask(GetTaskTemp(187),SetBit(GetTask(GetTaskTemp(187)),GetTaskTemp(188),1))  --¸ø´«ÈëÈÎÎñ±äÁ¿µÄÏµÓ¦×Ö½ÚÖÃÎªÍê³É×´Ì¬
+					nt_setTask(GetTaskTemp(187),SetBit(GetTask(GetTaskTemp(187)),GetTaskTemp(188),1))  --¸ø´«ÈëÈÎÎñ±äÁ¿µÄÏàÓ¦×Ö½ÚÖÃÎªÍê³É×´Ì¬
 				end
-				Msg2Player("Chóc mõng ng­¬i tr¶ lêi chÝnh x¸c sè l­îng ®· ®¹t tíi yªu cÇu !")
+				Msg2Player("¹§Ï²Äã»Ø´ðÕýÈ·µÄÌâÄ¿ÊýÁ¿ÒÑ´ïµ½ÁËÒªÇó£¡")
 				
 				local nProblemIdx = GetTaskTemp(191)
 				if (nProblemIdx ~= nil and nProblemIdx >= 1 and nProblemIdx <= getn(partner_keeponproblem)) then
@@ -133,7 +133,7 @@ function partner_problem(nAnswer)
 		end
 	end
 	if ( j == 1) then
-		Msg2Player("ThËt xin lçi, ng­¬i ®¸p sai lÇm råi.")
+		Msg2Player("¶Ô²»Æð£¬Äã´ð´íÁË¡£")
 		if ( GetTaskTemp(190) == 0 ) then
 			return
 		end

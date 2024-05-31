@@ -15,6 +15,11 @@ function main()
 		end;
 	else
 		SetFightState(1)
+		SetPunish(0);
+	
+		ForbidEnmity( 1 )
+	
+		--SetPKFlag(1)
 		if (GetCurCamp() == 2 and BT_GetData(PL_PARAM3) == 1) then
 			sf_addgrain_point(2)			-- 如果是同属阵营的，则检查是否运粮角色并给与奖励
 		end

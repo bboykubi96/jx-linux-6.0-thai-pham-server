@@ -1,9 +1,9 @@
---西北北区 药王谷to龙门镇
---TrapID：西北北区 6
+-- script viet hoa By http://tranhba.com  t﹜ b綾 b綾 khu dc vng c鑓 to long m玭 tr蕁 
+-- script viet hoa By http://tranhba.com TrapID# t﹜ b綾 b綾 khu 6 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(121, 2284, 4409);
+SetFightState(1); 
+NewWorld(121, 2284, 4409); 
 
 end;

@@ -1,4 +1,4 @@
---完颜雪衣(564)，生于每天21：05，在227,1504,3144
+
 function main()
 	mapindex = SubWorldID2Idx(227)
 	if (mapindex < 0 ) then

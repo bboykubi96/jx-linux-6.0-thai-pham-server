@@ -1,9 +1,9 @@
---西南北区 竹丝洞二层to竹丝洞一层
---Trap ID：西南北区 8
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu tr骳 ti ng t莕g hai to tr骳 ti ng m閠 t莕g 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 8 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(26, 1603, 3210);
+SetFightState(1) 
+NewWorld(26, 1603, 3210); 
 
 end;

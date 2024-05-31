@@ -3,11 +3,15 @@
 -- 2004.12.22
 IncludeLib("BATTLE")
 Include("\\script\\battles\\battlehead.lua")
-tbCD_MAP = {516, 517, 580, 581}	--∑Èª¡¨≥« ÿ≥«µÿÕº
+tbCD_MAP = {516, 517, 580, 581,355}	--∑Èª¡¨≥« ÿ≥«µÿÕº
 
 function main(nItemIdx)
 
 	W,X,Y = GetWorldPos();
+	if W==355 then 
+		Msg2Player("VÀt ph»m nµy chÿ c„ th” sˆ dÙng Î Chi’n tr≠Íng TËng Kim");
+	return 1;
+	end
 	nMapId = SubWorldIdx2MapCopy(SubWorld)
 	for i = 1, getn(tbBATTLEMAP) do 
 		if ( nMapId == tbBATTLEMAP[i] ) then

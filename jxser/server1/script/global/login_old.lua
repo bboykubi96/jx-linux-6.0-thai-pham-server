@@ -18,7 +18,7 @@ Include("\\script\\global\\titlefuncs.lua")
 IL("TITLE");
 
 function main_old()
-	check_update()					-- 技能更新、门派加标识（2004-05-31）
+	--check_update()					-- 技能更新、门派加标识（2004-05-31）
 	patchShituProcess(PlayerIndex)
 -- login_enterthd()				-- 自动进入挂机地图	
 	login_check_dupe()

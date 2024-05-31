@@ -1,94 +1,94 @@
--- ´äÑÌÃÅ ºÎÄºÑ© 30¼¶ÈÎÎñ
--- by£ºDan_Deng(2003-07-26)
--- update: Dan_Deng(2003-08-07)
--- update by xiaoyang (2004\4\20)
+-- script viet hoa By http://tranhba.com  thóy khãi cöa hµ mé tuyÕt 30 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-26) 
+-- script viet hoa By http://tranhba.com  update: Dan_Deng(2003-08-07) 
+-- script viet hoa By http://tranhba.com  update by xiaoyang (2004\4\20) 
 
 Include("\\script\\global\\skills_table.lua")
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main()
-	if allbrother_0801_CheckIsDialog(5) == 1 then
-		allbrother_0801_FindNpcTaskDialog(5)
-		return 0;
-	end
-	UTask_cy = GetTask(6)
-   Uworld121 = GetTask(121)
-	if (GetSeries() == 2) and (GetFaction() == "cuiyan") then
+function main() 
+if allbrother_0801_CheckIsDialog(5) == 1 then 
+allbrother_0801_FindNpcTaskDialog(5) 
+return 0; 
+end 
+UTask_cy = GetTask(6) 
+Uworld121 = GetTask(121) 
+if (GetSeries() == 2) and (GetFaction() == "cuiyan") then 
 		if (UTask_cy == 30*256+40) and (HaveItem(2) == 1) and (HaveItem(3) == 1) and (HaveItem(4) == 1) then
-			L30_prise()
-		elseif ((UTask_cy == 30*256) and (GetLevel() >= 30)) then		--30¼¶ÈÎÎñÆô¶¯
-			Talk(1,"L30_get","Tr­íc ®©y kh«ng l©u ta cã duyªn may gÆp mét lo¹i hoa trµ gäi lµ ' Vò Y Nghª Th­êng', lo¹i hoa trµ nµy v« cïng quÝ hiÕm vµ khã trång. NÕu nh­ kh«ng n¾m v÷ng ®­îc bÝ quyÕt, th× rÊt khã thµnh c«ng, ta b©y giê ®ang lo l¾ng ®©y! ")
-		elseif (UTask_cy > 30*256) and (UTask_cy < 40*256) then
-			Talk(1,"","ThÕ nµo? ¤ng ta ®· nãi víi ng­¬i c¸ch trång 'Vò Y Nghª Th­êng' ch­a?")
-		elseif (UTask_cy >= 40*256) then
-			Talk(1,"","Vò Y Nghª Th­êng rÊt mau ra hoa, ®Õn lóc ®ã cïng nhau xem hoa trµ! ")
-		else
-			Talk(1,"","¤ng Êy còng thÝch xem hoa trµ sao?")
-		end
-	elseif(Uworld121 == 10) and (HaveItem(373) == 1) then		--ÅÐ¶ÏÈÎÎñÊÇ·ñÆô¶¯ÒÔ¼°±³°üÖÐÊ±ºòÓÐÖÜÐ¡Èª¼ôµ¶
-		Talk(8,"Uworld121_lose","Hµ Tiªn Tö! ë ®©y cã 1 c©y kÐo Tr­¬ng TiÓu TuyÒn.","C¸m ¬n!","§õng kh¸ch s¸o! §­îc thÊy diÖn m¹o cña Tiªn Tö lµ vinh h¹nh cña t¹i h¹."," (B¹n vÉn ph¶i tiÕp tôc nãi, thÊy Mé TuyÕt vung kÐo lªn, gièng nh­ V©n Tó ph¸t kÐo nhiÒu lÇn) ","Hµ c« n­¬ng! C« ë ®©y lµm g×?"," Ta vµ ng­¬i vèn kh«ng quen biÕt nhau, ng­¬i l¹i b»ng lßng nhËn lêi ®i xa ngµn dÆm ®em kÐo tÆng ta, cßn «ng Êy th× sao?","¤ng ta lµ ai?",".....Cã thÓ gióp Mé TuyÕt thªm mét chuyÖn ®­îc kh«ng?")
-	elseif(Uworld121 == 10 ) then										--Èç¹û½ÓÊÜÁËÈÎÎñµ«Ã»ÓÐÈÎÎñµÀ¾ß¼ôµ¶
-		Talk(1,"","C©y kÐo nµy lµ ta nhê Tr­¬ng TiÓu TuyÒn s­ b¸ chÞu khã rÌn cho ta, ng­¬i xem cã ph¶i ®· ®Ó ë chç «ng ta hay kh«ng?.")
-	elseif (Uworld121 == 20) and (HaveItem(10) == 0) then		-- Í··¢¶ªÁË
-		AddEventItem(10)
-		Msg2Player("L¹i t×m ®­îc mét chïm tãc ")
-		Talk(1,"","Quªn mang theo tãc råi.")
-	elseif (Uworld121 >= 20) and (Uworld121 < 30) then			--ÔÚÓëÑîºþ¶Ô»°Ç°
-		Talk(1,"","Hy väng ng­¬i chuyÓn lêi giïm Mé TuyÕt. Xin ®a t¹!")
-	elseif(Uworld121 == 30) then
-		Talk(8,"Uworld121_Step4","Hµ c« n­¬ng!","Kh«ng cÇn nãi n÷a! Ta hiÓu råi.","Hµ c« n­¬ng ®· hiÓu lÇm råi, C«n L«n m­u ®å b¸ v­¬ng, D­¬ng H÷u sø ®îi mäi viÖc kÕt thóc råi sÏ lªn Thuý Yªn M«n gÆp nµng.","H¾n thËt sù cã ®¸p øng yªu cÇu cña ta kh«ng?",".....ViÖc nµy th× «ng ta kh«ng nãi.","Ha ha ha! Hµ Mé TuyÕt ¬i Hµ Mé TuyÕt, t¹i sao ng­¬i l¹i m¬ méng h·o huyÒn nh­ vËy?","Hµ c« n­¬ng.....","Ng­êi ta sinh ra th× ch­a cã ta, ®Õn lóc cã ta th× ng­êi ®· giµ! ¤i!.....")
-	elseif(Uworld121 == 40) and (HaveItem(376) == 0) then
-		Talk(1,"","Ch­a cã lÊy kh¨n thªu, Kh©u Anh ch¾c lµ kh«ng ®Ó ý ®Õn c« n­¬ng råi.")
-		AddEventItem(376)
-		Msg2Player("§o¹t l¹i kh¨n thªu. ")
-	else
-		Talk(1,"","T©m nguyÖn lín nhÊt cña ta lµ trång ®­îc hoa trµ ®Ñp nhÊt thiªn h¹.")
-	end
-end;
+L30_prise() 
+elseif ((UTask_cy == 30*256) and (GetLevel() >= 30)) then -- script viet hoa By http://tranhba.com 30 cÊp nhiÖm vô khëi ®éng 
+Talk(1,"L30_get","Tr­íc ®©y kh«ng l©u ta c¬ duyªn x¶o hîp , lÊy ®­îc mét lo¹i gäi lµ “ vò y nghª th­êng ” ®Ých trµ hoa ®Ých mÇm mãng , lo¹i trµ nµy hoa phÈm lo¹i hÕt søc tr©n quý , båi dôc ®øng lªn còng hÕt søc khã kh¨n . nÕu nh­ kh«ng cã n¾m gi÷ bÝ quyÕt , lµ rÊt khã thµnh c«ng ®Ých , ta b©y giê ®ang ph¹m sÇu ®©y ! ") 
+elseif (UTask_cy > 30*256) and (UTask_cy < 40*256) then 
+Talk(1,"","ThÕ nµo ? «ng néi ta ®· nãi cho ng­¬i biÕt lo¹i ' vò y nghª th­êng ' ®Ých ph­¬ng ph¸p ?") 
+elseif (UTask_cy >= 40*256) then 
+Talk(1,"","Vò y nghª th­êng hoa në rÊt nhanh , ®Òu lµ sau cïng nhau nh×n trµ hoa ") 
+else 
+Talk(1,"","Gia gia h¾n còng thÝch xem trµ hoa sao ?") 
+end 
+elseif(Uworld121 == 10) and (HaveItem(373) == 1) then -- script viet hoa By http://tranhba.com  ph¸n ®o¸n nhiÖm vô cã hay kh«ng khëi ®éng cïng víi trong tói ®eo l­ng thêi ®iÓm cã chu tiÓu tuyÒn c©y kÐo 
+Talk(8,"Uworld121_lose","Hµ tiªn tö # n¬i nµy cã mét thanh tê tiÓu tuyÒn c©y kÐo ","C¸m ¬n #","Kh«ng kh¸ch khÝ # cã thÓ thÊy tiªn tö ®Ých dung m¹o lµ cña ta vinh h¹nh .","( ng­¬i cßn ph¶i nãi tiÕp , nh×n thÊy mé tuyÕt cÇm kÐo lªn , gièng nh­ v©n tó mét d¹ng kÐo liÔu mÊy lÇn )","Hµ c« n­¬ng # ng­¬i lµm c¸i g× ? ","Ta vµ ng­¬i l¹i kh«ng quen biÕt , ng­¬i xa nh­ vËy véi tíi ta ®­a c©y kÐo , lµ h¾n cã ®óng hay kh«ng ? ","H¾n lµ ai ?","…… cã thÓ gióp mé tuyÕt mét chuyÖn sao ?") 
+elseif(Uworld121 == 10 ) then -- script viet hoa By http://tranhba.com  nÕu nh­ ®ãn nhËn nhiÖm vô nh­ng kh«ng cã nhiÖm vô ®¹o cô c©y kÐo 
+Talk(1,"","C¸i thanh nµy c©y kÐo lµ ta khæ cùc cÇu xin tê tiÓu tuyÒn s­ b¸ lµm , ng­¬i xem mét chót cã thÓ hay kh«ng t×m ®­îc chç ë cña h¾n ?.") 
+elseif (Uworld121 == 20) and (HaveItem(10) == 0) then -- script viet hoa By http://tranhba.com  tãc mÊt 
+AddEventItem(10) 
+Msg2Player(" l¹i t×m ®­îc mét to¸t tãc ") 
+Talk(1,"","Quªn dÉn ®Çu ph¸t .") 
+elseif (Uworld121 >= 20) and (Uworld121 < 30) then -- script viet hoa By http://tranhba.com  ®ang cïng d­¬ng hå ®èi tho¹i tr­íc 
+Talk(1,"","Mêi/xin ng­¬i truyÒn lêi cho mé tuyÕt . ®a t¹ ") 
+elseif(Uworld121 == 30) then 
+Talk(8,"Uworld121_Step4","Hµ c« n­¬ng # kh«ng nªn nãi n÷a , ta biÕt .","Hµ c« n­¬ng ng­¬i hiÓu lÇm , C«n L«n ý ®å b¸ v­¬ng , d­¬ng hå lµ ph¶i ®îi tÊt c¶ mäi chuyÖn kÕt thóc trë/mang lªn thóy khãi gÆp ng­¬i .","H¾n thËt ®¸p øng yªu cÇu cña ta liÔu sao ?","..... chuyÖn nµy h¾n sÏ kh«ng nãi .","Ha ha ha # hµ mé tuyÕt a hµ mé tuyÕt , ng­¬i thÕ nµo nh­ vËy ng©y th¬ a ?","Hµ c« n­¬ng .....","H¾n xuÊt th©n lµ cßn kh«ng cã ta ®©y , cã ta lµ h¾n ®· giµ råi !.....") 
+elseif(Uworld121 == 40) and (HaveItem(376) == 0) then 
+Talk(1,"","Kh«ng cã cÇm tó quyªn , kh©u anh nhÊt ®Þnh sÏ kh«ng hµi lßng .") 
+AddEventItem(376) 
+Msg2Player("§o¹t tíi tó quyªn . ") 
+else 
+Talk(1,"","Ta m¬ ­íc lín nhÊt chÝnh lµ trång ra thiªn h¹ ®Ñp nhÊt ®Ých trµ hoa ") 
+end 
+end; 
 
-function L30_get()
-	Say(" Nghe nãi ë thµnh §¹i Lý cã mét ng­êi trång hoa hä §oµn, biÕt trång hoa trµ. Nh­ng mµ tÝnh t×nh h¾n kú l¹, cã rÊt nhiÒu ng­êi ®Õn thØnh gi¸o, nh­ng ®Òu ph¶i uæng c«ng quay vÒ.",2,"§Ó ta nghÜ c¸ch gióp ng­¬i t×m c¸ch /L30_get_yes","Mäi ng­êi ®Òu ®ang gÆp trë ng¹i, e r»ng ta còng kh«ng cã c¸ch nµo kh¸c. /L30_get_no")
-end;
+function L30_get() 
+Say("Nghe nãi thµnh §¹i Lý cã mét hä §oµn ®Ých hoa n«ng , lµ lo¹i trµ hoa ®Ých n¨ng thñ , nh­ng lµ h¾n tÝnh t×nh cæ qu¸i , rÊt nhiÒu ng­êi thØnh gi¸o h¾n còng kh«ng cã c«ng mµ ph¶n ",2,"Chê ta suy nghÜ mét chót biÖn ph¸p gióp ng­¬i /L30_get_yes","Mçi ng­êi còng sÏ gÆp ph¶i trë ng¹i , chØ sî ta còng kh«ng cã nh÷ng biÖn ph¸p kh¸c . /L30_get_no") 
+end; 
 
-function L30_get_yes()
-	Talk(1,"","ThËt c¸m ¬n ng­¬i!")
+function L30_get_yes() 
+Talk(1,"","ThËt c¶m t¹ ng­¬i !") 
 	SetTask(6,30*256+10)
-	AddNote("GÆp §oµn l·o n«ng ë thµnh §¹i Lý ®Ó thØnh gi¸o ph­¬ng ph¸p nu«i d­ìng Vò Y Nghª Th­êng. ")
-	Msg2Player("GÆp §oµn l·o n«ng ë thµnh §¹i Lý ®Ó thØnh gi¸o ph­¬ng ph¸p nu«i d­ìng Vò Y Nghª Th­êng. ")
-end;
+AddNote(" ë §¹i Lý thÊy §oµn l·o n«ng thØnh gi¸o trång trät vò y nghª th­êng ®Ých ph­¬ng ph¸p . ") 
+Msg2Player(" ë §¹i Lý thÊy §oµn l·o n«ng thØnh gi¸o trång trät vò y nghª th­êng ®Ých ph­¬ng ph¸p . ") 
+end; 
 
-function L30_get_no()
-end;
+function L30_get_no() 
+end; 
 
-function L30_prise()
-	Talk(1,"","Ho¸ ra vÉn cßn bÝ quyÕt nh­ vËy, ®a t¹ tiÓu muéi! Ta phong muéi lµ NhÊt PhÈm Hoa Sø.")
-	SetTask(6,40*256)
-	SetRank(34)
-	DelItem(2)
-	DelItem(3)
-	DelItem(4)
---	AddMagic(105)
---	AddMagic(113)
-	add_cy(40)			-- µ÷ÓÃskills_table.luaÖÐµÄº¯Êý£¬²ÎÊýÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
-	Msg2Player("Chóc mõng b¹n! §· ®­îc phong thµnh NhÊt PhÈm Hoa Sø! Häc xong vâ c«ng Vò §¶ Lª Hoa, Phï V©n T¸n TuyÕt. ")
-	AddNote("§o¹t ®­îc bÝ quyÕt trång hoa Vò Y Nghª Th­êng, hoµn thµnh nhiÖm vô, ®­îc phong lµ: NhÊt PhÈm Hoa Sø. ")
-end;
+function L30_prise() 
+Talk(1,"","Th× ra lµ cßn cã nh­ vËy bÝ quyÕt , thËt lµ c¸m ¬n ng­¬i . ta th¨ng ng­¬i lµm mét phÈm hoa khiÕn cho ®i ") 
+SetTask(6,40*256) 
+SetRank(34) 
+DelItem(2) 
+DelItem(3) 
+DelItem(4) 
+-- script viet hoa By http://tranhba.com  AddMagic(105) 
+-- script viet hoa By http://tranhba.com  AddMagic(113) 
+add_cy(40) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®Ých hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
+Msg2Player("Chóc mõng ng­¬i # bÞ ®ãng cöa lµm mét phÈm hoa khiÕn cho # häc ®­îc vâ c«ng m­a ®¸nh lª hoa , m©y tr«i t¸n tuyÕt . ") 
+AddNote("§o¹t ®­îc lo¹i vò y nghª th­êng ®Ých bÝ quyÕt , hoµn thµnh nhiÖm vô , bÞ ®ãng cöa v× # nhÊt phÈm hoa khiÕn cho ") 
+end; 
 
-function Uworld121_lose()
-	Talk(5,"","C« n­¬ng cø nãi.","Xin ng­¬i h·y ®­a mí tãc nµy cho H÷u Sø D­¬ng Hå cña Thiªn V­¬ng Bang, nãi víi «ng Êy r»ng nÕu tr­íc th¸ng 7 «ng Êy kh«ng ®Õn Thuý Yªn m«n th× tõ ®©y vÒ sau ta vµ h¾n xem nh­ kh«ng cßn c¬ héi gÆp l¹i.","Qu¶ nhiªn lµ D­¬ng Hå! D­¬ng H÷u Sø v¨n tµi vâ ®øc chØ lµ sù lùa chän nhÊt thêi, lµ nh©n trung long phông. Hµ c« n­¬ng xin nghÜ l¹i.","Ng­¬i còng kh«ng muèn gióp ta? Hu hu...."," §­îc råi! Ta ®i.")
-	DelItem(373)
-	AddEventItem(10)
-	Msg2Player("NhËn lêi Hµ Mé TuyÕt, gióp c« Êy chuyÓn lêi ®Õn D­¬ng Hå, nhËn ®­îc mét khóc lôa cña Hµ Mé TuyÕt. ")
-	AddNote("NhËn lêi Hµ Mé TuyÕt, gióp c« Êy chuyÓn lêi ®Õn D­¬ng Hå. ")
-	SetTask(121,20) --ÈÎÎñ±äÁ¿ÉèÖÃÎª20
-end
+function Uworld121_lose() 
+Talk(5,"","C« n­¬ng nãi th¼ng .","KÝnh xin ng­¬i ®em tãc nµy mang cho Thiªn v­¬ng gióp ®Ých bªn ph¶i khiÕn cho d­¬ng hå , nãi cho h¾n biÕt nÕu nh­ 7 th¸ng tr­íc kh«ng ®Õn thóy khãi t×m ta lêi cña tõ nay vÒ sau ta cïng h¾n còng ch­a cã c¬ héi gÆp l¹i sau .","Qu¶ nhiªn lµ d­¬ng hå # d­¬ng bªn ph¶i khiÕn cho v¨n míi vâ ®øc ch¼ng qua lµ nhÊt thêi ®Ých lùa chän , lµ ng­êi trung long ph­îng , Hµ c« n­¬ng nghØ ng¬i mét chót ","Ta còng kh«ng muèn gióp ng­¬i , h« ....","§­îc råi # ta ®i .") 
+DelItem(373) 
+AddEventItem(10) 
+Msg2Player("Thay hµ mé tuyÕt ®¸i tho¹i cho d­¬ng hå , lÊy ®­îc hµ mé tuyÕt ®Ých mét thÊt t¬ lôa . ") 
+AddNote("Gióp hµ mé tuyÕt ®¸i tho¹i cho d­¬ng hå ") 
+SetTask(121,20) -- script viet hoa By http://tranhba.com  nhiÖm vô thay ®æi l­îng thiÕt trÝ v× 20 
+end 
 
-function Uworld121_Step4()
-	Talk(4,"Uworld121_sijin",".....….","Tuy h¾n bÊt nh©n nh­ng ta còng kh«ng thÓ bÊt nghÜa. ë ®©y cã mét c¸i kh¨n thªu, ng­¬i h·y d¾t h¾n ®i t×m Kh©u Anh C«n L«n ph¸i. Xem nh­ ta gióp h¾n lÇn cuèi cïng.","VËy ta ®i.....mong Tiªn c« nghÜ l¹i."," §õng nhiÒu lêi!")
-end
+function Uworld121_Step4() 
+Talk(4,"Uworld121_sijin",".....?","MÆc dï ng­¬i bÊt nh©n nh­ng lµ ta còng kh«ng cã thÓ bÊt nghÜa . n¬i nµy cã mét khèi tó quyªn , ng­¬i dÉn h¾n ®i t×m C«n L«n ®Ých kh©u anh . ta ®· gióp h¾n mét lÇn cuèi cïng . ","Ta ®i ..... hy väng tiªn c« hiÓu râ së .","Chí nhiÒu lêi !") 
+end 
 
-function Uworld121_sijin()
-	AddEventItem(376)
-	Msg2Player("NhËn chiÕc kh¨n thªu. ")
-	AddNote("NhËn ®­îc chiÕc kh¨n thªu cña Hµ Mé TuyÕt, ®em ®i t×m Kh©u Anh cña C«n L«n ph¸i. ")
-	SetTask(121,40) --ÈÎÎñ±äÁ¿ÉèÖÃÎª40
-end
+function Uworld121_sijin() 
+AddEventItem(376) 
+Msg2Player("TiÕp nhËn tó quyªn . ") 
+AddNote("B¾t ®­îc hµ mé tuyÕt ®Ých tó quyªn , mang theo ®i t×m C«n L«n ®Ých kh©u anh . ") 
+SetTask(121,40) -- script viet hoa By http://tranhba.com  nhiÖm vô thay ®æi l­îng thiÕt trÝ v× 40 
+end 

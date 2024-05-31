@@ -17,11 +17,13 @@ function OnDeath(Launcher)
 	DeathName = GetName();
 	deathcamp = GetCurCamp();
 	currank = BT_GetData(PL_CURRANK)
+			deathIP = GetPureIP()
+
 
 	if (PlayerIndex1 > 0) then
 		PlayerIndex = PlayerIndex1;
 		launchrank = BT_GetData(PL_CURRANK)
-		if (GetCurCamp() ~= deathcamp) then
+		if 1==1 then
 			LaunName = GetName();
 			--¸üĞÂÉ±NpcÊıÄ¿ºÍÅÅĞĞ°ñ
 			BT_SetData(PL_KILLPLAYER, BT_GetData(PL_KILLPLAYER) + 1); --¼ÇÂ¼Íæ¼ÒÉ±ÆäËüÍæ¼ÒµÄ×ÜÊı
@@ -63,10 +65,9 @@ function OnDeath(Launcher)
 			else
 				earnbonus = floor(BT_GetTypeBonus(PL_KILLPLAYER, 1) * rankradio)
 			end
-			pointplayer = bt_addtotalpoint(earnbonus)
+			bt_addtotalpoint(earnbonus)
 			mar_addmissionpoint(earnbonus)
-			Msg2Player("<color=yellow> B¹n h¹ gôc ®èi ph­¬ng nh©n vµ nhËn d­îc <color>"..pointplayer.." <color=yellow>®iÓm tİch lòy " )
-	
+			
 			local rankname = "";
 			rankname = tbRANKNAME[currank]
 			launchrank = BT_GetData(PL_CURRANK);

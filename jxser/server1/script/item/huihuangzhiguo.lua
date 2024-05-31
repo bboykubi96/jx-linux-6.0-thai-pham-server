@@ -1,7 +1,10 @@
+--Qua huy hoang config thap trung cao
 IncludeLib("ITEM");
 Include("\\script\\lib\\award.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 --huihuangzhiguo_level
-MX_LANTERN_COUNT = 5
+MX_LANTERN_COUNT = 5 --so luong qua HH an max trong ngay, so luong tra loi Hoa Dang max trong ngay
+
 function main(ItemIndex)
 	--if (GetLevel() < 90 and huihuangzhiguo_level > 1) then
 	--	Say("<#>ÄúµÄÀúÁ·»¹²»×ãÒÔÏû»¯ÕâÃ¶¹ûÊµ¡£", 0)
@@ -10,15 +13,22 @@ function main(ItemIndex)
 	--	Say("<#>ÄúµÄÀúÁ·»¹²»×ãÒÔÏû»¯ÕâÃ¶¹ûÊµ¡£", 0)
 	--	return 1
 	--end
+
+	--dofile("script/item/huihuangzhiguo.lua")
+
+	if SuDungQuaHH == 0 then
+	--	Say("TÝnh n¨ng Qu¶ Huy Hoµng t¹m khãa ch­a sö ®ông d­îc")
+	--	return 1
+	end
 	local szfruitlevel = ""
 	local nPlayerLevel = GetLevel();	
-	if (nPlayerLevel < 90) then
+	if (nPlayerLevel >=40 and nPlayerLevel<=79) then
 		nGetSeedLevel = 1;
 		szfruitlevel = "cÊp thÊp"
-	elseif (nPlayerLevel >= 90 and nPlayerLevel < 120) then
+	elseif (nPlayerLevel >= 80 and nPlayerLevel < 100) then
 		nGetSeedLevel = 2;
 		szfruitlevel = "Trung cÊp"
-	elseif (nPlayerLevel >= 120) then
+	elseif (nPlayerLevel >= 100) then
 		nGetSeedLevel = 3;
 		szfruitlevel = "Cao cÊp"
 	end
@@ -39,24 +49,32 @@ function main(ItemIndex)
 		Msg2Player(szMsg)
 		return 0
 	end
-	
+	if nGetSeedLevel<3 then
 	if ( GetTask(2313) >= MX_LANTERN_COUNT ) then
 		local szMsg = format("<#>H«m nay b¹n ®· ¨n %d qu¶ Huy hoµng, vâ c«ng th¨ng tiÕn qu¸ nhanh dÔ g©y t¸c dông ph¶n nghÞch, ngµy mai h·y tiÕp tôc vËy.",MX_LANTERN_COUNT);
 		Say(szMsg, 0)
 		return 1
 	end
+	else
+	if ( GetTask(2313) >= 1 ) then
+		local szMsg = format("<#>H«m nay b¹n ®· ¨n %d qu¶ Huy hoµng, vâ c«ng th¨ng tiÕn qu¸ nhanh dÔ g©y t¸c dông ph¶n nghÞch, ngµy mai h·y tiÕp tôc vËy.",1);
+		Say(szMsg, 0)
+		return 1
+	end
+	end
 	
 	local award_exp = 0
 	if (huihuangzhiguo_level == 1) then
-		award_exp = 500000
+		award_exp =500000
+		--Dieu chinh qua Huy Hoang G7VN cho cap 60 va 70
 	elseif (huihuangzhiguo_level == 2) then
-		award_exp = 2000000
+		award_exp = 20000000
 	elseif (huihuangzhiguo_level == 3) then
-		award_exp = 5000000
+		award_exp = 30000000
 	end
 	AddOwnExp(award_exp)
 	SetTask(2313, GetTask(2313) + 1)
-end
+	end
 
 function huihuang_checkdate(ItemIndex)
 	local nItemdate = GetItemParam(ItemIndex, 1)

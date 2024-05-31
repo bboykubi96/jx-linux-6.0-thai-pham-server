@@ -1,7 +1,6 @@
--- Î÷É½´å ÔÂÁÁÍÃ ¶Ô»°½Å±¾
--- ÀîĞÀ 2005-01-25
+-- script viet hoa By http://tranhba.com  t©y s¬n th«n tr¨ng s¸ng thá ®èi tho¹i ch©n vèn 
+-- script viet hoa By http://tranhba.com  lı h©n 2005-01-25 
 
-function main()
-	Say("Kú Kú lóc nµy kh«ng biÕt lµm sao ®ã, h×nh nh­ cã chuyÖn g× th× ph¶i.",0)
-end;
-
+function main() 
+Say("Kú kú kh«ng biÕt thÕ nµo , gièng nh­ cã chuyÖn g× muèn ph¸t sinh .",0) 
+end; 

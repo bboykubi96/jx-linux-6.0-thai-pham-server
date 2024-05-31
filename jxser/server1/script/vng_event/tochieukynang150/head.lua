@@ -9,9 +9,9 @@ end
 tbTrainSkill150.tbBIT_MIJI19 = {nTaskID = 3081,nStartBit = 1, nBitCount = 2, nMaxValue = 2};    --Task dµnh cho mËt tÞch skill 150 víi cÊp 19
 tbTrainSkill150.tbBIT_MIJI20 = {nTaskID = 3081,nStartBit = 3, nBitCount = 2, nMaxValue = 2};    --Task dµnh cho mËt tÞch skill 150 víi cÊp 20
 
-tbTrainSkill150.tbBIT_TCVA = {nTaskID = 3082,nStartBit = 1, nBitCount = 2, nMaxValue = 2};    --Task l­u sè lÇn nép tu ch©u v­ît ¶i
-tbTrainSkill150.tbBIT_TCVD = {nTaskID = 3082,nStartBit = 3, nBitCount = 2, nMaxValue = 2};    --Task l­u sè lÇn nép tu ch©u v­ît ¶i viªm ®Õ 
-tbTrainSkill150.tbBIT_TCTTMC = {nTaskID = 3082,nStartBit = 5, nBitCount = 2, nMaxValue = 2};	    --Task l­u sè lÇn nép tu ch©u v­ît ¶i thiªn tr× mËt c¶nh
+tbTrainSkill150.tbBIT_TCVA = {nTaskID = 3082,nStartBit = 1, nBitCount = 2, nMaxValue = 3};    --Task l­u sè lÇn nép tu ch©u v­ît ¶i
+tbTrainSkill150.tbBIT_TCVD = {nTaskID = 3082,nStartBit = 3, nBitCount = 2, nMaxValue = 3};    --Task l­u sè lÇn nép tu ch©u v­ît ¶i viªm ®Õ 
+tbTrainSkill150.tbBIT_TCTTMC = {nTaskID = 3082,nStartBit = 5, nBitCount = 2, nMaxValue = 3};	    --Task l­u sè lÇn nép tu ch©u v­ît ¶i thiªn tr× mËt c¶nh
 tbTrainSkill150.tbBIT_BCH_USE = {nTaskID = 3082,nStartBit = 7, nBitCount = 6, nMaxValue = 20};			-- Task l­u sè lÇn dïng Item B¹ch cÇu hoµn kü n¨ng
 tbTrainSkill150.tbBIT_Free_Use = {nTaskID = 2902,nStartBit = 1, nBitCount = 6, nMaxValue = 60};			-- Task l­u sè lÇn dïng Free trong ngµy
 tbTrainSkill150.tbBIT_Fee_Use = {nTaskID = 2902,nStartBit = 7, nBitCount = 6, nMaxValue = 60};			-- Task l­u sè lÇn dïng Fee trong ngµy

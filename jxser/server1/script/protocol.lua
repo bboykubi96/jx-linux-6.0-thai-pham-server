@@ -43,6 +43,7 @@ ScriptProtocol.KE_SCRIPT_PROTOCOL =
 	"emSCRIPT_PROTOCAL_SIGNIN_AWARD",
 	"emSCRIPT_PROTOCAL_SIGNIN_SYNC_DATE",
 	"emSCRIPT_PROTOCAL_SIGNIN_SYNC_AWARD",
+	"emSCRIPT_PROTOCOL_OPEN_MNS",
 	---------------------Ç©µ½ÏµÍ³ End--------------------------
 	"emSCRIPT_PROTOCOL_TONG_PKMESSAGE",
 }
@@ -127,7 +128,7 @@ if MODEL_GAMECLIENT == 1 then
 	{
 		{
 			"emSCRIPT_PROTOCOL_CLIENT_CMD",
-			"\script\\lib\\clientcmd.lua",
+			"\\script\\lib\\clientcmd.lua",
 			"ClientCmd:LuaExecute",
 			{OBJTYPE_STRING}
 		},
@@ -231,12 +232,12 @@ if MODEL_GAMECLIENT == 1 then
         "ProcessSignInSyncAward",
         {OBJTYPE_TABLE},
     },
-    {
-			"emSCRIPT_PROTOCOL_TONG_PKMESSAGE",
-			"\\script\\tongpkmessage\\tong_pk_message.lua",
-			"tbTongPkMessage:OnRecvProtocol",
+		{
+			"emSCRIPT_PROTOCOL_OPEN_MNS",
+			"\\script\\miniskill\\ui.lua",
+			"open_miniskill",
 			{OBJTYPE_TABLE},
-		}
+		},
 	}
 	ScriptProtocol:RegProtocolSet(Def)
 end

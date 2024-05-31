@@ -5,6 +5,8 @@
 Include("\\script\\missions\\citywar_city\\head.lua")
 
 function main()
+	Msg2Player("ctrap2c.lua");
+
 	ft = GetFightState();
 	if (ft == 0) then 
 		SetPos(1904,3544)

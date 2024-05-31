@@ -1,4 +1,4 @@
---端木睿(565)，生于每天22：05，在227,1630,3276
+
 function main()
 	mapindex = SubWorldID2Idx(227)
 	if (mapindex < 0 ) then

@@ -1,3 +1,6 @@
+Include("\\script\\worldrank\\vngglobalvar.lua")
+Include("\\script\\worldrank\\vngtop10.lua")
+Include("\\script\\worldrank\\xephang.lua")
 IncludeLib("SETTING");
 Include("\\script\\task\\newtask\\newtask_head.lua");
 Include( "\\script\\missions\\leaguematch\\wlls_levelup.lua" )
@@ -14,6 +17,9 @@ FACTION_SKILLTAB = {
 	[7] = {[90] = {361, 362, 391}, [120] = {715}, [150] = {1075, 1076},},
 	[8] = {[90] = {365, 368}, [120] = {716}, [150] = {1078, 1079},},
 	[9] = {[90] = {372, 375, 394}, [120] = {717}, [150] = {1080, 1081},},
+	[10] = {[90] = {1360, 1382}, [120] = {1365}, [150] = {1367, 1366},},
+	[11] = {[90] = {1963, 1987}, [120] = {1984}, [150] = {1967, 1966},},
+	[12] = {[90] = {1891, 1911}, [120] = {1894}, [150] = {1867, 1866},},
 }
 
 function levelup_check150skillmission()
@@ -22,7 +28,7 @@ function levelup_check150skillmission()
 		return
 	end
 	local nFact = GetLastFactionNumber()
-	if nFact == nil or nFact < 0 or  nFact > 9 then
+	if nFact == nil or nFact < 0 or  nFact > 12 then
 		return
 	end
 	local tb90Skill = FACTION_SKILLTAB[nFact][90]
@@ -83,10 +89,19 @@ function levelup_check150skillmission()
 end
 
 function main()
+	SaveNow();
+--	XepHang()
+	--XHDauHoi()
+--	tbTop10:LuuDSNhanVat()
 	local Uworld1001 = nt_getTask(1001)
 	local Uworld1002 = nt_getTask(1002)
 	local Uworld1003 = nt_getTask(1003)
 	local n_level = GetLevel();
+	
+	if n_level>=80 then
+	RemoveSkillState(1512,20,3,559872000,1) 
+--	RemoveSkillState(1679,20,3,559872000,1) 
+	end
 	if ( n_level == 30 ) then
 		if ( Uworld1001 == 60 ) and ( Uworld1002 == 60 ) and ( Uworld1003 == 108) then
 			nt_setTask(1001,80)

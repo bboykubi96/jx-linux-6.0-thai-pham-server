@@ -1,30 +1,30 @@
---Î÷ÄÏÄÏÇø ´óÀí¸® ³¤½­ÂëÍ·´¬·ò¶Ô»°
---suyu
---20031029
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lý phñ Tr­êng giang bÕn tµu thuyÒn phu ®èi tho¹i 
+-- script viet hoa By http://tranhba.com suyu 
+-- script viet hoa By http://tranhba.com 20031029 
 
-CurWharf = 9;
+CurWharf = 9; 
 Include("\\script\\global\\station.lua")
 Include("\\script\\missions\\autohang\\function.lua")
----------------------------------------------------------------
-function main(sel)
-	if (GetLevel() >= 50) then
-		Say("S«ng Hoµng Hµ uèn l­în chÝn khóc cong, em ë vïng biÓn anh trªn nói, c¸ch nhau Th­¬ng S¬n NhÜ H¶i, muèn gÆp còng kh«ng ®­îc.", 3, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel", "§i §µo Hoa ®¶o (5) /go_thd")
-	else
-		Say("S«ng Hoµng Hµ uèn l­în chÝn khóc cong, em ë vïng biÓn anh trªn nói, c¸ch nhau Th­¬ng S¬n NhÜ H¶i, muèn gÆp còng kh«ng ®­îc.", 2, "Ngåi thuyÒn/WharfFun", "Kh«ng ngåi/OnCancel")
-	end
-end;
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function main(sel) 
+if (GetLevel() >= 50) then 
+Say("Hoµng Hµ cöu khóc loan , ng­¬i ë ®©y s«ng ®Ých bªn nµy , ta ë s¬n ®Ých bªn kia , c¸ch nhau Th­¬ng S¬n nhÞ h¶i , muèn gÆp còng khã kh¨n .", 3,"Ngåi thuyÒn /WharfFun","Kh«ng ngåi /OnCancel", "# ®i hoa ®µo ®¶o (5) /go_thd") 
+else 
+Say("Hoµng Hµ cöu khóc loan , ng­¬i ë ®©y s«ng ®Ých bªn nµy , ta ë s¬n ®Ých bªn kia , c¸ch nhau Th­¬ng S¬n nhÞ h¶i , muèn gÆp còng khã kh¨n .", 2,"Ngåi thuyÒn /WharfFun","Kh«ng ngåi /OnCancel") 
+end 
+end; 
 
-function  OnCancel()
-   Talk(1,"","Kh«ng tiÒn kh«ng thÓ ngåi thuyÒn! ")
-end;
+function OnCancel() 
+Talk(1,"","Kh«ng cã tiÒn kh«ng thÓ ngåi thuyÒn ! ") 
+end; 
 
----------------------------------------------------------------
-function go_thd()
-	nRet = aexp_gotothd(239);
-	-- if (nRet == 1) then
-	--	Msg2Player("´¬·ò£º×î½üÈ¥ÌÒ»¨µºµÄÈË¿ÉÕæ¶à¡£ºÃ°É£¬Äã×øºÃà¶£¡")
-	if (nRet == -1) then
-		Talk(1,"","PhÝ ®i thuyÒn ®Õn §µo Hoa §¶o "..AEXP_TICKET.."L­îng, ng­¬i cã ®ñ kh«ng? ")
-	end
-end
----------------------------------------------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function go_thd() 
+nRet = aexp_gotothd(239); 
+-- script viet hoa By http://tranhba.com  if (nRet == 1) then 
+-- script viet hoa By http://tranhba.com  Msg2Player("ThuyÒn phu # gÇn nhÊt ®i hoa ®µo ®¶o ng­êi cña còng thËt nhiÒu . ®­îc råi , ng­¬i ngåi xong l©u #") 
+if (nRet == -1) then 
+Talk(1,"","§Õn hoa ®µo ®¶o phÝ dông "..AEXP_TICKET.." hai , ng­¬i ®ñ ch­a ? ") 
+end 
+end 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 

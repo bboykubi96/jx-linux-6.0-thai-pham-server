@@ -35,29 +35,30 @@ function AnnounceLuckyAward(strAwardName)
 	AddGlobalNews(strMsg)	
 end
 tbVnItemAwardEx = {
-	[1]={{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=0.5},},
-	[2]={{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=0.5},},
-	[3]={{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=0.5},},
-	[4]={{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=0.5},},
-	[5]={{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=0.5},},
-	[6]={{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=0.5},},
-	[7]={{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=0.5},},
-	[8]={{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.3},},
-	[9]={{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.3},},
-	[10]={{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.2},},
-	[11]={{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.2},},
-	[12]={{szName="B¶o R­¬ng Kim ¤ Kh«i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.01, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Kh«i") end},},
-	[13]={{szName="B¶o R­¬ng Kim ¤ Th­îng Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.013, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Th­îng Giíi") end},},
-	[14]={{szName="B¶o R­¬ng Kim ¤ Hµi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.01, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Hµi") end},},
-	[15]={{szName="B¶o R­¬ng Kim ¤ Yªu §¸i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.0125, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Yªu §¸i") end},},
-	[16]={{szName="B¶o R­¬ng Kim ¤ Hé UyÓn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.008, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Hé UyÓn") end},},
-	[17]={{szName="§å Phæ B¹ch Hæ Kh«i",tbProp={6,1,3173,1,0,0},nCount=1,nRate=0.2},},
-	[18]={{szName="§å Phæ B¹ch Hæ Béi",tbProp={6,1,3179,1,0,0},nCount=1,nRate=0.2},},
-	[19]={{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.05},},
-	[20]={{szName="Long HuyÕt Hoµn",tbProp={6,1,2117,1,0,0},nCount=1,nRate=3,nExpiredTime=20160},},
-	[21]={{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=5,nExpiredTime=10080},},
-	[22]={{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=8,nExpiredTime=20160},},
-	[23]={{szName="Thiªn Long LÖnh",tbProp={6,1,2256,1,0,0},nCount=1,nRate=7.5},},
+	
+--	[1]={{szName="Xu",tbProp={4,417,1,1},nCount=5},},
+--	[2]={{nExp_tl=1e9},},
+--	[3]={{szName="Viªm §Õ §å §»ng",tbProp={4,1620,1,1},nCount=1},},
+--	[4]={{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=0.5},},
+--	[5]={{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=0.5},},
+--	[6]={{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=0.5},},
+--	[7]={{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=0.5},},
+--	[8]={{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.3},},
+--	[9]={{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.3},},
+--	[10]={{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.2},},
+--	[11]={{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.2},},
+--	[12]={{szName="B¶o R­¬ng Kim ¤ Kh«i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.01, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Kh«i") end},},
+--	[13]={{szName="B¶o R­¬ng Kim ¤ Th­îng Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.013, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Th­îng Giíi") end},},
+--	[14]={{szName="B¶o R­¬ng Kim ¤ Hµi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.01, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Hµi") end},},
+--	[15]={{szName="B¶o R­¬ng Kim ¤ Yªu §¸i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.0125, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Yªu §¸i") end},},
+	--[16]={{szName="B¶o R­¬ng Kim ¤ Hé UyÓn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.008, CallBack = function(nItemIdx, nPlayerIdx)AnnounceLuckyAward("B¶o R­¬ng Kim ¤ Hé UyÓn") end},},
+	--[17]={{szName="§å Phæ B¹ch Hæ Kh«i",tbProp={6,1,3173,1,0,0},nCount=1,nRate=0.2},},
+	--[18]={{szName="§å Phæ B¹ch Hæ Béi",tbProp={6,1,3179,1,0,0},nCount=1,nRate=0.2},},
+	--[19]={{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.05},},
+--	[20]={{szName="Long HuyÕt Hoµn",tbProp={6,1,2117,1,0,0},nCount=1,nRate=3,nExpiredTime=20160},},
+	--[21]={{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=5,nExpiredTime=10080},},
+	--[22]={{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=8,nExpiredTime=20160},},
+--	[23]={{szName="Thiªn Long LÖnh",tbProp={6,1,2256,1,0,0},nCount=1,nRate=7.5},},
 }
 
 function ChuangGuan30:Init()
@@ -70,6 +71,7 @@ end
 function ChuangGuan30:Regist(szType, pFun, ...)
 	local nRegId = EventSys:GetType(szType):Reg(CHUANGGUAN30_MAP_ID, pFun, unpack(arg))
 	self.tbRegist[szType] = self.tbRegist[szType] or {}
+
 	tinsert(self.tbRegist[szType], nRegId)
 end
 
@@ -118,7 +120,7 @@ function ChuangGuan30:OnEnterMap()
 	self.tbPlayer[szName] = 1
 	self.nCount = self.nCount + 1
 	SetDeathScript("\\script\\missions\\challengeoftime\\chuangguang30.lua")
-	WriteLog("TiÕn vµo b¶n ®å, ng­êi ch¬i lµ" .. szName)
+	WriteLog("TiÕn vµo b¶n ®å, ng­êi ch¬i lµ " .. szName)
 	SetTmpCamp(nMapId) -- ÉèÖÃplayerµÄÕóÓª
 	self:SetState()
 end
@@ -126,16 +128,21 @@ end
 function ChuangGuan30:GiveAward(nGroupId, nCount)
 	if GetTask(PLAYER_MAP_TASK) == nGroupId then
 		local tbPro = {			
-			{szName="§iÓm Kinh NghiÖm",nExp = 10e6},
+			{szName="§iÓm Kinh NghiÖm",nExp = 10000000},
+			{szName="M¶nh GhÐp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=5},
+		--	{szName="TiÒn §ång",tbProp={4,417,1,1},nCount=5},
+		--	{szName="C©y Th«ng",tbProp={6,1,3065,1,0,0},nCount=2},
 		}
 		tbAwardTemplet:GiveAwardByList(tbPro, "jixuchuangguang award", 1)
-		tbAwardTemplet:GiveAwardByList(tbVnItemAwardEx, "jixuchuangguang item award", 1)
+		Msg2SubWorld("Tæ ®éi cña <color=yellow>"..GetName().."<color> ®· tiªu diÖt thµnh c«ng Boss, giµnh ®­îc phÇn th­ëng ®Æc biÖt lµ <color=yellow>10.000.000 EXP + 5 M¶nh GhÐp R­¬ng An Bang<color> trong MËt Phßng Cöa ¶i")
+		--tbAwardTemplet:GiveAwardByList(tbVnItemAwardEx, "jixuchuangguang item award", 1)
 	end
 end
 
 function ChuangGuan30:KickOut()
 	-- Ìß»Ø±¨Ãûµã
 	SetLogoutRV(0)
+	DisabledUseTownP(0)
 	NewWorld(11,3207,4978) -- ³É¶¼Äôß±³¾
 end
 

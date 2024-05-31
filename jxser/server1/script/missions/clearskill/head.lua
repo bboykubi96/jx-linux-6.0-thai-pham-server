@@ -22,7 +22,7 @@ CSP_NEEDJEWEL_PROP2			= 1;		-- 1个紫玉
 
 
 CSP_NEEDLEVEL			= 50; -- 可洗点的最小级别
-CSP_MAXClearTime		= 1; -- 最大洗点次数
+CSP_MAXClearTime		= 1; -- so lan tay tuy mien phi
 
 CSP_RevieSWID			= 1; -- 重生点ID
 CSP_MaxTestMapCount		= 10; --每一组PK洞的数量

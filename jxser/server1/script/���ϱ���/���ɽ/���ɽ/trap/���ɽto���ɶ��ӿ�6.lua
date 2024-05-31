@@ -1,11 +1,11 @@
---西南北区 青城山to神仙洞
---Trap ID：西南北区 15
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu n骾 Thanh Th祅h to th莕 ti猲 ng 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 15 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(23, 1583, 3205);
+SetFightState(1) 
+NewWorld(23, 1583, 3205); 
 
-AddTermini(32)
+AddTermini(32) 
 
 end;

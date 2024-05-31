@@ -1,8 +1,8 @@
---西南北区 会客大厅to唐门
---Trap ID：西南北区 35
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu ti誴 kh竎h i s秐h to Л阯g m玭 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 35 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(25, 4064, 5152);
+NewWorld(25, 4064, 5152); 
 
 end;

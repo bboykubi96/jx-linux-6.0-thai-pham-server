@@ -75,15 +75,18 @@ function OnTimer()
 			--Ã¿Ò»·ÖÖÓÍ¨¸æµ±Ç°Ë«·½»ý·Ö£¬ºÍnpc
 			if (mod(t, 3) == 0 ) then
 				sf_callfightnpc(t - RUNGAME_TIME, VANISHGAME_TIME - RUNGAME_TIME)	-- ²úÉúÕ½¶·Npc				
-				msstr = "C«ng c¸o: hiÖn giê tæng tÝch lòy cña 2 phe Tèng - Kim lµ "..GetMissionV(MS_TOTALPOINT_S)..":"..GetMissionV(MS_TOTALPOINT_J);
-				Msg2MSAll(MISSIONID, msstr)
+				msstr = "§iÓm: <color=green>"..GetCityOwner(7).."<color=yellow> "..GetMissionV(MS_TOTALPOINT_S).." <color=red>/ <color=green>"..GetCityOwner(4).."<color=yellow> "..GetMissionV(MS_TOTALPOINT_J);
+				--Msg2MSAll(MISSIONID, msstr)
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", msstr , "", "");			
 			end
-			
-
+                                                                                                                                                                     local nHour = tonumber(GetLocalDate("%H%M"))
+		if ( nHour >= 2100 and nHour < 2200) and (mod(t, 3) == 0 ) then
+	local szNews = format("<color=0xa9ffe0>Thiªn Tö<enter><color=0xa9ffe0>"..GetCityOwner(7).." <color=yellow>"..GetMSPlayerCount(MISSIONID, 1).."<color=0xa9ffe0> Ng­êi<color=0xa9ffe0> "..GetCityOwner(4).." <color=yellow>"..GetMSPlayerCount(MISSIONID, 2).." <color=0xa9ffe0>Ng­êi");
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");			
 		end
-	end
 end
-
+end
+end
 function sf_callfightnpc(usedtime, totaltime) 
 	if (usedtime > totaltime) then
 		return

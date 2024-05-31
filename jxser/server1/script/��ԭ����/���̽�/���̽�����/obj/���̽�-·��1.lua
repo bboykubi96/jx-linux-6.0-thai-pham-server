@@ -1,7 +1,7 @@
---ÖĞÔ­±±Çø ÌìÈÌ½Ì Â·±ê1£ºÌìÈÌ½Ì->ãê¾©
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu ngµy nhÉn d¹y b¶ng chØ ®­êng 1# ngµy nhÉn d¹y -> biÖn kinh 
 
-function main(sel)
+function main(sel) 
 
-Say("Thiªn NhÉn Gi¸o<---->BiÖn Kinh", 0)
+Say("Ngµy nhÉn d¹y <——> biÖn kinh ", 0) 
 
-end;
+end; 

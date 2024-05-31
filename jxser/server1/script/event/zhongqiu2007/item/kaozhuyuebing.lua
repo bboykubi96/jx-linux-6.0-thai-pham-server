@@ -6,7 +6,7 @@ Include("\\script\\event\\zhongqiu2007\\head.lua")
 
 function main(sel)
 	local ndate = tonumber(GetLocalDate("%y%m%d%H%M"))
-	if ndate > 0710312400 then
+	if ndate > 1810312400 then
 		Say("B¸nh Trung Thu heo quay nµy ®· qu¸ h¹n sö dông.",0)
 		return 0
 	end

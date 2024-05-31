@@ -1,9 +1,9 @@
---西北北区 药王洞三层5to药王洞四层2
---TrapID：西北北区 101
+-- script viet hoa By http://tranhba.com  t﹜ b綾 b綾 khu dc vng ng t莕g ba 5to dc vng ng b鑞 t莕g 2 
+-- script viet hoa By http://tranhba.com TrapID# t﹜ b綾 b綾 khu 101 
 
-function main(sel)
+function main(sel) 
 
-	SetFightState(1);
-	NewWorld(144, 1690, 3023);
-	AddTermini(210)
+SetFightState(1); 
+NewWorld(144, 1690, 3023); 
+AddTermini(210) 
 end;

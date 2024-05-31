@@ -1,11 +1,11 @@
---description: Á½ºşÇø ÎäÁêÉ½ ÌìÍõ°ïÈëÃÅÈÎÎñ Ğş²Î
---author: yuanlan	
---date: 2003/5/26
--- Update: Dan_Deng(2003-08-16)
+-- script viet hoa By http://tranhba.com description: hai hå khu vò l¨ng s¬n Thiªn v­¬ng gióp nhËp m«n nhiÖm vô huyÒn tè 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/5/26 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-16) 
 
-function main()
-	SetPropState()
-	AddEventItem(135)
-	Msg2Player("T×m ®­îc HuyÒn S©m. ")
-	AddNote("T¹i khu §«ng B¾c Vò L¨ng s¬n t×m ®­îc HuyÒn S©m. ")
-end;
+function main() 
+SetPropState() 
+AddEventItem(135) 
+Msg2Player("HuyÒn tè ") 
+AddNote("T×m ®­îc huyÒn tè . ") 
+end; 

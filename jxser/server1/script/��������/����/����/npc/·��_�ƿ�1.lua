@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡¾Æ¿Í1
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  ´ãµÝ##¢#Ì#####¿Ý1
+-- script viet hoa By http://tranhba.com  by#ºDan_Deng(2003-09-16)
 
 function main()
-	Talk(1,"","TiÓu nhÞ! Cho mét t« bón, ph¶i cay nha! ")
+	Talk(1,"","######µ´ß#Ý##Û###ãµ±! ")
 end;

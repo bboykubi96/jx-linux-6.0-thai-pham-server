@@ -1,27 +1,27 @@
--- Îå¶¾ Â·ÈËNPC Îå¶¾µÜ×Ó1 ÈëÃÅÈÎÎñ
--- by£ºDan_Deng(2003-08-05)
+-- script viet hoa By http://tranhba.com  n¨m ®éc ng­êi ®i ®­êng NPC n¨m ®éc ®Ö tö 1 nhËp m«n nhiÖm vô 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-08-05) 
 
-function main()
-	Uworld37 = GetByte(GetTask(37),2)
-	if (Uworld37 == 10) then		-- ÈëÃÅÈÎÎñÖĞ
-		if ((HaveItem(227) == 1) and (HaveItem(223) == 1) and (HaveItem(225) == 1) and (HaveItem(226) == 1) and (HaveItem(227) == 1)) then
-			Talk(1,"","Oa! T¹i sao l¹i Khæng t­íc vò tÆng cho ta vËy. Ph¶i mang ®Õn tÆng cho s­ huynh ë trong ®éng nµy míi ®óng. ")
-		else
-			Talk(1,"","Thêi gian luyÖn c«ng vÉn ch­a ®ñ, t¹i sao ng­¬i l¹i ra ®©y? Xem c¸i bé d¹ng ®ê ®Én cña ng­¬i k×a. Lµm sao cã thÓ trë thµnh ®Ö tö cña bæn m«n? Suèt ®êi chØ cã m¬ mµ th«i. ")
-		end
-	elseif (Uworld37 == 0) and (GetLevel() >= 10) and (GetFaction ~= "wudu") then		--ÈëÃÅÈÎÎñ
-		Say("Muèn trë thµnh ®Ö tö kı danh cña bæn m«n, cÇn ph¶i thö luyÖn qua Ngò §éc ®éng nµy. Ng­¬i cã muèn thö kh«ng",2,"D¹! §Ó ta thö xem! /enroll_get_yes","Kh«ng, ta chØ ®Õn tham quan. /no")
-	else							-- ³£¹æ¶Ô»°
-		Talk(1,"","§õng cã ch¹y lo¹n nh­ vËy. §éc trïng nu«i trong ®éng mµ c¾n th× ng­¬i v« ph­¬ng cøu ch÷a. ")
-	end
-end;
+function main() 
+Uworld37 = GetByte(GetTask(37),2) 
+if (Uworld37 == 10) then -- script viet hoa By http://tranhba.com  nhËp m«n nhiÖm vô trung 
+if ((HaveItem(227) == 1) and (HaveItem(223) == 1) and (HaveItem(225) == 1) and (HaveItem(226) == 1) and (HaveItem(227) == 1)) then 
+Talk(1,"","A ! thÕ nµo ®em khæng t­íc vò mao tÆng cho ta . h¼n muèn dÉn ®i ®­a cho trong ®éng ®İch s­ huynh míi ®óng . ") 
+else 
+Talk(1,""," luyÖn c«ng thêi gian kh«ng ®ñ , ng­¬i t¹i sao l¹i ®Õn n¬i nµy ? xem ng­¬i nh­ vËy uÓ o¶i kh«ng chÊn ®İch d¸ng vÎ lµm sao cã thÓ trë thµnh ®Ö tö bæn m«n ®©y ? c¶ ngµy h·y n»m m¬ ®i . ") 
+end 
+elseif (Uworld37 == 0) and (GetLevel() >= 10) and (GetFaction ~= "wudu") then -- script viet hoa By http://tranhba.com  nhËp m«n nhiÖm vô 
+Say("NÕu muèn trë thµnh ®Ö tö bæn m«n , ph¶i ®­îc qu¸ n¨m ®éc ®éng ®İch thö luyÖn . ng­¬i nghÜ thö mét chót sao ? ",2," lµ # ta muèn thö nh×n mét chót ! /enroll_get_yes","Kh«ng , ta ch¼ng qua lµ tíi xem mét chót . /no") 
+else -- script viet hoa By http://tranhba.com  th­êng quy ®èi tho¹i 
+Talk(1,"","Kh«ng nªn ch¹y lo¹n . bŞ trong ®éng ®İch trïng yªu ®Õn liÒn v« thuèc nh­ng y liÔu . ") 
+end 
+end; 
 
-function enroll_get_yes()
-	Uworld37 = SetByte(GetTask(37),2,10)
-	SetTask(37,Uworld37)
-	AddNote("NhËn nhiÖm vô ®Õn Ngò §éc ®éng luyÖn c«ng, ®i vµo trong ®éng, b¹n sÏ nhËn ®­îc 5 sîi l«ng mao chim Khæmg T­íc. ")
-	Msg2Player("NhËn nhiÖm vô ®Õn Ngò §éc ®éng luyÖn c«ng, ®i vµo trong ®éng, b¹n sÏ nhËn ®­îc 5 sîi l«ng mao chim Khæmg T­íc. ")
-end;
+function enroll_get_yes() 
+Uworld37 = SetByte(GetTask(37),2,10) 
+SetTask(37,Uworld37) 
+AddNote("NhËn ®­îc n¨m ®éc ®éng ®İch nhiÖm vô luyÖn c«ng , ®i tíi trong ®éng , ng­¬i sÏ thÊy 5 cïng d¸ng dÊp khæng t­íc mao . ") 
+Msg2Player("NhËn ®­îc n¨m ®éc ®éng ®İch nhiÖm vô luyÖn c«ng , ®i tíi trong ®éng , ng­¬i sÏ thÊy 5 cïng d¸ng dÊp khæng t­íc mao . ") 
+end; 
 
-function no()
-end;
+function no() 
+end; 

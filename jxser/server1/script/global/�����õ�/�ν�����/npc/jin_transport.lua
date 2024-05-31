@@ -4,6 +4,9 @@ Include("\\script\\global\\station.lua")
 IncludeLib("BATTLE");
 
 function main(sel)
+if GetTask(5859)==1 then
+return Say("§ang VËn Tiªu Xin §õng GÆp Ta")
+end
 	BT_LeaveBattle()
 	SetCurCamp(GetCamp())
 	SetFightState(0)

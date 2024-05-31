@@ -1,4 +1,5 @@
 Include("\\script\\missions\\basemission\\class.lua")
+IncludeLib("TIMER")
 
 Include("\\script\\missions\\huashanqunzhan\\taskctrl.lua")
 
@@ -12,9 +13,9 @@ huashanqunzhan = tbBaseMission:new() --´Ó»ùÀà¼Ì³ÐÏÂÀ´
 local tbMissionData = 
 {
 	nLatencyTime		= 45,
-	nDuelTime			= 30,
+	nDuelTime			= 20,
 	szPlayerDeathScript	= "\\script\\missions\\huashanqunzhan\\playerdeath.lua",
-	szMatchName			= "Hoa S¬n §¹i ChiÕn"
+	szMatchName			= "§Êu Tr­êng Hoa S¬n"
 }
 
 
@@ -45,31 +46,27 @@ function huashanqunzhan:_init(tbMissionData, tbRef)
 	self.TSK_Kill			= 1773
 	self.TSK_Winer			= 1774
 	self.TSK_MatchId		= 1775
-	self.nMoney				= 100000
+	self.nMoney				= 0
 	self.nPlayerCountLimit	= 300
-	self.nMinPlayerCountLimit = 10
+	self.nMinPlayerCountLimit = 5
 end
 
 huashanqunzhan.tbRevPos = 
 {
-	{2, 2594, 3508},
-	{2, 2616, 3508},
-	{2, 2603, 3513},
-	{2, 2602, 3533},
-	{2, 2602, 3548},
-	{2, 2608, 3557},
-	{2, 2617, 3571},
-	{2, 2600, 3598},
-	{2, 2608, 3598},
-	{2, 2615, 3598},
-	{2, 2613, 3585},
-	{2, 2604, 3573},
-	{2, 2592, 3570},
-	{2, 2610, 3563},
-	{2, 2603, 3514},
-	{2, 2595, 3515},
-	{2, 2594, 3514},
-	{2, 2604, 3522},
+	{162, 1589, 3135},
+	{162, 1591, 3141},
+	{162, 1589, 3145},
+	{162, 1596, 3140},
+	{162, 1594, 3145},
+	{162, 1587, 3137},
+	{162, 1589, 3142},
+	{162, 1590, 3135},
+	{162, 1592, 3141},
+	{162, 1580, 3145},
+	{162, 1597, 3140},
+	{162, 1595, 3145},
+	{162, 1588, 3137},
+	{162, 1590, 3142},
 }
 
 function huashanqunzhan:OnInit()
@@ -80,6 +77,7 @@ function huashanqunzhan:OnInit()
 end
 	
 function huashanqunzhan:OnPlayerJoin()
+	ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 1)
 	
 	--doFunByPlayer(nPlayerIndex, SetTask, self.TSK_Kills, 0)
 	
@@ -127,14 +125,20 @@ function huashanqunzhan:OnPlayerJoin()
 	ForbidChangePK(1);
 	SetCurCamp(4);	--ÉèÖÃÁÙÊ±ÕóÓª
 	DisabledUseTownP(1);	--½ûÖ¹Ê¹ÓÃ»Ø³Ì£»
-	
+	SetProtectTime(18*30) 
+	TM_SetTimer(900 * 18,119,1,0);
+	ChangeOwnFeature(0,0,1690);	
 	local nTimerCount = GetMissionV(self.tbMissionV.SECOND_COUNTER)
 	local szMsg	= format("Thi ®Êu b¾t ®Çu, thêi gian cßn l¹i lµ <color=yellow>%d<color> phót.", self.nDuelTime - nTimerCount)
 	Msg2Player(szMsg)
+	--Say("<color=white>+B¹n ®­îc tr¹ng th¸i bÊt tö trong 30s.\n+Chó ý: l«i ®µi cã thÓ lªn ho¾c xuèng ®­îc b»ng skill kinh kong\nPhót thø 15 cña trËn ®Êu tÊt c¶ nh©n vËt bÞ chuyÓn sang tr¹ng th¸i ®å s¸t.");
 	return 1
 end
 
+
+
 function huashanqunzhan:OnLeave()
+	ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 0)
 	--¹Ø±Õ½ûÖ¹¹â»·
 	ForbitAura(0)
 	--¹Ø±ÕÉèÖÃÓë°ï»áÓÐ¹ØµÄ±äÁ¿£¬²»ÔÊÐíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
@@ -161,7 +165,9 @@ function huashanqunzhan:OnLeave()
 	SetCurCamp(nCamp);
 	SetDeathScript(""); --Çå³ýËÀÍö½Å±¾
 	ForbidChangePK(0);
-	DisabledUseTownP(0);	--¹Ø±Õ½ûÖ¹Ê¹ÓÃ»Ø³Ì£»	
+	DisabledUseTownP(0);	--¹Ø±Õ½ûÖ¹Ê¹ÓÃ»Ø³Ì£»
+RestoreOwnFeature();	
+TM_StopTimer(119)
 end
 
 function huashanqunzhan:OnClose()
@@ -197,8 +203,7 @@ function huashanqunzhan:OnTimer()
 	nTimerCount = nTimerCount + 1
 	SetMissionV(self.tbMissionV.SECOND_COUNTER, nTimerCount)
 	local nPlayerCount = GetMSPlayerCount(self.nMissionId, 0)
-	local szMsg	= format("Thêi gian thi ®Êu cßn l¹i lµ <color=yellow>%d<color> phót.", self.nDuelTime - nTimerCount)
-	
+	local szMsg	= format("Thêi gian thi ®Êu cßn l¹i lµ<color=yellow>%d<color> phót.", self.nDuelTime - nTimerCount)
 	
 	if nTimerCount >= self.nDuelTime or nPlayerCount <= 1 then
 		self:OnClose()		
@@ -243,9 +248,9 @@ function huashanqunzhan:Judge(tbPlayer)
 	local szWinerName = doFunByPlayer(tbPlayer[1],GetName)
 	local nCurTime = GetMissionV(self.tbMissionV.SECOND_COUNTER)
 	
-	local szMsg = format("B¹n lµ ng­êi chiÕn th¾ng cuèi cïng, trong vßng <color=yellow>%d<color> phót cã thÓ tiÕn hµnh nhËn th­ëng, nÕu qu¸ thêi h¹n sÏ kh«ng nhËn ®­îc n÷a.", self.nLatencyTime-nCurTime)
-	SetMissionS(self.tbMissionS.WINER_INDEX, szWinerName)
-	AddGlobalNews(format("Ng­êi chiÕn th¾ng cuèi cïng cña <color=red>%s<color>: <color=yellow>%s<color>.", self.szMatchName, szWinerName))
+	local szMsg = format("B¹n lµ ng­êi chiÕn th¾ng cuèi cïng, trong vßng <color=yellow>%d<color> phót ph¶i ®Õn NPC B¸o Danh §Êu Tr­êng ®Ó nhËn th­ëng qu¸ thêi h¹n sÏ kh«ng nhËn ®­îc n÷a.", self.nLatencyTime-nCurTime)
+	ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 0)
+	Msg2SubWorld(format("Ng­êi M¹nh NhÊt Server trªn <color=green>§¹i ChiÕn Hoa S¬n<color=yellow> H«m Nay Kh«ng Ai Kh¸c ChÝnh Lµ: <color=cyan>%s<color>.", szWinerName))
 	doFunByPlayer(tbPlayer[1], SetTask, self.TSK_Winer, GetMissionV(self.tbMissionV.PLAYER_COUNT))
 	doFunByPlayer(tbPlayer[1], Msg2Player, szMsg)
 end

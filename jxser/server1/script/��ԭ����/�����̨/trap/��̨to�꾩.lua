@@ -1,2 +1,2 @@
---中原北区 帮会擂台to汴京
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu bang h閕 l玦 i to bi謓 kinh 
 Include("\\script\\missions\\citywar_arena\\leavetrap.lua")

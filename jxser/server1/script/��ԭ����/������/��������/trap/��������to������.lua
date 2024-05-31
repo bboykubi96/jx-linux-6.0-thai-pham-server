@@ -1,8 +1,8 @@
---中原北区 方丈禅室to少林派
---Trap ID：中原北区 60
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu phng trng thi謓 th蕋 to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 60 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1841, 2956);
+NewWorld(103, 1841, 2956); 
 
 end;

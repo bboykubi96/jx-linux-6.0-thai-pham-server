@@ -6,7 +6,7 @@ function main()
 	local szTitle = "<#><npc> CÇn giao dŞch kh«ng?"
 	local tbOpt = {}
 	tinsert(tbOpt, {"Giao dŞch", yes}) 
-	tinsert(tbOpt, {"Cöa hµng tinh luyÖn th¹ch", energy_sale}) 
+	--tinsert(tbOpt, {"Cöa hµng tinh luyÖn th¹ch", energy_sale}) 
 	tinsert(tbOpt, {"Nh©n tiÖn ghĞ qua th«i"}) 
 	CreateNewSayEx(szTitle, tbOpt);
 end

@@ -1,8 +1,8 @@
---中原北区 罗汉堂to少林派
---Trap ID：中原北区 62
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu La H竛 阯g to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 62 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1619, 3079);
+NewWorld(103, 1619, 3079); 
 
 end;

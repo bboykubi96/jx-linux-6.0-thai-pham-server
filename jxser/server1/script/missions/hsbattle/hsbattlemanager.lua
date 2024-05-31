@@ -7,7 +7,7 @@
 --6¡¢Èç¹û¿ÉÒÔ£¬¿ÉÒÔ´ÓNpc¶Ô»°ÖĞÁË½âµ±Ç°µÄ×ÜÅÅĞĞ
 --7¡¢±ÈÈü¿ÉÒÔ°´ÕÕµÈ¼¶·Ö³É¸÷ÖÖÈü³¡
 --ÈëÕ½ÇøµÄNpc¡¢Ñ¡ÔñÕóÓªµÄNpc
-
+Include("\\script\\global\\g7vn\\g7configall.lua")
 Include("\\script\\missions\\hsbattle\\hshead.lua");
 Include("\\script\\tong\\tong_header.lua");
 Include("\\script\\missions\\huashanqunzhan\\dailog.lua");
@@ -18,16 +18,20 @@ MapTab[1]= {212, 1577, 3288};
 function main()
 --[DinhHQ]
 --20110330: change request 30/03/2011
-do
-	Talk(1, "", "Chøc n¨ng t¹m ®ãng")
-	return
-end
+-- do
+	-- Talk(1, "", "Chøc n¨ng t¹m ®ãng")
+	-- return
+-- end
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return
+	end
 	local tbSay = 
 	{
-		"<dec><npc>§¹i hiÖp t×m ta cã viÖc g×?",
-		"L«i ®µi Hoa S¬n tuyÖt ®Ønh/HSBattle_Dailog_Main",
+		"<dec><npc>H«m nay l«i ®µi sÏ më cöa ng­¬i cã muèn tham gia",
+		-- "L«i ®µi Hoa S¬n tuyÖt ®Ønh/HSBattle_Dailog_Main",
 	}
-	tinsert(tbSay, "L«i ®µi Hoa S¬n/#huashanqunzhan_SignUpMain(1)")
+	tinsert(tbSay, "Ta muèn tham gia l«i ®µi sinh tö/#huashanqunzhan_SignUpMain(1)")
 	tinsert(tbSay, "KÕt thóc ®èi tho¹i/OnCancel")
 	CreateTaskSay(tbSay)
 end;

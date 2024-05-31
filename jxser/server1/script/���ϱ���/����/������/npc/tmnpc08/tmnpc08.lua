@@ -1,140 +1,140 @@
---description: ÌÆÃÅÌÆ²»È¾ 30¼¶ÈÎÎñ 
---author: yuanlan	
---date: 2003/3/11
---Dan_Deng(2003-07-22), ¼ÓÈëÃÅÅÉÈÎÎñµÄµÈ¼¶ÒªÇó
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n ®­êng bÊt nhiÔm 30 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/11 
+-- script viet hoa By http://tranhba.com Dan_Deng(2003-07-22), gia nhËp m«n ph¸i nhiÖm vô cÊp bËc yªu cÇu 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
 
-function main()
-	local nNpcIndex = GetLastDiagNpc()
-	local szNpcName = GetNpcName(nNpcIndex)
-	if NpcName2Replace then
-		szNpcName = NpcName2Replace(szNpcName)
-	end
-	local tbDailog = DailogClass:new(szNpcName)
-	tbDailog.szTitleMsg = "<npc>TÕ Tæ §×nh nµy lµ n¬i tÕ liÖt tæ liÖt t«ng cña bæn ph¸i, phµm lµ ng­êi th­êng ®õng cã mµ bĞn m·ng vµo ®©y!"
-	G_TASK:OnMessage("§­êng M«n", tbDailog, "DialogWithNpc")
-	tbDailog:AddOptEntry("Ta ®Õn t×m «ng cã viÖc kh¸c", main2)
-	tbDailog:Show() 
-end
+function main_com() 
+local nNpcIndex = GetLastDiagNpc() 
+local szNpcName = GetNpcName(nNpcIndex) 
+if NpcName2Replace then 
+szNpcName = NpcName2Replace(szNpcName) 
+end 
+local tbDailog = DailogClass:new(szNpcName) 
+tbDailog.szTitleMsg = "<npc> giæ tæ thİnh lµ tÕ tù bæn ph¸i liÖt tæ liÖt t«ng ®İch , th­êng nh©n kh«ng ®­îc ®i vµo !" 
+G_TASK:OnMessage("§­êng m«n ", tbDailog, "DialogWithNpc") 
+tbDailog:AddOptEntry("Ta tíi cã nh÷ng chuyÖn kh¸c ", main2) 
+tbDailog:Show() 
+end 
 
-function main2()
-	UTask_tm = GetTask(2)
-	Uworld123 = GetTask(123)
-	if (GetFaction() == "tangmen") and (GetSeries() == 1) then		-- ÌÆÃÅÃÅÅÉÈÎÎñ
-		if (UTask_tm == 30*256) and (GetLevel() >= 30) then		--30¼¶ÈÎÎñÆô¶¯
-			Talk(3, "L30_get", "<color=Red>phßng Háa khİ<color> cña <color=Red>§­êng V©n<color> s­ thóc thËt ®¸ng th­¬ng. Hai n¨m tr­íc cã mét g· lai lŞch bÊt minh b¾t cãc TiÓu Xuyªn, ®øa con ®éc nhÊt cña «ng, muèn Ğp «ng giao ra Bİ kiÕp <color=Red>'Háa Khİ Phæ'<color> cña bæn m«n.", "§­êng V©n s­ thóc kh«ng d¸m quay l­ng l¹i víi m«n quy. KÕt qu¶ lµ ngµy thø 2 g· kia ®­a tíi c¸nh tay cña TiÓu Xuyªn. S­ thóc chØ cã ®øa con trai nµy, nh­ng l¹i kh«ng thÓ giao 'Háa Khİ phæ' cho chóng ®­îc. Nµo ngê, l¹i ®æi lÊy thi thÓ cña TiÓu Xuyªn. S­ thóc ®au ®ín tét cïng, thÒ nhÊt ®Şnh ph¶i tr¶ mèi thï s©u ®Ëm!", "Nh­ng v× §­êng V©n s­ thóc tiÕt lé §­êng M«n Bİ kiÕp, nªn ph¶i chŞu sù trõng ph¹t cña m«n quy c¶ ®êi kh«ng thÓ rêi khái §­êng M«n nöa b­íc. Thï hËn kia e r»ng kiÕp nµy kh«ng thÓ tr¶ ®­îc!")
+function main2() 
+UTask_tm = GetTask(2) 
+Uworld123 = GetTask(123) 
+if (GetFaction() == "tangmen") and (GetSeries() == 1) then -- script viet hoa By http://tranhba.com  §­êng m«n m«n ph¸i nhiÖm vô 
+if (UTask_tm == 30*256) and (GetLevel() >= 30) then -- script viet hoa By http://tranhba.com 30 cÊp nhiÖm vô khëi ®éng 
+Talk(3, "L30_get", "<color=Red> háa khİ phßng <color> ®İch <color=Red> ®­êng v©n <color> s­ thóc thËt ®¸ng th­¬ng , hai n¨m tr­íc , mét nhãm kh«ng râ lai lŞch ng­êi cña b¾t cãc h¾n con ®éc nhÊt tiÓu xuyªn , uy hiÕp h¾n giao ra bæn m«n bİ kİp <color=Red> # háa khİ phæ # <color> . ","§­êng v©n s­ thóc kh«ng d¸m vi ph¹m m«n quy , kÕt qu¶ ngµy thø hai nhãm ng­êi kia sÏ ®­a tíi tiÓu xuyªn c¸nh tay cña , s­ thóc chØ cã nh­ vËy mét ®øa con trai , can ®¶m c©u liÖt d­íi bÊt ®¾c dÜ giao ra # háa khİ phæ # . nh­ng lµ kh«ng nghÜ tíi ®æi lÊy còng lµ tiÓu xuyªn ®İch thi thÓ , s­ thóc ®au ®ín muèn chÕt , thÒ nhÊt ®Şnh ph¶i chİnh tay ®©m cõu ®Şch . ","Nh­ng lµ bëi v× ®­êng v©n s­ thóc tiÕt lé liÔu §­êng m«n bİ kİp , nhÊt ®Şnh ph¶i tiÕp nhËn m«n quy xö ph¹t , cho nªn h¾n c¶ ®êi kh«ng thÓ sÏ rêi ®i §­êng m«n nöa b­íc , thï nµy hËn nµy sî r»ng kiÕp nÇy còng b¸o kh«ng ®­îc #!") 
 		elseif (UTask_tm == 30*256+50) then
-			Talk(2, "", "T¹i h¹ ®· t×m ®­îc tªn thæ phØ b¾t cãc con trai cña §­êng V©n s­ thóc, ®o¹t vÒ <color=Red> 'Háa Khİ Phæ'<color>.", " Tèt l¾m,<color=Red>§­êng V©n<color> s­ thóc nhÊt ®Şnh sÏ c¶m thÊy an ñi phÇn nµo. H·y giao <color=Red> 'Háa Khİ Phæ'<color>cho «ng Êy. ¤ng ta ë trong <color=Red>phßng Háa khİ<color>.")
-			Msg2Player("VÒ phßng tÕ tæ t×m §­êng BÊt NhiÔm, ®­îc biÕt §­êng V©n s­ thóc ®ang ë Háa Khİ phßng. ")
+Talk(2, "","Ta ®· t×m ®­îc b¾t cãc ®­êng v©n s­ thóc con trai ®İch phØ ®å , ®o¹t l¹i liÔu <color=Red># háa khİ phæ #<color>.","ThËt tèt qu¸ , <color=Red> ®­êng v©n <color> s­ thóc nhÊt ®Şnh sÏ c¶m thÊy vui mõng , ng­¬i nhanh ®i ®em <color=Red># háa khİ phæ #<color> giao cho h¾n , h¾n ®ang ë <color=Red> háa khİ phßng <color> trong .") 
+Msg2Player("Trë vÒ giæ tæ thİnh t×m ®­êng bÊt nhiÔm , biÕt ®­êng v©n s­ thóc ®ang háa khİ phßng ") 
 			SetTask(2,30*256+60)
 		elseif (UTask_tm == 30*256+60) then
-			Talk(1, "", "§­êng V©n s­ thóc nhÊt ®Şnh sÏ c¶m thÊy an ñi phÇn nµo. H·y ®Õn <color=Red>phßng Háa khİ<color> nãi víi «ng Êy tin mõng nµy!")
-		elseif (UTask_tm > 30*256) and (UTask_tm < 40*256) then					--ÒÑ¾­½Óµ½30¼¶ÈÎÎñ£¬ÉĞÎ´Íê³É
-			Talk(1,""," Ta ®· ©m thÇm dß la, tªn thæ phØ ®ã d­êng nh­ th­êng xuÊt hiÖn ë <color=Red>B¹ch V©n ®éng<color> phİa §«ng Thanh Thµnh s¬n.")
-		elseif (UTask_tm >= 40*256) then					--ÒÑ¾­Íê³É30¼¶ÈÎÎñ£¬±¾ÃÅµÜ×Ó
-			Skill150Dialog("Ng­¬i cã thÓ gióp §­êng V©n s­ thóc xãa ®i nçi oan khuÊt. Xem ra, ta thËt kİnh nÓ ng­¬i!")
-		else		
-			Skill150Dialog("TÕ Tæ §×nh nµy lµ n¬i tÕ liÖt tæ liÖt t«ng cña bæn ph¸i, phµm lµ ng­êi th­êng ®õng cã mµ bĞn m·ng vµo ®©y!")
-		end
-	elseif (Uworld123 == 10) then											-- ÌÆÃÅ90¼¶¼¼ÄÜÈÎÎñ
-		Say("Cã thÓ thay ta chuyÓn mét bøc th­ kh«ng?",2,"Tu©n lÖnh!/Uworld123_get","ThËt ¸y n¸y, m«n chñ võa míi gäi ta qua chç «ng Êy. /L30_get_no")
-	elseif (Uworld123 == 20) and (HaveItem(379) == 0) then		-- ÌÆ²»È¾ÈÎÎñ£¬µÀ¾ß¶ªÁË
-		Talk(1,"","Ng­¬i thËt lµ….., th­ cßn ch­a cÇm ®· véi v· ch¹y ®i!")
-		AddEventItem(379)
-		Msg2Player("NhËn l¹i th­ cña §­êng BÊt NhiÔm ")
-	elseif (Uworld123 == 30) and (HaveItem(380) == 1) then		-- ÌÆ²»È¾ÈÎÎñ£¬¿ª´ò
-		Talk(3,"Uworld123_step2","Ha ha…Qu¶ nhiªn diÖu kÕ! SÏ khiÕn §­êng nhÊt TrÇn chÕt còng kh«ng cã ®Êt dung th©n!","Hö…? Ng­¬i lµ ai? Sao kh«ng ph¶i lµ A Tµi?","Ng­¬i ®· nghe thÊy ®iÒu bİ mËt, muèn sèng còng kh«ng ®­îc, h·y xem chiªu cña ta ®©y!")
-	elseif (Uworld123 == 40) then											-- Ã»´òÍê£¬¼ÌĞø´ò
-		Talk(1,"Uworld123_step2","§õng ch¹y! H·y coi ®©y!")
-	elseif (Uworld123 == 50) then
-		if (GetSex() == 0) then
-			sexstr = "§¹i hiÖp "
-		else
-			sexstr = "N÷ hiÖp"
-		end
-		Talk(8,"Uworld123_step3","C«ng tö hµ tÊt ph¶i lo l¾ng. Tuy ta kh«ng th©n víi c«ng tö nh­ng còng ch¼ng viÖc g× lµm háng chuyÖn cña c«ng tö. ","Ng­¬i. Ng­¬i. ","C«ng tö th©n lµ thiÕu chñ §­êng Gia B¶o. Ta tuy bÊt tµi nh­ng kh«ng gióp c«ng tö ch¼ng lÏ ®i gióp ng­êi ngoµi. ","Kh«ng sai, ®óng nh­ vŞ anh hïng nµy nãi, xin cho hái cao danh quİ t¸nh? ","T¹i h¹ "..GetName().."TiÖn thÓ. ","µ, Ra vËy "..GetName()..sexstr.."Nghe danh ®· l©u, nh­ng kh«ng ngê lÇn ®Çu gÆp mÆt l¹i trong hoµn c¶nh nµy. ","§¹i hiÖp ®· ñng hé t¹i h¹ nh­ vËy, kh«ng biÕt cã thÓ gióp ta mang quyÓn s¸ch nµy trao cho §oan Méc DuÖ ®­îc ch¨ng? QuyÓn s¸ch nµy ®èi víi t¹i h¹ lµ mÊu chèt thuËn lîi ®Ó n¾m gi÷ §­êng M«n. Sù viÖc v« cïng träng ®¹i, kh«ng thÓ nhê v¶ ng­êi kh¸c ®­îc. ","ChuyÖn nhá, giao cho ta ®­îc råi. ")
-	elseif (Uworld123 == 60) and (HaveItem(377) == 0) then		-- ÃØóÅ¶ªÁË
-		if (GetSex() == 0) then
-			Talk(1,"","§¹i hiÖp quªn mang Bİ kiÕp ®i råi!")
-		else
-			Talk(1,"","N÷ hiÖp quªn mang Bİ kiÕp ®i råi!")
-		end
-		AddEventItem(377)
-		Msg2Player("LÊy l¹i bİ kİp §­êng m«n ")
-	elseif (Uworld123 == 70) or (Uworld123 == 75) then			-- ÈÎÎñÍê³É
-		Talk(1,"Uworld123_prise","Ha ha ha. Ta sÏ ®îi tin mõng cña ng­¬i. ThËt lßng c¶m ¬n ng­¬i!")
-	elseif (Uworld123 >= 10) and (Uworld123 < 80) then		-- ÌÆ²»È¾ÈÎÎñ½øĞĞÖĞ
-		Talk(1,"","ChuyÖn ta nãi ng­¬i mau lµm ngay ®i, kh«ng viÖc g× th× ®õng l·ng phİ thêi gian!")
-	elseif (GetTask(51) >= 90) then		-- Ò»³¾¡°Ï´ÇåÔ©Çü¡±ÈÎÎñÖ®ºó£¬¶Ô»°¸Ä±ä
-		Talk(1,"","T¹i sao cuèi cïng h¾n l¹i ®­îc sñng ¸i, cßn ta th× bŞ ®èi xö tÖ b¹c? Qu¶ thËt bÊt c«ng!")
-	elseif (Uworld123 >= 80) then									-- ÌÆ²»È¾ÈÎÎñÒÑ¾­Íê³É
-		Talk(1,"","ChuyÖn lÇn nµy thËt nhê c«ng cña ng­¬i, khi ta trë thµnh m«n chñ nhÊt ®Şnh sÏ kh«ng quªn c«ng lao cña ng­¬i!")
-	elseif (UTask_tm >= 70*256) then							--ÒÑ¾­³öÊ¦
-		Skill150Dialog("Ta lu«n muèn ra ®i nh­ng cha ta kh«ng ®ång ı.")
-	else
-		Skill150Dialog("TÕ Tæ §×nh nµy lµ n¬i tÕ liÖt tæ liÖt t«ng cña bæn ph¸i, phµm lµ ng­êi th­êng ®õng cã mµ bĞn m·ng vµo ®©y!")
-	end
-end;
+Talk(1, "","S­ thóc nhÊt ®Şnh sÏ c¶m thÊy vui mõng , ng­¬i nhanh ®i <color=Red> háa khİ phßng <color> nãi cho h¾n biÕt c¸i tin tøc tèt nµy !") 
+elseif (UTask_tm > 30*256) and (UTask_tm < 40*256) then -- script viet hoa By http://tranhba.com  ®· nhËn ®­îc 30 cÊp nhiÖm vô , ch­a hoµn thµnh 
+Talk(1,"","Ta ®· tèi trung t×m kiÕm qu¸ , ®¸m kia trãi phØ gièng nh­ th­êng ra kh«ng cã ë <color=Red> nói Thanh Thµnh phİa ®«ng m©y tr¾ng ®éng <color> mét d·y .") 
+elseif (UTask_tm >= 40*256) then -- script viet hoa By http://tranhba.com  ®· hoµn thµnh 30 cÊp nhiÖm vô , ®Ö tö bæn m«n 
+Skill150Dialog("Ng­¬i cã thÓ gióp ®­êng v©n s­ thóc t¾m cìi oan khuÊt , xem ra ta sÏ ®èi ng­¬i qu¸t môc nh×n nhau liÔu !") 
+else 
+Skill150Dialog("C¸i nµy giæ tæ thİnh lµ bæn m«n l¹y tÕ liÖt tæ liÖt t«ng ®İch ®Şa ph­¬ng , ng­êi b×nh th­êng chê kh«ng ph¶i thiÖn vµo !") 
+end 
+elseif (Uworld123 == 10) then -- script viet hoa By http://tranhba.com  §­êng m«n 90 cÊp kü n¨ng nhiÖm vô 
+Say("Cã thÓ gióp ta mang mét phong th¬ sao ?",2,"Tu©n lÖnh !/Uworld123_get","ThËt lµ ng­îng ngïng , ch­ëng m«n míi võa gäi ta qu¸ khø h¾n n¬i ®ã . /L30_get_no") 
+elseif (Uworld123 == 20) and (HaveItem(379) == 0) then -- script viet hoa By http://tranhba.com  ®­êng bÊt nhiÔm nhiÖm vô , ®¹o cô mÊt 
+Talk(1,"","Ng­¬i thËt lµ .., tin/th¬ cßn ch­a cÇm liÒn ch¹y !") 
+AddEventItem(379) 
+Msg2Player("NhËn ®­êng bÊt nhiÔm ®İch tin/th¬ ") 
+elseif (Uworld123 == 30) and (HaveItem(380) == 1) then -- script viet hoa By http://tranhba.com  ®­êng bÊt nhiÔm nhiÖm vô , ®¸nh 
+Talk(3,"Uworld123_step2","Ha ha ha , qu¶ nhiªn diÖu kÕ , ®Ó cho ®­êng mét trÇn chÕt kh«ng cã chç ch«n !","Ng­¬i lµ ai ? thÕ nµo kh«ng ph¶i lµ a míi ?","Ng­¬i nghe ®­îc bİ mËt , muèn sèng còng kh«ng ®­îc liÔu , xem chiªu !") 
+elseif (Uworld123 == 40) then -- script viet hoa By http://tranhba.com  kh«ng cã ®¸nh xong , tiÕp tôc ®¸nh 
+Talk(1,"Uworld123_step2","§õng ch¹y , xem chiªu !") 
+elseif (Uworld123 == 50) then 
+if (GetSex() == 0) then 
+sexstr = " ®¹i hiÖp " 
+else 
+sexstr = " n÷ hiÖp " 
+end 
+Talk(8,"Uworld123_step3","C«ng tö cÇn g× ph¶i rÇu rØ , mÆc dï ta cïng c«ng tö kh«ng h«n , nh­ng lµ , còng sÏ kh«ng h­ c«ng tö chuyÖn cña ","Ng­¬i , ng­¬i . ","C«ng tö th©n lµ §­êng gia b¶o ThiÕu chñ , ta tuy bÊt tµi , nh­ng lµ , kh«ng gióp c«ng tö , ch¼ng lÏ ®i gióp ng­êi kh¸c sao ? ","Kh«ng tÖ , ®óng nh­ anh hïng theo nh­ lêi , xin hái t«n tİnh ®¹i danh ? ","T¹i h¹ "..GetName().." a ","Th× ra lµ nh­ vËy "..GetName()..sexstr.." nghe ®¹i danh ®· l©u , kh«ng nghÜ tíi h«m nay ë n¬i nµy gÆp nhau . ","§¹i hiÖp nh­ thÕ ñng hé ta , kh«ng biÕt cã thÓ hay kh«ng ®em s¸ch nµy mang cho ®oan méc thôy ? s¸ch nµy ®èi víi ta mµ nãi , cùc kú träng yÕu . chuyÖn träng ®¹i , kh«ng thÓ dùa vµo ng­êi kh¸c liÔu . ","ChuyÖn nhá mét thung , giao cho ta lµ ®­îc . ") 
+elseif (Uworld123 == 60) and (HaveItem(377) == 0) then -- script viet hoa By http://tranhba.com  bİ kİp mÊt 
+if (GetSex() == 0) then 
+Talk(1,"","§¹i hiÖp quªn mang bİ kİp liÔu !") 
+else 
+Talk(1,"","ThiÕu hiÖp quªn mang bİ kİp liÔu !") 
+end 
+AddEventItem(377) 
+Msg2Player("B¾t ®­îc §­êng m«n bİ kİp ") 
+elseif (Uworld123 == 70) or (Uworld123 == 75) then -- script viet hoa By http://tranhba.com  nhiÖm vô hoµn thµnh 
+Talk(1,"Uworld123_prise","Ha ha ha , ta chê ng­¬i ®İch tin tøc tèt , thËt lµ c¶m t¹ ng­¬i !") 
+elseif (Uworld123 >= 10) and (Uworld123 < 80) then -- script viet hoa By http://tranhba.com  ®­êng bÊt nhiÔm nhiÖm vô tiÕn hµnh trung 
+Talk(1,"","Ta nãi , ng­¬i véi vµng ®i lµm , kh«ng muèn l·ng phİ thêi gian !") 
+elseif (GetTask(51) >= 90) then -- script viet hoa By http://tranhba.com  mét trÇn “ röa s¹ch oan khuÊt ” nhiÖm vô sau , ®èi tho¹i söa ®æi 
+Talk(1,"","T¹i sao h¾n lÊy ®­îc sñng ¸i , mµ ta l¹i kh«ng thÓ ? thËt lµ bÊt c«ng !") 
+elseif (Uworld123 >= 80) then -- script viet hoa By http://tranhba.com  ®­êng bÊt nhiÔm nhiÖm vô ®· hoµn thµnh 
+Talk(1,""," lÇn nµy lµm phiÒn ng­¬i , ta trë thµnh ch­ëng m«n sau , nhÊt ®Şnh sÏ kh«ng quªn ng­¬i !") 
+elseif (UTask_tm >= 70*256) then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
+Skill150Dialog("Ta muèn ®i ra ngoµi , nh­ng lµ , phô th©n kh«ng ®ång ı ?") 
+else 
+Skill150Dialog("C¸i nµy giæ tæ thİnh lµ bæn m«n l¹y tÕ liÖt tæ liÖt t«ng ®İch ®Şa ph­¬ng , ng­êi b×nh th­êng chê kh«ng ph¶i thiÖn vµo !") 
+end 
+end; 
 
-function Skill150Dialog(szTitle)
-	local nNpcIndex = GetLastDiagNpc()
-	local szNpcName = GetNpcName(nNpcIndex)
-	if NpcName2Replace then
-		szNpcName = NpcName2Replace(szNpcName)
-	end
-	local tbDailog = DailogClass:new(szNpcName)
-	tbDailog.szTitleMsg = format("<npc>%s", szTitle)
-	G_TASK:OnMessage("§­êng M«n", tbDailog, "DialogWithNpc")
-	tbDailog:Show() 
-end
+function Skill150Dialog(szTitle) 
+local nNpcIndex = GetLastDiagNpc() 
+local szNpcName = GetNpcName(nNpcIndex) 
+if NpcName2Replace then 
+szNpcName = NpcName2Replace(szNpcName) 
+end 
+local tbDailog = DailogClass:new(szNpcName) 
+tbDailog.szTitleMsg = format("<npc>%s", szTitle) 
+G_TASK:OnMessage("§­êng m«n ", tbDailog, "DialogWithNpc") 
+tbDailog:Show() 
+end 
 
-function L30_get()
---	DelItem(42)							--·ÀÖ¹ÖØ½ÓÈÎÎñºó£¬Íæ¼Ò¼ñÆğÈÎÎñµÀ¾ß
-	Say(" §­êng V©n s­ thóc tõng nãi bÊt luËn lµ ai, chØ cÇn cã thÓ gióp «ng tr¶ mèi thï giÕt con, lÊy vÒ <color=Red> Háa Khİ Phæ<color>, «ng sÏ mang nÆng ¬n s©u!", 2, "Gióp «ng ta b¸o thï. /L30_get_yes", "Ta kh«ng quan t©m!/L30_get_no")
-end;
+function L30_get() 
+-- script viet hoa By http://tranhba.com  DelItem(42) -- script viet hoa By http://tranhba.com  phßng ngõa nÆng tiÕp nhËn vô sau , nhµ ch¬i nhÆt lªn nhiÖm vô ®¹o cô 
+Say("§­êng v©n s­ thóc ®· tõng nãi , bÊt kÓ lµ ai , chØ cÇn cã thÓ gióp h¾n b¸o mèi thï giÕt con , ®o¹t l¹i <color=Red># háa khİ phæ #<color> , h¾n sÏ dèc hÕt tÊt c¶ b¸o ®¸p ng­êi nµy !", 2,"T×m kiÕm trãi phØ /L30_get_yes","Kh«ng liªn quan chuyÖn ta !/L30_get_no") 
+end; 
 
-function L30_get_yes()
-	Talk(1,""," Ta ®· ©m thÇm dß la, tªn thæ phØ ®ã d­êng nh­ th­êng xuÊt hiÖn ë <color=Red>B¹ch V©n ®éng<color> phİa §«ng Thanh Thµnh s¬n.")
+function L30_get_yes() 
+Talk(1,"","Ta ®· tèi trung t×m kiÕm qu¸ , ®¸m kia trãi phØ gièng nh­ th­êng ra kh«ng cã ë <color=Red> nói Thanh Thµnh phİa ®«ng m©y tr¾ng ®éng <color> mét d·y .") 
 	SetTask(2, 30*256+20)
-	AddNote("GÆp §­êng BÊt NhiÔm ë tõ ®­êng ( 514, 318) , nhËn <color=Red>nhiÖm vô Háa Khİ Phæ<color>, gióp §­êng V©n s­ thóc ®o¹t 'Háa Khİ Phæ' vÒ. ")
-	Msg2Player("NhËn nhiÖm vô 'Háa Khİ Phæ', gióp §­êng V©n s­ thóc ®o¹t 'Háa Khİ Phæ' vÒ. ")
-end;
+AddNote("ThÊy ®­êng bÊt nhiÔm ë ( 514, 318) , nhËn <color=Red> háa khİ phæ nhiÖm vô <color>, gióp ®­êng v©n s­ thóc ®o¹t l¹i háa khİ phæ ") 
+Msg2Player("NhËn háa khİ phæ nhiÖm vô , gióp ®­êng v©n s­ thóc ®o¹t l¹i háa khİ phæ ") 
+end; 
 
-function Uworld123_get()
-	Talk(1,"","Tèt! Mau kİp thay ta trao bøc th­ nµy ®Õn BiÖn Kinh cho B¹ch C«ng Tö. §i sím vÒ sím!")
-	SetTask(123,20)
-	Msg2Player("NhËn nhiÖm vô: Thay §­êng BÊt NhiÔm ®em th­ ®Õn trao cho B¹ch c«ng tö. ")
-	AddEventItem(379)
-	Msg2Player("NhËn ®­îc th­ cña §­êng BÊt NhiÔm ")
-end
+function Uworld123_get() 
+Talk(1,"","H¶o , mau thay ta mang phong th­ nµy ®Õn biÖn kinh cho B¹ch c«ng tö , nhanh ®i mau trë l¹i !") 
+SetTask(123,20) 
+Msg2Player("TiÕp nhËn vô # thay ®­êng bÊt nhiÔm mang tin/th¬ cho B¹ch c«ng tö ") 
+AddEventItem(379) 
+Msg2Player("NhËn ®­îc ®­êng bÊt nhiÔm ®İch tin/th¬ ") 
+end 
 
-function Uworld123_step2()
-	DelItem(380)
-	SetTask(123,40)
-	SetFightState(1)
-	NewWorld(229,1616,3195)
-end
+function Uworld123_step2() 
+DelItem(380) 
+SetTask(123,40) 
+SetFightState(1) 
+NewWorld(229,1616,3195) 
+end 
 
-function Uworld123_step3()
-	AddEventItem(377)
-	SetTask(123,60)
-	Msg2Player("LÊy ®­îc bİ kİp §­êng M«n. ")
-end
+function Uworld123_step3() 
+AddEventItem(377) 
+SetTask(123,60) 
+Msg2Player("B¾t ®­îc §­êng m«n bİ kİp . ") 
+end 
 
-function Uworld123_prise()
-	AddRepute(10)
-	Earn(20000)
-	if (GetTask(123) == 70) then			-- ²»ÊÇ±¾ÃÅ
-		SetTask(123,245)
-	else
-		SetTask(123,255)
-	end
-	Msg2Player("NhiÖm vô hoµn thµnh, b¹n sÏ ®­îc th­ëng 20000 l­îng, thanh thÕ cña b¹n t¨ng 10 ®iÓm. ")
-	AddNote("NhiÖm vô hoµn thµnh, b¹n sÏ ®­îc th­ëng 20000 l­îng, thanh thÕ cña b¹n t¨ng 10 ®iÓm. ")
-end
+function Uworld123_prise() 
+AddRepute(10) 
+Earn(20000) 
+if (GetTask(123) == 70) then -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ bæn m«n 
+SetTask(123,245) 
+else 
+SetTask(123,255) 
+end 
+Msg2Player("NhiÖm vô hoµn thµnh , t­ëng th­ëng 2 v¹n l­îng , uy tİn gia t¨ng 10 ®iÓm . ") 
+AddNote("NhiÖm vô hoµn thµnh , t­ëng th­ëng 2 v¹n l­îng , uy tİn gia t¨ng 10 ®iÓm . ") 
+end 
 
-function L30_get_no()
-end;
+function L30_get_no() 
+end; 

@@ -7,3 +7,21 @@ end;
 function salemedicine(sel)
 Sale(99, 1)
 end
+
+function buymaunhanh()
+	local pri = 100
+	local totalcount =CalcFreeItemCellCount();
+	local money = GetCash()
+	local moneymin = (money - mod(money,pri)) / pri
+	if totalcount == 0 then 
+                       Say("<color=yellow>§¹i hiÖp ®· cã ®Çy r­¬ng m¸u.",0)
+	return
+	end
+	if moneymin >= totalcount then
+		tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= totalcount }}, format("Get %s", "Than pham 1"))
+		Pay(totalcount * pri)
+	else
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= moneymin }}, format("Get %s", "Than pham 1"))
+		Pay(moneymin * pri)
+end
+end

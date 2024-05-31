@@ -1,37 +1,37 @@
---description: ÌÆÃÅÌÆÔÆ 30¼¶ÈÎÎñ 
---author: yuanlan	
---date: 2003/3/11
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n ®­êng v©n 30 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/11 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 
 Include("\\script\\global\\skills_table.lua")
 
-function main()
-	UTask_tm = GetTask(2);
-	if (GetFaction() == "tangmen") and (GetSeries() == 1) then
-		if ((UTask_tm >= 30*256+50) and (UTask_tm <= 30*256+60) and (HaveItem(42) == 1)) then		--30¼¶ÈÎÎñ
-			L30_prise()
-		elseif (UTask_tm >= 40*256) and (GetFaction() == "tangmen") then					--ÒÑ¾­Íê³É30¼¶ÈÎÎñ£¬ÉĞÎ´³öÊ¦
-			Talk(1,"","Ng­¬i ®· gióp ta b¸o mèi thï nµy, ng­¬i cÇn g×? Ta nhÊt ®Şnh gióp ng­¬i!")
-		else								--Ã»ÓĞÍê³É30¼¶ÈÎÎñ£¨È±Ê¡¶Ô»°£©
-			Talk(1,"","TiÓu Xuyªn, ®øa con téi nghiÖp cña ta….Thï hËn nµy……ngµy nµo ch­a tr¶, ta chÕt kh«ng nh¾m m¾t!")
-		end
-	elseif (UTask_tm >= 70*256) then							--ÒÑ¾­³öÊ¦
-		Talk(1,"","Giang hå hiÓm ¸c, mét m×nh hµnh hiÖp giang hå ph¶i hÕt søc cÈn thËn! ")
-	else
-		Talk(1,"","B×nh sinh ta vèn thï hËn bän thæ phØ giÕt ng­êi c­íp bãc!")
-	end
-end;
+function main() 
+UTask_tm = GetTask(2); 
+if (GetFaction() == "tangmen") and (GetSeries() == 1) then 
+		if ((UTask_tm >= 30*256+50) and (UTask_tm <= 30*256+60) and (HaveItem(42) == 1)) then		-- script viet hoa By http://tranhba.com 30¼¶ÈÎÎñ
+L30_prise() 
+elseif (UTask_tm >= 40*256) and (GetFaction() == "tangmen") then -- script viet hoa By http://tranhba.com  ®· hoµn thµnh 30 cÊp nhiÖm vô , ch­a xuÊt s­ 
+Talk(1,"","Ng­¬i gióp ta b¸o nµy ®¹i thï , ng­¬i nãi , ng­¬i muèn c¸i g× , ta tÊt c¶ ®Òu cho ng­¬i !") 
+else -- script viet hoa By http://tranhba.com  ch­a hoµn thµnh 30 cÊp nhiÖm vô # thiÕu tØnh ®èi tho¹i # 
+Talk(1,"","TiÓu xuyªn , ta hµi tö ®¸ng th­¬ng …… thï nµy hËn nµy , mét ngµy kh«ng b¸o , ta chÕt kh«ng nh¾m m¾t !") 
+end 
+elseif (UTask_tm >= 70*256) then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
+Talk(1,"","Giang hå hiÓm g¹t , ng­¬i mét th©n mét m×nh hµnh tÈu giang hå , ph¶i nhiÒu thªm cÈn thËn ! ") 
+else 
+Talk(1,"","Ta b×nh th©n hËn nhÊt giÕt ng­êi c­íp bãc ®İch thæ phØ !") 
+end 
+end; 
 
-function L30_prise()
-	Talk(2, "", "§­êng V©n s­ thóc, t¹i h¹ ®· t×m ®­îc nh÷ng tªn Thæ PhØ b¸o thï cho «ng vµ ®o¹t vÒ 'Háa Khİ Phæ'. ChØ cÇn «ng giao cho Ch­ëng m«n sÏ kh«ng ph¶i chŞu h×nh ph¹t n÷a!", "Ta lu«n ®îi ®Õn ngµy nµy. Ng­¬i nãi xem ng­¬i cÇn g×? Ta sÏ ®¸p øng!")
-	DelItem(42)
-	SetRank(28)
-	SetTask(2, 40*256)
---	AddMagic(50)
---	AddMagic(54)
---	AddMagic(47)
---	AddMagic(343)
-	add_tm(40)			-- µ÷ÓÃskills_table.luaÖĞµÄº¯Êı£¬²ÎÊıÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
-	Msg2Player("Chóc mõng b¹n! B¹n ®· ®­îc th¨ng lµm §­êng M«n Giíi TiÒn Hé VÖ, häc ®­îc: Truy T©m TiÔn, M¹n Thiªn Hoa Vò, Xuyªn T©m Thİch. ")
-	AddNote("VÒ ®Õn Háa Khİ phßng, giao Ho¶ Khİ Phæ cho §­êng V©n, hoµn thµnh nhiÖm vô Ho¶ Khİ Phæ, th¨ng lµ: Giíi TiÒn Hé VÖ. ")
-end;
+function L30_prise() 
+Talk(2, "","§­êng v©n s­ thóc , ta ®· t×m ®­îc nh÷ng thø kia trãi phØ , thay ng­¬i b¸o thï , ®©y lµ ®o¹t l¹i ®İch # háa khİ phæ # , chØ cÇn ng­¬i giao nã cho ch­ëng m«n , còng sÏ kh«ng n÷a bŞ tr¸ch ph¹t liÔu !","Ta cuèi cïng coi lµ ®îi ®Õn c¸i ngµy nµy , ng­¬i nãi , ng­¬i muèn c¸i g× , ta tÊt c¶ ®Òu cho ng­¬i !") 
+DelItem(42) 
+SetRank(28) 
+SetTask(2, 40*256) 
+-- script viet hoa By http://tranhba.com  AddMagic(50) 
+-- script viet hoa By http://tranhba.com  AddMagic(54) 
+-- script viet hoa By http://tranhba.com  AddMagic(47) 
+-- script viet hoa By http://tranhba.com  AddMagic(343) 
+add_tm(40) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®İch hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
+Msg2Player("Chóc mõng ng­¬i th¨ng lµm §­êng m«n cÊp tr­íc hé vÖ , häc ®­îc ®uæi t©m tiÕn , ®Çy trêi hoa ng÷ , xuyªn tim ®©m . ") 
+AddNote("Trë l¹i háa khİ phßng , giao háa khİ phæ cho ®­êng v©n , hoµn thµnh háa khİ phæ nhiÖm vô , th¨ng lµm cÊp tr­íc hé vÖ ") 
+end; 

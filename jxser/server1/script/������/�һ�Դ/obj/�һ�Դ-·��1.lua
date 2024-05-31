@@ -1,7 +1,7 @@
---Á½ºþÇø ÌÒ»¨Ô´ Â·±ê1£ºÌÒ»¨Ô´->ÎäÁêÉ½
+-- script viet hoa By http://tranhba.com  hai hå khu hoa ®µo nguyªn b¶ng chØ ®­êng 1# hoa ®µo nguyªn -> vò l¨ng s¬n 
 
-function main(sel)
+function main(sel) 
 
-Say("§µo Hoa nguyªn<---->Vò L¨ng s¬n", 0)
+Say("Hoa ®µo nguyªn <——> vò l¨ng s¬n ", 0) 
 
-end;
+end; 

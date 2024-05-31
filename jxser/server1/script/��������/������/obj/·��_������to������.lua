@@ -1,8 +1,8 @@
---Î÷ÄÏÄÏÇø ´óÀí¸® Â·±ê ÁúÃÅÕòtoÀ¥ÂØÅÉ
---by Suyu @20031029
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lı phñ b¶ng chØ ®­êng long m«n trÊn to C«n L«n ph¸i 
+-- script viet hoa By http://tranhba.com by Suyu @20031029 
 
-function main(sel)
+function main(sel) 
 
-Say("§i C«n L«n ph¸i", 0)
+Say("§i th«ng C«n L«n ph¸i ", 0) 
 
 end;

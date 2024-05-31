@@ -33,8 +33,8 @@ AEXP_SMALL_PARTYPE		= 74;
 --加经验的等级限制
 AEXP_NEEDLEVEL					= 50;
 AEXP_NEEDLEVEL_PARTNER	= 10;	--同伴在托管时获得经验的最低等级
-AEXP_OFFLINE_PLAYERCOUNT_LIMIT	= 600;				-- 当一台服务器的人数超过此数目，则不允许玩家在这台服务器内进行离线托管
-AEXP_OFFLINE_PLAYERCOUNT_SPECIAL = 750;				--专用托管服务器允许托管的人数
+AEXP_OFFLINE_PLAYERCOUNT_LIMIT	= 1000;				-- 当一台服务器的人数超过此数目，则不允许玩家在这台服务器内进行离线托管
+AEXP_OFFLINE_PLAYERCOUNT_SPECIAL = 1500;				--专用托管服务器允许托管的人数
 AEXP_INVALIDTIMEBEGIN 			= 18;		        --离线挂机无效的起始时间
 AEXP_INVALIDTIMEEND 			= 24;		        --离线挂机无效的终止时间
 
@@ -184,9 +184,7 @@ end
 -- 设置离线托管技能
 function onSetUpgradeSkill(nUpgradeSkillID, funcCallBack)
 	SetTask(AEXP_SKILL_ID_TASKID, nUpgradeSkillID);
-	if funcCallBack~= nil then
-		funcCallBack();
-	end
+	funcCallBack();
 end
 
 -- 根据技能级别熟练度自动设置离线挂技能升级的技能ID

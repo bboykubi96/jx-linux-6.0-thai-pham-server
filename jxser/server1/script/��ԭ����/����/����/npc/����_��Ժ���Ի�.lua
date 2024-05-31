@@ -2,7 +2,11 @@
 
 function main(sel)
 
-Say("Tõ T­¬ng D­¬ng, ®i vÒ h­íng T©y B¾c chİnh lµ Vâ §ang ph¸i. C¸c ®¹o nh©n ë ®ã ®Òu lµ nh÷ng ng­êi chİnh nghÜa!",0)
+if ( GetSex() == 0 ) then      -- Íæ¼ÒĞÔ±ğÎªÄĞ
+Say("L·o b¶o : TiÓu ca ca, c¸c c« n­¬ng n¬i nµy sÏ khiÕn ng­êi nhÑ nhµng khoan kho¸i ®ã, vµo th­ gi·n 1 chót ®i, hİ hİ !",0)
+else			       -- Íæ¼ÒĞÔ±ğÎªÅ®
+Say("L·o b¶o: L·o n­¬ng ta chç nµy kh«ng hoan nghªnh n÷ kh¸ch !", 0)
+end;
 
 end;
 

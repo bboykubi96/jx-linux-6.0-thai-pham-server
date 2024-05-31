@@ -1,22 +1,21 @@
---Á½ºşÇø ÄÏÔÀÕò ¾ÆµêÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn qu¸n r­îu l·o b¶n ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-	if ( GetTask(1256) == 1 ) then
+if ( GetTask(1256) == 1 ) then 
 		 SetTaskTemp(111,GetTaskTemp(111)+1)
-		 if ( GetTaskTemp(111) > 3 ) then
-		 	Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		 	SetTask(1256, 2);
-		 else
-		 	Talk(1,"","VŞ kh¸ch quan nµy xin dõng b­íc, qu¸n nhá chóng ta kh«ng d¸m më cöa n÷a. GÇn ®©y thŞ trÊn nµy nhiÒu ng­êi chÕt mét c¸ch k× l¹, chç chóng ta ®©y còng chÕt mÊy ng­êi kh¸ch qua ®­êng. HiÖn t¹i quan phñ ®ang ®iÒu tra, tiÓu nh©n ®©y rÊt sî chèn quan tr­êng nªn kh«ng thÓ më cöa tiÕp ngµi ®­îc xin ngµi bá qua cho.")		 	
-		 end
-		 return
-	elseif ( GetTask(1256) == 2 ) then
-		Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		return
-	end
+if ( GetTaskTemp(111) > 3 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u ngåi ng«i ®Òn tíi s­ th¸i ph¸p lùc v« biªn , ng­¬i ®i hái mét chót nh×n .") 
+SetTask(1256, 2); 
+else 
+Talk(1,"","Mêi kh¸ch quan dõng b­íc , chóng ta tiÓu ®iÕm kh«ng d¸m cöa më liÔu . h«m nay trÊn nhá ng­êi trªn kh«ng khái mµ chÕt , chóng ta n¬i nµy còng ®· chÕt mÊy qua ®­êng kh¸ch nh©n . b©y giê quan phñ ®ang ®iÒu tra , tiÓu nh©n b©y giê rÊt sî v× vËy kh«ng thÓ tiÕp tôc më tiÖm .") 
+end 
+return 
+elseif ( GetTask(1256) == 2 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u ngåi ng«i ®Òn tíi s­ th¸i ph¸p lùc v« biªn , ng­¬i ®i hái mét chót nh×n .") 
+return 
+end 
 
-Say("Sau khi §éc C« §¹i HiÖp cña Hoµnh S¬n lµm Vâ L©m Minh Chñ, nam Nh¹c TrÊn nhá cña chóng ta còng n¸o nhiÖt h¼n lªn; c¸c hiÖp kh¸ch kiÕm hiÖp ®Õn ®©y rÊt nhiÒu, lµm ¨n bu«n b¸n cña qu¸n r­îu nhá nµy còng ®¾t h¬n tr­íc",0);
+Say("Qu¸n r­îu l·o b¶n # kÓ tõ ph¸i Hµnh S¬n ®İch ®éc c« ®¹i hiÖp lµm minh chñ vâ l©m sau , chóng ta c¸i nµy nho nhá nam nh¹c trÊn liÒn trë nªn n¸o nhiÖt lªn . trÊn trªn th­êng sÏ cã mét İt ®ao kh¸ch kiÕm hiÖp xuÊt hiÖn , ta ®©y İt r­îu qu¸n ®İch lµm ¨n còng so tr­íc kia tèt h¬n nhiÒu . ",0); 
 
-end;
-
+end; 

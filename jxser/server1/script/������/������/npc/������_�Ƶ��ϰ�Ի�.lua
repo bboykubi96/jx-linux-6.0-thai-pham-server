@@ -1,55 +1,55 @@
---description: Á½ºşÇø °ÍÁêÏØ ¾ÆµêÀÏ°å¶Ô»° ÌìÍõÈëÃÅÈÎÎñ
---author: yuanlan	
---date: 2003/4/24
--- Update: Dan_Deng(2003-08-16)
+-- script viet hoa By http://tranhba.com description: hai hå khu ba l¨ng huyÒn qu¸n r­îu l·o b¶n ®èi tho¹i Thiªn v­¬ng nhËp m«n nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/4/24 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-16) 
 
 Include("\\script\\global\\timerhead.lua")
 
-function main(sel)
-	Uworld38 = GetByte(GetTask(38),1)
-	if (Uworld38 == 20) then 							--ÌìÍõ°ïÈëÃÅÈÎÎñ
-		Talk(4,"","Chñ qu¸n! ë®©y lo¹i r­îu nµo lµ ngon nhÊt?","R­îu ngon nhÊt ë ®©y lµ <color=Red>Bång Lai Xu©n<color>, nÊu lo¹i r­îu nµy tèn rÊt nhiÒu c«ng søc, h¬n n÷a nguyªn liÖu rÊt khã t×m, v× thÕ gi¸ c¶ sÏ kh«ng rÎ. ","ChØ cÇn r­îu ngon lµ ®­îc, ta muèn mua mét hò, hÕt bao nhiªu tiÒn?","Cã bao nhiªu tiÒn còng kh«ng ®ñ, bëi v× qu¸n chóng ta tõ l©u råi kh«ng cßn b¸n lo¹i r­îu nµy n÷a, v× thiÕu c¸c lo¹i nguyªn liÖu <color=Red>Linh Chi<color>, <color=Red>HuyÒn S©m<color> vµ <color=Red>Hµ Thñ ¤<color>. NÕu kh¸ch quan cã thÓ gióp ta t×m ba mãn nguyªn liÖu nµy, ta sÏ lµm gióp mét hò ")
-		SetTask(38,SetByte(GetTask(38),1,40))
-		AddNote("§èi tho¹i víi chñ qu¸n r­îu Ba L¨ng huyÖn, biÕt ®­îc cÇn t×m ba lo¹i nguyªn liÖu ®Ó nÊu r­îu: Linh Chi, HuyÒn S©m, Hµ Thñ ¤. ")
-		Msg2Player("BiÕt ®­îc cÇn t×m ba lo¹i nguyªn liÖu ®Ó nÊu r­îu: Linh Chi, HuyÒn S©m, Hµ Thñ ¤. ")
-	elseif (Uworld38 == 40) then
-		if (HaveItem(116) == 1) and (HaveItem(135) == 1) and (HaveItem(144) == 1) then
-			if (GetTimerId() > 0) then		-- ÁíÓĞ¼ÆÊ±Æ÷ÔÚÔËĞĞÖĞ
-				Talk(1,"","Ng­¬i ®ang mang nhiÖm vô cÊp b¸ch nh­ thÕ, mµ cßn ch¹y lung tung µ?")
-				return
-			end
-			Talk(2,"","Chñ qu¸n! Ta ®· t×m ®ñ ba lo¹i nguyªn liÖu råi, «ng gióp ta nÊu r­îu Bång Lai Xu©n ®i!","§­îc! Nh­ng ph¶i chê mét giê ®ång hå míi xong. ")
-			DelItem(116)
-			DelItem(135)
-			DelItem(144)
-			SetTask(38,SetByte(GetTask(38),1,60))
-			SetTimer(1 * CTime * FramePerSec, 1)									--¿ªÆô¼ÆÊ±Æ÷
-			AddNote("Quay l¹i qu¸n r­îu Ba L¨ng huyÖn, ®­a nguyªn liÖu, biÕt ®­îc cÇn ph¶i ®îi mét giê. ")
-			Msg2Player("§­a nguyªn liÖu, biÕt ®­îc cÇn ph¶i ®îi mét giê. ")
-		else
-			Talk(1,"","Nghe nãi ba lo¹i c©y thuèc nµy sinh tr­ëng t¹i <color=Red>phİa §«ng B¾c Vò L¨ng s¬n<color>, nh­ng ë ®ã cã rÊt nhiÒu qu¸i thó ¨n thŞt ng­êi, v× thÕ kh«ng ai cã can ®¶m ®Õn ®ã. ")
-		end
-	elseif (Uworld38 == 60) then			-- Îª¼ÆÊ±Æ÷Èİ´í¼ÓÈëÊÖ¶¯³¬Ê±´¦Àí
-		i = GetRestSec(1)
-		if (i > 0) then
-			Talk(1,"","Ch­a ®Õn lóc ®©u, r­îu nÊu ch­a xong, ng­¬i cßn ph¶i ®îi: "..i.."Gi©y, ")
-		else
-			StopTimer()						--½áÊø¼ÆÊ±
-			SetTask(38,SetByte(GetTask(38),1,80))
-			TWenroll_getitem()
-		end
-	elseif (Uworld38 == 80) and (HaveItem(90) == 0) then
-		TWenroll_getitem()
-	elseif (Uworld38 >= 80) then		-- Íê³É´ËÈÎÎñºó
-		Talk(1,"","ThÕ nµo?Bång Lai Xu©n cña bæn tiÖm kh«ng ph¶i lµ h­ danh chø?")
-	else
-		Talk(1,"","N¬i ®©y chóng ta cã ®ñ thøc ¨n, h¶i s¶n phong phó. Kh¸ch quan muèn ¨n g×? Muèn uèng r­îu g×?")
-	end
-end;
+function main(sel) 
+Uworld38 = GetByte(GetTask(38),1) 
+if (Uworld38 == 20) then -- script viet hoa By http://tranhba.com  Thiªn v­¬ng gióp nhËp m«n nhiÖm vô 
+Talk(4, "","Nhµ ch¬i # l·o b¶n , ng­¬i n¬i nµy r­îu g× tèt nhÊt ? ","Qu¸n r­îu l·o b¶n # bæn ®Şa tèt nhÊt r­îu kh«ng ph¶i lµ <color=Red>“ oµnh lai xu©n ”<color> m¹c chóc , ch¼ng qua lµ cÊt t¹o lo¹i nµy r­îu rÊt phİ c«ng phu , h¬n n÷a nguyªn liÖu còng rÊt khã t×m , cho nªn gi¸ tiÒn kh«ng tiÖn nghi . ","Nhµ ch¬i # chØ cÇn r­îu h¶o lµ ®­îc , ta muèn mua mét vß , ph¶i nhiÒu thiÓu b¹c ? ","Qu¸n r­îu l·o b¶n # b¹c nhiÒu h¬n n÷a còng v« İch , bæn ®iÕm ®· rÊt l©u kh«ng cã cÊt t¹o lo¹i nµy r­îu , bëi v× thiÕu hôt nguyªn liÖu <color=Red> linh chi <color>#<color=Red> huyÒn tè <color> cïng <color=Red> hµ thñ « <color> . nÕu nh­ ng­¬i cã thÓ lÊy ®­îc c¸i nµy ba lo¹i nguyªn liÖu , ta ®· gióp ng­¬i chÕ riªng cho mét vß . nghe nãi c¸i nµy ba lo¹i d­îc liÖu sinh tr­ëng ë <color=Red> vò l¨ng s¬n ®İch ®«ng b¾c bé <color> , chØ bÊt qu¸ n¬i ®ã cã rÊt nhiÒu ¨n thŞt ng­êi ®İch qu¸i thó , cho nªn kh«ng ai d¸m ®i chŞu chÕt . ") 
+SetTask(38,SetByte(GetTask(38),1,40)) 
+AddNote("Cïng ba l¨ng huyÒn töu qu¸n l·o b¶n ®èi tho¹i , biÕt muèn t×m 3 lo¹i nguyªn liÖu ch­ng cÊt r­îu # linh chi , huyÒn tè , hµ thñ « .") 
+Msg2Player("BiÕt muèn t×m 3 lo¹i nguyªn liÖu ch­ng cÊt r­îu # linh chi , huyÒn tè , hµ thñ « . ") 
+elseif (Uworld38 == 40) then 
+if (HaveItem(116) == 1) and (HaveItem(135) == 1) and (HaveItem(144) == 1) then 
+if (GetTimerId() > 0) then -- script viet hoa By http://tranhba.com  kh¸c cã tİnh giê khİ ë vËn hµnh trung 
+Talk(1,"","Trªn ng­êi ng­¬i cã khÈn cÊp ®İch nhiÖm vô , cßn ph¶i ch¹y lo¹n ") 
+return 
+end 
+Talk(2,""," l·o b¶n ! chóng ta ®· t×m ®ñ 3 lo¹i nguyªn liÖu , ng­¬i gióp ta cÊt oµnh lai xu©n ®i !","Tèt , nh­ng lµ muèn 1 canh giê míi cã thÓ . ") 
+DelItem(116) 
+DelItem(135) 
+DelItem(144) 
+SetTask(38,SetByte(GetTask(38),1,60)) 
+SetTimer(1 * CTime * FramePerSec, 1) -- script viet hoa By http://tranhba.com  më ra tİnh giê khİ 
+AddNote("Trë l¹i ba l¨ng huyÒn töu qu¸n , mang theo nguyªn liÖu , biÕt ph¶i ®îi mét giê . ") 
+Msg2Player("Mang theo nguyªn liÖu , biÕt ph¶i ®îi mét giê . ") 
+else 
+Talk(1,"","Nghe nãi c¸i nµy ba lo¹i d­îc liÖu sinh tr­ëng ë <color=Red> vò l¨ng s¬n ®İch ®«ng b¾c bé <color> , chØ bÊt qu¸ n¬i ®ã cã rÊt nhiÒu ¨n thŞt ng­êi ®İch qu¸i thó , cho nªn kh«ng ai d¸m ®i chŞu chÕt . ") 
+end 
+elseif (Uworld38 == 60) then -- script viet hoa By http://tranhba.com  v× tİnh giê khİ cho lçi gia nhËp thñ ®éng cùc kú lóc xö lı 
+i = GetRestSec(1) 
+if (i > 0) then 
+Talk(1,"","Thêi gian cßn ch­a tíi , r­îu cßn kh«ng cã cÊt h¶o , ng­¬i cßn ph¶i chê : "..i.." gi©y , ") 
+else 
+StopTimer() -- script viet hoa By http://tranhba.com  kÕt thóc tİnh giê 
+SetTask(38,SetByte(GetTask(38),1,80)) 
+TWenroll_getitem() 
+end 
+elseif (Uworld38 == 80) and (HaveItem(90) == 0) then 
+TWenroll_getitem() 
+elseif (Uworld38 >= 80) then -- script viet hoa By http://tranhba.com  hoµn thµnh nµy nhiÖm vô sau 
+Talk(1,"","Bæn ®iÕm oµnh lai xu©n kh«ng ph¶i lµ ®å cã h­ danh ®İch ") 
+else 
+Talk(1,"","Qu¸n r­îu l·o b¶n # chóng ta n¬i nµy lµ næi tiÕng ®İch c¸ th­íc chi h­¬ng , s«ng sinh phong phó , kh¸ch quan muèn ¨n chót g× tiªn hµng ? uèng chót g× kh«ng r­îu ? ") 
+end 
+end; 
 
-function TWenroll_getitem()
-	AddEventItem(90)
-	Msg2Player("LÊy ®­îc mét hò r­îu Bång Lai Xu©n. ")
---	SetTask(3, 8)
-	AddNote("Mét giê sau, quay l¹i qu¸n r­îu lÊy ®­îc Bång Lai Xu©n. ")
-end
+function TWenroll_getitem() 
+AddEventItem(90) 
+Msg2Player("B¾t ®­îc mét bÇu oµnh lai xu©n . ") 
+-- script viet hoa By http://tranhba.com  SetTask(3, 8) 
+AddNote("Mét giê sau , trë l¹i töu qu¸n cÇm oµnh lai xu©n . ") 
+end 

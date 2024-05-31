@@ -10,7 +10,7 @@ Include("\\script\\misc\\eventsys\\type\\map.lua")
 --ËùÓĞÊı¾İ·Åµ½Õâ¸ö±íÀï
 tbFruitData = {
 	N_FRUIT_START_DATE = 2011042800,--»î¶¯¿ªÊ¼ÈÕÆÚ
-    N_FRUIT_END_DATE = 2021052900,--»î¶¯½áÊøÈÕÆÚ(º¬)
+    N_FRUIT_END_DATE = 2011052900,--»î¶¯½áÊøÈÕÆÚ(º¬)
     SZ_FRUIT_MAP_NAME = "ChiÕn Long §éng",
     N_FRUIT_MAP_ID = 959,
     --Éú³¤»Æ½ğÖ®¹ûµÄÎ»ÖÃ
@@ -232,7 +232,14 @@ function CheckFruitDate()
 end
 
 --´«ËÍµ½ĞÂÁ½Ë®¶´µØÍ¼£¨²É¼¯»Æ½ğÖ®¹û£©
+Include("\\script\\global\\g7vn\\g7configall.lua")
 function OnGoToNewLiangShuiDong()
+
+	if chienlongdong == 0 then
+			Say("Chøc n¨ng ChiÕn Long §éng t¹m thêi ch­a më")
+			return
+	end
+
 	if CheckFruitDate() == 1 then
 		local nCount = getn(t.TB_ENTER_POS)
 		local nRand = random(1,nCount)

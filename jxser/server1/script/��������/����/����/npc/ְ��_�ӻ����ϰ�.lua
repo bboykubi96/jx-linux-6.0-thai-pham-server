@@ -1,19 +1,19 @@
--- ´óÀí¡¡Ö°ÄÜ ÔÓ»õµêÀÏ°å
--- By: Dan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lý # chøc n¨ng tiÖm t¹p hãa l·o b¶n 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2003-09-16) 
 Include("\\script\\global\\global_zahuodian.lua");
 
-function main(sel)
-	local Buttons = store_sel_extend();
-	Say("§å ë chç ta võa rÎ l¹i dÔ b¸n, h«m qua võa mua hµng míi vÒ, vui qu¸! ", getn(Buttons), Buttons)
-end;
+function main(sel) 
+local Buttons = store_sel_extend(); 
+Say("Ta ®©y ®Ých ®å l¹i tiÖn nghi l¹i h¶o b¸n , ngµy h«m qua míi võa vµo míi hµng trë l¹i , thËt vui vÎ ", getn(Buttons), Buttons) 
+end; 
 
-function yes()
-	Sale(17)
-end;
+function yes() 
+Sale(17) 
+end; 
 
-function BuyChristmasCard()
-	Sale(97);
-end
+function BuyChristmasCard() 
+Sale(97); 
+end 
 
-function no()
-end;
+function no() 
+end; 

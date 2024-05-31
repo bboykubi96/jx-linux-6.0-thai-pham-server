@@ -1,32 +1,32 @@
--- ´äÑÌÃÅ Â·ÈËNPC ´ºÏãÆÅÆÅ£¨´äÑÌÃÅ³öÊ¦ÈÎÎñ£©
--- by£ºDan_Deng(2003-07-27)
+-- script viet hoa By http://tranhba.com  thóy khãi cöa ng­êi ®i ®­êng NPC xu©n h­¬ng bµ bµ # thóy khãi cöa xuÊt s­ nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-27) 
 
-function main()
-	UTask_cy = GetTask(6)
-	if (GetFaction() == "cuiyan") then
-		if (UTask_cy == 60*256+20) then				--³öÊ¦ÈÎÎñ½øĞĞÖĞ
-			Talk(2,"","Bµ bµ! L·o b¸ ®ã ®· nãi cho ta nghe ch©n t­íng sù thËt, ta sÏ ®­a bøc th­ n¨m ®ã cho Ch­ëng m«n, mäi ng­êi xem xong sÏ hiÓu nçi khæ t©m cña S­ tæ! ","T©m nguyÖn n¨m ®ã cña S­ tû, ta ®· thay S­ tû hoµn thµnh, vËy còng ®· may råi! ")
+function main() 
+UTask_cy = GetTask(6) 
+if (GetFaction() == "cuiyan") then 
+		if (UTask_cy == 60*256+20) then				-- script viet hoa By http://tranhba.com ³öÊ¦ÈÎÎñ½øĞĞÖĞ
+Talk(2,"","Bµ bµ , c¸i ®ã l·o b¸ nãi cho ta biÕt ch©n t­íng cña chuyÖn liÔu , ta ®em mang l¸ th­ nÇy cho ch­ëng m«n , mäi ng­êi xem hoµn còng biÕt s­ tæ ®İch khæ t©m liÔu ","S­ tû lßng cña nguyÖn , ta ®· gióp nµng hoµn thµnh , vËy còng may m¾n ! ") 
 			SetTask(6,60*256+30)
-		elseif (UTask_cy == 60*256) and (GetLevel() >= 50) then		--³öÊ¦ÈÎÎñ
-			Talk(3,"L60_get","Ng­êi ngoµi lu«n cã thµnh kiÕn víi Thóy Yªn chóng ta, ngay c¶ ®Ö tö còng truyÒn r»ng tæ s­ s¸ng lËp ph¸i, do bŞ ng­êi yªu ruång bá nªn tİnh t×nh thay ®æi rÊt nhiÒu, c¨m hËn hÕt tÊt c¶ ®µn «ng trong thiªn h¹, cho nªn ®· ®Şnh ra m«n quy kh¾c nghiÖt, khiÕn cho c¸c ®Ö tö trong m«n ®êi ®êi c¨m ghĞt ®µn «ng.","Nh÷ng m«n quy nµy nh­ mét sîi d©y lu«n buéc chÆt tÊt c¶ mäi ng­êi, kú thùc vèn kh«ng ph¶i nh­ vËy, nguyªn do trong ®ã ng­êi ngoµi kh«ng hiÓu th× mÆc, tù b¶n th©n chïng ta còng kh«ng muèn khiÕn ng­êi kh¸c th­¬ng t©m nh­ vËy.","Lµm thÕ nµo míi cã thÓ khiÕn mäi ng­êi hiÓu ®­îc ch©n t­íng sù viÖc nµy chø?")
-		else
-			Talk(1,"","Tõ nhá ®· l­u l¹c trong chèn giang hå, chíp m¾t ®· nhiÒu n¨m tr«i qua råi ")
-		end
-	else
-		Talk(1,"","Nhí ngµy nµo ta cßn ½m Do·n ch­ëng m«n trªn tay, b©y giê ®· lín thÕ nµy råi! Thêi gian tr«i qua nhanh nh­ tªn b¾n! ")
-	end
-end;
+elseif (UTask_cy == 60*256) and (GetLevel() >= 50) then -- script viet hoa By http://tranhba.com  xuÊt s­ nhiÖm vô 
+Talk(3,"L60_get","Ng­êi bªn ngoµi ®èi víi chóng ta thóy khãi cöa mét mùc cßn cã thµnh kiÕn , m«n h¹ ®Ö tö trong còng mét mùc cã mét lo¹i lêi ®ån ®·i , nãi bæn m«n ®İch chÕ ph¸i tæ s­ bëi v× n¨m ®ã tao ng­êi yªu di khİ , tİnh t×nh ®¹i biÕn , hËn tÉn thiªn h¹ nam tö , cho nªn quyÕt ®Şnh m«n quy , muèn cho ®Ö tö bæn m«n ®êi ®êi ®¹i ®¹i còng thèng hËn nam tö , nh÷ng thø nµy m«n quy tùa nh­ gi©y thõng , mét mùc trãi buéc mäi ng­êi , thËt ra th× sù thËt c¨n b¶n kh«ng ph¶i nh­ vËy # trong nµy ®İch nguyªn do ngo¹i nh©n kh«ng râ còng liÒn th«i , chóng ta ng­êi m×nh còng nghÜ nh­ vËy , sÏ ®Ó cho ng­êi qu¸ th­¬ng t©m .","Nh­ thÕ nµo míi cã thÓ lµm cho mäi ng­êi hiÓu ch©n t­íng cña chuyÖn ®©y ?") 
+else 
+Talk(1,"","Tõ nhá l­u l¹c giang hå , trong nh¸y m¾t lµ h¬n n¨m tr«i qua ") 
+end 
+else 
+Talk(1,"","Nhí ngµy ®ã cßn «m duÉn ch­ëng m«n , b©y giê ®· lín nh­ vËy , thêi gian cùc nhanh ! ") 
+end 
+end; 
 
-function L60_get()
-	Say("Ch©n t­íng sù thËt cã liªn quan ®Õn mét ng­êi trong cÊm ®Şa, chØ cã t×m ®­îc ng­êi nµy th× tr¾ng ®en sÏ râ rµng",2,"TiÕp tôc t×m hiÓu /L60_get_yes","Hay mÆc kÖ kh«ng lo /L60_get_no")
-end;
+function L60_get() 
+Say("Ch©n t­íng sù thËt cïng mét ë cÊm ®Şa dÆm ng­êi cã liªn quan , chØ dïng t×m ®­îc h¾n liÒn ch©n t­íng cña sù t×nh râ rµng liÔu ",2,"TiÕp tôc mæ /L60_get_yes","Kh«ng cÇn lo l¾ng /L60_get_no") 
+end; 
 
-function L60_get_yes()
-	Talk(4,"","Th©n lµ ®Ö tö bæn m«n, tù thÊy cã tr¸ch nhiÖm ph¶i t×m ra sù thËt.","Ra khái cæng ®i theo h­íng §«ng B¾c sÏ ®Õn Ngäc N÷ hå, cÊm ®Şa ë gÇn Ngäc N÷ hå.","§­îc råi! Ta ®i ®©y! ","§õng véi! Ng­êi b¹n trÎ! §Ó b¶o vÖ tİnh m¹ng cho ng­¬i, tr­íc khi gÆp ng­êi ®ã cÇn ph¶i cã mét c¸i kh¨n t¬, kh¨n t¬ nµy sÏ xuÊt hiÖn trong S¬n §éng cña CÊm Cung."	)
+function L60_get_yes() 
+Talk(4,"","Th©n lµ ®Ö tö bæn m«n , cã tr¸ch nhiÖm t×m ra ch©n t­íng ?","Ra cöa h­íng ®«ng b¾c ph­¬ng h­íng ®i lµ cã thÓ ®Õn ngäc n÷ hå , cÊm ®Şa ë ngäc n÷ hå phô cËn ! ","Cã thÓ , ta ®i liÔu ! ","Kh«ng cÇn ph¶i gÊp g¸p , ng­êi tuæi trÎ , v× b¶o vÖ ng­¬i t¸nh m¹ng , ë thÊy ng­êi kia tr­íc , cÇn mét sîi t¬ m¹t , c¸i nµy ti m¹t s¾p xuÊt hiÖn b©y giê cÊm cung s¬n ®éng ." ) 
 	SetTask(6,60*256+10)
-	AddNote("TiÕp nhËn nhiÖm vô xuÊt s­ cña Thóy Yªn M«n, ®iÒu tra ch©n t­íng cña cÊm ®Şa Thóy Yªn m«n ")
-	Msg2Player("TiÕp nhËn nhiÖm vô xuÊt s­ cña Thóy Yªn M«n, ®iÒu tra ch©n t­íng cña cÊm ®Şa Thóy Yªn m«n ")
-end;
+AddNote("NhËn thóy khãi cöa xuÊt s­ nhiÖm vô , ®iÒu tra thóy khãi cöa cÊm ®Şa ch©n t­íng ") 
+Msg2Player("NhËn thóy khãi cöa xuÊt s­ nhiÖm vô , ®iÒu tra thóy khãi cöa cÊm ®Şa ch©n t­íng ") 
+end; 
 
-function L60_get_no()
-end;
+function L60_get_no() 
+end; 

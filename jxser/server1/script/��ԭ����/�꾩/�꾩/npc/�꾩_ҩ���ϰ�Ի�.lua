@@ -1,7 +1,6 @@
 --ÖĞÔ­±±Çø ãê¾©¸® Ò©µêÀÏ°å¶Ô»°
 Include( "\\script\\event\\teacherday\\teacherdayhead.lua" )
 Include( "\\script\\event\\teacherday\\medicine.lua" )
-Include("\\script\\config\\cfg_features.lua")
 
 -- Á¶ÖÆ»ìÔªÁéÂ¶
 function refine()
@@ -24,7 +23,5 @@ if TEACHERSWITCH then
 	tinsert(OPTIONS, "Gióp ta cÊt d­îc töu/brew")
 end
 tinsert(OPTIONS, "Giao dŞch/yes")
-if CFG_HONNGUYENLINHLO == 1 then
-	tinsert(OPTIONS, "Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
-end
+tinsert(OPTIONS, "Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
 tinsert(OPTIONS, "Kh«ng giao dŞch/Cancel")

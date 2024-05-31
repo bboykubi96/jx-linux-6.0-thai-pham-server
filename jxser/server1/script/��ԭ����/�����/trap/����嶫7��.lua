@@ -1,16 +1,24 @@
---ÖĞÔ­ÄÏÇø µ¾Ïã´å¶«7ÃÅ Õ½¶·×´Ì¬ÇĞ»»Trap
---TrapId:87
+-- script viet hoa By http://tranhba.com  Trung Nguyªn nam khu ®¹o h­¬ng th«n ®«ng 7 cöa tr¹ng th¸i chiÕn ®Êu thiÕt ®æi Trap 
+-- script viet hoa By http://tranhba.com TrapId:87 
 
-function main(sel)
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
-if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÄÚ
-	SetPos(1791, 3220)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÍâ	
-	SetFightState(1)		-- ×ª»»ÎªÕ½¶·×´Ì¬
-else			       		-- Íæ¼Ò´¦ÓÚÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÍâ
-	SetPos(1790, 3215)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÄÚ	
-	SetFightState(0)		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
-end;
-	AddStation(13)			-- ¼ÇÂ¼½ÇÉ«Ôø¾­µ½¹ıµ¾Ïã´å
-end;
+function main(sel) 
 
- 
+	--dofile("script/global/g7vn/g7configall.lua")
+	local zDate = tonumber(date("%Y%m%d%H%M"))
+		if zDate <= ThoiGianHetHanDiemTP then
+		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chİnh thøc khai më m¸y chñ");
+		SetPos(1790, 3215)
+		return 1
+	end
+
+if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë trong thµnh 
+SetPos(1791, 3220) -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë ngoµi thµnh 
+SetFightState(1) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 
+else -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu tr¹ng th¸i chiÕn ®Êu , tøc ë ngoµi thµnh 
+SetPos(1790, 3215) -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë trong thµnh 
+SetFightState(0) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+end; 
+AddStation(13) -- script viet hoa By http://tranhba.com  ghi chĞp vai trß ®· tõng ®· ®Õn ®¹o h­¬ng th«n 
+end; 

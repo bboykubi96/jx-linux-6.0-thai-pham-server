@@ -625,21 +625,21 @@ L_PLAYER_19	 [trade]trade µÃµ½½»Ò×¶Ô·½Ç®ĞÅÏ¢£º%d
 L_PLAYER_20	 [trade]trade ½»Ò×Íê³É£¡
 L_PLAYER_21	 [trade]trade ½»Ò×È¡Ïû£¡
 
-L_PLAYER_22	¼ñÈ¡ÎïÆ·\r\n
-L_PLAYER_23	¼ñÈ¡½ğÇ®	%d\r\n
-L_PLAYER_24	¶ªÆúÎïÆ·\r\n
-L_PLAYER_25	Íæ¼ÒÏà»¥½»Ò×Âô³öÎïÆ·¸ø [%s]\r\n
-L_PLAYER_26	Íæ¼ÒÏà»¥½»Ò×¶Ô·½ÕËºÅ [%s]½ÇÉ«Ãû [%s]	ÊÕÈë£º%d Ö§³ö£º%d\r\n
+L_PLAYER_22	NhÆt ®å\r\n
+L_PLAYER_23	NhËn tiÒn	%d\r\n
+L_PLAYER_24	§å bá ®i\r\n
+L_PLAYER_25	Ng­êi choi giao dŞch vËt phÈm [%s] Tªn nh©n vËt [%s]\r\n
+L_PLAYER_26	Ng­êi ch¬i giao dŞch ng©n l­îng [%s] Tªn nh©n vËt [%s]	NhËn:%d Tiªu:%d\r\n
 L_PLAYER_27	Song ph­¬ng giao dŞch tõ [%s] [%s] mua vµo vËt phÈm\r\n
 
-L_PLAYERCHAT_0	 [chat]ÁÄÌìÊı¾İ°ü´íÎó£¡
+L_PLAYERCHAT_0	 [chat] Chat packet error!
 L_PLAYERCHAT_1	player Packing friend sync data failed...\n
 L_PLAYERCHAT_2	player Packing friend 2 sync data failed...\n
 
 L_PLAYERSET_0	SERVER:Player[%s] has been removed!
 L_PLAYERSET_2	[error]Attach to a connected player named %s
 L_PLAYERSET_3	[error]Find Guid to a disconnect player
-L_PLAYERSET_4	%s ½Å±¾ÎŞ·¨¼ÓÔØ£¬¿ÉÄÜÎÄ¼ş²»´æÔÚ»òÓï·¨´íÎó
+L_PLAYERSET_4	%s could not be loaded, probably file does not exist or has a syntax error
 L_PlayerSet_AutohangItem	%s »ñµÃÁË %s\n
 L_PLAYER_TIRE_MSG1	B¹n ®ang trong giai ®o¹n mÖt mái! HiÖu qu¶ luyÖn c«ng chØ nhËn ®­îc 50%! Xin h·y nghØ ng¬i, gi÷ g×n søc kháe!
 L_PLAYER_TIRE_MSG2	B¹n ®· mÖt mái! Kh«ng nhËn ®­îc bÊt cø hiÖu qu¶ luyÖn c«ng nµo! Xin h·y nghØ ng¬i, gi÷ g×n søc kháe!
@@ -687,10 +687,10 @@ L_PLAYERSTALL_26	Some marked item don't exist, something wrong??
 L_PLAYERSTALL_27	Set seller %d to Stall_Sell_State\n,	m_nPlayerIndex);
 L_PLAYERSTALL_28	Recv  buy item info:	
 L_PLAYERSTALL_29	SellID = %d, ItemID= %d \n	
-L_PLAYERSTALL_30	 [%02d:%02d:%02d]: %s<%s> ´Ó %s<%s> ´¦ÒÔ %d µÄ¼Û¸ñÂò×ßÁË [%s]\r\n	
-L_PLAYERSTALL_31	 [Unknown Time]: %s<%s> ´Ó %s<%s> ´¦ÒÔ %d µÄ¼Û¸ñÂò×ßÁË [%s]\r\n	
-L_PLAYERSTALL_32	 [%s]µÄÉú³ÉÊ±¼äÊÇ (%u) \r\n\r\n	
-L_PLAYERSTALL_33	´Ó [Account:%s] [Name:%s]µÄ°ÚÌ¯ÂòÈëÎïÆ·	Ö§³ö£º%d [%s]ÊÕÈë£º%d Ë°½ğ£º%d\r\n	
+L_PLAYERSTALL_30	 [%02d:%02d:%02d]: %s<%s> ®· mua tõ %s<%s> víi gi¸ %d cho vËt phÈm [%s]\r\n	
+L_PLAYERSTALL_31	 [Unknown Time]: %s<%s> ®· mua tõ %s<%s> víi gi¸ %d cho vËt phÈm [%s]\r\n	
+L_PLAYERSTALL_32	 [%s] Thêi gian Gen vËt phÈm (%u) \r\n\r\n	
+L_PLAYERSTALL_33	Mua vËt phÈm tõ cöa hµng cña [Account:%s] [Name:%s] víi gi¸ %d. [%s] nhËn ®­îc %d, ThuÕ: %d\r\n	
 
 L_PlayerTrade_0	 [trade]trade µÃµ½½»Ò××´Ì¬ĞÅÏ¢£º¼º·½Ëø¶¨ %d £¬¶Ô·½Ëø¶¨ %d£¬¼º·½È·¶¨ %d£¬¶Ô·½È·¶¨ %d	
 L_BuySell_0	BuySell: %s buy idx error!

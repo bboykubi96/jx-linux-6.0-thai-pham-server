@@ -1,22 +1,28 @@
-EVENT_LOG_TITLE = "EventThang6"
-ITEM_FLOUR = {szName = "Bét M×", tbProp = {6,1,30204,1,0,0},nExpiredTime=20120701}
-ITEM_BUTTER = {szName = "B¬", tbProp = {6,1,30205,1,0,0},nExpiredTime=20120701}
-ITEM_MILK =  {szName = "S÷a", tbProp = {6,1,30206,1,0,0},nExpiredTime=20120701}
-ITEM_CHOCOLATE =  {szName = "Chocolate", tbProp = {6,1,30207,1,0,0},nExpiredTime=20120701}
-ITEM_FRUIT = {szName = "Tr¸i c©y", tbProp = {6,1,30208,1,0,0},nExpiredTime=20120701}
-ITEM_ROAD = {szName = "§­êng", tbProp = {6,1,30209,1,0,0},nExpiredTime=20120701}
-ITEM_OFTEN_CAKES = {szName = "B¸nh kem th­êng", tbProp = {6,1,30210,1,0,0},nExpiredTime=20120701}
-ITEM_CHOCOLATE_CAKES = {szName = "B¸nh kem Chocolate", tbProp = {6,1,30211,1,0,0},nExpiredTime=20120701}
-ITEM_FRUIT_CAKES = {szName = "B¸nh kem tr¸i c©y", tbProp = {6,1,30212,1,0,0},nExpiredTime=20120701}
-ITEM_BIRTHDAY_CAKE = {szName = "B¸nh sinh nhËt", tbProp = {6,1,30213,1,0,0},nExpiredTime=20120701}
+EVENT_LOG_TITLE = "EventThang5_SN_G7VN"
+ITEM_FLOUR = {szName = "Bét M×", tbProp = {6,1,30204,1,0,0},nExpiredTime=20170711}
+ITEM_BUTTER = {szName = "B¬", tbProp = {6,1,30205,1,0,0},nExpiredTime=20170711}
+ITEM_MILK =  {szName = "S÷a", tbProp = {6,1,30206,1,0,0},nExpiredTime=20170711}
+ITEM_CHOCOLATE =  {szName = "Chocolate", tbProp = {6,1,30207,1,0,0},nExpiredTime=20170711}
+ITEM_FRUIT = {szName = "Tr¸i c©y", tbProp = {6,1,30208,1,0,0},nExpiredTime=20170711}
+ITEM_ROAD = {szName = "§­êng", tbProp = {6,1,30209,1,0,0},nExpiredTime=20170711}
+ITEM_OFTEN_CAKES = {szName = "B¸nh kem th­êng", tbProp = {6,1,30210,1,0,0},nExpiredTime=20170711}
+ITEM_CHOCOLATE_CAKES = {szName = "B¸nh kem Chocolate", tbProp = {6,1,30211,1,0,0},nExpiredTime=20170711}
+ITEM_FRUIT_CAKES = {szName = "B¸nh kem tr¸i c©y", tbProp = {6,1,30212,1,0,0},nExpiredTime=20170711}
+ITEM_BIRTHDAY_CAKE = {szName = "B¸nh sinh nhËt", tbProp = {6,1,30213,1,0,0},nExpiredTime=20170711}
 ITEM_CONTRIBUTION_BOX = {szName = "Cèng hiÕn lÔ bao", tbProp = {6,1,30214,1,0,0},nExpiredTime=43200}
 ITEM_CONTRIBUTIONS_BOXS = {szName = "Cèng hiÕn ®¹i lÔ bao", tbProp = {6,1,30215,1,0,0},nExpiredTime=43200}
 ITEM_KIENTHIET_BOX = {szName = "KiÕm thiÕt lÔ bao", tbProp = {6,1,30216,1,0,0},nExpiredTime=43200}
 ITEMKIEN_KIENTHIET_BOXS = {szName = "KiÕn thiÕt ®¹i lÔ bao", tbProp = {6,1,30217,1,0,0},nExpiredTime=43200}
 ITEM_CAMPAIGN_BOX = {szName = "ChuÈn bÞ lÔ bao", tbProp = {6,1,30218,1,0,0},nExpiredTime=43200}
 ITEM_CAMPAIGN_BOXS = {szName = "ChuÈn bÞ ®¹i lÔ bao", tbProp = {6,1,30219,1,0,0},nExpiredTime=43200} 
-ITEM_DROP_MOTER ={{szName="§¸nh qu¸i rít Bét M×",tbProp={6,1,30204,1,0,0},nExpiredTime=20120701,nRate=8},}
-tbBITTSK_GET_EXP = {nTaskID = 2939,nStartBit = 1,nBitCount = 1,nMaxValue = 1} -- Gi¬i h¹n NhËn ®iÓm EXP trong suèt event
-tbBITTSK_LIMIT_USE_OFTEN_CAKE = {nTaskID = 2939,nStartBit = 2,nBitCount = 11,nMaxValue = 1000} -- Gi¬i h¹n dïng b¸nh kem th­êng trong suèt event
-tbBITTSK_LIMIT_USE_CAKE = {nTaskID = 2940,nStartBit = 1,nBitCount = 11,nMaxValue = 1500} -- Gi¬i h¹n dïng b¸nh kem chocolate/tr¸i c©y trong suèt event
-tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE = {nTaskID = 2940,nStartBit = 12,nBitCount = 8,nMaxValue = 200} -- Gi¬i h¹n dïng b¸nh kem sinh nhËt trong suèt event
+ITEM_DROP_MOTER ={{szName="§¸nh qu¸i rít Bét M×",tbProp={6,1,30204,1,0,0},nExpiredTime=20170711,nRate=3},}
+tbBITTSK_GET_EXP = {nTaskID = 2939,nStartBit = 2,nBitCount = 1,nMaxValue = 1} -- Gi¬i h¹n NhËn ®iÓm EXP trong suèt event
+tbBITTSK_LIMIT_USE_OFTEN_CAKE = {nTaskID = 2939,nStartBit = 12,nBitCount = 11,nMaxValue = 1000} -- Gi¬i h¹n dïng b¸nh kem th­êng trong suèt event
+tbBITTSK_LIMIT_USE_CAKE = {nTaskID = 2940,nStartBit = 1,nBitCount = 11,nMaxValue = 1000} -- Gi¬i h¹n dïng b¸nh kem tr¸i c©y trong suèt event
+tbBITTSK_LIMIT_USE_CAKE_CHOCOLATE = {nTaskID = 2941,nStartBit = 1,nBitCount = 11,nMaxValue = 1000} -- Gi¬i h¹n dïng b¸nh kem chocolate trong suèt event
+tbBITTSK_LIMIT_USE_BIRTHDAY_CAKE = {nTaskID = 2940,nStartBit = 20,nBitCount = 11,nMaxValue = 1000} -- Gi¬i h¹n dïng b¸nh kem sinh nhËt trong suèt event
+ITEM_COIN		= {szName="TiÒn §ång",tbProp={4,417,1,1,0,0},}
+
+ITEM_DTBK150_10		= {szName="§¹i thµnh bÝ kÝp 150 cÊp 10",tbProp={6,1,4342,1,0,0},}
+ITEM_DTBK150_15		= {szName="§¹i thµnh bÝ kÝp 150 cÊp 15",tbProp={6,1,4340,1,0,0},}
+ITEM_DTBK150_18		= {szName="§¹i thµnh bÝ kÝp 150 cÊp 18",tbProp={6,1,4343,1,0,0},}

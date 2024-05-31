@@ -1,7 +1,7 @@
---½­ÄÏÇø Áú¹¬¶´ÃÔ¹¬6toÑò½Ç¶´ÃÔ¹¬7
---Trap ID£º½­ÄÏÇø 82
+-- script viet hoa By http://tranhba.com  Giang Nam khu long cung ®éng mª cung 6to dª gi¸c ®éng mª cung 7 
+-- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 82 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(196, 1650, 3312);
-end;
+function main(sel) 
+SetFightState(1); 
+NewWorld(196, 1650, 3312); 
+end; 

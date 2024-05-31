@@ -1,8 +1,8 @@
---西北南区 锁云洞to剑阁中原
---Trap ID：西北南区 26
-function main(sel)
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu kh鉧 v﹏ ng to ki誱 c竎 Trung Nguy猲 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 26 
+function main(sel) 
 
-SetFightState(1);
-NewWorld(43, 1673, 2713);
+SetFightState(1); 
+NewWorld(43, 1673, 2713); 
 
 end;

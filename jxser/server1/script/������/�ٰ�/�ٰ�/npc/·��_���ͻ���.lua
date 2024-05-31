@@ -14,7 +14,7 @@ function main()
 	end
 
 	local tbDailog = DailogClass:new(szNpcName)
-	tbDailog.szTitleMsg = "<npc>Th玭g bao c鑙! Du t筩 c鑙! Cng kh雐 oa ch c du t筩 c鑙."
-	G_TASK:OnMessage("Thi猲 Nh蒼", tbDailog, "DialogWithNpc")
+	tbDailog.szTitleMsg = "<npc>葱包桧！油炸桧！刚起锅的油炸桧！"
+	G_TASK:OnMessage("卖油货的", tbDailog, "DialogWithNpc")
 	tbDailog:Show()
 end;

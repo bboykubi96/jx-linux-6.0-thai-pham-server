@@ -1,8 +1,7 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË1¾Å½ïÀÏµù¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 1 chİn c©n cha ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("Giang hå l­ìng h¹i, thËp niªn cöu tai! Mçi n¨m cø ®Õn mïa m­a, §éng §×nh hå l¹i d©ng n­íc, Ba L¨ng huyÖn biÕn thµnh ®ª gi÷a biÓn n­íc, mçi n¨m kh«ng biÕt cã bao nhiªu ng­êi chÕt!",0)
+Say("Chİn c©n cha # giang hå hai h¹i , m­êi n¨m chİn tai . hµng n¨m võa ®Õn mïa m­a , ®éng nµy ®×nh hå mét phång n­íc , ba l¨ng huyÒn liÒn biÕn thµnh m­êi viÖn chİn héi , hµng n¨m kh«ng biÕt muèn chÕt bao nhiªu ng­êi ®©y !",0) 
 
-end;
-
+end; 

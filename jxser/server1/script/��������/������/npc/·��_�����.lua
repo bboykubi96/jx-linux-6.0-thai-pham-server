@@ -1,5 +1,6 @@
 -- ÁúÃÅÕò¡¡Â·ÈË¡¡Ëï¶şÀÉ(¾ÈĞ¡¾êÈÎÎñ)
 -- by£ºDan_Deng(2003-09-16)
+--Nhiem vu cuu Tieu Quyen, NPC Ton Nhi Lang
 
 Include("\\script\\global\\repute_head.lua")
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
@@ -38,12 +39,12 @@ function U41_get_yes()
 	Talk(2,"","§¹i V­¬ng g×? Gi÷a thanh thiªn b¹ch nhËt l¹i c­íp d©n n÷? Ta sÏ ®i cøu c« Êy vÒ!","Xin hiÖp kh¸ch gióp cho! Cæ ¢m Tr¹i n»m trong Cæ D­¬ng ®éng!")
 	Uworld41 = random(1,15)*256*256 + 10			-- µÚÈı×Ö½ÚÎª£¨¶ş½øÖÆµÄ0001 - 1111£©£¬µÚÒ»×Ö½ÚÎª10
 	SetTask(41,Uworld41)
-	Msg2Player("TiÕp nhËn nhiÖm vô, mang TiÓu Quyªn trë vÒ tõ Cæ ¢m Tr¹i. ")
-	AddNote("TiÕp nhËn nhiÖm vô, mang TiÓu Quyªn trë vÒ tõ Cæ ¢m Tr¹i. ")
+	Msg2SubWorld("§¹i hiÖp <color=yellow>"..GetName().."<color> tiÕp nhËn nhiÖm vô, mang TiÓu Quyªn trë vÒ tõ Cæ ¢m Tr¹i. ")
+	AddNote("TiÕp nhËn nhiÖm vô, mang TiÓu Quyªn trë vÒ tõ Cæ ¢m Tr¹i.")
 end
 
 function U41_prise()
-	AddProp(1)											-- ½±Àø1µãÇ±ÄÜ
+	AddProp(5)											-- ½±Àø1µãÇ±ÄÜ
 	add_repute = ReturnRepute(30,50,3)			-- ÉùÍû½±Àø£º×î´ó30µã£¬´Ó50¼¶ÆğÃ¿¼¶µİ¼õ3%
 	AddRepute(add_repute)
 	Uworld41 = SetByte(GetTask(41),1,255)
@@ -54,8 +55,8 @@ function U41_prise()
 	end
 	SetTask(86,Ubonus86)
 	AddNote("Cøu TiÓu Quyªn mang vÒ, nhiÖm vô hoµn thµnh. ")
-	Msg2Player("<#> NhiÖm vô hoµn thµnh, danh väng cña b¹n t¨ng thªm "..add_repute.."<#> ®iÓm.")
-	Talk(1,"KickOutSelf","Uèng xong linh d­îc, vËn c«ng nöa buæi. B¹n c¶m thÊy tiÒm n¨ng t¨ng thªm mét ®iÓm.")
+	Msg2SubWorld("<#> NhiÖm vô hoµn thµnh, danh väng cña ®¹i hiÖp "..GetName().." t¨ng thªm "..add_repute.."<#> ®iÓm.")
+	Talk(1,"KickOutSelf","Uèng xong linh d­îc, vËn c«ng nöa buæi. B¹n c¶m thÊy tiÒm n¨ng t¨ng thªm 5 ®iÓm.")
 end
 
 function U41_get_no()

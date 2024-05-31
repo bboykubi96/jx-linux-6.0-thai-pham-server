@@ -181,6 +181,7 @@ TB_XINNIAN_GIFE = {
 	[2523] = {	{	6,	0,	9,	1,	1,	0	},	format("%d %s", 5,"Háa Phßng hoµn"),	-1,	5},
 	[2524] = {	{	6,	0,	10,	1,	1,	0	},	format("%d %s", 5,"§éc Phßng hoµn"),	-1,	5},
 	[2525] = {	{	6,	1,	2432,	1,	1,	0	},	format("%d %s", 5,"LÖnh bµi Vi S¬n ®¶o"),	-1,	5},
+	[2323] = {	{	6,	1,	888,	0,	0,	0	},	"10 TÝn Sø Kim Yªu Bµi",	-1,	10},
 }
 
 function main(nItemIdx)

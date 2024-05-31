@@ -1,257 +1,257 @@
 [SkillName]
 Type=String
-StaticName = Tªn chiªu thøc
+StaticName=¼¼ÄÜÃû
 
 [SkillId]
 Type=Number
-StaticName = m· sè kü n¨ng
+StaticName=¼¼ÄÜ±àºÅ
 Value=0
 
 [SkillStyle]
 Type=IndexList
-StaticName = Lo¹i kü n¨ng
-Value=Lo¹i bÉy/lo¹i chiÕn ®Êu/lo¹i chñ ®éng/lo¹i bŞ ®éng/lo¹i bïa chó/lo¹i luyÖn ®éc/lo¹i t¨ng ®éc/
+StaticName=¼¼ÄÜÀàĞÍ
+Value=×Óµ¯Àà|¸ñ¶·Àà|Ö÷¶¯Àà|±»¶¯Àà|ÕÙ»½Àà|Á¶¶¾Àà|¼Ó¶¾Àà|È¡ÎïÀà|¿çÔ½Àà|±äÎïÀà|²É¿óÀà|ĞŞ¸´Àà|²¶×½Àà
 DefaultValue=0
 
 
 [IsPhysical]
 Type=IndexList
-StaticName = Kü n¨ng VËt lı 
-Value = Sai/§óng
+StaticName=ÊÇÎïÀí¼¼ÄÜ
+Value=·ñ|ÊÇ
 
 [IsAura]
 Type=IndexList
-StaticName = Kü n¨ng Hç trî 
-Value = Sai/§óng
+StaticName=ÊÇ¹â»·¼¼ÄÜ
+Value=·ñ|ÊÇ
 
 
 [WaitTime]
 Type=Number
-StaticName = Thêi gian ph¸t xuÊt 1 chiªu
+StaticName=·¢¼¼ÄÜµÄÑÓ³ÙÊ±¼ä
 
 
 [StateSpecialId]
 Type=Number
-StaticName = hiÖu qu¶ tr¹ng th¸i kü n¨ng
+StaticName=×´Ì¬¼¼ÄÜĞ§¹û
 
 
 [SkillIcon]
 Type=String
-StaticName = icon kü n¨ng
+StaticName=¼¼ÄÜÍ¼±ê
 
 [PreCastSpr]
 Type=String
-StaticName = ThuyÕt minh ¶nh ®éng
+StaticName=ÊÍ·¨¶¯»­
 DefaultValue=
 
 [LRSkill]
 Type=IndexList
-StaticName = Kü n¨ng chuét tr¸i, ph¶i
-Value = Tr¸i, ph¶i ®Òu ®­îc/Chuét tr¸i/Chuét ph¶i/®Òu kh«ng ®­îc
+StaticName=×óÓÒ¼ü¼¼ÄÜ
+Value=×óÓÒ½ÔÊÇ|Ö»ÄÜ×ó¼ü|Ö»ÄÜÓÒ¼ü|¶¼²»¿É
 
 
 [NeedShadow]
 Type=IndexList
-StaticName = m¶nh vôn yªu cÇu
-Value = Sai/§óng
+StaticName=ĞèÒª²ĞÓ°
+Value=·ñ|ÊÇ
 
 
 
 [MaxShadowNum]
 Type=Number
-StaticName = Sè l­îng m¶nh vôn
+StaticName=×î´ó²ĞÓ°ÊıÁ¿
 
 
 [AttackRadius]
 Type=Number
-StaticName  =  Ph¹m vi c«ng kİch 
+StaticName=¹¥»÷·¶Î§
 Value=1
 
 
 
 [MslsGenerate]
 Type=IndexList
-StaticName = Ph­¬ng thøc næ bÉy
-Value = phæ th«ng/cïng lóc s¶n sinh/theo thø tù/ngÉu nhiªn/ngÉu nhiªn ®ång thêi/tõ trung t©m ph¸t t¸n
+StaticName=¶à×Óµ¯²úÉúÄ£Ê½
+Value=Ò»°ã|Í¬Ê±²úÉú|Ë³Ğò²úÉú|Ëæ»úË³Ğò|Ëæ»úÍ¬Ê±|ÖĞĞÄÏßÀ©É¢
 
 [MslsGenerateData]
 Type=Number
-StaticName = Sè l­îng bÉy ®Æt
+StaticName=¶à×Óµ¯²úÉúÊıÖµ
 Value=1
 
 [CharClass]
 Type=IndexList
-StaticName  =  thuéc tİnh nh©n vËt 
-Value = V« hÖ/Kim/Thñy/Méc/Háa/Thæ 
+StaticName=½ÇÉ«ÊôĞÔ
+Value=ÎŞÏµ|½ğÏµ|Ë®Ïµ|Ä¾Ïµ|»ğÏµ|ÍÁÏµ
 
 
 [MisslesForm]
 Type=IndexList
-StaticName = c¸ch thøc ®Æt bÉy
-Value = h×nh phiÕn/h×nh tia/m¶nh vôn/h×nh trßn/ngÉu nhiªn/khu vùc/®Şnh ®iÓm/b¶n th©n
+StaticName=×Óµ¯×éºÏ¸ñÊ½
+Value=Ç½ĞÎ|ÏßĞÎ|É¢ĞÎ|Ô²ĞÎ|Ëæ»ú|ÇøÓò|¶¨µã|±¾Éí
 
 
 [ChildSkillId]
 Type=Number
-StaticName = m· sè kü n¨ng
+StaticName=×Ó¼¼ÄÜ±àºÅ
 
 [ChildSkillLevel]
 Type=Number
-StaticName = §¼ng cÊp kü n¨ng
+StaticName=×Ó¼¼ÄÜµÈ¼¶
 
 [ChildSkillNum]
 Type=Number
-StaticName = Sè l­îng kü n¨ng
+StaticName=×Ó¼¼ÄÜ·¢ËÍÊıÄ¿
 Value=1
 
 [BaseSkill]
 Type=IndexList
-StaticName = Kü n¨ng c¬ b¶n
-Value = Sai/§óng
+StaticName=×Ó¼¼ÄÜÎª»ù±¾¼¼ÄÜ
+Value=·ñ|ÊÇ
 DefaultValue=1
 
 [CharAnimId]
 Type=Number
-StaticName = Sè hiÖu ¶nh ®éng nh©n vËt
+StaticName=½ÇÉ«¶¯»­±àºÅ
 
 [EventSkillLevel]
 Type=Number
-StaticName = §¼ng cÊp kü n¨ng
+StaticName=ÊÂ¼ş¼¼ÄÜµÈ¼¶
 Value=1
 
 [IsMelee]
 Type=IndexList
-StaticName = Cã ph¶i kü n¨ng chiÕn ®Êu
-Value = Sai/§óng
+StaticName=ÊÇ·ñ¸ñ¶·¼¼
+Value=·ñ|ÊÇ
 
 
 [SkillCostType]
 Type=IndexList
-StaticName = Tiªu hao kü n¨ng
+StaticName=¼¼ÄÜÏûºÄÀàĞÍ
 Value=MANA|LIFE|STAMINA|MONEY
 
 [CostValue]
 Type=Number
-StaticName = TrŞ sè tiªu hao
+StaticName=ÏûºÄÊıÖµ
 Value=0
 
 [TimePerCast]
 Type=Number
-StaticName = Thêi gian gi·n c¸ch xuÊt chiªu
+StaticName=·¢¼¼ÄÜ¼ä¸éÊ±¼ä
 Value=
 
 
 [TargetOnly]
 Type=IndexList
-StaticName = C«ng kİch môc tiªu
-Value = Sai/§óng
+StaticName=±ØÄ¿±ê¹¥»÷
+Value=·ñ|ÊÇ
 
 
 [TargetEnemy]
 Type=IndexList
-StaticName = ®©m th¼ng vµo ®èi ph­¬ng
-Value = Sai/§óng
+StaticName=¿ÉÕë¶ÔµĞ·½
+Value=·ñ|ÊÇ
 
 
 [TargetAlly]
 Type=IndexList
-StaticName = ®©m th¼ng vµo ®èi ph­¬ng
-Value = Sai/§óng
+StaticName=¿ÉÕë¶ÔÓÑ·½
+Value=·ñ|ÊÇ
 
 
 [TargetObj]
 Type=IndexList
-StaticName = ®©m th¼ng vµo ®èi ph­¬ng
-Value = Sai/§óng
+StaticName=¿ÉÕë¶ÔÎï¼ş
+Value=·ñ|ÊÇ
 
 
 [ByMissle]
 Type=IndexList
-StaticName = do bÉy næ ra
-Value = Sai/§óng
+StaticName=ÓÉ×Óµ¯·¢ËÍ
+Value=·ñ|ÊÇ
 
 
 [IsUseAR]
 Type=IndexList
-StaticName = TØ lÖ thµnh c«ng
-Value = Sai/§óng
+StaticName=Ê¹ÓÃ³É¹¦ÂÊ
+Value=·ñ|ÊÇ
 
 
 [StartEvent]
 Type=IndexList
-StaticName = B¾t ®Çu sù kiÖn
-Value = Sai/§óng
+StaticName=ÓĞ¿ªÊ¼ÊÂ¼ş
+Value=·ñ|ÊÇ
 
 
 [StartSkillId]
 Type=Number
-StaticName = Më m· sè kü n¨ng
+StaticName=¿ªÊ¼¼¼ÄÜ±àºÅ
 Value=0
 
 
 [FlyEvent]
 Type=IndexList
-StaticName = Khëi ®éng sù kiÖn
-Value = Sai/§óng
+StaticName=ÓĞ·ÉĞĞÊÂ¼ş
+Value=·ñ|ÊÇ
 
 
 [FlySkillId]
 Type=Number
-StaticName = khëi ®éng m· sè kü n¨ng
+StaticName=·ÉĞĞ¼¼ÄÜ±àºÅ
 Value=
 
 
 [FlyEventTime]
 Type=Number
-StaticName = Thêi gian thi triÓn chiªu thøc
+StaticName=·ÉĞĞ¼¼ÄÜÊ±¼ä
 Value=
 
 
 [CollideEvent]
 Type=IndexList
-StaticName = Sù kiÖn trïng lÆp
-Value = Sai/§óng
+StaticName=ÓĞÅö×²ÊÂ¼ş
+Value=·ñ|ÊÇ
 
 
 [CollideSkillId]
 Type=Number
-StaticName =  m· sè kü n¨ng trïng lÆp
+StaticName=Åö×²¼¼ÄÜ±àºÅ
 Value=
 
 
 [VanishedEvent]
 Type=IndexList
-StaticName = Hñy bá sù kiÖn
-Value = Sai/§óng
+StaticName=ÓĞÏûÍöÊÂ¼ş
+Value=·ñ|ÊÇ
 
 
 [VanishedSkillId]
 Type=Number
-StaticName = MÊt tµi kho¶n
+StaticName=ÏûÍö¼¼ÄÜ±àºÅ
 Value=
 
 
 [Param1]
 Type=Number
-StaticName = Tham sè 1
+StaticName=²ÎÊı1
 Value=
 
 
 [Param1Memo]
 Type=String
-StaticName = Tham sè 1 Chó thİch
+StaticName=²ÎÊı1×¢ÊÍ
 Value=
 
 
 [Param2]
 Type=Number
-StaticName = Tham sè 2
+StaticName=²ÎÊı2
 Value=
 
 
 [Param2Memo]
 Type=String
-StaticName = Tham sè 2 Chó thİch
+StaticName=²ÎÊı2×¢ÊÍ
 Value=
 
 [LvlSetScript]

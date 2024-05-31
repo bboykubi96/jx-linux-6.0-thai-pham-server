@@ -1,9 +1,9 @@
---Î÷±±±±Çø ÀÏ»¢¶´ÃÔ¹¬1to»ÆºÓÔ´Í·1
---TrapID£ºÎ÷±±±±Çø 8
+-- script viet hoa By http://tranhba.com  t©y b¾c b¾c khu con cäp ®éng mª cung 1to Hoµng Hµ ngän nguån 1 
+-- script viet hoa By http://tranhba.com TrapID# t©y b¾c b¾c khu 8 
 
-function main(sel)
+function main(sel) 
 
-	SetFightState(1);
-	NewWorld(122, 1665, 3326);
+SetFightState(1); 
+NewWorld(122, 1665, 3326); 
 
 end;

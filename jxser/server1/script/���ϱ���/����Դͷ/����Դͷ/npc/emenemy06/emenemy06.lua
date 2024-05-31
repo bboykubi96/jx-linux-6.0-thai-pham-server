@@ -1,14 +1,14 @@
---description: ∂Î·“≈…≥§Ω≠‘¥Õ∑«Â∫Õ
---author: yuanlan	
---date: 2003/3/6
--- Update: Dan_Deng(2003-08-12)
+-- script viet hoa By http://tranhba.com description: ph∏i Nga Mi Tr≠Íng giang ng‰n nguÂn thanh cÔng 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/6 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-12) 
 
-function OnDeath()
-	UTask_em = GetTask(1);
-	if ((UTask_em == 60*256+50) and (HaveItem(24) == 0) and (random(0,99) < 20)) then		--»ŒŒÒ÷–£¨≤¢«“√ª”–—Ã”Ò÷∏ª∑£¨‘Ú”–20%ª˙¬ 
-		AddEventItem(24) 
---		SetTask(1, 68)
-		AddNote("ß∏nh bπi ph∂n ÆÂ Thanh Hﬂa, l y lπi Y™n Ng‰c Chÿ Hoµn ")
-		Msg2Player("ß∏nh bπi ph∂n ÆÂ Thanh Hﬂa, l y lπi Y™n Ng‰c Chÿ Hoµn ")
-	end
-end;	
+function OnDeath() 
+UTask_em = GetTask(1); 
+	if ((UTask_em == 60*256+50) and (HaveItem(24) == 0) and (random(0,99) < 20)) then		-- script viet hoa By http://tranhba.com »ŒŒÒ÷–£¨≤¢«“√ª”–—Ã”Ò÷∏ª∑£¨‘Ú”–20%ª˙¬ 
+AddEventItem(24) 
+-- script viet hoa By http://tranhba.com  SetTask(1, 68) 
+AddNote("ß∏nh bπi thanh cÔng ph∂n ÆÂ , bæt Æ≠Óc kh„i ng„n tay ng‰c hoµn ") 
+Msg2Player("ß∏nh bπi thanh cÔng ph∂n ÆÂ , bæt Æ≠Óc kh„i ng„n tay ng‰c hoµn ") 
+end 
+end; 

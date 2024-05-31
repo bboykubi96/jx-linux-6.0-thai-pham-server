@@ -31,10 +31,10 @@ function start_match()
 		SetMissionV(VARV_PLAYER_USE_INDEX, 0);
 		SetMissionV(VARV_NPC_USE_INDEX, 0);
 		
-		-- Ğ¡Äôß±³¾³öÏÖµÄ¹Ø¿¨
-		local nBossBatch = random(5, 15)
-		SetMissionV(VARV_XIAONIESHICHEN_BATCH, nBossBatch)	-- ´Ó5µ½15Ëæ»ú²úÉúÒ»¸ö¹Ø¿¨
-		WriteLog(format("TiÓu NhiÕp Thİ TrÇn xuÊt hiÖn thÎ ¶i lµ %d",nBossBatch))
+		-- Update G7VN Bo tieu nhiep thi tran khi tham gia vuot ai
+		--local nBossBatch = random(5, 15)
+		--SetMissionV(VARV_XIAONIESHICHEN_BATCH, nBossBatch)	-- ´Ó5µ½15Ëæ»ú²úÉúÒ»¸ö¹Ø¿¨
+		--WriteLog(format("TiÓu NhiÕp Thİ TrÇn xuÊt hiÖn thÎ ¶i lµ %d",nBossBatch))
 		
 		-- ±£´æÍæ¼ÒĞÅÏ¢
 		save_player_info();

@@ -1,6 +1,10 @@
+--TÝnh n¨ng thÊt thµnh ®¹i chiÕn tiÕp ®Çu seach key "T¹m thêi ch­a më."
 Include("\\script\\missions\\sevencity\\war.lua")
 Include("\\script\\missions\\citywar_global\\infocenter_head.lua")
 Include("\\script\\lib\\log.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+
 --VNG_TSK_AWARD_LIMIT_TIME = 2747
 --VNG_TSK_EXP_LIMIT_TIME = 2743
 tbVngLimitTime = {}
@@ -30,14 +34,25 @@ AWARD_GUARD = {
 -- ²éÑ¯½±ÀøµÄ×´Ì¬±í
 QUERY_TABLE = {}
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+Include("\\script\\missions\\citywar_global\\citybulletin.lua")
+Include("\\script\\global\\g7vn\\g7quanly.lua")
+
 function main()
+	--dofile("script/missions/sevencity/dialog_npc.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+	--dofile("script/missions/citywar_global/citybulletin.lua");
+	--dofile("script/global/g7vn/g7quanly.lua")
+
 	Say("§©y lµ n¬i nghÞ sù c«ng thµnh chiÕn, ng­¬i ®Õn cã viÖc g×?",
-		6,
-		"Ta ®Õn giao lÖnh bµi/GiveTiaoZhanLing",
+		8,
+	--	"Th«ng tin, cai qu¶n thµnh thÞ/main123",
+		"Ta ®Õn giao khiªu chiÕn lÖnh/GiveTiaoZhanLing",
 		"Ta muèn xem sè l­îng khiªu chiÕn lÖnh cña bang/ViewTiaoZhanLing",
 		"B¸o danh tham gia thÊt thµnh ®¹i chiÕn/dlg_signup",
 		"Vµo chiÕn tr­êng thÊt thµnh ®¹i chiÕn/dlg_enter",
 		"NhËn phÇn th­ëng thÊt thµnh ®¹i chiÕn/dlg_query",
+		--"NhËn phÇn th­ëng ChiÕm lÜnh T­¬ng D­¬ng Thµnh/nhanTDCTLB",
 		"Kh«ng muèn g× c¶ /Cancel")
 end
 
@@ -54,7 +69,7 @@ function dlg_signup()
 	elseif (state == STATE_CLOSEWAR) then
 		Say("ThÊt thµnh ®¹i chiÕn ®· kÕt thóc")
 	elseif (state == STATE_STARTSIGNUP) then
-		Say("ThÊt thµnh ®¹i chiÕn ®ang vµo giai ®o¹n b¸o danh, ch­ vÞ bang chñ h·y ®¹i diÖn bæn bang ®Ó b¸o danh tham gia, phÝ b¸o danh <color=red>2000 v¹n ng©n l­îng<color> vµ<color=red> 2000 khiªu chiÕn lÖnh<color>. \nBang héi chiÕm thµnh kh«ng cÇn b¸o danh vµ cã thÓ trùc tiÕp vµo",
+		Say("ThÊt thµnh ®¹i chiÕn ®ang vµo giai ®o¹n b¸o danh, ch­ vÞ bang chñ h·y ®¹i diÖn bæn bang ®Ó b¸o danh tham gia, phÝ b¸o danh <color=red>2000 v¹n ng©n l­îng<color> vµ<color=red> 200 khiªu chiÕn lÖnh<color>. \nBang héi chiÕm thµnh kh«ng cÇn b¸o danh vµ cã thÓ trùc tiÕp vµo",
 			2,
 			"Ta muèn b¸o danh tham gia/action_signup",
 			"§Ó ta suy nghÜ l¹i/Cancel")
@@ -84,7 +99,7 @@ function dlg_query()
 	--Change request 14/06/2011 - Modified by DinhHQ
 	local nWeekDay = tonumber(GetLocalDate("%w"))
 	local nHour = tonumber(GetLocalDate("%H%M"))
-	if nWeekDay ~= 5  or nHour < 2145 or nHour > 2350 then
+	if nWeekDay ~= 5  or nHour < 2145 or nHour > 2250 then
 		Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
 		return
 	end
@@ -113,11 +128,18 @@ function dlg_query()
 		QUERY_TABLE[name] = PlayerIndex
 		local buff = ObjBuffer:New()
 		buff:Push(name)
-		RemoteExecute(
-			REMOTE_SCRIPT,
-			"Protocol:QueryAward",
-			buff.m_Handle,
-			"process_award")
+	local	tbAward = {
+	[1] = {	
+	{nExp_tl=100e6},	
+	{szName="D· TÈu Chi LÖnh",tbProp={6,1,4407,1,0,0},nCount=10},
+		{szName="R­¬ng §å Xanh",tbProp={6,1,4517,1,0,0},nCount=1},
+	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
+	
+		--{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=1},	
+		
+			},
+}
+tbAwardTemplet:GiveAwardByList(tbAward, "PhÇn th­ëng");
 		buff:Destroy()
 	end
 end
@@ -176,10 +198,10 @@ function process_award(param, result)
 						info.ExpAward)
 	local options = {}
 	if (info.BoxCount > 0) and (GetName() == GetTongMaster())  then
-		tinsert(options, format("Ta muèn nhËn C«ng Thµnh LÔ Bao/#action_awardbox(%d)", info.BoxCount))
+	--	tinsert(options, format("Ta muèn nhËn C«ng Thµnh LÔ Bao/#action_awardbox(%d)", info.BoxCount))
 	end
 	if (info.GuardAwardCount > 0) then
-		tinsert(options, format("Ta muèn nhËn VÖ Trô LÔ Bao/#action_guardaward(%d)", info.GuardAwardCount))
+	--	tinsert(options, format("Ta muèn nhËn VÖ Trô LÔ Bao/#action_guardaward(%d)", info.GuardAwardCount))
 	end
 	if (info.ExpAward > 0) then
 		tinsert(options, format("Ta muèn nhËn phÇn th­ëng kinh nghiÖm/#action_expaward(%d)", info.ExpAward))
@@ -196,12 +218,12 @@ function action_expaward(exp)
 		Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
 		return
 	end
-	StackExp(exp)
+	StackExp(50000000)
 	local buff = ObjBuffer:New()
 	buff:Push(GetName())
 	RemoteExecute(REMOTE_SCRIPT, "Protocol:ClearExpAward", buff.m_Handle)
 	buff:Destroy()
-	tbLog:PlayerActionLog("SEVENCITY", "PhanThuongExp", exp)
+	tbLog:PlayerActionLog("SEVENCITY", "PhanThuongExp", 50000000)
 end
 
 function action_guardaward(count)
@@ -213,7 +235,7 @@ function action_awardbox(count)
 		Talk(1, "", "ChØ cã bang chñ míi cã quyÒn nhËn th­ëng")
 		return
 	end	
-	action_awarditem(count, AWARD_BOX, 50)
+	action_awarditem(count, AWARD_BOX, 20)
 end
 
 function action_awarddew(count)
@@ -234,6 +256,7 @@ function action_awarditem(count, award, max_count)
 		return
 	end
 	local actual_count = 0
+
 	for i = 1, count do
 		-- add expired time to city and guard award item - Created by TinhPN - 20110421
 		--if (AddItemIntoEquipmentBox(award.ID[1], award.ID[2], award.ID[3], award.ID[4], 0, 0) > 0) then
@@ -243,7 +266,7 @@ function action_awarditem(count, award, max_count)
 			if (award.ID[3] == 2815 or award.ID[3] == 2814) then
 				ITEM_SetExpiredTime(nItemIndex, 43200)
 				SyncItem(nItemIndex)
-			end	
+			end
 			
 			actual_count = actual_count + 1
 		else
@@ -286,4 +309,46 @@ function add_award(call, name, count)
 	buff:Push(count)
 	RemoteExecute(REMOTE_SCRIPT, call, buff.m_Handle)
 	buff:Destroy()
+end
+
+function nhanTDCTLB()
+	
+	if GetName() ~= GetTongMaster() then
+		Talk(1, "", "ChØ cã bang chñ míi cã quyÒn nhËn th­ëng")
+		return
+	end	
+
+	if (CalcFreeItemCellCount() < 50) then
+		Say("Hµnh trang Ýt nhÊt ph¶i cã <color=red>50<color> « trèng míi nhËn ®­îc phÇn th­ëng.")
+		return
+	end
+
+	local szTong = GetTong()
+
+	if GetCityOwner(5) ~= GetTong() then
+		Say("Ng­¬i kh«ng ph¶i th¸i thó thµnh T­¬ng D­¬ng tuÇn nµy")
+		return
+	end
+
+	local szFile = "\\dulieu\\bandbygm.dat"
+	local slLeBao = server_getdata(szFile,"BANGHOI_TDLEBAO",szTong);
+	if not slLeBao or slLeBao == "" or slLeBao=="0" then 
+		Say("Ng­¬i ®· nhËn hÕt T­¬ng D­¬ng c«ng thµnh lÔ bao råi")
+		return
+	end
+
+	local numLeBao = tonumber(slLeBao)
+	
+	local tbAward = 
+	{	
+			{szName = "Tuong duong cong thanh le bao",	tbProp = {6, 1, 4322, 1, 0, 0},nCount=numLeBao,},
+	}
+	tbAwardTemplet:Give(tbAward, 1, {"NhanTDCTLBao", "NhanTDCTLBao"})
+
+	server_setdata(szFile,"BANGHOI_TDLEBAO",szTong,"0")
+	server_savedata(szFile);
+
+	local strmgs = "Chóc mõng bang héi <color=pink>" .. GetTong() .. "<color> ®· nhËn ®­îc phÇn th­ëng chiÕm lÜnh T­¬ng D­¬ng Thµnh"
+	Say(strmgs)
+	AddGlobalCountNews(strmgs,5)
 end

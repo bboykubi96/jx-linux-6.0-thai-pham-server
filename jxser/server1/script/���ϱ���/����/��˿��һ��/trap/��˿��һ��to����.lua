@@ -1,9 +1,9 @@
---西南北区 竹丝洞一层to唐门
---Trap ID：西南北区 6
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu tr骳 ti ng m閠 t莕g to Л阯g m玭 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 6 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(25, 4182, 5226);
+SetFightState(1) 
+NewWorld(25, 4182, 5226); 
 
 end;

@@ -1,8 +1,8 @@
---Î÷±±ÄÏÇø ÓÀÀÖÕò ¹ã³¡´¢ÎïÏä1
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu vÜnh nh¹c trÊn qu¶ng tr­êng tr÷ vËt r­¬ng 1 
 
-function main(sel)
+function main(sel) 
 
-OpenBox();		--µ¯³ö´¢ÎïÏäÎïÆ·¿òºÍÍæ¼ÒÎïÆ·¿ò£¬ÒÔ±ãÓÚÍæ¼Ò½øĞĞÎïÆ·ºÍ½ğÇ®µÄ´æÈ¡
-SetRevPos(43);		--ÉèÖÃÖØÉúµã
+OpenBox(); -- script viet hoa By http://tranhba.com  b¾n ra tr÷ vËt r­¬ng vËt phÈm khu«ng cïng nhµ ch¬i vËt phÈm khu«ng , ®Ó víi nhµ ch¬i tiÕn hµnh vËt phÈm cïng kim tiÒn ®İch tån lÊy 
+SetRevPos(43); -- script viet hoa By http://tranhba.com  thiÕt trİ sèng l¹i ®iÓm 
 
-end;
+end; 

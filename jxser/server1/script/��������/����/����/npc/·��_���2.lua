@@ -1,10 +1,10 @@
--- ´óÀí¡¡Â·ÈË¡¡Ïã¿Í1
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lý # ng­êi ®i ®­êng # h­¬ng kh¸ch 1 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	if (random(0,1) == 0) then
-		Talk(1,"","Thiªn Long Tù lµ gia miÕu cña tinh thÊt thµnh §¹i Lý chóng ta, ®Þa vÞ t«n vinh, h­¬ng ho¶ ®ang thÞnh.")
-	else
-		Talk(1,"","So s¸nh Thiªn Long Tù cña thµnh §¹i Lý chóng ta víi nh÷ng danh s¬n ®¹i tù nh­ Ngò §µi trong Vinh C¶nh, Phæ §µ, Cöu Hoa, kh«ng hÒ thua Nga Mi, ch¼ng qua chØ lµ bëi v× ë n¬i hoang v¾ng biªn giíi phÝa nam cho nªn Ýt tiÕng t¨m")
-	end
-end;
+function main() 
+if (random(0,1) == 0) then 
+Talk(1,"","Thiªn long tù lµ chóng ta §¹i Lý ®Ých nhµ miÕu , ®Þa vÞ t«n nghiªm , h­¬ng khãi ®ang v­îng .") 
+else 
+Talk(1,"","CÇm chóng ta thiªn long tù cïng nh÷ng kh¸c danh s¬n ®¹i tù ®i so , tû nh­ Ngò ®µi s¬n , Phæ ®µ s¬n , Cöu Hoa S¬n , còng kh«ng thua Nga Mi , chØ bÊt qu¸ ë nam bé biªn viÔn ®Þa ph­¬ng , cho nªn , danh tiÕng kh«ng lín ") 
+end 
+end; 

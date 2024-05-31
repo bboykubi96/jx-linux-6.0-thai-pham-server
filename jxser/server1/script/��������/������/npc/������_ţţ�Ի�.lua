@@ -1,74 +1,74 @@
-----description: ĞÂÊÖ´å_Å£Å£
---author: wangzg	
---date: 2003/7/18
---Modify:2003/7/21 wangzg
---update 2003/7/22 yuanlan
--- Update: Dan_Deng(2003-08-07)
--- µÈ´ı¼ì²â²¢É¾³ıÎäÆ÷µÄº¯Êı£¬ÏÖÔÚÏÈÖ»ÔÊĞí¸øÇ®
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com description: tay míi th«n _ bß bß 
+-- script viet hoa By http://tranhba.com author: wangzg 
+-- script viet hoa By http://tranhba.com date: 2003/7/18 
+-- script viet hoa By http://tranhba.com Modify:2003/7/21 wangzg 
+-- script viet hoa By http://tranhba.com update 2003/7/22 yuanlan 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-07) 
+-- script viet hoa By http://tranhba.com  chê ®îi kiÓm tr¾c còng thñ tiªu vò khİ ®İch hµm sè , b©y giê tr­íc chØ cho phĞp ®­a tiÒn 
 
-function main(sel)
-	UTask_world37=GetTask(65)
-	if (UTask_world37==2) then		--ÒÑ¾­½Óµ½ÈÎÎñ
-		Say("Ta muèn lµm ®¹i hiÖp, ®i kh¾p n¬i hµnh hiÖp tr­îng nghÜa, gióp ®ì ng­êi nghÌo khæ!",2,"Khuyªn can /reason", "ñng hé /help")
-	elseif (UTask_world37==9) then		--Ñ¡ÔñÈ°Ëµ
-		Say("Lµm ®¹i hiÖp thËt khã! LuyÖn vâ c«ng l©u qu¸!",0)
-	elseif (UTask_world37==10) then		--Ñ¡ÔñÖ§³Ö
-		Say("Ta muèn lµm ®¹i hiÖp, ®i kh¾p n¬i hµnh hiÖp tr­îng nghÜa, gióp ®ì ng­êi nghÌo khæ!",0)	
-	else
-		Say("Nh÷ng hiÖp kh¸ch trong s¸ch thËt lµ oai phong, nÕu ®­îc gièng nh­ hä th× hay qu¸!",0)
-	end
-end;
+function main(sel) 
+UTask_world37=GetTask(65) 
+if (UTask_world37==2) then -- script viet hoa By http://tranhba.com  ®· nhËn ®­îc nhiÖm vô 
+Say("Ta muèn ®i khi ®¹i hiÖp liÔu , gièng nh­ ng­¬i mét d¹ng kh¾p n¬i hµnh hiÖp tr­îng nghÜa ",2,"Khuyªn /reason", " ñng hé /help") 
+elseif (UTask_world37==9) then -- script viet hoa By http://tranhba.com  lùa chän khuyªn 
+Say(" lµm ®¹i hiÖp rÊt khã , luyÖn c«ng còng muèn rÊt l©u ",0) 
+elseif (UTask_world37==10) then -- script viet hoa By http://tranhba.com  lùa chän ñng hé 
+Say("Ta muèn ®i khi ®¹i hiÖp liÔu , gièng nh­ ng­¬i mét d¹ng kh¾p n¬i hµnh hiÖp tr­îng nghÜa ",0) 
+else 
+Say("S¸ch th­îng nh÷ng thø kia ®¹i hiÖp rÊt uy phong , nÕu lµ cã thÓ gièng nh­ bän hä mét d¹ng lµ tèt ",0) 
+end 
+end; 
 
-function reason()		--Ñ¡ÔñÈ°ËµÅ£Å£
-	Talk(3,"prise","Ng­êi xÊu rÊt hung d÷, ®Ö cßn nhá nh­ thÕ, vâ c«ng còng luyÖn kh«ng tèt th× lµm sao ®i hµnh hiÖp tr­îng nghÜa?","Ng­êi nãi còng ®óng! §îi ta lín lªn, luyÖn thªm vâ c«ng, sÏ ®i hµnh hiÖp tr­îng nghÜa!","§óng råi! LuyÖn tèt vâ c«ng c¬ b¶n, sau ®ã h·y ®i ®¸nh ng­êi xÊu. ")
-end;
+function reason() -- script viet hoa By http://tranhba.com  lùa chän khuyªn bß bß 
+Talk(3,"prise","Phİa ngoµi ng­êi xÊu rÊt hung ®İch , ng­¬i cßn nhá nh­ vËy , c¨n b¶n c«ng còng kh«ng cã luyÖn h¶o thÕ nµo ®i hµnh hiÖp tr­îng nghÜa nha ?"," õ/d¹ , ng­¬i nãi còng ®óng , vËy chê ta tr­ëng thµnh ®i ngay hµnh hiÖp tr­îng nghÜa !","§èi víi , tr­íc ®em c¨n b¶n c«ng luyÖn h¶o , sau nµy xong ®i ®¸nh ng­êi xÊu . ") 
+end; 
 
-function prise()
-	Talk(1,"","VËy ta vÒ nhµ ®©y!C¶m ¬n ®¹i hiÖp! §©y cã chót thuèc trŞ th­¬ng, xin nhËn cho!")
-	AddItem(1,0,0,1,0,0)
-	AddItem(1,0,0,1,0,0)
-	AddItem(1,0,0,1,0,0)
-	SetTask(65,9)
-	AddRepute(6)		-- ÉùÍû¼Ó6µã
-	AddNote("T×m ®­îc Ng­u Ng­u, khuyªn h¾n vÒ nhµ, nhiÖm vô hoµn thµnh. ")
-	Msg2Player("Khuyªn gi¶i Ng­u Ng­u vÒ nhµ, nhiÖm vô hoµn thµnh. ")
-	Msg2Player("§­îc ba gãi Kim Th­¬ng d­îc ")
-	Msg2Player("Thanh thÕ giang hå cña b¹n ®­îc gia t¨ng 6 ®iÓm. ")
-end;
+function prise() 
+Talk(1,"","VËy ta vÒ nhµ tr­íc . c¸m ¬n ng­¬i , ta chç nµy cã chót kim chÕ thuèc , sÏ ®­a cho ng­¬i ®i !") 
+AddItem(1,0,0,1,0,0) 
+AddItem(1,0,0,1,0,0) 
+AddItem(1,0,0,1,0,0) 
+SetTask(65,9) 
+AddRepute(6) -- script viet hoa By http://tranhba.com  danh väng thªm 6 ®iÓm 
+AddNote("T×m ®­îc bß bß , khuyªn h¾n vÒ nhµ , nhiÖm vô hoµn thµnh . ") 
+Msg2Player("Khuyªn bß bß vÒ nhµ , nhiÖm vô hoµn thµnh . ") 
+Msg2Player(" lÊy ®­îc ba tói kim chÕ thuèc ") 
+Msg2Player("Ng­¬i giang hå thanh thÕ gia t¨ng 6 ®iÓm . ") 
+end; 
 
-function help()			--Ñ¡Ôñ°ïÖúÅ£Å£
---	Say("Íæ¼Ò£ºĞ¡Ğ¡Äê¼Í£¬µ¹Í¦ÓĞÖ¾Æø¡£",3,"ËÍÒ»°ÑÎäÆ÷/arm","ËÍÒ»µãÒø×Ó/money","ÎÒÔÙÏëÏë/wait")
-	Say("Tuæi cßn nhá nh­ng ®· cã chİ lín!",2,"TÆng mét chót b¹c /money","§Ó ta suy nghÜ kü l¹i xem/wait")		--µÈÄÜ¹»¼ì²âÎäÆ÷ÔÙÓÃÉÏÃæÕâ¾ä£¬ÏÖÔÚÏÈÖ»¸øÇ®
-end
+function help() -- script viet hoa By http://tranhba.com  lùa chän trî gióp bß bß 
+-- script viet hoa By http://tranhba.com  Say("Nhµ ch¬i # cßn nhá tuæi , còng rÊt cã chİ khİ . ",3,"§­a mét thanh vò khİ /arm","§­a mét chót b¹c /money","Ta suy nghÜ l¹i mét chót /wait") 
+Say("Cßn nhá tuæi , còng rÊt cã chİ khİ !",2,"§­a mét chót b¹c /money","Ta suy nghÜ l¹i mét chót /wait") -- script viet hoa By http://tranhba.com  chê cã thÓ kiÓm tr¾c vò khİ l¹i dïng phİa trªn c©u nµy , b©y giê tr­íc chØ ®­a tiÒn 
+end 
 
-function arm()
-	if x==0 then	--Èç¹ûÃ»ÓĞÎäÆ÷
-		Say("Ta hiÖn t¹i kh«ng cã vò khİ.",3,"TÆng mét mãn vò khİ /arm","TÆng mét chót b¹c /money","§Ó ta suy nghÜ kü l¹i xem/wait")
-	else 
-		--¸øÎäÆ÷
-		Talk(1,"","C¶m ¬n ®¹i hiÖp! Ng­êi thËt lµ tèt!")
-		AddOwnExp(100)
-		SetTask(65,10)
-		AddNote("T×m ®­îc Ng­u Ng­u, cho ®i mét mãn vò khİ, ñng hé ­íc m¬ lµm ®¹i hiÖp cña nã. ")
-	end
-end
+function arm() 
+if x==0 then -- script viet hoa By http://tranhba.com  nÕu nh­ kh«ng cã vò khİ 
+Say("Ta b©y giê kh«ng cã vò khİ ?",3,"§­a mét thanh vò khİ /arm","§­a mét chót b¹c /money","Ta suy nghÜ l¹i mét chót /wait") 
+else 
+-- script viet hoa By http://tranhba.com  cho vò khİ 
+Talk(1,"","C¸m ¬n ng­¬i , ng­¬i thËt tèt !") 
+AddOwnExp(100) 
+SetTask(65,10) 
+AddNote("T×m ®­îc bß bß , cho h¾n mét thanh vò khİ , ñng hé h¾n ®¹i hiÖp méng ") 
+end 
+end 
 
-function money()
-	if (GetCash() < 100) then
---		Say("Íæ¼Ò£º°¥Ñ½£¬ÎÒÉíÉÏÃ»´øÊ²Ã´Ç®¡£",3,"ËÍÒ»°ÑÎäÆ÷/arm","ËÍÒ»µãÒø×Ó/money","ÎÒÔÙÏëÏë/wait")
-		Talk(1,"","Trong ng­êi ta kh«ng cã mang tiÒn, ®îi ta quay l¹i nhĞ!")		--µÈÄÜ¹»¼ì²âÎäÆ÷ÔÙÓÃÉÏÃæÕâ¾ä£¬ÏÖÔÚÏÈÖ»¸øÇ®
-	else
-		Pay(100)
-		Talk(1,"","C¶m ¬n ®¹i hiÖp! Ng­êi thËt lµ tèt!")
-		AddOwnExp(100)
-		SetTask(65,11)
-		AddRepute(4)
-		AddNote("T×m ®­îc Ng­u Ng­u, cho ®i mét mãn vò khİ, ñng hé ­íc m¬ lµm ®¹i hiÖp cña nã. Hoµn thµnh nhiÖm vô. ")
-		Msg2Player("T×m ®­îc Ng­u Ng­u, ñng hé ­íc m¬ lµm ®¹i hiÖp cña nã, cho nã mét İt b¹c. Hoµn thµnh nhiÖm vô. ")
-		Msg2Player("Kinh nghiÖm giang hå cña b¹n ®· gia t¨ng! ")
-		Msg2Player("Thanh thÕ giang hå cña b¹n ®· t¨ng lªn 4 ®iÓm. ")
-	end
-end
+function money() 
+if (GetCash() < 100) then 
+-- script viet hoa By http://tranhba.com  Say("Nhµ ch¬i # ai nha , trªn ng­êi ta kh«ng cã mang tiÒn g× . ",3,"§­a mét thanh vò khİ /arm","§­a mét chót b¹c /money","Ta suy nghÜ l¹i mét chót /wait") 
+Talk(1,"","Trªn ng­êi ta kh«ng cã mang tiÒn , chê ta trë l¹i ") -- script viet hoa By http://tranhba.com  chê cã thÓ kiÓm tr¾c vò khİ l¹i dïng phİa trªn c©u nµy , b©y giê tr­íc chØ ®­a tiÒn 
+else 
+Pay(100) 
+Talk(1,"","C¸m ¬n ng­¬i , ng­¬i thËt tèt !") 
+AddOwnExp(100) 
+SetTask(65,11) 
+AddRepute(4) 
+AddNote("T×m ®­îc bß bß , cho h¾n mét thanh vò khİ , ñng hé h¾n ®¹i hiÖp méng . hoµn thµnh nhiÖm vô ") 
+Msg2Player("T×m ®­îc bß bß , cho h¾n mét thanh vò khİ , ñng hé h¾n ®¹i hiÖp méng . hoµn thµnh nhiÖm vô ") 
+Msg2Player("Ng­¬i kinh nghiÖm giang hå gia t¨ng ! ") 
+Msg2Player("Ng­¬i giang hå thanh thÕ gia t¨ng 4 ®iÓm . ") 
+end 
+end 
 
-function wait()
-end
+function wait() 
+end 

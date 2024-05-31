@@ -5,6 +5,8 @@ Include("\\script\\missions\\citywar_city\\head.lua");
 Include("\\script\\missions\\citywar_city\\camper.lua");
 
 function main()
+	---dofile("script/missions/citywar_city/zhongzhuan_map/trap.lua")
+
 	SubWorldOld = SubWorld-- 记录原始的SubWorld
 	WorldID = SubWorldIdx2ID(SubWorld); --获得当前地图的ID号
 	
@@ -41,6 +43,8 @@ end;
 
 function CheckAndJoin(Camp)
 	if (GetTongName() == GetMissionS(Camp)) then  --属于该帮会则表示玩家为正规军，允许进入
+
+--*******************************************Dev Jackson2014 test cong thanh********************************
 		if (GetJoinTongTime() >= 7200) then
 			if (GetTask(TV_TASKKEY) ~= GetMissionV(MS_KEY)) then
 				BT_SetData(PL_KEYNUMBER, 0)

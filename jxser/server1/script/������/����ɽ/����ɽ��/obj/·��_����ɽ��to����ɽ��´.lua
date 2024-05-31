@@ -1,8 +1,8 @@
---¶«±±Çø\³¤°×É½\³¤°×É½½Å\obj\Â·±ê_³¤°×É½½Åto³¤°×É½ÄÏÂ´.lua
---by lixin @20050915
+-- script viet hoa By http://tranhba.com  ®«ng b¾c khu \ Tr­êng b¹ch s¬n \ Tr­êng b¹ch s¬n ch©n \obj\ b¶ng chØ ®­êng _ Tr­êng b¹ch s¬n ch©n to Tr­êng b¹ch s¬n nam léc .lua 
+-- script viet hoa By http://tranhba.com by lixin @20050915 
 
-function main(sel)
+function main(sel) 
 
-Say("§i ®Õn B¾c Léc nói Tr­êng B¹ch ", 0)
+Say("# tíi Tr­êng b¹ch s¬n b¾c léc ", 0) 
 
 end;

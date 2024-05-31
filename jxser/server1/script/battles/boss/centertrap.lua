@@ -15,6 +15,8 @@ function main()
 		end;
 	else
 		SetFightState(1)
+		SetPunish(0);
+			ForbidEnmity( 1 )
 	end;
 end;
 

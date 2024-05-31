@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡µ«ĞÓ»¨
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # ng­êi ®i ®­êng # nh­ng h¹nh hoa 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(4,"","Ng­¬i cã nghe truyÒn thuyÕt vÒ Hå §iÖp TuyÒn hay kh«ng?","V¨n c« lµ mét ng­êi tµi s¾c ®· cïng Hµ Lang ng­êi thî s¨n th­¬ng yªu nhau, ai biÕt r»ng c« n­¬ng Êy bŞ tªn ®Şa chñ b¾t ®i. Sau khi Hµ Lang ®i s¨n vÒ ®· liÒu m×nh cøu c« Êy.Kh«ng ngê quan binh truy ®uæi, hai ng­êi ®Õn ®­êng cïng ®· nh¶y xuèng suèi Hå §iÖp ®· biÕn thµnh mét ®«i Uyªn ¦¬ng Hå §iÖp m·i m·i bªn nhau kh«ng rêi.","Trong m¾t c¸c c« n­¬ng B¹ch Téc cña chóng ta suèi Hå §iÖp lµ t­îng tr­ng cho mét t×nh yªu chung trinh kh«ng thay ®æi. mçi n¨m ®Õn vµo th¸ng ba th¸ng t­ chóng ta sÏ tËp trung bªn suèi Hå ®iÖp, võa ch¶y ®Çu trang ®iÓm, võa nh¶y móa ca h¸t. ","Khi nµo ta míi cã thÓ t×m ®­îc chång cña ta?")
-end;
+function main() 
+Talk(4,"","Ng­¬i nghe qua con b­ím tuyÒn ®İch truyÒn thuyÕt sao ?","V¨n c« lµ mét tµi m¹o song toµn ng­êi cña , ®· cïng s¨n thó ®İch s«ng lang yªu nhau , kh«ng ngê , nµng bŞ mét chç chñ tr¶o liÔu , s«ng lang s¨n thó trë l¹i , liªn minh cïng ng­êi kh¸c cïng nhau cøu nµng , kh«ng nghÜ tíi quan binh ®uæi b¾t , hai ng­êi cïng nhau nh¶y xuèng liÔu con b­ím s«ng , biÕn thµnh mét ®«i uyªn ­¬ng con b­ím vÜnh viÔn chung mét chç ."," ë chóng ta b¹ch téc c« n­¬ng trong m¾t , con b­ím tuyÒn lµ trung trinh t×nh yªu t­îng tr­ng , hµng n¨m th¸ng ba th¸ng t­ , chóng ta còng tËp trung ë con b­ím tuyÒn ca h¸t khiªu vò . "," lóc nµo ta míi cã thÓ t×m ®­îc tr­îng phu cña ta ? ") 
+end; 

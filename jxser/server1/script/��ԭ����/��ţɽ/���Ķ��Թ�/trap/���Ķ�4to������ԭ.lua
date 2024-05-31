@@ -1,11 +1,11 @@
---中原北区 天心洞4to剑阁中原
---Trap ID：中原北区 21
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu thi猲 t﹎ ng 4to ki誱 c竎 Trung Nguy猲 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 21 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(43, 1695, 3200);
+SetFightState(1) 
+NewWorld(43, 1695, 3200); 
 
-AddTermini(113)
+AddTermini(113) 
 
 end;

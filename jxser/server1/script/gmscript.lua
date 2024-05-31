@@ -1,30 +1,48 @@
-Include("\\script\\event\\menglan_2006\\menglan_2006.lua");
-Include("\\script\\lib\\gb_taskfuncs.lua");
-Include("\\script\\lib\\gb_modulefuncs.lua");
+Include("\\script\\event\\menglan_2006\\menglan_2006.lua"); -- By ÁÎÖ¾É½(Ô½ÄÏ06ÓÛÀ¼½Ú);
+Include("\\script\\lib\\gb_taskfuncs.lua");	 				-- By ÁÎÖ¾É½»Ô»ÍÖ®ÖÖ;
+Include("\\script\\lib\\gb_modulefuncs.lua"); 				-- By ÁÎÖ¾É½»Ô»ÍÖ®ÖÖ;
 Include("\\script\\global\\skills_table.lua");
 Include("\\script\\battles\\battlehead.lua");
 Include("\\script\\event\\mid_autumn\\mooncake_head.lua");
 Include("\\script\\missions\\leaguematch\\wlls_gmscript.lua");
 Include("\\script\\event\\wulin_2nd\\wulin_gmscript.lua");
 Include("\\script\\event\\tongwar\\tongwar_gmscript.lua");
+
+-- Í¬°éÏµÍ³µÄÍ·ÎÄ¼ş
 IncludeLib("PARTNER");
+
+-- ÎÄ¼şÏµÍ³µÄÍ·ÎÄ¼ş
 IncludeLib("FILESYS");
+
+-- ÈÎÎñÏµÍ³
 IncludeLib("TASKSYS");
+
+-- Í¬°é¾çÇéÈÎÎñÍ·ÎÄ¼ş
 Include ("\\script\\task\\partner\\task_head.lua");
 Include("\\script\\missions\\boss\\callboss_incity.lua");
-Include("\\script\\task\\random\\treasure_head.lua");
+
+Include("\\script\\task\\random\\treasure_head.lua");  -- ²Ø±¦Í¼¹¦ÄÜ
+
+-- ¶ÁÈëËæ»úÈÎÎñÍ·ÎÄ¼ş
 Include("\\script\\task\\system\\task_main.lua");
+-- »Ô»ÍÖ®Ò¹
 Include("\\script\\event\\great_night\\lantern\\create_lanterns.lua");
+--ÌØÊâÑÌ»¨
 Include("\\script\\item\\fireworks_callback.lua");
+--ÇéÈË½Ú»î¶¯2006
 Include("\\script\\item\\valentine_callback.lua");
 
-if (GetProductRegion() == "cn_ib") then	
+if (GetProductRegion() == "cn_ib") then
+	--IB·şÎñÆ÷Ë¢bossĞÂ¹æÔò
 	Include([[\script\event\ib\ib_seed_boss.lua]]);
 end
 
-function ShowTask(i)
+-- ¼Ó¸÷ÃÅ¼¼ÄÜÊ±£¬Ö±½ÓÊ¹ÓÃº¯Êı£ºadd_tw(90) ×¢Òâ¸÷ÃÅÅÉËõĞ´²»Í¬¡£ÈëÃÅÎª10,10¼¶¼¼ÄÜÎª20...ÕòÅÉ¾øÑ§Îª70,90¼¶¼¼ÄÜÎª90¡£¸Ãº¯Êı²»×Ô¶¯Í¶µã
+--------------------- Dan_Deng's cmd ---------------------
+function ShowTask(i)			-- ÏÔÊ¾Íæ¼ÒÄ³¸öÈÎÎñ±äÁ¿µÄÖµ
 	Msg2Player(GetTask(i))
 end
+
 
 
 GLB_CURITERATOR = 49
@@ -397,14 +415,14 @@ end;
 end;
 
 function SPos()
-	x,y = GetPos();
-	Msg2Player((x)..","..(y))
+x,y = GetPos();
+Msg2Player((x)..","..(y))
 end;
 
 function LEVERUP(nLevel)
-	for i = 1, nLevel do 
-		AddOwnExp(1000000);
-	end;
+for i = 1, nLevel do 
+AddOwnExp(1000000);
+end;
 end;
 
 function GotoStation(nStation)
@@ -1082,6 +1100,7 @@ function ShowSeed(worldidx, mapid, seedlevel, count, SeedPosFile,szMapName, nBat
 					nBeginNumber = nBeginNumber + 1
 					gb_SetTask("h¹t Huy Hoµng",12,nBeginNumber)
 					SetNpcScript(nNPCIndex, szNpcScriptFile );
+					AddTimer(5*60* 18, "OnTimeout", nNPCIndex);		 
 					SetNpcParam(nNPCIndex, 1, seedlevel);
 					SetNpcParam(nNPCIndex, 2, nBeginNumber*10000 +  nCurDate ); --  nCurDate --¼ÓÉÏµ±Ç°ÈÕÆÚ
 					if szNpcName == "Qu¶ Hoµng Kim" or szNpcName == "H¹t Hoµng Kim " then
@@ -1091,7 +1110,9 @@ function ShowSeed(worldidx, mapid, seedlevel, count, SeedPosFile,szMapName, nBat
 			end;
 	end;
 end;
-
+function OnTimeout(nNpcIndex)
+DelNpc(nNpcIndex);
+end
 --GV_TSK_CD_OPEN = 35
 
 function NewCityDefence_OpenMain(citycamp)
@@ -1150,4 +1171,8 @@ function chrismas_shrewmouse(mapid)
 	OpenMission(29);
 	SetGlbValue(848, 1); --ÕâÀïÒªÈ·¶¨ÊÇ¶àÉÙ
 	SubWorld = OldSubWorld;
+end;
+function BauCuaKhoiDong()--event by Zhu
+	--print("Khoi Dong Bau Cua")
+	--DynamicExecute("\\script\\global\\bet\\baucua.lua", "FishGame:Init")
 end;

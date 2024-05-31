@@ -1,88 +1,88 @@
---Î÷ÄÏ±±Çø\ÌÆÃÅ\Ò½Ò©·¿\npc\tmnpc10.lua
---description: ÌÆÃÅÌÆÒ° 40¼¶ÈÎÎñ 
---author: yuanlan	
---date: 2003/3/12
---Dan_Deng(2003-07-22), ¼ÓÈëÃÅÅÉÈÎÎñµÄµÈ¼¶ÒªÇó
--- Update: Dan_Deng(2003-08-13)
--- Update: xiaoyang(2004\4\13)  ¼ÓÈë90¼¶Îå¶¾ÈÎÎñ
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu \ §­êng m«n \ y d­îc phßng \npc\tmnpc10.lua 
+-- script viet hoa By http://tranhba.com description: §­êng m«n ®­êng d· 40 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/12 
+-- script viet hoa By http://tranhba.com Dan_Deng(2003-07-22), gia nhËp m«n ph¸i nhiÖm vô cÊp bËc yªu cÇu 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
+-- script viet hoa By http://tranhba.com  Update: xiaoyang(2004\4\13) gia nhËp 90 cÊp n¨m ®éc nhiÖm vô 
 
 Include("\\script\\global\\skills_table.lua")
 
-function main()
-	UTask_tm = GetTask(2)
-	Uworld124 = GetTask(124)
-	if(GetFaction() == "tangmen") and (GetSeries() == 1) then
-		if((UTask_tm == 40*256) and (GetLevel() >= 40) and (GetFaction() == "tangmen")) then		--40¼¶ÈÎÎñÆô¶¯
-			Talk(4,"L40_get","Ta cã mét chuyÖn duy nhÊt mµ ®Õn nay vÉn ch­a hoµn thµnh! ThËt buån qu¸!", "L·o phu tõng cã ng­êi b¹n tªn C¶nh Tö Kú, 10 n¨m tr­íc, vî C¶nh Tö Kú m¾c bÖnh l¹ ®Õn xin cøu gióp. Nh­ng Bæn m«n cã quy ®Þnh kh«ng ph¶i lµ ng­êi trong §­êng M«n kh«ng ®­îc cøu ch÷a. BÊt luËn C¶nh Tö Kú cÇu xin l·o phu vÉn c­¬ng quyÕt kh«ng ra tay gióp ®ì, kÕt qu¶ kh«ng l©u sau vî h¾n qua ®êi, hai ta tõ ®ã trë mÆt thµnh thï.", "MÊy ngµy tr­íc, ta cã nhËn ®­îc 1 bøc th­ cña C¶nh Tö Kú, hÑn ta ra gÆp mÆt. Ta biÕt h¾n ®Õn t×m ta ®Ó b¸o thï, ta nî h¾n 1 m¹ng tr¶ l¹i h¾n còng kh«ng sao. ChØ lµ ta kh«ng mÆt mòi nµo gÆp l¹i cè nh©n! ", "S­ thóc! ChuyÖn nµy kh«ng thÓ tr¸ch ng­êi ®­îc, ng­êi nªn gi¶i thÝch râ nguyªn nh©n víi «ng ta, ®Ó «ng ta hiÓu râ nçi khæ n¨m x­a cña ng­êi.")
+function main() 
+UTask_tm = GetTask(2) 
+Uworld124 = GetTask(124) 
+if(GetFaction() == "tangmen") and (GetSeries() == 1) then 
+if((UTask_tm == 40*256) and (GetLevel() >= 40) and (GetFaction() == "tangmen")) then -- script viet hoa By http://tranhba.com 40 cÊp nhiÖm vô khëi ®éng 
+Talk(4,"L40_get","Ta §­êng mç mét ®êi ng­êi ta ®­îc ta lµm , chØ cã mét chuyÖn , cho tíi h«m nay vÉn lµm l·o phu c¶nh c¶nh víi nghi ngê ", " l·o phu tõng cã mét m¹c nghÞch chi giao gäi c¶nh tö kú , m­êi n¨m tr­íc , c¶nh tö kú ®Ých thª tö m¾c ph¶i qu¸i bÖnh , ®i cÇu ta ch÷a trÞ , nh­ng lµ bæn m«n sím cã m«n quy , kh«ng ph¶i lµ §­êng m«n ng­êi trong , nhÊt luËt kh«ng ph¶i ch÷a trÞ . l·o phu h¹n vu m«n quy , bÊt luËn c¶nh tö kú cÇu khÈn thÕ nµo , kiªn tr× kh«ng chÞu xuÊt thñ cøu gióp , kÕt qu¶ thª tö cña h¾n kh«ng l©u sau bëi v× bÖnh qua ®êi , ta hai ng­êi tõ nay ph¶n béi thµnh thï ","MÊy ngµy tr­íc ®©y l·o phu nhËn ®­îc c¶nh tö kú ®Ých mét phong th¬ , ­íc l·o phu gÆp mÆt tù cùu , ta biÕt h¾n lµ tíi t×m ta b¸o thï , ta thiÕu h¾n mét c¸i m¹ng , tr¶ l¹i cho h¾n vèn lµ còng kh«ng cã c¸i g× , ch¼ng qua lµ l·o phu thËt sù lµ kh«ng mÆt mòi nh×n b¹n cò a ! ","S­ thóc , chuyÖn nµy nguyªn kh«ng tr¸ch ng­¬i , ng­¬i h¼n h­íng h¾n gi¶i thÝch râ nguyªn nh©n , ®Ó cho h¾n hiÓu ng­¬i n¨m ®ã khã xö .") 
 		elseif(UTask_tm == 40*256+40) then 
-			Talk(3, "L40_step44", "§­êng D· s­ thóc! Con g¸i cña C¶nh tiÒn bèi vµ mÑ c« ta cïng m¾c gièng mét chøng bÖnh, tÝnh m¹ng ®ang nguy kÞch, nÕu S­ thóc cã thÓ cøu con cña «ng ta, «ng ta nhÊt ®Þnh sÏ kh«ng tr¸ch ng­êi n÷a!", "Nh­ng mµ m«n quy.....", "S­ thóc yªn t©m, ®Ö tö ®· nghÜ ra mét biÖn ph¸p hay. S­ thóc kh«ng cÇn ph¸ m«n quy mµ vÉn cã thÓ cøu ng­êi. ChØ cÇn cho §Ö tö biÕt ph­¬ng thuèc lµ ®­îc!")
+Talk(3, "L40_step44","§­êng d· s­ thóc , c¶nh tiÒn bèi ®Ých n÷ nhi ®­îc cïng mÉu th©n gièng nhau qu¸i bÖnh , t¸nh m¹ng nguy ë ®¸n tÞch , nÕu nh­ ng­¬i cã thÓ cøu sèng n÷ nhi cña h¾n , h¾n nhÊt ®Þnh sÏ kh«ng n÷a tr¸ch ng­¬i ®Ých !","Nh­ng lµ m«n quy .....","S­ thóc , ng­¬i yªn t©m , ta ®· nghÜ ra liÔu mét biÖn ph¸p tèt , ng­¬i kh«ng cÇn ph¸ h­ m«n quy còng cã thÓ cøu ng­êi , chØ cÇn ng­¬i ®em ph­¬ng thuèc nãi cho ta biÕt lµ ®­îc !") 
 		elseif(UTask_tm == 40*256+80) then
-			Talk(4, "L40_prise", "Ph­¬ng thuèc mµ S­ thóc ®­a qu¶ nhiªn cã hiÖu qu¶, con g¸i cña C¶nh tiÒn bèi ®­îc cøu råi! ¤ng ta ®· kh«ng cßn tr¸ch ng­êi n÷a!", "ThËt kh«ng? ThÕ th× hay qu¸! Nh­ng con g¸i cña «ng ta kh«ng ph¶i lµ do ta cøu mµ lµ ng­¬i cøu, hiÓu ý ta chø?", "D¹ hiÓu! ViÖc nµy kh«ng liªn can ®Õn S­ thóc, lµ do §Ö tö lµm! ", "Ng­¬i qua nhiªn th«ng minh, l·o phu kh«ng nh×n lÇm ng­¬i, ha ha ha! ")
-		elseif(UTask_tm > 40*256) and (UTask_tm < 40*256+60) then					--40¼¶ÈÎÎñÖÐÆÕÍ¨¶Ô»°
-			Talk(1,"","<color=Red>C¶nh Tö Kú<color> Èn c­ ë <color=Red>phÝa t©y Thanh Thµnh s¬n<color>.")
-		elseif(UTask_tm >= 40*256+60) and (UTask_tm < 50*256) then					--ÉÐÎ´Íê³É40¼¶ÈÎÎñ
-			Talk(1,"","D­îc liÖu cã 5 lo¹i:<color=Red>da cãc<color>, <color=Red>gan r¾n ®éc<color>,<color=Red>h¹t anh tóc<color>,<color=Red>®u«i rÕt ®éc<color>,<color=Red>®Çu thiªn tµm<color>. Nh÷ng d­îc liÖu nµy cã nhiÒu ë <color=Red>Thanh D­¬ng LÜnh<color> <color=Red>§«ng b¾c Thanh Thµnh s¬n<color>.")
-		elseif(UTask_tm >= 50*256) and (GetFaction() == "tangmen") then					--ÒÑ¾­Íê³É40¼¶ÈÎÎñ£¬ÉÐÎ´³öÊ¦
-			Talk(1,"","Ng­¬i ®· gióp l·o phu hãa gi¶i ©n o¸n 10 n¨m nay, thËt kh«ng biÕt sao ®Ó c¶m t¹!")
-		else
-			Talk(1,"","B¹n bÌ trë mÆt, thËt khiÕn ng­êi ta ®au lßng!")
-		end
-	elseif (Uworld124 == 20) and (HaveItem(385) == 1) then
-		Talk (2,"Uworld_wdutask","§­êng tiªn sinh! ë ®©y cã bøc th­ xin ngµi xem qua!","Vøt nã ®i! Ta kh«ng thÌm xem!")
-	elseif (Uworld124 == 20) then
-		Msg2Player("Bøc th­ ph¶i ch¨ng ®· bÞ mÊt trªn ®­êng ®i, h·y ®i t×m thö. ")
-	elseif (Uworld124 == 25) then
-		Talk (15,"Uworld_wdutask2","ChuyÖn g× vËy?","TiÓu tö! Ng­¬i suýt mÊt m¹ng cã biÕt kh«ng?","Oh! T¹i h¹ ngu muéi!","NÕu nh­ ta kh«ng cã néi gi¸n trong Ngò §éc Gi¸o xem ra h«m nay bÞ tróng kÕ cña V©n l·o nhi råi. Cã ph¶i ®©y lµ bøc th­ V©n BÊt Tµ nhê ng­êi chuyÓn gióp kh«ng?","§óng vËy.","Haha! Ng­¬i tróng kÕ råi! Th­ nµy cã ®éc v« h×nh ®ã, bÒ ngoµi kh«ng thÊy g× hÕt nh­ng khi më ra sÏ lµm cho kinh m¹ch ®¶olén, V©n l·o nhi vèn dÜ muèn h¹i ta, kh«ng xem m¹ng sèng cña ng­¬i ra g× hÕt.","Huhu! TÝnh sao ®©y tiªn sinh?","§õng lo! V©n l·o nhi h¹i ta lµ v× ta th­êng cøu nh÷ng ng­êi mµ l·o h¹ ®éc. BÖnh cña ng­¬i giao cho l·o phu.","§­êng D· sö dông néi c«ng trÞ ®éc cho b¹n, b¹n cã c¶m gi¸c nh­ cã ngµn viªn bi b¾n ra xuèng ®Êt vËy.","§­êng D·: May lµ ph¸t hiÖn sím, kh«ng th× ng­¬i tiªu råi.","C¸m ¬n §­êng L·o gia.","Kh«ng ph¶i lµm c«ng kh«ng ®©u! Ng­¬i gióp ta ®em bøc th­ nµy vÒ bªn ®ã ta cã bá s½n thuèc ®éc kh¸c råi chØ cÇn ng­¬i nãi lµ ®· ph¸t hiÖn ra ©m m­u cña h¾n, h¾n sÏ giùt ngay bøc th­ xem ®Õn lóc Êy sÏ cã ng­êi ®Õn lÊy m¹ng cña h¾n.","V©n BÊt Tµ nu«i ®éc h¹i ng­êi nhÊt ®Þnh ta kh«ng tha cho h¾n ®©u.","Ng­¬i uèng thuèc gi¶i xong lªn ®­êng ngay ®i.","D¹!")
-	elseif(Uworld124 == 30 ) and (HaveItem(386) == 0) then
-		Talk (1,"","TiÓu tö nhµ ng­¬i, l¸ th­ ë ®ã, ®i ®­êng cÈn thËn, V©n l·o tÆc tuyÖt kh«ng dÔ ®èi phã ®©u. ") 
-		AddEventItem(386)
-		Msg2Player("NhËn l¹i th­ cña §­êng D· ")
-	elseif(UTask_tm == 70*256) then							--ÒÑ¾­³öÊ¦
-		Talk(1,"","Cã r¶nh ®Õn uèng r­îu víi l·o phu!")
-	else										--Î´Íê³É40¼¶ÈÎÎñ£¨È±Ê¡¶Ô»°£©
-		Talk(1,"","§­êng mç nµy ®· nãi mét lêi quyÕt kh«ng thay ®æi!")
-	end
-end;
+Talk(4, "L40_prise","§­êng d· s­ thóc , ng­¬i khai ®Ých ph­¬ng thuèc qu¶ nhiªn h÷u hiÖu , c¶nh tiÒn bèi ®Ých n÷ nhi ®­îc cøu råi # h¾n ®· kh«ng hÒ n÷a tr¸ch ng­¬i !","Cã thËt kh«ng ? thËt tèt qu¸ # bÊt qu¸ h¾n ®Ých n÷ nhi còng kh«ng ph¶i lµ ta cøu ®Ých , mµ lµ ng­¬i cøu ®Ých , ng­¬i hiÓu ý cña ta kh«ng ?","HiÓu # chuyÖn nµy cïng s­ thóc kh«ng liªn quan , lµ ta lµm ! ","Ng­¬i qu¶ nhiªn c¬ trÝ , l·o phu kh«ng nh×n lÇm ng­¬i , c¸p c¸p c¸p c¸p ! ") 
+		elseif(UTask_tm > 40*256) and (UTask_tm < 40*256+60) then					-- script viet hoa By http://tranhba.com 40¼¶ÈÎÎñÖÐÆÕÍ¨¶Ô»°
+Talk(1,"","<color=Red> c¶nh tö kú <color> mét mùc Èn c­ ë <color=Red> nói Thanh Thµnh ®Ých t©y bé <color>.") 
+		elseif(UTask_tm >= 40*256+60) and (UTask_tm < 50*256) then					-- script viet hoa By http://tranhba.com ÉÐÎ´Íê³É40¼¶ÈÎÎñ
+Talk(1,"","D­îc liÖu tæng céng cã n¨m lo¹i #<color=Red> thiÒm thõ ®Ých da <color> , <color=Red> r¾n ®éc ®Ých ®¶m <color>#<<color=Red> anh tóc ®Ých x¸c <color>#<color=Red> con bß c¹p ®Ých ®u«i <color>#<color=Red> c­¬ng tµm ®Ých ®Çu <color> , nh÷ng d­îc liÖu nµy ë <color=Red> nói Thanh Thµnh ®«ng b¾c <color> ®Ých <color=Red> thanh d­¬ng ngän nói <color> t­¬ng ®èi nhiÒu .") 
+elseif(UTask_tm >= 50*256) and (GetFaction() == "tangmen") then -- script viet hoa By http://tranhba.com  ®· hoµn thµnh 40 cÊp nhiÖm vô , ch­a xuÊt s­ 
+Talk(1,"","Ng­¬i gióp l·o phu hãa gi¶i ®o¹n nµy m­êi n¨m ©n o¸n , thËt kh«ng hiÓu thÕ nµo c¶m t¹ ng­¬i ") 
+else 
+Talk(1,"","B»ng h÷u trë mÆt , thËt lµm cho lßng ng­êi ®au / th­¬ng yªu !") 
+end 
+elseif (Uworld124 == 20) and (HaveItem(385) == 1) then 
+Talk (2,"Uworld_wdutask","§­êng tiªn sinh , n¬i nµy cã phong th­ , mêi/xin ng­¬i xem qua !","§em nã nÐm , ta kh«ng nh×n !") 
+elseif (Uworld124 == 20) then 
+Msg2Player("Tin/th¬ cã ph¶i hay kh«ng r¬i ë trªn ®­êng ? nhanh ®i t×m mét chót ") 
+elseif (Uworld124 == 25) then 
+Talk (15,"Uworld_wdutask2","ChuyÖn g× ?","TiÓu tö , ng­¬i mau bá m¹ng , biÕt kh«ng ?","Nga , t¹i h¹ ngu muéi !","NÕu nh­ ta ë Ngò ®éc gi¸o kh«ng cã néi gian , h«m nay liÒn trung v©n l·o nhi ®Ých kÕ liÔu . phong th­ nµy lµ kh«ng ph¶i lµ v©n kh«ng tµ ®Ó cho ng­¬i mang tíi ? ","§èi víi .","Ha ha , ng­¬i tróng kÕ , phong th­ nµy cã v« h×nh ®Ých ®éc , bªn ngoµi c¸i g× còng kh«ng thÊy ®­îc , nh­ng lµ , më ra ®Ých thêi ®iÓm sÏ nhiÔu lo¹n kinh m¹ch , v©n l·o NhÞ vèn lµ muèn h¹i ta , kh«ng ®em ng­êi kh¸c t¸nh m¹ng coi ra g× .","¤ « , lµm sao b©y giê , tiªn sinh ?","Kh«ng cÇn lo l¾ng , v©n l·o nhi th­êng h¹i ta , lµ bëi v× ta th­êng cøu h¾n lµm h¹i ng­êi , bÖnh cña ng­¬i giao cho l·o phu .","§­êng d· sö dông néi c«ng v× ng­¬i trõ ®éc , ng­¬i c¶m gi¸c cã ngµn qu¶ ®¹n ®¸nh rít xuèng liÔu .","§­êng d· # may nhê ph¸t hiÖn sím , nÕu kh«ng ng­¬i nhÊt ®Þnh ph¶i chÕt .","C¶m t¹ §­êng l·o gia .","Kh«ng ph¶i lµ b¹ch lµm , ng­¬i gióp ta mang phong th­ nµy trë vÒ , ta ®· th¶ nh÷ng kh¸c ®éc d­îc , chØ cÇn ng­¬i nãi lµ ®· ph¸t hiÖn ©m m­u cña h¾n , h¾n liÒn lËp tøc më ra tin cËy nh×n , khi ®ã , sÏ cã ng­êi lÊy tÝnh mÖnh cña h¾n .","V©n kh«ng tµ dông ®éc h¹i ng­êi , ta nhÊt ®Þnh sÏ kh«ng bá qua h¾n .","Ng­¬i uèng hoµn gi¶i d­îc liÒn lªn ®­êng ®i .","Tèt ") 
+elseif(Uworld124 == 30 ) and (HaveItem(386) == 0) then 
+Talk (1,"","TiÓu tö , tin/th¬ ë n¬i nµo , cÈn thËn mét chót , v©n l·o tÆc kh«ng dÔ dµng ®èi phã . ") 
+AddEventItem(386) 
+Msg2Player("TiÕp nhËn ®­êng d· ®Ých tin/th¬ ") 
+elseif(UTask_tm == 70*256) then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
+Talk(1,"","Cã r·nh rçi tíi cïng ta uèng r­îu !") 
+else -- script viet hoa By http://tranhba.com  kh«ng hoµn thµnh 40 cÊp nhiÖm vô # thiÕu tØnh ®èi tho¹i # 
+Talk(1,"","§­êng mç nhÊt ng«n ký xuÊt tø m· nan truy !") 
+end 
+end; 
 
-function L40_step44()
+function L40_step44() 
 	SetTask(2, 40*256+60)
-	AddNote("Trë vÒ phßng Y D­îc gÆp §­êng D· s­, biÕt ®­îc ph­¬ng thuèc gåm cã: Da Cãc, Gan R¾n ®éc, §u«i RÕt ®éc vµ §Çu Thiªn tµm.")
-	Msg2Player("§i Thanh Thµnh S¬n,  ®Õn Thanh D­¬ng Phong t×m d­îc liÖu")
-	Talk(2,"", "ViÖc ®Õn n­íc nµy chØ ®µnh vËy, muèn trÞ bÖnh nµy cÇn cã 5 lo¹i ®éc vËt:<color=Red>da cãc<color>,<color=Red>gan r¾n ®éc<color>,<color=Red>vá anh tóc<color>,<color=Red> ®u«i bß c¹p ®éc<color>,<color=Red>®Çu con t»m<color>. LÊy ®éc trÞ ®éc.","5 lo¹i ®éc vËt nµy cã ë nhiÒu ë <color=Red>Thanh D­¬ng LÜnh<color> trªn <color=Red>§«ng B¾c Thanh Thµnh s¬n<color>. Nh­ng mµ ë ®ã th­êng cã <color=Red> H¾c ¦ng<color>,<color=Red>Hung thøu<color>,<color=Red>Linh §iªu<color> xuÊt hiÖn, ng­¬i ph¶i cÈn thËn!")
-end;
+AddNote("Trë vÒ y d­îc phßng thÊy ®­êng d· , biÕt ph­¬ng thuèc bao gåm # thiÒm thõ ®Ých da , r¾n ®éc ®Ých ®¶m , anh tóc ®Ých x¸c , con bß c¹p ®Ých ®u«i , c­¬ng tµm ®Ých ®Çu .") 
+Msg2Player("# ®i nói Thanh Thµnh , ®Õn thanh d­¬ng ngän nói t×m d­îc liÖu ") 
+Talk(2,"","ChuyÖn ®· nh­ thÕ , muèn trÞ bÖnh d­îc liÖu cÇn thiÕt tæng céng cã n¨m lo¹i #<color=Red> thiÒm thõ ®Ých da <color> , <color=Red> r¾n ®éc ®Ých ®¶m <color>#<<color=Red> anh tóc ®Ých x¸c <color>#<color=Red> con bß c¹p ®Ých ®u«i <color>#<color=Red> c­¬ng tµm ®Ých ®Çu <color> , nh÷ng d­îc liÖu nµy ë <color=Red> nói Thanh Thµnh ®«ng b¾c <color> ®Ých <color=Red> thanh d­¬ng ngän nói <color> t­¬ng ®èi nhiÒu , bÊt qu¸ n¬i ®ã th­êng cã <color=Red> h¾c ­ng <color>#<color=Red> hung thøu <color>#<color=Red> linh ®iªu <color> ra kh«ng cã , ng­¬i ph¶i cÈn thËn !") 
+end; 
 
-function L40_get()
-	Say("H¾n hËn ta thÊy chÕt kh«ng cøu, lµm g× nghe ta gi¶i thÝch.", 2, "Hãa gi¶i ©n o¸n gi÷a hai ng­êi/L40_get_yes", "Ta kh«ng thÓ gióp g× ®­îc/L40_get_no")
-end;
+function L40_get() 
+Say("H¾n hËn ta , thÊy chÕt mµ kh«ng cøu , lµm sao cã thÓ nghe ta gi¶i thÝch .", 2,"Hãa gi¶i gi÷a hai ng­êi ®Ých ©n o¸n /L40_get_yes","Ta kh«ng thÓ gióp ng­¬i c¸i g× /L40_get_no") 
+end; 
 
-function L40_get_yes()
-	Talk(1,"","<color=Red>C¶nh Tö Kú<color> cø Èn c­ ë <color=Red> phÝa t©y Thanh Thµnh s¬n<color>.")
+function L40_get_yes() 
+Talk(1,"","<color=Red> c¶nh tö kú <color> mét mùc Èn c­ ë <color=Red> nói Thanh Thµnh ®Ých t©y bé <color>.") 
 	SetTask(2, 40*256+20)
-	AddNote("T¹i phßng Y D­îc gÆp §­êng D·, nhËn <color=red> nhiÖm vô C¶nh Tö Kú<color>, hãa gi¶i ©n o¸n gi÷a §­êng D· vµ C¶nh Tö Kú.")
-	Msg2Player("NhËn nhiÖm vô C¶nh Tö Kú tõ §­êng D·: Hãa gi¶i ©n o¸n gi÷a §­êng D· vµ C¶nh Tö Kú.")
-end;
+AddNote(" ë y d­îc phßng thÊy ®­êng d· , nhËn <color=red> c¶nh tö kú nhiÖm vô <color>, hãa gi¶i ®­êng d· cïng c¶nh tö kú gi÷a ®Ých ©n o¸n ") 
+Msg2Player("C¶nh tö kú nhiÖm vô # hãa gi¶i ®­êng d· cïng c¶nh tö kú gi÷a ®Ých ©n o¸n ") 
+end; 
 
-function L40_get_no()
-end;
+function L40_get_no() 
+end; 
 
-function L40_prise()
-	SetRank(29)
-	SetTask(2, 50*256)
---	AddMagic(345)
-	add_tm(50)			-- µ÷ÓÃskills_table.luaÖÐµÄº¯Êý£¬²ÎÊýÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
-	Msg2Player("Chóc mõng b¹n! B¹n ®· ®­îc th¨ng lµm ®Ö tö NhËp C¸c! Cã thÓ häc vâ c«ng Hµn B¨ng ThÝch cña §­êng M«n. ")
-	AddNote("§Õn phßng thuèc §­êng m«n, phôc mÖnh §­êng D·, hoµn thµnh nhiÖm vô C¶nh Tö Kú, th¨ng lµm ®Ö tö NhËp C¸c. ")
-end;
+function L40_prise() 
+SetRank(29) 
+SetTask(2, 50*256) 
+-- script viet hoa By http://tranhba.com  AddMagic(345) 
+add_tm(50) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®Ých hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
+Msg2Player("Chóc mõng ng­¬i th¨ng lµm vµo c¸c ®Ö tö , cã thÓ häc ®­îc §­êng m«n hµn b¨ng ®©m vâ c«ng . ") 
+AddNote("§Õn §­êng m«n d­îc phßng , phôc mÖnh ®­êng d· , hoµn thµnh c¶nh tö kú nhiÖm vô , th¨ng lµm vµo c¸c ®Ö tö . ") 
+end; 
 
-function Uworld_wdutask()
-	DelItem(385)
-	Msg2Player("B¹n nÐm bá th­ cña V©n BÊt Tµ ")
-	SetTask(124,25)
-end
+function Uworld_wdutask() 
+DelItem(385) 
+Msg2Player("Ng­¬i nÐm v©n kh«ng tµ ®Ých tin/th¬ ") 
+SetTask(124,25) 
+end 
 
-function Uworld_wdutask2()
-	AddEventItem(386)
-	Msg2Player("ChÊt ®éc ®· gi¶i hÕt, nhËn ®­îc th­ cña §­êng D·, giao cho V©n BÊt Tµ ")
-	AddNote("§em th­ tr¶ lêi cña §­êng D· giao cho V©n BÊt Tµ. ")
-	SetTask(124,30)
-end
+function Uworld_wdutask2() 
+AddEventItem(386) 
+Msg2Player("§éc tè ®· mæ hoµn , nhËn ®­îc ®­êng d· ®Ých tin/th¬ , giao cho v©n kh«ng tµ ") 
+AddNote("Mang ®­êng d· ®Ých th¬ håi ©m cho v©n kh«ng tµ ") 
+SetTask(124,30) 
+end 

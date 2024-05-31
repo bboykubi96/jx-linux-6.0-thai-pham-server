@@ -1,5 +1,5 @@
--- Î÷±±ÄÏÇø	»ªÉ½ÅÉ	»ªÉ½ÅÉÍ¨ÍùÁ«»¨µî
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph¸i Hoa s¬n ph¸i Hoa s¬n ®i th«ng hoa sen ®iÖn 
 
-function main()
-	Say("§Ö tö Hoa S¬n ph¸i ®Òu h¹ s¬n thu thËp nhiÖm vô råi, ng­¬i ®õng nªn tïy tiÖn x«ng vµo Liªn Hoa ®iÖn, nÕu kh«ng vÒ sau kh«ng cã nhiÖm vô!",0);
+function main() 
+Say("Ph¸i Hoa s¬n ®Ö tö còng xuèng nói thu gãp nhiÖm vô , ng­¬i kh«ng nªn tïy tiÖn vät vµo hoa sen ®iÖn , nÕu kh«ng phİa sau còng ch­a cã nhiÖm vô cã thÓ lµm ",0); 
 end

@@ -14,10 +14,10 @@ mupai_Task=1826;
 function main( nItemIdx )
 	local TaskValue=GetTask(mupai_Task);
 	local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	if(nDate>20070820) then
-		Say("LÖnh bµi ®· qu¸ h¹n sö dông, bŞ mÊt hiÖu lùc!",0)
-		return 0;
-	end
+	-- if(nDate>20070820) then
+		-- Say("LÖnh bµi ®· qu¸ h¹n sö dông, bŞ mÊt hiÖu lùc!",0)
+		-- return 0;
+	-- end
 	if( IsCharged() == 0) then
 		Say("ThËt ®¸ng tiÕc, chØ cã ng­êi ch¬i ®· n¹p thÎ míi cã thÓ sö dông.",0);
 		return 1; 

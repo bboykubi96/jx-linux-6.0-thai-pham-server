@@ -22,7 +22,7 @@ function vn_delete_zizhuang()
 		vn_addlog(tab_Zizhuang[i]);
 		RemoveItemByIndex(tab_Zizhuang[i]);
 	end;
-	Msg2Player("ßi“u ki÷n b t th≠Íng Æ∑ Æ≠Óc gÏ b·");
+	Msg2Player("Trπng th∏i dﬁ th≠Íng Æ∑ bﬁ loπi b·Ö");
 end;
 
 function vn_addlog(nItemIdx)

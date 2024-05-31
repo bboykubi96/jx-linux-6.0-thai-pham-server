@@ -1,15 +1,36 @@
---Á½ºşÇø °ÍÁêÏØÄÏÃÅ Õ½¶·×´Ì¬ÇĞ»»Trap
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn cöa nam tr¹ng th¸i chiÕn ®Êu thiÕt ®æi Trap 
 
-function main(sel)
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
-if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÄÚ
-	SetPos(1562, 3256)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÍâ	
-	SetFightState(1)		-- ×ª»»ÎªÕ½¶·×´Ì¬
-else			       		-- Íæ¼Ò´¦ÓÚÕ½¶·×´Ì¬£¬¼´ÔÚ³ÇÍâ
-	SetPos(1564, 3251)		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ³ÇÄÚ	
-	SetFightState(0)		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
+function main(sel) 
+
+	--dofile("script/global/g7vn/g7configall.lua")
+	local nDate = tonumber(date("%Y%m%d%H%M"))
+	if nDate <= ThoiGianHetHanDiemTP then
+		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chİnh thøc khai më m¸y chñ");
+		SetPos(1564, 3251)
+		return 1
+	end
+	--if check_faction()==1 then
+		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		--SetPos(1564, 3251)
+		--return 1
+	--end;
+if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë trong thµnh 
+SetPos(1562, 3256) -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë ngoµi thµnh 
+SetFightState(1) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 
+else -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu tr¹ng th¸i chiÕn ®Êu , tøc ë ngoµi thµnh 
+SetPos(1564, 3251) -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë trong thµnh 
+SetFightState(0) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
+end; 
+AddStation(10) -- script viet hoa By http://tranhba.com  ghi chĞp vai trß ®· tõng ®· ®Õn ba l¨ng huyÒn 
+SetProtectTime(18*3) -- script viet hoa By http://tranhba.com  ba gi©y b¶o vÖ thêi gian 
+AddSkillState(963, 1, 0, 18*3) 
 end;
-	AddStation(10)			-- ¼ÇÂ¼½ÇÉ«Ôø¾­µ½¹ı°ÍÁêÏØ
-	SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
-end;
+function check_faction()
+	local szCurFaction = GetFaction()
+	if szCurFaction ~= nil and szCurFaction ~= "" then
+		return
+	end
+	return 1
+end

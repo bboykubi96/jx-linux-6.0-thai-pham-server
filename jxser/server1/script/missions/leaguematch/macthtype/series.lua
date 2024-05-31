@@ -133,7 +133,7 @@ WLLS_DATA = {
 		local n_lid, n_mtype, n_job, str_lgname, n_memcount = wlls_lg_info()
 		if (FALSE(n_lid)) then
 			wlls_descript("<enter>  LÇn nµy"..str_des.." lµ <color=red>§ång hÖ song ®Êu<color>. B¹n cã thÓ tù lËp chiÕn ®éi cña m×nh hoÆc gia nhËp chiÕn ®éi cña ng­êi kh¸c. Sau ®ã do ®éi tr­ëng ®Õn gÆp "..str_des.."§èi tho¹i víi Quan viªn, chän '§éi thi ®Êu"..str_des.."Thµnh viªn mçi chiÕn ®éi lµ <color=red>2 ng­êi<color> vµ ph¶i lµ ng­êi cïng hÖ víi nhau",
-				"Ta muèn lËp"..str_des.."nhãm/wlls_want2create",
+				"Ta muèn lËp "..str_des.." nhãm/wlls_want2create",
 				"Ta chØ ®Õn xem th«i/OnCancel")
 			return
 		end

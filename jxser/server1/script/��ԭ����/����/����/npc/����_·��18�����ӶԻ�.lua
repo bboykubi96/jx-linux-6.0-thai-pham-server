@@ -1,8 +1,8 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® Â·ÈË18·ëÅÖ×Ó¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢·ÈË18·ëÅÖ×Ó¶Ô»°
 
 function main(sel)
 
-Say("Heo s¸ng nay míi thŞt xong, thŞt cßn t­¬i nãng! Nh×n xem, mÊy miÕng s­ên heo ngon tuyÖt, mua vÒ hÇm canh ¨n lµ hÕt ı! Mêi v«!",0)
+Say("CËu bĞo Phïng: S¸ng sím h«m nay míi võa giÕt heo, kh«ng biÕt cã b¸n ®¾c kh«ng ®©y!Nh×n g×, ®Õn ®©y mua 1 İt ®ªªªªª !",0)
 
 end;
 

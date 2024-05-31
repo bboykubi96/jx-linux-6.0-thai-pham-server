@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡³çÊ¥ËÂºÍÉĞ4
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # ng­êi ®i ®­êng # sïng th¸nh tù hßa th­îng 4 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(2,"","Bæn tù cã 5 b¶o vËt, thİ chñ cã biÕt n¨m ngò b¶o ®ã lµ g× kh«ng? ","5 b¶o vËt lµ: Sïng Th¸nh Tam Th¸p, Nam Chiªu KiÕn Cùc §¹i Trung, Vò §ång Quan ¢m, Chİnh §¹o Ca Tú vµ bøc PhËt §« BiÓn.")
-end;
+function main() 
+Talk(2,"","Vèn tù cã 5 mãn b¶o bèi , thİ chñ biÕt lµ b¶o bèi g× sao ? ","5 mãn b¶o bèi v× # sïng th¸nh t©m ph¸p , nam chiÕu x©y cùc lín chu«ng / ®ång hå , ng« ®ång Quan ¢m , ch¸nh ®¹o ca tú cïng phËt còng h¶i .") 
+end; 

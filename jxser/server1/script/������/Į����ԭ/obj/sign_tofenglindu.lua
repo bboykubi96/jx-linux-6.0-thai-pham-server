@@ -1,8 +1,8 @@
---¶«±±Çø\Ä®±±²ÝÔ­\obj\Â·±ê_Ä®±±²ÝÔ­to·çÁê¶É
---by lixin @20050118
+-- script viet hoa By http://tranhba.com  ®«ng b¾c khu \ M¹c B¾c th¶o nguyªn \obj\ b¶ng chØ ®­êng _ M¹c B¾c th¶o nguyªn to phong l¨ng ®é 
+-- script viet hoa By http://tranhba.com by lixin @20050118 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Phong L¨ng §é", 0)
+Say("# phong l¨ng ®é ", 0) 
 
 end;

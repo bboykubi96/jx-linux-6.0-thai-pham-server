@@ -69,7 +69,7 @@ function tl_giveplayeraward(myGiveAwardType)
 				myTaskValue2 = tonumber(TabFile_GetCell(tl_gettasktextID(myTaskType),tl_gettasktablecol(),"TaskValue2"))
 				
 				-- 经过加乘值计算后的任务奖励价值
-				myMainValue = myTaskValue2 * (1+(myCountLinks+myTimes)*0.1) + myLoops * 0.2
+				myMainValue = (myTaskValue2 * (1+(myCountLinks+myTimes)*0.1) + myLoops * 0.2)/5
 				
 				-- 2005/9/20 日修改了金钱的产生比例，为 60% ~ 100% 浮动
 				-- 2006/8/23 为越南修改了野叟任务的金钱价值，增加 15%

@@ -1,12 +1,11 @@
---西南北区 成都to剑阁西南
---Trap ID：西南北区 52
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu th祅h  to ki誱 c竎 t﹜ nam 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 52 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(19, 3084, 3975);
+SetFightState(1); 
+NewWorld(19, 3084, 3975); 
 
-AddTermini(24)
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+AddTermini(24) 
+
 end;

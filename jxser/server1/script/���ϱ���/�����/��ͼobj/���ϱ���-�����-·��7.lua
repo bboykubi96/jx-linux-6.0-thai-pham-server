@@ -1,7 +1,7 @@
---Î÷ÄÏ±±Çø ½­½ò´å Â·±ê7£º½­½ò´å->³É¶¼
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu giang t©n th«n b¶ng chØ ®­êng 7# giang t©n th«n -> thµnh ®« 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Thµnh §« ", 0)
+Say("§i th«ng thµnh ®« ", 0) 
 
-end;
+end; 

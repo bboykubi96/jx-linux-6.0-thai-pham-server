@@ -1,13 +1,11 @@
---西北南区 凤翔to永乐镇
---Trap ID：西北南区 20
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu phng tng to v躰h nh筩 tr蕁 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 20 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(99,1412,2913);
+SetFightState(1); 
+NewWorld(99,1412,2913); 
 
---AddTermini(3)
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+-- script viet hoa By http://tranhba.com AddTermini(3) 
 
 end;

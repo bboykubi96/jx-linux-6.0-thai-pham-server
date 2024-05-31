@@ -1,4 +1,5 @@
 Include("\\script\\activitysys\\config\\20\\variables.lua")
+
 tbConfig = {}
 tbConfig[1] = --Ò»¸öÏ¸½Ú
 {
@@ -14,6 +15,8 @@ tbConfig[1] = --Ò»¸öÏ¸½Ú
 	tbActition = 
 	{
 		{"NpcFunLib:AddDialogNpc",	{"Thu V©n",1907,{{11,3182,4951}}} },
+		{"NpcFunLib:AddDialogNpc",	{"Thu V©n",1907,{{78,1582,3215}}} },
+		{"NpcFunLib:AddDialogNpc",	{"Thu V©n",1907,{{1,1582,3190}}} },
 		{"ThisActivity:InitRule",	{nil} },
 	},
 }
@@ -30,60 +33,70 @@ tbConfig[2] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		{"SetDialogTitle",	{"Tõ ngµy 3 th¸ng 6 ®Õn ngµy 30 th¸ng 6 n¨m 2012, c¸c hiÖp kh¸ch cã thÓ ®Õn chç cña ta tham gia ho¹t ®éng thu nhÆt lóa n­íc, sau khi thu nhÆt lóa n­íc cã thÓ ®Õn gÆp ta ®Ó ®æi phÇn th­ëng, mçi ngµy mçi ng­êi chØ ®­îc tham gia nhiÒu nhÊt 2 vßng, thêi gian tõ 16h ®Õn 17h vµ 20h ®Õn 21h"} },
-		{"AddDialogOpt",	{"Tham gia ho¹t ®éng thu nhÆt lóa n­íc",3} },		
-		{"AddDialogOpt",	{"NhËn th­ëng xÕp h¹ng",5} },
-		{"AddDialogOpt",	{"Nép vËt phÈm Lóa Xanh",4} },
-		{"AddDialogOpt",	{"Nép vËt phÈm Lóa Vµng",8} },
+		{"SetDialogTitle",	    {"C¸c hiÖp kh¸ch cã thÓ ®Õn chç cña ta tham gia ho¹t ®éng thu nhÆt lóa n­íc, sau khi thu nhÆt lóa n­íc cã thÓ ®Õn gÆp ta ®Ó ®æi phÇn th­ëng"} },
+		{"AddDialogOpt",	{"Hîp thµnh Bao G¹o Th­êng",4} },
+		{"AddDialogOpt",	{"Hîp thµnh Bao G¹o §Æc BiÖt",8} },
 	},
 }
 tbConfig[3] = --Ò»¸öÏ¸½Ú
 {
 	nId = 3,
-	szMessageType = "nil",
-	szName = "sign up",
+	szMessageType = "NpcOnDeath",
+	szName = "§¸nh qu¸i rít nguyen lieu",
 	nStartDate = nil,
 	nEndDate  = nil,
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
+		{"NpcFunLib:CheckNormalMonster",	{"50,60,70,80,90"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:SignUp",	{nil} },
+		{"NpcFunLib:DropSingleItem",	{{tbProp={6,1,4332,1,0,0},nExpiredTime=20180725,},1,"1"} },
+		{"NpcFunLib:DropSingleItem",	{{tbProp={6,1,4326,1,0,0},nExpiredTime=20180725,},1,"1"} },
 	},
 }
-tbConfig[4] = --Ò»¸öÏ¸½Ú
+
+tbConfig[4] = 
 {
 	nId = 4,
 	szMessageType = "CreateCompose",
-	szName = "compose",
+	szName = "Hîp thµnh bao g¹o th­êng",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"<npc>Nép vËt phÈm",1,1,1,0.02},
+	tbMessageParam = {"Hîp thµnh bao g¹o th­êng",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
-		{"AddOneMaterial",	{"Lóa Xanh",{tbProp={6,1,3199}},1} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"AddOneMaterial",	{"Bao T¶i",ITEM_BAOTAI,1} },
+		{"AddOneMaterial",	{"C©y Lóa Xanh",ITEM_LUAXANH,1} },
+		{"AddOneMaterial",	{"C©y Lóa Vµng",ITEM_LUAVANG,1} },
+		{"AddOneMaterial",	{"L­ìi LiÒm S¾t",ITEM_LIEMSAT,1} },
 	},
 	tbActition = 
-	{		
-		{"PlayerFunLib:AddExp",	{300000,0,"Event_Thang6","NopVatPhamLuaXanh"} },
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_BAOGAOTHUONG,1,EVENT_LOG_TITLE,"HopThanhBaoGaoThuong"} },
 	},
 }
-tbConfig[5] = --Ò»¸öÏ¸½Ú
+tbConfig[5] = 
 {
 	nId = 5,
-	szMessageType = "nil",
-	szName = "get rank award",
+	szMessageType = "CreateCompose",
+	szName = "Hîp thµnh bao g¹o Th¬m",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {"Hîp thµnh bao g¹o Th¬m",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"AddOneMaterial",	{"Bao T¶i",ITEM_BAOTAI,2} },
+		{"AddOneMaterial",	{"C©y Lóa Xanh",ITEM_LUAXANH,1} },
+		{"AddOneMaterial",	{"C©y Lóa Vµng",ITEM_LUAVANG,2} },
+		{"AddOneMaterial",	{"L­ìi LiÒm S¾t",ITEM_LIEMSAT,3} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:GetRankAward",	{nil} },
+		{"PlayerFunLib:GetItem",	{ITEM_BAOGAOTHOM,1,EVENT_LOG_TITLE,"HopThanhBaoGaoThuong"} },
 	},
 }
 tbConfig[6] = --Ò»¸öÏ¸½Ú
@@ -93,13 +106,14 @@ tbConfig[6] = --Ò»¸öÏ¸½Ú
 	szName = "click lingfan",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"Hµng rong"},
+	tbMessageParam = {"Chñ TiÖm"},
 	tbCondition = 
 	{
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"mua L­ìi LiÒm S¾t",7} },
+		--{"AddDialogOpt",	{"Mua L­ìi LiÒm S¾t",7} },
+		--{"AddDialogOpt",	{"Mua L­ìi LiÒm B¹c",9} },
 	},
 }
 tbConfig[7] = --Ò»¸öÏ¸½Ú
@@ -109,52 +123,57 @@ tbConfig[7] = --Ò»¸öÏ¸½Ú
 	szName = "buy item",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"L­ìi LiÒm S¾t",1,1,1,0.02},
+	tbMessageParam = {"L­ìi LiÒm S¾t",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
 		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},100000} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{{tbProp={6,1,3197,1,0,0},nExpiredTime = 20120701},1,"Event_Thang6","buy tool"} },
+		{"PlayerFunLib:GetItem",	{ITEM_LIEMSAT,1,EVENT_LOG_TITLE,"MuaLuoiLiemSat"} },
 	},
 }
-tbConfig[8] = --Ò»¸öÏ¸½Ú
+tbConfig[8] = 
 {
 	nId = 8,
 	szMessageType = "CreateCompose",
-	szName = "compose",
+	szName = "Hîp thµnh bao g¹o §Æc BiÖt",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"<npc>Nép vËt phÈm",1,1,1,0.02},
+	tbMessageParam = {"Hîp thµnh bao g¹o §Æc BiÖt",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
-		{"AddOneMaterial",	{"Lóa Vµng",{tbProp={6,1,3200}},1} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"§¼ng cÊp cña ng­¬i kh«ng ®ñ, lÇn sau h·y ®Õn nhÐ!",">="} },
+		{"AddOneMaterial",	{"Bao T¶i",ITEM_BAOTAI,1} },
+		{"AddOneMaterial",	{"C©y Lóa Xanh",ITEM_LUAXANH,1} },
+		{"AddOneMaterial",	{"C©y Lóa Vµng",ITEM_LUAVANG,1} },
+		--{"AddOneMaterial",	{"L­ìi LiÒm S¾t",ITEM_LIEMSAT,1} },
+		{"AddOneMaterial",	{"L­ìi LiÒm B¹c",ITEM_LIEMBAC,1} },
 	},
 	tbActition = 
-	{		
-		{"PlayerFunLib:AddExp",	{3000000,0,"Event_Thang6","NopVatPhamLuaVang"} },
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_BAOGAODACBIET,1,EVENT_LOG_TITLE,"HopThanhBaoGaoThuong"} },
 	},
 }
-tbConfig[9] = --Ò»¸öÏ¸½Ú
+
+tbConfig[9] = --mua luoi liem bac
 {
 	nId = 9,
-	szMessageType = "ItemScript",
-	szName = "Sö dông Tói h­¬ng",
+	szMessageType = "CreateCompose",
+	szName = "buy item",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {{tbProp={6,1,3201,1,0,0},}},
+	tbMessageParam = {"L­ìi LiÒm B¹c",1,1,1,0.02,0,50},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTaskDaily",	{VN_TSK_USE_BAG_DAILY,2,"H«m nay ng­¬i kh«ng thÓ sö dông vËt phÈm nµy n÷a, ngµy mai h·y sö dông tiÕp.","<"} },
+		{"AddOneMaterial",	{"TiÒn §ång",ITEM_COIN,10} },
 	},
 	tbActition = 
-	{		
-		{"PlayerFunLib:AddTaskDaily",	{VN_TSK_USE_BAG_DAILY,1} },
-		{"Msg2Player",	{"NhËn ®­îc thªm 1 lÇn tham gia ho¹t ®éng Træ Tµi Nhµ N«ng."} },
-		{"ThisActivity:UseBagLog",	{nil} }		
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LIEMBAC,1,EVENT_LOG_TITLE,"MuaLuoiLiemBac"} },
 	},
 }
+
 tbConfig[10] = --Ò»¸öÏ¸½Ú
 {
 	nId = 10,
@@ -170,116 +189,234 @@ tbConfig[10] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[11] = --Ò»¸öÏ¸½Ú
+
+--Sö dông Item
+tbConfig[11] = 
 {
 	nId = 11,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "ItemScript",
+	szName = "Sö dông Bao G¹o Th­êng",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {{tbProp={6,1,4327,1,0,0},}},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
+		{"ThisActivity:CheckTask",	{TSK_SUDUNGBAOGAOTHUONG,MAX_SUDUNGBAOGAOTHUONG,"Ng­¬i ®· nhËn ®­îc qu¸ nhiÒu phÇn th­ëng, xin h·y thö c¸i kh¸c ®i!","<"} },
 	},
 	tbActition = 
-	{
+	{		
+		{"PlayerFunLib:AddExp",	{400000,0,EVENT_LOG_TITLE,"Su Dung Bao Gao Thuong"} },
+		{"ThisActivity:AddTask",	{TSK_SUDUNGBAOGAOTHUONG,1} },
+		{"ThisActivity:SuDungBaoGaoThuong",{nil}},
 	},
 }
-tbConfig[12] = --Ò»¸öÏ¸½Ú
+tbConfig[12] = 
 {
 	nId = 12,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "ItemScript",
+	szName = "Sö dông Bao G¹o Th¬m",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {{tbProp={6,1,4328,1,0,0},}},
 	tbCondition = 
 	{
+		--{"PlayerFunLib:CheckTotalLevel",	{120,"default",">="} },
+		--{"ThisActivity:CheckTask",	{TSK_SUDUNGBAOGAOTHOM,MAX_SUDUNGBAOGAOTHOM,"Ng­¬i ®· nhËn ®­îc qu¸ nhiÒu phÇn th­ëng, xin h·y thö c¸i kh¸c ®i!","<"} },
 	},
 	tbActition = 
-	{
+	{		
+		--{"PlayerFunLib:AddExp",	{7e6,0,EVENT_LOG_TITLE,"Su Dung Bao Gao Thom"} },
+		--{"ThisActivity:AddTask",	{TSK_SUDUNGBAOGAOTHOM,1} },
+		--{"ThisActivity:SuDungBaoGaoThom",{nil}},
 	},
 }
-tbConfig[13] = --Ò»¸öÏ¸½Ú
+tbConfig[13] = 
 {
 	nId = 13,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "ItemScript",
+	szName = "Sö dông Bao G¹o §Æc BiÖt",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {{tbProp={6,1,4329,1,0,0},}},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
+		{"PlayerFunLib:CheckFreeBagCell",	{20,"default"} },
+		{"ThisActivity:CheckTask",	{TSK_SUDUNGBAOGAODB,MAX_SUDUNGBAOGAODB,"Ng­¬i ®· nhËn ®­îc qu¸ nhiÒu phÇn th­ëng, xin h·y thö c¸i kh¸c ®i!","<"} },
 	},
 	tbActition = 
-	{
+	{		
+		{"PlayerFunLib:AddExp",	{1000000,0,EVENT_LOG_TITLE,"Su Dung Bao Gao DB"} },
+		{"ThisActivity:AddTask",	{TSK_SUDUNGBAOGAODB,1} },
+		{"ThisActivity:SuDungBaoGaoDB",{nil}},
 	},
 }
-tbConfig[14] = --Ò»¸öÏ¸½Ú
+tbConfig[14] = --Tèng kim 1000 ®iÓm
 {
 	nId = 14,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "FinishSongJin",
+	szName = "Tèng kim  1000 ®iÓm",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {-2,2},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckBT_PL_BATTLEPOINT",	{1000,">="} },
+		{"PlayerFunLib:CheckBT_PL_BATTLEPOINT",	{3000,"<"} },
 	},
 	tbActition = 
 	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,20,EVENT_LOG_TITLE,"TongKim1000"} },		
 	},
 }
-tbConfig[15] = --Ò»¸öÏ¸½Ú
+tbConfig[15] = --Tèng kim 3000 ®iÓm
 {
 	nId = 15,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "FinishSongJin",
+	szName = "Tèng kim  3000 ®iÓm",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {-2,2},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckBT_PL_BATTLEPOINT",	{3000,">="} },
 	},
 	tbActition = 
 	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,50,EVENT_LOG_TITLE,"TongKim3000"} },		
 	},
 }
-tbConfig[16] = --Ò»¸öÏ¸½Ú
+tbConfig[16] =		--V­ît ¶i 17
 {
 	nId = 16,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "Chuanguan",
+	szName = "V­ît qua ¶i 17",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {"17"},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
-	{
+	{	
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,20,EVENT_LOG_TITLE,"VuotAi17"} },		
 	},
 }
-tbConfig[17] = --Ò»¸öÏ¸½Ú
+tbConfig[17] =		--V­ît ¶i 28
 {
 	nId = 17,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "Chuanguan",
+	szName = "V­ît qua ¶i 28",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {nil},
+	tbMessageParam = {"28"},
 	tbCondition = 
 	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
 	},
 	tbActition = 
-	{
+	{	
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,30,EVENT_LOG_TITLE,"VuotAi28"} },		
 	},
 }
-tbConfig[18] = --Ò»¸öÏ¸½Ú
+tbConfig[18] = --Thñy tÆc ®Çu lÜnh
 {
 	nId = 18,
-	szMessageType = "nil",
-	szName = "nil",
+	szMessageType = "NpcOnDeath",
+	szName = "GiÕt chÕt 1 thñy tÆc ®Çu lÜnh",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {nil},
+	tbCondition = 
+	{
+		{"NpcFunLib:CheckBoatBoss",	{nil} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,20,EVENT_LOG_TITLE,"TieuDietThuyTacDauLinh"} },				
+	},
+}
+tbConfig[19] = --thuû tÆc ®¹i ®Çu lÜnh
+{
+	nId = 19,
+	szMessageType = "NpcOnDeath",
+	szName = "Tiªu diÖt thuû tÆc ®¹i ®Çu lÜnh",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {nil},
+	tbCondition = 
+	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+		{"NpcFunLib:CheckId",	{"1692"} },
+		{"NpcFunLib:CheckInMap",	{"337,338,339"} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,30,EVENT_LOG_TITLE,"TieuDietThuyTacDaiDauLinh"} },				
+	},
+}
+tbConfig[20] = --Viªm ®Õ - v­ît ¶i thø 10
+{
+	nId = 20,
+	szMessageType = "YDBZguoguan",
+	szName = "V­ît qua ¶i Viªm §Õ thø 6",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {6},
+	tbCondition = 
+	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,15,EVENT_LOG_TITLE,"VuotAiViemDe6"} },				
+	},
+}
+tbConfig[21] = --Boss Hoµng Kim
+{
+	nId = 21,
+	szMessageType = "NpcOnDeath",
+	szName = "Tiªu diÖt boss Hoµng Kim",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {nil},
+	tbCondition = 
+	{
+		{"NpcFunLib:CheckWorldBoss",	{nil} },
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,30,EVENT_LOG_TITLE,"TieuDietBossTheGioi"} },				
+	},
+}
+tbConfig[22] = --boss s¸t thñ
+{
+	nId = 22,
+	szMessageType = "NpcOnDeath",
+	szName = "NhiÖm vô s¸t thñ cÊp 90",
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {nil},
+	tbCondition = 
+	{
+		{"PlayerFunLib:CheckTotalLevel",	{50,"",">="} },
+		{"NpcFunLib:CheckKillerdBoss",	{90} },
+	},
+	tbActition = 
+	{
+		{"PlayerFunLib:GetItem",	{ITEM_LUAVANG,5,EVENT_LOG_TITLE,"TieuDietBossSatThu"} },				
+	},
+}
+
+tbConfig[23] = --Ò»¸öÏ¸½Ú
+{
+	nId = 23,
+	szMessageType = "OnLogin",
+	szName = "Ng­êi ch¬i trùc tuyÕn",
 	nStartDate = nil,
 	nEndDate  = nil,
 	tbMessageParam = {nil},
@@ -288,5 +425,6 @@ tbConfig[18] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
+		{"ThisActivity:PlayerOnLogin",	{nil} },
 	},
 }

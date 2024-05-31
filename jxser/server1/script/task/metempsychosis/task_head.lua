@@ -49,17 +49,17 @@ end
 
 Load_TransLifeSetting()
 
-TB_LEVEL_LIMIT = {160, 170, 180, 200, 200};
-TB_TRANSTIME_LIMIT = {90, 180, 180, 180, 180};
+TB_LEVEL_LIMIT = {160, 170, 195, 200, 200, 200, 200, 200};
+TB_TRANSTIME_LIMIT = {0, 0, 0, 0, 0, 0, 0, 0};-- thoi gian giua 2 lan chuyen sinh
 -- 4×ªĞèÒªµÄÆäËûµÀ¾ß
 TBITEMNEED_4 = {
 	[1] = {szName = "Tİch LŞch ®¬n", tbProb = {6,1,2973}, nCount = 999},	-- Åùö¨µ¯
-	[2] = {szName = "<B¾c §Èu Tr­êng Sinh ThuËt—§¹i Thõa T©m Ph¸p>", tbProb = {6,1,2974}, nCount = 1},  -- ±±¶·³¤ÉúÊõ¡ª´ó³ËĞÄ·¨
+	[2] = {szName = "B¾c §Èu Tr­êng Sinh ThuËt—§¹i Thõa T©m Ph¸p", tbProb = {6,1,2974}, nCount = 1},  -- ±±¶·³¤ÉúÊõ¡ª´ó³ËĞÄ·¨
 	}
 
 TB_TRANSLIFE_ERRORMSG = {
 	[1] = "<dec><npc>Tu luyÖn B¾c §Èu Tr­êng Sinh ThuËt cÇn ph¶i cëi bá tÊt c¶  trang bŞ trªn ng­êi!",
-	[2] = "<dec><npc>H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>100000000<color>.",
+	[2] = "<dec><npc>H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>10.000 v¹n<color> l­îng.",
 	[3] = "<dec><npc>Tu luyÖn B¾c §Èu Tr­êng Sinh ThuËt cÇn ph¶i bá quan hÖ S­ §å",
 	[4] = "<dec><npc>VŞ thiÕu hiÖp nµy vÉn ch­a häc <B¾c §Èu Tr­êng Sinh ThuËt - C¬ Së Thiªn>, vËt nµy ë Kú Tr©n C¸c cã b¸n.",
 	[5] = "<dec><npc>VŞ thiÕu hiÖp nµy vÉn ch­a ®ñ cÊp ®Ó tu luyÖn, h·y vÒ tu luyÖn thªm ®i nhĞ.",
@@ -70,9 +70,9 @@ TB_TRANSLIFE_ERRORMSG = {
 	[10]= "<dec><npc>NhiÖm vô d· tÈu vÉn ch­a hoµn thµnh! H·y hoµn tÊt nhiÖm vô råi quay l¹i nhĞ.",
 	[11]= "<dec><npc>D· tÈu thu ®­îc c¬ héi hñy bá nhiÖm vô! H·y hoµn tÊt nhiÖm vô nµy råi quay l¹i nhĞ.",
 	[12]= "<dec><npc>Kho¶ng c¸ch 2 lÇn trïng sinh ph¶i lµ %d ngµy.",
-	[13]= "<dec><npc>ChuyÓn sinh 4 cÇn cã <color=red> 200 v¹n <color> l­îng, xin h·y chuÈn bŞ ®ñ råi ®Õn ®©y.",
+	[13]= "<dec><npc>ChuyÓn sinh 4 cÇn cã <color=red> 70.000 v¹n <color> l­îng, xin h·y chuÈn bŞ ®ñ råi ®Õn ®©y.",
 	[14]= "<dec><npc>ChuyÓn sinh 4 cÇn cã <color=red> 999 <color> c¸i Tİch LŞch §¬n, xin h·y chuÈn bŞ ®ñ råi ®Õn ®©y.",
-	[15]= "<dec><npc>ChuyÓn sinh 4 cÇn cã <color=red> «B¾c §Èu Tr­êng Sinh ThuËt—§¹i Thõa T©m Ph¸p»<color>, xin h·y chuÈn bŞ ®ñ råi ®Õn ®©y.",
+	[15]= "<dec><npc>ChuyÓn sinh 4 cÇn cã <color=red> B¾c §Èu Tr­êng Sinh ThuËt—§¹i Thõa T©m Ph¸p<color>, xin h·y chuÈn bŞ ®ñ råi ®Õn ®©y.",
 }
 
 -- ÎåĞĞÈËÎïµÄÌìÉúÊôĞÔÖµ
@@ -111,14 +111,14 @@ TSK_TASKLINK_CancelTaskExp2 = 2575;
 TSK_ZHUANSHENG_GRE = {2577, 2578, 2579}	-- Ã¿´Î×ªÉúËùÑ¡µÈ¼¶ºÍ¿¹ĞÔ
 TSK_ZHUANSHENG_LASTTIME = 2580;			-- ±£´æ×îºó´Î×ªÉúµÄServerTime ÒÔÃë¼Ç£¨Ïà¶Ô1700-0-0µ½Ä¿Ç°µÄÃèÊö£©
 TSKM_ZHUANSHENG_RESISTID = 199;			-- ÁÙÊ±´æ·ÅÑ¡ÔñÔö¼ÓµÄ¿¹ĞÔ
---¿¹ĞÔ±àºÅ£¬0£º»ğ£¬1£º±ù£¬2:¶¾£¬3:µç£¬4:ÎïÀí
+
 TB_BASE_RESIST = {
-	[0] = "<#16083>",
-	[1] = "<#16084>",
-	[2] = "<#16085>",
-	[3] = "<#16086>",
-	[4] = "<#16087>",
-	}
+	[0] = "<# Kh¸ng háa>",
+	[1] = "<# Kh¸ng b¨ng>",
+	[2] = "<# Kh¸ng ®éc>",
+	[3] = "<# Kh¸ng l«i>",
+	[4] = "<# Phßng thñ vËt lı>",
+}
 
 TSK_TRANSLIFE_4 = 2908		-- ±£´æÊÇ·ñ½ÓÊÜÁË4×ªÈÎÎñ	
 TSK_LEAVE_SKILL_POINT_4 = 2909		-- ±£´æÊ£ÓàµÄ4×ª¼¼ÄÜµÄÊ£Óà¼¼ÄÜµã	

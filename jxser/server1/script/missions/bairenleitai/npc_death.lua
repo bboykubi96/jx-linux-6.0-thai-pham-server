@@ -22,9 +22,10 @@ function OnDeath(nNpcIndex)
 		return
 	end
 	
-	local nArenaID = ArenaNpc:GetNpcArena(nNpcIndex);
-	if (HundredArena.tbArenaList[nArenaID]) then
-		HundredArena.tbArenaList[nArenaID]:NpcDeath();
-	end
+	--Dang bi loi cho nay
+	--local nArenaID = ArenaNpc:GetNpcArena(nNpcIndex);
+	--if (HundredArena.tbArenaList[nArenaID]) then
+		--HundredArena.tbArenaList[nArenaID]:NpcDeath();
+	--end
 	
 end

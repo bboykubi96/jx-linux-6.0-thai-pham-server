@@ -1,12 +1,12 @@
---description: ÌÆÃÅ50¼¶ÈÎÎñ Çà³ÇÉ½ÏìË®¶´¹ÖÎï
---author: yuanlan	
---date: 2003/3/12
--- Update: Dan_Deng(2003-08-13)
--- Õâ¸öÈÎÎñÒÑ¾­¹»¸´ÔÓÁË£¬Ïë°ÑËüÈ¡Ïû£¬·Åµ½ÆäËüÈÎÎñÖĞÈ¥ÓÃ¡£
+-- script viet hoa By http://tranhba.com description: §­êng m«n 50 cÊp nhiÖm vô nói Thanh Thµnh vang n­íc ®éng qu¸i vËt 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/12 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
+-- script viet hoa By http://tranhba.com  nhiÖm vô nµy ®· ®ñ phøc t¹p , muèn ®em nã hñy bá , th¶ vµo kú tha nhiÖm vô trung ®i dïng . 
 
-function OnDeath()
-	UTask_tm = GetTask(2);
+function OnDeath() 
+UTask_tm = GetTask(2); 
 	if ((UTask_tm == 50*256+80) and (HaveItem(48) == 0)) then
-		Msg2Player("LÊy ®­îc ¸m khİ phæ gi¶ m¹o, hãa ra chØ lµ mét quyÓn s¸ch kh«ng cã ch÷ ")
-	end
-end;
+Msg2Player(" lÊy ®­îc gi¶ # ¸m khİ phæ # , nguyªn lai lµ mét quyÓn kh«ng cã ch÷ thiªn th­ ") 
+end 
+end; 

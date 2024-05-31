@@ -1,8 +1,8 @@
--- ĞÂÈÎÎñÏµÍ³ÕıÅÉÖ§Ïß¹ÜÀínpc
--- BY£ºXIAOYANG£¨2004-11-30£©
+-- script viet hoa By http://tranhba.com  nhiÖm vô míi hÖ thèng chİnh ph¸i chi tuyÕn qu¶n lı npc 
+-- script viet hoa By http://tranhba.com  BY#XIAOYANG#2004-11-30# 
 
 Include("\\script\\task\\newtask\\branch\\zhengpai\\branch_aoyunzong.lua")
 
-function main()
-	task_aoyunzong()
+function main() 
+task_aoyunzong() 
 end

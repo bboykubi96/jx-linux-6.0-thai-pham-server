@@ -1,7 +1,7 @@
---Î÷ÄÏ±±Çø Çà³ÇÉ½Â·±ê3
+-- script viet hoa By http://tranhba.com  t©y nam b¾c khu nói Thanh Thµnh b¶ng chØ ®­êng 3 
 
-function main(sel)
+function main(sel) 
 
-Say("§i H­ëng Thñy ®éng", 0)
+Say("§i th«ng vang n­íc ®éng ", 0) 
 
-end;
+end; 

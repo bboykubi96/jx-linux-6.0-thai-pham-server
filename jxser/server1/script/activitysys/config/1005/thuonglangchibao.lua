@@ -4,7 +4,7 @@ function main(nItemIdx)
 	tb.tbLog = {"PhongVanLenhBai", "SuDungThuongLangChiBao"}
 	--tb.tbTransLog = {strFolder = "201107_EventNgoiSaoTuyet/", nID = %nPromotionID, strAction = "SuDungTuMangBaoChau"}
 	local nFaction = GetLastFactionNumber()
-	if nFaction < 0 or nFaction > 9 then
+	if nFaction < 0 or nFaction > 12 then
 		Talk(1, "", "Xin h·y gia nhËp ph¸i råi h·y sö dông vËt phÈm nµy")
 		return 1
 	end

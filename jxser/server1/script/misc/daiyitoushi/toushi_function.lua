@@ -11,11 +11,11 @@ IncludeLib("LEAGUE");
 Include("\\script\\misc\\daiyitoushi\\toushi_head.lua");
 Include("\\script\\misc\\daiyitoushi\\toushi_resetbase.lua");
 Include("\\script\\lib\\gb_modulefuncs.lua");
-
+TinVatMonPhai			 = 1881
 
 -- ¼ì²é¡°´øÒÕÍ¶Ê¦¡±£¬ÍË³öÃÅÅÉµÄÌõ¼ş£ºµÈ¼¶´ïµ½120¼¶£¬»ò120¼¶ÒÔÉÏ
 function toushiCheckApplyState()
-	if (GetLevel() < 120) then
+	if (GetLevel() < 70) then
 		return TOUSHI_LVLERR;
 	end
 	
@@ -59,26 +59,38 @@ function toushiCheckTransFactState(nFactionNumb, nStage)
 		return TOUSHI_EQFACTERR;
 	end
 	
-	if (GetLevel() < 120) then
+	if (GetLevel() < 70) then
 		return TOUSHI_LVLERR;
 	end
 	
 	if (nStage == 2) then
 		if (check_zhuansheng_league(LG_WLLSLEAGUE) == 1) then
-			return TOUSHI_LGERR;
+		--	return TOUSHI_LGERR;
 		end
-		
-		if (CalcItemCount(2,0,-1,-1,-1) > 0) then
+		if (CalcItemCount(2,0,3,0,1) > 0) or (CalcItemCount(2,0,9,0,-1) > 0) or (CalcItemCount(2,0,9,1,-1) > 0) or (CalcItemCount(2,0,4,0,-1) > 0) or (CalcItemCount(2,0,4,1,-1) > 0) or (CalcItemCount(2,0,2,0,-1) > 0) or (CalcItemCount(2,0,2,1,-1) > 0) or (CalcItemCount(2,0,2,2,-1) > 0) or (CalcItemCount(2,0,2,3,-1) > 0) or (CalcItemCount(2,0,2,4,-1) > 0) or (CalcItemCount(2,0,2,5,-1) > 0) or (CalcItemCount(2,0,2,6,-1) > 0) or (CalcItemCount(2,0,2,8,-1) > 0) or (CalcItemCount(2,0,2,9,-1) > 0) or (CalcItemCount(2,0,2,10,-1) > 0) or (CalcItemCount(2,0,2,11,-1) > 0) or (CalcItemCount(2,0,2,12,-1) > 0) or (CalcItemCount(2,0,2,13,-1) > 0) or (CalcItemCount(2,0,6,0,-1) > 0) or (CalcItemCount(2,0,6,1,-1) > 0) or (CalcItemCount(2,0,5,0,-1) > 0) or (CalcItemCount(2,0,5,1,-1) > 0) or (CalcItemCount(2,0,5,2,-1) > 0) or (CalcItemCount(2,0,5,3,-1) > 0) or (CalcItemCount(2,0,8,0,-1) > 0) or (CalcItemCount(2,0,8,1,-1) > 0) or (CalcItemCount(2,0,7,0,-1) > 0) or (CalcItemCount(2,0,7,1,-1) > 0) or (CalcItemCount(2,0,7,2,-1) > 0) or (CalcItemCount(2,0,7,3,-1) > 0) or (CalcItemCount(2,0,7,4,-1) > 0) or (CalcItemCount(2,0,7,5,-1) > 0) or (CalcItemCount(2,0,7,6,-1) > 0) or (CalcItemCount(2,0,7,7,-1) > 0) or (CalcItemCount(2,0,7,8,-1) > 0) or (CalcItemCount(2,0,7,9,-1) > 0) or (CalcItemCount(2,0,7,10,-1) > 0) or (CalcItemCount(2,0,7,11,-1) > 0) or (CalcItemCount(2,0,7,12,-1) > 0) or (CalcItemCount(2,0,7,13,-1) > 0) or (CalcItemCount(2,0,0,1,-1) > 0) or (CalcItemCount(2,0,0,2,-1) > 0) or (CalcItemCount(2,0,0,3,-1) > 0) or (CalcItemCount(2,0,0,4,-1) > 0) or (CalcItemCount(2,0,0,5,-1) > 0) or (CalcItemCount(2,0,1,0,-1) > 0) or (CalcItemCount(2,0,1,1,-1) > 0) or (CalcItemCount(2,0,1,2,-1) > 0)  then
+	--	if (CalcItemCount(2,0,-1,-1,-1) == 0) then
+		return 	Say("<color=white>Muèn chuyÓn ®æi m«n ph¸i c¸c h¹ cÇn bá toµn bé ®å trªn ng­êi xuèng.") -- go
+		end
+		if CalcItemCount(2,0,11,842,-1) > 0 or CalcItemCount(2,0,11,843,-1) > 0 or CalcItemCount(2,0,11,844,-1) > 0 or CalcItemCount(2,0,11,845,-1) > 0 or CalcItemCount(2,0,11,846,-1) > 0 or CalcItemCount(2,0,11,847,-1) > 0 or CalcItemCount(2,0,11,848,-1) > 0 or CalcItemCount(2,0,11,849,-1) > 0 or CalcItemCount(2,0,11,850,-1) > 0 or CalcItemCount(2,0,11,851,-1) > 0 then
+	--	if (CalcItemCount(2,0,-1,-1,-1) == 0) then
+		return 	Say("<color=white>Muèn chuyÓn ®æi m«n ph¸i c¸c h¹ cÇn bá toµn bé ®å trªn ng­êi xuèng.") -- go
+		end
+		if (CalcItemCount(2,0,-1,-1,-1) > 1) then
 			return TOUSHI_EQUIPERR;
 		end
-	end
+		end
+	
 	
 	if (GetTask(TSK_TOUSHI_COUNT) == 0 and CalcFreeItemCellCount() < 2) then
 		return TOUSHI_NOFREEBAG;
 	end
-	
+if (check_zhuansheng_league(LG_WLLSLEAGUE) == 1) and (nStage == 2) then
+--ConsumeEquiproomItem(10,6,1,4361,-1);
+end
 	return TOUSHI_SUCCEED;
 end
+
+
 
 
 function toushiGetHierarchTitle(nFactionNumb)
@@ -165,14 +177,14 @@ function toushiApplyEnter(nFactionNumb)
 	
 	
 	CreateTaskSay({szDes,
-					format("%s yªn t©m, ®Ö tö sÏ ®em tİn vËt vÒ ®©y./OnCancel", szHierarchTitle),
-					format("%s, Xin mêi xem ®©y cã ph¶i lµ tİn vËt m«n ph¸i?/#toushiApplyMenPaiXinWu(%d)", szHierarchTitle, nFactionNumb),
+					format("%s, Ta ®· cã tİn vËt xin tr­ëng m«n h·y nhËn lÊy./#toushiApplyMenPaiXinWu(%d)", szHierarchTitle, nFactionNumb),
 					"KÕt thóc ®èi tho¹i/OnCancel"
 				});
 end
 
 -- ¸øÓë½çÃæÌá½»ÃÅÅÉĞÅÎï
 function toushiApplyMenPaiXinWu()
+--AddItem(6,1,1670,1,1,0,0)
 	local bFlag = toushiCheckApplyState();
 	if (bFlag == TOUSHI_SUCCEED) then
 		GiveItemUI("Tr×nh tİn vËt m«n ph¸i", "Bá tİn vËt m«n ph¸i vµo « trèng bªn d­íi.", "toushiApplyShowXinWu", "OnCancel", 1);
@@ -214,7 +226,7 @@ function toushiApplyShowXinWu(nCount)
 				GetLevel(), GetLastFactionNumber(),
 				"§­a ra m«n ph¸i tİn vËt, yªu cÇu chuyÓn m«n ph¸i thµnh c«ng"));
 				
-	CreateTaskSay({"<dec><npc>§óng vËt nµy råi, ta phª chuÈn cho ng­¬i h¹ s¬n, ta mong r»ng ng­¬i sím cã ngµy ngé ra ®­îc tuyÖt kü vâ häc ®Ó quang ®¹i ng· vâ l©m.", "§Ö tö nhÊt ®Şnh sÏ nghe lêi d¹y cña s­ phô/OnCancel"});
+	CreateTaskSay({"<dec><npc>Chóc mõng ®¹i hiÖp ®· ®ñ tiªu chuÈn chuyÔn ph¸i,ng©y giê ng­¬i h·y chän ph¸i mµ m×nh ­ng ı xin t¹m biÖt hÑn ngµi t¸i ngé..", "Ta muèn chän ph¸i chuyÓn ®Õn/chonphaimoi"});
 end
 
 -- ´øÒÕÍ¶Ê¦£¬°İÈëÃÅÇ½
@@ -238,7 +250,7 @@ function toushiTransEnter(nFactionNumb)
 		end
 		
 		CreateTaskSay({szDes, 
-				format("%s, ta ®· nghÜ kü råi, muèn gia nhËp m«n ph¸i cña bæn bang./#toushiTransSureTodo(%d)", szHierarchTitle, nFactionNumb),
+				format("%s, Ta ®· nghÜ kü råi, muèn gia nhËp m«n ph¸i cña bæn bang./#toushiTransSureTodo(%d)", szHierarchTitle, nFactionNumb),
 				format("%s, ®Ó ta suy nghÜ thªm/OnCancel", szHierarchTitle),
 			});
 		
@@ -433,7 +445,7 @@ function toushiDoTransPlayer(nMyFacNumb, nFactionNumb, nMagicIdx, szLog)
 		SetTask(TB_DAIYITOUSHI_FACTS[nFactionNumb + 1].nTaskId_Fact, TOUSHI_FACTION_CHUSHI);	-- ÃÅÅÉÈÎÎñ±äÁ¿,³öÊ¦
 	end
 	
-	SetRank(TB_DAIYITOUSHI_FACTS[nFactionNumb + 1].nRankId);					-- ½ÇÉ«Í·ÏÎ
+	-- SetRank(TB_DAIYITOUSHI_FACTS[nFactionNumb + 1].nRankId);					-- ½ÇÉ«Í·ÏÎ
 	
 	SetTask(TB_DAIYITOUSHI_FACTS[nFactionNumb + 1].nTaskId_137, 
 					TB_DAIYITOUSHI_FACTS[nFactionNumb + 1].nValue_137);			-- ÃÅÅÉÈÎÎñ±äÁ¿,³öÊ¦
@@ -442,7 +454,7 @@ function toushiDoTransPlayer(nMyFacNumb, nFactionNumb, nMagicIdx, szLog)
 	SetTask(TSK_TOUSHI_FLAG, 0);												-- Çå´øÒÕÍ¶Ê¦³É¹¦±ê¼Ç
 	SetTask(TSK_TOUSHI_COUNT, GetTask(TSK_TOUSHI_COUNT) + 1);					-- ÉèÖÃ´øÒÕÍ¶Ê¦³É¹¦´ÎÊı
 	
-	if (GetByte(GetTask(TSK_ZHENPAILINGDAN_USECNT), 3) ~= 1) then
+	if (GetByte(GetTask(TSK_ZHENPAILINGDAN_USECNT), 3) ~= 1) and CalcFreeItemCellCount() > 5 then
 		SetItemBindState(AddItem(unpack(TB_TOUSHI_ZHENPAILINGDAN)), -2);			-- ÔùËÍµÄÎïÆ·ÎªÓÀ¾Ã°ó¶¨
 		SetItemBindState(AddItem(unpack(TB_TOUSHI_ZHENPAILINGYAO)), -2);
 		SetTask(TSK_ZHENPAILINGDAN_USECNT, SetByte(GetTask(TSK_ZHENPAILINGDAN_USECNT), 3, 1))
@@ -756,4 +768,244 @@ function toushiAddWuXingSkill(nOldSeries, nNewSeries)
 			AddSkillExp(TB_WUXING_SKILL_ID[nNewSeries + 1].nMagicId2, nMagicExp2, 1);
 		end
 	end
+end
+
+
+function chonphaimoi()
+if CalcFreeItemCellCount() < 10 then
+		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h· chuyÓn.",0);
+		return
+end
+	local tbDialog = 
+{ 
+"<dec><npc> B¹n muèn chuyÓn sang ph¸i nµo?", 
+" ThiÕu L©m/#daiyitoushi_main(0)",
+" Thiªn V­¬ng/#daiyitoushi_main(1)",
+" §­êng M«n/#daiyitoushi_main(2)",
+" Ngò §éc/#daiyitoushi_main(3)",
+" Nga Mi/#daiyitoushi_main(4)",
+" Thóy yªn/#daiyitoushi_main(5)",
+" C¸i Bang/#daiyitoushi_main(6)",
+" Thiªn NhÉn/#daiyitoushi_main(7)",
+" Vâ §ang/#daiyitoushi_main(8)",
+" C«n L«n/#daiyitoushi_main(9)",
+--" Hoa S¬n/chuyen_hsz2",
+" KÕt thóc ®èi tho¹i /0", 
+} 
+CreateTaskSay(tbDialog) 
+end
+
+
+
+function chuyen_hsz()
+local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
+	if (nSilverCount < 100) then -- gia xu
+Say("<color=white>ThËt xin lçi hoa s¬n ta lµ 1 ph¸i Èn chøa nhiÒu tuyÖt kü bİ mËt cã uy lùc m¹nh mÏ triÖt tiªu c¸c ph¸i trong chèn giang hå.VŞ ®¹i hiÖp ®©y muèn gia nhËp ph¸i ta cÇn ®ãng lÖ phİ 100xu.")
+	return 
+	end
+--if GetFaction() == "huashan" then 
+	local bFlag			= GetTask(TSK_TOUSHI_FLAG);				-- »ñµÃ×ªÍ¶Ê¦ÃÅµÄ±ê¼Ç
+	local nMyFacNumb	= GetLastFactionNumber();				-- »ñµÃÔ­ÃÅÅÉID
+	local nSex			= GetSex();								-- ½ÇÉ«ĞÔ±ğ
+	local nLastChange   = GetTask(TSK_LAST_CHANGE_FACTION)      -- ÉÏ´Î×ªÍ¶Ê¦ÃÅ±ê¼Ç
+	local nCurTime      = tonumber( GetCurServerTime() );
+		if (CalcItemCount(2,0,-1,-1,-1) > 0) then
+			return Say("Muèn chuyÓn m«n ph¸i cÇn cëi bá trang bŞ ra hÕt.",0);
+
+		end
+if GetLastFactionNumber() == 10 then
+Talk(2,"","Ng­¬i ®· lµ ®Ö tö hoa s¬n råi cßn muèn chuyÓn hoa s¬n n÷a µ.!")
+return end
+	local base_str = {35,20,25,30,20}			-- ÎåĞĞÈËÎïµÄÌìÉúÊôĞÔÖµ
+	local base_dex = {25,35,25,20,15}
+	local base_vit = {25,20,25,30,25}
+	local base_eng = {15,25,25,20,40}
+	local player_series = GetSeries() + 1
+
+	local Utask88 = GetTask(88)
+	AddStrg(base_str[player_series] - GetStrg(1) + GetByte(Utask88, 1))			-- ½«ÒÑ·ÖÅäÇ±ÄÜÖØÖÃ£¨task(88)ÊÇÈÎÎñÖĞÖ±½Ó½±ÀøµÄÁ¦Á¿¡¢Éí·¨µÈ£©
+	AddDex(base_dex[player_series] - GetDex(1) + GetByte(Utask88, 2))
+	AddVit(base_vit[player_series] - GetVit(1) + GetByte(Utask88, 3))
+	AddEng(base_eng[player_series] - GetEng(1) + GetByte(Utask88, 4))
+	local i = HaveMagic(210)		-- Çá¹¦ÁíÍâ²Ù×÷
+	local j = HaveMagic(400)		-- ¡°½Ù¸»¼ÃÆ¶¡±ÁíÍâ²Ù×÷
+	local n = RollbackSkill()		-- Çå³ı¼¼ÄÜ²¢·µ»ØËùÓĞ¼¼ÄÜ?ã£¨°üÀ¨Çá¹¦µÈÌØÊâ¼¼ÄÜ£?
+	local x = 0
+	if (i ~= -1) then i = 1; x = x + i end		-- ÕâÁ½¾äÅĞ¶ÏÊÇÅÅ³ı´ÓÎ´Ñ§¹ıÇá¹¦µÄÈË·µ»Ø-1´Ó¶øµ¼ÖÂµãÊı¼ÆËã´íÎóÇé¿ö
+	if (j ~= -1) then x = x + j end
+	local rollback_point = n - x			-- °Ñ¼¼ÄÜµãµ±×ö¿ÕÏĞµãÊı·µ»¹£¬µ«ÏÈ?Û³ıÇá¹¦µ?
+	if (rollback_point + GetMagicPoint() < 0) then		-- Èç¹ûÏ´³ÉÁË¸ºÊı£¬Ôòµ±×÷0£¨ÎªÒÔºó¶à´ÎÏ´µã±£?ô£?
+		 rollback_point = -1 * GetMagicPoint()
+	end
+	AddMagicPoint(rollback_point)
+	if (i ~= -1) then AddMagic(210, i) end			-- Èç¹ûÑ§¹uÇá¹¦Ô?¼Ó»ØÔ­ÓĞµÈ¼¶
+	if (j ~= -1) then AddMagic(400, j) end			-- Èç¹ûÑ§¹u¡°½Ù¸»¼AÆ¶¡±Í¬Ñù´¦Àí
+	--Msg2Player("TÈy tñy thµnh c«ng! Ng­¬i ca "..rollback_point.." ®iÓm kü n¨ng ®Ó ph©n phèi l¹i.")
+	SetTask(11,10*256)	--mac dinh			-- Ö±½ÓÈëÃÅ
+	SetFaction("huashan")       			--Íæ¼Ò¼ÓÈëÃÅÅÉ
+	Msg2Player("Chóc mõng b¹n gia nhËp thµnh c«ng Hoa S¬n Ph¸i!")
+	--Msg2Faction("huashan",GetName().."§· gia nhËp Hoa S¬n ph¸i, tõ h«m nay mong c¸c s­ huynh chiÕu cè.!",GetName())
+	for i=1,1600 do
+	DelMagic(i)
+	end
+		SetFaction("huashan")       			--Íæ¼Ò¼ÓÈëÃÅÅÉ
+   SetTask(169,10)
+		SetLastFactionNumber(10)
+		SetCamp(3)
+		SetCurCamp(3)
+		SetRank(87)
+SetSeries(2)
+		AddMagic(1347) --Skill Hoa son
+		AddMagic(1349) --Skill Hoa son
+		AddMagic(1374) --Skill Hoa son
+		AddMagic(1350) --Skill Hoa son
+		AddMagic(1375) --Skill Hoa son
+		AddMagic(1351) --Skill Hoa son
+		AddMagic(1354) --Skill Hoa son
+		AddMagic(1378) --Skill Hoa son
+		AddMagic(1355) --Skill Hoa son
+		AddMagic(1379) --Skill Hoa son
+		AddMagic(1358) --Skill Hoa son
+		AddMagic(1360) --Skill Hoa son
+		AddMagic(1365,20) --Skill Hoa son
+	AddMagic(1368,20) --Skill Hoa son --------Doc Co Cuu Kiem
+	AddMagic(1364,20) --Skill Hoa son --------Doc Co Cuu Kiem
+   AddMagic(1369, 20)
+   AddMagic(210,1)
+ConsumeEquiproomItem(100,4,417,1,1)
+local n_solan = ST_GetTransLifeCount();
+if n_solan < 1 then
+	KickOutSelf()
+elseif 	n_solan >= 1 then
+	--AddMagicPoint(100)
+	KickOutSelf()
+end
+end
+function NopTinVat()
+	--ThiÕu L©m
+	if GetLastFactionNumber() == 0 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i ThiÕu L©m/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Thiªn V­¬ng
+	elseif GetLastFactionNumber() == 1 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Thiªn V­¬ng/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No") 
+	--§­êng M«n
+	elseif GetLastFactionNumber() == 2 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i §­êng M«n/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Ngò §éc
+	elseif GetLastFactionNumber() == 3 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Ngò §éc/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Nga My
+	elseif GetLastFactionNumber() == 4 then	
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Nga My/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Thóy Yªn
+	elseif GetLastFactionNumber() == 5 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Thóy Yªn/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--C¸i Bang
+	elseif GetLastFactionNumber() == 6 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i C¸i Bang/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Thiªn NhÉn
+	elseif GetLastFactionNumber() == 7 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Thiªn NhÉn/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Vâ §ang
+	elseif GetLastFactionNumber() == 8 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Vâ §ang/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--C«n L«n
+	elseif GetLastFactionNumber() == 9 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i C«n L«n/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")
+	--Hoa S¬n
+	elseif GetLastFactionNumber() == 10 then
+		Say("Muèn ChuyÓn M«n Ph¸i CÇn Giao Nép Tİn VËt M«n Ph¸i",3,"Nép Tİn VËt Ph¸i Hoa S¬n/TrinhTinVatMonPhai","Ta Quay L¹i Sau/No")	
+	else
+		Talk(1,"","<bclr=violet>C¸c H¹ Ch­a Gia NhËp M«n Ph¸i")
+	end
+end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function TrinhTinVatMonPhai()
+	if (GetTask(TinVatMonPhai) == 0) then
+		GiveItemUI("Tr×nh Tİn VËt M«n Ph¸i","Bá Tİn VËt M«n Ph¸i Vµo ¤ Bªn\nD­íi","KiemTra","onCancel",1)
+	else
+		Talk(1,"","Ta Cho PhĞp Ng­¬i Xuèng Nói T×m §­êng Häc NghÖ Míi\nKhi Nµo Muèn Quay L¹i Bæn M«n Th× L¹i T×m Ta..!")
+	end
+end
+sbook_150skill_list = {
+		[0] = {318 ,319 ,321, 1055, 1056, 1057},
+		[1] = {322 ,323 ,325, 1058, 1059, 1060},
+		[2] = {339 ,302 ,342, 1069, 1070, 1071, 1110},
+		[3] = {1066, 1067},
+		[4] = {1061, 1062, 1114},
+		[5] = {1063, 1065},
+		[6] = {1073, 1074},
+		[7] = {1075, 1076},
+		[8] = {1078, 1079},
+		[9] = {1080, 1081},
+		[10] = {1368, 1384},
+}
+
+sbook_factstep_list = {
+		[5] = 6,
+		[2] = 7,
+		[4] = 7,
+		[3] = 5,
+		[6] = 9,
+		[7] = 9,
+		[0] = 6,
+		[8] = 5,
+		[1] = 4,
+		[9] = 5,
+		[10] = 5,
+	}
+function fixskill150()
+	
+	local nFact = GetLastFactionNumber()
+	if nFact == -1 then	
+		Msg2Player("<color=yellow>Ng­¬i vÉn ch­a gia nhËp m«n ph¸i nµo, kh«ng thÓ häc yÕu quyÕt nµy! <color>");
+		return 1
+	end
+	
+	if GetLevel() < 150 then
+		Msg2Player("<color=yellow>§¼ng cÊp cña ng­¬i thÊp h¬n 150, kh«ng thÓ häc yÕu quyÕt nµy! <color>");
+		return 1
+	end
+	
+	local tb150Skill = sbook_150skill_list[nFact]
+	
+	for i = 1, getn(tb150Skill) do
+		local nSkillId = tb150Skill[i]
+		if (HaveMagic(nSkillId) == 21) then
+			SetTask(3000,2)
+		end
+		if (HaveMagic(nSkillId) == 22) then
+			SetTask(3000,4)
+		end
+		if (HaveMagic(nSkillId) == 23) then
+			SetTask(3000,6)
+		end
+		if (HaveMagic(nSkillId) == 24) then
+			SetTask(3000,8)
+		end
+
+
+	end
+end
+function KiemTra(nCount)
+local nItemIdx = GetGiveItemUnit(nCount);
+local nG, nD, nP = GetItemProp(nItemIdx);
+local szKey = join({nG, nD, nP});
+	if (nCount ~= 1) then
+		Say("Tİn VËt M«n Ph¸i Kh«ng Ph¶i Lµ Mãn §å Ch¬i TrÎ Con\nKh«ng LÏ Ng­¬i Lµm Mê M¾t Ta Hay Sao",3,"Tr×nh L¹i Tİn VËt M«n Ph¸i/TrinhTinVatMonPhai","Ta SÏ Quay L¹i Sau/No")
+		return
+	end
+	if (szKey ~= join({6,1,1670})) then
+		Say("Tİn VËt M«n Ph¸i Kh«ng Ph¶i Lµ Mãn §å Ch¬i TrÎ Con\nKh«ng LÏ Ng­¬i Lµm Mê M¾t Ta Hay Sao",3,"Tr×nh L¹i Tİn VËt M«n Ph¸i/TrinhTinVatMonPhai","Ta SÏ Quay L¹i Sau/No")
+		return
+	end
+	if GetSkillState(1646)>=1 or GetSkillState(1647)>=1 then
+	--	if CalcEquiproomItemCount(6,1,4361,-1)<10 then
+	--	Say("Trªn ng­êi §¹i HiÖp ®· cã dïng Hång Ngäc hoÆc Ngäc Lôc B¶o. CÇn cã 10 Tói Tèng Kim ®Ó chuyÓn ph¸i.",2,"Ta SÏ Quay L¹i Sau/No")
+	--	return
+	--	end
+	--	ConsumeEquiproomItem(10,6,1,4361,-1)
+	end
+	
+	SetTask(TinVatMonPhai,1) RemoveItemByIndex(nItemIdx) Talk(1,"","Chóc Mõng B¹n  §· Ra M«n Ph¸i Tİn VËt, Yªu CÇu\nChuyÓn M«n Ph¸i Thµnh C«ng")
 end

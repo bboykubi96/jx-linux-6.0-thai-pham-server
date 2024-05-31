@@ -6,13 +6,13 @@
 -------------------------------------------------------------------------
 --master_taskid£º		Íæ¼Ò×öÈÎÎñµÄ±äÁ¿
 --master_value£º		Íæ¼Ò×öÈÎÎñÓ¦¸Ã´ïµ½µÄ±äÁ¿Öµ
---partner_uworld£º		¼Ç¢¼»ñµÃÎïÆ·ÊıÁ¿µÄ±äÁ¿
+--partner_uworld£º		¼ÇÂ¼»ñµÃÎïÆ·ÊıÁ¿µÄ±äÁ¿
 --partner_master_exp£º	Íæ¼Ò¿É»ñµÃµÄ¾­Ñé
 --partner_taskid£º		ÊıÖµ¾ö¶¨ÁËÍæ¼Ò½«Ëæ»ú»ñµÃÄÄ¸öÈÎÎñµÄÎïÆ·
 --BMapId£º				Íæ¼ÒÓ¦µ±ËùÔÚµÄµØÍ¼
 --partner_valuebit£º    Òª¸Ä±äµÄÈÎÎñ±äÁ¿µÄÎ»Êı
 
-Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
+Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
 Include("\\script\\task\\partner\\partner_head.lua") --°üº¬ÁËÍ¼Ïóµ÷ÓÃ
 IncludeLib("PARTNER")
 
@@ -26,9 +26,9 @@ function lib_master_shanzei(master_taskid,master_value,partner_uworld,partner_ma
 		if ( yaocai == 1 ) and ( nt_getTask(master_taskid) == master_value ) then
 			nt_setTask(partner_uworld,nt_getTask(partner_uworld)+1)
 			if ( partner_taskid == 1 ) then
-				Msg2Player("Ngµi thu ho¹ch ®­îc Hoµng Th¶o")
+				Msg2Player("Äú»ñµÃÁËÒ»ÖêµØ»Æ²İ¡£")
 			elseif 	( partner_taskid == 2 ) then
-				Msg2Player("Ngµi thu ho¹ch ®­îc Chu Phİ DiÖp")
+				Msg2Player("Äú»ñµÃÁËÒ»Öê·ÑÒ¶¡£")
 			end
 		end
 		PlayerIndex = nPreservedPlayerIndex;
@@ -42,9 +42,9 @@ function lib_master_shanzei(master_taskid,master_value,partner_uworld,partner_ma
 				if ( yaocai == 1 ) and ( nt_getTask(master_taskid) == master_value ) then
 					nt_setTask(partner_uworld,nt_getTask(partner_uworld)+1)
 					if ( partner_taskid == 1 ) then
-						Msg2Player("Ngµi thu ho¹ch ®­îc Hoµng Th¶o")
+						Msg2Player("Äú»ñµÃÁËÒ»ÖêµØ»Æ²İ¡£")
 					elseif 	( partner_taskid == 2 ) then
-						Msg2Player("Ngµi thu ho¹ch ®­îc Chu Phİ DiÖp")
+						Msg2Player("Äú»ñµÃÁËÒ»Öê·ÑÒ¶¡£")
 					end
 				end
 			end

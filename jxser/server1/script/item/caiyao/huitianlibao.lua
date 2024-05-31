@@ -2,7 +2,7 @@
 Include("\\script\\lib\\awardtemplet.lua")
 local tbItem = 
 {
-	["6,1,2527"] = {szName="Håi Thiªn T¸i T¹o §¬n", tbProp={1, 8, 0, 4, 0, 0}},
+	["6,1,2527"] = {szName="Håi Thiªn T¸i T¹o §¬n", tbProp={1,2,0,5,0,0,0}},
 }
 	
 
@@ -16,7 +16,13 @@ function main(nItemIndex)
 	
 	SetTaskTemp(114, nItemIndex)
 	AskClientForNumber("huitianjinlang_getpotion", 0,(60-nCount), "Xin mêi nhËp sè cÇn rót")
-	
+	local n = CalcFreeItemCellCount()
+	if n > 60-nCount then 
+		n = 60-nCount
+
+	end
+	huitianjinlang_getpotion(n)
+
 	return 1
 end
 
@@ -57,6 +63,10 @@ function huitianjinlang_getpotion(nPickCount)
 	else
 		print("VËt phÈm kh«ng ë trªn ng­êi")
 	end
+	--print("Item:  "..nItemIndex)
+	--print("Pickcount:  " ..nPickCount)
+	--print("ncount:  " ..nCount)
+
 end
 
 function GetDesc(nItemIndex)

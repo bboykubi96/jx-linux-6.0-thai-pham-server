@@ -1,8 +1,8 @@
---Î÷ÄÏÄÏÇø ´óÀí¸® Â·±ê ´óÀí¸®to´äÑÌÃÅ
---by Suyu @20031029
+-- script viet hoa By http://tranhba.com  t©y nam nam khu §¹i Lı phñ b¶ng chØ ®­êng §¹i Lı phñ to thóy khãi cöa 
+-- script viet hoa By http://tranhba.com by Suyu @20031029 
 
-function main(sel)
+function main(sel) 
 
-Say("§i Thóy Yªn m«n", 0)
+Say("Thóy khãi cöa ", 0) 
 
 end;

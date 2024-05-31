@@ -55,7 +55,7 @@ function ws_main(nTongID, nWorkshopID)
 			};
 			
 	if (GetProductRegion() == "cn") then
-		tinsert(aryszContent, "NhÀn l÷nh bµi g‰i Boss/#use_g_1_ok("..nTongID..","..nWorkshopID..")");
+		--tinsert(aryszContent, "NhÀn l÷nh bµi g‰i Boss/#use_g_1_ok("..nTongID..","..nWorkshopID..")");
 	end;
 	
 	tinsert(aryszContent, "Kh´ng c«n Æ©u/cancel");

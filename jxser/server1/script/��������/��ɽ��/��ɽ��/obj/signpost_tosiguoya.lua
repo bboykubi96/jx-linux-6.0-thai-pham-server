@@ -1,7 +1,7 @@
---»ªÉ½ÅÉÍ¨ÍùË¼¹ıÑÂµÄÂ·±ê
+-- script viet hoa By http://tranhba.com  ph¸i Hoa s¬n ®i th«ng t­ qu¸ nhai ®İch b¶ng chØ ®­êng 
 
-function main(sel)
+function main(sel) 
 
-	Say("§i T­ Qu¸ Nhai", 0)
+Say("§i th«ng t­ qu¸ nhai ", 0) 
 
 end;

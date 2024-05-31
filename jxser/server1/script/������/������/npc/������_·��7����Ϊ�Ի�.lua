@@ -1,26 +1,25 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË7·½¿ÉÎª¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 7 l¹i võa v× ®èi tho¹i 
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main(sel)
-	if allbrother_0801_CheckIsDialog(200) == 1 then
-		allbrother_0801_FindNpcTaskDialog(200)
-		return 0;
-	end
+function main(sel) 
+if allbrother_0801_CheckIsDialog(200) == 1 then 
+allbrother_0801_FindNpcTaskDialog(200) 
+return 0; 
+end 
 
-i = random(0,2)
+i = random(0,2) 
 
-if (i == 0) then
-Say("Ba L¨ng huyÖn cña chóng ta lµ mét vïng ®Êt nhá, nh­ng cuéc sèng cña mäi ng­êi rÊt an b×nh. ",0)
-return
-end;
+if (i == 0) then 
+Say(" l¹i võa v× # chóng ta ba l¨ng huyÒn lµ mét ®Şa ph­¬ng nhá , nh­ng d©n chóng ®İch ngµy qu¸ ng­îc l¹i còng an vui . ",0) 
+return 
+end; 
 
-if (i == 1) then
-Say("Thiªn V­¬ng Bang chİnh lµ cøu c¸nh cña chóng ta, nÕu kh«ng cã hä thÕ thiªn hµnh ®¹o, chóng ta h¼n ®· bŞ bän tham quan nhòng nhiÔu råi!",0)
-return
-end;
+if (i == 1) then 
+Say(" l¹i võa v× # Thiªn v­¬ng gióp chİnh lµ chóng ta ®İch thanh thiªn , nÕu nh­ kh«ng cã bän hä thay trêi hµnh ®¹o , nh÷ng thø kia tham quan « l¹i cßn kh«ng biÕt muèn thÕ nµo nghiÒn Ğp chóng ta d©n chóng ®©y !",0) 
+return 
+end; 
 
-if (i == 2) then
-Say("Trong m¾t cña b¸ch tİnh, Thiªn V­¬ng Bang ®Òu lµ nh÷ng vŞ anh hïng h¶o h¸n! Thanh thiÕu niªn trong huyÖn ®Òu mong muèn gia nhËp Thiªn V­¬ng bang!",0)
-end;
+if (i == 2) then 
+Say(" l¹i võa v× # ë d©n chóng trong m¾t , Thiªn v­¬ng trong bang ng­êi ng­êi còng lµ lín anh hïng , thËt tèt h¸n ! chóng ta n¬i nµy trÎ tuæi tiÓu tö còng muèn gia nhËp Thiªn v­¬ng gióp ®©y !",0) 
+end; 
 
-end;
-
+end; 

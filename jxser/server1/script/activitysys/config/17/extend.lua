@@ -20,39 +20,55 @@ end
 --§iÒu chØnh phÇn th­ëng r¬i ra tõ boss thuû tÆc ®¹i ®Çu lÜnh - Modified By DinhHQ - 20120523
 function pActivity:VnFFBigBossDrop(nNpcIndex)
 	tbVnFFBigBossDrop = {
-		[1]={{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=1},},
-		[2]={{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=1},},
-		[3]={{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=1},},
-		[4]={{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=1},},
-		[5]={{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=1},},
-		[6]={{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=1},},
-		[7]={{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=1},},
-		[8]={{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=1},},
-		[9]={{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=1},},
-		[10]={{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.5},},
-		[11]={{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.2},},
-		[12]={{szName="B¶o R­¬ng Kim ¤ Kh«i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.5},},
-		[13]={{szName="B¶o R­¬ng Kim ¤ Th­îng Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.3},},
-		[14]={{szName="B¶o R­¬ng Kim ¤ Hµi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.5},},
-		[15]={{szName="B¶o R­¬ng Kim ¤ Yªu §¸i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.5},},
-		[16]={{szName="B¶o R­¬ng Kim ¤ Hé UyÓn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.5},},
-		[17]={{szName="§å Phæ B¹ch Hæ Kh«i",tbProp={6,1,3173,1,0,0},nCount=1,nRate=0.15},},
-		[18]={{szName="§å Phæ B¹ch Hæ Y",tbProp={6,1,3174,1,0,0},nCount=1,nRate=0.15},},
-		[19]={{szName="§å Phæ B¹ch Hæ Hµi",tbProp={6,1,3175,1,0,0},nCount=1,nRate=0.15},},
-		[20]={{szName="§å Phæ B¹ch Hæ Yªu §¸i",tbProp={6,1,3176,1,0,0},nCount=1,nRate=0.15},},
-		[21]={{szName="§å Phæ B¹ch Hæ Hé UyÓn",tbProp={6,1,3177,1,0,0},nCount=1,nRate=0.15},},
-		[22]={{szName="§å Phæ B¹ch Hæ H¹ng Liªn",tbProp={6,1,3178,1,0,0},nCount=1,nRate=0.15},},
-		[23]={{szName="§å Phæ B¹ch Hæ Béi",tbProp={6,1,3179,1,0,0},nCount=1,nRate=0.15},},
-		[24]={{szName="§å Phæ B¹ch Hæ Th­îng Giíi",tbProp={6,1,3180,1,0,0},nCount=1,nRate=0.08},},
-		[25]={{szName="B¹ch Hæ §å Phæ H¹ Giíi",tbProp={6,1,3181,1,0,0},nCount=1,nRate=0.08},},
-		[26]={{szName="§å Phæ B¹ch Hæ Vò KhÝ",tbProp={6,1,3182,1,0,0},nCount=1,nRate=0.05},},
-		[27]={{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.05},},
-		[28]={{szName="Long HuyÕt Hoµn",tbProp={6,1,2117,1,0,0},nCount=1,nRate=3,nExpiredTime=20160},},
-		[29]={{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=5,nExpiredTime=10080},},
-		[30]={{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=8,nExpiredTime=20160},},
-		[31]={{szName="Thiªn Long LÖnh",tbProp={6,1,2256,1,0,0},nCount=1,nRate=7.5},},
+		--{szName="Thiªn Long LÖnh",tbProp={6,1,2256,1,0,0},nCount=5,nRate=20},
+		--{szName="B¹ch Cèt LÖnh",tbProp={6,1,2255,1,0,0},nCount=5,nRate=20},
+		--{szName="Ngò Hµnh Kú Th¹ch",tbProp={6,1,2256,1,0,0},nCount=10,nRate=20},
+		--{szName="TiÒn §ång",tbProp={6,1,2256,1,0,0},nCount=10,nRate=20},
+		--{szName = "M¶nh Thiªn S¬n TuyÕt Liªn",tbProp={6,1,4344,1,0,0},nCount=20,nRate=20,},
+		--{szName = "Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nCount=1, nRate=35},
+		{szName = "NÕn B¸t tr©n phóc nguyÖt", tbProp = {6, 1, 1817, 1, 0, 0}, nCount=1, nRate=35},
+		{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0}, nCount=1,  nRate=1},
+		{szName = "Tói danh väng",tbProp={6,1,4338,1,0,0}, nCount=1,  nRate=8},
+		{szName = "Tinh hång b¶o th¹ch",					tbProp={4,353,1,1,0,0},nCount=1, nRate=0.01},
+		{szName = "Tö thñy tinh",								tbProp={4,239,1,1,0,0},nCount=1,  nRate=0.01},
+		{szName = "Lôc thñy tinh",								tbProp={4,240,1,1,0,0},nCount=1,  nRate=0.01},
+		{szName = "Lam thñy tinh",							tbProp={4,238,1,1,0,0},nCount=1,  nRate=0.01},
+		{szName = "QuÕ hoa töu",tbProp={6,1,125,1,0,0}, nCount=1,  nRate=1},
+		{szName = "Vâ l©m mËt tÞch",tbProp={6,1,26,1,0,0}, nCount=1,  nRate=0.2},
+		{szName = "TÈy tñy kinh",tbProp={6,1,22,1,0,0}, nCount=1,  nRate=0.2},
+		{szName = "§¹i thµnh bÝ kÝp",tbProp={6,1,2424,1,0,0}, nCount=1,  nRate=0.05},
+
+		--{szName = "M¶nh Nhu T×nh  TuÖ T©m Ngäc Béi (1/4)",tbProp={4,923,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh Nhu T×nh  TuÖ T©m Ngäc Béi (2/4)",tbProp={4,924,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh Nhu T×nh  TuÖ T©m Ngäc Béi (3/4)",tbProp={4,925,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh Nhu T×nh  TuÖ T©m Ngäc Béi (4/4)",tbProp={4,926,1,1,0,0}, nCount=1,  nRate=0.2},
+
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (1/6) ",tbProp={4,771,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (2/6) ",tbProp={4,772,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (3/6) ",tbProp={4,773,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (4/6) ",tbProp={4,774,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (5/6) ",tbProp={4,775,1,1,0,0}, nCount=1,  nRate=0.2},
+		--{szName = "M¶nh HiÖp Cèt T×nh ý KÕt (6/6) ",tbProp={4,776,1,1,0,0}, nCount=1,  nRate=0.2},
+		
 	}	
 	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex, tbVnFFBigBossDrop, "PhÇn th­ëng tiªu diÖt Thñy TÆc §¹i §Çu LÜnh", 1)
+end
+
+function pActivity:VnFFBigBossDropTieu(nNpcIndex)
+	tbVnFFBigBossDrop = {
+		--{szName = "Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nCount=1, nRate=30},
+		{szName = "NÕn B¸t tr©n phóc nguyÖt", tbProp = {6, 1, 1817, 1, 0, 0}, nCount=1, nRate=20},
+		{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0}, nCount=1,  nRate=3},
+		{szName = "Tói danh väng",tbProp={6,1,4338,1,0,0}, nCount=1,  nRate=5},
+		{szName = "Tinh hång b¶o th¹ch",					tbProp={4,353,1,1,0,0},nCount=1, nRate=0.001},
+		{szName = "Tö thñy tinh",								tbProp={4,239,1,1,0,0},nCount=1,  nRate=0.001},
+		{szName = "Lôc thñy tinh",								tbProp={4,240,1,1,0,0},nCount=1,  nRate=0.001},
+		{szName = "Lam thñy tinh",							tbProp={4,238,1,1,0,0},nCount=1,  nRate=0.001},
+		{szName = "QuÕ hoa töu",tbProp={6,1,125,1,0,0}, nCount=1,  nRate=0.001},
+		--{szName = "Vâ l©m mËt tÞch",tbProp={6,1,26,1,0,0}, nCount=1,  nRate=0.001},
+		--{szName = "TÈy tñy kinh",tbProp={6,1,22,1,0,0}, nCount=1,  nRate=0.001},
+	}	
+	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex, tbVnFFBigBossDrop, "PhÇn th­ëng tiªu diÖt Thñy TÆc §Çu LÜnh", 1)
 end
 
 function pActivity:VnUsePirateBox(nItemIdx)

@@ -5,7 +5,7 @@ Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\lib\\log.lua")
 IncludeLib("SETTING")
-COST_MONEY = 100000
+COST_MONEY = 1000000
 MAX_AWARD_COUNT = 100
 DaTuShaRankAward = 
 {
@@ -22,19 +22,14 @@ DaTuShaRankAward =
 }
 LastManAward = 
 {
-	[1]={szName="§å Phæ Tö M·ng Kh«i",tbProp={6,1,2714,1,0,0},nRate = 2.0,},
-	[2]={szName="§å Phæ Tö M·ng Y",tbProp={6,1,2715,1,0,0},nRate = 2.0,},
-	[3]={szName="§å Phæ Tö M·ng Yªu §¸i",tbProp={6,1,2717,1,0,0},nRate = 2.0,},
-	[4]={szName="§å Phæ Tö M·ng Hé UyÓn",tbProp={6,1,2718,1,0,0},nRate = 2.0,},
-	[5]={szName="§å Phæ Tö M·ng Béi",tbProp={6,1,2720,1,0,0},nRate = 2.0,},	
-	[6]={szName="§å Phæ Tö M·ng Hµi",tbProp={6,1,2716,1,0,0},nRate = 2.0,},	
-	[7]={szName="§å Phæ Tö M·ng H¹ng Liªn",tbProp={6,1,2719,1,0,0},nRate = 2.0,},	
-	[8]={szName="§å Phæ Tö M·ng Th­îng Giíi ChØ",tbProp={6,1,2721,1,0,0},nRate = 0.5,},	
-	[9]={szName="§å Phæ Tö M·ng H¹ Giíi ChØ",tbProp={6,1,2722,1,0,0},nRate = 0.5,},	
-	[10]={szName="§å Phæ Tö M·ng KhÝ Giíi",tbProp={6,1,2723,1,0,0},nRate = 0.5,},
-	[11]={szName="Tö M·ng LÖnh",tbProp={6,1,2350,1,0,0},nCount=1,nRate=0.5},
-	[12]={szName="Qu¶ Hoµng Kim",tbProp={6,1,907,1,0,0},nCount=1,nRate=19, nExpiredTime = 10080},	
-	[13]={nExp_tl=1,nRate = 65,nCount = 10000000,},	
+	
+	[1]={szName="Tay tuy kinh",tbProp={6,1,22,1,0,0},nRate = 0.5,nCount=1},	
+	[2]={szName="Vo lam mat tich",tbProp={6,1,26,1,0,0},nRate = 0.5,nCount=1},	
+	[3]={szName="Tien thao lo 8h",tbProp={6,1,1181,1,0,0},nRate = 0.5,nCount=1},
+	[4]={szName="Que hoa tuu",tbProp={6,1,125,1,0,0},nCount=1,nRate=0.5},
+	[5]={szName="M·nh Hoang kim",tbProp={4,random(771,788),1,1,0,0},nCount=1,nRate=0.5},
+	[6]={szName="M·nh Hoang kim",tbProp={4,random(903,942),1,1,0,0},nCount=1,nRate=0.5},
+	[7]={nExp_tl=1,nRate = 97,nCount = 50000000,},	
 }
 
 TotalRankAward = 
@@ -42,7 +37,7 @@ TotalRankAward =
 	{
 		{nExp_tl = 32e6},
 		{
-			{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nRate = 5.0, nExpiredTime = 43200}
+			--{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nRate = 5.0, nExpiredTime = 43200}
 		}
 	},
 	{nExp_tl = 28e6},
@@ -222,8 +217,8 @@ function join_datusha()
 	else
 		return
 	end
-	if (ST_GetTransLifeCount() <= 0 and GetLevel() < 120) then
-		return Msg2Player(format("CÊp ph¶i ®¹t ®Õn <color=yellow>%d<color>.", 120))
+	if (GetLevel() < 90) then
+		return Msg2Player(format("CÊp ph¶i ®¹t ®Õn <color=yellow>%d<color>.", 90))
 	end
 	--Change request July 13, 2011 - Modified by DinhHQ - 20110713
 --	if Pay(COST_MONEY) ~= 1 then
@@ -251,7 +246,12 @@ function join_datusha()
 	end
 end
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function dialog_main()
+	
+	
+
 	local szTitle = "<npc>§Ó chän ra nh÷ng nh©n tµi cho qu©n ®éi, triÒu ®×nh ®· quyÕt ®Þnh tuyÓn chän trong d©n chóng nh÷ng cao thñ trÝ dòng song toµn. Hoan nghªnh c¸c ch­ vÞ ®Õn tham gia b¸o danh."
 	local tbOpt = 
 	{

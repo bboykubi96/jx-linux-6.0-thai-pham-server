@@ -7,7 +7,7 @@ if(not KBONUS_HEAD) then
 end
 
 ChushiHongbao = inherit(KBonus,{
-	[1] = {[CONST_ITEM_TYPE]=KBonus.ITEM,[CONST_ITEM_PARAMS]={6,1,402},[CONST_ITEM_NAME]="ßπi HÂng bao th«n b› "}--"…Ò√ÿ¥Û∫Ï∞¸",
+	--[1] = {[CONST_ITEM_TYPE]=KBonus.ITEM,[CONST_ITEM_PARAMS]={6,1,402},[CONST_ITEM_NAME]="ßπi HÂng bao th«n b› "}--"…Ò√ÿ¥Û∫Ï∞¸",
 })
 
 function PayHongbao(pid,num)

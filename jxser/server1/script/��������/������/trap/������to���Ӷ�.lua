@@ -1,8 +1,9 @@
---ÓÀÀÖÕòto±ùºÓ¶´
---TrapId£ºÎ÷±±ÄÏÇø 194
+-- script viet hoa By http://tranhba.com  vÜnh nh¹c trÊn to b¨ng hµ ®éng 
+-- script viet hoa By http://tranhba.com TrapId# t©y b¾c nam khu 194 
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(201, 1599, 3197)
-	AddTermini(213)
+function main(sel) 
+SetFightState(1); 
+NewWorld(201, 1599, 3197) 
+AddTermini(213) 
 end;

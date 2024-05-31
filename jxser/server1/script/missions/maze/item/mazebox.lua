@@ -9,84 +9,58 @@ tbKG_Box_Award =
 {
 	["chiakhoanhuy"] = 
 	{
+		{szName = "NgÚ Hµnh K˙ Thπch",										tbProp = {6,1,2125,1,0,0},nCount=1,nRate=25},
 		{szName="ßi”m kinh nghi÷m 1", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(1000000, "B∂o R≠¨ng Ki’m Gia")
-					end,
-					nRate = 52,
-		},
-		{szName="ßi”m kinh nghi÷m 2", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(2000000, "B∂o R≠¨ng Ki’m Gia")
-					end,
-					nRate = 30,
-		},
-		{szName="ßi”m kinh nghi÷m 3", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(3000000, "B∂o R≠¨ng Ki’m Gia")
-					end,
-					nRate = 10,
-		},
-		{szName="ßi”m kinh nghi÷m 4", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(4000000, "B∂o R≠¨ng Ki’m Gia")
-					end,
-					nRate = 5,
-		},
-		{szName="ßi”m kinh nghi÷m 5", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(5000000, "B∂o R≠¨ng Ki’m Gia")
 					end,
+					nRate = 50,
+		},
+		{szName="ßi”m kinh nghi÷m 2", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(10000000, "B∂o R≠¨ng Ki’m Gia")
+					end,
+					nRate = 20,
+		},
+		{szName="ßi”m kinh nghi÷m 3", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(15000000, "B∂o R≠¨ng Ki’m Gia")
+					end,
 					nRate = 3,
+		},
+		{szName="ßi”m kinh nghi÷m 4", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(20000000, "B∂o R≠¨ng Ki’m Gia")
+					end,
+					nRate = 1,
+		},
+		{szName="ßi”m kinh nghi÷m 5", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(25000000, "B∂o R≠¨ng Ki’m Gia")
+					end,
+					nRate = 1,
 		},		
 	},	
 	["chiakhoavang"] = 
 	{
-		{szName="ßÂ PhÊ Bπch HÊ Hµi",tbProp={6,1,3175,1,0,0},nCount=1,nRate=0.008},
-		{szName="Bπch HÊ ßÂ PhÊ Hπ GiÌi",tbProp={6,1,3181,1,0,0},nCount=1,nRate=0.008},
-		{szName="Bπch HÊ L÷nh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.005},
-		{szName="Kim Hoa Chi B∂o",tbProp={6,1,3002,1,0,0},nCount=1,nRate=0.3},
-		{szName="Phÿ ThÛy Chi B∂o",tbProp={6,1,3003,1,0,0},nCount=1,nRate=0.2},
-		{szName="Phong V©n Chi B∂o",tbProp={6,1,3004,1,0,0},nCount=1,nRate=0.1},
-		{szName="B∂o R≠¨ng Kim § Kh´i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § Y",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § Hµi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § Y™u ß∏i",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § HÈ Uy”n",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § Hπng Li™n",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={1,0,0,0,0,0},nRate=0.003},
-		{szName="B∂o R≠¨ng Kim § BÈi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={9,0,0,0,0,0}, nRate=0.003},
-		{szName="MÀt tﬁch k‹ n®ng 150 (C p 19)",tbProp={6,1,30170,1,0,0},nCount=1,nRate=0.02},
-		{szName="MÀt tﬁch k‹ n®ng 150 (C p 20)",tbProp={6,1,30171,1,0,0},nCount=1,nRate=0.02},
-		{szName="M∆t nπ - Anh hÔng chi’n tr≠Íng",tbProp={0,11,482,1,0,0},nCount=1,nRate=0.1,nExpiredTime=10080,nUsageTime=60},
-		{szName="HÂi thi™n t∏i tπo l‘ bao",tbProp={6,1,2527,1,0,0},nCount=1,nRate=1.05,nExpiredTime=43200},
-		{szName="Ch◊a Kh„a Nh≠ ˝",tbProp={6,1,2744,1,0,0},nCount=1,nRate=4,nExpiredTime=20160},
-		{szName="Cµn Kh´n Song Tuy÷t BÈi",tbProp={6,1,2219,1,0,0},nCount=1,nRate=0.05,nExpiredTime=43200},
-		{szName="CËng Hi’n L‘ bao",tbProp={6,1,30214,1,0,0},nCount=1,nRate=0.5,nExpiredTime=1440},
-		{szName="Thanh B◊nh Lπc",tbProp={0,3881},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="HÂi Xu©n",tbProp={0,3882},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="Kh´ MÈc",tbProp={0,3883},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="L≠u V©n ",tbProp={0,3884},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="N™ Trπch",tbProp={0,3885},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="L´i H·a Ki’p",tbProp={0,3886},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="M™ TÛy Thi™n H≠¨ng",tbProp={0,3887},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
-		{szName="ßi÷p VÚ Hoa Phi",tbProp={0,3888},nCount=1,nRate=0.5,nQuality = 1,nExpiredTime=1440},
+		{szName = "NgÚ Hµnh K˙ Thπch",										tbProp = {6,1,2125,1,0,0},nCount=5,nRate=25},
 		{szName="ßi”m kinh nghi÷m 1", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(6000000, "B∂o R≠¨ng Ki’m Gia")
+						%tbvng_ChestExpAward:ExpAward(15000000, "B∂o R≠¨ng Ki’m Gia")
 					end,
-					nRate = 81.118,
+					nRate = 50,
 		},
 		{szName="ßi”m kinh nghi÷m 2", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(12000000, "B∂o R≠¨ng Ki’m Gia")
+						%tbvng_ChestExpAward:ExpAward(25000000, "B∂o R≠¨ng Ki’m Gia")
 					end,
-					nRate = 5,
+					nRate = 20,
 		},
 		{szName="ßi”m kinh nghi÷m 3", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(20000000, "B∂o R≠¨ng Ki’m Gia")
+						%tbvng_ChestExpAward:ExpAward(30000000, "B∂o R≠¨ng Ki’m Gia")
 					end,
-					nRate = 3,
+					nRate = 5,
 		},
 		{szName="ßi”m kinh nghi÷m 4", 
 					pFun = function (tbItem, nItemCount, szLogTitle)

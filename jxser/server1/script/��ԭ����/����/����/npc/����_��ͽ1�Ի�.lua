@@ -1,7 +1,7 @@
 --ÖĞÔ­ÄÏÇø ÏåÑô¸® ¶ÄÍ½1¶Ô»°
 
 function main(sel)
-Say("ThËt ch¶ biÕt xui xÎo thÕ nµo? C¶ ngµy h«m nay l·o tö cø thua m·i, thËt lµ quü ¸m!", 0);
+Say("Con b¹c:  L·o tö h«m nay thua tiÒn nhiÒu qu¸, thËt lµ xui xÎo mµ !", 0);
 end;
 
 

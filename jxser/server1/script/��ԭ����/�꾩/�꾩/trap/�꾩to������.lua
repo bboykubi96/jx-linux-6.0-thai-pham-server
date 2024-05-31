@@ -5,6 +5,5 @@ function main(sel)
 
 SetFightState(1);
 NewWorld(100, 1509, 2861);
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
+
 end;

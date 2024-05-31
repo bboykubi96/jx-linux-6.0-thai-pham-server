@@ -1,5 +1,5 @@
---Î÷ÄÏ±±Çø ÌÆÃÅtoÒéÊÂ´óÌü
---Trap ID£ºÎ÷ÄÏ±±Çø 32
+-- script viet hoa By http://tranhba.com ##Ä#±±## ×#·ÅtoßĞ£¢´ã×#
+-- script viet hoa By http://tranhba.com Trap ID#º##Ä#±±## 32
 
 function main(sel)
 

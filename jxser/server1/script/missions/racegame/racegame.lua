@@ -11,27 +11,26 @@ racegame_tbMission = new(tbMission)
 
 racegame_tbMission.nMissionId	= 53
 racegame_tbMission.tbTimer		=  { {91, 18*10}}
-racegame_tbMission.nLatencyTime	= 60*14     -- µÈ´ýÊ±¼ä14·ÖÖÓ
+racegame_tbMission.nLatencyTime	= 60*20     -- µÈ´ýÊ±¼ä14·ÖÖÓ
 
 racegame_tbMission.nMapId		= 863     -- µØÍ¼Id
 
 racegame_tbMission.tbNpcList = 
 {
-	[1] = {szName = "¤ng chñ ®­êng ®ua", nNpcId = 228, szScriptPath = "\\script\\missions\\racegame\\npcsaichanglaoban.lua"},
-	[2] = {szName = "§¹o cô hç trî", nNpcId = 1288,szScriptPath = "\\script\\missions\\racegame\\npctoolitem.lua"},
+	[1] = {szName = "§iÓm §Õn §Ých", nNpcId = 1571, szScriptPath = "\\script\\missions\\racegame\\npcsaichanglaoban.lua"},
+	[2] = {szName = "Thuèc lag", nNpcId = 1236,szScriptPath = "\\script\\missions\\racegame\\npctoolitem.lua"},
 }
 
 racegame_tbMission.tbItemList = 
 {
-	{szName="Gia Tèc hoµn", tbProp={6, 1, 978, 1, 0, 0} },
-	{szName="L«i Tèc hoµn", tbProp={6, 1, 990, 1, 0, 0} },
-	{szName="HuyÒn Thiªn H·m TÜnh", tbProp={6, 1, 982, 1, 0, 0} },
-	{szName="B¨ng Phong H·m TÜnh", tbProp={6, 1, 984, 1, 0, 0} },
-	{szName="HuyÔn Hu©n H·m TÜnh", tbProp={6, 1, 981, 1, 0, 0} },
-	{szName="S­¬ng Gi¸ng H·m TÜnh", tbProp={6, 1, 983, 1, 0, 0} },
-	{szName="B¨ng S­¬ng HiÖu gi¸c ", tbProp={6, 1, 979, 1, 0, 0} },
-	{szName="B¹o L«i HiÖu gi¸c", tbProp={6, 1, 980, 1, 0, 0}},
-	{szName="§én §Þa phï ", tbProp={6, 1, 987, 1, 0, 0} },
+	{szName="Gia Tèc hoµn", tbProp={6, 1, 4392, 1, 0, 0} },
+--	{szName="B¨ng S­¬ng HiÖu gi¸c ", tbProp={6, 1, 4393, 1, 0, 0} },
+--	{szName="B¹o L«i HiÖu gi¸c", tbProp={6, 1, 4394, 1, 0, 0}},
+	{szName="HuyÔn Hu©n H·m TÜnh", tbProp={6, 1, 4395, 1, 0, 0} },
+	{szName="HuyÒn Thiªn H·m TÜnh", tbProp={6, 1, 4396, 1, 0, 0} },
+	{szName="S­¬ng Gi¸ng H·m TÜnh", tbProp={6, 1, 4397, 1, 0, 0} },
+	{szName="B¨ng Phong H·m TÜnh", tbProp={6, 1, 4398, 1, 0, 0} },
+	{szName="L«i Tèc hoµn", tbProp={6, 1, 4399, 1, 0, 0} },
 }
 
 
@@ -43,7 +42,7 @@ racegame_tbMission.MissionState			= 2
 
 
 
-racegame_tbMission.tbSignUpPos = {1592+4,3264+8}
+racegame_tbMission.tbSignUpPos = {1578,3159}
 racegame_tbMission.tbMissionV =
 {
 	MISSION_STATE	= 1,
@@ -141,6 +140,7 @@ function racegame_tbMission:OnLeave()
 	
 	ForbidChangePK(0);
 	DisabledUseTownP(0);	--¹Ø±Õ½ûÖ¹Ê¹ÓÃ»Ø³Ì£»
+                                                                                  RestoreOwnFeature()
 end
 
 function racegame_tbMission:OnClose()
@@ -169,7 +169,7 @@ function racegame_tbMission:OnClose()
 		doFunByPlayer(tbPlayer[i], jiefang_0804_ResetTask)
 		local nPlayerMapId = doFunByPlayer(tbPlayer[i], GetTask, jiefang_0804_TSK_MapId)
 		if nPlayerMapId == 0 then
-			nPlayerMapId = 524
+			nPlayerMapId = 53
 		end
 		doFunByPlayer(tbPlayer[i], NewWorld, nPlayerMapId, self.tbSignUpPos[1], self.tbSignUpPos[2])
 	end
@@ -177,7 +177,7 @@ function racegame_tbMission:OnClose()
 end
 
 function racegame_tbMission:AddGoalNpc()
-	local nX, nY = 1568*32, 2507*32
+	local nX, nY = 2053*32, 3423*32
 	racegame_CallNpc(self.tbNpcList[1], self.nMapId, nX, nY)
 end
 
@@ -207,10 +207,6 @@ function racegame_tbMission:OnTimer()
 	if mod(nTimerCount, 100) == 10 then
 		self:AddItemNpc()
 		
-	end
-	
-	if mod(nTimerCount, 100) == 20 then
-		self:ClearItemNpc()
 	end
 	if mod(nTimerCount, 60) == 0 or nTimerCount == self.nLatencyTime - 10 then
 		Msg2MSAll(self.nMissionId, szMsg)

@@ -1,0 +1,2 @@
+TSK_Date_Give_HPT = 2785
+nEXP_Give_HPT = 500000000

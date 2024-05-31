@@ -1,13 +1,8 @@
--- ÎÄ¼şÃû¡¡£ºtianlindan.lua
--- ´´½¨Õß¡¡£ºwangjingjun
--- ÄÚÈİ¡¡¡¡£ºÌìÁéµ¤£¬Ã¿Ìì×î¶àÖ»ÄÜÊ¹ÓÃ2¸ö
--- ´´½¨Ê±¼ä£º2011-09-01 09:42:31
-
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 
-TSK_USED = 2800	-- ÈÎÎñ±äÁ¿´ı¶¨
---1 ngµy dc sö dông 5 lÇn vËt phÈm Tiªn Linh §¬n - Modified by DinhHQ - 20111013
+TSK_USED = 2800
+
 NDAILYTIME = 5
 
 
@@ -22,6 +17,5 @@ function main()
 		tbAwardTemplet:Give(tbAward, 1, {"goldbossadjust_2011", "use_tianlindan"} )
 		return 0
 	end
-	
 	return 1
 end

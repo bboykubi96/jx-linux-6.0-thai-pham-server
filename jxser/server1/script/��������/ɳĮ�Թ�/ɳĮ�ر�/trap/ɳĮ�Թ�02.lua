@@ -1,5 +1,5 @@
--- É³Ä®ÃÔ¹¬´«ËÍµã£¨È«Ëæ»ú´«ËÍ£©
--- By Dan_Deng(2004-04-01)
+-- script viet hoa By http://tranhba.com  Ð³Ä#·¤##´##Ý#·##Ì####ó´##Ý##
+-- script viet hoa By http://tranhba.com  By Dan_Deng(2004-04-01)
 
 function main(sel)
 	
@@ -9,8 +9,8 @@ function main(sel)
 	end
 	
 	i = random(0,120)
---	Msg2Player("i = "..i)	-- µ÷ÊÔÐÅÏ¢
-	if (i < 5) then					-- µØ±í£¬¹²25%¼¸ÂÊ
+-- script viet hoa By http://tranhba.com 	Msg2Player("i = "..i)	-- script viet hoa By http://tranhba.com  ##£¤#Å##
+	if (i < 5) then					-- script viet hoa By http://tranhba.com  ##±Ý###²25%##¢£
 		SetFightState(1);
 		NewWorld(224,1591,3013)
 	elseif (i < 10) then
@@ -28,13 +28,13 @@ function main(sel)
 	elseif (i < 30) then
 		SetFightState(1);
 		NewWorld(224,1870,2986)
-	elseif (i < 50) then				-- É½¶´1£¬¹²33%¼¸ÂÊ
+	elseif (i < 50) then				-- script viet hoa By http://tranhba.com  Ð##´1###²33%##¢£
 		SetFightState(1);
 		NewWorld(225,1476,3274)
 	elseif (i < 70) then
 		SetFightState(1);
 		NewWorld(225,1579,3186)
-	elseif (i < 80) then				-- É½¶´2£¬¹²33%¼¸ÂÊ
+	elseif (i < 80) then				-- script viet hoa By http://tranhba.com  Ð##´2###²33%##¢£
 		SetFightState(1);
 		NewWorld(226,1553,3173)
 	elseif (i < 90) then
@@ -46,7 +46,7 @@ function main(sel)
 	elseif (i < 110) then
 		SetFightState(1);
 		NewWorld(226,1690,3246)
-	elseif (i < 115) then			-- É½¶´3£¬¹²8.33%¼¸ÂÊ
+	elseif (i < 115) then			-- script viet hoa By http://tranhba.com  Ð##´3###²8.33%##¢£
 		SetFightState(1);
 		NewWorld(227,1530,3270)
 	else

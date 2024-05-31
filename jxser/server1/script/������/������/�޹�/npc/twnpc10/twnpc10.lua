@@ -1,251 +1,251 @@
---description: ÌìÍõ°ïÇŞ¹¬ Ñîçø¡¡ÌìÍõ³öÊ¦ÈÎÎñ¡¢ÖØ·µÃÅÅÉÈÎÎñ
---author: yuanlan	
---date: 2003/4/28
---Dan_Deng(2003-07-22), ¼ÓÈëÃÅÅÉÈÎÎñµÄµÈ¼¶ÒªÇó
---Dan_Deng(2003-07-24), ¼ÓÈëÖØ·µÃÅÅÉÈÎÎñ
--- Update: Dan_Deng(2003-08-16)
--- Update: Dan_Deng(2003-09-21)ÖØĞÂÉè¼ÆÖØ·µÃÅÅÉÓëÕòÅÉ¾øÑ§Ïà¹Ø
--- Update£ºDan_Deng(2003-10-27)ÎªÖØ·µÊ¦ÃÅÈÎÎñ¼ÓÈëÈ¡ÏûÈÎÎñ¹¦ÄÜ£¬ÒÔ¼°ÓëĞÂÃÅÅÉ¶ÔÓ¦
+-- script viet hoa By http://tranhba.com description: Thiªn v­¬ng gióp tÈm cung d­¬ng anh # Thiªn v­¬ng xuÊt s­ nhiÖm vô # trë l¹i m«n ph¸i nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/4/28 
+-- script viet hoa By http://tranhba.com Dan_Deng(2003-07-22), gia nhËp m«n ph¸i nhiÖm vô cÊp bËc yªu cÇu 
+-- script viet hoa By http://tranhba.com Dan_Deng(2003-07-24), gia nhËp trë l¹i m«n ph¸i nhiÖm vô 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-16) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-09-21) lÇn n÷a thiÕt kÕ trë l¹i m«n ph¸i cïng trÊn ph¸i tuyÖt häc t­¬ng quan 
+-- script viet hoa By http://tranhba.com  Update#Dan_Deng(2003-10-27) lµm träng ph¶n s­ m«n nhiÖm vô gia nhËp hñy bá nhiÖm vô chøc n¨ng , cïng víi cïng míi m«n ph¸i ®èi øng 
 
 Include("\\script\\global\\skills_table.lua")
-Include([[\script\event\teachersday06_v\prize_qingyika.lua]]);
+Include([[\script\event\teachersday06_v\prize_qingyika.lua]]); 
 Include("\\script\\task\\lv120skill\\head.lua")
-Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- ´øÒÕÍ¶Ê¦
+Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- script viet hoa By http://tranhba.com  ´øÒÕÍ¶Ê¦
 
 Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
 
-function main()
-	if (vt06_isactive() ~= 0) then
-		Say("T×m ta cã viÖc g×?", 2, "Muèn thØnh gi¸o ®¹i s­!/oldentence", "Mõng lÔ ¢n S­, t¹i h¹ ®· t×m ®ñ “ThÎ ¢n S­” vµ “ThÎ Cao §å”./vt06_prizeenter");
-		return
-	end;
-	
-	local nNpcIndex = GetLastDiagNpc();
-	local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M"))
-	local szNpcName = GetNpcName(nNpcIndex)
-	if NpcName2Replace then
-		szNpcName = NpcName2Replace(szNpcName)
-	end
-	local tbDailog = DailogClass:new(szNpcName)
-	tbDailog.szTitleMsg = "<npc>GÇn ®©y ta cã rÊt nhiÒu viÖc gi¶i quyÕt, ng­¬i ®Õn ®©y cã viÖc g×."
-	G_TASK:OnMessage("Thiªn V­¬ng", tbDailog, "DialogWithNpc")
-	if (GetLevel() >= 120 and GetTask(LV120_SKILL_STATE) ~= 19 and GetLastFactionNumber() == 1) then
-		tbDailog:AddOptEntry("Häc kü n¨ng cÊp 120.", lvl120skill_learn)
-	end
-	tbDailog:AddOptEntry("Muèn thØnh gi¸o viÖc kh¸c", oldentence)
-	tbDailog:Show() 
-	
-end
+function main() 
+if (vt06_isactive() ~= 0) then 
+Say("T×m ta cã chuyÖn g× ?", 2,"Muèn mêi d¹y ®¹i s­ #/oldentence","¢n s­ , t¹i h¹ ®· t×m ®ñ ©n s­ thiÕp cïng ®é cao thiÕp liÔu /vt06_prizeenter"); 
+return 
+end; 
 
-function oldentence()
---	if (check_skill() == 0) then
---		return
---	end
+local nNpcIndex = GetLastDiagNpc(); 
+local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M")) 
+local szNpcName = GetNpcName(nNpcIndex) 
+if NpcName2Replace then 
+szNpcName = NpcName2Replace(szNpcName) 
+end 
+local tbDailog = DailogClass:new(szNpcName) 
+tbDailog.szTitleMsg = "<npc> ngµy gÇn ®©y ta cã rÊt nhiÒu chuyÖn muèn gi¶i quyÕt , ng­¬i tíi cã chuyÖn g× ?" 
+G_TASK:OnMessage("Thiªn v­¬ng ", tbDailog, "DialogWithNpc") 
+if (GetLevel() >= 120 and GetTask(LV120_SKILL_STATE) ~= 19 and GetLastFactionNumber() == 1) then 
+tbDailog:AddOptEntry("Häc tËp 120 cÊp kü n¨ng .", lvl120skill_learn) 
+end 
+tbDailog:AddOptEntry("Muèn mêi d¹y chuyÖn kh¸c ", oldentence) 
+tbDailog:Show() 
 
-	UTask_tw = GetTask(3);
-	local nFactID = GetLastFactionNumber();
+end 
 
-	if (UTask_tw == 70*256) and (GetFaction() == "tianwang") then			-- »ØÊ¦´íÎóĞŞÕı
-		SetFaction("")
-		Say("HÖ thèng ph¸t hiÖn sai sãt, ®· kŞp thêi håi phuc!",0)
-		return
-	elseif (UTask_tw == 70*256) and (GetTask(7) >= 5*256) and (GetTask(7) < 10*256) then		-- ÒÔÇ°½Ó¹ıÈëÃÅÈÎÎñµÄ
-		SetTask(7,0)
-		Say("HÖ thèng ph¸t hiÖn sai sãt, ®· kŞp thêi håi phuc!",0)
-		return
-	elseif (UTask_tw == 80*256) and (GetCamp() == 4) then			-- »ØÊ¦´íÎóĞŞÕı
-		SetTask(3,70*256)
-		Say("HÖ thèng ph¸t hiÖn sai sãt, ®· kŞp thêi håi phuc!",0)
-		return
-	elseif (UTask_tw == 80*256 and nFactID == 1 and GetCamp() == 3 and GetFaction() == "Míi nhËp giang hå ") then
-		 local _, nTongID = GetTong();
-		 if (nTongID == 0) then
-			SetFaction("tianwang");
-			Say("HÖ thèng ph¸t hiÖn sai sãt, ®· kŞp thêi håi phuc!",0)
-			return
-		end
-	elseif (UTask_tw == 70*256 and nFactID == 1 and GetCamp() ~= 4 and GetFaction() == "Míi nhËp giang hå ") then
-		 local _, nTongID = GetTong();
-		 if (nTongID == 0) then
-			SetFaction("");
-			SetCurCamp(GetCamp());
-			Say("HÖ thèng ph¸t hiÖn sai sãt, ®· kŞp thêi håi phuc!",0)
-			return
-		end
-	end
-	local tbDes = {"§¸i nghÖ ®Çu s­/#daiyitoushi_main(1)", "Muèn thØnh gi¸o viÖc kh¸c/common_talk"};
-	
-	Say("GÇn ®©y ta cã rÊt nhiÒu viÖc gi¶i quyÕt, ng­¬i ®Õn ®©y cã viÖc g×.", getn(tbDes), tbDes);
-end
+function oldentence() 
+-- script viet hoa By http://tranhba.com  if (check_skill() == 0) then 
+-- script viet hoa By http://tranhba.com  return 
+-- script viet hoa By http://tranhba.com  end 
 
-function common_talk()
-	local UTask_tw = GetTask(3);
-	if (GetTask(39) == 10) and (GetBit(GetTask(40),3) == 0) then				-- ÊÀ½çÈÎÎñ£ºÎäÁÖÏò±³
-		Talk(1,"","TriÒu ®×nh nhµ Tèng ngu xuÈn, kh«ng ®éi trêi chung víi D­¬ng gia ta. N¨m x­a Së V­¬ng cïng cha ta thÒ quyÕt diÖt Tèng. D­¬ng Anh tuy bÊt tµi, nh­ng còng quyÕt thùc hiÖn chİ lín!")
-		Uworld40 = SetBit(GetTask(40),3,1)
-		SetTask(40,Uworld40)
-	elseif (GetSeries() == 0) and (GetFaction() == "tianwang") then
-		if (UTask_tw == 60*256+40) and (HaveItem(96) == 1) then					--ÄÃµ½ÌìÍõÒÅÊé
-			Talk(3, "L60_prise", "Thuéc h¹ kh«ng d¸m khinh sø mÖnh, ®· lÊy ®­îc 'Thiªn V­¬ng Di Th­', xin Bang chñ xem qua! ", "Tèt qu¸! LÊy ®­îc 'Thiªn V­¬ng Di Th­' kh«ng nh÷ng b¶o toµn ®­îc bæn bang mµ cßn cã thÓ ng¨n chÆn ®­îc tai ­¬ng trªn chèn vâ l©m! Ng­¬ilµm rÊt tèt! Tõ h«m nay trë ®i, ng­¬icã thÓ tù do hµnh tÈu giang hå!", "Chóc mõng b¹n thµnh nghÖ xuÊt s­! B¹n ®­îc phong lµ K×nh Thiªn Nguyªn So¸i, tõ nay vÒ sau cã thÓ tù do hµnh tÈu giang hå! Hy väng b¹n sÏ ph¸t huy n¨ng lùc, ph¸t triÓn tiÒn ®å!")
-		elseif (UTask_tw == 60*256) and (GetLevel() >= 50) then
-			Talk(3, "L60_get", "Nhí n¨m x­a, Së V­¬ng khëi binh t¹i §éng §×nh Hå, Nam kh¸ng TriÖu Tèng, B¾c chèng Kim binh. Sau khi Së V­¬ng b¨ng hµ, nghÜa qu©n cßn l¹i tiÕn cö cha ta §¹i Th¸nh Thiªn V­¬ng lµm l·nh ®¹o. NghÜa qu©n ph¸t triÓn m¹nh mÏ, triÒu ®×nh ho¶ng sî cö qu©n ®Õn t×m diÖt. Trong trËn huyÕt chiÕn cha ta kh«ng may bŞ bän ph¶n béi b¸n ®øng, ®· hy sinh t¹i Thanh Loa §¶o", "Sau khi cha ta qua ®êi, ta lÊy ®­îc ¸o bµo, kiÕm b¸u vµ mét bé binh th­ giÊu t¹i <color=Red>Thanh Loa §¶o<color>. Tªn cuèn binh th­ ®ã lµ <color=Red>'Thiªn V­¬ng Di Th­'<color>, bªn trong kh«ng chØ ghi l¹i ph­¬ng ph¸p bè trËn cña cha ta, mµ cßn ghi chó chi tiÕt ®Şa thÕ chiÕn l­îc cña §éng §×nh Hå, v× thÕ ®©y ®­îc xem nh­ lµ bİ kİp cña bæn bang. ", "ThÕ nh­ng gÇn ®©y kh«ng biÕt bŞ ai ®ã cung cÊp th«ng tin ra ngoµi, cuèn s¸ch nµy bŞ qu©n Kim dß ra, chóng ®· cö bän s¸t thñ ®Õn lÊy c¾p cuèn s¸ch nµy. ")
-		elseif (UTask_tw == 80*256) or (UTask_tw == 80) then						-- ÖØ·µºóµÄ×ÔÓÉ³öÈë
-			Say("ThÕ nµo! Muèn hµnh tÈu giang hå mét phen µ?",2,"V©ng, xin Bang chñ ©n chuÈn. /goff_yes","Kh«ng, ta tù thÊy c«ng phutËp luyÖn vÉn ch­a ®ñ. /no")
-		elseif (UTask_tw > 60*256) and (UTask_tw < 70*256) then		--ÒÑ¾­½Óµ½³öÊ¦ÈÎÎñ£¬ÉĞÎ´Íê³É
-			Talk(1,"","<color=Red>'Thiªn V­¬ng Di th­'<color> ®­îc giÊu trong mét <color=Red>B¶o r­¬ng <color>, B¶o r­¬ng ®­îc giÊu ë <color=Red>phİa b¾c Thanh Loa ®¶o<color>, tr­íc tiªn cÇn ph¶i t×m ®­îc <color=Red>Ch×a khãa ®Ó më B¶o r­¬ng<color>.")
-		else
-			Talk(1,"","Kim quèc cã ı muèn ng«ng cuång lËt ®æ vâ l©m Trung Nguyªn ta, nÕu nh­ huynh ®Ö chóng ta kh«ng ®ång t©m, lµm sao cã thÓ chèng ®­îc qu©n thï?")
-		end
---	elseif (GetTask(7) == 5*256+10) then		-- ×ªÅÉÖÁÉÙÁÖÅÉ
---		Say("Ñîçø£ºÅÑ°ïÕßÒª·ÏÈ¥±¾°ïÈ«²¿Îä¹¦£¬ÄãÕæµÄÒª±³Æú±¾ÃÅÍ¶ÈëÉÙÁÖÅÉ£¿",2,"²»´í£¬ÎÒÒâÒÑ¾ö/defection_yes","²»£¬ÎÒ»¹ÊÇ²»¸ÄÍ¶ÉÙÁÖÁË/defection_no")
-	elseif (GetSeries() == 0) and (GetCamp() == 4) and (GetLevel() >= 60) and (UTask_tw == 70*256) and (GetTask(7) < 5*256) then		-- ÖØ·µÊ¦ÃÅÈÎÎñ
-		Talk(1,"return_select","Tèt l¾m! Hµnh tÈu giang hå nhí gióp ®ì nh÷ng ng­êi khèn khã!")
+UTask_tw = GetTask(3); 
+local nFactID = GetLastFactionNumber(); 
+
+if (UTask_tw == 70*256) and (GetFaction() == "tianwang") then -- script viet hoa By http://tranhba.com  trë vÒ s­ sai lÇm tu ch¸nh 
+SetFaction("") 
+Say("HÖ thèng ph¸t hiÖn chç s¬ hë ®· gÇn lóc ch÷a trŞ !",0) 
+return 
+elseif (UTask_tw == 70*256) and (GetTask(7) >= 5*256) and (GetTask(7) < 10*256) then -- script viet hoa By http://tranhba.com  tr­íc kia nhËn lÊy nhËp m«n nhiÖm vô 
+SetTask(7,0) 
+Say("HÖ thèng ph¸t hiÖn chç s¬ hë ®· gÇn lóc ch÷a trŞ !",0) 
+return 
+elseif (UTask_tw == 80*256) and (GetCamp() == 4) then -- script viet hoa By http://tranhba.com  trë vÒ s­ sai lÇm tu ch¸nh 
+SetTask(3,70*256) 
+Say("HÖ thèng ph¸t hiÖn chç s¬ hë ®· gÇn lóc ch÷a trŞ !",0) 
+return 
+elseif (UTask_tw == 80*256 and nFactID == 1 and GetCamp() == 3 and GetFaction() == " míi vµo giang hå ") then 
+local _, nTongID = GetTong(); 
+if (nTongID == 0) then 
+SetFaction("tianwang"); 
+Say("HÖ thèng ph¸t hiÖn chç s¬ hë ®· gÇn lóc ch÷a trŞ !",0) 
+return 
+end 
+elseif (UTask_tw == 70*256 and nFactID == 1 and GetCamp() ~= 4 and GetFaction() == " míi vµo giang hå ") then 
+local _, nTongID = GetTong(); 
+if (nTongID == 0) then 
+SetFaction(""); 
+SetCurCamp(GetCamp()); 
+Say("HÖ thèng ph¸t hiÖn chç s¬ hë ®· gÇn lóc ch÷a trŞ !",0) 
+return 
+end 
+end 
+local tbDes = {"Mang nghÖ ®Çu s­ /#daiyitoushi_main(1)","Muèn mêi d¹y chuyÖn kh¸c /common_talk"}; 
+
+Say("Ngµy gÇn ®©y ta cã rÊt nhiÒu chuyÖn muèn gi¶i quyÕt , ng­¬i t×m ta cã chuyÖn g× ?", getn(tbDes), tbDes); 
+end 
+
+function common_talk() 
+local UTask_tw = GetTask(3); 
+if (GetTask(39) == 10) and (GetBit(GetTask(40),3) == 0) then -- script viet hoa By http://tranhba.com  thÕ giíi nhiÖm vô # vâ l©m h­íng bèi 
+Talk(1,"","Tèng triÒu triÒu ®×nh ngu xuÈn , cïng ta D­¬ng gia bÊt céng ®¸i thiªn . n¨m ®ã Së v­¬ng cïng phô th©n ta kiªn quyÕt diÖt tèng . d­¬ng anh theo bÊt tµi , còng muèn thùc hiÖn c¸i nµy chİ lín !") 
+Uworld40 = SetBit(GetTask(40),3,1) 
+SetTask(40,Uworld40) 
+elseif (GetSeries() == 0) and (GetFaction() == "tianwang") then 
+		if (UTask_tw == 60*256+40) and (HaveItem(96) == 1) then					-- script viet hoa By http://tranhba.com ÄÃµ½ÌìÍõÒÅÊé
+Talk(3, "L60_prise","Thuéc h¹ kh«ng cã nhôc sø m¹ng , ®· ®em # Thiªn v­¬ng di th­ # thu håi , xin/mêi bang chñ xem qua ! ","ThËt tèt qu¸ # b¾t ®­îc Thiªn v­¬ng di th­ ch¼ng nh÷ng cã thÓ b¶o toµn bæn bang cßn ng¨n c¶n liÔu mét cuéc vâ l©m h¹o kiÕp # ng­¬i lµm rÊt tèt # h«m nay khëi ng­¬i cã thÓ tù do x«ng x¸o giang hå liÔu ?","Chóc mõng ng­¬i thµnh c«ng xuÊt s­ . ng­¬i bŞ ®ãng cöa v× kinh thiªn Nguyªn so¸i , tõ nay vÒ sau ng­¬i cã thÓ tù do x«ng x¸o giang hå liÔu # hy väng ng­¬i cã thÓ ph¸t huy lùc l­îng , ph¸t triÓn tiÒn ®å !") 
+elseif (UTask_tw == 60*256) and (GetLevel() >= 50) then 
+Talk(3, "L60_get","Nhí n¨m ®ã , Së v­¬ng ë §éng ®×nh hå khëi binh , nam kh¸ng triÖu tèng , b¾c ®Ó qu©n Kim , bùc nµo anh hïng # Së v­¬ng th©n cè sau , nghÜa qu©n tµn bé ®Ò cö cha ta ®¹i th¸nh thiªn v­¬ng v× l·nh tô , tiÕp tôc l·nh ®¹o khëi nghÜa . nghÜa qu©n ph¸t triÓn tÊn m·nh , ®­a tíi triÒu ®×nh khñng ho¶ng , ph¸i träng binh tíi tr­íc tiªu diÖt , ë ®ã trµng huyÕt chiÕn trung , cha ta bÊt h¹nh bŞ ph¶n ®å b¸n , lùc chiÕn bÊt khuÊt , ë thanh loa ®¶o bŞ b¾t hy sinh ","ChuyÖn sau , ta ®em cha ®İch y quan # béi kiÕm cïng mét quyÓn binh th­ cïng nhau ch«n ë <color=Red> thanh loa ®¶o <color>. quyÓn kia binh th­ ®­îc ®Æt tªn lµ <color=Red>' Thiªn v­¬ng di th­ <color>, bªn trong kh«ng chØ cã ghi l¹i cha ta khi cßn sèng hµnh qu©n bµy trËn t©m ®¾c cïng mËt muèn , h¬n n÷a cßn ghi chĞp cÆn kÏ §éng ®×nh hå ®Şa khu qu©n sù yÕu ®Şa cïng thñy lé muèn t¾c , v× vËy ®èi víi bæn bang mµ nãi chİnh lµ mét quyÓn hÕt søc träng yÕu mËt s¸ch . ","Nh­ng lµ gÇn nhÊt kh«ng biÕt bŞ ng­êi nµo ®i lät tin tøc , quyÓn s¸ch nµy bŞ kim quèc dß th¨m , bän hä ph¸i ®¹i l­îng s¸t thñ ®i tr­íc thanh loa ®¶o , muèn ®i c­íp ®o¹t quyÓn s¸ch nµy . ") 
+elseif (UTask_tw == 80*256) or (UTask_tw == 80) then -- script viet hoa By http://tranhba.com  trë l¹i sau ®İch tù do xuÊt nhËp 
+Say("ThÕ nµo ? muèn hµnh tÈu giang hå mét phen ?",2,"§óng vËy , xin mêi bang chñ ©n chuÈn . /goff_yes","Kh«ng , tù ta luyÖn ®İch c«ng phu cßn ch­a ®ñ . /no") 
+elseif (UTask_tw > 60*256) and (UTask_tw < 70*256) then -- script viet hoa By http://tranhba.com  ®· nhËn ®­îc xuÊt s­ nhiÖm vô , ch­a hoµn thµnh 
+Talk(1,"","<color=Red>' Thiªn v­¬ng di th­ <color> bŞ giÊu ë mét <color=Red> b¶o r­¬ng trong <color>, b¶o r­¬ng giÊu ë <color=Red> thanh loa ®¶o b¾c bé <color>, tr­íc ph¶i t×m ®­îc <color=Red> më ra b¶o r­¬ng ®İch c¸i ch×a khãa <color>.") 
+else 
+Talk(1,"","Kim quèc cuång väng ®Şa muèn lËt ®æ trong chóng ta nguyªn vâ l©m , nÕu nh­ huynh ®Ö chóng ta kh«ng ®ång lßng , lµm sao cã thÓ ®èi kh¸ng ®Şch qu©n ®©y ") 
+end 
+-- script viet hoa By http://tranhba.com 	elseif (GetTask(7) == 5*256+10) then		-- script viet hoa By http://tranhba.com  ×ªÅÉÖÁÉÙÁÖÅÉ
+-- script viet hoa By http://tranhba.com  Say("D­¬ng anh # ph¶n béi gióp ng­êi muèn phÕ ®i bæn bang toµn bé vâ c«ng , ng­¬i thËt muèn bèi khİ bæn m«n ®Çu nhËp ph¸i ThiÕu l©m ? ",2,"Kh«ng tÖ , ta ı ®· quyÕt /defection_yes","Kh«ng , ta cßn lµ kh«ng thay ®æi ®Çu ThiÕu L©m liÔu /defection_no") 
+elseif (GetSeries() == 0) and (GetCamp() == 4) and (GetLevel() >= 60) and (UTask_tw == 70*256) and (GetTask(7) < 5*256) then -- script viet hoa By http://tranhba.com  trë l¹i s­ m«n nhiÖm vô 
+Talk(1,"return_select","RÊt tèt # hµnh tÈu giang hå nhí ph¶i gióp gióp khèn khæ ng­êi cña ") 
 	elseif (GetCamp() == 4) and ((UTask_tw == 70*256+10) or (UTask_tw == 70*256+20)) then
-		Say("Ng­¬i ®· chuÈn bŞ ®ñ 5 v¹n l­îng ch­a?",2,"§· chuÈn bŞ xong/return_complete","VÉn ch­a chuÈn bŞ xong/no")
-	elseif (UTask_tw >= 70*256) and (GetFaction() ~= "tianwang") then		--ÒÑ¾­³öÊ¦
-		Talk(1,"","Sau khi rêi khái Thiªn V­¬ng Bang, mäi ng­êi vÉn nh­ anh em ruét thŞt!")
-	else
-		Talk(1,"","Thiªn V­¬ng Bang ®øng gi÷a mèi thï Tèng Kim vÉn ®øng v÷ng, thËm chİ vÉn ph¸t triÓn m¹nh mÏ, ®Òu do huynh ®Ö trong Bang ®oµn kÕt mét lßng")
-	end
-end
+Say("Ng­¬i chuÈn bŞ xong 5 v¹n l­îng sao ?",2,"ChuÈn bŞ xong /return_complete","Cßn kh«ng cã chuÈn bŞ xong /no") 
+elseif (UTask_tw >= 70*256) and (GetFaction() ~= "tianwang") then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
+Talk(1,"","Rêi ®i Thiªn v­¬ng sau mçi ng­êi nh­ cò gièng nh­ tù tay ch©n mét d¹ng !") 
+else 
+Talk(1,"","Thiªn v­¬ng gióp kh«ng dùa vµo tèng kim bÊt kú võa còng cã thÓ ®øng v÷ng , thËm chİ ph¸t triÓn nhanh chãng , ®Òu lµ bëi v× bang chóng huynh ®Ö mét lßng ®oµn kÕt ") 
+end 
+end 
 
----------------------- ¼¼ÄÜµ÷ÕûÏà¹Ø ------------------------
-function check_skill()
-	x = 0
-	skillID = 38					-- ÅÌ¹Å¾ÅÊ½
-	i = HaveMagic(skillID)
-	if (i >= 0) then
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  kü n¨ng ®iÒu chØnh t­¬ng quan -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function check_skill() 
+x = 0 
+skillID = 38 -- script viet hoa By http://tranhba.com  Bµn Cæ chİn thøc 
+i = HaveMagic(skillID) 
+if (i >= 0) then 
 		x = x + 1
-		DelMagic(skillID)
-		AddMagicPoint(i)
-	end
-	if (x > 0) then		-- ÈôÓĞ¼¼ÄÜ·¢Éú±ä»¯£¬ÔòÌßÏÂÏß£¬·ñÔò·µ»Ø¼ÌĞøÁ÷³Ì
-		Say("Vi s­ lÇn nµy bÕ quan suy nghÜ mÊy ngµy, s¸ng chÕ ra ®­îc chiªu thøc míi, b©y giê truyÒn l¹i cho ng­¬i. Häc xong nhí ph¶i tŞnh d­ìng mét thêi gian ®Ó khái lµm tæn th­¬ng kinh m¹ch.",1,"§a t¹ s­ phô /KickOutSelf")
-		return 0
-	else
-		return 1
-	end
-end
+DelMagic(skillID) 
+AddMagicPoint(i) 
+end 
+if (x > 0) then -- script viet hoa By http://tranhba.com  nÕu cã kü n¨ng ph¸t sinh biÕn hãa , lµ ®¸ xuèng tuyÕn , nÕu kh«ng trë vÒ tiÕp tôc l­u tr×nh 
+Say("Vi s­ lÇn nµy bÕ quan suy tİnh mÊy ngµy , s¸ng lËp chiªu thøc míi , b©y giê truyÒn cho ng­¬i . häc xong sau nhí ph¶i tÜnh d­ìng mét ®o¹n thêi gian tr¸nh khái tæn th­¬ng g©n m¹ch .",1,"§a t¹ s­ phô /KickOutSelf") 
+return 0 
+else 
+return 1 
+end 
+end 
 
----------------------- ÖØ·µÈÎÎñ ----------------------
-function goff_yes()
-	Talk(1,"","Tèt l¾m! Hµnh tÈu giang hå nhí gióp ®ì nh÷ng ng­êi khèn khã!")
-	SetTask(3,70*256)
-	AddNote("Rêi khái Thiªn V­¬ng bang, tiÕp tôc hµnh tÈu giang hå. ")
-	Msg2Player("Ban ®· rêi khái Thiªn V­¬ng bang, tiÕp tôc hµnh tÈu giang hå. ")
-	SetFaction("")
-	SetCamp(4)
-	SetCurCamp(4)
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  trë l¹i nhiÖm vô -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function goff_yes() 
+Talk(1,"","ThËt tèt qu¸ ! hµnh tÈu giang hå ph¶i nhí ph¶i trî gióp khèn khæ ng­êi cña a ") 
+SetTask(3,70*256) 
+AddNote("Rêi ®i Thiªn v­¬ng gióp , tiÕp tôc hµnh tÈu giang hå ") 
+Msg2Player("Ng­¬i ®· rêi ®i Thiªn v­¬ng gióp , tiÕp tôc hµnh tÈu giang hå ") 
+SetFaction("") 
+SetCamp(4) 
+SetCurCamp(4) 
+end 
 
-function defection_yes()
--- Ë¢µô¼¼ÄÜ
-	n = 0
-	i=29; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- Õ¶Áú¾÷
-	i=23; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÌìÍõÇ¹·¨
-	i=24; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÌìÍõµ¶·¨
-	i=26; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÌìÍõ´¸·¨
-	i=30; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- »Ø·çÂäÑã
-	i=31; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ĞĞÔÆ¾÷
-	i=32; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÎŞĞÄÕ¶
-	i=33; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ¾²ĞÄ¾÷
-	i=34; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ¾ªÀ×Õ¶
-	i=35; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- Ñô¹ØÈıµş
-	i=36; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÌìÍõÕ½Òâ
-	i=37; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÆÃ·çÕ¶
-	i=38; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÅÌ¹Å¾ÅÊ½£¨ÒÑÈ¡Ïû¼¼ÄÜ£©
-	i=40; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ¶Ï»êØİ
-	i=41; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ÑªÕ½°Ë·½
-	i=42; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- ½ğÖÓÕÖ
-	AddMagicPoint(n)
--- Ë¢Íê¼¼ÄÜºó¼ÌĞø×ªÃÅÅÉÁ÷³Ì
+function defection_yes() 
+-- script viet hoa By http://tranhba.com  cµ r¬i kü n¨ng 
+n = 0 
+	i=29; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  Õ¶Áú¾÷
+	i=23; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÌìÍõÇ¹·¨
+	i=24; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÌìÍõµ¶·¨
+	i=26; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÌìÍõ´¸·¨
+	i=30; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  »Ø·çÂäÑã
+	i=31; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ĞĞÔÆ¾÷
+	i=32; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÎŞĞÄÕ¶
+	i=33; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ¾²ĞÄ¾÷
+	i=34; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ¾ªÀ×Õ¶
+	i=35; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  Ñô¹ØÈıµş
+	i=36; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÌìÍõÕ½Òâ
+	i=37; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÆÃ·çÕ¶
+	i=38; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÅÌ¹Å¾ÅÊ½£¨ÒÑÈ¡Ïû¼¼ÄÜ£©
+	i=40; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ¶Ï»êØİ
+	i=41; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ÑªÕ½°Ë·½
+	i=42; x = HaveMagic(i); if (x ~= -1) then n = n + x end; DelMagic(i)			-- script viet hoa By http://tranhba.com  ½ğÖÓÕÖ
+AddMagicPoint(n) 
+-- script viet hoa By http://tranhba.com  cµ hoµn kü n¨ng nèi nghiÖp tôc chuyÓn m«n ph¸i l­u tr×nh 
 	SetTask(7,5*256+20)
-	SetTask(3,75*256)				-- ÎªÔ­ÃÅÅÉ×÷¸ö±ê¼Ç
-	SetRank(79)						-- Í·ÏÎ½µÎªÕò°ïÔªË§
-	if (GetRepute() < 200) then
-		Msg2Player("V× hµnh vi bÊt trung víi m«n ph¸i, danh väng cña b¹n gi¶m xuèng "..GetRepute().."®iÓm!")
-		AddRepute(-1 * GetRepute())
-	else
-		Msg2Player("V× hµnh vi bÊt trung víi m«n ph¸i, danh väng cña b¹n gi¶m xuèng 200 ®iÓm! ")
-		AddRepute(-200)
-	end
-	AddNote("D­¬ng Anh phÕ bá vâ c«ng Thiªn V­¬ng bang cña b¹n, ®o¹t l¹i chøc K×nh Thiªn Nguyªn So¸i dång thêi c«ng bè cho thiªn h¹ b¹n ®· ra khái Thiªn V­¬ng Bang. B©y giê ng­¬i cã thÓ gia nhËp ThiÕu L©m ph¸i. ")
-	Msg2Player("D­¬ng Anh phÕ bá vâ c«ng Thiªn V­¬ng bang cña b¹n, ®o¹t l¹i chøc K×nh Thiªn Nguyªn So¸i dång thêi c«ng bè cho thiªn h¹ b¹n ®· ra khái Thiªn V­¬ng Bang. B©y giê ng­¬i cã thÓ gia nhËp ThiÕu L©m ph¸i. ")
-	Talk(1,"KickOutSelf","ThËt ®¸ng tiÕc! Ta ph¶i thu håi l¹i vâ c«ng ®· d¹y ng­¬i! Hñy bá danh x­ng K×nh Thiªn Nguyªn So¸i cña ng­¬i")
-end
+SetTask(3,75*256) -- script viet hoa By http://tranhba.com  v× nguyªn m«n ph¸i lµm c¸ dÊu hiÖu 
+SetRank(79) -- script viet hoa By http://tranhba.com  ®Çu hµm xuèng lµm trÊn gióp Nguyªn so¸i 
+if (GetRepute() < 200) then 
+Msg2Player("Bëi v× hµnh ®éng ®èi víi m«n ph¸i bÊt trung , ng­¬i danh väng gi¶m bít "..GetRepute().." ®iÓm !") 
+AddRepute(-1 * GetRepute()) 
+else 
+Msg2Player("Bëi v× hµnh ®éng ®èi víi m«n ph¸i bÊt trung , ng­¬i danh väng gi¶m bít 200 ®iÓm ! ") 
+AddRepute(-200) 
+end 
+AddNote("D­¬ng anh phÕ ng­¬i Thiªn v­¬ng gióp ®İch vâ c«ng , ®o¹t tíi ng­¬i kinh thiªn Nguyªn so¸i ®İch chøc vŞ , ®ång thêi th«ng b¸o thiªn h¹ ng­¬i ®· rêi ®i Thiªn v­¬ng gióp . b©y giê ng­¬i cã thÓ gia nhËp ph¸i ThiÕu l©m . ") 
+Msg2Player("D­¬ng anh phÕ ng­¬i Thiªn v­¬ng gióp ®İch vâ c«ng , ®o¹t tíi ng­¬i kinh thiªn Nguyªn so¸i ®İch chøc vŞ , ®ång thêi th«ng b¸o thiªn h¹ ng­¬i ®· rêi ®i Thiªn v­¬ng gióp . b©y giê ng­¬i cã thÓ gia nhËp ph¸i ThiÕu l©m . ") 
+Talk(1,"KickOutSelf","ThËt tiÕc nuèi , ta muèn thu trë vÒ d¹y vâ c«ng cña ng­¬i # hñy bá ng­¬i kinh thiªn Nguyªn so¸i tªn ") 
+end 
 
-function defection_no()
-	SetTask(7,1*256)				-- ÎªÆóÍ¼ÅÑÊ¦×÷¸ö±ê¼Ç£¬ÒÔ±¸½«À´²»Ê±Ö®Ğè
-	AddNote("B¹n tõ bá ı ®Şnh gia nhËp ThiÕu L©m ph¸i. ")
-	Msg2Player("B¹n tõ bá ı ®Şnh gia nhËp ThiÕu L©m ph¸i. ")
-end
+function defection_no() 
+SetTask(7,1*256) -- script viet hoa By http://tranhba.com  v× ı ®å ph¶n béi s­ lµm c¸ dÊu hiÖu , ®Ó phßng t­¬ng lai bÊt cø t×nh huèng nµo 
+AddNote("Ng­¬i bu«ng tha cho gia nhËp ThiÕu L©m . ") 
+Msg2Player("Ng­¬i bu«ng tha cho gia nhËp ThiÕu L©m . ") 
+end 
 
-function return_select()
-	Say("§óng vËy! Søc mét con ng­êi chØ cã h¹n, ph¶i ®oµn kÕt cïng mäi ng­êi th× míi nªn chuyÖn. Bæn bang vÉn cßn tuyÖt kü trÊn ph¸i 'Kim Chung Tr¸o', chØ truyÒn cho nh÷ng ®Ö tö trung thµnh. ThÕ nµo,cã muèn quay l¹i bæn bang kh«ng?",2,"V©ng, ta muèn trë l¹i Thiªn V­¬ng bang /return_yes","Kh«ng, ta chØ buét miÖng nãi vËy th«i. /return_no")
-end;
+function return_select() 
+Say("§èi víi # mét ng­êi lùc l­îng cã h¹n , muèn ®oµn kÕt mçi mét nh©n tµi cã thÓ ®­îc viÖc . bæn bang cßn cã trÊn ph¸i tuyÖt kû “ Kim chung tr¸o ” , chØ truyÒn cho trung thµnh ®İch ®Ö tö . nh­ thÕ nµo , muèn trë vÒ bæn bang sao ?",2,"Tèt , ta muèn håi thiªn v­¬ng gióp /return_yes","Kh«ng , ta ch¼ng qua lµ thuËn miÖng nãi mét chót . /return_no") 
+end; 
 
-function return_yes()
-	Talk(2,"","RÊt tèt! Tr­íc m¾t qu©n ta ®ang giao chiÕn víi qu©n Tèng, qu©n phİ kh«ng ®ñ, ng­¬i nép 50000 l­îng th× cã thÓ trë l¹i bæn bang häc Kim Chung Tr¸o","V©ng! Xin ®Ó ®Ö tö chuÈn bŞ mét chót. ")
+function return_yes() 
+Talk(2,"","ThËt tèt qu¸ , d­íi m¾t qu©n ta ®ang cïng tèng qu©n giao chiÕn , qu©n phİ ch­a ®ñ , ng­¬i ®ãng 5 v¹n l­îng liÒn cã thÓ trë vÒ bæn gi¸o tíi häc Kim chung tr¸o ","Tèt # ®Ö tö chuÈn bŞ mét chót . ") 
 	SetTask(3,70*256+20)
-	AddNote("Hæ trî 50000 l­îng qu©n phİ cho Thiªn V­¬ng bang cã thÓ quay l¹i m«n ph¸i. ")
-	Msg2Player("Hæ trî 50000 l­îng qu©n phİ cho Thiªn V­¬ng bang cã thÓ quay l¹i m«n ph¸i. ")
-end;
+AddNote(" lÊy ra 5 v¹n l­îng qu©n phİ ñng hé Thiªn v­¬ng gióp liÒn cã thÓ trë l¹i m«n ph¸i . ") 
+Msg2Player(" lÊy ra 5 v¹n l­îng qu©n phİ ñng hé Thiªn v­¬ng gióp liÒn cã thÓ trë l¹i m«n ph¸i . ") 
+end; 
 
-function return_no()
-	Talk(1,"","Ta chØ lµ nh©n tiÖn ghĞ th¨m ®ång m«n th«i!")
-end;
+function return_no() 
+Talk(1,"","Ta ch¼ng qua lµ ®i ngang qua tíi xem mét chót ®ång m«n mµ th«i !") 
+end; 
 
-function return_complete()
-	if(GetCash() >= 50000) then								-- ÓĞ50000Á½
-		Talk(1,"","RÊt tèt! Hoan nghªnh ng­¬i trë l¹i Thiªn V­¬ng Bang, ta phong ng­¬i lµ K×nh Thiªn Nguyªn So¸i. ")
-		Pay(50000)
-		SetTask(3, 80*256)
-		SetFaction("tianwang")
-		SetCamp(3)
-		SetCurCamp(3)
-		SetRank(69)
---		if (HaveMagic(36) == -1) then
---			AddMagic(32)
---			AddMagic(41)
---			AddMagic(324)
---			AddMagic(36)
-		add_tw(70)			-- µ÷ÓÃskills_table.luaÖĞµÄº¯Êı£¬²ÎÊıÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
-		Msg2Player("B¹n häc ®­îc tuyÖt kü trÊn ph¸i cña Thiªn V­¬ng bang: Thiªn V­¬ng ChiÕn ı, Vâ C«ng V« T©m Tr¶m, HuyÕt ChiÕn B¸t ph­¬ng, Thõa Long QuyÕt. ")
---		end
-		AddNote("§· quay trë l¹i Thiªn V­¬ng bang. ")
-		Msg2Faction(GetName().." ®· trë l¹i Thiªn V­¬ng bang, ®­îc phong lµ K×nh Thiªn Nguyªn So¸i")
-	else
-		Talk(2,"","H¶?H×nh nh­ vÉn ch­a ®ñ?","Xin lçi! §Ó ta kiÓm tra l¹i.")
-	end
-end;
+function return_complete() 
+if(GetCash() >= 50000) then -- script viet hoa By http://tranhba.com  cã 50000 hai 
+Talk(1,"","RÊt tèt # hoan nghªnh ng­¬i trë l¹i Thiªn v­¬ng gióp , ta phong ng­¬i v× kinh thiªn Nguyªn so¸i . ") 
+Pay(50000) 
+SetTask(3, 80*256) 
+SetFaction("tianwang") 
+SetCamp(3) 
+SetCurCamp(3) 
+SetRank(69) 
+-- script viet hoa By http://tranhba.com  if (HaveMagic(36) == -1) then 
+-- script viet hoa By http://tranhba.com  AddMagic(32) 
+-- script viet hoa By http://tranhba.com  AddMagic(41) 
+-- script viet hoa By http://tranhba.com  AddMagic(324) 
+-- script viet hoa By http://tranhba.com  AddMagic(36) 
+add_tw(70) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®İch hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
+Msg2Player("Ng­¬i häc ®­îc Thiªn v­¬ng gióp kü n¨ng # Thiªn v­¬ng chiÕn ı , vâ c«ng kh«ng lßng d¹ nµo chĞm , huyÕt chiÕn b¸t ph­¬ng , ngù long quyÕt . ") 
+-- script viet hoa By http://tranhba.com  end 
+AddNote("Trë l¹i Thiªn v­¬ng gióp . ") 
+Msg2Faction(GetName().." trë l¹i Thiªn v­¬ng gióp , bŞ ®ãng cöa v× kinh thiªn Nguyªn so¸i ") 
+else 
+Talk(2,"","A ? gièng nh­ cßn ch­a ®ñ ","Ng­îng ngïng , ta kiÓm tra mét c¸i .") 
+end 
+end; 
 
----------------------- ³öÊ¦ÈÎÎñ ----------------------
-function L60_get()
-	Say("<color=Red>'Thiªn V­¬ng Di th­'<color> tuyÖt ®èi kh«ng thÓ ®Ó r¬i vµo tay ng­êi Kim. Ng­¬i h·y lËp tøc ®Õn <color=Red>Thanh Loa ®¶o<color>, lÊy <color=Red>'Thiªn V­¬ng Di th­'<color> vÒ ®©y! Cã lµm ®­îc kh«ng?", 2, "Thuéc h¹ tËn lùc thi hµnh /L60_get_yes", "E r»ng khã cã thÓ nhËn nhiÖm vô /no")
-end;
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  xuÊt s­ nhiÖm vô -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function L60_get() 
+Say("<color=Red>' Thiªn v­¬ng di th­ <color> tuyÖt ®èi kh«ng thÓ r¬i vµo ng­êi Kim trong tay . ng­¬i lËp tøc ®Õn <color=Red> thanh loa ®¶o <color>, b¾t ®­îc <color=Red>' Thiªn v­¬ng di th­ <color> trë l¹i # lµm ®­îc ®Õn sao ?", 2,"Thuéc h¹ nhÊt ®Şnh tËn t©m tËn lùc /L60_get_yes","Thuéc h¹ sî r»ng kh«ng thÓ tiÕp nhËn nhiÖm vô nµy /no") 
+end; 
 
-function L60_get_yes()
-	Talk(1,"","<color=Red>'Thiªn V­¬ng Di th­'<color> ®­îc giÊu trong mét <color=Red>B¶o r­¬ng <color>, B¶o r­¬ng ®­îc giÊu ë <color=Red>phİa b¾c Thanh Loa ®¶o<color>, tr­íc tiªn cÇn ph¶i t×m ®­îc <color=Red>Ch×a khãa ®Ó më B¶o r­¬ng<color>. Ng­¬i h·y lËp tøc ®i thuyÒn ®Õn <color=Red>Thanh Loa ®¶o<color>. Nhí pahØ hÕt søc cÈn thËn!")
+function L60_get_yes() 
+Talk(1,"","<color=Red>' Thiªn v­¬ng di th­ <color> giÊu ë mét <color=Red> b¶o r­¬ng <color>, b¶o r­¬ng giÊu ë <color=Red> thanh loa ®¶o b¾c bé <color>, tr­íc ph¶i t×m ®­îc <color=Red> më ra b¶o r­¬ng ®İch c¸i ch×a khãa <color>. ng­¬i nhanh lªn ngåi thuyÒn ®i <color=Red> thanh loa ®¶o <color>. nhí muèn ngµn v¹n cÈn thËn !") 
 	SetTask(3, 60*256+20)
-	AddNote("T¹i TÈm cung Thiªn V­¬ng bang (223, 196) gÆp D­¬ng Anh, tiÕp nhËn nhiÖm vô ®i Thanh Loa ®¶o thu håi Thiªn V­¬ng Di Th­. ")
-	Msg2Player("T¹i TÈm cung Thiªn V­¬ng bang (223, 196) gÆp D­¬ng Anh, tiÕp nhËn nhiÖm vô ®i Thanh Loa ®¶o thu håi Thiªn V­¬ng Di Th­. ")
-end;
+AddNote(" ë trªn trêi v­¬ng gióp tÈm cung (223, 196) thÊy d­¬ng anh , tiÕp nhËn nhiÖm vô ®i thanh loa ®¶o cÇm håi thiªn v­¬ng di th­ ") 
+Msg2Player(" ë trªn trêi v­¬ng gióp tÈm cung (223, 196) thÊy d­¬ng anh , tiÕp nhËn nhiÖm vô ®i thanh loa ®¶o cÇm håi thiªn v­¬ng di th­ ") 
+end; 
 
-function L60_prise()
-DelItem(96)
-Msg2Player("Chóc mõng b¹n ®· xuÊt s­ thµnh c«ng, b¹n ®­îc phong lµ TrÊn Bang Nguyªn So¸i! Danh väng t¨ng thªm 120 ®iÓm! ")
---AddGlobalCountNews(GetName().."ÒÕ³É³öÊ¦£¬¸æ±ğÍ¬ÃÅÊ¦µÜ¿ªÊ¼´³µ´½­ºş¡£", 1)
-Msg2SubWorld("Thiªn V­¬ng"..GetName().."XuÊt s­ thµnh c«ng, c¸o biÖt D­¬ng bang chñ vµ c¸c ®ång m«n huynh ®Ö, tiÕp tôc hµnh tÈu giang hå. ")
-AddRepute(120)
-SetRank(79)
-SetTask(3, 70*256)
-SetFaction("")
-SetCamp(4)			   				--Íæ¼ÒÍË³öÌìÍõ°ï
-SetCurCamp(4)
-AddNote("Quay l¹i TÈm cung Thiªn V­¬ng Bang, ®­a Thiªn V­¬ng Di Th­ cho Bang chñ D­¬ng Anh, hoµn thµnh nhiÖm vô xuÊt s­. Th¨ng chøc K×nh Thiªn Nguyªn So¸i.. ")
-end;
+function L60_prise() 
+DelItem(96) 
+Msg2Player("Chóc mõng ng­¬i xuÊt s­ thµnh c«ng , ng­¬i bŞ ®ãng cöa v× trÊn bang Nguyªn so¸i # danh väng gia t¨ng 120 ®iÓm ") 
+-- script viet hoa By http://tranhba.com AddGlobalCountNews(GetName().." thµnh tµi xuÊt s­ , tõ gi¶ ®ång m«n s­ ®Ö b¾t ®Çu x«ng x¸o giang hå . ", 1) 
+Msg2SubWorld("Thiªn v­¬ng "..GetName().." thµnh tµi xuÊt s­ , tõ gi¶ ®ång m«n huynh ®Ö tiÕp tôc x«ng x¸o giang hå ") 
+AddRepute(120) 
+SetRank(79) 
+SetTask(3, 70*256) 
+SetFaction("") 
+SetCamp(4) -- script viet hoa By http://tranhba.com  nhµ ch¬i thèi lui ra Thiªn v­¬ng gióp 
+SetCurCamp(4) 
+AddNote("Trë vÒ Thiªn v­¬ng gióp tÈm cung , ®em Thiªn v­¬ng di th­ giao cho bang chñ d­¬ng anh , hoµn thµnh xuÊt s­ nhiÖm vô . vinh th¨ng lªn kinh thiªn Nguyªn so¸i .. ") 
+end; 
 
-function no()
-end
+function no() 
+end 

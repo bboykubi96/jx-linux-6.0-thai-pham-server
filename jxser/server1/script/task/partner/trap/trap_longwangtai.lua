@@ -1,11 +1,11 @@
--- script viet hoa By http://tranhba.com  v©n trung ®¹o Long v­¬ng thai chiÕn ®Êu thiÕt ®æi ®iÓm 
+-- ÔÆÖĞµÀ ÁúÍõÌ¨ Õ½¶·ÇĞ»»µã
 
-function main(sel) 
-if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
-SetPos(1666,3524); -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ®ang chiÕn ®Êu khu vùc 
-SetFightState(1); -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 
-else 
-SetPos(1662,3520); -- script viet hoa By http://tranhba.com  thiÕt trİ ®i ra Trap ®iÓm , môc ®İch ®iÓm ë kh«ng ph¶i lµ chiÕn ®Êu khu vùc 
-SetFightState(0); -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu 
-end; 
+function main(sel)
+	if ( GetFightState() == 0 ) then	-- Íæ¼Ò´¦ÓÚ·ÇÕ½¶·×´Ì¬
+		SetPos(1666,3524);		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚÕ½¶·ÇøÓò
+		SetFightState(1);		-- ×ª»»ÎªÕ½¶·×´Ì¬
+	else
+		SetPos(1662,3520);		-- ÉèÖÃ×ß³öTrapµã£¬Ä¿µÄµãÔÚ·ÇÕ½¶·ÇøÓò
+		SetFightState(0);		-- ×ª»»Îª·ÇÕ½¶·×´Ì¬
+	end;
 end;

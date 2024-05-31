@@ -1,7 +1,7 @@
---½­ÄÏÇø ÎäÒÄÉ½5toÁ½Ë®¶´ÃÔ¹¬3
---Trap ID£º½­ÄÏÇø 53
+-- script viet hoa By http://tranhba.com  Giang Nam khu Vò di s¬n 5to hai n­íc ®éng mª cung 3 
+-- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 53 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(181, 1828, 3154);
-end;
+function main(sel) 
+SetFightState(1); 
+NewWorld(181, 1828, 3154); 
+end; 

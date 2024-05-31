@@ -1,9 +1,9 @@
---Á½ºşÇø ÌìÍõ°ï ºÅÁîÌ¨¹ã³¡´¢ÎïÏä2
+-- script viet hoa By http://tranhba.com  hai hå khu Thiªn v­¬ng gióp hiÖu lÖnh thai qu¶ng tr­êng tr÷ vËt r­¬ng 2 
 
-function main(sel)
+function main(sel) 
 
-OpenBox();		--µ¯³ö´¢ÎïÏäÎïÆ·¿òºÍÍæ¼ÒÎïÆ·¿ò£¬ÒÔ±ãÓÚÍæ¼Ò½øĞĞÎïÆ·ºÍ½ğÇ®µÄ´æÈ¡
-if (GetFaction() == "tianwang") then
-SetRevPos(22);		--ÉèÖÃÖØÉúµã
-end
+OpenBox(); -- script viet hoa By http://tranhba.com  b¾n ra tr÷ vËt r­¬ng vËt phÈm khu«ng cïng nhµ ch¬i vËt phÈm khu«ng , ®Ó víi nhµ ch¬i tiÕn hµnh vËt phÈm cïng kim tiÒn ®İch tån lÊy 
+if (GetFaction() == "tianwang") then 
+SetRevPos(22); -- script viet hoa By http://tranhba.com  thiÕt trİ sèng l¹i ®iÓm 
+end 
 end;

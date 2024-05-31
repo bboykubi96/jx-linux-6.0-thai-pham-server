@@ -1,9 +1,9 @@
---Á½ºþÇø °ÍÁêÏØ Ä¾ÈËËÀÍö ÐÂÊÖ´åÁ·¼¶ÈÎÎñ(²»¿ÉÖØ¸´µÄÈÎÎñ)
--- Update: Dan_Deng(2003-08-09)
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn méc nh©n tö vong tay míi th«n luyÖn cÊp nhiÖm vô ( kh«ng thÓ t¸i diÔn ®Ých nhiÖm vô ) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-09) 
 
-function learn()
-	UTask_world32 = GetTask(32)
-	if (UTask_world32 >= 140) and (UTask_world32 < 190) then
+function learn() 
+UTask_world32 = GetTask(32) 
+if (UTask_world32) ~= nil and (UTask_world32 >= 140) and (UTask_world32 < 190) then 
 		SetTask(32,GetTask(32)+1)
-	end
-end;
+end 
+end; 

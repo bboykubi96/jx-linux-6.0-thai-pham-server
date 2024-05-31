@@ -1,10 +1,10 @@
---中原北区 宋金战场to朱仙镇
---Trap ID：中原北区 43
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu t鑞g kim chi課 trng to Chu ti猲 tr蕁 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 43 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(100, 1406, 3486);
+SetFightState(1) 
+NewWorld(100, 1406, 3486); 
 
 
 end;

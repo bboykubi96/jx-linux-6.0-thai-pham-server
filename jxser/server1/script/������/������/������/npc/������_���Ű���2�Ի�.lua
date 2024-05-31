@@ -1,8 +1,7 @@
---Á½ºşÇø ÌìÍõ°ï ´óÃÅ°ïÖÚ2¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu Thiªn v­¬ng gióp ®¹i m«n bang chóng 2 ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("800 dÆm quanh §éng §×nh Hå cã ai kh«ng biÕt danh tiÕng cña Thiªn V­¬ng cña chóng ta",0)
+Say("Thiªn v­¬ng bang chóng # §éng §×nh t¸m tr¨m dÆm , cã ai kh«ng biÕt chóng ta Thiªn v­¬ng gióp ®İch ®¹i danh #",0) 
 
-end;
-
+end; 

@@ -1,4 +1,4 @@
-
+--Thong bao khi khoi dong server edit by mcteam
 Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\activitysys\\activity.lua")
 Include("\\script\\activitysys\\detailtype\\itemscript.lua")
@@ -85,7 +85,19 @@ G_ACTIVITY:UnRegisteItemScript(pItemScript.tbItem)
 local bTestCaseRet3 = TestItem(pItemScript.tbItem, -1)
 
 if bTestCaseRet1 == 1 and bTestCaseRet1 == 1 and bTestCaseRet3 == 1 then
-print("\n \n----------------Chao mung ban den voi VolamTruyenKy----------------\n----------- Ver CTC By TranMinhDo - Nam Cung Nhat Thien------------\n----------------Mua Server Va Cac Dich Vu Lien He :----------------\n-----------------01649525074 Hoac FB:01649525074-------------------\n------ Server da khoi dong hoan tat - Chuc cac ban choi vui ve-----\n \n ") 
-else 
-print("\n \n----------------Chao mung ban den voi VolamTruyenKy----------------\n----------- Ver CTC By TranMinhDo - Nam Cung Nhat Thien------------\n----------------Mua Server Va Cac Dich Vu Lien He :----------------\n-----------------01649525074 Hoac FB:01649525074-------------------\n------ Khoi dong that bai vui long kiem tra lai he thong ---------------------\n \n ") 
+	print("===============================================================")
+	print("======================Vo Lam Truyen Ky==========================")
+	print("==================Viet Hoa Tong Hop Version 1=======================")
+	print("====================By MC Team========================")
+	print("================Chuc Cac Ban Choi Game Vui Ve======================")
+	print("===============================================================")
+
+else
+	print("===============================================================")
+	print("======================Vo Lam Truyen Ky==========================")
+	print("==================Viet Hoa Tong Hop Version 1=======================")
+	print("====================By MC Team========================")
+	print("================Chuc Cac Ban Choi Game Vui Ve======================")
+	print("===============================================================")
+	print("ItemScript Test --------------- Fail", bTestCaseRet1, bTestCaseRet2, bTestCaseRet3)
 end

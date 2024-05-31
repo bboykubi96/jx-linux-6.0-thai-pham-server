@@ -5,7 +5,7 @@ Include("\\script\\global\\baijuwanhead.lua")
 function main(itemindex)
 	SetTaskTemp(AEXP_TEMPOFFLINETASKID, itemindex)
 	str=
-	{	"<#> Sö dông sÏ nhËn ®­îc <color=red>8 giê<color> ñy th¸c.",
+	{	"<#>Sö dông sÏ nhËn ®­îc <color=red>8 giê<color> ñy th¸c.",
 		"<#> Sö dông B¹ch C©u hoµn/confirmlevel",
 		"<#> §Ó ta suy nghÜ l¹i!/cancel",
 		"<#> Tra xem thêi gian treo m¸y cßn l¹i cña ta/get_left_time",

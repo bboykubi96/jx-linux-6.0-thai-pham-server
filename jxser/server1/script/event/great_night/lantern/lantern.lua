@@ -1,15 +1,25 @@
 -- 2005ÖÐÇï½Ú»î¶¯ »¨µÆNPC½Å±¾ by wangbin 2005-09-02
-
+Include("\\script\\lib\\awardtemplet.lua")
 IncludeLib("FILESYS")
 Include("\\script\\event\\great_night\\lantern\\create_lanterns.lua")
 Include("\\script\\tong\\tong_award_head.lua");
 
 LANTERN_TSKID_DATE	= 1604;
 LANTERN_TSKID_WCNT	= 1605;
-MX_LANTERN_COUNT	= 30;
+MX_LANTERN_COUNT	= 10; -- So luong hoa dang tra loi toi da trong ngay
 LANTERN_FILE = "\\settings\\event\\zhongqiuhuodong\\zhongqiudengmi.txt"
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+	--dofile("script/event/great_night/lantern/lantern.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if doanhoadang == 0 then
+		--Say("Ho¹t ®éng Hoa §¨ng t¹m thêi ch­a më.", 0)
+		--return
+	end
+
 	local npcidx = GetLastDiagNpc()
 	if (GetNpcParam(npcidx, 4) == 0 ) then
 		return
@@ -21,15 +31,18 @@ function main()
 		SetTask(LANTERN_TSKID_WCNT, 0)
 	end
 	
-	if ( GetLevel() < 20 ) then
-		Say("§¼ng cÊp thÊp h¬n 20, kh«ng thÓ tham gia ho¹t ®éng nµy.", 0)
+	if ( GetLevel() < 50 ) then
+		Say("§¼ng cÊp thÊp h¬n 50, kh«ng thÓ tham gia ho¹t ®éng nµy.", 0)
 		return
 	end
 	
 	if ( GetTask(LANTERN_TSKID_WCNT) >= MX_LANTERN_COUNT ) then
-		Say("H«m nay b¹n ®· ®o¸n ®óng "..MX_LANTERN_COUNT.."nhiÒu c©u ®è råi! Nh­êng c¬ héi cho ng­êi kh¸c ®i!", 0)
+		Say("H«m nay b¹n ®· ®o¸n ®óng <color=red>"..MX_LANTERN_COUNT.."<color> nhiÒu c©u ®è råi! Nh­êng c¬ héi cho ng­êi kh¸c ®i!", 0)
 		return
 	end
+
+	Msg2Player("H«m nay ®· tr¶ lêi: <color=green>"..GetTask(LANTERN_TSKID_WCNT).. " lÇn<color> cßn l¹i: <color=yellow>" .. MX_LANTERN_COUNT - GetTask(LANTERN_TSKID_WCNT) .."<color> lÇn ")
+
 	show_riddle(0, "C©u ®è nh­ sau: <enter>" )
 	SetNpcParam(npcidx,4,0)
 	delnpcsafe(npcidx)	--delete npc
@@ -108,11 +121,31 @@ tbl_awards = {
 	{0, {"Tö Thñy Tinh", 239}},
 };
 
+function Thuong3LanDungLienTiep()
+	local tbAward = 
+	{	
+		{szName = "TÈy Tñy Kinh"				,tbProp={6,1,22,1,0,0},nCount=1,nRate=0.001},
+		{szName = "Vâ L©m MËt TÞch"		,tbProp={6,1,26,1,0,0},nCount=1,nRate=0.001},
+		{szName = "Tinh hång b¶o th¹ch",					tbProp={4,353,1,1,0,0},nCount=1,nRate=0.002},--2 vien
+		{szName = "Tö thñy tinh",								tbProp={4,239,1,1,0,0},nCount=1,nRate=0.01},
+		{szName = "Lôc thñy tinh",								tbProp={4,240,1,1,0,0},nCount=1,nRate=0.01},
+		{szName = "Lam thñy tinh",							tbProp={4,238,1,1,0,0},nCount=1,nRate=0.01},
+		{szName = "QuÕ Hoa Töu",							tbProp={6,1,125,1,0,0},nCount=1,nRate=0.001},
+		{szName = "Thiªn s¬n  B¶o Lé",							tbProp={6,1,72,1,0,0},nCount=1,nRate=0.5},
+		{szName = "Phóc Duyªn Lé (§¹i)",							tbProp={6,1,124,1,0,0},nCount=1,nRate=0.01},
+		{szName = "Tiªn Th¶o Lé",							tbProp={6,1,71,1,0,0},nCount=1,nRate=0.1},
+		{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 1000000,nRate=49},
+		{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 700000,nRate=50},
+	}
+	tbAwardTemplet:Give(tbAward, 1, {"3CauHoaDangLienTiep", "3CauHoaDangLienTiep"})
+	Msg2Player("§¹i hiÖp <color=yellow>"..GetName().."<color> ®· tr¶ lêi ®óng liªn tiÕp <color=green>3 c©u hái Hoa §¨ng<color> t¹i ®Ønh Hoa S¬n nhËn ®­îc phÇn th­ëng!")
+end
+
 -- ·¢½±
 function issue(items)
 local szLog = date("%y-%m-%d,%H:%M,").."Account:"..GetAccount()..",Name:"..GetName()..",in the mid_autumn "
 	if (items[1] ~= 0) then
-		local exp = items[1] * 10000
+		local exp = items[1] * 200000
 		AddOwnExp(exp)
 		Msg2Player("B¹n ®¹t ®­îc" .. exp .. "®iÓm kinh nghiÖm.");
 		szLog = szLog.."get "..exp.." point experience;"
@@ -127,7 +160,8 @@ local szLog = date("%y-%m-%d,%H:%M,").."Account:"..GetAccount()..",Name:"..GetNa
 		elseif (count == 9) then
 			AddQualityItem(attrs[2], attrs[3], attrs[4], attrs[5], attrs[6], attrs[7], attrs[8], attrs[9])
 		end
-		Msg2Player("B¹n nhËn ®­îc mét" .. attrs[1] .. "!");
+		--Msg2Player("B¹n nhËn ®­îc mét" .. attrs[1] .. "!");
+		Msg2Player("§¹i hiÖp <color=yellow>"..GetName()"<color> ®· tr¶ lêi ®óng liªn tiÕp <color=green>3 c©u hái Hoa §¨ng<color> t¹i ®Ønh Hoa S¬n nhËn ®­îc mét <color=pink>" .. attrs[1] .. "<color>!")
 		szLog = szLog.."get "..attrs[1]..";"
 	end
 	WriteLog(szLog)
@@ -190,7 +224,14 @@ function answer_ok(count)
 		tongaward_riddle()
 		local index = get_odds_award(tbl_odds, 100)
 		if (index >= 1) then
-			issue(tbl_awards[index])
+			--issue(tbl_awards[index])
+			--Thuong3LanDungLienTiep()
+			local rannn=random(1,2)
+		--	if rannn==1 then
+			tbAwardTemplet:GiveAwardByList({{nExp_tl = 500000}}, "test", 1);
+		--	else
+	--		tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Chi LÖnh",tbProp={6,1,4407,1,0,0},nCount=1},}, "test", 1);
+	--	end
 			Talk(1, "", "Ng­¬i ®· ®¸p ®óng liªn tôc 3 c©u! Xin nhËn phÇn th­ëng!")
 			SetTask(LANTERN_TSKID_WCNT, GetTask(LANTERN_TSKID_WCNT) + 1)
 			DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "huashandengmi")

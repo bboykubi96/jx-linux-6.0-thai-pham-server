@@ -16,6 +16,8 @@ IL("RELAYLADDER");
 Include("\\script\\missions\\leaguematch\\tb_head.lua")
 Include("\\script\\lib\\common.lua")
 
+Include("\\script\\global\\g7vn\\phanthuongliendau.lua")
+
 -- 2006/04/21 ¼ÓÈë×°±¸Éı¼¶ÈÎÎñ - ÅåÀ×Ë¹
 --Include("\\script\\task\\equipex\\head.lua");
 Include("\\script\\tong\\tong_award_head.lua");--°ï»áÖÜÄ¿±ê
@@ -116,7 +118,7 @@ WLLS_LGTYPE		= 5	--Õ½¶ÓÀàĞÍ
 WLLS_REG_LGTYPE	= 2	--µÇ¼Ç´¦Õ½¶ÓÀàĞÍ
 
 WLLS_LEVEL_JUNIOR	= 80	--²Î¼ÓĞÂĞãÈüËùĞè×îĞ¡¼¶±ğ
-WLLS_LEVEL_SENIOR	= 120	--²Î¼ÓÎäÁÖÈüËùĞè×îĞ¡¼¶±ğ
+WLLS_LEVEL_SENIOR	= 80	--²Î¼ÓÎäÁÖÈüËùĞè×îĞ¡¼¶±ğ
 
 WLLS_MIN_TEAM	= 2	--±ÈÈü³¡ÖÁÉÙ¶àÉÙ²ÎÈü¶ÓÎé²Å¿ÉÒÔ¿ªÕ½
 
@@ -133,6 +135,7 @@ WLLS_CITY_INDEX	= {
 	[162]	= {2,1},
 	[80]	= {2,2},
 	[1]	= {2,3},
+	[53]	= {2,3}, 
 	[11]	= {2,4},
 }
 
@@ -222,6 +225,7 @@ WLLS_FORBID_ITEM = {
 	{	"Hoµn Hån §¬n LÔ Bao", {6, 1, 2830, -1, 0, 0},635},
 	{	"Tiªu Diªu T¸n", {6, 1, 2831, -1, 0, 0},635},
 	{	"Hoµn Hån §¬n", {6, 1, 2837, -1, 0, 0},635},
+	{	"Tói M¸u T©n Thñ", {6, 1, 4461, -1, 0, 0},635},
 }
 
 WLLS_FORBID_STATES = {
@@ -351,7 +355,7 @@ function wlls_check_addmem(n_capidx, n_lid, n_mtype)
 	return WLLS_TAB[n_nexttype].check_addmem(n_capidx, n_lid, n_mtype)
 end
 
---Ã¿³¡½áÊø¼Ó¾­Ñé
+--Tang diem 
 function wlls_award_pl_exp(n_rate, n_alevel)
 	if (GetUUID() == 0) then	--ÏÂÏßµÄ²»¸ø¾­ÑéÁË
 		wlls_award_log("Bëi v× ng­êi ch¬i ®· tho¸t m¹ng, kh«ng thÓ nhËn phÇn th­ëng kinh nghiÖm.")
@@ -366,6 +370,7 @@ function wlls_award_pl_exp(n_rate, n_alevel)
 	local n_exp = (700+floor((n_level*4-350)/5)*100)*60*0.6*n_rate
 	wlls_add_exp(n_exp)
 	local str = "NhËn ®­îc phÇn th­ëng thi ®Êu——<color=yellow>"..n_exp.."<color>®iÓm kinh nghiÖm"
+	--tl_addPlayerExp(n_exp)
 	wlls_award_log(str)
 	Msg2Player(str)
 end
@@ -677,6 +682,9 @@ function wlls_award_pl(nLevel, nWin, nTie, nTotal)
 		SetTask(WLLS_TASKID_HONOUR, GetTask(WLLS_TASKID_HONOUR) + nPoint)
 		Msg2Player(format("Chóc mõng b¹n ®· nhËn ®­îc phÇn th­ëng --- §iÓm vinh dù lµ %d ®iÓm", nPoint))
 		wlls_award_log(format("Chóc mõng b¹n ®· nhËn ®­îc phÇn th­ëng liªn ®Êu - §iÓm vinh dù lµ %d ®iÓm. Tæng céng cã %d ®iÓm", nPoint, GetTask(WLLS_TASKID_HONOUR)))
+
+		phanthuongthemliendau()
+
 	end
 	SetTask(WLLS_TASKID_TOTAL, GetTask(WLLS_TASKID_TOTAL) + nTotal)
 end
@@ -836,11 +844,11 @@ function wlls_matchresult(str_league1, str_league2, result, n_usedtime)
 		wlls_award_lg(n_level, str_league1, 1, n_usedtime)
 	else
 		if (result == 1) then	--Ê¤
-			str = str.." ®éi ["..str_league1.."]chiÕn th¾ng ["..str_league2.."]!"
+			str = str.." ®éi ["..str_league1.."] chiÕn th¾ng ["..str_league2.."]!"
 			wlls_award_lg(n_level, str_league1, 1, n_usedtime)
 			wlls_award_lg(n_level, str_league2, 2, n_usedtime)
 		else		--Æ½
-			str = str.." ®éi ["..str_league1.."]cïng ®éi ["..str_league2.."] hßa nhau!"
+			str = str.." ®éi ["..str_league1.."] cïng ®éi ["..str_league2.."] hßa nhau!"
 			wlls_award_lg(n_level, str_league1, 0, n_usedtime)
 			wlls_award_lg(n_level, str_league2, 0, n_usedtime)
 		end
@@ -1038,10 +1046,11 @@ end
 
 --ÅĞ¶Ïµ±Ç°ÁªÈüÊÇ·ñ¿ªÆô
 function wlls_CheckIsOpen(nLevel)
+	
 	local nClose = GetGlbValue(GLB_WLLS_CLOSE)
 	if (nClose) then
 		if (GetBit(nClose, nLevel) ~= 0) then
-			Say(wlls_npcname().."Xin lçi! M¸y chñ "..WLLS_LEVEL_DESC[nLevel].."hiÖn ®ang t¹m dõng!", 0)
+			Say(wlls_npcname().."Xin lçi! M¸y chñ "..WLLS_LEVEL_DESC[nLevel].." hiÖn ®ang t¹m dõng!", 0)
 			return nil
 		end
 	end

@@ -1,5 +1,5 @@
--- ÌìÁúËÂÍ¨ÍùÎŞÏà±¦Ëş
+-- script viet hoa By http://tranhba.com  thiªn long tù ®i th«ng v« t­íng b¶o th¸p 
 
-function main()
-	Say("T¨ng nh©n trong tù ®ang tŞnh tu, tèt nhÊt ng­¬i ®õng nªn tïy tiÖn x«ng vµo V« T­íng B¶o Th¸p ®ã!",0);
+function main() 
+Say("Tù bªn trong t¨ng nh©n ®ang tÜnh tu , ng­¬i tèt nhÊt kh«ng nªn tïy tiÖn tiÕn vµo v« t­íng b¶o th¸p !",0); 
 end

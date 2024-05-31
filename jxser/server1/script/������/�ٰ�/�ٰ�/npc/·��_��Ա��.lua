@@ -9,9 +9,9 @@ function main()
 		Describe("Hoa viªn ngo¹i: Trung thu ®· ®Õn, chØ cÇn thu thËp ®ñ 6 <color=red>m¶nh tranh V©n Du<color> ®Ó hîp thµnh 1 bøc tranh hoµn chØnh mang ®Õn cho ta, ta sÏ tÆng l¹i ®¹i hiÖp 1 b¸nh <color=red>Cèng NguyÖt Phï Dung<color>.",2,"§æi b¸nh Cèng NguyÖt Phï Dung/makeItemUI","Nh©n tiÖn ghĞ qua th«i/NoChoice")
 	else
 		if (random(0,1) == 0) then
-			Talk(1,"","Ta vèn kh«ng ph¶i lµ ng­êi trong chèn quan tr­êng nh­ng l¹i quen thuéc víi nhiÒu ng­êi næi danh trong Giang hå. ChØ cÇn cã tiÒn b¹c, viÖc g× mµ ch¼ng xong!")
-		else
-			Talk(1,"","Ai ai còng ®Òu muèn lµm quan v× ch­a hiÓu ®­îc hiÓm nguy lu«n r×nh rËp. Ch¼ng b»ng ®­îc ta, tiªu diªu tù t¹i")
+Talk(1,"","Hoa viªn ngo¹i  ta tuy kh«ng ph¶i lµ ng­êi trong quan tr­êng , nh­ng lµ trong triÒu ®¹i viªn còng cïng ta qu¸ møc thôc , chØ cÇn cã b¹c , cßn sî kh«ng lµm ®­îc chuyÖn ? ") 
+else 
+Talk(1,"","Hoa viªn ngo¹i  ng­êi ng­êi còng muèn lµm quan , ph¶i biÕt sÜ ®å gian hiÓm , kia cïng ®­îc víi ta nh­ vËy tiªu dao tù t¹i ") 
 		end
 	end
 end;

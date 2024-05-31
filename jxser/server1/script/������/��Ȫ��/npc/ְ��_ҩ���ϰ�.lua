@@ -16,7 +16,7 @@ function L10_buy()
 end;
 
 function L10_buy_sele()
-	Say("Nh­ng mµ nÕu ng­¬i cã thÓ tr¶ thªm ta chót ®Ønh th×...heyhey, 1000 l­îng th«i!",2,"Mua/L10_buy_yes","Sao gièng c­íp qu¸ vËy!/L10_buy_no")
+	Say("Nh­ng mµ nÕu ng­¬i cã thÓ tr¶ thªm ta chót ®Ønh th×……heyhey, 1000 l­îng th«i!",2,"Mua/L10_buy_yes","Sao gièng c­íp qu¸ vËy!/L10_buy_no")
 end;
 
 function L10_buy_yes()

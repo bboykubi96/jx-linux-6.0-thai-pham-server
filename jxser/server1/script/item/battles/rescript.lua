@@ -4,8 +4,12 @@
 Include("\\script\\battles\\battlehead.lua");
 Include("\\script\\battles\\battleinfo.lua");
 
-
 function main()
+
+		Msg2Player("Lóc nµy b¹n kh«ng thÓ sö dông vËt phÈm nµy");
+		return 0
+end
+function main1()
 	W,X,Y = GetWorldPos();
 
 	local nSongNumber = 60; -- ËÎ·½ÈËÊı
@@ -54,14 +58,14 @@ function main()
 		return 1;
 	end
 	
-	if (nMapId == 162) then	--ÎäÁÖµÚÒ»°ïµØÍ¼
-		Say("HiÖn t¹i c¸c h¹ ®ang ë thµnh §¹i Lı, cã thÓ ®Õn c¸c ®Şa ®iÓm sau ®Ó b¸o danh:\nPhe Tèng (T): täa ®é <color=red>201/203<color>\nPhe Kim (K): täa ®é <color=red>195/204<color>", 1, "§ãng/onCancel")
-		return 1;
-	end
+	-- if (nMapId == 162) then	--ÎäÁÖµÚÒ»°ïµØÍ¼
+		-- Say("HiÖn t¹i c¸c h¹ ®ang ë thµnh §¹i Lı, cã thÓ ®Õn c¸c ®Şa ®iÓm sau ®Ó b¸o danh:\nPhe Vµng (T): täa ®é <color=red>201/203<color>\nPhe Tİm (K): täa ®é <color=red>195/204<color>", 1, "§ãng/onCancel")
+		-- return 1;
+	-- end
 	
 	Say ( "<#> <color=red>Chiªu th­<color><enter><enter><color><enter><enter>   sè ng­êi chiÕm thÕ m¹nh tuy trªn chiÕn tr­êng cã 1 vµi ­u thÕ nh­ng ®iÓm tİch lòy nhËn ®­îc<enter> cã thÓ t­¬ng ®èi İt, b¹n muèn ®Õn ®iÓm b¸o danh cña phe nµo?", 
-			4, "\tVµo ®iÓm b¸o danh phe Tèng (T) /ToSong", 
-			"\tVµo ®iÓm b¸o danh phe Kim (K) /ToJin", 
+			4, "\tVµo ®iÓm b¸o danh phe Vµng (T) /ToSong", 
+			"\tVµo ®iÓm b¸o danh phe Tİm (K) /ToJin", 
 			" Ta lµ ®µo binh.../Cancel" );
 	-- ¿Õ¸ñ²»Òª¸ÄÁË£¬ÎªÁË¾ÓÖĞÏÔÊ¾
 	return 1;
@@ -69,10 +73,10 @@ function main()
 end
 
 function ToSong()	-- ½øÈëËÎ·½±¨Ãûµã	
-	--if ( GetLevel() < 120 ) then
-		--Talk( 1, "", "Phong V©n LuËn KiÕm gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 120 h·y vÒ luyÖn thªm råi h·y tİnh." );
-		--return
-	--end
+	-- if ( GetLevel() < 120 ) then
+		-- Talk( 1, "", "Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 120 h·y vÒ luyÖn thªm råi h·y tİnh." );
+		-- return
+	-- end
 	if ( GetLevel() < 40 ) then
 		Talk( 1, "", "ChiÕn tr­êng Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 40 h·y vÒ luyÖn thªm råi h·y tİnh." );
 	elseif ( GetLevel() >= 40 and GetLevel() < 80 ) then
@@ -89,17 +93,20 @@ function ToSong()	-- ½øÈëËÎ·½±¨Ãûµã
 		end
 	else
 		if (DelCommonItem( 6, 1, 155, 1, 0, 0) == 1) then
-			NewWorld( 325,1541, 3178);
+			NewWorld( 325, 1541, 3178);
 			DisabledUseTownP(0); -- ²»ÏŞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
 			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Cao CÊp" );
+			-- NewWorld( 162,1608,3254);
+			-- DisabledUseTownP(0); -- ²»ÏŞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			-- Msg2Player( "§· ®Õn thµnh §¹i Lı" );
 		end
 	end
 end
 
 function ToJin()	-- ½øÈë½ğ·½±¨Ãûµã
 	--if ( GetLevel() < 120 ) then
-	--	Talk( 1, "", "Phong V©n LuËn KiÕm gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 120 h·y vÒ luyÖn thªm råi h·y tİnh." );
-	--	return
+		--Talk( 1, "", "Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 120 h·y vÒ luyÖn thªm råi h·y tİnh." );
+		--return
 	--end
 	if ( GetLevel() < 40 ) then
 		Talk( 1, "", "ChiÕn tr­êng Tèng Kim gian khæ khèc liÖt, ng­¬i ch­a ®¹t ®Õn cÊp 40 h·y vÒ luyÖn thªm råi h·y tİnh." );
@@ -117,9 +124,12 @@ function ToJin()	-- ½øÈë½ğ·½±¨Ãûµã
 		end
 	else
 		if (DelCommonItem( 6, 1, 155, 1, 0, 0) == 1) then
-			NewWorld( 325,1570,3085);
+			NewWorld( 325, 1570, 3085);
 			DisabledUseTownP(0); -- ²»ÏŞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
 			Msg2Player( "§Õn n¬i b¸o danh ChiÕn Tr­êng Tèng Kim Cao CÊp" );
+			-- NewWorld( 162,1566,3277);
+			-- DisabledUseTownP(0); -- ²»ÏŞÖÆÆäÊ¹ÓÃ»Ø³Ç·û
+			-- Msg2Player( "§· ®Õn thµnh §¹i Lı" );
 		end
 	end
 end

@@ -1,7 +1,7 @@
---Á½ºþÇø ÌÒ»¨Ô´to·üÁ÷¶´ÃÔ¹¬5
---TrapID£ºÁ½ºþÇø 23
+-- script viet hoa By http://tranhba.com  hai hå khu hoa ®µo nguyªn to phôc l­u ®éng mª cung 5 
+-- script viet hoa By http://tranhba.com TrapID# hai hå khu 23 
 
-function main(sel)
-	SetFightState(1)
-	NewWorld(73, 1579, 2892);
-end;
+function main(sel) 
+SetFightState(1) 
+NewWorld(73, 1579, 2892); 
+end; 

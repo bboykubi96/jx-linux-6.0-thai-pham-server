@@ -1,7 +1,7 @@
---Á½ºşÇø ÄÏÔÀÕò ¸æÊ¾ÅÆ
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn c¸o kú bµi 
 
-function main(sel)
+function main(sel) 
 
-ShowLadder(2, 4, 15)
+ShowLadder(2, 4, 15) 
 
 end;

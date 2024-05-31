@@ -31,11 +31,11 @@ function CSP_EnterClearMap(nCityIndex)
 		{
 			"<#>Xa phu: LÇn dïng miÔn phİ ®· dïng hÕt, nh­ng c¸c h¹ cã thÓ sö dông <color=blue>thñy tinh (hoÆc b¹ch ngäc) <color> hoÆc <color=blue>tinh hång b¶o th¹ch (hoÆc tö ngäc) <color> ®Ó cã thÓ ®i vµo ®¶o tÈy tñy. Ng­¬i cã ®ång ı nh­ vËy kh«ng?",
 			"<#> ChØ tÈy ®iÓm kü n¨ng [3 viªn Thñy Tinh]/CSP_JEnterClearMap_Skill",
-			"<#>ChØ tÈy ®iÓm kü n¨ng [B¹ch Ngäc]/CSP_JEnterClearMap_Skill2",
+			--"<#>ChØ tÈy ®iÓm kü n¨ng [B¹ch Ngäc]/CSP_JEnterClearMap_Skill2",
 			"<#> ChØ tÈy ®iÓm tiÒm n¨ng [6 viªn Tinh Hång B¶o Th¹ch]/CSP_JEnterClearMap_Prop",
-			"<#>ChØ tÈy ®iÓm tiÒm n¨ng [Tö Ngäc]/CSP_JEnterClearMap_Prop2",
+			--"<#>ChØ tÈy ®iÓm tiÒm n¨ng [Tö Ngäc]/CSP_JEnterClearMap_Prop2",
 			"<#> TÈy c¶ ®iÓm tiÒm n¨ng vµ kü n¨ng [3 viªn Thñy Tinh + 6 viªn Tinh Hång B¶o Th¹ch]/CSP_JEnterClearMap_All",
-			"<#>TÈy ®iÓm kü n¨ng tiÒm n¨ng [B¹ch Ngäc + Tö Ngäc]/CSP_JEnterClearMap_All2",
+			--"<#>TÈy ®iÓm kü n¨ng tiÒm n¨ng [B¹ch Ngäc + Tö Ngäc]/CSP_JEnterClearMap_All2",
 			"<#> §Ó ra nghÜ l¹i/CSP_Cancel"
 		};
 		-- Say(strNoFree[1], 7, strNoFree[2], strNoFree[3], strNoFree[4], strNoFree[5], strNoFree[6], strNoFree[7], strNoFree[8]);

@@ -1,51 +1,51 @@
---description: ÌìÍõ°ï×óÊ¹¹Å°Ø¡¡ÌìÍõ30¼¶ÈÎÎñ
---author: yuanlan	
---date: 2003/4/25
---Dan_Deng(2003-07-22), ¼ÓÈëÃÅÅÉÈÎÎñµÄµÈ¼¶ÒªÇó
--- Update: Dan_Deng(2003-08-16)
+-- script viet hoa By http://tranhba.com description: Thiªn v­¬ng gióp bªn tr¸i khiÕn cho cæ b¸ch # Thiªn v­¬ng 30 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/4/25 
+-- script viet hoa By http://tranhba.com Dan_Deng(2003-07-22), gia nhËp m«n ph¸i nhiÖm vô cÊp bËc yªu cÇu 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-16) 
 
 Include("\\script\\global\\skills_table.lua")
 
-function main()
-	UTask_tw = GetTask(3)
-	if (GetSeries() == 0) and (GetFaction() == "tianwang") then
-		if ((UTask_tw == 30*256) and (GetLevel() >= 30) and (GetFaction() == "tianwang")) then
-			Say("ThËt xui xÎo! H«m qua ta ®i ngang qua <color=Red>YÕn Tö ®éng<color>, ®· lµm r¬i mÊt <color=Red>Thiªn V­¬ng lÖnh<color>. §ã lµ tİn vËt cña bæn bang. NÕu kh«ng t×m l¹i ®­îc….HÇy!..", 2, "Gióp t×m Thiªn V­¬ng lÖnh /L30_get_yes", "Ta kh«ng quan t©m!/L30_get_no")
+function main() 
+UTask_tw = GetTask(3) 
+if (GetSeries() == 0) and (GetFaction() == "tianwang") then 
+if ((UTask_tw == 30*256) and (GetLevel() >= 30) and (GetFaction() == "tianwang")) then 
+Say("Nh¾c tíi thËt lµ xui xÎo , ta tr­íc ®ã vµi ngµy ®i mét chuyÕn <color=Red> yÕn tö ®éng <color>, kÕt qu¶ kh«ng cÈn thËn ®em <color=Red> Thiªn v­¬ng lµm <color>. cho vøt bá , Thiªn v­¬ng lµm lµ bæn bang tİn vËt , nÕu nh­ r¬i vµo c­ t©m kh«ng thÓ dß ®­îc ng­êi cña trªn tay , hËu qu¶ thiÕt t­ëng kh«ng chŞu næi !..", 2,"Trî gióp t×m kiÕm Thiªn v­¬ng lµm /L30_get_yes","Kh«ng liªn quan chuyÖn ta !/L30_get_no") 
 		elseif (UTask_tw == 30*256+20) and (HaveItem(145) == 1 ) then
-			L30_prise()
-		elseif (UTask_tw > 30*256) and (UTask_tw < 40*256) then					--ÒÑ¾­½Óµ½30¼¶ÈÎÎñ£¬ÉĞÎ´Íê³É
-			Talk(1,"","<color=Red>Thiªn V­¬ng lÖnh<color> mÊt ë <color=Red>YÕn Tö ®éng<color>. NÕu ng­¬i t×m l¹i ®­îc, ta sÏ phong ng­¬i lµ Ch­ëng §µ §Çu LÜnh.")
-		elseif (UTask_tw >= 40*256) then					--ÒÑ¾­Íê³É30¼¶ÈÎÎñ£¬ÉĞÎ´³öÊ¦
-			Talk(1,"","H¶o huynh ®Ö! Ng­¬i ®· gióp ta mét viÖc lín råi!")
-		else
-			Talk(1,"","Chóng ta b¾c kh¸ng Kim binh, Nam phßng TriÖu Tèng, hai bªn ®Òu t¸c chiÕn thËt kh«ng dÔ dµng g× ")
-		end
-	elseif (UTask_tw >= 70*256) then							--ÒÑ¾­³öÊ¦
-		Talk(1,"","XuÊt s­ råi ®õng quªn th­êng xuyªn trë vÒ th¨m c¸c huynh ®Ö nhĞ!")
-	else
-		Talk(1,"","§õng coi th­êng bang chñ lµ mét n÷ nhi.C« ta xö lı c¸c viÖc trong bang tÊt c¶ ®Òu ®©u ra ®ã, th­ëng ph¹t ph©n minh, trong lßng mäi ng­êi ®Òu rÊt kİnh träng c« ta.")
-	end
-end;
+L30_prise() 
+elseif (UTask_tw > 30*256) and (UTask_tw < 40*256) then -- script viet hoa By http://tranhba.com  ®· nhËn ®­îc 30 cÊp nhiÖm vô , ch­a hoµn thµnh 
+Talk(1,"","<color=Red> Thiªn v­¬ng lµm <color> lµ ë <color=Red> miªu lÜnh yÕn tö ®éng <color> mÊt ®İch , nÕu nh­ ng­¬i cã thÓ gióp ta t×m trë vÒ , ta b¶o cö ng­¬i lµm ch­ëng ®µ ®Çu lÜnh .") 
+elseif (UTask_tw >= 40*256) then -- script viet hoa By http://tranhba.com  ®· hoµn thµnh 30 cÊp nhiÖm vô , ch­a xuÊt s­ 
+Talk(1,"","H¶o huynh ®Ö # ng­¬i gióp ta mét ®¹i mang !") 
+else 
+Talk(1,"","Chóng ta b¾c kh¸ng qu©n Kim , nam phßng Tèng triÒu , hai bªn t¸c chiÕn còng kh«ng dÔ dµng ") 
+end 
+elseif (UTask_tw >= 70*256) then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
+Talk(1,"","XuÊt s­ sau kh«ng nªn quªn th­êng trë vÒ s­ m«n xem mét chót c¸c huynh ®Ö ") 
+else 
+Talk(1,"","§õng xem bang chñ lµ mét n÷ l­u h¹ng ng­êi , nh­ng lµ thèng trŞ bæn bang ©n uy còng thi # th­ëng ph¹t ph©n minh , mäi ng­êi trong lßng còng ®Ünh kİnh sî nµng .") 
+end 
+end; 
 
-function L30_get_yes()
-	Talk(1,"","<color=Red>Thiªn V­¬ng lÖnh<color> mÊt ë <color=Red>YÕn Tö ®éng<color>. NÕu ng­¬i t×m l¹i ®­îc, ta sÏ phong ng­¬i lµ Ch­ëng §µ §Çu LÜnh.")
+function L30_get_yes() 
+Talk(1,"","<color=Red> Thiªn v­¬ng lµm <color> lµ ë <color=Red> miªu lÜnh yÕn tö ®éng <color> mÊt ®İch , nÕu nh­ ng­¬i cã thÓ gióp ta t×m trë vÒ , ta b¶o cö ng­¬i lµm ch­ëng ®µ ®Çu lÜnh .") 
 	SetTask(3, 30*256+20)
-	AddNote("T¹i cöa T©y Thiªn ®iÖn, tiÕp nhËn nhiÖm vô <color=red>Thiªn V­¬ng lÖnh<color>, ®i ®Õn YÕn Tö ®éng t×m Thiªn V­¬ng lÖnh ")
-	Msg2Player("T¹i cöa T©y Thiªn ®iÖn tiÕp nhËn nhiÖm vô Thiªn V­¬ng lÖnh, ®i ®Õn YÕn Tö ®éng t×m Thiªn V­¬ng lÖnh ")
-end;
+AddNote(" ë t©y thiªn cöa ®iÖn nhËn <color=red> Thiªn v­¬ng lµm nhiÖm vô <color>, ®Õn yÕn tö ®éng t×m Thiªn v­¬ng lµm ") 
+Msg2Player(" ë t©y thiªn cöa ®iÖn nhËn Thiªn v­¬ng lµm nhiÖm vô , ®Õn yÕn tö ®éng t×m Thiªn v­¬ng lµm ") 
+end; 
 
-function L30_get_no()
-end;
+function L30_get_no() 
+end; 
 
-function L30_prise()
-	Talk(1,"","Th× ra Thiªn V­¬ng LÖnh ®· bŞ bän c­íp ë YÕn Tö ®éng trém mÊt, may lµ t×m l¹i ®­îc, nÕu kh«ng sÏ bŞ bang chñ quë tr¸ch. Ng­¬i thËt ®· gióp ta mét viÖc lín. Bæn sø nãi lêi sÏ gi÷ lÊy lêi, nhÊt ®Şnh sÏ phong ng­¬i lµm Ch­ëng §¸ §Çu LÜnh.")
-	DelItem(145)
-	SetRank(46)
-	SetTask(3, 40*256)
---	AddMagic(37)
---	AddMagic(35)
---	AddMagic(31)
-	add_tw(40)			-- µ÷ÓÃskills_table.luaÖĞµÄº¯Êı£¬²ÎÊıÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
-	Msg2Player("Mang Thiªn V­¬ng lÖnh giao cho Cæ B¸ch, hoµn thµnh nhiÖm vô Thiªn V­¬ng lÖnh. §­îc phong lµ: Ch­ëng §µ §Çu LÜnh. Häc ®­îc B¸t Phong Tr¶m, D­¬ng Quan Tam §iÖp, Hµng V©n QuyÕt. ")
-	AddNote("Trë l¹i ®¶o Thiªn V­¬ng mang Thiªn V­¬ng lÖnh giao cho Cæ B¸ch, hoµn thµnh nhiÖm vô, ®­îc phong lµ: Ch­ëng §µ §Çu LÜnh ")
-end;
+function L30_prise() 
+Talk(1,"","ThËt ra th× Thiªn v­¬ng lµm ë thóy khãi ®éng bŞ c­êng ®¹o vøt bá , may m¾n lµ l¹i t×m mét chót trë l¹i , nÕu kh«ng sÏ bŞ bang chñ tr¸ch cø ®İch , ng­¬i thËt lµ gióp ta mét ®¹i mang . vèn khiÕn cho nãi chuyÖn coi lµ tho¹i , nhÊt ®Şnh phong ng­¬i lµm ch­ëng ®µ thñ lÜnh .") 
+DelItem(145) 
+SetRank(46) 
+SetTask(3, 40*256) 
+-- script viet hoa By http://tranhba.com  AddMagic(37) 
+-- script viet hoa By http://tranhba.com  AddMagic(35) 
+-- script viet hoa By http://tranhba.com  AddMagic(31) 
+add_tw(40) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®İch hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
+Msg2Player("§em Thiªn v­¬ng lµm giao cho cæ b¸ch , hoµn thµnh Thiªn v­¬ng lµm nhiÖm vô . bŞ ®ãng cöa v× # ch­ëng ®µ thñ lÜnh . häc ®­îc b¸t ph­¬ng chĞm , d­¬ng quan ba ®iÖp , ®­îc v©n quyÕt . ") 
+AddNote("Trë l¹i Thiªn v­¬ng ®¶o ®em Thiªn v­¬ng lµm giao cho cæ b¸ch , hoµn thµnh nhiÖm vô , bŞ ®ãng cöa v× # ch­ëng ®µ thñ lÜnh ") 
+end; 

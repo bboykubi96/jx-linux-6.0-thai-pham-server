@@ -1,65 +1,65 @@
--- ÖĞÔ­±±Çø ·üÅ£É½ ·üÅ£É½Î÷ Â·ÈË_Âå¾ÅÌì.lua¡¡£¨È­ÇãÌìÏÂÈÎÎñ(Ò°ÇòÈ­ÈÎÎñ)£©
--- By: Dan_Deng(2004-05-24)
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu phôc bß s¬n phôc bß S¬n T©y ng­êi ®i ®­êng _ l¹c cöu thiªn .lua## quyÒn nghiªng thiªn h¹ nhiÖm vô ( d· cÇu quyÒn nhiÖm vô )# 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2004-05-24) 
 
 Include("\\script\\global\\repute_head.lua")
 
-function main(sel)
-	Uworld75 = GetTask(75)
-	U75_sub1 = GetTask(52)
-	U75_sub2 = GetTask(53)
-	U75_sub3 = GetTask(54)
-	U75_sub4 = GetTask(55)
-	U75_sub5 = GetTask(56)
---	if (Uworld75 < 10) and (GetLevel() >= 30) and (GetCamp() == 0) and (GetReputeLevel(GetRepute()) >= 3) then		-- ÈÎÎñÆô¶¯
---		Talk(10,"U75_get","Âå¾ÅÌì£ºÈ­·¨Ìì£¬ÕÆ·¨µØ£¬Ö¸·¨ĞÄ¡£Ï¦ÈÕÁúÕ½ÓÚÒ°£¬ÎÀÀÏÒ»È­µÃÌìµØÁéÆø£¬¾¢ÓÉĞÄÉú£¬¶ÙÊ±Íõ°ÔÖ®Æø±¼Ó¿£¬ÆÆ¾ŞÁúÓÚÎŞĞÎ£¬È­ÊÔÌìÏÂ£¡åä¸ÄÃûÎÀÌìÏÂ£¬È­ÃûÒ°Çò¡£","Íæ¼Ò£ºÇëÎÊ×ğ¼İ¸Õ¸ÕÄîµÄÊÇÊ²Ã´£¿ÔÚÏÂÎªºÎÔÚËÄÊéÎå¾­ÖĞ´ÓÎ´¼ûÊ¶¡£","Âå¾ÅÌì£ººÇ£¬Ğ¡ÏÀ²»Öª£¬´ËÄËÇ°´úÎäÁÖÉñ»°¡°È­ºÀ¡±ÎÀÌìÏÂµÄ×Ô´«¡£","Íæ¼Ò£ºÔÚÏÂÔøÌıËµÇ°´úÎäÁÖËÄÆæÖĞµÄ¡°Ò»Ç¹ÍÀÁú¡±Áú×·ÎèÉÃÊ¹É±ÁúÇ¹·¨£¬²»ÖªÏÈÉúËùËµ´óÏÀ¿ÉÓëÖ®¹¦·¨ÏàËÆ£¿","Âå¾ÅÌì£º¹ş¹ş¹ş¹ş¡­¡­ÁúÊÏĞ¡¶ù£¬Æñ¿ÉÓë¿áÔÂÕù»Ô¡£ÎÀÀÏµ±Äê±âÖÛ¶Éº££¬ÓÚÅîÀ³´óÕ½ÉñÁú£¬ÔÚÅìÅÈ×ÔÈ»ÖĞÁìÎòÒ°ÇòÈ­·¨£¬ÈıÕĞ¾øÉ±¶ñÁú¡£ÊµÎª¹Å½ñµÚÒ»ÈË£¬ÄÇÊÇºÎµÈµÄºÀÓÂ£¡ÁúĞ¡×ÓÇ¹ÃûÍÀÁú£¬¿ÖÅÂÁ¬ÁúµÄÓ°×Ó¶¼Ã»¼û¹ı¡£","Íæ¼Ò£ºÃ»Ïëµ½½­ºşÖĞ»¹ÓĞÈç´ËÀ÷º¦µÄÈËÎï£¬ÎªºÎ´ÓÎ´ÌıËµ£¿","Âå¾ÅÌì£ºÎÀÀÏÒÔÌìÏÂÎªÖØ£¬ÓÖÔõ»áÔÚÕâÖÖÌøÁºĞ¡³óµÄÎèÌ¨ÖĞ³öÏÖ¡£¸üºÎ¿öµ±ÄêÈ­ÊÔÌìÏÂºó£¬½­ºşºÚµÀĞÄµ¨¾ãÁÑ£¬»Ì»Ì²»¿ÉÖÕÈÕ¡£¼¸Ê®ÄêµÄÌ«Æ½Ê¢ÊÀ£¬ÓÖÔõÖµµÃÎÀÏÈÉúÔÙ³öÈ­¡£","Íæ¼Ò£º¾ÓÈ»ÓĞÈç´ËÆæÕĞ£¿²»Öª´óÏÀ¿ÉÏşµÃ´ËÌ×È­Æ×ÏÂÂä¡£","Âå¾ÅÌì£º²»²ÅÂåÄ³£¬ÕıÊÇÏÈÊ¦µÜ×Ó£¬Ò²ÔøÏ°µÃÆ¤Ã«¡£","Íæ¼Ò£º°¡£¡ÍûÏÈÉú½ÌÎÒ£¡")
-	if (Uworld75 == 10) and (U75_sub1 == 20) and (U75_sub2 == 20) and (U75_sub3 == 20) and (U75_sub4 == 20) and (U75_sub5 == 20) and (HaveItem(384) == 1) then			-- ÈÎÎñÍê³É
-		DelItem(384)
-		Talk(2,"U75_prise","H¶o tiÓu tö! Qu¶ nhiªn ta kh«ng nh×n lÇm ng­¬i! §Õn ®©y nµo! Häc nhanh th«i."," Vâ häc nhÊt ®¹o, thiªn ngo¹i h÷u thiªn. Ng­¬i ph¶i kh«ng ngõng luyÖn tËp, bªn c¹nh cã c¸i bia thö c«ng phu cã thÓ thö c«ng lùc. ChØ cÇn tung mét quyÒn cã thÓ ®¸nh vì nã, lóc ®ã quyÒn n¨ng cña ng­¬i ®· thuéc vµo bËc thÇn tiªn cña thiªn h¹ råi. ")
-	elseif (Uworld75 == 10) and (HaveItem(384) == 0) then			-- ÈÎÎñÖĞ£¬ĞÅ¶ªÁË
-		AddEventItem(384)
-		Msg2Player("L¹i nhËn ®­îc bøc th­ giíi thiÖu cña L¹c Cöu Thiªn. ")
-		Talk(1,"","Cø lµm mÊt thÕ nµy, sao cã thÓ lµm chuyÖn lín ®­îc? Th«i ®­îc, cho ng­¬i thªm mét c¬ héi n÷a, ta viÕt l¹i mét bøc th­ kh¸c cho ng­¬i, nhí ®õng lµm mÊt n÷a nhĞ!")
-	elseif (Uworld75 == 10) then
-		Talk(1,""," Tr­íc tiªn ng­¬i ph¶i v­ît qua n¨m s­ ®Ö kh¸c, ta míi cã thÓ d¹y cho ng­¬i!")
-	elseif (Uworld75 == 255) then
-		Talk(1,""," D· CÇu QuyÒn ph¶i luyÖn tËp hµng ngµy míi cã thÓ luyÖn thµnh tµi ®­îc, ng­¬i cÇn cã lßng nhÉn n¹i.")
-	else
-		Talk(1,""," QuyÒn Ph¸p Thiªn, Ch­ëng Ph¸p §Şa, ChØ Ph¸p T©m. QuyÒn Ph¸p....khã nhí qu¸!")
-	end
-end;
+function main(sel) 
+Uworld75 = GetTask(75) 
+U75_sub1 = GetTask(52) 
+U75_sub2 = GetTask(53) 
+U75_sub3 = GetTask(54) 
+U75_sub4 = GetTask(55) 
+U75_sub5 = GetTask(56) 
+-- script viet hoa By http://tranhba.com  if (Uworld75 < 10) and (GetLevel() >= 30) and (GetCamp() == 0) and (GetReputeLevel(GetRepute()) >= 3) then -- script viet hoa By http://tranhba.com  nhiÖm vô khëi ®éng 
+-- script viet hoa By http://tranhba.com  Talk(10,"U75_get"," l¹c cöu thiªn # quyÒn ph¸p ngµy , ch­ëng ph¸p ®Şa , chØ ph¸p t©m . tŞch nhËt long chiÕn víi d· , VÖ l·o mét quyÒn ph¶i thiªn ®Şa linh khİ , kİnh tõ sinh lßng , nhÊt thêi v­¬ng ph¸ch khİ b«n dòng , r¸ch cù long víi v« h×nh , quyÒn thö thiªn h¹ # thóy ®æi tªn vÖ thiªn h¹ , quyÒn tªn d· cÇu . ","Nhµ ch¬i # xin hái t«n gi¸ míi võa ®äc lµ c¸i g× ? t¹i h¹ v× sao ë tø th­ ngò kinh trung tõ kh«ng thÊy thøc . "," l¹c cöu thiªn # a , tiÓu hiÖp kh«ng biÕt , cßn ®©y lµ ®êi tr­íc vâ l©m thÇn tho¹i “ quyÒn hµo ” vÖ thiªn h¹ ®İch tù truyÖn . ","Nhµ ch¬i # t¹i h¹ tõng nghe nãi ®êi tr­íc vâ l©m bèn kú trung ®İch “ mét sóng ®å long ” long ®uæi vò thiÖn khiÕn cho giÕt long th­¬ng ph¸p , kh«ng biÕt tiªn sinh theo nh­ lêi ®¹i hiÖp cã thÓ cïng c«ng ph¸p t­íng tùa nh­ ? "," l¹c cöu thiªn # c¸p c¸p c¸p c¸p …… Long thŞ tiÓu nhi , khëi cã thÓ cïng khèc th¸ng tranh huy . VÖ l·o n¨m ®ã biÓn chu ®é h¶i , víi oµnh lai ®¹i chiÕn thÇn long , ë mªnh m«ng tù nhiªn trung lÜnh ngé d· cÇu quyÒn ph¸p , ba chiªu tuyÖt s¸t ¸c long . thËt lµ cæ kim ng­êi thø nhÊt , ®ã lµ bùc nµo ®İch hµo dòng # Long tiÓu tö sóng tªn ®å long , sî r»ng ngay c¶ long ®İch c¸i bãng còng kh«ng ra m¾t . ","Nhµ ch¬i # kh«ng nghÜ tíi trong chèn giang hå cßn cã nh©n vËt lîi h¹i nh­ thÕ , v× sao ch­a tõng nghe nãi ? "," l¹c cöu thiªn # VÖ l·o lÊy thiªn h¹ lµm träng , l¹i nh­ thÕ nµo ë n¬i nµy lo¹i nh¶y l­¬ng tiÓu söu ®İch vâ ®µi/sµn nh¶y trung xuÊt hiÖn . huèng chi n¨m ®ã quyÒn thö thiªn h¹ sau , giang hå h¾c ®¹o t©m ®¶m c©u liÖt , hoµng hoµng kh«ng thÓ c¶ ngµy . mÊy thËp niªn th¸i b×nh thŞnh thÕ , l¹i sao ®¸ng gi¸ VÖ tiªn sinh ra l¹i quyÒn . ","Nhµ ch¬i # l¹i cã nh­ thÕ kú chiªu ? kh«ng biÕt ®¹i hiÖp nh­ng hiÓu ®­îc nµy bé/vá quyÒn phæ tung tİch . "," l¹c cöu thiªn # bÊt tµi L¹c mç , chİnh lµ tiªn s­ ®Ö tö , còng tõng tËp ®­îc da l«ng . ","Nhµ ch¬i # a # ng¾m tiªn sinh d¹y ta #") 
+if (Uworld75 == 10) and (U75_sub1 == 20) and (U75_sub2 == 20) and (U75_sub3 == 20) and (U75_sub4 == 20) and (U75_sub5 == 20) and (HaveItem(384) == 1) then -- script viet hoa By http://tranhba.com  nhiÖm vô hoµn thµnh 
+DelItem(384) 
+Talk(2,"U75_prise","H¶o tiÓu tö , ta qu¶ nhiªn kh«ng cã nh×n lÇm ng­êi , tíi n¬i nµy , häc nhanh lªn mét chót .","Vâ häc mét ®¹o , thiªn ngo¹i h÷u thiªn . ng­¬i nÕu kh«ng ®o¹n luyÖn tËp , n¬i nµy cã c¸ thö c«ng phu : thêi gian ®İch bia , chØ cÇn mét quyÒn lµ cã thÓ ®¸nh n¸t , khi ®ã ng­¬i quyÒn liÒn trë thµnh thiªn h¹ thÇn tiªn cÊp bËc . ") 
+elseif (Uworld75 == 10) and (HaveItem(384) == 0) then -- script viet hoa By http://tranhba.com  nhiÖm vô trung , tin/th¬ mÊt 
+AddEventItem(384) 
+Msg2Player(" l¹i nhËn ®­îc l¹c cöu thiªn ®İch th¬ giíi thiÖu liÔu . ") 
+Talk(1,""," l·o thŞ nh­ vËy nĞm , t¹i sao cã thÓ lµm ®¹i sù ? tİnh / chän , sÏ cho ng­¬i cã c¸i c¬ héi , ta n÷a viÕt mét phong th¬ cho ng­¬i , nhí kh«ng muèn vøt bá ") 
+elseif (Uworld75 == 10) then 
+Talk(1,"","§Çu tiªn ng­¬i muèn v­ît qua b¶y ngµy n¨m s­ ®Ö , ta míi cã thÓ d¹y ng­¬i !") 
+elseif (Uworld75 == 255) then 
+Talk(1,"","D· cÇu quyÒn muèn mçi ngµy luyÖn tËp míi cã thÓ luyÖn thµnh , ng­¬i cÇn ph¶i cã nhÉn n¹i .") 
+else 
+Talk(1,"","QuyÒn ph¸p ngµy , ch­ëng m«n ®Şa , chØ ph¸p t©m . quyÒn ph¸p .... rÊt khã nhí ") 
+end 
+end; 
 
-function U75_get()
-	Say(" Bé quyÒn ph¸p nµy kh«ng thÓ cïng luyÖn tËp víi c¸c chiªu néi c«ng kh¸c. NÕu ng­¬i muèn gia nhËp vµo c¸c m«n ph¸i kh¸c, th× kh«ng thÓ häc ®­îc. Ng­¬i ®· c©n nh¾c kü ch­a?",2,"Ta ®· nghÜ kü råi, h·y cho ta häc D· CÇu QuyÒn. /U75_get_yes","§Ó ta suy nghÜ l¹i!/no")
-end
+function U75_get() 
+Say("Nªn quyÒn ph¸p kh«ng thÓ uèng nh÷ng kh¸c néi c«ng cïng nhau luyÖn tËp , nÕu nh­ ng­¬i nghÜ gia nhËp nh÷ng m«n ph¸i kh¸c , th× kh«ng thÓ häc . ng­¬i nghÜ xong ch­a ?",2,"Ta muèn cÈn thËn , xin cho ta häc d· cÇu quyÒn . /U75_get_yes","§Ó cho ta muèn muèn !/no") 
+end 
 
-function U75_get_yes()
-	Talk(5,"U75_go","T¹i muèn häc D· CÇu QuyÒn, kh«ng muèn nhËp ph¸i kh¸c."," Ha ha! §óng lµ Thiªn tø kú tµi! Ta thÊy g©n cèt ng­¬i rÊt kháe, thËt hiÕm cã trªn chèn giang hå. Nh­ng tÊt ph¶i nhê ®Õn c¸c huynh ®Ö kh¸c míi cã thÓ d¹y ng­¬i ®­îc.","§a t¹ S­ phô! ","ë ®©y ta cã mét bøc th­, ng­¬i ®em ®Õn Thµnh §«, §¹i Lı, Ph­îng T­êng, BiÖn Kinh t×m Ph­¬ng Thİch, Hoa N«ng, Th¸i ®¹i thóc, Phã Nam B¨ng vµ Tr­¬ng TuÊn. N¨m ng­êi nµy cã vÎ ®Òu ®· ®ång ı cho ng­¬i luyÖn tËp kü n¨ng nµy. ","V©ng! S­ b¸.")
-end
+function U75_get_yes() 
+Talk(5,"U75_go","Bëi v× muèn häc d· cÇu quyÒn , kh«ng muèn gia nhËp nh÷ng m«n ph¸i kh¸c .","Ha ha , thËt lµ trêi ban kú tµi , ta xem ng­¬i g©n cèt rÊt m¹nh tr¸ng , trªn giang hå rÊt İt . nh­ng lµ muèn phiÒn to¸i nh÷ng huynh ®Ö kh¸c míi cã thÓ d¹y ng­¬i .","§a t¹ s­ phô ? ","N¬i nµy cã mét phong th¬ , ng­¬i mang ®i thµnh ®« , §¹i Lı , ph­îng t­êng , biÖn kinh t×m ph­¬ng thİch , hoa n«ng , Th¸i ®¹i thóc , phã nam b¨ng cïng tê tuÊn . n¨m ng­êi nµy ®Òu ®ång ı ng­¬i luyÖn tËp kü n¨ng . ","Tèt , s­ b¸ ") 
+end 
 
-function U75_go()
-	Talk(1,""," §­êng ®i rÊt hiÓm trë khã kh¨n, ng­¬i nªn chuÈn bŞ kü. Tõ x­a ®Õn nay nh÷ng ng­êi lµm nªn nghiÖp lín, ch­a ai lµ ch­a tõng nÕm qua ®au khæ. ")
-	AddEventItem(384)				-- Âå¾ÅÌì½éÉÜĞÅ
-	SetTask(75,10)
-	SetTask(52,0)					-- ×Ó±äÁ¿³õÊ¼»¯
-	SetTask(53,0)
-	SetTask(54,0)
-	SetTask(55,0)
-	SetTask(56,0)
-	AddNote("NhËn nhiÖm vô QuyÒn Khuynh Thiªn H¹: CÇm th­ giíi thiÖu cña L¹c Cñu Thiªn, ®i Thµnh §« t×m ph­¬ng Thİch, §¹i Lı t×m Hoa N«ng, Ph­îng T­êng t×m Th¸i ®¹i thóc, BiÖn Kinh t×m Phô Nam B¨ng, L©m An t×m Tr­¬ng TuÊn, cÇu häc D· CÇu QuyÒn. ")
-	Msg2Player("NhËn nhiÖm vô QuyÒn Khuynh Thiªn H¹: CÇm th­ giíi thiÖu cña L¹c Cñu Thiªn, ®i Thµnh §« t×m ph­¬ng Thİch, §¹i Lı t×m Hoa N«ng, Ph­îng T­êng t×m Th¸i ®¹i thóc, BiÖn Kinh t×m Phô Nam B¨ng, L©m An t×m Tr­¬ng TuÊn, cÇu häc D· CÇu QuyÒn. ")
-end
+function U75_go() 
+Talk(1,"","§­êng rÊt nguy hiÓm , ng­¬i cÇn chuÈn bŞ xong . tõ cæ chİ kim , lµm ®¹i sù nghiÖp ng­êi cña , mçi ng­êi kh«ng tr¶i qua khæ n¹n ") 
+AddEventItem(384) -- script viet hoa By http://tranhba.com  l¹c cöu thiªn th¬ giíi thiÖu 
+SetTask(75,10) 
+SetTask(52,0) -- script viet hoa By http://tranhba.com  tö thay ®æi l­îng míi b¾t ®Çu hãa 
+SetTask(53,0) 
+SetTask(54,0) 
+SetTask(55,0) 
+SetTask(56,0) 
+AddNote("NhËn quyÒn nghiªng thiªn h¹ nhiÖm vô # cÇm l¹c cöu thiªn ®İch th¬ giíi thiÖu ®i thµnh ®« t×m ph­¬ng thİch , §¹i Lı t×m hoa n«ng , ph­îng t­êng t×m Th¸i ®¹i thóc , biÖn kinh t×m phã nam b¨ng , tr­íc khi an t×m tê tuÊn , cÇu häc d· cÇu quyÒn . ") 
+Msg2Player("NhËn quyÒn nghiªng thiªn h¹ nhiÖm vô # cÇm l¹c cöu thiªn ®İch th¬ giíi thiÖu ®i thµnh ®« t×m ph­¬ng thİch , §¹i Lı t×m hoa n«ng , ph­îng t­êng t×m Th¸i ®¹i thóc , biÖn kinh t×m phã nam b¨ng , tr­íc khi an t×m tê tuÊn , cÇu häc d· cÇu quyÒn . ") 
+end 
 
-function U75_prise()
-	Talk(1,"","§Ö tö xin nhËn lêi chØ d¹y.")
-	DelItem(384)
-	SetTask(75,255)
-	AddRepute(30)
-	if (HaveMagic(395) == -1) then		-- ±ØĞëÃ»ÓĞ¼¼ÄÜµÄ²Å¸ø¼¼ÄÜ
-		AddMagic(395)
-	end
-	AddNote("NhiÖm vô QuyÒn Khuynh Thiªn H¹: NhiÖm vô hoµn thµnh, häc ®­îc kü n¨ng D· CÇu QuyÒn, danh väng cña b¹n t¨ng thªm 30 ®iÓm. ")
-	Msg2Player("NhiÖm vô QuyÒn Khuynh Thiªn H¹: NhiÖm vô hoµn thµnh, häc ®­îc kü n¨ng D· CÇu QuyÒn, danh väng cña b¹n t¨ng thªm 30 ®iÓm. ")
-end
+function U75_prise() 
+Talk(1,"","§Ö tö tiÕp nhËn chØ gi¸o .") 
+DelItem(384) 
+SetTask(75,255) 
+AddRepute(30) 
+if (HaveMagic(395) == -1) then -- script viet hoa By http://tranhba.com  nhÊt ®Şnh ph¶i kh«ng cã kü n¨ng ®İch míi cho kü n¨ng 
+AddMagic(395) 
+end 
+AddNote("QuyÒn nghiªng thiªn h¹ nhiÖm vô # nhiÖm vô hoµn thµnh , häc ®­îc d· cÇu quyÒn kü n¨ng , ng­¬i danh väng gia t¨ng 30 ®iÓm . ") 
+Msg2Player("QuyÒn nghiªng thiªn h¹ nhiÖm vô # nhiÖm vô hoµn thµnh , häc ®­îc d· cÇu quyÒn kü n¨ng , ng­¬i danh väng gia t¨ng 30 ®iÓm . ") 
+end 
 
-function no()
-end
+function no() 
+end 

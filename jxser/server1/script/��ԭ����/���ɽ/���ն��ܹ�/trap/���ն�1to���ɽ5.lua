@@ -1,11 +1,11 @@
---中原南区 荐菊洞1to蜀冈山5
---Trap ID：中原南区 30
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 nam khu ti課 c骳 ng 1to th鬰 cng s琻 5 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 nam khu 30 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(92, 1852, 3240);
+SetFightState(1); 
+NewWorld(92, 1852, 3240); 
 
-AddTermini(132)
+AddTermini(132) 
 
 end;

@@ -2,5 +2,5 @@
 -- by£ºDan_Deng(2003-09-16)
 
 function main()
-	Talk(4,"","TiÓu ®Ö muèn ®i vÒ ph­¬ng B¾c, ®· qu¸ ch¸n ng¸n nh÷ng ngµy say kh­ít nh­ vÇy råi!","L¨ng l·o ®Ö! Ta hiÓu t©m t×nh cña ®Ö. Nh­ng hiÖn giê ph­¬ng B¾c ®ang giao chiÕn víi qu©n Kim. HiÓm nguy lóc nµo còng chùc chê, ch¼ng lÏ ®Ö l¹i thİch ®i vµo nh÷ng n¬i hiÓm nguy nh­ vËy? Huèng hå lÖnh t«n còng kh«ng cho phĞp ®Ö m¹o hiÓm nh­ vËy. ","Gia phô muèn ®Ö cã chót c«ng danh nh­ng ®Ö l¹i c¨m ghĞt nh÷ng sù gi¶ dèi trong chèn quan tr­êng. §Ö thµ lµ anh hïng chÕt trªn chèn sa tr­êng","L¨ng l·o ®Ö ®õng qu¸ kİch ®éng! Lµm vŞÖc g× còng ph¶i suy xĞt kü cµng. Nµo nµo chóng ta cïng c¹n ly!")
+Talk(4,"","Töu kh¸ch gi¸p  TriÖu huynh , tiÓu ®Ö muèn ®i b¾c ph­¬ng ®i mét chót , lo¹i nµy say hu©n hu©n ®İch ngµy ta lµ qu¸ ®ñ råi ","Töu kh¸ch Êt  L¨ng l·o ®Ö , ta biÕt ng­¬i lßng «m chİ lín , nh­ng lµ h«m nay b¾c ph­¬ng ®· ë qu©n Kim d­íi mãng s¾t , tïy thêi còng cã thÓ sù håi sinh chiÕn háa , ng­¬i cÇn g× ®i m¹o hiÓm ? huèng chi lÖnh t«n còng sÏ kh«ng ®ång ı . ","Töu kh¸ch gi¸p  gia phô mét lßng muèn cho ta cÇu xin lÊy c«ng danh , nh­ng lµ ta b×nh sanh hËn nhÊt chİnh lµ nhÜ ngu ta g¹t ®İch quan tr­êng , ta thµ bŞ ®Çu bót tõ nhung , chÕt trËn sa tr­êng . ","Töu kh¸ch Êt  L¨ng l·o ®Ö , ng­¬i ngµn v¹n chí xung ®éng , chuyÖn nµy cÇn tõ tr­êng th­¬ng nghŞ , tíi tíi tíi , chóng ta uèng tr­íc liÔu chĞn r­îu nµy ") 
 end;

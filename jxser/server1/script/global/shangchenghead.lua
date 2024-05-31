@@ -1,12 +1,12 @@
 --ÓÎÏ·Ê±¼ä
-FRAME2TIME		= 18;			-- 18ÕìÏµµ±ÓÚÓÎÏ·ÖĞ1ÃëÖÓ
---ÉÍÉÆÁî½±Àø£¬¶µ³¤Ê±¼äÄÚË«±¶¾­Ñé
+FRAME2TIME		= 18;			-- 18ÕìÏàµ±ÓÚÓÎÏ·ÖĞ1ÃëÖÓ
+--ÉÍÉÆÁî½±Àø£¬¶à³¤Ê±¼äÄÚË«±¶¾­Ñé
 AEXP_ADWARD_TIME = 4
 
---¼Ç¢¼µ±Ç°ÎÄ¼ş¸÷¸ö³ÇÊĞÉÍÉÆÁîµÄtabÎÄ¼ş
---windowsÏ¢Ãæ
+--¼ÇÂ¼µ±Ç°ÎÄ¼ş¸÷¸ö³ÇÊĞÉÍÉÆÁîµÄtabÎÄ¼ş
+--windowsÏÂÃæ
 --CITYPRIZETABFILENAME	=	"data\\cityprize.txt"
---LinuxÏ¢Ãæ
+--LinuxÏÂÃæ
 CITYPRIZETABFILENAME	=	"data//cityprize.txt"
 
 AEXP_LOAD		= 0
@@ -61,13 +61,13 @@ arraycitytoglobalvalue =
 --³ÇÊĞË÷ÒıºÍ³ÇÊĞÃû³Æ¶ÔÓ¦±í
 arraycityindextoname =
 {
-	"Ph­îng T­êng", 
-"Thµnh §«", 
-"§¹i Lı", 
-"BiÖn Kinh", 
-"T­¬ng D­¬ng", 
-"D­¬ng Ch©u", 
-"L©m An",
+	"Ph­îng T­êng",
+	"Thµnh §«",
+	"§¹i Lı",
+	"BiÖn Kinh",
+	"T­¬ng D­¬ng",
+	"D­¬ng Ch©u",
+	"L©m An",
 };
 
 --ÀÛ¼Æ´óÓÚÄ³ÖµÊ±´æÅÌ
@@ -100,7 +100,7 @@ function loadsavevalue()
 	end	
 end
 
---ÎªÁË·ÀÖ¹seekÑ°ÕÒfile³ö´í£¬¶øÇÒÄ¿Ç°Ê¹ÓÃÊı¾İ½ÏÉÙ£¬´æÅÌÊ±Çå³ıÎÄ¼şÖØĞ¢Ğ´Ò»¸öĞ¢ÎÄ¼ş
+--ÎªÁË·ÀÖ¹seekÑ°ÕÒfile³ö´í£¬¶øÇÒÄ¿Ç°Ê¹ÓÃÊı¾İ½ÏÉÙ£¬´æÅÌÊ±Çå³ıÎÄ¼şÖØĞÂĞ´Ò»¸öĞÂÎÄ¼ş
 function savevalue()
 	handle = openfile(CITYPRIZETABFILENAME, "w+")
 	if (handle == nil) then

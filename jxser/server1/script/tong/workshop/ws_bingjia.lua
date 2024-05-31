@@ -40,7 +40,7 @@ function ws_main(nTongID, nWorkshopID)
 	if (GetProductRegion() == "cn") then
 		tinsert(aryszContent, "NhËn Tö kim cµo/#use_zijingao("..nTongID..","..nWor);
 	elseif(GetProductRegion() == "vn") then
-		tinsert(aryszContent, "NhËn lÖnh bµi gäi Boss/#use_g_4_ok("..nTongID..","..nWorkshopID..")");
+		--tinsert(aryszContent, "NhËn lÖnh bµi gäi Boss/#use_g_4_ok("..nTongID..","..nWorkshopID..")");
 	end;
 	
 	tinsert(aryszContent, "Kh«ng cÇn ®©u/cancel");

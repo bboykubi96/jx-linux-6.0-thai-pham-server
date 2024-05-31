@@ -7,14 +7,14 @@ yinpai_Task=1827;
 function main( nItemIdx )
 	local TaskValue=GetTask(yinpai_Task);
 	local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	-- if(nDate>20080331) then
-		-- Say("LÖnh bµi ®· qu¸ h¹n sö dông, bŞ mÊt hiÖu lùc!",0)
-		-- return 0;
-	-- end
-	-- if( IsCharged() == 0) then
-		-- Say("ThËt ®¸ng tiÕc, chØ cã ng­êi ch¬i ®· n¹p thÎ míi cã thÓ sö dông.",0);
-		-- return 1; 
-	-- end
+	if(nDate>20180331) then
+		Say("LÖnh bµi ®· qu¸ h¹n sö dông, bŞ mÊt hiÖu lùc!",0)
+		return 0;
+	end
+	if( IsCharged() == 0) then
+		Say("ThËt ®¸ng tiÕc, chØ cã ng­êi ch¬i ®· n¹p thÎ míi cã thÓ sö dông.",0);
+		return 1; 
+	end
 	if( GetLevel() <90 ) then
 		Say("ThËt ®¸ng tiÕc, chØ cã ng­êi ch¬i cÊp 90 trë lªn míi cã thÓ sö dông.",0);
 		return 1;

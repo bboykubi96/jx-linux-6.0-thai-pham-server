@@ -1,21 +1,21 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® Â·ÈË11¶ÎĞã²Å¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢·ÈË11¶ÎĞã²Å¶Ô»°
 
 function main(sel)
 
 i = random(0,2)
 
 if (i == 0) then
-Say("ë T­¬ng D­¬ng ta cã h«n ­íc víi mét biÓu muéi, ta ®Æc biÖt ®Õn n¬i nµy ®Ó th¨m nµng!",0)
+Say("§oµn tó tµi:  Ta ë T­¬ng D­¬ng lµ v× muèn hái c­íi biÓu muéi, ta ®Õn ®Ó t×m nµng.",0)
 return
 end;
 
 if (i == 1) then
-Say(" BiÓu muéi ta tªn gäi §µo Gia. Ta chØ biÕt tªn chø tr­íc nay ch­a hÒ gÆp mÆt bao giê!",0)
+Say("§oµn tó tµi:  BiÓu muéi ta hä Diªu tªn Gia, ta chØ biÕt tªn hä cña nµng, cho tíi b©y giê ch­a tõng thÊy qua nµng.",0)
 return
 end;
 
 if (i == 2) then
-Say("Ch¼ng biÕt khi biÓu muéi lín lªn vãc d¸ng thÕ nµo? Ta kh«ng d¸m mong nµng rùc rì nh­ T©y Thi, chØ mong ®õng gièng Chung V« DiÖm lµ ®­îc råi!",0)
+Say("§oµn tó tµi:  Kh«ng biÕt biÓu muéi d¸ng dÊp h×nh d¸ng ra sao? Ta kh«ng d¸m tr«ng cËy vµo nµng cã t©y tö d¸ng vÎ, chØ cÇu d¸ng dÊp cña nµng kh«ng qu¸ mËp lµ tèt.",0)
 end;
 
 end;

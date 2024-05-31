@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡×¡¿Í1
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # ng­êi ®i ®­êng # ë kh¸ch 1 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(1,"","Ta phông mÖnh TriÒu ®×nh ®Õn cai qu¶n §¹i Lı Th¹ch. Cø ngì §¹i Lı lµ n¬i hoang s¬ hÎo l¸nh, kh«ng ngê l¹i ®«ng ®óc nh­ vËy, viÖc bu«n b¸n l¹i tÊp nËp ch¼ng kĞm g× L©m An.")
-end;
+function main() 
+Talk(1,"","Ta phông triÒu ®×nh chi mÖnh tíi qu¶n lı §¹i Lı , nguyªn t­ëng r»ng §¹i Lı lµ mét hoang d· ®Êt , kh«ng nghÜ tíi n¸o nhiÖt nh­ thÕ , mua b¸n n¸o nhiÖt nh­ thÕ , kh«ng thua tr­íc khi an .") 
+end; 

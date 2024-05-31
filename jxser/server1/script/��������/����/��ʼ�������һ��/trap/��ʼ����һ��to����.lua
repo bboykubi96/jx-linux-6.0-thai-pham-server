@@ -1,11 +1,11 @@
---西北南区 秦始皇陵一层to秦始皇陵地表
---Trap ID：西北南区 2
+-- script viet hoa By http://tranhba.com  t﹜ b綾 nam khu T莕 Th駓 Ho祅g l╪g m閠 t莕g to T莕 Th駓 Ho祅g l╪g a bi觰 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ b綾 nam khu 2 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(7, 2417, 2631);
+SetFightState(1); 
+NewWorld(7, 2417, 2631); 
 
-AddTermini(20)
+AddTermini(20) 
 
 end;

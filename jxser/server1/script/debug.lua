@@ -1,4 +1,4 @@
-
+-- 基础IO函数
 local _read_ = function() 
 	local nPakIdx = 0
 	if usepack then
@@ -12,7 +12,7 @@ local _read_ = function()
 	end
 	return szBuff
 end
-
+-- 基础IO函数
 local _write_ = function(...)
 	local nPakIdx = 0
 	if usepack then

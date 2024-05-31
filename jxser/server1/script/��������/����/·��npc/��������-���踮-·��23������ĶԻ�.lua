@@ -1,10 +1,10 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·ÈË23ÂôÖíÈâµÄ¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ ng­êi ®i ®­êng 23 b¸n thŞt heo ®İch ®èi tho¹i 
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
-function main(sel)
-if allbrother_0801_CheckIsDialog(189) == 1 then
-		allbrother_0801_FindNpcTaskDialog(189)
-		return 0;
-	end
-Say("ThŞt heo t­¬i ngon ®©y, kh«ng ngon kh«ng cÇn tr¶ tiÒn.",0)
+function main(sel) 
+if allbrother_0801_CheckIsDialog(189) == 1 then 
+allbrother_0801_FindNpcTaskDialog(189) 
+return 0; 
+end 
+Say("Chu ®å phu # míi mÎ thŞt heo , kh«ng míi mÎ kh«ng lÊy tiÒn a #",0) 
 
 end;

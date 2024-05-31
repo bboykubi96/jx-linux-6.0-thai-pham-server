@@ -1,3 +1,5 @@
+--Setup thoi gian nhiem vu thuy tac phong lang do
+
 jf0904_TSK_version		= 1760	-- 活动版本号
 jf0904_TSK_jiuexp		= 1761	-- 酒葫芦和葡萄酒使用后获得的经验
 jf0904_TSK_jiuexplt		= 1762	-- 酒葫芦和葡萄酒使用后获得的经验上限
@@ -21,7 +23,7 @@ jf0904_item_expiredtime	= 20090601
 jf0904_jiu_expiredtime	= 20090608
 
 jf0904_act_dateS 	= 20090428; 
-jf0904_act_dateE	= 20090601;
+jf0904_act_dateE	= 20250601;
 
 function jf0904_InitTaskctrl()	
 	if (GetTask(jf0904_TSK_version) ~= 200904) then

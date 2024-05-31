@@ -1,6 +1,6 @@
--- ´óÀí¡¡Ö°ÄÜ¡¡³èÎïµêÀÏ°åÄï
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lı # chøc n¨ng # sñng vËt ®iÕm l·o b¶n mÑ 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(3,"","C¸c b¹n nhá nµy thËt ®¸ng yªu, tuy tÊt c¶ ®Ó b¸n, nh­ng mçi con ®Òu lµ b¶o bèi cña ta, b¸n chóng nã ®i ta còng kh«ng vui vÎ g×! ","Sau khi ng­¬i mua vÒ, nhí ®èi xö tèt víi nã, ®õng ®Ó cho nã ®ãi bông, d¾t nã ®i cïng ng­¬i nha! ","Con vËt còng gièng nh­ con ng­êi vËy, còng cã t×nh c¶m, chØ cÇn th­êng ngµy ®èi xö tèt víi nã, nã sÏ gióp ®ì ng­¬i khi ng­¬i gÆp khã kh¨n.")
-end;
+function main() 
+Talk(3,"","TiÓu nh÷ng ®éng vËt thËt lµ kh¶ ¸i , mÆc dï ®Òu lµ b¸n , nh­ng lµ , mçi ®Òu lµ cña ta b¶o bèi , b¸n , ta còng kh«ng chŞu næi ","Ng­¬i mua vÒ sau , nhí ®èi víi nã tèt mét chót , kh«ng muèn ®ãi bông , ®em nã d¾t ®i ! ","§éng vËt còng gièng nh­ ng­êi , ®Òu cã t×nh c¶m , chØ cÇn mçi ngµy ®èi víi nã h¶o , nã sÏ ë ng­¬i khã kh¨n lóc gióp ng­¬i .") 
+end; 

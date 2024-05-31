@@ -5,17 +5,17 @@ function main(sel)
 i = random(0,2)
 
 if (i == 0) then
-Say("Tõ ®êi §­êng ®Õn nay, TriÒu B¾c ta lu«n s¶n xuÊt ra nh÷ng lo¹i trµ næi tiÕng. Nh­ Kú M«n §oµn Hoµng, H×nh Ch©u Tiªn Nh©n Trµ, Tïng T­ Bİch Gi¶n Trµ, Qui Ch©u B¹ch Trµ, Hoµng Ch©u Tïng La Trµ….., s¶n phÈm ®a d¹ng, s¶n l­îng dåi dµo!", 0)
+Say("Trµ b¸c sÜ:Tù ®­êng thay mÆt khëi, chóng ta Hå B¾c còng kh«ng ®o¹n s¶n xuÊt trµ næi tiÕng. Nh­ kú cöa ®oµn hoµng ? Kinh Ch©u tiªn nh©n trµ ? tïng t­ bİch gi¶n trµ ? thuéc vÒ ch©u b¹ch trµ ? hoµng ch©u tïng la trµ chê , phÈm lo¹i phån ®a , s¶n l­îng phong nhiªu .", 0)
 return
 end;
 
 if (i == 1) then
-Say("Tuy TriÒu B¾c s¶n xuÊt trµ cùc thŞnh, nh­ng cuéc sèng cña ng­êi trång trµ v« cïng khæ së v× triÒu ®×nh ®¸nh thuÕ trµ qu¸ nÆng.", 0)
+Say("Trµ b¸c sÜ:Hå B¾c mÆc dï sinh trµ cùc thŞnh, nh­ng lµ trµ n«ng ngµy nay l¹i khæ kh«ng thÓ t¶, c¸i nµy tÊt c¶ ®Òu lµ bëi v× triÒu ®×nh chinh thu trµ thuÕ qu¸ cao.", 0)
 return
 end;
 
 if (i == 2) then
-Say("D©n trång trµ ph¶i høng chŞu hµnh ®éng bèc lét c«ng søc cña d©n mµ thu lîi cña triÒu ®×nh. NhiÒu n¬i ®· nhæ bá c©y trµ ®Ó trång d©u t»m, kh«ng s¶n xuÊt trµ n÷a!", 0)
+Say("Trµ b¸c sÜ:Trµ n«ng kh«ng nhŞn ®­îc triÒu ®×nh x©m d©n m­u lîi, thËt lµ nhiÒu ®Şa ph­¬ng còng ®· rót ra trµ lo¹i tang , kh«ng phôc sinh trµ .", 0)
 end;
 
 end;

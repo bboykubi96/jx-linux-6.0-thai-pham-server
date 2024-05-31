@@ -1,9 +1,9 @@
---东北区 漠北草原to风陵渡
---Trap ID：漠北草原 1
+-- script viet hoa By http://tranhba.com  ng b綾 khu M筩 B綾 th秓 nguy猲 to phong l╪g  
+-- script viet hoa By http://tranhba.com Trap ID# M筩 B綾 th秓 nguy猲 1 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(336, 1590, 2514);
+SetFightState(1); 
+NewWorld(336, 1590, 2514); 
 
 end;

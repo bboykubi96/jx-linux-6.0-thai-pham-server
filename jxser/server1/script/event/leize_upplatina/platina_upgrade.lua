@@ -7,7 +7,7 @@ function platina_main()
 	"Ta muèn th¨ng cÊp cho trang bÞ B¹ch Kim nµy/upgrade_paltinaequip",
 	"Ta muèn chÕ t¹o trang bÞ Hoµng Kim thµnh trang bÞ B¹ch Kim/upgrade_goldformplatina",
 	"C¸ch thu thËp m¶nh Bæ Thiªn Th¹ch/about_aerolite",
-	"Trang bÞ B¹ch Kim lµ g×/about_platina",
+	"Trang bÞ B¹ch Kim lµ g×?/about_platina",
 	"§Ó ta suy nghÜ kü l¹i xem/no",
 	};
 	CreateTaskSay(aryDescribe);
@@ -120,6 +120,8 @@ function do_upplatinaeq_process(nItemCount)
 end;
 
 function do_upgradeequip_process(nItemCount, nStep, bPreview)
+
+
 	local nComposeEntryIdx = 0;
 	local nEquipIndex = 0;
 	local nEquipItemIdx = 0;
@@ -127,18 +129,20 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 	local nUpGradeProb = 0;
 	
 	local nItemBindState;	--Ô­ÁÏ»Æ½ðµÄ°ó¶¨×´Ì¬
-	--local nItemLockState = 0;   --Ô­ÁÏµÄËø»ê×´Ì¬
+	local nItemLockState = 0;   --Ô­ÁÏµÄËø»ê×´Ì¬
 	local tb_enhanceitem_count = {};
 	local tb_tempUpgrade = tbUpGradeProcess[nStep];
 	local szContinueFunc = tb_tempUpgrade.szContinueFunc;
 	
---	if (bPreview ~= 1) then
---		szContinueFunc = "#"..szContinueFunc.."(0)";
---	else
---		szContinueFunc = "#"..szContinueFunc.."(1)";
---	end
+	if (bPreview ~= 1) then
+		szContinueFunc = "#"..szContinueFunc.."(0)";
+	else
+		szContinueFunc = "#"..szContinueFunc.."(1)";
+	end
+
+
 	
-	-- Ð£ÑéÎïÆ·ÊÇ·ñÆ¥Åä
+	
 	for i = 1, nItemCount do
 		local nCurItemIdx = GetGiveItemUnit(i);
 		local nCurItemName = GetItemName(nCurItemIdx);
@@ -146,6 +150,7 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 		local nExpiredTime = ITEM_GetExpiredTime(nCurItemIdx);
 		local tbCurItemProp = pack(GetItemProp(nCurItemIdx));
 		local nCurItemValue = 0;
+
 		if (nCurItemQuality == tb_tempUpgrade.nItemQuality) then
 			--Èç¹û²»ÊÇ×°±¸(¿ÉÄÜÊÇËð»µ×°±¸)
 			if (tbCurItemProp[1] ~= 0) then
@@ -169,10 +174,11 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 			local szcurEqGold = getglobal(tb_tempUpgrade.szGetEquipIDFunc)(nCurItemIdx);
 			
 			for szkey, tb_item in TB_PLATINAEQ_GOLDEQ do
-			
+
 				if (szkey == szcurEqGold) then
 					nComposeEntryIdx = szkey;
 					nEquipIndex = nCurItemIdx;
+					
 					if (nStep == 1 and tb_item[5] and tb_item[5] == 1) then
 						tb_tempUpgrade = tbUpGradeProcess[4];
 					end
@@ -199,10 +205,14 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 									"ThËt ng¹i qu¸, ta sÏ quay l¹i sau./no"	}	);
 				return
 			end;
+
 			
+
 			nEquipItemIdx = nCurItemIdx;
 			nCurItemValue = 0;
 			nItemBindState = GetItemBindState(nCurItemIdx)	--»ñÈ¡°ó¶¨×´Ì¬
+			
+
 		end
 	end
 	
@@ -227,7 +237,9 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 			end
 			if (tb_tempUpgrade.tbUpItemList[szItemKey][3] ~= -1) then
 				if (tbCurItemProp[4] ~= tb_tempUpgrade.tbUpItemList[szItemKey][3]) then
-					CreateTaskSay(	{	"<dec><npc>§¼ng cÊp cña trang bÞ"..GetItemName(nCurItemIdx).." nµy d­êng nh­ kh«ng ®óng.",
+					Msg2Player("tbCurItemProp[4] "..tbCurItemProp[4])
+					Msg2Player("tb_tempUpgrade.tbUpItemList[szItemKey][3] "..tb_tempUpgrade.tbUpItemList[szItemKey][3])
+					CreateTaskSay(	{	"<dec><npc>§¼ng cÊp cña "..GetItemName(nCurItemIdx).." nµy d­êng nh­ kh«ng ®óng.",
 									"Ha ha, ®¹i hiÖp còng cã lóc bÊt cÈn, ®Ó ta ®Æt vµo l¹i./".."#"..szContinueFunc.."("..bPreview..")",
 									"ThËt ng¹i qu¸, ta sÏ quay l¹i sau./no"	}	);
 					return
@@ -241,6 +253,7 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 			end
 		end
 	end
+	
 	if (nComposeEntryIdx == 0) then
 		CreateTaskSay(	{	"<dec><npc>NÕu muèn ta gióp ng­¬i, h·y giao trang bÞ ®ã cho ta.",
 							"Ha ha, ®¹i hiÖp còng cã lóc bÊt cÈn, ®Ó ta ®Æt vµo l¹i./".."#"..szContinueFunc.."("..bPreview..")",
@@ -253,6 +266,7 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 		[6] = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 1)", [7] = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 2)", [8] = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 3)", [9] = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 4)"
 	};
 	local PLevel = GetPlatinaLevel(nEquipItemIdx);
+	
 	if (nStep == 3 and bPreview == 0) then
 		for szkey, tb_item in tb_tempUpgrade.tbUpItemList do
 			if (tb_item[4]) then
@@ -271,16 +285,26 @@ function do_upgradeequip_process(nItemCount, nStep, bPreview)
 			end
 		end
 	end
+
+	
+
 	if (nStep == 1) then
 		for szkey, tb_item in tb_tempUpgrade.tbUpItemList do
+			Msg2Player("szkey "..tb_enhanceitem_count[szkey][1])
 			if (tb_enhanceitem_count[szkey][1] ~= tb_tempUpgrade.tbUpItemList[szkey][1]) then
-				CreateTaskSay(	{	"<dec><npc>Muèn chÕ t¹o trang bÞ nµy, tèi thiÓu ta còng cÇn <color=yellow>"..tb_tempUpgrade.tbUpItemList[szkey][1].."c¸i"..tb_tempUpgrade.tbUpItemList[szkey][2].."<color>, ®Æt nhiÒu qu¸ sÏ thiÖt thßi cho ng­¬i, nh­ng Ýt qu¸ th× ta kh«ng chÕ t¹o ®­îc.",
-										"§Ó ta thö l¹i./".."#"..szContinueFunc.."("..bPreview..")",
-										"ThËt ng¹i qu¸, ta sÏ quay l¹i sau./no"	}	);
+				--CreateTaskSay(	{	"<dec><npc>Muèn chÕ t¹o trang bÞ nµy, tèi thiÓu ta còng cÇn <color=yellow>"..tb_tempUpgrade.tbUpItemList[szkey][1].."c¸i"..tb_tempUpgrade.tbUpItemList[szkey][2].."<color>, ®Æt nhiÒu qu¸ sÏ thiÖt thßi cho ng­¬i, nh­ng Ýt qu¸ th× ta kh«ng chÕ t¹o ®­îc.",
+										--"§Ó ta thö l¹i./".."#"..szContinueFunc.."("..bPreview..")",
+										--"ThËt ng¹i qu¸, ta sÏ quay l¹i sau./no"	}	);
+				--Say("Muèn chÕ t¹o trang bÞ nµy, tèi thiÓu ta còng cÇn <color=yellow>"..tb_tempUpgrade.tbUpItemList[szkey][1].."c¸i"..tb_tempUpgrade.tbUpItemList[szkey][1].."<color>, ®Æt nhiÒu qu¸ sÏ thiÖt thßi cho ng­¬i, nh­ng Ýt qu¸ th× ta kh«ng chÕ t¹o ®­îc.")
+				
 				return
 			end
+
 		end
 		nUpGradeProb = 1;
+
+		
+
 	else
 	
 		nUpGradeProb = nSrcItemValueSum / (TB_PLATINAEQ_GOLDEQ[nComposeEntryIdx][3] * TB_PLATINAEQ_UPGRADERATE[GetPlatinaLevel(nEquipItemIdx)]);
@@ -390,7 +414,7 @@ end;
 
 function about_aerolite()
 	CreateTaskSay({
-		"m¶nh Bæ Thiªn Th¹ch lµ b¶o vËt cña trêi ®Êt, chèn nh©n gian khã t×m. Tuy nhiªn, ng­¬i cã thÓ ®Õn  <color=yellow>Sø gi¶ liªn ®Êu<color> hái xem thÕ nµo, nÕu ng­¬i cã <color=yellow>§iÓm vinh dù<color> th× cã thÓ mua ®­îc. Còng cã thÓ ghÐ vµo <color=yellow>Kú Tr©n C¸c<color> xem thö.",
+		"m¶nh Bæ Thiªn Th¹ch lµ b¶o vËt cña trêi ®Êt, chèn nh©n gian khã t×m. Tuy nhiªn, ng­¬i cã thÓ ®Õn  <color=yellow>Sø gi¶ liªn ®Êu<color> hái xem thÕ nµo, nÕu ng­¬i cã <color=yellow>§iÓm vinh dù<color> th× cã thÓ mua ®­îc.",
 		"Ta biÕt råi!/no",
 	});
 end;

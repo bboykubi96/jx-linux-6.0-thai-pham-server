@@ -29,7 +29,7 @@ TIMER_2 = 90 * 60  * FRAME2TIME; -- ½»Õ½Ê±¼äÎª1Ğ¡Ê±
 RUNGAME_TIME = 30 * 60 * FRAME2TIME / TIMER_1; --±¨Ãû30·ÖÖÓÖ®ºó£¬×Ô¶¯½øÈëÕ½¶·½×¶Î
 GO_TIME =  30 * 60 * FRAME2TIME  / TIMER_1; -- ±¨ÃûÊ±¼äÎª°ëĞ¡Ê±
 
-MAX_MEMBERCOUNT = 150 
+MAX_MEMBERCOUNT = 200 
 TIME_PLAYER_REV = 8 ; -- Íæ¼ÒËÀÍö»òÍË³öÓÎÏ·ÔÙ½øÈëÊ±£¬±ØĞë3·ÖÖÓÖ®ºó²ÅÄÜÀë¿ªºóÓªµ½´óÓª
 TIME_PLAYER_STAY = 120
 --ÒÔÏÂÊÇÄ³Ğ©Öµ¼ÇÂ¼ÔÚMissionValueÖĞµÄË÷ÒıÎ»ÖÃ£¬Í¨¹ıGetMissionV(MS_XXX)À´»ñµÃÊµ¼ÊµÄÖµ
@@ -423,8 +423,8 @@ function sf_join(camp)
 	end
 
 if (result == 0) then
-	if (GetCash() >= 3000) then
-		Pay(3000)
+	--if (GetCash() >= 3000) then
+	--	Pay(3000)
 		BT_LeaveBattle() -- Çå³ıÍæ¼Ò¿Í»§¶Ëµ±Ç°µÄÅÅÃûÊı¾İ
 		BT_ClearPlayerData()
 		SetTask(2435, 0);--±¾³¡ËÎ½ğÒÑ¾­ÁìÈ¡µÄ°ï»á¹±Ï×¶ÈÇåÁã--by ÁÎÖ¾É½
@@ -432,10 +432,10 @@ if (result == 0) then
 		BT_SetData(PL_ROUND,BT_GetGameData(GAME_ROUND))
 		local nlevel = BT_GetGameData(GAME_LEVEL)
 		G_ACTIVITY:OnMessage("SignUpSongJin", PlayerIndex, nlevel)
-	else
-		Say("Muèn tham gia chiÕn tr­êng Tèng Kim h·y ñng hé 3000 l­îng", 0)
-		return 
-	end
+	--else
+	--	Say("Muèn tham gia chiÕn tr­êng Tèng Kim h·y ñng hé 3000 l­îng", 0)
+	--	return 
+	--end
 end
 
 gametime = floor(GetMSRestTime(MISSIONID, 100) / 18);

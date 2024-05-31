@@ -1,19 +1,40 @@
-Name	Feature	Price
-Th›ch Ni M∑o	0	500
-Thi™n Thanh M∑o	1	500
-X›ch ∂nh ph∏t Qu∏n	2	500
-B◊TrÙ 	6	500
-ThÛ CËt Tr©m	7	500
-Huy“n T™ Di÷n Tr∏o	8	500
-Th´ Thi’t ß«u Hoµn	9	500
-K™ V‹ Thoa	10	500
-Long Huy’t ß«u hoµn	11	500
-Vi™n M∑o	12	500
-Song PhÙng Tri“u Thi™n Qu∏n	13	500
-Long L©n Kh´i	14	500
-BË M∑o	15	500
-L≠u Ly Thoa	16	500
-Thanh Tinh Thoa	17	500
-Hoµng BË Ph∏t ß∏i	18	500
-Thanh L≠u Ly Ph∏t Xoa	19	500
-Kim PhÙng Tri”n S› 	20	500
+Name	Feature	Price	nGenre	nDetail	nParticular
+Ki”u 1	0	1	0	7	-1
+Ki”u 2	1	1	0	7	-1
+Ki”u 3	2	1	0	7	-1
+Ki”u 4	3	1	0	7	-1
+Ki”u 5	4	1	0	7	-1
+Ki”u 6	5	1	0	7	-1
+Ki”u 7	6	1	0	7	-1
+Ki”u 8	7	1	0	7	-1
+Ki”u 9	8	1	0	7	-1
+Ki”u 10	9	1	0	7	-1
+Ki”u 11	10	1	0	7	-1
+Ki”u 12	11	1	0	7	-1
+Ki”u 13	12	1	0	7	-1
+Ki”u 14	13	1	0	7	-1
+Ki”u 15	14	1	0	7	-1
+Ki”u 16	15	1	0	7	-1
+Ki”u 17	16	1	0	7	-1
+Ki”u 18	17	1	0	7	-1
+Ki”u 19	18	1	0	7	-1
+Ki”u 20	19	1	0	7	-1
+Ki”u 21	20	1	0	7	-1
+Ki”u 22	21	1	0	7	-1
+Ki”u 23	22	1	0	7	-1
+Ki”u 24	23	1	0	7	-1
+Ki”u 25	24	1	0	7	-1
+Ki”u 26	25	1	0	7	-1
+Ki”u 27	26	1	0	7	-1
+Ki”u 28	27	1	0	7	-1
+Ki”u 29	29	2	0	7	-1
+Ki”u 30	30	2	0	7	-1
+Ki”u 31	31	2	0	7	-1
+Ki”u 32	32	2	0	7	-1
+Ki”u 33	33	2	0	7	-1
+Ki”u 34	34	2	0	7	-1
+Ki”u 35	35	2	0	7	-1
+Ki”u 36	36	2	0	7	-1
+Ki”u 37	37	2	0	7	-1
+Ki”u 38	39	2	0	7	-1
+Ki”u 39	42	2	0	7	-1

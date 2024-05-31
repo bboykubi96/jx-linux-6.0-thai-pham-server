@@ -1,9 +1,9 @@
---ÖĞÔ­ÄÏÇø µ¾Ïã´å Ä¾ÈËËÀÍö ĞÂÊÖ´åÁ·¼¶ÈÎÎñ(²»¿ÉÖØ¸´µÄÈÎÎñ)
--- Update: Dan_Deng(2003-08-09)
--- Update: Dan_Deng(2003-11-04)¸ÄÎªÄ£°å·½Ê½£¬È«·şÍ³Ò»µ÷ÓÃÒ»¸öº¯ÊıÒÔÀûÓÚÎ¬»¤¡¢À©Õ¹
+-- script viet hoa By http://tranhba.com  Trung Nguyªn nam khu ®¹o h­¬ng th«n méc nh©n tö vong tay míi th«n luyÖn cÊp nhiÖm vô ( kh«ng thÓ t¸i diÔn ®İch nhiÖm vô ) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-09) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-11-04) ®æi thµnh m« b¶n ph­¬ng thøc , toµn dïng/uèng thèng nhÊt ®iÒu dông mét hµm sè lÊy lîi cho duy tr× # ph¸t triÓn 
 
 Include("\\script\\global\\¸÷ÅÉ½ÓÒıµÜ×Ó\\Çá¹¦_Ä¾ÈËÄ£°å.lua")
 
-function OnDeath()
-	learn()
-end;
+function OnDeath() 
+learn() 
+end; 

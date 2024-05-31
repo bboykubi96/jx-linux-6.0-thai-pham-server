@@ -43,7 +43,6 @@ tab_citynpc = {
 function add_zhongqiunpc()
 	add_mingyuenpc();
 	add_citynpc();
-	--add_balanghuyen_npc();
 end
 
 function add_mingyuenpc()

@@ -1,11 +1,11 @@
--- Êñ¸ÔÉ½ Õ½¶·NPC ½ğ±ø Ø¤°ï30¼¶ÈÎÎñ
--- by£ºDan_Deng(2003-07-28)
+-- script viet hoa By http://tranhba.com  thôc c­¬ng s¬n chiÕn ®Êu NPC qu©n Kim C¸i Bang 30 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-07-28) 
 
-function OnDeath()
-	UTask_gb = GetTask(8);
-	if (UTask_gb == 30*256+20) then			--30¼¶ÈÎÎñÖĞ
+function OnDeath() 
+UTask_gb = GetTask(8); 
+	if (UTask_gb == 30*256+20) then			-- script viet hoa By http://tranhba.com 30¼¶ÈÎÎñÖĞ
 		SetTask(8,30*256+30)
-		AddNote("§¸nh b¹i qu©n Kim mai phôc, c¸c ®Ö tö C¸i Bang vèn mÊt tİch ®Òu bŞ qu©n Kim mai phôc b¾t ®i. ")
-		Msg2Player("§¸nh b¹i qu©n Kim mai phôc, c¸c ®Ö tö C¸i Bang vèn mÊt tİch ®Òu bŞ qu©n Kim mai phôc b¾t ®i. ")
-	end
-end;
+AddNote("§¸nh b¹i mai phôc ®İch qu©n Kim , c¸c vŞ mÊt tİch C¸i Bang ®Ö tö còng bŞ qu©n Kim phôc binh b¾t l¹i . ") 
+Msg2Player("§¸nh b¹i mai phôc ®İch qu©n Kim , c¸c vŞ mÊt tİch C¸i Bang ®Ö tö còng bŞ qu©n Kim phôc binh b¾t l¹i . ") 
+end 
+end; 

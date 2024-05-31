@@ -1,5 +1,6 @@
 --Á½ºşÇø ºâÉ½ÅÉ ¶À¹Â½£¶Ô»° ÊÀ½çÈÎÎñ£ºÎäÁÖÏò±³
 -- By: Dan_Deng(2004-02-03)
+--Nhiem vu the gioi NPC Doc Ho Kiem
 
 Include("\\script\\global\\repute_head.lua")
 Include("\\script\\global\\chuangong.lua")
@@ -17,8 +18,8 @@ function main()
 	local tbDailog = DailogClass:new(szNpcName);
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
 	tbDailog.szTitleMsg = "<npc>L©u ngµy kh«ng gÆp! T×m ta cã viÖc g×?"
-	tbDailog:AddOptEntry("Ta ®Õn b¸i pháng Minh chñ.", old_main)
-	tbDailog:AddOptEntry("Minh Chñ ng­êi cã biÕt NguyÖt Ca §¶o nµy cã tån t¹i thËt hay kh«ng?", yuegedao_help)
+--	tbDailog:AddOptEntry("Ta ®Õn b¸i pháng Minh chñ.", old_main)
+	--tbDailog:AddOptEntry("Minh Chñ ng­êi cã biÕt NguyÖt Ca §¶o nµy cã tån t¹i thËt hay kh«ng?", yuegedao_help)--Nguyet ca Dao hoc Skill 150
 	tbDailog:Show()
 	
 --	if (GetTask(TV_LAST_APPLY_TIME) > 0) then
@@ -59,8 +60,8 @@ function U39_yes()
 	SetTask(39,10)
 	SetTask(40,0)
 	Earn(10000)
-	Msg2Player("TiÕp nhËn nhiÖm vô Th¸i ®é Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
-	AddNote("TiÕp nhËn nhiÖm vô Th¸i ®é Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
+	Msg2SubWorld("§¹i hiÖp "..GetName().." ®· tiÕp nhËn nhiÖm vô Liªn KÕt Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
+	AddNote("TiÕp nhËn nhiÖm vô Liªn KÕt Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
 end
 
 function U39_prise()
@@ -69,8 +70,13 @@ function U39_prise()
 	SetTask(40,0)									-- ×Ó±äÁ¿¸´Î»
 	i = 10+random(1,10)							-- ÉùÍûËæ»ú½±Àø11---20µã
 	AddRepute(i)
-	Msg2Player("Hoµn thµnh nhiÖm vô Th¸i ®é Vâ L©m cña §éc C« KiÕm, danh väng cña b¹n t¨ng "..i.."®iÓm.")
-	AddNote("Quay l¹i Hoµnh s¬n §¹i §×nh, hoµn thµnh nhiÖm vô Th¸i ®é Vâ L©m cña §éc C« KiÕm. ")
+	Msg2SubWorld("§¹i hiÖp "..GetName().." ®· hoµn thµnh nhiÖm vô Liªn KÕt Vâ L©m cña §éc C« KiÕm, danh väng cña b¹n t¨ng "..i.." ®iÓm.")
+	AddNote("Quay l¹i Hoµnh s¬n §¹i §×nh, hoµn thµnh nhiÖm vô Liªn KÕt Vâ L©m cña §éc C« KiÕm. ")
+	--local tbAward = 
+	--{
+	--	{szName = "Tiªn Th¶o Lé", tbProp = {6,1,71,1,0,0,}, nBindState = -2,},
+	--}
+	--tbAwardTemplet:GiveAwardByList(tbAward, "§Õn §éc C« KiÕm - Hoµnh S¬n Ph¸i nhËn Tiªn Th¶o Lé")
 end
 
 function U39_progress()

@@ -1,35 +1,63 @@
---description: Á½ºşÇø °ÍÁêÏØ Ò©µêÀÏ°å¶Ô»°£¨ÌìÍõ°ï40¼¶ÈÎÎñ¡¢ĞÂÊÖÈÎÎñĞ¡ÓæµùµùµÄ²¡£©
+--description: ¸½ºşÇø °İ¸êÏØ Ò©µêµÏ°å¶Ô»°£¨Ììİõ°ï40¼¶ÈÎÎñ¡¢Ğ¢ÊÖÈÎÎñĞ¡ÓæµùµùµÄ²¡£©
 --author: yuanlan	
 --date: 2003/4/26
 -- Update: Dan_Deng(2003-08-10)
 Include("\\script\\task\\newtask\\education\\jiaoyutasknpc.lua")
 Include("\\script\\task\\newtask\\newtask_head.lua")
+Include("\\script\\lib\\awardtemplet.lua");	
 function main(sel)
 	UTask_tw = GetTask(3)
 	UTask_world18 = GetTask(46)
-	if (UTask_tw == 40*256+20) then						-- ÌìÍõ40¼¶ÈÎÎñ
-		Talk(5, "L40_tw_talk2", "T¹i h¹ lµ ®Ö tö Thiªn V­¬ng bang, cã mét ®ång m«n bŞ tróng näc r¾n Xİch LiÖm. Xin thÇn y cho thuèc gi¶i!", "R¾n Xİch LiÖm µ? ThËt lµ nguy hiÓm qu¸!..Ta cã thÓ cøu, c¸i khã lµ ph¶i t×m ®­îc d­îc liÖu ®Ó phèi thuèc!", "Kh«ng biÕt ph¶i cÇn nh÷ng d­îc liÖu g×?", "§©y lµ bİ quyÕt gia truyÒn, nh­ng ng­¬i lµ ®Ö tö Thiªn V­¬ng nªn ta nãi cho nghe! CÇn cã <color=Red>da th»n l»n ®á<color> vµ <color=Red>Lôc Thñ Quy<color>. T×m ®­îc hai thø nµy th× ®ång m«n cña ng­¬i sÏ ®­îc cøu", "Kh«ng biÕt cã thÓ t×m hai thø nµy ë ®©u?")
-	elseif(UTask_world18 == 1) then				-- ĞÂÊÖ´åĞ¡ÓæÈÎÎñ
-		Talk(1,"","H¶?Bè cña TiÓu Ng­ bÖnh µ? Ng­¬i ®Õn chËm råi! Ta võa b¸n viªn Tú Bµ hoµn cuèi cïng cho ®Ö tö Thiªn V­¬ng. Hay lµ ng­¬i hái thö «ng ta xem")
-		Msg2Player("Chñ d­îc ®iÕm cho biÕt Tú Bµ hoµn ®· b¸n hÕt. B¹n h·y ®i hái thö ®Ö tö Thiªn V­¬ng Bang. ")
-		AddNote("Tú Bµ hoµn ®· b¸n hÕt. B¹n h·y ®i hái thö ®Ö tö Thiªn V­¬ng Bang. ")
+	if (UTask_tw == 40*256+20) then						-- Ììİõ40¼¶ÈÎÎñ
+		Talk(5, "L40_tw_talk2", "ht1", "ht2", "ht3<color=Red>4<color> 5<color=Red>6<color>.7", "ht8")
+	elseif(UTask_world18 == 1) then				-- Ğ¢ÊÖ´åĞ¡ÓæÈÎÎñ
+		Talk(1,"","H¶?Bè cña TiÓu Ng­ bÖnh µ? Ng­¬i ®Õn chËm råi! Ta võa b¸n viªn Tú Bµ hoµn cuèi cïng cho ®Ö tö Thiªn V­¬ng. Hay lµ ng­¬i hái thö «ng ta xem. ")
+		Msg2Player("Chñ d­îc ®iÕm cho biÕt: Tú Bµ Hoµn ®· b¸n hÕt. B¹n h·y ®i hái thö ®Ö tö Thiªn V­¬ng Bang. ")
+		AddNote("Chñ d­îc ®iÕm cho biÕt: Tú Bµ Hoµn ®· b¸n hÕt. B¹n h·y ®i hái thö ®Ö tö Thiªn V­¬ng Bang. ")
 	elseif (UTask_tw == 40*256+50) then
-		Say("Nghe nãi trong <color=Red>Phôc L­u ®éng<color> cã <color=Red>Th»n lµn ®á<color> vµ<color=Red>Lôc Thñ Quy<color>, cã ng­êi trªn <color=Red>Thiªn V­¬ng ®¶o<color> ®· nh×n thÊy. ChØ cÇn t×m ®­îc nã th× ®ång m«n sÏ ®­îc cøu", 2, "Ta mua İt thuèc tr­íc ®·/yes", "Ta ph¶i lËp tøc ®i t×m thuèc dÉn/no")
+		Say("ht12<color=Red>13´<color> 14<olor=Red>115<color> 16<color=Red>17<color>, 18<color=Red>19<color>20", 2, "21/yes", "22/no")
 	else							-- ·ÇÈÎÎñ×´Ì¬
-		Say("Bæn tiÖm ®Òu lµ thÇn d­îc! Cã bÖnh sÏ khái bÖnh, kh«ng bÖnh sÏ kháe, gi¸ c¶ ph¶i ch¨ng. Mua mét İt chø?", 3, "Giao dŞch/yes", "Ta ®Õn nhËn nhiÖm vô S¬ nhËp/yboss","Kh«ng giao dŞch/no");
+		--Say("Bæn tiÖm ®Òu lµ thÇn d­îc! Cã bÖnh sÏ khái bÖnh, kh«ng bÖnh sÏ kháe, gi¸ c¶ ph¶i ch¨ng. Mua mét İt chø? ", 4, "Giao dŞch/yes", "Ta ®Õn nhËn nhiÖm vô s¬ nhËp/yboss","Mua M¸u Nhanh/muamauquanhanh","Kh«ng giao dŞch/no");
+		Say("Bæn tiÖm ®Òu lµ thÇn d­îc! Cã bÖnh sÏ khái bÖnh, kh«ng bÖnh sÏ kháe, gi¸ c¶ ph¶i ch¨ng. Mua mét İt chø? ", 3, "Giao dŞch/yes", "Mua Tói M¸u T©n Thñ (100 V¹n)/tuimautanthu","Mua M¸u Nhanh (2000 l­îng -1 b×nh)/muamauquanhanh","Kh«ng giao dŞch/no");
 	end
 end;
 
 function L40_tw_talk2()
-	Talk(2,"","Nghe nãi trong <color=Red>Phôc L­u ®éng<color> cã <color=Red>Th»n lµn ®á<color> vµ<color=Red>Lôc Thñ Quy<color>, cã ng­êi trªn <color=Red>Thiªn V­¬ng ®¶o<color> ®· nh×n thÊy", "§a t¹ Ng« thÇn y!")
-	SetTask(3, 40*256+50)								-- ÌìÍõ40¼¶ÈÎÎñ
-	AddNote("Ng« thÇn y t¹i Ba L¨ng huyÖn cho biÕt: muèn gi¶i näc r¾n cÇn cã da th»n l»n ®á vµ Lôc Thñ Quy")
-	Msg2Player("Muèn trŞ ®­îc näc cña §éc xµ, cÇn ph¶i cã da Th»n l»n ®á vµ Lôc Thñ Quy.")
+	Talk(2,"","ht23<color=Red>24<color> 26<color=Red>27<color>28<color=Red>29<color>,30<color=Red>31<color>32", "33")
+	SetTask(3, 40*256+50)								-- Ììİõ40¼¶ÈÎÎñ
+	AddNote("ht34")
+	Msg2Player("ht35.")
 end;
 
 function yes()
-	Sale(39);  			--µ¯³ö½»Ò×¿ò
+	Sale(12);  			--µ¯³ö½»Ò×¿ò
 end;
 
 function no()
 end;
+function tuimautanthu()
+	if GetCash()>=1000000 then
+		Pay(1000000)
+		tbAwardTemplet:GiveAwardByList({{szName = "Tói M¸u",tbProp={6,1,4461,1,1},nCount=1},}, "test", 1);
+	else
+		Say("Hµnh trang kh«ng cã ®ñ 100 V¹n")
+		return
+	end
+end
+function muamauquanhanh()
+	local pri = 100
+	local totalcount =CalcFreeItemCellCount();
+	local money = GetCash()
+	local moneymin = (money - mod(money,pri)) / pri
+	if totalcount == 0 then 
+                       Say("<color=yellow>§¹i hiÖp ®· cã ®Çy r­¬ng m¸u.",0)
+	return
+	end
+	if money>=totalcount*2000 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= totalcount}}, format("Get %s", "Than pham 1"))
+	Pay(totalcount*2000)
+	else
+		Say("§¹i hiÖp kh«ng ®ñ ng©n l­îng ®Ó mua m¸u nhanh.")
+		return
+	end
+end

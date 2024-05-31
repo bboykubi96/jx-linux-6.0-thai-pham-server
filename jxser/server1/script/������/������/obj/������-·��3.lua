@@ -1,8 +1,8 @@
---Á½ºşÇø °ÍÁêÏØ Â·±ê3£º°ÍÁêÏØ->ÉñÅ©¼Ü
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn b¶ng chØ ®­êng 3# ba l¨ng huyÒn -> thÇn n«ng chiÕc 
 
-function main(sel)
+function main(sel) 
 
---Say("°ÍÁêÏØ<¡ª¡ª>ÉñÅ©¼Ü", 0)
-Say("Ba L¨ng huyÖn<---->Miªu LÜnh", 0)
+-- script viet hoa By http://tranhba.com Say("Ba l¨ng huyÒn <——> thÇn n«ng chiÕc ", 0) 
+Say("Ba l¨ng huyÒn <——> miªu lÜnh ", 0) 
 
-end;
+end; 

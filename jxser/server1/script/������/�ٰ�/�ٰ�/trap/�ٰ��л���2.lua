@@ -11,6 +11,4 @@ else			       		-- 玩家处于战斗状态，即在城外
 	SetPos(1714, 3328)		-- 设置走出Trap点，目的点在城内	
 	SetFightState(0)		-- 转换为非战斗状态
 end;
-SetProtectTime(18*3)
-	AddSkillState(963, 1, 0, 18*3) 
 end;

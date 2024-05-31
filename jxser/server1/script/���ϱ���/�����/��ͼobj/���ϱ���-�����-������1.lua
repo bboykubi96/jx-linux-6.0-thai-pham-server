@@ -1,7 +1,7 @@
---西南北区 江津村 小广场传送门1
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu giang t﹏ th玭 ti觰 qu秐g trng truy襫 t鑞g c鯽 1 
 
-function main(sel)
+function main(sel) 
 
-ReturnFromPortal();
+ReturnFromPortal(); 
 
 end;

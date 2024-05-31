@@ -1,7 +1,7 @@
---东北区 长白山脚to临渝关
---Trap ID：东北区 1
+-- script viet hoa By http://tranhba.com  ng b綾 khu Trng b筩h s琻 ch﹏ to trc khi du quan 
+-- script viet hoa By http://tranhba.com Trap ID# ng b綾 khu 1 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(319, 2031, 3286);
+function main(sel) 
+SetFightState(1); 
+NewWorld(319, 2031, 3286); 
 end;

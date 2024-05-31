@@ -4,7 +4,17 @@
 -- Date: 2007-06-06 19:47
 Include("\\script\\maps\\checkmap.lua");
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+	
+	--dofile("script/item/mobei_portal.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+	if dimanbacthaonguyen == 0 then
+		Say("M¹c b¾c th¶o nguyªn t¹m thêi ch­a më")
+		return 1;
+	end
+
 	local pMapID, pMx, pMy = GetWorldPos();
 	if GetFightState()>=1 or (IsCityMap(pMapID)~=1 and IsFreshmanMap(pMapID)~=1 and pMapID ~= 175)  then
 		Msg2Player("<color=yellow>Cuén truyÒn tèng M¹c B¾c chØ cã thÓ sö dông t¹i khu vùc phi chiÕn ®Êu cña thµnh thŞ, t©n thñ th«n vµ t©y s¬n th«n<color>");

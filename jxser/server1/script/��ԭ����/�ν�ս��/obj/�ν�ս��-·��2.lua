@@ -1,7 +1,7 @@
---÷–‘≠±±«¯ ÀŒΩ’Ω≥° ¬∑±Í2£∫ÀŒΩ’Ω≥°->œÂ—Ù
+-- script viet hoa By http://tranhba.com  Trung Nguy™n bæc khu tËng kim chi’n tr≠Íng b∂ng chÿ Æ≠Íng 2# tËng kim chi’n tr≠Íng -> t≠¨ng d≠¨ng 
 
-function main(sel)
+function main(sel) 
 
-Say("Chi’n tr≠Íng TËng Kim<---->T≠¨ng D≠¨ng ", 0)
+Say("TËng kim chi’n tr≠Íng <óó> t≠¨ng d≠¨ng ", 0) 
 
-end;
+end; 

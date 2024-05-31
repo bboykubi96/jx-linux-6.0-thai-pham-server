@@ -10,6 +10,15 @@ function want_playboat()
 	local freeboat = 0
 	local startboat = 0
 	local blevel = 0
+
+	--do Say("Theo lé tr×nh TOP 10 thÕ giíi ®¹t LV 100 míi më tİnh n¨ng nµy") return end
+
+	--local nNowTime = tonumber(date( "%H%M "))
+	--if nNowTime >= 1111 or nNowTime < 1100 then
+	--	Say("Xin lçi! NhiÖm vô V­ît ¶i Th¸ch thøc thêi gian thêi gian b¸o danh tõ 11h00 ®Õn 11h10 hµng ngµy",0)
+	--	return
+	--end
+
 	if (IsCaptain() ~= 1) then
 		Say("Xin lçi! CÇn ph¶i lµ §éi tr­ëng míi cã t­ c¸ch b¸o danh tham gia 'NhiÖm vô Th¸ch thøc thêi gian'",0)
 		return
@@ -18,34 +27,37 @@ function want_playboat()
 		Say("Xin lçi! §éi tham gia 'NhiÖm vô Th¸ch thøc thêi gian' cÇn ph¶i cã İt nhÊt <color=red>4<color> ng­êi!",0)
 		return
 	end
-	if(GetLevel() < 50) then
-		Say("Xin lçi! §¼ng cÊp d­íi 50 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
+
+	--Update level 100 tham gia vuot ai g7vn
+	if(GetLevel() < 80) then
+		Say("Xin lçi! §¼ng cÊp d­íi 90 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
 		return
 	end
-	if (GetLevel() >= 90) then
+
+	if (GetLevel() >= 80) then
 		blevel = 1
 	end
 	
 	for i = 1, GetTeamSize() do 
 		PlayerIndex = GetTeamMember(i)
 		local bmbrlevel = 0
-		if(GetLevel() < 50) then
-			Say("Xin lçi! §¼ng cÊp d­íi 50 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
-			Msg2Team("Xin lçi! Trong ®éi b¹n cã thµnh viªn d­íi cÊp 50, kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.");
+		if(GetLevel() < 80) then
+			Say("Xin lçi! §¼ng cÊp d­íi 80 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
+			Msg2Team("Xin lçi! Trong ®éi b¹n cã thµnh viªn d­íi cÊp 80, kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.");
 			return
 		end
-		if (GetLevel() >= 90) then
+		if (GetLevel() >= 80) then
 			bmbrlevel = 1
 		end
 		
 		if (blevel ~= bmbrlevel) then
 			if (blevel == 0) then
-				Say(" Xin lçi! Trong ®éi b¹n cã thµnh viªn v­ît <color=red>cÊp 90<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
-				Msg2Team("Trong ®éi b¹n cã thµnh viªn trªn cÊp 90, xin h·y kiÓm tra l¹i råi b¸o danh!");
+				Say(" Xin lçi! Trong ®éi b¹n cã thµnh viªn v­ît <color=red>cÊp 80<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
+				Msg2Team("Trong ®éi b¹n cã thµnh viªn trªn cÊp 80, xin h·y kiÓm tra l¹i råi b¸o danh!");
 				return
 			else
-				Say("Xin lçi! Trong ®éi b¹n cã thµnh viªn ch­a ®¹t <color=red>cÊp 90<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
-				Msg2Team("Trong ®éi b¹n cã thµnh viªn ch­a ®¹t cÊp 90, xin kiÓm tra l¹i råi b¸o danh!");
+				Say("Xin lçi! Trong ®éi b¹n cã thµnh viªn ch­a ®¹t <color=red>cÊp 80<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
+				Msg2Team("Trong ®éi b¹n cã thµnh viªn ch­a ®¹t cÊp 80, xin kiÓm tra l¹i råi b¸o danh!");
 				return
 			end
 		end
@@ -77,24 +89,27 @@ function want_playboat()
 	
 	if (startboat == 1) then
 		if (freeboat == 0) then
-			Say("Khu vùc nµy"..strlevel.."®· b¾t ®Çu. Kh«ng cßn chç n÷a….",0)
+			Say("Khu vùc  "..strlevel.." ®· b¾t ®Çu. Kh«ng cßn chç n÷a….",0)
 			return
 		else
-			Say("Khu vùc nµy"..strlevel.."giai ®o¹n b¸o danh ®ua thuyÒn rång, vÉn cßn <color=red>"..freeboat.."<color>Mét b¶n ®å nhiÖm vô miÔn phİ, thêi gian khiªu chiÕn cÇn ph¶i giao <color=red>1 v¹n<color> ng©n l­îng, ng­¬i muèn tham gia kh«ng?",2, "Ph¶i! Ta muèn dÉn d¾t ®éi cña ta tham gia./dragon_join", "Kh«ng cÇn/onCancel")
+			Say("Khu vùc  "..strlevel.." giai ®o¹n b¸o danh ®ua thuyÒn rång, vÉn cßn <color=red> "..freeboat.." <color> b¶n ®å nhiÖm vô miÔn phİ, tham gia khiªu chiÕn cÇn ph¶i giao <color=red>10 v¹n<color> ng©n l­îng, ng­¬i muèn tham gia kh«ng?",2, "Ph¶i! Ta muèn dÉn d¾t ®éi cña ta tham gia./dragon_join", "Kh«ng cÇn/onCancel")
 			return
 		end
 	else
-		Say("Xin lçi! Khu vùc nµy"..strlevel.."HiÖn t¹i kh«ng cã nhiÖm vô khiªu chiÕn thêi gian ®Ó tham gia. B¸o danh vµo  <color=red>®óng mçi tiÕng ®ång hç<color> b¾t ®Çu, lµ" .. TIME_SIGNUP .."phót, xin h·y l­u ı th«ng b¸o cña hÖ thèng.",0)
+		Say("Xin lçi! Khu vùc  "..strlevel.." HiÖn t¹i kh«ng cã nhiÖm vô khiªu chiÕn thêi gian ®Ó tham gia. B¸o danh vµo  <color=red>®óng mçi tiÕng ®ång hç<color> b¾t ®Çu, lµ" .. TIME_SIGNUP .."phót, xin h·y l­u ı th«ng b¸o cña hÖ thèng.",0)
 		return
 	end
 	
 end
 
 function dragon_join()
+local nocount=0
+			local szstr=""
+			local tbstr = {{},{},{},{}}
 	local blevel = 0
 	local havesword = 0
 	local nNowDate = tonumber(GetLocalDate("%y%m%d"));
-	if (GetLevel() >= 90) then
+	if (GetLevel() >= 80) then
 		blevel = 1
 	end
 	if(GetTask(1551) == nNowDate) then
@@ -107,8 +122,8 @@ function dragon_join()
 		Say("Xin lçi! CÇn ph¶i lµ §éi tr­ëng míi cã t­ c¸ch b¸o danh tham gia 'NhiÖm vô Th¸ch thøc thêi gian'",0)
 		return
 	end
-	if(GetLevel() < 50) then
-		Say("Xin lçi! §¼ng cÊp d­íi 50 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
+	if(GetLevel() < 80) then
+		Say("Xin lçi! §¼ng cÊp d­íi 80 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
 		return
 	end
 	if (GetTeamSize() < 4) then
@@ -116,8 +131,8 @@ function dragon_join()
 		return
 	end
 	
-	if (GetCash() < 10000) then
-		Say("Tham gia nhiÖm vô “Th¸ch thøc thêi gian” cÇn <color=red>1v¹n l­îng<color>. ChuÈn bŞ ®ñ tiÒn råi h·y quay l¹i!", 0)
+	if (GetCash() < 100000) then
+		Say("Tham gia nhiÖm vô “Th¸ch thøc thêi gian” cÇn <color=red>10 v¹n l­îng<color>. ChuÈn bŞ ®ñ tiÒn råi h·y quay l¹i!", 0)
 		return
 	end
 	
@@ -134,23 +149,23 @@ function dragon_join()
 				return
 			end
 		end
-		if(GetLevel() < 50) then
-			Say("Xin lçi! §¼ng cÊp d­íi 50 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
-			Msg2Team("Xin lçi! Trong ®éi b¹n cã thµnh viªn d­íi cÊp 50, kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.");
+		if(GetLevel() < 80) then
+			Say("Xin lçi! §¼ng cÊp d­íi 80 kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.",0);
+			Msg2Team("Xin lçi! Trong ®éi b¹n cã thµnh viªn d­íi cÊp 80, kh«ng thÓ tham gia 'NhiÖm vô Th¸ch thøc thêi gian'.");
 			return
 		end
-		if (GetLevel() >= 90) then
+		if (GetLevel() >= 80) then
 			bmbrlevel = 1
 		end
 		
 		if (blevel ~= bmbrlevel) then
 			if (blevel == 0) then
-				Say(" Xin lçi! Trong ®éi b¹n cã thµnh viªn v­ît <color=red>cÊp 90<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
-				Msg2Team("Trong ®éi b¹n cã thµnh viªn trªn cÊp 90, xin h·y kiÓm tra l¹i råi b¸o danh!");
+				Say(" Xin lçi! Trong ®éi b¹n cã thµnh viªn v­ît <color=red>cÊp 80<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
+				Msg2Team("Trong ®éi b¹n cã thµnh viªn trªn cÊp 80, xin h·y kiÓm tra l¹i råi b¸o danh!");
 				return
 			else
-				Say("Xin lçi! Trong ®éi b¹n cã thµnh viªn ch­a ®¹t <color=red>cÊp 90<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
-				Msg2Team("Trong ®éi b¹n cã thµnh viªn ch­a ®¹t cÊp 90, xin kiÓm tra l¹i råi b¸o danh!");
+				Say("Xin lçi! Trong ®éi b¹n cã thµnh viªn ch­a ®¹t <color=red>cÊp 80<color>, xin kiÓm tra l¹i råi b¸o danh!",0)
+				Msg2Team("Trong ®éi b¹n cã thµnh viªn ch­a ®¹t cÊp 80, xin kiÓm tra l¹i råi b¸o danh!");
 				return
 			end
 		end
@@ -166,6 +181,7 @@ function dragon_join()
 			end	
 		else
 			havesword = CalcEquiproomItemCount( 6, 1, 400, 90 )
+			
 		end
 		if (havesword < 1 and blevel == 0) then
 			Say("NhiÕp Thİ ThÇn: Xin l­îng thø, tham gia nhiÖm vô khiªu chiÕn thêi gian s¬ cÊp mçi thµnh viªn cÇn ph¶i cã mét S¸t Thñ Gi¶n ngò hµnh bÊt kú cÊp 90 trë xuèng, xin h·y chuÈn bŞ råi h·y ®Õn ®©y gÆp ta",0)
@@ -173,13 +189,24 @@ function dragon_join()
 			return
 		elseif (havesword < 1 and blevel == 1) then
 			Say("NhiÕp Thİ ThÇn: Xin l­îng thø, tham gia nhiÖm vô khiªu chiÕn thêi gian cao cÊp mçi thµnh viªn cÇn ph¶i cã mét S¸t Thñ Gi¶n ngò hµnh bÊt kú cÊp 90 , xin h·y chuÈn bŞ råi h·y ®Õn ®©y gÆp ta",0)
-			Msg2Team("Trong tæ ®éi cña ng­¬i cã ng­êi kh«ng cã S¸t Thñ Gi¶n ngò hµnh bÊt kú cÊp 90, xin  kiÓm tra l¹i råi h·y b¸o danh tham gia !")
-			return
-		end
+			
+
+			nocount = nocount + 1
+			tbstr[2][nocount] = "<color=yellow>"..GetName().."<color>"
+			
 	end
 	
 	PlayerIndex = OldPlayer
-	
+	if nocount>0 then
+			local szstr1 = tbstr[2][1]
+				for i=2,nocount do 
+					szstr1 = szstr1 .. ", " .. tbstr[2][i]
+				end
+			szstr = szstr .. format("Ng­êi ch¬i %s kh«ng mang theo S¸t Thñ Gi¶n.",szstr1)
+			Msg2Team(szstr)
+			return
+		end
+		end
 	OldSubWorld = SubWorld
 	
 	for i = 1, getn(map_map) do 
@@ -205,8 +232,7 @@ function dragon_join()
 				-- DEBUG
 				--print(format("%s´Ó(%d,%d,%d)Î»ÖÃ½øÈëÊ±¼äµÄÌôÕ½ÈÎÎñµØÍ¼", GetName(), w, x, y));
 
-				Pay(10000)
-				
+				Pay(100000)
 
 				for i = 1 , getn(tabplayer) do 
 					PlayerIndex = tabplayer[i]
@@ -222,7 +248,7 @@ function dragon_join()
 					else
 						ConsumeEquiproomItem( 1, 6, 1, 400, 90)
 					end
-					
+					AddOwnExp(10e6)
 					--print("player"..PlayerIndex)
 
 					-- ÔÚÕâÀïÅĞ¶ÏÊÇ·ñÓĞÔ½ÓüÆóÍ¼
@@ -249,10 +275,10 @@ function dragon_join()
 				end
 				
 				local ndate = tonumber(GetLocalDate("%H"))
-				if ndate <= 22 and ndate >= 10 and blevel == 1 then
+				if ndate <= 22 and ndate >= 00 and blevel == 1 then
 					SetMissionV(VARV_BATCH_MODEL,1)
 				else
-					SetMissionV(VARV_BATCH_MODEL,0)
+					SetMissionV(VARV_BATCH_MODEL,1)
 				end
 				
 				tbLog:PlayerActionLog("EventChienThang042011","BaoDanhVuotAi")-- ±¨ÃûÈÕÖ¾				

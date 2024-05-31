@@ -1,10 +1,10 @@
 -- À¥ÂØ µÜ×Ó ÇàÁ«×Ó 40¼¶ÈÎÎñ
 -- by£ºDan_Deng(2003-07-30)
-TASK_9=9
+
 Include("\\script\\global\\skills_table.lua")
 
 function main()
-	UTask_kl = GetTask(TASK_9);
+	UTask_kl = GetTask(9);
 	if (GetSeries() == 4) and (GetFaction() == "kunlun") then
 		if ((UTask_kl == 40*256+20) and (HaveItem(9) == 1)) then		--40¼¶ÈÎÎñÍê³É
 			Talk(2,"L40_prise","Hé ph¸p! §©y cã ph¶i lµ HuyÕt Hån ThÇn KiÕm","H¶o kiÕm! ThËt lµ h¶o kiÕm! Ha! Ha! Ha! Bæn täa ®· kh«ng nh×n lÇm ng­êi, ng­¬i ®óng lµ cã tµi! §­îc! Bæn täa sÏ th¨ng ng­¬i thµnh ®¹i ®Ö tö cÊp 40!")
@@ -22,7 +22,7 @@ end;
 
 function L40_get_yes()
 	Talk(1,"","ChØ cÇn lÊy ®­îc HuyÕt Hån ThÇn KiÕm, ta sÏ th¨ng cÊp ng­¬i thµnh ®Ö tö cÊp 40!")
-	SetTask(TASK_9,40*256+10)
+	SetTask(9,40*256+10)
 	AddNote("NhËn nhiÖm vô cÊp 40 C«n L«n ph¸i: T¹i ®Ønh KiÕn Tİnh ®o¹t lÊy thanh HuyÕt Hån b¶o kiÕm. ")
 	Msg2Player("NhËn nhiÖm vô cÊp 40 C«n L«n ph¸i: T¹i ®Ønh KiÕn Tİnh ®o¹t lÊy thanh HuyÕt Hån b¶o kiÕm. ")
 end;
@@ -33,7 +33,7 @@ end;
 function L40_prise()
 	Talk(1,"","§a t¹ Hé ph¸p! ")
 	DelItem(9)
-	SetTask(TASK_9,50*256)
+	SetTask(9,50*256)
 	SetRank(23)
 --	AddMagic(175)
 --	AddMagic(181)

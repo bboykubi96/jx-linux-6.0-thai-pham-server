@@ -1,7 +1,7 @@
 --ÖĞÔ­ÄÏÇø ÏåÑô¸® ¶Ä³¡ÀÏ°å¶Ô»°
 
---function main(sel)
---Say("¶Ä³¡ÀÏ°å£ºÏ²»¶ÍæÃ´ÊÂ£¿ÖÀ÷»×Ó¡¢ÍÆÅÆ¾Å¡¢´òÌì¾Å¡¢Ò¡±¦»¹ÊÇ¿ª±¦£¿", 0);
---end;
+function main(sel)
+Say("Chñ Sßng B¹c:  Thİch ch¬i c¸i g× ? §æ xóc s¾c ? ®Èy bµi chİn ? ®¸nh ngµy chİn ? diªu b¶o cßn lµ khai b¶o ?", 0);
+end;
 
 Include("\\script\\global\\dicegame.lua");

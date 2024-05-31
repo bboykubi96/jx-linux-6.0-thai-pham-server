@@ -1,6 +1,6 @@
--- ´óÀí¡¡Â·ÈË¡¡°×ÀÏºº
--- by£ºDan_Deng(2003-09-16)
+-- script viet hoa By http://tranhba.com  §¹i Lý # ng­êi ®i ®­êng # B¹ch l·o h¸n 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
 
-function main()
-	Talk(4,"","Th­¬ng S¬n lµ n¬i hïng vÜ nhÊt cña §¹i Lý chóng ta!","TruyÒn thuyÕt kÓ r»ng §¹i Lý th¹ch lµ cuéc chiÕn gi÷a B¹ch Long vµ H¾c Long. B¹ch Long lµ ®¹i diÖn cho chÝnh nghÜa, H¾c Long lµ ®¹i diÖn cho c¸i ¸c. Sau trËn chiÕn hai bªn ®Òu l­ìng b¹i c©u th­¬ng, sau ®ã H¾c Long th× chÕt, B¹ch Long th× th«i thãp.","Sau khi hai con rång chÕt, th× trong lßng ®¹i d­¬ng nh« lªn ngän Th­¬ng S¬n. Th©n thÓ cña B¹ch Long biÕn thµnh §¹i Lý th¹ch, cßn H¾c Long biÕn thµnh than ®¸ ®en. Ng­êi ta mang ®èt than ®¸ coi nh­ sù trõng ph¹t H¾c Long. Cßn §¹i Lý th¹ch ®em ®Ó l¹i trªn ®êi xem nh­ lµ t­áng niÖm B¹ch Long.","Nghe nãi c¸i tªn b©y giê còng lµ tªn gèc cña §¹i Lý th¹ch. §¹i Lý th¹ch kh«ng chØ mang l¹i cho nguêi §¹i Lý sù b×nh yªn mµ cßn mang ®Õn sù phån vinh thÞnh v­îng.")
-end;
+function main() 
+Talk(4,"","Th­¬ng S¬n lµ §¹i Lý nhÊt hoµnh vÜ ®Ých ®Þa ph­¬ng ","TruyÒn thuyÕt , §¹i Lý th¹ch lµ b¹ch long cïng h¾c long ®ang lóc ®Ých chiÕn ®Êu . b¹ch long lµ ch¸nh nghÜa ®¹i biÓu , h¾c long lµ tµ ¸c ®¹i biÓu . khai chiÕn sau , song ph­¬ng còng th­¬ng vong th¶m träng . sau ®ã , h¾c long chÕt , b¹ch long còng yÕu ®i .","Hai con long còng sau khi chÕt , ®¹i d­¬ng trong liÒn dµi ra liÔu Th­¬ng S¬n . b¹ch long ®Ých th©n thÓ biÕn thµnh §¹i Lý th¹ch , h¾c long biÕn thµnh h¾c ®¸ . mäi ng­êi dïng ®Ó ®èt than ®en , coi nh­ lµ ®èi víi h¾c long ®Ých trõng ph¹t . §¹i Lý th¹ch lµ ë l¹i trªn ®êi , coi nh­ lµ ®èi víi b¹ch long ®Ých kû niÖm .","Nghe nãi b©y giê tªn còng lµ §¹i Lý th¹ch ®Ých nguyªn danh . §¹i Lý th¹ch kh«ng chØ cã cho §¹i Lý ng­êi mang ®Õn b×nh an , cßn mang ®Õn phån vinh cïng thÞnh v­îng .") 
+end; 

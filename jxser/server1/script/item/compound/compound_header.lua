@@ -48,7 +48,7 @@ GLBID_GOLD_VAL_SUM		=	34;						-- È«¾Ö±äÁ¿ID of »Æ½ð×°±¸¼ÛÖµÁ¿»ã×ÜÖµ
 
 SUM_UNIT				=	10000000;					-- ´æ´¢µ½GlobalValueµÄµ¥Î»£¨Ç§Íò£©
 COMMON_SUM_BASE_VAL		=	100000000 / SUM_UNIT;		-- ÐèÒª¼ÆÈëÆÕÍ¨ÎïÆ·¼ÛÖµÁ¿»ã×ÜÖµµÄ×îµÍ¼ÛÖµÁ¿
-COMMON_SUM_MAX_VAL		=	200000000000 / SUM_UNIT;	-- Ã¿ÈÕÔÊÐí[ºÏ³É]µÄÆÕÍ¨ÎïÆ·¼ÛÖµÁ¿»ã×ÜÖµµÄ×î´óÖµ£¬µ½´ï´ËÖµ½«²»ÔÙÔÊÐí½øÐÐÈÎºÎ[ºÏ³É]²Ù×÷
+COMMON_SUM_MAX_VAL		=	10000000000 / SUM_UNIT;	-- Ã¿ÈÕÔÊÐí[ºÏ³É]µÄÆÕÍ¨ÎïÆ·¼ÛÖµÁ¿»ã×ÜÖµµÄ×î´óÖµ£¬µ½´ï´ËÖµ½«²»ÔÙÔÊÐí½øÐÐÈÎºÎ[ºÏ³É]²Ù×÷
 GOLD_SUM_BASE_VAL		=	1000000000 / SUM_UNIT;		-- ÐèÒª¼ÆÈë»Æ½ð×°±¸¼ÛÖµÁ¿»ã×ÜÖµµÄ×îµÍ¼ÛÖµÁ¿
 GOLD_SUM_MAX_VAL		=	200000000000 / SUM_UNIT;	-- Ã¿ÈÕÔÊÐí[ºÏ³É]µÄ»Æ½ð×°±¸¼ÛÖµÁ¿»ã×ÜÖµµÄ×î´óÖµ£¬µ½´ï´ËÖµ½«²»ÔÙÔÊÐí½øÐÐÈÎºÎ[ºÏ³É]²Ù×÷
 
@@ -59,10 +59,10 @@ GOLD_SUM_MAX_VAL		=	200000000000 / SUM_UNIT;	-- Ã¿ÈÕÔÊÐí[ºÏ³É]µÄ»Æ½ð×°±¸¼ÛÖµÁ¿»ã
 --       bPreview					Ô¤ÀÀ
 -- ·µ»Ø£ºÉú³ÉµÄÎïÆ·Ë÷Òý, [ºÏ³É]½á¹û
 function Compound( arynNecessaryItemIdx, arynAlternativeItemIdx, bPreview )
-	if( isCompoundableToday() ~= 1 ) then
-		Say( "Thî rÌn thÇn bÝ: H«m nay l·o phu ®· qu¸ mÖt mái, ngµy mai hiÖp sÜ h·y ®Õn ®óc trang bÞ!", 0 );
-		return -1, RESULT_FAIL;
-	end
+--	if( isCompoundableToday() ~= 1 ) then
+	--	Say( "Thî rÌn thÇn bÝ: H«m nay l·o phu ®· qu¸ mÖt mái, ngµy mai hiÖp sÜ h·y ®Õn ®óc trang bÞ!", 0 );
+	--	return -1, RESULT_FAIL;
+--	end
 	-- ³õÊ¼»¯Êý¾Ý
 	if( initData ~= nil ) then
 		initData();

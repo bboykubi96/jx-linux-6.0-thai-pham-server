@@ -1,8 +1,8 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® Â·ÈË14¼ÖÉñËã¶Ô»°
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢·ÈË14¼ÖÉñËã¶Ô»°
 
 function main(sel)
 
-Talk(4, "", "Ta ®o¸n chuyÖn nh­ thÇn, ng­¬i muèn hái chuyÖn chi?", "Cã ph¶i ng­¬i muèn hái vÒ nh©n duyªn, ®­êng ®êi, c«ng danh, kiÖn c¸o hay tµi vËn, t×m ng­êi hoÆc mÊt ®å?", "Ng­¬i muèn bãi to¸n, rót quÎ, bãi ch÷ hay chØ tay, t­íng m¹o, xem tö vi, bæn ®¹i s­ b¶o ®¶m sÏ lµm ng­¬i hµi lßng!", "Ha..ha.., cô thÓ ph¶i tèn bao nhiªu tiÒn ph¶i xem møc ®é «ng ®o¸n tróng thÕ nµo, ®o¸n chİnh x¸c bao nhiªu?")
+Talk(4, "", "Gi¶ thÇn to¸n:  Ta cæ thÇn to¸n liÖu sù nh­ thÇn, coi lµ kh«ng sai. Ng­¬i muèn coi chuyÖn g×?", "Ng­¬i muèn hái nh©n duyªn, vËn ®å, c«ng danh, tè tông, hay lµ hái tµi vËn, t×m ng­êi hoÆc lµ vËt bŞ mÊt ?", "ng­¬i lµ muèn bÆc quÎ ? rót ra tiªn ? tr¾c ch÷ , cßn lµ tay t­¬ng ? g­¬ng mÆt , hoÆc lµ tö vi ®Êu ®Õm ®İch ®o¸n , vèn ®¹i s­ b¶o ®¶m ®Ó cho ng­¬i hµi lßng , th«ng th«ng ®« lµ mét v¨n tiÒn .. khëi .", "h¾c h¾c , cô thÓ tèn bao nhiªu b¹c , vËy sÏ ph¶i xem ng­¬i muèn coi lµ tíi tr×nh ®é nµo , muèn coi lµ nhiÒu chİnh x¸c l©u !")
 
 end;
 

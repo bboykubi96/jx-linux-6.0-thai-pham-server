@@ -2,14 +2,14 @@ Include("\\script\\global\\login_head.lua")
 -- ×ÓÄ¸´ü
 
 DAY_SECOND_SUM			=	60 * 60 * 24;
-WEEK_SECOND_SUM			=	DAY_SECOND_SUM * 7;
+WEEK_SECOND_SUM			=	DAY_SECOND_SUM * 15;
 
 TASKID_ZMD_EXPIRE_TIME	=	2558;					-- ×ÓÄ¸´üÓÐÐ§ÈÕÆÚÈÎÎñ±äÁ¿
 
 
 function main(nItemIdx)
-	local szMsg = "<#>Tói tö mÉu cã thêi h¹n sö dông lµ: <color=yellow>"..zmd_get_expire_date().."<color>";
-	Say(szMsg, 2, "N¹p 1 tuÇn/#recharge("..nItemIdx..")", "Hñy bá /cancel");
+	local szMsg = "<#>KiÓm tra tr­íc khi sö dông Tói tö mÉu : <color=yellow>"..zmd_get_expire_date().."<color>";
+	Say(szMsg, 2, "Më tói Tö MÉu/#recharge("..nItemIdx..")", "Hñy bá /cancel");
 	return 1;
 end
 
@@ -18,11 +18,11 @@ function recharge(nItemIdx)
 	if (RemoveItemByIndex(nItemIdx) ~= 1) then
 		return
 	end
-	zmd_add_expire_date(1);
+	--zmd_add_expire_date(1);
 	if (GetPartnerBagLevel() ~= 10) then
 		SetPartnerBagLevel(10);
 	end
-	Say("<#>N¹p thµnh c«ng, tói tö mÉu cña ®¹i hiÖp cã thêi h¹n sö dông lµ: <color=yellow>"..zmd_get_expire_date().."<color>", 0);
+	Say("<#>N¹p thµnh c«ng", 0);
 end
 
 -- ×ÓÄ¸´ü¶¨Ê±¼ì²é

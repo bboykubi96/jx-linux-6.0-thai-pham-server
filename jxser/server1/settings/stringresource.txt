@@ -2,12 +2,7 @@ ID	STRING
 10001	*********APPEND 2004/7-15/1:8************
 10002	GM Command List
 10003	3
-10004	Ng
-15640	Bang chñ cã lÖnh: Binh khÝ cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµi
-15641	TÊt c¶ c¸c d­îc phÈm æ ®©y ®Òu do huynh ®Ö c¸i bang tù bµo chÕ c¶ 
-15642	Bang chñ cã lÖnh: D­îc phÈm cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµi
-15643	Th©n lµ ®Ö tö C¸i Bang, cÇn ph¶i gian khæ rÌn luyÖn ®Ó b¶o vÖ chÝnh nghÜa
-15644	Bang chñ cã lÖnh: trang bÞ cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµiµy vui kh«ng thÓ thiÕu ®­îc ®©y!  Ph¸o Hoa chØ cã 5000 l­îng hoÆc ®æi 1 c¸i ®ïi gµ ®©y! 
+10004	Ngµy vui kh«ng thÓ thiÕu ®­îc ®©y!  Ph¸o Hoa chØ cã 5000 l­îng hoÆc ®æi 1 c¸i ®ïi gµ ®©y! 
 10005	§©y lµ phÇn cña b¹n! Xin ®a t¹! 
 10006	Hµng cùc phÈm ®©y! B¸n ®óng gi¸ ®©y! 
 10007	Vi kh¸ch quan nµy cã muèn thö vËn khÝ kh«ng?
@@ -1842,7 +1837,7 @@ ID	STRING
 11836	Ch­ëng m«n TuyÒn C¬ Tö   VÞ trÝ: ChÝnh ®iÖn   Täa ®é: 190,196<enter> §Çy r¾c d· t©m, ngoµi mÆt ra vÎ qu©n tö nhòn nhÆn, thùc tÕ t©m hiÓm ®éc ¸c, ch­a ®¹t môc ®Ých kh«ng tõ mäi thñ ®o¹n. 
 11837	Thanh Liªn Tö   VÞ trÝ: Tö Vi ®iÖn   Täa ®é: 186/199<enter>Lµ ng­êi Ých kû, môc ®Ých lín nhÊt muèn lµm ch­ëng m«n C«n L«n Ph¸i, v× ®¹t môc ®Ých, kh«ng tiÕc lîi dông lÉn nhau víi Ngäc Hoµnh Tö 
 11838	Ngäc Hoµnh Tö  VÞ trÝ: Thiªn Vi ®iÖn   Täa ®é: 195/195<enter>Lµ ng­êi cã lßng ®è kþ cao, bao gåm c¶ ®Ö tö cña m×nh. V× muèn ®¹t ®­îc chøc ch­ëng m«n cña C«n L«n Ph¸i nªn lîi dông  lÉn nhau víi Thanh Liªn Tö, thùc chÊt ai còng mang d· t©m.
-11839	Chu KhuyÕt	VÞ trÝ:  Bªn trong §¹i m«n      Täa ®é: 198/200<enter>§¹i §Ö Tö cña TuyÒn C¬ Tö, tÝnh t×nh l·nh ®¹m, nham hiÓm ®è kþ. BÞ B¹ch Doanh Doanh cña Ngò §éc gi¸o lîi dông
+11839	ÖìÈ±¡¡¡¡¡¡Î»ÖÃ£º´óÃÅÄÚ²à¡¡¡¡¡¡×ø±ê£º198/200<enter>è¯çá×ÓµÄ´óµÜ×Ó£¬ÐÔÇéÀäµ­£¬ÎªÈËÐÄ»ú¼«Éî£¬¼µºÞÐÄÖØ¡£ÓëÎå¶¾½Ì°×Ó¨Ó¨»¥ÏàÀûÓÃ£¬ÀÇ±·Îª¼é¡£
 11840	§ång TÞch Nhan   VÞ trÝ: hËu Hoa viªn   Täa ®é: 178,195<enter> con g¸i TuyÒn C¬ Tö, ng­êi trong tr¾ng ng©y th¬, t©m tÝnh l­¬ng thiÖn
 11841	TiÓu Hµn   VÞ trÝ: TÞch Nhan ®×nh   Täa ®é: 184,196<enter> a hoµn cña §ång TÞch Nhan, lµ mét c« g¸i nhá nh¾n, th«ng minh lanh lîi. 
 11842	Th¸n Tøc L·o Nh©n   VÞ trÝ: phßng §Ö tö   Täa ®é: 191,201<enter> Ch­ëng m«n cña ®êi tr­íc, s­ phô cña 3 ng­êi TuyÒn C¬ Tö, Thanh Liªn Tö vµ Ngäc Hoµnh Tö. Ngµy tr­íc lóc ®­¬ng nhiÖm Ch­ëng m«n, b¶n tÝnh tµn nhÉn, ®èi ®·i m«n ®å th« b¹o v« ¬n, khiÕn 3 ®å ®Ö uÊt hËn r¾p kÕ h·m h¹i ra n«ng næi nµy. Nh­ng v× 3 ®å ®Ö nghi sî lÉn nhau, nªn kh«ng d¸m h¹i chÕt l·o
@@ -3531,8 +3526,8 @@ ID	STRING
 13525	 ThÕ Tû muèn t×m hiÓu vÒ vÞ tû muéi nµo?
 13526	Ch­ëng m«n Do·n Hµm Yªn   VÞ trÝ: Thóy Yªn lÇu   Täa ®é: 35,75<enter> Do·n Ch­ëng m«n lín lªn t¹i Thuý Yªn m«n, sau nµy quen biÕt víi §­êng m«n §­êng NhÊt TrÇn, tr¶i qua nhiÒu gian khæ cuèi cïng sèng ®­îc víi nhau. HiÖn t¹i Thuý Yªn §­êng m«n ®­îc ng­êi ®êi ca th­ëng.
 13527	H¶i §­êng Sø Gi¶ LÖ Thu Thñy<enter> LÖ s­ tû tÝnh c¸ch cao ng¹o, rÊt ghÐt ®µn «ng, nªn mét mùc ph¶n ®èi ch­ëng m«n kÕt th©n cïng víi §­êng NhÊt TrÇn.
-13528	ThñyTiªn Sø Gi¶ Yªn HiÓu Tr¸i	  VÞ trÝ: Thñ Ngäc S¶nh   Täa ®é: 43,90<enter> Yªn s­ tû tõ nhá sèng víi mÑ, mÉu th©n bÞ phô th©n ruång bá, céng thªm bÞ bÖnh hiÓm nghÌo, bÞ ng­êi kh¸c l­êng g¹t mµ chÕt. T¹o ra mét vÕt th­¬ng s©u ®Ëm trong lßng tû Êy, tuy bªn ngoµi rÊt yÕu ®uèi nh­ng néi t©m l¹i rÊt kiªn c­êng
-13529	T­êng Vi Sø Gi¶ Hµ Mé TuyÕt 	  VÞ trÝ: B¸ch Hoa §×nh   Täa ®é:52,85<enter>Hµ tû tû dÞu dµng linh ho¹t,tÊt c¶ c¸c tû muéi chóng ta ai còng ®Òu thÝch chÞ Êy, nh­ng V­¬ng TriÒu Thiªn V­¬ng Bang v× c¸i g× lµ nî n­íc thï nhµ kh«ng ngã ngµng g× ®Õn Hµ tû,thËt ®¸ng hËn! 
+13528	Ë®ÏÉÊ¹ÕßæÌÏþÙ»¡¡¡¡¡¡Î»ÖÃ£ºÊØÓñÌü¡¡¡¡¡¡×ø±ê£º43,90<enter>æÌÊ¦½ãÓ×ÄêÊ±Ä¸Ç×±»Æä¸¸ÒÅÆú£¬Æ¶²¡½»¼Ó£¬±»ÈËÆÛÈè¶øËÀ£¬ÔÚËýÐÄÁéÉÏÁôÏÂÁË¼«ÉîµÄ´´ÉË¡£ËùÒÔËýËäÈ»Íâ±íÎÄÈõ£¬µ«ÄÚÐÄÀïÈ´Ê®·Ö¼áÇ¿¡£
+13529	Ç¾Þ±Ê¹ÕßºÎÄºÑ©¡¡¡¡¡¡Î»ÖÃ£º°Ù»¨Ìü¡¡¡¡¡¡×ø±ê£º52,85<enter>ºÎ½ã½ãÎÂÈáÁéÇÉ£¬ÎÒÃÇËùÓÐÈË¶¼Ï²»¶Ëý¡£¿ÉÊÇÌìÍõ°ïÄÇ¸öÑîºþÎªÁËËûÄÇÊ²Ã´¹úºÞ¼Ò³ð¾¹È»²»ÀíºÎ½ã½ãÁË¡£ÕæÊÇ¿ÉºÞ£¡
 13530	Lª Hoa Sø Gi¶ Chung Linh Tó<enter>Chung muéi muéi nhá tuæi nhÊt, nh­ng lµ ng­êi cã tiÒn ®å nhÊt. Do cha mÑ cña muéi Êy bÞ giÆc Kim s¸t h¹i, ng­êi th©n bÞ l­u l¹c cho nªn rÊt c¨m thï giÆc Kim, chuyªn t©m luyÖn tËp vâ thuËt ®Ó ®îi ngµy b¸o thï cho cha mÑ.
 13531	Xu©n H­¬ng bµ bµ   VÞ trÝ: HËu hoa viÖn   Täa ®é: 40,74<enter> Xu©n H­¬ng bµ bµ lµ a hoµn cña ch­ëng m«n lËp ph¸i, bµ ta ®èi xö víi chóng ta v« cïng nh· nhÆn vµ th©n thiÕt.
 13532	Nh­îc Lan  VÞ trÝ: Qu·ng tr­êng   Täa ®é: 48,84  Phô tr¸ch: Giao dÞch binh khÝ 
@@ -4168,7 +4163,7 @@ ID	STRING
 14162	ph­¬ng tr­îng HuyÒn NhÊt ®¹i s­  VÞ trÝ: ph­¬ng tr­îng ThiÒn phßng  Täa ®é: 230,184<enter> TrÝ tuÖ xuÊt chóng, vâ nghÖ cao c­êng, khiªm nh­êng ®é l­îng 
 14163	§¹t Ma §­êng ®Çu täa HuyÒn Bi  VÞ trÝ: §¹t Ma §­êng  Täa ®é: 210,188<enter> Lµ ng­êi thiÕt diÖn v« t­, c«ng chÝnh nghiªm minh, tuy cã lóc h¬i gi¸o ®iÒu nh­ng rÊt ®­îc c¸c ®Ö tö yªu quý 
 14164	Bµn Nh­îc ®­êng ®Çu täa HuyÒn Gi¸c  VÞ trÝ: hå Phãng sinh  Täa ®é: 220,193<enter> C¨m ghÐt c¸i ¸c, tÝnh nãng nh­ löa, kh¶ng kh¸i hµo hiÖp
-14165	Tµng Kinh c¸c ®Çu täa HuyÒn Tõ 	  VÞ trÝ: Tµng Kinh C¸c  Täa ®é: 218,190<enter>ThÝch ®äc kinh th­, chuyÖn g× còng dùa vµo s¸ch vë, lµ mét con mät s¸ch. HiÒn hßa, kh«ng thÝch tranh ®Êu víi ai, ®«i lóc h¬i cæ hñ 
+14165	²Ø¾­¸óÊ××ùÐþ´È¡¡¡¡¡¡Î»ÖÃ£º²Ø¾­¸ó¡¡¡¡¡¡×ø±ê£º218,190<enter>±¥¶Á¾­Êé£¬ÓöÊÂ±ãÒý¾­¾Ýµä£¬Êé´ô×ÓÒ»¸ö£¬ÎªÈËÐÔÇéËæºÍ£¬²»Ï²ÓëÈËÕù¶·£¬·²ÊÂÒÔÈÌÈÃÎªÏÈ£¬ÓÐÊ±ÏÔµÃ¹ýÓÚÓØ¸¯¡£
 14166	La H¸n ®­êng ®Çu täa HuyÒn Nan  VÞ trÝ: La H¸n §­êng  Täa ®é: 201,192<enter> Träng quan niÖm ®Þa vÞ x· héi, lµ ng­êi cao ng¹o, tranh c­êng h¸o th¾ng, lu«n muèn cïng §¹t Ma viÖn thñ täa HuyÒn Bi tranh tµi cao thÊp. 
 14167	Trõng M¹c  VÞ trÝ: Qu·ng tr­êng  Täa ®é: 211,196  Phô tr¸ch: Giao dÞch binh khÝ 
 14168	Trõng TiÕt  VÞ trÝ: Qu·ng tr­êng  Täa ®é: 209,194  Phô tr¸ch: Giao dÞch trang bÞ 
@@ -5647,24 +5642,38 @@ ID	STRING
 15641	TÊt c¶ c¸c d­îc phÈm æ ®©y ®Òu do huynh ®Ö c¸i bang tù bµo chÕ c¶ 
 15642	Bang chñ cã lÖnh: D­îc phÈm cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµi
 15643	Th©n lµ ®Ö tö C¸i Bang, cÇn ph¶i gian khæ rÌn luyÖn ®Ó b¶o vÖ chÝnh nghÜa
-15644	Bang chñ cã lÖnh: trang bÞ cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµiÐ¡×éÈ¡µÃÁË×îÖÕµÄÊ¤Àû!
+15644	Bang chñ cã lÖnh: trang bÞ cña bæn m«n kh«ng ®­îc b¸n cho ng­êi ngoµi
+15646	C?ph¶i ng­¬i muèn rêi khái l«i ®µi thi ®Êu kh«ng?
+15647	Ph¶i, ta ra ®©y mét l¸t!
+15648	Ta l?®éi tr­ëng, muèn biÕt s?th?t?vµo ®Êu tr­êng
+15649	Kh«ng cÇn ®©u
+15650	¶àÈËÀÞÌ¨ÈüÕ½¶·ÖÐ£¬
+15651	¶ÓµÄ
+15652	ÔÚ±ÈÈüÖÐ»÷µ¹ÁË
+15653	ÀÞÌ¨ÈüË«·½Í¬¹éÓÚ¾¡£¬
+15654	thi ®Êu 
+15655	Ð¡×é  ±»ÅÐ³ÉÆ½ÊÖ£¡
+15656	Thi ®Êu l«i ®µi kÕt thóc
+15657	Ð¡×é»÷µ¹ÁËËùÓÐ
+15658	Thµnh viªn trong ®éi
+15659	Ð¡×éÈ¡µÃÁË×îÖÕµÄÊ¤Àû!
 15660	ÒÑ¾­½øÈëÁË±ÈÈüÈü³¡¡£
-15661	C«ng BÝnh Tö Ng­¬i ®¨ng ký thi ®Êu l«i ®µi l?®¬n ®Êu, kh«ng cÇn biÕt sè thø tù vµo ®Êu tr­êng, ng­¬i c?th?trùc tiÕp vµo thi ®Êu
-15662	C«ng BÝnh Tö Xin lçi! ng­¬i kh«ng ph¶i lµ ng­êi tham gia trËn ®Êu, nªn ta kh«ng thÓ nãi víi ng­¬i sè thø tù cña trËn ®Êu!
-15663	C«ng BÝnh Tö sè thø tù cña ng­¬i l?  
-15664	mau th«ng b¸o víi thµnh viªn tham gia thi ®Êu, ®éi viªn ch?viÖc nhËp sè thø tù chÝnh x¸c l?c?th?vµo thi ®Êu. Xin c¶m ¬n!
-15665	§©y lµ ®Êu tr­êng thi ®Êu l«i ®µi, n¬i cho c¸c nh©n sÜ giang hå ®¬n ®Êu hoÆc tø chøc ®éi thi ®Êu, hiÖn t¹i ch­a ai b¸o danh thi ®Êu, c¸c h¹ muèn b¸o danh kh«ng?<color=yellow> HiÖn t¹i l«i ®µi më cöa miÔn phÝcolor> cho toµn bé nh©n sÜ trong giang hå
+15661	C«ng BÝnh T? Ng­¬i ®¨ng k?thi ®Êu l«i ®µi l?®¬n ®Êu, kh«ng cÇn biÕt s?th?t?vµo ®Êu tr­êng, ng­¬i c?th?trùc tiÕp vµo thi ®Êu
+15662	C«ng BÝnh T? Xin lçi! ng­¬i kh«ng ph¶i l?ng­êi tham gia trËn ®Êu, nªn ta kh«ng th?nãi víi ng­¬i s?th?t?cña trËn ®Êu!
+15663	C«ng BÝnh T? S?th?t?cña ng­¬i l?  
+15664	mau th«ng b¸o víi thµnh viªn tham gia thi ®Êu, ®éi viªn ch?viÖc nhËp s?th?t?chÝnh x¸c l?c?th?vµo thi ®Êu. Xin c¶m ¬n!
+15665	§©y l?®Êu tr­êng thi ®Êu l«i ®µi, n¬i cho c¸c nh©n s?giang h?®¬n ®Êu hoÆc t?chøc ®éi thi ®Êu, hiÖn t¹i ch­a ai b¸o danh thi ®Êu, c¸c h?muèn b¸o danh kh«ng?<color=yellow> HiÖn t¹i l«i ®µi m?cöa miÔn ph?color> cho toµn b?nh©n s?trong giang h?
 15666	§­îc th«i!
 15667	Quy t¾c thi ®Êu ra sao?
-15668	§Ó ta nghÜ l¹i!
-15669	§©y lµ trËn ®Êu l«i ®µi, hiÖn t¹i ®éi 
+15668	§Ó ta ngh?l¹i!
+15669	§©y l?trËn ®Êu l«i ®µi, hiÖn t¹i ®éi 
 15670	v?®éi 
-15671	ng­¬i cã yªu cÇu g× kh«ng?
-15672	Ta lµ tuyÓn thñ muèn vµo ®Êu tr­êng
+15671	ng­¬i c?yªu cÇu g?kh«ng?
+15672	Ta l?tuyÓn th? muèn vµo ®Êu tr­êng
 15673	Ta muèn xem trËn ®Êu nµy
-15674	Ta kh«ng cã høng thó víi trËn ®Êu nµy
-15675	Muèn b¸o danh thi ®Êu cÇn ph¶i lµ <color=yellow>§éi tr­ëng<color>cña hai bªn, ®éi ngò cña ng­¬i h×nh nh­ kh«ng ®ñ <color=yellow>2<color> ng­êi.
-15676	C¸c h¹ muèn thi ®Êu l«i ®µi, sè ng­êi ®«i bªn nhiÒu nhÊt bao nhiªu? 
+15674	Ta kh«ng c?høng th?víi trËn ®Êu nµy
+15675	Muèn b¸o danh thi ®Êu cÇn ph¶i l?<color=yellow>§éi tr­ëng<color>cña hai bªn, ®éi ng?cña ng­¬i h×nh nh?kh«ng ®ñ <color=yellow>2<color> ng­êi.
+15676	C¸c h?muèn thi ®Êu l«i ®µi, s?ng­êi ®«i bªn nhiÒu nhÊt bao nhiªu? 
 15677	Th«i khái!
 15678	ÄãµÄÕóÓªÈë±ÈÎä³¡ºÅÂëÎª:
 15679	Çë½«¸ÃºÅÂëÍ¨ÖªÄãµÄ¶ÓÓÑ¡£¶ÓÓÑÏò¹«Æ½×ÓÊäÈë¸ÃºÅÂë²ÅÄÜÈë³¡¡£
@@ -5673,17 +5682,18 @@ ID	STRING
 15682	·ÖÖÓºóÕýÊ½¿ªÊ¼¡£ÄãµÄÕóÓªÈë±ÈÎä³¡ºÅÂëÎª:
 15683	Çë½«¸ÃºÅÂëÍ¨ÖªÄãµÄ¶ÓÓÑ¡£¶ÓÓÑÏò¹«Æ½×ÓÊäÈë¸ÃºÅÂë²ÅÄÜÈë³¡¡£
 15684	 ®Ó 
-15685	B©y giê
-15686	Tæ ®éi
-15687	ChuÈn bÞ tiÕn hµnh thi ®Êu l«i ®µi, ®éi tr­ëng 2 bªn 
+15685	B©y gi?
+
+15686	T?®éi
+15687	ChuÈn b?tiÕn hµnh thi ®Êu l«i ®µi, ®éi tr­ëng 2 bªn 
 15688	 v? 
-15689	l«i ®µi më cöa miÔn phÝ vµ chµo ®ãn tÊt c¶ c¸c nh©n sÜ trong giang hå tíi xem thi ®Êu.
-15690	Ng­¬i ®· ®¨ng ký thi ®Êu gi÷a 
+15689	l«i ®µi m?cöa miÔn ph?v?chµo ®ãn tÊt c?c¸c nh©n s?trong giang h?tíi xem thi ®Êu.
+15690	Ng­¬i ®· ®¨ng k?thi ®Êu gi÷a 
 15691	h·y may nhanh chãng vµo ®Êu tr­êng, 
 15692	trËn ®Êu s?chÝnh thøc b¾t ®Çu sau 
 15693	L«i ®µi thi ®Êu l?n¬i ®Ó c¸c cao th?thi th?tµi ngh?víi nhau v?còng l?n¬i thi ®Êu c«ng b»ng nhÊt cho ®«i bªn.
-15694	Muèn tham gia l«i ®µi thi ®Êu, tr­íc tiªn ph¶i tíi chç ta xin b¸o danh.
-15695	Sau khi ®Æt c­îc xong, b¸o danh tham gia l«i ®µi sÏ hoµn tÊt. Lý do ®Êu tr­êng cã giíi h¹n nªn trong lóc ng­êi kh¸c ®ang thi ®Êu th× kh«ng thÓ b¸o danh.
+15694	Muèn tham gia l«i ®µi thi ®Êu, tr­íc tiªn ph¶i tíi ch?ta xin b¸o danh.
+15695	Sau khi ®Æt c­îc xong, b¸o danh tham gia l«i ®µi s?hoµn tÊt. L?do ®Êu tr­êng c?giíi h¹n nªn trong lóc ng­êi kh¸c ®ang thi ®Êu th?kh«ng th?b¸o danh.
 15696	ÇëÊäÈë²Î¼Ó±¾´ÎÀÞÌ¨µÄÈë³¡ºÅÂë·½¿ÉÈë³¡¡£
 15697	ºÃ£¬ÎÒÊäÈëÒ»ÏÂ
 15698	ºÅÂëÍüÁË£¬ÎÒÎÊÒ»ÏÂ¶Ó³¤
@@ -5736,7 +5746,7 @@ ID	STRING
 15745	D­¬ng Ch©u
 15746	T­¬ng D­¬ng
 15747	Thµnh §«
-15748	Sè l­îng cßn l¹i: 
+15748	S?l­îng cßn l¹i: 
 15749	ÊÜµ½ÉËº¦Á¿Îª£º
 15750	Ë«·½ÎÕÊÖÑÔºÍ£¡
 15751	§µo hoa ®¶o (1)
@@ -5746,269 +5756,328 @@ ID	STRING
 15755	Ð¡×éËùÊÜÉËº¦Á¿£º
 15756	ÉÙÁÖÅÉ
 15757	ThiÕu L©m quyÒn
-15758	§å Phæ B¹ch Hæ H¹ng Liªn
-15759	§å Phæ B¹ch Hæ T¨ng M¹o
-15760	§å Phæ B¹ch Hæ Th­îng Giíi ChØ 
-15761	§å Phæ B¹ch Hæ Hæ UyÓn
-15762	§å Phæ B¹ch Hæ Yªu §¸i
-15763	§å Phæ B¹ch Hæ Cµ Sa
-15764	§å Phæ B¹ch Hæ TriÒn Th?
-15765	§å Phæ B¹ch Hæ T¨ng Hµi
-15766	§å Phæ B¹ch Hæ Yªu Trôy
-15767	§å Phæ B¹ch Hæ Hæ Giíi ChØ 
+15758	§å Ph?B¹ch H?H¹ng Liªn
+15759	§å Ph?B¹ch H?T¨ng M¹o
+15760	§å Ph?B¹ch H?Th­îng Giíi Ch?
+
+15761	§å Ph?B¹ch H?H?UyÓn
+15762	§å Ph?B¹ch H?Yªu §¸i
+15763	§å Ph?B¹ch H?C?Sa
+15764	§å Ph?B¹ch H?TriÒn Th?
+
+15765	§å Ph?B¹ch H?T¨ng Hµi
+15766	§å Ph?B¹ch H?Yªu Trôy
+15767	§å Ph?B¹ch H?H?Giíi Ch?
+
 15768	ThiÕu L©m C«n
-15769	§å Phæ B¹ch Hæ L«i ¢m PhËt Ch©u
-15770	§å Phæ B¹ch Hæ L«i ¢m T¨ng M¹o
-15771	§å Phæ B¹ch Hæ L«i ¢m Th­îng Giíi ChØ 
-15772	§å Phæ B¹ch Hæ L«i ¢m Hæ UyÓn
-15773	§å Phæ B¹ch Hæ L«i ¢m Yªu §¸i
-15774	§å Phæ B¹ch Hæ L«i ¢m Cµ Sa
-15775	§å Phæ B¹ch Hæ L«i ¢m T¨ng C«n
-15776	§å Phæ B¹ch Hæ L«i ¢m T¨ng Hµi
-15777	§å Phæ B¹ch Hæ L«i ¢m Yªu Trôy
-15778	§å Phæ B¹ch Hæ L«i ¢m Hæ Giíi ChØ 
+15769	§å Ph?B¹ch H?L«i ¢m PhËt Ch©u
+15770	§å Ph?B¹ch H?L«i ¢m T¨ng M¹o
+15771	§å Ph?B¹ch H?L«i ¢m Th­îng Giíi Ch?
+
+15772	§å Ph?B¹ch H?L«i ¢m H?UyÓn
+15773	§å Ph?B¹ch H?L«i ¢m Yªu §¸i
+15774	§å Ph?B¹ch H?L«i ¢m C?Sa
+15775	§å Ph?B¹ch H?L«i ¢m T¨ng C«n
+15776	§å Ph?B¹ch H?L«i ¢m T¨ng Hµi
+15777	§å Ph?B¹ch H?L«i ¢m Yªu Trôy
+15778	§å Ph?B¹ch H?L«i ¢m H?Giíi Ch?
+
 15779	ThiÕu L©m §ao
-15780	§å Phæ B¹ch Hæ Ma Ni H¹ng Liªn
-15781	§å Phæ B¹ch Hæ Ma Ni T¨ng M¹o
-15782	§å Phæ B¹ch Hæ Ma Ni Th­îng Giíi ChØ 
-15783	§å Phæ B¹ch Hæ Ma Ni Hæ UyÓn
-15784	§å Phæ B¹ch Hæ Ma Ni Yªu §¸i
-15785	§å Phæ B¹ch Hæ Ma Ni Cµ Sa
-15786	§å Phæ B¹ch Hæ Ma Ni Giíi §ao
-15787	§å Phæ B¹ch Hæ Ma Ni T¨ng Hµi
-15788	§å Phæ B¹ch Hæ Ma Ni Yªu Trôy
-15789	§å Phæ B¹ch Hæ Ma Ni Hæ Giíi ChØ 
+15780	§å Ph?B¹ch H?Ma Ni H¹ng Liªn
+15781	§å Ph?B¹ch H?Ma Ni T¨ng M¹o
+15782	§å Ph?B¹ch H?Ma Ni Th­îng Giíi Ch?
+
+15783	§å Ph?B¹ch H?Ma Ni H?UyÓn
+15784	§å Ph?B¹ch H?Ma Ni Yªu §¸i
+15785	§å Ph?B¹ch H?Ma Ni C?Sa
+15786	§å Ph?B¹ch H?Ma Ni Giíi §ao
+15787	§å Ph?B¹ch H?Ma Ni T¨ng Hµi
+15788	§å Ph?B¹ch H?Ma Ni Yªu Trôy
+15789	§å Ph?B¹ch H?Ma Ni H?Giíi Ch?
+
 15790	ÌìÍõ°ï
 15791	Thiªn V­¬ng Trïy
-15792	§å Phæ B¹ch Hæ §Þnh Quang Liªn
-15793	§å Phæ B¹ch Hæ §Þnh Quang Kh«i
-15794	§å Phæ B¹ch Hæ §Þnh Quang Th­îng Giíi ChØ 
-15795	§å Phæ B¹ch Hæ §Þnh Quang Hæ UyÓn
-15796	§å Phæ B¹ch Hæ §Þnh Quang Yªu §¸i
-15797	§å Phæ B¹ch Hæ §Þnh Quang Kh¶i
-15798	§å Phæ B¹ch Hæ §Þnh Quang Trïy
-15799	§å Phæ B¹ch Hæ §Þnh Quang Ngoa
-15800	§å Phæ B¹ch Hæ §Þnh Quang Yªu Trôy
-15801	§å Phæ B¹ch Hæ §Þnh Quang Hæ Giíi ChØ 
+15792	§å Ph?B¹ch H?§Þnh Quang Liªn
+15793	§å Ph?B¹ch H?§Þnh Quang Kh«i
+15794	§å Ph?B¹ch H?§Þnh Quang Th­îng Giíi Ch?
+
+15795	§å Ph?B¹ch H?§Þnh Quang H?UyÓn
+15796	§å Ph?B¹ch H?§Þnh Quang Yªu §¸i
+15797	§å Ph?B¹ch H?§Þnh Quang Kh¶i
+15798	§å Ph?B¹ch H?§Þnh Quang Trïy
+15799	§å Ph?B¹ch H?§Þnh Quang Ngoa
+15800	§å Ph?B¹ch H?§Þnh Quang Yªu Trôy
+15801	§å Ph?B¹ch H?§Þnh Quang H?Giíi Ch?
+
 15802	Thiªn V­¬ng Th­¬ng
-15803	§å Phæ B¹ch Hæ Ngù  Phong H¹ng Liªn
-15804	§å Phæ B¹ch Hæ Ngù  Phong Kh«i
-15805	§å Phæ B¹ch Hæ Ngù  Phong Th­îng Giíi ChØ 
-15806	§å Phæ B¹ch Hæ Ngù  Phong Hæ UyÓn
-15807	§å Phæ B¹ch Hæ Ngù  Phong Yªu §¸i
-15808	§å Phæ B¹ch Hæ Ngù  Phong Kh¶i
-15809	§å Phæ B¹ch Hæ Ngù  Phong Th­¬ng
-15810	§å Phæ B¹ch Hæ Ngù  Phong Ngoa
-15811	§å Phæ B¹ch Hæ Ngù  Phong Yªu Trôy
-15812	§å Phæ B¹ch Hæ Ngù   Phong Hæ Giíi ChØ 
+15803	§å Ph?B¹ch H?Ng?Phong H¹ng Liªn
+15804	§å Ph?B¹ch H?Ng?Phong Kh«i
+15805	§å Ph?B¹ch H?Ng?Phong Th­îng Giíi Ch?
+
+15806	§å Ph?B¹ch H?Ng?Phong H?UyÓn
+15807	§å Ph?B¹ch H?Ng?Phong Yªu §¸i
+15808	§å Ph?B¹ch H?Ng?Phong Kh¶i
+15809	§å Ph?B¹ch H?Ng?Phong Th­¬ng
+15810	§å Ph?B¹ch H?Ng?Phong Ngoa
+15811	§å Ph?B¹ch H?Ng?Phong Yªu Trôy
+15812	§å Ph?B¹ch H?Ng?Phong H?Giíi Ch?
+
 15813	Thiªn V­¬ng §ao
-15814	§å Phæ B¹ch Hæ B¹o Phong H¹ng Liªn
-15815	§å Phæ B¹ch Hæ B¹o Phong Kh«i
-15816	§å Phæ B¹ch Hæ B¹o Phong Th­îng Giíi ChØ 
-15817	§å Phæ B¹ch Hæ B¹o Phong Hæ UyÓn
-15818	§å Phæ B¹ch Hæ B¹o Phong Yªu §¸i
-15819	§å Phæ B¹ch Hæ B¹o Phong Kh¶i
-15820	§å Phæ B¹ch Hæ B¹o Phong B¶o §ao
-15821	§å Phæ B¹ch Hæ B¹o Phong Ngoa
-15822	§å Phæ B¹ch Hæ B¹o Phong Yªu Trôy
-15823	§å Phæ B¹ch Hæ B¹o Phong Hæ Giíi ChØ 
+15814	§å Ph?B¹ch H?B¹o Phong H¹ng Liªn
+15815	§å Ph?B¹ch H?B¹o Phong Kh«i
+15816	§å Ph?B¹ch H?B¹o Phong Th­îng Giíi Ch?
+
+15817	§å Ph?B¹ch H?B¹o Phong H?UyÓn
+15818	§å Ph?B¹ch H?B¹o Phong Yªu §¸i
+15819	§å Ph?B¹ch H?B¹o Phong Kh¶i
+15820	§å Ph?B¹ch H?B¹o Phong B¶o §ao
+15821	§å Ph?B¹ch H?B¹o Phong Ngoa
+15822	§å Ph?B¹ch H?B¹o Phong Yªu Trôy
+15823	§å Ph?B¹ch H?B¹o Phong H?Giíi Ch?
+
 15824	ÌÆÃÅ
 15825	§­êng M«n Phi §ao
-15826	§å Phæ B¹ch Hæ NhËt ¶nh H¹ng Liªn
-15827	§å Phæ B¹ch Hæ NhËt ¶nh Ph¸t Qu¸n
-15828	§å Phæ B¹ch Hæ NhËt ¶nh Th­îng Giíi ChØ 
-15829	§å Phæ B¹ch Hæ NhËt ¶nh Hæ UyÓn
-15830	§å Phæ B¹ch Hæ NhËt ¶nh Yªu §¸i
-15831	§å Phæ B¹ch Hæ NhËt ¶nh Gi¸p
-15832	§å Phæ B¹ch Hæ NhËt ¶nh Phi §ao
-15833	§å Phæ B¹ch Hæ NhËt ¶nh L?
-15834	§å Phæ B¹ch Hæ NhËt ¶nh Yªu Trôy
-15835	§å Phæ B¹ch Hæ NhËt ¶nh Hæ Giíi ChØ 
-15836	§­êng M«n Ná
-15837	§å Phæ B¹ch Hæ Cùc Quang H¹ng Liªn
-15838	§å Phæ B¹ch Hæ Cùc Quang Ph¸t Qu¸n
-15839	§å Phæ B¹ch Hæ Cùc Quang Th­îng Giíi ChØ 
-15840	§å Phæ B¹ch Hæ Cùc Quang Hæ UyÓn
-15841	§å Phæ B¹ch Hæ Cùc Quang Yªu §¸i
-15842	§å Phæ B¹ch Hæ Cùc Quang Gi¸p
-15843	§å Phæ B¹ch Hæ Cùc Quang TiÔn
-15844	§å Phæ B¹ch Hæ Cùc Quang L?
-15845	§å Phæ B¹ch Hæ Cùc Quang Yªu Trôy
-15846	§å Phæ B¹ch Hæ Cùc Quang Hæ Giíi ChØ 
+15826	§å Ph?B¹ch H?NhËt ¶nh H¹ng Liªn
+15827	§å Ph?B¹ch H?NhËt ¶nh Ph¸t Qu¸n
+15828	§å Ph?B¹ch H?NhËt ¶nh Th­îng Giíi Ch?
+
+15829	§å Ph?B¹ch H?NhËt ¶nh H?UyÓn
+15830	§å Ph?B¹ch H?NhËt ¶nh Yªu §¸i
+15831	§å Ph?B¹ch H?NhËt ¶nh Gi¸p
+15832	§å Ph?B¹ch H?NhËt ¶nh Phi §ao
+15833	§å Ph?B¹ch H?NhËt ¶nh L?
+
+15834	§å Ph?B¹ch H?NhËt ¶nh Yªu Trôy
+15835	§å Ph?B¹ch H?NhËt ¶nh H?Giíi Ch?
+
+15836	§­êng M«n N?
+
+15837	§å Ph?B¹ch H?Cùc Quang H¹ng Liªn
+15838	§å Ph?B¹ch H?Cùc Quang Ph¸t Qu¸n
+15839	§å Ph?B¹ch H?Cùc Quang Th­îng Giíi Ch?
+
+15840	§å Ph?B¹ch H?Cùc Quang H?UyÓn
+15841	§å Ph?B¹ch H?Cùc Quang Yªu §¸i
+15842	§å Ph?B¹ch H?Cùc Quang Gi¸p
+15843	§å Ph?B¹ch H?Cùc Quang TiÔn
+15844	§å Ph?B¹ch H?Cùc Quang L?
+
+15845	§å Ph?B¹ch H?Cùc Quang Yªu Trôy
+15846	§å Ph?B¹ch H?Cùc Quang H?Giíi Ch?
+
 15847	§­êng M«n Tiªu
-15848	§å Phæ B¹ch Hæ Th­íc Kim H¹ng Liªn
-15849	§å Phæ B¹ch Hæ Th­íc Kim Ph¸t Qu¸n
-15850	§å Phæ B¹ch Hæ Th­íc Kim Th­îng Giíi ChØ 
-15851	§å Phæ B¹ch Hæ Th­íc Kim Hæ UyÓn
-15852	§å Phæ B¹ch Hæ Th­íc Kim Yªu §¸i
-15853	§å Phæ B¹ch Hæ Th­íc Kim Gi¸p
-15854	§å Phæ B¹ch Hæ Th­íc Kim Phi Tiªu
-15855	§å Phæ B¹ch Hæ Th­íc Kim L?
-15856	§å Phæ B¹ch Hæ Th­íc Kim Yªu Trôy
-15857	§å Phæ B¹ch Hæ Th­íc Kim Hæ Giíi ChØ 
+15848	§å Ph?B¹ch H?Th­íc Kim H¹ng Liªn
+15849	§å Ph?B¹ch H?Th­íc Kim Ph¸t Qu¸n
+15850	§å Ph?B¹ch H?Th­íc Kim Th­îng Giíi Ch?
+
+15851	§å Ph?B¹ch H?Th­íc Kim H?UyÓn
+15852	§å Ph?B¹ch H?Th­íc Kim Yªu §¸i
+15853	§å Ph?B¹ch H?Th­íc Kim Gi¸p
+15854	§å Ph?B¹ch H?Th­íc Kim Phi Tiªu
+15855	§å Ph?B¹ch H?Th­íc Kim L?
+
+15856	§å Ph?B¹ch H?Th­íc Kim Yªu Trôy
+15857	§å Ph?B¹ch H?Th­íc Kim H?Giíi Ch?
+
 15858	Îå¶¾½Ì
-15859	Ngù  §éc Ch­ëng
-15860	§å Phæ B¹ch Hæ §éc Sa H¹ng Liªn
-15861	§å Phæ B¹ch Hæ §éc Sa Ph¸t §¸i
-15862	§å Phæ B¹ch Hæ §éc Sa Th­îng Giíi ChØ 
-15863	§å Phæ B¹ch Hæ §éc Sa Hæ UyÓn
-15864	§å Phæ B¹ch Hæ §éc Sa Yªu §¸i
-15865	§å Phæ B¹ch Hæ §éc Sa B?Trang
-15866	§å Phæ B¹ch Hæ §éc Sa TriÒn Th?
-15867	§å Phæ B¹ch Hæ §éc Sa Ngoa
-15868	§å Phæ B¹ch Hæ §éc Sa Yªu Trôy
-15869	§å Phæ B¹ch Hæ §éc Sa Hæ Giíi ChØ 
-15870	Ngù  §éc §ao
-15871	§å Phæ B¹ch Hæ U Linh H¹ng Liªn
-15872	§å Phæ B¹ch Hæ U Linh Ph¸t §¸i
-15873	§å Phæ B¹ch Hæ U Linh Th­îng Giíi ChØ 
-15874	§å Phæ B¹ch Hæ U Linh Hæ UyÓn
-15875	§å Phæ B¹ch Hæ U Linh Yªu §¸i
-15876	§å Phæ B¹ch Hæ U Linh B?Trang
-15877	§å Phæ B¹ch Hæ U Linh B¶o §ao
-15878	§å Phæ B¹ch Hæ U Linh Ngoa
-15879	§å Phæ B¹ch Hæ U Linh Yªu Trôy
-15880	§å Phæ B¹ch Hæ U Linh Hæ Giíi ChØ 
+15859	Ng?§éc Ch­ëng
+15860	§å Ph?B¹ch H?§éc Sa H¹ng Liªn
+15861	§å Ph?B¹ch H?§éc Sa Ph¸t §¸i
+15862	§å Ph?B¹ch H?§éc Sa Th­îng Giíi Ch?
+
+15863	§å Ph?B¹ch H?§éc Sa H?UyÓn
+15864	§å Ph?B¹ch H?§éc Sa Yªu §¸i
+15865	§å Ph?B¹ch H?§éc Sa B?Trang
+15866	§å Ph?B¹ch H?§éc Sa TriÒn Th?
+
+15867	§å Ph?B¹ch H?§éc Sa Ngoa
+15868	§å Ph?B¹ch H?§éc Sa Yªu Trôy
+15869	§å Ph?B¹ch H?§éc Sa H?Giíi Ch?
+
+15870	Ng?§éc §ao
+15871	§å Ph?B¹ch H?U Linh H¹ng Liªn
+15872	§å Ph?B¹ch H?U Linh Ph¸t §¸i
+15873	§å Ph?B¹ch H?U Linh Th­îng Giíi Ch?
+
+15874	§å Ph?B¹ch H?U Linh H?UyÓn
+15875	§å Ph?B¹ch H?U Linh Yªu §¸i
+15876	§å Ph?B¹ch H?U Linh B?Trang
+15877	§å Ph?B¹ch H?U Linh B¶o §ao
+15878	§å Ph?B¹ch H?U Linh Ngoa
+15879	§å Ph?B¹ch H?U Linh Yªu Trôy
+15880	§å Ph?B¹ch H?U Linh H?Giíi Ch?
+
 15881	¶ëáÒÅÉ
 15882	Nga My KiÕm
-15883	§å Phæ B¹ch Hæ L­u V©n Ch©u Liªn
-15884	§å Phæ B¹ch Hæ L­u V©n Ph¸t §¸i
-15885	§å Phæ B¹ch Hæ L­u V©n Th­îng Giíi ChØ 
-15886	§å Phæ B¹ch Hæ L­u V©n Hæ UyÓn
-15887	§å Phæ B¹ch Hæ L­u V©n Yªu §¸i
-15888	§å Phæ B¹ch Hæ L­u V©n Sa Y
-15889	§å Phæ B¹ch Hæ L­u V©n Tr­êng KiÕm
-15890	§å Phæ B¹ch Hæ L­u V©n Ngoa
-15891	§å Phæ B¹ch Hæ L­u V©n Yªu Trôy
-15892	§å Phæ B¹ch Hæ L­u V©n Hæ Giíi ChØ 
+15883	§å Ph?B¹ch H?L­u V©n Ch©u Liªn
+15884	§å Ph?B¹ch H?L­u V©n Ph¸t §¸i
+15885	§å Ph?B¹ch H?L­u V©n Th­îng Giíi Ch?
+
+15886	§å Ph?B¹ch H?L­u V©n H?UyÓn
+15887	§å Ph?B¹ch H?L­u V©n Yªu §¸i
+15888	§å Ph?B¹ch H?L­u V©n Sa Y
+15889	§å Ph?B¹ch H?L­u V©n Tr­êng KiÕm
+15890	§å Ph?B¹ch H?L­u V©n Ngoa
+15891	§å Ph?B¹ch H?L­u V©n Yªu Trôy
+15892	§å Ph?B¹ch H?L­u V©n H?Giíi Ch?
+
 15893	Nga My Ch­ëng
-15894	§å Phæ B¹ch Hæ Hµn Ngäc Ch©u Liªn
-15895	§å Phæ B¹ch Hæ Hµn Ngäc Ph¸t §¸i
-15896	§å Phæ B¹ch Hæ Hµn Ngäc Th­îng Giíi ChØ 
-15897	§å Phæ B¹ch Hæ Hµn Ngäc Hæ UyÓn
-15898	§å Phæ B¹ch Hæ Hµn Ngäc Yªu §¸i
-15899	§å Phæ B¹ch Hæ Hµn Ngäc Sa Y
-15900	§å Phæ B¹ch Hæ Hµn Ngäc TriÒn Th?
-15901	§å Phæ B¹ch Hæ Hµn Ngäc Ngoa
-15902	§å Phæ B¹ch Hæ Hµn Ngäc Yªu Trôy
-15903	§å Phæ B¹ch Hæ Hµn Ngäc Hæ Giíi ChØ 
+15894	§å Ph?B¹ch H?Hµn Ngäc Ch©u Liªn
+15895	§å Ph?B¹ch H?Hµn Ngäc Ph¸t §¸i
+15896	§å Ph?B¹ch H?Hµn Ngäc Th­îng Giíi Ch?
+
+15897	§å Ph?B¹ch H?Hµn Ngäc H?UyÓn
+15898	§å Ph?B¹ch H?Hµn Ngäc Yªu §¸i
+15899	§å Ph?B¹ch H?Hµn Ngäc Sa Y
+15900	§å Ph?B¹ch H?Hµn Ngäc TriÒn Th?
+
+15901	§å Ph?B¹ch H?Hµn Ngäc Ngoa
+15902	§å Ph?B¹ch H?Hµn Ngäc Yªu Trôy
+15903	§å Ph?B¹ch H?Hµn Ngäc H?Giíi Ch?
+
 15904	´äÑÌÃÅ
 15905	Thóy Yªn §ao
-15906	§å Phæ B¹ch Hæ Hång Nhan Ch©u Liªn
-15907	§å Phæ B¹ch Hæ Hång Nhan Tr©m
-15908	§å Phæ B¹ch Hæ Hång Nhan Th­îng Giíi ChØ 
-15909	§å Phæ B¹ch Hæ Hång Nhan Hæ UyÓn
-15910	§å Phæ B¹ch Hæ Hång Nhan Yªu §¸i
-15911	§å Phæ B¹ch Hæ Hång Nhan Sam
-15912	§å Phæ B¹ch Hæ Hång Nhan B¶o §ao
-15913	§å Phæ B¹ch Hæ Hång Nhan Ngoa
-15914	§å Phæ B¹ch Hæ Hång Nhan Yªu Trôy
-15915	§å Phæ B¹ch Hæ Hång Nhan Hæ Giíi ChØ 
+15906	§å Ph?B¹ch H?Hång Nhan Ch©u Liªn
+15907	§å Ph?B¹ch H?Hång Nhan Tr©m
+15908	§å Ph?B¹ch H?Hång Nhan Th­îng Giíi Ch?
+
+15909	§å Ph?B¹ch H?Hång Nhan H?UyÓn
+15910	§å Ph?B¹ch H?Hång Nhan Yªu §¸i
+15911	§å Ph?B¹ch H?Hång Nhan Sam
+15912	§å Ph?B¹ch H?Hång Nhan B¶o §ao
+15913	§å Ph?B¹ch H?Hång Nhan Ngoa
+15914	§å Ph?B¹ch H?Hång Nhan Yªu Trôy
+15915	§å Ph?B¹ch H?Hång Nhan H?Giíi Ch?
+
 15916	Thóy Yªn Song §ao
-15917	§å Phæ B¹ch Hæ HuyÔn Th?Ch©u Liªn
-15918	§å Phæ B¹ch Hæ HuyÔn Th?Tr©m
-15919	§å Phæ B¹ch Hæ HuyÔn Th?Th­îng Giíi ChØ 
-15920	§å Phæ B¹ch Hæ HuyÔn Th?Hæ UyÓn
-15921	§å Phæ B¹ch Hæ HuyÔn Th?Yªu §¸i
-15922	§å Phæ B¹ch Hæ HuyÔn Th?Linh Sam
-15923	§å Phæ B¹ch Hæ HuyÔn Th?Song §ao
-15924	§å Phæ B¹ch Hæ HuyÔn Th?Ngoa
-15925	§å Phæ B¹ch Hæ HuyÔn Th?Yªu Trôy
-15926	§å Phæ B¹ch Hæ HuyÔn Th?Hæ Giíi ChØ 
+15917	§å Ph?B¹ch H?HuyÔn Th?Ch©u Liªn
+15918	§å Ph?B¹ch H?HuyÔn Th?Tr©m
+15919	§å Ph?B¹ch H?HuyÔn Th?Th­îng Giíi Ch?
+
+15920	§å Ph?B¹ch H?HuyÔn Th?H?UyÓn
+15921	§å Ph?B¹ch H?HuyÔn Th?Yªu §¸i
+15922	§å Ph?B¹ch H?HuyÔn Th?Linh Sam
+15923	§å Ph?B¹ch H?HuyÔn Th?Song §ao
+15924	§å Ph?B¹ch H?HuyÔn Th?Ngoa
+15925	§å Ph?B¹ch H?HuyÔn Th?Yªu Trôy
+15926	§å Ph?B¹ch H?HuyÔn Th?H?Giíi Ch?
+
 15927	Ø¤°ï
 15928	C¸i Bang Ch­ëng
-15929	§å Phæ B¹ch Hæ Hæ Ph¸p H¹ng Liªn
-15930	§å Phæ B¹ch Hæ Hæ Ph¸p §Çu Hoµn
-15931	§å Phæ B¹ch Hæ Hæ Ph¸p Th­îng Giíi ChØ 
-15932	§å Phæ B¹ch Hæ Hæ Ph¸p Hæ UyÓn
-15933	§å Phæ B¹ch Hæ Hæ Ph¸p Yªu §¸i
-15934	§å Phæ B¹ch Hæ Hæ Ph¸p C¸i Y
-15935	§å Phæ B¹ch Hæ Hæ Ph¸p TriÒn Th?
-15936	§å Phæ B¹ch Hæ Hæ Ph¸p Ngoa
-15937	§å Phæ B¹ch Hæ Hæ Ph¸p Yªu Trôy
-15938	§å Phæ B¹ch Hæ Hæ Ph¸p Hæ Giíi ChØ 
+15929	§å Ph?B¹ch H?H?Ph¸p H¹ng Liªn
+15930	§å Ph?B¹ch H?H?Ph¸p §Çu Hoµn
+15931	§å Ph?B¹ch H?H?Ph¸p Th­îng Giíi Ch?
+
+15932	§å Ph?B¹ch H?H?Ph¸p H?UyÓn
+15933	§å Ph?B¹ch H?H?Ph¸p Yªu §¸i
+15934	§å Ph?B¹ch H?H?Ph¸p C¸i Y
+15935	§å Ph?B¹ch H?H?Ph¸p TriÒn Th?
+
+15936	§å Ph?B¹ch H?H?Ph¸p Ngoa
+15937	§å Ph?B¹ch H?H?Ph¸p Yªu Trôy
+15938	§å Ph?B¹ch H?H?Ph¸p H?Giíi Ch?
+
 15939	C¸i Bang C«n
-15940	§å Phæ B¹ch Hæ Trõng Giíi H¹ng Liªn
-15941	§å Phæ B¹ch Hæ Trõng Giíi §Çu Hoµn
-15942	§å Phæ B¹ch Hæ Trõng Giíi Th­îng Giíi ChØ 
-15943	§å Phæ B¹ch Hæ Trõng Giíi Hæ UyÓn
-15944	§å Phæ B¹ch Hæ Trõng Giíi Yªu §¸i
-15945	§å Phæ B¹ch Hæ Trõng Giíi C¸i Y
-15946	§å Phæ B¹ch Hæ Trõng Giíi Tr­îng
-15947	§å Phæ B¹ch Hæ Trõng Giíi Ngoa
-15948	§å Phæ B¹ch Hæ Trõng Giíi Yªu Trôy
-15949	§å Phæ B¹ch Hæ Trõng Giíi Hæ Giíi ChØ 
+15940	§å Ph?B¹ch H?Trõng Giíi H¹ng Liªn
+15941	§å Ph?B¹ch H?Trõng Giíi §Çu Hoµn
+15942	§å Ph?B¹ch H?Trõng Giíi Th­îng Giíi Ch?
+
+15943	§å Ph?B¹ch H?Trõng Giíi H?UyÓn
+15944	§å Ph?B¹ch H?Trõng Giíi Yªu §¸i
+15945	§å Ph?B¹ch H?Trõng Giíi C¸i Y
+15946	§å Ph?B¹ch H?Trõng Giíi Tr­îng
+15947	§å Ph?B¹ch H?Trõng Giíi Ngoa
+15948	§å Ph?B¹ch H?Trõng Giíi Yªu Trôy
+15949	§å Ph?B¹ch H?Trõng Giíi H?Giíi Ch?
+
 15950	ÌìÈÌ½Ì
 15951	ChiÕn NhÉn
-15952	§å Phæ B¹ch Hæ XÝch Minh H¹ng Khuyªn
-15953	§å Phæ B¹ch Hæ XÝch Minh Kh«i
-15954	§å Phæ B¹ch Hæ XÝch Minh Th­îng Giíi ChØ 
-15955	§å Phæ B¹ch Hæ XÝch Minh Hæ UyÓn
-15956	§å Phæ B¹ch Hæ XÝch Minh Yªu §¸i
-15957	§å Phæ B¹ch Hæ XÝch Minh Gi¸p
-15958	§å Phæ B¹ch Hæ XÝch Minh Th­¬ng
-15959	§å Phæ B¹ch Hæ XÝch Minh Ngoa
-15960	§å Phæ B¹ch Hæ XÝch Minh Yªu Trôy
-15961	§å Phæ B¹ch Hæ XÝch Minh Hæ Giíi ChØ 
+15952	§å Ph?B¹ch H?XÝch Minh H¹ng Khuyªn
+15953	§å Ph?B¹ch H?XÝch Minh Kh«i
+15954	§å Ph?B¹ch H?XÝch Minh Th­îng Giíi Ch?
+
+15955	§å Ph?B¹ch H?XÝch Minh H?UyÓn
+15956	§å Ph?B¹ch H?XÝch Minh Yªu §¸i
+15957	§å Ph?B¹ch H?XÝch Minh Gi¸p
+15958	§å Ph?B¹ch H?XÝch Minh Th­¬ng
+15959	§å Ph?B¹ch H?XÝch Minh Ngoa
+15960	§å Ph?B¹ch H?XÝch Minh Yªu Trôy
+15961	§å Ph?B¹ch H?XÝch Minh H?Giíi Ch?
+
 15962	Ma NhÉn
-15963	§å Phæ B¹ch Hæ S¸t Viªm H¹ng Liªn
-15964	§å Phæ B¹ch Hæ S¸t Viªm Kh«i
-15965	§å Phæ B¹ch Hæ S¸t Viªm Th­îng Giíi ChØ 
-15966	§å Phæ B¹ch Hæ S¸t Viªm Hæ UyÓn
-15967	§å Phæ B¹ch Hæ S¸t Viªm Yªu §¸i
-15968	§å Phæ B¹ch Hæ S¸t Viªm Gi¸p
-15969	§å Phæ B¹ch Hæ S¸t Viªm §ao
-15970	§å Phæ B¹ch Hæ S¸t Viªm Ngoa
-15971	§å Phæ B¹ch Hæ S¸t Viªm Yªu Trôy
-15972	§å Phæ B¹ch Hæ S¸t Viªm Hæ Giíi ChØ 
+15963	§å Ph?B¹ch H?S¸t Viªm H¹ng Liªn
+15964	§å Ph?B¹ch H?S¸t Viªm Kh«i
+15965	§å Ph?B¹ch H?S¸t Viªm Th­îng Giíi Ch?
+
+15966	§å Ph?B¹ch H?S¸t Viªm H?UyÓn
+15967	§å Ph?B¹ch H?S¸t Viªm Yªu §¸i
+15968	§å Ph?B¹ch H?S¸t Viªm Gi¸p
+15969	§å Ph?B¹ch H?S¸t Viªm §ao
+15970	§å Ph?B¹ch H?S¸t Viªm Ngoa
+15971	§å Ph?B¹ch H?S¸t Viªm Yªu Trôy
+15972	§å Ph?B¹ch H?S¸t Viªm H?Giíi Ch?
+
 15973	Îäµ±ÅÉ
 15974	V?§ang Kh?
-15975	§å Phæ B¹ch Hæ Tiªn ¢m Ph?
-15976	§å Phæ B¹ch Hæ Tiªn ¢m Qu¸n
-15977	§å Phæ B¹ch Hæ Tiªn ¢m Th­îng Giíi ChØ 
-15978	§å Phæ B¹ch Hæ Tiªn ¢m Hæ UyÓn
-15979	§å Phæ B¹ch Hæ Tiªn ¢m Ph¸p §¸i
-15980	§å Phæ B¹ch Hæ Tiªn ¢m Bµo
-15981	§å Phæ B¹ch Hæ Tiªn ¢m KiÕm
-15982	§å Phæ B¹ch Hæ Tiªn ¢m L?
-15983	§å Phæ B¹ch Hæ Tiªn ¢m Ngäc Béi
-15984	§å Phæ B¹ch Hæ Tiªn ¢m Hæ Giíi ChØ 
+15975	§å Ph?B¹ch H?Tiªn ¢m Ph?
+
+15976	§å Ph?B¹ch H?Tiªn ¢m Qu¸n
+15977	§å Ph?B¹ch H?Tiªn ¢m Th­îng Giíi Ch?
+
+15978	§å Ph?B¹ch H?Tiªn ¢m H?UyÓn
+15979	§å Ph?B¹ch H?Tiªn ¢m Ph¸p §¸i
+15980	§å Ph?B¹ch H?Tiªn ¢m Bµo
+15981	§å Ph?B¹ch H?Tiªn ¢m KiÕm
+15982	§å Ph?B¹ch H?Tiªn ¢m L?
+
+15983	§å Ph?B¹ch H?Tiªn ¢m Ngäc Béi
+15984	§å Ph?B¹ch H?Tiªn ¢m H?Giíi Ch?
+
 15985	V?§ang KiÕm
-15986	§å Phæ B¹ch Hæ §¹o Minh Ph?
-15987	§å Phæ B¹ch Hæ §¹o Minh Qu¸n
-15988	§å Phæ B¹ch Hæ §¹o Minh Th­îng Giíi ChØ 
-15989	§å Phæ B¹ch Hæ §¹o Minh Hæ UyÓn
-15990	§å Phæ B¹ch Hæ §¹o Minh Ph¸p §¸i
-15991	§å Phæ B¹ch Hæ §¹o Minh Bµo
-15992	§å Phæ B¹ch Hæ §¹o Minh KiÕm
-15993	§å Phæ B¹ch Hæ §¹o Minh L?
-15994	§å Phæ B¹ch Hæ §¹o Minh Ngäc Béi
-15995	§å Phæ B¹ch Hæ §¹o Minh Hæ Giíi ChØ 
+15986	§å Ph?B¹ch H?§¹o Minh Ph?
+
+15987	§å Ph?B¹ch H?§¹o Minh Qu¸n
+15988	§å Ph?B¹ch H?§¹o Minh Th­îng Giíi Ch?
+
+15989	§å Ph?B¹ch H?§¹o Minh H?UyÓn
+15990	§å Ph?B¹ch H?§¹o Minh Ph¸p §¸i
+15991	§å Ph?B¹ch H?§¹o Minh Bµo
+15992	§å Ph?B¹ch H?§¹o Minh KiÕm
+15993	§å Ph?B¹ch H?§¹o Minh L?
+
+15994	§å Ph?B¹ch H?§¹o Minh Ngäc Béi
+15995	§å Ph?B¹ch H?§¹o Minh H?Giíi Ch?
+
 15996	À¥ÂØÅÉ
 15997	C«n L«n §ao
-15998	§å Phæ B¹ch Hæ Thiªn C­¬ng H¹ng Liªn
-15999	§å Phæ B¹ch Hæ Thiªn C­¬ng §¹o Qu¸n
-16000	§å Phæ B¹ch Hæ Thiªn C­¬ng Th­îng Giíi ChØ 
-16001	§å Phæ B¹ch Hæ Thiªn C­¬ng Hæ UyÓn
-16002	§å Phæ B¹ch Hæ Thiªn C­¬ng Yªu §¸i
-16003	§å Phæ B¹ch Hæ Thiªn C­¬ng §¹o Bµo
-16004	§å Phæ B¹ch Hæ Thiªn C­¬ng B¶o §ao
-16005	§å Phæ B¹ch Hæ Thiªn C­¬ng Ngoa
-16006	§å Phæ B¹ch Hæ Thiªn C­¬ng Yªu Trôy
-16007	§å Phæ B¹ch Hæ Thiªn C­¬ng Hæ Giíi ChØ 
+15998	§å Ph?B¹ch H?Thiªn C­¬ng H¹ng Liªn
+15999	§å Ph?B¹ch H?Thiªn C­¬ng §¹o Qu¸n
+16000	§å Ph?B¹ch H?Thiªn C­¬ng Th­îng Giíi Ch?
+
+16001	§å Ph?B¹ch H?Thiªn C­¬ng H?UyÓn
+16002	§å Ph?B¹ch H?Thiªn C­¬ng Yªu §¸i
+16003	§å Ph?B¹ch H?Thiªn C­¬ng §¹o Bµo
+16004	§å Ph?B¹ch H?Thiªn C­¬ng B¶o §ao
+16005	§å Ph?B¹ch H?Thiªn C­¬ng Ngoa
+16006	§å Ph?B¹ch H?Thiªn C­¬ng Yªu Trôy
+16007	§å Ph?B¹ch H?Thiªn C­¬ng H?Giíi Ch?
+
 16008	C«n L«n KiÕm
-16009	§å Phæ B¹ch Hæ Ng¹o S­¬ng Ph?
-16010	§å Phæ B¹ch Hæ Ng¹o S­¬ng §¹o Qu¸n
-16011	§å Phæ B¹ch Hæ Ng¹o S­¬ng Th­îng Giíi ChØ 
-16012	§å Phæ B¹ch Hæ Ng¹o S­¬ng Hæ UyÓn
-16013	§å Phæ B¹ch Hæ Ng¹o S­¬ng Yªu §¸i
-16014	§å Phæ B¹ch Hæ Ng¹o S­¬ng §¹o Bµo
-16015	§å Phæ B¹ch Hæ Ng¹o S­¬ng Tr­êng KiÕm
-16016	§å Phæ B¹ch Hæ Ng¹o S­¬ng Ngoa
-16017	§å Phæ B¹ch Hæ Ng¹o S­¬ng Béi
-16018	§å Phæ B¹ch Hæ Ng¹o S­¬ng Hæ Giíi ChØ 
+16009	§å Ph?B¹ch H?Ng¹o S­¬ng Ph?
+16010	§å Ph?B¹ch H?Ng¹o S­¬ng §¹o Qu¸n
+16011	§å Ph?B¹ch H?Ng¹o S­¬ng Th­îng Giíi Ch?
+
+16012	§å Ph?B¹ch H?Ng¹o S­¬ng H?UyÓn
+16013	§å Ph?B¹ch H?Ng¹o S­¬ng Yªu §¸i
+16014	§å Ph?B¹ch H?Ng¹o S­¬ng §¹o Bµo
+16015	§å Ph?B¹ch H?Ng¹o S­¬ng Tr­êng KiÕm
+16016	§å Ph?B¹ch H?Ng¹o S­¬ng Ngoa
+16017	§å Ph?B¹ch H?Ng¹o S­¬ng Béi
+16018	§å Ph?B¹ch H?Ng¹o S­¬ng H?Giíi Ch?
+
 16019	Håi Thiªn T¸i T¹o CÈm Nang
 16020	ÁìÈ¡ÒøÁ½100Íò
+
 16021	ÁìÈ¡×øÆï³àÁú¾Ô
 16022	ÁìÈ¡Ç¬À¤Ë«¾øÅå
 16023	½£ÏÀÈºÐÛÕ½ÄÏº££¬ÁúÕù»¢¶·Ò«¾ÅÖÝ£¬7ÔÂ±ÈÈüÕýÊ½¿ªÆô£¬±¾Ê¹Õß´ú±íÎ÷É½¾ÓÊ¿ÔÚ´Ë»¶Ó­¸÷Â·Ó¢ÐÛºÀ½Ü£¬ÏÀÊ¿ÃÇ¿ÉÒÔÕÒÎÒËùÒª±ÈÈüµÄÉñ±øÀûÆ÷ºÍÁéµ¤ÃîÒ©¡£
@@ -6023,7 +6092,7 @@ ID	STRING
 16032	Göi th«ng b¸o
 16033	NhËn ®¹o c?GM
 16034	ChuyÓn sinh lÇn 4 kh«ng th?th¨ng ®Õn cÊp 200
-16035	B¹n ®· chuyÓn sinh 4 lÇn, kh«ng thÓ chuyÓn sinh
+16035	B¹n ®· chuyÓn sinh 4 lÇn, kh«ng th?chuyÓn sinh
 16036	§¹t cÊp 200 tr­íc khi chuyÓn sinh
 16037	Tr¹ng th¸i bÊt th­êng, vui lßng liªn h?nh?ph¸t hµnh
 16038	Ngoµi ra
@@ -6032,12 +6101,14 @@ ID	STRING
 16041	ÄãÔÚµÚ%d´Î×ªÉúÊ±£¬Ñ¡¹ý%s£¬²»ÄÜ¶à´ÎÑ¡ÔñÍ¬Ò»¸ö¿¹ÐÔ·ÀÓù£¬ÇëÖØÐÂÑ¡Ôñ¡£
 16042	ÄãÒÑ¾­¼ÓÈëÃÅÅÉÁË£¡
 16043	·µ»ØÉÏÒ»²ã
-16044	Mét khi chän lµ kh«ng thÓ thay ®æi m«n ph¸i, h·y c©n nh¾c kü
+16044	Mét khi chän l?kh«ng th?thay ®æi m«n ph¸i, h·y c©n nh¾c k?
+
 16045	ÃÅÅÉÒ»µ©Ñ¡¶¨Ôò²»ÄÜÐÞ¸Ä£¬Ö»ÄÜÒÔ¸Ã½ÇÉ«²ÎÈü£¬È·ÈÏÒª¼ÓÈë
 16046	X¸c nhËn
-16047	H·y ®Ó ta suy nghÜ l¹i
+16047	H·y ®Ó ta suy ngh?l¹i
 16048	B¹n ®· tham gia thµnh c«ng
-16049	Gia nhËp m«n ph¸i míi cã thÓ nhËn trang bÞ
+16049	Gia nhËp m«n ph¸i míi c?th?nhËn trang b?
+
 16050	Vui lßng chän m«n ph¸i
 16051	ÒÔÏÂ¾ÍÊÇ%sµÄ°×»¢Ì××°
 16052	ÖÁÉÙÐèÒª1¸ö%dx%dµÄ±³°ü¿Õ¼ä
@@ -6084,4 +6155,3 @@ ID	STRING
 16093	ÏÀÊ¿ÒªÈ¥ÄÄ¶ù£¿
 16094	ÄãÃ»ÓÐ¿ÉÓÃµÄ4×ª¼¼ÄÜµã£¬¼¼ÄÜÎÞ·¨ÌáÉý¡£
 16095	µÄÐÞÎªÒÑ¾­´ïµ½¶¥¼¶ÁË£¬ÎÞ·¨ÔÙµÃµ½¸ü¸ßµÄÌáÉý¡£
-16096	µÄÐÞÎªµÃµ½ÌáÉý£¬»¹¿ÉÒÔÊ¹ÓÃµÄ4×ª¼¼ÄÜµãÎª

@@ -124,3 +124,108 @@ end
 function pActivity:UseBagLog()
 	%tbLog:PlayerActionLog("Event_Thang6", "SuDungTuiHuong")
 end
+
+function pActivity:SuDungBaoGaoThuong()
+	local solansudung = self:GetTask(%TSK_SUDUNGBAOGAOTHUONG)
+	Msg2Player("§· sö dông: <color=yellow>" .. solansudung .. "<color> lÇn")
+end
+
+function pActivity:SuDungBaoGaoThom()
+	local solansudung = self:GetTask(%TSK_SUDUNGBAOGAOTHOM)
+	Msg2Player("§· sö dông: <color=pink>" .. solansudung .. "<color> lÇn")
+end
+
+function pActivity:SuDungBaoGaoDB()
+	
+	local nCurCount = self:GetTask(%TSK_SUDUNGBAOGAODB)
+	Msg2Player("§· sö dông: <color=green>" .. nCurCount .. "<color> lÇn")
+
+	Ladder_NewLadder(10282, GetName(),nCurCount,0,GetLastFactionNumber());
+
+	--Diem kn dat moc
+	local tbBonusAward = {
+		[100] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 3000000}, --Hoa son
+			--{szName = "ChiÕu d¹", tbProp={0,10,5,5,0,0},nCount=1, nExpiredTime=60*24*14},
+			{szName = "QuÕ Hoa Thöu",tbProp={6,1,125,1,0,0},nCount=1,},
+		},
+		[200] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 4000000}, --Hoa son
+			{szName = "QuÕ Hoa Thöu",tbProp={6,1,125,1,0,0},nCount=1,},
+		},
+		[300] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 5000000}, --Hoa son
+			{szName = "QuÕ Hoa Thöu",tbProp={6,1,125,1,0,0},nCount=1,},
+			
+		},
+		[400] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 6000000}, --Hoa son
+			{szName = "QuÕ Hoa Thöu",tbProp={6,1,125,1,0,0},nCount=1,},
+			
+		},
+		[500] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 10000000}, --Hoa son
+			--{szName = "§¹i thµnh bÝ kÝp 90",tbProp={6,1,2424,1,0,0},nCount=1},
+			{
+				{szName = "BÝ kÝp 90",tbProp={6,1,random(27,28),1,0,0},nCount=1,nRate=33},
+				{szName = "BÝ kÝp 90",tbProp={6,1,random(33,43),1,0,0},nCount=1,nRate=33},
+				{szName = "BÝ kÝp 90",tbProp={6,1,random(45,59),1,0,0},nCount=1,nRate=34},
+				
+			},
+
+			
+		},
+		[1000] = 
+		{
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 20000000}, --Hoa son
+			{szName = "§¹i thµnh bÝ kÝp 90",tbProp={6,1,2424,1,0,0},nCount=1},
+			
+		},
+	}
+
+	if tbBonusAward[nCurCount] then
+		tbAwardTemplet:Give(tbBonusAward[nCurCount], 1 , {EVENT_LOG_TITLE, format("SuDung%dlanBaoGaoDB", nCurCount)})
+		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông vËt phÈm Bao G¹o §Æc BiÖt ®Õn mèc <color=yellow>"..nCurCount.."<color>, nhËn ®­îc phÇn th­ëng nh­ ý")
+	end
+
+	--Phan thuong them
+	local tbItemAward = 
+	{
+			{szName = "Phóc duyªn tiÓu", tbProp={6,1,123,1,0,0},nCount=1, nRate =5},
+			{szName = "Phóc duyªn trung", tbProp={6,1,124,2,0,0},nCount=1, nRate =0.5},
+			{szName = "Phóc duyªn §¹i", tbProp={6,1,125,3,0,0},nCount=1, nRate =0.3},
+			{szName = "Tiªn th¶o lé §Æc BiÖt",tbProp={6,1,1181,1,0,0},nCount=1, nRate=0.2},--1 cai
+			{szName = "Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nCount=1, nRate=2},--10 cai
+			{szName = "NÕn B¸t tr©n phóc nguyÖt", nRate = 0.2,   tbProp = {6, 1, 1817, 1, 0, 0}, nCount=1},	
+			{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0},nCount=1, nRate =0.1},
+			{szName = "Tö mÉu lÖnh",tbProp={6,1,1427,1,0,0},nCount=1,nRate=0.1},
+			{szName = "Tinh hång b¶o th¹ch",tbProp={4,353,1,1,0,0},nCount=1,nRate=0.4},--2 vien
+			{szName = "Tö thñy tinh",tbProp={4,239,1,1,0,0},nCount=1,nRate=0.1},
+			{szName = "Lôc thñy tinh",tbProp={4,240,1,1,0,0},nCount=1,nRate=0.1},
+			{szName = "Lam thñy tinh",tbProp={4,238,1,1,0,0},nCount=1,nRate=0.1},
+			{szName = "QuÕ hoa töu",tbProp={6,1,125,1,0,0},nCount=1,nRate=2},--2 vien
+			{szName = "Ch×a khãa nh­­ ý",tbProp={6,1,2744,1,0,0},nCount=1,nRate=2},
+			{szName = "LÖnh bµi hoµn thµnh d· tÈu",tbProp={6,1,4336,1,0,0},nCount=1,nRate=2},
+			{szName= "Tói danh väng",tbProp={6,1,4338,1,0,0},nCount=1,nRate=2},--10 cai
+			{szName = "ChiÕu d¹", tbProp={0,10,5,5,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 1",tbProp={4,490,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 2",tbProp={4,491,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 3",tbProp={4,492,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 4",tbProp={4,493,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 5",tbProp={4,494,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 6",tbProp={4,495,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 7",tbProp={4,496,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 8",tbProp={4,497,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 9",tbProp={4,498,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 10",tbProp={4,499,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 11",tbProp={4,500,1,1,0,0},nCount=1,nRate=0.02},
+			{szName="M¶nh Tµng B¶o §å 12",tbProp={4,501,1,1,0,0},nCount=1,nRate=0.02},
+	}
+	tbAwardTemplet:Give(tbItemAward, 1 , {EVENT_LOG_TITLE, "PhanThuongThemBaoGaoDB"})
+
+end

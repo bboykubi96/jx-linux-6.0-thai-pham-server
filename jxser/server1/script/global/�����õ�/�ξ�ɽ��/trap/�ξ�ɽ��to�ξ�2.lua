@@ -1,7 +1,7 @@
--- ÃÎ¾³É½¶´toÃÎ¾³2.lua
+-- script viet hoa By http://tranhba.com  méng c¶nh s¬n ®éng to méng c¶nh 2.lua 
 Include("\\script\\missions\\clearskill\\head.lua")
 Include("\\script\\missions\\clearskill\\testhole.lua")
 
-function main()
-	LeaveGame(2)
-end
+function main() 
+LeaveGame(2) 
+end 

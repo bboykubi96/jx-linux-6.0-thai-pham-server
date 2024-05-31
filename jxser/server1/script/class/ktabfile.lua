@@ -14,13 +14,9 @@
 if not KTABFILE_HEAD then
 KTABFILE_HEAD = 1
 
-if not MEM_HEAD then
-	Include "\\script\\lib\\mem.lua"
-end
+Include("\\script\\lib\\mem.lua")
+Include("\\script\\class\\lerror.lua")
 
-if not LERROR_HEAD then
-	Include "\\script\\class\\lerror.lua"
-end
 
 IncludeLib("FILESYS")
 

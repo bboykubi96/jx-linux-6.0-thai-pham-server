@@ -1,7 +1,7 @@
---Î÷±±±±Çø ±ùºÓ¶´toÓÀÀÖÕò
---TrapID£ºÎ÷±±±±Çø 195
+-- script viet hoa By http://tranhba.com  t©y b¾c b¾c khu b¨ng hµ ®éng to vÜnh nh¹c trÊn 
+-- script viet hoa By http://tranhba.com TrapID# t©y b¾c b¾c khu 195 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(99, 1478, 3348);
+function main(sel) 
+SetFightState(1); 
+NewWorld(99, 1478, 3348); 
 end;

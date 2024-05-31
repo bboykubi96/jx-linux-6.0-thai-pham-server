@@ -1,7 +1,7 @@
---Á½ºþÇø ÄÏÔÀÕò Â·±ê3£ºÄÏÔÀÕò->ÂÞÏöÉ½
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn b¶ng chØ ®­êng 3# nam nh¹c trÊn -> la tiªu s¬n 
 
-function main(sel)
+function main(sel) 
 
-Say("Nam Nh¹c trÊn<——>H¾c Sa ®éng", 0)
+Say("Nam nh¹c trÊn <——> la tiªu s¬n ", 0) 
 
-end;
+end; 

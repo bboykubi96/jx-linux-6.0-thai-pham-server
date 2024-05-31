@@ -1,8 +1,8 @@
---Á½ºşÇø ÌìÍõ°ïtoÇŞ¹¬
---TrapID£ºÁ½ºşÇø 67
+-- script viet hoa By http://tranhba.com  hai hå khu Thiªn v­¬ng gióp to tÈm cung 
+-- script viet hoa By http://tranhba.com TrapID# hai hå khu 67 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(62, 1611, 3202);
+NewWorld(62, 1611, 3202); 
 
 end;

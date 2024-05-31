@@ -1,10 +1,7 @@
--- 文件名　：callboss.lua
--- 创建者　：wangjingjun
--- 内容　　：gs call boss
--- 创建时间：2011-08-29 10:11:26
+----------------***Heart*Doldly***----------------------
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\lib\\objbuffer_head.lua")
-
+-----------------------------------------------
 function getParamValue(nHandle)
 	if (OB_IsEmpty(nHandle) == 1) then
 		return
@@ -38,13 +35,12 @@ function gbAdjust_MakeBoss(ParamHandle)
 		return
 	end
 	
-	local tbGoldBoss = 
-	{
+	local tbGoldBoss = {
 		szName = szBossname, 
 		nLevel = nBossLevel,
 		nNpcId = nBossId,
 		nIsboss = 1,
-		nTime =  24 * 60 * 60,		-- 存在时间 24小时
+		nTime =  24 * 60 * 60,
 		szScriptPath = "\\script\\missions\\boss\\goldboss_adjust_2011\\goldboss.lua",
 		tbNpcParam = {nBossId,},
 	}
@@ -53,7 +49,6 @@ function gbAdjust_MakeBoss(ParamHandle)
 		AddGlobalCountNews(szWorldMsg, 1)
 	end
 end
-
 
 function gbCallBossTest()
 	local nBossId = 1873
@@ -77,13 +72,12 @@ function gbCallBossTest()
 		return
 	end
 	
-	local tbGoldBoss = 
-	{
+	local tbGoldBoss = {
 		szName = szBossname, 
 		nLevel = nBossLevel,
 		nNpcId = nBossId,
 		nIsboss = 1,
-		nTime =  24 * 60 * 60,		-- 存在时间 24小时
+		nTime =  24 * 60 * 60,
 		szScriptPath = "\\script\\missions\\boss\\goldboss_adjust_2011\\goldboss.lua",
 		tbNpcParam = {nBossId,},
 	}

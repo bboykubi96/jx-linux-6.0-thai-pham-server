@@ -1,13 +1,13 @@
--- Õ½¶·_ÌÆ²»È¾.lua
--- by: Dan_Deng(2004-04-12)
+-- script viet hoa By http://tranhba.com  chiÕn ®Êu _ ®­êng bÊt nhiÔm .lua 
+-- script viet hoa By http://tranhba.com  by: Dan_Deng(2004-04-12) 
 
-function OnDeath()
-	Uworld123 = GetTask(123)
-	if (Uworld123 == 40) then
-		SetTask(123,50)
-		SetFightState(0)
-		Talk(1,"","T¹i sao ta l¹i cã thÓ thua cuéc?!")
-		Msg2Player("B¹n ®· ®¸nh b¹i §­êng BÊt NhiÔm, cßn kh«ng mau an ñi h¾n mét tİ? ")
-		NewWorld(36, 1592, 3193)		-- ËÍ»Ø¼À×æÌü
-	end
-end
+function OnDeath() 
+Uworld123 = GetTask(123) 
+if (Uworld123 == 40) then 
+SetTask(123,50) 
+SetFightState(0) 
+Talk(1,"","ThÕ nµo ta sÏ thua ®©y ?!") 
+Msg2Player("Ng­¬i ®· ®¸nh b¹i ®­êng bÊt nhiÔm , cßn kh«ng ®i an ñi h¾n mét c¸i ") 
+NewWorld(36, 1592, 3193) -- script viet hoa By http://tranhba.com  ®­a vÒ giæ tæ thİnh 
+end 
+end 

@@ -1,12 +1,14 @@
--- ½­ÄÏÇø ÌÒ»¨µº Â·ÈË_ÌÒ»¨ÒşÊ¿.lua
--- by: Dan_deng(2004-05-15)
--- Âô¹Ò»úÒ©£¬²éÑ¯Ê±¼ä£¬ÎªÏ´µã×öºÏ·¨ĞÔ¼ì²é
+--Dao hoa dao edit by McTeam 11/08/2016
 
 Include("\\script\\global\\timerhead.lua")
 Include("\\script\\missions\\autohang\\function.lua")
-Include("\\script\\config\\cfg_features.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function main()
+	
+	--dofile("script/½­ÄÏÇø/ÌÒ»¨µº/Â·ÈË_ÌÒ»¨ÒşÊ¿.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
 	--Uworld137 = GetTask(137)
 	--if (Uworld137 == 0) then						-- µÚÒ»´Î¶Ô»°£¬ĞèÒª¼ì²â¼¼ÄÜ¸üĞÂ
 	--	if (check_faction() < 20) then			-- ĞèÒª¸üĞÂÆä¼¼ÄÜ
@@ -21,7 +23,7 @@ function main()
 	--end
 	
 	strNeedLevel = "§µo Hoa §¶o vµ c¸ch tuyÖt víi thÕ giíi bªn ngoµi, ®­êng ®i nguy hiÓm, kh«ng ®Õn<color=red> "..AEXP_NEEDLEVEL.."cÊp<color> mµ muèn vµo ®©y? VÒ luyÖn c«ng thªm ®i!";
-	-- Ãâ·ÑË«¾­Ñé
+	
 	if (AEXP_IsFreeTimeDoubleExp() == 1) then-- Ãâ·ÑË«¾­ÑéÈÕ×Ó
 		nLevel = GetLevel();	
 		if (nLevel < AEXP_NEEDLEVEL) then
@@ -38,9 +40,11 @@ function main()
 		Say(strNeedLevel, 0);
 	else
 		local tbSay = {}
-		tinsert(tbSay,"§­îc! ta uèng! /buy_yes")
-		tinsert(tbSay,"Xin hái: Thø ch¸o nµy, uèng vµo bao l©u sau míi cã c«ng hiÖu? /check_time")
-		if CFG_HONNGUYENLINHLO == 1 then
+		if UongChaoLapBat == 1 then
+			tinsert(tbSay,"§­îc! ta uèng! /buy_yes")
+			tinsert(tbSay,"Xin hái: Thø ch¸o nµy, uèng vµo bao l©u sau míi cã c«ng hiÖu? /check_time")
+		end
+		if chetaohonnguyenlinhlo == 1 then
 			tinsert(tbSay,"Ta muèn chÕ t¹o Hçn Nguyªn Linh Lé/refine")
 		end
 		tinsert(tbSay,"LÇn sau sÏ nãi tiÕp /OnCancel")
@@ -48,7 +52,6 @@ function main()
 	end
 end
 
--- Á¶ÖÆ»ìÔªÁéÂ¶
 function refine()
 	DynamicExecute("\\script\\global\\jingli.lua", "dlg_entrance", PlayerIndex)
 end

@@ -1,7 +1,7 @@
---ÖĞÔ­±±Çø ËÎ½ğÕ½³¡ Â·±ê1£ºËÎ½ğÕ½³¡->ÖìÏÉÕò
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu tèng kim chiÕn tr­êng b¶ng chØ ®­êng 1# tèng kim chiÕn tr­êng -> Chu tiªn trÊn 
 
-function main(sel)
+function main(sel) 
 
-Say("ChiÕn tr­êng Tèng Kim<---->Chu Tiªn trÊn", 0)
+Say("Tèng kim chiÕn tr­êng <——> biÖn kinh ", 0) 
 
-end;
+end; 

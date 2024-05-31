@@ -14,6 +14,7 @@ function RunMission()
 		SetPKFlag(2)	--ÍÀÉ±Ä£Ê½
 		ForbidChangePK(1);	--½ûÖ¹¸ü»»PKÄ£Ê½
 		SetFightState(1);	--¿ªÊ¼Õ½¶·
+		--SetCurCamp(4) 
 	end
 	PlayerIndex = oldPlayerIndex
 	Msg2MSAll( WLLS_MSID_COMBAT, "<color=yellow>Thêi gian chuÈn bÞ kÕt thóc, thi ®Êu chÝnh thøc b¾t ®Çu." );

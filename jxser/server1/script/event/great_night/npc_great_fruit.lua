@@ -25,22 +25,22 @@ function main()
 		return
 	end
 	
-	if (nPlayerLevel < 90) then
+	if (nPlayerLevel>=40 and nPlayerLevel < 80) then
 		nGetSeedLevel = 1;
-	elseif (nPlayerLevel >= 90 and nPlayerLevel < 120) then
+	elseif (nPlayerLevel >= 80 and nPlayerLevel <100) then
 		nGetSeedLevel = 2;
-	elseif (nPlayerLevel >= 120) then
+	elseif (nPlayerLevel >= 100) then
 		nGetSeedLevel = 3;
 	end
 	
 	if (nGetSeedLevel ~= GetNpcParam(nNpcIdx, 1)) then -- Èç¹û¼¶±ð²»¶Ô,²»ÄÜ½øÐÐÊ°È¡
 		--ÕâÀï¸æËßÍæ¼Ò¼¶±ð²»¶Ô,²»ÄÜÊ°È¡
 		if (1 == GetNpcParam(nNpcIdx, 1)) then
-			Msg2Player("Lo¹i qu¶ nµy ng­êi ch¬i tõ cÊp 90 trë xuèng cã thÓ h¸i!")
+			Msg2Player("ChØ cã ng­êi ch¬i cÊp 40 ®Õn cÊp 79 míi cã thÓ h¸i qu¶ nµy!")
 		elseif (2 == GetNpcParam(nNpcIdx, 1)) then
-			Msg2Player("Lo¹i qu¶ nµy ng­êi ch¬i tõ cÊp 90 ®Õn cÊp 119 míi cã thÓ h¸i.")
+			Msg2Player("Lo¹i qu¶ nµy ng­êi ch¬i tõ cÊp 80 ®Õn cÊp 99 míi cã thÓ h¸i.")
 		else
-			Msg2Player("Lo¹i qu¶ nµy ng­êi ch¬i tõ cÊp 120 trë lªn míi cã thÓ h¸i!")
+			Msg2Player("Lo¹i qu¶ nµy ng­êi ch¬i tõ cÊp 100 trë lªn míi cã thÓ h¸i!")
 		end
 		return
 	end;
@@ -55,7 +55,12 @@ function main()
 	--			local nowdate = tonumber(GetLocalDate("%y%m%d"))
 	--			SetSpecItemParam(nItemIndex, 1, nowdate)
 				SyncItem(nItemIndex)
-				Msg2Player("B¹n nhËn ®­îc mét qu¶ Huy Hoµng ");
+				Msg2Player("B¹n nhËn ®­îc mét qu¶ Huy Hoµng");
+				local _, nTongID = GetTongName()
+				if nTongID~=0 then
+				Msg2Tong(nTongID,"§¹i hiÖp "..GetName().." ®· nhÆt ®­îc qu¶ Huy Hoµng")
+				end
+			--	Msg2Tong("Chóc mõng ®¹i hiÖp "..GetName().." ®· nhÆt ®­îc qu¶ Huy Hoµng")
 			end
 			SetTask(GREADSEED_TIME_TASKID, 0);
 			SetTask(GREADSEED_SEEDID_TASKID, 0);

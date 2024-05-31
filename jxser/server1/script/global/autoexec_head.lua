@@ -1,3 +1,4 @@
+-- 系统启动时自动运行的函数 wangbin 2010.12.10
 AutoFunctions = {
 	m_Functions = {}
 }

@@ -1,7 +1,7 @@
 AttributeType	Value1	Value2	Value3	Comment
-166	1500	-1	-1	T╪g ch輓h x竎
-166	2000	-1	-1	T╪g ch輓h x竎
-166	2500	-1	-1	T╪g ch輓h x竎
+166	1500	-1	-1	增加命中
+166	2000	-1	-1	增加命中
+166	2500	-1	-1	增加命中
 85	800	-1	-1	增加生命
 85	1200	-1	-1	增加生命
 85	1500	-1	-1	增加生命

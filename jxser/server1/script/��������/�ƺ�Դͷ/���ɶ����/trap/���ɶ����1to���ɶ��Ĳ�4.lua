@@ -1,10 +1,10 @@
---西北北区 留仙洞五层1to留仙洞四层4
---TrapID：西北北区 38
+-- script viet hoa By http://tranhba.com  t﹜ b綾 b綾 khu l璾 ti猲 ng t莕g n╩ 1to l璾 ti猲 ng b鑞 t莕g 4 
+-- script viet hoa By http://tranhba.com TrapID# t﹜ b綾 b綾 khu 38 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1);
-NewWorld(128, 1523, 3061);
+SetFightState(1); 
+NewWorld(128, 1523, 3061); 
 
 
 end;

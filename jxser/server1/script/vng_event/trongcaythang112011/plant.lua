@@ -41,7 +41,7 @@ tbTreeMap = {
 	101,
 	99,
 	100,
-	1,		
+	2,		--dinh hoa son
 	11,	
 	37,	
 	78,	
@@ -98,48 +98,29 @@ end
 tbAwardList = 
 {
 	[1] = {
-		{szName = "§iÓm Kinh NghiÖm", nExp=2000000, nRate = 59},
-		{szName = "§iÓm Kinh NghiÖm", nExp=4000000, nRate = 20},
-		{szName = "§iÓm Kinh NghiÖm", nExp=6000000, nRate = 15},
-		{szName = "§iÓm Kinh NghiÖm", nExp=10000000, nRate = 5},
-		{szName = "§iÓm Kinh NghiÖm", nExp=20000000, nRate = 1},
+		{szName = "§iÓm Kinh NghiÖm", nExp=700000, nRate = 19},
+		{szName = "§iÓm Kinh NghiÖm", nExp=800000, nRate = 30},
+		{szName = "§iÓm Kinh NghiÖm", nExp=900000, nRate = 30},
+		{szName = "§iÓm Kinh NghiÖm", nExp=900000, nRate = 20},
+		{szName = "§iÓm Kinh NghiÖm", nExp=1000000, nRate = 1},
 	},
 	[2] = {
-		[1] =	{szName = "§iÓm Kinh NghiÖm", nExp = 6000000},
-		[2] = {
-			{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.05, CallBack = _Message},
-			{szName="Kim ¤ Kim Bµi",tbProp={6,1,3001,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=0.2},
-			{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.1},
-			{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.05},
-			{szName="Kim Hoa Chi B¶o",tbProp={6,1,3002,1,0,0},nCount=1,nRate=0.2, CallBack = _Message},
-			{szName="PhØ Thóy Chi B¶o",tbProp={6,1,3003,1,0,0},nCount=1,nRate=0.1, CallBack = _Message},
-			{szName="Thanh C©u Th¹ch",tbProp={6,1,2710,1,0,0},nCount=2,nRate=0.2},
-			{szName="V©n Léc Th¹ch",tbProp={6,1,2711,1,0,0},nCount=2,nRate=0.1},
-			{szName="Th­¬ng Lang Th¹ch",tbProp={6,1,2712,1,0,0},nCount=1,nRate=0.2},
-			{szName="Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=1,nRate=25},
-			{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=1},
-			{szName="Thiªn Long LÖnh",tbProp={6,1,2256,1,0,0},nCount=1,nRate=1, nExpiredTime = 20111208},
-			{szName="HuyÕt ChiÕn LÖnh Kú LÔ Hép",tbProp={6,1,2401,1,0,0},nCount=1,nRate=1},
-			{szName="Viªm §Õ LÖnh",tbProp={6,1,1617,1,0,0},nCount=1,nRate=0.5, nExpiredTime = 20111208},
-			{szName="Anh Hïng ThiÕp",tbProp={6,1,1604,1,0,0},nCount=1,nRate=1.5},
-			{szName="Tiªu Diªu T¸n",tbProp={6,1,2831,1,0,0},nCount=1,nRate=1, nExpiredTime = 20111208},
-			{szName="Cöu Ch©u LÖnh",tbProp={6,1,30117,1,0,0},nCount=1,nRate=1},
-			{szName="Ch×a Khãa Nh­ ý",tbProp={6,1,2744,1,0,0},nCount=2,nRate=1, nExpiredTime = 20111208},
-			{szName="Hoµn Hån §¬n",tbProp={6,1,2837,1,0,0},nCount=1,nRate=5, nExpiredTime = 20111208},
-			{szName="H¶i long ch©u",tbProp={6,1,2115,1,0,0},nCount=1,nRate=1, nExpiredTime = 20111208},
-			{szName = "§iÓm Kinh NghiÖm", nExp=5000000,nRate=35},
-			{szName = "§iÓm Kinh NghiÖm", nExp=7000000,nRate=16},
-			{szName = "§iÓm Kinh NghiÖm", nExp=10000000,nRate=6},
-			{szName = "§iÓm Kinh NghiÖm", nExp=15000000,nRate=1.5},
-			{szName = "§iÓm Kinh NghiÖm", nExp=20000000,nRate=0.5},
+		[1] =	{szName = "§iÓm Kinh NghiÖm", nExp = 1000000},
+		[2] = 
+		{
+			{szName = "Vo lam mat tich",tbProp={6,1,22,1,0,0},nCount=1,nRate=1},
+			{szName = "§¹i thµnh bÝ kÝp 90",tbProp={6,1,2424,1,0,0},nCount=1,nRate=2},
+			--{szName = "Vu khi xanh",tbProp={0,0,random(0,5),10,random(0,4),100,10},nCount=1,nRate=0.5},
+			--{szName = "Vu khi xanh",tbProp={0,1,random(0,2),10,random(0,4),100,10},nCount=1,nRate=0.5},
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 1000000,nRate=6},
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 800000,nRate=6},
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 700000,nRate=10},
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 600000,nRate=25},
+
+			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 500000,nRate=50},
+
+
+			
 		},
 	},
 }
@@ -273,16 +254,31 @@ end
 --	TaskManager:SetTask(TASKGROUP_WINTERSWEET, TASKINDEX_COUNT, Count)
 --end
 
+function tbSeed:CheckTime()
+	local nNowTime = tonumber(date( "%H%M "))
+	if nNowTime >= 1900 and nNowTime < 2000 then
+		return 1
+	end
+	if nNowTime >= 0700 and nNowTime < 0900 then
+		return 1
+	end
+	return 0
+end
+
 function tbSeed:Check(kind)
+	
+	
+	
 	if (tbSeed:InMapList(tbTreeMap) == 0 or GetFightState() == 1) then
-		Say("ChØ ®­îc trång c©y t¹i n¬i phi chiÕn ®Êu thµnh thÞ, t©n thñ th«n!")
+		Say("ChØ ®­îc trång c©y t¹i n¬i phi chiÕn ®Êu!")
 		return 0
 	end
 
-	if (offlineCheckPermitRegion() == 0) then
-		Say("Kh«ng ®­îc trång c©y t¹i nh÷ng n¬i gÇn xa phu hoÆc xung quanh nh÷ng n¬i ®«ng ng­êi")
-		return 0
-	end
+	--if (offlineCheckPermitRegion() == 0) then
+	--	Say("Kh«ng ®­îc trång c©y t¹i nh÷ng n¬i gÇn xa phu hoÆc xung quanh nh÷ng n¬i ®«ng ng­êi")
+	--	return 0
+	--end
+
 	local mate_name = GetName()
 	if ST_GetTransLifeCount() < 1 and (GetLevel() < 50) then
 		Say(format("Nh©n vËt %s ch­a ®ñ cÊp 50!", mate_name))
@@ -295,10 +291,13 @@ function tbSeed:Check(kind)
 	else
 		nMaxCount = tbTaskInfo[kind].nMaxValue
 	end
-	if nCount >= nMaxCount  then
-		Talk(1, "", "Trång c©y ®· ®¹t giíi h¹n, kh«ng thÓ trång thªm")
-		return 0
-	end
+	--Msg2Player("§· trång tæng céng: " ..nCount .. " c©y")
+	--Msg2Player("Tæng c©y ®­îc trång: " ..nMaxCount .. " c©y")
+	--if nCount >= nMaxCount  then
+	--	Talk(1, "", "Trång c©y ®· ®¹t giíi h¹n, kh«ng thÓ trång thªm")
+	--	return 0
+	--end
+	Msg2SubWorld("Chóc mõng §¹i hiÖp: <color=yellow>" .. mate_name .. "<color> ®· trång c©y thµnh c«ng")
 	return 1
 end
 
@@ -629,6 +628,7 @@ function tbAwardState:Process(Tree, Team, Name)
 		self.AwardFlag[Name] = 1
 		local tbTranslog = {strFolder ="201111_EventTrongCay/", nPromID = 19, nResult = 1}
 		tbAwardTemplet:Give(tbAward, 1, {"Event_TrongCay", "NhanPhanThuong["..tbTreeName[Tree.Kind].."]", tbTranslog})
+		
 	end
 --	if (exp > 0) then
 --		AddOwnExp(exp)

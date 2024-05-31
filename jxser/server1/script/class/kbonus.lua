@@ -14,13 +14,8 @@
 if not KBONUS_HEAD then
 KBONUS_HEAD = 1
 
-if not PLAYER_HEAD then
-	Include "/script/lib/player.lua"
-end
-
-if not STRING_HEAD then
-	Include "/script/lib/string.lua"
-end
+Include("\\script\\lib\\player.lua")
+Include("\\script\\lib\\string.lua")
 
 --========类定义====================================--
 --类名：

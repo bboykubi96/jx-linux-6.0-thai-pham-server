@@ -1,72 +1,63 @@
--- Ñ×µÛ±¦²Ø
--- by Ð¡ÀË¶à¶à
--- 2007.10.24
--- ÎÒ..
--- ÕýÔÚ³¢ÊÔ×Å..
--- Ñ°ÕÒ×ÅÊôÓÚÎÒµÄÌìµØ..
-
 IncludeLib("RELAYLADDER")
 IncludeLib("FILESYS")
 IncludeLib("TITLE");
 IncludeLib("SETTING");
+Include("\\script\\lib\\objbuffer_head.lua")	-- Message khi giÕt ®­îc Boss cuèi tÝnh n¨ng Viªm §Õ -Modifiled by AnhHH - 20110725
+-------------------------------------------------------------------------------------------------------------------------------------
 
--- Message khi giÕt ®­îc Boss cuèi tÝnh n¨ng Viªm §Õ -Modifiled by AnhHH - 20110725
-Include("\\script\\lib\\objbuffer_head.lua")
+YDBZ_MISSION_MATCH			 = 50
+YDBZ_TIMER_MATCH			 = 87
+YDBZ_TIMER_FIGHTSTATE		 = 89
+YDBZ_NPC_BOSS_COUNT			 = 1
+YDBZ_VARV_STATE			 = 4
+YDBZ_SIGNUP_WORLD			 = 5
+YDBZ_SIGNUP_POSX			 = 6
+YDBZ_SIGNUP_POSY			 = 7
+YDBZ_NPC_COUNT			 = {8,9,10}
+YDBZ_NPC_BOSS_COUNT			 = 11
+YDBZ_NPC_WAY				 = {12,13,14}
+YDBZ_STATE_SIGN			 = 15
+YDBZ_TEAM_COUNT			 = 16
+YDBZ_TEAM_SUM				 = 17
 
-YDBZ_MISSION_MATCH			= 50		-- ±ÈÈümission
-YDBZ_TIMER_MATCH				= 87		-- ±ÈÈü¿ªÊ¼¶¨Ê±Æ÷
-YDBZ_TIMER_FIGHTSTATE 	= 89		-- ¼ì²âÍæ¼ÒÕ½¶·×´Ì¬¼ÆÊ±Æ÷
-YDBZ_NPC_BOSS_COUNT			= 1			-- Õù¶áµØbossÊýÁ¿¼ÆËã
-YDBZ_VARV_STATE 				= 4			-- mission×´Ì¬£¬1±íÊ¾±¨Ãû£¬2×¼±¸½×¶Î£¬Í£Ö¹±¨Ãû£¬3¿ªÊ¼±ÈÈü
-YDBZ_SIGNUP_WORLD				= 5			-- ±¨ÃûµØÍ¼
-YDBZ_SIGNUP_POSX				= 6			-- ±¨ÃûµØµãµÄX×ø±ê
-YDBZ_SIGNUP_POSY				= 7			-- ±¨ÃûµØµãµÄY×ø±ê 
-YDBZ_NPC_COUNT					= {8,9,10}		-- ¸÷Ð¡¹ØÐ¡¹Öµþ¼Ó
-YDBZ_NPC_BOSS_COUNT			= 11		-- Õù¶áµØboss
-YDBZ_NPC_WAY						= {12,13,14}	-- ´ïµ½µÄ¹Ø
-YDBZ_STATE_SIGN					= 15 		--½ø¶È,YDBZ_STATE_SIGN
-YDBZ_TEAM_COUNT					= 16		--²Î¼ÓÕù¶áµÄ¶ÓÎéÊý£¬¼ÆËãÆ÷
-YDBZ_TEAM_SUM						=	17		--²Î¼ÓÕù¶áµÄ¶ÓÎé×ÜÊý£¬³£Á¿
-YDBZ_NPC_TYPE						= {
-	{20,21,22,23,24,25,26,27,28,29},		--AÂ·¼ÇÂ¼¹ÖÎïÀàÐÍ			
-	{30,31,32,33,34,35,36,37,38,39},		--BÂ·¼ÇÂ¼¹ÖÎïÀàÐÍ	
-	{40,41,42,43,44,45,46,47,48,49},		--CÂ·¼ÇÂ¼¹ÖÎïÀàÐÍ	
+YDBZ_NPC_TYPE = {
+	{20,21,22,23,24,25,26,27,28,29},			
+	{30,31,32,33,34,35,36,37,38,39},	
+	{40,41,42,43,44,45,46,47,48,49},	
 }
 
-
-YDBZ_TEAM_NAME					= {1,2,3}						--A¶ÓÎéÃû	--B¶ÓÎéÃû	--C¶ÓÎéÃû					
-
-YDBZ_TEAMS_TASKID				=	1851			-- ¼ÇÂ¼Íæ¼ÒËùÔÚgroupÈÎÎñ±äÁ¿
-YDBZ_PLAY_LIMIT_COUNT   = 1852			-- ²Î¼Ó´ÎÊý±äÁ¿£¬1£¬½ñÄêµÄµÚ¼¸ÖÜ£¬2´ÎÊý £¬3ÈÕ £¬4´ÎÊý
-YDBZ_ITEM_YANDILING			= 1853			-- Ñ×µÛÁîÊ¹ÓÃ±äÁ¿¼ÇÂ¼,1Ñ×µÛÁî 2¼ÇÂ¼ÁÙÊ±ÕóÓª
-YDBZ_MISSIOM_PLAYER_KEY = 1854			-- Ñ×µÛ¼ÇÂ¼Íæ¼ÒÉíÉÏµÄkey
-YDBZ_ITEM_YANDILING_SUM	= 1855			-- Ñ×µÛÁîÊ¹ÓÃ×ÜÊý
-YDBZ_LIMIT_SIGNUP				= 5					-- ¿ªÊ¼Ë¢¹ÖÖ®¼äµÄÊ±¼ä£º10Ãë
-YDBZ_LIMIT_FINISH 			= 30 * 60		-- ÈÎÎñÊ±¼äÆÚÏÞ£¨Ãë£©£º30·ÖÖÓ
-YDBZ_LIMIT_BOARDTIME		= 5	* 60		-- ¹«¸æÊ±¼ä,Ã¿5·ÖÖÓ¹«¸æÒ»´ÎÊ±¼ä
-YDBZ_TIME_WAIT_STATE1		= 10				-- É±ÍêÕù¶áµØbossºóµÈ¼¶10Ãë½øÈëÕù¶á½×¶Î
-YDBZ_TIME_WAIT_STATE3		= 30				-- ´³¹Ø³É¹¦½áÊøºó£¬µÈ´ý30Ãë±»´«ËÍ³ö³¡µØ
-YDBZ_LIMIT_SETFIGHTSTATE= 3					-- Õù¶á½×¶Î£¬Íæ¼Ò±»É±ºóÎÞµÐ×´Ì¬Ê±¼ä3Ãë
-YDBZ_LIMIT_TEAMS_COUNT	= 15				-- ¶ÓÎéÊýÁ¿µÄ×î´óÏÞÖÆ
-YDBZ_LIMIT_PLAYER_LEVEL = 120				-- Íæ¼Ò×îµÍµÈ¼¶ÏÞÖÆ
-YDBZ_LIMIT_WEEK_COUNT		= 10 				-- Ò»ÖÜ²Î¼Ó×î´ó´ÎÊý
-YDBZ_LIMIT_DAY_COUNT		= 4 				-- Ã¿Ìì²Î¼Ó×î´ó´ÎÊý
-YDBZ_PAIHANG_ID					=	10252			--ÅÅÐÐ°ñID
-YDBZ_LIMIT_ITEM					= {{6,1,1604},1,"Anh Hïng ThiÕp"}	--ÐèÒªÐÅÎï£¬Ó¢ÐÛÌû£¬tb1£¬Í¼Æ×ID£¬tb2£¬ÐèÒªÊýÁ¿
-YDBZ_LIMIT_DOUBEL_ITEM	= {{6,1,1617},1,"Viªm §Õ LÖnh"}	--Ñ×µÛÁî£¬¿É»ñµÃË«±¶µÄ½±Àø
-YDBZ_AWARD_EXP 					= 600000									--Ã¿Í¨¹ýÒ»¹ØÕû¶Ó»ñµÃµÄ¾­Ñé
-YDBZ_Faninl_AWARD_EXP		=	300000									--Õù¶áµØboss¾­Ñé
-YDBZ_KILLPLAYER_EXP 		= 200000									--É±ËÀÒ»¸öµÐÈË»ñµÃ¾­Ñé£¨É±Íæ¼ÒµÃ¾­Ñé£©
-YDBZ_KILLLASTBOSS_EXP		= 1000000									--É±ËÀ×îÖÕboss»ñµÃ¾­Ñé
-YDBZ_BOAT_POS 					=													--Íæ¼Ò±»´«ËÍ±¦²Ø³¡µÄ3¸öµãx,y×ø±ê¡£
-{
+YDBZ_TEAM_NAME			 = {1,2,3}
+YDBZ_TEAMS_TASKID			 = 1851		--Diem Pk Viem De
+YDBZ_PLAY_LIMIT_COUNT		 = 1852
+YDBZ_ITEM_YANDILING			 = 1853
+YDBZ_MISSIOM_PLAYER_KEY		 = 1854
+YDBZ_ITEM_YANDILING_SUM		 = 1855
+YDBZ_LIMIT_SIGNUP			 = 5			--Thêi Gian B¸o Danh 5 Phót
+YDBZ_LIMIT_FINISH			 = 30*60		--KÕt Thóc B¸o Danh Phót Thø 30
+YDBZ_LIMIT_BOARDTIME			 = 5*60
+YDBZ_TIME_WAIT_STATE1		 = 10
+YDBZ_TIME_WAIT_STATE3		 = 30
+YDBZ_LIMIT_SETFIGHTSTATE		 = 3
+YDBZ_LIMIT_TEAMS_COUNT		 = 15
+YDBZ_LIMIT_PLAYER_LEVEL		 = 90			-- Yªu C©u CÊp 150 (MÆc §Þnh 120)
+YDBZ_LIMIT_WEEK_COUNT		 = 21			--1 TuÇn §i 21 L©n (MÆc §Þnh 10)
+YDBZ_LIMIT_DAY_COUNT			 = 2		--1 Ngµy §i 3 LÇn
+YDBZ_PAIHANG_ID			 = 10252
+YDBZ_LIMIT_ITEM			 = {{6,1,1604},1,"Anh Hïng ThiÕp"}
+YDBZ_LIMIT_DOUBEL_ITEM		 = {{6,1,1617},1,"Viªm §Õ LÖnh"}
+YDBZ_AWARD_EXP			 = 0		--§i Qua 1 ¶i NhËn §­îc 700 TriÖu Kinh NghiÖm
+YDBZ_Faninl_AWARD_EXP		 = 0		--GiÕt 3 Boss Trong ¶i 10 NhËn §­îc 800 TriÖu Kinh NghiÖm
+YDBZ_KILLPLAYER_EXP			 = 0		--GiÕt 1 M¹ng Ng­êi NhËn §­îc 500 TriÖu Kinh NghiÖm
+YDBZ_KILLLASTBOSS_EXP		 = 0		--Tiªu DiÖt 1 Boss NhËn §­îc 300 TriÖu Kinh NghiÖm
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+YDBZ_BOAT_POS = {
 	[1]={60032,104832},
 	[2]={59744,123296},
 	[3]={52960,121952},
 }
-YDBZ_FIGHTING_RELIFT = 		--Íæ¼ÒÕù¶áÇø´«ËÍµãºÍÖØÉúµã£¬Ëæ»ú
-{
-	[1]=
+
+YDBZ_FIGHTING_RELIFT = {
+	[1]= 
 	{
 		{57408,112000},
 		{57504,112160},
@@ -85,7 +76,7 @@ YDBZ_FIGHTING_RELIFT = 		--Íæ¼ÒÕù¶áÇø´«ËÍµãºÍÖØÉúµã£¬Ëæ»ú
 		{56320,112736},
 	},
 }
--- ±ÈÈüµØÍ¼ID
+
 YDBZ_MAP_MAP = {
 	853,
 	854,
@@ -99,7 +90,7 @@ YDBZ_MAP_MAP = {
 	862,
 };
 
--- Message khi giÕt ®­îc Boss cuèi tÝnh n¨ng Viªm §Õ -Modifiled by AnhHH - 20110725
+--------------------------Tæ §éi GiÕt §­îc Boss Cuèi NhËn §­îc PhÇn Th­ëng-------------------------------------------------
 local  _Message =  function (nItemIndex)
 	local handle = OB_Create()
 	local msg = format("Chóc mõng cao thñ <color=yellow>%s<color> thuéc tæ ®éi tiªu diÖt [L­¬ng Mi Nhi] ®· nhËn ®­îc phÇn th­ëng [%s] " ,GetName(),GetItemName(nItemIndex))
@@ -113,10 +104,9 @@ local  _Message =  function (nItemIndex)
 	Msg2Team(msg)
 end
 
---½±Àø
-YDBZ_ZUANYONG_ITEM =				--×¨ÓÃÎïÆ·
+YDBZ_ZUANYONG_ITEM =	
 {
-	[1] = {"H×nh nh©n",6,1,1605}, -- 1¹Ì¶¨Îª¿þÀÜ
+	[1] = {"H×nh nh©n",6,1,1605},
 	[2] = {"Viªm §Õ tr­êng mÖnh hoµn",	6,	0,	1607}, 
 	[3] = {"Viªm §Õ gia bµo hoµn",	6,	0,	1608}, 
 	[4] = {"Viªm §Õ ®¹i lùc hoµn",	6,	0,	1609}, 
@@ -127,100 +117,60 @@ YDBZ_ZUANYONG_ITEM =				--×¨ÓÃÎïÆ·
 	[9] = {"Viªm §Õ l«i phßng hoµn",	6,	0,	1614}, 
 	[10] = {"Viªm §Õ hßa phßng hoµn",	6,	0,	1615}, 
 	[11] = {"Viªm §Õ ®éc phßng hoµn",	6,	0,	1616}, 
-
 }
 
--- µôÂäÎïÆ·
-YDBZ_tbaward_item ={
-	[1]=--Ð¡¹Ö
-	{
+YDBZ_tbaward_item = {
+	[1] = {
 	},
-	[2]=--Ð¡¹Øboss
-	{--¼¸ÂÊ%,¸öÊý,ÎïÆ·ID,ÊÇ·ñµôµØÉÏ(0,µôµØÉÏ£¬1Ö±½ÓËæ»úµôÒ»¸ö¶ÓÔ±ÉíÉÏ),Ãû³Æ,Ë«±¶ÍèÊÇ·ñÓÐÐ§
-		{50,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},		--¿þÀÜ
-		{100,15,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0}, --Îå»¨
---		{10,1,{6,1,1606,1,0,0},1,"Viªm §Õ §å §»ng",1},			--ËéÆ¬
---		{10,1,{6,0,1591,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ³¤ÃüÍè",0},
---		{10,1,{6,0,1592,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ¼ÓÅÜÍè",0},
---		{10,1,{6,0,1593,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ´óÁ¦Íè",0},
---		{10,1,{6,0,1594,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ¸ßÉÁÍè",0},
---		{10,1,{6,0,1595,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ¸ßÖÐÍè",0},
---		{10,1,{6,0,1596,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ·ÉËÙÍè",0},
---		{10,1,{6,0,1597,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ±ù·ÀÍè",0},
---		{10,1,{6,0,1598,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃÀ×·ÀÍè",0},
---		{10,1,{6,0,1599,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ»ð·ÀÍè",0},
---		{10,1,{6,0,1600,1,0,0},1,"Ñ×µÛ±¦²Ø×¨ÓÃ¶¾·ÀÍè",0},
+
+	[2] = {
+	--	{50,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
+		{100,15,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0},
 	},
-	[3]=--Õù¶áµØÐ¡boss
-	{
-		{100,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},		--¿þÀÜ
-		{100,30,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0},--Îå»¨
---		{30,1,{6,1,1606,1,0,0},1,"Viªm §Õ §å §»ng",1}			--ËéÆ¬
+	[3] = {
+	--	{100,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
+		{100,30,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0},
 	},
-	-- Thay ®æi phÇn th­ëng Boss cuèi tÝnh n¨ng Viªm §Õ -Modifiled by DinhHQ - 20120314
-	[4]=--×îÖÕboss
-	{			
-		[1]={{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=0.5},},
-		[2]={{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=0.5},},
-		[3]={{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=0.5},},
-		[4]={{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=0.5},},
-		[5]={{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=0.5},},
-		[6]={{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=0.5},},
-		[7]={{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=0.5},},
-		[8]={{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=0.3},},
-		[9]={{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=0.3},},
-		[10]={{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=0.2},},
-		[11]={{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.2},},
-		[12]={{szName="B¶o R­¬ng Kim ¤ H¹ng Liªn",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={1,0,0,0,0,0},nRate=0.1, CallBack = _Message},},		
-		[13]={{szName="B¶o R­¬ng Kim ¤ Béi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={9,0,0,0,0,0}, nRate=0.05, CallBack = _Message},},
-		[14]={{szName="B¶o R­¬ng Kim ¤ Y",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.1, CallBack = _Message},},
-		[15]={{szName="B¶o R­¬ng Kim ¤ H¹ Giíi",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={10,0,0,0,0,0},nRate=0.1, CallBack = _Message},},
-		[16]={{szName="B¶o R­¬ng Kim ¤ Vò KhÝ",tbProp={6,1,30190,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.05, CallBack = _Message},},	
-		[17]={{szName="Anh Hïng ThiÕp",tbProp={6,1,1604,1,0,0},nCount=1,nRate=5,nExpiredTime=10080},},
-		[18]={{szName="M¹c B¾c TruyÒn Tèng LÖnh",tbProp={6,1,1448,1,0,0},nCount=1,nRate=5},},
-		[19]={{szName="Bao D­îc hoµn ",tbProp={6,1,910,1,0,0},nCount=1,nRate=8.75},},
-		[20]={{szName="Thiªn C¬ LÖnh",tbProp={6,1,1091,1,0,0},nCount=1,nRate=7.5},},
-		[21]={{szName="§å Phæ B¹ch Hæ H¹ng Liªn",tbProp={6,1,3178,1,0,0},nCount=1,nRate=0.2},},
-		[22]={{szName="§å Phæ B¹ch Hæ Vò KhÝ",tbProp={6,1,3182,1,0,0},nCount=1,nRate=0.1},},
-		[23]={{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nCount=1,nRate=0.05},},
+	
+	[4] = {
+	--	{szName="Minh Ph­îng LÖnh",tbProp={6,1,2371,1,0,0}, nCount = 1,nRate=0.5},
+	--	{szName="MËt TÞch ThÊt TruyÒn M«n Ph¸i",tbProp={6,1,4804,1,0,0}, nCount = 1,nRate=0.2},
+	},
+	[5] = {
+		--{szName="Hµnh HiÖp LÖnh",tbProp={6,1,2566,1,0,0}, nCount = 5},
+	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
+	--{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=1},
 	},
 }
 
--- 2011.03.23
-YDBZ_tbaward_item_ex = 
-{
-	[1] = {szName="Viªm §Õ BÝ B¶o",tbProp={6,1,2805,1,0,0}},		-- Ñ×µÛÃØ±¦pÓÐ´ýÐÞ¸Ä
+YDBZ_tbaward_item_ex = {
+	--[1] = {szName="Viªm §Õ BÝ B¶o",tbProp={6,1,2805,1,0,0},nCount=1,nBindState=-2,},		-- phan qua Viem De
 }
 
---
--- NPC±í¸ñÁÐº¬Òå
--- NPC²ÎÊý¸÷ÁÐµÄº¬Òå£ººóÐø´¦Àí¡¢ID¡¢Ãû×Ö¡¢µÈ¼¶¡¢ÎåÐÐ¡¢ÊÇ·ñBOSS(0,1)¡¢ÊýÁ¿¡¢Î»ÖÃ
-YDBZ_NPC_ATTRIDX_PROCEED		= 1			-- NPCºóÐø´¦Àí
-YDBZ_NPC_ATTRIDX_ID			= 2			-- NPCµÄID
-YDBZ_NPC_ATTRIDX_NAME		= 3			-- NPCÃû×Ö
-YDBZ_NPC_ATTRIDX_LEVEL		= 4			-- NPCµÈ¼¶
-YDBZ_NPC_ATTRIDX_SERIES		= 5			-- NPCÎåÐÐ
-YDBZ_NPC_ATTRIDX_ISBOSS		= 6			-- ÊÇ·ñBOSS
-YDBZ_NPC_ATTRIDX_COUNT		= 7			-- NPCÊýÁ¿
-YDBZ_NPC_ATTRIDX_POSITION	= 8			-- NPCÎ»ÖÃ
---
+YDBZ_NPC_ATTRIDX_PROCEED		 = 1
+YDBZ_NPC_ATTRIDX_ID			 = 2
+YDBZ_NPC_ATTRIDX_NAME		 = 3
+YDBZ_NPC_ATTRIDX_LEVEL		 = 4
+YDBZ_NPC_ATTRIDX_SERIES		 = 5
+YDBZ_NPC_ATTRIDX_ISBOSS		 = 6
+YDBZ_NPC_ATTRIDX_COUNT		 = 7
+YDBZ_NPC_ATTRIDX_POSITION		 = 8
 
-YDBZ_SCRIPT_NPC_DEATH 	= "\\script\\missions\\yandibaozang\\npc_death.lua"
+YDBZ_SCRIPT_NPC_DEATH = "\\script\\missions\\yandibaozang\\npc_death.lua"
 YDBZ_SCRIPT_PLAYER_DEATH = "\\script\\missions\\yandibaozang\\player_death.lua"
---
----- ÎåÐÐ
+
 YDBZ_map_series = {
-	0,	-- ½ð
-	1,	-- Ä¾
-	2,	-- Ë®
-	3,	-- »ð
-	4,	-- ÍÁ
+	0,	-- Kim
+	1,	-- Moc
+	2,	-- Thuy
+	3,	-- Hoa
+	4,	-- Tho
 };
 
 
-YDBZ_mapfile_trap =
-{
+YDBZ_mapfile_trap = {
 	{"\\settings\\maps\\yandibaozang\\trap\\a","\\script\\missions\\yandibaozang\\trap\\a",10,"\\settings\\maps\\yandibaozang\\trap\\clear\\a"},
 	{"\\settings\\maps\\yandibaozang\\trap\\b","\\script\\missions\\yandibaozang\\trap\\b",10,"\\settings\\maps\\yandibaozang\\trap\\clear\\b"},
 	{"\\settings\\maps\\yandibaozang\\trap\\c","\\script\\missions\\yandibaozang\\trap\\c",10,"\\settings\\maps\\yandibaozang\\trap\\clear\\c"},
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

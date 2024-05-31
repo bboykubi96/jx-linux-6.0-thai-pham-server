@@ -2,7 +2,7 @@
 Include("\\script\\lib\\common.lua")
 
 TopList = {
-	m_Map = {53},
+	m_Map = {},
 	m_List = {},
 	m_MaxCount = 10,
 	m_CurCount = 0,

@@ -1,34 +1,34 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·ÈË6²Ì´óÊå¶Ô»°¡¡£¨È­ÇãÌìÏÂÈÎÎñ£©
--- By: Dan_Deng(2004-05-24)
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ ng­êi ®i ®­êng 6 Th¸i ®¹i thóc ®èi tho¹i ## quyÒn nghiªng thiªn h¹ nhiÖm vô # 
+-- script viet hoa By http://tranhba.com  By: Dan_Deng(2004-05-24) 
 
-function main(sel)
-	Uworld75 = GetTask(75)
-	U75_sub3 = GetTask(54)
-	if (Uworld75 == 10) and (U75_sub3 < 10) then		-- ÈÎÎñÖĞ£¬½ÓÈ¡×ÓÈÎÎñ
-		if (HaveItem(384) == 1) then
-			SetTask(54,10)
-			AddNote("§Õn hÎm ThiÕu L©m Méc Nh©n gióp Th¸i ®¹i thóc t×m hoa sen vµng. ")
-			Msg2Player("§Õn hÎm ThiÕu L©m Méc Nh©n gióp Th¸i ®¹i thóc t×m hoa sen vµng. ")
-			Talk(1,"","TiÕc lµ c¶ ®êi ta nghiªn cøu vâ häc, vÉn ch­a cã con. Nghe nãi trong ThiÕu L©m Méc Nh©n H¹ng cã hoa sen vµng, ®­îc phËt tæ phï hé, cã thÓ gióp ng­êi ta cã con")
-		else
-		 	Talk(1,"","Ngay c¶ bøc th­ còng kh«ng cã, chØ dùa vµo lêi nãi lµm sao tin ng­¬i?")
-		end
-	elseif (Uworld75 == 10) and (U75_sub3 == 10) then		-- ×ÓÈÎÎñÍê³ÉÅĞ¶Ï
-		if (HaveItem(26) == 1) then
-			DelItem(26)
-			SetTask(54,20)
-			AddNote("T×m ra hoa sen vµng, nhiÖm vô hoµn thµnh. ")
-			Msg2Player("T×m ra hoa sen vµng, nhiÖm vô hoµn thµnh. ")
-			Talk(1,"","Ha ha! Cã ph¶i ®ã lµ ngäc bèi trong truyÒn thuyÕt kh«ng? H¶o tiÓu tö! C¶m ¬n ng­¬i! ViÖc ng­¬i häc quyÒn ph¸p, ta hoµn toµn t¸n thµnh.")
-		else
-			Talk(1,"","Cßn ch­a t×m ®­îc hoa sen vµng µ ")
-		end
-	else
-		i = random(0,1)
-		if (i == 0) then
-			Talk(1,"","L·o th¸i gia chóng ta mÊy ®êi ®¬n truyÒn, kh«ng cã con trai, thËt cã lçi víi liÖt tæ liÖt t«ng!")
-		else
-			Talk(1,"","BÊt hiÕu cã 3 ®iÒu, kh«ng cã ng­êi nèi dâi lµ ®iÒu lín nhÊt!")
-		end
-	end
-end;
+function main(sel) 
+Uworld75 = GetTask(75) 
+U75_sub3 = GetTask(54) 
+if (Uworld75 == 10) and (U75_sub3 < 10) then -- script viet hoa By http://tranhba.com  nhiÖm vô trung , nhËn lÊy tö nhiÖm vô 
+if (HaveItem(384) == 1) then 
+SetTask(54,10) 
+AddNote("§Õn ThiÕu L©m ®İch méc nh©n h¹ng trî gióp Th¸i ®¹i thóc t×m kim liªn hoa . ") 
+Msg2Player("§Õn ThiÕu L©m ®İch méc nh©n h¹ng trî gióp Th¸i ®¹i thóc t×m kim liªn hoa . ") 
+Talk(1,"","TiÕc nuèi lµ ta c¶ ®êi nghiªn cøu häc tËp nh­ng lµ còng kh«ng cã hµi tö . nghe nãi ë ThiÕu L©m ®İch méc nh©n h¹ng cã kim liªn hoa , cã thÓ gióp ta cã hµi tö ") 
+else 
+Talk(1,"","B©y giê ngay c¶ c¸i bãng ®Òu kh«ng thÊy , ch¼ng qua lµ truyÒn vµo ng­¬i lç tai lêi cña lµm sao cã thÓ tin/th¬ ®©y ? ") 
+end 
+elseif (Uworld75 == 10) and (U75_sub3 == 10) then -- script viet hoa By http://tranhba.com  tö nhiÖm vô hoµn thµnh ph¸n ®o¸n 
+if (HaveItem(26) == 1) then 
+DelItem(26) 
+SetTask(54,20) 
+AddNote("T×m ®­îc kim liªn hoa , hoµn thµnh nhiÖm vô . ") 
+Msg2Player("T×m ®­îc kim liªn hoa , hoµn thµnh nhiÖm vô . ") 
+Talk(1,"","Ha ha # ®©y chİnh lµ trong truyÒn thuyÕt ®İch ngäc béi ®i ? h¶o tiÓu tö , c¸m ¬n ng­¬i .") 
+else 
+Talk(1,"","Cßn kh«ng cã t×m ®­îc kim liªn hoa sao ? ") 
+end 
+else 
+i = random(0,1) 
+if (i == 0) then 
+Talk(1,"","Th¸i ®¹i thóc # bän ta l·o Th¸i nhµ mÊy ®êi ®an truyÖn , nh­ng ta ®©y ®Õn b©y giê cßn kh«ng cã c¸ nam tÓ , ng­êi ®èi víi ®­îc liÖt tæ liÖt t«ng ? ") 
+else 
+Talk(1,"","Th¸i ®¹i thóc # bÊt hiÕu cã ba , v« sau v× ®¹i nha #") 
+end 
+end 
+end; 

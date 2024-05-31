@@ -175,42 +175,6 @@ tbExchangeLingPai =
 		szComposFunc = "exchange_lingpai_zimang",
 		nRequireJingLianShi = 70000,
 	},
-	["Kim ¤ LÖnh"] = 
-	{
-		tbItem = {szName="Kim ¤ LÖnh", tbProp={6,1,2349,1,0,0}},
-		szComposFunc = "exchange_lingpai_wujin",
-		nRequireJingLianShi = 6000,
-	},
-	["B¹ch Hæ LÖnh"] = 
-	{
-		tbItem = {szName="B¹ch Hæ LÖnh", tbProp={6,1,2357,1,0,0}},
-		szComposFunc = "exchange_lingpai_baihu",
-		nRequireJingLianShi = 12000,
-	},
-	["XÝch L©n LÖnh"] = 
-	{
-		tbItem = {szName="XÝch L©n LÖnh", tbProp={6,1,2370,1,0,0}},
-		szComposFunc = "exchange_lingpai_chilin",
-		nRequireJingLianShi = 24000,
-	},
-	["Ngò §Õ LÖnh"] = 
-	{
-		tbItem = {szName="Ngò §Õ LÖnh", tbProp={6,1,30226,1,0,0}},
-		szComposFunc = "exchange_lingpai_wuhuang",
-		nRequireJingLianShi = 6000,
-	},
-	["M· Hæ LÖnh"] = 
-	{
-		tbItem = {szName="M· Hæ LÖnh", tbProp={6,1,30227,1,0,0}},
-		szComposFunc = "exchange_lingpai_mahu",
-		nRequireJingLianShi = 6000,
-	},
-	["Viªm §Õ LÖnh"] = 
-	{
-		tbItem = {szName="Viªm §Õ LÖnh", tbProp={6,1,1617,1,0,0}},
-		szComposFunc = "exchange_lingpai_yanhuang",
-		nRequireJingLianShi = 6000,
-	},
 --	["½ðÎÚÁî"] = 
 --	{
 --		tbItem = {szName="½ðÎÚÁî", tbProp={6,1,2349,1,0,0}},
@@ -259,14 +223,7 @@ function exchange_lingpai()
 	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh lùc", "Th­¬ng Lang LÖnh", tbExchangeLingPai["Th­¬ng Lang LÖnh"].nRequireJingLianShi);
 	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh lùc", "HuyÒn Viªn LÖnh", tbExchangeLingPai["HuyÒn Viªn LÖnh"].nRequireJingLianShi);
 	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh lùc", "Tö M·ng LÖnh", tbExchangeLingPai["Tö M·ng LÖnh"].nRequireJingLianShi);
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh luyÖn th¹ch ","Kim ¤ LÖnh", tbExchangeLingPai["Kim ¤ LÖnh"].nRequireJingLianShi); 
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa <color=green>%d<color> tinh luyÖn th¹ch ","B¹ch Hæ LÖnh", tbExchangeLingPai["B¹ch Hæ LÖnh"].nRequireJingLianShi); 
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh luyÖn th¹ch ","XÝch L©n LÖnh", tbExchangeLingPai["XÝch L©n LÖnh"].nRequireJingLianShi); 
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa <color=green>%d<color> tinh luyÖn th¹ch ","Ngò §Õ LÖnh", tbExchangeLingPai["Ngò §Õ LÖnh"].nRequireJingLianShi); 
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh luyÖn th¹ch ","M· Hæ LÖnh", tbExchangeLingPai["M· Hæ LÖnh"].nRequireJingLianShi); 
-	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh luyÖn th¹ch ","Viªm §Õ LÖnh", tbExchangeLingPai["Viªm §Õ LÖnh"].nRequireJingLianShi); 
-
---DinhHQ
+	--DinhHQ
 	--20110413: b¸n ®å ph??th?rÌn thÇn b?LA
 	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh lùc", "§å Phæ Tö M·ng Th­îng Giíi ChØ", tbExchangeLingPai["§å Phæ Tö M·ng Th­îng Giíi ChØ"].nRequireJingLianShi);
 	tbSay[1] = tbSay[1].."<enter>"..format("%s: cÇn Ýt nhÊt hån th¹ch cã chøa<color=green>%d<color> tinh lùc", "§å Phæ Tö M·ng H¹ Giíi ChØ", tbExchangeLingPai["§å Phæ Tö M·ng H¹ Giíi ChØ"].nRequireJingLianShi);
@@ -277,13 +234,9 @@ function exchange_lingpai()
 	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","Th­¬ng Lang LÖnh","Th­¬ng Lang LÖnh"));
 	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","HuyÒn Viªn LÖnh","HuyÒn Viªn LÖnh"));
 	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","Tö M·ng LÖnh","Tö M·ng LÖnh"));
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","Kim ¤ LÖnh","Kim ¤ LÖnh"));	
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","B¹ch Hæ LÖnh","B¹ch Hæ LÖnh"));
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","XÝch L©n LÖnh","XÝch L©n LÖnh"));
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","Ngò §Õ LÖnh","Ngò §Õ LÖnh"));
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","M· Hæ LÖnh","M· Hæ LÖnh"));
-	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","Viªm §Õ LÖnh","Viªm §Õ LÖnh"));
-		--DinhHQ
+	--tinsert(tbSay, format("»»È¡%s/#exchange_lingpai_main_dlg('%s')","½ðÎÚÁî","½ðÎÚÁî"));
+	--tinsert(tbSay, format("»»È¡%s/#exchange_lingpai_main_dlg('%s')","°×»¢Áî","°×»¢Áî"));
+	--DinhHQ
 	--20110413: b¸n ®å ph??th?rÌn thÇn b?LA
 	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","§å Phæ Tö M·ng Th­îng Giíi ChØ","§å Phæ Tö M·ng Th­îng Giíi ChØ"));
 	tinsert(tbSay, format("§æi %s/#exchange_lingpai_main_dlg('%s')","§å Phæ Tö M·ng H¹ Giíi ChØ","§å Phæ Tö M·ng H¹ Giíi ChØ"));
@@ -367,21 +320,6 @@ end
 function exchange_lingpai_baihu(nCount)
 	exchange_lingpai_compose(nCount, "B¹ch Hæ LÖnh");
 end
-function exchange_lingpai_chilin(nCount) 
-exchange_lingpai_compose(nCount,"XÝch L©n LÖnh"); 
-end 
-
-function exchange_lingpai_wuhuang(nCount) 
-exchange_lingpai_compose(nCount,"Ngò §Õ LÖnh"); 
-end 
-
-function exchange_lingpai_mahu(nCount) 
-exchange_lingpai_compose(nCount,"M· Hæ LÖnh"); 
-end 
-
-function exchange_lingpai_yanhuang(nCount) 
-exchange_lingpai_compose(nCount,"Viªm §Õ LÖnh"); 
-end 
 
 function exchange_Dopho_Tumang_Thuonggioi(nCount)
 	exchange_lingpai_compose(nCount, "§å Phæ Tö M·ng Th­îng Giíi ChØ");

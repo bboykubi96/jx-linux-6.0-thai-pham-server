@@ -1,7 +1,7 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·ÈË9¶¹¶¹ÄïµÄ¶Ô»°
+-- script viet hoa By http://tranhba.com  t©y b¾c nam khu ph­îng t­êng phñ ng­êi ®i ®­êng 9 ®Ëu ®Ëu mÑ ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Talk(4, "", "Th¸i tû! §øa bĞ nhµ ta qu¸ tinh nghŞch, h«m qua ph¸ ph¸ch nhµ tû n÷a ph¶i kh«ng?", "Em ®õng nãi nh­ vËy, nhµ ai mµ kh«ng cã trÎ con hiÕu ®éng,®õng qu¸ quan t©m!", "Cßn con bĞ Thóy Thóy nhµ chŞ th× thËt lµ ngoan.", "Ch¾c con bĞ ®· lÊy lßng chŞ...nh­ng cha con bĞ cßn muèn cã con trai.")
+Talk(4, "","§Ëu ®Ëu mÑ # th¸i t¶ , ta ®©y nhµ kia oa nhi qu¸ ®¶o trøng , t¹c nhi c¸ l¹i ®ang nhµ ng­¬i g©y häa , ta cho ng­¬i båi kh«ng ph¶i lµ . ","Th¸i thÈm thÈm # §¹i muéi tö , mau ®õng nãi nh­ vËy , nhµ ai ®İch kiÓn tÓ kh«ng ®µo khİ ? ng­¬i b»ng h­íng trong lßng ®i . ","§Ëu ®Ëu mÑ # cßn lµ n÷ oa tö h¶o a , nh×n nhµ c¸c ng­¬i thóy thóy nhiÒu hiÓu chuyÖn . ","Th¸i thÈm thÈm # n÷ oa nhi qu¶ thËt d¸n mÑ t©m , bÊt qu¸ thóy thóy cha h¾n cßn lµ vÉn muèn c¸ tÓ . ") 
 
 end;

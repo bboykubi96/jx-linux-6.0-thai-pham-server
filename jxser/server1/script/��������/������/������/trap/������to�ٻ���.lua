@@ -1,8 +1,8 @@
---西南南区 翠烟门to百花厅
---Trap ID：西南南区 19
+-- script viet hoa By http://tranhba.com  t﹜ nam nam khu th髖 kh鉯 c鯽 to b竎h hoa th輓h 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam nam khu 19 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(155, 1585, 3207);
+NewWorld(155, 1585, 3207); 
 
 end;

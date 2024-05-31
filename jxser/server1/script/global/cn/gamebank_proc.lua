@@ -1,212 +1,495 @@
--- Ç®×¯¹¦ÄÜ (Ô½ÄÏ°æ±¾) Banks function (Vietnamese version) 
+-- ÁÙ°²¡¡Ö°ÄÜ¡¡Ç®×¯ÀÏ°å
 -- by£ºDan_Deng(2003-09-16)
 -- Update: Dan_Deng(2004-01-06) ´ÓÍ³Ò»¹¦ÄÜÒÆ¶¯´¦ÀíÒøÆ±µ½´Ë¶ÀÓĞ
 -- Update: Fanghao_Wu(2004-9-04) Ôö¼ÓÔª±¦¶Ò»»Í­Ç®¹¦ÄÜ
 
--- Update: paul zhang(2005-09-06) ÎªÔ½ÄÏ°æ×÷ĞŞ¸Ä£¬Ö»Ê¹ÓÃÒøÔª±¦£¬Ã»ÓĞ½ğÔª±¦£¬ÒøÔª±¦¿É³ä³É°üÖÜ(7Ìì)»òÕß25Ğ¡Ê±£¬
---			Í­Ç®ÔİÊ±²»¿ª·Å£¬Í¬Ê±Ôö¼ÓÒ»¸öÍ·ÎÄ¼şÓÃÓÚ¿ØÖÆ¹¦ÄÜµÄ¿ª·ÅÓë¹Ø±Õ
--- Update: paul zhang(2005-12-28) ÎªÔ½ÄÏ°æ×÷ĞŞ¸Ä£¬ÓÉÓÚÔ½ÄÏ·½µÄÔ­Òò£¬ĞŞ¸Ä³ÉÖ»Ê¹ÓÃ½ğÔª±¦£¬Ã»ÓĞÒøÔª±¦£¬µ«ÊÇ½ğÔª±¦µÄ×÷ÓÃĞŞ¸ÄÎª¿É³ä³É°üÖÜ(7Ìì)»òÕß25Ğ¡Ê±£¬
+-- Include("\\script\\global\\Ç®×¯¹¦ÄÜ.lua")
 
--- Edited by peres
--- 2005/12/29 ¿ª·ÅÒ»¸öÔª±¦»» 15 ¸öÍ­Ç®µÄ¹¦ÄÜ
--- Last edited by Giangleloi WwW.ClbGamesVN.COM
+-- function main(sel)
+--	Talk(1,"main_proc","Ç®×¯ÀÏ°å£º°³ÕâÇ®×¯ĞÅÓşÒ»Ïò¶¼ºÃµÃºÜ£¬´Ó²»Æ­ÈË¡£")
 -- end;
 
 Include("\\script\\global\\systemconfig.lua") -- ÏµÍ³ÅäÖÃ
---Include("\\script\\global\\yuanbao_head.lua")
-Include("\\script\\task\\newtask\\newtask_head.lua")
-Include("\\script\\task\\newtask\\education\\jiaoyutasknpc.lua") 
-Include("\\script\\misc\\maskfree\\event.lua")		--Ãâ·ÑÃæ¾ßÁìÈ¡
-Include("\\script\\event\\vnchristmas2006\\event.lua")	--Ê¥µ®³ä¿¨ËÍÃæ¾ß
-Include("\\script\\global\\vn\\extpointfunc_proc.lua") --by Giangleloi
-
---Msg2Player("gamebank_proc-- vn")
+Include("\\script\\global\\head_qianzhuang.lua") -- Í·¶¨Òå
 
 function gamebank_proc()
 	local msg = {
-		"Ta muèn rót TiÒn ®ång/get_ingot", 
-		"Ta muèn ®æi TiÒn ®ång lÊy ngµy ch¬i/pay_ingot",
-		"KiÓm tra ta cßn göi bao nhiªu TiÒn ®ång/show_ingot", 
-		"Ta muèn ®æi kim nguyªn b¶o thµnh tiÒn ®ång/change_ingot_to_coin", 
-		"Nh©n tiÖn ghĞ qua th«i/no" 
+		"ÎÒÏë¹ÜÀíÎÒµÄÔª±¦/use_ingot",
+		"ÎÒÏë¹ÜÀíÎÒµÄÒøÆ±/use_ticket",
+		"¹ØÓÚÍ­Ç®/onAboutCoin",
+		"Ëæ±ã¹ä¹ä/no"
 	};
+
 	local talk = "";  
 	if (GetSex() == 0) then
-		talk = "§óng råi, thiÕu hiÖp cÇn g×?";
+		talk = "Ç®×¯ÀÏ°å£º¶ÔÁËÕâÎ»ÉÙÏÀÒªĞ©Ê²Ã´·şÎñ£¿";
 	else
-		talk = "§óng råi, n÷ hiÖp cÇn g×?"; -- 
+		talk = "Ç®×¯ÀÏ°å£º¶ÔÁËÕâÎ»¹ÃÄïÒªĞ©Ê²Ã´·şÎñ£¿";
 	end
-	local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	if (nDate >= 20061223 and nDate <= 20270114) then
-		tinsert(msg, 1, "NhËn mÆt n¹ miÔn phİ khi n¹p thÎ/takeMaskFree"); 
-	end;
-	Say(talk, getn(msg), msg)
+
+	local btns ={}
+	if  (SYSCFG_GAMEBANK_GOLDSILVER_OPEN) then
+		tinsert(btns, msg[1])
+	end
+	
+	if  (SYSCFG_GAMEBANK_TICKET_OPEN) then
+		tinsert(btns, msg[2])
+	end
+	
+	tinsert(btns, msg[3])
+	tinsert(btns, msg[4])
+	
+	Say(talk,  getn(btns), btns);
 end
+
+function use_ticket()
+	local msg = {
+		"ÎÒÏëÈ¡ÕÅÒøÆ±³öÀ´/get_ticket",
+		"ÎÒÏë°ÑÕâÕÅÒøÆ±ÔÚÄãÕâ¶ù¶ÒÏÖÁË/pay_ticket",
+		"ÎÒÏë°ÑÕâÕÅÒøÆ±¶Ò»»³ÉÍ­Ç®/change_ticket_to_coin",
+		"²éÒ»ÏÂÎÒÔÚÕâ´æÁË¶àÉÙÒøÆ±/show_ticket",
+		"Ëæ±ã¹ä¹ä/no"
+	};
+
+	local talk = "";  
+	if (GetSex() == 0) then
+		talk = "Ç®×¯ÀÏ°å£ºÉÙÏÀĞèÒªĞ©Ê²Ã´·şÎñ£¿";
+	else
+		talk = "Ç®×¯ÀÏ°å£º¹ÃÄïĞèÒªĞ©Ê²Ã´·şÎñ£¿";
+	end
+
+	local btns ={}
+	if  (SYSCFG_GAMEBANK_TICKET_GET) then
+		tinsert(btns, msg[1])
+	end
+
+	if  (SYSCFG_GAMEBANK_TICKET_PAY) then
+		tinsert(btns, msg[2])
+	end
+	
+	if  (SYSCFG_GAMEBANK_TICKET_COIN) then
+		tinsert(btns, msg[3])
+	end
+		
+	tinsert(btns, msg[4])
+	tinsert(btns, msg[5])
+	
+	Say(talk, getn(btns), btns);
+end
+
+function use_ingot()
+	local msg = {
+		"ÎÒÏëÈ¡¸öÔª±¦³öÀ´/get_ingot",
+		"ÎÒÏë°ÑÕâ¸öÔª±¦ÔÚÄãÕâ¶ù¶ÒÏÖÁË/pay_ingot",
+		"ÎÒÏë°ÑÕâ¸öÔª±¦¶Ò»»³ÉÍ­Ç®/change_ingot_to_coin",
+		"²éÒ»ÏÂÎÒÔÚÕâ´æÁË¶àÉÙÔª±¦/show_ingot",
+		"Ëæ±ã¹ä¹ä/no"
+	};
+
+	local talk = "";  
+	if (GetSex() == 0) then
+		talk = "Ç®×¯ÀÏ°å£ºÉÙÏÀĞèÒªĞ©Ê²Ã´·şÎñ£¿";
+	else
+		talk = "Ç®×¯ÀÏ°å£º¹ÃÄïĞèÒªĞ©Ê²Ã´·şÎñ£¿";
+	end
+
+	local btns ={}
+	if  (SYSCFG_GAMEBANK_GOLD_GET or SYSCFG_GAMEBANK_SILVER_GET) then
+		tinsert(btns, msg[1])
+	end
+
+	if  (SYSCFG_GAMEBANK_GOLD_PAY or SYSCFG_GAMEBANK_SILVER_PAY) then
+		tinsert(btns, msg[2])
+	end
+	
+	if  (SYSCFG_GAMEBANK_GOLD_COIN or SYSCFG_GAMEBANK_SILVER_COIN) then
+		tinsert(btns, msg[3])
+	end
+	
+	tinsert(btns, msg[4])
+	tinsert(btns, msg[5])
+	
+	Say(talk, getn(btns), btns);
+end
+
+------------- ²éÑ¯ÒøÆ± --------------------
+function show_ticket()
+	local count = GetExtPoint(EXTPOINT_TICKET) + GetExtPoint(EXTPOINT_TICKET_NEW);
+	if (count >= EXTPOINT_MAXVAL or count <= 0) then
+		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÏÖÔÚÃ»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£", 1, "ÖªµÀÁË/no")
+	else
+		Say("<#>Ç®×¯ÀÏ°å£º¿ÍÙÄÔÚĞ¡ºÅ×Ü¹²¼Ä´æÁË <color=green>" .. count .. "<color> ÕÅÒøÆ±¡£", 1, "ÖªµÀÁË/no")
+	end
+end
+
 ------------- ²éÑ¯Ôª±¦ --------------------
 function show_ingot()
-	local nMoney = GetExtPoint(1)
-	if (nMoney >= 32768) then
-		nMoney = 0
-		Msg2Player("T¹m thêi kh«ng thÓ rót TiÒn ®ång! Xin liªn hÖ víi nhµ s¶n xuÊt ®Ó gi¶i quyÕt!") 
-		return
+	i = GetExtPoint(1)
+	if (i >= 32768) then
+		i = 0
 	end
-	if (nMoney <= 0) then
-		Say("Chñ tiÒn trang: Kh¸ch quan ch­a hÒ göi kú tr©n b¶o vËt g× ë ®©y",1,"BiÕt råi/no") 
-		return
+	if (i <= 0) then
+		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÏÖÔÚÃ»ÓĞÔÚĞ¡ºÅ¼Ä´æ½ğÒøÔª±¦¡£",1,"ÖªµÀÁË/no")
 	else
-		local nCurVar = nMoney *20
-		Say("<#> Kh¸ch quan ®ang göi ë ®©y <color=green>"..nCurVar.."<color> TiÒn ®ång.",1,"BiÕt råi/no") 
+		Say("<#>Ç®×¯ÀÏ°å£ºĞ¡ºÅËù¼Ä´æµÄÔª±¦Ò»ÂÉÒÔÒøÔª±¦¼ÆÊı£¬Ã¿Ò»¸ö½ğÔª±¦»áÕÛËã³ÉËÄ¸öÒøÔª±¦¡£¿ÍÙÄÔÚĞ¡ºÅ×Ü¹²¼Ä´æÁË"..i.."¸öÒøÔª±¦¡£",1,"ÖªµÀÁË/no")
 	end
 end
 
 ------------- È¡Ôª±¦ -----------------------
 function get_ingot()
-	if (SYSCFG_GAMEBANK_GOLDSILVER_OPEN ~= 1) then
-		Talk(1,"","ThËt xin lçi! TiÒn trang ®ang söa ch÷a, 2 ngµy sau h·y ®Õn.")  
-		return
+--	Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬´ËÏîÒµÎñÕıÔÚ³ï±¸ÖĞ£¬ÔİÊ±»¹Ã»ÓĞ¿ªÍ¨£¬Çë¹ıÁ½ÌìÔÙÀ´¡£")
+	i = GetExtPoint(1)	
+	if (i >= 32768) then
+		i = 0
 	end
-	local nMoney = GetExtPoint(1)	
-	if (nMoney >= 32768) then
-		nMoney = 0
-		Msg2Player("Chøc n¨ng bŞ lçi!")
-		return
-	end
-	if CalcFreeItemCellCount() < 5 then
-			Talk(1, "", "CÇn İt nhÊt 5 « trèng trong hµnh trang."); 
-			return 1
-	end
-	if (nMoney <= 0) then					-- Ã»ÓĞÀ©Õ¹µãÊı
-		Talk(1,"","Xin lçi! Kh¸ch quan kh«ng cã göi TiÒn ®ång t¹i bæn trang!") 
-		return
-	else
-		local nCurVar = nMoney *20
-		Say("<#> Kh¸ch quan ®ang göi ë ®©y tæng céng <color=green>"..nCurVar.."<color> TiÒn ®ång, muèn rót chø?", 2, "Ta muèn rót "..G_COIN.." TiÒn ®ång/get_ingot10", "Kh«ng rót/no") 
+	if (i <= 0) then					-- Ã»ÓĞÀ©Õ¹µãÊı
+		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æ½ğÒøÔª±¦¡£")
+	elseif (i < 4) then				-- ²»×ã4£¬Ö±½Ó¸øÒøÔª±¦
+		if (SYSCFG_GAMEBANK_SILVER_GET) then -- ÊÇ·ñÔÊĞíÈ¡ÒøÔª±¦£¿
+			get_ingot_10()
+		end
+--	elseif (mod(i, 4) == 0) then	-- ÊÇ4µÄÕûÊı±¶£¬Ö±½Ó¸ø½ğÔª±¦
+--		get_ingot_35()
+	else							-- ÔÊĞí×ÔĞĞÑ¡ÔñÒªÈ¡½ğÔª±¦»¹ÊÇÒøÔª±¦
+		if (SYSCFG_GAMEBANK_GOLD_GET == nil and SYSCFG_GAMEBANK_SILVER_GET) then -- ²»ÔÊĞíÈ¡½ğÔª±¦£¬µ«ÔÊĞíÈ¡ÒøÔª±¦
+			get_ingot_10()
+		elseif (SYSCFG_GAMEBANK_GOLD_GET and SYSCFG_GAMEBANK_SILVER_GET == nil) then -- ²»ÔÊĞíÈ¡ÒøÔª±¦£¬µ«ÔÊĞíÈ¡½ğÔª±¦
+			get_ingot_35()
+		else
+			Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÔÚĞ¡ºÅ¼Ä´æÁË½ğÒøÁ½ÖÖÔª±¦£¬²»ÖªÄúÏëÈ¡ÄÄÖÖÄØ£¿",3,"È¡¸ö½ğÔª±¦/get_ingot_35","È¡¸öÒøÔª±¦/get_ingot_10","²»È¡ÁË/no")
+		end
 	end
 end
 
-function get_ingot10()
-	if (SYSCFG_GAMEBANK_SILVER_GET == nil) then -- ³ö´íÁË~~
-		print("get_silver have close, but something is wrong...");
-		Msg2Player("Chøc n¨ng bŞ lçi!"); 
+------------- È¡ÒøÆ± -----------------------
+function get_ticket()
+	if (SYSCFG_GAMEBANK_TICKET_GET == nil) then -- ³ö´íÁË~~
+		print("get_ticket have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
 	
-	if (GetExtPoint(1) < 1) then
-		Talk(1,"","T¹m thêi kh«ng thÓ rót TiÒn ®ång! Xin liªn hÖ víi nhµ s¶n xuÊt ®Ó gi¶i quyÕt!") 
+	local count = GetExtPoint(EXTPOINT_TICKET) + GetExtPoint(EXTPOINT_TICKET_NEW);
+	local msg = "";
+	if (count >= EXTPOINT_MAXVAL or count <= 0) then				-- Ã»ÓĞÀ©Õ¹µãÊı
+		msg = "Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£";
+		Talk(1, "", msg)
+	else 
+		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡ÒøÆ±Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ticketok", "È¡Ïû/no");
+	end
+end
+
+function get_ticketok()
+	local nCountOld = GetExtPoint(EXTPOINT_TICKET);
+	local nCountNew = GetExtPoint(EXTPOINT_TICKET_NEW);
+	if (nCountOld > 0) then
+		PayExtPoint(EXTPOINT_TICKET, 1);
+		Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÆ±ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
+	elseif (nCountNew > 0) then
+		PayExtPoint(EXTPOINT_TICKET_NEW, 1);
+		Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÆ±ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
+	else
+		msg = "Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£";
+		Talk(1, "", msg);
+	end;
+end
+
+function get_ingot_35()
+	if (SYSCFG_GAMEBANK_GOLD_GET == nil) then -- ³ö´íÁË~~
+		print("get_gold35 have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	Say("Kh¸ch quan cã ch¾c muèn rót TiÒn ®ång chø? (NÕu ®ång ı, xin ®õng tho¸t khái trß ch¬i!) ", 2, "Ta ®ång ı/get_ingot10ok", "Kh«ng rót/no"); 
+	
+	if (GetExtPoint(1) < 4) then
+		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬ÎÒÃÇµÄÕÊ±¾ÖĞÄúµÄ¼ÇÂ¼ºÃÏóÓĞĞ©²»¶Ô¾¢£¬ÇëÄúµÈµÈ£¬ÎÒÃÇ»á¾¡¿ì¸øÄúºËÊµ²éÇå¡£ÊµÔÚ²»ºÃÒâË¼£¬»¹µÃÇëÄú°Ñ½ğÔª±¦ÏÈÔÚÎÒÃÇÕâ¶ù¶à·ÅÒ»Ğ¡¶ÎÊ±¼ä¡£")
+		return
+	end
+	Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡½ğÔª±¦Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ingot35ok", "È¡Ïû/no");
+end
+
+function get_ingot35ok()
+	PayExtPoint(1,4)
+	Msg2Player("ÕıÔÚÎªÄú»ñÈ¡Ôª±¦ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
+end
+
+function get_ingot_10()
+	if (SYSCFG_GAMEBANK_SILVER_GET == nil) then -- ³ö´íÁË~~
+		print("get_silver10 have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
+		return
+	end
+	
+	if (GetExtPoint(1) < 1) then		-- Ğ¡¿¨Ïû·Ñ³É¹¦
+		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬ÎÒÃÇµÄÕÊ±¾ÖĞÄúµÄ¼ÇÂ¼ºÃÏóÓĞĞ©²»¶Ô¾¢£¬ÇëÄúµÈµÈ£¬ÎÒÃÇ»á¾¡¿ì¸øÄúºËÊµ²éÇå¡£ÊµÔÚ²»ºÃÒâË¼£¬»¹µÃÇëÄú°ÑÒøÔª±¦ÏÈÔÚÎÒÃÇÕâ¶ù¶à·ÅÒ»Ğ¡¶ÎÊ±¼ä¡£")
+		return
+	end
+	Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡ÒøÔª±¦Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ingot10ok", "È¡Ïû/no");
 end
 
 function get_ingot10ok()
 	PayExtPoint(1,1)
-	Msg2Player("§ang rót TiÒn ®ång! Xin cÈn träng vµ ®õng tho¸t khái trß ch¬i!") 
+	Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÔª±¦ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
 end;
-
 ------------- ¶ÒÏÖÔª±¦ ---------------------
 function pay_ingot()
-	if (SYSCFG_GAMEBANK_SILVER_PAY ~= 1) then
-		Talk(1,"","ThËt xin lçi! TiÒn trang ®ang söa ch÷a, 2 ngµy sau h·y ®Õn.") 
+--	Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬´ËÏîÒµÎñÕıÔÚ³ï±¸ÖĞ£¬ÔİÊ±»¹Ã»ÓĞ¿ªÍ¨£¬Çë¹ıÁ½ÌìÔÙÀ´¡£")
+	i = GetItemCountEx(343)
+	j = GetItemCountEx(342)
+	if (i > 0) and (j > 0) and (SYSCFG_GAMEBANK_GOLD_PAY and SYSCFG_GAMEBANK_SILVER_PAY)then			-- Á½ÖÖ¶¼ÓĞ£¬Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
+		Say("Ç®×¯ÀÏ°å£ºÄúÉíÉÏ´øÁËĞí¶àÔª±¦°¡£¬ÄúÏë¶ÒÏÖÄÄÒ»¸öÄØ£¿",5,"°Ñ½ğÔª±¦¶ÒÏÖ³É25Ìì/pay_ingot_35a","°Ñ½ğÔª±¦¶ÒÏÖ³É600µã/pay_ingot_35b","°ÑÒøÔª±¦¶ÒÏÖ³É6Ìì/pay_ingot_10a","°ÑÒøÔª±¦¶ÒÏÖ³É150µã/pay_ingot_10b","²»¶ÒÏÖÁË/no")
+	elseif (i > 0) and (SYSCFG_GAMEBANK_GOLD_PAY) then						-- Ö»ÓĞ½ğÔª±¦
+		Say("Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=red>½ğÔª±¦<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",3,"°Ñ½ğÔª±¦¶ÒÏÖ³É25Ìì/pay_ingot_35a","°Ñ½ğÔª±¦¶ÒÏÖ³É600µã/pay_ingot_35b","²»¶ÒÏÖÁË/no")
+	elseif (j > 0) and (SYSCFG_GAMEBANK_SILVER_PAY) then						-- Ö»ÓĞÒøÔª±¦
+		Say("Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=green>ÒøÔª±¦<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",3,"°ÑÒøÔª±¦¶ÒÏÖ³É6Ìì/pay_ingot_10a","°ÑÒøÔª±¦¶ÒÏÖ³É150µã/pay_ingot_10b","²»¶ÒÏÖÁË/no")
+	elseif (i <= 0 and SYSCFG_GAMEBANK_GOLD_PAY) or (j <= 0 and SYSCFG_GAMEBANK_SILVER_PAY) then	-- Ò»ÖÖ¶¼Ã»ÓĞ
+		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÔª±¦°¡£¡",1,"¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no")
+	end
+end
+
+------------- ¶ÒÏÖÒøÆ± ---------------------
+function pay_ticket()
+	if (SYSCFG_GAMEBANK_TICKET_PAY == nil) then -- ³ö´íÁË~~
+		print("pay_ticket have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	-- Ô½ÄÏµÄÒøÔª±¦ÎïÆ·IDÓë´óÂ½°æ±¾µÄ½ğÔª±¦ÎïÆ·IDÒ»ÖÂ
-	local nCurTD = CalcEquiproomItemCount(4,417,1,1)
-	if (nCurTD >= 20) then
-		Say("Chñ tiÒn trang: Kh¸ch quan muèn ®æi <color=green>TiÒn ®ång<color> thµnh d¹ng g×?", 3,"Ta muèn dïng 20 tiÒn ®ång ®æi lÊy 7 ngµy ch¬i/pay_ingot_10a","Ta muèn dïng 20 tiÒn ®ång ®æi lÊy 25 giê ch¬i/pay_ticket_10b","Kh«ng ®æi/no")
+	
+	local msg = {
+		"Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=red>ÒøÆ±<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",
+		"°ÑÒøÆ±¶ÒÏÖ³É30Ğ¡Ê±/pay_ticket_hours",
+		"°ÑÒøÆ±¶ÒÏÖ³É7Ìì/pay_ticket_days",
+		"²»¶ÒÏÖÁË/no"
+	};
+	local count = GetItemCountEx(QUESTKEY_TICKET) + GetItemCountEx(QUESTKEY_TICKET_NEW);
+	if (count > 0) then			-- Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
+		Say(msg[1], 3, msg[2], msg[3], msg[4])
 	else
-		Say("Kh¸ch quan kh«ng ®em theo TiÒn ®ång",1,"§óng råi, ta quªn mang theo/no")
+		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no")
+	end
+end
+
+--»ñÈ¡¿Û³ıÒøÆ±µÄÖÖÀà
+function pay_ticket_typediff()
+	local tab_TicketType = {
+		{QUESTKEY_TICKET, 2},
+		{QUESTKEY_TICKET_NEW, 3}
+		};
+	local nOldSilverCount = GetItemCountEx(QUESTKEY_TICKET);
+	local nNewSilverCount = GetItemCountEx(QUESTKEY_TICKET_NEW);
+	if (nOldSilverCount > 0) then
+		return tab_TicketType[1];
+	elseif (nNewSilverCount > 0) then
+		return tab_TicketType[2];
+	else
+		return nil;
+	end;
+end;
+-- °ÑÒøÆ±¶ÒÏÖ³É30Ğ¡Ê±
+function pay_ticket_hours()
+	local tab_TicketType = pay_ticket_typediff();
+	if (not tab_TicketType) then
+		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
+		return
+	end;
+	DelItemEx(tab_TicketType[1]);
+	UseSilver(tab_TicketType[2], 0, 1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 30 HOUR CHARGE", 0, 0, 0, -1 );
+	Say("Ç®×¯ÀÏ°å£º<color=red>ÒøÆ±<color>¶Ò»»³É<color=red>30Ğ¡Ê±<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no")
+end
+
+-- °ÑÒøÆ±¶ÒÏÖ³É7Ìì
+function pay_ticket_days()
+	local tab_TicketType = pay_ticket_typediff();
+	if (not tab_TicketType) then
+		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
+		return
+	end;
+	DelItemEx(tab_TicketType[1])
+	UseSilver(tab_TicketType[2], 1, 1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 7 DAY CHARGE", 0, 0, 0, -1 );
+	Say("Ç®×¯ÀÏ°å£º<color=red>ÒøÆ±<color>¶Ò»»³É<color=red>7Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no")
+end
+
+function pay_ingot_35a()
+	if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- ³ö´íÁË~~
+		print("pay_gold35 have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
+		return
+	end
+
+	if (GetItemCountEx(343) > 0) then 
+	DelItemEx(343)
+	UseSilver(0,1,1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 25 DAY CHARGE", -1, 0, 0, 0 );
+	Say("Ç®×¯ÀÏ°å£º<color=red>½ğÔª±¦<color>¶Ò»»³É<color=red>25Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
+	end
+end
+
+function pay_ingot_35b()
+	if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- ³ö´íÁË~~
+		print("pay_gold35 have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
+		return
+	end
+	
+	if (GetItemCountEx(343) > 0) then
+	DelItemEx(343)
+	UseSilver(0,0,1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 600 POINT CHARGE", -1, 0, 0, 0 );
+	Say("Ç®×¯ÀÏ°å£º<color=red>½ğÔª±¦<color>¶Ò»»³É<color=green>600µã<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
 	end
 end
 
 function pay_ingot_10a()
 	if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- ³ö´íÁË~~
 		print("pay_silver10 have close, but something is wrong...");
-		Msg2Player("Chøc n¨ng bŞ lçi!"); 
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	local nCurTD = CalcEquiproomItemCount(4,417,1,1)
-	if (nCurTD >= 20) then
-		if (ConsumeEquiproomItem(20,4,417,1,1)~= 1) then
-			Msg2Player("Quy ®æi thÊt b¹i!") 
-			WriteLog(date("%Y%m%d %H%M%S").."\t".." Tµi kho¶n "..GetAccount().."\t"..GetName().."\t".." quy ®æi 20 TiÒn ®ång thµnh 7 ngµy ch¬i thÊt b¹i!")
-			return
-		end
-		UseSilver(1,1,1)
-		SaveNow(); -- Á¢¼´´æÅÌ - immediately save 
-		WriteLog(date("%Y%m%d %H%M%S").."\t".." Tµi kho¶n "..GetAccount().."\t"..GetName().."\t".." quy ®æi 20 TiÒn ®ång thµnh 7 ngµy ch¬i thµnh c«ng!")
-		WriteGoldLog( GetAccount().."("..GetName()..") USE a 343 SILVER for 7 DAY CHARGE", 0, -1, 0 );
-		Say("Chñ tiÒn trang: Kh¸ch quan ®· sö dông <color=green>20 TiÒn ®ång<color> ®æi lÊy <color=red>7 ngµy ch¬i<color> thµnh c«ng! Xin kiÓm tra l¹i!", 0)
+	
+	if (GetItemCountEx(342) > 0) then 
+	DelItemEx(342)
+	UseSilver(1,1,1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 6 DAY CHARGE", 0, -1, 0, 0 );
+	Say("Ç®×¯ÀÏ°å£º<color=green>ÒøÔª±¦<color>¶Ò»»³É<color=red>6Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
 	end
 end
 
-function pay_ticket_10b()
+function pay_ingot_10b()
 	if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- ³ö´íÁË~~
 		print("pay_silver10 have close, but something is wrong...");
-		Msg2Player("Chøc n¨ng bŞ lçi!"); 
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	local nCurTD = CalcEquiproomItemCount(4,417,1,1)
-		if (nCurTD >= 20) then
-			if (ConsumeEquiproomItem(20,4,417,1,1)~= 1) then
-				Msg2Player("Quy ®æi thÊt b¹i!")
-				WriteLog(date("%Y%m%d %H%M%S").."\t".." Tµi kho¶n "..GetAccount().."\t"..GetName().."\t".." quy ®æi 20 TiÒn ®ång thµnh 25 giê ch¬i thÊt b¹i!")
-				return
-			end
-			UseSilver(1,0,1)
-			SaveNow(); -- Á¢¼´´æÅÌ
-			WriteLog(date("%Y%m%d %H%M%S").."\t".." Tµi kho¶n "..GetAccount().."\t"..GetName().."\t".." quy ®æi 20 TiÒn ®ång thµnh 25 giê ch¬i thµnh c«ng!")
-			WriteGoldLog( GetAccount().."("..GetName()..") USE a 343 SILVER for 25 HOURS CHARGE", 0, -1, 0 );
-			Say("Chñ tiÒn trang: Kh¸ch quan ®· sö dông <color=green>20 TiÒn ®ång<color> ®æi lÊy <color=green>25 giê ch¬i<color> thµnh c«ng! Xin kiÓm tra l¹i!", 0)
-		end
+	
+	if (GetItemCountEx(342) > 0) then 
+	DelItemEx(342)
+	UseSilver(1,0,1)
+	-- SaveQuickly()
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 150 POINT CHARGE", 0, -1, 0, 0 );
+	Say("Ç®×¯ÀÏ°å£º<color=green>ÒøÔª±¦<color>¶Ò»»³É<color=green>150µã<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
+	end
 end
 
-------------- ¶Ò»»Í­Ç®---------------------
+------------- È·ÈÏÒøÆ±¶Ò»»Í­Ç®---------------------
+function change_ticket_to_coin()
+	if (SYSCFG_GAMEBANK_TICKET_COIN == nil) then -- ³ö´íÁË~~
+		print("coin_ticket have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
+		return
+	end
+	
+	local count = GetItemCountEx(QUESTKEY_TICKET) + GetItemCountEx(QUESTKEY_TICKET_NEW);
+	if (count > 0) then
+		Say( "Ç®×¯ÀÏ°å£ºÄúÈ·¶¨Òª°ÑÒøÆ±¶Ò»»³ÉÍ­Ç®Âğ£¿", 2, "<#>°ÑÒøÆ±¶Ò»»³É"..COIN_CHANGE_COUNT_OF_TICKET.."<#>¸öÍ­Ç®/confirm_ticket_to_coin", "²»¶Ò»»ÁË/no");
+	else
+		Say( "Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
+	end
+end
+
+------------- ÒøÆ±¶Ò»»Í­Ç®---------------------
+function confirm_ticket_to_coin()
+	local tab_TicketType = pay_ticket_typediff();
+	if (not tab_TicketType) then
+		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
+		return
+	end;
+	DelItemEx(tab_TicketType[1]);
+	AddStackItem(COIN_CHANGE_COUNT_OF_TICKET, 4, 417, 1, 1, 0, 0, 0);
+	UseSilver(tab_TicketType[2], 2, 1); -- ÒøÆ±¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
+	-- SaveQuickly();
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a TICKET into "..COIN_CHANGE_COUNT_OF_TICKET.." COINS", 0, 0, COIN_CHANGE_COUNT_OF_TICKET, -1 );
+	Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÆ±ÒÑ³É¹¦¶Ò»»³É" .. COIN_CHANGE_COUNT_OF_TICKET .. "<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ticket_to_coin" );
+end
+
+------------- Ôª±¦¶Ò»»Í­Ç®---------------------
 function change_ingot_to_coin()	
---do return end
-	local nSilverCount = GetItemCountEx(343);		-- Ôª±¦¸öÊı
-	if (SYSCFG_GAMEBANK_SILVER_COIN ~= 1) then
-		Talk(1,"","ThËt xin lçi! TiÒn trang ®ang söa ch÷a, 2 ngµy sau h·y ®Õn.")
+	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
+	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
+	
+	if( nGoldCount > 0 and nSilverCount > 0 ) and (SYSCFG_GAMEBANK_GOLD_COIN and SYSCFG_GAMEBANK_SILVER_COIN) then			-- Á½ÖÖ¶¼ÓĞ£¬Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
+		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 3, "<#>°Ñ½ğÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®/change_gold_to_coin", "<#>°ÑÒøÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®/change_silver_to_coin", "²»¶Ò»»ÁË/no");
+	elseif( nGoldCount > 0 and SYSCFG_GAMEBANK_GOLD_COIN) then							-- Ö»ÓĞ½ğÔª±¦
+		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 2, "<#>°Ñ½ğÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®/change_gold_to_coin", "²»¶Ò»»ÁË/no");
+	elseif( nSilverCount > 0 and SYSCFG_GAMEBANK_SILVER_COIN) then							-- Ö»ÓĞÒøÔª±¦
+		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 2, "<#>°ÑÒøÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®/change_silver_to_coin", "²»¶Ò»»ÁË/no");
+	elseif (nGoldCount <= 0 and SYSCFG_GAMEBANK_GOLD_COIN) or (nSilverCount <= 0 and SYSCFG_GAMEBANK_SILVER_COIN) then	-- Ò»ÖÖ¶¼Ã»ÓĞ
+		Say( "Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÔª±¦°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
+	end
+end
+
+function change_gold_to_coin()
+	if (SYSCFG_GAMEBANK_GOLD_COIN == nil) then -- ³ö´íÁË~~
+		print("coin_gold have close, but something is wrong...");
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	if (nSilverCount <= 0) then					-- Ã»ÓĞÔª±¦
-		Say("Kh¸ch quan kh«ng mang theo kim nguyªn b¶o?", 1, "§óng råi, ta quªn mang theo/no");
-		return
+
+	if (GetItemCountEx(343) > 0) then
+	DelItemEx( 343 );
+	AddStackItem( COIN_CHANGE_COUNT_OF_GOLD, 4, 417, 1, 1, 0, 0, 0 );
+	UseSilver(0, 2, 1); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
+	-- SaveQuickly();
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a GOLD into "..COIN_CHANGE_COUNT_OF_GOLD.." COINS", -1, 0, COIN_CHANGE_COUNT_OF_GOLD, 0 );
+	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
+	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
+	if( nGoldCount > 0 or nSilverCount > 0 ) then
+		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄ½ğÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ingot_to_coin" );
+	else
+		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄ½ğÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no" );
 	end
-	if CalcFreeItemCellCount() < 5 then
-			Talk(1, "", "Kh«ng ®ñ 5 « trèng trong hµnh trang.");
-			return 1
 	end
-	Say("Chñ TiÒn Trang: Kh¸ch quan ®ång ı ®æi Kim Nguyªn b¶o lÊy ®ång tiÒn sao?", 2, "§æi Kim nguyªn b¶o thµnh "..COIN_CHANGE_COUNT_OF_SILVER.."<#> tiÒn ®ång/change_silver_to_coin", "Kh«ng ®æi/no");
 end
 
 function change_silver_to_coin()
 	if (SYSCFG_GAMEBANK_SILVER_COIN == nil) then -- ³ö´íÁË~~
 		print("coin_silver have close, but something is wrong...");
-		Msg2Player("Chøc n¨ng bŞ lçi!"); 
+		Msg2Player("¹¦ÄÜ³ö´í£¡");
 		return
 	end
-	if (GetItemCountEx(343) > 0) then		
-		DelItemEx(343);		
-		AddStackItem(COIN_CHANGE_COUNT_OF_SILVER, 4, 417, 1, 1, 0, 0, 0 );
-		UseSilver(1, 2, 1); -- ÒøÆ±¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
-		SaveNow(); -- Á¢¼´´æÅÌ
-		WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a SILVER into "..COIN_CHANGE_COUNT_OF_SILVER.." COINS", 0, -1, COIN_CHANGE_COUNT_OF_SILVER );
-		--local nSilverCount = GetItemCountEx( 343 );		-- Ôª±¦¸öÊı
-		--if( nSilverCount > 0 ) then
-		--	Say( "Ç®×¯ÀÏ°å£ºÄúµÄÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_coin" );
-		-- Say ("banks Boss: Your ingot has been successfully converted into" .. COIN_CHANGE_COUNT_OF_SILVER .. "<#> months coins, treat groom verification.", 2, "know / no", "and then exchange some coins / change_coin "); 
-		--else
-		Say("Kh¸ch quan ®· ®æi thµnh c«ng Kim Nguyªn B¶o lÊy "..COIN_CHANGE_COUNT_OF_SILVER.."<#> tiÒn ®ång! Xin kiÓm tra l¹i!",0);
-		-- Say ("banks Boss: Keguan change ingot out" .. COIN_CHANGE_COUNT_OF_SILVER .., 0 "<#> coins Keguan please check again!"); 
-		--end
+	
+	if (GetItemCountEx(342) > 0) then
+	DelItemEx( 342 );
+	AddStackItem( COIN_CHANGE_COUNT_OF_SILVER, 4, 417, 1, 1, 0, 0, 0 );
+	UseSilver(1, 2, 1); -- ÒøÆ±¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
+	-- SaveQuickly();
+	SaveNow(); -- Á¢¼´´æÅÌ
+	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a SILVER into "..COIN_CHANGE_COUNT_OF_SILVER.." COINS", 0, -1, COIN_CHANGE_COUNT_OF_SILVER, 0 );
+	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
+	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
+	if( nGoldCount > 0 or nSilverCount > 0 ) then
+		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ingot_to_coin" );
+	else
+		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no" );
+	end
 	end
 end
 
 ------------ ¹ØÓÚÍ­Ç® ------------------
 function onAboutCoin()
-	Talk( 2,"","Ç®×¯ÀÏ°å£º¿ÉÒÔ´øÔª±¦µ½±¾µê»»³ÉÍ­Ç®, 1 <color=yellow>Ôª±¦<color>»»µÃ<color=yellow>"..COIN_CHANGE_COUNT_OF_SILVER.."<color> Í­Ç®¡£Ôª±¦»»³ÉÍ­Ç®ºó£¬¾Í²»ÄÜ»»»ØÀ´ÁË","Í­Ç®¿ÉÒÔµ½¸÷³ÇÊĞµÄÉÌ··´¦ÂòÆæÕäÒì±¦.","µã»÷Êó±ê×ó¼üµ½Ò»¸öÍ­Ç®ÉÏ£¬À­³öÁíÒ»¸öÍ­Ç®µşÔÚÉÏÃæ£¬×î¶àÎª<color=yellow>100¸ö<color>. °´¼üÅÌ<color=yellow>Shift<color> ÒÔ¼°°´Êó±ê×ó¼üµ½Ò»¸öÍ­Ç®ÉÏ£¬ÊäÈëÏë»»µÄÇ®Êı£¬°´È·¶¨À´Íê³É¡£!");
--- Talk (2, "", "banks boss: can be replaced with gold coins to shop, 1 <color=yellow> ingot <color> exchange <color=yellow>" .. COIN_CHANGE_COUNT_OF_SILVER .. "<color> gold coins After the switch to coins, you can not change back, "and" coins to traders can buy at various cities treasures. "," click on the left mouse button to a coins, pull coins stacked on top of another, up to . <color=yellow> 100 ? <color> <color=yellow> Shift <color> the keyboard and press the left mouse button to count the money on one coins, enter want to change, and press OK to finish. ")!; 
+	local msg = {
+		"Ç®×¯ÀÏ°å£ºÍ­Ç®¿ÉÒÔ´ÓÎÒÕâÀïÓÃÔª±¦»òÒøÆ±»»µÃ£¬Ôª±¦»òÒøÆ±»»³ÉÍ­Ç®ºó²»¿ÉÒÔÔÙ»»»Ø¡£",
+		"<#>Ç®×¯ÀÏ°å£ºÒ»¸ö<color=yellow>½ğÔª±¦<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_GOLD.."<color>Ã¶Í­Ç®£¬Ò»¸ö<color=yellow>ÒøÔª±¦<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_SILVER.."<color>Ã¶£¬Ò»ÕÅ<color=yellow>ÒøÆ±<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_TICKET.."<color>Ã¶¡£",
+		"Ç®×¯ÀÏ°å£ºÓÃÍ­Ç®¿ÉÒÔÔÚ¸÷¸ö³ÇÊĞµÄÁã··´¦¹ºÂò¸÷ÖÖÏ¡ÓĞÎïÆ·¡£",
+		"Ç®×¯ÀÏ°å£º×ó¼üµ¥»÷ĞèÒªµş·ÅµÄÍ­Ç®£¬Êó±êÒÆ¶¯µ½ÁíÒ»¶ÑÍ­Ç®ÉÏ×ó¼üµ¥»÷£¬Á½¶ÑÍ­Ç®¾Í»áµş·Åµ½Ò»Æğ£¬Ã¿¶ÑÍ­Ç®µş·ÅµÄÉÏÏŞÊÇ<color=yellow>100<color>¸ö¡£°´×¡<color=yellow>Shift<color>¼ü£¬×ó¼üµ¥»÷ĞèÒª²ğ·ÖµÄÍ­Ç®£¬ÊäÈëÏë²ğ³öµÄÍ­Ç®¸öÊı£¬¼´¿ÉÍê³É²ğ·Ö¡£"
+	};
+	Talk(4, "", msg[1], msg[2], msg[3], msg[4]);
 end
+
 ----------------------------------------
 function no()
 end

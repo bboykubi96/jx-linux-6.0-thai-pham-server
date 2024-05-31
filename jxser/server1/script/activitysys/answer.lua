@@ -4,10 +4,22 @@ IncludeLib("FILESYS")
 
 tbRiddle = {}
 
--- ÏÔÊ¾µÆÃÕÎÊÌâ
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 tbRiddle.PlayerData = {}
 function tbRiddle:Show(szFile, nTotalCount, caption, szMsg, szFunFinalOk, szFunStepOk, szFunStepFail, count)
 --	print(format("g_count:%d", g_count))
+
+	--dofile("script/global/g7vn/g7configall.lua")
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
+
+	if doanhoadang == 0 then
+		Say("Ho¹t ®éng §o¸n Hoa §¨ng t¹m thêi ch­a më")
+		return 1
+	end
 
 	if szFile then
 		self.PlayerData[PlayerIndex] = 

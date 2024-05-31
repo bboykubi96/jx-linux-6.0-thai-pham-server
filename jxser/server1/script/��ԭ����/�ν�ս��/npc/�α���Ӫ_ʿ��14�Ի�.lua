@@ -1,8 +1,7 @@
---ÖĞÔ­±±Çø ËÎ±ø´óÓª Ê¿±ø14¶Ô»°
+-- script viet hoa By http://tranhba.com  Trung Nguyªn b¾c khu tèng binh ®¹i doanh binh lİnh 14 ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-Say("ChiÕn tr­êng tiÒn tuyÕn rÊt khèc liÖt, ng­êi chÕt rÊt nhiÒu. ",0)
+Say("Binh lİnh # nghe nãi phİa tr­íc chiÕn sù rÊt chÆc , chÕt thËt lµ nhiÒu ng­êi ®©y #",0) 
 
-end;
-
+end; 

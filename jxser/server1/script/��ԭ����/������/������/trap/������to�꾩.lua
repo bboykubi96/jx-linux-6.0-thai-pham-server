@@ -1,9 +1,9 @@
---中原北区 少林派to汴京
---Trap ID：中原北区 48
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ph竔 Thi誹 l﹎ to bi謓 kinh 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 48 
 
-function main(sel)
+function main(sel) 
 
-SetFightState(1)
-NewWorld(37, 1555, 3723);
+SetFightState(1) 
+NewWorld(37, 1555, 3723); 
 
 end;

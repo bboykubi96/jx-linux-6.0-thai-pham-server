@@ -1,4 +1,4 @@
---古柏(566)，生于每天17：05，在225,1546,3278
+
 function main()
 	mapindex = SubWorldID2Idx(225)
 	if (mapindex < 0 ) then

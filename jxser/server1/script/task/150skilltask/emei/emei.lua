@@ -54,9 +54,9 @@ tbMissionDialog[4] = {
 }
 
 tbConfig.tbNpcPos = {
-	{nNpcId = 1862, nMapId = 24, nPosX = 1697*32, nPosY = 3090*32, nLevel = 95, szName = "Triªm TuyÕt B¨ng Liªn", bNoRevive = 0,
-		szScriptPath = "\\script\\task\\150skilltask\\emei\\binglian.lua",},
-	{nNpcId = 1833, nMapId = 13, nPosX = 1745*32, nPosY = 4990*32, nLevel = 95, szName = "Gia LuËt TÞ Ly", bNoRevive = 0, nIsboss = 1,},
+--	{nNpcId = 1862, nMapId = 24, nPosX = 1697*32, nPosY = 3090*32, nLevel = 95, szName = "Triªm TuyÕt B¨ng Liªn", bNoRevive = 0,
+--		szScriptPath = "\\script\\task\\150skilltask\\emei\\binglian.lua",},
+--	{nNpcId = 1833, nMapId = 13, nPosX = 1745*32, nPosY = 4990*32, nLevel = 95, szName = "Gia LuËt TÞ Ly", bNoRevive = 0, nIsboss = 1,},
 }
 
 tbConfig[0] = {

@@ -1,27 +1,27 @@
---description: ÓÀÀÖÕò_Å£Å£Âè
---author: wangzg
---date: 2003/7/18
---modify 2003/7/21 wangzg
---update 2003/7/22 yuanlan
--- Update: Dan_Deng(2003-08-07)
+-- script viet hoa By http://tranhba.com description: vÜnh nh¹c trÊn _ bß bß mÑ 
+-- script viet hoa By http://tranhba.com author: wangzg 
+-- script viet hoa By http://tranhba.com date: 2003/7/18 
+-- script viet hoa By http://tranhba.com modify 2003/7/21 wangzg 
+-- script viet hoa By http://tranhba.com update 2003/7/22 yuanlan 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-07) 
 
-function main(sel)
-	UTask_world37=GetTask(65)
-	if ((UTask_world37==0) and (GetLevel() >= 2)) then		-- ÒªÇóµÈ¼¶³¬¹ı2¼¶
-		Say("Th»ng Ng­u Ng­u nhµ ta cø thİch lµm ®¹i hiÖp, b©y giê l¹i kh«ng biÕt ®· ch¹y ®i ®©u råi… ",2,"§õng lo l¾ng, ta gióp tÈu t×m /yes", "T×m kh«ng ra /no")
-	elseif (UTask_world37==2) then
-		Talk(1,"","§õng lo l¾ng, ta gióp tÈu t×m nã!")
-	else
-		Talk(1,"","Kh¾p n¬i ngµy cµng kh«ng yªn b×nh, con ta l¹i kh«ng nghe lêi, thËt lµ buån lßng!")
-	end
-end;
+function main(sel) 
+UTask_world37=GetTask(65) 
+if ((UTask_world37==0) and (GetLevel() >= 2)) then -- script viet hoa By http://tranhba.com  yªu cÇu cÊp bËc v­ît qua 2 cÊp 
+Say("Nhµ ta bß bß c¶ ngµy lÉn ®ªm nãi muèn ®i khi ®¹i hiÖp , b©y giê l¹i kh«ng biÕt ch¹y ®Õn ®i ®©u råi , thËt lµ cÊp ng­êi chÕt nhµ ta bß bß c¶ ngµy lÉn ®ªm nãi muèn ®i khi ®¹i hiÖp , b©y giê l¹i kh«ng biÕt ch¹y ®Õn ®i ®©u råi , thËt lµ cÊp ng­êi chÕt ",2,"§¹i tÈu ®õng lo l¾ng , ta gióp ng­¬i t×m /yes","Kh«ng ®i t×m /no") 
+elseif (UTask_world37==2) then 
+Talk(1,"","§¹i tÈu ®õng lo l¾ng , ta gióp ng­¬i t×m ") 
+else 
+Talk(1,"","Kh¾p n¬i ®Òu kh«ng yªn æn , hµi tö l¹i kh«ng nghe lêi , thËt lµ quan t©m a !") 
+end 
+end; 
 
-function yes()
-	Talk(1,"","Ng­¬i thËt lµ ng­êi tèt, vËy th× lµm phiÒn gióp ta nhĞ!")
-	SetTask(65,2)
-	AddNote("NhËn nhiÖm vô: gióp mÑ Ng­u Ng­u t×m con trai ")
-	Msg2Player("NhËn nhiÖm vô: gióp mÑ Ng­u Ng­u t×m con trai ")
-end
+function yes() 
+Talk(1,"","Ng­¬i thËt lµ ng­êi tèt , liÒn lµm phiÒn ng­¬i hç trî ") 
+SetTask(65,2) 
+AddNote("TiÕp nhËn vô # gióp bß bß mÑ t×m hµi tö ") 
+Msg2Player("TiÕp nhËn vô # gióp bß bß mÑ t×m hµi tö ") 
+end 
 
-function no()
-end
+function no() 
+end 

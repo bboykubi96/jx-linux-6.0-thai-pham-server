@@ -1,9 +1,10 @@
--- ÉñÃØÉÌÈË ¶Ô»°½Å±¾
+-- Phuc hoi trang bi hong edit by mcteam
 -- Li_Xin(2004-07-20)
 
 --Include("\\script\\global\\systemconfig.lua") -- ÏµÍ³ÅäÖÃ
 IncludeLib("ITEM")
 IncludeLib("SETTING")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function writeChapManLog(str)
 	WriteLog(date("%H%M%S")..": Tµi kho¶n:"..GetAccount()..", nh©n vËt:"..GetName()..","..str);
@@ -220,7 +221,7 @@ end;
 function buy_silk()
 	str=
 	{
-		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>B¨ng Tµm V« Cùc T¬<color> chø? <color=red>40 TiÒn §ång<color> ®æi ®­îc <color=red>1 B¨ng Tµm V« Cùc T¬<color>.",
+		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>B¨ng Tµm V« Cùc T¬<color> chø? <color=red>10 TiÒn §ång<color> ®æi ®­îc <color=red>1 B¨ng Tµm V« Cùc T¬<color>.",
 		"<#> Sö dông/sure10",
 		"<#> Hñy bá /no",
 	};
@@ -228,24 +229,24 @@ function buy_silk()
 end;
 
 function sure10()
-	if (CalcEquiproomItemCount(4, 417, 1, 1)>=40) then 
-		Talk(1,"","Ha! Ha! §· nhËn ®­îc 40 TiÒn §ång. §©y lµ <color=red>B¨ng Tµm V« Cùc T¬<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ th¨ng cÊp y phôc, kh«i m·o!")
-	  	ConsumeEquiproomItem(40, 4, 417, 1, 1)
+	if (CalcEquiproomItemCount(4, 417, 1, 1)>=10) then 
+		Talk(1,"","Ha! Ha! §· nhËn ®­îc 10 TiÒn §ång. §©y lµ <color=red>B¨ng Tµm V« Cùc T¬<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ th¨ng cÊp y phôc, kh«i m·o!")
+	  	ConsumeEquiproomItem(10, 4, 417, 1, 1)
 	  	AddEventItem(415)
 	  	UseSilver(1, 2, 2); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ(Ö±½ÓÏûºÄµÄÔª±¦ÒøÆ±£¬ÓëÍ­Ç®¶Ò»»µÈÍ¬´¦Àí)
 	  	SaveNow(); -- Á¢¼´´æÅÌ
 	  	-- writeChapManLog("ÄãµÃµ½±ù²ÏÎŞ¼«Ë¿¡£")
-	  	writeChapManGoldLog("Dïng 40 tiÒn ®ång ®æi ®­îc B¨ng Tµm V« Cùc T¬", 1, 0, 0, 0);
+	  	writeChapManGoldLog("Dïng 10 tiÒn ®ång ®æi ®­îc B¨ng Tµm V« Cùc T¬", 1, 0, 0, 0);
 	  	Msg2Player("B¹n nhËn ®­îc B¨ng Tµm V« Cùc T¬.")
 	else
-	  	Talk(1,"","B¨ng Tµm V« Cùc T¬ ph¶i ®æi b»ng 40 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
+	  	Talk(1,"","B¨ng Tµm V« Cùc T¬ ph¶i ®æi b»ng 30 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
 	end
 end;
 
 function buy_stone()
 	str=
 	{
-		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>Nam Minh Chi Tinh<color> chø? <color=red>40 TiÒn ®ång<color> ®æi ®­îc <color=red>1 Nam Minh Chi Tinh<color>.",
+		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>Nam Minh Chi Tinh<color> chø? <color=red>10 TiÒn ®ång<color> ®æi ®­îc <color=red>1 Nam Minh Chi Tinh<color>.",
 		"<#> Sö dông/sure11",
 		"<#> Hñy bá /no",
 	};
@@ -253,18 +254,18 @@ function buy_stone()
 end;
 
 function sure11()
-	if (CalcEquiproomItemCount(4, 417, 1, 1)>=40) then 
-		Talk(1,"","Ha! Ha! §· nhËn ®­îc 40 TiÒn §ång. §©y lµ <color=red>Nam Minh Chi Tinh<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ gi¶m cÊp y phôc, kh«i m·o!")
-	  	ConsumeEquiproomItem(40, 4, 417, 1, 1)
+	if (CalcEquiproomItemCount(4, 417, 1, 1)>=10) then 
+		Talk(1,"","Ha! Ha! §· nhËn ®­îc 10 TiÒn §ång. §©y lµ <color=red>Nam Minh Chi Tinh<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ gi¶m cÊp y phôc, kh«i m·o!")
+	  	ConsumeEquiproomItem(1, 4, 417, 1, 1)
 	  	AddEventItem(416)
 		UseSilver(1, 2, 2); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ(Ö±½ÓÏûºÄµÄÔª±¦ÒøÆ±£¬ÓëÍ­Ç®¶Ò»»µÈÍ¬´¦Àí)
 		SaveNow(); -- Á¢¼´´æÅÌ
 		
 	  	-- writeChapManLog("ÄãµÃµ½ÄÏÃ÷Ö®¾«¡£")
-	  	writeChapManGoldLog("Dïng 40 TiÒn ®ång ®æi ®­îc Nam Minh Chi Tinh", 1, 0, 0, 0);
+	  	writeChapManGoldLog("Dïng 30 TiÒn ®ång ®æi ®­îc Nam Minh Chi Tinh", 1, 0, 0, 0);
 	  	Msg2Player("B¹n nhËn ®­îc Nam Minh Chi Tinh.")
 	else
-	  	Talk(1,"","Nam Minh Chi Tinh ph¶i ®æi b»ng 40 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
+	  	Talk(1,"","Nam Minh Chi Tinh ph¶i ®æi b»ng 10 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
 	end
 end;
 
@@ -319,12 +320,10 @@ function throw_be_sure(nItemIdx)
 	Msg2Player("<trang bŞ tæn h¹i>"..szItemName.." §· bŞ thu håi");
 	writeChapManLog("[Remove]: RestoreBrokenEquip Remove: "..szItemName);
 end
-------------------------------------
 
-------------------------------------
--- ¡±Ëğ»µµÄ×°±¸¡°»Ö¸´
+
 function restore_brokenequip()
-	GiveItemUI( "<trang bŞ tæn h¹i> giao diÖn phôc håi", "Xin mêi bá <trang bŞ ®· h­ háng> vµo « bªn d­íi. Phİ cÇn söa (xu): trang bŞ phæ th«ng cÇn 1 xu, tİm cÇn 2 xu, hoµng kim cÇn 5 xu, b¹ch kim cÇn 6 xu (söa b¹ch kim +6 trë lªn cßn cÇn thªm thiÕt huyÕt ®¬n). Chó ı: tr­íc khi tiÕn hµnh söa trang bŞ, h·y kiÓm tra hµnh trang cßn ®ñ « trèng.", "on_restore_be", "no", 1);	
+	GiveItemUI( "<trang bŞ tæn h¹i> giao diÖn phôc håi", "Xin mêi bá <trang bŞ ®· h­ háng> vµo « bªn d­íi. Phİ cÇn söa (xu): trang bŞ phæ th«ng cÇn "..xutbphothong.." xu, tİm cÇn "..xutbtim.." xu, hoµng kim cÇn "..xutbhoangkim.." xu, b¹ch kim cÇn "..xutbbachkim.." xu (söa b¹ch kim +6 trë lªn cßn cÇn thªm thiÕt huyÕt ®¬n). Chó ı: tr­íc khi tiÕn hµnh söa trang bŞ, h·y kiÓm tra hµnh trang cßn ®ñ « trèng.", "on_restore_be", "no", 1);	
 end
 
 function on_restore_be(nCount)
@@ -339,13 +338,13 @@ function on_restore_be(nCount)
 	local nNeedCoin = 0;
 
 	if (nQuality == 0) then
-		nNeedCoin = 1;
+		nNeedCoin = xutbphothong;
 	elseif (nQuality == 1) then -- »Æ½ğ×°±¸
-		nNeedCoin = 5;
+		nNeedCoin = xutbtim;
 	elseif (nQuality == 2) then -- ×ÏÉ«×°±¸
-		nNeedCoin = 2;
+		nNeedCoin = xutbhoangkim;
 	elseif (nQuality == 4) then -- °×½ğ×°±¸
-		nNeedCoin = 10;
+		nNeedCoin = xutbbachkim;
 	end
 	
 	if (nNeedCoin <= 0) then
@@ -379,6 +378,7 @@ function on_restore_be(nCount)
 			Msg2Player("Tiªu hao"..nNeedCoin.."TiÒn ®ång, <trang bŞ tæn h¹i>"..szItemName.." phôc håi thµnh c«ng, xin kiÓm tra hµnh trang");
 			writeChapManGoldLog("[Succeed]: RestoreBrokenEquip Ok: "..szItemName, 0, 0, nNeedCoin, 0)
 			-- Fix chøc n¨ng söa ®å - Created by AnhHH - 20110704
+
 			KickOutSelf()
 		else
 			Msg2Player("<trang bŞ tæn h¹i>"..szItemName.." phôc håi thÊt b¹i, xin liªn hÖ ng­êi cã tr¸ch nhiÖm");

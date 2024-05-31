@@ -28,7 +28,7 @@ BOSS_TIME = (BAOMING_TIME + 30) * 60 * FRAME2TIME / TIMER_1;	--Õ½Õù¿ªÊ¼ºó30·ÖÖÓ³
 VANISHGAME_TIME = (BAOMING_TIME + FIGHTING_TIME - 20) * 60 * FRAME2TIME/ TIMER_1; --Õ½¶·×îºó20·ÖÖÓÊ±£¬±ØĞëËùÓĞNpcÈ«²¿²úÉú
 
 
-MAX_MEMBERCOUNT = 150 
+MAX_MEMBERCOUNT = 200 
 TIME_PLAYER_REV = 8 ; -- Íæ¼ÒËÀÍö»òÍË³öÓÎÏ·ÔÙ½øÈëÊ±£¬±ØĞë3·ÖÖÓÖ®ºó²ÅÄÜÀë¿ªºóÓªµ½´óÓª
 
 --ÒÔÏÂÊÇÄ³Ğ©Öµ¼ÇÂ¼ÔÚMissionValueÖĞµÄË÷ÒıÎ»ÖÃ£¬Í¨¹ıGetMissionV(MS_XXX)À´»ñµÃÊµ¼ÊµÄÖµ
@@ -459,10 +459,9 @@ function sf_join(camp)
 
 if (result == 0) then
 --§æi phİ b¸o danh l¹i thµnh 1 TK chiªu binh lÖnh - Modified by DinhHQ - 20110504
-	if (GetCash() >= SONGJIN_SIGNUP_FEES) then
-		Pay(SONGJIN_SIGNUP_FEES)
---	if (CalcItemCount(-1, 6, 1, 30083, -1) >= 1 and ConsumeEquiproomItem(1, 6, 1, 30083, 1) == 1) then		
-
+--	if (GetCash() >= SONGJIN_SIGNUP_FEES) then
+--	Pay(SONGJIN_SIGNUP_FEES)
+	--if (CalcItemCount(-1, 6, 1, 30083, -1) >= 1 and ConsumeEquiproomItem(1, 6, 1, 30083, 1) == 1) then		
 		BT_LeaveBattle() -- Çå³ıÍæ¼Ò¿Í»§¶Ëµ±Ç°µÄÅÅÃûÊı¾İ
 		BT_ClearPlayerData()
 		SetTask(2435, 0);--±¾³¡ËÎ½ğÒÑ¾­ÁìÈ¡µÄ°ï»á¹±Ï×¶ÈÇåÁã--by ÁÎÖ¾É½
@@ -472,11 +471,12 @@ if (result == 0) then
 		local nlevel = BT_GetGameData(GAME_LEVEL)
 		G_ACTIVITY:OnMessage("SignUpSongJin", PlayerIndex, nlevel)
 		tbLog:PlayerActionLog("TinhNangKey","BaoDanhTongKim")
-	else
-		local szMsg = "Xin lçi, tham gia ®ît Tèng Kim ®¹i chiÕn nµy, cÇn ph¶i nép 3000 l­îng"
-		Say(szMsg, 0)
-		return 
-	end
+	--else
+		-- local szMsg = "Xin lçi, tham gia ®ît Tèng Kim ®¹i chiÕn nµy, cÇn ph¶i nép 1 Tèng Kim Chiªu Binh LÖnh"
+	--	local szMsg = "Xin lçi, tham gia ®ît Tèng Kim ®¹i chiÕn nµy, cÇn ph¶i nép 2 v¹n l­îng"
+	--	Say(szMsg, 0)
+	--	return 
+	--end
 end
 
 gametime = floor(GetMSRestTime(MISSIONID, 31) / 18);

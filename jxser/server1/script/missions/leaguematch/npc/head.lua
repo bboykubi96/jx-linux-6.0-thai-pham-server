@@ -138,18 +138,18 @@ function wlls_query_do(n_lid)
 	if (n_rank > 1000) then
 		str_rank = "Sau 1000"
 	elseif (n_rank > 0) then
-		str_rank = "h¹ng thø "..n_rank.."danh "
+		str_rank = "h¹ng thø "..n_rank.." danh "
 	else
 		str_rank = "VÉn ch­a xÕp h¹ng"
 	end
 	local n_width = 17
 	local str = "<enter>"
-	str = str .. strfill_center(str_mtype.."nhãm [<color=yellow>"..str_lgname.."<color>]", 53+21, "-")
-	str = str .. strfill_left("gåm cã<color=yellow>"..n_memcount.."<color> Thµnh viªn", n_width+21).."<color=cyan>"..str_mem.."<color><enter>"
-	str = str .. strfill_left("®· tham gia<color=yellow>"..n_total.."<color>thi ®Êu:", n_width+21).."th¾ng lîi<color=yellow>"..n_win.."<color>trËn/hßa<color=yellow>"..n_tie.."<color>trËn/thÊt b¹i<color=yellow>"..n_lose.."<color>trËn<enter>"
-	str = str .. strfill_left("",n_width).."tû lÖ th¾ng<color=yellow>"..strsub(f_rate,1,4).."<color>%<enter>"
-	str = str .. strfill_left("®iÓm th­ëng nhãm:<color=yellow>"..n_point.."<color>", n_width+21).."thêi gian chiÕn ®Êu tÝch lòy:<color=yellow>"..n_time.."<color>gi©y<enter>"
-	str = str .. ""..strfill_center("<<  <color=yellow>"..str_rank.."<color>  >>", 53+21).."<color>"
+	str = str .. strfill_center(str_mtype.." nhãm [<color=yellow>"..str_lgname.."<color>]", 53+21, "-")
+	str = str .. strfill_left("gåm cã <color=yellow>"..n_memcount.."<color> Thµnh viªn ", n_width+21).."<color=cyan>"..str_mem.."<color><enter>"
+	str = str .. strfill_left("®· tham gia <color=yellow>"..n_total.."<color> thi ®Êu:", n_width+21).." th¾ng lîi<color=yellow>"..n_win.."<color> trËn/hßa <color=yellow>"..n_tie.."<color> trËn/thÊt b¹i <color=yellow>"..n_lose.."<color> trËn<enter>"
+	str = str .. strfill_left("",n_width).."tû lÖ th¾ng <color=yellow>"..strsub(f_rate,1,4).."<color>%<enter>"
+	str = str .. strfill_left("®iÓm th­ëng nhãm: <color=yellow>"..n_point.."<color>", n_width+21).."thêi gian chiÕn ®Êu tÝch lòy:<color=yellow>"..n_time.."<color>gi©y<enter>"
+	str = str .. ""..strfill_center("<<  <color=yellow> "..str_rank.."<color>  >>", 53+21).."<color>"
 	wlls_descript(str)
 end
 
@@ -215,10 +215,10 @@ function wlls_add_option(tb, str)
 		n_level = wlls_getcityinfo()
 	end
 	if (n_type == n_next) then
-		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. "Hç trî thi ®Êu/#wlls_help("..n_type..","..n_level..",1)"
+		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. " Hç trî thi ®Êu/#wlls_help("..n_type..","..n_level..",1)"
 	else
-		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. WLLS_TAB[n_type].name .. "Hç trî thi ®Êu/#wlls_help("..n_type..","..n_level..",1)"
-		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. WLLS_TAB[n_next].name .. "Hç trî thi ®Êu/#wlls_help("..n_next..","..n_level..",1)"
+		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. WLLS_TAB[n_type].name .. " Hç trî thi ®Êu/#wlls_help("..n_type..","..n_level..",1)"
+		tb[getn(tb)+1] = WLLS_LEVEL_DESC[n_level] .. WLLS_TAB[n_next].name .. " Hç trî thi ®Êu/#wlls_help("..n_next..","..n_level..",1)"
 	end
 	--if (n_map == 1) then
 	--	tb[getn(tb)+1] = "ÎÒÒªÀë¿ª»á³¡/wlls_want2transback"

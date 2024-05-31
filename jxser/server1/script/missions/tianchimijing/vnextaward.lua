@@ -11,7 +11,7 @@ function tbVnExtAward:VnBonusAward()
 	if PlayerFunLib:CheckTaskDaily(3086, 2, "H«m nay ng­¬i ®· nhËn 2 lÇn phÇn th­ëng nµy, kh«ng thÓ nhËn thªm.", "<") then
 		local tbVnBonusAward = {
 			{szName = "§iÓm Kinh NghiÖm", nExp=10000000},			
-			{szName="Tu ch©n yÕu quyÕt (Thiªn tr× mËt c¶nh)",tbProp={6,1,30164,1,0,0},nCount=1,nExpiredTime=10080},
+			--{szName="Tu ch©n yÕu quyÕt (Thiªn tr× mËt c¶nh)",tbProp={6,1,30164,1,0,0},nCount=1,nExpiredTime=10080},
 			{szName="Thiªn Tr× Bİ B¶o",tbProp={6,1,30193,1,0,0},nCount=3},
 		}
 		PlayerFunLib:AddTaskDaily(3086, 1)

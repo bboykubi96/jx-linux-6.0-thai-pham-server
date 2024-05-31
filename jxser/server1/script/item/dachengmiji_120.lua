@@ -29,13 +29,16 @@ function main(nItemIdx)
 		[7] = {715},
 		[8] = {716},
 		[9] = {717},
+		[10] = {1365},
+		[11] = {1984},
+		[12] = {1894},
 	};
 	
 	local tb_Desc = {};
 	for i = 1, getn(tb_90skill[n_fac]) do
 		local skill = HaveMagic(tb_90skill[n_fac][i]);
 		if (skill ~= -1 and skill ~= 20) then
-			tinsert(tb_Desc, format("N©ng c p".."%s/#upgrade_skilllevel(%d)", GetSkillName(tb_90skill[n_fac][i]), tb_90skill[n_fac][i]));
+			tinsert(tb_Desc, format("N©ng c p ".."%s/#upgrade_skilllevel(%d)", GetSkillName(tb_90skill[n_fac][i]), tb_90skill[n_fac][i]));
 		end
 	end
 	

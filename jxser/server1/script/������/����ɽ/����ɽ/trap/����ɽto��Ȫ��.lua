@@ -1,7 +1,7 @@
---江南区 罗霄山to龙泉村
---Trap ID：江南区 6
+-- script viet hoa By http://tranhba.com  Giang Nam khu la ti猽 s琻 to long tuy襫 th玭 
+-- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 6 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(174, 1710, 2946);
-end;
+function main(sel) 
+SetFightState(1); 
+NewWorld(174, 1710, 2946); 
+end; 

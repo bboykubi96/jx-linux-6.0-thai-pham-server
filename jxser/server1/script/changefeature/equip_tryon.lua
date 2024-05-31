@@ -38,8 +38,6 @@ function tbEquipTryOn:DailogMenu(nPage)
 	
 	local nTotalCount = getn(tbData)
 	
-	
-	
 	local nCountPerPage = self.nCountPerPage
 	local nStart = (nPage - 1) * nCountPerPage + 1
 	local nEnd = nStart + nCountPerPage - 1
@@ -51,14 +49,14 @@ function tbEquipTryOn:DailogMenu(nPage)
 		nEnd = nTotalCount
 	end
 
-	local szTitle = format("§ang xem thö ngo¹i h×nh tõ %d~%d", nStart, nEnd)
+	local szTitle = format("§ang xem thö ngo¹i h×nh tõ %d ®Õn %d", nStart, nEnd)
 	local tbOpt = {}
 	
 	
 	for i=nStart, nEnd do
 		local opt = 
 		{
-			format("%d\%s", i, tbData[i].szName),
+			format("%d\ %s", i, tbData[i].szName),
 			self.TryOnDailog,
 			{self, i}
 		}
@@ -89,7 +87,8 @@ function tbEquipTryOn:TryOnDailog(nIdx)
 	
 	self:TryOn(tbData[nIdx].nFeature)
 	
-	local szTitle = format("C¸c h¹ c¶m thÊy thÕ nµo? Cã võa lßng kh«ng? Muèn luyÖn ngo¹i h×nh nµy cÇn <color=yellow>%d<color> tinh lùc.", tbData[nIdx].nPrice)
+	--local szTitle = format("C¸c h¹ c¶m thÊy thÕ nµo? Cã võa lßng kh«ng? Muèn thay ®æi ngo¹i h×nh nµy cÇn <color=yellow>%d<color> tinh lùc.", tbData[nIdx].nPrice)
+	local szTitle = "C¸c h¹ c¶m thÊy thÕ nµo? Cã võa lßng kh«ng? Muèn thay ®æi ngo¹i h×nh nµy kh«ng?"
 	local nPage = ceil(nIdx/self.nCountPerPage)
 	local tbOpt = 
 	{
@@ -162,27 +161,39 @@ function tbEquipTryOn:Proc(nIdx, nCount)
 	if self:CheckEquip(nItemIndex) ~= 1 then
 		return 
 	end
-	--local tbItem = {szName="¾«Á¶Ê¯", tbProp={6, 1, 2280, -1}}
-	--local tbProp = tbItem.tbProp
-	local nCount = pData.nPrice
---	--¼ì²éÊ¯Í·
---	if CalcEquiproomItemCount(tbProp[1], tbProp[2], tbProp[3], tbProp[4]) < nCount then
---		Talk(1, "", format("ÄãÃ»ÓÐ´ø¹»¾«Á¶Ê¯°¡£¬ÐèÒª%d¸ö", nCount))
---		return 
---	end
+	
+	local tbItem = {szName="Xu", tbProp={4,417,1,1}}
+	local tbProp = tbItem.tbProp
+	local nCount = 20--so hanh hiep lenh can thiet
+	--local nCount = pData.nPrice
+	
+	--local sotienchiphi = 5000000
+--	if GetCash() < sotienchiphi then
+--		Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ ng©n l­îng, cÇn %d l­îng vµng", sotienchiphi))
+	--	return
+	--end
 
-	if GetEnergy() < nCount then
-		Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ tinh lùc, cÇn %d tinh lùc", nCount))
+	if CalcEquiproomItemCount(tbProp[1], tbProp[2], tbProp[3], tbProp[4]) < nCount then
+		Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ Xu, cÇn %d Xu", nCount))
+		return 
+	end
+
+	if (ConsumeEquiproomItem(nCount,tbProp[1], tbProp[2], tbProp[3], tbProp[4])~= 1) then--tru HHL tren hanh trang that bai
+		Msg2Player("Trõ Xu thÊt thÊt b¹i !")
 		return
 	end
+
+	--if GetEnergy() < nCount then
+	--	Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ tinh lùc, cÇn %d tinh lùc", nCount))
+	--	return
+	--end
 	
-	--¿ÛÊ¯Í·
-	ReduceEnergy(nCount)
-	
+	--ReduceEnergy(nCount)
 	
 	if pData.nFeature then
 		self:InjectToItem(nItemIndex, pData.nFeature)
 		Msg2Player(format("Ngo¹i h×nh trang bÞ %s ®· ®­îc ®æi", GetItemName(nItemIndex)))
+		Pay(sotienchiphi)
 	end
 	
 end
@@ -208,7 +219,6 @@ function tbEquipTryOn:LoadFile()
 	self.tbData_Female = {}
 	self:LoadOneFile( self.tbData_Male, self.szFile_Male)
 	self:LoadOneFile( self.tbData_Female, self.szFile_Female)
-	
 end
 
 function tbEquipTryOn:LoadOneFile( tbData, szFile)

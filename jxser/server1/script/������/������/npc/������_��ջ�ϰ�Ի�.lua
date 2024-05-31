@@ -1,23 +1,22 @@
---Á½ºşÇø ÄÏÔÀÕò ¿ÍÕ»ÀÏ°å¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu nam nh¹c trÊn kh¸ch s¹n l·o b¶n ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-	if ( GetTask(1256) == 1 ) then
+if ( GetTask(1256) == 1 ) then 
 		 SetTaskTemp(111,GetTaskTemp(111)+1)
 
-		 if ( GetTaskTemp(111) > 3 ) then
-		 	Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		 	SetTask(1256, 2);
-		 else
-		 	Talk(1,"","Kh¸ch quan xin mêi vµo, ®õng sî, ®õng sî, tuy trong s·nh ®­êng cã mÊy c¸i quan tµi nh­ng chóng ta vÉn më cöa ®ãn kh¸c ®õng ®Ó ı ®Õn mÊy vô dŞch bÖnh Êy. C¸i g×? ta kh«ng sî míi l¹ ®ã, lì l¨n ra chÕt mét ®ãng th× sao ®©y. Hihihi, tiÓu ®iÕm ®©y an toµn mµ, ®­¬ng nhiªn trong thêi buæi lo¹n l¹c nµy tiÒn thuª phßng cã h¬i cao mét chót ®Êy.")		 
-		 end
-		 return
-	elseif ( GetTask(1256) == 2 ) then
-		Talk(1,"","Nghe nãi cã mét vŞ s­ th¸i kh«ng biÕt tõ miÕu nµo ®Õn, ph¸p lùc v« biªn ng­¬i ®i hái thö xem sao.")
-		return
-	end
-	
-Say("Ng­êi còng lªn nói b¸i kiÕn §éc C« §¹i hiÖp sao? Nh­ng «ng Êy lµ thÇn t­îng cña ta. GÆp ®­îc «ng ta, phiÒn «ng Êy viÕt cho ta mét ch÷ ",0);
+if ( GetTaskTemp(111) > 3 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u ngåi ng«i ®Òn tíi s­ th¸i ph¸p lùc v« biªn , ng­¬i ®i hái mét chót nh×n .") 
+SetTask(1256, 2); 
+else 
+Talk(1,"","Mêi kh¸ch quan vµo , ®õng sî ®õng sî , mÆc dï ë trong phßng kh¸ch ®Ó vµi híp quan tµi , nh­ng lµ ta vÉn cöa më ®ãn kh¸ch còng lµ v× y bÖnh . ta sî kh«ng ph¶i lµ c¸i ®ã . a a , tiÓu ®iÕm rÊt an toµn , dÜ nhiªn ë lo¹n thÕ trung c¸i nµy thu lÖ phİ nhÊt ®Şnh ph¶i líp m­êi ®iÓm .") 
+end 
+return 
+elseif ( GetTask(1256) == 2 ) then 
+Talk(1,"","Nghe nãi cã mét vŞ kh«ng biÕt tõ ®©u ngåi ng«i ®Òn tíi s­ th¸i ph¸p lùc v« biªn , ng­¬i ®i hái mét chót nh×n .") 
+return 
+end 
 
-end;
+Say("Kh¸ch s¹n l·o b¶n # kh¸ch xem quan ®İch d¸ng vÎ , còng lµ mét ë vÕt ®ao th­îng kiÕm sèng ng­êi ®i ? chóng ta n¬i nµy th­êng sÏ cã ng­êi trong giang hå xuÊt nhËp , ®Òu lµ lªn nói b¸i pháng ®éc c« ®¹i hiÖp ®İch . ",0); 
 
+end; 

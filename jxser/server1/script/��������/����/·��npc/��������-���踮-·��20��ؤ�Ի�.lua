@@ -1,32 +1,32 @@
---Î÷±±ÄÏÇø ·ïÏè¸® Â·ÈË20ÆòØ¤¶Ô»° ÊÀ½çÈÎÎñ
+-- script viet hoa By http://tranhba.com ##±±Ä### ###Ì## ¢#Ì#20#ß###¤#° £µ##Ì###
 
 function main(sel)
 
---UTask_world36 = GetTask(64);
+-- script viet hoa By http://tranhba.com UTask_world36 = GetTask(64);
 
---if (UTask_world36 == 0) then 
---Talk(3, "select", "ÆòØ¤£º°¦¡­¡­", "Ð¡¸ç£¬ÔõÃ´ÔÚÕâ°¦ÉùÌ¾ÆøµÄ£¿", "ÆòØ¤£º¿´ÄãÊÇÍâµØÀ´µÄ°É£¬Ã»¼ûµ½¹Ù¸®Ç°µÄ¸æÊ¾Âð£¿Õâ¼¸Ìì³¯Í¢ÅÉÊàÃÜÊ¹´óÈËÀ´ÊÓ²ì£¬ËùÓÐÆòØ¤¶¼²»ÄÜÉÏ½ÖÆòÌÖ£¬ËµÊÇÓÐ°­ÊÐÈÝ£¬ÄãËµÕâÊàÃÜÊ¹´óÈËÊÓ²ì¸ú°³ÃÇÕâÐ©Òª·¹µÄÓÐÊ²Ã´¹ØÏµ£¬Õâ¼¸Ìì×ö²»³ÉÉúÒâ£¬°³Ò»¼Ò´óÐ¡¿ÉÔõÃ´¹ý°¡¡£")
---return
---end;
+if (UTask_world36 == 0) then 
+Talk(3, "select", "#ß###º°#####", "######¤â·´¤óâ©°#Ðï×####Ä#¿", "#ß###º¿´Ä·£#Ý©##µ´#Ä°Ð##·######ï###°#Ä##£#¢ð#¿â©##××³¯Ý#ÅÐ£µ·#£#´ãÌ#µ´£ã²×###ïã##ß####²#Ä#Ð####ß×#####£#ã#°#£#Ìý##Ä·##â©£µ·#£#´ãÌ#£ã²×#ó°³·#â©##ß####Äã#£²·´######â©##××##²#³ÐÐóß©##°³ß##ß´ã##¿Ð¤â·´#ý°###")
+return
+end;
 
---if (UTask_world36 == 1) then 
-Say("Nh×n anh ch¾c lµ ng­êi n¬i kh¸c, anh kh«ng thÊy c¸o thÞ tr­íc cöa nha m«n sao? MÊy ngµy nµy triÒu ®×nh cö quan mËt sø ®Õn thÞ s¸t n¬i ®©y. V× vËy ¨n xin kh«ng ®­îc ra ®­êng. Quan mËt sø ®Õn víi viÖc chóng ta xin c¬m th× cã liªn quan g× chø? MÊy ngµy nay kh«ng lµm ®­îc g×, c¶ nhµ lÊy g× mµ sèng.", 0)
---end;
+-- script viet hoa By http://tranhba.com if (UTask_world36 == 1) then 
+Say("#ß###º¿´Ä·£#Ý©##µ´#Ä°Ð##·######ï###°#Ä##£#¢ð#¿â©##××³¯Ý#ÅÐ£µ·#£#´ãÌ#µ´£ã²×###ïã##ß####²#Ä#Ð####ß×#####£#ã#°#£#Ìý##Ä·##â©£µ·#£#´ãÌ#£ã²×#ó°³·#â©##ß####Äã#£²·´######â©##××##²#³ÐÐóß©##°³ß##ß´ã##¿Ð¤â·´#ý°###", 0)
+-- script viet hoa By http://tranhba.com end;
 
 end;
 
 
 function select()
-Say("Nh×n anh ta thËt ®¸ng th­¬ng… ", 2, "Cho tiÒn /accept", "Kh«ng cho tiÒn /refuse");
+Say("¿´####¿Ð¸¯#Ä####", 2, "####/accept", "²#####/refuse");
 end;
 
 
 function accept()
 
-if (GetCash() > 1000) then							--²Î¿¼Öµ
-	Talk(2, "select1", "TiÓu ca! ®©y cã Ýt ng©n l­îng, huynh cÇm ®ì mµ dïng!", "Chóng ta bÌo n­íc t­¬ng phïng, ng­¬i l¹i cho ta nhiÒu ng©n l­îng nh­ vËy, thËt lµ mét ng­êi tr­îng nghÜa! ThÕ th×...ta l¨n lén trªn giang hå còng cã kh«ng Ýt kinh nghiÖm, ta sÏ truyÒn l¹i ®Ó ng­¬i phßng th©n")	
+if (GetCash() > 1000) then							-- script viet hoa By http://tranhba.com ²#¿###
+	Talk(2, "select1", "#######ßâ©µ#ã###ß##ã##Ä·#ÌÄ·Ì##Ì#Ì#±##", "#ß###º°³¸######µ#ª##Ä·#Ý###ßâ©·´#µß##ã##â#£#ß###â×ß##ÄÌ###â©·´#Å°Ð###ß##Ì#ß¤#ß×###Ðó####£#¿´##Ì####ÛÐ###ß²#·ã#²#ÐïÅ###º##Ä###Ð¸####Ý´###Ä·ß###ã·µ´#µÐÝ°Ð##")	
 else
-	Say("Xem ra ng­¬i còng kh«ng giµu cã g×, ta chØ nhËn h¶o ý cña ng­¬i th«i.", 0)
+	Say("#ß###º¿´µ´Ä·ß²²###¤#°#####£##·¸#°Ð##Ä·#Äº·ß©#ß#Ä¸×¸###", 0)
 end;
 
 end;

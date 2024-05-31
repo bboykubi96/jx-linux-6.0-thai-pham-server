@@ -1,8 +1,8 @@
---中原南区 稻香村to阳中洞
---TrapID：中原南区 73
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 nam khu o hng th玭 to dng trung ng 
+-- script viet hoa By http://tranhba.com TrapID# Trung Nguy猲 nam khu 73 
 
-function main(sel)
-	SetFightState(1);
-	NewWorld(205, 1698, 3408)
-	AddTermini(217)
+function main(sel) 
+SetFightState(1); 
+NewWorld(205, 1698, 3408) 
+AddTermini(217) 
 end;

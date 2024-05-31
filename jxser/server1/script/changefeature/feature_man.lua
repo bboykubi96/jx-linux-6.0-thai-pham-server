@@ -5,7 +5,7 @@ tbFeatureNpc = {}
 
 
 function tbFeatureNpc:SelectType()
-	local szTitle = "Xin h·y chän vŞ trİ"
+	local szTitle = "Xin h·y chän vŞ trİ "
 	
 	
 	local tbOpt = {}
@@ -19,14 +19,23 @@ function tbFeatureNpc:SelectType()
 	
 	CreateNewSayEx(szTitle, tbOpt)
 end
-	
+
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function tbFeatureNpc:Dialog()
-	
+	--dofile("script/changefeature/feature_man.lua")
+	--dofile("script/global/g7vn/g7configall.lua")
+
+	if ThayDoiNgoaiHinhTB == 0 then
+		Say("Tİnh n¨ng thay ®æi ngo¹i h×nh trang bŞ t¹m thêi ch­a më")
+		return
+	end
+
 	local szTitle = "Xin chµo ®¹i hiÖp, l·o phu cã thÓ gióp g× ®­îc?"
 	local tbOpt = 
 	{
 		{"Xem tr­íc ngo¹i h×nh trang bŞ", self.SelectType, {self}},
-		{"Thay ®æi ngo¹i h×nh trang bŞ ­ng ı nhÊt cho trang bŞ", self.InjectToItem, {self}},
+		--{"Thay ®æi ngo¹i h×nh trang bŞ ­ng ı nhÊt cho trang bŞ(150xu)", self.InjectToItem, {self}},
 		{"Xãa hiÖu øng hiÖn t¹i", RestoreOwnFeature},
 		{"Lµm thÕ nµo ®Ó thay ®æi ngo¹i h×nh trang bŞ",  self.Explain, {self}},
 		{"Nh©n tiÖn ghĞ qua th«i"},
@@ -35,7 +44,7 @@ function tbFeatureNpc:Dialog()
 end
 
 function tbFeatureNpc:Explain()
-	local szTitle = "Bæn tiÖm cã thÓ t¹o ra 'ngo¹i h×nh trang bŞ' theo nh­ ı muèn, thu thËp ®ñ nguyªn liÖu cÇn thiÕt nh­ tinh luyÖn th¹ch vµ trang bŞ cÇn thay ®æi ®em ®Õn cho l·o phu th× ta sÏ gióp ng­¬i thay ®æi ngo¹i h×nh trang bŞ nh­ ı muèn. Nªn nhí ta chØ gióp ng­¬i thay ®æi ngo¹i h×nh trang bŞ mµ kh«ng thay ®æi ®é m¹nh yÕu cña trang bŞ ®©u nhĞ."
+	local szTitle = "Bæn tiÖm cã thÓ t¹o ra 'ngo¹i h×nh trang bŞ' theo nh­ ı muèn, thu thËp ®ñ <color=red>Hµnh HiÖp LÖnh, Ng©n L­îng<color> vµ trang bŞ cÇn thay ®æi ®em ®Õn cho l·o phu th× ta sÏ gióp ng­¬i thay ®æi ngo¹i h×nh trang bŞ nh­ ı muèn. Nªn nhí ta chØ gióp ng­¬i thay ®æi ngo¹i h×nh trang bŞ mµ kh«ng thay ®æi ®é m¹nh yÕu cña trang bŞ ®©u nhĞ."
 	local tbOpt = 
 	{
 		{"Trë l¹i", self.Dialog, {self}},

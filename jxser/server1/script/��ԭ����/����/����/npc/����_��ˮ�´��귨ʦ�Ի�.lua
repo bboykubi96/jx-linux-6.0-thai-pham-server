@@ -1,7 +1,7 @@
 --ÖĞÔ­ÄÏÇø ÏåÑô¸® ´ÈÓê·¨Ê¦¶Ô»°
 
 function main(sel)
-Say("T­¬ng truyÒn n¨m x­a qu©n cña H¸n Quang Vò §Õ L­u Tó b¹i trong tay ph¶n tÆc V­¬ng M·ng ch¹y ®Õn ®Ønh nói S­ Tö nµy. Ng­êi ngùa mÖt l·, l­ìi kh« miÖng kh¸t t×m giÕng uèng n­íc, n­íc l¹i chØ toµn mµu ®en kh«ng tµi nµo uèng næi! §ang lóc L­u Tó nguy khèn th× cã mét con rång xanh bay ra khái giÕng, n­íc giÕng ®en biÕn thµnh s¾c tr¾ng!Sau nµy, ®Ó thê cóng L­u Tó, ng­êi trong th«n ®· dùng nªn ng«i miÕu nµy vµ lÊy tªn lµ B¹ch Thñy Tù!", 0);
+Say("Tõ Vò ph¸p s­:  T­¬ng truyÒn n¨m ®ã H¸n vò ®Õ l­u binh b¹i tho¸t khái ph¶n tÆc v­¬ng m·ng, tíi chç ®Ønh nói s­ tö nµy. Ng­êi ngùa ®Òu mÖt mái, qu©n sÜ t×m ®­îc 1 giÕng n­íc, nh­ng n­íc ®en rÊt khã uèng. Bçng nhiªn 1 con thanh long bay lªn, n­íc giÕng tõ ®en ®æi thµnh tr¾ng. Tõ ®ã ®©y ®­îc gäi lµ B¹ch Thñy Tù.", 0);
 end;
 
 

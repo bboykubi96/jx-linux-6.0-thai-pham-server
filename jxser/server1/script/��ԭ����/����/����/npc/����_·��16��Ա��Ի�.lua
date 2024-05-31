@@ -1,5 +1,5 @@
---ÖĞÔ­ÄÏÇø ÏåÑô¸® Â·ÈË16¹ùÔ±Íâ¶Ô»°
--- edit by Ğ¡ÀË¶à¶à
+--ÖĞÔ­ÄÏÇø ÏåÑô¸® ¢·ÈË16¹ùÔ±Íâ¶Ô»°
+-- edit by Ğ¡ÀË¶µ¶µ
 
 Include("\\script\\event\\zhongqiu2007\\picture_head.lua")
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
@@ -11,8 +11,8 @@ function main(sel)
 	local ndate = tonumber(GetLocalDate("%y%m%d%H%M"))
 	if ndate > 0709220000 and ndate < 0710312400 then
 		SetTaskTemp(TSK_TEMP,2)
-		Describe("Qu¸ch viªn ngo¹i: Trung thu ®· ®Õn, chØ cÇn thu thËp ®ñ 6 <color=red>m¶nh tranh Tiªn Vò<color> ®Ó hîp thµnh 1 bøc tranh hoµn chØnh mang ®Õn cho ta, ta sÏ tÆng l¹i ®¹i hiÖp 1 b¸nh <color=red>Phông NguyÖt Qu¶ Dung<color>.",2,"§æi b¸nh Phông NguyÖt Qu¶ Dung/makeItemUI","Nh©n tiÖn ghĞ qua th«i/NoChoice")
+		Describe("Qu¸ch viªn ngo¹i:  trung thu ®Õn, cÇn thu tËp ®ñ 6 <color=red>m¶nh häa ®å<color> hîp thµnh mét bøc vÏ hoµn chØnh mang ®Õn cho ta, ta sÏ ®­a ng­¬i mét <color=red>Phông NguyÖt Qu¶<color>.",2,"§æi Phông nguyÖt qu¶/makeItemUI","ThuËn tiÖn ghĞ qua/NoChoice")
 	else
-		Describe("Ta ®· ®em toµn bé gia s¶n quyªn gãp cho triÒu ®×nh. N­íc nhµ gÆp n¹n, mäi ng­êi d©n ®Ò cã tr¸ch nhiÖm. Ta chØ gãp chøc søc män nµy mµ cã x¸ g×! So víi c¸c chiÕn sÜ ng· xuèng trªn sa tr­êng, chót ®ãng gãp nhá nhÆt nµy nµo cã ®¸ng chi!",1,"BiÕt råi/NoChoice")
+		Describe("Ta ®· ®em toµn bé gia s¶n hiÕn tÆng cho triÒu ®×nh, quèc gia gÆp n¹n, thÊt phu h÷u tr¸ch. Ta ch¼ng qua lµ cèng hiÕn mét chót søc lùc, c¨n b¶n còng kh«ng s¸ g×.",1,"Ta biÕt råi./NoChoice")
 	end
 end;

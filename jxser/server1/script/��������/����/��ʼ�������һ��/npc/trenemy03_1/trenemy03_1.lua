@@ -1,13 +1,13 @@
---description: 秦陵地下一层敌人
---author: yuanlan	
---date: 2003/5/19
--- Update: Dan_Deng(2003-08-14)
+-- script viet hoa By http://tranhba.com description: t莕 l╪g di t m閠 t莕g ch nh﹏ 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/5/19 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-14) 
 
-function OnDeath()
-	UTask_tr = GetTask(4);
+function OnDeath() 
+UTask_tr = GetTask(4); 
 	if (UTask_tr == 30*256+20) and (HaveItem(59) == 0) then
-		AddEventItem(59)
-		Msg2Player("Л頲 B秓 Th筩h C竝 Huy誸 H錸g. ")
-		AddNote("T筰 T莕 L╪g a, nh b筰 t猲 tr閙 B秓 Ng鋍, 頲 B秓 Th筩h C竝 Huy誸 H錸g. ")
-	end
-end;	
+AddEventItem(59) 
+Msg2Player(" l蕐 頲 c竝 m竨  b秓 th筩h . ") 
+AddNote("T莕 l╪g di t , nh b筰 b秓 ng鋍 ╪ tr閙 , l蕐 頲 c竝 m竨  b秓 th筩h . ") 
+end 
+end; 

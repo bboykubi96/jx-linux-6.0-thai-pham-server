@@ -7,20 +7,20 @@ Include("\\script\\event\\birthday_jieri\\200905\\chuangguan\\chuangguan.lua");
 Include("\\script\\event\\birthday_jieri\\200905\\class.lua");
 Include("\\script\\lib\\common.lua");
 Include("\\script\\lib\\log.lua")
--- ´³¹Ø»î¶¯Ã¿ÈÕÅÅĞĞ°ñ
+Include("\\script\\global\\g7vn\\g7configall.lua")
 Include("\\script\\missions\\challengeoftime\\rank_perday.lua");
 ---- DescribÍ¼Æ¬ÃèÊö
 --DescLink_NieShiChen = "<#><link=image[147,167]:\\spr\\npcres\\enemy\\enemy154\\enemy154_pst.spr>Äôß±³¾£º<link>";
---TSKID_KILLTASKID = 1082;	-- ½ÓÊÜµÄÄÄ¸öÈÎÎñ
---TSKID_KILLERDATE	= 1192;	--½ÓÈÎÎñÊ±µÄÈÕÆÚ
---TSKID_KILLERMAXCOUNT	= 1193;	--Ã¿ÌìÉ±ÈË´ÎÊı
---KILLER_MAXCOUNT		= 8;	--Ã¿ÌìÉ±ÈËÉÏÏŞ8ÈË
+TSKID_KILLTASKID = 1082;	-- ½ÓÊÜµÄÄÄ¸öÈÎÎñ
+TSKID_KILLERDATE	= 1192;	--½ÓÈÎÎñÊ±µÄÈÕÆÚ
+TSKID_KILLERMAXCOUNT	= 1193;	--Ã¿ÌìÉ±ÈË´ÎÊı
+KILLER_MAXCOUNT		= 8;	--Ã¿ÌìÉ±ÈËÉÏÏŞ8ÈË
 
 --Thªm dßng kiÓm tra ®iÒu kiÖn tham gia khiªu chiÕn cña tæ ®éi - Modified by DinhHQ - 20110504
 Include("\\script\\vng_feature\\challengeoftime\\npcNhiepThiTran.lua")
 
 ContentList = {
-	"<#>NÕu ai cã ®ñ 160  s¸t thñ gi¶n trong tay th× giÊc méng trë thµnh ®Ö nhÊt s¸t thñ ®· xem nh­ hoµn thµnh. Mçi ngµy chØ cÇn hoµn thµnh <color=yellow>8nhiÖm vô<color>lµ ®­îc. <enter>H·y tiÕp nhËn nhiÖm vô “th¸ch thøc thêi gian” ®Ó thÓ nghiÖm søc m¹nh ®ång ®éivµ kh¶ n¨ng s¸t thñ cña m×nh.",
+	"<#>NÕu ai cã ®ñ 160  s¸t thñ gi¶n trong tay th× giÊc méng trë thµnh ®Ö nhÊt s¸t thñ ®· xem nh­ hoµn thµnh. Mçi ngµy chØ cÇn hoµn thµnh <color=yellow>1 nhiÖm vô<color> lµ ®­îc. <enter>H·y tiÕp nhËn nhiÖm vô “th¸ch thøc thêi gian” ®Ó thÓ nghiÖm søc m¹nh ®ång ®éi vµ kh¶ n¨ng s¸t thñ cña m×nh.",
 	"<#> NhiÖm vô s¸t thñ cÊp 20/killer20",
 	"<#> NhiÖm vô s¸t thñ cÊp 30/killer30",
 	"<#> NhiÖm vô s¸t thñ cÊp 40/killer40",
@@ -47,17 +47,32 @@ ContentList = {
 	"<#> Tham gia khiªu chiÕn/want_playboat",	--25
 	"<#> S¸t thñ luyÖn thøc tr­íc tiªn ph¶i b¾t ®Çu tõ viÖc tham gia khiªu chiÕn, ng­¬i d¸m tiÕp nhËn nhiÖm vô chø?",
 	"<#> Liªn quan ®Õn khiªu chiÕn/aboutchallenge",
-	"<#> Cø mçi giê hÖ thèng sÏ th«ng b¸o 1 lÇn. Thêi gian b¸o danh lµ 5 phót, thùc hiÖn chØ trong 30 phót. Mçi ng­êi chØ tèi ®a 2 lÇn/ngµy. Ph¶i ®o ®éi tr­ëng ®Õn b¸o danh. <enter>”NhiÖm vô th¸ch thøc thêi gian” gåm 2 khu vùc tham gia. S¬ cÊp: ng­êi ch¬i tõ cÊp 50 ®Õn 89, do ®éi tr­ëng mang 2 s¸t thñ gi¶n d­íi cÊp 90 (ngò hµnh bÊt kú) ®i b¸o danh. Cao cÊp: ng­êi ch¬i tõ cÊp 90, do ®éi tr­ëng mang 2 s¸t thñ gi¶n cÊp 90 (ngò hµnh bÊt kú) ®i b¸o danh. <enter>Néi trong thêi gian quy ®Şnh, nÕu v­ît qua hÕt 28 ¶i sÏ hoµn thµnh. Mçi ¶i phÇn th­ëng kinh nghiÖm sÏ kh¸c nhau. NÕu hoµn thµnh nhiÖm vô tr­íc thêi gian h¹n ®Şnh, phÇn th­ëng kinh nghiÖm sÏ cµng cao <enter>NÕu tr­íc thêi h¹n ®· hoµn thµnh, cã thÓ sÏ xuÊt hiÖn thªm 1 ¶i, trong ®ã cã nhiÒu phÇn th­ëng bÊt ngê (vËt phÈm ngÉu nhiªn, trang bŞ Hoµng Kim…). ChØ nh÷ng ®éi ®· v­ît 28 ¶i ®óng thêi gian quy ®Şnh míi cã tªn trong b¶ng xÕp h¹ng.",
-	"<#> NhiÖm vô \"Qu¸ quan tÇm b¶o\"/guoguan_xunbao",
-	"<#> Ta ®Õn nhËn th­ëng/rank_award",
-	"<#> Ta ®Õn xem xÕp h¹ng 5 ®éi cao nhÊt cña h«m nay./get_top5team"
+	"<#>Cø 11 giê hÖ thèng sÏ th«ng b¸o 1 lÇn. Thêi gian b¸o danh lµ 5 phót, thùc hiÖn chØ trong 30 phót. Mçi ng­êi chØ tèi ®a 1 lÇn/ngµy. Ph¶i ®o ®éi tr­ëng ®Õn b¸o danh. <enter>”NhiÖm vô th¸ch thøc thêi gian” gåm 2 khu vùc tham gia. S¬ cÊp: ng­êi ch¬i tõ cÊp 50 ®Õn 89, do ®éi tr­ëng mang 2 s¸t thñ gi¶n d­íi cÊp 90 (ngò hµnh bÊt kú) ®i b¸o danh. Cao cÊp: ng­êi ch¬i tõ cÊp 90, do ®éi tr­ëng mang 1 s¸t thñ gi¶n cÊp 90 (mua t¹i NPC TiÓu Ph­¬ng ) ®i b¸o danh. <enter>Néi trong thêi gian quy ®Şnh, nÕu v­ît qua hÕt 28 ¶i sÏ hoµn thµnh. Mçi ¶i phÇn th­ëng kinh nghiÖm sÏ kh¸c nhau. NÕu hoµn thµnh nhiÖm vô tr­íc thêi gian h¹n ®Şnh, phÇn th­ëng kinh nghiÖm sÏ cµng cao <enter>NÕu tr­íc thêi h¹n ®· hoµn thµnh, cã thÓ sÏ xuÊt hiÖn thªm 1 ¶i, trong ®ã cã nhiÒu phÇn th­ëng bÊt ngê (vËt phÈm ngÉu nhiªn, trang bŞ Hoµng Kim…). ChØ nh÷ng ®éi ®· v­ît 28 ¶i ®óng thêi gian quy ®Şnh míi cã tªn trong b¶ng xÕp h¹ng.",
+	"<#>NhiÖm vô \"Qu¸ quan tÇm b¶o\"/guoguan_xunbao",
+	"<#>Ta ®Õn nhËn th­ëng/rank_award",
+	"<#>Ta ®Õn xem xÕp h¹ng 5 ®éi cao nhÊt cña h«m nay./get_top5team"
 }
 
 killertabfile = new(KTabFile,"/settings/task/tollgate/killer/killer.txt","KILLER")
 
+Include("\\script\\global\\g7vn\\g7configall.lua")
+
 function main()
+
+	--dofile("script/task/tollgate/killer/nieshichen.lua");
+	--dofile("script/global/g7vn/g7configall.lua")
+	
+	if DangDuaTop == 1 then
+		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
+	if(nhiepthitranboss == 0) then
+		Say("NhiÕp thİ trÇn t¹m thêi ch­a më.")
+		return 1;
+	end
+
 	UWorld1082 = nt_getTask(1082);
-	local tbDialog = {ContentList[24],ContentList[17],ContentList[2],ContentList[3],ContentList[4],ContentList[5],ContentList[6],ContentList[7],ContentList[8],ContentList[9],ContentList[10],ContentList[11],ContentList[30], ContentList[31], ContentList[15]};
+	local tbDialog = {ContentList[25],ContentList[27],ContentList[15]};--{ContentList[24],ContentList[17],ContentList[2],ContentList[3],ContentList[4],ContentList[5],ContentList[6],ContentList[7],ContentList[8],ContentList[9],ContentList[10],ContentList[11],ContentList[30], ContentList[31], ContentList[15]};
 	if (tbBirthday0905:IsActDate() == 1) then
 		tinsert(tbDialog, 12, ContentList[29]);
 	end
@@ -123,7 +138,16 @@ function killer80()
 	showboss( 120 );
 end
 
+function killer901()
+Say("Chøc N¨ng Nµy T¹m §ãng")
+end
+
 function killer90()
+local nTime = tonumber(GetLocalDate("%H%M"));
+if nTime<=1200 then
+Say("NhiÖm Vô Nµy ChØ Më: 12h00-24h00 ")
+return 0;
+end
 	if ( killerCoundTakedTask(90, 350) == 0) then
 		return 0;
 	end;
@@ -145,7 +169,7 @@ function havetask()
 end
 
 function showboss(row)
-	Describe(DescLink_NieShiChen..ContentList[16], 12, killertabfile:getCell("BossName",row+1).."/#givetask("..(row+1)..")", killertabfile:getCell("BossName",row+2).."/#givetask("..(row+2)..")", killertabfile:getCell("BossName",row+3).."/#givetask("..(row+3)..")", killertabfile:getCell("BossName",row+4).."/#givetask("..(row+4)..")", killertabfile:getCell("BossName",row+5).."/#givetask("..(row+5)..")", killertabfile:getCell("BossName",row+6).."/#givetask("..(row+6)..")", killertabfile:getCell("BossName",row+7).."/#givetask("..(row+7)..")", killertabfile:getCell("BossName",row+8).."/#givetask("..(row+8)..")", killertabfile:getCell("BossName",row+9).."/#givetask("..(row+9)..")", killertabfile:getCell("BossName",row+10).."/#givetask("..(row+10)..")", "Trang kÕ /#showbossnext("..row..")", ContentList[15]);
+	Describe(DescLink_NieShiChen..ContentList[16], 12, killertabfile:getCell("BossName",row+1).."/#givetask("..(row+1)..")", killertabfile:getCell("BossName",row+2).."/#givetask("..(row+2)..")", killertabfile:getCell("BossName",row+3).."/#givetask("..(row+3)..")", killertabfile:getCell("BossName",row+4).."/#givetask("..(row+4)..")", killertabfile:getCell("BossName",row+5).."/#givetask("..(row+5)..")", killertabfile:getCell("BossName",row+6).."/#givetask("..(row+6)..")", killertabfile:getCell("BossName",row+7).."/#givetask("..(row+7)..")", killertabfile:getCell("BossName",row+8).."/#givetask("..(row+8)..")", killertabfile:getCell("BossName",row+9).."/#givetask("..(row+9)..")", killertabfile:getCell("BossName",row+10).."/#givetask("..(row+10)..")", "Trang sau/#showbossnext("..row..")");
 end
 
 function showbossnext(row)

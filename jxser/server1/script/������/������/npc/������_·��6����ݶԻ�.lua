@@ -1,23 +1,22 @@
---Á½ºşÇø °ÍÁêÏØ Â·ÈË6Óá¾ÅÖİ¶Ô»°
+-- script viet hoa By http://tranhba.com  hai hå khu ba l¨ng huyÒn ng­êi ®i ®­êng 6 du Cöu ch©u ®èi tho¹i 
 
-function main(sel)
+function main(sel) 
 
-i = random(0,2)
+i = random(0,2) 
 
-if (i == 0) then
-Say("Ngµy tr­íc §¹i Th¸nh Thiªn V­¬ng khëi binh t¹i §éng §×nh hå,thÕ thiªn hµnh ®¹o, diÖt b¹o cøu chóng sinh,®­îc d©n yªu mÕn, lµm triÒu ®×nh rÊt lo sî, ph¸i binh tiªu diÖt. Thiªn V­¬ng qu©n İt ®Şch ®«ng, bŞ b¾t sau ®ã ®· hy sinh ",0)
-return
-end;
+if (i == 0) then 
+Say("Du Cöu ch©u # ngµy x­a ®¹i th¸nh thiªn v­¬ng d­¬ng yªu ë §éng ®×nh hå khëi binh , thay trêi hµnh ®¹o , sõ c­êng phï nh­îc , s©u d©n t©m , kÕt qu¶ ®­a tíi triÒu ®×nh khñng ho¶ng , ph¸i binh tiªu diÖt , Thiªn v­¬ng qu¶ bÊt ®Şch chóng , bŞ b¾t sau th¶m tao s¸t h¹i . ",0) 
+return 
+end; 
 
-if (i == 1) then
-Say("Khi Thiªn V­¬ng bŞ giÕt, D­¬ng c«ng tö cña ngµi ®ang t¹i ngo¹i häc nghÖ, kh«ng thÓ vÒ nh×n mÆt. Khi quay l¹i §éng §×nh Hå, tËp hîp anh em nghÜa qu©n, lËp ra Thiªn V­¬ng Bang. ",0)
-return
-end;
+if (i == 1) then 
+Say("Du Cöu ch©u # Thiªn v­¬ng ngé h¹i lóc , h¾n ThiÕu c«ng tö ®ang bªn ngoµi häc nghÖ , v× vËy may m¾n tho¸t khái gÆp n¹n , h¾n trë l¹i §éng ®×nh hå sau , lÇn n÷a tô tËp t¸n l¹c chung quanh ®İch nghÜa qu©n huynh ®Ö , tæ chøc Thiªn v­¬ng gióp . ",0) 
+return 
+end; 
 
-if (i == 2) then
-Say("D­¬ng c«ng tö vâ nghÖ cao c­êng, tµi trİ h¬n ng­êi, Thiªn V­¬ng Bang d­íi bµn tay l·nh ®¹o cña anh ta, ngµy cµng ph¸t triÓn, rÊt ®­îc lßng cña l·o b¸ t¸nh. Nh­ng tõ tr­íc ®Õn giê ta ch­a tõng ®­îc thÊy mÆt tËt cña D­¬ng c«ng tö,nghe nãi ®ã lµ mét thiÕu niªn kh«i ng« tuÊn tó. ",0)
-return
-end;
+if (i == 2) then 
+Say("Du Cöu ch©u # D­¬ng c«ng tö vâ nghÖ cao c­êng , ®¶m thøc h¬n ng­êi , Thiªn v­¬ng gióp khi h¾n ®İch d­íi sù h­íng dÉn cña ngµy cµng h­ng thŞnh , s©u chóng ta d©n chóng ñng ®¸i . bÊt qu¸ chóng ta cho tíi b©y giê ch­a tõng thÊy qua D­¬ng c«ng tö ®İch mÆt mòi thùc , nghe nãi lµ c¸ anh tuÊn thiÕu niªn nga . ",0) 
+return 
+end; 
 
-end;
-
+end; 

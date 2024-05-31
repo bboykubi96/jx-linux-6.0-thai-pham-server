@@ -1,43 +1,43 @@
--- ÁúÃÅÕò-¹ÅÑô¶´-»ú¹Ø4(ÊÀ½çÈÎÎñ¡°¾ÈÐ¡¾ê¡±)
--- by£ºDan_Deng(2004-03-03)
+-- script viet hoa By http://tranhba.com  long m«n trÊn - cæ d­¬ng ®éng - c¬ quan 4( thÕ giíi nhiÖm vô “ cøu tiÓu ®Ñp ”) 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2004-03-03) 
 
-function main(sel)
-	Uworld41 = GetTask(41)
-	if (GetByte(Uworld41,1) == 30) and (HaveItem(352) == 1) then		-- ÈÎÎñÖÐ£¬ÓÐ¡°»ú¹ØÔ¿³×¡±£¬ÈËÎ´¾È³ö
-		if (GetBit(Uworld41,12) == 0) then				-- »ú¹Øµ±Ç°Îª¹Ø±Õ
-			Say("HiÖn giê c¬ quan ®· bÞ khãa, b¹n cã muèn më nã ra kh«ng?",2,"Më ra /Turn_On","Cø tiÕp tôc ®ãng cöa /Turn_Off")
-		else
-			Say("HiÖn giê c¬ quan ®· më, b¹n cã muèn ®ãng nã l¹i kh«ng?",2,"TiÕp tôc më cöa /Turn_On","§ãng/Turn_Off")
-		end
-	end
-end
+function main(sel) 
+Uworld41 = GetTask(41) 
+if (GetByte(Uworld41,1) == 30) and (HaveItem(352) == 1) then -- script viet hoa By http://tranhba.com  nhiÖm vô trung , cã “ c¬ quan c¸i ch×a khãa ” , ng­êi kh«ng cøu ra 
+if (GetBit(Uworld41,12) == 0) then -- script viet hoa By http://tranhba.com  c¬ quan tr­íc mÆt v× t¾t 
+Say("C¬ quan b©y giê lµ t¾t ®Ých tr¹ng th¸i , ng­¬i muèn ®em nã më ra sao ?",2,"Më ra /Turn_On","TiÕp tôc gi÷ v÷ng t¾t /Turn_Off") 
+else 
+Say("C¬ quan b©y giê lµ më ra ®Ých tr¹ng th¸i , ng­¬i muèn ®em nã t¾t sao ? ",2,"TiÕp tôc gi÷ v÷ng më ra /Turn_On","T¾t /Turn_Off") 
+end 
+end 
+end 
 
-function Turn_On()
---	Talk(1,"","»ú¹Ø´ò¿ªÁË¡£")
-	Msg2Player("C¬ quan ®· më ra")
-	Cur_Switchs = SetBit(GetTask(41),12,1)
-	SetTask(41,Cur_Switchs)
-	Check_Switch()
-end
+function Turn_On() 
+-- script viet hoa By http://tranhba.com  Talk(1,"","C¬ quan më ra . ") 
+Msg2Player("C¬ quan më ra ") 
+Cur_Switchs = SetBit(GetTask(41),12,1) 
+SetTask(41,Cur_Switchs) 
+Check_Switch() 
+end 
 
-function Turn_Off()
---	Talk(1,"","»ú¹Ø¹Ø±ÕÁË¡£")
-	Msg2Player("C¬ quan ®· khãa l¹i")
-	Cur_Switchs = SetBit(GetTask(41),12,0)
-	SetTask(41,Cur_Switchs)
-	Check_Switch()
-end
+function Turn_Off() 
+-- script viet hoa By http://tranhba.com  Talk(1,"","C¬ quan ®ãng cöa . ") 
+Msg2Player("C¬ quan ®ãng cöa ") 
+Cur_Switchs = SetBit(GetTask(41),12,0) 
+SetTask(41,Cur_Switchs) 
+Check_Switch() 
+end 
 
-function Check_Switch()
-	Cur_Switchs = GetByte(GetTask(41),2)
-	Set_Switchs = GetByte(GetTask(41),3)
-	if (Cur_Switchs == Set_Switchs) then			-- ÄÜ¹»Ò»ÖÂ£¬¾È³öÐ¡¾ê
-		Uworld41 = SetByte(GetTask(41),1,100)
-		SetTask(41,Uworld41)
-		DelItem(352)						-- ³É¹¦ºóÔòÉ¾³ýÔ¿³×
-		Talk(1,"","Më ®­îc c¬ quan! Cøu thµnh c«ng TiÓu Quyªn")
-		Msg2Player("B¹n më ®­îc c¬ quan, cøu thµnh c«ng TiÓu Quyªn ")
-	else
-		Msg2Player("Nh­ng khi b¹n trë l¹i H¾c lao ®Èy c¸nh cöa th× nã vÉn kh«ng hÒ ®éng ®Ëy ")
-	end
-end
+function Check_Switch() 
+Cur_Switchs = GetByte(GetTask(41),2) 
+Set_Switchs = GetByte(GetTask(41),3) 
+if (Cur_Switchs == Set_Switchs) then -- script viet hoa By http://tranhba.com  cã thÓ nhÊt trÝ , cøu ra tiÓu ®Ñp 
+Uworld41 = SetByte(GetTask(41),1,100) 
+SetTask(41,Uworld41) 
+DelItem(352) -- script viet hoa By http://tranhba.com  sau khi thµnh c«ng lµ thñ tiªu c¸i ch×a khãa 
+Talk(1,"","Gi¶i trõ c¬ quan , ng­¬i thµnh c«ng cøu ra liÔu tiÓu ®Ñp ") 
+Msg2Player("Ng­¬i ®· gi¶i trõ c¬ quan , cøu ra tiÓu ®Ñp ") 
+else 
+Msg2Player("Nh­ng lµ ng­¬i trë l¹i ngôc tèi thö ®Èy mét c¸i cöa , l¹i vÉn kh«ng nhóc nhÝch ") 
+end 
+end 

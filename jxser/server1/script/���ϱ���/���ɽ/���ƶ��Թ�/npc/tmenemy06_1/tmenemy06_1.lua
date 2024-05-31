@@ -1,14 +1,14 @@
---description: ÌÆÃÅ30¼¶ÈÎÎñ Çà³ÇÉ½°×ÔÆ¶´°ó·Ë
---author: yuanlan	
---date: 2003/3/11
--- Update: Dan_Deng(2003-08-13)
+-- script viet hoa By http://tranhba.com description: §­êng m«n 30 cÊp nhiÖm vô nói Thanh Thµnh m©y tr¾ng ®éng trãi phØ 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/11 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-13) 
 
-function OnDeath()
-	UTask_tm = GetTask(2);
+function OnDeath() 
+UTask_tm = GetTask(2); 
 	if (UTask_tm == 30*256+20) then 
-		Talk(1,"","Hõ! Muèn ®¸nh b¹i ta µ! §õng t­ëng r»ng dÔ dµng ®o¹t ®­îc 'Háa KhÝ Phæ'. Thµnh thËt nãi víi ng­¬i, 'Háa KhÝ Phæ' ®ang ®Ó trong r­¬ng b¸u. Ch×a khãa r­¬ng ta ®Ó trong ®éng, ng­¬i cã giái h·y vµo ®éng mµ t×m!")
+Talk(1,"","Hõ # coi nh­ ®¸nh b¹i ta , ng­¬i còng ®õng muèn dÔ dµng lÊy ®­îc # háa khÝ phæ # . ®µng hoµng nãi cho ng­¬i biÕt , # háa khÝ phæ # sÏ ë ®ã c¸ b¶o r­¬ng trong , khai b¶o r­¬ng ®Ých c¸i ch×a khãa ng­¬i cã b¶n l·nh ®ang ë trong ®éng tõ tõ t×m ®i !") 
 		SetTask(2, 30*256+30)
-		AddNote("§¸nh b¹i §¹i §Çu Môc Cuång Sa, biÕt ®­îc Ho¶ KhÝ Phæ ®­îc cÊt trong mét b¶o r­¬ng. CÇn ph¶i t×m ®­îc ch×a khãa! ")
-		Msg2Player("§¸nh b¹i §¹i §Çu Môc Cuång Sa, biÕt ®­îc Ho¶ KhÝ Phæ ®­îc cÊt trong mét b¶o r­¬ng. CÇn ph¶i t×m ®­îc ch×a khãa! ")
-	end
-end;	
+AddNote("§¸nh b¹i ®Çu môc cuång sa , biÕt háa khÝ phæ ®Æt ë b¶o r­¬ng trong ! ") 
+Msg2Player("§¸nh b¹i ®Çu môc cuång sa , biÕt háa khÝ phæ ®Æt ë b¶o r­¬ng trong ! ") 
+end 
+end; 

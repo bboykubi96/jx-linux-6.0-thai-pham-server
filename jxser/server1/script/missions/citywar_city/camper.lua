@@ -46,7 +46,7 @@ function GameOver()
 	end
 	
 	
-	-- ½±ÀøÅÅÐÐ°ñÉÏÇ°10Ãû
+	-- Phan Thuong 10 dau tien nhan duoc diem kinh nghiem hoat dong cong thanh chien tam tru
 	for i = 1, 10 do
 		local szName,nZhanGong = BT_GetTopTenInfo(i, PL_TOTALPOINT);
 		if szName ~= nil and szName ~= "" then
@@ -68,7 +68,7 @@ function GameOver()
 	end
 	OldPlayer = PlayerIndex;
 	
-	
+	-- Phan Thuong 10 may man nhan duoc vat pham thuong hoat dong cong thanh chien tam tru
 	for i  = 1, PCount do 
 		PlayerIndex = PTab[i]
 		
@@ -83,6 +83,13 @@ end;
 
 function citywar_awardplayer()
 	AddItem(6,1,1075,1,1,0);
+	AddItem(6,1,2744,1,1,0);--Chia khoa nhu y
+	AddItem(6,1,2744,1,1,0);
+	AddItem(6,1,2744,1,1,0);
+	AddItem(6,1,2744,1,1,0);
+	AddItem(6,1,2744,1,1,0);
+	AddItem(6,1,2744,1,1,0);
+	AddItem(6,1,2744,1,1,0);
 	local szLog = format("B¹n nhËn ®­îc phÇn th­ëng C«ng thµnh chiÕn——%s","LÔ hép qu¶ huy hoµng")
 	Msg2Player(szLog);
 	WriteLog(format("[citywar_award]\t%s\tName:%s\tAccount:%s\t%s",

@@ -31,6 +31,8 @@
 --	程序将会理解为 type = nil; amount = 1 的一组奖品，以此方便奖品数组书写
 --	即这种写法等效为：Award = {nil, {Award1, Award2, ……}, 0}
 
+Include("\\script\\task\\task_addplayerexp.lua")  --给玩家累加经验的公共函数
+
 __award_log_HEAD = {"[AWARD_GIVE]", {date, "%y-%m-%d,%H:%M"}, GetAccount, GetName}
 __award_log_HEAD.sep = "\t"
 __award_log_HEAD.bra = {"", "\t"}
@@ -53,19 +55,7 @@ end
 
 --可升级的加经验
 function award_addexp( awardexp )
-	local mapfile = "\\settings\\npc\\player\\level_exp.txt"
-	if (TabFile_Load(mapfile, mapfile) == 0) then 
-		__award_log("award_addexp : TabFile_Load Error!"..mapfile)
-		return
-	end
-	while( awardexp > 0 ) do
-		local curexp = GetExp()
-		local curlel = GetLevel()
-		local fullexp = tonumber(TabFile_GetCell(mapfile, curlel + 1, 2))
-		local needexp = fullexp - curexp
-		AddOwnExp( awardexp )
-		awardexp = awardexp - needexp
-	end
+	tl_addPlayerExp(awardexp)
 end
 
 --给与奖品

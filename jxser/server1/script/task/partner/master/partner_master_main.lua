@@ -6,12 +6,12 @@
 -- 2005/09/09 PM 11:19
 
 -- Ö»ÓĞËûºÍËıÁ½¸öÈË
--- ËûÃÇÏµ°®
+-- ËûÃÇÏà°®
 -- Ëı¼ÇµÃ
--- ËûµÄÊÖ¸§Ä¦ÔÚËıµÄÆ¤·ôÉÏµÄÎ¢Çé
--- ËûµÄÇ×ÎÇÏñÄñÈºÔÚÌì¿Õ¢Ó¹ı
+-- ËûµÄÊÖ¸§Ä¦ÔÚËıµÄÆ¤·ôÉÏµÄÎÂÇé
+-- ËûµÄÇ×ÎÇÏñÄñÈºÔÚÌì¿ÕÂÓ¹ı
 -- ËûÔÚËıÉíÌåÀïÃæµÄ±©ìåºÍ·Å×İ
--- ËûÈëË¯Ê±ºòµÄÑù×Ó³ä¢ú´¿Õæ
+-- ËûÈëË¯Ê±ºòµÄÑù×Ó³äÂú´¿Õæ
 -- Ëı¼ÇµÃ£¬Çå³¿ËıĞÑ¹ıÀ´µÄÒ»¿Ì£¬ËûÔÚËıµÄÉí±ß
 -- ËıÕö×ÅÑÛ¾¦£¬¿´Êï¹âÍ¸¹ı´°Á±Ò»µãÒ»µãµØÕÕÉä½øÀ´
 -- ËıµÄĞÄÀïÒòÎªĞÒ¸£¶øÌÛÍ´
@@ -33,13 +33,14 @@ taskProcess_000 = inherit(CProcess, {
 
 	taskEntity = function(self, nCondition)
 	
-		local strMain = { 
-                               "<npc> tèng kim lo¹n chiÕn , M«ng Cæ quËt khëi, nhiÒu lÇn cïng nam tèng thÇm th«ng kho¶n khóc ®İch mËt m­u , còng bŞ kim quèc c­íp lÊy ®­îc , t©y h¹ quèc chñ rèt côc ph¸t gi¸c ta ®¹i Tèng v­¬ng h­íng ®· tõ tõ h­íng ®i phóc mÊt ®İch l»n ranh . v× vËy h¾n bİ khiÕn/sai nhÊt phÈm ®­êng vâ sÜ tiÕn vµo Trung Nguyªn , t×m kiÕm mét mãn mÊt tİch ®· l©u ®å . cô thÓ lµ thø g× kh«ng biÕt ®­îc , bÊt qu¸ chóng ta l¹i tõ chuyÖn nµy thuËn ®»ng sê d­a t×m ra liÔu mét İt ®Çu mèi . bÊt qu¸ nghÜa qu©n ®¾c lùc kiÖn t­íng rèi rİt ë c¸c trªn chiÕn tr­êng trî gióp triÒu ®×nh chèng l¹i kim quèc , tr­íc m¾t ta b©y giê nh©n thñ thiÕu hôt . hy väng ng­¬i cã thÓ gióp bËn rén lµm mÊy mãn ®iÒu tra . nh÷ng nhiÖm vô nµy chia ra liÖt cö xuèng . ë ng­¬i hoµn thµnh t­¬ng øng kŞch t×nh nhiÖm vô sau , sau nµy mçi ngµy , mçi vŞ ®ång b¹n còng cã thÓ lùa chän hai ®· hoµn thµnh kŞch t×nh nhiÖm vô tiÕp tôc lµm mét lÇn , hy väng ng­¬i ngµn v¹n gióp ta mét c¸i !", 
-                            "ThŞ lang chi tö/#taskProcess_001:doTaskEntity()", 
-                            "Khèng xµ nh©n chi bİ/#taskProcess_002_01:doTaskEntity()", 
-                            "Ch©u b¸u th­¬ng nh©n /#taskProcess_003_Main:doTaskEntity()", 
-                            "DŞ téc vâ sÜ /#taskProcess_004_Main:doTaskEntity()", 
-                            "Ta ®Òu kh«ng muèn nhËn, sau nµy trë l¹i./OnTaskExit"}
+		local strMain = {
+			"<npc>ËÎ½ğÂÒÕ½£¬ÃÉ¹ÅáÈÆğ£¬Î÷±±Âù»ÄÖ®µØµÄÏÄ¹ú¸ĞÊÜµ½ÁËÇ°ËùÎ´ÓĞµÄÎ£»ú¡£ÂÅ´ÎÓëÄÏËÎ°µÍ¨¿îÇúµÄÃÜÄ±£¬¶¼±»½ğ¹ú½Ù»ñ£¬Î÷ÏÄ¹úÖ÷ÖÕÓÚ·¢¾õÎÒ´óËÎÍõ³¯ÒÑÖğ½¥×ßÏò¸²ÍöµÄ±ßÔµ¡£ÓÚÊÇËûÃØÇ²Ò»Æ·ÌÃÎäÊ¿½øÈëÖĞÔ­£¬Ñ°ÕÒÒ»¼şÊ§×ÙÒÑ¾ÃµÄ¶«Î÷¡£¾ßÌåÊÇÊ²Ã´¶«Î÷²»µÃ¶øÖª£¬²»¹ıÎÒÃÇÈ´´ÓÕâ¼şÊÂÉÏË³ÌÙÃş¹ÏÕÒ³öÁËÒ»Ğ©ÏßË÷¡£²»¹ıÒå¾üµÃÁ¦¸É½«·×·×ÔÚ¸÷Õ½³¡ÉÏ°ïÖú³¯Í¢¿¹»÷½ğ¹ú£¬Ä¿Ç°ÎÒÊµÔÚÈËÊÖ¶ÌÈ±¡£Ï£ÍûÄãÄÜ°ïÃ¦×ö¼¸¼şµ÷²é¡£ÕâĞ©ÈÎÎñ·Ö±ğÁĞ¾ÙÁËÏÂÀ´¡£ÔÚÄãÍê³ÉÁËÏàÓ¦¾çÇéÈÎÎñºó£¬½ñºóÃ¿Ìì£¬Ã¿Î»Í¬°é¶¼¿ÉÒÔÑ¡ÔñÁ½¸öÒÑÍê³ÉµÄ¾çÇéÈÎÎñ¼ÌĞø×öÒ»´Î£¬ÎÒ»á¶ÔÄã½øĞĞ²¹³¥µÄ£¬ÖØÖØµÄ²¹³¥¡£¹ú¼Ò´¦ÓÚÎ£ÄÑÖ®ÖĞ£¬Ï£ÍûÄãÇ§Íò°ïÎÒÒ»°Ñ£¡",
+			"ÊÌÀÉÖ®ËÀ/#taskProcess_001:doTaskEntity()",
+			"¿ØÉßÈËÖ®ÃØ/#taskProcess_002_01:doTaskEntity()",
+			"Öé±¦ÉÌÈË/#taskProcess_003_Main:doTaskEntity()",
+			"Òì×åÎäÊ¿/#taskProcess_004_Main:doTaskEntity()",
+			"ÎÒ¶¼²»Ïë½Ó£¬³ÙĞ©ÔÙÀ´°É/OnTaskExit"
+		}
 		
 		if nCondition==1 then
 			SelectDescribe(strMain);

@@ -1,8 +1,8 @@
---西南北区 唐门to医药房
---Trap ID：西南北区 30
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu Л阯g m玭 to y dc ph遪g 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 30 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(32, 1595, 3205);
+NewWorld(32, 1595, 3205); 
 
 end;

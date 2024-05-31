@@ -1,46 +1,86 @@
--- Edited by Giangleloi WwW.ClbGamesVN.COM
+QUESTKEY_TICKET = 488;					-- ÒøÆ±µÄÎïÆ·ID
 
-G_COIN = 20 -- 1 lan rut duoc bao nhieu tien dong, mac dinh 20, by Giangleloi
 function OnExtPointChange_Proc(nExtPointIndex, nChangeValue)
 	if (ExtFunTab[nExtPointIndex + 1] == nil) then
-		--print("Error!!!!!!!!, No ExtPoint Fun On"..nExtPointIndex)
-		--WriteGoldLog("Importacne Error!!!!!!!!, No ExtPoint CallFun On"..nExtPointIndex..", "..GetAccount().." "..GetName().." nExtPointIndex"..nExtPointIndex.." nChangeValue"..nChangeValue, 0, 0, 0, 0)
-		return 0;
+		print("Error!!!!!!!!, No ExtPoint Fun On"..nExtPointIndex)
+		WriteGoldLog("Importacne Error!!!!!!!!, No ExtPoint CallFun On"..nExtPointIndex..", "..GetAccount().." "..GetName().." nExtPointIndex"..nExtPointIndex.." nChangeValue"..nChangeValue, 0, 0, 0, 0)
+		return
 	end
 	ExtFunTab[nExtPointIndex + 1](nChangeValue)
-	return 1;
 end
 
 function OnPayYuanBao(nChangeValue)
 	nValue = -nChangeValue
-	if (nValue == 1) then
+	if (nValue == 4) then
+	--ÄÃ½ğÔª±¦
+		AddEventItem(343)
+		SaveNow(); -- Á¢¼´´æÅÌ
+		WriteGoldLog( GetAccount().."("..GetName()..") MAKE a GOLD with a HIGH CARD", 1, 0, 0, 0 );
+		Talk(1,"","Ç®×¯ÀÏ°å£ºÕâÊÇÄúµÄ½ğÔª±¦£¬ÇëÄÃºÃà¶£¡")
+		Msg2Player( "Äú»ñµÃ1¸ö½ğÔª±¦.½ğÔª±¦²Ù×÷ÒÑ³É¹¦£¡");
+	elseif (nValue == 1) then
 	--ÄÃÒøÔª±¦
-AddStackItem(5, 6, 1, 147, 6, 1, 1, 1)
-				AddStackItem(5, 6, 1, 147, 7, 1, 1, 1)
-		AddStackItem(G_COIN,4,417,1,1,0,0,0)--Add G_COIN tien dong
+		AddEventItem(342)
 		SaveNow(); -- Á¢¼´´æÅÌ
 		WriteGoldLog( GetAccount().."("..GetName()..") MAKE a SILVER with a LOW CARD", 0, 1, 0, 0 );
-		local nCurValue = GetExtPoint(1)
-		WriteLog(date("%Y%m%d %H%M%S").."\t".." Tµi kho¶n"..GetAccount().."\t"..GetName().."\t".." lÊy 20 tiÒn ®ång"..nCurValue*20)
- 		Say("Kh¸ch quan ®· rót thµnh c«ng 20 TiÒn ®ång! Xin kiÓm tra l¹i!", 0)
-		Msg2Player("NhËn ®­îc 20 TiÒn ®ång!");
+ 		Talk(1,"","Ç®×¯ÀÏ°å£ºÕâÊÇÄúµÄÒøÔª±¦£¬ÇëÄÃºÃà¶£¡")
+		Msg2Player( "Äú»ñµÃ1¸öÒøÔª±¦.ÒøÔª±¦²Ù×÷ÒÑ³É¹¦£¡");
  	elseif( nValue > 1) then
-			WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YUANBAO , MUST PAY(1) BUT PAY("..nValue..")!!!!", 0,0,0,0)
-			Msg2Player("Cã lçi x¶y ra trong qu¸ tr×nh quy ®æi! Xin liªn hÖ GM ®Ó söa lçi!")
+			WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YUANBAO , MUST PAY(4) BUT PAY("..nValue..")!!!!", 0,0,0,0)
+			Msg2Player("Ôª±¦²Ù×÷³ö´í£¬ÒÑ±¸µµ£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡")
 	else
 			WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YUANBAO PAYVALUE <= 0", 0,0,0,0)
-			Say("Xin lçi, kh¸ch quan kh«ng kh«ng cã göi TiÒn ®ång ë chç bæn trang!", 0)
+			Say("Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÔª±¦¡£", 0)
 	end
 end
 
+function OnPayYinPiao(nChangeValue)
+--ÄÃÒøÆ±
+	nValue = -nChangeValue
+	  if (nValue == 1) then
+		AddEventItem(QUESTKEY_TICKET)
+		SaveNow(); -- Á¢¼´´æÅÌ
+		WriteGoldLog( GetAccount() .. "(" .. GetName() .. ") MAKE a TICKET:"..szItemEnName, 0, 0, 0, 1 );
+		Say("Ç®×¯ÀÏ°å£ºÕâÊÇÄúµÄÒøÆ±£¬ÇëÄÃºÃà¶£¡",0)
+		Msg2Player( "Äú»ñµÃ1¸öÒøÆ±.ÒøÆ±²Ù×÷ÒÑ³É¹¦£¡");
+		elseif (nValue > 1) then
+				WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YINPIAO , MUST PAY(1) BUT PAY("..nValue..")!!!!")
+				Msg2Player("ÒøÆ±²Ù×÷³ö´í£¬ÒÑ±¸µµ£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡")
+		else
+				Say("Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£", 0)
+				WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YUANBAO PAYVALUE <= 0", 0,0,0,0)
+	  end
+end
+
+function LiguanLog(object)
+	WriteLog(date("%H%M%S") .. "£ºÕËºÅ£º" .. GetAccount() .. "£¬½ÇÉ«£º" .. GetName() .. "£¬" .. object);
+end
+	
+function OnYearGift(nChangeValue)
+	nValue = -nChangeValue
+			if (nValue == 1) then
+				AddStackItem(5, 6, 1, 147, 6, 1, 1, 1)
+				AddStackItem(5, 6, 1, 147, 7, 1, 1, 1)
+				LiguanLog( "ÓÉÓÚ³äÖµÄê¿¨»ñµÃ5¸ö6¼¶Ğş¾§¿óÊ¯ºÍ5¸ö7¼¶Ğş¾§¿óÊ¯");
+				Say("Äú»ñµÃ5¸ö6¼¶Ğş¾§¿óÊ¯ºÍ5¸ö7¼¶Ğş¾§¿óÊ¯", 0)
+				Msg2Player( "Äú»ñµÃ5¸ö6¼¶Ğş¾§¿óÊ¯ºÍ5¸ö7¼¶Ğş¾§¿óÊ¯.»ñÈ¡Äê¿¨ÀñÎï²Ù×÷³É¹¦£¡");
+			elseif (nValue > 1) then
+				Msg2Player("¶Ô²»ÆğÄê¿¨ÀñÎï»ñÈ¡²Ù×÷³ö´í£¬ÒÑ±¸µµ£¬ÇëÓëGMÁªÏµ£¡")
+				WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YEARGIFT , MUST PAY(3,1) BUT PAY(3"..nValue..")!!!!",0,0,0,0)				
+			else
+				Say("¶Ô²»Æğ£¬ÄúÃ»ÓĞÄê¿¨ÀñÎï»òÒÑÁìÈ¡¹ıÁË£¬ÈçÓĞÎÊÌâÇëÓëGMÁªÏµ¡£", 0)
+				WriteGoldLog(GetAccount().."("..GetName()..") PAY EXPOINT ERROR ON YUANBAO PAYVALUE <= 0", 0,0,0,0)
+			end
+end		
+
+
 ExtFunTab=
-{
-	nil,
- 	OnPayYuanBao,
- 	nil,
- 	nil,
- 	nil,
- 	nil,
- 	nil,
- 	nil
+{nil,
+ nil, -- OnPayYuanBao,
+ OnPayYinPiao,
+ OnYearGift,
+ nil,
+ nil,
+ nil,
+ nil
 };

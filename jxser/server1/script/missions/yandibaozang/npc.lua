@@ -61,53 +61,63 @@ YDBZ_map_posfiles = {
 YDBZ_map_npc = {
 	-- 1
 	{
-		{nil, 1299, "M«n ®Ö Thiªn V­¬ng Bang", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1289, "Cæ Thiªn KhuyÕt", 95, 0, 1, 1, func_npc_getpos}
+		-- {nil, 1299, "M«n ®Ö Thiªn V­¬ng Bang", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1299, "M«n ®Ö Thiªn V­¬ng Bang", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1289, "Cæ Thiªn KhuyÕt", 65, 0, 1, 1, func_npc_getpos}
 	},
 	-- 2
 	{
-		{nil, 1300, "§Ö tö ThiÕu l©m", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1290, "Chøng Ng«n", 95, 0, 1, 1, func_npc_getpos}
+		-- {nil, 1300, "§Ö tö ThiÕu l©m", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1300, "§Ö tö ThiÕu l©m", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1290, "Chøng Ng«n", 65, 0, 1, 1, func_npc_getpos}
 	},
 	-- 3
 	{
-		{nil, 1301, "Ngò §éc gi¸o ®å", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1291, "ChiÕu NhËt MiÖn", 95, 1, 1, 1, func_npc_getpos}
+		-- {nil, 1301, "Ngò §éc gi¸o ®å", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1301, "Ngò §éc gi¸o ®å", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1291, "ChiÕu NhËt MiÖn", 65, 1, 1, 1, func_npc_getpos}
 	},
 	-- 4
 	{
-		{nil, 1302, "§­êng M«n gia ®inh", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1292, "§­êng H¹o", 95, 1, 1, 1, func_npc_getpos}
+		-- {nil, 1302, "§­êng M«n gia ®inh", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1302, "§­êng M«n gia ®inh", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1292, "§­êng H¹o", 65, 1, 1, 1, func_npc_getpos}
 	},
 	-- 5
 	{
-		{nil, 1303, "§Ö tö Nga My", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1293, "DiÖu NhÊt", 95, 2, 1, 1, func_npc_getpos}
+		-- {nil, 1303, "§Ö tö Nga My", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1303, "§Ö tö Nga My", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1293, "DiÖu NhÊt", 65, 2, 1, 1, func_npc_getpos}
 	},
 	-- 6
 	{
-		{nil, 1304, "§Ö t?Thóy Yªn ", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1294, "LÖ ChiÕt Mai", 95, 2, 1, 1, func_npc_getpos}
+		-- {nil, 1304, "§Ö tö Thóy Yªn ", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1304, "§Ö tö Thóy Yªn ", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1294, "LÖ ChiÕt Mai", 65, 2, 1, 1, func_npc_getpos}
 	},
 	-- 7
 	{
-		{nil, 1305, "Thiªn NhÉn Gi¸o ®å", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1295, "§oan Méc Li", 95, 3, 1, 1, func_npc_getpos}
+		-- {nil, 1305, "Thiªn NhÉn Gi¸o ®å", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1305, "Thiªn NhÉn Gi¸o ®å", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1295, "§oan Méc Li", 65, 3, 1, 1, func_npc_getpos}
 	},
 	-- 8
 	{
-		{nil, 1306, "§Ö tö C¸i Bang", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1296, "B¹ch Lang", 95, 3, 1, 1, func_npc_getpos}
+		-- {nil, 1306, "§Ö tö C¸i Bang", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1306, "§Ö tö C¸i Bang", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1296, "B¹ch Lang", 65, 3, 1, 1, func_npc_getpos}
 	},
 	-- 9
 	{
-		{nil, 1307, "§Ö tö Vâ §ang", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1297, "TÇn HiÓu Th­", 95, 4, 1, 1, func_npc_getpos}
+		-- {nil, 1307, "§Ö tö Vâ §ang", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1307, "§Ö tö Vâ §ang", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1297, "TÇn HiÓu Th­", 65, 4, 1, 1, func_npc_getpos}
 	},
 	-- 10
 	{
-		{nil, 1308, "§Ö tö C«n L«n", 95, -1, 0, 60, func_npc_getpos},
-		{nil, 1298, "L¨ng Tiªu Tö", 95, 4, 1, 1, func_npc_getpos}
+		-- {nil, 1308, "§Ö tö C«n L«n", 95, -1, 0, 60, func_npc_getpos},
+		{nil, 1308, "§Ö tö C«n L«n", 65, -1, 0, 20, func_npc_getpos},
+		{nil, 1298, "L¨ng Tiªu Tö", 65, 4, 1, 1, func_npc_getpos}
 	},
 };
 
@@ -300,6 +310,7 @@ function YDBZ_add_npc(file,nteams,nway,nstate)
 			YDBZ_npc_proceed(item);
 			
 			-- DEBUG
+			-- print("Count: "..npc_count.." - Level: "..level.." - IsBoss: "..isboss)
 	--		print("AddNpcEx");
 	--		print(format("id:%d", id));
 	--		print(format("level:%d", level));
@@ -310,7 +321,8 @@ function YDBZ_add_npc(file,nteams,nway,nstate)
 	
 			local npc_index = AddNpcEx(
 				id,			-- ID
-				level,		-- µÈ¼¶
+				-- level,		-- µÈ¼¶
+				60,		-- µÈ¼¶
 				series,		-- ÎåÐÐ
 				SubWorld,	-- µØÍ¼
 				px ,	-- X×ø±ê
@@ -372,7 +384,8 @@ function YDBZ_add_npcboss(file,nway)
 
 		local npc_index = AddNpcEx(
 			id,			-- ID
-			level,		-- µÈ¼¶
+			-- level,		-- µÈ¼¶
+			60,		-- µÈ¼¶
 			series,		-- ÎåÐÐ
 			SubWorld,	-- µØÍ¼
 			px ,	-- X×ø±ê
@@ -490,7 +503,8 @@ function YDBZ_AddNpc_YuanJun(nTeam,nCurCamp)
 			
 		local npc_index = AddNpcEx(
 				id,			-- ID
-				level,		-- µÈ¼¶
+				-- level,		-- µÈ¼¶
+				60,		-- µÈ¼¶
 				series,		-- ÎåÐÐ
 				SubWorld,	-- µØÍ¼
 				px ,	-- X×ø±ê

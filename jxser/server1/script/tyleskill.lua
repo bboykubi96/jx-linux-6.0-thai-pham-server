@@ -1,0 +1,1 @@
+tyle=600;  -- 1 la gia tri mac dinh cua VNG - Muon cang nhanh thi go so cang to

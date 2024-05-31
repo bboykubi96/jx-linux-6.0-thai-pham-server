@@ -1,8 +1,8 @@
---西南北区 正房to唐门
---Trap ID：西南北区 45
+-- script viet hoa By http://tranhba.com  t﹜ nam b綾 khu ch竛h ph遪g to Л阯g m玭 
+-- script viet hoa By http://tranhba.com Trap ID# t﹜ nam b綾 khu 45 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(25, 4092, 5117);
+NewWorld(25, 4092, 5117); 
 
 end;

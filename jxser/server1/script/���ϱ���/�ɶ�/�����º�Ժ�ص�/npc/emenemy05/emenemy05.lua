@@ -1,14 +1,14 @@
---description: ∂Î·“≈… –≈œ‡À¬∫Û‘∫µÿµ¿µ–»À
---author: yuanlan	
---date: 2003/3/6
--- Update: Dan_Deng(2003-08-12)
+-- script viet hoa By http://tranhba.com description: ph∏i Nga Mi tin/th¨ t≠¨ng t˘ hÀu vi÷n n„i Æﬁch nh©n 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/3/6 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-12) 
 
-function OnDeath()
-	UTask_em = GetTask(1);
-	if (UTask_em == 50*256+60) and (HaveItem(23) == 1) and (random(0,99) < 30) then							--æ»≥ˆ¥»∫£∑Ω’…µƒ∏≈¬  «30%
-		Msg2Player("ß∏nh bπi t™n Ph∂n T®ng Æ«u mÙc, c¯u tho∏t ph≠¨ng tr≠Óng Tı H∂i, giao Kim tuy’n tÛ t≠Óng Kim Cang kinh cho ´ng ta. ")
-		DelItem(23)
+function OnDeath() 
+UTask_em = GetTask(1); 
+	if (UTask_em == 50*256+60) and (HaveItem(23) == 1) and (random(0,99) < 30) then							-- script viet hoa By http://tranhba.com æ»≥ˆ¥»∫£∑Ω’…µƒ∏≈¬  «30%
+Msg2Player("ß∏nh bπi ph∂n t®ng Æ«u mÙc , c¯u tı h∂i ph≠¨ng tr≠Óng , Æem kim tuy’n tÛ phÀt kinh Kim C≠¨ng cho hæn . ") 
+DelItem(23) 
 		SetTask(1, 50*256+80)
-		AddNote("ß∏nh bπi t™n Ph∂n T®ng Æ«u mÙc, c¯u tho∏t ph≠¨ng tr≠Óng Tı H∂i, giao Kim tuy’n tÛ t≠Óng Kim Cang kinh cho ´ng ta. ")
-	end
-end;	
+AddNote("ß∏nh bπi ph∂n t®ng Æ«u mÙc , c¯u tı h∂i ph≠¨ng tr≠Óng , Æem kim tuy’n tÛ phÀt kinh Kim C≠¨ng cho hæn . ") 
+end 
+end; 

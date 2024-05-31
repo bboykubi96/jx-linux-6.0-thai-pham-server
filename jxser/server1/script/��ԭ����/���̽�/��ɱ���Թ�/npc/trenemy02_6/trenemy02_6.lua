@@ -1,13 +1,13 @@
---description: ÆßÉ±¶´ËÀÇô6¡¡ÌìÈÌ10¼¶ÈÎÎñ
---author: yuanlan	
---date: 2003/5/18
--- Update: Dan_Deng(2003-08-14)
+-- script viet hoa By http://tranhba.com description: thÊt s¸t ®éng tö tï 6# ngµy nhÉn 10 cÊp nhiÖm vô 
+-- script viet hoa By http://tranhba.com author: yuanlan 
+-- script viet hoa By http://tranhba.com date: 2003/5/18 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2003-08-14) 
 
-function OnDeath()
-	UTask_tr = GetTask(4)
+function OnDeath() 
+UTask_tr = GetTask(4) 
 	if ((UTask_tr == 10*256+50) and (HaveItem(56) == 0)) then
-		AddEventItem(56)
-		Msg2Player("LÊy ®­îc m¶nh thø s¸u cña lÖnh bµi. ")
-		AddNote("LÊy ®­îc m¶nh thø s¸u cña lÖnh bµi trong ThÊt S¸t ®éng. ")
-	end
-end;
+AddEventItem(56) 
+Msg2Player("B¾t ®­îc lÖnh bµi m¶nh vôn 6. ") 
+AddNote("B¾t ®­îc thÊt s¸t ®éng lÖnh bµi m¶nh vôn 6. ") 
+end 
+end; 

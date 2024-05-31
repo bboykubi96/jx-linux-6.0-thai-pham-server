@@ -1,8 +1,8 @@
---中原北区 千佛殿to少林派
---Trap ID：中原北区 66
+-- script viet hoa By http://tranhba.com  Trung Nguy猲 b綾 khu ng祅 ph藅 甶謓 to ph竔 Thi誹 l﹎ 
+-- script viet hoa By http://tranhba.com Trap ID# Trung Nguy猲 b綾 khu 66 
 
-function main(sel)
+function main(sel) 
 
-NewWorld(103, 1636, 3169);
+NewWorld(103, 1636, 3169); 
 
 end;

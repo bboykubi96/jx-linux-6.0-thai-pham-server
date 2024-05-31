@@ -1,75 +1,28 @@
-Include("\\script\\global\\login_head.lua")
+-- Cam nang hoang kim edit by mcteam
+-- Ëæ»ú±¦ÏäÎïÆ·£¨Ëæ»ú»ñµÃÒ»ÑùÎïÆ·£©
+-- By: Dan_Deng(2004-06-01)
 
-function main(nItemIdx)
-local nDate = tonumber(GetLocalDate("%d"))
-if ( GetTask(DAY) ~= nDate ) then
-	SetTask(DAY, nDate);
-	SetTask(352,0);
-	if (GetTask(352) <= 20) then
-		local k = random(1,100)
-		SetTask(352,GetTask(352) + 1)
-		if (k >= 90) then
-			local x = random(1,100)
-				if (x >= 70) then
- 					AddItem(6,1,125,1,1,1)
-					AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=green>QuÕ Hoa Töu<color> !")
-					Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  QuÕ Hoa Töu ")
-				elseif (x >=80)  then
- 					AddItem(6,1,71,1,1,1)
-					AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=green>Tiªn Th¶o Lé<color> !")
-					Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  Tiªn Th¶o Lé ")
-				else
-					local p = random(122,124)
-					AddItem(6,1,p,1,1,1)
-					AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=pink>Phóc Duyªn Lé<color> !")
-					Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  Phóc Duyªn Lé")
-				end
-		elseif (k >=50) then
-			local m = random (5,45)
-			n = GetLevel()
-			AddOwnExp(n*m*30)
-		else
-			local m = random (5,45)
-			n = GetLevel()
-			Earn(n*m*5)
-		end
+function main(sel)
+	p=random(0,99)
+	if (p < 5) then
+		p = random(238,240)
+		AddEventItem(p)			-- Ë®¾§
+		Msg2Player("B¹n nhËn ®­îc mét viªn Thñy Tinh. ")
+	elseif (p < 10) then
+		AddEventItem(353)			-- ÐÉºì
+		Msg2Player("B¹n nhËn ®­îc mét viªn Tinh Hång B¶o Th¹ch. ")
+	elseif (p < 20) then
+		AddItem(6,1,15,1,0,0,0)		-- Åû·ç
+		Msg2Player("B¹n nhËn ®­îc mét tÊm ¸o kho¸c. ")
+	elseif(p < 40) then
+		AddItem(6,1,18,1,0,0,0)		-- ÐÄÐÄÏàÓ¡
+		Msg2Player("B¹n nhËn ®­îc mét c¸i T©m T©m T­¬ng Ên phï! ")
+	elseif (p < 65) then
+		AddItem(6,1,19,1,0,0,0)		-- ¼ªÏé°ü
+		Msg2Player("B¹n nhËn ®­îc mét c¸i T©m T©m T­¬ng Ên phï! ")
 	else
-		Talk(1,"","<color=green>H«m nay ®· më ®ñ 20 C¶m nang Hoµng Kim råi, ngµy mai h·y më tiÕp<color>")
+		AddItem(6,0,20,1,0,0,0)		-- Ãµ¹åÓê
+		Msg2Player("B¹n nhËn ®­îc mét cµnh hoa hång. ")
 	end
-	
-else	--Sau khi da set ngay
-
-if (GetTask(352) <= 20) then
-	local k = random(1,100)
-	SetTask(352,GetTask(352) + 1)
-	if (k >= 90) then
-		local x = random(1,100)
-		if (x >= 70) then
- 			AddItem(6,1,125,1,1,1)
-			AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=green>QuÕ Hoa Töu<color> !")
-			Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  QuÕ Hoa Töu ")
-		elseif (x >=80)  then
- 			AddItem(6,1,71,1,1,1)
-			AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=green>Tiªn Th¶o Lé<color> !")
-			Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  Tiªn Th¶o Lé ")
-		else
-			local p = random(122,124)
-			AddItem(6,1,p,1,1,1)
-			AddGlobalNews("§¹i hiÖp <color=green>"..GetName().."<color> më tói Hoµng Kim , may m¾n nhËn ®­îc <color=pink>Phóc Duyªn Lé<color> !")
-			Msg2Player("Më cÈm nang Hoµng Kim, nhËn ®­îc  Phóc Duyªn Lé")
-		end
-	elseif (k >=50) then
-		local m = random (5,45)
-		n = GetLevel()
-		AddOwnExp(n*m*30)
-	else
-		local m = random (5,45)
-		n = GetLevel()
-		Earn(n*m*5)
-	end
-else
-	Talk(1,"","<color=green>H«m nay ®· më ®ñ 20 C¶m nang Hoµng Kim råi, ngµy mai h·y më tiÕp<color>")
+	return 0
 end
-
-end
-end 
