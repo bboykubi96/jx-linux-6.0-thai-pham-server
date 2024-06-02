@@ -44,7 +44,7 @@ end
 		--{"NhËn ®Òn bï 8 TTL ®Æc biÖt sù cè 26-12", g7denbu8TTL},	
 	--	{"NhËn §å Test", tbhoangkimbk},
 	--{"NhËn M¶nh Tµng B¶o §å", layevent},
-	{"NhËn cÊp 200.", Nhancap200},
+	{"NhËn cÊp 150.", Nhancap150},
 	{"ChÕ t¹o trang bŞ b¹ch kim", chetaoBachKim},
 --{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 	{"NhËn Set HKMP ", sethkmp},
@@ -1042,9 +1042,9 @@ function NhanPhienVu()
 local Index = AddItem(0,10,13,10,0,0,0) -- Phi Van
 end
 -------------------------------------------------code cua quy ----------------------------------
-function Nhancap200()
-	if GetLevel()<200 then
-			local nAddLevel =200 - GetLevel()
+function Nhancap150()
+	if GetLevel()<150 then
+			local nAddLevel =150 - GetLevel()
 
 		ST_LevelUp(nAddLevel)
 
