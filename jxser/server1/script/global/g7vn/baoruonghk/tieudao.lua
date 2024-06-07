@@ -12,6 +12,7 @@ Include("\\script\\lib\\droptemplet.lua")
 Include("\\script\\lib\\composelistclass.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 Include("\\script\\lib\\composeex.lua")
+
 function main()
 dofile("script/global/g7vn/baoruonghk/tieudao.lua")
 if CalcFreeItemCellCount() < 20 then
@@ -23,7 +24,7 @@ if CalcFreeItemCellCount() < 20 then
 --		return 1;
 --end
 local a = random(1,17)
-if a==1 then
+if a==1 then																						--nExpiredTime=60*24*7 (thêi h¹n gian 7)
 tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,6284},nQuality=1,nCount=1,CallBack=_Message},}, "test", 1);
 --Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=red> D­¬ng Quan Thiªn Ngäc ChØ CÇm.")
 end

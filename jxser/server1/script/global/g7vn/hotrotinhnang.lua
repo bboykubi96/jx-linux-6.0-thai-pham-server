@@ -512,6 +512,7 @@ function chetaoBachKim()
 		{"ChÕ t¹o Trang BŞ B¹ch Kim.", platina_main},
 		--{"ChÕ t¹o Trang BŞ B¹ch Kim (®Æc biÖt).", dialog_mainBK},
 		{"Nguyªn liÖu chÕ t¹o trang bŞ B¹ch Kim.", nguyenlieuBK},
+		{"Nguyªn liÖu n©ng cÊp trang bŞ B¹ch Kim +7 .", nguyenlieuBK7},
 		{"Tho¸t"},
 	}
 	CreateNewSayEx("<npc> Ng­¬i muèn lÊy mãn g×?", tbOpt)
@@ -531,6 +532,17 @@ function nguyenlieuBK()
 	end
 end
 
+function nguyenlieuBK7()
+	if(CalcFreeItemCellCount() < 20)then
+		Talk(1,"no","§Ó ®¶m b¶o kh«ng r¬i vËt phÈm ra ngoµi, cÇn 20 « trèng trong hµnh trang.")
+	return end
+	AddItem(6,1,2160,1,0,0)	
+	AddItem(6,1,2161,1,0,0)
+	AddItem(6,1,2162,1,0,0)
+	for i=1,10 do
+		AddItem(6,1,1310,1,0,0)
+	end
+end
 
 function daithanhbk() 
 	local ttltem ={
