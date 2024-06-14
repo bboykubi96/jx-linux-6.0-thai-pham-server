@@ -14,7 +14,7 @@ Include("\\script\\global\\tieungao\\huyvatpham.lua")
 Include("\\script\\global\\g7vn\\npctanthu.lua")
 Include("\\script\\global\\tieungao\\lenhbaihotro.lua")
 
-local tbGMAccount = {"quycan1","kimluyen2002","","","","",""} TENADMIN ={{"",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"testgame4",} TENADMIN ={{"hoason",99},}
 
 
 function main()

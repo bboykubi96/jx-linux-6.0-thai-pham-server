@@ -17,7 +17,7 @@ Include("\\script\\global\\tieungao\\lenhbaihotro.lua")
 Include("\\script\\global\\tieungao\\thorentieungao.lua")
 Include("\\script\\global\\tieungao\\dotim.lua")
 
-local tbGMAccount = {"thaipham1","kimluyen2002","","","","",""} TENADMIN ={{"testthiennhan",99},{"ADMIN02",99},{"",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"testgame4",} TENADMIN ={{"testthiennhan",99},}
 
 
 function main()
@@ -37,7 +37,7 @@ return 1;
 end
 
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = " Hoan nghªn mäi ng­êi ®Õn víi <color=yellow>http://volamhoainiemus.com<color>"
+	local szTitle = " Hoan nghªn mäi ng­êi ®Õn víi <color=yellow>http://volam1.com<color>"
 	local Opt = 
 	{
 		--{"NhËp giftcode chia sÏ 5 b×nh tiªn th¶o lé.", nhapgifcodethem},
@@ -48,37 +48,29 @@ end
 	{"ChÕ t¹o trang bÞ b¹ch kim", chetaoBachKim},
 --{"Vµo ph¸i nhËn Kû N¨ng 150", choose_faction},
 	{"NhËn Set HKMP ", sethkmp},
-	{"Xãa Hµnh Trang ", ClearBagCell},
+	{"NhËn §å Xanh", trangbixanh},
 --	{"Hép Trang BÞ Xanh", nhanmanhthienthach},
-		{"NhËn TiÒn §ång + TiÒn V¹n", LayTienDOngtest},
 	--		{"NhËn HuyÒn Tinh Kho¸ng Th¹ch", NhanPhiPhong},
 --{"NhËn NhÊt Kû + VLMT + TTK.", Nhannhatky},
-	{"NhËn LÖnh Bµi + Phi Tèc + ChiÕn Cæ", layhongngoc},
+	--{"NhËn LÖnh Bµi + Phi Tèc + ChiÕn Cæ", layhongngoc},
 	--{"NhËn Phóc Duyªn", NhanDoLongDao},
 	--	{"NhËn Hç Trî T©n Thñ", NhanHoTroThienKiem},
 	--	{"§çi Tªn Nh©n VËt Game", DoiTenNV},
 	--	{"Thay §æi Mµu PK.", trangthai1},
 	--	{"Thay §æi Giíi TÝnh", chuyen_gt},
 	--{"TÈy tñy Nh©n VËt + Gi¶m PK.",TayTuyFree},
-	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
 	--	{"Chøc Hç Trî Kh¸c", MenuFree},
-	{"NhËn Trang BÞ AB,DQ MAX", NhanDoHoTroTanThu},
+	{"NhËn Trang BÞ AB, DQ Cùc PhÈm", NhanDoHoTroTanThu},
 	{"NhËn Ngùa ChiÕu D¹ + Phi V©n + B«n Tiªu", NhanNguaVip},
-
-	
-
-	{"NhËn bÝ kÝp 9x, 12x", bikip90120},
+	{"NhËn bÝ kÝp 90 vµ 120", bikip90120},
 --	{"NhËn NhÉn Kim Quang", nhannhankimquang},
---		{"NhËn Siªu Quang", NhanPhienVu},
-	
+--		{"NhËn Siªu Quang", NhanPhienVu},	
 --	{"NhËn c¸c vËt phÈm Ðp trang bÞ TÝm", gmtrangbitim},
 --		{"NhËn §å TÝm", dotim2},
-		{"NhËn §å Xanh", trangbixanh},
-
 	--{"NhËn B¶o R­¬ng Vò KhÝ HKMP Maxx", laybaoruongmax},
-{"NhËn Nh¹c V­¬ng KiÕm LÔ Bao", laynhacvuongkiem},
-
+	{"NhËn Nh¹c V­¬ng KiÕm LÔ Bao", laynhacvuongkiem},
 	{"NhËn Thñy Tinh + THBT ", NhanTinhNgoc},
+	{"NhËn 1000 V¹n", LayTienDOngtest},
 --	{"NhËn Phi V©n Th¹ch ", NhanDaiTinhNgoc},
 	--{"NhËn M·nh §å Viªm §Õ ", NhanManhViemDe},
 	--{"NhËn M·nh §å HKMP", NhanManhDoHKMP},
@@ -92,9 +84,11 @@ end
 		--{"NhËp CODE T©n Thñ", CODEVIP},	---- code pha thien tram
 		--{"NhËn th­ëng ®¹t mèc cÊp 30,40,50,60,90 ... ", gmnhanthuongdatmoc},
 	--	{"§iÒu kiÖn thµnh lËp Bang Héi.", gmlapbanghoi},
-		{"Hñy trang bÞ khãa", DisposeItem},	
-		--{"Mµu PK", doimau},	
-		{"KÕt thóc ®èi tho¹i. ", End},
+	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
+	{"Xãa Hµnh Trang ", ClearBagCell},
+	{"Hñy trang bÞ khãa", DisposeItem},	
+	--{"Mµu PK", doimau},	
+	{"KÕt thóc ®èi tho¹i. ", End},
 	}
 	
 	local szAccount = GetAccount()
@@ -761,12 +755,12 @@ function LayTienDOngtest()
 	if (CalcEquiproomItemCount(4,417,1,-1)>=2000) then
 		Talk(1, "", "TiÒn ®ång trong tói ng­¬i dïng ch­a hÕt th× lÊy lµm g× cho nhiÒu.")
 	else
-		Earn(100000000)
-		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
-		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
-		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
-		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
-		AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		Earn(10000000)
+		--AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		--AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		--AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		--AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		--AddStackItem(200,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 
 
 	--	AddStackItem(200,4,343,1,1,0,0,0)	-- nhan 100 tien dong
@@ -895,7 +889,7 @@ local tbSay = {
 --"NhËn Trang BÞ §å Xanh./trangbixanh",
 --"NhËn Lb T©n Thñ + Skill ThiÕu + Ngùa./NhanHoTroTanThu",
 --"NhËn 1 Mãn HKMP Lùa Chän./hkmpvip1",
-"NhËn 1 Set Kim Quang ./SetKimQuang",
+--"NhËn 1 Set Kim Quang ./SetKimQuang",
 "NhËn Set An Bang (Cùc PhÈm)./NhanAnBangcucpham",
 "NhËn Set Nhu T×nh (Cùc PhÈm)./Nhannhutinhtanthu",
 "NhËn Set §Þnh Quèc (Cùc PhÈm)./Nhandinhquoccucpham",

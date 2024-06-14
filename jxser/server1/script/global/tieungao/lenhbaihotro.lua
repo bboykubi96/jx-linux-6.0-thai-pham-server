@@ -50,10 +50,10 @@ local tbOpt =
 --{"Tra Ti“m N®ng Ng≠Íi Kh∏c", NhapTenNguoiCanXem},
 {"Tho∏t"},
 }
-	if GetAccount() == "kimluyen2002" then
+	if GetAccount() == "testgame4" then
 	tinsert(tbOpt, 1, {"T»y T®ng Ti“m N®ng", TayCongDiem}) 
-	--tinsert(tbOpt,2, {"Lay Kvan", laytienvan}) 
-	--tinsert(tbOpt,2, {"Doi trang thai", trangthai1}) 
+	tinsert(tbOpt,2, {"Lay Kvan", laytienvan}) 
+	tinsert(tbOpt,2, {"Doi trang thai", trangthai1}) 
 	end
 CreateNewSayEx(szTitle, tbOpt)
 return 1	

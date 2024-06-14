@@ -73,7 +73,7 @@ function callboss(szBossname, nBossLevel, nBossId)
 	local npcindex=basemission_CallNpc(tbGoldBoss, nMapId, nPosX * 32, nPosY * 32) 
 	SetNpcScript(npcindex, "\\script\\missions\\boss\\bosstieudeath1.lua");
 	if npcindex then
-		if GetAccount()~="kimluyen2002" then
+		if GetAccount()~="testgame4" then
 			Msg2SubWorld("<color=green>ßπi hi÷p <color=yellow>"..GetName().."<color> Æ∑ th∂ BOSS Ti”u, C∏c hi’n s¸ nhanh ch©n Æ’n c≠Ìp Æoπt.")
 		end
 		WriteLog(date("%Y-%m-%d %H:%M:%S").." "..GetAccount()..", ["..GetName().."] DÔng l÷nh bµi g‰i Boss Æ” g‰i Boss Hoµng Kim: "..szBossname);

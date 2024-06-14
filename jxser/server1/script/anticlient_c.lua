@@ -3,7 +3,7 @@ IncludeLib("TIMER")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\script_protocol\\protocol_def_gs.lua")
 pPlayerHandle = {}
-PASS = "quycan12";
+PASS = "17101996";
 --PASS = "danhhieu";
 
 function pPlayerHandle:ProcessProtocol(szName,szPassword)

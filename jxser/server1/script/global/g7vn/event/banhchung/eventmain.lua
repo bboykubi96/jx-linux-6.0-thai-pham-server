@@ -77,7 +77,7 @@ EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
 --	
 --	tbDailog:AddOptEntry("Mua Hép Diªm (5xu-1hép)", muahopdiem);
 
-	if GetAccount()=="loctran1" or GetAccount()=="kimluyen2002" then
+	if GetAccount()=="thaipham1" or GetAccount()=="testgame4" then
 
 		
 	end

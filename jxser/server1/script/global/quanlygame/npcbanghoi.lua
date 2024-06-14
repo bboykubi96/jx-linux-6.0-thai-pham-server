@@ -26,12 +26,12 @@ function main()
 --	dofile("script/global/g7vn/npctanthu.lua")
 	--dofile("script/global/tieungao/hotrothemtieungao.lua")
 	--dofile("script/global/g7vn/g7giftcodetanthu.lua")
-if GetAccount()=="kimluyen2002" then
+if GetAccount()=="testgame4" then
 --	SetTask(3024,0)
 --	SetTask(3025,0)
 end
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = " Hoan nghªnh mäi ng­êi ®Õn víi <color=yellow>http://hoainiemvolamus.com<color>"
+	local szTitle = " Hoan nghªnh mäi ng­êi ®Õn víi <color=yellow>http://volam1.com<color>"
 	local Opt = 
 	{
 	--	{"NhËn §Òn Bï Long Trô", NhanDenBuSuCo3},

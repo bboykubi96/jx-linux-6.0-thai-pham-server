@@ -11,7 +11,7 @@ Include("\\script\\global\\station.lua")
 IncludeLib("TONG")
 IncludeLib("TITLE");
 function main(sel)
-	if GetAccount()=="boquyx123" or GetAccount=="loctran1" or GetAccount=="kimluyen2002" then
+	if GetAccount()=="boquyx123" or GetAccount=="thaipham1" or GetAccount=="testgame4" then
 		dofile("script/item/ib/shenxingfu.lua")
 	end
 	--Msg2Player(""..IsDisabledTeam().."")
@@ -534,7 +534,7 @@ tab_RevivePos = {
 		{"Ba L¨ng huyÖn", 19, 53},{"Giang T©n Th«n", 10, 20},{"VÜnh L¹c trÊn", 43, 99},{"Chu Tiªn trÊn", 45, 100},{"§¹o H­¬ng th«n", 47, 101},{"Long M«n trÊn", 55, 121},{"Th¹ch Cæ trÊn", 59, 153},{"Long TuyÒn th«n", 65, 174},{"T©y S¬n th«n", 1, 175}
 	},
 	[9] = {	--"ÃÅÅÉ"
-		{"Thiªn V­¬ng Bang", 21, 59},{"ThiÕu L©m ph¸i", 52, 103},{"§­êng M«n", 15, 25},{"Ngò §éc Gi¸o", 71, 183},{"Nga My ph¸i", 13, 13},{"Thóy Yªn m«n", 61, 154},{"Thiªn NhÉn gi¸o", 28, 49},{"C¸i Bang", 53, 115},{"Vâ §ang ph¸i", 40, 81},{"C«n L«n ph¸i", 58, 131}
+		{"Thiªn V­¬ng Bang", 21, 59},{"ThiÕu L©m ph¸i", 52, 103},{"§­êng M«n", 15, 25},{"Ngò §éc Gi¸o", 71, 183},{"Nga My ph¸i", 13, 13},{"Thóy Yªn m«n", 61, 154},{"Thiªn NhÉn gi¸o", 28, 49},{"C¸i Bang", 53, 115},{"Vâ §ang ph¸i", 40, 81},{"C«n L«n ph¸i", 58, 131},{"Hoa S¬n ph¸i", 987, 987}
 	},
 };
 --Éè¶¨ÖØÉúµã£¨Ñ¡³ÇÊÐ£©

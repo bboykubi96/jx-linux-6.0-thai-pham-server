@@ -61,7 +61,7 @@ local nGoldPoint = GetExtPoint(1);
 			AddStackItem(num,4,343,1,1,0,0)
 			WriteLogPro("dulieu/DoiTienDong.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da Rut THanh Cong "..num.."\n");
 		Msg2Player("Chóc Mõng "..myplayersex().." §· Rót Thµnh C«ng "..num.." Kim Nguyªn B¶o")
-		if GetAccount()~="loctran1" then
+		if GetAccount()~="testgame4" then
 	--	Msg2SubWorld("<color=green>Xin Chóc Mõng<color> "..GetName().." <color=green> Rót Thµnh C«ng "..num.." KNB")
 		end
 	else

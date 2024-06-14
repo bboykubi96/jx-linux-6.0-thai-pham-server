@@ -22,7 +22,7 @@ Include("\\data\\code100k.lua")
 Include("\\data\\codevip.lua")
 Include("\\script\\tong\\tong_award_head.lua");
 
-local tbGMAccount = {"thaipham1","testgame4","cuckold010203","","","",""} TENADMIN ={{"testthiennhan",99},{"hoasonn",99},{"GameMaster",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1","testgame4"} TENADMIN ={{"testthiennhan",99},{"hoasonn",99}}
 
 function main()
 	
@@ -44,21 +44,21 @@ if szTongName~=nil and szTongName~="" then
 end
 --npcchat_npcmacdinh1()
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = "<npc><color=gold> GM_"..GetName().." <color>chµo mõng b¹n ®Õn víi hÖ thèng <color=yellow>Vâ L©m TruyÒn Kú<color> - <color=green>CTC<color> 8 Acc / 1 PC -- 16 Acc / 1 IP\n"
+	local szTitle = "<npc><color=gold> GM_"..GetName().." <color>chµo mõng b¹n ®Õn víi hÖ thèng <color=yellow>Vâ L©m ThËp NhÞ Ph¸i<color> - <color=green>CTC<color> 4 Acc / 1 PC -- 4 Acc / 1 IP\n"
 	local Opt = 
 	{	
 		
 		--{"Mua s¸t thñ gi¶n", satthugian},
 		--{"Mua Viªm §Õ lÖnh", testitem},
 		
-		{"NhËn Quµ Hç Trî", nhanquatanthu},
+		--{"NhËn Quµ Hç Trî", nhanquatanthu},
 	--	{"Code LikeShare", phanthuongcodenew2},
 --		{"Mua 50 Phi Tèc + 50 LÖnh Bµi + 50 ChiÕn Cæ (50 Xu).", MuaChienCo50 },
 --		{"Hñy VËt PhÈm Khãa", huyVPkhoa},
 	--	{"Shop TiÒn V¹n", ShowTopThiep},
 	
-	{"NhËn Th­ëng §Òn Bï 50 TriÖu EXP",nhanthuongonline},
-		{"NhËn Bé Kim Phong 14 Ngµy",NhanDenBuSuCo2},
+	--{"NhËn Th­ëng §Òn Bï 50 TriÖu EXP",nhanthuongonline},
+	--	{"NhËn Bé Kim Phong 14 Ngµy",NhanDenBuSuCo2},
 		{"NhËn Tµi L·nh §¹o + 500 Danh Väng",NhanDenBuSuCo},
 	--	{"NhËn ThÇn Hµnh Phï + Thæ §Þa Phï",lenhbaitanthu},
 	

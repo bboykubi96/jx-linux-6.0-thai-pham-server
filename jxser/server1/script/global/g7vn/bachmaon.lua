@@ -14,7 +14,7 @@ Include("\\script\\global\\g7vn\\hotrotinhnang.lua")
 Include("\\script\\global\\g7vn\\npctanthu.lua")
 Include("\\script\\global\\tieungao\\lenhbaihotro.lua")
 
-local tbGMAccount = {"admingm","kimluyen2002","admin99","boquyx123","","",""} TENADMIN ={{"ADMINBACHKIM",99},{"KIMLUYEN",99},{"GameÙMaster",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"testgame",} TENADMIN ={{"ADMINBACHKIM",99}}
 
 
 function main()
@@ -26,7 +26,7 @@ function main()
 	--dofile("script/global/g7vn/g7giftcodetanthu.lua")
 
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = " Hoan nghªn mäi ng­êi ®Õn víi <color=yellow>http://vldevuong.com<color>"
+	local szTitle = " Hoan nghªn mäi ng­êi ®Õn víi <color=yellow>http://volam1.com<color>"
 	local Opt = 
 	{
 		{"§æi Ngùa Phi V©n", doinguaphivan},

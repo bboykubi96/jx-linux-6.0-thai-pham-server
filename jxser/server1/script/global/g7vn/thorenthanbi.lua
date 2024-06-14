@@ -49,7 +49,7 @@ dofile("script/global/g7vn/trungluyentrangbi/trangbihkmp/refine_equip_hanche.lua
 	tbDailog:AddOptEntry("R· Trang BÞ B¹ch Kim ", RaTrangBiBachKim)
 --	tbDailog:AddOptEntry("Xoay M¶nh HKMP", XoayManhHKMP)
 	--tbDailog:AddOptEntry("Läc L¹i Option Trang BÞ HKMP", LocOptionHKOK)
-	if GetAccount()=="kimluyen2002" or GetAccount()=="admingm" then
+	if GetAccount()=="testgame4" or GetAccount()=="thaipham1" then
 	
 --	tbDailog:AddOptEntry("Test Nang Bach Kim", bachkim0)
 --		tbDailog:AddOptEntry("Test Nang Cap +8", nangcapbachkim6)

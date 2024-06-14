@@ -30,7 +30,7 @@ local nNpcIndex = GetLastDiagNpc();
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
 	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
 	--tbDailog.szTitleMsg = "<#><npc> N¨i nµy Æ“u lµ k˙ tr©n dﬁ b∂o! ßπi hi÷p c«n g◊!?"
-	if GetAccount()=="kimluyen2002"   then
+	if GetAccount()=="testgame4"   then
 	tbDailog:AddOptEntry("Ki”m tra Æi”m Huy’t Chi’n.", checkdiem);
 	tbDailog:AddOptEntry("K›ch hoπt vﬂng s∏ng Huy’t Chi’n.", tbvongsang);
 

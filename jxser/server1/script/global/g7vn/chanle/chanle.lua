@@ -6,7 +6,7 @@ dofile("script/global/g7vn/chanle/chanle.lua");
 	SetTask(4189,0)
 	SetTask(4202,0)
 	SetFightState(1)
-	if GetAccount() == "kimluyen2002" or GetAccount()=="admingm" then
+	if GetAccount() == "testgame4" or GetAccount()=="thaipham1" then
 		local tbOpt =
 	{
 	

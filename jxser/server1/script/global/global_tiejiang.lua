@@ -68,7 +68,7 @@ function tiejiang_city(...)
 	tbDailog:AddOptEntry("§æi 3 BÝ KÝp --> 1 BÝ KÝp NgÉu Nhiªn", doibikip);
 	--tbDailog:AddOptEntry("Cöa hµng tinh lùc", energy_sale);
 	--tbDailog:AddOptEntry("Giao dÞch", yes);
-	if GetAccount() == "loctran" or GetAccount()=="kimluyen2002" then
+	if GetAccount() == "testgame4" or GetAccount()=="thaipham1" then
 	--	tbDailog:AddOptEntry("Trang bÞ tÝm ", gmtrangbitim);
 	--	tbDailog:AddOptEntry("VËt phÈm ®óc", onFoundry);
 	--	tbDailog:AddOptEntry("N©ng cÊp trang bÞ hoµng kim", gmnangcaptrangbi_hk);
@@ -81,7 +81,7 @@ function tiejiang_city(...)
 		tbDailog:AddOptEntry("Xö lý <trang bÞ ®· bÞ háng>", deal_brokenequip);
 	end
 --	tbDailog:AddOptEntry("Ta ®Õn nhËn nhiÖm vô S¬ nhËp", education_tiejiang);	
-	if GetAccount()=="kimluyen2002" or GetAccount()=="loctran1" then
+	if GetAccount()=="testgame4" or GetAccount()=="thaipham1" then
 			
 		--	tbDailog:AddOptEntry("GhÐp M¶nh An Bang --> Trang BÞ An Bang", ghepmanhratrangbi);	
 	end

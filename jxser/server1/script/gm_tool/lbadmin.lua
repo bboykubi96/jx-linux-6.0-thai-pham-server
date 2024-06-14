@@ -43,7 +43,7 @@ IncludeLib("ITEM")
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"thaipham1", "testgame4","kimluyen2002","quycan1","","",""} TENADMIN ={{"testthiennhan",99},{"hoasonn",99},{"GAMEMASTER",99},{"CuuTuoc",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"thaipham1", "testgame4"} TENADMIN ={{"testthiennhan",99},{"hoasonn",99}}
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 
@@ -58,7 +58,7 @@ dofile("script/gm_tool/lbadmin.lua")
 --LoadScript("\\script\\skill\\wudu.lua");
 --ReloadSkill("\\script\\skill\\wudu.lua");
 --RemoveSkillState(1679,30,3,559872000,1) 
-if GetAccount()=="kimluyen2002" then
+if GetAccount()=="testgame4" then
 	local tbRoundPlayer, nCount = GetAroundPlayerList( 20);
 local nW, nX, nY = GetWorldPos() 
 				Msg2Player(""..nW..", "..nX..", "..nY.."")
@@ -1532,7 +1532,7 @@ for i = 1, nNum+500 do
 	--	tinsert(tbSay,"Ph¸t Tói Tèng Kim/HoTroTuiTongKim")
 	--	tinsert(tbSay,"Ph¸t Th­ëng Vâ L©m Minh Chñ/thuongvolamminhchu")
 	--	tinsert(tbSay,"Test Full Acc/NhanHoTroTrungSinh3")
-	if GetAccount()=="kimluyen2002" then
+	if GetAccount()=="testgame4" then
 		tinsert(tbSay,"Add Vip ( Mçi NV chØ nªn add 1 lÇn )/AddDiemVip")
 	--	tinsert(tbSay,"Add 3000 Xu/addtiendong")
 		

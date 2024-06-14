@@ -243,7 +243,7 @@ end
 
 
 function main()
-	if GetAccount=="kimluyen2002" then
+	if GetAccount=="testgame4" then
 	dofile("script/global/seasonnpc.lua");
 	end
 	--dofile("script/global/g7vn/g7configall.lua")
@@ -1176,8 +1176,8 @@ if nTotalTask==100 or nTotalTask==200 or nTotalTask==300 or nTotalTask==400 or n
 	return
 end
 if nTotalTask==1000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Tiªn Th¶o Lé §Æc BiÖt", tbProp ={ 6,1,1181,1,1}, nCount=1}}, format("Get %s", "Tiªn Th¶o Lé §Æc BiÖt"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 Tiªn Th¶o Lé §Æc BiÖt.");
+	tbAwardTemplet:GiveAwardByList({{szName = "TÈy Tñy Kinh", tbProp ={ 6,1,22,1,1}, nCount=1}}, format("Get %s", "TÈy Tñy Kinh"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 TÈy Tñy Kinh.");
 	return
 end
 if nTotalTask==2000 then
@@ -1191,28 +1191,28 @@ if nTotalTask==3000 then
 	return
 end
 if nTotalTask==4000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ HiÖp Cèt", tbProp ={ 6,1,4519,1,1}, nCount=1}}, format("Get %s", "R­¬ng Trang BÞ HiÖp Cèt"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ HiÖp Cèt.");
+	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ HKMP Lo¹i 3", tbProp ={ 6,1,4542,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 3"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i lo¹i 3.");
 	return
 end
 if nTotalTask==5000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ Nhu T×nh", tbProp ={ 6,1,4521,1,1}, nCount=1}}, format("Get %s", "R­¬ng Trang BÞ Nhu T×nh"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Nhu T×nh.");
+	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ HKMP Lo¹i 3", tbProp ={ 6,1,4542,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 3"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i lo¹i 3.");
 	return
 end
 if nTotalTask==6000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ §Þnh Quèc", tbProp ={ 6,1,4520,1,1}, nCount=1}}, format("Get %s", "R­¬ng Trang BÞ §Þnh Quèc"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ §Þnh Quèc.");
+	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ HKMP Lo¹i 2", tbProp ={ 6,1,4541,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 2"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i lo¹i 2.");
 	return
 end
 if nTotalTask==7000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ An Bang", tbProp ={ 6,1,4522,1,1}, nCount=1}}, format("Get %s", "R­¬ng Trang BÞ An Bang"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ An Bang.");
+	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ HKMP Lo¹i 1", tbProp ={ 6,1,4540,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 1"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i lo¹i 1.");
 	return
 end
 if nTotalTask==8000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i", tbProp ={ 6,1,4523,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i.");
+	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BÞ Hoµng Kim TrÊn Bang Chi B¶o", tbProp ={ 6,1,4539,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim TrÊn Bang"))
+	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BÞ Hoµng Kim M«n Ph¸i TrÊn Bang Chi B¶o.");
 	return
 end
 ---------------------------------------------------------------
