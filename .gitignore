@@ -33,3 +33,5 @@ jxser/server1/servershutdown_log
 *.log
 .vscode
 storage/
+jxser/server1/dulieu/rank.txt
+jxser/server1/worldrank/subcribers.txt

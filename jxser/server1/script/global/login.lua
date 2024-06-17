@@ -34,7 +34,7 @@ Include("\\script\\global\\topall.lua")
 Include("\\script\\activitysys\\g_activity.lua")	
 Include("\\script\\global\\g7vn\\g7quanly.lua")
 Include("\\script\\global\\g7vn\\g7tichluyvip.lua")
-Include("\\script\\miniskill\\init_miniskill.lua")	
+--Include("\\script\\miniskill\\init_miniskill.lua")	
 
 IncludeLib("TITLE");
 if (GetProductRegion() ~= "vn") then
@@ -116,7 +116,7 @@ SetTask(3077,0)
 	--LoadScript("\\script\\global\\logout.lua")
 	--player2hwidin()
 	--SetEnergy(0)
-	if GetLevel() == 1 and nMapId ~= 53 then
+	if GetLevel() == 10 and nMapId ~= 53 then
 		--NewWorld(53, 1623, 3179)
 	end
 --if GetLevel()>=80 then
@@ -340,7 +340,7 @@ end
 	--		return
 	--	end
 	--end
-	add_timer_mns()
+	--add_timer_mns()
 end
 -------------------------------------------
 
