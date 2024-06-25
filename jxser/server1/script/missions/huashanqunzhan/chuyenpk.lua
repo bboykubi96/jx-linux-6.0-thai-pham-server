@@ -5,10 +5,10 @@ Include("\\script\\lib\\awardtemplet.lua")
 
 function OnTimer()
 SetPKFlag(2)
-NewWorld(865,1787, 3099)
+NewWorld(1002,1787, 3099)
 SetProtectTime(18*15) 
 AddSkillState(963, 1, 0, 18*15) 
---mautrogiup2()
+mautrogiup2()
 end
 
 

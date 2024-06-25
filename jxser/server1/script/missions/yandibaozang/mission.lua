@@ -1,24 +1,11 @@
--- Ñ×µÛ±¦²Ø
--- by Ğ¡ÀË¶à¶à
--- 2007.10.24
--- ÎÒ..
--- ÕıÔÚ³¢ÊÔ×Å..
--- Ñ°ÕÒ×ÅÊôÓÚÎÒµÄÌìµØ..
-
-
 Include("\\script\\missions\\yandibaozang\\include.lua")
 Include("\\script\\missions\\yandibaozang\\npc_death.lua")
 
----- Æô¶¯±ÈÈü¿ªÊ¼¶¨Ê±Æ÷
 function YDBZ_start_match_timer()
-	-- 1·ÖÖÓºóÆô¶¯±ÈÈüÈÎÎñ
-	--broadcast("Ñ×µÛ±¦²ØÈÎÎñÒÑ¾­¿ªÊ¼£¬¸÷Â·ºÃÊÖÒÑ¾­½øÈëÑ×µÛ±¦²ØÖĞ,¾ºÕùÂíÉÏ¿ªÊ¼ÁË¡£");
 	StartMissionTimer(YDBZ_MISSION_MATCH, YDBZ_TIMER_MATCH, YDBZ_LIMIT_SIGNUP * 18);
 end
 
--- ¿ªÊ¼±¨Ãû
 function YDBZ_start_signup()
-	-- ÉèÖÃÎª×¼±¸×´Ì¬
 	SetMissionV(YDBZ_VARV_STATE, 3);
 	SetMissionV(YDBZ_STATE_SIGN,0)
 	SetMissionV(YDBZ_TEAM_COUNT,0)
@@ -28,20 +15,15 @@ function YDBZ_start_signup()
 		SetMissionV(YDBZ_NPC_WAY[i],0)
 	end
 	SetMissionV(YDBZ_NPC_BOSS_COUNT,0)
-		
---	SetMissionV(YDBZ_VARV_BOARD_TIMER, 0);
---	SetMissionS(YDBZ_VARS_TEAM_NAME, "");
 end
 
 function InitMission()
 	YDBZ_close_match()
-	--print("¿ªÊ¼±ÈÈüµØÍ¼mission")
 	YDBZ_start_signup();
 	YDBZ_start_match_timer();
 	for i=1,getn(YDBZ_mapfile_trap) do
 		for x =1,YDBZ_mapfile_trap[1][3] do 
 			local mapfile = YDBZ_mapfile_trap[i][1].."trap"..x..".txt"
-			--print(mapfile,scriptfile)
 			YDBZ_bt_addZhangai(mapfile)
 		end
 		local mapfile = YDBZ_mapfile_trap[i][1].."trapenter.txt"
@@ -63,7 +45,6 @@ function EndMission()
 
 end
 
--- Íæ¼ÒÍË³ö
 function OnLeave(index)
 
 	local oldplayindex = PlayerIndex
@@ -84,11 +65,9 @@ function OnLeave(index)
 
 	if GetMSPlayerCount(YDBZ_MISSION_MATCH,nteams) == 0 then
 		local pname = GetMissionS(YDBZ_TEAM_NAME[nteams])
-		--broadcast(format("%sµÄ¶ÓÎé£¬ÔÚÑ×µÛ±¦²ØÖĞ²»Ğ¡ĞÄÈ«²¿ÕóÍöÁË¡£",nteams))
 		Msg2MSAll(YDBZ_MISSION_MATCH,format("Toµn bé ng­êi trong tæ ®éi <color=yellow>%s<color> ®· tö trËn trong b¶o tµng viªm ®Õ.",pname))
 		SetMissionS(YDBZ_TEAM_NAME[nteams],"")
 		local nteamscount = GetMissionV(YDBZ_TEAM_COUNT)
-		--print(nteamscount,SubWorld)
 		SetMissionV(YDBZ_TEAM_COUNT,(nteamscount-1))
 	end
 	if GetMSPlayerCount(YDBZ_MISSION_MATCH,0) == 0 then

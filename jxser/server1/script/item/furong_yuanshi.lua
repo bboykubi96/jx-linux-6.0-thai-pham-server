@@ -1,11 +1,11 @@
 
 Include("\\script\\lib\\string.lua")
 
-function GetDesc(nItem)
-	local series = GetItemSeries(nItem)
-	return "<color=blue>Phèi hîp HuyÒn Tinh Kho¸ng Th¹ch cã thÓ kİch ho¹t"..toSeries(series).."<color=blue> <color=dblue>thuéc tİnh Èn<color> thø 4 trªn trang bŞ mµu xanh"
-end
+function GetDesc(nItem) 
+local series = GetItemSeries(nItem) 
+return "<color=blue> phèi hîp huyÒn tinh qu¸ng th¹ch cã thÓ lÊy ra "..toSeries(series).."<color=blue> hÖ mµu xanh da trêi trang bŞ th­îng thø t­ vŞ trİ <color=dblue> thÇm thuéc tİnh <color>" 
+end 
 
-function main(nItem)
-	return 1
-end
+function main(nItem) 
+return 1 
+end 

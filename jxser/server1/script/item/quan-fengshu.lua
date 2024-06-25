@@ -1,22 +1,22 @@
---Created by fangjieying 2003-5-17
---¡¶Ô¦·çÊõ¡·
---Ñ§»á°ÁÑ©Ğ¥·ç¼¼ÄÜ
---À¥ÂØ£¬80¼¶ÒÔÉÏ¿ÉÓÃ
-function main(sel)
-	party = GetLastAddFaction()
-	skill = HaveMagic(372)
-	if(party ~= "kunlun") then							-- ²»ÊÇÀ¥ÂØ
-		Msg2Player("B¹n nghiªn cøu Ngù Phong ThuËt ®­îc nöa ngµy, nh­ng vÉn ch­a lÜnh ngé ®­îc g×. ")
-		return 1
-	elseif(GetLever < 80) then							-- ÊÇÀ¥ÂØµ«Î´µ½80¼¶
-		Msg2Player("B¹n nghiªn cøu Ngù Phong ThuËt ®­îc nöa ngµy, lÜnh ngé ®­îc rÊt İt. ")
-		return 1
-	elseif(skill ~= -1) then							-- ÒÑÑ§¹ı¸Ã¼¼ÄÜ
-		Msg2Player("B¹n ®· nghiªn cøu kü Ngù Phong ThuËt, nh­ng vÉn ch­a häc ®­îc g×. ")
-		return 1
-	else
-		AddMagic(372,1)
-		Msg2Player("Häc ®­îc kü n¨ng Ng¹o TuyÕt TiÕu Phong. ")
-		return 0
-	end
+-- script viet hoa By http://tranhba.com Created by fangjieying 2003-5-17 
+-- script viet hoa By http://tranhba.com # ngù phong thuËt # 
+-- script viet hoa By http://tranhba.com  häc ®­îc ng¹o tuyÕt khiÕu phong kü n¨ng 
+-- script viet hoa By http://tranhba.com  C«n L«n , 80 cÊp trë lªn cã thÓ dïng 
+function main(sel) 
+party = GetLastAddFaction() 
+skill = HaveMagic(372) 
+if(party ~= "kunlun") then -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ C«n L«n 
+Msg2Player("Ng­¬i cÇm # ngù phong thuËt # nghiªn cøu nöa ngµy , kÕt qu¶ c¸i g× còng kh«ng cã lÜnh ngé ®Õn . ") 
+return 1 
+elseif(GetLever < 80) then -- script viet hoa By http://tranhba.com  lµ C«n L«n nh­ng ch­a tíi 80 cÊp 
+Msg2Player("Ng­¬i cÇm # ngù phong thuËt # ®iÒu nghiªn liÔu nöa ngµy , kÕt qu¶ lÜnh ngé rÊt İt , kh«ng hiÖu qu¶ g× . ") 
+return 1 
+elseif(skill ~= -1) then -- script viet hoa By http://tranhba.com  ®· häc qua nªn kü n¨ng 
+Msg2Player("Ng­¬i ®· ®em # ngù phong thuËt # ®iÒu nghiªn thÊu triÖt , tõ trong còng n÷a häc kh«ng tíi bÊt kú vËt g× . ") 
+return 1 
+else 
+AddMagic(372,1) 
+Msg2Player("Häc ®­îc kü n¨ng “ ng¹o tuyÕt khiÕu phong ” . ") 
+return 0 
+end 
 end

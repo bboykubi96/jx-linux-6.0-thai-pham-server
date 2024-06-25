@@ -7,51 +7,29 @@ tbMazeExtAward.	tbTSK_GetBaoRuong = 3076;
 tbMazeExtAward.tbExpAward = {szName = "§iÓm Kinh NghiÖm", nExp = 2e6}
 tbMazeExtAward.tbServerAward = {-- Phan thuong server cu
 	[1] = {
-		{szName = "§iÓm Kinh NghiÖm", nExp = 10e6},
+		{szName = "§iÓm Kinh NghiÖm", nExp = 10e7},
+             {szName="XU  ",tbProp={4,417,1,1,0,0},nCount=5},
 	},
 	[2] = {
-			--{{szName="§å Phæ Kim ¤ Kh«i",tbProp={6,1,2982,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Y",tbProp={6,1,2983,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Hµi",tbProp={6,1,2984,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Yªu §¸i",tbProp={6,1,2985,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Hé UyÓn",tbProp={6,1,2986,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ H¹ng Liªn",tbProp={6,1,2987,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Béi",tbProp={6,1,2988,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ Th­îng Giíi",tbProp={6,1,2989,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ H¹ Giíi",tbProp={6,1,2990,1,0,0},nCount=1,nRate=3},},
-			--{{szName="§å Phæ Kim ¤ KhÝ Giíi",tbProp={6,1,2991,1,0,0},nCount=1,nRate=1},},
-			--{{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Kh«i",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Y",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Hµi",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Yªu §¸i",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Hé UyÓn",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ H¹ng Liªn",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={1,0,0,0,0,0},nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Béi",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={9,0,0,0,0,0}, nRate=0.25},},
-			--{{szName="B¶o R­¬ng Kim ¤ Th­îng Giíi",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.125},},
-			--{{szName="B¶o R­¬ng Kim ¤ H¹ Giíi",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={10,0,0,0,0,0},nRate=0.125},},
-			--{{szName="B¶o R­¬ng Kim ¤ Vò KhÝ",tbProp={6,1,30180,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.0625},},
-			--{{szName="Hµnh HiÖp LÖnh",tbProp={6,1,2566,1,0,0},nCount=5,nRate=50},},
-			--{{szName="Th­¬ng Lang Th¹ch",tbProp={6,1,2712,1,0,0},nCount=1,nRate=1},},
-			--{{szName="V©n Léc Th¹ch",tbProp={6,1,2711,1,0,0},nCount=1,nRate=2},},
-			--{{szName="Thanh C©u Th¹ch",tbProp={6,1,2710,1,0,0},nCount=1,nRate=2},},
-			--{{szName="§å Phæ B¹ch Hæ Kh«i",tbProp={6,1,3173,1,0,0},nCount=1,nRate=0.013},},
-			--{{szName="§å Phæ B¹ch Hæ Y",tbProp={6,1,3174,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ Hµi",tbProp={6,1,3175,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ Yªu §¸i",tbProp={6,1,3176,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ Hé UyÓn",tbProp={6,1,3177,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ H¹ng Liªn",tbProp={6,1,3178,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ Béi",tbProp={6,1,3179,1,0,0},nCount=1,nRate=0.0125},},
-			--{{szName="§å Phæ B¹ch Hæ Th­îng Giíi",tbProp={6,1,3180,1,0,0},nCount=1,Rate=0.0625},},
-			--{{szName="B¹ch Hæ §å Phæ H¹ Giíi",tbProp={6,1,3181,1,0,0},nCount=1,nRate=0.0625},},
-			--{{szName="§å Phæ B¹ch Hæ Vò KhÝ",tbProp={6,1,3182,1,0,0},nCount=1,nRate=0.0025},},
-
+			--{{szName="chiakhoavang",tbProp={6,1,2744,1,0,0},nCount=1,nRate=3},},
+                    -- {{szName="chiakhoavang",tbProp={6,1,4877,1,0,0},nCount=1,nRate=1},},
 	},		
 }
+
+-- kevin109 phÇn th­ëng ¶i cuèi
 function tbMazeExtAward:MazeBossAward(mate)
+ local tbMazeBoss = {
+			{szName = "§iÓm Kinh NghiÖm", nExp = 2e9},
+			{szName="Tö Tinh Kho¸ng Th¹ch",tbProp={6,1,8000,1,0,0},nCount=10},
+			-- {szName="Tinh Ngoc",tbProp={6,1,4807,1,0,0},nCount=50},
+			-- {szName="knb",tbProp={4,1496,1,1,0,0},nCount=50},
+			{szName="Xu",tbProp={4,417,1,1,0,0},nCount=300}, 
+                   -- {szName = "Vinh Dù Hoµng Kim ThÇn Méc LÖnh",tbProp={6,1,63019,1,0,0},nCount=2,nBindState = -2,nExpiredTime=1440},
+		}
 	local nOldPlayer = PlayerIndex
 	PlayerIndex = mate.m_PlayerIndex
-	tbAwardTemplet:Give(self.tbServerAward[2], 1, {"KiemGiaMeCung", "KillBossLongCuuThienAward"})
+	tbAwardTemplet:Give(tbMazeBoss, 1, {"KiemGiaMeCung", "KillBossLongCuuThienAward"})
+          SetTask(5141,GetTask(5141)+1)
 	PlayerIndex = nOldPlayer
 end
 
@@ -66,13 +44,16 @@ end
 
 function tbMazeExtAward:MazeStepFinishAward(mate)
 		local tbMazeAward = {
-			{szName="B¶o R­¬ng KiÕm Gia",tbProp={6,1,30203,1,0,0},nCount=1},
+		{szName = "§iÓm Kinh NghiÖm", nExp = 500000000},
+		-- {szName="Tinh Ngoc",tbProp={6,1,4806,1,0,0},nCount=2},
+		{szName="xu",tbProp={4,417,1,1,0,0},nCount=50},
 		}
 		local nOldPlayer = PlayerIndex
 		PlayerIndex = mate.m_PlayerIndex
-		if PlayerFunLib:CheckTaskDaily(self.tbTSK_GetBaoRuong, 5, format("H«m nay ng­¬i ®· nhËn<color=yellow> 5 <color>lÇn phÇn th­ëng nµy, kh«ng thÓ nhËn thªm."), "<") then
+		if PlayerFunLib:CheckTaskDaily(self.tbTSK_GetBaoRuong, 60, format("H«m nay ng­¬i ®· nhËn<color=yellow> 60 <color>lÇn phÇn th­ëng nµy, kh«ng thÓ nhËn thªm."), "<") then
 			PlayerFunLib:AddTaskDaily(self.tbTSK_GetBaoRuong, 1)
 			tbAwardTemplet:Give(tbMazeAward, 1, {"KiemGiaMeCung", "KillBossAward"})
 		end	
 		PlayerIndex = nOldPlayer
 end
+

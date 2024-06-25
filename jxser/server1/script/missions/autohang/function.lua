@@ -1,70 +1,71 @@
 Include("\\script\\missions\\autohang\\head.lua");
 
--- ¸ù¾İÍæ¼Ò¼¶±ğ£¬¼ÆËã¾­ÑéÖµ
--- ´Ëº¯ÊıÔÚGameServerÆô¶¯Ê±×Ô¶¯µ÷ÓÃ£¬ÓÃÓÚ½¨Á¢¹Ò»ú¾­ÑéÊıÖµ±í
-function AEXP_GetHangExpValue(nLevel)	
+-- script viet hoa By http://tranhba.com  c¨n cø nhµ ch¬i cÊp bËc , tİnh to¸n kinh nghiÖm trŞ gi¸ 
+-- script viet hoa By http://tranhba.com  nµy hµm sè ë GameServer khëi ®éng lóc tù ®éng ®iÒu dông , dïng cho thµnh lËp treo ky kinh nghiÖm trŞ sè biÓu 
+function AEXP_GetHangExpValue(nLevel) 
 
-	nExp = 0;
-	-- Ò»Ğ¡Ê±¹Ò»ú¾­Ñé£ºe={3.5w+floor[(lv-50)/5]*0.5w}*1.2
-	if (nLevel == 50) then 	-- 50
-		nExp = 700; -- Ã¿·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ
-	elseif (nLevel < 100) then 	-- 51~99
-		nExp = 700 + floor((nLevel - 50)/5)*100; -- Ã¿·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ
-	else -- 100¼¶¼°100¼¶ÒÔÉÏ
-		nExp = 1700; -- Ã¿·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ[700 + floor((100 - 50)/5)*100]
-	end
-	
-	--2007-01-05 ¾­Ñéµ÷ÕûÎªÔ­À´µÄ3±¶
-	nExp = nExp * AEXP_FREQ * 3 / 2; -- (10)·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ
-	
-	return nExp;
-end;
+nExp = 0; 
+	-- script viet hoa By http://tranhba.com  Ò»Ğ¡Ê±¹Ò»ú¾­Ñé£ºe={3.5w+floor[(lv-50)/5]*0.5w}*1.2
+if (nLevel == 50) then -- script viet hoa By http://tranhba.com  50 
+nExp = 700; -- script viet hoa By http://tranhba.com  mçi phót ®¹t ®­îc ®İch kinh nghiÖm trŞ gi¸ 
+elseif (nLevel < 100) then -- script viet hoa By http://tranhba.com  51~99 
+		nExp = 700 + floor((nLevel - 50)/5)*100; -- script viet hoa By http://tranhba.com  Ã¿·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ
+else -- script viet hoa By http://tranhba.com  100 cÊp cïng 100 cÊp trë lªn 
+		nExp = 1700; -- script viet hoa By http://tranhba.com  Ã¿·ÖÖÓ»ñµÃµÄ¾­ÑéÖµ[700 + floor((100 - 50)/5)*100]
+end 
 
--- ¸ù¾İÍæ¼Ò¼¶±ğ£¬ÒÔ¼°¹Ò»úÊ±¼ä(ÒÔĞ¡Ê±Îªµ¥Î»)£¬¼ÆËãËùĞèµÄ½ğÇ®
-function AEXP_GetNeedMoney(nLevel, nTime)
-	nTemp =  60 / AEXP_FREQ; -- Ò»Ğ¡Ê±(60·ÖÖÓ)µ÷Õû¼¸´Î¾­Ñé
-	nMoney = AEXP_GetHangExpValue(nLevel) * nTemp * nTime / 2; -- ¾­ÑéÖµ:ÒøÁ½Êı = 2:1
-	return nMoney;
-end;
+-- script viet hoa By http://tranhba.com 2007-01-05 kinh nghiÖm ®iÒu chØnh lµm th× ra lµ 3 lÇn 
+nExp = nExp * AEXP_FREQ * 3 / 2; -- script viet hoa By http://tranhba.com  (10) phót ®¹t ®­îc ®İch kinh nghiÖm trŞ gi¸ 
 
--- ½øÈëÌÒ»¨µº
--- ·µ»ØÖµ£º1±íÊ¾³É¹¦£¬0±íÊ¾Ê§°Ü£¬-1±íÊ¾ÒøÁ½²»×ã
-function aexp_gotothd(nSubWorldID)
-	if (GetCash() < AEXP_TICKET) then
-		return -1;
-	end
-	
-	if(GetExtPoint( 0 ) <= 0 ) then
-		Say("Xin lçi! ChØ cã n¹p thÎ míi ®i ®­îc §µo Hoa ®¶o ",0)
-		return -2
-	end
+return nExp; 
+end; 
 
-	Pay(AEXP_TICKET)
-	LeaveTeam(); -- Àë¿ª¶ÓÎé
-	SetAutoHangMapFlag(1) -- ÉèÖÃ½øÈë¹Ò»úµØÍ¼±ê¼Ç(ÆÁ±Î¹«ÁÄ¡¢»Ø³ÇµÈ¹¦ÄÜ)
-	
-	-- Ãâ·ÑË«¾­ÑéÊ±¼ä£¬²»ĞèĞ£Õı¹Ò»úÊ±¼ä
-	if (AEXP_IsFreeTimeDoubleExp() == 0) then-- ·ÇÃâ·ÑË«¾­ÑéÈÕ×Ó
-		-- Ê£ÓàÊ±¼äĞ£Õı - start
-		-- Íæ¼ÒÔÚÀë¿ªÌÒ»¨µºÊ±£¬À°°ËÖàµÄÒ©Á¦ÎŞĞ§µ«ÓĞĞ§Ê±¼äÈÔ»áÏûºÄ
-		-- ËùÒÔÔÚÔÙ´Î½øÈëÊ±Ğè¿Û³ıÕâ²¿·Ö¹Ò»úÊ±¼ä
-		--06.06.13
-		--À°°ËÖàÒÑ±»ÍÚ¿óÊ±¼äÌæ»»£»Íæ¼ÒÀë¿ªÌÒ»¨µºÊ±¼ä²»»áÏûºÄ£¬²»Ğè¿Û³ıÊ±¼ä
-		--nTime = GetTask(AEXP_OLTIME_TASKID);
-		--if (nTime > 0) then
-		--	nTime = floor((GetGameTime() - nTime) / 60); -- µ¥Î»£º·ÖÖÓ
-		--	nPointTime = GetTask(AEXP_TASKID) - nTime;  -- ¿ÛÊ±¼ä(µ¥Î»£º·ÖÖÓ)
-		--	if (nPointTime < 0) then
-		--		nPointTime = 0;
-		--	end
-		--	
-		--	SetTask(AEXP_TASKID, nPointTime); -- ĞÂµÄÊ£ÓàÊ±¼ä
-		--end
-		-- Ê£ÓàÊ±¼äĞ£Õı - end
-	end
-	
-	NewWorld(nSubWorldID,1523,3237)
-	SetFightState(0)
-	Msg2Player("B¹n ®· ®Æt ch©n vµo mét thÕ giíi riªng biÖt. T¹i ®©y n¨ng lùc cña b¹n sÏ bŞ ¶nh h­ëng: Kh«ng thÓ t¸n gÉu thµnh thŞ, t¸n gÉu m«n ph¸i, t¸n gÉu thÕ giíi; kh«ng thÓ sö dông Thæ ®Şa phï, T©m T©m T­¬ng ¸nh Phï; kh«ng thÓ tæ chøc ®éi, kh«ng thÓ bu«n b¸n. ");
-	return 1;
-end;
+-- script viet hoa By http://tranhba.com  c¨n cø nhµ ch¬i cÊp bËc , cïng víi treo ky thêi gian ( lÊy giê lµm ®¬n vŞ ) , tİnh to¸n cÇn ®İch kim tiÒn 
+function AEXP_GetNeedMoney(nLevel, nTime) 
+nTemp = 60 / AEXP_FREQ; -- script viet hoa By http://tranhba.com  mét giê (60 phót ) ®iÒu chØnh mÊy lÇn kinh nghiÖm 
+nMoney = AEXP_GetHangExpValue(nLevel) * nTemp * nTime / 2; -- script viet hoa By http://tranhba.com  kinh nghiÖm trŞ gi¸ : ng©n l­îng ®Õm = 2:1 
+return nMoney; 
+end; 
+
+-- script viet hoa By http://tranhba.com  tiÕn vµo hoa ®µo ®¶o 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ #1 bµy tá thµnh c«ng , 0 bµy tá thÊt b¹i , -1 bµy tá ng©n l­îng ch­a ®ñ 
+function aexp_gotothd(nSubWorldID) 
+do return -1 end
+if (GetCash() < AEXP_TICKET) then 
+return -1; 
+end 
+
+if(GetExtPoint( 0 ) <= 0 ) then 
+Say("Ng­îng ngïng # chØ cã sung trŞ gi¸ míi cã thÓ ®i hoa ®µo ®¶o ",0) 
+return -2 
+end 
+
+Pay(AEXP_TICKET) 
+LeaveTeam(); -- script viet hoa By http://tranhba.com  rêi ®i ®éi ngò 
+SetAutoHangMapFlag(1) -- script viet hoa By http://tranhba.com  thiÕt trİ tiÕn vµo treo ky b¶n ®å dÊu hiÖu ( che giÊu c«ng trß chuyÖn # trë vÒ thµnh chê chøc n¨ng ) 
+
+-- script viet hoa By http://tranhba.com  miÔn phİ song kinh nghiÖm thêi gian , kh«ng nªn gi¸o ®ang treo ky thêi gian 
+if (AEXP_IsFreeTimeDoubleExp() == 0) then-- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ miÔn phİ song kinh nghiÖm ngµy 
+-- script viet hoa By http://tranhba.com  cßn thõa l¹i thêi gian gi¸o ®ang - start 
+-- script viet hoa By http://tranhba.com  nhµ ch¬i c¸ch khai hoa ®µo ®¶o lóc , tŞch t¸m ch¸o ®İch d­îc lùc kh«ng cã hiÖu qu¶ nh­ng h÷u hiÖu thêi gian vÉn sÏ tiªu hao 
+-- script viet hoa By http://tranhba.com  cho nªn ë lÇn n÷a tiÕn vµo lóc cÇn khÊu trõ bé nµy ph©n treo ky thêi gian 
+-- script viet hoa By http://tranhba.com 06.06.13 
+-- script viet hoa By http://tranhba.com  tŞch t¸m ch¸o ®· bŞ ®µo má thêi gian thay thÕ # nhµ ch¬i rêi ®i hoa ®µo ®¶o thêi gian sÏ kh«ng tiªu hao , kh«ng nªn khÊu trõ thêi gian 
+-- script viet hoa By http://tranhba.com nTime = GetTask(AEXP_OLTIME_TASKID); 
+-- script viet hoa By http://tranhba.com if (nTime > 0) then 
+-- script viet hoa By http://tranhba.com  nTime = floor((GetGameTime() - nTime) / 60); -- script viet hoa By http://tranhba.com  ®¬n vŞ # phót 
+-- script viet hoa By http://tranhba.com  nPointTime = GetTask(AEXP_TASKID) - nTime; -- script viet hoa By http://tranhba.com  trõ thêi gian ( ®¬n vŞ # phót ) 
+-- script viet hoa By http://tranhba.com  if (nPointTime < 0) then 
+-- script viet hoa By http://tranhba.com  nPointTime = 0; 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  SetTask(AEXP_TASKID, nPointTime); -- script viet hoa By http://tranhba.com  míi cßn thõa l¹i thêi gian 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  cßn thõa l¹i thêi gian gi¸o ®ang - end 
+end 
+
+NewWorld(nSubWorldID,1523,3237) 
+SetFightState(0) 
+Msg2Player("Ng­¬i ®· tíi ®Õn mét ®¬n ®éc thÕ giíi . ë n¬i nµy n¨ng lùc cña ng­¬i sÏ bŞ ¶nh h­ëng # kh«ng thÓ cïng thÕ giíi # m«n ph¸i cïng thÕ giíi liªn l¹c # kh«ng thÓ sö dông thæ ®Şa phï , t©m t©m t­¬ng Ên phï # kh«ng thÓ häp thµnh ®éi , kh«ng thÓ mua b¸n . "); 
+return 1; 
+end; 

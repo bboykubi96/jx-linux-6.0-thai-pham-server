@@ -1,29 +1,29 @@
-tbNewPracticeMap = {};
+tbNewPracticeMap = {}; 
 
-tbNewPracticeMap.bDeBug			= 0;					-- DeBugÄ£Ê½
-tbNewPracticeMap.interval		= 18 * 60;				-- Timer¼ä¸ô (1·ÖÖÓ)
-tbNewPracticeMap.timerId		= 114;					-- TimerID
-tbNewPracticeMap.TimeLeft_A		= 2662;					-- ÈÎÎñ±äÁ¿:AÐÍµØÍ¼Ê£ÓàÊ±¼ä
-tbNewPracticeMap.TimeLeft_B		= 2663;					-- ÈÎÎñ±äÁ¿:BÐÍµØÍ¼Ê£ÓàÊ±¼ä
-tbNewPracticeMap.MapId_A		= {917,918,919,920};	-- AÐÍµØÍ¼ID
-tbNewPracticeMap.MapId_B		= {921,922,923,924};	-- BÐÍµØÍ¼ID
-tbNewPracticeMap.WarningTime	= 3;					-- ÌáÊ¾Ê±¼ä (Ê£ÓàÊ±¼äÐ¡ÓÚ3·ÖÖÓ½øÐÐÌáÊ¾)
+tbNewPracticeMap.bDeBug = 0; -- script viet hoa By http://tranhba.com  DeBug m« thøc 
+tbNewPracticeMap.interval = 18 * 60; -- script viet hoa By http://tranhba.com  Timer gian c¸ch (1 phót ) 
+tbNewPracticeMap.timerId = 114; -- script viet hoa By http://tranhba.com  TimerID 
+tbNewPracticeMap.TimeLeft_A = 2662; -- script viet hoa By http://tranhba.com  nhiÖm vô thay ®æi l­îng :A h×nh b¶n ®å cßn thõa l¹i thêi gian 
+tbNewPracticeMap.TimeLeft_B = 2663; -- script viet hoa By http://tranhba.com  nhiÖm vô thay ®æi l­îng :B h×nh b¶n ®å cßn thõa l¹i thêi gian 
+tbNewPracticeMap.MapId_A = {917,918,919,920}; -- script viet hoa By http://tranhba.com  A h×nh b¶n ®å ID 
+tbNewPracticeMap.MapId_B = {921,922,923,924}; -- script viet hoa By http://tranhba.com  B h×nh b¶n ®å ID 
+tbNewPracticeMap.WarningTime = 3; -- script viet hoa By http://tranhba.com  ®Ò kú thêi gian ( cßn thõa l¹i thêi gian Ýt h¬n 3 phót tiÕn hµnh ®Ò kú ) 
 
-function tbNewPracticeMap:checkMapId()	
-	
-	local nSubWorldID = SubWorldIdx2ID();
-	
-	for i = 1, getn(self.MapId_A) do
-		if(nSubWorldID == self.MapId_A[i]) then 
-			return 1;
-		end
-	end
-	
-	for i = 1, getn(self.MapId_B) do
-		if(nSubWorldID == self.MapId_B[i]) then 
-			return 2; 
-		end
-	end	
-	
-	return 0;	
+function tbNewPracticeMap:checkMapId() 
+
+local nSubWorldID = SubWorldIdx2ID(); 
+
+for i = 1, getn(self.MapId_A) do 
+if(nSubWorldID == self.MapId_A[i]) then 
+return 1; 
+end 
+end 
+
+for i = 1, getn(self.MapId_B) do 
+if(nSubWorldID == self.MapId_B[i]) then 
+return 2; 
+end 
+end 
+
+return 0; 
 end

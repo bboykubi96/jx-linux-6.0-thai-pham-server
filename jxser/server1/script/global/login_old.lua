@@ -1,133 +1,133 @@
--- µÇÂ¼½Å±¾
--- By: LaiLiGao(2004-06-20)
--- Update: Dan_Deng(2004-07-09) Ìí¼Ó×Ô¶¯¸üĞÂ¼¼ÄÜ¹¦ÄÜ
+-- script viet hoa By http://tranhba.com  ®¨ng lôc ch©n vèn 
+-- script viet hoa By http://tranhba.com  By: LaiLiGao(2004-06-20) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2004-07-09) t¨ng thªm tù ®éng ®æi míi kü n¨ng chøc n¨ng 
 Include("\\script\\global\\login_head.lua")
-Include("\\script\\global\\systemconfig.lua") -- ÏµÍ³ÅäÖÃ
+Include("\\script\\global\\systemconfig.lua") -- script viet hoa By http://tranhba.com  ÏµÍ³ÅäÖÃ
 
-Include("\\script\\missions\\autohang\\function.lua")		-- for ¹Ò»ú¹¦ÄÜ
-Include("\\script\\global\\skills_table.lua")				-- ×Ô¶¯¸üĞÂ¼¼ÄÜ
+Include("\\script\\missions\\autohang\\function.lua")		-- script viet hoa By http://tranhba.com  for ¹Ò»ú¹¦ÄÜ
+Include("\\script\\global\\skills_table.lua")				-- script viet hoa By http://tranhba.com  ×Ô¶¯¸üĞÂ¼¼ÄÜ
 Include("\\script\\task\\newtask\\newtask_head.lua")	
 
--- LLG_ALLINONE_TODO_20070802 ´ıÈ·ÈÏ
+-- script viet hoa By http://tranhba.com  LLG_ALLINONE_TODO_20070802 ®îi x¸c nhËn 
 Include ("\\script\\event\\newbielvlup\\event.lua")
 Include("\\script\\event\\qingming\\event.lua")
 Include("\\script\\event\\playerlvlup\\event_temp.lua")
 
 Include("\\script\\shitu\\shitu.lua")
 Include("\\script\\global\\titlefuncs.lua")
-IL("TITLE");
+IL("TITLE"); 
 
-function main_old()
-	--check_update()					-- ¼¼ÄÜ¸üĞÂ¡¢ÃÅÅÉ¼Ó±êÊ¶£¨2004-05-31£©
-	patchShituProcess(PlayerIndex)
--- login_enterthd()				-- ×Ô¶¯½øÈë¹Ò»úµØÍ¼	
-	login_check_dupe()
-	--GetNewBulletin()
-	check_townpotol()
-	title_loginactive()
-	if (SYSCFG_PARTNER_OPEN) then
-		SyncPartnerMasterTask();  -- Í¬²½Í¬°é¾çÇéÈÎÎñ±äÁ¿
-	end
-end
+function main_old() 
+check_update() -- script viet hoa By http://tranhba.com  kü n¨ng ®æi míi # m«n ph¸i thªm tiªu chİ #2004-05-31# 
+patchShituProcess(PlayerIndex) 
+-- script viet hoa By http://tranhba.com  login_enterthd() -- script viet hoa By http://tranhba.com  tù ®éng tiÕn vµo treo ky b¶n ®å 
+login_check_dupe() 
+-- script viet hoa By http://tranhba.com GetNewBulletin() 
+check_townpotol() 
+title_loginactive() 
+if (SYSCFG_PARTNER_OPEN) then 
+SyncPartnerMasterTask(); -- script viet hoa By http://tranhba.com  cïng b­íc ®ång b¹n kŞch t×nh nhiÖm vô thay ®æi l­îng 
+end 
+end 
 
-------------------
--- µÚÒ»´ÎÑÓÊ±Í¬²½µÄÊı¾İ£¬ÔÚ´ËÌí¼Ó
-function delaysync_1()
-	GetNewBulletin();
-	return 0;
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  lÇn ®Çu tiªn duyªn lóc cïng b­íc ®İch sè liÖu , ë chç nµy t¨ng thªm 
+function delaysync_1() 
+GetNewBulletin(); 
+return 0; 
+end 
 
--- µÚ¶ş´ÎÑÓÊ±Í¬²½µÄÊı¾İ£¬ÔÚ´ËÌí¼Ó
-function delaysync_2()
-	SyncTaskValue(1082)		--Í¬²½BossÉ±ÊÖÈÎÎñ±äÁ¿µ½¿Í»§¶Ë
-	messenger_copytaskvalue()  --Í¬²½ĞÅÊ¹ÈÎÎñµÄÈÎÎñ±äÁ¿
-	SyncPartnerMasterTask()    -- Í¬²½Í¬°é¾çÇéÈÎÎñ
-	return 0;
-end
+-- script viet hoa By http://tranhba.com  lÇn thø hai duyªn lóc cïng b­íc ®İch sè liÖu , ë chç nµy t¨ng thªm 
+function delaysync_2() 
+SyncTaskValue(1082) -- script viet hoa By http://tranhba.com  cïng b­íc Boss s¸t thñ nhiÖm vô thay ®æi l­îng ®Õn kh¸ch hµng b­ng 
+messenger_copytaskvalue() -- script viet hoa By http://tranhba.com  cïng b­íc tin/th¬ khiÕn cho nhiÖm vô nhiÖm vô thay ®æi l­îng 
+SyncPartnerMasterTask() -- script viet hoa By http://tranhba.com  cïng b­íc ®ång b¹n kŞch t×nh nhiÖm vô 
+return 0; 
+end 
 
--- µÚÈı´ÎÑÓÊ±Í¬²½µÄÊı¾İ£¬ÔÚ´ËÌí¼Ó
-function delaysync_3()
-	GetAllCitySummary();
-	SyncTaskValue(1569)	--ÖĞÇïÔÂ±ı
-	return 1;
-end
+-- script viet hoa By http://tranhba.com  lÇn thø ba duyªn lóc cïng b­íc ®İch sè liÖu , ë chç nµy t¨ng thªm 
+function delaysync_3() 
+GetAllCitySummary(); 
+SyncTaskValue(1569) -- script viet hoa By http://tranhba.com  trung thu b¸nh Trung thu 
+return 1; 
+end 
 
 
--------------------------------------------
-function check_townpotol()
-	if (GetTask(1505) == 1) then
-		DisabledUseTownP(0)
-		SetTask(1505,0)
-	end
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function check_townpotol() 
+if (GetTask(1505) == 1) then 
+DisabledUseTownP(0) 
+SetTask(1505,0) 
+end 
+end 
 
-function login_enterthd()
-	mapList = {235, 236, 237, 238, 239, 240, 241};
-	MapCount = getn(mapList);
+function login_enterthd() 
+mapList = {235, 236, 237, 238, 239, 240, 241}; 
+MapCount = getn(mapList); 
 
-	-- ÈôÒÑÔÚ¹Ò»úµØÍ¼£¬Ôò²»ÓÃÔÙ½øÁË
-	nCurSWID = SubWorldIdx2ID();
-	for i = 1, MapCount do
-		if (nCurSWID == mapList[i]) then
-			return 0;
-		end
-	end
-	
-	nMapID = random(1, MapCount);
-	aexp_gotothd(mapList[nMapID]);
-end;
+-- script viet hoa By http://tranhba.com  nÕu ®· ë treo ky b¶n ®å , lµ kh«ng cÇn n÷a vµo 
+nCurSWID = SubWorldIdx2ID(); 
+for i = 1, MapCount do 
+if (nCurSWID == mapList[i]) then 
+return 0; 
+end 
+end 
 
--- ¼ì²âÊÇ·ñÓĞ¸´ÖÆ×°±¸±ê¼Ç£¬²¢·¢Çæ¸æ
-function login_check_dupe()
-	local nValue = GetTask(156);
-	if (nValue > 0) then
-		Say("<color=red>B¹n sö dông vËt phÈm ®· bŞ phôc chÕ, hÖ thèng ph¸t hiÖn vµ ®· xãa! NÕu b¹n cã kiÕn nghi g× xin liªn hÖ víi ng­êi qu¶n lı! C¶m ¬n b¹n ®· hîp t¸c!<color>", 1, "Tho¸t/dupe_warning");
+nMapID = random(1, MapCount); 
+aexp_gotothd(mapList[nMapID]); 
+end; 
 
-		SetTask(156, nValue - 1);
-	end
-end
+-- script viet hoa By http://tranhba.com  kiÓm tr¾c cã hay kh«ng cã sao chĞp trang bŞ dÊu hiÖu , còng ph¸t gi¬ cao c¸o 
+function login_check_dupe() 
+local nValue = GetTask(156); 
+if (nValue > 0) then 
+Say("<color=red> ë ngµi trªn ng­êi ph¸t hiÖn sao chĞp ra ngoµi vËt phÈm , ®· bŞ hÖ thèng thanh trõ . chóng ta cã cÆn kÏ ®İch theo dâi ghi chĞp . nÕu ngµi ®èi víi lÇn nµy kh¸c th­êng nghŞ , xin/mêi cïng kh¸ch phôc liªn l¹c . ®a t¹ ñng hé #<color>", 1,"T¾t nµy c¶nh c¸o /dupe_warning"); 
 
-function dupe_warning()
-	Msg2Player("B¹n sö dông vËt phÈm ®· bŞ phôc chÕ, hÖ thèng ph¸t hiÖn vµ ®· xãa! NÕu b¹n cã kiÕn nghi g× xin liªn hÖ víi ng­êi qu¶n lı! C¶m ¬n b¹n ®· hîp t¸c!");
-end
+SetTask(156, nValue - 1); 
+end 
+end 
 
-function messenger_copytaskvalue()
-	
-	SyncTaskValueMore(1201, 1247, 1)
-	--for i = 1201, 1247 do 
-	--	SyncTaskValue(i)
-	--end
-end
+function dupe_warning() 
+Msg2Player(" ë ngµi trªn ng­êi ph¸t hiÖn sao chĞp ra ngoµi vËt phÈm , ®· bŞ hÖ thèng thanh trõ . chóng ta cã cÆn kÏ ®İch theo dâi ghi chĞp . nÕu ngµi ®èi víi lÇn nµy kh¸c th­êng nghŞ , xin/mêi cïng kh¸ch phôc liªn l¹c . ®a t¹ ñng hé #"); 
+end 
 
-function no()
-end;
+function messenger_copytaskvalue() 
 
--- Í¬²½Í¬°é¾çÇéÈÎÎñ±äÁ¿
-function SyncPartnerMasterTask()
+SyncTaskValueMore(1201, 1247, 1) 
+-- script viet hoa By http://tranhba.com for i = 1201, 1247 do 
+-- script viet hoa By http://tranhba.com  SyncTaskValue(i) 
+-- script viet hoa By http://tranhba.com end 
+end 
 
-local i=0;
+function no() 
+end; 
 
-	SyncTaskValue(1262);
-	SyncTaskValue(1256);
-	
-	-- Í¬²½Í¬°éËæ»úÈÎÎñ
-	SyncTaskValue(1301);
-	SyncTaskValue(1302);
-	SyncTaskValue(1303);
-	SyncTaskValue(1304);
-	SyncTaskValue(1305);
-	SyncTaskValue(1306);
-	
-	-- Í¬²½ÈÎÎñÒıÇæËùÓÃµÄ±äÁ¿
-	for i=2000, 2300 do
-		SyncTaskValue(i);
-	end;
+-- script viet hoa By http://tranhba.com  cïng b­íc ®ång b¹n kŞch t×nh nhiÖm vô thay ®æi l­îng 
+function SyncPartnerMasterTask() 
 
-end;
+local i=0; 
 
---¼ÓÈë¾ÉµÄLogin mainº¯Êı
-if login_add then login_add(main_old, 0) end
---¼ÓÈë¾ÉµÄ·Ö²½Í¬²½º¯Êı
-if login_add then login_add(delaysync_1, 1) end
-if login_add then login_add(delaysync_2, 2) end
-if login_add then login_add(delaysync_3, 3) end
+SyncTaskValue(1262); 
+SyncTaskValue(1256); 
+
+-- script viet hoa By http://tranhba.com  cïng b­íc ®ång b¹n ngÉu nhiªn nhiÖm vô 
+SyncTaskValue(1301); 
+SyncTaskValue(1302); 
+SyncTaskValue(1303); 
+SyncTaskValue(1304); 
+SyncTaskValue(1305); 
+SyncTaskValue(1306); 
+
+-- script viet hoa By http://tranhba.com  cïng b­íc nhiÖm vô dÉn k×nh sö dông ®İch thay ®æi l­îng 
+for i=2000, 2300 do 
+SyncTaskValue(i); 
+end; 
+
+end; 
+
+-- script viet hoa By http://tranhba.com  gia nhËp cùu ®İch Login main hµm sè 
+if login_add then login_add(main_old, 0) end 
+-- script viet hoa By http://tranhba.com  gia nhËp cùu ®İch ph©n b­íc cïng b­íc hµm sè 
+if login_add then login_add(delaysync_1, 1) end 
+if login_add then login_add(delaysync_2, 2) end 
+if login_add then login_add(delaysync_3, 3) end 

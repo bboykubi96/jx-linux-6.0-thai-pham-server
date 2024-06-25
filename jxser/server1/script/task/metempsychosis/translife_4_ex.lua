@@ -23,7 +23,7 @@ end
 
 function checkTranslifetime()
 	local n_transcount = ST_GetTransLifeCount()
-	if n_transcount ~= TRANSLIFE_TIME then
+	if n_transcount < TRANSLIFE_TIME then
 		Talk(1,"","Ch­a ®¹t ®­îc yªu cÇu lu«n kiªn tr× cÊp 200 trïng sinh ®Õn lÇn 4, kh«ng thÓ nhËn ®­îc kü n¨ng nµy")	
 		return 0
 	end

@@ -1,6 +1,5 @@
 Include( "\\script\\missions\\leaguematch\\head.lua" )
 Include( "\\script\\missions\\leaguematch\\npc\\head.lua" )
-Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function wlls_get_winrate()
 	local n_total	= GetTask(WLLS_TASKID_TOTAL)
@@ -21,30 +20,18 @@ function wlls_get_total()
 end
 
 WLLS_REG_TABLE	= {
-	-- Ãû³Æ£¬	»ñÈ¡º¯Êý£¬				ÏÔÊ¾£¬																			µ¥Î»)
-	{"giíi tÝnh",	GetSex,					{"Nam", "N÷ "},																	""},
-	{"m«n ph¸i",	GetLastFactionNumber,	{"ThiÕu L©m", "Thiªn V­¬ng", "§­êng M«n", "Ngò §éc", "Nga Mi", "Thóy Yªn", "C¸i Bang", "Thiªn NhÉn", "Vâ §ang", "C«n L«n"},""},
-	{"®¼ng cÊp",	GetLevel,				{{80,99}, {100,119}, {120,129}, {130,139}, {140,149}, {150,nil}},	"cÊp"},
-	{"tham gia thi ®Êu",	wlls_get_total,			{{nil,9}, {10,48}, {49,99}, {100,200}, {200,nil}},								"trËn"},
-	{"tû lÖ th¾ng",	wlls_get_winrate,		{{nil,29}, {30,49}, {50,70}, {70,90}, {90,nil}},								"%"},
+	{"giíi tÝnh",	GetSex,{"Nam", "N÷ "},""},
+	{"m«n ph¸i",	GetLastFactionNumber,{"ThiÕu L©m","Thiªn V­¬ng","§­êng M«n", "Ngò §éc","Nga Mi","Thóy Yªn","C¸i Bang","Thiªn NhÉn","Vâ §ang","C«n L«n"},""},
+	{"®¼ng cÊp",	GetLevel,{{80,99}, {100,119}, {120,129}, {130,139}, {140,149}, {150,nil}},"cÊp"},
+	{"tham gia thi ®Êu",	wlls_get_total,{{nil,9}, {10,48}, {49,99}, {100,200}, {200,nil}},"trËn"},
+	{"tû lÖ th¾ng",wlls_get_winrate,{{nil,29}, {30,49}, {50,70}, {70,90}, {90,nil}},"%"},
 }
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
-
 function main()
-	
-	--dofile("script/missions/leaguematch/npc/helper.lua");
-	--dofile("script/global/g7vn/g7configall.lua")
-
-	if(volamliendau == 0) then
-		Say("Liªn ®Êu t¹m thêi ch­a më.")
-		return
-	end
-
 	local n_ntype	= GetGlbValue(GLB_WLLS_NEXT)
 	if (WLLS_TAB[n_ntype].max_member <= 1) then
-	--	Say("HiÖn vâ l©m tû vâ theo h×nh thøc ®¬n ®Êu. Ta kh«ng thÓ gióp ng­¬i råi!", 0)
-	--	return
+		Say("HiÖn vâ l©m tû vâ theo h×nh thøc ®¬n ®Êu. Ta kh«ng thÓ gióp ng­¬i råi!", 0)
+		return
 	end
 	local n_lid = LG_GetLeagueObj(WLLS_REG_LGTYPE, GetName())
 	local tb_option	= {}
@@ -59,49 +46,39 @@ function main()
 	Say("Sø gi¶ liªn ®Êu: Vâ l©m liªn ®Êu chÝnh thøc b¾t ®Çu" .. WLLS_TAB[n_ntype].name .. ", Cã thÓ gÆp ta ®Ó t× hiÓu vÒ c¸c th«ng tin cña nh÷ng tuyÓn thñ kh¸c hoÆc ®ang ký c¸c th«ng tin cña m×nh vµ tæ ®éi", getn(tb_option), tb_option)
 end
 
--- µÇ¼Ç³ÉÔ±
 function wlls_reg_me()
-	-- ½¨Õ½¶Ó
 	local n_lid = LG_CreateLeagueObj()
 	LG_SetLeagueInfo(n_lid, WLLS_REG_LGTYPE, GetName())
 	LG_ApplyAddLeague(n_lid, "", "") 
 	LG_FreeLeagueObj(n_lid)
-
-	-- ´æÈë×ÔÉí»ù±¾Êý¾Ý
 	wlls_save_myinfo()
-
 	Talk(1, "wlls_view_me", "   §¨ng ký thµnh c«ng! Cã thÓ thay ®æi c¸c th«ng tin")
 end
 
--- ²é¿´×Ô¼º
 function wlls_view_me()
-	-- Èç¹û ¸ÕµÇ¼Ç/¸Õ¸üÐÂ Á¢¼´ÔËÐÐ´Ëº¯Êý ÓÐ¿ÉÄÜÏÔÊ¾Òì³£
 	Describe(wlls_get_infostr(GetName()), 3,
 		"Thay ®æi tin tøc c¬ b¶n cña ta/wlls_reg_refresh", "Söa tin tøc ®éi h÷u kú väng/#wlls_edit_need('')", "Trë l¹i")
 end
 
--- ¸üÐÂ×Ô¼ºµÄ»ù±¾ÐÅÏ¢
 function wlls_reg_refresh()
 	wlls_save_myinfo()
 	Talk(1, "wlls_view_me", strfill_right("Thay ®æi thµnh c«ng!", 30))
 end
 
--- ½«×ÔÉí»ù±¾ÐÅÏ¢´æÈë
 function wlls_save_myinfo()
 	local tb_info = {}
 	for n_idx, tb_fmt in WLLS_REG_TABLE do
 		tb_info[n_idx]	= tb_fmt[2]()
-		if (type(tb_fmt[3][1]) == "string") then	-- Ã¶¾Ù+1
-			tb_info[n_idx]	= tb_info[n_idx] + 1
+		if (type(tb_fmt[3][1]) == "string") then
+			tb_info[n_idx] = tb_info[n_idx] + 1
 		end
 	end
 	local n_data	= wlls_reg_savedata(tb_info)
 	LG_ApplySetLeagueTask(WLLS_REG_LGTYPE, GetName(), 1, n_data)
 end
 
--- ²é¿´²¢±à¼­ÆÚÍû¶ÓÓÑÐÅÏ¢
 function wlls_edit_need(str, b_query)
-	if (str == "") then	-- ¸Õ´ò¿ª
+	if (str == "") then
 		SetTaskTemp(WLLS_TEMPTASK, LG_GetLeagueTask(WLLS_REG_LGTYPE, GetName(), 2))
 		if b_query then
 			str	= "Xin thay ®æi c¸c th«ng tin mÆc ®Þnh cña ®éi h÷u "
@@ -134,7 +111,6 @@ function wlls_edit_need(str, b_query)
 	Say(str, getn(tb_option), tb_option)
 end
 
--- ×¼±¸ÐÞ¸ÄÄ³ÏîÆÚÍûÖµ
 function wlls_want2modify_need(n_idx, b_query)
 	local tb_fmt	= WLLS_REG_TABLE[n_idx]
 	local tb_info	= wlls_reg_loaddata(GetTaskTemp(WLLS_TEMPTASK))
@@ -150,51 +126,44 @@ function wlls_want2modify_need(n_idx, b_query)
 		wlls_get_oneneed(n_idx, n_value) .. "<color>\nxin chän ph¹m vi míi:", getn(tb_option), tb_option)
 end
 
--- Òª×¢Ïú³ÉÔ±
 function wlls_want2out()
 	Say("Sø gi¶ liªn ®Êu: Sau khi xãa, tÊt c¶ c¸c tuyÓn thñ kh¸c ®Òu sÏ kh«ng thÓ xem ®­îc c¸c tin tøc! QuyÕt ®Þnh kü ch­a?", 2, "Ta quyÕt ®Þnh xãa!/wlls_doout", "Th«i sau h½ng tÝnh!/OnCancel")
 end
 
--- ×¢Ïú³ÉÔ±
 function wlls_doout()
 	LG_ApplyRemoveLeague(WLLS_REG_LGTYPE, GetName())
 	Talk(1, "main", strfill_right("Xãa thµnh c«ng", 30))
 end
 
--- ²éÑ¯²Ëµ¥
 function wlls_reg_query_menu()
 	local tb_option = {}
 	tb_option[getn(tb_option)+1]	= "T×m hiÓu theo [tªn]/wlls_reg_query_name"
 	for n_idx, tb_fmt in WLLS_REG_TABLE do
-		tb_option[getn(tb_option)+1]	= "Theo [" .. tb_fmt[1] .. "] /#wlls_reg_query_single(" .. n_idx .. ")"
+		tb_option[getn(tb_option)+1] = "Theo [" .. tb_fmt[1] .. "] /#wlls_reg_query_single(" .. n_idx .. ")"
 	end
 	tb_option[getn(tb_option)+1] = "T×m hiÓu cao cÊp/#wlls_edit_need('',1)"
 	tb_option[getn(tb_option)+1] = "Trë l¹i"
 	Say("Sø gi¶ liªn ®Êu: B¹n cã thÓ c¨n cø vµo c¸c lo¹i h×nh kh¸c nhau ®Ó t×m hiÓu tuyÓn thñ, bao gåm giíi tÝnh, m«n ph¸i, ®¼ng cÊp.", getn(tb_option), tb_option)
 end
 
--- ²é¿´¶ÓÓÑ£¨ÊäÈë£©
 function wlls_reg_query_name()
 	AskClientForString("wlls_reg_query_name_do", "", 1, 16, "NhËp tªn thµnh viªn muèn t×m hiÓu")
 end
 
--- ²é¿´¶ÓÓÑ£¨²éÑ¯£©
 function wlls_reg_query_name_do(str_name)
 	Describe(wlls_get_infostr(str_name), 1, "Trë l¹i/wlls_reg_query_menu", "Trë l¹i")
 end
 
--- ×¼±¸µ¥Ïî²éÑ¯
 function wlls_reg_query_single(n_idx)
 	local tb_fmt	= WLLS_REG_TABLE[n_idx]
 	local tb_option	= {}
 	for i = 1, getn(tb_fmt[3]) do
-		tb_option[getn(tb_option)+1]	= wlls_get_oneneed(n_idx, i).."/#wlls_reg_query_single_do("..n_idx..","..i..")"
+		tb_option[getn(tb_option)+1] = wlls_get_oneneed(n_idx, i).."/#wlls_reg_query_single_do("..n_idx..","..i..")"
 	end
-	tb_option[getn(tb_option)+1]	= "Trë l¹i/wlls_reg_query_menu"
+	tb_option[getn(tb_option)+1] = "Trë l¹i/wlls_reg_query_menu"
 	Say("Sø gi¶ liªn ®Êu: HiÖn t¹i theo thø tù<color=yellow>"..tb_fmt[1].."<color> t×m hiÓu, xin chän ph¹m vi cÇn t×m hiÓu:", getn(tb_option), tb_option)
 end
 
--- µ¥Ïî²éÑ¯
 function wlls_reg_query_single_do(n_idx, n_need)
 	local tb_info	= {}
 	for n, tb_fmt in WLLS_REG_TABLE do
@@ -208,51 +177,46 @@ function wlls_reg_query_single_do(n_idx, n_need)
 	wlls_reg_query_begin()
 end
 
--- ¶àÏî²éÑ¯
 function wlls_reg_query_begin()
 	SetStringTask(WLLS_STRINGTASK, "")
 	wlls_reg_query_do()
 end
 
--- ¸ù¾ÝÁÙÊ±±äÁ¿²éÑ¯
 function wlls_reg_query_do(str_name, b_next)
-	-- È·¶¨±¾Ò³µÄµÚÒ»¸öÕ½¶ÓID
 	local n_lid
 	local str_start
-	if b_next then	-- ·­Ò³£¬str_nameÊÇÆðÊ¼³ÉÔ±
+	if b_next then
 		SetStringTask(WLLS_STRINGTASK, str_name)
 		str_start	= str_name
 	else
 		str_start	= GetStringTask(WLLS_STRINGTASK)
 	end
-	if (str_start ~= "") then	-- µ±Ç°Ò³
+	if (str_start ~= "") then
 		n_lid	= LG_GetLeagueObj(WLLS_REG_LGTYPE, str_start)
-	else	-- µÚÒ»Ò³
+	else
 		n_lid	= LG_GetFirstLeague(WLLS_REG_LGTYPE)
 	end
 	
-	-- ¼ÌÐø²éÕÒÕ½¶Ó
 	local str_myname	= GetName()
 	local str
 	local tb_option	= {}
 	local tb_need	= wlls_reg_loaddata(GetTaskTemp(WLLS_TEMPTASK))
 	while (not FALSE(n_lid)) do
 		local tb_info	= wlls_reg_loaddata(LG_GetLeagueTask(n_lid, 1))
-		if (wlls_check_need(tb_need, LG_GetLeagueTask(n_lid, 1))) then	-- ÕÒµ½Ò»¸öÆ¥Åä
+		if (wlls_check_need(tb_need, LG_GetLeagueTask(n_lid, 1))) then
 			local str_lgname	= LG_GetLeagueInfo(n_lid)
-			if (str_myname ~= str_lgname) then	-- ²»ÄÜËÑË÷×Ô¼º
+			if (str_myname ~= str_lgname) then
 				local n_got	= getn(tb_option)
 				if (n_got == 0) then	-- µÚÒ»¸ö
-					-- ÏÔÊ¾Òª²éÑ¯µÄÕ½¶Ó
-					if (not str_name) then 	-- Ä¬ÈÏÏÔÊ¾±¾Ò³µÚÒ»¸ö
+					if (not str_name) then
 						str_name	= str_lgname
 					end
 					str	= wlls_get_infostr(str_name)
-				elseif (getn(tb_option) >= 10) then	-- ÒÑÂú
+				elseif (getn(tb_option) >= 10) then
 					str_name	= str_lgname
 					break
 				end
-				if (str_lgname == str_name) then	-- ÕýÊÇµ±Ç°²éÑ¯µÄÕ½¶Ó
+				if (str_lgname == str_name) then
 					tb_option[getn(tb_option)+1]	= "< " .. safeshow(str_name) .. " >/#wlls_reg_query_do('" .. safestr(str_name) .. "')"
 				else
 					tb_option[getn(tb_option)+1]	= safeshow(str_lgname) .. "/#wlls_reg_query_do('" .. safestr(str_lgname) .. "')"
@@ -262,24 +226,23 @@ function wlls_reg_query_do(str_name, b_next)
 		n_lid = LG_GetNextLeague(WLLS_REG_LGTYPE, n_lid)
 	end
 
-	if (not str) then	-- Ã»ÄÜÕÒµ½
+	if (not str) then
 		Say("Sø gi¶ liªn ®Êu: Xin lçi! Kh«ng thÓ t×m thµnh viªn ®¨ng ký phï hîp víi yªu cÇu.", 1, "Trë l¹i/wlls_reg_query_menu")
 		return
 	end
 
-	if (not FALSE(n_lid)) then	-- ºóÃæ»¹ÓÐ
-		tb_option[getn(tb_option)+1]	= "Trang kÕ /#wlls_reg_query_do('" .. safestr(str_name) .. "', 1)"
+	if (not FALSE(n_lid)) then
+		tb_option[getn(tb_option)+1] = "Trang kÕ /#wlls_reg_query_do('" .. safestr(str_name) .. "', 1)"
 	end
 	tb_option[getn(tb_option)+1]	= "Trë l¹i/wlls_reg_query_menu"
 	Describe(str, getn(tb_option), tb_option)
 end
 
--- ÐÞ¸ÄÄ³ÏîÆÚÍûÖµ
 function wlls_modify_need(n_idx, n_value, b_query)
 	local tb_info	= wlls_reg_loaddata(GetTaskTemp(WLLS_TEMPTASK))
-	tb_info[n_idx]	= n_value
-	-- ·ûºÏÒ»¶¨Âß¼­
-	if (n_idx == 2) then	-- ÃÅÅÉ
+	tb_info[n_idx] = n_value
+	
+	if (n_idx == 2) then
 		if (n_value == 1 or n_value == 2) then
 			if (tb_info[1] == 2) then
 				tb_info[1] = 1
@@ -289,7 +252,7 @@ function wlls_modify_need(n_idx, n_value, b_query)
 				tb_info[1] = 2
 			end
 		end
-	elseif (n_idx == 1) then	-- ÐÔ±ð
+	elseif (n_idx == 1) then
 		if (n_value == 1) then
 			if (tb_info[2] == 5 or tb_info[2] == 6) then
 				tb_info[2] = 0
@@ -304,7 +267,6 @@ function wlls_modify_need(n_idx, n_value, b_query)
 	wlls_edit_need(WLLS_REG_TABLE[n_idx][1] .. "®· söa", b_query)
 end
 
--- ±£´æÆÚÍû¶ÓÓÑÐÅÏ¢
 function wlls_save_need(b_query)
 	local n_data	= GetTaskTemp(WLLS_TEMPTASK)
 	if (n_data ~= LG_GetLeagueTask(WLLS_REG_LGTYPE, GetName(), 2)) then
@@ -313,7 +275,6 @@ function wlls_save_need(b_query)
 	Talk(1, iif(b_query, "wlls_reg_query_begin", "wlls_view_me"), strfill_right("B¶o l­u thµnh c«ng!", 30))
 end
 
--- µÃµ½ÏàÓ¦µÄ³ÉÔ±ÐÅÏ¢×Ö·û´®
 function wlls_get_infostr(str_name)
 	local n_lid	= LG_GetLeagueObj(WLLS_REG_LGTYPE, str_name)
 	if FALSE(n_lid) then
@@ -330,9 +291,9 @@ function wlls_get_infostr(str_name)
 	end
 	for n_idx, tb_fmt in WLLS_REG_TABLE do
 		local str	= wlls_get_oneinfo(n_idx, tb_info[n_idx])
-		if (mod(n_idx, 2) == 1) then	-- µ¥Êý
+		if (mod(n_idx, 2) == 1) then
 			str_ret	= str_ret .. " " .. tb_fmt[1] .. ":" .. strfill_left(str, 10)
-		else	-- Ë«Êý
+		else
 			str_ret	= str_ret .. tb_fmt[1] .. ":" .. str .. "\n"
 		end
 	end
@@ -354,13 +315,12 @@ function wlls_get_infostr(str_name)
 	return str_ret .. "\n§éi cã hy väng:\n" .. wlls_get_needinfo(n_data2)
 end
 
--- µÃµ½ÏàÓ¦µÄÆÚÍûÐÅÏ¢×Ö·û´®
 function wlls_get_needinfo(n_data)
 	local tb_info	= wlls_reg_loaddata(n_data)
 	local str_ret	= ""
 	for n_idx, tb_fmt in WLLS_REG_TABLE do
 		local str	= wlls_get_oneneed(n_idx, tb_info[n_idx])
-		if (mod(n_idx, 2) == 1) then	-- µ¥Êý
+		if (mod(n_idx, 2) == 1) then
 			str_ret	= str_ret .. " " .. tb_fmt[1] .. ":" .. strfill_left(str, 10)
 		else	-- Ë«Êý
 			str_ret	= str_ret .. tb_fmt[1] .. ":" .. str .. "\n"
@@ -369,7 +329,6 @@ function wlls_get_needinfo(n_data)
 	return str_ret
 end
 
--- ·µ»ØÒ»ÌõÐèÇóÐÅÏ¢µÄ×Ö·û´®
 function wlls_get_oneneed(n_idx, n_value)
 	local tb		= WLLS_REG_TABLE[n_idx][3]
 	local str_units	= WLLS_REG_TABLE[n_idx][4]
@@ -384,7 +343,7 @@ function wlls_get_oneneed(n_idx, n_value)
 		else
 			return tb_range[1] .. "~" .. tb_range[2] .. str_units
 		end
-	elseif (type(tb[1]) == "string") then	-- Ã¶¾Ù
+	elseif (type(tb[1]) == "string") then
 		local str = tb[n_value]
 		if (not str) then
 			return "Kh«ng vÊn ®Ò"
@@ -396,17 +355,16 @@ function wlls_get_oneneed(n_idx, n_value)
 	end
 end
 
--- ·µ»ØÒ»Ìõ³ÉÔ±»ù±¾ÐÅÏ¢µÄ×Ö·û´®
 function wlls_get_oneinfo(n_idx, n_value)
 	local tb	= WLLS_REG_TABLE[n_idx][3]
 	local str_units	= WLLS_REG_TABLE[n_idx][4]
-	if (type(tb[1]) == "table") then	-- ÊýÖµ
+	if (type(tb[1]) == "table") then
 		if (n_value >= 255) then
 			return "#" .. n_value .. str_units
 		else
 			return n_value .. str_units
 		end
-	elseif (type(tb[1]) == "string") then	-- Ã¶¾Ù
+	elseif (type(tb[1]) == "string") then
 		local str = tb[n_value]
 		if (not str) then
 			return "Ch­a biÕt"
@@ -418,7 +376,6 @@ function wlls_get_oneinfo(n_idx, n_value)
 	end
 end
 
--- ¼ì²éÆÚÍûÖµÊÇ·ñ·ûºÏ
 function wlls_check_need(tb_need, n_data)
 	local tb_value	= wlls_reg_loaddata(n_data)
 	for n_idx, tb_fmt in WLLS_REG_TABLE do
@@ -426,7 +383,7 @@ function wlls_check_need(tb_need, n_data)
 		if (n_need ~= 0) then
 			local tb		= WLLS_REG_TABLE[n_idx][3]
 			local n_value	= tb_value[n_idx]
-			if (type(tb[1]) == "table") then	-- ÊýÖµ·¶Î§
+			if (type(tb[1]) == "table") then
 				local tb_range	= tb[n_need]
 				if (not tb_range[1]) then
 					if (n_value > tb_range[2]) then
@@ -441,7 +398,7 @@ function wlls_check_need(tb_need, n_data)
 						return
 					end
 				end
-			elseif (type(tb[1]) == "string") then	-- Ã¶¾Ù
+			elseif (type(tb[1]) == "string") then
 				if (n_need ~= n_value) then
 					return
 				end
@@ -453,7 +410,6 @@ function wlls_check_need(tb_need, n_data)
 	return 1
 end
 
--- ¸ù¾Ý ÐÅÏ¢ ·µ»Ø ±£´æµÄÊý¾Ý
 function wlls_reg_savedata(tb_info)
 	local n_data	= 0;
 	n_data	= SetByte(n_data, 1, tb_info[1] * 16 + tb_info[2])
@@ -463,7 +419,6 @@ function wlls_reg_savedata(tb_info)
 	return n_data
 end
 
--- ¸ù¾Ý ±£´æµÄÊý¾Ý ·µ»Ø ÐÅÏ¢
 function wlls_reg_loaddata(n_data)
 	local n_data1	= GetByte(n_data, 1)
 	tb_info	= {

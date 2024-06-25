@@ -2,11 +2,11 @@
 ItemClass = {}
 function ItemClass:_init()
 	self.szName = ""
-	self.tbProp = {} --{nItemGenre, nDetailType, nParticualrType, nLevel, nSeries, nLuck}
-	self.nVersion = 4--Ä¬ÈÏ°æ±¾ºÅ£¬Ä¿Ç°ÓÃµÄÊÇ4
-	self.nRandSeed = 0 --0±íÊ¾²»Ö¸¶¨Ëæ»úÖÖ×Ó
-	self.nQuality = 0 --0ÆÕÍ¨ 1 »Æ½ğ  4°×½ğ
-	self.tbParam = {0,0,0,0,0,0}--ÓÃÓÚÄ§·¨ÊôĞÔ or ×Ô¶¨Òå²ÎÊı£¨¶şÕßÑ¡Ò»£¬Òò´Ë×°±¸²»¿É×Ô¶¨Òå²ÎÊı£©
+	self.tbProp = {} -- script viet hoa By http://tranhba.com {nItemGenre, nDetailType, nParticualrType, nLevel, nSeries, nLuck}
+	self.nVersion = 4-- script viet hoa By http://tranhba.com Ä#Ì#°#±#ºÅ##Ä¿#°ã·#Ä£#4
+	self.nRandSeed = 0 -- script viet hoa By http://tranhba.com 0±İ£#²########ó###ã
+	self.nQuality = 0 -- script viet hoa By http://tranhba.com 0#âİ# 1 ###ğ  4°##ğ
+	self.tbParam = {0,0,0,0,0,0}-- script viet hoa By http://tranhba.com ã·ãóÄ###£«#¤ or #¤##ß#²#£ı####â###ß###ßß´##°±#²#¿Ğ#¤##ß#²#£ı##
 	self.nUpgradeLevel = nil
 	self.nCurDurability = nil 
 	self.nMaxDurability = nil
@@ -21,7 +21,7 @@ function ItemClass:Pack(...)
 	return arg
 end
 
---Éú³É¿ÕÊı¾İµÄµÀ¾ß
+-- script viet hoa By http://tranhba.com Ğó³Ğ¿â£ı#ı#Ä#µ##
 function ItemClass:New()
 	local tb = {}
 	for key, value in self do
@@ -31,7 +31,7 @@ function ItemClass:New()
 	return tb
 end
 
---¸ù¾İ´¿Êı¾İÉú³ÉÒ»¸öÎïÆ·
+-- script viet hoa By http://tranhba.com #ï#ı´¿£ı#ıĞó³Ğß#######
 function ItemClass:NewFormPureData(tbItem)
 	local tb = self:New()
 	for key, value in tbItem do
@@ -42,7 +42,7 @@ function ItemClass:NewFormPureData(tbItem)
 	return tb
 end
 
---¸ù¾İÎïÆ·IndexÉú³ÉµÀ¾ßÊı¾İ
+-- script viet hoa By http://tranhba.com #ï#ı####IndexĞó³Ğ#µ##£ı#ı
 function ItemClass:NewFromItemIndex(nItemIndex)
 	local tb = self:New()
 	
@@ -55,7 +55,7 @@ function ItemClass:NewFromItemIndex(nItemIndex)
 	tb.nExpiredTime		=  ITEM_GetExpiredTime(nItemIndex)
 	tb.nLeftUsageTime	= ITEM_GetLeftUsageTime(nItemIndex)
 	
-	--ÔİÊ±Ã»ÓĞËø»ê
+	-- script viet hoa By http://tranhba.com ¤ı£±·#ã####ª
 	
 	if tb.nQuality == 1 then
 		tb.tbProp = {0, GetGlodEqIndex(nItemIndex)}
@@ -66,9 +66,9 @@ function ItemClass:NewFromItemIndex(nItemIndex)
 	end
 	
 		
-	if IsItemStackable(nItemIndex) == 1 then --µş¼ÓÎïÆ·¿´µş¼ÓÊı£¬Ã»ÄÍ¾Ã
+	if IsItemStackable(nItemIndex) == 1 then -- script viet hoa By http://tranhba.com ###ã####¿´###ã£ı##·#Äİ#·
 		tb.nCount = GetItemStackCount(nItemIndex)
-	else--·Çµş¼ÓÎïÆ·¿´ÄÍ¾Ã
+	else-- script viet hoa By http://tranhba.com #####ã####¿´Äİ#·
 		tb.nCurDurability = GetCurDurability(nItemIndex)
 		tb.nMaxDurability = GetMaxDurability(nItemIndex)	
 	end
@@ -76,7 +76,7 @@ function ItemClass:NewFromItemIndex(nItemIndex)
 	return tb
 end
 
---»ñÈ¡µÀ¾ßµÄ´¿Êı¾İ£¬²»°üº¬º¯Êı
+-- script viet hoa By http://tranhba.com ##Ì##µ###Ä´¿£ı#ı##²#°#º#º¯£ı
 function ItemClass:GetPureData()
 	local tb = {}
 	for key, value in self do
@@ -98,7 +98,7 @@ function ItemClass:AddStackCount(nItemIndex, nAddCount)
 		nStackCount = nMaxStackCount
 	end
 	SetItemStackCount(nItemIndex, nStackCount)
-	return nStackCount - nOrgStackCount --·µ»ØÔö¼ÓÁË¼¸¸öµş¼ÓÊı
+	return nStackCount - nOrgStackCount -- script viet hoa By http://tranhba.com ####¤##ã¸########ã£ı
 end
 
 
@@ -108,14 +108,14 @@ function ItemClass:CreateItem(nPlayerIndex, nCopysCount, varLogTitle)
 	return nItemIndex
 end
 
---¸øÍæ¼ÒÔö¼ÓÒ»¸öµÀ¾ß
+-- script viet hoa By http://tranhba.com ##İ##ß¤##ãß####µ##
 function ItemClass:AddToPlayer(nPlayerIndex, nCopysCount, varLogTitle)
 	local nCount = (self.nCount or 1) * nCopysCount
 	
 	for i=1, nCount do 
 		local nItemIndex = self:GenBaseItem()
 		if nItemIndex > 0 then
-			if IsItemStackable(nItemIndex) == 1 then --¶ÔÓÚµş¼ÓÎïÆ·,ÓÅ»¯Ñ­»·´ÎÊıÎª ceil(topCount / MaxStackCount)
+			if IsItemStackable(nItemIndex) == 1 then -- script viet hoa By http://tranhba.com #¤ãó###ã####,ãÅ#¯####´#£ı## ceil(topCount / MaxStackCount)
 				i = i + self:AddStackCount(nCount - i)
 			end
 			self:SetExtProperty(nItemIndex)
@@ -130,7 +130,7 @@ function ItemClass:WriteLog(varLogTitle, szLog)
 	
 end
 
---·şÎñÆ÷Éú³ÉÒ»¸öÎïÆ·»ù±¾Êı¾İ£¨Ô­Ê¼Êı¾İ£©
+-- script viet hoa By http://tranhba.com ######Ğó³Ğß########ï±#£ı#ı##¤#£#£ı#ı##
 function ItemClass:GenBaseItem()
 	local nRow = 0
 	if self.nQuality and (self.nQuality == 1 or tbItem.self == 4) then
@@ -156,30 +156,30 @@ function ItemClass:GenBaseItem()
 		self.nUpgradeLevel)
 end
 
---ÉèÖÃ¶îÍâµÄÊôĞÔ
+-- script viet hoa By http://tranhba.com ĞÌ#·##İ©#Ä£«#¤
 function ItemClass:SetExtProperty(nItemIndex)		
-	if IsItemStackable(nItemIndex) ~= 1 then --¶ÔÓÚ²»¿Éµş¼ÓµÄµÀ¾ß
-		if self.nCurDurability then --ÉèÖÃµ±Ç°ÄÍ¾Ã¶È
+	if IsItemStackable(nItemIndex) ~= 1 then -- script viet hoa By http://tranhba.com #¤ãó²#¿Ğ###ã#Ä#µ##
+		if self.nCurDurability then -- script viet hoa By http://tranhba.com ĞÌ#·#±#°Äİ#·#Ì
 			SetCurDurability(nItemIndex, self.nCurDurability)
 		end
 		
-		if self.nMaxDurability then -- ÉèÖÃ×î´óÄÍ¾Ã¶È
+		if self.nMaxDurability then -- script viet hoa By http://tranhba.com  ĞÌ#·##´ãÄİ#·#Ì
 			SetMaxDurability(nItemIndex, self.nMaxDurability)
 		end
 	end
 	if self.nExpiredTime then
-		ITEM_SetExpiredTime(nItemIndex, self.nExpiredTime)-- ÉèÖÃÓĞĞ§ÆÚ
+		ITEM_SetExpiredTime(nItemIndex, self.nExpiredTime)-- script viet hoa By http://tranhba.com  ĞÌ#·ã####ó
 	end
 	
 	if self.nUsageTime or self.nLeftUsageTime then
-		ITEM_SetLeftUsageTime(nItemIndex, self.nUsageTime or self.nLeftUsageTime) -- ÉèÖÃÊ¹ÓÃÆÚ
+		ITEM_SetLeftUsageTime(nItemIndex, self.nUsageTime or self.nLeftUsageTime) -- script viet hoa By http://tranhba.com  ĞÌ#·£#ã·#ó
 	end
 	
-	if self.nItemLockState == 1 then --ÉèÖÃËø»ê
+	if self.nItemLockState == 1 then -- script viet hoa By http://tranhba.com ĞÌ#·###ª
 		LockItem(nItemIndex);
 	end
 	
 	if self.nBindState then
-		SetItemBindState(nItemIndex, self.nBindState)--¸ù¾İnBindState°ó¶¨ÎïÆ·
+		SetItemBindState(nItemIndex, self.nBindState)-- script viet hoa By http://tranhba.com #ï#ınBindState°ã######
 	end
 end

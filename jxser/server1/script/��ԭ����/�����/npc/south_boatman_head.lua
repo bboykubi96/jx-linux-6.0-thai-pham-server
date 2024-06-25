@@ -29,7 +29,7 @@ function south_boatman_main(BOATID)
 				local nDate = tonumber(GetLocalDate("%Y%m%d"));
 				tbBoatmanDialog	= {format("Lªn thuyÒn/#fld_wanttakeboat(%d)", BOATID), "L¸t n÷a sÏ quay l¹i/fld_cancel"};
 				if (nDate >= jf0904_act_dateS) then
-					tinsert(tbBoatmanDialog, 2, "Ta ®Õn tham gia ho¹t ®éng 'Tiªu diÖt thñy tÆc'/join_shuizei_act");
+					--tinsert(tbBoatmanDialog, 2, "Ta ®Õn tham gia ho¹t ®éng 'Tiªu diÖt thñy tÆc'/join_shuizei_act");
 				end
 				Say(format("%s: Lªn thuyÒn thİch thËt ®ã! Cßn %d lµ thuyÒn b¾t ®Çu ch¹y råi.", szNpcname, remaintime), getn(tbBoatmanDialog), unpack(tbBoatmanDialog));
 			else

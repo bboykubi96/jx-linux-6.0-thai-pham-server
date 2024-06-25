@@ -1,17 +1,17 @@
 Include("\\script\\missions\\autohang\\head.lua")
 
-function InitMission()
-	WriteLog(GetLoop()..date("%m%d-%H:%M")..": B¾t ®Çu treo m¸y!")
-	StartMissionTimer(AEXP_MISSIONID, AEXP_TIMERID, AEXP_UPDATETIME);
-	
-	-- ÉèÖÃÊÇ·ñÃâ·Ñ£¬ÒÔ¼°¾­Ñé±¶Êý(>=1)
-	SetAutoHangFreeFlag(AEXP_IsFreeTimeDoubleExp(), AEXP_FREEDATE_EXPFACTOR);
-end;
+function InitMission() 
+WriteLog(GetLoop()..date("%m%d-%H:%M")..": b¾t ®Çu treo ky !") 
+StartMissionTimer(AEXP_MISSIONID, AEXP_TIMERID, AEXP_UPDATETIME); 
 
-function RunMission()
-end;
+-- script viet hoa By http://tranhba.com  thiÕt trÝ cã hay kh«ng miÔn phÝ , cïng víi kinh nghiÖm béi sè (>=1) 
+SetAutoHangFreeFlag(AEXP_IsFreeTimeDoubleExp(), AEXP_FREEDATE_EXPFACTOR); 
+end; 
 
-function EndMission()
-	WriteLog(GetLoop()..date("%m%d-%H:%M")..": KÕt thóc treo m¸y!");
-	StopMissionTimer(AEXP_MISSIONID, AEXP_TIMERID);
-end;
+function RunMission() 
+end; 
+
+function EndMission() 
+WriteLog(GetLoop()..date("%m%d-%H:%M")..": kÕt thóc treo ky !"); 
+StopMissionTimer(AEXP_MISSIONID, AEXP_TIMERID); 
+end; 

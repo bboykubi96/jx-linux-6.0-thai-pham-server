@@ -28,16 +28,20 @@ YELLOW_ITEM_EXP						= 1e9
 
 TASKID_DAILY_X2TONGKIM		= 2785							-- Reset daily TK
 TASKID_COUNT_X2TONGKIM		= 2786							-- Count quest TK
-TASKID_RECIEVE_BONUS_TK	= 2784							
+TASKID_RECIEVE_BONUS_TK			 = 2784							--Nhan Doi Tong Kim
+TASKID_RECIEVE_TOP_TK			 = 2783							--Phan Thuong Top 10 Tong Kim
+TASKID_RECIEVE_TIMES_TK			 = 2782							--Reset Top Hang Ngay
 
+IPBONUS_EVENT_START_DATE = 201801010000
+IPBONUS_EVENT_END_DATE = 202512312400
 IPBONUS_EVENT_START_DATE = 201203220000
 IPBONUS_EVENT_END_DATE = 201204052400
 TASKID_ONLINE_TIME_GET_YELLOW_BOX					= 2929							-- Total online time to get yellow box
 tbBITTSK_CHECK_GET_YELLOW_BOX = {
-	nTaskID = 2930,
-	nStartBit = 1,
-	nBitCount = 1,
-	nMaxValue = 1,
+nTaskID = 2930,
+nStartBit = 1,
+nBitCount = 1,
+nMaxValue = 1,
 }
 
 function IpBonus_Start()		

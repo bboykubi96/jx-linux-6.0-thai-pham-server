@@ -4,14 +4,14 @@
 -- CreateTime	:	2005-04-07 10:23:14
 -- Desc			:   风之骑关卡的出口处对话npc，风之骑将白翼
 -------------------------------------------------------------------------
-Include("\\script\\task\\newtask\\newtask_head.lua") --调用 nt_getTask 同步变量到客户端的类
+Include("\\script\\task\\newtask\\newtask_head.lua") --调用 nt_getTask 同步变量到客户端的赖
 Include("\\script\\task\\tollgate\\killbosshead.lua") --包含了图象调用
-Include("\\script\\task\\tollgate\\messenger\\posthouse.lua") --包含玩家任务数据表格的类
+Include("\\script\\task\\tollgate\\messenger\\posthouse.lua") --包含玩家任务数据表格的赖
 Include("\\script\\task\\tollgate\\messenger\\messenger_losetask.lua")  --取消任务
 Include("\\script\\task\\tollgate\\messenger\\messenger_timeer.lua")    --调用计时器
 Include ("\\script\\task\\partner\\master\\partner_master_main.lua");   --增加同伴剧情任务完成的控制判断
-Include("\\script\\activitysys\\g_activity.lua")			--活动编辑器
-Include("\\script\\activitysys\\playerfunlib.lua")		--活动编辑器
+Include("\\script\\activitysys\\g_activity.lua")			--活动钡辑器
+Include("\\script\\activitysys\\playerfunlib.lua")		--活动钡辑器
 
 function main()
 	local Uworld1206 = nt_getTask(1206)

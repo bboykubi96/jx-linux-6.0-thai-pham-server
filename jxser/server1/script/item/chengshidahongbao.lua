@@ -1,61 +1,44 @@
-if(not KTABFILE_HEAD) then
-	Include "/script/class/ktabfile.lua"
+Include("\\script\\lib\\awardtemplet.lua")
+ _Message = function (nItemIdx)
+	local strItemName = GetItemName(nItemIdx)
+	local strMessage = format("<color=green>Chóc mõng <color=yellow>%s<color=green> ®· nhËn ®­îc vËt phÈm <color=yellow>%s<color=green> tõ c«ng thµnh thÞ ®¹i hång bao", GetName(), strItemName)
+	local handle = OB_Create();
+	Msg2SubWorld(strMessage)
+	-- ObjBuffer:PushObject(handle, strMessage)
+	-- RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+	-- OB_Release(handle)
 end
-
-if(not KBONUS_HEAD) then
-	Include "/script/class/kbonus.lua"
-end
-
-if(not MEM_HEAD) then
-	Include "/script/lib/mem.lua"
-end
-
-ChengShi_GiftsTabfile = new(KTabFile,"/settings/item/chengshidahongbao.txt","CHENGSHI_GIFTS")
-ChengShi_BonusHongbao = new(KBonus)
-print(ChengShi_GiftsTabfile:getRow())
-for i=1,ChengShi_GiftsTabfile:getRow() do
-	local name = ChengShi_GiftsTabfile:getCell("Name",i)
-	local proba = ChengShi_GiftsTabfile:getCell("Proba",i)
-	local costly = ChengShi_GiftsTabfile:getCell("Costly",i)
-	local msg = ChengShi_GiftsTabfile:getCell("Msg",i)
-	if(msg == "") then msg = nil end
-	local type = ChengShi_GiftsTabfile:getCell("Type",i)
-	local g = ChengShi_GiftsTabfile:getCell("Genre",i)
-	local d = ChengShi_GiftsTabfile:getCell("Detail",i)
-	local p = ChengShi_GiftsTabfile:getCell("Particular",i)
-	local lvl = ChengShi_GiftsTabfile:getCell("Level",i)
-	local serise = ChengShi_GiftsTabfile:getCell("Serise",i)
-	local log = ChengShi_GiftsTabfile:getCell("Log",i)
-	local p1 = ChengShi_GiftsTabfile:getCell("Param1",i)
-	if(p1=="") then p1=nil end
-	local p2 = ChengShi_GiftsTabfile:getCell("Param2",i)
-	if(p2=="") then p2=nil end
-	local p3 = ChengShi_GiftsTabfile:getCell("Param3",i)
-	if(p3=="") then p3=nil end
-	local p4 = ChengShi_GiftsTabfile:getCell("Param4",i)
-	if(p4=="") then p4=nil end
-	local p5 = ChengShi_GiftsTabfile:getCell("Param5",i)
-	if(p5=="") then p5=nil end
-	local p6 = ChengShi_GiftsTabfile:getCell("Param6",i)
-	if(p6=="") then p6=nil end
-
-	ChengShi_BonusHongbao:addBonus(i,name,proba,costly,msg,type,log,{
-			g,d,p,lvl,serise,nil,p1,p2,p3,p4,p5,p6
-		})
-end
-ChengShi_GiftsTabfile:release()
-
+local tbTop={
+		[23]={szName = "Ng©n L­îng", nJxb =250000, nRate = 100, nCount = 1},
+		-- [1]={szName="§¹i thµnh bÝ kÝp",tbProp={6,1,2424,1,0,0},nRate=0.01,CallBack =_Message},
+		[1]={szName="Tiªn th¶o lé 8h",tbProp={6,1,1181,1,0,0},nRate=0.1,CallBack =_Message},
+		[2] = {szName="§Þnh quèc",tbProp={0,{159,160}},nQuality = 1,nRate=0,CallBack = _Message},
+		[3]={szName="Thñy tinh",tbProp={4,{238,240},1,1,0,0},nRate=15,CallBack = _Message},
+		[4]={szName="Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nRate=5,},
+		[5]={szName="QuÕ hoa töu",tbProp={6,1,125,1,0,0},nRate=5,},
+		[6] = {szName="§Þnh quèc",tbProp={0,{161,163}},nQuality = 1,nRate=0,CallBack = _Message},
+		[7]={szName="Tinh hång b¶o th¹ch",tbProp={4,353,1,1,0,0},nRate=15,CallBack =_Message},
+		[8] = {szName = "Ng©n L­îng", nJxb =300000, nRate = 2, nCount = 1},
+		[9] = {szName="HiÖp cèt",tbProp={0,{186,188}},nQuality = 1,nRate=0,CallBack = _Message},
+		[10] = {szName="ChiÕu d¹",tbProp={6,1,2332,1,0,0},nRate=0.1,CallBack = _Message},
+		[11] = {szName="M· bµi 8x",tbProp={6,1,{2328,2331},1,0,0},nRate=0.2,CallBack = _Message},
+		[12] =	{szName = "TÈy tñy kinh",tbProp={6,1,22,1,0,0,0}, nRate=1,CallBack = _Message},
+		[13] =	{szName = "Vâ l©m mËt tÞch",tbProp={6,1,26,1,0,0,0}, nRate=1,CallBack = _Message},
+		[14] =	{szName = "ThÇn hµnh phï",tbProp={6,1,1266,1,0,0,0}, nRate=0.5,nExpiredTime=24*60*7,CallBack = _Message},
+		[15] =	{szName = "Thæ ®Þa phï",tbProp={6,1,438,1,0,0,0}, nRate=0.8,nExpiredTime=24*60*7,CallBack = _Message},
+		[16] = {szName="Nhu t×nh",tbProp={0,{191,193}},nQuality = 1,nRate=0,CallBack = _Message},
+		[17] = {szName="Phóc duyªn",tbProp={6,1,{122,124},1,0,0},nRate=2,CallBack = _Message},
+		[18] = {szName = "Ng©n L­îng", nJxb =500000, nRate = 1, nCount = 1},
+		[19] = {szName = "Ng©n L­îng", nJxb =1000000, nRate = 0.5, nCount = 1},
+		[20] = {szName="HiÖp cèt",tbProp={0,189},nQuality = 1,nRate=0,CallBack = _Message},
+		[21] = {szName="Nhu T×nh",tbProp={0,190},nQuality = 1,nRate=0,CallBack = _Message},
+		[22] = {szName="M· bµi phi v©n",tbProp={6,1,2396,1,0,0},nRate=0.001,CallBack = _Message},
+		[22] = {szName="R­¬ng cao quý",tbProp={6,1,1384,1,0,0},nRate=0,CallBack = _Message},
+}
 function main()
-	if CalcFreeItemCellCount() < 6 then
-		Talk(1,"","Hµnh trang kh«ng ®ñ chç trèng, kh«ng thÓ më ®¹i hång bao.")
-		Msg2Player("Hµnh trang kh«ng ®ñ chç trèng, kh«ng thÓ më ®¹i hång bao.")
-		return 1
-	end
-	local idx = ChengShi_BonusHongbao:randomSelect()
-	if(not idx) then
-		Msg2Player("B¹n më ®¹i hång bao ra ph¸t hiÖn bªn trong kh«ng cã g× hÕt.")
-		return 0
-	end
-	ChengShi_BonusHongbao:payBonus(PlayerIndex,idx)
-	return 0
+if CalcFreeItemCellCount() < 20 then
+		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
+		return 
+end
+tbAwardTemplet:GiveAwardByList(%tbTop, "Mo than bi dai hong bao")
 end

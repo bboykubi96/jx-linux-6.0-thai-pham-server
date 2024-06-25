@@ -1,4 +1,3 @@
---B¶ng xÕp thø h¹ng nh©n vËt edit by mcteam search key "Thø h¹ng c¸ nh©n"
 IncludeLib("RELAYLADDER");
 IncludeLib("TONG")
 function XepHang()
@@ -9,21 +8,18 @@ function XepHang()
 	end
 end
 
-
 function XepHang_Top10ALL()
 	Ladder_NewLadder(10287, GetName(),GetLevel(),1);
-	--Ladder_NewLadder(10250, GetName(),GetLevel(),1);--xep hang tong kim
 end
 function XepHang_TopPH10ALL()
 	Ladder_NewLadder(10288, GetName(),GetCash(),1);
 end
 
 function XoaXepHang()
-	for i=10277,10288 do
+	for i=10277,10286 do
 		Ladder_ClearLadder(i)
 	end
 	Ladder_ClearLadder(10119)
-	Ladder_ClearLadder(10250)
 end
 
 function XepHang_Top10MP()
@@ -61,39 +57,39 @@ function XepHang_Top10MP()
 end
 
 function xephangcanhan()
-	local PlayerIndexOld = PlayerIndex
-	local szArrayRankingLevel = {}
-	local szArrayRankingName = {}
-	local i = 1
-	local MAX_PLAYER = 100
-	for i=1, MAX_PLAYER do
-		PlayerIndex = i
-		szArrayRankingLevel[i] = GetLevel()
-		szArrayRankingName[i] = GetName()
-	end
-	PlayerIndex = PlayerIndexOld
+	-- local PlayerIndexOld = PlayerIndex
+	-- local szArrayRankingLevel = {}
+	-- local szArrayRankingName = {}
+	-- local i = 1
+	-- local MAX_PLAYER = 100
+	-- for i=1, MAX_PLAYER do
+		-- PlayerIndex = i
+		-- szArrayRankingLevel[i] = GetLevel()
+		-- szArrayRankingName[i] = GetName()
+	-- end
+	-- PlayerIndex = PlayerIndexOld
 	
-	local TempLevel = 0
-	local TempName = ""
-	local hasChanged
-	while hasChanged do 
-		hasChanged = false
-		for i = 1, MAX_PLAYER - 1 do
-			if szArrayRankingLevel[i] > szArrayRankingLevel[i + 1] then
-				TempLevel = szArrayRankingLevel[i]
-				szArrayRankingLevel[i] = szArrayRankingLevel[i + 1]
-				szArrayRankingLevel[i + 1] = TempLevel
+	-- local TempLevel = 0
+	-- local TempName = ""
+	-- local hasChanged
+	-- while hasChanged do 
+		-- hasChanged = false
+		-- for i = 1, MAX_PLAYER - 1 do
+			-- if szArrayRankingLevel[i] > szArrayRankingLevel[i + 1] then
+				-- Temp = szArrayRankingLevel[i]
+				-- szArrayRankingLevel[i] = szArrayRankingLevel[i + 1]
+				-- szArrayRankingLevel[i + 1] = Temp
 				
-				TempName = szArrayRankingName[i]
-				szArrayRankingName[i] = szArrayRankingName[i + 1]
-				szArrayRankingName[i + 1] = TempName
-				hasChanged = true
-			end
-		end
-	end
-	for i=1, MAX_PLAYER do
-		PlayerIndex = i
-		SetTask(3001,szArrayRankingLevel[i])
-		--Msg2Player("Thø h¹ng c¸ nh©n: Nh©n vËt:"..szArrayRankingName[i].."\tH¹ng:"..szArrayRankingLevel[i].."\n")
-	end
+				-- TempName = szArrayRankingName[i]
+				-- szArrayRankingName[i] = szArrayRankingName[i + 1]
+				-- szArrayRankingName[i + 1] = TempName
+				-- hasChanged = true
+			-- end
+		-- end
+	-- end
+	-- for i=1, MAX_PLAYER do
+		-- PlayerIndex = i
+		-- SetTask(3001,szArrayRankingLevel[i])
+		-- Msg2Player("ThÃ¸ hÂ¹ng cÂ¸ nhÂ©n: NhÂ©n vÃ‹t:"..szArrayRankingName[i].."\tHÂ¹ng:"..szArrayRankingLevel[i].."\n")
+	-- end
 end

@@ -6,18 +6,18 @@ Include("\\script\\lib\\awardtemplet.lua")
 ----------------------------------------------------------------------------
 function pActivity:AddInitNpc()
 	local tbNpcPos = {
-		{53,1624,3198,},
+		{53,1629,3183,},
 	}
 	local tbNpc = {	
-			szName = "Thî May Hoµng Kim", 
+			szName = "Thî RÌn Hoµng Kim", 
 			nLevel = 95,
-			nNpcId = 1464,
+			nNpcId = 198,
 			nIsboss = 0,
 			szScriptPath = "\\script\\activitysys\\npcdailog.lua",
 	}
-	--for i=1,getn(tbNpcPos) do
-	--	local nMapId, nPosX, nPosY = unpack(tbNpcPos[i])
-	--	basemission_CallNpc(tbNpc, nMapId, nPosX * 32, nPosY * 32)	
---	end
+	for i=1,getn(tbNpcPos) do
+		local nMapId, nPosX, nPosY = unpack(tbNpcPos[i])
+		basemission_CallNpc(tbNpc, nMapId, nPosX * 32, nPosY * 32)	
+	end
 end
 

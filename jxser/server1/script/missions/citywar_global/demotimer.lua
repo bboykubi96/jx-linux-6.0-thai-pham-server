@@ -1,19 +1,19 @@
-ARENACOUNT = 8;
-ARENAWLDIDXBEGIN = 213;
-CITYWARIDX = 221;
-CITYCOUNT = 7
-MS_ISDEMO = 81
+ARENACOUNT = 8; 
+ARENAWLDIDXBEGIN = 213; 
+CITYWARIDX = 221; 
+CITYCOUNT = 7 
+MS_ISDEMO = 81 
 
-function OnTimer()
+function OnTimer() 
 
-	--¼ì²â³ÇÕ½µÄÇé¿ö,µ±·ûºÏÌõ¼þÊ±×Ô¶¯¿ªÆô³ÇÕ½
-	WorldIdx = SubWorldID2Idx(CITYWARIDX);
-	if (WorldIdx >= 0) then 
-		SubWorld = WorldIdx
-		if (GetMissionV(1) == 0) then 
-			OpenMission(6)
-			SetMissionV(MS_ISDEMO, 1)
-			RunMission(6)
-		end
-	end
+-- script viet hoa By http://tranhba.com  kiÓm tr¾c thµnh chiÕn ®Ých t×nh huèng , khi phï hîp ®iÒu kiÖn lóc tù ®éng më ra thµnh chiÕn 
+WorldIdx = SubWorldID2Idx(CITYWARIDX); 
+if (WorldIdx >= 0) then 
+SubWorld = WorldIdx 
+if (GetMissionV(1) == 0) then 
+OpenMission(6) 
+SetMissionV(MS_ISDEMO, 1) 
+RunMission(6) 
+end 
+end 
 end;

@@ -22,8 +22,8 @@ function tbDangBossTaskCtrl:_init()
 	self.nTotalCountMax = 50
 	
 	
-	self.nStartDate = 090117
-	self.nEndDate = 090217
+	self.nStartDate = 090119
+	self.nEndDate = 090220
 end
 
 

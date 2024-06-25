@@ -1,109 +1,127 @@
---¼ÓÈëÄ³Ò»·½µÄNpc¶ÔÓ¦½Å±¾
---BattleIdÍâ²¿µÄÈ«¾Ö±äÁ¿£¬±íÊ¾µ±Ç°ÌôÕ½ÈüµØÍ¼µÄ±àºÅ(1-8)
+-- script viet hoa By http://tranhba.com  gia nhËp mét ph­¬ng ®İch Npc ®èi øng ch©n vèn 
+-- script viet hoa By http://tranhba.com BattleId bªn ngoµi ®İch toµn côc thay ®æi l­îng , bµy tá tr­íc mÆt khiªu chiÕn cuéc so tµi b¶n ®å ®İch biªn sè (1-8) 
 
---HaveBeginWar(CityID) -- CityID(1-7)		//ÏÖÔÚÄ³¸ö³ÇÊĞÊÇ·ñÒÑ¿ªÕ½,·µ»ØÖµÎªÒ»¸öBOOLÖµ
---GetCityAreaName(CityID)					//È¡1µ½7µÄ³ÇÇøÃû³Æ,·µ»ØÖµÎªÒ»¸ö×Ö·û´®
---GetCityWarBothSides(CityID)				//»ñµÃ¹¥»÷·½ÓëÊØ·½µÄ°ï»áÃû,·µ»ØÁ½¸ö×Ö·û´®,°´´ÎĞò·Ö±ğ´ú±í¹¥»÷·½ºÍÊØ·½
---NotifyWarResult(CityID, WarResult)		//±ÈÈü½áÊøÖ®ºó£¬Í¨ÖªRelay±ÈÈü½á¹û(WarResultÎªBOOLÖµ±íÊ¾¹¥³Ç·½ÊÇ·ñÊ¤Àû)
---GetCityWarTongCamp(TongName)				//»ñµÃ²ÎÓë¹¥³ÇÕ½Ïà¹Ø»î¶¯µÄ°ï»áÕóÓª£¬·µ»ØINT¼´ÕóÓª´ú±íÖµ
---IsArenaBegin(ArenaID) -- ArenaID(0-7)		//»ñµÃµ±Ç°¸÷¸öÀŞÌ¨³¡ÇøÊÇ·ñ¿ªÊ¼£¬·µ»ØBOOL
---GetArenaCityArea(nArenaID)				//»ñµÃµ±Ç°ÕıÔÚ½øĞĞµÄÀŞÌ¨ÈüÊÇÕë¶ÔÄÄ¸ö³ÇÇø,·µ»ØÖµÎªCityID
---GetArenaBothSides(ArenaID)				//»ñµÃÄ³Ò»³¡ÀŞÌ¨ÈüË«·½µÄÃû³Æ,·µ»ØÁ½¸ö×Ö·û´®,°´´ÎĞò·Ö±ğ´ú±í¼×·½ÒÒ·½
---NotifyArenaResult(ArenaID, ArenaResult)	//Í¨ÖªÒ»³¡ÀŞÌ¨Èü½áÊøµÄ±ÈÈü½á¹û¸øRelay, ArenaResultÎªBOOLÖµ±íÊ¾µÄ¼×·½ÊÇ·ñ»ñÊ¤
---GetArenaLevel()							//»ñµÃµ±Ç°ÀŞÌ¨ÈüËùÔÚÂÖ´Î£¬·µ»ØÖµ 0:±ÈÈüÒÑ¾­½áÊø»òÕßÉĞÎ´¿ªÊ¼£¬1:µÚÒ»ÂÖ£¬2/3/4/5ÒÔ´ËÀàÍÆ
---GetArenaTotalLevel()						//»ñµÃµ±Ç°ÀŞÌ¨ÈüµÄ×ÜÂÖ´Î
---GetCurArenaInfo()							//»ñµÃµ±Ç°ÂÖ´ÎµÄÈü³Ì
---GetArenaTotalLevelByCity(CityID)			//»ñµÃÄ³¸ö³ÇÊĞÀŞÌ¨ÈüµÄ×ÜÂÖ´Î
---GetArenaInfoByCity(CityID, ArenaLevel)	//»ñµÃÄ³¸ö³ÇÊĞÀŞÌ¨Èü¹ûµÄÊı¾İ,ArenaLevel: 0-Based
+-- script viet hoa By http://tranhba.com HaveBeginWar(CityID) -- script viet hoa By http://tranhba.com  CityID(1-7) // b©y giê mét thµnh thŞ lµ hay kh«ng ®· më chiÕn , trë vÒ trŞ gi¸ lµ mét BOOL trŞ gi¸ 
+-- script viet hoa By http://tranhba.com GetCityAreaName(CityID) // lÊy 1 ®Õn 7 ®İch thµnh khu tªn , trë vÒ trŞ gi¸ lµ mét ch÷ phï chuçi 
+-- script viet hoa By http://tranhba.com GetCityWarBothSides(CityID) // ®¹t ®­îc c«ng kİch ph­¬ng cïng thñ ph­¬ng ®İch bang héi tªn , trë vÒ hai ch÷ phï chuçi , theo nh­ thø tù chia ra ®¹i biÓu c«ng kİch ph­¬ng cïng thñ ph­¬ng 
+-- script viet hoa By http://tranhba.com NotifyWarResult(CityID, WarResult) // tranh tµi sau khi kÕt thóc , th«ng b¸o Relay tranh tµi kÕt qu¶ (WarResult v× BOOL trŞ gi¸ bµy tá c«ng thµnh míi lµ hay kh«ng th¾ng lîi ) 
+-- script viet hoa By http://tranhba.com GetCityWarTongCamp(TongName) // ®¹t ®­îc tham dù c«ng thµnh chiÕn t­¬ng quan ho¹t ®éng ®İch bang héi trËn doanh , trë vÒ INT tøc trËn doanh ®¹i biÓu trŞ gi¸ 
+-- script viet hoa By http://tranhba.com IsArenaBegin(ArenaID) -- script viet hoa By http://tranhba.com  ArenaID(0-7) // ®¹t ®­îc tr­íc mÆt c¸c l«i ®µi trµng khu cã hay kh«ng b¾t ®Çu , trë vÒ BOOL 
+-- script viet hoa By http://tranhba.com GetArenaCityArea(nArenaID) // ®¹t ®­îc tr­íc mÆt ®ang tiÕn hµnh ®İch l«i ®µi cuéc so tµi lµ nh»m vµo c¸i nµo thµnh khu , trë vÒ trŞ gi¸ lµ CityID 
+-- script viet hoa By http://tranhba.com GetArenaBothSides(ArenaID) // ®¹t ®­îc mét trµng l«i ®µi cuéc so tµi song ph­¬ng tªn , trë vÒ hai ch÷ phï chuçi , theo nh­ thø tù chia ra ®¹i biÓu gi¸p ph­¬ng Êt ph­¬ng 
+-- script viet hoa By http://tranhba.com NotifyArenaResult(ArenaID, ArenaResult) // th«ng b¸o mét cuéc l«i ®µi cuéc so tµi kÕt thóc ®İch tranh tµi kÕt qu¶ cho Relay, ArenaResult v× BOOL trŞ gi¸ bµy tá ®İch gi¸p míi lµ hay kh«ng chiÕn th¾ng 
+-- script viet hoa By http://tranhba.com GetArenaLevel() // ®¹t ®­îc tr­íc mÆt l«i ®µi cuéc so tµi chç ë ®æi phiªn lÇn , trë vÒ trŞ gi¸ 0: tranh tµi ®· kÕt thóc hoÆc lµ ch­a b¾t ®Çu , 1: vßng thø nhÊt , 2/3/4/5 lÊy lo¹i nµy ®Èy 
+-- script viet hoa By http://tranhba.com GetArenaTotalLevel() // ®¹t ®­îc tr­íc mÆt l«i ®µi cuéc so tµi ®İch tæng ®æi phiªn lÇn 
+-- script viet hoa By http://tranhba.com GetCurArenaInfo() // ®¹t ®­îc tr­íc mÆt ®æi phiªn lÇn cuéc so tµi tr×nh 
+-- script viet hoa By http://tranhba.com GetArenaTotalLevelByCity(CityID) // ®¹t ®­îc mét thµnh phè l«i ®µi cuéc so tµi ®İch tæng ®æi phiªn lÇn 
+-- script viet hoa By http://tranhba.com GetArenaInfoByCity(CityID, ArenaLevel) // ®¹t ®­îc mét thµnh phè l«i ®µi cuéc so tµi qu¶ ®İch sè liÖu ,ArenaLevel: 0-Based 
 
 Include("\\script\\missions\\citywar_arena\\head.lua");
 Include("\\script\\lib\\common.lua")
-function main()
---	dofile("script/missions/citywar_arena/camper.lua")
-	ms_state = GetMissionV(MS_STATE);
-	if (ms_state == 0) then 
-		WorldID = SubWorldIdx2ID(SubWorld);
-		ArenaID = WorldID - 213;
-		if (IsArenaBegin(ArenaID) ~= 0) then
-			Tong1, Tong2 = GetArenaBothSides(ArenaID);
-			Tong1 = safeshow(Tong1)
-			Tong2 = safeshow(Tong2)
+function main() 
+ms_state = GetMissionV(MS_STATE); 
+if (ms_state == 0) then 
+WorldID = SubWorldIdx2ID(SubWorld); 
+ArenaID = WorldID - 213; 
+if (IsArenaBegin(ArenaID) ~= 0) then 
+Tong1, Tong2 = GetArenaBothSides(ArenaID); 
+Tong1 = safeshow(Tong1) 
+Tong2 = safeshow(Tong2) 
+Say(Tong1.." cïng "..Tong2.." lËp tøc chuÈn bŞ chiÕn ®Êu , cuéc so tµi trµng ®ang chuÈn bŞ trø , mçi ng­êi còng chuÈn bŞ xong ", 0); 
+else 
+Say("Thêi gian chiÕn ®Êu cßn ch­a tíi !", 1,"BiÕt , ta ®i tr­íc /OnCancel"); 
+end; 
+elseif (ms_state == 1) then 
+OnReady(); 
+elseif (ms_state == 2) then 
+OnFighting(); 
+else 
+ErrorMsg(3) 
+end; 
+end; 
 
-			Say("<color=yellow>"..Tong1.."<color> vµ <color=yellow>"..Tong2.."<color>. LËp tøc chuÈn bŞ chiÕn ®Êu, ®Êu tr­êng ®ang chuÈn bŞ, mäi ng­êi h·y s½n sµng ", 0);
-		else
-			Say("Thêi gian chiÕn ®Êu vÉn ch­a ®Õn!", 1, "BiÕt råi, ta ®i tr­íc ®©y /OnCancel");
-		end;
-	elseif (ms_state == 1) then
-		OnReady();
-	elseif (ms_state == 2) then 
-		OnFighting();
-	else
-		ErrorMsg(3)
-	end;
-end;
+function OnHelp() 
+Talk(8, "","Bang héi l«i ®µi lµ trªn giang hå c¸ bang héi gi÷a so tµi vâ nghÖ ®İch ®Şa ph­¬ng # ®©y lµ mét c«ng b×nh c¹nh tranh ®İch vâ ®µi/sµn nh¶y ","Muèn tham gia bang héi l«i ®µi , tr­íc ph¶i tíi h­íng ta th©n thØnh # th©n thØnh ng­êi ph¶i lµ tranh tµi bang héi ®İch bang chñ #","Häp thµnh ®éi sau song ph­¬ng ®éi tr­ëng muèn tíi ghi danh . song ph­¬ng bang chñ mçi ng­êi muèn ®ãng I ngµn v¹n l­îng tiÒn ®Æt cäc . ","Nép tiÒn ®Æt cäc sau , tranh tµi th©n thØnh liÒn hoµn thµnh . ë 2 c¸ ban cã thÓ so víi cuéc so tµi trong lóc kh«ng thÓ ghi danh ","Th©n thØnh thµnh c«ng , song ph­¬ng ®éi viªn cã 10 phót gia nhËp tranh tµi . sau tranh tµi ®em chİnh thøc b¾t ®Çu !","Th¾ng b¹i ®em kÕ vµo song ph­¬ng tranh tµi tİch ph©n . mçi vŞ bang héi thµnh viªn ®em ®èi ph­¬ng ®¸nh träng th­¬ng ®İch ®em cã 3 c¸ tİch ph©n , ®èi ph­¬ng bŞ khÊu trõ 1 c¸ tİch ph©n ","Tranh tµi kÕt thóc , tİch ph©n cao bang héi ®em lÊy ®­îc th¾ng lîi #","Ngoµi ra , tranh tµi trung cã võa kh«ng cã thµnh viªn n÷a tranh tµi lµ th¾ng lîi thuéc vÒ mét mÆt kh¸c ","Th¾ng lîi bang héi ®em cã thÓ thu håi ®· nép ®İch 1 ngµn v¹n l­îng , ngoµi ra , cßn cã thÓ lÊy ®­îc 800 v¹n l­îng ®İch t­ëng th­ëng cïng 1 v¹n 2 ngµn ®iÓm bang héi kinh nghiÖm . thÊt b¹i bang héi kh«ng thÓ dÉn trë vÒ ®· nép ®İch phİ dông , cßn ph¶i khÊu trõ 1 v¹n 4 ngµn ®iÓm bang héi kinh nghiÖm "); 
+end; 
 
-function OnHelp()
-	Talk(8, "",	"L«i ®µi bang héi lµ n¬i häc hái vâ nghÖ gi÷a c¸c bang héi trªn giang hå! §©y sÏ lµ n¬i thi ®Êu c«ng b»ng",	"Muèn tham gia L«i ®µi bang héi, tr­íc hÕt ph¶i gÆp ta ®Ó xin phĞp! Ng­êi xin phĞp ph¶i lµ bang chñ cña bang héi thi ®Êu!",	"Sau khi tæ ®éi, ®éi tr­ëng 2 bªn sÏ ®Õn b¸o danh. Bang chñ hai bªn  mçi ng­êi ph¶i ®Æt c­îc thi ®Êu 1000 v¹n l­îng. ",	"Sau khi ®Æt c­îc xong, xin phĞp thi ®Êu ®· hoµn thµnh. Trong lóc cã 2 bang héi kh¸c ®ang thi ®Êu, kh«ng cho phĞp b¸o danh",	"Xin phĞp thµnh c«ng xong, thµnh viªn cña hai bang héi cã10 phót gia nhËp ®Êu tr­êng. Sau ®ã thi ®Êu sÏ chİnh thøc b¾t ®Çu!" ,"Th¾ng b¹i phô thuéc vµo ®iÓm tİch lòy thi ®Êu cña hai bªn. Mçi thµnh viªn bang héi lµm träng th­¬ng ®èi ph­¬ng sÏ ®­îc 3 ®iÓm, ®èi ph­¬ng bŞ trõ 1 ®iÓm", 	"KÕt thóc thi ®Êu, bang héi nµo tİch lòy ®iÓm cao h¬n sÏ giµnh th¾ng lîi!",	"Ngoµi ra, trong lóc thi ®Êu mét bªn nµo kh«ng cßn thµnh viªn nµo ë l¹i ®Êu tr­êng th× th¾ng lîi sÏ thuéc vÒ bªn kia. ","Bang héi chiÕn th¾ng cã thÓ thu håi 1000 v¹n l­îng ®· ®ãng, ngoµi ra cßn ®­îc 800 v¹n l­îng tiÒn th­ëng vµ 12.000 ®iÓm kinh nghiÖm bang héi. Bang héi thua cuéc sÏ kh«ng lÊy l¹i ®­îc tiÒn ®· ®ãng, mµ cßn bŞ trõ 14.000 ®iÓm kinh nghiÖm bang héi");
-end;
+function OnReady() 
+V = GetMissionV(MS_NEWSVALUE); 
+RestTime = (GO_TIME - V) * 20; 
 
-function OnReady()
-	V = GetMissionV(MS_NEWSVALUE);
-	RestTime = (GO_TIME - V) * 20;
-	
-	if (RestTime < 0) then 
-		RestTime=0
-	end;
-	
-	RestMin, RestSec = GetMinAndSec(RestTime);
+if (RestTime < 0) then 
+RestTime=0 
+end; 
 
-	str = " N¬i nµy ®ang diÔn ra tranh ®Êu <color=yellow>"..GetMissionS(3).."<color> c«ng thµnh khiªu chiÕn, hiÖn t¹i bang héi thi ®Êu lµ: <color=yellow>"..GetMissionS(1).."<color> víi <color=yellow>"..GetMissionS(2).."<color>, thêi gian nhËp tr­êng cßn l¹i <color=yellow>"..RestMin.." phót "..RestSec.." gi©y.";
-	Say(str, 2, "Ta thİch hîp víi ®iÒu kiÖn, ta muèn vµo ®Êu tr­êng /OnJoin", "ta kh«ng muèn vµo ®Êu tr­êng /OnCancel");
-end;
+RestMin, RestSec = GetMinAndSec(RestTime); 
 
-function ErrorMsg(ErrorId)
+str = "<#> n¬i nµy ®ang tiÕn hµnh tranh tµi "..GetMissionS(3).."<#> c«ng thµnh khiªu chiÕn , b©y giê tranh tµi bang héi lµ :"..GetMissionS(1).."<#> ®èi víi "..GetMissionS(2).."<#>, vµo trµng thêi gian cßn cã "..RestMin.."<#> ph©n "..RestSec.."<#> gi©y ."; 
+Say(str, 2,"Ta phï hîp ®iÒu kiÖn , muèn th­îng cuéc so tµi trµng /OnJoin","Ta kh«ng muèn th­îng cuéc so tµi trµng /OnCancel"); 
+end; 
+
+function ErrorMsg(ErrorId) 
 if (ErrorId == 1) then 
-	Say("Bang chñ hai bªn muèn xin phĞp thi ®Êu tr­íc hÕt ph¶i lËp nhãm råi míi xin phĞp. ",0)
+Say("Muèn th©n thØnh so tµi song ph­¬ng bang chñ tr­íc ph¶i häp thµnh ®éi sau n÷a th©n thØnh tranh tµi ",0) 
 elseif (ErrorId == 2) then 
-	Say("§Õn b¸o danh ph¶i lµ ®éi tr­ëng cña bang héi muèn thi ®Êu, mçi bang chñ ph¶i mang ®ñ 1000 v¹n l­îng",0)
+Say("B¸o l¹i tªn ®İch nÕu lµ muèn tham gia so tµi bang héi ®éi tr­ëng , bang chñ muèn dÉn ®ñ 1000 v¹n l­îng ",0) 
 elseif (ErrorId == 3) then 
-	Say("B¸o danh xuÊt hiÖn trôc trÆc. Xin liªn hÖ ng­êi qu¶n lı!",0);
+Say("Ghi danh h­ , xin liªn l¹c nh©n viªn qu¶n lı #",0); 
 elseif (ErrorId == 4) then 
-	Say("B¹n kh«ng ph¶i lµ thµnh viªn cña hai bang héi thi ®Êu hoÆc sè ng­êi trong ®Êu tr­êng ®· ®Çy, kh«ng thÓ vµo ®­îc!", 0);
+Say("Ng­¬i kh«ng ph¶i lµ tranh tµi song ph­¬ng thµnh viªn cña bang héi hoÆc lµ cuéc so tµi ng­êi trong s©n ®Õm ®· ®Çy , kh«ng thÓ ®i vµo !", 0); 
 elseif(ErrorId == 5) then 
-	Say("Bang chñ b¸o danh cÇn ph¶i lµ ®éi tr­ëng cña ®éi ngò hiÖn t¹i",0);
-else
-	
-end;
+Say("Ghi danh bang chñ lµ muèn b©y giê ®éi ngò ®İch ®éi tr­ëng ",0); 
+else 
 
-return
-end;
+end; 
 
-function OnJoin()
-	if (GetTongName() == GetMissionS(1)) then 
-		if (GetJoinTongTime() >= 7200) then --Check thoi gian tham gia bang hoi tham gia loi dai
-			JoinCamp(1);
-		else
-			Say("Thêi gian b¹n gia nhËp bang héi qu¸ ng¾n, kh«ng thÓ tham gia chiÕn ®Êu!", 0);
-		end;
-	elseif (GetTongName() == GetMissionS(2)) then 
-		if (GetJoinTongTime() >= 7200) then
-			JoinCamp(2);
-		else
-			Say("Thêi gian b¹n gia nhËp bang héi qu¸ ng¾n, kh«ng thÓ tham gia chiÕn ®Êu!", 0);
-		end;
-	else
-		ErrorMsg(4)
-	end;
-end;
+return 
+end; 
 
-function OnFighting()
-	gametime = (floor(GetMSRestTime(MISSIONID,17)/18));
-	RestMin, RestSec = GetMinAndSec(gametime);
-	str1 = "nh©n sè 2 bªn hiÖn t¹i lµ: <color=yellow>"..GetMSPlayerCount(MISSIONID, 1).." : "..GetMSPlayerCount(MISSIONID, 2).."<color>. Thêi gian cßn d­ <color=yellow>"..RestMin.." phót "..RestSec.." gi©y.<color>";
-	str = "HiÖn t¹i bang héi <color=yellow>"..GetMissionS(1).." víi "..GetMissionS(2).."<color> ®ang tiÕn hµnh, ";
-	Say(str..str1, 0);
-end;
+function CheckIsCaptainAndTongMaster(szTong)
+	--- check xem chu party co phai la bang chu hay khong
+if  GetTongMaster() == GetName() then return 1 end-- ban than la bang chu khong can kiem tra  doi
+local nTeamSize = GetTeamSize(); 
+if nTeamSize == 0 then return 0 end -- khong co to doi
+local nOld = PlayerIndex
+for i=1,nTeamSize  do
+	PlayerIndex = GetTeamMember(i)
+	if GetTongName() == szTong and GetTongMaster() == GetName() and IsCaptain() == 1 then PlayerIndex = nOld return 1 end
+end
+PlayerIndex = nOld
+return 0
+end
 
-function OnCancel()
+function OnJoin() 
+if (GetTongName() == GetMissionS(1)) then 
+if CheckIsCaptainAndTongMaster(GetTongName()) ~= 1 then
+	return Say("Chñ tæ ®éi cña ng­¬i ph¶i lµ bang chñ míi cã thÓ b¸o danh lóc nµy. Xin kiÓm tra l¹i",0)
+end
+if (GetJoinTongTime() >= 7200) then 
+JoinCamp(1); 
+else 
+Say("Ng­¬i gia nhËp bang héi ®İch thêi gian qu¸ ng¾n , kh«ng thÓ tham gia chiÕn ®Êu !", 0); 
+end; 
+elseif (GetTongName() == GetMissionS(2)) then 
+if (GetJoinTongTime() >= 7200) then 
+if CheckIsCaptainAndTongMaster(GetTongName()) ~= 1 then
+	return Say("Chñ tæ ®éi cña ng­¬i ph¶i lµ bang chñ míi cã thÓ b¸o danh lóc nµy. Xin kiÓm tra l¹i",0)
+end
+JoinCamp(2); 
+else 
+Say("T ng­¬i gia nhËp bang héi ®İch thêi gian qu¸ ng¾n , kh«ng thÓ tham gia chiÕn ®Êu !", 0); 
+end; 
+else 
+ErrorMsg(4) 
+end; 
+end; 
 
-end;
+function OnFighting() 
+gametime = (floor(GetMSRestTime(MISSIONID,17)/18)); 
+RestMin, RestSec = GetMinAndSec(gametime); 
+str1 = "<#> b©y giê ng­êi cña song ph­¬ng ®Õm lµ "..GetMSPlayerCount(MISSIONID, 1).."<#> "..GetMSPlayerCount(MISSIONID, 2).."<#>. thêi gian cßn thõa l¹i "..RestMin.."<#> ph©n "..RestSec.."<#> gi©y ."; 
+str = "<#> b©y giê bang héi "..GetMissionS(1).."<#> cïng "..GetMissionS(2).."<#> ®ang tiÕn hµnh "; 
+Say(str..str1, 0); 
+end; 
+
+function OnCancel() 
+
+end; 

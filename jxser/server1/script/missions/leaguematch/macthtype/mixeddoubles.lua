@@ -1,16 +1,12 @@
 Include("\\script\\missions\\leaguematch\\tb_head.lua")
---==============»ìºÏË«ÈËÈüÏà¹ØÊý¾Ý===============
 
 if (not tmp_process_data) then
 	return
 end
 
---È«²¿»ìºÏË«ÈËÈüÏà¹ØÊý¾Ý
 WLLS_DATA = {
 	
 	name = "Song ®Êu",
-	
-	--µØÍ¼ÐÅÏ¢
 	match_type = {
 		{
 			name = "",
@@ -18,13 +14,13 @@ WLLS_DATA = {
 			ladder = 10248,
 			map = {
 				{396, 560, 397, "(1)"},
-				--{398, 561, 399, "(2)"},
-				--{400, 562, 401, "(3)"},
-				--{402, 563, 403, "(4)"},
-				--{404, 564, 405, "(5)"},
-				--{406, 565, 407, "(6)"},
-				--{408, 566, 409, "(7)"},
-				--{410, 567, 411, "(8)"},
+				{398, 561, 399, "(2)"},
+				{400, 562, 401, "(3)"},
+				{402, 563, 403, "(4)"},
+				{404, 564, 405, "(5)"},
+				{406, 565, 407, "(6)"},
+				{408, 566, 409, "(7)"},
+				{410, 567, 411, "(8)"},
 			},
 		},
 		{
@@ -33,19 +29,19 @@ WLLS_DATA = {
 			ladder = 10249,
 			map = {
 				{540, 570, 541, "(1)"},
-				--{542, 571, 543, "(2)"},
-				--{544, 572, 545, "(3)"},
-				--{546, 573, 547, "(4)"},
-				--{548, 574, 549, "(5)"},
-				--{550, 575, 551, "(6)"},
-				--{552, 576, 553, "(7)"},
-				--{554, 577, 555, "(8)"},
+				{540, 570, 541, "(2)"},
+				{540, 570, 541, "(3)"},
+				{540, 570, 541, "(4)"},
+				{540, 570, 541, "(5)"},
+				{540, 570, 541, "(6)"},
+				{540, 570, 541, "(7)"},
+				{540, 570, 541, "(8)"},
 			},
 		},
 	},
 	
 	award_rank = {
-		{	--ÅÅÐÐ½±Àø£¬ÐÂÐã
+		{
 			{1, 5000},	--µÚ1Ãû
 			{2, 4000},	--µÚ2Ãû
 			{3, 3500},	--µÚ3Ãû
@@ -55,7 +51,8 @@ WLLS_DATA = {
 			{32, 1000},	--µÚ17-32Ãû
 			{64, 500},	--µÚ33-64Ãû
 			{128, 250},	--µÚ65-128Ãû
-		}, {	--ÁªÈü
+		},
+		{
 			{1, 10000},	--µÚ1Ãû
 			{2, 8000},	--µÚ2Ãû
 			{3, 7000},	--µÚ3Ãû
@@ -68,24 +65,21 @@ WLLS_DATA = {
 		}
 	},
 	
-	max_member = 2,	--Ã¿¸öÕ½¶ÓµÄ×î´óÈËÊý
+	max_member = 2,
 	
-	text_main = {	--officerÖ÷¶Ô»°£¨Ä©Î²²îÒì²¿·Ö£©
+	text_main = {
 		"Liªn ®Êu kiÖt xuÊt kú nµy sÏ theo thÓ thøc song ®Êu. Mäi ng­êi cã thÓ tù do thµnh lËp chiÕn ®éi. H·y nç lùc luyÖn tËp ®Ó sù phèi hîp ¨n ý",
 		"Vâ l©m liªn ®Êu kú nµy sÏ theo thÓ thøc song ®Êu. Mäi ng­êi cã thÓ tù do thµnh lËp chiÕn ®éi, h·y nç lùc luyÖn tËp ®Ó sù phèi hîp ¨n ý!",
 	},
 	
-	addmem_ex	= ", yªu cÇu <color=red>nam vµ n÷<color>",	--×é½¨Õ½¶Ó¶îÍâÒªÇó£¨¿ÉÑ¡£©
+	addmem_ex	= ", yªu cÇu <color=red>nam vµ n÷<color>",
 
-	--====Functions====
-	
-	--ÎÒµÄÕ½¶Ó
 	npc_mylg = function()
 		local str_des = wlls_get_desc(1)
 		local n_lid, n_mtype, n_job, str_lgname, n_memcount = wlls_lg_info()
 		if (FALSE(n_lid)) then
 			wlls_descript("<enter>  LÇn nµy"..str_des.." tham gia <color=red>song ®Êu<color>. Ng­¬i cã thÓ tù s¸ng lËp chiÕn ®éi, còng cã thÓ tham gia chiÕn ®éi cña ng­êi kh¸c. Sau khi ®éi tr­ëng lùa chän tæ ®éi víi ng­êi ch¬i kh¸c, sÏ "..str_des.."§èi tho¹i víi Quan viªn, chän '§éi thi ®Êu"..str_des.."lËp tøc h×nh thµnh chiÕn ®éi. Sè l­îng thµnh viªn tèi ®a lµ <color=red>2 ng­êi<color=red>, b¾t buéc ph¶i kh¸c giíi tÝnh.",
-				"Ta muèn lËp "..str_des.." nhãm/wlls_want2create",
+				"Ta muèn lËp"..str_des.."nhãm/wlls_want2create",
 				"Ta chØ ®Õn xem th«i/OnCancel")
 			return
 		end
@@ -115,7 +109,6 @@ WLLS_DATA = {
 		wlls_descript(str, tb_option)
 	end,
 	
-	--¼ì²éµ±Ç°½ÇÉ«ÊÇ·ñ¿ÉÒÔ¼ÓÈëÖ¸¶¨µÄÕ½¶Ó
 	check_addmem = function(nCapIdx, nLGID, nMType)
 		print(nMType, wlls_player_type())
 		if (nMType ~= wlls_player_type()) then
@@ -129,7 +122,7 @@ WLLS_DATA = {
 			return "Tû vâ lÇn nµy theo thÓ thøc “Nam-N÷ song ®Êu”. Ng­¬i ph¶i t×m mét ®ång ®éi kh¸c giíi!"
 		end
 	end,
-}	--WLLS_DATA
+}
 
 tmp_process_data(WLLS_DATA)	
 wllstab_additem(7,WLLS_DATA)

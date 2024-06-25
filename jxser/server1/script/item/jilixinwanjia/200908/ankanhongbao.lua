@@ -1,6 +1,6 @@
 
 Include("\\script\\event\\other\\jilixinwanjia\\200908\\itemscript.lua")
-function main(nItemIndex)
-	
-	return tbJILIWanJia0908:UseAnKanHongBao(nItemIndex)
+function main(nItemIndex) 
+
+return tbJILIWanJia0908:UseAnKanHongBao(nItemIndex) 
 end

@@ -1,6 +1,6 @@
 [Rank]
-hoasonn	=1
-GameMaster	=2
+testtt	=1
+	=2
 	=3
 	=4
 	=5
@@ -9,3 +9,5 @@ GameMaster	=2
 	=8
 	=9
 	=10
+hoasonn	=11
+testhoason	=12

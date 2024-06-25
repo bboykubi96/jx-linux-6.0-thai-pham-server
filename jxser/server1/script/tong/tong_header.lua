@@ -140,8 +140,8 @@ TB_TONG_FIGURE_NAME =
 	[TONG_RETIRE]	=	"Èn sü",
 };
 
-MAX_ELDER_COUNT		=	15		-- ×î´ó³¤ÀÏÊýÁ¿
-MAX_MANAGER_COUNT	=	30		-- ×î´ó¶Ó³¤ÊýÁ¿
+MAX_ELDER_COUNT		=	6		-- ×î´ó³¤ÀÏÊýÁ¿
+MAX_MANAGER_COUNT	=	10		-- ×î´ó¶Ó³¤ÊýÁ¿
 
 
 -- °ï»áÈ¨ÏÞID

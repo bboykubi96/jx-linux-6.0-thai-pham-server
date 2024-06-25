@@ -1,53 +1,53 @@
---²ÎÈüÁ÷³Ì
---1¡¢ÓëÖ÷Èë¿ÚµÄNpc¶Ô»°£¬Ñ¡Ôñ½øÈëµÚ¼¸¸öÕ½Çø
---2¡¢Èç¹û·ûºÏ²ÎÈüÌõ¼şÔò½øÈëÕ½ÇøÄÚ£¨ÁíÒ»ÕÅµØÍ¼£©£¬²¢ÒÔ0ÕóÓªÄ£Ê½½øÈë
---3¡¢Íæ¼ÒÓëÁ½±ßµÄNpc¶Ô»°£¬×ÔÓÉÑ¡Ôñ²ÎÓëµÄÕóÓª¡£
---4¡¢Íæ¼ÒPkËÀÍöºó½«×Ô¶¯±»ÈÔ³ö³¡Íâ£¬µ«ÔÚ±¾µØÍ¼ÄÚ
---5¡¢µ±Íæ¼ÒËÀÍöÊ±£¬»á×Ô¶¯ÏòÍ¬µØÍ¼µÄËùÓĞÍæ¼Ò¹«²¼µ±Ç°µÄÕ½¿ö¡£
---6¡¢Èç¹û¿ÉÒÔ£¬¿ÉÒÔ´ÓNpc¶Ô»°ÖĞÁË½âµ±Ç°µÄ×ÜÅÅĞĞ
---7¡¢±ÈÈü¿ÉÒÔ°´ÕÕµÈ¼¶·Ö³É¸÷ÖÖÈü³¡
---ÈëÕ½ÇøµÄNpc¡¢Ñ¡ÔñÕóÓªµÄNpc
+-- script viet hoa By http://tranhba.com  dù thi l­u tr×nh 
+-- script viet hoa By http://tranhba.com 1# cïng chñ nhËp khÈu ®İch Npc ®èi tho¹i , lùa chän tiÕn vµo thø mÊy c¸ chiÕn khu 
+-- script viet hoa By http://tranhba.com 2# nÕu nh­ phï hîp ®iÒu kiÖn dù thi lµ tiÕn vµo chiÕn khu bªn trong # kh¸c mét tÊm b¶n ®å # , còng lÊy 0 trËn doanh m« thøc tiÕn vµo 
+-- script viet hoa By http://tranhba.com 3# nhµ ch¬i cïng hai bªn Npc ®èi tho¹i , tù do lùa chän tham dù ®İch trËn doanh . 
+-- script viet hoa By http://tranhba.com 4# nhµ ch¬i Pk tö vong sau ®em tù ®éng bŞ vÉn ra s©n bªn ngoµi , nh­ng ë bæn ®Şa ®å bªn trong 
+-- script viet hoa By http://tranhba.com 5# khi nhµ ch¬i tö vong lóc , sÏ tù ®éng h­íng cïng b¶n ®å ®İch tÊt c¶ nhµ ch¬i c«ng bè tr­íc mÆt ®İch chiÕn huèng . 
+-- script viet hoa By http://tranhba.com 6# nÕu nh­ cã thÓ , cã thÓ tõ Npc ®èi tho¹i trung hiÓu râ tr­íc mÆt ®İch tæng ®øng hµng thø 
+-- script viet hoa By http://tranhba.com 7# tranh tµi cã thÓ dùa theo cÊp bËc chia lµm c¸c lo¹i cuéc so tµi trµng 
+-- script viet hoa By http://tranhba.com  vµo chiÕn khu ®İch Npc# lùa chän trËn doanh ®İch Npc 
 Include("\\script\\missions\\challenge\\challengehead.lua");
 
-MapTab = {};
+MapTab = {}; 
 
-MapTab[1]= {209, 1568, 3278};
-MapTab[2]= {210, 1568, 3278};
-MapTab[3]= {211, 1568, 3278};
+MapTab[1]= {209, 1568, 3278}; 
+MapTab[2]= {210, 1568, 3278}; 
+MapTab[3]= {211, 1568, 3278}; 
 
-MapCount = getn(MapTab);
+MapCount = getn(MapTab); 
 
-function main()
-	if (GetCamp() == 0) then 
-		Say("B¹n kh«ng ph¶i lµ ng­êi trong giang hå! Kh«ng thÓ vµo khi vùc chiÕn ®Êu!",0);
-		return
-	end;
+function main() 
+if (GetCamp() == 0) then 
+Say("Ng­¬i kh«ng ph¶i lµ giang hå nh©n sÜ , kh«ng thÓ vµo chiÕn khu !",0); 
+return 
+end; 
 
-	--ÉèÖÃ·µ»Øµã
-	SetTask(300, 80);
-	SetTask(301, 1908);
-	SetTask(302, 2844);
-	Say("Hoan nghªnh tham gia thi ®Êu! ChØ cã nh÷ng tuyÓn thñ ®· b¸o danh míi ®­îc vµo vâ tr­êng! B¹n muèn vµo khu ®Êu nµo?", 4 , "Khu ®Êu thø nhÊt /DoJoin", "Khu ®Êu thø hai /DoJoin", "Khu ®Êu thø ba /DoJoin","Ta kh«ng ph¶i tuyÓn thñ tham gia thi ®Êu, ta kh«ng vµo. /OnCancel");
-end;
+-- script viet hoa By http://tranhba.com  thiÕt trİ trë vÒ ®iÓm 
+SetTask(300, 80); 
+SetTask(301, 1908); 
+SetTask(302, 2844); 
+Say("Hoan nghªnh tham gia tranh tµi # chØ cã ®· gÇn ®Õn ghi danh ®İch tuyÓn thñ míi cã thÓ tiÕn vµo vò trµng # ng­¬i muèn ®i vµo c¸i nµo chiÕn khu ?", 4 ,"TrËn chiÕn ®Çu tiªn khu /DoJoin","Thø hai chiÕn khu /DoJoin","Thø ba chiÕn khu /DoJoin","Ta kh«ng ph¶i lµ tham gia so tµi tuyÓn thñ , ta kh«ng ®i vµo . /OnCancel"); 
+end; 
 
-function DoJoin(nSel)
+function DoJoin(nSel) 
 	if (nSel + 1 > MapCount) then
-		return
-	end;
-	LeaveTeam();
+return 
+end; 
+LeaveTeam(); 
 	WantToJoin(MapTab[nSel + 1][1], MapTab[nSel + 1][2], MapTab[nSel + 1][3]);
-end;
+end; 
 
 
-function WantToJoin(nMapId, nX, nY)
-	SetFightState(0);
-	SetLogoutRV(1);
-	SetTaskTemp(200,1);--´ËÊ±ÎŞ·¨ĞŞ¸Ä°ï»áÕóÓª
-	w, x, y = GetLeavePos();
-	SetTempRevPos(w, x * 32 , y * 32); --ÉèÖÃÔİÊ±ÖØÉúµãÎª±¨Ãûµã¸½½ü
-	NewWorld(nMapId, nX, nY);
-end;
+function WantToJoin(nMapId, nX, nY) 
+SetFightState(0); 
+SetLogoutRV(1); 
+SetTaskTemp(200,1);-- script viet hoa By http://tranhba.com  lóc nµy kh«ng c¸ch nµo söa ®æi bang héi trËn doanh 
+w, x, y = GetLeavePos(); 
+SetTempRevPos(w, x * 32 , y * 32); -- script viet hoa By http://tranhba.com  thiÕt trİ t¹m thêi sèng l¹i ®iÓm v× ghi danh ®iÓm phô cËn 
+NewWorld(nMapId, nX, nY); 
+end; 
 
-function OnCancel()
+function OnCancel() 
 
-end;
+end; 

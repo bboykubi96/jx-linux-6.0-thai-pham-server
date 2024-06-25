@@ -1,193 +1,193 @@
 Include("\\script\\missions\\racegame\\lib.lua")
 
-if not tbMission then
+if not tbMission then 
 
 tbMission = 
-{
-	nMissionId	= 0,
-	tbTimer		= {},
-	tbMissionV	= {MISSION_STATE	= 1,},
-	tbMissionS	= {},
-	nMapId		= 0,
-}
+{ 
+nMissionId = 0, 
+tbTimer = {}, 
+tbMissionV = {MISSION_STATE = 1,}, 
+tbMissionS = {}, 
+nMapId = 0, 
+} 
 
-end
-function tbMission:Init()
-	if GetMissionV(self.tbMissionV.MISSION_STATE) ~= 0 then
-		self:Close()
-	end
-	
-	for i = 1, getn(self.tbTimer) do
-		StartMissionTimer(self.nMissionId, self.tbTimer[i][1], self.tbTimer[i][2]); --
-	end
-	
-	if self.OnInit then
-		self:OnInit()
-	end
-end
+end 
+function tbMission:Init() 
+if GetMissionV(self.tbMissionV.MISSION_STATE) ~= 0 then 
+self:Close() 
+end 
 
-function tbMission:OnInit()
-	SetMissionV(self.tbMissionV.MISSION_STATE, 1)
-end
+for i = 1, getn(self.tbTimer) do 
+StartMissionTimer(self.nMissionId, self.tbTimer[i][1], self.tbTimer[i][2]); -- script viet hoa By http://tranhba.com  
+end 
 
-function tbMission:OnClose()
-	print("tbMission:OnClose()")
-end
+if self.OnInit then 
+self:OnInit() 
+end 
+end 
 
-function tbMission:Close()
-	if self.OnClose then
-		self:OnClose()
-	end
-	
-	for _, nMissionVId in self.tbMissionV do		
-		SetMissionV(nMissionVId, 0);
-	end
-	
-	for _, nMissionSId in self.tbMissionS do		
-		SetMissionS(nMissionSId, "")
-	end
-	
-	for i = 1, getn(self.tbTimer) do
-		StopMissionTimer(self.nMissionId, self.tbTimer[i][1], self.tbTimer[i][2]); --
-	end
-end
+function tbMission:OnInit() 
+SetMissionV(self.tbMissionV.MISSION_STATE, 1) 
+end 
 
---
-function tbMission:PlayerJoin(nPlayerIndex, nGroupId)
-	if doFunByPlayer(nPlayerIndex, self.OnPlayerJoin, self ) == 1 then
-		doFunByPlayer(nPlayerIndex, AddMSPlayer, self.nMissionId, nGroupId)
-		return 1;
-	end
-	return 0;
-end
+function tbMission:OnClose() 
+print("tbMission:OnClose()") 
+end 
 
-function tbMission:OnPlayerJoin()
-	print("tbMission:OnPlayerJoin()")
-end
+function tbMission:Close() 
+if self.OnClose then 
+self:OnClose() 
+end 
 
+for _, nMissionVId in self.tbMissionV do 
+SetMissionV(nMissionVId, 0); 
+end 
 
-function tbMission:OnLeave()
-	print("tbMission:OnLeave()")
-end
+for _, nMissionSId in self.tbMissionS do 
+SetMissionS(nMissionSId, "") 
+end 
 
-function tbMission:OnTimer()
-	print("tbMission:OnTimer()")
-end
+for i = 1, getn(self.tbTimer) do 
+StopMissionTimer(self.nMissionId, self.tbTimer[i][1], self.tbTimer[i][2]); -- script viet hoa By http://tranhba.com  
+end 
+end 
 
-function tbMission:OnRun()
-	print("tbMission:OnRun()")
-end
+-- script viet hoa By http://tranhba.com  
+function tbMission:PlayerJoin(nPlayerIndex, nGroupId) 
+if doFunByPlayer(nPlayerIndex, self.OnPlayerJoin, self ) == 1 then 
+doFunByPlayer(nPlayerIndex, AddMSPlayer, self.nMissionId, nGroupId) 
+return 1; 
+end 
+return 0; 
+end 
 
-function tbMission:output(szMsg)
-	print(szMsg)
-end
-
-function tbMission:Debug(szMsg)
-	print(szMsg)
-end
-------------Íâ²¿µ÷ÓÃ£¬ÐèÒª±£»¤µ±Ç°µÄSubWorld
-
---¿ªÆô
-function tbMission:StartGame()
-	
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		if self:GetMissionV(self.tbMissionV.MISSION_STATE) ~= 0 then
-			self:Debug("LÇn tr­íc vÉn ch­a t¾t")
-			self:CloseGame()
-		end
-		doFunInWorld(nMapIndex, OpenMission, self.nMissionId)
-		return 1
-	else
-		self:output(format("[mission start fail]:map %d is not load", self.nMapId))
-		return 0
-	end	
-end
-
---¹Ø±Õ
-function tbMission:CloseGame()
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		doFunInWorld(nMapIndex, CloseMission, self.nMissionId )
-	end
-end
-
---ÈÃÄ³¸öÍæ¼Ò¼ÓÈë
-function tbMission:JoinGame(nPlayerIndex, nGroupId)
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, self.PlayerJoin, self, nPlayerIndex, nGroupId)	
-	end
-	return -1;
-end
-
---Àë¿ªÓÎÏ·
-function tbMission:LeaveGame()
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, self.OnLeave, self)	
-	end
-	return -1
-end
+function tbMission:OnPlayerJoin() 
+print("tbMission:OnPlayerJoin()") 
+end 
 
 
-function tbMission:Run()
-	
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		doFunInWorld(nMapIndex, self.OnRun, self)
-	end
-end
+function tbMission:OnLeave() 
+print("tbMission:OnLeave()") 
+end 
+
+function tbMission:OnTimer() 
+print("tbMission:OnTimer()") 
+end 
+
+function tbMission:OnRun() 
+print("tbMission:OnRun()") 
+end 
+
+function tbMission:output(szMsg) 
+print(szMsg) 
+end 
+
+function tbMission:Debug(szMsg) 
+print(szMsg) 
+end 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  bªn ngoµi ®iÒu dông , cÇn b¶o vÖ tr­íc mÆt ®Ých SubWorld 
+
+-- script viet hoa By http://tranhba.com  më ra 
+function tbMission:StartGame() 
+
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+
+if nMapIndex >= 0 then 
+if self:GetMissionV(self.tbMissionV.MISSION_STATE) ~= 0 then 
+self:Debug(" lÇn tr­íc kh«ng quan ") 
+self:CloseGame() 
+end 
+doFunInWorld(nMapIndex, OpenMission, self.nMissionId) 
+return 1 
+else 
+self:output(format("[mission start fail]:map %d is not load", self.nMapId)) 
+return 0 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com  t¾t 
+function tbMission:CloseGame() 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+
+if nMapIndex >= 0 then 
+doFunInWorld(nMapIndex, CloseMission, self.nMissionId ) 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com  ®Ó cho mét nhµ ch¬i gia nhËp 
+function tbMission:JoinGame(nPlayerIndex, nGroupId) 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, self.PlayerJoin, self, nPlayerIndex, nGroupId) 
+end 
+return -1; 
+end 
+
+-- script viet hoa By http://tranhba.com  rêi ®i trß ch¬i 
+function tbMission:LeaveGame() 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, self.OnLeave, self) 
+end 
+return -1 
+end 
 
 
-function tbMission:GetMissionV(nVId)
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, GetMissionV, nVId)
-	end
-	return 0
-end
+function tbMission:Run() 
 
-function tbMission:GetMissionS(nSId)
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, GetMissionS, nSId)
-	end
-	return ""
-end
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
 
-function tbMission:SetMissionV(nVId, nValue)
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, SetMissionV, nVId, nValue)
-	end
-	return 0
-end
+if nMapIndex >= 0 then 
+doFunInWorld(nMapIndex, self.OnRun, self) 
+end 
+end 
 
-function tbMission:SetMissionS(nSId, szValue)
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, SetMissionS, nSId, szValue)
-	end
-	return ""
-end
 
-function tbMission:GetMissionState()
-	return self:GetMissionV(self.tbMissionV.MISSION_STATE)
-end
+function tbMission:GetMissionV(nVId) 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
 
-function tbMission:GetMSPlayerCount(nGroupId)
-	
-	local nMapIndex = SubWorldID2Idx(self.nMapId)
-	if nMapIndex >= 0 then
-		return doFunInWorld(nMapIndex, GetMSPlayerCount, self.nMissionId, nGroupId)	
-	end
-	return -1;	
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, GetMissionV, nVId) 
+end 
+return 0 
+end 
+
+function tbMission:GetMissionS(nSId) 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, GetMissionS, nSId) 
+end 
+return "" 
+end 
+
+function tbMission:SetMissionV(nVId, nValue) 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, SetMissionV, nVId, nValue) 
+end 
+return 0 
+end 
+
+function tbMission:SetMissionS(nSId, szValue) 
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, SetMissionS, nSId, szValue) 
+end 
+return "" 
+end 
+
+function tbMission:GetMissionState() 
+return self:GetMissionV(self.tbMissionV.MISSION_STATE) 
+end 
+
+function tbMission:GetMSPlayerCount(nGroupId) 
+
+local nMapIndex = SubWorldID2Idx(self.nMapId) 
+if nMapIndex >= 0 then 
+return doFunInWorld(nMapIndex, GetMSPlayerCount, self.nMissionId, nGroupId) 
+end 
+return -1; 
 end

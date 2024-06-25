@@ -1,4 +1,9 @@
+
+
 function dohoangkimmax()
+if (CalcFreeItemCellCount() < 40) then
+		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
+end
 local tab_Content =
 {
 "Trang BÞ Kim ¤./kimomax",
@@ -11,6 +16,8 @@ local tab_Content =
 "Tho¸t./no",
 "Trë l¹i"
 }
+
+
 Say(" Muèn lÊy trang bÞ g× ? ", getn(tab_Content), tab_Content);
 end
 -------------------------------------------------------------------------------------------------------------------------------
@@ -99,7 +106,7 @@ local tab_Content = {
 Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
 end
 function setinhsuongmax(nId)
-for i = 5400, 5409 do
+for i = 6481, 6490 do
 AddGoldItem(0,10*nId+i-10)
 end
 end
@@ -181,15 +188,15 @@ local tab_Content = {
 "Vâ §ang QuyÒn/#sexichlanmax(20)",
 "C«n L«n §ao/#sexichlanmax(22)",
 "C«n L«n KiÕm/#sexichlanmax(23)",
-"Hoa S¬n KhÝ T«ng/#sexichlanmax(24)",
-"Hoa S¬n KiÕm T«ng/#sexichlanmax(25)",
+-- "Hoa S¬n KhÝ T«ng/#sexichlanmax(24)",
+-- "Hoa S¬n KiÕm T«ng/#sexichlanmax(25)",
 "Tho¸t/no",
 "Trë l¹i"
 }
 Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
 end
 function sexichlanmax(nId)
-for i = 4650, 4659 do
+for i = 6620, 6629 do
 AddGoldItem(0,10*nId+i-10)
 end
 end
@@ -226,15 +233,16 @@ local tab_Content = {
 "Vâ §ang QuyÒn/#seminhphuongmax(20)",
 "C«n L«n §ao/#seminhphuongmax(22)",
 "C«n L«n KiÕm/#seminhphuongmax(23)",
-"Hoa S¬n KhÝ T«ng/#seminhphuongmax(24)",
-"Hoa S¬n KiÕm T«ng/#seminhphuongmax(25)",
+-- "Hoa S¬n KhÝ T«ng/#seminhphuongmax(24)",
+-- "Hoa S¬n KiÕm T«ng/#seminhphuongmax(25)",
 "Tho¸t/no",
 "Trë l¹i"
 }
 Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
 end
 function seminhphuongmax(nId)
-for i = 4900, 4909 do
+-- for i = 4900, 4909 do
+for i = 6890, 6899 do
 AddGoldItem(0,10*nId+i-10)
 end
 end

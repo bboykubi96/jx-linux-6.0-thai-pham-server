@@ -248,16 +248,22 @@ tbBetInfo.nEndDate = 20200822;
 tbBetInfo.tbNormalAward =
 {
 	-- §iÒu ChØnh Phó Quı CÈm Hép - Created by AnhHH  20110919
-	{nExp_tl = 500000},
---	{szName="Que hoa tuu", tbProp={6,1,125,1,0,0}, nCount=1},
+	{nExp_tl = 3000000},
+	{szName="Tiªn thæ lé", tbProp={6,1,71,1,0,0}, nCount=1},
+	--{szName="Vo lam mat tich", tbProp={6,1,1477,1,1,0}, nCount=1},
 }
 tbBetInfo.tbSpecAward =
 {
 	-- §iÒu ChØnh Phó Quı CÈm Hép - Created by AnhHH  20110919
-	{nExp_tl = 500000},
---	{szName="Vo lam mat tich", tbProp={6,1,22,1,0,0}, nCount=2},
---	{szName="Tay tuy kinh", tbProp={6,1,26,1,0,0}, nCount=2},
-	--{szName="Que hoa tuu", tbProp={6,1,125,1,0,0}, nCount=10},
+	{nExp_tl = 10000000},
+	--{szName="Vo lam mat tich", tbProp={6,1,22,1,0,0}, nCount=2},
+	--{szName="Tay tuy kinh", tbProp={6,1,26,1,0,0}, nCount=2},
+	--	{szName="nen may man", tbProp={6,1,4399,1,0,0}, nCount=1},
+	--{szName="nen hanh phuc", tbProp={6,1,4400,1,0,0}, nCount=1},
+		--{szName="ruong hk", tbProp={6,1,4435,1,0,0}, nCount=1},
+
+	{szName="Que hoa tuu", tbProp={6,1,125,1,0,0}, nCount=1},
+		--{szName="Vo lam mat tich", tbProp={6,1,1477,1,1,0}, nCount=2},
 --	{szName="ThÇn Hµnh To¸i PhiÕn", tbProp={6,1,2410,1,0,0}, nCount=18, nExpiredTime = 20100823},
 }
 
@@ -371,65 +377,43 @@ function tbBetInfo:GetLastBetNumInfo()
 	end
 	return szInfo;
 end
-sodadat={0};
+
 function tbBetInfo:Bet(nValue)
 	if (self:IsActive() ~= 1) then
 		return 0;
 	end
-	tbBetInfo:ClearNumInfo()
-			local nDate = tonumber(GetLocalDate("%m%d"))
-	if ( GetTask(3021) ~= nDate ) then
-		SetTask(3021, nDate)
-		SetTask(3022, 0)
-	end
-
-	if ( GetTask(3022) >= 10 ) then
-		Say("H«m nay ®¹i hiÖp ®· sö dông 10 Phó Quı CÈm H¹p, kh«ng thÓ sö dông thªm.")
-		return 0
-	end
+	
 	if (nValue < 10 or nValue > 99) then
 		Talk(1,"","ChØ ®­îc phĞp nhËp tõ sè 10 ®Õn 99.");
 		return 0;
 	end
-	--tbBetInfo:AddNormalNum(nValue)
-	--tbBetInfo:AddSpecNum(nValue)
-
-	--for i=1,getn(sodadat) do
-		--if  nValue==sodadat[i] then
-		--Talk(1,"","Ng­¬i ®· ®Æt sè "..sodadat[i].." råi, kh«ng thÓ ®Æt l¹i n÷a");
-		--return 0;	
-	--end
-	--end
---	tinsert(sodadat,nValue);
 	
-	--	if tbBetInfo:IsNumExist(nValue)~=0 then
-	
-	--	end
 	if ConsumeEquiproomItem(1, 6, 1, 2402, -1) ~= 1 then
 		Talk(1,"","ña, sao ta kh«ng thÊy ng­¬i cÇm cÈm h¹p nhØ, kiÓm tra l¹i thö xem.");
 		return 0;
 	end
-
+		
 	tbJinhe_tsk:AddCurBetCount(1);
 	local nCount = tbJinhe_tsk:GetCurBetCount();
 	tbJinhe_tsk:SetCurBetNum(nCount, nValue);
 
 	RemoteExecute("\\script\\event\\expansion\\201006\\fuguijinhe\\fuguijinhe.lua", "AddBetCount", 0);
-	SetTask(3022,GetTask(3022)+1)
-	PlayerFunLib:AddExp(500000,0,format("fuguijinhe\tbet number%d",nValue));
-	Msg2Player(format("§· chän <color=green>%d<color> ®ång thêi nhËn ®­îc %d kinh nghiÖm",nValue,500000))
+	
+	PlayerFunLib:AddExp(1000000,0,format("fuguijinhe\tbet number%d",nValue));
+	Msg2Player(format("§· chän <color=green>%d<color> ®ång thêi nhËn ®­îc %d kinh nghiÖm",nValue,1000000))
+    SetTask(3333,GetTask(3333)+1)
 	return 1;
 end
 
 function tbBetInfo:UseJinhe()
-	if (PlayerFunLib:CheckLevel(50, "default", ">=") ~= 1) then
+	if (PlayerFunLib:CheckLevel(90, "default", ">=") ~= 1) then
 		return 0;
 	end
 	
 	local nCount = tbJinhe_tsk:GetCurBetCount();
 
-	if (nCount >= 20) then
-		Talk(1, "", format("Mçi nh©n vËt mçi ®ît ho¹t ®éng chØ ®­îc sö dông %d lÇn.",20));
+	if (nCount >= 10) then
+		Talk(1, "", format("Mçi nh©n vËt mçi ®ît ho¹t ®éng chØ ®­îc sö dông %d lÇn.",10));
 		return 0;
 	end
 	
@@ -529,8 +513,8 @@ function tbBetInfo:GetNormalAward()
 		return
 	end
 	
-	if (tbJinhe_tsk:GetNormalAwardCount() >= 20) then
-		Talk(1, "", format("Mçi mét ®ît mçi nh©n vËt nhiÒu nhÊt chØ nhËn ®­îc %d lÇn th­ëng",20));
+	if (tbJinhe_tsk:GetNormalAwardCount() >= 10) then
+		Talk(1, "", format("Mçi mét ®ît mçi nh©n vËt nhiÒu nhÊt chØ nhËn ®­îc %d lÇn th­ëng",10));
 		return
 	end
 	

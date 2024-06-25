@@ -1,5 +1,5 @@
 Include("\\script\\missions\\championship\\head.lua")
 
-function main()
-	transtoplace()		--判断等级、门派传送相应地图
+function main() 
+transtoplace() -- script viet hoa By http://tranhba.com  ph竛 畂竛 c蕄 b薱 # m玭 ph竔 truy襫 t鑞g tng 鴑g b秐  
 end

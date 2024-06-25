@@ -9,23 +9,21 @@ tbTop10.tbAwardCheck = {0,0,0}
 tbTop10.nIDX_Account = 1
 tbTop10.nIDX_TotalCount = 2
 tbTop10.nIDX_LastUpdate = 3
-tbTop10.nIDX_LastUpdate1 = 4
-tbTop10.tbFileHeader = {"Name", "Account", "§¼ng CÊp", "Kinh NghiÖm","Thêi Gian cËp nhËt gÇn nhÊt"}
-tbTop10.tbTopListFileHeader = {"Name", "Account", "§¼ng CÊp", "Kinh NghiÖm","Thêi gian cËp nhËt gÇn nhÊt"}
-tbTop10.tbSubcribersPattern = {"*w", "*w", "*n", "*n", "*w"}
-tbTop10.tbToplistPattern = {"*w", "*w", "*n", "*n", "*w"}
+tbTop10.tbFileHeader = {"Name", "Account", "Sè l­îng", "LÇn nép cuèi"}
+tbTop10.tbTopListFileHeader = {"Name", "Account", "Sè l­îng", "LÇn nép cuèi"}
+tbTop10.tbSubcribersPattern = {"*w", "*w", "*n", "*w"}
+tbTop10.tbToplistPattern = {"*w", "*w", "*n", "*w"}
 tbTop10.strFilePath = "vng_data/event_thang2_top10/"
 tbTop10.strFileName = "subcribers.txt"
-tbTop10.strTopListFileName1 = "toplist.dat"
-tbTop10.strTopListFileName = "toplistuphang.dat"
+tbTop10.strTopListFileName = "toplist.txt"
 tbTop10.nRegisterCount = 0
 tbTop10.nSort_Time = 0005
 tbTop10.tbPhase = {
-	[1] = {201202020000, 201802282400}, 
-	[2] = {201802290900, 201802292400}, 
+	[1] = {201202020000, 201202282400}, --nép hoa
+	[2] = {201202290900, 201202292400}, --nhËn th­ëng
 }
 tbTop10.nStartDate = 201202020000
-tbTop10.nEndDate = 201802292400
+tbTop10.nEndDate = 201202292400
 
 function tbTop10:Init()
 	self.tbSubcribers = {}
@@ -60,25 +58,31 @@ end
 
 function tbTop10:GiveRose(strName, strAccount, nCount)
 	local nPhase = self:GetPhase()
-	local nLevel = GetLevel()
 	if nPhase ~= 1 then
 		Talk(1, "", "HiÖn t¹i kh«ng ph¶i thêi gian nép vËt phÈm.")
 		return
 	end
+	if self:CheckTime() == 1 then
+		Talk(1, "", "HÖ thèng ®ang tiÕn hµnh xÕp h¹ng, xin h·y quay l¹i sau.")
+		return
+	end
+	
 	if not self.tbSubcribers then
 		self:Init()
 	end
-	local strTime = GetExp()
-	local strTime1 = tonumber(date("%Y%m%d%H%M"))
-	self.tbSubcribers[strName] = {strAccount,nLevel,strTime,strTime1}
+	local strTime = GetLocalDate("%Y-%m-%d_%H:%M:%S")
+	self.tbSubcribers[strName] = {strAccount, nCount,strTime}
 		
+	if self:Subcribers2File() == 1 then
+		Say("Nép thµnh c«ng Hoa Hång", 1, "§ãng/OnCancel")
+	end
 end
 
 function tbTop10:Subcribers2File()
 	local tbTemp = {}
 	tinsert(tbTemp, self.tbFileHeader)
 	for key, val in self.tbSubcribers do
-		tinsert(tbTemp, {key, val[self.nIDX_Account], val[self.nIDX_TotalCount], val[self.nIDX_LastUpdate], val[self.nIDX_LastUpdate1]})
+		tinsert(tbTemp, {key, val[self.nIDX_Account], val[self.nIDX_TotalCount], val[self.nIDX_LastUpdate]})
 	end
 	tbVngLib_File:Table2File(self.strFilePath, self.strFileName, "w", tbTemp)	
 	return 1
@@ -99,7 +103,7 @@ function LoadFromFile()
 	for i = 1, getn(tb) do		
 		if tb[i][1] then
 			nLength = nLength + 1
-			tbTop10.tbSubcribers[tb[i][1]] = {tb[i][2], tb[i][3], tb[i][4], tb[i][5]}			
+			tbTop10.tbSubcribers[tb[i][1]] = {tb[i][2], tb[i][3], tb[i][4]}			
 		end
 	end
 	
@@ -123,19 +127,22 @@ function test()
 end
 ----=========top list==============-----
 function tbTop10:UpdateTopList()
-
+	nLamAnMapID = SubWorldID2Idx(176)
+	if nLamAnMapID < 0 then		
+		return
+	end
 	self.tbTopList = {}
 	local tbTemp = {}	
 	--t¹o table l­u t¹m d÷ liÖu cho viÖc s¾p xÕp	
 	for key, val in self.tbSubcribers do		
-		tinsert(tbTemp, {key, val[self.nIDX_Account], val[self.nIDX_TotalCount], val[self.nIDX_LastUpdate], val[self.nIDX_LastUpdate1]})
+		tinsert(tbTemp, {key, val[self.nIDX_Account], val[self.nIDX_TotalCount], val[self.nIDX_LastUpdate]})
 	end
 	--s¾p xÕp table t¹m theo thø tù gi¶m dÇn dùa vµo sè l­îng vËt phÈm ®· nép
-	sort(tbTemp, function (a, b ) if a[3]~=b[3] then return(a[3] > b[3]) else return a[4]>b[4] end end)
+	sort(tbTemp, function (a, b) return(a[3] > b[3]) end)
 	--Chän 10 ng­êi cã sè l­îng cao nhÊt ®Ó ®­a vµo danh s¸ch toplist dïng cho viÖc l­u vµo file hoÆc hiÓn thÞ t¹i npc
 	local nCount = 0
- 	if getn(tbTemp) > 100 then
- 		nCount = 100
+ 	if getn(tbTemp) > 10 then
+ 		nCount = 10
  	else
  		nCount = getn(tbTemp)
  	end
@@ -152,24 +159,15 @@ function tbTop10:TopList2File()
 	for key, val in self.tbTopList do
 		tinsert(tbTemp, val)
 	end
-	local nTime = tonumber(date("%H%M"))
-	if nTime>=2050 and nTime<2100 then
- 	tbVngLib_File:Table2File(self.strFilePath, self.strTopListFileName1, "w", tbTemp)
-	else
-	 tbVngLib_File:Table2File(self.strFilePath, self.strTopListFileName, "w", tbTemp)
+	tbVngLib_File:Table2File(self.strFilePath, self.strTopListFileName, "w", tbTemp)	
 	return 1
 end
 
-end
 function tbTop10:TopListFromFile()
 	if not self.tbTopList then
 		self.tbTopList = {}
 	end
-	if nTime>=2050 and nTime<2100 then
 	local tb = tbVngLib_File:TableFromFile(tbTop10.strFilePath, tbTop10.strTopListFileName, self.tbToplistPattern)
-	else
-	local tb = tbVngLib_File:TableFromFile(tbTop10.strFilePath, tbTop10.strTopListFileName1, self.tbToplistPattern)
-	end
 	if not tb then
 		tbTop10.tbTopList = nil
 		return
@@ -180,59 +178,33 @@ function tbTop10:TopListFromFile()
 end
 
 function tbTop10:ShowTopList()
-	if not self.tbTopList1 then
-		self.tbTopList1 = {}
-	end
-
-	local tb = tbVngLib_File:TableFromFile(tbTop10.strFilePath, tbTop10.strTopListFileName1, self.tbToplistPattern)
-	if not tb then
-		tbTop10.tbTopList1 = nil
+	if self:CheckTime() == 1 then
+		Talk(1, "", "HÖ thèng ®ang tiÕn hµnh xÕp h¹ng, xin h·y quay l¹i sau.")
 		return
 	end
-	for i = 1, getn(tb) do
-		self.tbTopList1[i] = tb[i]
-	end
-	if not self.tbTopList1 or getn(self.tbTopList1) <= 0 then
-		CreateNewSayEx("HiÖn t¹i ch­a cã b¶ng xÕp h¹ng",{{"§ãng",OnCancel}})
-		return
-	end
-	for nRank = 1, getn(self.tbTopList1) do
-		strName = self.tbTopList1[nRank][1]			
-		if strName == GetName() then
-			
-		--SetEnergy(nRank)
-		
-		--Say(""..nRank.."")	
-		end
-	end
-	
-end
-function tbTop10:ShowTopList1()
 	if not self.tbTopList or getn(self.tbTopList) <= 0 then
 		CreateNewSayEx("HiÖn t¹i ch­a cã b¶ng xÕp h¹ng",{{"§ãng",OnCancel}})
 		return
 	end
 	--local strTittle = format("%-13s%s\n%s <color=red>%s<color>\n\n", "", "Danh s¸ch 10 ng­êi cã sè l­îng nép nhiÒu nhÊt", "\t\t\t\t\t\tThêi gian tæng kÕt:", self.tbTopList[1][4])
-	local strTittle = "Danh s¸ch 50 ng­êi ®øng ®Çu server Hoa S¬n\n"
-	strTittle = strTittle..format("%-10s%-17s%-17s%-12s\n", "Thø h¹ng", "Tªn", "§¼ng cÊp", "Exp")	
+	local strTittle = "Danh s¸ch 10 ng­êi cã sè l­îng nép nhiÒu nhÊt\n"
+	strTittle = strTittle..format("%-5s%-17s%-12s\n", "Tªn", "Sè l­îng nép", "LÇn nép gÇn nhÊt")	
 	for nRank = 1, getn(self.tbTopList) do
 		strName = self.tbTopList[nRank][1]			
 		local strTotalCount  = self.tbTopList[nRank][3]	
 		local strLastUpdate = self.tbTopList[nRank][4]	
-		local strLastUpdate1 = self.tbTopList[nRank][5]	
 		if strName == GetName() then
-			strTittle = strTittle..format("<color=cyan>%-10s%-17s%-12s%-12s<color>\n", nRank, strName, strTotalCount, strLastUpdate)
+			strTittle = strTittle..format("<color=cyan>%-5s%-17s%-12s<color>\n", nRank, strName, strTotalCount, strLastUpdate)
 		else
-			strTittle = strTittle..format("<color=yellow>%-10s%-17s%-12s%-12s<color>\n", nRank, strName, strTotalCount, strLastUpdate)
+			strTittle = strTittle..format("<color=yellow>%-5s%-17s%-12s<color>\n", nRank, strName, strTotalCount, strLastUpdate)
 		end
 	end
 	CreateNewSayEx(strTittle,{{"§ãng",OnCancel}})
 end
-
 --end top list
 function tbTop10:GetCurRank(strName, strAccount)
-	local j = 100
-	if getn(self.tbTopList) < j then
+	local j = 3
+	if getn(self.tbTopList) < 3 then
 		j = getn(self.tbTopList)
 	end
 	for i =1, j do

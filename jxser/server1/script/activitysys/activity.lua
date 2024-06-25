@@ -1,11 +1,8 @@
-
-
 Include("\\script\\activitysys\\activitydetail.lua")
-
 Include("\\script\\misc\\taskmanager.lua")
+Include("\\script\\lib\\awardtemplet.lua")
 
 ActivityClass = {}
-
 
 function ActivityClass:_init()
 	self.szName = ""	
@@ -62,7 +59,6 @@ function ActivityClass:ExecActivityDetail(nDetailId)
 	return self:GotoDetail(nDetailId, {})
 end
 
---加载配置脚本，
 function ActivityClass:LoadConfig(tbDetailConfigList, gActivity)
 	self.tbDetailSet = {}
 	
@@ -82,13 +78,13 @@ function ActivityClass:LoadConfig(tbDetailConfigList, gActivity)
 	end
 	
 end
+
 function ActivityClass:InitTaskGroup()
 	if self.nGroupId then
 		self.TaskGroup = TaskManager:Create(self.nGroupId, self.nVersion)
 	end
 end
 
---读取活动基本信息
 function ActivityClass:Load(szPath, nRow, gActivity)
 	if TabFile_Load(szPath, szPath) == 0 then
 		WriteLog(format("Load %s is fail", szPath))
@@ -118,7 +114,6 @@ function ActivityClass:GotoDetail(nDetailId, tbParam)
 		WriteLog(format("Warrning nDetailId %d is nil", nDetailId))
 	end
 end
-
 
 function ActivityClass:OnMessage(tbParam, szType)
 	local tbMessage = self.tbMessage[szType]
@@ -242,7 +237,7 @@ function ActivityClass:SetTaskBit(nTaskIndex, nBitPos, nBitCount, nValue)
 	nValue = lib:NumberParamTrans(nValue)
 	self.TaskGroup:SetTaskBit(nTaskIndex, nBitPos, nBitCount, nValue)
 end
-Include("\\script\\lib\\awardtemplet.lua")
+
 function ActivityClass:GiveAward(szAwardName, nAwardCount, szLogTitle, szAction)
 	
 	if self.tbAward and self.tbAward[szAwardName] then

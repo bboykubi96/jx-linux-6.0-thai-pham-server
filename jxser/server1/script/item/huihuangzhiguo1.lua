@@ -1,2 +1,2 @@
 Include("\\script\\item\\huihuangzhiguo.lua")
-huihuangzhiguo_level = 1
+huihuangzhiguo_level = 1 

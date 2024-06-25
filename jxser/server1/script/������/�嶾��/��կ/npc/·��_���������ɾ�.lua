@@ -10,7 +10,7 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- script viet hoa B
 -- script viet hoa By http://tranhba.com dinhhq: new lunar year 2011 
 Include("\\script\\vng_event\\LunarYear2011\\npc\\mastergift.lua")
 
-function main_com() 
+function main() 
 if tbVNG_LY2011:isActive() == 1 then 
 local tbSay = 
 { 

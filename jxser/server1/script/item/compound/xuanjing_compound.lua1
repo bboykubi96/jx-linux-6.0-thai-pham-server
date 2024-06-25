@@ -1,0 +1,34 @@
+-- script viet hoa By http://tranhba.com  chøc n¨ng # mµu tÝm trang bÞ hÖ thèng - sö dông lam / b¹ch ®å trang søc ®eo tay hîp thµnh huyÒn tinh qu¸ng th¹ch 
+-- script viet hoa By http://tranhba.com  Fanghao Wu 2005.1.15 
+
+Include( "\\script\\item\\compound\\compound_header.lua" );
+
+-- script viet hoa By http://tranhba.com  [ hîp thµnh ] phÝ dông 
+COMPOUND_COST = 1000; 
+
+
+-- script viet hoa By http://tranhba.com  lÊy ®­îc [ hîp thµnh ] thao t¸c tham sæ # dïng cho truyÒn l¹i cho ITEM_CalcItemValue tÝnh to¸n vËt phÈm gi¸ trÞ l­îng # 
+function getCompoundParam() 
+return "XUANJING_COMPOUND"; 
+end 
+
+-- script viet hoa By http://tranhba.com  gi¸o nghiÖm nguyªn liÖu cã hay kh«ng phï hîp [ hîp thµnh ] quy t¾c # ®ång thêi tån tr÷ mét Ýt nguyªn liÖu sè liÖu # 
+function verifySrcItems( arynNecessaryItemIdx, arynAlternativeItemIdx ) 
+-- return RESULT_SUCCEED; 
+return RESULT_LACK_RESOURCE; 
+end 
+
+-- script viet hoa By http://tranhba.com  sinh thµnh môc tiªu vËt phÈm tin tøc 
+function genDesItemsInfo( arynNecessaryItemIdx ) 
+local aryDesItemInfo = {}; 
+local nLatestItemVer = ITEM_GetLatestItemVersion(); 
+for i = 1, 10 do 
+aryDesItemInfo[i] = { nLatestItemVer, 0, 0, 6, 1, 147, i, 0, 0, nil, nil, getCompoundParam() }; 
+end 
+return aryDesItemInfo; 
+end 
+
+-- script viet hoa By http://tranhba.com  hoµn thµnh lùa chän môc tiªu vËt phÈm # thñ tiªu nguyªn liÖu chê kÕt thóc thao t¸c 
+function finalCompound( arynNecessaryItemIdx, arynAlternativeItemIdx, nSrcItemValSum, aryDesItemInfo, arydDesItemVal ) 
+return defFinalCompound( arynNecessaryItemIdx, arynAlternativeItemIdx, nSrcItemValSum, aryDesItemInfo, arydDesItemVal ); 
+end

@@ -23,18 +23,18 @@ CITYID_LINAN		= 7
 TONGMEMBER_AWARDSCORE = 30	-- 帮会成员必须获得此积分或以上才可以获得奖励
 
 FIELD2CITYID_LIST = {
-	[FIELD_CHENGDU	] = {CityId = CITYID_CHENDU,	AwardCount = 80},	-- 成都战场
-	[FIELD_BIANJING	] = {CityId = CITYID_BIANJING,	AwardCount = 180},	-- 汴京战场
-	[FIELD_DALI		] = {CityId = CITYID_DALI,		AwardCount = 40},	-- 大理战场
-	[FIELD_FENGXIANG] = {CityId = CITYID_FENGXIANG,	AwardCount = 80},	-- 凤翔战场
-	[FIELD_LINAN	] = {CityId = CITYID_LINAN,		AwardCount = 120},	-- 临安战场
-	[FIELD_XIANGYANG] = {CityId = CITYID_XIANGYANG,	AwardCount = 80},	-- 襄阳战场
-	[FIELD_YANGZHOU	] = {CityId = CITYID_YANGZHOU,	AwardCount = 40},	-- 扬州战场
+	[FIELD_CHENGDU	] = {CityId = CITYID_CHENDU,	AwardCount = 60},	-- thanh do
+	[FIELD_BIANJING	] = {CityId = CITYID_BIANJING,	AwardCount = 100},	-- bien kinh
+	[FIELD_DALI		] = {CityId = CITYID_DALI,		AwardCount = 40},	-- dai ly
+	[FIELD_FENGXIANG] = {CityId = CITYID_FENGXIANG,	AwardCount = 60},	--phuong tuong
+	[FIELD_LINAN	] = {CityId = CITYID_LINAN,		AwardCount = 80},	-- Lam an
+	[FIELD_XIANGYANG] = {CityId = CITYID_XIANGYANG,	AwardCount = 60},	-- tuong duong
+	[FIELD_YANGZHOU	] = {CityId = CITYID_YANGZHOU,	AwardCount = 40},	-- duong chau
 }
 
 FIELDSCORE_LIST = {
 	[FIELD_CHENGDU	] = 2,
-	[FIELD_BIANJING	] = 4,
+	[FIELD_BIANJING	] = 3,
 	[FIELD_DALI		] = 1,
 	[FIELD_FENGXIANG] = 2,
 	[FIELD_LINAN	] = 3,
@@ -336,7 +336,7 @@ function BattleWorld:SaveAward(tong, inf)
 		local award_count = self:GetTongMemberAwardCount(tb)
 		if (award_count > 0) then
 			local tong_score = self.m_TongScore[tong] or 0
-			local exp_award = floor(tong_score * 25000000)
+			local exp_award = floor(tong_score * 10000000)
 			local rate = floor(tong_score * 2 * 100 / award_count)
 			OutputMsg(format("[SEVENCITY]tong(%s): score(%d), highscore_member_count(%d), guardaward_rate(%d)",
 				tong, tong_score, award_count, rate))

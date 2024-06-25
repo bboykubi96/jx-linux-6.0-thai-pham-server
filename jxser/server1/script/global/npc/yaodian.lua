@@ -1,14 +1,14 @@
 Include("\\script\\dailogsys\\dailogsay.lua")
 
-function main()
-	--local szTitle = "<npc>需要买药么？"
-	--local tbOpt = {}
-	--tinsert(tbOpt, {"交易", yes}) 
-	--tinsert(tbOpt, {"我随便逛逛"}) 
-	--CreateNewSayEx(szTitle, tbOpt);
-	Sale(176)
-end
+function main() 
+-- script viet hoa By http://tranhba.com local szTitle = "<npc> c莕 ph秈 mua thu鑓 sao ? " 
+-- script viet hoa By http://tranhba.com local tbOpt = {} 
+-- script viet hoa By http://tranhba.com tinsert(tbOpt, {"Giao d辌h ", yes}) 
+-- script viet hoa By http://tranhba.com tinsert(tbOpt, {"Ta t飝 ti謓 甶 d筼 m閠 ch髏 "}) 
+-- script viet hoa By http://tranhba.com CreateNewSayEx(szTitle, tbOpt); 
+Sale(176) 
+end 
 
-function yes()
-	Sale(176)
-end
+function yes() 
+Sale(176) 
+end 

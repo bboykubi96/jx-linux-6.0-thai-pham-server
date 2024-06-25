@@ -1,7 +1,7 @@
 Include("\\script\\missions\\bw\\bwhead.lua")
 function InitMission()
 	for i = 1, 40 do 
-		SetMissionV(i,0);--允许报符杆
+		SetMissionV(i,0);--允许报名了
 	end;
 	
 	for i = 1, 10 do 
@@ -11,8 +11,8 @@ function InitMission()
 	SetMissionV(BW_KEY, random(10000000)+1);
 	StartMissionTimer(BW_MISSIONID, BW_SMALLTIME_ID, TIMER_1);
 	StartMissionTimer(BW_MISSIONID, BW_TOTALTIME_ID, TIMER_2);
-	CreateChannel("L玦 i Gi竝", 11);
-	CreateChannel("L玦 i 蕋", 11);
+	CreateChannel("L玦 i nhi襲 ngi b猲 Gi竝", 11);
+	CreateChannel("L玦 i nhi襲 ngi b猲 蕋", 11);
 	
 	for i = 1, getn(CS_CamperPos) do
 		local nNpcIdx = AddNpc(332, 1, SubWorld, CS_CamperPos[i][1] * 32, CS_CamperPos[i][2] * 32, 1, CS_CamperPos[i][3]);
@@ -39,16 +39,17 @@ function EndMission()
 	GameOver();
 	StopMissionTimer(BW_MISSIONID, BW_SMALLTIME_ID);
 	StopMissionTimer(BW_MISSIONID, BW_TOTALTIME_ID);
-	DeleteChannel("L玦 i Gi竝");
-	DeleteChannel("L玦 i 蕋");
+	DeleteChannel("L玦 i nhi襲 ngi b猲 Gi竝");
+	DeleteChannel("L玦 i nhi襲 ngi b猲 蕋");
 	local subworldid = SubWorldIdx2ID(SubWorld)
 	ClearMapNpc(subworldid);
+	BWDamageStat:ClearStat();
 end;
 
 function OnLeave(RoleIndex)
 	PlayerIndex = RoleIndex;
 
-	str2 = GetName().."R阨 kh醝 chi課 trng";
+	--str2 = GetName().."退出了战场。";
 	LeaveGame();
 	NewWorld(GetTask(BW_SIGNPOSWORLD), GetTask(BW_SIGNPOSX), GetTask(BW_SIGNPOSY));
 end;
@@ -67,6 +68,7 @@ function bw_group_to_fight(nGroupID)
 		if (pidx > 0) then
 		   	PlayerIndex = pidx;
 		   	SetFightState(1);
+		   	ForbitStamina(1)
 		end;
 		if (idx == 0) then
 			break;

@@ -16,6 +16,7 @@ Include("\\script\\thoren\\rollback_config.lua")
 Include("\\script\\thoren\\hoason_config.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\changefeature\\feature_man.lua")
 IncludeLib("ITEM")
 function OnExit()
 
@@ -32,23 +33,978 @@ function main()
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
 	
 	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
-	
-	
-		 tbDailog:AddOptEntry("§æi trang bÞ NguyÖt KhuyÕt Max lÊy r­¬ng NguyÖt KhuyÕt Max ", quynguyennguyetkhuyenmax)
-		 tbDailog:AddOptEntry("§æi trang bÞ Tinh S­¬ng Max lÊy r­¬ng Tinh S­¬ng Max ", quynguyentinhsuongmax)
-	--if GetAccount()=="boquyx123" or GetAccount()=="luuhuanvlv201901" then
-		 tbDailog:AddOptEntry("NhËn 1 CÆp Ngò Hµnh Ên 4 + Xuyªn Y 5", NhanFreeAn45)
-		 tbDailog:AddOptEntry("§æi Tinh Ngäc --> §¹i Tinh Ngäc", DoiTinhNgocDaiTinhNgoc)
-		 tbDailog:AddOptEntry("§æi Ên + Xuyªn Y --> Nguyªn LiÖu", DoiNguyenLieu56)
-		 tbDailog:AddOptEntry("N©ng CÊp Ngò Hµnh Ên ", nangcapnguhanhan)
-		 tbDailog:AddOptEntry("N©ng CÊp Xuyªn Y  ", nangcapxuyeny)
-
-	--end
-
+		
+		--tbDailog:AddOptEntry("ChÕ T¹o C¸c Trang BÞ Vip Xin Xß", epnguavip)
+		tbDailog:AddOptEntry("Thay §æi Ngo¹i Trang", DoiNgoaiTrang)
+		--tbDailog:AddOptEntry("Trïng LuyÖn NhÉn Cµng Kh«n",trungluyennhan)
+		tbDailog:AddOptEntry("Thay §ái Ngo¹i H×nh Vò KhÝ", MenuDoiNgoaiHinh0)
+		tbDailog:AddOptEntry("ChÕ T¹o Vò KhÝ HKMP Ph¸t S¸ng(VIP)", PhatSangVip)
 	tbDailog:Show()
 end;
+function trungluyennhan()
+local tbSay = 
+{
+"Trïng LuyÖn NhÉn CÊp 7/#trungluyennhan71()",
+"Trïng LuyÖn NhÉn CÊp 8/#trungluyennhan81()",
+--"Ðp Cè S¬n Ph¸ Thiªn/#epcoson()",
+--"Ðp Vò LiÖt TruyÒn Kú/#epvuliet()",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("Ng­¬i muèn lo¹i ngùa nµo  ",getn(tbSay),tbSay)
+end
+function trungluyennhan71()
+Say("Vui Lßng Chän §óng NhÉn M×nh §ang Mang §Ó Trïng LuyÖn",6,
+	"Kh¸ng §éc/Doc_1",
+	"Kh¸ng L«i/Loi_1",
+	"Kh¸ng Háa/Hoa_1",
+	"Phßng Thñ VËt Lý/Pho_1",
+	"Kh¸ng B¨ng/Bang_1",
+	"Hñy/No")
+end
+
+function Doc_1()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4743)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4733)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4738)",
+	"Hñy Bá/No")
+end
+
+function Loi_1()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4742)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4732)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4737)",
+	"Hñy Bá/No")
+end
+
+function Hoa_1()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4740)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4730)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4735)",
+	"Hñy Bá/No")
+end
+
+function Pho_1()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4744)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4734)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4739)",
+	"Hñy Bá/No")
+end
+
+function Bang_1()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4741)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4731)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4736)",
+	"Hñy Bá/No")
+end
+function trungluyennhan7(num)
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn Trïng LuyÖn ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Cµng Kh«n 7 ", tbProp = {0,num}, nQuality = 1 },
+             	{szName = "Xu ", tbProp = {4,417,1,1,0},nCount = 500},
+              
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,num}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+-------------------------------------
+function trungluyennhan81()
+Say("Vui Lßng Chän §óng NhÉn M×nh §ang Mang §Ó Trïng LuyÖn",6,
+	"Kh¸ng §éc/Doc_2",
+	"Kh¸ng L«i/Loi_2",
+	"Kh¸ng Háa/Hoa_2",
+	"Phßng Thñ VËt Lý/Pho_2",
+	"Kh¸ng B¨ng/Bang_2",
+	"Hñy/No")
+end
+
+function Doc_2()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan8(4758)",
+	"Thêi Gian Tróng §éc/#trungluyennhan8(4748)",
+	"Thêi Gian Cho¸ng/#trungluyennhan8(4753)",
+	"Hñy Bá/No")
+end
+
+function Loi_2()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan8(4757)",
+	"Thêi Gian Tróng §éc/#trungluyennhan8(4747)",
+	"Thêi Gian Cho¸ng/#trungluyennhan8(4752)",
+	"Hñy Bá/No")
+end
+
+function Hoa_2()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan7(4755)",
+	"Thêi Gian Tróng §éc/#trungluyennhan7(4745)",
+	"Thêi Gian Cho¸ng/#trungluyennhan7(4750)",
+	"Hñy Bá/No")
+end
+
+function Pho_2()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan8(4759)",
+	"Thêi Gian Tróng §éc/#trungluyennhan8(4749)",
+	"Thêi Gian Cho¸ng/#trungluyennhan8(4754)",
+	"Hñy Bá/No")
+end
+
+function Bang_2()
+Say("H·y Lùa Chän HiÖu XuÊt",4,
+	"Thêi Gian Lµm ChËm/#trungluyennhan8(4756)",
+	"Thêi Gian Tróng §éc/#trungluyennhan8(4746)",
+	"Thêi Gian Cho¸ng/#trungluyennhan8(4751)",
+	"Hñy Bá/No")
+end
+function trungluyennhan8(num)
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn Trïng LuyÖn ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Cµng Kh«n 8 ", tbProp = {0,num}, nQuality = 1 },
+             	{szName = "Xu ", tbProp = {4,417,1,1,0},nCount = 800},
+              
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,num}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}	
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function epnguavip()
+local tbSay = 
+{
+
+"Ðp MÆt N¹ 3Skill Hµng VÜnh ViÔn/#epmatna()",
+"Ðp NGùa Hoµng Kim 4 Skill/#epsieuquanghsd()",
+"Ðp Cè S¬n Ph¸ Thiªn/#epcoson()",
+"Ðp Vò LiÖt TruyÒn Kú/#epvuliet()",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("Ng­¬i muèn lo¹i ngùa nµo  ",getn(tbSay),tbSay)
+
+end
+function epcoson()
+	local tbSay = 
+{
+"Ta Muèn §æi Sang  Bao Tay (Phong Ma QuyÕt)/#TienHanhDoiSkillTrungSinh42z(5978)",
+"Ta Muèn §æi Sang  Bao Tay (§Êu UyÓn)/#TienHanhDoiSkillTrungSinh42z(5979)",
+"Ta Muèn §æi Sang  Bao Tay (Tµn Phong V©n QuyÒn)/#TienHanhDoiSkillTrungSinh42z(5980)",
+"Ta Muèn §æi Sang  Bao Tay (§o¹n NguyÖt)/#TienHanhDoiSkillTrungSinh42z(5981)",
+"Ta Muèn §æi Sang  Bao Tay (T©m Tinh Thøc)/#TienHanhDoiSkillTrungSinh42z(5982)",
+"Ta Muèn §æi Sang D©y ChuyÒn (Triªt Vò Phong ThÓ)/#TienHanhDoiSkillTrungSinh42z(5984)",
+"Ta Muèn §æi Sang  D©y ChuyÒn (Hæ KÝch)/#TienHanhDoiSkillTrungSinh42z(5985)",
+"Ta Muèn §æi Sang  D©y ChuyÒn(Ngäc Th¹ch PhiÕm)/#TienHanhDoiSkillTrungSinh42z(5986)",
+"Ta Muèn §æi Sang  D©y ChuyÒn (L¨ng Phong)/#TienHanhDoiSkillTrungSinh42z(5987)",
+"Ta Muèn §æi Sang D©y ChuyÒn (NhËt Nh­ S¬n)/#TienHanhDoiSkillTrungSinh42z(5988)",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("B¹n Muèn trïng luyÖn g× G×",getn(tbSay),tbSay)
+
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+function TienHanhDoiSkillTrungSinh42z(num)
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Cè S¬n ", tbProp = {0,{5262,5266}}, nQuality = 1 },
+                {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4873,1,0},nCount = 600},
+                {szName = "M·nh Nguyªn LiÖu HiÕm", tbProp = {4,1508,1,1,0},nCount = 200},
+		{szName = "Kim Nguyªn B¶o", tbProp = {4,1496,1,1,0},nCount = 300},
+              
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,num}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+------------------------------
+function epvuliet()
+	local tbSay = 
+{
+"Ta Muèn §æi Sang  nãn/#TienHanhDoiSkillTrungSinh432z(5109)",
+"Ta Muèn §æi Sang  ¸o/#TienHanhDoiSkillTrungSinh432z(5110)",
+"Ta Muèn §æi Sang  Giµy/#TienHanhDoiSkillTrungSinh432z(5111)",
+"Ta Muèn §æi Sang Béi/#TienHanhDoiSkillTrungSinh432z(5112)",
+"Ta Muèn §æi Sang §ai/#TienHanhDoiSkillTrungSinh432z(5113)",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("B¹n Muèn trïng luyÖn g× G×",getn(tbSay),tbSay)
+
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+function TienHanhDoiSkillTrungSinh432z(num)
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Vò LiÖt ", tbProp = {0,{5114,5118}}, nQuality = 1 },
+                {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4873,1,0},nCount = 600},
+                {szName = "M·nh Nguyªn LiÖu HiÕm", tbProp = {4,1508,1,1,0},nCount = 200},
+		{szName = "Kim Nguyªn B¶o", tbProp = {4,1496,1,1,0},nCount = 300},
+              
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,num}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+---------------------------ep ngua sieu quang vinh vien---------------------------------
+function epsieuquangvinhvien()
+	GiveItemUI("ThÇn M· Siªu Quang VÜnh ViÔn !","-----(bá vµo trong)--------\n+1 Ngùa Hoµng Kim\n\n-----(®Ó ë hµnh trang)-----\n+80 M¶nh ngùa Siªu Quang \n+1 ThÇn M· §an\n<enter>L­u ý: Trang bÞ hoµng kim Ðp ra sÏ cã h¹n sö dông vÜnh viÔn.!","epsieuquangvinhvien_run")
+end
+function epsieuquangvinhvien_run(nCount)
+		if (nCount == 0) then 
+			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ta chØ cÇn 1 Siªu Quang VÜnh ViÔn vµo th«i cßn l¹i tÊt c¶ thø kh¸c ®Ó bªn ngoµi",0);
+		return
+	end
+			if (nCount ~= 1) then 
+			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ta chØ cÇn 1 Siªu Quang VÜnh ViÔn vµo th«i cßn l¹i tÊt c¶ thø kh¸c ®Ó bªn ngoµi",0);
+		return
+	end
+	
+		local itemIndex = GetGiveItemUnit(1)
+	local nCurItemQuality	= GetItemQuality(itemIndex);
+	local bindState = GetItemBindState(itemIndex)
+	local nG, nD,nP = GetItemProp(itemIndex)
+	local timeitem = ITEM_GetExpiredTime(itemIndex)
+	local goldEquipIndex = GetGlodEqIndex(itemIndex)
+    local nTen=GetItemName(itemIndex)	
+		if (bindState ~=0) then
+		Talk(1,"", "Trang bÞ ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
+		return
+	end
+        if  timeitem >0	then
+			Talk(1,"", "Trang bÞ ®ang cã h¹n sö dông, kh«ng thÓ n©ng cÊp")
+			return
+		end	
+		if (nCurItemQuality ~= 1) then
+			Talk(1, "", "VËt phÈm ®Æt vµo kh«ng ph¶i lµ trang bÞ HK");
+			return
+		end
+	 if goldEquipIndex~=6758 then
+		Talk(1,"", "<color=white>ChØ cã trang bÞ lµ Ngùa Hoµng Kim  VÜnh ViÔn míi ®­îc ë môc Ðp nµy")
+		return
+	end
+	
+	local thanmadan = CalcEquiproomItemCount(6,1,5000,-1) ;
+	if(thanmadan < 1) then 
+	Talk(1,"","CÇn cã 1 ThÇn M· §an ®Ó ë hµnh trang.") 
+	return 
+	end
+		local bachnghetinhngoc = CalcEquiproomItemCount(6,1,30355,-1) ;
+	if(bachnghetinhngoc < 10) then 
+	Talk(1,"","CÇn cã 10 B¸ch NghÖ Tinh Ngäc ®Ó ë hµnh trang.") 
+	return 
+	end
+	
+		local manhsieuquang = CalcEquiproomItemCount(4,1504,1,-1) ;
+	if(manhsieuquang < 80 ) then 
+	Talk(1,"","CÇn cã 80 M¶nh Siªu Quang ®Ó ë hµnh trang.") 
+	return 
+	end
+	k = RemoveItemByIndex(itemIndex)
+	if  k == 1 and ConsumeEquiproomItem(1,6,1,5000,-1) >0 and ConsumeEquiproomItem(80,4,1504,1,-1) and ConsumeEquiproomItem(10,6,1,30355,-1)  then
+			tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,6757},nQuality=1,nCount=1},}, "test", 1);
+			WriteLogPro("dulieu/epnguasieuquang.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da nang sao thanh cong sieu quang vinh vien \n");	
+	end	
+end
+---------------------------ep ngua sieu quang 30---------------------------------
+function epmatna()
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4873,1,0},nCount = 600},
+                {szName = "M·nh Nguyªn LiÖu HiÕm", tbProp = {4,1508,1,1,0},nCount = 200},
+		{szName = "Kim Nguyªn B¶o", tbProp = {4,1496,1,1,0},nCount = 300},
+                {szName = "M¹t N¹ 2 Skill", tbProp = {0,11,806,1,0,0},nCount = 1},
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,11,839,1,0,0},nCount = 1 },
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+-------------------
+function epsieuquanghsd()
+	local tbSay = 
+{
+"Ta Muèn §æi Sang  Han Huyet Than Cau/#TienHanhDoiSkillTrungSinh4321z(4989)",
+"Ta Muèn §æi Sang  Sieu Quang /#TienHanhDoiSkillTrungSinh4321z(4990)",
+"Ta Muèn §æi Sang  xich long cau/#TienHanhDoiSkillTrungSinh4321z(4991)",
+"Ta Muèn §æi Sang duc huy /#TienHanhDoiSkillTrungSinh4321z(4992)",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("B¹n Muèn trïng luyÖn g× G×",getn(tbSay),tbSay)
+
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+function TienHanhDoiSkillTrungSinh4321z(num)
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Ngua 3 Skill", tbProp = {0,{4956,4968}}, nQuality = 1 },
+                {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4873,1,0},nCount = 600},
+                {szName = "M·nh Nguyªn LiÖu HiÕm", tbProp = {4,1508,1,1,0},nCount = 200},
+		{szName = "Kim Nguyªn B¶o", tbProp = {4,1496,1,1,0},nCount = 300},
+              
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0,num}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+
+--------------------------ep ngua hoang kim---------------------------------
+function epnguahoangkimhsd()
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "Kim Nguyªn B¶o", tbProp = {4,1496,1,1,0},nCount = 50},
+                {szName = "B¸ch NghÖ Tinh Ngäc", tbProp = {6,1,30355,1,0},nCount = 1},
+                {szName = "M¶nh Ngùa Hoµng Kim 1/7", tbProp = {4,1497,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 2/7", tbProp = {4,1498,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 3/7", tbProp = {4,1499,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 4/7", tbProp = {4,1500,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 5/7", tbProp = {4,1501,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 6/7", tbProp = {4,1502,1,1,0},nCount = 10},
+                {szName = "M¶nh Ngùa Hoµng Kim 7/7", tbProp = {4,1503,1,1,0},nCount = 10},
+
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0, 6756}, nQuality = 1,nExpiredTime=30*24*60},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+--------------hoang kim vinh vien
+
+function epnguahoangkimvinhvien()
+	local nPrice = 400
+	local szTitle = format("Ng­¬i muèn lµm ®Ñp ­",tostring(nPrice))
+	local tbOpt = {}
+	local tbFormulaList = 
+	{
+		
+		
+               [1] = 
+		{
+			tbMaterial = 
+			{
+                {szName = "M¶nh Ngùa Hoµng Kim 1/7", tbProp = {4,1497,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 2/7", tbProp = {4,1498,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 3/7", tbProp = {4,1499,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 4/7", tbProp = {4,1500,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 5/7", tbProp = {4,1501,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 6/7", tbProp = {4,1502,1,1,0},nCount = 50},
+                {szName = "M¶nh Ngùa Hoµng Kim 7/7", tbProp = {4,1503,1,1,0},nCount = 50},
+				  {szName = "Gia M· §an", tbProp = {6,1,5001,1,1},nCount = 1},
+				  {szName = "B¸ch NghÖ Tinh Ngäc", tbProp = {6,1,30355,1,0},nCount = 5},
+			},
+			tbProduct = {szName="Cho tÊt c¶ nguyªn liÖu vµo trong ok?", tbProp={0, 6758}, nQuality = 1},
+			nWidth = 1,
+			nHeight = 1,
+			nFreeItemCellLimit = 0.04
+		},	
+		
+
+	}
+
+		
+	local tbOpt = {}
+	local pEventType = EventSys:GetType("AddNpcOption")
+	for i=1, getn(tbFormulaList) do
+		local p = tbEquip2Item:new(tbFormulaList[i], "Equip2Stone", INVENTORY_ROOM.room_giveitem)
+		local szOpt = format("%s", tbFormulaList[i].tbProduct.szName)
+		tinsert(tbOpt, {szOpt, p.ComposeGiveUI, {p}})
+	end
+	tinsert(tbOpt, {"Hñy bá"})
+	CreateNewSayEx(szTitle, tbOpt);
+	end
+
+function TestGame()
+	szDescription = format("100 Kim Nguyªn B¶o\n=> §Ñp V·i C¸i Lån!!.")
+	GiveItemUI("Nguyªn LiÖu CÇn Cã", szDescription, "Run_TestGame", "no", 1)
+		--GiveItemUI("Gia H¹n Phï", "Xin h·y bá 1 mãn trang søc cã h¹n sö dông vµo « bªn d­íi", "tbVnGiaHanPhuGiveUIConfirm", "onCancel")
+
+end
+ function Run_TestGame()
+	local itemIndex = GetGiveItemUnit(1)
+	local bindState = GetItemBindState(itemIndex)
+	local goldEquipIndex = GetGlodEqIndex(itemIndex)
+	local nG, nD, nP, nL, nS = GetItemProp(itemIndex)
+	Msg2Player("RÊt tiÕc! "..nG.."."..nD.."."..nP.."."..nL.."."..nS..".")
+	--	Msg2Player("RÊt tiÕc! "..goldEquipIndex..".")
+end
+function Make_Weapons()
+	szDescription = format("100 Kim Nguyªn B¶o\n=> §Ñp V·i C¸i Lån!!.")
+	GiveItemUI("Nguyªn LiÖu CÇn Cã", szDescription, "Run_MakeWeapons", "no", 1)
+		--GiveItemUI("Gia H¹n Phï", "Xin h·y bá 1 mãn trang søc cã h¹n sö dông vµo « bªn d­íi", "tbVnGiaHanPhuGiveUIConfirm", "onCancel")
+
+end
+
+function Run_MakeWeapons(nCount)
+	if nCount == 0 then
+		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/Make_Weapons", "no")
+	end
+	
+	local tbDatabase = 
+	{
+		tbWeapons = {},
+		tbItem = {},
+		tbStone1 = {},
+		tbStone2 = {},
+		tbStone3 = {},
+	}
+	
+	for i = 1, nCount do
+		local nItemIndex = GetGiveItemUnit(i)
+		local nG, nD, nP, nL, nS = GetItemProp(nItemIndex)
+		szItemName = GetItemName(nItemIndex)
+		nItemTime = ITEM_GetExpiredTime(nItemIndex)
+		nQuality = GetItemQuality(nItemIndex)
+		local tbMagicItem =
+		{
+			[4] =
+			{
+				[238] = 1,
+				[239] = 1,
+				[240] = 1,
+                                                                                                                                                                                                                                                                                                                                          [1496] = 1,
+			},
+
+		}
+		
+		local nIndex = 0
+		if nG == 4 then
+			nIndex = nD
+		end
+
+		if nG == 4 then
+			if nIndex == 238 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone1, nItemIndex)
+				end
+			elseif nIndex == 239 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone2, nItemIndex)
+				end
+			elseif nIndex == 240 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone3, nItemIndex)
+				end
+			end
+		end
+
+		if nG == 0 then
+			if nD == 0 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 and nP ~= 3 and nP ~= 4 and nP ~= 5 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
+			 elseif nD == 1 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
+			 else
+				Talk(1, "no", "ThËt thø lçi! Kh¶ n¨ng cña ta ca giíi h¹n, kh«ng thÓ n©ng cÊp <color=red>trang bÞ<color> nµy ®­îc.")
+				return
+			end
+		end
+		
+		local TAB_WEAPONS =
+		{
+			["0,0,0"] = {},
+			["0,0,1"] = {},
+			["0,0,2"] = {},
+			["0,0,3"] = {},
+			["0,0,4"] = {},
+			["0,0,5"] = {},
+			["0,1,0"] = {},
+			["0,1,1"] = {},
+			["0,1,2"] = {},
+		}
+		local tbIndex = format("%d,%d,%d", nG, nD, nP)
+		if TAB_WEAPONS[tbIndex] then
+			tinsert(tbDatabase.tbWeapons, nItemIndex)
+		end
+		
+		local nFaction = GetLastFactionNumber()
+		nRandomAccess = random(1,100)
+		nRandomRes = random(1, 100)
+		nSucces = 1
+		if nG == 0 and nD == 0 and nP == 0 then
+			if nFaction == 8 then  ----------------------------------------------------------Kiem Vo Dang
+				if nRandomAccess > 1 then
+					nIndexRes = 59
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 4 then ----------------------------------------------------------Kiem Nga Mi
+				if nRandomAccess > 1 then
+					nIndexRes = 57
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 9 then ----------------------------------------------------------Kiem Con Lon
+				if nRandomAccess > 1 then
+					nIndexRes = 58
+				 else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 0 and nRandomRes < 33 then
+					if nRandomAccess > 1 then
+						nIndexRes = 57
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 33 and nRandomRes < 66 then
+					if nRandomAccess > 1 then
+						nIndexRes = 58
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 66 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 59
+					 else
+						nSucces = 0
+					end
+				end
+			 end
+		                                                                                   elseif nG == 0 and nD == 0 and nP == 1 then
+			if nFaction == 0 or nFaction == 1 then
+				if nRandomAccess > 1 then
+					nIndexRes = 52
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 3 then ----------------------------------------------------------Dao Ngu Doc
+				if nRandomAccess > 1 then
+					nIndexRes = 53
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 5 then   ----------------------------------------------------------Dao Thuy Yen
+				if nRandomAccess > 1 then
+					nIndexRes = 54
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 9 then   ----------------------------------------------------------Dao Con Lon
+				if nRandomAccess > 1 then
+					nIndexRes = 56
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 1 and nRandomRes < 25 then
+					if nRandomAccess > 1 then
+						nIndexRes = 52
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 25 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 53
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 50 and nRandomRes < 75 then
+					if nRandomAccess > 1 then
+						nIndexRes = 54
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 75 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 56
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				end
+			end
+		                                                                                  elseif nG == 0 and nD == 0 and nP == 2 then
+			if nFaction == 0 then -------------------------------------------------Bong Thieu Lam
+				if nRandomAccess > 1 then
+					nIndexRes = 40
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 6 then -------------------------------------------------Bong Cai Bang
+				if nRandomAccess > 1 then
+					nIndexRes = 41
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 1 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 40
+						nSucces = 1
+					 else
+						nSucces = 0
+						end
+				 elseif nRandomRes >= 50 and nRandomRes < 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 41
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				end
+			end
+		                                                                                  elseif nG == 0 and nD == 0 and nP == 3 then
+			if nFaction == 7 then
+				if nRandomAccess > 1 then
+					nIndexRes = 51
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 elseif nFaction == 1 then
+				if nRandomAccess > 1 then
+					nIndexRes = 50
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 1 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 51
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 50 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 50
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+				end
+			end
+		 elseif nG == 0 and nD == 0 and nP == 4 then
+			if nRandomAccess > 1 then
+			nIndexRes = 60
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 0 and nP == 5 then
+			if nRandomAccess > 1 then
+				nIndexRes = 61
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 0 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 1 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 2 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		end
+	end
+	
+
+	if nItemTime ~= 0 then
+		Talk(1, "no", "Kh«ng thÓ ®Æt vµo vËt phÈm cã thêi h¹n!")
+		return
+	end
+	local nCountWeapon = getn(tbDatabase.tbWeapons)
+	if nCountWeapon ~= 1 then
+		Talk(1, "no", "Ng­¬i ch­a ®Æt vò khÝ cÇn n©ng cÊp vµo « trèng")
+		return
+	end
+
+
+	local nSilverCount = CalcEquiproomItemCount(4,1496,1,1) ;
+	if(nSilverCount < 100) then
+		Talk(1, "no", "CÇn cã 100 <color=red>Kim Nguyªn B¶o<color> míi cã thÓ n©ng cÊp.")
+		return
+	end
+	--local nIDX = GetGiveItemUnit(n)
+	--local nQuality = GetItemQuality(nIDX)
+	--if nQuality ~= 1 then
+		--Talk(1, "", "Trang bÞ ng­¬i ®Æt vµo kh«ng ph¶i lµ trang bÞ hoµng kim")
+		--return
+	--end
+
+	
+	
+                                                                                  ConsumeEquiproomItem(100,4,1496,1,1)
+
+	if nSucces == 0 then
+		Msg2Player("RÊt tiÕc! ThÊt b¹i lµ chuyÖn b×nh th­êng cña binh gia,huynh ®µi ®õng n¶n chÝ h·y cè g¾ng lÇn n÷a sÏ ®­îc nh­ ý.")
+	elseif nSucces == 1 then
+		_Weapons(tbDatabase.tbWeapons[1], nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®· n©ng cÊp thµnh c«ng vò khÝ ph¸t quang.")
+                                                                                                                                                                     Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> §· n©ng cÊp thµnh c«ng vò khÝ<color=green> Ph¸t S¸ng!")
+                                                                                                                                                                     SaveNow();
+                                                                                   local epphatsang = "script/global/bil4i3n/bil4i3n_log/vukhiphatsang.log"
+	local moepphatsang = openfile(epphatsang  , "a");
+	--write(moepphatsang,format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] N©ng cÊp thµnh c«ng vò khÝ ph¸t s¸ng",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	-- write(moepphatsang, format("%d:%d\tAccount: %s\t Name: %s\t Level: %s\t IP Address: %s  N©ng cÊp thµnh c«ng vò khÝ ph¸t s¸ng\n",GetLocalDate("%H"), GetLocalDate("%M"), GetAccount(), GetName(), GetLevel(), GetIP()))
+	--closefile(moepphatsang)
+	else
+		print("Bug tinh nang nang cap Vu Khi phat quang")
+	end
+end
+
+function _Weapons(nItemIndex, nIndexRes)
+	SetItemNewFeature(nItemIndex, nIndexRes)
+	print(nIndexRes)
+end
+
+function no()
+end
+
+function DoiNgoaiTrang()
+tbFeatureNpc:Dialog()
+end
+
+
 function DoiNguyenLieu56()
-	szDescription = format("+Ên 5:5 Nguyªn LiÖu \n+Ên 6:10 Nguyªn LiÖu\n+Xuyªn Y 5: 5 Nguyªn LiÖu\n+Xuyªn Y 6: 10 Nguyªn LiÖu\n.")
+	szDescription = format("+Ên 5:5 Nguyªn LiÖu \n+Ên 6:10 Nguyªn LiÖu\n+Kim Nguyªn B¶oyªn Y 5: 5 Nguyªn LiÖu\n+Kim Nguyªn B¶oyªn Y 6: 10 Nguyªn LiÖu\n.")
 	GiveItemUI("Nguyªn LiÖu CÇn Cã", szDescription, "DoiNguyenLieu56_ok", "no", 1)
 		
 end
@@ -188,7 +1144,7 @@ function nangcapnguhanhan()
 				  {szName = "Trïng LuyÖn Ngäc", tbProp = {6,1,4830,1,1},nCount = 1},
 				   {szName = "Ngäc Linh Hån", tbProp = {6,1,4912,1,1},nCount = 5},
 			},
-			tbProduct = {szName="Trïng LuyÖn Ngò Hµnh Ên 51", tbProp={0, idnguhanhan}, nQuality = 1},
+			tbProduct = {szName="Trïng LuyÖn Ngò Hµnh Ên 5", tbProp={0, idnguhanhan}, nQuality = 1},
 			nWidth = 1,
 			nHeight = 1,
 			nFreeItemCellLimit = 0.02
@@ -277,14 +1233,14 @@ function nangcapxuyeny()--- ti le 30-30-15-10-5%
 		{
 			tbMaterial = 
 			{
-				{szName = "Xuyªn Y Ph¸ Gi¸p 4", tbProp = {0,6149}, nQuality = 1 },
+				{szName = "Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 4", tbProp = {0,6149}, nQuality = 1 },
                 {szName = "B¸ch NghÖ Thiªn Th¹ch", tbProp = {6,1,4904,1,0},nCount = 1},
                {szName = "B¸ch NghÖ Tinh Ngäc", tbProp = {6,1,30355,1,0,0},nCount = 2},
                 {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4919,1,1},nCount = 1000},
                 {szName = "Ngäc C­êng Hãa Nguyªn LiÖu", tbProp = {6,1,4913,1,1},nCount = 100},
 		--		{szName="Ng©n L­îng",nJxb=200000000,nCount=1},
 			},
-			tbProduct = {szName="Xuyªn Y Ph¸ Gi¸p 4--> Xuyªn Y Ph¸ Gi¸p 5", tbProp={0, idxuyengiap}, nQuality = 1},
+			tbProduct = {szName="Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 4--> Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 5", tbProp={0, idxuyengiap}, nQuality = 1},
 			nWidth = 1,
 			nHeight = 1,
 			nFreeItemCellLimit = 0.04
@@ -294,13 +1250,13 @@ function nangcapxuyeny()--- ti le 30-30-15-10-5%
 		{
 			tbMaterial = 
 			{
-				{szName = "Xuyªn Y Ph¸ Gi¸p 5", tbProp = {0,{6150,6154}}, nQuality = 1 },
+				{szName = "Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 5", tbProp = {0,{6150,6154}}, nQuality = 1 },
 				 {szName = "Ngò Linh KiÓm §Þnh Phï", tbProp = {6,1,3007,1,1},nCount = 1},
                  {szName = "Ngò Linh Quy Nguyªn Phï", tbProp = {6,1,3008,1,1},nCount = 1},
 				  {szName = "Trïng LuyÖn Ngäc", tbProp = {6,1,4830,1,1},nCount = 1},
-				   {szName = "Ngäc Linh Hån", tbProp = {6,1,4913,1,1},nCount = 5},
+				   {szName = "Ngäc C­êng Hãa Nguyªn LiÖu", tbProp = {6,1,4913,1,1},nCount = 5},
 			},
-			tbProduct = {szName="Trïng LuyÖn Xuyªn Y Ph¸ Gi¸p 5", tbProp={0, idxuyengiap}, nQuality = 1},
+			tbProduct = {szName="Trïng LuyÖn Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 5", tbProp={0, idxuyengiap}, nQuality = 1},
 			nWidth = 1,
 			nHeight = 1,
 			nFreeItemCellLimit = 0.02
@@ -309,13 +1265,13 @@ function nangcapxuyeny()--- ti le 30-30-15-10-5%
 		{
 			tbMaterial = 
 			{
-				{szName = "Xuyªn Y Ph¸ Gi¸p 5", tbProp = {0,{6150,6154}}, nQuality = 1 },
+				{szName = "Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 5", tbProp = {0,{6150,6154}}, nQuality = 1 },
                 {szName = "B¸ch NghÖ Thiªn Th¹ch", tbProp = {6,1,4904,1,0},nCount = 1},
                {szName = "B¸ch NghÖ Tinh Ngäc", tbProp = {6,1,30355,1,0,0},nCount = 4},
                 {szName = "§¹i Tinh Ngäc", tbProp = {6,1,4919,1,1},nCount = 2000},
                 {szName = "Ngäc C­êng Hãa Nguyªn LiÖu", tbProp = {6,1,4913,1,1},nCount = 200},
 			},
-			tbProduct = {szName="Xuyªn Y Ph¸ Gi¸p 5--> Xuyªn Y Ph¸ Gi¸p 6", tbProp={0, idxuyengiap2}, nQuality = 1},
+			tbProduct = {szName="Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 5--> Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 6", tbProp={0, idxuyengiap2}, nQuality = 1},
 			nWidth = 1,
 			nHeight = 1,
 			nFreeItemCellLimit = 0.02
@@ -324,13 +1280,13 @@ function nangcapxuyeny()--- ti le 30-30-15-10-5%
 		{
 			tbMaterial = 
 			{
-				{szName = "Xuyªn Y Ph¸ Gi¸p 6", tbProp = {0,{6155,6159}}, nQuality = 1 },
+				{szName = "Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 6", tbProp = {0,{6155,6159}}, nQuality = 1 },
 				 {szName = "Ngò Linh KiÓm §Þnh Phï", tbProp = {6,1,3007,1,1},nCount = 1},
                  {szName = "Ngò Linh Quy Nguyªn Phï", tbProp = {6,1,3008,1,1},nCount = 1},
 				  {szName = "Trïng LuyÖn Ngäc", tbProp = {6,1,4830,1,1},nCount = 1},
-				   {szName = "Ngäc Linh Hån", tbProp = {6,1,4913,1,1},nCount = 5},
+				   {szName = "Ngäc C­êng Hãa Nguyªn LiÖu", tbProp = {6,1,4913,1,1},nCount = 5},
 			},
-			tbProduct = {szName="Trïng LuyÖn Xuyªn Y Ph¸ Gi¸p 6", tbProp={0, idxuyengiap2}, nQuality = 1},
+			tbProduct = {szName="Trïng LuyÖn Kim Nguyªn B¶oyªn Y Ph¸ Gi¸p 6", tbProp={0, idxuyengiap2}, nQuality = 1},
 			nWidth = 1,
 			nHeight = 1,
 			nFreeItemCellLimit = 0.02
@@ -350,6 +1306,7 @@ function nangcapxuyeny()--- ti le 30-30-15-10-5%
 	CreateNewSayEx(szTitle, tbOpt);
 	
 end 
+
 
 
 
@@ -777,7 +1734,7 @@ function WantBuyBaoshi()
 			tbMaterial = 
 			{
 				{szName = "Trang bÞ  Kim ¤", tbProp = {0, {2055,2284}}, nQuality = 1 },
-                  {szName = "TiÒn ®ång", tbProp = {4,417,1,1},nCount = 5},
+                  {szName = "TiÒn ®ång", tbProp = {4,1496,1,1},nCount = 5},
 			},
 			tbProduct = {szName="Kim ¤ LÖnh", tbProp={6, 1, 2349, 1, 0, 0}},
 			nWidth = 1,
@@ -789,7 +1746,7 @@ function WantBuyBaoshi()
 			tbMaterial = 
 			{
 				{szName = "Trang bÞ B¹ch Hæ", tbProp = {0, {2285,2514}}, nQuality = 1 },
-                            {szName = "TiÒn ®ång", tbProp = {4,417,1,1},nCount = 10},
+                            {szName = "TiÒn ®ång", tbProp = {4,1496,1,1},nCount = 10},
 			},
 			tbProduct = {szName="B¹ch Hæ LÖnh", tbProp={6, 1, 2357, 1, 0, 0}},
 			nWidth = 1,
@@ -2069,7 +3026,7 @@ end
 --------------------------------------------------------------------------
 
 function bachqua1()
-local nIndex = AddStackItem(1,4,417,1,1,0,0,0)
+local nIndex = AddStackItem(1,4,1496,1,1,0,0,0)
 SyncItem(nIndex)
 SetItemBindState(nIndex,-2)
 end
@@ -2090,7 +3047,7 @@ function doilenhbai()
 			tbMaterial = 
 			{
 				{szName="LÖnh bµi kim ¤", tbProp={6,1,2349,1,0,0}},
-                            --{szName = "TiÒn ®ång(kh«ng khãa)", tbProp = {4,417,1,1},nCount = 500},
+                            --{szName = "TiÒn ®ång(kh«ng khãa)", tbProp = {4,1496,1,1},nCount = 500},
                             {szName="ThÇn bÝ kho¸ng th¹ch", tbProp={6,1,398, 1, 0, 0}},
                             {szName="HuyÒn tinh kho¸ng th¹ch(cÊp 10)", tbProp={6,1,147,10,0,0}},
 			},
@@ -2105,7 +3062,7 @@ function doilenhbai()
 			tbMaterial = 
 			{
 				{szName="LÖnh bµi B¹ch Hæ", tbProp={6,1,2357,1,0,0}},
-                            --{szName = "TiÒn ®ång(kh«ng khãa)", tbProp = {4,417,1,1},nCount = 500},
+                            --{szName = "TiÒn ®ång(kh«ng khãa)", tbProp = {4,1496,1,1},nCount = 500},
                             {szName="ThÇn bÝ kho¸ng th¹ch", tbProp={6,1,398, 1, 0, 0},nCount=3},
                             {szName="HuyÒn tinh kho¸ng th¹ch(cÊp 10)", tbProp={6,1,147,10,0,0}},
 			},
@@ -2562,7 +3519,7 @@ function doiruongtinhsuongmax(putCount)
 			return
 		
 	end
-if typeItem ==6 or typeItem ==5  then  ---kiem tra la vu khi
+if typeItem ==6 or typeItem ==7  then  ---kiem tra la vu khi
 	if (CalcEquiproomItemCount(4, 1496, 1, -1) < 50) then
 		Talk(1,"", "Vò KhÝ +¸o Th× Trong r­¬ng ph·i cã Ýt nhÊt 50 KNB nhÐ b¹n ")
 		return
@@ -2588,7 +3545,7 @@ end
 					tbparam = roll_cfg_ts_max[2][i][4]
 				end
 	end
-	if typeItem ==6 or typeItem ==5 then  ---kiem tra la vu khi
+	if typeItem ==6 or typeItem ==7 then  ---kiem tra la vu khi
 		ConsumeEquiproomItem(50,4,1496,1,-1)
 		else 
 			ConsumeEquiproomItem(10,4,1496,1,-1)
@@ -2818,9 +3775,1014 @@ function logExchangeItem1(gradientItem, gradientnumber, item)
 end
 
 
+function MenuDoiNgoaiHinh0()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"®æi sang ®ao/dao",
+		"®æi sang kiÕm/kiem",
+		"®æi sang chïy/chuy",
+		"®æi sang bæng/bong",
+		"®æi sang th­¬ng/thuong",
+		"®æi sang song ®ao/song",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function dao()
+SetTask(5859,1)
+SetTask(5858,0)
+SetTask(5857,0)
+SetTask(5856,0)
+SetTask(5855,0)
+SetTask(5854,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh ®ao.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
+
+function kiem()
+SetTask(5858,1)
+SetTask(5859,0)
+SetTask(5857,0)
+SetTask(5856,0)
+SetTask(5855,0)
+SetTask(5854,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh kiÕm.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
+
+function chuy()
+SetTask(5857,1)
+SetTask(5859,0)
+SetTask(5858,0)
+SetTask(5856,0)
+SetTask(5855,0)
+SetTask(5854,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh chïy.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
+
+function bong()
+SetTask(5856,1)
+SetTask(5859,0)
+SetTask(5858,0)
+SetTask(5857,0)
+SetTask(5855,0)
+SetTask(5854,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh bæng.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
+
+function song()
+SetTask(5855,1)
+SetTask(5859,0)
+SetTask(5858,0)
+SetTask(5857,0)
+SetTask(5856,0)
+SetTask(5854,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh song ®ao.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
+
+function thuong()
+SetTask(5854,1)
+SetTask(5859,0)
+SetTask(5858,0)
+SetTask(5857,0)
+SetTask(5856,0)
+SetTask(5855,0)
+Say("Chóc mõng b¹n ®· chän Ðp sang h×nh song ®ao.",2,"b¾t ®Çu Ðp/MenuDoiNgoaiHinh","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+end
 
 
+function MenuDoiNgoaiHinh()
+	szDescription = format("+ 5000 TiÒn §ång \n=> Trang bÞ ®Ñp nhÊt.")
 
+	GiveItemUI("Bá Vò KhÝ Vµo", szDescription, "BatDauDoiVK", "no", 1)
+
+end
+
+function BatDauDoiVK(nCount,nItemIndex, nIndexRes)
+	if nCount == 0 then
+		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/MenuDoiNgoaiHinh", "no")
+	end
+	
+	local tbDatabase = 
+	{
+		tbWeapons = {},
+		tbItem = {},
+	}
+	
+	for i = 1, nCount do
+		local nItemIndex = GetGiveItemUnit(i)
+		local nG, nD, nP, nL, nS = GetItemProp(nItemIndex)
+		szItemName = GetItemName(nItemIndex)
+		nItemTime = ITEM_GetExpiredTime(nItemIndex)
+		nQuality = GetItemQuality(nItemIndex)
+
+		if nG == 0 then
+			if nD == 0 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 and nP ~= 3 and nP ~= 4 and nP ~= 5 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c -"..nG..", "..nD..", "..nP..", "..nL..", "..nS.." !")
+					return
+				end
+			 elseif nD == 1 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c  22-"..nG..", "..nD..", "..nP..", "..nL..", "..nS.." !")
+					return
+				end
+			 else
+				Talk(1, "no", "ThËt thø lçi! Kh¶ n¨ng cña ta ca giíi h¹n, kh«ng thÓ n©ng cÊp <color=red>trang bÞ<color> nµy ®­îc.")
+				return
+			end
+		end
+		
+		local TAB_WEAPONS =
+		{
+			["0,0,0"] = {},
+			["0,0,1"] = {},
+			["0,0,2"] = {},
+			["0,0,3"] = {},
+			["0,0,4"] = {},
+			["0,0,5"] = {},
+			["0,1,0"] = {},
+			["0,1,1"] = {},
+			["0,1,2"] = {},
+		}
+		local tbIndex = format("%d,%d,%d", nG, nD, nP)
+		if TAB_WEAPONS[tbIndex] then
+			tinsert(tbDatabase.tbWeapons, nItemIndex)
+		end
+		
+	local nSilverCount = CalcEquiproomItemCount(4,417,1,1) ;
+	if(nSilverCount < 5000) then
+		Talk(1, "no", "CÇn cã 5000 <color=red>TiÒn §ång<color> míi cã thÓ n©ng cÊp.")
+		return
+	end
+	--if nItemTime ~= 0 then
+	--	Talk(1, "no", "Kh«ng thÓ ®Æt vµo vËt phÈm cã thêi h¹n!")
+	--	return
+--	end
+	local nCountWeapon = getn(tbDatabase.tbWeapons)
+	if nCountWeapon ~= 1 then
+		Talk(1, "no", "Ng­¬i ch­a ®Æt vò khÝ cÇn n©ng cÊp vµo « trèng")
+		return
+	end
+if GetTask(5859) < 1 and GetTask(5858) < 1 and GetTask(5857) < 1 and GetTask(5856) < 1 and GetTask(5855) < 1 and GetTask(5854) < 1 then
+Say("®¹i hiÖp ch­a chän vò khÝ nµo c¶.",2,"Cho ta chän l¹i/MenuDoiNgoaiHinh0","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+		return
+	end   	
+if GetTask(5859) == 1 then --dao
+		SetItemNewFeature(nItemIndex, random(53,56)) --53 54 55 56
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh §ao")
+end
+if GetTask(5858) == 1 then --kiem
+		SetItemNewFeature(nItemIndex, random(57,59))  --  57 58 59
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh KiÕm")
+end
+if GetTask(5857) == 1 then --chuy
+		SetItemNewFeature(nItemIndex, 60)  -- 
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh Chïy")
+end
+if GetTask(5856) == 1 then --bong
+		SetItemNewFeature(nItemIndex, 41)  -- 40 41
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh Bæng")
+end
+if GetTask(5855) == 1 then --song
+		SetItemNewFeature(nItemIndex, 61) --
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh Song §ao")
+end
+if GetTask(5854) == 1 then --thuong
+		SetItemNewFeature(nItemIndex, random(50,51)) -- 50 51
+		ConsumeEquiproomItem(5000,4,417,1,1)
+	    print(nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®æi thµnh c«ng ngo¹i h×nh.")                                                                                                                                                                     
+		Msg2SubWorld("<color=cyan>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> ®æi thµnh c«ng ngo¹i h×nh vò khÝ cña m×nh thµnh Th­¬ng")
+end
+SetTask(5859,0)
+SetTask(5858,0)
+SetTask(5857,0)
+SetTask(5856,0)
+SetTask(5855,0)
+SetTask(5854,0)
+SaveNow()
+end
+end
+
+function PhatSangVip()
+	tbOpt =
+	{
+		"<dec><npc>§©y lµ danh s¸ch Ðp vò khÝ ph¸t s¸ng rÊt vip ch¼ng hay ®¹i hiÖp muèn Ðp lo¹i nµo xin h·y lùa chän h×nh .",
+		"Chän Ngo¹i H×nh Vò KhÝ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+
+function ChonNgoaiHinhPS()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"Ngo¹i h×nh ®ao/daops",
+		"Ngo¹i h×nh kiÕm/kiemps",
+		"Ngo¹i h×nh chïy/chuyps",
+		"Ngo¹i h×nh bæng/bongps",
+		"Ngo¹i h×nh th­¬ng/thuongps",
+		"Ngo¹i h×nh ¸m khÝ/amkhips",
+		"Ngo¹i h×nh song ®ao/songdaops",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+	--SetTask(3010,0)
+--	SetTask(3011,0)
+--	SetTask(3012,0)
+	--SetTask(3013,0)
+	--SetTask(3014,0)
+	--SetTask(3015,0)
+--	SetTask(3016,0)
+task3010=0
+task3011=0
+task3012=0
+task3013=0
+task3014=0
+task3015=0
+task3016=0
+end
+
+function daops()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"®ao 1/daops1",
+		"®ao 2/daops2",
+		"®ao 3/daops3",
+		"®ao 4/daops4",
+		"®ao 5/daops5",
+		"®ao 6/daops6",
+		"®ao 7/daops7",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function daops1() --112
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_078_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3010,112)
+	task3010=12
+end
+
+function daops2() --55
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_042_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--	SetTask(3010,55)
+			task3010=55
+end
+
+function daops3()  --128
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_092_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3010,128)
+		task3010=128
+end
+
+function daops4() --131
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_095_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3010,131)
+		task3010=131
+end
+
+function daops5() -- 146
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_106_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3010,146)
+		task3010=146
+end
+
+function daops6() --115
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_081_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3010,115)
+	task3010=115
+end
+
+function daops7() --56
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_040_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3010,56)
+	task3010=56
+end
+--------------------------KIEM
+
+function kiemps()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"kiÕm 1/kiemps1",
+		"kiÕm 2/kiemps2",
+		"kiÕm 3/kiemps3",
+		"kiÕm 4/kiemps4",
+		"kiÕm 5/kiemps5",
+		"kiÕm 6/kiemps6",
+		"kiÕm 7/kiemps7",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function kiemps1() --134
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_097_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3011,134)
+	task3011=134
+end
+
+function kiemps2() --130
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_094_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3011,130)
+	task3011=130
+end
+
+function kiemps3() --132
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_096_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3011,132)
+	task3011=132
+end
+
+function kiemps4() --129
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_093_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3011,129)
+	task3011=129
+end
+
+
+function kiemps5() --57
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_041_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3011,57)
+	task3011=57
+end
+
+function kiemps6() --58
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_041_RD01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3011,58)
+	task3011=58
+end
+
+function kiemps7() --59
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_043_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3011,59)
+	task3011=59
+end
+
+--------------------------CHUY
+
+function chuyps()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"chïy 1/chuyps1",
+		"chïy 2/chuyps2",
+		"chïy 3/chuyps3",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function chuyps1() --60
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_046_ST06.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3012,60)
+	task3012=60
+end
+
+function chuyps2() --113
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_079_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3012,113)
+	task3012=113
+end
+
+
+function chuyps3() --79
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_100_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3012,79)
+	task3012=79
+end
+
+
+--------------------------BONG
+
+function bongps()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"bæng 1/bongps1",
+		"bæng 2/bongps2",
+		"bæng 3/bongps3",
+
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function bongps1() --61
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_037_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3013,61)
+	task3013=61
+end
+
+function bongps2() --41
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_038_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3013,41)
+	task3013=41
+end
+
+function bongps3() --136
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_098_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3013,136)
+		task3013=136
+end
+
+--------------------------THUONG
+
+function thuongps()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"th­¬ng 1/thuongps1",
+		"th­¬ng 2/thuongps2",
+		"th­¬ng 3/thuongps3",
+		"th­¬ng 4/thuongps4",
+		"th­¬ng 5/thuongps5",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function thuongps1() --50
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_045_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3014,50)
+		task3014=50
+end
+
+function thuongps2() --51
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_045_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3014,51)
+	task3014=51
+end
+
+function thuongps3() --127
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_091_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3014,127)
+	task3014=127
+end
+
+function thuongps4() --101
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_059_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3014,101)
+	task3014=101
+end
+
+function thuongps5() --114
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_080_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3014,114)
+	task3014=114
+end
+
+--------------------------SONG DAO
+
+function songdaops()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"song ®ao 1/songdaops1",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function songdaops1() --61
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_047_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3015,61)
+	task3015=61
+end
+
+--------------------------Am KhI
+
+function amkhips()
+	tbOpt =
+	{
+		"<dec><npc>Xin h·y chän vò khi cÇn thay ®æi ngo¹i h×nh.",
+		"¸m khÝ 1/amkhips1",
+		"¸m khÝ 2/amkhips2",
+		"¸m khÝ 3/amkhips3",
+		"¸m khÝ 4/amkhips4",
+		"¸m khÝ 5/amkhips5",
+		"trë vÒ/ChonNgoaiHinhPS",
+		"KÕt thóc ®èi tho¹i./no",
+	}
+	CreateTaskSay(tbOpt)
+end
+
+function amkhips1() --70
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_048_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+--	SetTask(3016,70)
+	task3016=70
+end
+
+function amkhips2() --110
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_076_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+---	SetTask(3016,110)
+		task3016=110
+end
+
+function amkhips3() --120
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_086_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3016,120)
+	task3016=120
+end
+
+function amkhips4() --123
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_088_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3016,123)
+	task3016=123
+end
+
+function amkhips5() --125
+	local img = "<link=image[0,0]:\\spr\\npcres\\man\\MA_RW_089_ST01.spr><link>"
+	local strTitle = ""..img.."§©y lµ vÎ ®Ñp cña trang bÞ ph¸t s¸ng mµ c¸c h¹ s¾p Ðp."
+	local tbOpt =
+	{
+		{"TiÕn hµnh Ðp.", TienHanhEpPS},
+		{"trë vÒ", ChonNgoaiHinhPS},
+		{"§Ó ta suy nghÜ l¹i"},
+	}
+	CreateNewSayEx(strTitle, tbOpt)
+	--SetTask(3016,125)
+	task3016=125
+end
+
+function TienHanhEpPS()
+	--szDescription = format("+ CÇn 1000 V¹n l­îng + 50 Vµng + 100 b¹c + 50xu\n+ 1 Mãn HKMP maxop.")
+	szDescription = format("+ CÇn 100 KNB\n.")
+
+	GiveItemUI("Nguyªn LiÖu CÇn Cã", szDescription, "BatDauEpPhatSang", "no", 1)
+
+end
+
+function BatDauEpPhatSang(nCount)
+	if nCount == 0 then
+		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/TienHanhEpPS", "no")
+	end
+	
+	local tbDatabase = 
+	{
+		tbWeapons = {},
+		tbItem = {},
+		tbStone1 = {},
+		tbStone2 = {},
+		tbStone3 = {},
+	}
+	
+	for i = 1, nCount do
+		local nItemIndex = GetGiveItemUnit(i)
+		local nG, nD, nP, nL, nS = GetItemProp(nItemIndex)
+		szItemName = GetItemName(nItemIndex)
+		nItemTime = ITEM_GetExpiredTime(nItemIndex)
+		nQuality = GetItemQuality(nItemIndex)
+	--if nQuality ~= 1 then
+	--Talk(1, "", "Trang bÞ ng­¬i ®Æt vµo kh«ng ph¶i lµ trang bÞ hoµng kim")
+	--return
+   --end
+	   local goldEquipIndex = GetGlodEqIndex(nItemIndex)
+  -- if (goldEquipIndex ~= 6 and goldEquipIndex ~= 11 and goldEquipIndex ~=16 and goldEquipIndex ~=21 and goldEquipIndex ~=26 and goldEquipIndex ~=31 and goldEquipIndex ~=46 and goldEquipIndex ~=61 and goldEquipIndex ~=61 and goldEquipIndex ~=71 and goldEquipIndex ~=76 and goldEquipIndex ~=81 and goldEquipIndex ~=96 and goldEquipIndex ~=101 and goldEquipIndex ~=329 and goldEquipIndex ~=116 and goldEquipIndex ~=126 and goldEquipIndex ~=258 and goldEquipIndex ~=250 and goldEquipIndex ~=265 and goldEquipIndex ~=270 and goldEquipIndex ~=295 and goldEquipIndex ~=300 and goldEquipIndex ~=290 and goldEquipIndex ~=280  and goldEquipIndex ~=240  and goldEquipIndex ~=235  and goldEquipIndex ~=245  and goldEquipIndex ~=230  and goldEquipIndex ~=225  and goldEquipIndex ~=335  and goldEquipIndex ~=340  and goldEquipIndex ~=121 and goldEquipIndex ~=764  and goldEquipIndex ~=345  and goldEquipIndex ~=320  and goldEquipIndex ~=540  and goldEquipIndex ~=315 )then
+	--	Talk(1,"", "<color=white>ChØ cã trang bÞ vò khÝ HKMP MaxOp míi cã thÓ Ðp lªn ph¸t s¸ng xin h·y n©ng cÊp trang bÞ cña m×nh lªn maxop råi h· Ðp")
+		--return
+	--end
+		if nG == 0 then
+			if nD == 0 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 and nP ~= 3 and nP ~= 4 and nP ~= 5 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
+			 elseif nD == 1 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 then
+					Talk(1, "no", "Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
+			 else
+				Talk(1, "no", "ThËt thø lçi! Kh¶ n¨ng cña ta ca giíi h¹n, kh«ng thÓ n©ng cÊp <color=red>trang bÞ<color> nµy ®­îc.")
+				return
+			end
+		end
+		
+		local TAB_WEAPONS =
+		{
+			["0,0,0"] = {},
+			["0,0,1"] = {},
+			["0,0,2"] = {},
+			["0,0,3"] = {},
+			["0,0,4"] = {},
+			["0,0,5"] = {},
+			["0,1,0"] = {},
+			["0,1,1"] = {},
+			["0,1,2"] = {},
+		}
+		local tbIndex = format("%d,%d,%d", nG, nD, nP)
+		if TAB_WEAPONS[tbIndex] then
+			tinsert(tbDatabase.tbWeapons, nItemIndex)
+		end
+		
+		local nFaction = GetLastFactionNumber()
+		nRandomAccess = random(1,100)
+		nRandomRes = random(1, 100)
+		nSucces = 1
+		if nG == 0 and nD == 0 and nP == 0 then --kiem
+				if nRandomAccess >=1 then
+					nIndexRes =task3011
+				 else
+					nSucces = 0
+				end
+		                                                                                   elseif nG == 0 and nD == 0 and nP == 1 then  --dao
+				if nRandomAccess >=1 then
+					nIndexRes = task3010
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+			
+			
+		                                                                                  elseif nG == 0 and nD == 0 and nP == 2 then --bong
+				if nRandomAccess >=1 then
+					nIndexRes =  task3013
+					nSucces = 1
+				 else
+					nSucces = 0
+				end
+		                                                                                  elseif nG == 0 and nD == 0 and nP == 3 then  --kich
+					if nRandomAccess >=1 then
+						nIndexRes = task3014
+						nSucces = 1
+					 else
+						nSucces = 0
+					end
+		 elseif nG == 0 and nD == 0 and nP == 4 then  --chuy
+			if nRandomAccess >=1 then
+			nIndexRes = task3012
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 0 and nP == 5 then  --songdao
+			if nRandomAccess >=1 then
+				nIndexRes = task3015
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 0 then  --tieu
+			if nRandomAccess >=1 then
+				nIndexRes = task3016
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 1 then --tieu
+			if nRandomAccess >=1 then
+				nIndexRes = task3016
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		 elseif nG == 0 and nD == 1 and nP == 2 then --tieu
+			if nRandomAccess >=1 then
+				nIndexRes = task3016
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+end
+end	
+
+	if nItemTime ~= 0 then
+		Talk(1, "no", "Kh«ng thÓ ®Æt vµo vËt phÈm cã thêi h¹n!")
+		return
+	end
+	local nCountWeapon = getn(tbDatabase.tbWeapons)
+	if nCountWeapon ~= 1 then
+		Talk(1, "no", "Ng­¬i ch­a ®Æt vò khÝ cÇn n©ng cÊp vµo « trèng")
+		return
+	end
+	
+	--local nCountStone1 = getn(tbDatabase.tbStone1)
+	--if nCountStone1 ~= 1 then
+		--Talk(1, "no", "CÇn cã 1 viªn <color=red>Lam Thñy Tinh<color> míi cã thÓ n©ng cÊp.")
+		--return
+	--end
+	
+	--local nCountStone2 = getn(tbDatabase.tbStone2)
+	--if nCountStone2 ~= 1 then
+		--Talk(1, "no", "CÇn cã 1 viªn <color=red>Tö Thñy Tinh<color> míi cã thÓ n©ng cÊp.")
+		--return
+	--end
+	
+	--local nCountStone3 = getn(tbDatabase.tbStone3)
+	--if nCountStone3 ~= 1 then
+		--Talk(1, "no", "CÇn cã 1 viªn <color=red>Lôc Thñy Tinh<color> míi cã thÓ n©ng cÊp.")
+		--return
+	--end
+
+	local nSilverCount = CalcEquiproomItemCount(4,417,1,1) ;
+	if(nSilverCount < 5000) then
+		Talk(1, "no", "CÇn cã 5000 <color=red>TiÒn §ång<color> míi cã thÓ n©ng cÊp.")
+		return
+end
+	--if (GetCash() < 10000000) then
+    --   Talk(1,"","<color=white>Cã vô rÌn miÔn phÝ n÷a sao haha ®¹i hiÖp cÇn cã 1000 v¹n l­îng råi h·y nãi chuyÖn víi ta..") -- go
+	--return
+--end
+--local nSilverCount = CalcEquiproomItemCount(4,1674,1,1) ;
+	--if(nSilverCount < 50) then
+	--Talk(1, "no", "CÇn cã 50 <color=red>Vµng Thái<color> míi cã thÓ n©ng cÊp.")
+	--return
+	--end
+	--local nSilverCount = CalcEquiproomItemCount(4,1673,1,1) ;
+	--if(nSilverCount < 100) then
+	--Talk(1, "no", "CÇn cã 100 <color=red>B¹c Thái<color> míi cã thÓ n©ng cÊp.")
+	--return
+--end
+if nSucces == 0 or nIndexRes <10 then
+Say("Vò khÝ bá vµo kh«ng phï hîp  víi h×nh ¶nh ®­îc chän hoÆc ®¹i hiÖp ch­a chän vò khÝ nµo ®Ó ®æi ngo¹i h×nh c¶ xin h·y chän l¹i.",2,"Cho ta chän l¹i/ChonNgoaiHinhPS","Kh«ng cÇn ®©u! C¶m ¬n!/cancel")
+
+--Msg2Player("RÊt tiÕc! ThÊt b¹i lµ chuyÖn b×nh th­êng cña binh gia,huynh ®µi ®õng n¶n chÝ h·y cè g¾ng lÇn n÷a sÏ ®­îc nh­ ý.")
+	elseif nSucces == 1 then
+		RemoveItemByIndex(tbDatabase.tbItem[1])
+   ConsumeEquiproomItem(5000,4,417,1,1)
+  -- ConsumeEquiproomItem(50,4,1674,1,1)
+  -- ConsumeEquiproomItem(100,4,1673,1,1)
+   --Pay(10000000)
+		_Weapons(tbDatabase.tbWeapons[1], nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®· n©ng cÊp thµnh c«ng vò khÝ ph¸t s¸ng nh­ vµng rång.")
+Msg2SubWorld("<pic=7>Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=yellow> §· n©ng cÊp thµnh c«ng vò khÝ<color=green> Ph¸t S¸ng VIP!")
+                                                                                                                                                                     --SaveNow();
+                                                                                   local epphatsang = "dulieu/vukhiphatsang.log"
+	local moepphatsang = openfile(epphatsang  , "a");
+	--write(moepphatsang,format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] N©ng cÊp thµnh c«ng vò khÝ ph¸t s¸ng",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	 write(moepphatsang, format(""..date("%d-%m-%Y").."   -   [%d:%d]   \tTai Khoan: %s   -   Ten: %s   -   Ep Thanh Cong Vu Khi Phat Sang\n",GetLocalDate("%H"), GetLocalDate("%M"), GetAccount(), GetName()))
+	closefile(moepphatsang)
+	else
+	print("Bug tinh nang nang cap Vu Khi phat quang")
+	end
+end
 
 function WriteLogPro(data,str)
 	local Data2 = openfile(""..data.."", "a+");

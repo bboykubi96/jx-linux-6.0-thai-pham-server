@@ -1,13 +1,13 @@
-IncludeLib("SETTING"); --ÔØÈëSETTING½Å±¾Ö¸Áî¿â
+IncludeLib("SETTING"); -- script viet hoa By http://tranhba.com  t¸i nhËp SETTING ch©n vèn chØ thŞ kho 
 
-function main()
-	--Msg2Player("´Ë¹¦ÄÜÉÔºó¿ª·Å.¶àĞ»Ö§³Ö!")
-	--return 1
---	if (GetNpcExpRate() <= 100) then
-		AddSkillState(451, 20, 1, 1080 * 60);
---	else
---		Say("¶Ô²»Æğ£¬Ä¿Ç°ÔİÊ±ÎŞ·¨Ê¹ÓÃÏÉ²İÂ¶¡£", 0)
---		return 1
---	end
---	return 0
+function main() 
+-- script viet hoa By http://tranhba.com Msg2Player("Nµy chøc n¨ng sau nµy më ra . ®a t¹ ñng hé !") 
+-- script viet hoa By http://tranhba.com return 1 
+-- script viet hoa By http://tranhba.com  if (GetNpcExpRate() <= 100) then 
+AddSkillState(451, 20, 1, 1080 * 60); 
+-- script viet hoa By http://tranhba.com  else 
+-- script viet hoa By http://tranhba.com  Say("ThËt xin lçi , tr­íc m¾t t¹m thêi kh«ng c¸ch nµo sö dông tiªn th¶o lé . ", 0) 
+-- script viet hoa By http://tranhba.com  return 1 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  return 0 
 end

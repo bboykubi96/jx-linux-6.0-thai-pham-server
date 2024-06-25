@@ -6,7 +6,7 @@ Include("\\script\\tong\\tong_award_head.lua");
 
 LANTERN_TSKID_DATE	= 1604;
 LANTERN_TSKID_WCNT	= 1605;
-MX_LANTERN_COUNT	= 10; -- So luong hoa dang tra loi toi da trong ngay
+MX_LANTERN_COUNT	= 20; -- So luong hoa dang tra loi toi da trong ngay
 LANTERN_FILE = "\\settings\\event\\zhongqiuhuodong\\zhongqiudengmi.txt"
 
 Include("\\script\\global\\g7vn\\g7configall.lua")
@@ -16,8 +16,8 @@ function main()
 	--dofile("script/global/g7vn/g7configall.lua")
 
 	if doanhoadang == 0 then
-		--Say("Ho¹t ®éng Hoa §¨ng t¹m thêi ch­a më.", 0)
-		--return
+		Say("Ho¹t ®éng Hoa §¨ng t¹m thêi ch­a më.", 0)
+		return
 	end
 
 	local npcidx = GetLastDiagNpc()
@@ -225,13 +225,7 @@ function answer_ok(count)
 		local index = get_odds_award(tbl_odds, 100)
 		if (index >= 1) then
 			--issue(tbl_awards[index])
-			--Thuong3LanDungLienTiep()
-			local rannn=random(1,2)
-		--	if rannn==1 then
-			tbAwardTemplet:GiveAwardByList({{nExp_tl = 500000}}, "test", 1);
-		--	else
-	--		tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Chi LÖnh",tbProp={6,1,4407,1,0,0},nCount=1},}, "test", 1);
-	--	end
+			Thuong3LanDungLienTiep()
 			Talk(1, "", "Ng­¬i ®· ®¸p ®óng liªn tôc 3 c©u! Xin nhËn phÇn th­ëng!")
 			SetTask(LANTERN_TSKID_WCNT, GetTask(LANTERN_TSKID_WCNT) + 1)
 			DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "huashandengmi")

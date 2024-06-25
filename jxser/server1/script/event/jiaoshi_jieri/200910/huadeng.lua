@@ -4,7 +4,7 @@ Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\activitysys\\npcdailog.lua")
 tbJiaoShi2009.tbHuaDengExpAward = 
 {
-	{nExp = 3000000},
+	{nExp = 1000000},
 }
 
 function main()

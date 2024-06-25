@@ -35,7 +35,7 @@ function tbFeatureNpc:Dialog()
 	local tbOpt = 
 	{
 		{"Xem tr­íc ngo¹i h×nh trang bŞ", self.SelectType, {self}},
-		--{"Thay ®æi ngo¹i h×nh trang bŞ ­ng ı nhÊt cho trang bŞ(150xu)", self.InjectToItem, {self}},
+		-- {"Thay ®æi ngo¹i h×nh trang bŞ ­ng ı nhÊt cho trang bŞ", self.InjectToItem, {self}},
 		{"Xãa hiÖu øng hiÖn t¹i", RestoreOwnFeature},
 		{"Lµm thÕ nµo ®Ó thay ®æi ngo¹i h×nh trang bŞ",  self.Explain, {self}},
 		{"Nh©n tiÖn ghĞ qua th«i"},

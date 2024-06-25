@@ -24,10 +24,9 @@ function OnDeath(index)
 			broadcast(name .. "Toµn ®éi tö vong hÕt!");
 		end
 	end
-	--DelMSPlayer(MISSION_MATCH, 1);
+	DelMSPlayer(MISSION_MATCH, 1);
 	-- ÔÚmissionÄÚÍ¨¸æÍæ¼ÒËÀÍö
 	Msg2MSAll(MISSION_MATCH, GetName() .. "Kh«ng may t¹i trËn tö vong!");	
-	Msg2SubWorld("<color=green>Con Gµ <color=yellow>"..GetName().."<color> ®· ph¬i x¸c trong lóc ®i <color=cyan>V­ît ¶i.")
 	SetLogoutRV(0)	
 	NewWorld(11,3207,4978)
 	-- ´«ËÍ»Ø±¨ÃûµØµã

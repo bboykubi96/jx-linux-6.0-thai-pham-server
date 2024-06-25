@@ -21,7 +21,7 @@ function main()
 					bt_RankEffect(BT_GetData(PL_CURRANK))
 					SetFightState(1)
 					SetPunish(0);
-	
+	AddSkillState(963, 1, 0, 18*3)
 					ForbidEnmity( 1 )
 	
 					--SetPKFlag(1)
@@ -37,7 +37,7 @@ function main()
 			SetPunish(0);
 	
 			ForbidEnmity( 1 )
-	
+	AddSkillState(963, 1, 0, 18*3)
 			--SetPKFlag(1)
 		end;
 end;

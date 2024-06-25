@@ -8,6 +8,9 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 
 Include("\\script\\lib\\awardtemplet.lua")
 
+
+
+
 function cutdowntimefix(nWeekDay, nDay, nMonth, nYear, nMonthDay)
 	if nDay > nMonthDay then
 		nDay = nDay - nMonthDay
@@ -78,6 +81,12 @@ function getranklist()
 end
 
 function guanghuan_sure()
+	local nWeekDay = tonumber(GetLocalDate("%w"))
+		if nWeekDay ~= 1 then
+						Talk(1, "", "ChØ nhËn ®­îc vµo thø 2 hµng tuÇn")		
+	return							
+			end
+	
 	--[dinhhq][20101230]:thay doi phan thuong TKTT
 --		local nWeekDay = tonumber(GetLocalDate("%w"));
 --		local nCurTime = tonumber(GetLocalDate("%Y%m%d%H%M"));
@@ -192,22 +201,63 @@ function getcurranklist()
 end
 
 function get_TTTCAward(nRank)
+	local BilAwardTitle
+	if nRank == 1 then
+		BilAwardTitle = 360
+	tbAwardTemplet:GiveAwardByList({{szName = "TiÒn",tbProp={4,417,1,1},nCount=500,},}, "test", 1);
+	tbAwardTemplet:GiveAwardByList({{szName = "Phi V©n",tbProp={0,10,8,1,0,0},nCount=1, nExpiredTime=10080,},}, "test", 1);
+	logplayer("dulieu/nhanthuongtk.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] nhËn th­ëng top 1 thµnh c«ng ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	elseif nRank == 2 then
+	BilAwardTitle = 361
+		tbAwardTemplet:GiveAwardByList({{szName = "TiÒn",tbProp={4,417,1,1},nCount=300,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "ttk",tbProp={6,1,22,1,1},nCount=1,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "vlmt",tbProp={6,1,26,1,1},nCount=1,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "Phi V©n",tbProp={0,10,8,1,0,0},nCount=1, nExpiredTime=10080,},}, "test", 1);
+	logplayer("dulieu/nhanthuongtk.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] nhËn th­ëng top 2 thµnh c«ng ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	elseif nRank == 3 then
+	BilAwardTitle = 362
+		tbAwardTemplet:GiveAwardByList({{szName = "TiÒn",tbProp={4,417,1,1},nCount=200,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "TT",tbProp={4,238,1,1},nCount=1,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "TT",tbProp={4,239,1,1},nCount=1,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "TT",tbProp={4,240,1,1},nCount=1,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "TH",tbProp={4,353,1,1},nCount=6,},}, "test", 1);
+		tbAwardTemplet:GiveAwardByList({{szName = "Phi V©n",tbProp={0,10,8,1,0,0},nCount=1, nExpiredTime=10080,},}, "test", 1);
+	logplayer("dulieu/nhanthuongtk.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] nhËn th­ëng top 1 thµnh c«ng ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	end
+	Bil_TitleAwardApply(BilAwardTitle)
 	local tbExp =
 		 {
-			{nExp =400e6},
-			{nExp =300e6},
-			{nExp =200e6}								
+			-- {nExp =400e6},
+			-- {nExp =300e6},
+			-- {nExp =200e6}
+			
+			-- {nExp =40000000},
+			-- {nExp =30000000},
+			-- {nExp =20000000}		
+			
+		--	{nExp =6000000},
+			--{nExp =4000000},
+			--{nExp =2000000}								
 		};
-		if nRank==1 then
-		PlayerFunLib:AddSkillState(1689,20,3,18*60*60*24*5,1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1},nCount=200,},}, "test", 1);
-	elseif nRank==2 then
-		PlayerFunLib:AddSkillState(1690,20,3,18*60*60*24*5,1)
-
-	elseif nRank==3 then
-		PlayerFunLib:AddSkillState(1691,20,3,18*60*60*24*5,1)
-
-	end
-	local szLog = format("PhÇn th­ëng Tèng Kim Thiªn Tö Tham ChiÕn h¹ng %d", nRank)
-	--tbAwardTemplet:GiveAwardByList(tbExp[nRank], szLog)
+	local szLog = format("Tèng kim thiªn tö tham chiÕn nhËn th­ëng %d", nRank)
+	tbAwardTemplet:GiveAwardByList(tbExp[nRank], szLog)
 end
+
+function Bil_TitleAwardApply(TitleID)
+	local nServerTime = GetCurServerTime()+ (7*24*60*60); 
+	local nDate = FormatTime2Number(nServerTime);
+	local nDay = floor(mod(nDate,1000000) / 10000);
+	local nMon = mod(floor(nDate / 1000000) , 100)
+	local nTime = nMon * 1000000 + nDay * 10000 
+	Title_AddTitle(TitleID, 2, nTime)
+	Title_ActiveTitle(TitleID)
+	SetTask(1122, TitleID)
+	Msg2Player("Chóc mõng T­íng qu©n ®· nhËn vµ kÝch ho¹t danh hiÖu <color=yellow>"..Title_GetTitleName(TitleID).."<color> trong <color=green>7<color> ngµy")
+end
+
+
+function logplayer(zFile,szMsg)
+  local handle = openfile(zFile,"a")
+  write(handle,format("%s\n",szMsg));
+  closefile(handle);
+ end

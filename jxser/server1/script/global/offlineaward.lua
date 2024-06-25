@@ -2,7 +2,6 @@ Include("\\script\\lib\\player.lua")
 Include("\\script\\lib\\common.lua")
 Include("\\script\\global\\login_head.lua")
 Include("\\script\\trip\\define.lua")
-Include("\\script\\global\\g7vn\\g7configall.lua")
 
 MAXOFFLINETIME_EVERYDAY = 18		-- ·¿ÈÕ×î´óµëÏßÊ±¼ä£¨Ð¡Ê±£©
 
@@ -78,9 +77,9 @@ function OfflineAward:CalcOfflineTime(time1, time2)
 end
 
 function OfflineAward:CheckCondition(player)
-if (player:GetLevel() >= 50) then
-	return 1
-else
+	if (player:GetLevel() >= 50 or player:IsTransLife() == 1) then
+		return 1
+	else
 		return 0
 	end
 end
@@ -146,7 +145,7 @@ function OfflineAward:CalcExp(type, itr, level, tran_count)
 		return 0
 	end
 	local exp = tb[index] * itr
-	return exp
+	return 0
 end
 
 function dlg_menu(player)
@@ -158,14 +157,6 @@ function dlg_menu(player)
 end
 
 function dlg_offlineaward(player)
-	
-	if(uythacroimang == 0 or cachtuyendantuong == 0) then
-		if(GetAccount() == "sonho212") then 
-			Say("Chøc n¨ng nhËn ®iÓm kinh nghiÖm ®ang t¹m ®ãng")
-		end
-		return
-	end
-
 	local time_offline = OfflineAward:GetLastOfflineTime(player)
 	local time_login = player:GetLoginTime()
 	if (time_login < time_offline) then
@@ -218,7 +209,8 @@ function dlg_offlineaward(player)
 						line6,
 						line7)
 	local option = "Sö dông %s/#action_usepill(%d)"
-	player:Describe(caption, 5,"MiÔn phÝ nhËn phÇn th­ëng kinh nghiÖm/action_takefreeexp",
+	player:Describe(caption, 5,
+		"MiÔn phÝ nhËn phÇn th­ëng kinh nghiÖm/action_takefreeexp",
 		format(option, PILL_LIST[AWARDTYPE_SIHAIXIAOYAO].Name, AWARDTYPE_SIHAIXIAOYAO),
 		format(option, PILL_LIST[AWARDTYPE_WUZHOULINGKONG].Name, AWARDTYPE_WUZHOULINGKONG),
 		format(option, PILL_LIST[AWARDTYPE_JIUTIANYUNYOU].Name, AWARDTYPE_JIUTIANYUNYOU),
@@ -241,7 +233,7 @@ function action_takefreeexp()
 					lowtime,
 					player:GetLevel(),
 					player:GetTransLifeCount())
-	player:StackExp(exp)
+	-- player:StackExp(exp)
 	player:ClearOfflineLowTime()
 end
 
@@ -330,7 +322,7 @@ end
 	end
 	local use_time = inf.Time * count
 	local exp = OfflineAward:CalcExp(type, use_time, player:GetLevel(), player:GetTransLifeCount())
-	player:StackExp(exp)
+	-- player:StackExp(exp)
 	player:ReduceOfflineAdvTime(use_time)
 	WriteLog(format("[OFFLINEAWARD]%s(%s) use %s(%d), get exp(%d)",
 		player:GetAccount(),
@@ -356,6 +348,9 @@ function apply_usejiutianyunyou(count)
 end
 
 function login(playerindex, exchange)
+	if 1==1 then
+	return
+	end
 	local player = Player:New(playerindex)
 	if (exchange == 0) then
 		OfflineAward:Login(player)

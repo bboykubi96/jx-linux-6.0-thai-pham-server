@@ -1,9 +1,9 @@
 Include("\\script\\activitysys\\activity.lua")
 pActivity = ActivityClass:new()
 pActivity.nId = 31
-pActivity.szName = "Sinh NhËt Vâ L©m TruyÒn Kú n¨m 2011"
-pActivity.nStartDate = 201106060000
-pActivity.nEndDate = 201106300000
-pActivity.szDescription = "Chóc mõng Vâ L©m TruyÒn Kú sinh nhËt lÇn thø 7"
-pActivity.nGroupId = 2
-pActivity.nVersion = 3
+pActivity.szName = "Ho¹t §éng Sinh NhËt VLTK 2018"
+pActivity.nStartDate = 201807010000
+pActivity.nEndDate = 202109302400
+pActivity.szDescription = "nil"
+pActivity.nGroupId = 20
+pActivity.nVersion = 1

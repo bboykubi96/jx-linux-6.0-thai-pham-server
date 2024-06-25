@@ -1,9 +1,9 @@
---ÖĞ×ªµØÍ¼--ÎÀ±ø
+-- script viet hoa By http://tranhba.com  trung chuyÓn b¶n ®å -- script viet hoa By http://tranhba.com  vÖ binh 
 Include("\\script\\missions\\citywar_city\\zhongzhuan_map\\trap.lua");
 
---function main(sel)
+-- script viet hoa By http://tranhba.com function main(sel) 
 
 
---Say("Ç°·½²»Ô¶¾ÍÊÇÕ½³¡ÁË£¬Ô¸ÖÚ½«Áì¿­Ğı¶ø¹é",0);
+-- script viet hoa By http://tranhba.com Say("Phİa tr­íc kh«ng xa chİnh lµ chiÕn tr­êng liÔu , nguyÖn chóng t­íng dÉn kh¶i hoµn mµ vÒ ",0); 
 
---end;
+-- script viet hoa By http://tranhba.com end;

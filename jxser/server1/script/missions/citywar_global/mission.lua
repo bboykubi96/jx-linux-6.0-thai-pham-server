@@ -1,15 +1,15 @@
-FRAME2TIME = 18;
-INTERVAL = 5 * 60 * FRAME2TIME;  --5∑÷÷”“ª¥Œ
+FRAME2TIME = 18; 
+INTERVAL = 5 * 60 * FRAME2TIME; -- script viet hoa By http://tranhba.com 5 phÛt mÈt l«n 
 
-function InitMission()
-	SetGlbMissionV(1, 1);
-	StartGlbMSTimer(8, 18, INTERVAL);
-end;
+function InitMission() 
+SetGlbMissionV(1, 1); 
+StartGlbMSTimer(8, 18, INTERVAL); 
+end; 
 
-function RunMission()
+function RunMission() 
 
-end;
+end; 
 
-function EndMission()
-	StopGlbMSTimer(8, 18);
-end;
+function EndMission() 
+StopGlbMSTimer(8, 18); 
+end; 

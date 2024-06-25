@@ -1,139 +1,136 @@
--- script viet hoa By http://tranhba.com  Nga Mi tiÕp dÉn ®Ö tö m« b¶n Nga Mi cÈm y ni 
--- script viet hoa By http://tranhba.com  By: Dan_Deng(2003-10-28) tõ nh©n vËt ®èi tho¹i söa ®æi tíi 
--- script viet hoa By http://tranhba.com  Update: Dan_Deng(2004-05-25) thÓ dïng/uèng kü n¨ng toµn khai söa ®æi ®iÒu dông bªn ngoµi v¨n kiÖn ph­¬ng thøc 
+-- ¶ëáÒ½ÓÒıµÜ×Ó Ä£°å ¶ëáÒ½õÒÂÄá
+-- By: Dan_Deng(2003-10-28) ÓÉÈËÎï¶Ô»°ĞŞ¸Ä¶øÀ´
+-- Update: Dan_Deng(2004-05-25) Ìå·ş¼¼ÄÜÈ«¿ªĞŞ¸Ä£¨µ÷ÓÃÍâ²¿ÎÄ¼ş·½Ê½£©
 Include("\\script\\task\\newtask\\newtask_head.lua")
 Include("\\script\\task\\newtask\\education\\knowmagic.lua")
 Include("\\script\\global\\skills_table.lua")
 Include("\\script\\global\\map_helper.lua")
 Include( "\\script\\missions\\freshman_match\\head.lua" )
-npc_name = "Nga Mi CÈm Y Ni" 
-
 Include("\\script\\global\\g7vn\\g7configall.lua")
+npc_name = "Nga My CÈm Y Ni"
 
 function default_talk()
+	player_Faction = GetFaction()
+	Uworld1000 = nt_getTask(1000)
+	if (( Uworld1000 == 240 ) or ( Uworld1000 == 250 )) and ( GetLastFactionNumber() == 4 ) then
+			nt_setTask(1000,250)
+			Talk(1,"Uworld1000_jiaoyuemei","Ng­¬i ®· lµ ®Ö tö cña bæn ph¸i, kh«ng cÇn ®i n÷a, cã thÓ trùc tiÕp gÆp Long Ngò nãi chuyÖn.")
+	elseif (player_Faction == "emei") then
+		Say("TiÓu s­ muéi l¹i xuèng nói ch¬i µ? Cã cÇn ta ®­a vÒ nói kh«ng?",4,"L¹i lµm phiÒn tû tû n÷a råi!/return_yes", "T×m hiÓu khu vùc luyÖn c«ng/map_help","T×m hiÓu vâ nghÖ bæn m«n/skill_help","Kh«ng cÇn ®©u! §a t¹ S­ tû /no")
+--		Say("¶ëáÒ½õÒÂÄá£º²»ºÃÒâË¼£¬ÒòÎªÓĞĞ©ÈËµÄÈÎÎñ×´Ì¬²»ÕıÈ·£¬ÎÒÃÇÕıÔÚÖØĞÂÎªÃÅÏÂµÜ×Ó½øĞĞ¼ì²é¡£ÄãÒª¼ì²éÄãµÄÈÎÎñ×´Ì¬Âğ£¿Èç¹ûÄãÈÏÎªÄãµÄ×´Ì¬ÊÇÕıÈ·µÄ¾Í²»±Ø¼ì²éÁË¡£",2,"¼ì²é/em_check_yes","²»ÓÃÁË/em_check_no")
+	elseif (player_Faction == "cuiyan") then				
+		Talk(1,"","Quı ph¸i danh chÊn V©n Nam. Tr­íc giê ch­a cïng bæn ph¸i qua l¹i. Kh«ng biÕt cã g× chØ gi¸o! ")
+	elseif (player_Faction == "tangmen") then
+		Talk(1,"","Ng­¬i lµ ng­êi cña Thôc Nam §­êng M«n? Bæn m«n lµ danh m«n ch¸nh ph¸i, tr­íc giê kh«ng qua l¹i víi nh÷ng ng­êi cã t­ t­ëng kh«ng chİnh thèng")
+	elseif (player_Faction == "wudu") then
+		Talk(1,"","Bän tµ ma ngo¹i ®¹o c¸c ng­¬i!  Ai ai còng muèn tiªu diÖt! ")
+	elseif (player_Faction == "tianwang") then
+		Talk(1,"","Quı bang bang chñ D­¬ng Anh lµ mét bËc n÷ trung hµo kiÖt!  BÇn ni tõ l©u ng­ìng mé!  Mong sÏ cã ngµy diÖn kiÕn! ")
+	elseif (player_Faction == "shaolin") then
+		Talk(1,"","A di ®µ phËt!  Th× ra lµ hßa th­îng  ThiÕu l©m, kh«ng biÕt HuyÒn Nh©n ®¹i s­ gÇn ®©y cã kháe kh«ng?")
+	elseif (player_Faction == "wudang") then
+		Talk(1,"","Vâ ®ang hiÖp nghÜa, danh chÊn thiªn h¹. §¹o NhÊt Ch©n Nh©n cña quı ph¸i vµ ch­ëng m«n cña bæn ph¸i giao t×nh th©m s©u. Hai ph¸i chóng ta cã thÓ nãi lµ  anh em mét nhµ ")
+	elseif (player_Faction == "kunlun") then
+		Talk(1,"","TÖ ph¸i vµ quı ph¸i ch­a hÒ qua l¹i, kh«ng biÕt cã g× chØ gi¸o!?")
+	elseif (player_Faction == "tianren") then
+		Talk(1,"","C¸c ng­¬i phô thuéc Kim quèc, lu«n dßm ngã giang s¬n  §¹i tèng ta. Vâ l©m chİnh ph¸i chóng ta vµ c¸c ng­¬i thÒ kh«ng ®éi trêi chung! ")
+	elseif (player_Faction == "gaibang") then
+		Talk(1,"","Quı bang ng­êi ®«ng thÕ m¹nh, hµo khİ xung thiªn, bæn gi¸o rÊt vui ®­îc kÕt giao víi nh÷ng b»ng h÷u nh­ vËy! ")
+	elseif (nt_getTask(75) == 255) then		-- Ñ§ÁËÒ°ÇòÈ­µÄ£¬²»ÔÊĞíÔÙÈëÃÅÅÉ
+		Talk(1,"","Tù häc khæ luyÖn!  BÇn ni v« cïng béi phôc! ")
+	else						-- Ö»Òª²»ÊôÓÚ10¸öÃÅÅÉ£¬²»ÔÙµ¥¶À¼ì²â¡°ÎŞÃÅÅÉ¡±
+		UTask_em = nt_getTask(1)
+		if ((UTask_em > 5*256) and (UTask_em < 10*256)) then		-- ÈëÃÅÈÎÎñÖĞ
+			Talk(1,"","Muéi ®· tiÕp nhËn nhiÖm vô nhËp m«n víi  DiÖp B¨ng H©n nh­ng vÉn ch­a hoµn thµnh. Tr­íc tiªn h·y th«ng qua cuéc kh¶o nghiÖm Trµ CÇm Th­, sau ®ã  lªn dèc Toµn Thiªn Ph¸ lÊy B¹ch Ngäc Nh­ ı! ")
+		elseif (UTask_em >= 70*256) and (player_Faction ~= "emei") then					--ÒÑ¾­³öÊ¦
+			Say("Th× ra lµ S­ tû, d¹o nµy cã kháe kh«ng?",3,"T×m hiÓu së tr­êng luyÖn c«ng/map_help","T×m hiÓu vâ nghÖ bæn m«n/skill_help","KÕt thóc ®èi tho¹i/no")
+		else
+			Talk(1,"select","Trong thiªn h¹ c¸c m«n ph¸i do n÷ nhi s¸ng lËp th× bæn m«n ®øng ®Çu!  §Ö tö bæn m«n kh«ng nh÷ng vâ nghÖ cao c­êng, cÇm kú thi häa ®Òu tinh th«ng!  Ai nãi giang hå lµ thÕ giíi cña nam nh©n th× cø nh×n bæn ph¸i mµ lµm g­¬ng")
+		end
+	end
+end;
 
+function select()
+	UTask_em = nt_getTask(1)
+	UTask_cy = nt_getTask(6)
+	if ((UTask_cy > 5*256) and (UTask_cy < 10*256)) then		-- ÒÑ½ÓÁË´äÑÌÈëÃÅÈÎÎñ
+		Talk(1,"","C« ng­¬i nµy vèn lµ muèn gia nhËp Thóy Yªn m«n! Mçi ng­êi cã chİ h­íng riªng cña m×nh! Ta còng kh«ng miÔn c­ìng! ")
+	elseif (GetSeries() == 2) and (GetCamp() == 0) and (UTask_cy < 5*256) and (UTask_em < 5*256) then		--Ë®Ïµ¡¢Î´Èë´äÑÌ¶ëáÒ
+		if (GetLevel() >= 10) then						--µÈ¼¶´ïµ½Ê®¼¶
+			Say("Gia nhËp Nga My ph¸i, chóng ta sÏ lµ tû muéi 1 nhµ!  Häa phóc cïng h­ëng! ", 3, "Gia nhËp Nga Mi ph¸i/go", "§Ó ta suy nghÜ kü l¹i xem/no","T×m hiÓu tinh hoa vâ nghÖ c¸c m«n ph¸i/Uworld1000_knowmagic")
+		else
+			Say("Tr­íc tiªn muéi h·y luyÖn tËp l¹i c¨n b¶n, ®¹t ®Õn <color=Red>cÊp 10<color> chóng ta sÏ lµ tû muéi 1 nhµ! ", 0)		
+		end
+	end		-- ²»ÊÇË®ÏµµÄ¾Í²»ÔÙ¶àËµ»°ÁË¡£
+end;
+
+function go()
+	Uworld1000 = nt_getTask(1000)
+	if ( Uworld1000 == 240 ) or ( Uworld1000 == 250 ) then
+		nt_setTask(1000,260)
+	end
+	SetRevPos(13,13)		  			--ÉèÖÃÖØÉúµã
+	nt_setTask(1, 10*256)				-- Ö±½ÓÈëÃÅ
+	SetFaction("emei")       			--Íæ¼Ò¼ÓÈë¶ëáÒÅÉ
+	SetCamp(1)
+	SetCurCamp(1)
+	-- SetRank(13)
+	nt_setTask(137,61)
+	SetLastFactionNumber(4)
+-- Ö±½Ó´¦ÀíÁ÷³Ì
+--	nt_setTask(1,80*256)
+	SetRank(63)
+--	Msg2Player("»¶Ó­Äã¼ÓÈë¶ëáÒÅÉ£¬²âÊÔÖĞÖ±½ÓÑ§»á±¾ÃÅËùÓĞ¼¼ÄÜ¡£")
+	add_em(150)			-- µ÷ÓÃskills_table.luaÖĞµÄº¯Êı£¬²ÎÊıÎªÑ§µ½¶àÉÙ¼¶¼¼ÄÜ¡£
+-- ½áÊø
+	Msg2Player("Hoan nghªnh b¹n gia nhËp Nga Mi ph¸i, trë thµnh Bè Y Ni. Häc ®­îc NhÊt DiÖp Tri Thu, Phiªu TuyÕt Xuyªn V©n")
+	AddNote("gia nhËp Nga Mi Ph¸i, trë thµnh Bè Y Ni")
+	Msg2Faction("emei",GetName().."tõ h«m nay gia nhËp Nga Mi ph¸i. Xin b¸i kiÕn c¸c vŞ s­ tû. Mong c¸c vŞ quan t©m chØ gi¸o!",GetName())
+	--NewWorld(13, 1898, 4978)			--°ÑÍæ¼Ò´«ËÍµ½ÃÅÅÉÈë¿Ú
+
+end;
+
+function return_yes()
 local nDate = tonumber(date("%Y%m%d%H%M"))
-if nDate <= ThoiGianHetHanDiemTP then
-	Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chİnh thøc khai më m¸y chñ");
-	return 1
+		if nDate <= ThoiGianHetHanDiemTP then
+		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chİnh thøc khai më m¸y chñ");
+		return 1
+	end
+	NewWorld(13, 1898, 4978)			--°ÑÍæ¼Ò´«ËÍµ½ÃÅÅÉÈë¿Ú
+end;
+
+function em_check_yes()
+	if (GetSeries() ~= 2) then
+		Talk(1,"","Ngò hµnh cña ng­¬i kh¸c víi bän ta!  §Õn ®©y lµm g×? H·y lªn diÔn ®µn häc hái thªm!")
+	elseif (HaveMagic(91) >= 0) then		-- ×öÍêÁË50¼¶ÈÎÎñ,·ğ¹âÆÕÕÕ
+		nt_setTask(1,60*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· cã thÓ ®i nhËn nhiÖm vô xuÊt s­.")
+	elseif (HaveMagic(88) >= 0) then		-- ×öÍêÁË40¼¶ÈÎÎñ,²»Ãğ²»¾ø
+		nt_setTask(1,50*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· hoµn thµnh nhiÖm vô cÊp 40.")
+	elseif (HaveMagic(85) >= 0) then		-- ×öÍêÁË30¼¶ÈÎÎñ,Ò»Ò¶ÖªÇï
+		nt_setTask(1,40*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· hoµn thµnh nhiÖm vô cÊp 30.")
+	elseif (HaveMagic(82) >= 0) then		-- ×öÍêÁË20¼¶ÈÎÎñ,ËÄÏóÍ¬¹é
+		nt_setTask(1,30*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· hoµn thµnh nhiÖm vô cÊp 20.")
+	elseif (HaveMagic(77) >= 0) then		-- ×öÍêÁË10¼¶ÈÎÎñ,¶ëÃ¼½£·¨
+		nt_setTask(1,20*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· hoµn thµnh nhiÖm vô cÊp 10.")
+	else
+		nt_setTask(1,10*256)
+		Talk(1,"","Ta ®· chØnh lı l¹i tr¹ng th¸i nhiÖm vô cña ng­¬i. Ng­¬i ®· cã thÓ nhËn nhiÖm vô cÊp 10.")
+	end
+end;
+
+function em_check_no()
+	Say("TiÓu s­ muéi l¹i xuèng nói ch¬i µ? Cã cÇn ta ®­a vÒ nói kh«ng?",2,"L¹i lµm phiÒn tû tû n÷a råi!/return_yes","Kh«ng cÇn ®©u! §a t¹ S­ tû /return_no")
 end
 
-player_Faction = GetFaction() 
-Uworld1000 = nt_getTask(1000) 
-if (( Uworld1000 == 240 ) or ( Uworld1000 == 250 )) and ( GetLastFactionNumber() == 4 ) then 
-nt_setTask(1000,250) 
-Talk(1,"Uworld1000_jiaoyuemei","Ng­¬i ®· lµ ®Ö tö bæn m«n , kh«ng cÇn ®i , cã thÓ trùc tiÕp cïng Long nhi gÆp mÆt nãi .") 
-elseif (player_Faction == "emei") then 
-Say("TiÓu s­ muéi , l¹i xuèng nói tíi ch¬i ? lÇn nµy muèn ta ®­a ng­¬i trë vÒ nói sao ? ",4,"§óng vËy , l¹i muèn phiÒn to¸i tû tû /return_yes","B¶n ®å giíi thiÖu /map_help","Kü n¨ng nãi râ /skill_help","Kh«ng cÇn , ®a t¹ s­ tû /no") 
--- script viet hoa By http://tranhba.com  Say("ng­îng ngïng , bëi v× cã İt ng­êi nhiÖm vô tr¹ng th¸i bÊt ch¸nh x¸c , chóng ta ®ang lÇn n÷a v× m«n h¹ ®Ö tö tiÕn hµnh kiÓm tra . ng­¬i muèn kiÓm tra nhiÖm vô cña ng­¬i tr¹ng th¸i sao ? nÕu nh­ ng­¬i cho r»ng ng­¬i ®İch tr¹ng th¸i lµ chİnh x¸c còng kh«ng tÊt kiÓm tra . ",2,"KiÓm tra /em_check_yes","Kh«ng cÇn /em_check_no") 
-elseif (player_Faction == "cuiyan") then 
-Talk(1,"","Quı ph¸i thiªn chç V©n Nam , cïng bæn ph¸i ch­a tõng lui tíi , kh«ng biÕt cã g× chØ gi¸o ? ") 
-elseif (player_Faction == "tangmen") then 
-Talk(1,"","Ng­¬i lµ thôc nam ng­êi cña §­êng m«n sao ? bæn m«n chİnh lµ danh m«n chİnh ph¸i , tõ kh«ng cïng bµng m«n t¶ ®¹o ng­êi lui tíi . ") 
-elseif (player_Faction == "wudu") then 
-Talk(1,"","Vâ l©m ®İch tµ ma oai ®¹o , ng­êi ng­êi ph¶i mµ giÕt chi") 
-elseif (player_Faction == "tianwang") then 
-Talk(1,"","§¾t gióp mét tay chñ d­¬ng anh chİnh lµ mét vŞ n÷ trung hµo kiÖt , bÇn ni x­a nay ng­ìng mé , ®¸ng tiÕc mét mùc duyÕn khan mét mÆt . ") 
-elseif (player_Faction == "shaolin") then 
-Talk(1,"","A di ®µ phËt nguyªn lai lµ ph¸i ThiÕu l©m ®İch s­ huynh , kh«ng biÕt huyÒn bëi v× ®¹i s­ gÇn ®©y cã hay kh«ng khang kiÖn ? ") 
-elseif (player_Faction == "wudang") then 
-Talk(1,"","Vâ §­¬ng hiÖp nghÜa , tªn kh¾p thiªn h¹ , quı ph¸i ®¹o mét ch©n nh©n cïng bæn ph¸i ch­ëng m«n giao t×nh kh«ng c¹n , hai chóng ta ph¸i nh­ng x­ng lµ lµ cïng khİ ngay c¶ chi a") 
-elseif (player_Faction == "kunlun") then 
-Talk(1,"","TÖ ph¸i cïng quı ph¸i lµm v« lui tíi , kh«ng biÕt cã g× chØ gi¸o ? ") 
-elseif (player_Faction == "tianren") then 
-Talk(1,"","Quı gi¸o mét mùc c­ t©m kh«ng thÓ dß ®­îc , theo phô kim quèc , ®èi víi ta ®¹i tèng giang s¬n m­u ®å bÊt chİnh , chóng ta chİnh ph¸i vâ l©m cïng c¸c ng­¬i thÒ kh«ng l­ìng lËp") 
-elseif (player_Faction == "gaibang") then 
-Talk(1,"","§¾t gióp nhiÒu ng­êi thÕ lín , hµo khİ ngÊt trêi , bæn ph¸i rÊt nguyÖn ı kÕt giao c¸c ng­¬i nh÷ng ng­êi b¹n nÇy") 
-elseif (nt_getTask(75) == 255) then -- script viet hoa By http://tranhba.com  häc d· cÇu quyÒn ®İch , kh«ng cho phĞp n÷a nhËp m«n ph¸i 
-Talk(1,"","Ng­¬i ®· häc ®­îc d· cÇu quyÒn ! kh«ng thÓ n÷a nhËp m«n ph¸i ! ") 
-else -- script viet hoa By http://tranhba.com  chØ cÇn kh«ng thuéc vÒ 10 c¸ m«n ph¸i , kh«ng hÒ n÷a ®¬n ®éc kiÓm tr¾c “ kh«ng cöa ph¸i ” 
-UTask_em = nt_getTask(1) 
-if ((UTask_em > 5*256) and (UTask_em < 10*256)) then -- script viet hoa By http://tranhba.com  nhËp m«n nhiÖm vô trung 
-Talk(1,"","Ng­¬i ®· ë Nga Mi s¬n l¸ b¨ng vÕt s­ tû chç nhËn bæn ph¸i ®İch nhËp m«n nhiÖm vô , nh­ng lµ ch­a hoµn thµnh , ng­¬i tr­íc hÕt th«ng qua trµ cÇm s¸ch ®İch kh¶o nghiÖm , sau ®ã sÏ x«ng chui ngµy s­ên nói lÊy ®­îc b¹ch ngäc nh­ ı . ") 
-elseif (UTask_em >= 70*256) and (player_Faction ~= "emei") then -- script viet hoa By http://tranhba.com  ®· xuÊt s­ 
-Say("nguyªn lai lµ s­ tû , kh«ng biÕt gÇn ®©y kháe kh«ng ? ",3,"B¶n ®å giíi thiÖu /map_help","Kü n¨ng nãi râ /skill_help","Kh«ng cÇn , ®a t¹ s­ tû /no") 
-else 
-Talk(1,"select","Thiªn h¹ c« g¸i s¸ng chÕ ®İch trong m«n ph¸i , lÊy bæn ph¸i lµ thø nhÊt . bæn ph¸i ®Ö tö ®Òu v× c« g¸i , kh«ng chØ cã vâ c«ng cao c­êng , h¬n n÷a ®a tµi ®a nghÖ , cÇm kú th­ häa kh«ng chç nµo kh«ng tinh . cã ng­êi nãi giang hå lµ nam nh©n thÕ giíi , nh­ng lµ bæn ph¸i l¹i cã thÓ cïng ThiÕu L©m Vâ §­¬ng ®Ønh lËp , v× vËy ng­êi trong vâ l©m kh«ng khái kİnh ®Ö tö bæn m«n ba ph©n . ") 
-end 
-end 
-end; 
+function Uworld1000_jiaoyuemei()
+	nt_setTask(1000,260)
+	Msg2Player("§Ö tö tiÕp dÉn Nga Mi b¶o b¹n ®· lµ ®Ö tö cña m«n ph¸i, cã thÓ trùc tiÕp gÆp Long Ngò nãi chuyÖn.")
+end
 
-function select() 
-UTask_em = nt_getTask(1) 
-UTask_cy = nt_getTask(6) 
-if ((UTask_cy > 5*256) and (UTask_cy < 10*256)) then -- script viet hoa By http://tranhba.com  ®· nhËn thóy khãi nhËp m«n nhiÖm vô 
-Talk(1,"","VŞ muéi muéi nµy nguyªn lai lµ muèn vµo thóy khãi cöa , ng­êi cã chİ riªng , ta còng kh«ng tiÖn miÔn c­ìng . ") 
-elseif (GetSeries() == 2) and (GetCamp() == 0) and (UTask_cy < 5*256) and (UTask_em < 5*256) then -- script viet hoa By http://tranhba.com  thñy hÖ kh«ng/ch­a vµo thóy khãi Nga Mi 
-if (GetLevel() >= 10) then -- script viet hoa By http://tranhba.com  cÊp bËc ®¹t tíi cÊp m­êi 
-Say("Gia nhËp chóng ta ph¸i Nga Mi , mäi ng­êi ®Òu lµ h¶o tû muéi , t­¬ng th©n t­¬ng ¸i , kh¾p n¬i lÊy bæn ph¸i İch lîi lµm träng , cïng chung ®em bæn ph¸i ph¸t d­¬ng quang ®¹i . ", 3,"Gia nhËp ph¸i Nga Mi /go","Ta suy nghÜ l¹i mét chót /no","HiÓu râ c¸c cöa vâ nghÖ tinh hoa /Uworld1000_knowmagic") 
-else 
-Say("Ng­¬i c¨n c¬ ch­a ®¸nh h¶o , th­îng cÇn mét ®o¹n ngµy giê ®İch ma luyÖn , kh«ng muèn thao chi qu¸ cÊp . ®i tr­íc d· ngo¹i luyÖn mét chót , ®Õn <color=Red> cÊp m­êi <color> tíi t×m ta n÷a ®i . ", 0) 
-end 
-end -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ thñy hÖ ®İch còng kh«ng nãi thªm n÷a liÔu . 
-end; 
-
-function go() 
-Uworld1000 = nt_getTask(1000) 
-if ( Uworld1000 == 240 ) or ( Uworld1000 == 250 ) then 
-nt_setTask(1000,260) 
-end 
-SetRevPos(13,13) -- script viet hoa By http://tranhba.com  thiÕt trİ sèng l¹i ®iÓm 
--- script viet hoa By http://tranhba.com  nt_setTask(1, 10*256) -- script viet hoa By http://tranhba.com  trùc tiÕp nhËp m«n 
-SetFaction("emei") -- script viet hoa By http://tranhba.com  nhµ ch¬i gia nhËp ph¸i Nga Mi 
-SetCamp(1) 
-SetCurCamp(1) 
--- script viet hoa By http://tranhba.com  SetRank(13) 
-nt_setTask(137,61) 
-SetLastFactionNumber(4) 
--- script viet hoa By http://tranhba.com  trùc tiÕp xö lı l­u tr×nh 
-nt_setTask(1,10*256) 
-SetRank(74) 
-Msg2Player("Hoan nghªnh ng­¬i gia nhËp ph¸i Nga Mi , trùc tiÕp häc ®­îc bæn m«n tÊt c¶ kü n¨ng . ") 
-add_em(70) -- script viet hoa By http://tranhba.com  ®iÒu dông skills_table.lua trung ®İch hµm sè , tham sæ v× häc ®­îc bao nhiªu cÊp kü n¨ng . 
--- script viet hoa By http://tranhba.com  kÕt thóc 
--- script viet hoa By http://tranhba.com  Msg2Player("Hoan nghªnh ng­¬i gia nhËp ph¸i Nga Mi , trë thµnh Nga Mi ®Ö tö , häc ®­îc mét l¸ biÕt thu , tuyÕt bay xuyªn v©n ") 
--- script viet hoa By http://tranhba.com  AddNote("Gia nhËp ph¸i Nga Mi , trë thµnh Nga Mi ®Ö tö ") 
-Msg2Faction("emei",GetName().." kÓ tõ h«m nay gia nhËp ph¸i Nga Mi , b¸i kiÕn c¸c vŞ s­ tæ , hy väng c¸c vŞ quan t©m chØ gi¸o !",GetName()) 
---NewWorld(13, 1898, 4978) -- script viet hoa By http://tranhba.com  ®em nhµ ch¬i truyÒn tèng ®Õn m«n ph¸i nhËp khÈu 
-
-end; 
-
-function return_yes() 
-NewWorld(13, 1898, 4978) -- script viet hoa By http://tranhba.com  ®em nhµ ch¬i truyÒn tèng ®Õn m«n ph¸i nhËp khÈu 
-end; 
-
-function em_check_yes() 
-if (GetSeries() ~= 2) then 
-Talk(1,"","Ng­¬i ngò hµnh thuéc tİnh kh«ng ph¶i chóng ta thñy hÖ , lµm sao sÏ lÉn vµo ®Õn bæn m«n tíi ? ®i tr­íc hái mét chót trß ch¬i nh©n viªn qu¶n lı ®i . ") 
-elseif (HaveMagic(91) >= 0) then -- script viet hoa By http://tranhba.com  lµm xong 50 cÊp nhiÖm vô , phËt quang chiÕu kh¾p 
-nt_setTask(1,60*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i b©y giê cã thÓ ®i nhËn xuÊt s­ nhiÖm vô . ") 
-elseif (HaveMagic(88) >= 0) then -- script viet hoa By http://tranhba.com  lµm xong 40 cÊp nhiÖm vô , bÊt diÖt kh«ng døt 
-nt_setTask(1,50*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i ®· hoµn thµnh 40 cÊp nhiÖm vô . ") 
-elseif (HaveMagic(85) >= 0) then -- script viet hoa By http://tranhba.com  lµm xong 30 cÊp nhiÖm vô , mét l¸ biÕt thu 
-nt_setTask(1,40*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i ®· hoµn thµnh 30 cÊp nhiÖm vô . ") 
-elseif (HaveMagic(82) >= 0) then -- script viet hoa By http://tranhba.com  lµm xong 20 cÊp nhiÖm vô , tø t­îng cïng thuéc vÒ 
-nt_setTask(1,30*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i ®· hoµn thµnh 20 cÊp nhiÖm vô . ") 
-elseif (HaveMagic(77) >= 0) then -- script viet hoa By http://tranhba.com  lµm xong 10 cÊp nhiÖm vô , Nga Mi kiÕm ph¸p 
-nt_setTask(1,20*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i ®· hoµn thµnh 10 cÊp nhiÖm vô . ") 
-else 
-nt_setTask(1,10*256) 
-Talk(1,"","Ta ®· ®em nhiÖm vô cña ng­¬i tr¹ng th¸i lÇn n÷a söa sang l¹i qua . ng­¬i b©y giê cã thÓ ®i nhËn 10 cÊp nhiÖm vô . ") 
-end 
-end; 
-
-function em_check_no() 
-Say("TiÓu s­ muéi , l¹i xuèng nói tíi ch¬i ? lÇn nµy muèn ta ®­a ng­¬i trë vÒ nói sao ? ",2,"§óng vËy , l¹i muèn phiÒn to¸i tû tû /return_yes","Kh«ng cÇn , ®a t¹ s­ tû /return_no") 
-end 
-
-function Uworld1000_jiaoyuemei() 
-nt_setTask(1000,260) 
-Msg2Player("Ph¸i Nga Mi tiÕp dÉn ®Ö tö nãi ®· lµ m«n ph¸i ®Ö tö , ng­¬i cã thÓ trùc tiÕp ®i gÆp Long nhi nãi chuyÖn .") 
-end 
-
-function no() 
-end; 
+function no()
+end;

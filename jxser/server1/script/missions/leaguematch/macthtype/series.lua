@@ -1,19 +1,12 @@
 Include("\\script\\missions\\leaguematch\\tb_head.lua")
---==============Í¬ÏµË«ÈËÈüÏà¹ØÊı¾İ===============
-
--- LLG_ALLINONE_TODO_20070802
-
 if (not tmp_process_data) then
 	return
 end
 
---È«²¿Í¬ÏµË«ÈËÈüÏà¹ØÊı¾İ
 local nTmpLadderBase	= 10238
 WLLS_DATA = {
 	
 	name = "Song ®Êu (Cïng hÖ)",
-	
-	--µØÍ¼ĞÅÏ¢
 	match_type = {
 		{
 			name = "hÖ Kim",
@@ -78,7 +71,7 @@ WLLS_DATA = {
 	},
 	
 	award_rank = {
-		{	--ÅÅĞĞ½±Àø£¬ĞÂĞã
+		{
 			{1, 4000},	--µÚ1Ãû
 			{2, 3000},	--µÚ2Ãû
 			{3, 2500},	--µÚ3Ãû
@@ -89,7 +82,8 @@ WLLS_DATA = {
 			{64, 750},	--µÚ33-64Ãû
 			{128, 500},	--µÚ65-128Ãû
 			{256, 250},	--µÚ129-256Ãû
-		}, {	--ÁªÈü
+		},
+		{
 			{1, 8000},	--µÚ1Ãû
 			{2, 6000},	--µÚ2Ãû
 			{3, 5000},	--µÚ3Ãû
@@ -103,17 +97,15 @@ WLLS_DATA = {
 		}
 	},
 	
-	max_member = 2,	--Ã¿¸öÕ½¶ÓµÄ×î´óÈËÊı
+	max_member = 2,
 	
-	text_main = {	--officerÖ÷¶Ô»°£¨Ä©Î²²îÒì²¿·Ö£©
+	text_main = {
 		"Thi ®Êu lÇn nµy lµ §ång hÖ song ®Êu",
 		"Thi ®Êu lÇn nµy lµ §ång hÖ song ®Êu",
 	},
 	
-	addmem_ex	= ", vµ ph¶i lµ ng­êi ch¬i <color=red>cïng hÖ<color> víi nhau",	--×é½¨Õ½¶Ó¶îÍâÒªÇó£¨¿ÉÑ¡£©
+	addmem_ex	= ", vµ ph¶i lµ ng­êi ch¬i <color=red>cïng hÖ<color> víi nhau",
 
-	--====Functions====
-	--·µ»Øµ±Ç°½ÇÉ«¿ÉÒÔ²Î¼ÓµÄ±ÈÈüÀàĞÍ£¬nilÎª²»ÄÜ²ÎÈü
 	player_type = function()
 		local nLevel = wlls_player_level()
 		if (nLevel <= 0) then
@@ -127,13 +119,12 @@ WLLS_DATA = {
 		return (nLevel - 1) * 5 + nSeries
 	end,
 	
-	--ÎÒµÄÕ½¶Ó
 	npc_mylg = function()
 		local str_des = wlls_get_desc(1)
 		local n_lid, n_mtype, n_job, str_lgname, n_memcount = wlls_lg_info()
 		if (FALSE(n_lid)) then
 			wlls_descript("<enter>  LÇn nµy"..str_des.." lµ <color=red>§ång hÖ song ®Êu<color>. B¹n cã thÓ tù lËp chiÕn ®éi cña m×nh hoÆc gia nhËp chiÕn ®éi cña ng­êi kh¸c. Sau ®ã do ®éi tr­ëng ®Õn gÆp "..str_des.."§èi tho¹i víi Quan viªn, chän '§éi thi ®Êu"..str_des.."Thµnh viªn mçi chiÕn ®éi lµ <color=red>2 ng­êi<color> vµ ph¶i lµ ng­êi cïng hÖ víi nhau",
-				"Ta muèn lËp "..str_des.." nhãm/wlls_want2create",
+				"Ta muèn lËp"..str_des.."nhãm/wlls_want2create",
 				"Ta chØ ®Õn xem th«i/OnCancel")
 			return
 		end
@@ -163,13 +154,12 @@ WLLS_DATA = {
 		wlls_descript(str, tb_option)
 	end,
 	
-	--¼ì²éµ±Ç°½ÇÉ«ÊÇ·ñ¿ÉÒÔ¼ÓÈëÖ¸¶¨µÄÕ½¶Ó
 	check_addmem = function(nCapIdx, nLGID, nMType)
 		if (nMType ~= wlls_player_type()) then
 		 	return wlls_npcname().."Xin lçi! §éi viªn trong nhãm:"..GetName().."<color=red>§¼ng cÊp<color> hoÆc <color=red>ngò hµnh<color> cña hai ®éi kh«ng hîp lÖ, kh«ng thÓ thµnh lËp chiÕn ®éi!"
 		end
 	end,
-}	--WLLS_DATA
+}
 
 tmp_process_data(WLLS_DATA)	
 wllstab_additem(6,WLLS_DATA)

@@ -20,7 +20,7 @@ function main()
 					bt_RankEffect(BT_GetData(PL_CURRANK))
 					SetFightState(1)
 					SetPunish(0);
-	
+	AddSkillState(963, 1, 0, 18*3)
 					ForbidEnmity( 1 )
 	
 					--SetPKFlag(1)
@@ -32,6 +32,7 @@ function main()
 				SetPos(floor(x/32), floor(y/32))
 			--SetPos(GetMissionV(MS_HOMEOUT_X2), GetMissionV(MS_HOMEOUT_Y2))
 			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
+	AddSkillState(963, 1, 0, 18*3)
 		end;
 end;
 

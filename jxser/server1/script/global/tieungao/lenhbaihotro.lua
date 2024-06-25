@@ -6,19 +6,17 @@ Include("\\script\\misc\\league_cityinfo.lua")
 Include("\\script\\lib\\log.lua")
 Include("\\script\\activitysys\\npcdailog.lua")
 Include("\\script\\global\\g7vn\\oantuty\\oantuty.lua")
-Include("\\script\\lib\\objbuffer_head.lua")
-Include("\\script\\bonus_onlinetime\\head.lua")
-Include("\\script\\bonus_onlinetime\\func_onlineaward.lua")
+Include("\\script\\global\\g7vn\\item\\huyetchien.lua")
+Include("\\script\\vng_feature\\resetbox.lua")
+
+
 function main()
 --local diemtk=GetTask(747)
 dofile("script/global/tieungao/lenhbaihotro.lua")
-OnlineAward_SummaryOnlineTime()
-OnlineAward_StartTime()
---UseTownPortal(0)
---IsDisabledUseTownP()=0
---Msg2Player(IsDisabledUseTownP() )
-local nHour, nMin, nSec = OnlineAward_ShowTime()
-local szTitle =  "B¹n §ang Cã <color=red>"..GetTask(747).."<color> §iÓm TÝch Lòy Tèng Kim\nB¹n ®· Online <color=yellow>"..nHour.." giê "..nMin.." phót "..nSec.." gi©y<color>\nEXP Tèng Kim Trong 7 Ngµy ®· ®æi:<color=red> "..GetTask(3034).."<color>."
+--dofile("script/global/g7vn/item/huyetchien.lua")
+
+
+local szTitle =  "B¹n §ang Cã <color=red>"..GetTask(747).."<color> §iÓm TÝch Lòy Tèng Kim"
 
 local tbOpt = 
 {
@@ -30,7 +28,7 @@ local tbOpt =
 --{"Ch¬i O¶n Tï T×",ThamGiaOanTuTi},
 {"Gi¶i KÑt Nh©n VËt VÒ Ba L¨ng HuyÖn",Mua500MauTongKim},
 --{"NhËn 1 BÝ KÝp 9x (CÊp 80 nhËn)",nhanbikip9x},
---{"NhËn Th­ëng 12 TiÕng Online",nhanthuongonline},
+{"NhËn Th­ëng 12 TiÕng Online",nhanthuongonline},
 {"NhËn Vßng S¸ng T©n Thñ", nhanvongsang1},
 {"Xem S¸ch Vë", xemsachvo},
 --{"NhËn Håi Thµnh Phï Nhá", Nhanthuonghangngay},
@@ -54,7 +52,6 @@ local tbOpt =
 	tinsert(tbOpt, 1, {"TÈy T¨ng TiÒm N¨ng", TayCongDiem}) 
 	tinsert(tbOpt,2, {"Lay Kvan", laytienvan}) 
 	tinsert(tbOpt,2, {"Doi trang thai", trangthai1}) 
-	--tinsert(tbOpt,1, {"Xem Th«ng Tin Ng­êi Kh¸c", luachontennv})
 	end
 CreateNewSayEx(szTitle, tbOpt)
 return 1	
@@ -570,141 +567,114 @@ Talk(1, "", "<color=green> Chóc mïng §¹i HiÖp më khãa thµnh c«ng "..strItemlock,
 		ConsumeEquiproomItem(1,6,1,1371,1);
 		SaveNow();
 end
-
-function NhanDoHoTroTanThu()
-local tbSay = {
---"NhËn Trang BÞ §å Xanh./trangbixanh",
-"NhËn Vò KhÝ Tr¾ng cÊp 10./nhanvukhitrang",
---"NhËn 1 Mãn HKMP Lùa Chän./hkmpvip1",
-"NhËn Bé Kim Phong./NhanKimPhong",
-"NhËn Bé An Bang TiÓu./NhanAnBangTieu",
-"NhËn Full BÝ KÝp 8x-12x./Nhanbikip",
---"NhËn Bé §Þnh Quèc./Nhandinhquoctanthu",
-"Th«i ta kh«ng muèn n÷a./no"
+--------------------------------------------------------xu khoa-------------------------
+function ShopXuKhoaLeQuan()
+local tbSay1 = {
+"Mua 1 B×nh m¸u 900 (1 Xu)/#muadoxukhoa(4832,1,1)",
+"Mua 5 B×nh m¸u 900 (5 Xu)/#muadoxukhoa(4832,5,5)",
+"Th«i ta kh«ng muèn n÷a/no"
 }
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-
-end
-function nhanvukhitrang()
-if CalcFreeItemCellCount()<30 then
-	Say("Hµnh trang kh«ng ®ñ 30 « trèng")
-	return
-end
-local tbSay = {
---"NhËn Trang BÞ §å Xanh./trangbixanh",
-"Vò khÝ tÇm gÇn cÊp 10./vukhitamgan",
---"NhËn 1 Mãn HKMP Lùa Chän./hkmpvip1",
-"Vò khÝ tÇm xa cÊp 10./vukhitamxa",
-
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-
-end
-function vukhitamgan()
- AddItem(0, 0, 0, 10, random(0,4), 0, 0) 
- AddItem(0, 0, 1, 10, random(0,4), 0, 0) 
-  AddItem(0, 0, 2, 10, random(0,4), 0, 0) 
-   AddItem(0, 0, 3, 10, random(0,4), 0, 0) 
-    AddItem(0, 0, 4, 10, random(0,4), 0, 0) 
-	 AddItem(0, 0, 5, 10, random(0,4), 0, 0) 
-end
-function vukhitamxa()
- AddItem(0, 1, 0, 10, random(0,4), 0, 0) 
- AddItem(0, 1, 1, 10, random(0,4), 0, 0) 
- AddItem(0, 1, 2, 10, random(0,4), 0, 0) 
-end
-function Nhanbikip()
-if CalcFreeItemCellCount()<20 then
-		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 20 « trèng");
-		return 1;
-	end
-	--local Index = AddGoldItem(0,424) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,425) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
---	local Index = AddGoldItem(0,426) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,427) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-			local Index	= AddItem(6,1,2426,0,0,0,0) SetItemBindState(Index, -2)--bk 90
-			local Index	= AddItem(6,1,2426,0,0,0,0)  SetItemBindState(Index, -2) --bk 90
-			local Index	= AddItem(6,1,2426,0,0,0,0) SetItemBindState(Index, -2)--bk 90
-			local Index = AddItem(6,1,2424,0,0,0,0) SetItemBindState(Index, -2)--dai thanh bk 90
-			local Index = AddItem(6,1,2424,0,0,0,0) SetItemBindState(Index, -2)--dai thanh bk 90
-			local Index = AddItem(6,1,2424,0,0,0,0) SetItemBindState(Index, -2)--dai thanh bk 90
-			local Index = AddItem(6,1,1125,0,0,0,0) SetItemBindState(Index, -2)--bk 120
-			local Index = AddItem(6,1,2425,0,0,0,0) SetItemBindState(Index, -2) --dai thanh bk 120
-Msg2Player("NhËn ®­îc bé BÝ KÝp 8x-12x.")
-end
-function NhanKimPhong()
-if CalcFreeItemCellCount()<40 then
-		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 40 « trèng");
-		return 1;
-	end
-	--local Index = AddGoldItem(0,424) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,425) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
---	local Index = AddGoldItem(0,426) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,427) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,177) SyncItem(Index) -- an bang
-		local Index = AddGoldItem(0,178) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,182) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,184) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,181) SyncItem(Index) -- an bang
-Msg2Player("NhËn ®­îc bé Kim Phong.")
-end
-function NhanAnBangTieu()
-if (CountFreeRoomByWH(3,3,1) < 1) then
-		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
-		return 1;
-	end
-	--local Index = AddGoldItem(0,424) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,425) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
---	local Index = AddGoldItem(0,426) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	--local Index = AddGoldItem(0,427) SyncItem(Index) SetItemBindState(Index, -2)-- an bang
-	local Index = AddGoldItem(0,216) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,217) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,218) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,219) SyncItem(Index) -- an bang
-Msg2Player("NhËn ®­îc bé trang søc An Bang TiÓu.")
-end
-function Nhandinhquoctanthu()
-if (CountFreeRoomByWH(3,3,1) < 1) then
-		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
-		return 1;
-	end
-	local Index = AddGoldItem(0,403) SyncItem(Index) -- DQ Tieu
-	local Index = AddGoldItem(0,404) SyncItem(Index)-- an bang
-	local Index = AddGoldItem(0,405) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,406) SyncItem(Index) -- an bang
-	local Index = AddGoldItem(0,407) SyncItem(Index) -- an bang
-Msg2Player("NhËn ®­îc bé Trang BÞ §Þnh Quèc!")
-end
-function MoKhoaDinh() 
-
-GiveItemUI("Më Khãa §Ýnh", "<color=white>§¹i hiÖp cÇn më g× xin ®Æt vµo « d­íi ®©y! chØ cã thÓ më 1 vËt phÈm duy nhÊt nÕu bá h¬n th× më ngÉu nhiªn.", "batdaucheckngay", "onCancel", 1);
+Say("B¹n Mua G× Nµo",getn(tbSay1),tbSay1)
 end
 
-function Mua500MauTongKim()
-KickOutSelf() 
-IsDisabledTeam()
-SetCreateTeam(1)
-NewWorld(53,1596,3183)
-
-end
-function batdaucheckngay(nItemIdx)
-
-		local nItemIdx = GetGiveItemUnit(1);
-		local bindState = GetItemBindState(nItemIdx)
-		if (bindState == -2) then
-			Talk(1,"", "Trang bÞ do BQT khãa vÜnh viÔn kh«ng thÓ më khãa ®­îc rÊt tiÕc.")
+function muadoxukhoa(id,xu,num)
+if CalcFreeItemCellCount() < 6 then
+		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 6 « trèng!")
 		return
 	end
-	    local strItemlock = GetItemName(nItemIdx)
-		Msg2Player("<color=white>Më khãa vËt phÈm "..strItemlock, " thµnh c«ng")
-Talk(1, "", "<color=green> Chóc mïng §¹i HiÖp më khãa thµnh c«ng "..strItemlock, "!"); 
-		SetItemBindState(nItemIdx,0);
-		--ConsumeEquiproomItem(10,4,417,1,1);
-		ConsumeEquiproomItem(1,6,1,1371,1);
-		SaveNow();
+
+if CalcEquiproomItemCount(6,1,4893,-1)>=xu then 
+local tbAward100k = {
+
+		{szName="R­¬ng M¸u §¹i",tbProp={6,1,id,1,0,0},nCount=num,nExpiredTime=30*24*60, nBindState = -2},
+		
+}		
+tbAwardTemplet:GiveAwardByList(tbAward100k,"PhÇn Th­ëng §¹t M«c 100 Ngµn")
+ConsumeEquiproomItem(xu,6,1,4893,-1);
+
+else Talk(1,"no","<color=red>B¹n kh«ng ®ñ 1 Xu Khãa.")	
 end
 
+end
+
+function ShopTienVan()
+if CalcFreeItemCellCount() < 6 then
+		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 6 « trèng!")
+		return
+	end
+local tbSay = {
+"Mua M¸u B»ng TiÒn V¹n/#MuaTuiMauTienVan()",
+--"Mua Hµnh HiÖp Ký 2000 V¹n/#MuaDoTienVan(4875,2000)",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+Say("B¹n Muèn Mua G×",getn(tbSay),tbSay)
+end
+
+function MuaDoTienVan(id,sotien)
+local vatpham={
+{szName="Håi thiªn t¸i t¹o lÔ bao", tbProp={6,1,id,1,0,0},nCount = 1,nExpiredTime=30*24*60,nBindState = -2},	
+}
+sotienthat=sotien*10000
+if GetCash()>=sotienthat and CalcFreeItemCellCount()>=5 then
+	tbAwardTemplet:GiveAwardByList(vatpham,"PhÇn Th­ëng GiftCode")
+	Pay(sotienthat)
+	else Say("Kh«ng §ñ "..sotien.." V¹n HoÆc 5 ¤ Trèng")
+end
+
+
+
+end
+function MuaTuiMauTienVan()
+
+local szTitle =  "Mua B»ng TiÒn V¹n, Qu¸ §·!"
+local tbOpt = 
+{
+{"Mua 1 B×nh 60 (40 v¹n)", muabinh60},
+{"Mua 1 B×nh 900 (200 v¹n)",muabinh900},
+{"Mua 5 B×nh 900 (1000 v¹n)",muabinh300},
+{"Tho¸t"},
+}
+CreateNewSayEx(szTitle, tbOpt)
+
+end
+
+function muabinh60()
+local tuimau60={
+{szName="Håi thiªn t¸i t¹o lÔ bao", tbProp={6,1,2527,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},	
+}
+if GetCash()>=400000 and CalcFreeItemCellCount()>=5 then
+	tbAwardTemplet:GiveAwardByList(tuimau60,"PhÇn Th­ëng GiftCode")
+	Pay(400000)
+	
+	else Say("Kh«ng §ñ 40 V¹n HoÆc 5 ¤ Trèng")
+end
+
+end
+
+function muabinh900()
+local tuimau60={
+{szName="Håi thiªn t¸i t¹o lÔ bao", tbProp={6,1,4832,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},	
+}
+if GetCash()>=2000000 and CalcFreeItemCellCount()>=7 then
+	tbAwardTemplet:GiveAwardByList(tuimau60,"PhÇn Th­ëng GiftCode")
+	Pay(2000000)
+	
+	else Say("Kh«ng §ñ 200 V¹n HoÆc 7 ¤ Trèng")
+end
+end
+
+function muabinh300()
+local tuimau60={
+{szName="Håi thiªn t¸i t¹o lÔ bao", tbProp={6,1,4832,1,0,0},nCount = 5,nExpiredTime=7*24*60,nBindState = -2},	
+}
+if GetCash()>=10000000 and CalcFreeItemCellCount()>=7 then
+	tbAwardTemplet:GiveAwardByList(tuimau60,"PhÇn Th­ëng GiftCode")
+	Pay(10000000)
+	
+	else Say("Kh«ng §ñ 1000 V¹n HoÆc 7 ¤ Trèng")
+end
+
+end
 function ThamGiaOanTuTi()
 tbAloneScriptGame:DialogMain();
 end
@@ -723,16 +693,16 @@ end
 function MuaTuiTichLuyTongKim()
 local tbAwardcc={
 --{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50,nBindState = -2},
-{szName="Tói TÝch Luü Tèng Kim", tbProp={6,1,4361,1,0,0},nCount = 1},
+{szName="Cµn Kh«n T¹o Hãa §an", tbProp={6,1,4361,1,0,0},nCount = 1},
 }
 if CalcFreeItemCellCount() < 3 then
 		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
 	end
-if GetTask(747)>=10000 then
+if GetTask(747)>=11000 then
 	tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
-	SetTask(747,GetTask(747)-10000)
+	SetTask(747,GetTask(747)-11000)
 	else
-	Say("B¹n Kh«ng §ñ 10000 §iÓm TÝch Lòy")
+	Say("B¹n Kh«ng §ñ 11000 §iÓm TÝch Lòy")
 end
 end
 
@@ -753,27 +723,15 @@ end
 
 end
 function NhanChienCo()
-local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	if nDate ~= GetTask(3008) then
-		SetTask(3008,nDate)
-		SetTask(3007,0)
-	end
-	if GetTask(3007)>0 and nDate==GetTask(3008) then
-		Say("Mçi ngµy chØ nhËn ®­îc thuèc lag 1 lÇn.")
-		return 1
-	end
 if CalcFreeItemCellCount() < 3 then
 		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
 	end
 local tbAwardcc={
---{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50},
-{szName="LÖnh bµi", tbProp={6,1,157,1,0,0},nCount = 50,nBindState=-2,nExpiredTime=60*24},
-{szName="Phong V©n Phi Tèc hoµn", tbProp={6,1,190,1,0,0},nCount = 50,nBindState=-2,nExpiredTime=60*24},
---{szName="Phong Vân Tru?ng M?nh hoàn", tbProp={6,1,186,1,0,0},nCount = 50},
---{szName="Phong Vân Gia Bào hoàn", tbProp={6,1,187,1,0,0},nCount = 50},
+--{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50,nBindState = -2},
+{szName="LÖnh bµi", tbProp={6,1,157,1,0,0},nCount = 50,nBindState = -2},
+{szName="HPhong V©n Phi Tèc hoµn", tbProp={6,1,190,1,0,0},nCount = 50,nBindState = -2},
 }
 tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
-SetTask(3007,1)
 end
 ---------------------------------------------------------------------------
 function NhanKhieuChienLenh()
@@ -782,7 +740,7 @@ function NhanKhieuChienLenh()
 	end
 	local tbAwardcc={
 		{
-			szName="HPhong V©n Phi Tèc hoµn", tbProp={6,1,1499,1,0,0},nCount = 10,nExpiredTime=30*24*1},
+			szName="HPhong V©n Phi Tèc hoµn", tbProp={6,1,1499,1,0,0},nCount = 10},
 		}
 	tbAwardTemplet:GiveAwardByList(tbAwardcc, "PhÇn Th­ëng");
 end
@@ -793,10 +751,10 @@ function TayCongDiem()
 end
 
 function laytienvan()
-	if (GetCash() >= 5000000) then 	--  50 ngµn v¹n
+	if (GetCash() >= 500000000) then 	--  50 ngµn v¹n
 		Talk(1, "", "Ng©n l­îng trong tói ng­¬i dïng ch­a hÕt th× lÊy lµm g× cho nhiÒu.")
 	else
-		Earn(5000000)
+		Earn(500000000)
 		Msg2Player("NhËn ®­îc 500000000 v¹n l­îng.");
 	end
 end
@@ -880,31 +838,24 @@ function Huydeltem()
 		return
 	end
 GiveItemUI("Hñy VËt PhÈm Khãa", " §¹i hiÖp cÇn hñy g× xin ®Æt vµo « d­íi ®©y! Cã thÓ hñy nhiÒu vËt phÈm cïng lóc", "DisposeConfirm", "onCancel", 1);
+
 end
 
 function DisposeConfirm(nCount)
 for i=1, nCount do
 local nItemIndex = GetGiveItemUnit(i)
 local strItem = GetItemName(nItemIndex)
+		local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
+local nG, nD, nP, nL, nS ,kk = GetItemProp(nItemIndex)
 RemoveItemByIndex(nItemIndex)
+WriteLogPro("dulieu/huyvatpham.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da huy vatpham --"..strItem.."+ nGoldEquipIdxFF:"..nGoldEquipIdxFF.."+ "..nG.." - "..nD.."-"..nP.."-"..nL.."-"..nS.."-"..kk.."\n");	
 end
 Msg2Player("Thao t¸c b¸n vËt phÈm thµnh c«ng")
 Talk(1, "", "<color=green> Chóc mïng §¹i HiÖp ®· hñy vËt phÈm khãa thµnh c«ng!"); 
 end
 
-function KhoaVatPham()
-GiveItemUI("Hñy VËt PhÈm Khãa", " §¹i hiÖp cÇn khãa g× xin ®Æt vµo « d­íi ®©y! Cã thÓ khãa nhiÒu vËt phÈm cïng lóc", "KhoaVatPham_ok", "onCancel", 1);
-end
 
-function KhoaVatPham_ok(nCount)
-for i=1, nCount do
-local nItemIndex = GetGiveItemUnit(i)
-SetItemBindState(nItemIndex,-2)
-end
-Msg2Player("Thao t¸c b¸n vËt phÈm thµnh c«ng")
-Talk(1, "", "<color=green> Chóc mïng §¹i HiÖp ®· khãa vËt phÈm khãa thµnh c«ng!"); 
 
-end
 ------------------------------------ NHAN TRANG BI XANH --------------------------
 
 tbDoXanh =
@@ -1099,7 +1050,7 @@ function nhutinhtanthu()
 AddGoldItem(0,191)
 AddGoldItem(0,192)
 AddGoldItem(0,193)
---AddGoldItem(0,419)--
+--AddGoldItem(0,419)
 Msg2Player("NhËn ®­îc Trang BÞ Nhu T×nh")
 end
 
@@ -1219,21 +1170,15 @@ if CalcFreeItemCellCount() < 6 then
 end 
 
 function hkvipnmc()
-for i=1,10 do
 AddGoldItem(0,39)  
-end
 end;
 
 function hkvipnmk() 
-for i=1,10 do
 AddGoldItem(0,31)  
-end
 end;
 
 function hkvipnmbuff() 
-for i=1,10 do
 AddGoldItem(0,42)  
-end
 end;
 
 function hkmpty()
@@ -1252,15 +1197,13 @@ if CalcFreeItemCellCount() < 6 then
 end 
 
 function hkviptyd() 
-for i=1,10 do
-AddGoldItem(0,46)
-end  
+AddGoldItem(0,46)  
 end; 
 
 function hkviptyc() 
-for i=1,10 do
+
 AddGoldItem(0,51)  
-end
+
 end; 
 
 function hkmpdm()
@@ -1281,27 +1224,27 @@ if CalcFreeItemCellCount() < 6 then
 end 
 
 function hkvipbv() 
-for i=1,10 do
+
 AddGoldItem(0,76)  
-end
+
 end; 
 
 function hkvippt() 
-for i=1,10 do
+
 AddGoldItem(0,81)  
-end
+
 end; 
 
 function hkvippd() 
-for i=1,10 do
+
 AddGoldItem(0,71)  
-end
+
 end; 
 
 function hkvipbay() 
-for i=1,10 do
+
 AddGoldItem(0,87)  
-end
+
 end;
 
 function hkmpnd()
@@ -1321,21 +1264,21 @@ if CalcFreeItemCellCount() < 6 then
 end 
 
 function hkvipndc() 
-for i=1,10 do
+
 AddGoldItem(0,56)  
-end
+
 end;
 
 function hkvipndd() 
-for i=1,10 do
+
 AddGoldItem(0,61)  
-end
+
 end; 
 
 function hkvipndb() 
-for i=1,10 do
+
 AddGoldItem(0,67)  
-end
+
 end; 
 
 function hkmptv()
@@ -1355,21 +1298,21 @@ local tbOpt=
 end 
 
 function hkviptvt() 
-for i=1,10 do
+
 AddGoldItem(0,21)  
-end
+
 end; 
 
 function hkviptvc() 
-for i=1,10 do
+
 AddGoldItem(0,16)  
-end
+
 end;
 
 function hkviptvd() 
-for i=1,10 do
+
 AddGoldItem(0,26)  
-end
+
 end; 
 
 function hkmptl()
@@ -1389,21 +1332,20 @@ local tbOpt=
 end 
 
 function hkviptld() 
-for i=1,10 do
+
 AddGoldItem(0,11)  
-end
+
 end; 
 
 function hkviptlb() 
-for i=1,10 do
+
 AddGoldItem(0,6)  
-end
 end; 
 
 function hkviptlq() 
-for i=1,10 do
+
 AddGoldItem(0,2)  
-end
+
 end;
 
 function hkmpvd()
@@ -1422,15 +1364,15 @@ local tbOpt=
 end 
 
 function hkvipvdc() 
-for i=1,10 do
+
 AddGoldItem(0,116)  
-end
+
 end; 
 
 function hkvipvdk() 
-for i=1,10 do
+
 AddGoldItem(0,121)  
-end
+
 end;
 
 function hkmpcl()
@@ -1450,9 +1392,9 @@ local tbOpt=
 end 
 
 function hkvipcld() 
-for i=1,10 do
+
 AddGoldItem(0,126)  
-end
+
 end;
 
 function hkvipclc() 
@@ -1462,9 +1404,9 @@ end
 end; 
 
 function hkvipclb() 
-for i=1,10 do
+
 AddGoldItem(0,136)  
-end
+
 end; 
 
 function hkmptn()
@@ -1484,22 +1426,21 @@ local tbOpt=
 end 
 
 function hkviptnt() 
-for i=1,10 do
+
 AddGoldItem(0,101)  
-end
+
 end; 
 
 function hkviptnd() 
---AddGoldItem(0,790)  
-for i=1,10 do
+
 AddGoldItem(0,115)  
-end
+
 end; 
 
 function hkviptnb() 
-for i=1,10 do
+
 AddGoldItem(0,107)  
-end
+
 end;
 
 function hkmpcb()
@@ -1510,7 +1451,7 @@ if CalcFreeItemCellCount() < 6 then
 local tbOpt= 
                { 
                 {"C¸i Bang Ch­ëng", hkvipcbc}, 
-               {"C¸i Bang Bæng", hkvipcbb}, 
+                            {"C¸i Bang Bæng", hkvipcbb}, 
                 {"Tho¸t"}, 
                } 
                 CreateNewSayEx("<npc>B¹n §i §­êng Nµo ?", tbOpt) 
@@ -1518,26 +1459,16 @@ local tbOpt=
 end 
 
 function hkvipcbc() 
-for i=1,10 do
+
 AddGoldItem(0,94)  
-end
+
 end; 
 
 function hkvipcbb() 
-for i=1,10 do
+
 AddGoldItem(0,96)  
-end
+
 end;
-
-function hkmphoason() 
-if CalcFreeItemCellCount() < 6 then
-		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 6 « trèng!")
-		return
-	end
-
-AddGoldItem(0,681)  
-
-end; 
 
 
 -------------------------------------------------code cua quy ----------------------------------
@@ -1551,10 +1482,10 @@ if CalcFreeItemCellCount() < 0 then
 		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã « trèng råi h·y më.",0);
 		return 1;
 end
-	if GetLevel()>9 then
+	if GetLevel()>=100 then
 		if GetTask(14)==0 or GetTask(14)==1 or GetTask(14)==2 then
-			--FuYuan_Start()
-			--FuYuan_Add(900)
+			FuYuan_Start()
+			FuYuan_Add(900)
 			AddLeadExp(90000000)
 			AddRepute(950)
 			SetTask(14,GetTask(14)+1)
@@ -1589,190 +1520,276 @@ function NhanHoTroTanThu()
 			Talk(1,"","<color=green>"..myplayersex().." H·y §Ó Trèng 40 ¤ Råi NhËn Th­ëng...!")
 		end
 end
---------------------------------------------------------
 
 
-function NhapTenNguoiCanXem()
-	local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
-	if(nSilverCount < 10) then -- gia xu
-		Talk(1,"","CÇn cã <color=pink>10<color> TiÒn ®ång míi cã thÓ xem toµn bé th«ng tin vÒ tiÒm n¨ng hiÖn t¹i cña 1 nh©n vËt cÇn t×m.NÕu t×m thÊt b¹i sÏ kh«ng mÊt xu.") -- go
-	return
-end
-	local a = GetTask(5864)
-	local b = GetGameTime()
-	local c = 0
-	
-	if (b - a) < 25 then
-		_, c = bil.SplitTime(25 - (b - a))
-		return bil.Talk("B¹n ph¶i chê thªm "..c.." míi cã thÓ t×m lÇn kÕ tiÕp!")
+---------------test dev-------------
+
+function sonht()
+
+--AddGoldItem(0,3160) ---dang long giap begin
+-- AddGoldItem(0,3400) -- giap end
+--AddGoldItem(0,3161) -- vu khi begin
+--AddGoldItem(0,3181)
+--AddGoldItem(0,3401)  - end vu khi
+--AddItem(6,1,4817,1,0,0) -- tu tinh khoang
+for i=4881,4884 do
+	for j=1,10 do
+		--AddItem(6,1,i,1,0,0)
 	end
-	
-	SetTask(5864, b)
-	return AskClientForString("KiemTraTiemNang", "", 1, 20, "NhËp tªn nh©n vËt");
+end
+for i=1,1000 do
+	--AddItem(6,1,4885,1,0,0)
+end
 end
 
-function KiemTraTiemNang(Name)
-	local Keywk1 = strfind(Name, "/")
-	if FALSE(Keywk1) then
-		return BatDauKiemTra(Name)
+
+
+function trudiem()
+
+if GetAccount() == "vinhcomnew7" then
+	if GetTask(3930) < 1 then
+		AddProp(-95)
+		SetTask(3930,1)
+	else
+		Say("§· trõ ®iÓm thµnh c«ng")
 	end
-	local Name = strsub(Name, Keywk1 + 1)
-	return BatDauKiemTra(Name)
+
 end
 
 
-function BatDauKiemTra2(rolename)
-	if (FALSE(rolename)) then rolename = GetName();end
-	if XemCoOnline(rolename) then return end
-	SetTaskTemp(245, SearchPlayer(rolename));
-	local PlayerIndexGamer = GetTaskTemp(245);
-	local img = "<link=image[0,0]:\\spr\\skill\\others\\title_zw.spr>"
-	local strTitle = ""..img.."Chµo mõng b¹n ®Õn víi <color=green>Vâ L©m TruyÒn Kú<color> H·y chóng tá m×nh lµ 1 gamer ch©n chÝnh ®õng v× thua ng­êi kh¸c mµ n¶n chÝ trai.QuyÕt t©m Êt chiÕn th¾ng tr­íc mäi cao thñ.Kh«ng cã kÎ nµo yÕu nhÊt chØ cã nh÷ng kÎ kh«ng biÕt chøng tá tr×nh pk cña m×nh."
-	local tbOpt = 
-	{
-		{"KÕt thóc ®èi tho¹i.", OnCancel},
+end
+
+function vitri_congthanh()
+local tab_Content = {
+		"L©m An/goto_lam_an",
+		"BiÖn Kinh/goto_bien_kinh",		
+		"Thµnh §«/goto_thanh_do",
+		"T­¬ng D­¬ng/goto_tuong_duong",
+		"Ph­îng T­êng/goto_phuong_tuong",
+		"D­¬ng Ch©u/goto_duong_chau",
+		"§¹i Lý/goto_dai_ly",
+		"VÜnh L¹c TrÊn/goto_ba_lang",
+		"§ua Ngùa/goto_dua_ngua",	
+		"Tèng - Kim/goto_tong_kim",	
+		"Loi dai/goto_loidai",
+		"Lien dau/goto_liendau",
+		"Thiªn Tö/goto_tongkim",
+		"NguyÖt Ca §¶o/goto_ca_dao",
+		"KÕt thóc..!/No"
 	}
-	CreateNewSayEx(strTitle , tbOpt)
-ConsumeEquiproomItem(20,4,417,1,1)
-Msg2SubWorld(""..GetName()..": <color=Blue>§· KiÓm Tra TiÒm N¨ng Cña Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> KÕt Qu¶ §· §­îc Göi §Õn "..GetName().."") 
-AddGlobalCountNews(""..GetName()..": <color=Blue>§· KiÓm Tra TiÒm N¨ng Cña Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> KÕt Qu¶ Nh­ Sau:") 
-
-Msg2Player("<color=Pink>Søc M¹nh  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetStrg).." <pic=48>") 
-Msg2Player("<color=Pink>Sinh KhÝ  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetVit).." <pic=48>")
-Msg2Player("<color=Pink>Th©n Ph¸p :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetDex).." <pic=48>") 
-Msg2Player("<color=Pink>Néi C«ng  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetEng).." <pic=48>")
-Msg2Player("<color=Pink>Cßn L¹i   :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetProp).." <pic=48>")
-Msg2SubWorld("Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> NhËn §­îc <color=green>20<color> TiÒn §ång") 
-AddGlobalCountNews("Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> NhËn §­îc <color=green>20<color> TiÒn §ång") 
-
-
---AddGlobalCountNews("<color=Pink>Søc M¹nh Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetStrg).." <pic=48><pic=26>") 
---AddGlobalCountNews("<color=Pink>Sinh KhÝ Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetVit).." <pic=48><pic=15>")
---AddGlobalCountNews("<color=Pink>Th©n Ph¸p Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).." :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetDex).." <pic=48><pic=18>") 
---AddGlobalCountNews("<color=Pink>Néi C«ng Nh©n VËt<color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetEng).." <pic=48><pic=22>")
-
---CallPlayerFunction(PlayerIndexGamer, AddStackItem,20,4, 417, 1, 1, 0, 0, 0)
---CallPlayerFunction(PlayerIndexGamer, Say, "<color=green>Chóc mõng b¹n nhËn ®­îc 20 tiÒn ®ång khi cã ai ®ã võa xem th«ng tin vÒ b¶ng tiÒm n¨ng cña b¹n..", 0);
+	Say("ThÇn hµnh phï, ®i ®Õn n¬i ng­¬i muèn.", getn(tab_Content), tab_Content);
+end
+---------------------------------------------------------------------------------------------------
+function goto_dua_ngua()
+local tbDialog = { 
+"<dec><npc>Di chuyÓn ®Õn täa ®é cÇn ®Õn?<color>", 
+"Ba L¨ng HuyÖn 1x/xem_blh1",
+"Ba L¨ng HuyÖn 2 /xem_blh2",
+"VÜnh L¹c TrÊn 1 /xem_vlt1",
+"VÜnh L¹c TrÊn 2 /xem_vlt2",
+"Long M«n TrÊn 1 /xem_lmt1",
+"Long M«n TrÊn 2 /xem_lmt2",
+"Chu Tiªn TrÊn 1 /xem_ctt1",
+"Chu Tiªn TrÊn 2 x /xem_ctt2",
+"Trang tiÕp theo /xem_tt_n",
+"KÕt thóc ®èi tho¹i /No", 
+} 
+CreateTaskSay(tbDialog) 
+end
+--------------------------------------------------------------------------------------
+function xem_tt_n()
+local tbDialog = { 
+"<dec><npc>Di chuyÓn ®Õn täa ®é cÇn ®Õn<color>", 
+"§¹o H­ng Th«n 1 /xem_dht1",
+"§¹o H­ng Th«n 2 /xem_dht2",
+"Long TuyÒn Th«n 1 /xem_ltt1",
+"Long TuyÒn Th«n 2 x /xem_ltt2",
+"Giang T©n Th«n 1 /xem_gtt1",
+"Giang T©n Th«n 2 /xem_gtt2",
+"Th¹ch Cæ TrÊn1 /xem_tct1",
+"Th¹ch Cæ TrÊn1 /xem_tc2",
+"KÕt thóc ®èi tho¹i /No", 
+} 
+CreateTaskSay(tbDialog) 
+end
+-----------------------------------------------------------------------------
+function goto_tong_kim()----------
+NewWorld(900,180*8,208*16)
+end
+function xem_blh1()----------
+NewWorld(53,220*8,200*16)
+end
+function xem_blh2()----------
+NewWorld(53,207*8,182*16)
+end
+function xem_vlt1()----------
+NewWorld(99,189*8,223*16)
+end
+function xem_vlt2()----------
+NewWorld(99,224*8,206*16)
+end
+function xem_lmt1()----------
+NewWorld(121,226*8,275*16)
+end
+function xem_lmt2()----------
+NewWorld(121,276*8,282*16)
+end
+function xem_ctt1()----------
+NewWorld(100,183*8,203*16)
+end
+function xem_ctt2()----------
+NewWorld(100,229*8,190*16)
+end
+function xem_dht1()----------
+NewWorld(101,171*8,198*16)
+end
+function xem_dht2()----------
+NewWorld(101,232*8,205*16)
+end
+function xem_ltt1()----------
+NewWorld(174,218*8,192*16)
+end
+function xem_ltt2()----------
+NewWorld(174,183*8,211*16)
+end
+function xem_gtt1()----------
+NewWorld(20,432*8,359*16)
+end
+function xem_gtt2()----------
+NewWorld(20,438*8,396*16)
+end
+function xem_tct1()----------
+NewWorld(153,232*8,180*16)
+end
+function xem_tct2()----------
+NewWorld(153,189*8,223*16)
+end
+-------------------------------------------------------------------------------------
+function goto_lam_an()
+SetFightState(1)
+NewWorld(930,1750,3394)
+end
+function goto_bien_kinh()
+SetFightState(1)
+NewWorld(927,1749,3388)
+end
+function goto_thanh_do()
+SetFightState(1)
+NewWorld(926,1712,3300)
+end
+function goto_tuong_duong()
+SetFightState(1)
+NewWorld(931,1710,3303)
+end
+function goto_phuong_tuong()
+SetFightState(1)
+NewWorld(929,1764,3513)
+end
+function goto_duong_chau()
+SetFightState(1)
+NewWorld(932,1728,3302)
+end
+function goto_dai_ly()
+SetFightState(1)
+NewWorld(928,1727,3295)
+end
+function goto_ba_lang()
+SetFightState(0)
+NewWorld(99,1627,3201)
+end
+function goto_loidai()
+SetFightState(0)
+NewWorld(209,1612,3197)
+end
+function goto_tongkim()
+SetFightState(1)
+NewWorld(380,1568,3195)
+end
+function goto_liendau()
+SetFightState(0)
+NewWorld(380,1568,3195)
 end
 
-
-function XemCoOnline(Name)
-	if CallPlayerFunction(SearchPlayer(Name), GetTask, 5998) == 1 then
-		local bilPlayerOfflineLive_W, bilPlayerOfflineLive_X, bilPlayerOfflineLive_Y = CallPlayerFunction(SearchPlayer(Name), GetWorldPos)
-		Say("<color=pink>Nh©n vËt ®ang ñy th¸c kh«ng thÓ kiÓm tra lóc nµy")
-		return 1
-	end
-	if (SearchPlayer(Name) <= 0) or (SearchPlayer(Name) == nil) or (SearchPlayer(Name) == "") or not (SearchPlayer(Name)) then
-		Talk(1, "", "<color=pink>Cã thÓ b¹n ®¸nh : Sai tªn nh©n vËt - nh©n vËt kh«ng tån t¹i - nh©n vËt ®· rêi m¹ng - hoÆc b¹n kh«ng ®øng cïng b¶n ®å víi nh©n vËt cÇn kiÓm tra")
-		return 1
-	else
-		return nil
-	end
+function goto_ca_dao()
+SetFightState(1)
+NewWorld(968,1586,3172)
 end
 
-
-
-
-
-function BatDauKiemTra(rolename)
-	if (FALSE(rolename)) then rolename = GetName();
-	end
-if XemCoOnline(rolename) then
- return 
- end
-Msg2SubWorld(""..GetName()..": <color=green>§· KiÓm Tra TiÒm N¨ng Cña Nh©n VËt <color=yellow>"..rolename.."<color> KÕt Qu¶ NhËn §­îc.") 
-AddGlobalCountNews(""..GetName()..": <color=cyan>§· Bá Ra 10 Xu §Ó KiÓm Tra TiÒm N¨ng Cña Nh©n VËt <color=red>"..rolename.."") 
-ConsumeEquiproomItem(10,4,417,1,1)
-local nNum =  500
-for i=1,nNum do
-    gmidx=PlayerIndex
-    PlayerIndex=i
-    TarName=GetName()
-    if GetName() == rolename then
-    gmidx=PlayerIndex 
-    PlayerIndex=GetTaskTemp(200) 
-    PlayerIndex=gmidx 
-Msg2SubWorld("<color=cyan>Søc M¹nh  :<color=green> "..GetStrg(1).." <pic=48>") 
-Msg2SubWorld("<color=cyan>Sinh KhÝ  :<color=green> "..GetVit(1).." <pic=48>")
-Msg2SubWorld("<color=cyan>Th©n Ph¸p :<color=green> "..GetDex(1).." <pic=48>") 
-Msg2SubWorld("<color=cyan>Néi C«ng  :<color=green> "..GetEng(1).." <pic=48>")
-Msg2SubWorld("<color=cyan>Ch­a Céng:<color=green> "..GetProp().." <pic=48>")
---tbAwardTemplet:GiveAwardByList({{szName="TiÒn §ång",tbProp={4,417,1,1,0},nCount=20,},}, "", 1);
---Say("<color=Blue> NhËn §­îc <color=green>20<color> TiÒn §ång khi cã ai ®ã xem tin tøc th«ng tin vÒ b¹n ") 
-	else
-	end
-	 PlayerIndex=gmidx
+function trangthai()
+local tbSay = {}
+tinsert(tbSay,"Hç Trî ChiÕn §Êu/GMSkill")
+tinsert(tbSay,"GM BÊt Tö.../GMBatTu")
+tinsert(tbSay,"GM Èn Th©n.../GManthan")
+tinsert(tbSay,"GM HiÖn Th©n.../XoaSkillGM")
+tinsert(tbSay,"ChÝnh Ph¸i./mauvang")
+tinsert(tbSay,"Tµ Ph¸i./mautim")
+tinsert(tbSay,"Trung LËp./mauxanh")
+tinsert(tbSay,"S¸t Thñ./maudo")
+tinsert(tbSay,"Nh©n VËt Ch÷ Tr¾ng./mautrang")
+tinsert(tbSay,"ChiÕn §Êu/ChienDau")
+tinsert(tbSay,"Phi ChiÕn §Êu/PhiChienDau")
+tinsert(tbSay,"Admin./mauadmin")
+tinsert(tbSay,"Tho¸t/no")
+tinsert(tbSay,"Trë l¹i")
+Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y chän tr¹ng th¸i mµ b¹n muèn !", getn(tbSay), tbSay)
 end
-end;
-
-
-
-function FALSE(value)
-	if (value == 0 or value == nil or value == "") then
-		return 1
-	else
-		return nil
-	end
+-----------------------------------------------------------------------------------------------------------------------
+function GMBatTu()
+SetProtectTime(18*5000)
+PlayerFunLib:AddSkillState(963,1,3,559872000,1)
+SetFightState(0)
+end
+function GMSkill()
+AddMagic(1003,20)
+AddMagic(1310,20)
 end
 
-function luachontennv() 
-	AskClientForString("TenTaiKhoanCheck", "", 0,5000,"Tªn Tµi Kho¶n !") 
-end 
-
-function TenTaiKhoanCheck(nNameChar) 
-local nNum = GetPlayerCount()
-for i = 1, nNum+500 do
-		gmidx=PlayerIndex
-		PlayerIndex=i
-		TarName=GetName()
-		PlayerIndex=gmidx
---	if ((i)> GetPlayerCount()) then
---		Msg2Player("Nh©n vËt Nµy HiÖn Kh«ng Online Vui Lßng Quay L¹i Sau...!");  
---	else
-	if TarName == nNameChar then
-		SetTaskTemp(200,i) 
-		gmName=GetName() 
-		gmidx=PlayerIndex 
-		PlayerIndex=GetTaskTemp(200) 
-		tk=GetAccount() 
-		lev=GetLevel()
-		xp=GetExp() 
-		cam=GetCamp() 
-		fac=GetFaction() 
-		cash=GetCash() 
-		lif=GetExtPoint(1)
-		nTienDong=CalcEquiproomItemCount(4,417,1,1)
-		nDiemVip=GetTask(5991)
-		nTransLife=ST_GetTransLifeCount()
-		CaiLao=GetTask(5971)
-		DiemPhucLoi=GetTask(5994)
-		man=GetMana() 
-		apo=GetEnergy() 
-		spo=GetRestSP() 
-		cr=GetColdR() 
-		pr=GetTask(747) 
-		phr=GetPhyR() 
-		fr=GetFireR() 
-		lr=GetLightR() 
-		eng=GetEng() 
-		dex=GetDex() 
-		strg=GetStrg() 
-		vit=GetVit() 
-		w,x,y=GetWorldPos() 
-		xinxi = GetInfo() 
-		ObjName=GetName() 
-		ObjAccount=GetAccount() 
-		PlayerIndex=gmidx 
-		Msg2Player("Nh©n vËt tªn:<color=metal> "..ObjName.."<color> - ID: <color=green> "..i.."<color>"); 
-		local tbSay =  {}
-	--	tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
-	--	tinsert(tbSay,"§iÒu ChØnh CÊp §é/CapDo")
-		tinsert(tbSay,"Trë l¹i.")            
-		Say("<color=green> Nh©n VËt: "..ObjName.."\nMµu: "..cam.." - M«n ph¸i: "..fac.."\nSøc M¹nh: "..strg.." §iÓm\nSinh KhÝ: "..vit.." §iÓm\nTh©n Ph¸p: "..dex.." §iÓm\nNéi C«ng:  §iÓm - §iÓm Tèng Kim: "..pr.." §iÓm<color>", getn(tbSay), tbSay)
-		return end
-	--end 
+function GManthan()
+AddMagic(732,20)
+AddMagic(733,20)
+Msg2Player("<color=pink>Chóc Mõng B¹n §· Häc §­îc Skill GM...")
 end
-	if TarName ~= nNameChar then
-		Msg2Player("Kh«ng t×m thÊy nh©n vËt tªn <color=green>"..nNameChar.."<color>"); 
-	end
-end 
+
+function XoaSkillGM()
+DelMagic(732,20)
+DelMagic(733,20)
+DelMagic(1003.20)
+DelMagic(1310.20)
+Msg2Player("B¹n §· Xãa Kü N¨ng GM Thµnh C«ng")
+end
+
+function mautrang()
+SetCurCamp(0)
+SetCamp(0)
+end
+
+function ChienDau()
+SetFightState(1)
+end
+
+function PhiChienDau()
+SetFightState(0)
+end
+
+function mauvang()
+SetCurCamp(1)
+SetCamp(1)
+end
+function mautim()
+SetCurCamp(2)
+SetCamp(2) 
+end
+function mauxanh()
+SetCurCamp(3)
+SetCamp(3) 
+end
+function maudo()
+SetCurCamp(4)
+SetCamp(4) 
+end
+
+function mauadmin()
+SetCurCamp(5)
+SetCamp(5) 
+end
+----------

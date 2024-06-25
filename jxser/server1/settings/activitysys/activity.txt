@@ -20,4 +20,3 @@ Id	Name	StartDate	EndDate	Description	TaskGroup	TaskVersion	TaskIdSet
 19	资料片富贵锦盒活动	201007090000	211008230000		1	2	
 20	Ho箃 ng ch骳 ph骳	201008160000	201008310000		10	2	
 21	Ho箃 ng trung thu 2010	201009200000	201010180000		11	1	
-22	Tet trong cay	201009200000	201604280000		4	3

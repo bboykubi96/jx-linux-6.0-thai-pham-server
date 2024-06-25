@@ -13,11 +13,11 @@ function main(sel)
 		SetPos(1808, 3456)
 		return 1
 	end
-	--if check_faction()==1 then
-		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-		--SetPos(1808, 3456)
-		--return 1
-	--end;
+	if GetLastFactionNumber() < 0 then
+		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		SetPos(1808, 3456)
+		return 1
+	end;
 if (GetLevel() >= 5) then -- script viet hoa By http://tranhba.com  cÊp bËc ®¹t tíi cÊp m­êi 
 SetFightState(1); 
 NewWorld(54, 1471 ,2992) 

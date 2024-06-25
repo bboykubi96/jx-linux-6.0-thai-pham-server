@@ -1,7 +1,5 @@
 Include("\\script\\missions\\citywar_global\\citywar_function.lua");
 
-function main()
-	Say("Dông cò hç trî chiÕn thµnh rÊt quı,tÊt c¶ ®Òu do t¹i h¹ thiªn cùc v¹n khæ vËn chuyÓn  ra tiÒn tuyÕn nµy,gi¸ thµnh rÊt cao,nghÜa sÜ cã muèn sö dông kh«ng?", 2, "Cã. Ta muèn mua! /AskDeal", "Kh«ng. Ta kh«ng cÇn! /OnCancelBuy");
-end;
-
-
+function main() 
+Say("Trî gióp dông cô c«ng thµnh rÊt ®¾t , tÊt c¶ ®Òu lµ tõ t¹i h¹ thiªn t©n v¹n khæ míi vËn ®Õn tiÒn tuyÕn ®İch , tiÒn vèn rÊt cao , nghÜa sÜ muèn sö dông sao ?", 2,"Ta muèn mua ! /AskDeal","Kh«ng . ta kh«ng cÇn ! /OnCancelBuy"); 
+end; 

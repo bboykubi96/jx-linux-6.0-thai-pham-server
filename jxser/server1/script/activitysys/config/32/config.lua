@@ -208,7 +208,7 @@ tbConfig[12] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		--{"AddDialogOpt",	{"Ta ®Õn trao th­ cho ng­¬i",15} },
+		{"AddDialogOpt",	{"Ta ®Õn trao th­ cho ng­¬i",15} },
 	},
 }
 tbConfig[13] = --Ò»¸öÏ¸½Ú

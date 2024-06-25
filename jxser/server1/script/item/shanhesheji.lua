@@ -1,11 +1,11 @@
-function main()
---Ôö¼ÓÒ»¿éËéÊ¯
+function main() 
+-- script viet hoa By http://tranhba.com  gia t¨ng mét khèi ®¸ vôn 
 
-AddEventItem(351);
-Msg2Player("Chóc mõng B¹n! B¹n lÊy ®­îc mét miÕng ®Þa ®å s¬n hµ x· t¾c ");
-Name = GetName();
-str = format("Chóc mõng! %s nhËn ®­îc mét m¶nh b¶n ®å S¬n Hµ X· T¾c!", Name);
-AddGlobalNews(str);
-WriteLog(date("%m%d%H%M")..str);
-DelObject();
+AddEventItem(351); 
+Msg2Player("Chóc mõng ngµi # ngµi lÊy ®­îc mét khèi nói s«ng x· t¾c ®å m¶nh vôn #"); 
+Name = GetName(); 
+str = format("Chóc mõng #%s lÊy ®­îc mét khèi nói s«ng x· t¾c ®å m¶nh vôn #", Name); 
+AddGlobalNews(str); 
+WriteLog(date("%m%d%H%M")..str); 
+DelObject(); 
 end;

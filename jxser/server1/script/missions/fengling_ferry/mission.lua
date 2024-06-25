@@ -2,9 +2,12 @@ Include("\\script\\missions\\fengling_ferry\\fld_head.lua")
 Include("\\script\\event\\jiefang_jieri\\200904\\taskctrl.lua");
 Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
-
+Include("\\script\\activitysys\\playerfunlib.lua")
+Include("\\script\\lib\\droptemplet.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 function InitMission()
-	for i = 1, 200 do 
+	for i = 1, 100 do 
 		SetMissionV(i , 0);
 	end
 	worldid= SubWorldIdx2ID(SubWorld)
@@ -19,10 +22,10 @@ function RunMission()
 	for i=1, 30 do
 		posx, posy = fld_getadata(npcthiefpos)
 		local npcindex	= AddNpc(724, 95, SubWorld, posx, posy, 0, "Thñy TÆc");
-		--SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\shuizeideath.lua");
+		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\shuizeideath.lua");
 	end
 	idx = 0
-	for i = 1 , 200 do 
+	for i = 1 , 100 do 
  		idx, pidx = GetNextPlayer(MISSIONID,idx, 0);
 
  		if (pidx > 0) then
@@ -55,7 +58,7 @@ function EndMission()
 	StopMissionTimer(MISSIONID, 28)
 	StopMissionTimer(MISSIONID ,29)
 	Landing()
-	for i = 1, 200 do 
+	for i = 1, 100 do 
 		SetMissionV(i , 0);
 	end
 end
@@ -76,7 +79,8 @@ end
 
 function Landing()
 	Msg2MSAll(MISSIONID, "®· ®Õn bê B¾c Phong L¨ng §é.")
-
+	--tbAwardTemplet:GiveAwardByList({tbProp={6,1,4983,1,0,0},nBindState = -2}, "fenglingdu_shuizeicaibao", 1)
+	StackExp(2000000000);
 	local nDate = tonumber(GetLocalDate("%Y%m%d"));		-- by bel µ½°¶ÒÔºó·¢³ö¡°ÏûÃðË®Ôô¡±»î¶¯µÄÁì½±¹«¸æ
 	if (nDate >= jf0904_act_dateS and nDate < jf0904_act_dateE) then
 		local szNews = "Quan phñ vµ c¸c cao thñ ®· hoµn tÊt chiÕn dÞch tiªu diÖt Thñy TÆc, h·y nhanh chãng giao [Truy C«ng LÖnh] cho ThuyÒn Phu ®Ó nhËn th­ëng!";
@@ -85,7 +89,7 @@ function Landing()
 	
 	local tbPlayer = {}
 	idx = 0
-	for i = 1 , 200 do 
+	for i = 1 , 100 do 
 		idx, pidx = GetNextPlayer(MISSIONID,idx, 0)
 		
 		if (pidx > 0) then
@@ -110,34 +114,10 @@ function Landing()
 		SetDeathScript("")
 --		SetTaskTemp(200, 0)
 		ForbidEnmity(0);
-			tbAward = 
-			{
-			--{szName="§iÓm Kinh NghiÖm",nExp = 10000000},
-		--	{szName="M¶nh Ph«i TÝm",tbProp={4,1622,1,1},nCount=2},
-		--		{szName="M¶nh GhÐp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=2},
-			--			{szName="Tinh Ngäc",tbProp={6,1,4409,1,1,0},nCount=3},
-		{szName="LÖnh bµi gäi boss",tbProp={6,1,4489,1,1,0},nCount=1},
-		--	{szName="R­¬ng §å Phæ HKMP",tbProp={6,1,4403,1,1,0},nCount=5,nRate=30},
-			}
-		--	Add120SkillExp(1000000)
-	--Clear120SkillExpLimit ()
-	local nhour = tonumber(GetLocalDate("%H"))
-	if nhour==23  then
-		local rnnnn=random(1,2)
-		if rnnnn==1 then
-	--	tbAwardTemplet:Give(tbAward, 1, {"DT", "test"})
-		end
-	end
-	--	tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1},nCount=5},}, "test", 1);
-	--	tbAwardTemplet:GiveAwardByList({{szName = "Ruong manh thien thach",tbProp={6,1,4455,1,1,0},nCount=5},}, "test", 1);
-			--local tbAward1= {
-	--{szName="TÝn VËt Phong L¨ng §é",tbProp={6,1,4424,1,1,0},nCount=1,nBindState=-2},
-	--		}
---	tbAwardTemplet:GiveAwardByList(tbAward1,"PhÇn th­ëng hoµn thµnh Phong L¨ng §é")	
-	
-		if (check_new_shuizeitask() == 1) then
-			--tbAwardTemplet:GiveAwardByList({tbProp={6,1,2743,1,0,0},}, "fenglingdu_shuizeicaibao", 2)
-		end
+		
+		--if (check_new_shuizeitask() == 1) then
+			--tbAwardTemplet:GiveAwardByList({tbProp={6,1,4983,1,0,0},nBindState = -2}, "fenglingdu_shuizeicaibao", 1)
+		--end
 		
 		local mapid = SubWorldIdx2ID(SubWorld)
 		if (mapid == 337) then
@@ -148,6 +128,12 @@ function Landing()
 			SetRevPos(175,1)	--Éè¶¨ËÀÍöÖØÉúµãÎªÎ÷É½´å
 			SetProtectTime(18*3) --ÈuAë±£»¤Ê±¼ä
 			AddSkillState(963, 1, 0, 18*3)
+			-- ForbidChangePK(0);	-- dc doi pk
+
+	
+		-- if CalcFreeItemCellCount() >= 1 then
+		-- tbAwardTemplet:GiveAwardByList({{szName = "Xu", tbProp ={4,417,1,1,0,0}, nCount=50}}, format("Get %s", "Kim bµi v­ît ¶i"))
+		-- end
 		elseif (mapid == 338) then
 			SetLogoutRV(0)
 			NewWorld(fld_landingpos(2))
@@ -156,6 +142,12 @@ function Landing()
 			SetRevPos(175,1)	--Éè¶¨ËÀÍöÖØÉúµãÎªÎ÷É½´å
 			SetProtectTime(18*3) --ÈuAë±£»¤Ê±¼ä
 			AddSkillState(963, 1, 0, 18*3)
+					-- ForbidChangePK(0);	-- dc doi pk
+
+
+		-- if CalcFreeItemCellCount() >= 1 then
+		-- tbAwardTemplet:GiveAwardByList({{szName = "Xu", tbProp ={ 4,417,1,1,0,0}, nCount=50}}, format("Get %s", "Kim bµi v­ît ¶i"))
+		-- end
 		elseif (mapid == 339) then
 			SetLogoutRV(0)
 			NewWorld(fld_landingpos(3))
@@ -164,6 +156,12 @@ function Landing()
 			SetRevPos(175,1)	--Éè¶¨ËÀÍöÖØÉúµãÎªÎ÷É½´å
 			SetProtectTime(18*3) --ÈuAë±£»¤Ê±¼ä
 			AddSkillState(963, 1, 0, 18*3)
+		-- ForbidChangePK(0);	-- dc doi pk
+				
+	
+			-- if CalcFreeItemCellCount() >= 1 then
+			-- tbAwardTemplet:GiveAwardByList({{szName = "Xu", tbProp ={4,417,1,1,0,0}, nCount=50}}, format("Get %s", "Kim bµi v­ît ¶i"))
+			-- end
 		else
 			print("error:i don't know why")
 		end

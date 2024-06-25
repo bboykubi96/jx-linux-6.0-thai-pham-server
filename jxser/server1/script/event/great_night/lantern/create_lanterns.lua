@@ -58,8 +58,8 @@ tbLANTERN_ENTER_POS = {
 		 },
 }
 
-LANTERN_START	= 1900;
-LANTERN_END		= 1945;
+LANTERN_START	= 1400;
+LANTERN_END		= 2300;
 
 function lantern_enter_lantern(area)
 	local tb_enter_pos = tbLANTERN_ENTER_POS[area]
@@ -129,7 +129,7 @@ function go_lanternplace()
 	
 	local ntime = tonumber(GetLocalDate("%H%M"));
 	if (ntime < LANTERN_START or ntime >= LANTERN_END) then
-		Say("Hoπt ÆÈng Hoa Æ®ng chÿ bæt Æ«u tı 19h:00 Æ’n 19h:45! Xin quay lπi sau nh–!", 0)
+		Say("Hoπt ÆÈng Hoa Æ®ng chÿ bæt Æ«u tı 14h:00 Æ’n 23h:00! Xin quay lπi sau nh–!", 0)
 		return 0;
 	end;
 	

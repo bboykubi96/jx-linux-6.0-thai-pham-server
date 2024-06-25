@@ -1,15 +1,15 @@
--------------------------------------------------------------------------
--- FileName		:	task_huoqimihan.lua
--- Author		:	zifeiyu
--- CreateTime	:	2005-09-10 
--- Desc			:	<#>»ğÆáÃÜº¯
--------------------------------------------------------------------------
-DescLink_huoqimihan ="<#><link=image:\\spr\\item\\questkey\\taskobj075.spr>Háa TÊt MËt Hµm<link>"
-function main()
-	Describe(DescLink_huoqimihan.."<#> <enter>Cø ®Õn mïa trung thu lµ §éc C« minh chñ tËp häp c¸c cao thñ vÒ Minh NguyÖt trÊn, võa th«ng b¸o tin tøc vâ l©m, võa tæ chøc héi thi lµm b¸nh."
-	.."<enter>  §éc d­îc cña §­êng M«n v« s¾c v« vŞ, tróng ph¶i chÕt ngay lËo tøc. Ng­¬i ph¶i hÕt søc cÈn thËn kh«ng ®­îc ®Ó lé th©n phËn cña m×nh. NÕu bŞ chóng ph¸t gi¸c, h·y uèng ngay viªn ®éc d­îc nµy, sÏ l©m vµo t×nh tr¹ng chÕt t¹m thêi. Tøc kh¾c sÏ cã ng­êi ®Õn cøu ng­¬i", 1, "KÕt thóc ®èi tho¹i/no")
-	return 1
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  FileName : task_huoqimihan.lua 
+-- script viet hoa By http://tranhba.com  Author : zifeiyu 
+-- script viet hoa By http://tranhba.com  CreateTime : 2005-09-10 
+-- script viet hoa By http://tranhba.com  Desc : <#> löa tÊt mËt hµm 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+DescLink_huoqimihan ="<#><link=image:\\spr\\item\\questkey\\taskobj075.spr> löa tÊt mËt hµm <link>" 
+function main() 
+Describe(DescLink_huoqimihan.."<#><enter> h¹ ¸o xanh tiªn sinh # gÇn ®©y chñ th­îng thóc giôc Ğp cµng ngµy cµng gÊp , kÕ ho¹ch trung c¸i ®ã hµnh ®éng lµm ¬n tÊt ë th¸ng chİn trung thu tr­íc ¸p dông . bëi v× ®éc c« kiÕm hiÖu triÖu thiªn h¹ ng­êi trong vâ l©m tÒ tô tr¨ng s¸ng trÊn , c¸i kÕ ho¹ch nµy ®İch thùc hiÖn cã lÏ sÏ mang ®Õn ı kh«ng nghÜ tíi chç tèt . ®Õn lóc ®ã , H¹ tiªn sinh mét nhµ vinh hoa còng liÒn thãa tay cã thÓ ph¶i liÔu . " 
+.."<enter> h¹c ®Ønh hång ®· trø ng­êi ë ®­a tíi , ngµi h¼n nhËn ®­îc . c©n nh¾c ®Õn ®­êng thiÕu lµ tuyÖt ®Ønh cao thñ , §­êng m«n l¹i tinh chuyªn dïng ®éc , phèi trİ c¸i nµy phã d­îc liÖu ng­êi cña xuèng rÊt lín c«ng phu , kú ®éc v« s¾c v« vŞ , trung ng­êi chÕt ngay lËp tøc . ngµi cÇn ph¶i thİch ®¸ng b¶o qu¶n , nhÊt ®Şnh nhÊt ®Şnh kh«ng thÓ bŞ ng­êi ph¸t gi¸c . nÕu nh­ kÕ ho¹ch thÊt b¹i hoÆc lµ ph¸t sinh ngoµi ı muèn , nh­ vËy ngµi còng cã thÓ dïng mïi nµy ®éc d­îc kÕt thóc m×nh . nãi nh­ vËy , tin t­ëng nhµ cña ngµi ng­êi sÏ bŞ chóng ta chiÕu cè rÊt kh¸ . nÕu kh«ng , hÕt th¶y ®Òu kh«ng thÓ biÕt . v¹n mong tr©n träng . ", 1,"KÕt thóc ®èi tho¹i /no") 
+return 1 
+end 
 
-function no()
+function no() 
 end

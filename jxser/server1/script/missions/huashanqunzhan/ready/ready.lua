@@ -6,7 +6,7 @@ Include("\\script\\missions\\huashanqunzhan\\huashanqunzhan.lua")
 
 local tbMissionData = 
 {
-	nLatencyTime		= 5,
+	nLatencyTime		= 10,
 }
 tbMissionData.tbMissionV =
 {
@@ -60,24 +60,24 @@ function huashanqunzhan_tbReady:OnPlayerJoin()
 
 	if nPlayerCount >= self.nPlayerCountLimit then
 		self:GotoSignUpPlace()
-		Msg2Player("Sè ng­êi tham gia ho¹t ®éng nµy ®· ®ñ, b¹n h·y tham gia ®ît sau!")
-		return Say("Sè ng­êi tham gia ho¹t ®éng nµy ®· ®ñ, b¹n h·y tham gia ®ît sau!", 0)
+		Msg2Player("S?ng­êi tham gia ho¹t ®éng nµy ®· ®ñ, b¹n h·y tham gia ®ît sau!")
+		return Say("S?ng­êi tham gia ho¹t ®éng nµy ®· ®ñ, b¹n h·y tham gia ®ît sau!", 0)
 	end
 	
 	if GetLevel() < self.tbLevelLimit[1] then
 		self:GotoSignUpPlace()
-		Msg2Player(format("Ch­a ®ñ cÊp %s, kh«ng thÓ tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[1]))
-		return Say(format("Ch­a ®ñ cÊp %s, kh«ng thÓ tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[1]), 0)
+		Msg2Player(format("Ch­a ®ñ cÊp %s, kh«ng th?tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[1]))
+		return Say(format("Ch­a ®ñ cÊp %s, kh«ng th?tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[1]), 0)
 	elseif self.tbLevelLimit[2] and GetLevel() > self.tbLevelLimit[2] then
 		self:GotoSignUpPlace()
-		Msg2Player(format("B¹n ®· v­ît cÊp %s, kh«ng thÓ tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[2]))
-		return Say(format("B¹n ®· v­ît cÊp %s, kh«ng thÓ tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[2]), 0)
+		Msg2Player(format("B¹n ®· v­ît cÊp %s, kh«ng th?tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[2]))
+		return Say(format("B¹n ®· v­ît cÊp %s, kh«ng th?tham gia l«i ®µi cÊp bËc nµy.", self.tbLevelLimit[2]), 0)
 	end
-	if GetCash() < self.nMoney then
-		self:GotoSignUpPlace()
-		Msg2Player("Kh«ng ®ñ ng©n l­îng.")
-		return Say("Kh«ng ®ñ ng©n l­îng.", 0)
-	end
+	--if GetCash() < self.nMoney then
+	--	self:GotoSignUpPlace()
+	--	Msg2Player("Kh«ng ®ñ ng©n l­îng.")
+	--	return Say("Kh«ng ®ñ ng©n l­îng.", 0)
+	--end
 	--ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 1)
 	--ÉèÖÃÓë°ï»áÓÐ¹ØµÄ±äÁ¿£¬²»ÔÊÐíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
 	SetTaskTemp(200,1);
@@ -125,7 +125,7 @@ function huashanqunzhan_tbReady:OnLeave()
 	--¹Ø±Õ½ûÖ¹½»Ò×;
 	DisabledStall(0);
 	ForbitTrade(0);
-	RestoreOwnFeature();	
+	
 	local nCamp = GetCamp();
 	SetCurCamp(nCamp);
 	
@@ -139,7 +139,7 @@ function huashanqunzhan_tbReady:OnTimer()
 	
 	nTimerCount = nTimerCount + 1
 	SetMissionV(self.tbMissionV.SECOND_COUNTER, nTimerCount)
-	local szMsg = format("Cßn <color=yellow>%d<color> phót n÷a trËn ®Êu sÏ b¾t ®Çu.", self.nLatencyTime - nTimerCount)
+	local szMsg = format("Cßn <color=yellow>%d<color> phót n÷a trËn ®Êu s?b¾t ®Çu.", self.nLatencyTime - nTimerCount)
 	
 	
 	if nTimerCount == self.nLatencyTime then
@@ -181,7 +181,7 @@ function huashanqunzhan_tbReady:OnClose()
 			if nPlayerCount >= self.nMinPlayerCountLimit then
 				doFunByPlayer(tbPlayer[i], Msg2Player, "§­êng ®i phÝa tr­íc kh«ng th«ng, h·y ®îi cuéc ®ua sau.")
 			else
-				doFunByPlayer(tbPlayer[i], Msg2Player, format("Sè ng­êi tham gia Ýt h¬n %d, tr©n ®Êu kh«ng thÓ b¾t ®Çu.",self.nMinPlayerCountLimit))
+				doFunByPlayer(tbPlayer[i], Msg2Player, format("S?ng­êi tham gia Ýt h¬n %d, tr©n ®Êu kh«ng th?b¾t ®Çu.",self.nMinPlayerCountLimit))
 			end
 		else
 			local nX, nY = getadata("\\settings\\maps\\huashanqunzhan\\huashanjingji.txt")

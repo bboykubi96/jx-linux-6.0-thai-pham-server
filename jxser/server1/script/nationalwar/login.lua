@@ -27,11 +27,9 @@ function nationalwar_login()
 				AddSkillState(SKILLID_SKILL_MINISTER, 1, 0, 99999999)
 			elseif (pos == NWPOSITION_MARSHAL) then
 				-- 兵马大元帅光环
-				AddSkillState(SKILLID_SKILL_MARSHAL, 1, 0, 99999999)
 				AddSkillState(SKILLID_STATE_MARSHAL, 1, 0, 99999999)
 			elseif (pos == NWPOSITION_PIONEER) then
 				-- 先锋官光环
-				AddSkillState(SKILLID_SKILL_PIONEER, 1, 0, 99999999)
 				AddSkillState(SKILLID_STATE_PIONEER, 1, 0, 99999999)
 			end
 		end

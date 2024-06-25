@@ -1,31 +1,31 @@
-Include([[\script\missions\tong\collectgoods\head.lua]]);
+Include([[\script\missions\tong\collectgoods\head.lua]]); 
 
-function InitMission()
-	local i;
-	for i = 1, 40 do
-		SetMissionV(i, 0);
-	end;
-	
-	for i = 1, 10 do
-		SetMissionS(i, "");
-	end;
-	
-	strGlbNews = "Vâ l©m minh chñ ®ang tËp trung c¸c nh©n sü tæ chøc ®i t×m tói hµng hãa cña T©y H¹ th­¬ng nh©n vÒ, mäi ng­êi cã thÓ ®Õn Tæng qu¶n Ho¹t ®éng ph­êng ®Ó b¸o danh tham gia."
-	AddGlobalNews(strGlbNews);
-	SetGlbValue(GLB_COLLG_PHASE, 1);	--¿ÉÒÔ¿ªÊ¼±¨ÃûÁË
-	gb_SetTask(COLLG_NAME, 1, 1);
-	StartMissionTimer(COLLG_PREPAREMISSIONID, COLLG_PREPARETIME, COLLG_RUNINTERVER);
-end;
+function InitMission() 
+local i; 
+for i = 1, 40 do 
+SetMissionV(i, 0); 
+end; 
 
-function RunMission()
-end;
+for i = 1, 10 do 
+SetMissionS(i, ""); 
+end; 
 
-function EndMission()
-	StopMissionTimer(COLLG_PREPAREMISSIONID, COLLG_PREPARETIME);
-	SetGlbValue(GLB_COLLG_PHASE, 2); --½ûÖ¹ÔÙ½øÀ´±¨Ãû
-	gb_SetTask(COLLG_NAME, 1, 2);
-	collg_gameover(COLLG_MAPID[1], COLLG_PREPAREMISSIONID);
-end;
+strGlbNews = " minh chñ vâ l©m ®ang triÖu tËp mäi ng­êi sÜ ®i t×m t©y h¹ th­¬ng nh©n hµng hãa ®¹i trë l¹i , mäi ng­êi cã thÓ ®Õn ho¹t ®éng ph­êng tæng qu¶n chç ghi danh tham gia ." 
+AddGlobalNews(strGlbNews); 
+SetGlbValue(GLB_COLLG_PHASE, 1); -- script viet hoa By http://tranhba.com  cã thÓ b¾t ®Çu b¸o danh 
+gb_SetTask(COLLG_NAME, 1, 1); 
+StartMissionTimer(COLLG_PREPAREMISSIONID, COLLG_PREPARETIME, COLLG_RUNINTERVER); 
+end; 
 
-function OnLeave()
-end
+function RunMission() 
+end; 
+
+function EndMission() 
+StopMissionTimer(COLLG_PREPAREMISSIONID, COLLG_PREPARETIME); 
+SetGlbValue(GLB_COLLG_PHASE, 2); -- script viet hoa By http://tranhba.com  cÊm chØ ®i vµo n÷a ghi danh 
+gb_SetTask(COLLG_NAME, 1, 2); 
+collg_gameover(COLLG_MAPID[1], COLLG_PREPAREMISSIONID); 
+end; 
+
+function OnLeave() 
+end 

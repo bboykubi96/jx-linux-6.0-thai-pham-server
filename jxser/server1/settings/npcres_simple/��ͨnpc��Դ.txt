@@ -975,3 +975,40 @@ boss156	boss156_st01.spr	boss156_st01.spr	boss156_st02.spr	boss156_wlk.spr	boss1
 boss157	boss157_st01.spr	boss157_st01.spr	boss157_st02.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_wlk.spr	boss157_bat.spr	boss157_die.spr	boss157_at01.spr	boss157_at02.spr	boss157_at02.spr	boss157_st02.spr	boss157_wlk.spr
 boss158	boss158_st01.spr	boss158_st01.spr	boss158_st02.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_wlk.spr	boss158_bat.spr	boss158_die.spr	boss158_at01.spr	boss158_at02.spr	boss158_at02.spr	boss158_st02.spr	boss158_wlk.spr
 boss159	boss159_st01.spr	boss159_st01.spr	boss159_st02.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_wlk.spr	boss159_bat.spr	boss159_die.spr	boss159_at01.spr	boss159_at02.spr	boss159_at02.spr	boss159_st02.spr	boss159_wlk.spr
+passerby389_jin	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr	pneuma_jin.spr
+passerby389_mu	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr	pneuma_mu.spr
+passerby389_shui	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr	pneuma_shui.spr
+passerby389_huo	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr	pneuma_huo.spr
+passerby389_tu	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr	pneuma_tu.spr
+passerby389	passerby389_st01.spr	passerby389_st01.spr	passerby389_st01.spr											
+passerby390	passerby390_st01.spr	passerby390_st01.spr	passerby390_st01.spr											
+passerby394	passerby394_st01.spr	passerby394_st01.spr	passerby394_st01.spr											
+passerby395	passerby395_st01.spr	passerby395_st01.spr	passerby395_st01.spr											
+passerby397	passerby397_st01.spr	passerby397_st01.spr	passerby397_st01.spr											
+passerby399	passerby399_st01.spr	passerby399_st01.spr	passerby399_st01.spr											
+passerby401	passerby401_st01.spr	passerby401_st01.spr	passerby401_st01.spr											
+passerby402	passerby402_st01.spr	passerby402_st01.spr	passerby402_st01.spr											
+passerby411	passerby411_st01.spr	passerby411_st01.spr	passerby411_st01.spr											
+passerby412	passerby412_st01.spr	passerby412_st01.spr	passerby412_st01.spr											
+passerby403	passerby403_st01.spr	passerby403_st01.spr	passerby403_st01.spr											
+passerby404	passerby404_st01.spr	passerby404_st01.spr	passerby404_st01.spr											
+passerby405	passerby405_st01.spr	passerby405_st01.spr	passerby405_st01.spr											
+passerby406	passerby406_st01.spr	passerby406_st01.spr	passerby406_st01.spr											
+passerby407	passerby407_st01.spr	passerby407_st01.spr	passerby407_st01.spr											
+passerby408	passerby408_st01.spr	passerby408_st01.spr	passerby408_st01.spr											
+passerby409	passerby409_st01.spr	passerby409_st01.spr	passerby409_st01.spr											
+passerby410	passerby410_st01.spr	passerby410_st01.spr	passerby410_st01.spr											
+boss174	boss149_st01.spr	boss149_st02.spr	boss149_st02.spr	boss149_st01.spr	boss149_st02.spr	boss149_st01.spr	boss149_st02.spr	boss149_bat.spr	boss149_die.spr	boss149_at01.spr	boss149_at02.spr	boss149_at02.spr	boss149_st02.spr	boss149_wlk.spr
+boss175	boss150_st01.spr	boss150_st02.spr	boss150_st02.spr	boss150_st01.spr	boss150_st02.spr	boss150_st01.spr	boss150_st02.spr	boss150_bat.spr	boss150_die.spr	boss150_at01.spr	boss150_at02.spr	boss150_at02.spr	boss150_st02.spr	boss150_wlk.spr
+boss176	boss151_st01.spr	boss151_st02.spr	boss151_st02.spr	boss151_st01.spr	boss151_st02.spr	boss151_st01.spr	boss151_st02.spr	boss151_bat.spr	boss151_die.spr	boss151_at01.spr	boss151_at02.spr	boss151_at02.spr	boss151_st02.spr	boss151_wlk.spr
+boss177	boss162_st01.spr	boss162_st02.spr	boss162_st02.spr	boss162_st01.spr	boss162_st02.spr	boss162_st01.spr	boss162_st02.spr	boss162_bat.spr	boss162_die.spr	boss162_at01.spr	boss162_at02.spr	boss162_at02.spr	boss162_st02.spr	boss162_wlk.spr
+passerby391	passerby391.spr	passerby391.spr	passerby391.spr											
+boss165	boss165_st01.spr	boss165_st02.spr	boss165_st02.spr	boss165_wlk.spr	boss165_wlk.spr	boss165_wlk.spr	boss165_wlk.spr	boss165_bat.spr	boss165_die.spr	boss165_at01.spr	boss165_at02.spr	boss165_at02.spr	boss165_st02.spr	boss165_wlk.spr
+boss166	boss166_st01.spr	boss166_st02.spr	boss166_st02.spr	boss166_wlk.spr	boss166_wlk.spr	boss166_wlk.spr	boss166_wlk.spr	boss166_bat.spr	boss166_die.spr	boss166_at01.spr	boss166_at02.spr	boss166_at02.spr	boss166_st02.spr	boss166_wlk.spr
+boss167	boss167_st01.spr	boss167_st02.spr	boss167_st02.spr	boss167_wlk.spr	boss167_wlk.spr	boss167_wlk.spr	boss167_wlk.spr	boss167_bat.spr	boss167_die.spr	boss167_at01.spr	boss167_at02.spr	boss167_at02.spr	boss167_st02.spr	boss167_wlk.spr
+boss168	boss168_st01.spr	boss168_st02.spr	boss168_st02.spr	boss168_wlk.spr	boss168_wlk.spr	boss168_wlk.spr	boss168_wlk.spr	boss168_bat.spr	boss168_die.spr	boss168_at01.spr	boss168_at02.spr	boss168_at02.spr	boss168_st02.spr	boss168_wlk.spr
+boss169	boss169_st01.spr	boss169_st02.spr	boss169_st02.spr	boss169_wlk.spr	boss169_wlk.spr	boss169_wlk.spr	boss169_wlk.spr	boss169_bat.spr	boss169_die.spr	boss169_at01.spr	boss169_at02.spr	boss169_at02.spr	boss169_st02.spr	boss169_wlk.spr
+boss170	boss170_st01.spr	boss170_st02.spr	boss170_st02.spr	boss170_wlk.spr	boss170_wlk.spr	boss170_wlk.spr	boss170_wlk.spr	boss170_bat.spr	boss170_die.spr	boss170_at01.spr	boss170_at02.spr	boss170_at02.spr	boss170_st02.spr	boss170_wlk.spr
+boss171	boss171_st01.spr	boss171_st02.spr	boss171_st02.spr	boss171_wlk.spr	boss171_wlk.spr	boss171_wlk.spr	boss171_wlk.spr	boss171_bat.spr	boss171_die.spr	boss171_at01.spr	boss171_at02.spr	boss171_at02.spr	boss171_st02.spr	boss171_wlk.spr
+boss172	boss172_st01.spr	boss172_st02.spr	boss172_st02.spr	boss172_wlk.spr	boss172_wlk.spr	boss172_wlk.spr	boss172_wlk.spr	boss172_bat.spr	boss172_die.spr	boss172_at01.spr	boss172_at02.spr	boss172_at02.spr	boss172_st02.spr	boss172_wlk.spr
+boss173	boss173_st01.spr	boss173_st02.spr	boss173_st02.spr	boss173_wlk.spr	boss173_wlk.spr	boss173_wlk.spr	boss173_wlk.spr	boss173_bat.spr	boss173_die.spr	boss173_at01.spr	boss173_at02.spr	boss173_at02.spr	boss173_st02.spr	boss173_wlk.spr

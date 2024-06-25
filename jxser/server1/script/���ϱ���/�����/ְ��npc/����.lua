@@ -23,10 +23,6 @@ TOTALSEC_OF_DAY = 60 * 60 * 24; -- 1ÌìµÈÓÚ¶àÉÙÃë£¬ÓÃÓÚ°ÑÌìÊı×ª³ÉÃë
 COSTOFSIMGLEDIV = 1000000; --µ¥·½Àë»é»¨·Ñ
 
 function main(sel)
-if 1==1 then
- Say("Chuc Nang Tam Dong")
- return
-end
 	if (check_married() == 1) then
 		SetTask(67, SetBit(GetTask(67), 24, 0));
 		Msg2Player("<color=yellow>T×nh tr¹ng h«n phèi cña b¹n ®· thay ®æi<color>");
@@ -52,7 +48,7 @@ end
 		tbDailog:AddOptEntry("Kh«ng! Ta kh«ng muèn trong lóc bång bét ®­a ra quyÕt ®Şnh c¶ ®êi ng­êi m×nh.", female_cancel)
 	else
 		tbDailog.szTitleMsg = "<#><npc>Thùc ra l·o giµ nµy suèt ngµy bËn rén, nh­ng cã thÓ xem vµ gi¶i quyÕt ®­îc t×nh duyªn cña ng­êi trÎ tuæi."
-		tbDailog:AddOptEntry("Ta ®· cã ı trung nh©n, muèn cÇu h«n víi c« Êy", Qmarry)
+		tbDailog:AddOptEntry("Ta ®· cã ı trung nh©n, muèn cÇu h«n víi c« Êy.", Qmarry)
 		tbDailog:AddOptEntry("Tİnh cña chóng ta kh«ng hîp nhau, muèn li h«n cho råi.", divorce)
 		tbDailog:AddOptEntry("Phu Thª chóng t«i c·i v· suèt ngµy, xin NguyÖt L·o gióp t«i vµi lêi khuyªn.", fix_marry)
 		tbDailog:AddOptEntry("Xin ®¬n ph­¬ng ly h«n", singlediv_apply)
@@ -529,9 +525,11 @@ function present_ring(PlayerId)			-- ËÍ½äÖ¸£¨ÅĞ¶Ï¡¢ÖÃ±äÁ¿ÒÑÒÆÖÁ½á»é¹ı³ÌÖĞ£©
 			p[i] = item_level - i - 2
 		end
 	end
-	AddItem(0,3,0,item_level,random(0,4),5,p[1],p[2],p[3],p[4],p[5],p[6])
+	--AddItem(0,3,0,item_level,random(0,4),5,p[1],p[2],p[3],p[4],p[5],p[6])
 	AddItem(6,1,18,1,0,0,0)			-- tam tam tuong anh phu
-	Msg2Player("NguyÖt L·o tÆng cho b¹n mét chiÕc nhÉn ")
+	--Msg2Player("NguyÖt L·o tÆng cho b¹n mét chiÕc nhÉn ")
+		Msg2Player("Xin lçi d¹o nµy vµng b¹c lªn gi¸ ta kh«ng thÓ tÆng nhÉn ®­îc.")
+
 	PlayerIndex = OldPlayer
 end
 

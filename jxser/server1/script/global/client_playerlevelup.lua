@@ -1,135 +1,135 @@
---Creator:yfeng
---Date:2004-9-6
---Comm:¿Í»§¶ËÉı¼¶ÌáÊ¾ĞÅÏ¢
+-- script viet hoa By http://tranhba.com Creator:yfeng 
+-- script viet hoa By http://tranhba.com Date:2004-9-6 
+-- script viet hoa By http://tranhba.com Comm: kh¸ch hµng b­ng th¨ng cÊp ®Ò kú tin tøc 
 
-STRTAB_LEVELUP={
-	[2]="<#> Chóc mõng b¹n ®· lªn cÊp 2, b¹n ®· cã thÓ ®i t×m Vâ s­ ®Ó häc Khinh c«ng",
-	[5]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 5! B¹n ®· cã thÓ ®i xem thÕ giíi bªn ngoµi råi!.",
-	[10]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 10! B¹n ®· cã thÓ gia nhËp m«n ph¸i, PK víi ng­êi kh¸c, tham gia bÊt cø ho¹t ®éng nµo cña Vâ l©m!",
-	[20]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 20! B©y giê b¹n ®· cã thÓ t×m ng­êi t©m ®Çu ı hîp ®Ó kÕt b¹n tr¨m n¨m, hoÆc tiÕp tôc con ®­êng giang hå cña m×nh",
-	[30]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 30!H·y quay vÒ m«n ph¸i, cã rÊt nhiÒu nhiÖm vô tr«ng chê b¹n!",
-	[40]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 40! B¹n ®· cã thÓ  tham gia chiÕn tr­êng Tèng  Kim. §õng quªn quay vÒ m«n ph¸i, cã rÊt nhiÒu nhiÖm vô tr«ng chê b¹n!",
-	[50]="<#> Chóc mõng b¹n ®· lªn ®Õn cÊp 50! B¹n ®· cã thÓ ®i ®¶o TÈy Tñy, n¬i ®ã b¹n cã v« sè lÇn thö nghiÖm hiÖu qu¶ tÈy ®iÓm cña m×nh/ hoÆc ®Õn §µo hoa ®¶o ®Ó th­ëng chø? ch¸o L¹p B¸t t¨ng kinh nghiÖm! C¸c thuyÒn phu vµ Xa phu ®Òu cã thÓ ®­a b¹n ®i! Nhí vÒ m«n ph¸i lµm nhiÖm vŞu xuÊt s­ ®Ó häc ®­îc tuyÖt kü trÊn ph¸i",
-	[60]="<#> B¹n cã thÓ nhËn nhiÖm vô Håi s­, hoµn thµnh sÏ häc ®­îc tuyÖt häc trÊn ph¸i! ",
-}
+STRTAB_LEVELUP={ 
+[2]="<#> chóc mõng ng­¬i lªn tíi 2 cÊp # ng­¬i cã thÓ ®Õn th«n bªn ngoµi t×m vò s­ häc tËp khinh c«ng liÔu . ", 
+[5]="<#> chóc mõng ng­¬i lªn tíi 5 cÊp # ng­¬i ®· kh«ng hÒ n÷a yÕu kh«ng khái phong , cã thÓ ®i ®¹i thµnh thŞ gÆp mét chót ®êi mÆt . ", 
+[10]="<#> chóc mõng ng­¬i lªn tíi 10 cÊp # ng­¬i ®· cã nhÊt ®Şnh c«ng ®Ó , cã thÓ vµo ph¸i b¸i s­ häc nghÖ liÔu . tay míi trong th«n cã c¸c ®¹i m«n ph¸i ®İch m«n ®å , bän hä sÏ dÉn ng­¬i vµo ph¸i , s­ m«n sÏ cã nhiÖm vô chê ng­¬i . vµo ph¸i sau liÒn cã thÓ ë m«n ph¸i b¨ng tÇn trong t¸n gÉu . ®ång thêi , ng­¬i cã thÓ cïng ng­êi kh¸c pk liÔu , cßn cã thÓ ë thµnh trÊn trong bµy s¹p b¸n ®å . ", 
+[20]="<#> chóc mõng ng­¬i lªn tíi 20 cÊp # ng­¬i ®· sÏ liÔu thiªn lı truyÒn ©m , cã thÓ ë thµnh phè b¨ng tÇn trong t¸n gÉu . h¬n n÷a , ng­¬i cã thÓ cìi m· liÔu , c¸c ®¹i thµnh thŞ ®Òu cã m· phiÕn tö . ng­¬i ®· lµ thµnh ng­êi liÔu , cã thÓ kÕt h«n , mang theo ng­¬i mét nöa kia ®i giang t©n th«n ®İch nguyÖt l·o n¬i ®ã thµnh th©n ®i . ®ång thêi kh«ng nªn quªn trë vÒ chuyÕn s­ m«n , cã nhiÖm vô míi chê ng­¬i nga #", 
+[30]="<#> chóc mõng ng­¬i lªn tíi 30 cÊp # ng­¬i thiªn lı truyÒn ©m c¶nh giíi cao h¬n , cã thÓ trªn ®êi giíi b¨ng tÇn trong t¸n gÉu . ®ång thêi kh«ng nªn quªn trë vÒ chuyÕn s­ m«n , cã nhiÖm vô míi chê ng­¬i nga #", 
+[40]="<#> chóc mõng ng­¬i lªn tíi 40 cÊp # ng­¬i cã thÓ tham gia tèng kim ®¹i chiÕn , tèng kim chiÕn tr­êng ë vµo t­¬ng d­¬ng cïng Chu tiªn trÊn gi÷a . ®ång thêi kh«ng nªn quªn trë vÒ chuyÕn s­ m«n , cã nhiÖm vô míi chê ng­¬i nga #", 
+[50]="<#> chóc mõng ng­¬i lªn tíi 50 cÊp # ng­¬i cã thÓ ®i tÈy tñy ®¶o liÔu , ë n¬i nµo ng­¬i cã thÓ t¾m r¬i tiÒm n¨ng ®iÓm cïng kü n¨ng ®iÓm , c¸c ®¹i thµnh thŞ ®İch phu xe cã thÓ dÉn ng­¬i ®i . ®ång thêi kh«ng nªn quªn trë vÒ chuyÕn s­ m«n , cã 50 cÊp nhiÖm vô cïng xuÊt s­ nhiÖm vô chê ng­¬i nga #", 
+[60]="<#> ng­¬i cã thÓ lµm trë vÒ s­ nhiÖm vô , hoµn thµnh nhiÖm vô sau cã thÓ häc ®­îc trÊn ph¸i tuyÖt häc #", 
+} 
 
-function main(lvl)
-	Uworld1001 = nt_getTask(1001)
-	Uworld1002 = nt_getTask(1002)
-	Uworld1003 = nt_getTask(1003)
-	if ( GetLevel() == 30 ) then
-		if ( Uworld1001 == 60 ) and ( Uworld1002 == 60 ) and ( Uworld1003 == 108) then
-			nt_setTask(1001,80)
-			nt_setTask(1002,80)
-			nt_setTask(1003,109)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, trung, tµ cÊp 30.")
-		elseif ( Uworld1001 == 60 ) and ( Uworld1002 == 60 )  then
-			nt_setTask(1001,80)
-			nt_setTask(1002,80)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, trung lËp cÊp 30.")
-		elseif ( Uworld1001 == 60 ) and ( Uworld1003 == 108)  then
-			nt_setTask(1001,80)
-			nt_setTask(1003,109)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, tµ ph¸i cÊp 30 ")
-		elseif ( Uworld1002 == 60 ) and ( Uworld1003 == 108)  then
-			nt_setTask(1002,80)
-			nt_setTask(1003,109)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô trung lËp, tµ ph¸i cÊp 30.")
-		elseif ( Uworld1001 == 60 ) then
-			nt_setTask(1001,80)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô chİnh ph¸i cÊp 30.")
-		elseif ( Uworld1002 == 60 ) then
-			nt_setTask(1002,80)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô trung lËp cÊp 30.")
-		elseif ( Uworld1003 == 108) then
-			nt_setTask(1003,109)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô tµ ph¸i cÊp 30.")
-		end
-	elseif ( GetLevel() == 40 ) then
-		if ( Uworld1001 == 130 ) and ( Uworld1002 == 110 ) and ( Uworld1003 == 208 ) then
-			nt_setTask(1001,150)
-			nt_setTask(1002,130)
-			nt_setTask(1003,209)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, trung, tµ cÊp 40")
-		elseif ( Uworld1001 == 130 ) and ( Uworld1002 == 110 )  then
-			nt_setTask(1001,150)
-			nt_setTask(1002,130)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, trung cÊp 40.")
-		elseif ( Uworld1001 == 130 ) and ( Uworld1003 == 208 )  then
-			nt_setTask(1001,150)
-			nt_setTask(1003,209)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, tµ  cÊp 40")
-		elseif ( Uworld1002 == 110 ) and ( Uworld1003 == 208 )  then
-			nt_setTask(1002,130)
-			nt_setTask(1003,209)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô trung, tµ cÊp 40.")
-		elseif ( Uworld1001 == 130 ) then
-			nt_setTask(1001,150)
-			SendTaskOrder("B¹n nhËn d­îc nhiÖm vô chİnh ph¸i cÊp 40.")
-		elseif ( Uworld1002 == 110 ) then
-			nt_setTask(1002,130)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô trung lËp cÊp 40.")
-		elseif ( Uworld1003 == 208 ) then
-			nt_setTask(1003,209)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô tµ ph¸i cÊp 40.")
-		end
-	elseif ( GetLevel() == 50 ) then
-		if ( Uworld1001 == 200 ) and ( Uworld1002 == 180 ) and ( Uworld1003 == 328) then
-			nt_setTask(1001,220)
-			nt_setTask(1002,200)
-			nt_setTask(1003,329)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, trung, tµ cÊp 50")
-		elseif ( Uworld1001 == 200 ) and ( Uworld1002 == 180 )  then
-			nt_setTask(1001,220)
-			nt_setTask(1002,200)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, trung lËp  cÊp 50")
-		elseif ( Uworld1001 == 200 ) and ( Uworld1003 == 328 )  then
-			nt_setTask(1001,220)
-			nt_setTask(1003,329)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, tµ ph¸i cÊp 50")
-		elseif ( Uworld1002 == 180 ) and ( Uworld1003 == 328 )  then
-			nt_setTask(1002,200)
-			nt_setTask(1003,329)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô trung lËp, tµ ph¸i cÊp 50")
-		elseif ( Uworld1001 == 200 ) then
-			nt_setTask(1001,220)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô chİnh ph¸i cÊp 50")
-		elseif ( Uworld1002 == 180 ) then
-			nt_setTask(1002,200)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô trung lËp cÊp 50")
-		elseif ( Uworld1003 == 328 ) then
-			nt_setTask(1003,329)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô tµ ph¸i cÊp 50")
-		end
-	elseif ( GetLevel() == 60 ) then
-		if ( Uworld1001 == 270 ) and ( Uworld1002 == 240 ) and ( Uworld1003 == 408 ) then
-			nt_setTask(1001,290)
-			nt_setTask(1002,260)
-			nt_setTask(1003,409)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh, trung, tµ cÊp 50")
-		elseif ( Uworld1001 == 270 ) and ( Uworld1002 == 240 )  then
-			nt_setTask(1001,290)
-			nt_setTask(1002,260)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, trung lËp  cÊp 50")
-		elseif ( Uworld1001 == 270 ) and ( Uworld1003 == 408 )  then
-			nt_setTask(1001,290)
-			nt_setTask(1003,409)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô chİnh ph¸i, tµ ph¸i cÊp 50")
-		elseif ( Uworld1002 == 240 ) and ( Uworld1003 == 408 )  then
-			nt_setTask(1002,260)
-			nt_setTask(1003,409)
-			SendTaskOrder("B¹n ®ång thêi nhËn ®­îc nhiÖm vô trung lËp, tµ ph¸i cÊp 50")
-		elseif ( Uworld1001 == 270 ) then
-			nt_setTask(1001,290)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô chİnh ph¸i cÊp 50")
-		elseif ( Uworld1002 == 240 ) then
-			nt_setTask(1002,260)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô trung lËp cÊp 50")
-		elseif ( Uworld1003 == 408 ) then
-			nt_setTask(1003,409)
-			SendTaskOrder("B¹n nhËn ®­îc nhiÖm vô tµ ph¸i cÊp 50")
-		end
-	else
-		return Msg2Player(STRTAB_LEVELUP[lvl])
-	end
-end
+function main(lvl) 
+Uworld1001 = nt_getTask(1001) 
+Uworld1002 = nt_getTask(1002) 
+Uworld1003 = nt_getTask(1003) 
+if ( GetLevel() == 30 ) then 
+if ( Uworld1001 == 60 ) and ( Uworld1002 == 60 ) and ( Uworld1003 == 108) then 
+nt_setTask(1001,80) 
+nt_setTask(1002,80) 
+nt_setTask(1003,109) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 30 cÊp ®İch chİnh ph¸i , trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 60 ) and ( Uworld1002 == 60 ) then 
+nt_setTask(1001,80) 
+nt_setTask(1002,80) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 30 cÊp ®İch chİnh ph¸i , trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 60 ) and ( Uworld1003 == 108) then 
+nt_setTask(1001,80) 
+nt_setTask(1003,109) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 30 cÊp ®İch chİnh ph¸i , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 60 ) and ( Uworld1003 == 108) then 
+nt_setTask(1002,80) 
+nt_setTask(1003,109) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 30 cÊp ®İch trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 60 ) then 
+nt_setTask(1001,80) 
+SendTaskOrder("Ngµi thu ®­îc 30 cÊp ®İch chİnh ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 60 ) then 
+nt_setTask(1002,80) 
+SendTaskOrder("Ngµi thu ®­îc 30 cÊp ®İch trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1003 == 108) then 
+nt_setTask(1003,109) 
+SendTaskOrder("Ngµi thu ®­îc 30 cÊp ®İch tµ ph¸i trËn doanh nhiÖm vô . ") 
+end 
+elseif ( GetLevel() == 40 ) then 
+if ( Uworld1001 == 130 ) and ( Uworld1002 == 110 ) and ( Uworld1003 == 208 ) then 
+nt_setTask(1001,150) 
+nt_setTask(1002,130) 
+nt_setTask(1003,209) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 40 cÊp ®İch chİnh ph¸i , trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 130 ) and ( Uworld1002 == 110 ) then 
+nt_setTask(1001,150) 
+nt_setTask(1002,130) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 40 cÊp ®İch chİnh ph¸i , trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 130 ) and ( Uworld1003 == 208 ) then 
+nt_setTask(1001,150) 
+nt_setTask(1003,209) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 40 cÊp ®İch chİnh ph¸i , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 110 ) and ( Uworld1003 == 208 ) then 
+nt_setTask(1002,130) 
+nt_setTask(1003,209) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 40 cÊp ®İch trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 130 ) then 
+nt_setTask(1001,150) 
+SendTaskOrder("Ngµi thu ®­îc 40 cÊp ®İch chİnh ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 110 ) then 
+nt_setTask(1002,130) 
+SendTaskOrder("Ngµi thu ®­îc 40 cÊp ®İch trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1003 == 208 ) then 
+nt_setTask(1003,209) 
+SendTaskOrder("Ngµi thu ®­îc 40 cÊp ®İch tµ ph¸i trËn doanh nhiÖm vô . ") 
+end 
+elseif ( GetLevel() == 50 ) then 
+if ( Uworld1001 == 200 ) and ( Uworld1002 == 180 ) and ( Uworld1003 == 328) then 
+nt_setTask(1001,220) 
+nt_setTask(1002,200) 
+nt_setTask(1003,329) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 200 ) and ( Uworld1002 == 180 ) then 
+nt_setTask(1001,220) 
+nt_setTask(1002,200) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 200 ) and ( Uworld1003 == 328 ) then 
+nt_setTask(1001,220) 
+nt_setTask(1003,329) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 180 ) and ( Uworld1003 == 328 ) then 
+nt_setTask(1002,200) 
+nt_setTask(1003,329) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 200 ) then 
+nt_setTask(1001,220) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch chİnh ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 180 ) then 
+nt_setTask(1002,200) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1003 == 328 ) then 
+nt_setTask(1003,329) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch tµ ph¸i trËn doanh nhiÖm vô . ") 
+end 
+elseif ( GetLevel() == 60 ) then 
+if ( Uworld1001 == 270 ) and ( Uworld1002 == 240 ) and ( Uworld1003 == 408 ) then 
+nt_setTask(1001,290) 
+nt_setTask(1002,260) 
+nt_setTask(1003,409) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 270 ) and ( Uworld1002 == 240 ) then 
+nt_setTask(1001,290) 
+nt_setTask(1002,260) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 270 ) and ( Uworld1003 == 408 ) then 
+nt_setTask(1001,290) 
+nt_setTask(1003,409) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch chİnh ph¸i , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 240 ) and ( Uworld1003 == 408 ) then 
+nt_setTask(1002,260) 
+nt_setTask(1003,409) 
+SendTaskOrder("Ngµi ®ång thêi thu ®­îc 50 cÊp ®İch trung lËp , tµ ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1001 == 270 ) then 
+nt_setTask(1001,290) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch chİnh ph¸i trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1002 == 240 ) then 
+nt_setTask(1002,260) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch trung lËp trËn doanh nhiÖm vô . ") 
+elseif ( Uworld1003 == 408 ) then 
+nt_setTask(1003,409) 
+SendTaskOrder("Ngµi thu ®­îc 50 cÊp ®İch tµ ph¸i trËn doanh nhiÖm vô . ") 
+end 
+else 
+return Msg2Player(STRTAB_LEVELUP[lvl]) 
+end 
+end 

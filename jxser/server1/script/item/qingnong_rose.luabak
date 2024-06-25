@@ -1,0 +1,28 @@
+IL("SETTING") 
+IL("LEAGUE") 
+Include("\\script\\lib\\gb_modulefuncs.lua")
+
+TSK_VALENTINE = 1553 
+function main() 
+if (gb_GetModule(" lÔ t×nh nh©n hép quµ ") == 1) then 
+if (GetSex() == 1) then 
+if (GetTask(TSK_VALENTINE) >= 99) then 
+Say("<#> ngµi ®· sö dông <color=yellow>99 ®ãa t×nh nång hoa hång <color> , dïng nhiÒu nh­ vËy hoa lµm trang søc sÏ bŞ ghen tş nga #", 0) 
+return 1 
+end 
+AddOwnExp(1000000) 
+AddSkillState(440, 20, 1,32400)-- script viet hoa By http://tranhba.com 30 phót bªn trong ®¹t ®­îc gÊp ®«i kinh nghiÖm thêi gian . 
+AddSkillState(450, 20, 1,32400)-- script viet hoa By http://tranhba.com  may m¾n trŞ gi¸ 30 phót bªn trong gia t¨ng 20 ®iÓm . 
+		SetTask(TSK_VALENTINE, GetTask(TSK_VALENTINE) + 1)
+if (GetTask(TSK_VALENTINE) == 99) then 
+Msg2Player("<#> ngµi sö dông mét ®ãa t×nh nång hoa hång ®¹t ®­îc 100W chót kinh nghiÖm trŞ gi¸ , kinh nghiÖm gÊp ®«i cïng may m¾n gia t¨ng 20 giê r­ìi giê . ") 
+else 
+Msg2Player("<#> ngµi sö dông mét ®ãa t×nh nång hoa hång ®¹t ®­îc 100W chót kinh nghiÖm trŞ gi¸ , kinh nghiÖm gÊp ®«i cïng may m¾n gia t¨ng 20 giê r­ìi giê . ngµi cßn cã thÓ sö dông "..(99 - GetTask(TSK_VALENTINE)).." ®ãa t×nh nång hoa hång . ") 
+end 
+return 
+else 
+Msg2Player("<#> t×nh nång hoa hång chØ cã thÓ hiÖp n÷ sö dông ®©y #") 
+return 1 
+end 
+end 
+end

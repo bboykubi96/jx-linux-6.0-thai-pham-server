@@ -1,20 +1,16 @@
-allbrother_0801_Date_S				= 091113--2008Äê03ÔÂ08ÈÕµ½2008Äê03ÔÂ16ÈÕ24µã
-allbrother_0801_Date_E				= 091129
-allbrother_0801_szActName			= "Tø h¶i giai huynh ®Ö"
-allbrother_0801_TeamSizeLimit		= 8
-TSK_allbrother_0801_TaskState		= 1958;
-TSK_allbrother_0801_TaskTime		= 1959;
-TSK_allbrother_0801_TaskLimit		= 1960;
-TSK_allbrother_0801_TaskTeamLimit	= 1961;
-TSKV_allbrother_0801_TaskLimit		= 8
-TSKV_allbrother_0801_TaskTeamLimit	= 8
-TSKV_allbrother_0801_TaskTime		= 60*60*3
+allbrother_0801_szActName		 = "Ho¹t §éng"
+HUYETLINHDON				 = 5983
+
+TSK_StartNhiemVu_TaskState		 = 5982;
+TSK_NhiemVuBacDau_TaskLimit		 = 5981;
+TSKV_NhiemVuBacDau_TaskLimit	 = 30
+
+TSK_StartTime_TaskTime		 = 5980;
+TSKV_StartTime_TaskTime		 = 60*60*3
+
+TSK_PhucMenhBacDau_TaskLimit	 = 5979;
+TSKV_PhucMenhBacDau_TaskLimit	 = 1
 
 
-function allbrother_0801_IsAct()
-	
-	local nWeek = tonumber(GetLocalDate("%w"))
-	if (nWeek == 5 or nWeek == 6 or nWeek == 0) then
-		return 1
-	end
-end
+
+

@@ -1,17 +1,10 @@
-
-
+-----------***Heart*Doldly***------------
 function TaskShedule()
-	--设置方案名称
-	TaskName(" ho箃 ng x誴 h筺g <Th竎h th鴆 th阨 gian> m鏸 ng祔")
-	
+	TaskName("ho箃 ng x誴 h筺g <Th竎h th鴆 th阨 gian> m鏸 ng祔")
 	TaskTime(0, 0);
-	
-	--设置间隔时间，单位为分钟
-	TaskInterval(1440) --30分钟一次
-	
-	--设置触发次数，0表示无限次数
+	TaskInterval(1440) 
 	TaskCountLimit(0)
-	OutputMsg("=====> BANG XEP HANG <THACH THUC THOI GIAN> MOI NGAY=======");
+	OutputMsg("                     *** BANG XEP HANG <THACH THUC THOI GIAN> MOI NGAY ***                           ")
 end
 
 function TaskContent()
@@ -24,11 +17,12 @@ function TaskContent()
 		GlobalExecute(format("dw Msg2SubWorld([[%s]])", szMsg))
 	end
 	Ladder_ClearLadder(10235);
-	OutputMsg("=====> Bang Xep Hang Vuot Ai Moi Ngay 00:00 Bat Dau==================");
+	OutputMsg("=====> Bang Xep Hang Vuot Ai Moi Ngay 00:00 Bat Dau <================");
 end
 
 function GameSvrConnected(dwGameSvrIP)
 end
+
 function GameSvrReady(dwGameSvrIP)
 end
 

@@ -1,26 +1,20 @@
--- 战役系统
--- Fanghao_Wu 2004-12-6
-
+------------------------------***Edit*By*Heart*Doldly***----------------------------------------
 function TaskShedule()
-	-- 设置方案名称
-	TaskName( "CHIEN TRUONG TONG KIM 12:50" );
-	TaskInterval( 1440);
+	TaskName( "CHIEN TRUONG TONG KIM" );
+	TaskInterval( 1440 );
 	TaskTime( 12, 50 );
 	TaskCountLimit( 0 );
-	-- 输出启动消息
-	OutputMsg("=====> [TongKim] Chien Truong Tong Kim 12:50 BAT DAU")
-
 end
 
 function TaskContent()
-	Battle_StartNewRound( 1, 1 );	-- GM指令，启动低级新战局
-	Battle_StartNewRound( 1, 2 );	-- GM指令，启动中级新战局
-	Battle_StartNewRound( 1, 3 );	-- GM指令，启动高级新战局
-	OutputMsg("=====> [TongKim] Chien Truong Tong Kim 12:50 BAT DAU")
-
+--	Battle_StartNewRound( 1, 1 );	-- chien truong 1
+--	Battle_StartNewRound( 1, 2 );	-- chien truong 1
+	Battle_StartNewRound( 1, 3 );	-- chien truong 1
+	OutputMsg("=====> [TongKim] Chien Truong Tong Kim 13:00 BAT DAU")
 end
 
 function GameSvrConnected(dwGameSvrIP)
 end
+
 function GameSvrReady(dwGameSvrIP)
 end

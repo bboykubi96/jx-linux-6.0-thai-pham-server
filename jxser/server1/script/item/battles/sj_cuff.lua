@@ -4,8 +4,8 @@ Include("\\script\\item\\battles\\addmarshalpoint.lua")
 
 function add496()
 		level = random(1,2);
-		AddSkillState(496, level, 0, 1080 )	--Íæ¼Ò»ñµÃÎä¹¦³öÕÐ¶¯×÷ËÙ¶ÈÔö¼Ó
-		Msg2Player("<#> B¹n nhËn ®­îc <color=0xB5FDD7> t¨ng ®éng t¸c xuÊt chiªu trong 1 phót"..(level*10).."<#> %")	
+		AddSkillState(496, level, 0, 1080 )	-- script viet hoa By http://tranhba.com Ý##ß###·####³#â##¯###ï#Ì¤##ã
+		Msg2Player("<#>Ä·###·¸#<color=0xB5FDD7>1###ã#Ä####³#â##¯###º¤##ã"..(level*10).."<#>##")	
 end
 
 Tab={add496}
@@ -23,7 +23,7 @@ function PickUp( nItemIndex, nPlayerIndex )
 		checkbattlerule(BT_GetTypeBonus(PL_GETITEM, GetCurCamp()))
 		BT_SortLadder();
 		BT_BroadSelf();
-		return 0;	-- É¾³ýÎïÆ·
+		return 0;	-- script viet hoa By http://tranhba.com  Ð#³ý####
 	end
 end
 

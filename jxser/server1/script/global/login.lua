@@ -1,65 +1,37 @@
-Include("\\script\\worldrank\\vngglobalvar.lua")
-Include("\\script\\worldrank\\vngtop10.lua")
-Include("\\script\\worldrank\\xephang.lua")
-IncludeLib("TIMER")
-Include("\\script\\script_protocol\\protocol_def_gs.lua")
-Include("\\script\\lib\\objbuffer_head.lua") 
 Include("\\script\\global\\login_head.lua")
-Include("\\script\\activitysys\\config\\1008\\extend.lua")
-Include("\\script\\lib\\awardtemplet.lua")
-Include("\\script\\gm_tool\\quanly.lua")
---================================================================
-Include("\\script\\script_protocol\\protocol_def_c.lua")
-IncludeLib("TONG")
---------test
-IncludeLib("RELAYLADDER");
-IncludeLib("FILESYS")
-Include("\\script\\vng_lib\\files_lib.lua")
---Include("\\script\\global\\jxprivate\\xephang\\top.lua") 
---Include("\\script\\global\\jxprivate\\xephang\\bangxephang.lua") 
------------------------
-
-Include("\\script\\global\\login_old.lua")	
-Include("\\script\\missions\\leaguematch\\wlls_login.lua")	
+Include("\\script\\global\\ladder_player.lua")
+Include("\\script\\global\\login_old.lua")	-- script viet hoa By http://tranhba.com ¾ÉµÄLogin½Å±¾£¨°üº¬¶à¸ö»î¶¯£©
+Include("\\script\\missions\\leaguematch\\wlls_login.lua")	-- script viet hoa By http://tranhba.com WLLSÎäÁÖÁªÈü
 Include("\\script\\misc\\extpoint_loginmsg\\login_msg.lua")
-Include("\\script\\global\\offline_login.lua")	
+Include("\\script\\global\\offline_login.lua")	-- script viet hoa By http://tranhba.com if offline time > 8hours then reset hours
 Include("\\script\\global\\recordplayerinfo.lua")
 Include("\\script\\nationalwar\\login.lua")
 Include("\\script\\misc\\daiyitoushi\\toushi_resetbase.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\global\\playerlist.lua")
-Include ("\\script\\global\\login_hint.lua")	
---================================================================
-Include("\\script\\global\\topall.lua")
+Include("\\script\\global\\resetbos.lua")	
+Include ("\\script\\global\\login_hint.lua")	-- script viet hoa By http://tranhba.com µÇÂ½»î¶¯ÌáÊ¾
 Include("\\script\\activitysys\\g_activity.lua")	
 Include("\\script\\global\\g7vn\\g7quanly.lua")
 Include("\\script\\global\\g7vn\\g7tichluyvip.lua")
---Include("\\script\\miniskill\\init_miniskill.lua")	
+Include("\\script\\miniskill\\init_miniskill.lua")	
 
 IncludeLib("TITLE");
 if (GetProductRegion() ~= "vn") then
 	Include("\\script\\global\\chuangong_login.lua")
 	Include("\\script\\task\\lv120skill\\head.lua")	
-	
-	Include("\\script\\battles\\battle_login.lua")	
-end
+end 
 
-if (GetProductRegion() == "cn_ib") then
-	Include("\\script\\misc\\spreader\\emigration.lua")
-	Include("\\script\\misc\\lost_item\\takelostitem.lua")
-	Include([[\script\item\ib\tishenzhiren.lua]])	
-	Include("\\script\\item\\ib\\zimudai.lua");
-end
+if (GetProductRegion() == "cn_ib") then 
+Include("\\script\\item\\ib\\zimudai.lua");
+end 
 
 Include("\\script\\tong\\tong_login.lua");
 Include("\\script\\item\\tianziyuxi.lua");	
 Include("\\script\\misc\\taskmanager.lua")
 Include("\\script\\misc\\eventsys\\type\\player.lua")
-
---tinhpn 20100817: Online Award
+Include("\\script\\global\\g7vn\\g7configall.lua")
 Include("\\script\\bonus_onlinetime\\head.lua")
-
---tinhpn 20110223:Reset pass ruong
 Include("\\script\\vng_feature\\resetbox.lua")
 Include("\\script\\vng_feature\\top10\\vngtop10.lua");
 
@@ -116,7 +88,7 @@ SetTask(3077,0)
 	--LoadScript("\\script\\global\\logout.lua")
 	--player2hwidin()
 	--SetEnergy(0)
-	if GetLevel() == 10 and nMapId ~= 53 then
+	if GetLevel() == 1 and nMapId ~= 53 then
 		--NewWorld(53, 1623, 3179)
 	end
 --if GetLevel()>=80 then
@@ -340,7 +312,7 @@ end
 	--		return
 	--	end
 	--end
-	--add_timer_mns()
+	add_timer_mns()
 end
 -------------------------------------------
 
@@ -349,110 +321,24 @@ function main_delaysync(nStep)
 		print("main_delaysync error: "..nStep.." funccount:"..getn(TB_LOGIN_FUN));
 		return 1;
 	end
-	
-	--ÔËÐÐµÚnStep´ÎÑÓÊ±Í¬²½µÄËùÓÐº¯Êý
+
+
 	if (TB_LOGIN_FUN[nStep]) then
 		for i = 1, getn(TB_LOGIN_FUN[nStep]) do
 			if (TB_LOGIN_FUN[nStep][i]) then TB_LOGIN_FUN[nStep][i]() end
 		end
 	end
 
-
-
 	if (nStep < getn(TB_LOGIN_FUN)) then
 		return 0
 	else
 		return 1
 	end
-end
-tbItemBag = {
-	["LÖnh bµi GM"] = 1,
-	["LÖnh Bµi T©n Thñ"] = 1,
-	["Tói M¸u T©n Thñ"] = 1,
-	["ThÇn Hµnh Phï"] = 1,
-	["Håi thµnh phï (lín) "] = 1,
-	["Håi thµnh phï (nhá) "] = 1,
-	["Thæ ®Þa phï (sö dông v« h¹n) "] = 1,
-	["Kim Nguyªn B¶o"] = 1,
-	["TiÒn ®ång"] = 1,
-	
-}
-function ClearBag()
-local tbRoomItems = GetRoomItems(0)
-	for i = 1, getn(tbRoomItems) do
-		local szName = GetItemName(tbRoomItems[i])
-		if not tbItemBag[szName] or tbItemBag[szName] ~= 1 then
-			RemoveItemByIndex(tbRoomItems[i])
-		end
-	end
-end
-function no()
-	if chuangong_login ~= nil then
-		chuangong_login()
-	end
-end
-function WriteLogPro(data,str)
-	local Data2 = openfile(""..data.."", "a+");
-	write(Data2,tostring(str));
-	closefile(Data2);
+
 end
 
-function logplayer(zFile,szMsg)
-  local handle = openfile(zFile,"a")
-  write(handle,format("%s\n",szMsg));
-  closefile(handle);
- end
-
-function check_faction()
-	local szCurFaction = GetFaction()
-	if szCurFaction ~= nil and szCurFaction ~= "" then
-		return 1
-	end
-	return 0
-end
-
-function check_faction2() 
-if (GetTask(7) >= 10*256) and (GetTask(7) ~= 75*256) then -- script viet hoa By http://tranhba.com  ThiÕu L©m hoÆc m«n ph¸i nµy xuÊt s­ 
-return 0 
-elseif (GetTask(3) >= 10*256) and (GetTask(3) ~= 75*256) then -- script viet hoa By http://tranhba.com  Thiªn v­¬ng hoÆc m«n ph¸i nµy xuÊt s­ 
-return 1
-elseif (GetTask(10) >= 10*256) and (GetTask(10) ~= 75*256) then -- script viet hoa By http://tranhba.com  n¨m ®éc hoÆc m«n ph¸i nµy xuÊt s­ 
-return 3
-elseif (GetTask(2) >= 10*256) and (GetTask(2) ~= 75*256) then -- script viet hoa By http://tranhba.com  §­êng m«n hoÆc m«n ph¸i nµy xuÊt s­ 
-return 2
-elseif (GetTask(6) >= 10*256) and (GetTask(6) ~= 75*256) then -- script viet hoa By http://tranhba.com  thóy khãi hoÆc m«n ph¸i nµy xuÊt s­ 
-return 5
-elseif (GetTask(1) >= 10*256) and (GetTask(1) ~= 75*256) then -- script viet hoa By http://tranhba.com  Nga Mi hoÆc m«n ph¸i nµy xuÊt s­ 
-return 4
-elseif (GetTask(8) >= 10*256) and (GetTask(8) ~= 75*256) then -- script viet hoa By http://tranhba.com  C¸i Bang hoÆc m«n ph¸i nµy xuÊt s­ 
-return 6 
-elseif (GetTask(4) >= 10*256) and (GetTask(4) ~= 75*256) then -- script viet hoa By http://tranhba.com  ngµy nhÉn hoÆc m«n ph¸i nµy xuÊt s­ 
-return 7
-elseif (GetTask(9) >= 10*256) and (GetTask(9) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
-return 9 
------------------------Hoa Son
-elseif (GetTask(11) >= 10*256) and (GetTask(11) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
-return 11 
-elseif (GetTask(12) >= 10*256) and (GetTask(12) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
-return 12
-elseif (GetTask(13) >= 10*256) and (GetTask(13) ~= 75*256) then -- script viet hoa By http://tranhba.com  C«n L«n hoÆc m«n ph¸i nµy xuÊt s­ 
-return 13 
-----------------------------------
-elseif (GetTask(5) >= 10*256) and (GetTask(5) ~= 75*256) then -- script viet hoa By http://tranhba.com  Vâ §­¬ng hoÆc m«n ph¸i nµy xuÊt s­ 
-return 8
-else -- script viet hoa By http://tranhba.com  b¹ch tªn ®Ých , kh«ng cÇn ®æi míi 
-SetLastFactionNumber(-1) 
-return 20 
+function no() 
+if chuangong_login ~= nil then 
+chuangong_login() 
 end 
-end; 
-function XoaXepHang()
-	--for i=10277,10288 do
-	for i=10001,10300 do
-		Ladder_ClearLadder(i)
-		--print(i)
-	end
-	Ladder_ClearLadder(10119)
-	Ladder_ClearLadder(10250)
-	Ladder_ClearLadder(10279)
-end
-
+end 

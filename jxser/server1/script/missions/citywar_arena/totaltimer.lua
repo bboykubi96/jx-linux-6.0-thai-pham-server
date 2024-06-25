@@ -2,36 +2,36 @@ Include("\\script\\missions\\citywar_arena\\head.lua");
 
 function OnTimer()
 
-	State = GetMissionV(MS_STATE) ;
-	if (State == 0) then
-		return
-	end;
+State = GetMissionV(MS_STATE) ;
+if (State == 0) then
+	return
+end;
 
-	Rest1 = GetMSPlayerCount(MISSIONID, 1);
-	Rest2 = GetMSPlayerCount(MISSIONID, 2);
+Rest1 = GetMSPlayerCount(MISSIONID, 1);
+Rest2 = GetMSPlayerCount(MISSIONID, 2);
 
-	if (Rest1 > Rest2) then 
-		Msg2MSAll(MISSIONID, "Thi ®Êu ®· kÕt thóc, <color=yellow>"..GetMissionS(1).."<color> th¾ng ®­îc trËn nµy!");
-		str = "Thêi gian thi ®Êu ®· kÕt thóc! <color=red>"..GetMissionS(1).."<color> Th¾ng råi! <color=red>"..GetMissionS(2).."<color>!";
+if (Rest1 > Rest2) then 
+	Msg2MSAll(MISSIONID, "<#>â###ß##¸£#,"..GetMissionS(1).."<#>##£#!");
+	str = "<#> <#>â###£±##ß##¸£#!"..GetMissionS(1).."<#>£#µ#!"..GetMissionS(2).."<#>!";
+	WinBonus(1)
+elseif (Rest2 > Rest1) then 
+	Msg2MSAll(MISSIONID, "<#>â###ß##¸£#,"..GetMissionS(2).."<#>##£#!")
+	str = "<#> <#>â###£±##ß##¸£#!"..GetMissionS(2).."<#>£#µ#!"..GetMissionS(1).."<#>!";
+	WinBonus(2)
+else
+	if (GetTotalLevel() == 1) then
+		Msg2MSAll(MISSIONID, "<#>â###ß##¸£#,"..GetMissionS(1).."<#>##£#!")
+		str = "<#> <#>â###£±##ß##¸£#!"..GetMissionS(1).."<#>£#µ#!"..GetMissionS(2).."<#>!";
 		WinBonus(1)
-	elseif (Rest2 > Rest1) then 
-		Msg2MSAll(MISSIONID, "Thi ®Êu ®· kÕt thóc, <color=yellow>"..GetMissionS(2).."<color> th¾ng ®­îc trËn nµy!")
-		str = "Thêi gian thi ®Êu ®· kÕt thóc! <color=red>"..GetMissionS(2).."<color> Th¾ng råi! <color=red>"..GetMissionS(1).."<color>!";
-		WinBonus(2)
 	else
-		if (GetTotalLevel() == 1) then
-			Msg2MSAll(MISSIONID, "Thi ®Êu ®· kÕt thóc, <color=yellow>"..GetMissionS(1).."<color> th¾ng ®­îc trËn nµy!")
-			str = "Thêi gian thi ®Êu ®· kÕt thóc! <color=red>"..GetMissionS(1).."<color> Th¾ng råi! <color=red>"..GetMissionS(2).."<color>!";
-			WinBonus(1)
-		else
-			Msg2MSAll(MISSIONID, "Thi ®Êu ®· kÕt thóc, <color=yellow>"..GetMissionS(2).."<color> th¾ng ®­îc trËn nµy!")
-			str = "Thêi gian thi ®Êu ®· kÕt thóc! <color=red>"..GetMissionS(2).." Th¾ng råi! <color=red>"..GetMissionS(1).."<color>!";
-			WinBonus(2)
-		end;
+		Msg2MSAll(MISSIONID, "<#>â###ß##¸£#,"..GetMissionS(2).."<#>##£#!")
+		str = "<#> <#>â###£±##ß##¸£#!"..GetMissionS(2).."<#>£#µ#!"..GetMissionS(1).."<#>!";
+		WinBonus(2)
 	end;
-	AddGlobalNews(str);
-	SetMissionV(MS_STATE , 3);
-	CloseMission(MISSIONID);
+end;
+AddGlobalNews(str);
+SetMissionV(MS_STATE , 3);
+CloseMission(MISSIONID);
 end;
 
 function GetTotalLevel()

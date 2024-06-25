@@ -14,7 +14,7 @@ end
 
 local tbUseOnlyInMap = 
 {
-	586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,53
+	586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604
 }
 local checkOnlyUseInMap = function()
 	local nMapId = SubWorldIdx2MapCopy(SubWorld)
@@ -55,23 +55,36 @@ function callboss(szBossname, nBossLevel, nBossId)
 	end
 	return 0
 end
-function OnTimeout(nNpcIndex)
-DelNpc(nNpcIndex);
-end
+
 function main(nItemIdx)
+                       local nSubWorldID = GetWorldPos();
+                        if (nSubWorldID == 11) or (nSubWorldID == 78) or (nSubWorldID == 1) or (nSubWorldID == 162)  or (nSubWorldID == 37)  or (nSubWorldID == 80)  or (nSubWorldID == 176)  or (nSubWorldID == 555)  or (nSubWorldID == 20)  or (nSubWorldID == 99)  or (nSubWorldID == 100)  or (nSubWorldID == 101)  or (nSubWorldID == 121)  or (nSubWorldID == 153)  or (nSubWorldID == 174)  or (nSubWorldID == 175) or (nSubWorldID == 242) or (nSubWorldID == 243) or (nSubWorldID == 244) or (nSubWorldID == 245) or (nSubWorldID == 246) or (nSubWorldID == 247) or (nSubWorldID == 248)   or (nSubWorldID == 53) then
+Msg2Player("TriÖu håi Boss")
+		else
+   Say("ChØ ®­îc th¶ ë thÊt ®¹i thµnh thÞ vµ th«n trÊn vµ ®¶o tÈy tñy.",0)
+return 1
+end
+	--local nSubWorldID = GetWorldPos();
+	--	if nSubWorldID == 53 then
+--Say("Kh«ng thÓ  th¶ t¹i Ba L¨ng HuyÖn")
+--return 1
+--end
+
 	if checkfightstate() ~= 1 then
 		return 1
 	end
-	local nMapId,nPosX,nPosY = GetWorldPos()
-		local mapidx = SubWorldID2Idx(nMapId)
-	local npcindex = AddNpcEx(1335, 95, random(0,4), SubWorldID2Idx(nMapId), nPosX*32, nPosY*32, 1, "Ng­êi TuyÕt LuyÖn Skill", 1)
-	SetNpcParam(npcindex, 1, 1335)
-	SetNpcScript(npcindex, "\\script\\missions\\boss\\sieuboss\\heart_death222.lua");
-	 AddTimer(24*60*60* 18, "OnTimeout", npcindex);--SetNpcTimer(npcindex, 40*60*18);
+	
 	--if %checkOnlyUseInMap() ~= 1 then
 		--Msg2Player("Kh«ng thÓ sö dông vËt phÈm nµy t¹i ®©y.")
 	--	return 1
 	--end
 	
+	local szBossname, nBossLevel, nBossId = getbossinfo(nItemIdx)
+	
+	if callboss(szBossname, nBossLevel, nBossId) ~= 1 then
+		Msg2Player("TriÖu håi Boss thÊt b¹i, xin thö l¹i")
+		return 1
+	end
+
 	return 0
 end

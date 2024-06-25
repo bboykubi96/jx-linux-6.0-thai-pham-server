@@ -25,7 +25,7 @@ TASK_ID_FIRST	TASK_ID_LAST	TASK_NAME	TASK_DESCRIBE
 23		天忍教出师任务	（取消）
 24		天忍教出师任务	（取消）
 25		练轻功任务：木桩/沙袋/木人	
-26		江津村新手任务：打沙袋(取消)	（取消）
+26		江津村新手任务：打沙袋(取消)	（取消
 27		江津村新手任务：打木人(取消)	（取消）
 28		巴陵县新手任务：打木桩(取消)	（取消）
 29		巴陵县新手任务：打沙袋(取消)	（取消）
@@ -94,7 +94,7 @@ TASK_ID_FIRST	TASK_ID_LAST	TASK_NAME	TASK_DESCRIBE
 246		联赛使用 —— 张帆	
 250		中秋活动谜语题目的编号	
 251		中秋活动谜语题目的答案编号	
-			
+255		Task Timer Delay HDD				
 256(end)			
 			
 			

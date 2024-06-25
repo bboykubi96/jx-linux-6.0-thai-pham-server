@@ -1,9 +1,9 @@
--- ËÎ½ğµÀ¾ßÁîÅÆ,3·ÖÖÓÄÚ,¸½½ü¼º·½Íæ¼ÒÅÜËÙÔö¼Ó30%,¹¥ËÙÔö¼Ó50%
--- Liu Kuo
--- 2004.12.18
-Include( "\\script\\item\\checkmapid.lua" )
+-- script viet hoa By http://tranhba.com  tèng kim ®¹o cô lÖnh bµi ,3 phót bªn trong , phô cËn mÊy phe nhµ ch¬i ch¹y tèc gia t¨ng 30%, c«ng tèc gia t¨ng 50% 
+-- script viet hoa By http://tranhba.com  Liu Kuo 
+-- script viet hoa By http://tranhba.com  2004.12.18 
+Include( "\\script\\item\\checkmapid.lua" ) 
 
-function EatMedicine()
-	CastSkill( 492, 1);		--ÅÜËÙÔö¼Ó30%,¹¥ËÙÔö¼Ó50%
-	Msg2Player("B¹n ®· sö dông 1 lÖnh bµi");
+function EatMedicine() 
+CastSkill( 492, 1); -- script viet hoa By http://tranhba.com  ch¹y tèc gia t¨ng 30%, c«ng tèc gia t¨ng 50% 
+Msg2Player("Ng­¬i sö dông mét lÖnh bµi "); 
 end

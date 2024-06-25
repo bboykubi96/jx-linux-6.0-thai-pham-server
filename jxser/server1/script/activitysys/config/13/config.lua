@@ -224,7 +224,7 @@ tbConfig[12] = --一个细节
 	},
 	tbActition = 
 	{
-		--{"AddDialogOpt",	{" n b秐  m韎",13} },
+		{"AddDialogOpt",	{" n b秐  m韎",13} },
 	},
 }
 tbConfig[13] = --一个细节

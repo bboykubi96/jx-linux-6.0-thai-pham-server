@@ -4,7 +4,6 @@
 -- Update: Dan_Deng(2003-08-17)
 
 -- Á¶ÖÆ»ìÔªÁé¢¶
-Include("\\script\\lib\\awardtemplet.lua")
 function refine()
 	DynamicExecute("\\script\\global\\jingli.lua", "dlg_entrance", PlayerIndex)
 end
@@ -35,19 +34,17 @@ function main(sel)
 					"Kh«ng giao dÞch/no")
 			end
 		else
-			Say("C¸c lo¹i thuèc trÞ th­¬ng bæn tiÖm ®Òu cã, ng­¬i muèn mua thuèc g× ?",
-				2,
+			Say("C¸c lo¹i thuéc trÞ th­¬ng bæn tiÖm ®Òu cã, ng­¬i muèn mua thuèc g× ?",
+				3,
 				"Giao dÞch/yes",
-				-- "Ta muèn ®iÒu chÕ hçn nguyªn linh /refine",
+				"Ta muèn ®iÒu chÕ hçn nguyªn linh /refine",
 				"Kh«ng giao dÞch/no")
 		end
 	else
-		Say("C¸c lo¹i thuèc trÞ th­¬ng bæn tiÖm ®Òu cã, ng­¬i muèn mua thuèc g× ?",
+		Say("C¸c lo¹i thuéc trÞ th­¬ng bæn tiÖm ®Òu cã, ng­¬i muèn mua thuèc g× ?",
 			3,
 			"Giao dÞch/yes",
-			"Mua M¸u Nhanh (2000 l­îng - b×nh)/nhanhquamuamau",
-
-			-- "Ta muèn ®iÒu chÕ hçn nguyªn linh /refine",
+			"Ta muèn ®iÒu chÕ hçn nguyªn linh /refine",
 			"Kh«ng giao dÞch/no")
 	end
 end
@@ -57,22 +54,4 @@ function yes()
 end
 
 function no()
-end
-
-function nhanhquamuamau()
-	local pri = 100
-	local totalcount =CalcFreeItemCellCount();
-	local money = GetCash()
-	local moneymin = (money - mod(money,pri)) / pri
-	if totalcount == 0 then 
-                       Say("<color=yellow>§¹i hiÖp ®· cã ®Çy r­¬ng m¸u.",0)
-	return
-	end
-	if money>=totalcount*2000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= totalcount }}, format("Get %s", "Than pham 1"))
-	Pay(totalcount*2000)
-	else
-		Say("§¹i hiÖp kh«ng ®ñ ng©n l­îng ®Ó mua m¸u nhanh.")
-		return
-	end
 end

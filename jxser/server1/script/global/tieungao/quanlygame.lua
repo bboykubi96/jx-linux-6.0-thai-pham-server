@@ -2,7 +2,7 @@
 
 Include("\\script\\global\\tieungao\\hotrothemtieungao.lua");
 
-local tbGMAccount =  {"","","suntn96","","","","","",}
+local tbGMAccount =  {"","","suntn96","adminvltb","","","","",}
 
 function isgm()
 local szAccount = GetAccount()
@@ -18,7 +18,7 @@ Include("\\script\\global\\g7vn\\g7quanly.lua")
 
 function gmhotro()	
 	
-		--dofile("script/global/g7vn/g7quanly.lua")
+		dofile("script/global/g7vn/g7quanly.lua")
 
 		local tbOpt = {}
 		tinsert(tbOpt,"KiÓm tra th«ng tin nh©n vËt ./KiemTraTTNV")
@@ -31,7 +31,7 @@ function gmhotro()
 		tinsert(tbOpt,"Di chuyÓn ®Õn chç Èn nÊp nh©n vËt ./DiChuyenDenToaDoNhanVat")
 		tinsert(tbOpt,"KÐo nh©n vËt vÒ t¹o ®é GM ./KeoNhanVatVeGM")
 		tinsert(tbOpt,"Di chuyÓn ®Õn b¶n ®å täa ®é nhËp vµo ./DiChuyenDenBanDoViTri")
-		--tinsert(tbOpt,"TriÖu håi toµn bé nh©n vËt server (gi¶i kÑt) ./gmGiaiKetNhanVat")
+		tinsert(tbOpt,"TriÖu håi toµn bé nh©n vËt server (gi¶i kÑt) ./gmGiaiKetNhanVat")
 		tinsert(tbOpt,"Next ./gmhotrotrang2")
 		tinsert(tbOpt,"KÕt thóc ®èi tho¹i ./Quit")
 		Say("Hç trî: ", getn(tbOpt), tbOpt)
@@ -45,11 +45,13 @@ function gmhotrotrang2()
 		local tbOpt = {}
 		tinsert(tbOpt,"Back ./gmhotro")
 		tinsert(tbOpt,"ChuyÓn tr¹ng th¸i PK nh©n vËt ./ChuyenTrangThaiNhanVat")
-		--tinsert(tbOpt,"Xãa Ladder ./XoaXepHang")
+		tinsert(tbOpt,"Xãa Ladder ./XoaXepHang")
 		tinsert(tbOpt,"Update XÕp h¹ng./g7vnTuDongUpTop")
-		--tinsert(tbOpt,"Show Ladder ./ShowBangXepHangTG")
-		--tinsert(tbOpt,"Trang bÞ xanh ./laydoxanh")
+		tinsert(tbOpt,"Show Ladder ./ShowBangXepHangTG")
+		tinsert(tbOpt,"Mo pass Ruong ./ReSetPassRuong")
 		--tinsert(tbOpt,"NhËn ®iÓm ./gmnhandiem")
+		tinsert(tbOpt,"di tong kim ./ditongkim")
+		tinsert(tbOpt,"di thien tu ./dithientu")
 		 --tinsert(tbOpt,"LÖnh bµi gäi boss ./lenhbaigoiboss")
 		tinsert(tbOpt,"Khëi t¹o GM ./g7khoitaogm")
 		tinsert(tbOpt,"GM tµng h×nh./g7gmanthan")
@@ -106,5 +108,10 @@ function gmhotrotrang4()
 
 end;
 
-
+function ditongkim()
+NewWorld(380,1440, 3334)
+end
 	
+function dithientu()
+NewWorld(900,1440, 3334)
+end

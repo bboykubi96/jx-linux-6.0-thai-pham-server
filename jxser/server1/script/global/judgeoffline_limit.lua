@@ -431,6 +431,11 @@ end;
 
 
 function StallCheckPermitRegion()
+local knb= CalcEquiproomItemCount(4,1496,1,1);
+if knb>0 then
+Talk(1, "", "KNB kh«ng thÓ bµy b¸n")
+return
+end
 	if offlineCheckPermitRegion() == 1 then
 		return 1
 	else

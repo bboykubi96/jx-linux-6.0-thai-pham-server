@@ -1,17 +1,17 @@
 IncludeLib("RELAYLADDER");
 IncludeLib("TONG")
-Include("\\script\\vng_lib\\files_lib.lua")
-Include("\\script\\activitysys\\functionlib.lua")
-Include("\\script\\lib\\log.lua")
-Include("\\script\\worldrank\\vngglobalvar.lua")
-Include("\\script\\worldrank\\vngtop10.lua")
-Include("\\script\\vng_lib\\files_lib.lua")
-Include("\\script\\global\\autoexec_head.lua")
-IncludeLib("FILESYS")
+
 function Reoff()
-   
+	-- if GetName()=="NgäcÙS­¬ng1" then
+		-- return
+	-- end	
+	-- if GetTask(3003) ~= 10 then
+	-- return
+	-- end
 	if GetLevel()>20 then
-		
+		if GetTask(3003) == 10 then
+		RankRace()
+		else
 		raktdct()
 		rakfac()
 		rakcashfac()
@@ -20,32 +20,18 @@ function Reoff()
 		rakd()
 		trip()
 		valu()
-						
-						
+		end
 	end
 end
-
-Trungsinh={
-	[0]={0},
-	[1]={200},
-	[2]={400},
-	[3]={600},
-	[4]={800},
-	[5]={1000},
-	[6]={1200},
-}
-
-
-function rankList()
- end
-
+function RankRace()
+	Ladder_NewLadder(10299, GetName(),GetLevel(),1);
+end
 function raktdct()
-	CapDo = Trungsinh[ST_GetTransLifeCount()][1] + GetLevel() 	
-	if (GetCamp() ~= 4)  and (GetCamp() ~= 0) then
-	Ladder_NewLadder(10287, GetName(),CapDo,0,GetLastFactionNumber(),GetExpPercent());
+	if (GetCamp() ~= 4) and (GetCamp() ~= 0)  then
+	Ladder_NewLadder(10287, GetName(),GetLevel(),1);
 	end
-	
 end
+
 
 function rakd()
 	Ladder_NewLadder(10264, GetName(),GetRepute(),1);
@@ -56,19 +42,20 @@ function trip()
 end
 
 function valu()
-	Ladder_NewLadder(10261,GetName(),GetAllEquipValue(),1);
+	--Ladder_NewLadder(10261,GetName(),GetAllEquipValue(),1);
 end
 
 
 function hoangda()
 	if (GetCamp() == 4) or (GetCamp() == 0)  then
-		Ladder_NewLadder(10119, GetName(),GetLevel(),1);
+			Ladder_NewLadder(10119, GetName(),GetLevel(),1);
 	end
 end
 
 
 function rakcash()
-	Ladder_NewLadder(10288, GetName(),GetCash(),1);
+local nCash = GetBoxMoney() + GetCash()
+	Ladder_NewLadder(10288, GetName(),nCash,1);
 end
 
 
@@ -132,6 +119,8 @@ function rakcashfac()
 		end
 	end
 end
+
+
 
 
 

@@ -1,7 +1,7 @@
-function GetDesc(nItem)
-	return ""
-end
+function GetDesc(nItem) 
+return "" 
+end 
 
-function main(nItem)
-	return 1
-end
+function main(nItem) 
+return 1 
+end 

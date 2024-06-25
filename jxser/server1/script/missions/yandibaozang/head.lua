@@ -2,7 +2,8 @@ IncludeLib("RELAYLADDER")
 IncludeLib("FILESYS")
 IncludeLib("TITLE");
 IncludeLib("SETTING");
-Include("\\script\\lib\\objbuffer_head.lua")	-- Message khi giÕt ®­îc Boss cuèi tÝnh n¨ng Viªm §Õ -Modifiled by AnhHH - 20110725
+Include("\\script\\lib\\objbuffer_head.lua")
+
 -------------------------------------------------------------------------------------------------------------------------------------
 
 YDBZ_MISSION_MATCH			 = 50
@@ -32,23 +33,24 @@ YDBZ_PLAY_LIMIT_COUNT		 = 1852
 YDBZ_ITEM_YANDILING			 = 1853
 YDBZ_MISSIOM_PLAYER_KEY		 = 1854
 YDBZ_ITEM_YANDILING_SUM		 = 1855
+YDBZ_TEAMS_TICHLUY			 = 1856		--Tich Luy Doi Thuong
 YDBZ_LIMIT_SIGNUP			 = 5			--Thêi Gian B¸o Danh 5 Phót
 YDBZ_LIMIT_FINISH			 = 30*60		--KÕt Thóc B¸o Danh Phót Thø 30
 YDBZ_LIMIT_BOARDTIME			 = 5*60
 YDBZ_TIME_WAIT_STATE1		 = 10
 YDBZ_TIME_WAIT_STATE3		 = 30
 YDBZ_LIMIT_SETFIGHTSTATE		 = 3
-YDBZ_LIMIT_TEAMS_COUNT		 = 15
-YDBZ_LIMIT_PLAYER_LEVEL		 = 90			-- Yªu C©u CÊp 150 (MÆc §Þnh 120)
-YDBZ_LIMIT_WEEK_COUNT		 = 21			--1 TuÇn §i 21 L©n (MÆc §Þnh 10)
-YDBZ_LIMIT_DAY_COUNT			 = 2		--1 Ngµy §i 3 LÇn
+YDBZ_LIMIT_TEAMS_COUNT		 = 25			--Sè L­îng Tæ §æi Tham Gia Viªm §Õ MÆc §Þnh 15
+YDBZ_LIMIT_PLAYER_LEVEL		 = 150			-- Yªu C©u CÊp 150
+YDBZ_LIMIT_WEEK_COUNT		 = 42			--1 TuÇn §i 42 L©n
+YDBZ_LIMIT_DAY_COUNT			 = 8			--1 Ngµy §i 6 LÇn
 YDBZ_PAIHANG_ID			 = 10252
 YDBZ_LIMIT_ITEM			 = {{6,1,1604},1,"Anh Hïng ThiÕp"}
 YDBZ_LIMIT_DOUBEL_ITEM		 = {{6,1,1617},1,"Viªm §Õ LÖnh"}
-YDBZ_AWARD_EXP			 = 0		--§i Qua 1 ¶i NhËn §­îc 700 TriÖu Kinh NghiÖm
-YDBZ_Faninl_AWARD_EXP		 = 0		--GiÕt 3 Boss Trong ¶i 10 NhËn §­îc 800 TriÖu Kinh NghiÖm
-YDBZ_KILLPLAYER_EXP			 = 0		--GiÕt 1 M¹ng Ng­êi NhËn §­îc 500 TriÖu Kinh NghiÖm
-YDBZ_KILLLASTBOSS_EXP		 = 0		--Tiªu DiÖt 1 Boss NhËn §­îc 300 TriÖu Kinh NghiÖm
+YDBZ_AWARD_EXP			 = 5000000	--§i Qua 1 ¶i NhËn §­îc 500 TriÖu Kinh NghiÖm
+YDBZ_Faninl_AWARD_EXP		 = 10000000	--GiÕt 3 Boss Trong ¶i 10 NhËn §­îc 1 Tû Kinh NghiÖm
+YDBZ_KILLPLAYER_EXP			 = 3000000	--GiÕt 1 M¹ng Ng­êi NhËn §­îc 300 TriÖu Kinh NghiÖm
+YDBZ_KILLLASTBOSS_EXP		 = 7000000	--Tiªu DiÖt 1 Boss NhËn §­îc 700 TriÖu Kinh NghiÖm
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 YDBZ_BOAT_POS = {
 	[1]={60032,104832},
@@ -124,27 +126,17 @@ YDBZ_tbaward_item = {
 	},
 
 	[2] = {
-	--	{50,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
+		{50,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
 		{100,15,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0},
 	},
 	[3] = {
-	--	{100,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
+		{100,1,{6,1,1605,1,0,0},1,"H×nh nh©n",1},
 		{100,30,{1, 2, 0, 5, 0, 0},0,"Ngò Hoa Ngäc Lé Hoµn",0},
-	},
-	
-	[4] = {
-	--	{szName="Minh Ph­îng LÖnh",tbProp={6,1,2371,1,0,0}, nCount = 1,nRate=0.5},
-	--	{szName="MËt TÞch ThÊt TruyÒn M«n Ph¸i",tbProp={6,1,4804,1,0,0}, nCount = 1,nRate=0.2},
-	},
-	[5] = {
-		--{szName="Hµnh HiÖp LÖnh",tbProp={6,1,2566,1,0,0}, nCount = 5},
-	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
-	--{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=1},
 	},
 }
 
 YDBZ_tbaward_item_ex = {
-	--[1] = {szName="Viªm §Õ BÝ B¶o",tbProp={6,1,2805,1,0,0},nCount=1,nBindState=-2,},		-- phan qua Viem De
+	--[1] = {szName="Viªm §Õ BÝ B¶o",tbProp={6,1,2805,1,0,0},nCount=1,nBindState=-2,},-- phan qua Viem De
 }
 
 YDBZ_NPC_ATTRIDX_PROCEED		 = 1

@@ -20,7 +20,7 @@ function main()
 		Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
 		SetFightState(1)
 		SetPunish(0);
-	
+	AddSkillState(963, 1, 0, 18*3)
 		ForbidEnmity( 1 )
 	
 		--SetPKFlag(1)

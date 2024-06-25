@@ -7,7 +7,7 @@ function main(sel)
 	Talk(1, "", "H·y gia nhËp m«n ph¶i ®Ó tiÕp tôc b«n tÈu !!!");
 		return
 	end 
-if (GetLevel() >= 80) then 
+if (GetLevel() >= 5) then 
 SetFightState(1); 
 NewWorld(336, 1119, 3192); 
 AddTermini(224); 

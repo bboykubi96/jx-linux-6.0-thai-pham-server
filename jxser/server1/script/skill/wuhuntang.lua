@@ -34,23 +34,21 @@ SKILLS={
 		skill_cost_v={{{1,10},{20,10}}}
 	},
 	wuhuntangdaofa={ --Îä»êÌÃµ¶·¨
-		addphysicsdamage_p={{{1,10},{20,150}},{{1,-1},{2,-1}},{{1,11},{2,11}}},
+		addphysicsdamage_p={{{1,10},{20,150}},{{1,-1},{2,-1}},{{1,1},{2,1}}},
 		deadlystrikeenhance_p={{{1,2},{20,25}},{{1,-1},{2,-1}}}
 	},
 	gongzhongbingxing={ --¹«ÖÒ±üÐÔ
-		--meleedamagereturn_p={{{1,-1},{20,-15}},{{1,-1},{2,-1}}},
-		--rangedamagereturn_p={{{1,-1},{20,-15}},{{1,-1},{2,-1}}},
-		anti_enhancehit_rate={{{1,0},{34,0},{35,5},{39,5},{40,10},{50,10}},{{1,-1},{2,-1}}},
-		block_rate={{{1,0},{34,0},{35,5},{39,5},{40,10},{50,10}},{{1,-1},{2,-1}}},
-		skill_desc=
-			function(level)
-				return "Mçi <color=orange> "..floor(Link(level,SKILLS.gongzhongbingxing.autocastskill[3]) / 18/256).." gi©y <color>tù ®éng nhËn ®­îc <color=orange>2 tÇng [Né]<color>,"
-				.."Tèi ®a cã <color=orange>"..floor(Link(level,SKILLS.gongzhongbingxing.special_point_base[3])).."TÇng [Né]<color>"
-			end,
+		meleedamagereturn_p={{{1,1},{20,15}},{{1,-1},{2,-1}}},
+		rangedamagereturn_p={{{1,1},{20,15}},{{1,-1},{2,-1}}},
+		--skill_desc=
+		--	function(level)
+		--		return "Mçi <color=orange> "..floor(Link(level,SKILLS.gongzhongbingxing.autocastskill[3]) / 18/256).." gi©y <color>tù ®éng nhËn ®­îc <color=orange>2 tÇng [Né]<color>,"
+		--		.." tèi ®a nhËn <color=orange>"..floor(Link(level,SKILLS.gongzhongbingxing.special_point_base[3])).."T»ng [Né]<color>"
+		--	end,
         autocastskill = {
-			{{1,1989*256 + 1},{20,1989*256 + 20}},--Ä¿±ê¼¼ÄÜid * 256 + µÈ¼¶
-			{{1,-1},{20,-1}},-- Îª1±íÊ¾ËãCD£¬²»ËãCDÌî-1
-			{{1, (3*18*256 + 100)},{20, (3*18*256 + 100)}},-- ¼ä¸ôÖ¡Êý * 256 + ·¢¶¯¼¸ÂÊ
+		--	{{1,1989*256 + 1},{20,1989*256 + 20}},--Ä¿±ê¼¼ÄÜid * 256 + µÈ¼¶
+		--	{{1,-1},{20,-1}},-- Îª1±íÊ¾ËãCD£¬²»ËãCDÌî-1
+		--	{{1, (3*18*256 + 100)},{20, (3*18*256 + 100)}},-- ¼ä¸ôÖ¡Êý * 256 + ·¢¶¯¼¸ÂÊ
 		},
         special_point_base={
 			{{1,1976},{20,1976}},-- Ä¿±ê¼¼ÄÜid
@@ -82,8 +80,8 @@ SKILLS={
 		},
 		skill_desc=
 			function(level)
-				return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.hanshanji.cost_sp[3])).." tÇng [Né]<color>\n"
-				.."TØ lÖ håi phôc sinh lùc: <color=orange>-"..floor(Link(level,SKILLS.hanshanji_zi2.lifereplenish_dec_p[1])).."%<color>\n"
+		--		return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.hanshanji.cost_sp[3])).." tÇng [Né]<color>\n"
+				return "TØ lÖ håi phôc sinh lùc: <color=orange>-"..floor(Link(level,SKILLS.hanshanji_zi2.lifereplenish_dec_p[1])).."%<color>\n"
 			end,
 		missle_speed_v={{{1,22},{20,30},{21,32},{22,32}}},
 		skill_attackradius={{{1,22*16},{20,30*16},{21,30*16}}},
@@ -118,11 +116,8 @@ SKILLS={
 		skill_cost_v={{{1,28},{20,48}}}
 	},
 	baijiangguzhanhan={ --¹Â½«°ÙÕ½º¨
-		attackspeed_v={{{1,1},{30,43},{31,43}},{{1,-1},{30,-1}}},
-	    attackspeed_yan_v={{{1,1},{30,43},{31,43}},{{1,-1},{30,-1}}},
-		anti_block_rate={{{1,1},{30,30},{31,30}},{{1,-1},{30,-1}}},
-		me2metaldamage_p={{{1,20},{30,20},{31,20}},{{1,-1},{30,-1}}},
-		metal2medamage_p={{{1,20},{30,20},{31,20}},{{1,-1},{30,-1}}},
+		attackspeed_v={{{1,1},{28,25},{28,25}},{{1,-1},{30,-1}}},
+	    	attackspeed_yan_v={{{1,1},{28,45},{28,45}},{{1,-1},{30,-1}}},
 	},
 	jicanhunurou={ --¼¢²ÍºúÂ²Èâ
 		physicsenhance_p={{{1,25},{20,231}}},
@@ -146,7 +141,7 @@ SKILLS={
 	wumuyizhi={ --ÎäÄÂÒÅÖ¾
 		lock_life={
 			{{1,100},{35,3000},{36,3400}}, -- Ëø¶¨µÄÊýÖµ
-			{{1,18*1},{20,18*3},{30,18*4},{41,18*4}}, -- ³ÖÐøÊ±¼ä£¬ÒÔbuffµÄµÚÒ»¸öÊôÐÔÎª×¼
+			{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}, -- ³ÖÐøÊ±¼ä£¬ÒÔbuffµÄµÚÒ»¸öÊôÐÔÎª×¼
 			{{1,1},{20,1,}},-- 0£ºÎÞÐ§¹û£¬ 1£º²»ÄÜµÍÓÚËø¶¨Öµ£¬ 2£º²»ÄÜ¸ßÓÚËø¶¨Öµ£¬3£ºÖ»ÄÜµÈÓÚËø¶¨Öµ
 		},
 		cast_when_buff_removed = {
@@ -158,8 +153,11 @@ SKILLS={
 			{{1,1},{15,1},{20,1},{21,1}},
 			{{1,18},{20,18},{21,18}},
 		},
-		skill_mintimepercast_v={{{1,60*18},{20,50*18},{30,45*18},{40,40*18},{41,40*18}}},
-		skill_mintimepercastonhorse_v={{{1,60*18},{10,55*18},{20,50*18},{30,45*18},{40,40*18},{41,40*18}}},
+		freezetimereduce_p={{{1,50},{35,1000}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
+		sorbdamage_p={{{1,50},{35,500}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
+		lifereplenish_v={{{1,100},{35,100}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
+		skill_mintimepercast_v={{{1,45*18},{35,30*18},{40,30*18}}},
+		skill_mintimepercastonhorse_v={{{1,45*18},{35,30*18},{40,30*18}}},
 		anti_do_hurt_p={{{1,1},{35,35}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
 		anti_do_stun_p={{{1,1},{35,35}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
 		fasthitrecover_v={{{1,50},{35,1000}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
@@ -167,9 +165,9 @@ SKILLS={
 		skill_enhance={{{1,3},{35,100},{36,110}},{{1,18*1},{35,18*5},{40,18*7},{41,18*7}}},
 		skill_desc=
 			function(level)
-				return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.wumuyizhi.cost_sp[3])).." tÇng [Né]<color>\n"
-				.."Thi triÓn kü n¨ng, <color=orange>lËp tøc<color> xãa tr¹ng th¸i bÊt lîi cña b¶n th©n\n"
-				.."Trong thêi gian duy tr× tr¹ng th¸i kü n¨ng, t¨ng kh¶ n¨ng chiÕn ®Êu vµ sinh lùc kh«ng thÓ gi¶m ®Õn <color=orange>"..floor(Link(level,SKILLS.wumuyizhi.lock_life[1])).."<color> trë xuèng\n"
+		--		return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.wumuyizhi.cost_sp[3])).." tÇng [Né]<color>\n"
+				return "Thi triÓn kü n¨ng, <color=orange>lËp tøc<color> xãa tr¹ng th¸i bÊt lîi cña b¶n th©n\n"
+				.."Trong thêi gian duy tr× tr¹ng th¸i kü n¨ng, t¨ng kh¶ n¨ng chiÕn ®Êu vµ sinh lùc tù phôc håi <color=orange>"..floor(Link(level,SKILLS.wumuyizhi.lifereplenish_v[1])).." ®iÓm<color> mçi n÷a gi©y\n"
 				.."Thêi gian duy tr×: <color=orange>"..floor(Link(level,SKILLS.wumuyizhi.lock_life[2]) / 18).." gi©y<color>, "
 				.."Thêi gian kh«i phôc chiªu thøc: <color=orange>"..floor(Link(level,SKILLS.wumuyizhi.skill_mintimepercast_v[1]) / 18).." gi©y<color>\n"
 			end,
@@ -181,7 +179,7 @@ SKILLS={
 	},
 	keyinxiongnuxue={ --¿ÊÒûÐÙÅ«Ñª
 		physicsenhance_p={{{1,12*1.05},{15,100*1.05},{20,206*1.05},{28,375*1.05},{29,396*1.05}}},
-		seriesdamage_p={{{1,20},{15,20},{20,60},{21,62}}},
+		seriesdamage_p={{{1,20},{15,20},{20,60},{30,100},{31,102}}},
 		firedamage_v={
 			[1]={{1,70*1.05},{15,150*1.05},{20,285*1.05},{28,501*1.05},{29,528*1.15}},
 			[3]={{1,70*1.05},{15,200*1.05},{20,432*1.05},{28,803*1.05},{29,849*1.15}}
@@ -241,21 +239,35 @@ SKILLS={
 							}},	
 		skill_desc=
 			function(level)
-				return "Sau khi chÊm døt tr¹ng th¸i <color=yellow>Vò Môc Di Th­<color>, b¶n th©n håi sinh lùc: <color=orange>"..floor(Link(level,SKILLS.zhongwuliufengBUFF.resume_life_p[1])).."% x Sinh lùc tèi ®a b¶n th©n<color>\n\n"
+				return "<color=water>[Trung Vò L­u Phong]<color>, ".."Gióp b¶n th©n tho¸t nguy khi bÞ tÊn c«ng, sinh lùc phôc håi <color=orange>"..floor(Link(level,SKILLS.zhongwuliufengBUFF.lifereplenish_v[1]))..
+				" ®iÓm<color> mçi n÷a gi©y, duy tr× trong <color=orange>"..floor(Link(level,SKILLS.zhongwuliufengBUFF.lifereplenish_v[2]) / 18).."<color> gi©y \n"
 			end,
+		autoreplyskill=
+		{
+			{
+				{1,1991*256 + 1},{20,1991*256 + 20},{21,1991*256 + 20}
+			},
+			{
+				{1,-1},{20,-1}
+			},
+			{
+				{1,15*18*256 + 1},{20,15*18*256 + 15},{21,15*18*256 + 15}
+			}
+		},
 	},
 	zhongwuliufengBUFF={ --ÖÒÎäÁ÷·ç»ØÑªBUFF
 		resume_life_p = {
 			{{1,30},{28,60},{34,70},{35,71}}, -- »Ø°Ù·ÖÖ®¼¸,¸ºÊýÎÞÐ§
 			{{1,1},{2,1}} -- ³ÖÐøÊ±¼ä£¬Ã¿Ö¡ÉúÐ§
 		},
+		lifereplenish_v={{{1,300},{35,2500}},{{1,18*1},{35,18*1},{40,18*7},{41,18*7}}},
 	},
 	chanjianchuning={ --²ù¼é³ýØú
-		physicsenhance_p={{{1,17},{10,170},{20,340},{30,510},{40,680},{50,850},{51,850}}},
-		seriesdamage_p={{{1,40},{15,40},{20,80},{21,82}}},
+		physicsenhance_p={{{1,10},{15,80},{20,165},{28,352*1.05},{29,369*1.15},{37,862},{38,895}}},
+		seriesdamage_p={{{1,40},{15,40},{20,80},{35,143},{36,145}}},
 		firedamage_v={
-			[1]={{1,15},{10,150},{20,300},{50,750},{51,750}},
-			[3]={{1,15},{10,150},{20,300},{50,750},{51,750}}
+			[1]={{1,60},{15,120},{20,350},{28,712*1.05},{29,994*1.15}},
+			[3]={{1,60},{15,160},{20,645},{28,1752*1.05},{29,2889*1.15}}
 		},
 		reset_bufftime = {
 			{{1,1988},{20,1988}}, -- Ä¿±ê¼¼ÄÜid
@@ -270,7 +282,7 @@ SKILLS={
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,8},{10,8}}},
 		missle_speed_v={{{1,40},{20,40}}},
-		skill_attackradius={{{1,480},{20,480}}},
+		skill_attackradius={{{1,200},{20,200}}},
 		skill_skillexp_v={{	{1,300},
 												{2,600},
 												{3,1000},
@@ -300,13 +312,13 @@ SKILLS={
 												}},	
 	},
 	feixuezhiren={ --·ÐÑªÖ®ÈÐ
-		seriesdamage_p={{{1,40},{15,40},{20,80},{21,82}}},
+		seriesdamage_p={{{1,10},{20,50},{21,52}}},
 		physicsenhance_p={{{1,10*0.5},{20,179*0.5}}},
 		firedamage_v={
 			[1]={{1,70*0.5},{20,360*0.5}},
 			[3]={{1,70*0.5},{20,420*0.5}}
 		},
-		skill_attackradius={{{1,480},{20,480}}},
+		skill_attackradius={{{1,120},{20,120}}},
 		skill_cost_v={{{1,28},{20,48}}}
 	},
 	jingzhongbaoguo= --¾«ÖÒ±¨¹ú
@@ -354,7 +366,7 @@ SKILLS={
 		},
 	},
 	wuhuntang_dunfa={ --Îä»êÌÃ¶Ü·¨
-		addphysicsdamage_p={{{1,15},{20,215}},{{1,-1},{2,-1}},{{1,12},{2,12}}},
+		addphysicsdamage_p={{{1,15},{20,215}},{{1,-1},{2,-1}},{{1,1},{2,1}}},
 		--attackratingenhance_p={{{1,35},{20,272}},{{1,-1},{2,-1}}},
 		attackratingenhance_p={{{1,20},{20,320}},{{1,-1},{2,-1}}},--Ôö¼ÓÃüÖÐÂÊ LLX140722
 		addfiredamage_v={{{1,20},{30,315}},{{1,18*120},{30,18*360}}},
@@ -429,6 +441,9 @@ SKILLS={
 	qingyin_tiruilv1={ --ÇëÓ§ÌáÈñÂÃ
 		sorbdamage_yan_p={{{1,10},{15,8},{32,25}},{{1,36},{2,36}}},
 		anti_do_hurt_p={{{1,1},{15,3},{20,5},{25,6}},{{1,36},{2,36}}},
+		lifemax_p={{{1,5},{15,25},{20,30}},{{1,36},{31,36},{32,36}}},
+		lifemax_yan_p={{{1,5},{15,10},{25,15},{31,20},{33,21}},{{1,36},{31,36},{32,36}}},
+		allres_yan_p={{{1,1},{15,4},{25,15},{26,15}},{{1,36},{2,36}}},
 		anti_enhancehit_rate={{{1,1},{5,2},{10,3},{15,4},{20,5},{23,6},{26,7}},{{1,36},{20,36}}},
 		--lifereplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
 		--manareplenish_v={{{1,1},{15,4},{25,15},{26,15}},{{1,18},{2,18}}},
@@ -439,10 +454,10 @@ SKILLS={
 			{{1,0},{20,0}}, -- ÌîÁã
 			{{1,4},{20,4}}, -- ³Ô¼¸¸ö
 		},
-		skill_desc=
-			function(level)
-				return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.qingyin_tiruilv1.cost_sp[3])).." tÇng [Né]<color>\n"
-			end,
+		--skill_desc=
+		--	function(level)
+		--		return "<color=orange>§iÒu kiÖn thi triÓn: <color><color=yellow>"..floor(Link(level,SKILLS.qingyin_tiruilv1.cost_sp[3])).." tÇng [Né]<color>\n"
+		--	end,
 		--skill_desc=
 			--function(level)
 
@@ -463,16 +478,17 @@ SKILLS={
 		},
 	},
 	huishi_mielu={ --»ÓÊ¦ÃðÂ²
-		physicsenhance_p={{{1,55},{20,535},{23,686},{26,762}}},
-		seriesdamage_p={{{1,40},{15,40},{20,80},{21,82}}},
-		deadlystrike_p={{{1,10},{10,20},{20,40},{30,60},{40,80},{45,85}}},
+		physicsenhance_p={{{1,10},{15,80},{20,348},{23,520},{26,810}}},
+		seriesdamage_p={{{1,40},{15,40},{20,100},{21,102}}},
+		deadlystrike_p={{{1,6},{20,80},{23,103},{26,125}}},
+		fatallystrike_p={{{1,1},{20,50},{23,60},{25,70},{27,75},{30,85},{33,85}}},--Chi Tu
 		firedamage_v={
-			[1]={{1,10},{15,150},{20,500},{23,900},{26,1200}},
-			[3]={{1,10},{15,150},{20,500},{23,900},{26,1200}}
+			[1]={{1,60},{15,213},{20,541},{21,893},{22,1168}},
+			[3]={{1,60},{15,281},{20,772},{21,1292},{22,1304}}
 		},
 		--missle_speed_v={{{1,24},{20,24},{21,24}}},
 		missle_speed_v={{{1,55},{20,55},{21,55}}},--Ôö¼Óµ¶´äÑÌµÄ×Óµ¯·ÉÐÐËÙ¶È ByLLX 140722
-		skill_attackradius={{{1,480},{20,480},{21,480}}},
+		skill_attackradius={{{1,448},{20,512},{21,512}}},
 		skill_cost_v={{{1,48},{20,72},{23,79}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_collideevent={
@@ -509,11 +525,11 @@ SKILLS={
 												}},	
 	},
 	huishi_mielu_2={ --»ÓÊ¦ÃðÂ²µÚ2Ê½
-		physicsenhance_p={{{1,10},{15,60},{30,120},{40,200},{45,200}}},
+		physicsenhance_p={{{1,18},{15,120},{20,175},{23,241},{26,274}}},
 		seriesdamage_p={{{1,40},{15,40},{20,80},{21,82}}},
 		firedamage_v={
-			[1]={{1,1},{30,230},{31,230}},
-			[3]={{1,1},{30,400},{31,400}}
+			[1]={{1,12},{15,168},{20,210},{23,260},{26,285}},
+			[3]={{1,60},{15,240},{20,331},{23,440},{26,494}}
 		},
 		missle_speed_v={{{1,45},{20,45},{21,45}}},
 		skill_misslenum_v={{{1,1},{5,1},{20,3},{21,3}}},
@@ -521,8 +537,6 @@ SKILLS={
 	zhiyong_new={ --ÖÇÓÂ³¬Â×
 		lifemax_p={{{1,5},{25,60},{31,70},{32,70}},{{1,12*18*256},{20,12*18*256},{31,12*18*256},{32,12*18*256}}},
 		lifemax_yan_p={{{1,5},{25,60},{31,70},{32,70}},{{1,12*18*256},{20,12*18*256},{31,12*18*256},{32,12*18*256}}},
-		allres_yan_p={{{1,1},{30,25},{40,25}},{{1,12*18*256},{20,12*18*256},{31,12*18*256},{32,12*18*256}}},
-		allres_p={{{1,1},{30,25},{40,25}},{{1,12*18*256},{20,12*18*256},{31,12*18*256},{32,12*18*256}}}
 		},
 --		missle_speed_v={{{1,28},{20,32},{21,32}}},
 --		skill_attackradius={{{1,448},{20,512},{21,512}}},
@@ -533,11 +547,12 @@ SKILLS={
 
 		skill_desc=
 			function(level)
-				return "<color=water>[ChiÕt KÝch]<color> g©y cho ng­êi tÊn c«ng, kü n¨ng tÊn c«ng t¨ng: Gi¶m <color=orange>"..floor(-Link(level,SKILLS.zhiyong_chaolun1.skill_enhance[1]))..
-				"%<color> tèc ®é di chuyÓn trong <color=orange>"..floor(Link(level,SKILLS.zhiyong_chaolun1.skill_enhance[2]) / 18).."<color> gi©y \n"
+				return "<color=water>[ChiÕt KÝch]<color> g©y cho ng­êi tÊn c«ng, kü n¨ng tÊn c«ng: Gi¶m <color=orange>"..floor(-Link(level,SKILLS.zhiyong_chaolun1.skill_enhance[1]))..
+				"%<color> kü n¨ng tÊn c«ng trong <color=orange>"..floor(Link(level,SKILLS.zhiyong_chaolun1.skill_enhance[2]) / 18).."<color> gi©y \n"
 			end,
 
-		autoreplyskill={{{1,16777216+1973*256 + 1},{20,16777216+1973*256 + 20},{21,16777216+1973*256 + 21}},{{1,10*60*18},{20,10*60*18}},{{1,12*18*256 + 1},{20,12*18*256 + 20},{30,12*18*256 + 30},{31,12*18*256 + 30}}},
+		--autoreplyskill={{{1,16777216+1973*256 + 1},{20,16777216+1973*256 + 20},{21,16777216+1973*256 + 21}},{{1,10*60*18},{20,10*60*18}},{{1,12*18*256 + 1},{20,12*18*256 + 20},{30,12*18*256 + 30},{31,12*18*256 + 30}}},
+		autoreplyskill={{{1,1973*256 + 1},{20,1973*256 + 20},{21,1973*256 + 21}},{{1,10*60*18},{20,10*60*18}},{{1,12*18*256 + 1},{20,12*18*256 + 20},{30,12*18*256 + 30},{31,12*18*256 + 30}}},
 		skill_cost_v={{{1,48},{20,72},{23,79}}},
 		skill_eventskilllevel={{{1,1},{20,20}}},
 		skill_showevent={{{1,1},{10,1},{20,1}}},
@@ -573,7 +588,7 @@ SKILLS={
 	zhiyong_chaolun1=
 	{--ÖÇÓÂ³¬Â×¼õ¹¥»÷
 		skill_enhance={
-			[1]={{1,-1},{20,-20},{21,-22},{22,-24}},
+			[1]={{1,-1},{20,-20},{21,-24},{22,-32}},
 			[2]={{1,1*18},{20,5*18},{21,5*18}},
 			[3]={},
 			},

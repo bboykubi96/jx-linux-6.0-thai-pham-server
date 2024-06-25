@@ -487,19 +487,21 @@ function BattleWorld:CheckMapPermission(player, err)
 	local msg = ""
 	if (self.m_State ~= STATE_PREPARING and self.m_State ~= STATE_STARTWAR) then
 		msg = "HiÖn t¹i kh«ng thÓ vµo chiÕn tr­êng."
---	elseif (player:GetLevel() < 90) then
-	--	msg = "<color=red>Ng­êi ch¬i cÊp 90 vµ cÊp 90 trë lªn<color> míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
+         --elseif (player:GetTask(5969) < 3) then
+	--	msg = "<color=red>Ng­êi ch¬i ®¹t c·i l·o 3, cÊp 180 vµ cÊp 193 trë lªn<color> míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
+	elseif (player:GetLevel() < 150) then
+		msg = "<color=red>Ng­êi ch¬i cÊp 150 vµ cÊp 150 trë lªn<color> míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
 	elseif (tong == nil or tong == "") then
 		msg = "Thµnh viªn bang héi míi cã thÓ tham gia thÊt thµnh ®¹i chiÕn."
 	elseif (self:CheckWarriorTongChange(player:GetName(), tong) == 1) then
 		msg = "Ng­¬i ®· ph¶n bang kh«ng thÓ tiÕn vµo chiÕn tr­êng."
---	elseif (player:GetJoinTongTime() <  1 * 60) then
-	--	msg = "Gia nhËp bang héi<color=red>  1 giê trë lªn míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
+	-- elseif (player:GetJoinTongTime() < 1 * 60) then
+		-- msg = "Gia nhËp bang héi<color=red> 1 Gio hoÆc 1 Gio trë lªn míi ®­îc tham gia ThÊt Thµnh §¹i ChiÕn."
 	elseif (self.m_CityManager:IsViceroy(tong) == 0 and
 			self.m_SignupList[tong] == nil) then
 		msg = "Bang héi chiÕm thµnh hoÆc ®· b¸o danh míi cã thÓ tham gia thÊt thµnh ®¹i chiÕn"
-	elseif (self:GetTongWarriorCount(tong) >= PARAM_LIST.WORLD_TONGMEMBER) then
-		msg = "Sè ng­êi tham chiÕn cña quý bang ®· ®Õn møc cao nhÊt, h·y ®îi l¸t n÷a tham gia l¹i nhÐ."
+	--elseif (self:GetTongWarriorCount(tong) >= PARAM_LIST.WORLD_TONGMEMBER) then
+		--msg = "Sè ng­êi tham chiÕn cña quý bang ®· ®Õn møc cao nhÊt lµ 600 ng­êi, h·y ®îi l¸t n÷a tham gia l¹i nhÐ."
 	else
 		return 1
 	end
@@ -980,12 +982,6 @@ function Monster:Down(killer)
 		self.m_NpcIndex = 0
 		local name = killer:GetName()
 		local tong = BattleWorld:GetWarriorTong(name)
-		if name==nil or name=="" then
-			name="Kh«ngTªn"
-		end
-		if tong==nil or tong=="" then
-			tong="Kh«ngTªn"
-		end
 		local msg = format("[%s] long trô bÞ bang héi %s %s ph¸ vì!",
 						MAP_INFO[self.m_MapId].Name,
 						tong,

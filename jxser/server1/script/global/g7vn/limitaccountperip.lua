@@ -4,7 +4,7 @@ Include("\\script\\vng_lib\\files_lib.lua");
 LimitAccountPerIP = {};
 LimitAccountPerIP.Patch = "data/";
 LimitAccountPerIP.File = "limitip.log";
-LimitAccountPerIP.Max = 8;
+LimitAccountPerIP.Max = 3;
 LimitAccountPerIP.IP = {};
 
 function LimitAccountPerIP:AskSetMax()
@@ -90,7 +90,7 @@ function LimitAccountPerIP:Logout()
 end;
 
 function LimitAccountPerIP:KickOut(nPlayerIndex)
---	OfflineLive(nPlayerIndex);
+	OfflineLive(nPlayerIndex);
 	KickOutSelf();
 end;
 

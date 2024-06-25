@@ -3,54 +3,30 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\bonus_onlinetime\\head.lua")
 Include("\\script\\task\\random\\task_head.lua");
 Include("\\script\\baoruongthanbi\\head.lua");
+IncludeLib("LEAGUE")
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\task\\task_addplayerexp.lua");
+IncludeLib("FILESYS")
+Include("\\script\\global\\g7vn\\g7libgm.lua")
 
---tbRandomTask =
---{
---	211,
---	212,
---	213,
---	214,
---	215,
---	216,
---	222,
---	224,
---	225,
---	226,
---	227,
---	228,
---}
---
---
---tbOnlineAwardExp =
---{
---	{szName = "ßi”m kinh nghi÷m", nExp_tl = 15000000},
---}
---
---tbOnlineAwardHuyenTinh =
---{
---	{szName="Huy“n Tinh Kho∏ng Thπch ", tbProp={6,1,147,2,0,0}, nCount=10},
---	{szName="Huy“n Tinh Kho∏ng Thπch ", tbProp={6,1,147,3,0,0}, nCount=10},
---	{szName="Huy“n Tinh Kho∏ng Thπch ", tbProp={6,1,147,4,0,0}, nCount=10},
---}
---
---function IsActiveGetHuyenTinh()
---	local nCurDate = tonumber(GetLocalDate("%Y%m%d"))
---	if (nCurDate <= 20101110) then
---		return 1
---	else
---		return 0
---	end
---end
+
+tbKandy = {}
+tbKandy.szFile = "\\dulieu\\baodanh.ini"
+
+server_loadfile(tbKandy.szFile)
+
 
 function OnlineAward()
+
 
 	 OnlineAward_ResetStillOnlineNewDay()
 	
 	local tbOpt = {};
-		local szTitle = format("ßπi hi÷p, xin h∑y ch‰n ph«n th≠Îng:");
+		local szTitle = format("Khi online ÆÒ 12 ti’ng Æπi hi÷p b∏o danh Æ” nhÀn ph«n quµ h p d…n khi Open Server:");
 		tbOpt = 
 		{
-			"NhÀn ph«n th≠Îng thÍi gian Online/OnlineAward_GetBonus",
+			"Ta muËn b∏o danh v◊ Æ∑ online ÆÒ 12h/OnlineAward_GetBonus",
 			"Ki”m tra thÍi gian Online/OnlineAward_ShowTimeNow",
 			"K’t thÛc/Cancel",
 		}
@@ -59,12 +35,20 @@ function OnlineAward()
 end
 
 function OnlineAward_GetBonus()
+--if GetTask(3239) >= 1 then
+		--Say("ßπi hi÷p Æ∑ b∏o danh rÂi kh´ng c«n b∏o danh n˜a.")
+		--return
+	--end
 --	if CheckIPBonus() == 0 then
 --		Say("Hi÷n tπi Æπi hi÷p ch≠a th” nhÀn th≠Îng, h∑y thˆ lπi sau!",0)
 --		return
 --	end
+		--if GetLevel() < 105 then
+	--	Say("ßºng c p tı 105 trÎ l™n mÌi c„ th” nhÀn.")
+		--return
+	--end
 	if OnlineAward_Check_TransferLife() ~= 1 then
-		Say("Hi÷n tπi Æπi hi÷p ch≠a th” xem tin t¯c, h∑y thˆ lπi sau!",0)
+		Say("Hi÷n tπi Æπi hi÷p ch≠a th” xem tin t¯c v◊ ch≠a online Æ≠Óc giÍ nµo xin h∑y thˆ lπi sau!",0)
 		return		
 	end
 
@@ -72,25 +56,26 @@ function OnlineAward_GetBonus()
 	OnlineAward_StartTime()
 	
 	local nHour, nMin, nSec = OnlineAward_ShowTime()
-	if nHour < 1 then
-		Say("ßπi hi÷p ch≠a ÆÒ 1 giÍ tr™n mπng!",0)
+	if nHour < 12 then
+		Say("ßπi hi÷p ch≠a ÆÒ 12 giÍ online tr™n mπng kh´ng th” b∏o danh",0)
 		return
 	end
-	
-	if (PlayerFunLib:CheckTaskDaily(BNCQ_TASKID_GET_TIMES,6,"H´m nay Æπi hi÷p Æ∑ nhÀn th≠Îng 6 l«n rÂi. Ngµy mai quay lπi nh–!","<") ~= 1) then
+		if (PlayerFunLib:CheckTaskDaily(BNCQ_TASKID_GET_TIMES,1,"ßπi hi÷p Æ∑ b∏o danh rÂi","<") ~= 1) then
+
+	--if (PlayerFunLib:CheckTaskDaily(BNCQ_TASKID_GET_TIMES,1,"H´m nay Æπi hi÷p Æ∑ nhÀn th≠Îng 2 l«n rÂi. Ngµy mai quay lπi nh–!","<") ~= 1) then
 			return
 	end
 	
-	if CalcFreeItemCellCount() < 1 then
-		Say("Kh´ng ÆÒ 1 ´ trËng trong hµnh trang cÒa Æπi hi÷p!",0)
-		return
-	end
+--	if CalcFreeItemCellCount() < 30 then
+		--Say("Kh´ng ÆÒ 30 ´ trËng trong hµnh trang cÒa Æπi hi÷p!",0)
+		--return
+--	end
 	
 	local tbOpt = {};
 		local szTitle = format("ßπi hi÷p, xin h∑y ch‰n ph«n th≠Îng:");
 		tbOpt = 
 		{
-			"NhÀn ph«n th≠Îng B∏nh ch≠ng Æ∆c bi÷t/#OnlineAward_ConfirmBonus()",
+			"Ta Æ∑ ÆÒ Æi“u ki÷n b∏o danh/#OnlineAward_ConfirmBonus()",
 --			"NhÀn ph«n th≠Îng loπi 2/#OnlineAward_ConfirmBonus(2)",
 			"K’t thÛc/Cancel",
 		}
@@ -109,16 +94,32 @@ end
 
 
 function OnlineAward_ConfirmBonus()
+	--if CalcFreeItemCellCount() < 30 then
+	--	Say("Kh´ng ÆÒ 30 ´ trËng trong hµnh trang cÒa Æπi hi÷p!",0)
+		--return
+	--end
 --	if (nType == 1) then
-		if OnlineAward_PayTime(1*60*60) == 1 then	
+		if OnlineAward_PayTime(12*60*60) == 1 then	
 			PlayerFunLib:AddTaskDaily(BNCQ_TASKID_GET_TIMES,1)
+			batdaubaodanh()
 --			for i = 1, 10 do AddLenhBaiBH() end
 --			for i = 1, 10 do AddMocNhan() end
 --			if (IsActiveGetHuyenTinh() == 1) then
 --				tbAwardTemplet:GiveAwardByList(tbOnlineAwardHuyenTinh, "Online nhÀn th≠Îng");
 --			end
-			local tbAward = {szName="B∏nh Ch≠ng",tbProp={6,1,30086,1,0,0},nCount=10,nExpiredTime=20110220}
-			tbAwardTemplet:GiveAwardByList(tbAward, "[VNG][Lunar Year 2011][Online nhÀn th≠Îng]");
+--tl_addPlayerExp(10000000)
+--tbAwardTemplet:GiveAwardByList({{szName="PhÛ Qu˝ C»m Hπp",tbProp={6,1,2402,1,1,0,0}, nBindState=-2,nCount=2,},}, "test", 1);
+--tbAwardTemplet:GiveAwardByList({{szName="PhÛ Qu˝ C»m Hπp",tbProp={6,1,2402,1,1,0,0}, nBindState=-2,nCount=1,},}, "test", 1);
+--tbAwardTemplet:GiveAwardByList({{szName="Qu’ Hoa Tˆu",tbProp={6,1,125,1,1,0,0}, nBindState=-2,nCount=2,},}, "test", 1);
+--tbAwardTemplet:GiveAwardByList({{szName="Thi™n S¨n b∂o LÈ",tbProp={6,1,72,1,1,0,0}, nBindState=-2,nCount=2,},}, "test", 1);
+--SetTask(5110,GetTask(5110)+5)
+--SetTask(3239,1)
+--tbAwardTemplet:GiveAwardByList({{szName = "VLMT",tbProp={6,1,26,1,1},nCount=1,nExpiredTime=10080,nBindState=-2},}, "test", 1);
+--tbAwardTemplet:GiveAwardByList({{szName = "TTK",tbProp={6,1,22,1,1},nCount=1,nExpiredTime=10080,nBindState=-2},}, "test", 1);
+--Msg2Player("<color=green>ChÛc mıng Æπi hi÷p nhÀn Æ≠Óc<color=pink> 5 Æi”m n®ng ÆÈng.")	
+	--local szNews = format("ChÛc Mıng ßπi Hi÷p <color=green>"..GetName().."<color=yellow> Æ∑ b∏o danh thµnh c´ng khi Æπt Æi“u ki÷n online ÆÒ 12 ti’ng");
+	--AddGlobalNews(szNews);
+--LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 		end
 --	else
 --		if OnlineAward_PayTime(1*60*60) == 1 then	
@@ -144,7 +145,7 @@ function OnlineAward_ShowTimeNow()
 	Talk(1,"Online NhÀn Th≠Îng",strMsg)
 end
 
-function AddLenhBaiBH()
+function AddLenhBaiBH2222()
 do return end
 	--local nRandomTaskID = createRandomTask();
 	local nRandomIndex = random(1, getn(tbRandomTask))
@@ -161,7 +162,7 @@ do return end
 	WriteLog(date("%Y%m%d %H%M%S").."\t".." Online nhÀn th≠Îng "..GetAccount().."\t"..GetName().."\t".." Online nhÀn th≠Îng nhÀn Æ≠Óc "..strItem)
 end
 
-function AddMocNhan()
+function AddMocNhan2222()
 do return end
 		local ndx = AddItem(6,1,1085,1,0,0)
 		SetSpecItemParam(ndx, 2, 9)
@@ -175,4 +176,40 @@ do return end
 end
 
 function Cancel()
+end
+
+function batdaubaodanh()
+local szName = GetAccount()
+local nBaoDanh = server_getdata(tbKandy.szFile,"BAO_DANH",szName);
+if (tonumber(nBaoDanh) == 1 ) then
+Say("Tµi kho∂n Æ∑ b∏o danh rÂi")
+return
+end 
+if ( nBaoDanh == "" ) or ( nBaoDanh == nil ) then
+--Msg2Player("Tµi kho∂n Æ∑ ch≠a b∏o dang ti’n hµnh b∏o danh")
+local szName = GetAccount()
+	server_setdata(tbKandy.szFile,"BAO_DANH",szName,1);
+	server_savedata(tbKandy.szFile);
+	Say("B∏o danh thµnh c´ng h∑y chÍ ÆÓi Æ’n ngµy oppen dÔng tµi kho∂n nµy Æ” nhÀn Æ≠Óc quµ h p d…n nh–")
+end
+end
+
+
+function server_setdata(filename,szsect,szkey,szvalue)
+	IniFile_SetData(filename, szsect, szkey, szvalue)	
+end
+
+function server_getdata(filename,szsect,szkey)
+	return IniFile_GetData(filename, szsect, szkey)
+end
+
+function server_savedata(filename)
+	IniFile_Save(filename,filename)
+end
+
+function server_loadfile(filename)
+	if (IniFile_Load(filename,filename) == 0) then 
+			File_Create(filename)
+			IniFile_Load(filename, filename)
+	end
 end

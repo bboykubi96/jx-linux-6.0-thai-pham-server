@@ -1,132 +1,132 @@
 
--- ====================== ÎÄ¼şĞÅÏ¢ ======================
+-- script viet hoa By http://tranhba.com  ====================== v¨n kiÖn tin tøc ====================== 
 
--- ½£ÏÀÇéÔµonline ÈÎÎñÏµÍ³ÈÎÎñ¾íÖá¿Í»§¶Ë½Å±¾
--- Edited by peres
--- 2005/07/04 PM 19:59
+-- script viet hoa By http://tranhba.com  kiÕm hiÖp t×nh duyªn online nhiÖm vô hÖ thèng nhiÖm vô quyÓn trôc kh¸ch hµng b­ng ch©n vèn 
+-- script viet hoa By http://tranhba.com  Edited by peres 
+-- script viet hoa By http://tranhba.com  2005/07/04 PM 19:59 
 
--- ÑÌ»¨¡£ÄÇÒ»Ò¹µÄÑÌ»¨¡£
--- Ëı¼ÇµÃËûÔÚ´óÓêµÄÈËÈºÖĞ£¬Õ¾ÔÚËıµÄ±³ºóÓµ±§×¡Ëı¡£
--- ËûÎÂÅ¯µÄÆ¤·ô£¬ËûÊìÏ¤µÄÎ¶µÀ¡£ÑÌ»¨ÕÕÁÁËıµÄÑÛ¾¦¡£
--- Ò»ÇĞÎŞ¿ÉÍì»Ø¡­¡­
+-- script viet hoa By http://tranhba.com  ph¸o b«ng . ®ªm h«m ®ã ®İch ph¸o b«ng . 
+-- script viet hoa By http://tranhba.com  nµng nhí h¾n ë m­a to ng­êi cña bÇy trung , ®øng ë sau l­ng cña nµng «m ë nµng . 
+-- script viet hoa By http://tranhba.com  h¾n Êm ¸p ®İch da , h¾n mïi vŞ ®¹o quen thuéc . ph¸o b«ng chiÕu s¸ng ¸nh m¾t cña nµng . 
+-- script viet hoa By http://tranhba.com  hÕt th¶y kh«ng thÓ v·n håi …… 
 
--- ======================================================
--- ÈÎÎñÏµÍ³
-IncludeLib("TASKSYS");
+-- script viet hoa By http://tranhba.com  ====================================================== 
+-- script viet hoa By http://tranhba.com  nhiÖm vô hÖ thèng 
+IncludeLib("TASKSYS"); 
 
--- ¶ÁÈëÊı¾İ¶¨ÒåÍ·ÎÄ¼ş
+-- script viet hoa By http://tranhba.com  häc vµo sè liÖu ®Şnh nghÜa ®Çu v¨n kiÖn 
 Include("\\script\\task\\system\\task_head.lua");
 
-function GetItemDescription(name, magiclevel1, magiclevel2, magiclevel3, magiclevel4, magiclevel5, magiclevel6)
+function GetItemDescription(name, magiclevel1, magiclevel2, magiclevel3, magiclevel4, magiclevel5, magiclevel6) 
 
-local strDesc = "";
+local strDesc = ""; 
 
-	strDesc = strDesc.."<enter>Miªu t¶ nhiÖm vô: <color=yellow>"..TaskId(magiclevel1, 1, TaskID_Table.TaskText_Row).."<color><enter><enter>";
+strDesc = strDesc.."<enter> nhiÖm vô miªu t¶ #<color=yellow>"..TaskId(magiclevel1, 1, TaskID_Table.TaskText_Row).."<color><enter><enter>"; 
 
-	strDesc = strDesc..CreateAwardText(TaskName(magiclevel1));
+strDesc = strDesc..CreateAwardText(TaskName(magiclevel1)); 
 
-	strDesc = strDesc.."<enter><color=yellow>DiÔn gi¶i: nhÊp chuét ph¶i th× lËp tøc tiÕp nhËn nhiÖm vô nµy<color><enter>";
-	
-	return strDesc;
+strDesc = strDesc.."<enter><color=yellow> nãi râ # ®an kİch bªn ph¶i kiÖn lµ ®­îc ®¹t ®­îc nµy nhiÖm vô <color><enter>"; 
 
-end;
+return strDesc; 
+
+end; 
 
 
--- Éú³É½±ÀøÎÄ×Ö×Ö¶Î
-function CreateAwardText(taskName)
+-- script viet hoa By http://tranhba.com  sinh thµnh t­ëng th­ëng ch÷ viÕt ch÷ ®o¹n 
+function CreateAwardText(taskName) 
 
-local nRow, nCol = TaskAwardMatrix(taskName);
+local nRow, nCol = TaskAwardMatrix(taskName); 
 
-local i=0;
+local i=0; 
 
-local aryAward = {{}};
+local aryAward = {{}}; 
 
-local strArray = "";
-local strArrayRate = "";
-local strText = ""; -- ½±ÀøµÄËµÃ÷
+local strArray = ""; 
+local strArrayRate = ""; 
+local strText = ""; -- script viet hoa By http://tranhba.com  t­ëng th­ëng ®İch nãi râ 
 
-local nIsArray = 0; -- ÅĞ¶ÏÊÇ·ñÓĞÊı×é
+local nIsArray = 0; -- script viet hoa By http://tranhba.com  ph¸n ®o¸n cã hay kh«ng cã mÊy tæ 
 
-local strAwardNormal = {} -- ¹Ì¶¨·¢ÓèµÄ½±Àø
-local strAward = "Sau khi hoµn thµnh nhiÖm vô nhËn ®­îc phÇn th­ëng: <enter>"; -- ×îºó·µ»ØµÄ½±Àø×Ö¶Î
+local strAwardNormal = {} -- script viet hoa By http://tranhba.com  cè ®Şnh ph¸t d­ ®İch t­ëng th­ëng 
+local strAward = " nhiÖm vô sau khi hoµn thµnh ®o¹t ®­îc t­ëng th­ëng #<enter>"; -- script viet hoa By http://tranhba.com  cuèi cïng trë vÒ ®İch t­ëng th­ëng ch÷ ®o¹n 
 
-local strType = "";
+local strType = ""; 
 
-	strType = TaskAward(taskName, 1, 1);
+strType = TaskAward(taskName, 1, 1); 
 
-	-- ¶ÔÓÚÈÎÎñ½±ÀøÀàĞÍÊÇ½±ÀøË÷ÒıµÄ´¦Àí
-	if strType=="hÖ thèng phÇn th­ëng" then
-		-- Ö±½ÓË÷Òıµ½ÈÎÎñÃû³Æ
-		taskName = TaskAward(taskName, 1, Award.AlliedAward_Row);
-		nRow, nCol = TaskAwardMatrix(taskName);
-	end;
+-- script viet hoa By http://tranhba.com  ®èi víi nhiÖm vô t­ëng th­ëng lo¹i h×nh lµ t­ëng th­ëng t¸c dÉn ®İch xö lı 
+if strType==" t­ëng th­ëng t¸c dÉn " then 
+-- script viet hoa By http://tranhba.com  trùc tiÕp t¸c dÉn tíi nhiÖm vô tªn 
+taskName = TaskAward(taskName, 1, Award.AlliedAward_Row); 
+nRow, nCol = TaskAwardMatrix(taskName); 
+end; 
 
-	for i=1, nRow do
-	
-		strArray = TaskAward(taskName, i, Award.ArrayID_Row);
-		strArrayRate = TaskAward(taskName, i, Award.ArrayRate_Row);
-		strText     = TaskAward(taskName, i, Award.AwardText_Row);
-		
-		-- Èç¹û½±Àø±»¶¨ÒåÁËÊı×é
-		if strArray~="" then
-		
-			-- Èç¹ûÊı×é²»´æÔÚÔò³õÊ¼»¯Êı×é
-			if aryAward[tonumber(strArray)]==nil then
-				rawset(aryAward, tonumber(strArray), {}); 
-			end;
-			
-			 rawset(aryAward[tonumber(strArray)],
+for i=1, nRow do 
+
+strArray = TaskAward(taskName, i, Award.ArrayID_Row); 
+strArrayRate = TaskAward(taskName, i, Award.ArrayRate_Row); 
+strText = TaskAward(taskName, i, Award.AwardText_Row); 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng bŞ ®Şnh nghÜa liÔu ®Õm tæ 
+if strArray~="" then 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ ®Õm tæ kh«ng tån t¹i lµ míi b¾t ®Çu hãa ®Õm tæ 
+if aryAward[tonumber(strArray)]==nil then 
+rawset(aryAward, tonumber(strArray), {}); 
+end; 
+
+rawset(aryAward[tonumber(strArray)], 
 			 		getn(aryAward[tonumber(strArray)])+1,
-			 		"<color=green>"..strText.."<color>  "..strArrayRate.."% c¬ héi"
-			 		);
-			 		
-			 nIsArray = 1;
-			 
-		else
-			rawset(strAwardNormal,
+"<color=green>"..strText.."<color> "..strArrayRate.."% ®İch x¸c suÊt " 
+); 
+
+nIsArray = 1; 
+
+else 
+rawset(strAwardNormal, 
 					getn(strAwardNormal)+1,
-					strText);
-		end;
-	
-	end;
-	
-	-- Èç¹û½±Àø±»¶¨ÒåÁËÊı×é£¬Ôòµ÷ÓÃÊı×é·¢½±º¯Êı
-	if nIsArray==1 then
-		for i=1, getn(aryAward) do
-			strAward = strAward.."<enter>thø "..i.."phÇn th­ëng ngÉu nhiªn:<enter>";
-			strAward = strAward..CreateTextForArray(aryAward[i]);
-		end;
-	end;
-	
-	strAward = strAward.."<enter>PhÇn th­ëng cè ®Şnh:<enter>";
-	
-	if getn(strAwardNormal)~=0 then
-	
-		for i=1, getn(strAwardNormal) do
-			strAward = strAward.."<color=green>"..strAwardNormal[i].."<enter>";
-		end;
-		
-	else
-		strAward = strAward.."<color=green>PhÇn th­ëng kh«ng cè ®Şnh<color>";
-	end;
-	
-	return strAward;
-	
-end;
+strText); 
+end; 
+
+end; 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng bŞ ®Şnh nghÜa liÔu ®Õm tæ , lµ ®iÒu dông ®Õm tæ ph¸t t­ëng hµm sè 
+if nIsArray==1 then 
+for i=1, getn(aryAward) do 
+strAward = strAward.."<enter> thø "..i.." c¸ ngÉu nhiªn t­ëng th­ëng tói #<enter>"; 
+strAward = strAward..CreateTextForArray(aryAward[i]); 
+end; 
+end; 
+
+strAward = strAward.."<enter> cè ®Şnh t­ëng th­ëng #<enter>"; 
+
+if getn(strAwardNormal)~=0 then 
+
+for i=1, getn(strAwardNormal) do 
+strAward = strAward.."<color=green>"..strAwardNormal[i].."<enter>"; 
+end; 
+
+else 
+strAward = strAward.."<color=green> v« cè ®Şnh t­ëng th­ëng <color>"; 
+end; 
+
+return strAward; 
+
+end; 
 
 
 
-function CreateTextForArray(aryAward)
+function CreateTextForArray(aryAward) 
 
-local strAward = "";
-local i=0;
+local strAward = ""; 
+local i=0; 
 
 
-	-- °ÑÊı×éÀïÃæµÄ¶«Î÷·¢³öÈ¥
-	for i=1, getn(aryAward) do
-		strAward = strAward..aryAward[i].."<enter>";
-	end;
-	
-	return strAward;
-	
+-- script viet hoa By http://tranhba.com  ®em ®Õm tæ lı mÆt ®İch ®å ph¸t ra ngoµi 
+for i=1, getn(aryAward) do 
+strAward = strAward..aryAward[i].."<enter>"; 
+end; 
+
+return strAward; 
+
 end;

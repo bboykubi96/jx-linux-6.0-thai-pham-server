@@ -1,52 +1,51 @@
---ÀñÆ·ºĞ
---2007-04-04
---by Ğ¡ÀË¶à¶à
+-- script viet hoa By http://tranhba.com  lÔ phÈm hép 
+-- script viet hoa By http://tranhba.com 2007-04-04 
+-- script viet hoa By http://tranhba.com by tiÓu l·ng nhiÒu h¬n 
 
-TB_GIFT = {
-	--ÎïÆ·Ãû ¸ÅÂÊ				ÎïÆ·ID
-	100000, -- ×Ü¸ÅÂÊ
-	{0.25,		{"ThiÕt La H¸n",	6,1,23,0,0,0}},
-	{0.25,		{"Phóc Duyªn Lé (§¹i) ",	6,1,124,0,0,0}},
-	{0.0003,	{"An Bang §iÒn Hoµng Th¹ch Ngäc Béi",	0,166}},
-	{0.0001,	{"An Bang B¨ng Tinh Th¹ch H¹ng Liªn",	0,164}},
-	{0.0002,	{"An Bang Cóc Hoa Th¹ch ChØ hoµn",	0,165}},
-	{0.0002,	{"An Bang Kª HuyÕt Th¹ch Giíi ChØ ",	0,167}},
-	{0.0002,	{"§Şnh Quèc Thanh Sa Tr­êng Sam",	0,159}},
-	{0.0001,	{"§Şnh Quèc ¤ Sa Ph¸t Qu¸n",	0,160}},
-	{0.0003,	{"§Şnh Quèc Xİch Quyªn NhuyÔn Ngoa",	0,161}},
-	{0.0003,	{"§Şnh Quèc Tö §»ng Hé uyÓn",	0,162}},
-	{0.0003,	{"§Şnh Quèc Ng©n Tµm Yªu ®¸i",	0,163}},
-	{0.2,			{"§¹i bæ thÇn ®an",	6,1,1398,0,0,0	}},
-	{0.001,		{"ThËp toµn ®¹i bæ thÇn ®an",	6,1,1399,0,0,0}},
-	{0.288,		{"Tiªn Th¶o Lé ",6,1,71,0,0,0}},
-}
-function main(sel)
-	if CalcFreeItemCellCount() < 12 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bŞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 12 « trèng råi h·y më.",0);
-		return 1;
-	end
-	local prob = TB_GIFT[1];
-	local sum = 0;
-	local num = random(1,prob);
-	--print(num.."\t"..getn(TB_GIFT).."\t")
-	for i = 2,getn(TB_GIFT) do
-		local odds = TB_GIFT[i][1];
-		local item = TB_GIFT[i][2];
+TB_GIFT = { 
+-- script viet hoa By http://tranhba.com  vËt phÈm tªn x¸c suÊt vËt phÈm ID 
+100000, -- script viet hoa By http://tranhba.com  tæng x¸c suÊt 
+{0.25, {"ThiÕt La H¸n ", 6,1,23,0,0,0}}, 
+{0.25, {"Phóc duyªn lé ( ®¹i ) ", 6,1,124,0,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Tinh luyÖn th¹ch ", 6,1,2280,1,0,0}}, 
+{0.02, {"Ngäc lon ", 6,1,2311,1,0,0}}, 
+{0.2, {"§¹i bæ thÇn ®an ", 6,1,1398,0,0,0 }}, 
+{0.1, {"M­êi toµn ®¹i bæ thÇn ®an ", 6,1,1399,0,0,0}}, 
+{0.0288, {"Tiªn th¶o lé ",6,1,71,0,0,0}}, 
+} 
+function main(sel) 
+if CalcFreeItemCellCount() < 12 then 
+Say("§¹i hiÖp ®İch trang bŞ qu¸ nhiÒu , cã thÓ sÏ ®¹t ®­îc chiÕm rÊt nhiÒu chç trèng ®İch trang bŞ , xin/mêi ®i trõ vËt phÈm , b¶o ®¶m cã 12 c¸ chç trèng sau më ra ",0); 
+return 1; 
+end 
+local prob = TB_GIFT[1]; 
+local sum = 0; 
+local num = random(1,prob); 
+-- script viet hoa By http://tranhba.com print(num.."\t"..getn(TB_GIFT).."\t") 
+for i = 2,getn(TB_GIFT) do 
+local odds = TB_GIFT[i][1]; 
+local item = TB_GIFT[i][2]; 
 		sum = sum + odds * prob;
-		if num < sum then
-			--print(item[1]);
-			award_item(item);
-			break;
-		end
-	end
-end
+if num < sum then 
+-- script viet hoa By http://tranhba.com print(item[1]); 
+award_item(item); 
+break; 
+end 
+end 
+end 
 
-function award_item(item)
-	if getn(item) == 3 then
-		AddGoldItem(item[2], item[3]);
-	elseif getn(item) == 7 then
-		AddItem(item[2], item[3], item[4], item[5], item[6], item[7]);
-	end
-	WriteLog(format("[chuanguanGiftBox]\t date:%s \t Account:%s \t Name:%s \t GetItem:%s \t",GetLocalDate("%Y-%m-%d %H:%M:%S"),GetAccount(),GetName(),item[1]));
-	Msg2SubWorld("§¹i hiÖp <color=green>"..GetName().." ®· sö dông Tói LÔ VËt V­ît ¶i<color> nhËn ®­îc nhiÒu phÇn quµ hÊp dÉn")
+function award_item(item) 
+if getn(item) == 3 then 
+AddGoldItem(item[2], item[3]); 
+elseif getn(item) == 7 then 
+AddItem(item[2], item[3], item[4], item[5], item[6], item[7]); 
+end 
+WriteLog(format("[chuanguanGiftBox]\t date:%s \t Account:%s \t Name:%s \t GetItem:%s \t",GetLocalDate("%Y-%m-%d %H:%M:%S"),GetAccount(),GetName(),item[1])); 
 end

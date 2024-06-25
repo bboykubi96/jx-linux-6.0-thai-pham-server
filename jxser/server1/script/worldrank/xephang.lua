@@ -9,7 +9,7 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\vng_lib\\taskweekly_lib.lua")
 Include("\\script\\vng_lib\\bittask_lib.lua")
 Include("\\script\\lib\\objbuffer_head.lua")
-function XepHang11()
+function XepHang()
 	
 		XepHang_TopMPPhuho()
 		XepHang_Top10ALL()
@@ -80,7 +80,8 @@ function XepHang_Top10ALL()
 		--SetTask(3022,GetLevel());
 		--return
 	--end
-	CapDo = Trungsinh[ST_GetTransLifeCount()][1] + GetLevel() 
+	--CapDo = Trungsinh[ST_GetTransLifeCount()][1] + GetLevel() 
+	CapDo = Trungsinh[ST_GetTransLifeCount()][1] + 200*GetTask(5969) + GetLevel()
 	--local level = mod(CapDo,ST_GetTransLifeCount())	
 	--if (GetCamp() ~= 4)  and (GetCamp() ~= 0) then
 	Ladder_NewLadder(10270, GetName(),CapDo,0,GetLastFactionNumber(),GetExpPercent());
@@ -164,8 +165,8 @@ function XoaXepHang()
 end
 
 function XepHang_Top10MP()
---	local nlv = GetTask(3023)
-	--if(GetLevel()~=nlv) then
+	local nlv = GetTask(3023)
+	if(GetLevel()~=nlv) then
 		local player_Faction = GetFaction()
 		local TenNV = GetName()
 		local MonPhai = GetLastFactionNumber()
@@ -205,6 +206,6 @@ function XepHang_Top10MP()
 		elseif (GetLastFactionNumber() == 10) then
 			Ladder_NewLadder(10282, TenNV,CapDo,0,MonPhai);
 		end
-	--end
+	end
 end
 

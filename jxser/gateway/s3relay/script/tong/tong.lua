@@ -568,25 +568,7 @@ function UPGRADE_R(nTongID)
 end
 
 function UPGRADE_G_1(nTongID)
-	local nRet, rt_1, rt_2 = logicTongLevelUp(nTongID)
-	if (nRet == 0)then
 		return 1
-	elseif (nRet == 1)then
-		Msg2Player("ß” n©ng l™n c p k’ ti’p c«n ph∂i x©y d˘ng <color=yellow> "..rt_1.."<color> T∏c Ph≠Íng")
-	elseif (nRet == 2)then
-		Msg2Player("ßºng c p ki’n th’t n©ng l™n c p ti’p theo c«n T∏c Ph≠Íng c„ <color=yellow>"..rt_1.."<color> Æπt <color=green>"..rt_2.."<color>")
-	elseif (nRet == 3)then
-		Msg2Player("ßºng c p ki’n thi’t n©ng l™n c p ti’p theo c«n ng©n s∏ch ki’n thi’t<color=gold>: "..rt_1.." vπn")
-	elseif (nRet == 4)then
-		Msg2Player("N©ng c p Æºng c p ki’n thi’t c«n ph∂i c∏ch nhau 1 tu«n!")
-	elseif (nRet == 5)then
-		Msg2Player("ßºng c p ki’n thi’t Æ∑ Æπt Æ’n c p cao nh t!")
-	elseif (nRet == 6)then
-		Msg2Player("ßºng c p ki’n thi’t Æπt c p 3 c«n ph∂i c„ khu v˘c bang hÈi ri™ng!")		
-	elseif (nRet == 7)then
-		Msg2Player("ßºng c p ki’n thi’t Æπt c p 5 c«n chi’m l‹nh 1 thµnh thﬁ!")				
-	end	
-	return 0	
 end
 --UPGRADE_G_2 = DefFun1
 --//////////////////
@@ -721,14 +703,15 @@ function TONGCLAIMWAR_R(nTongID, nDestTongID)
 	
 	local nCostMoneyFund = 0;	--µ•Œª:ÕÚ
 	if (nCurTimes == 1) then
-		nCostMoneyFund = 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes == 2) then
-		nCostMoneyFund = 2 * 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes == 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes > 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 200;
 	end;
+	
 	
 	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then	
 		Msg2Player("Bang hÈi tuy™n chi’n c«n giao nÈp"..nCostMoneyFund.." vπn l y tı ng©n s∏ch!");
@@ -771,14 +754,15 @@ function DO_TONGCLAIMWAR_G_1(nTongID, nDestTongID)
 	nCurTimes = nTimes + 1;	
 	local nCostMoneyFund = 0;	--µ•Œª:ÕÚ
 	if (nCurTimes == 1) then
-		nCostMoneyFund = 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes == 2) then
-		nCostMoneyFund = 2 * 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes == 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 200;
 	elseif (nCurTimes > 3) then
-		nCostMoneyFund = 4 * 5000;
+		nCostMoneyFund = 200;
 	end;
+	
 	
 	if (TONG_GetMoney(nTongID) < nCostMoneyFund * 10000) then
 		Msg2Player("Tuy™n chi’n bang hÈi c«n giao nÈp"..nCostMoneyFund.." vπn l y tı ng©n s∏ch!");
@@ -806,7 +790,8 @@ function ClaimWar_Death_Process(nAttackerIndex)
 	local szDestTong     = GetNpcTong(nAttackerIndex);
 	
 	local szMsg = format("%s bang hÈi cÒa %s Æ∑ ti™u di÷t %s bang hÈi cÒa %s", szDestTong, szAttackPlayer, szTong, GetName());
-	Msg2SubWorld(szMsg);
+	-- Msg2SubWorld(szMsg);
+	-- kevin109
 end
 
 function CHANGECAMP_R(nTongID, nCamp)
@@ -828,12 +813,12 @@ function CHANGECAMP_R(nTongID, nCamp)
 --		return 0;
 --	end
 	
-	local nCostMoneyFund = 100;	-- µ•Œª£∫ÕÚ ”¶‘Ωƒœ»À“™«Û∏ƒŒ™100W by Zhi Dong
-	if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then
-		local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
-		Msg2PlayerByName(szExecutorName, "ßÊi phe c∏nh cho bang c«n nπp ph› "..nCostMoneyFund.." vπn l y tı ng©n s∏ch!");
-		return 0;
-	end
+	-- local nCostMoneyFund = 100;	-- µ•Œª£∫ÕÚ ”¶‘Ωƒœ»À“™«Û∏ƒŒ™100W by Zhi Dong
+	-- if (TONG_ApplyAddMoney(nTongID, -(nCostMoneyFund*10000)) ~= 1) then
+		-- local szExecutorName = TONGM_GetName(nTongID, ExecutorId);
+		-- Msg2PlayerByName(szExecutorName, "ßÊi phe c∏nh cho bang c«n nπp ph› "..nCostMoneyFund.." vπn l y tı ng©n s∏ch!");
+		-- return 0;
+	-- end
 	Msg2Tong(nTongID, "Bang chÒ thay ÆÊi phe ph∏i cÒa bÊn bang! ");
 	cTongLog:WriteInfTB("TONG", "changecamp", nTongID, {camp = nCamp, camp_old = nCurCamp})
 	return 1;

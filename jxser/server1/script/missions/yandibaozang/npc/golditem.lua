@@ -1,11 +1,8 @@
 Include("\\script\\task\\system\\task_string.lua")
 
-
-
-
 YDBZ_item_suipian_ID = {6,1,1606}		--ËéÆ¬ID
 YDBZ_tbgolditem = {
-	[1]={--Ãû³Æ£¬ĞèÒªËéÆ¬£¬ÎïÆ·ID£¨g,d,p£©
+	[1]={
 			"Bé trang bŞ To¹i Nh©n [Kim]",	
 			{"To¹i Nh©n Xİch HuyÕt Nguyªn Vò Gi¸p",50,6,1,1536,"{{Sinh lùc lín nhÊt}}180-240<enter>{{Gi¶m bít thêi gian ®éng t¸c s¸t th­¬ng}}45-55<enter>{{Gi¶m thêi gian cho¸ng}}30-50<enter>{{TrŞ phßng háa lín nhÊt}}25-30<enter>{{PhÇn tr¨m s¸t th­¬ng vËt lı hÖ ngo¹i c«ng}}30-50"},
 			{"To¹i Nh©n B¸ch LuyÖn Kh«i",45,6,1,1537,"<enter>{{Sinh lùc lín nhÊt}}180-240<enter>{{Háa phßng lín nhÊt}}25-30<enter>{{Néi lùc lín nhÊt}}180-240<enter>{{Gi¶m thêi gian ®ãng b¨ng}}30-50<enter>{{PhÇn tr¨m s¸t th­¬ng vËt lı hÖ ngo¹i c«ng}}30-50"},
@@ -88,6 +85,6 @@ function YDBZ_golditem_getyes(nchose,ni)
 	YDBZ_sdl_writeLog("§æi hoµng kim ®å phæ",format("Dïng %s viªm ®Õ ®å ®¨ng ®æi thµnh c«ng %s",nitemc,YDBZ_tbgolditem[nchose][ni][1]))
 end
 
-function YDBZ_sdl_writeLog(sztitle,szevent)	--¼ÇÂ¼,sztitle=ÊÂ¼şÃû,szevent=ÊÂ¼şÄÚÈİ
+function YDBZ_sdl_writeLog(sztitle,szevent)
 	WriteLog(format("[%s]\t Date:%s\t Account:%s\t Name:%s\t %s",sztitle,GetLocalDate("%y-%m-%d %H:%M:%S"),GetAccount(),GetName(),szevent));
 end

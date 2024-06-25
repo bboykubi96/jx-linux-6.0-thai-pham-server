@@ -17,8 +17,8 @@ function fwcloud_HWID:AddCount()
 			local str5 = split(GetInfo(),"-")[5]
 			local str6 = split(GetInfo(),"-")[6]
 			local str7 = split(GetInfo(),"-")[7]
-			 local hwid = str4..str5..str6..str7 
-			--local hwid = GetInfo()
+			-- local hwid = str4..str5..str6..str7 
+			local hwid = GetInfo()
 			fwcloud_HWID[hwid] = fwcloud_HWID[hwid] + 1
 end
 
@@ -28,8 +28,8 @@ function fwcloud_HWID:RemoveCount()
 			local str5 = split(GetInfo(),"-")[5]
 			local str6 = split(GetInfo(),"-")[6]
 			local str7 = split(GetInfo(),"-")[7]
-			 local hwid = str4..str5..str6..str7 
-			--local hwid = GetInfo()
+			-- local hwid = str4..str5..str6..str7 
+			local hwid = GetInfo()
 			fwcloud_HWID[hwid] = fwcloud_HWID[hwid] - 1
 			
 end
@@ -40,8 +40,8 @@ function fwcloud_HWID:CheckCount()
 			local str5 = split(GetInfo(),"-")[5]
 			local str6 = split(GetInfo(),"-")[6]
 			local str7 = split(GetInfo(),"-")[7]
-			 local hwid = str4..str5..str6..str7 
-			--local hwid = GetInfo()
+			-- local hwid = str4..str5..str6..str7 
+			local hwid = GetInfo()
 			fwcloud_HWID[hwid] = fwcloud_HWID[hwid] or 0
 			return fwcloud_HWID[hwid] 
 end

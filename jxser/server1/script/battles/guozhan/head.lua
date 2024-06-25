@@ -30,7 +30,7 @@ BOSS_TIME = (BAOMING_TIME + 30) * 60 * FRAME2TIME / TIMER_1;--战争开始后30分钟出
 VANISHGAME_TIME = (BAOMING_TIME + FIGHTING_TIME - 20) * 60 * FRAME2TIME/ TIMER_1; --战斗最后20分钟时，必须所有Npc全部产生
 
 
-MAX_MEMBERCOUNT = 55 
+MAX_MEMBERCOUNT = 70 
 TIME_PLAYER_REV = 8 ; -- 玩家死亡或退出游戏再进入时，必须3分钟之后才能离开后营到大营
 
 --以下是某些值记录在MissionValue中的索引位置，通过GetMissionV(MS_XXX)来获得实际的值

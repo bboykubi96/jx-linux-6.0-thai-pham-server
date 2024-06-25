@@ -6,32 +6,31 @@
 -------------------------------------------------------------------------
 CP_TASKID_LOGOUT = 1094		--ÎäÁÖ´ó»áÔ¤Ñ¡Èü 0: ÒÑ±£´æÏà¹ØÈÎÎñ±äÁ¿£» 1£ºÎ´±£´æ
 
+Include("\\script\\global\\quanlygame\\sukien\\vantieubanghoi\\vantieubanghoi.lua")
 Include("\\script\\task\\tollgate\\messenger\\messenger_lievegame.lua")
 Include("\\script\\event\\storm\\logout.lua")	--Storm
 Include("\\script\\misc\\vngpromotion\\ipbonus\\ipbonus_2_head.lua");
 Include("\\script\\global\\playerlist.lua")
 Include("\\script\\global\\logout_head.lua")
 --Include("\\script\\t9team\\t9_hwid_head.lua")
---Include("\\script\\miniskill\\init_miniskill.lua")
+Include("\\script\\miniskill\\init_miniskill.lua")
 
 Include("\\script\\global\\g7vn\\limitaccountperip.lua");
 Include("\\script\\global\\quanlygame\\sukien\\vantieubanghoi\\vantieubanghoi.lua")
 
 function main()
-	--del_timer_mns()
+	del_timer_mns()
 dofile("script/global/logout.lua")
 	LimitAccountPerIP:Logout()
 --	dologouttk()
 	if GetTask(5859) > 0 then
-			local nHour = tonumber(GetLocalDate("%H%M"))
-		if nHour >= 2000 and nHour <= 2030 then
-	AddTieuBang()
-	end
+	AddTieuBang1()
 	SetTask(5859,0)
 	DisabledUseTownP(0);
 	RestoreOwnFeature();
-	Msg2SubWorld("<color=yellow>Bang Chñ "..GetName().." §· Out Game, Tiªu Bang Héi SÏ  XuÊt HiÖn ë §iÓm XuÊt Ph¸t.")	
+	Msg2SubWorld("<color=white>Tiªu Bang Cña Bang Chñ §· Out Game, Tiªu Bang SÏ  XuÊt HiÖn Sau İt Phót N÷a.")	
 	end
+	
 	if IsIPBonus() == 1 then
 		IpBonus_Close()
 	end;
@@ -46,13 +45,16 @@ dofile("script/global/logout.lua")
 	if ( MapId >= 387  and MapId <= 395) then
 		messenger_livegame()
 	end
+	local MapId = SubWorldIdx2ID( SubWorld )
+	local nSilverCount = CalcEquiproomItemCount(4,417,1,-1)
+	if (MapId == 865) then
+	ConsumeEquiproomItem(nSilverCount,4,417,1,-1)
+	end
 	
 
 	local W,X,Y = GetWorldPos();
 	local nMapId = W;	
-	if ( nMapId == 325 ) or ( nMapId == 977 ) or ( nMapId == 380 ) or ( nMapId == 900 ) then
-	--	player2hwidout()
-	end
+	
 
 	storm_logout()	--Storm
 	PlayerList:DelPlayer(PlayerIndex)
@@ -66,6 +68,9 @@ function RemoveExchange()
 	end
 	PlayerList:DelPlayer(PlayerIndex)
 end
+
+
+
 
 
 

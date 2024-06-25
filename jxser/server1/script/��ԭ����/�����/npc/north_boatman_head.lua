@@ -27,6 +27,7 @@ function tosouth(nId)
 		NewWorld(unpack(tbMap));
 		Pay( 2000 );
 		DisabledUseTownP(0);
+				ForbidChangePK(0);	-- dc doi pk
 	else
 		Talk(1,"",format("%s: Kh«ng cã tiÒn sao ngåi thuyÒn ®­îc nhØ?", szNpcname));
 	end

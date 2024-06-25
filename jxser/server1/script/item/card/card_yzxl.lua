@@ -1,143 +1,143 @@
---Óë×ÓÙÉÀÏ¿¨
+-- script viet hoa By http://tranhba.com  cïng tö giai l·o t¹p 
 
---by yfeng
+-- script viet hoa By http://tranhba.com by yfeng 
 Include ("\\script\\event\\chinesenewyear\\eventhead.lua")
 
-NUMPERMIN = 0  --·ÖÖÓÄÚÊ°È¡µÄ¿¨ÊýÁ¿
-LASTTIME = 0 --ÉÏÒ»´ÎÊ°È¡Ê±µÄÊ±¼ä
+NUMPERMIN = 0 -- script viet hoa By http://tranhba.com  phót bªn trong thËp lÊy t¹p sè l­îng 
+LASTTIME = 0 -- script viet hoa By http://tranhba.com  lÇn tr­íc thËp lÊy lóc ®Ých thêi gian 
 
-TID_VALIDATION = 500
-TID_CARDNUMBER = 502
-GETBYTE = 1
+TID_VALIDATION = 500 
+TID_CARDNUMBER = 502 
+GETBYTE = 1 
 
-function ComputeTime()
+function ComputeTime() 
 	 return tonumber((((date("%m")-1)*30+date("%d")-1)*24+date("%H"))*60+date("%M"))
-end
+end 
 
-function main(idx)
-	return 1
-end
+function main(idx) 
+return 1 
+end 
 
-function IsPickable( nItemIndex, nPlayerIndex )
-	return 1
-end
+function IsPickable( nItemIndex, nPlayerIndex ) 
+return 1 
+end 
 
-function PickUp( nItemIndex, nPlayerIndex )
-	if(not CHINESENEWYEAR) then
-		return 0
-	end
-	local oldPlyIdx = PlayerIndex
-	PlayerIndex = nPlayerIndex
-	local size = GetTeamSize()
-	local myName = GetName()
-	local mySex = GetSex()
-	local myCode = GetTask(TID_VALIDATION)
-	local myNum = GetByte(GetTask(TID_CARDNUMBER),GETBYTE)
-	local myLevel = GetLevel()
-	if(size < 2) then --
-		Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o, nh­ng kÎ c« ®¬n nh­ b¹n kh«ng thÓ më c«ng n¨ng cña thÎ nµy!")
-		PlayerIndex = oldPlyIdx
-		return 0
-	end
-	if(size > 2) then
-		Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o, nh­ng nhiÒu ng­êi thÕ, biÕt cïng ai ®Ó më c«ng n¨ng cña thÎ nµy!")
-		PlayerIndex = oldPlyIdx
-		return 0
-	end
-	local otherIndex = GetTeamMember(1)
-	if( otherIndex == nPlayerIndex) then
-		otherIndex = GetTeamMember(2)
-	end
-	PlayerIndex = otherIndex
-	otherName = GetName()
-	otherSex = GetSex()
-	otherCode = GetTask(TID_VALIDATION)
-	otherNum = GetByte(GetTask(TID_CARDNUMBER),GETBYTE)
-	otherLevel = GetLevel()
-	PlayerIndex = nPlayerIndex
-	if(otherSex == mySex) then
-		Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o, nh­ng kh«ng thÓ më c«ng n¨ng cña thÎ cho hai b¹n cïng giíi!")
-		PlayerIndex = oldPlyIdx
-		return 0
-	end
-	if(myCode == otherCode and myCode ~=0) then  --ÑéÖ¤ÂëÏàÍ¬
-		if(myNum == otherNum) then --ÓÐÇéÈË£¬¿¨µÄÊýÁ¿Ò»Ñù¡£
-			myNum = myNum + 1  --¿¨Æ¬ÊýÁ¿ÀÛ¼Ó
-			otherNum = myNum
-			Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o, gióp cho duyªn phËn cña b¹n vµ     "..otherName.."thªm gÇn nhau h¬n. HiÖn nay, b¹n ®· tÝch lòy"..myNum.."tÊm thiÖp giai l·o.")
+function PickUp( nItemIndex, nPlayerIndex ) 
+if(not CHINESENEWYEAR) then 
+return 0 
+end 
+local oldPlyIdx = PlayerIndex 
+PlayerIndex = nPlayerIndex 
+local size = GetTeamSize() 
+local myName = GetName() 
+local mySex = GetSex() 
+local myCode = GetTask(TID_VALIDATION) 
+local myNum = GetByte(GetTask(TID_CARDNUMBER),GETBYTE) 
+local myLevel = GetLevel() 
+if(size < 2) then -- script viet hoa By http://tranhba.com  
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , nh­ng lµ kiÕt nhiªn mét th©n ng­¬i kh«ng c¸ch nµo më ra thÎ nµy ®Ých n¨ng lùc . ") 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
+if(size > 2) then 
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , nh­ng lµ nhiÒu ng­êi nh­ vËy , ng­¬i kh«ng biÕt cïng ai míi cã thÓ më ra thÎ nµy ®Ých n¨ng lùc . ") 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
+local otherIndex = GetTeamMember(1) 
+if( otherIndex == nPlayerIndex) then 
+otherIndex = GetTeamMember(2) 
+end 
+PlayerIndex = otherIndex 
+otherName = GetName() 
+otherSex = GetSex() 
+otherCode = GetTask(TID_VALIDATION) 
+otherNum = GetByte(GetTask(TID_CARDNUMBER),GETBYTE) 
+otherLevel = GetLevel() 
+PlayerIndex = nPlayerIndex 
+if(otherSex == mySex) then 
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , nh­ng lµ kh«ng c¸ch nµo cïng ®ång tÝnh nhµ ch¬i më ra thÎ nµy ®Ých n¨ng lùc . ") 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
+if(myCode == otherCode and myCode ~=0) then -- script viet hoa By http://tranhba.com  nghiÖm chøng con ngùa gièng nhau 
+if(myNum == otherNum) then -- script viet hoa By http://tranhba.com  h÷u t×nh ng­êi , t¹p ®Ých sè l­îng mét d¹ng . 
+			myNum = myNum + 1  -- script viet hoa By http://tranhba.com ¿¨Æ¬ÊýÁ¿ÀÛ¼Ó
+otherNum = myNum 
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , ®em ng­¬i cïng "..otherName.." ®Ých duyªn phËn kÐo ph¶i cµng gÇn , ®Õn tr­íc m¾t th× ng­ng , ng­¬i tÝch lòy "..myNum.." tê cïng tö giai l·o t¹p . ") 
 			AddOwnExp(myLevel * (20+0.1*myLevel)-10)
-			SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) --»ØÐ´ÐÅÏ¢
-			PlayerIndex = otherIndex
-			Msg2Player(myName.."®­îc 1 tÊm ThiÖp giai l·o, gióp cho duyªn phËn cña c¸c b¹n thªm gÇn nhau h¬n. §Õn nay, b¹n ®· tÝch lòy"..otherNum.."tÊm thiÖp giai l·o.")
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+PlayerIndex = otherIndex 
+Msg2Player(myName.." lÊy ®­îc mét tê cïng tö giai l·o t¹p , ®em c¸c ng­¬i duyªn phËn kÐo ph¶i cµng gÇn , ®Õn tr­íc m¾t th× ng­ng , ng­¬i tÝch lòy "..otherNum.." tê cïng tö giai l·o t¹p . ") 
 			AddOwnExp(otherLevel * (10+0.07*otherLevel))
-			SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) --»ØÐ´ÐÅÏ¢
-			if(myNum > 98) then --´ïµ½99¸ö£¬Óë×ÓÙÉÀÏÀ²
-				myNum = 0
-				PlayerIndex = nPlayerIndex
-				AddSkillState(531,10,1,2*60*60*18)
-				AddSkillState(533,1,1,2*60*60*18)
-				Msg2Player("B¹n ®· tÝch lòy ®­îc 99 tÊm thiÖp giai l·o! B¹n vµ "..otherName.."cïng më c«ng n¨ng cña thiÖp nµy. B¹n nhËn ®­îc nh©n ®«i ®iÓm kinh nghiÖm trong 2 giê.")
-				SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) --»ØÐ´ÐÅÏ¢
-				PlayerIndex = otherIndex
-				AddSkillState(531,10,1,2*60*60*18)
-				AddSkillState(533,1,1,2*60*60*18)
-				Msg2Player("B¹n ®· tÝch lòy ®­îc 99 tÊm thiÖp giai l·o! B¹n vµ "..myName.."cïng më c«ng n¨ng cña thiÖp nµy. B¹n nhËn ®­îc nh©n ®«i ®iÓm kinh nghiÖm trong 2 giê.")
-				SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) --»ØÐ´ÐÅÏ¢
-			end
-			PlayerIndex = oldPlyIdx
-			return 0
-		end
-		--ÒÆÇé±ðÁµµÄÒ»¶Ô
-		if(myNum > otherNum) then --ÎÒ±ÈËý¿¨¶à
-			myNum = myNum - 1
-			if(myNum ~= otherNum) then --ËðÊ§ÁË£¬»¹²»µÈ£¬Ã»Ôµ·Ý°¡
-				otherNum = otherNum + 1  --ÄãÃÇµÄÔµ·ÖÔÙ½üÒ»µã¡£ :)
-			end
-		else  --Ëý±ÈÎÒ¿¨¶à
-			myNum = myNum + 1  --¼ÓÒ»¸ö
-			if(myNum ~=otherNum) then
-				otherNum = otherNum - 1
-			end
-		end
-		PlayerIndex = nPlayerIndex
-		Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o! B¹n vµ "..otherName.."duyªn phËn thªm gÇn nhau h¬n. B¹n hiÖn ®· tÝch lòy ®­îc"..myNum.."tÊm thiÖp giai l·o.")
-		SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) --»ØÐ´ÐÅÏ¢
-		PlayerIndex = otherIndex
-		Msg2Player(myName.."®­îc 1 tÊm thiÖp giai l·o, gióp cho duyªn phËn cña c¸c b¹n thªm gÇn nhau h¬n. §Õn nay, b¹n ®· tÝch lòy"..otherNum.."tÊm thiÖp giai l·o.")
-		SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,otherNum)) --»ØÐ´ÐÅÏ¢
-		PlayerIndex = oldPlyIdx
-		return 0
-	end
-	--ÑéÖ¤Âë²»Í¬£¬»òÕß¶¼ÊÇ0
-	local code = GetValidateCode(nPlayerIndex)
-	Msg2Player("B¹n ®­îc 1 tÊm ThiÖp Giai L·o, ®ång thêi cïng "..otherName.."b¾t ®Çu b¾t ®Çu cuéc t×nh duyªn. ")
-	SetTask(TID_VALIDATION,code)
-	PlayerIndex = otherIndex
-	Msg2Player(myName.."®­îc 1 tÊm ThiÖp Giai L·o, ®ång thêi cïng b¹n b¾t ®Çu cuéc t×nh duyªn.")
-	SetTask(TID_VALIDATION,code)
-	PlayerIndex = oldPlyIdx
-	return 0
-end
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+if(myNum > 98) then -- script viet hoa By http://tranhba.com  ®¹t tíi 99 c¸ , cïng tö giai l·o n÷a/råi 
+myNum = 0 
+PlayerIndex = nPlayerIndex 
+AddSkillState(531,10,1,2*60*60*18) 
+AddSkillState(533,1,1,2*60*60*18) 
+Msg2Player("Ng­¬i cïng tö giai l·o t¹p ®· tÝch lòy 99 c¸ , ng­¬i cïng "..otherName.." cïng chung më ra thÎ nµy ®Ých n¨ng lùc . ng­¬i thu ®­îc 2 canh giê ®Ých kinh nghiÖm gÊp béi . ") 
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+PlayerIndex = otherIndex 
+AddSkillState(531,10,1,2*60*60*18) 
+AddSkillState(533,1,1,2*60*60*18) 
+Msg2Player("Ng­¬i cïng tö giai l·o t¹p ®· tÝch lòy 99 c¸ , ng­¬i cïng "..myName.." cïng chung më ra thÎ nµy ®Ých n¨ng lùc . ng­¬i thu ®­îc 2 canh giê ®Ých kinh nghiÖm gÊp béi . ") 
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+end 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
+-- script viet hoa By http://tranhba.com  dêi t×nh chí yªu ®Ých mét ®«i 
+if(myNum > otherNum) then -- script viet hoa By http://tranhba.com  ta so nµng t¹p nhiÒu 
+myNum = myNum - 1 
+if(myNum ~= otherNum) then -- script viet hoa By http://tranhba.com  tæn thÊt , cßn kh«ng chê , kh«ng cã duyªn phËn a 
+				otherNum = otherNum + 1  -- script viet hoa By http://tranhba.com ÄãÃÇµÄÔµ·ÖÔÙ½üÒ»µã¡£ :)
+end 
+else -- script viet hoa By http://tranhba.com  nµng so víi ta t¹p nhiÒu 
+			myNum = myNum + 1  -- script viet hoa By http://tranhba.com ¼ÓÒ»¸ö
+if(myNum ~=otherNum) then 
+otherNum = otherNum - 1 
+end 
+end 
+PlayerIndex = nPlayerIndex 
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , cïng "..otherName.." ®Ých duyªn phËn cµng gÇn , ng­¬i b©y giê tÝch lòy "..myNum.." tê cïng tö giai l·o thÎ . ") 
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,myNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+PlayerIndex = otherIndex 
+Msg2Player(myName.." lÊy ®­îc mét tê cïng tö giai l·o t¹p , cïng ng­¬i ®Ých duyªn phËn cµng gÇn , ng­¬i b©y giê tÝch lòy "..otherNum.." tê cïng tö giai l·o thÎ . ") 
+SetTask(TID_CARDNUMBER,SetByte(GetTask(TID_CARDNUMBER),GETBYTE,otherNum)) -- script viet hoa By http://tranhba.com  trë vÒ viÕt th¬ h¬i thë 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
+-- script viet hoa By http://tranhba.com  nghiÖm chøng con ngùa bÊt ®ång , hoÆc lµ ®Òu lµ 0 
+local code = GetValidateCode(nPlayerIndex) 
+Msg2Player("Ng­¬i lÊy ®­îc mét tê cïng tö giai l·o t¹p , h¬n n÷a cïng "..otherName.." b¾t ®Çu t×nh duyªn . ") 
+SetTask(TID_VALIDATION,code) 
+PlayerIndex = otherIndex 
+Msg2Player(myName.." lÊy ®­îc mét tê cïng tö giai l·o t¹p , h¬n n÷a cïng ng­¬i b¾t ®Çu t×nh duyªn . ") 
+SetTask(TID_VALIDATION,code) 
+PlayerIndex = oldPlyIdx 
+return 0 
+end 
 
-function GetValidateCode(plyIdx)
-	local oPID = PlayerIndex
-	PlayerIndex = plyIdx
-	local mid = GetWorldPos()
-	PlayerIndex = oPID
-	local time = ComputeTime() --(((date("%m")-1)*30+date("%d")-1)*24+date("%H"))*60+date("%M")
-	
-	if(time == LASTTIME) then
+function GetValidateCode(plyIdx) 
+local oPID = PlayerIndex 
+PlayerIndex = plyIdx 
+local mid = GetWorldPos() 
+PlayerIndex = oPID 
+	local time = ComputeTime() -- script viet hoa By http://tranhba.com (((date("%m")-1)*30+date("%d")-1)*24+date("%H"))*60+date("%M")
+
+if(time == LASTTIME) then 
 		NUMPERMIN = NUMPERMIN + 1
-	---+----------------+---------+-------+
-	---|   LASTTIME     |  MAPID  |NUM/MIN|
-	---+----------------+---------+-------+
-	---|    16 BIT      |  9 BIT  |  7BIT |
-	---+----------------+---------+-------+
-	---|     65535      |   511   |  127  |
-	---+----------------+---------+-------+
+	-- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com +-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+
+-- script viet hoa By http://tranhba.com -| LASTTIME | MAPID |NUM/MIN| 
+	-- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com +-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+
+-- script viet hoa By http://tranhba.com -| 16 BIT | 9 BIT | 7BIT | 
+	-- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com +-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+
+-- script viet hoa By http://tranhba.com -| 65535 | 511 | 127 | 
+	-- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com +-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -+
 		return LASTTIME * 65536 + mid*128 + NUMPERMIN
-	end
-	LASTTIME = time
-	NUMPERMIN = 0
+end 
+LASTTIME = time 
+NUMPERMIN = 0 
 	return LASTTIME * 65536 + mid*128 + NUMPERMIN
-end
+end 

@@ -1,7 +1,6 @@
 Include( "\\script\\missions\\leaguematch\\head.lua" )
 
 function main(sel)
---	DisabledUseTownP(0)	--»Ö¸´ÆäÊ¹ÓÃ»Ø³Ç·û
 	Say("<#> Xa phu: Chµo mõng c¸c vÞ ®Õn tham gia liªn ®Êu Vâ l©m, ta lµ Xa phu cña cuéc thi nµy, quý kh¸ch muèn ngåi xe, xin cø dÆn dß!",
 		8, "Ph­îng T­êng Phñ /#wlls_want2go(1)", "Thµnh §« Phñ /#wlls_want2go(11)", "§¹i Lý/#wlls_want2go(162)", "BiÖn Kinh Phñ /#wlls_want2go(37)", "T­¬ng D­¬ng Phñ /#wlls_want2go(78)", "D­¬ng Ch©u Phñ /#wlls_want2go(80)", "L©m An Phñ /#wlls_want2go(176)", "§©u còng kh«ng muèn ®i!/OnCancel")
 end;

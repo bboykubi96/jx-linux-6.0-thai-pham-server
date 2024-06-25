@@ -5,13 +5,12 @@ Include("\\script\\lib\\progressbar.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\activitysys\\config\\38\\award.lua")
 Include("\\script\\activitysys\\config\\38\\extend.lua")
-Include("\\script\\activitysys\\config\\38\\variables.lua")
 
 local AWARD_TABLE = tbAwardList["Gift_npc"] 
 local nHideTime = 30
 
 local _limit = function()
-	if PlayerFunLib:CheckTotalLevel(DangCapYeuCau, "default", ">=") ~= 1 then
+	if PlayerFunLib:CheckTotalLevel(150, "default", ">=") ~= 1 then
 		return 1
 	end
 	

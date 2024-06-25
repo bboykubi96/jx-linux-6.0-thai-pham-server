@@ -29,8 +29,8 @@ end
 local tbMon = 
 { 
 {713-2,"Phôc ba "}, 
-{714-2, " l­ít sãng "}, 
-{715-2,"C­ìi giã "} 
+{714-2, " Ph¸ Lang"}, 
+{715-2,"Thõa Phong "} 
 } 
 local nRowCount = TabFile_GetRowCount(npcfile) 
 for i=2, nRowCount do 

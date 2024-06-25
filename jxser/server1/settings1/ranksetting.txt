@@ -1,0 +1,182 @@
+RANKID	RANKSTR	FACTION
+1	T¶o §Þa T¨ng	1
+2	Hé ViÖn Vâ T¨ng	1
+3	Hé Tù Kim Cang 	1
+4	Hé Ph¸p La H¸n	1
+5	TruyÒn Kinh La H¸n	1
+6	Phôc Ma Thiªn V­¬ng 	1
+7	§¹o §ång	2
+8	Nhµn T¶n §¹o S­ 	2
+9	Thanh Tu §¹o S­ 	2
+10	TuÇn S¬n §¹o Nh©n	2
+11	NhËp Quan §¹o Nh©n	2
+12	Ch­ëng Kinh §¹o Nh©n	2
+13	Bè Y Ni	3
+14	Vò Y Ni	3
+15	CÈm Y Ni	3
+16	B¹ch Liªn Tiªn Tö 	3
+17	Thanh Liªn Tiªn Tö 	3
+18	T¶n Hoa Thiªn N÷ 	3
+19	PhÊt TrÇn §Ö Tö 	4
+20	Phông KiÕm §Ö Tö 	4
+21	Tö Vi Hé Ph¸p	4
+22	Th¸i Vi Hé Ph¸p	4
+23	Thiªn Vi Hé Ph¸p	4
+24	Thô Phï Thiªn T­íng	4
+25	T¹p dÞch	5
+26	Lµng D	5
+27	Hé ViÖn	5
+28	Giíi TiÒn Hé VÖ	5
+29	NhËp C¸c §Ö Tö	5
+30	Tû L·o M«n Nh©n	5
+31	Hoa T×	6
+32	Tam PhÈm Hoa Sø	6
+33	NhÞ PhÈm Hoa Sø	6
+34	NhÊt PhÈm Hoa Sø	6
+35	Hoa Tiªn	6
+36	Hoa Tinh	6
+37	V« §¹i §Ö Tö	7
+38	ChÊp §¹i §Ö Tö	7
+39	ChÊp B¸t §Ö Tö	7
+40	ChÊp Bæng §Ö Tö	7
+41	Long §Çu	7
+42	§¹i Long §Çu	7
+43	ThÞ vÖ	8
+44	 ThÞ vÖ tr­ëng	8
+45	Thñ Tr¹i H·n T­íng	8
+46	Ch­ëng §¸ §Çu LÜnh	8
+47	Thñy §¹o Thèng LÜnh	8
+48	Hé §¶o T­íng Qu©n	8
+49	Ngò §éc §ång Tö	9
+50	§o¹t Hån T¶n Nh©n	9
+51	Th«i MÖnh Sø Gi¶	9
+52	H¾c ¸m Diªm La	9
+53	V« §éng La S¸t	9
+54	Co §éc T«n Gi¶	9
+55	S¸t Thñ	10
+56	V« ¶nh S¸t Thñ	10
+57	Tö SÜ	10
+58	U Minh Tö SÜ	10
+59	Ch­ëng Kú Sø	10
+60	Hé Gi¸o Sø	10
+61	V« Danh TiÓu Bèi	0
+62	V« L­îng Gi¶i T«n	1
+63	HuyÒn Vâ ThÇn ThÞ	2
+64	Kim §Ønh Th¸nh N÷	3
+65	Tiªn Phï Ch©n Qu©n	4
+66	Thiªn Thñ ThÇn VÖ	5
+67	Hoa ThÇn	6
+68	Tiªu Dao ThÇn C¸i	7
+69	K×nh Thiªn Nguyªn So¸i	8
+70	U Minh Quû Sø	9
+71	T¸t M·n Ph¸p V­¬ng	10
+72	Hé Ph¸p Tr­ëng L·o	1
+73	HuyÒn Vâ Ch©n Nh©n	2
+74	Th¸nh n÷	3
+75	Hé Ph¸i Ch©n Qu©n	4
+76	Lôc C¸c Tr­ëng L·o	5
+77	Hoa ThÇn Sø	6
+78	Cöu §¹i Tr­ëng L·o	7
+79	TrÊn Bang Nguyªn So¸i	8
+80	U Minh Quû V­¬ng	9
+81	Th¸nh Gi¸o Tr­ëng L·o	10
+82	V« L­îng Thiªn T«n	11
+83	Thiªn S¬n Tr­ëng L·o	12
+84	H¹ng 3	11
+85	H¹ng 4	11
+86	H¹ng 5	11
+87	H¹ng 6	11
+88	H¹ng 7	11
+89	H¹ng 8	11
+90	H¹ng 9	11
+91	H¹ng 10	11
+92	H¹ng 11	11
+93	H¹ng 12	11
+94	H¹ng 13	11
+95	H¹ng 14	11
+96	H¹ng 15	11
+97	H¹ng 16	11
+98	H¹ng 17	11
+99	H¹ng 18	11
+100	H¹ng 19	11
+101	H¹ng 20	11
+102	H¹ng 21	11
+103	H¹ng 22	11
+104	H¹ng 23	11
+105	H¹ng 24	11
+106	H¹ng 25	11
+107	H¹ng 26	11
+108	H¹ng 27	11
+109	H¹ng 28	11
+110	H¹ng 29	11
+111	H¹ng 30	11
+112	H¹ng 31	11
+113	H¹ng 32	11
+114	H¹ng 33	11
+115	H¹ng 34	11
+116	H¹ng 35	11
+117	H¹ng 36	11
+118	H¹ng 37	11
+119	H¹ng 38	11
+120	H¹ng 39	11
+121	H¹ng 40	11
+122	H¹ng 41	11
+123	H¹ng 42	11
+124	H¹ng 43	11
+125	H¹ng 44	11
+126	H¹ng 45	11
+127	H¹ng 46	11
+128	H¹ng 47	11
+129	H¹ng 48	11
+130	H¹ng 49	11
+131	H¹ng 50	11
+132	H¹ng 51	11
+133	H¹ng 52	11
+134	H¹ng 53	11
+135	H¹ng 54	11
+136	H¹ng 55	11
+137	H¹ng 56	11
+138	H¹ng 57	11
+139	H¹ng 58	11
+140	H¹ng 59	11
+141	H¹ng 60	11
+142	H¹ng 61	11
+143	H¹ng 62	11
+144	H¹ng 63	11
+145	H¹ng 64	11
+146	H¹ng 65	11
+147	H¹ng 66	11
+148	H¹ng 67	11
+149	H¹ng 68	11
+150	H¹ng 69	11
+151	H¹ng 70	11
+152	H¹ng 71	11
+153	H¹ng 72	11
+154	H¹ng 73	11
+155	H¹ng 74	11
+156	H¹ng 75	11
+157	H¹ng 76	11
+158	H¹ng 77	11
+159	H¹ng 78	11
+160	H¹ng 79	11
+161	H¹ng 80	11
+162	H¹ng 81	11
+163	H¹ng 82	11
+164	H¹ng 83	11
+165	H¹ng 84	11
+166	H¹ng 85	11
+167	H¹ng 86	11
+168	H¹ng 87	11
+169	H¹ng 88	11
+170	H¹ng 89	11
+171	H¹ng 90	11
+172	H¹ng 91	11
+173	H¹ng 92	11
+174	H¹ng 93	11
+175	H¹ng 94	11
+176	H¹ng 95	11
+177	H¹ng 96	11
+178	H¹ng 97	11
+179	H¹ng 98	11
+180	H¹ng 99	11
+181	H¹ng 100	11

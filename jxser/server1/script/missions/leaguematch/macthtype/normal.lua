@@ -1,10 +1,10 @@
---==============Ò»°ã±ÈÈüÏà¹ØÊı¾İ===============
+
 /*
 if (not WLLS_HEAD) then
 	return
 end
 */
--- ½±Àø¹æÔò£¬½±Æ·±í
+
 function tmp_help_award(tbData, nLevel)
 	local tbAward	= tbData.award_rank[nLevel]
 	local str = "    1. PhÇn th­ëng tİch lòy: bªn th¾ng nhËn ®­îc "..(5*nLevel).."®iÓm, hßa "..(2*nLevel).." ®iÓm, thua: 0 ®iÓm. Mçi trËn ®Êu sÏ cã thªm <color=red>®iÓm th­ëng kinh nghiÖm<color>. Th¾ng hay thua ®Òu cã ®iÓm th­¬ng t­¬ng øng\n"
@@ -31,24 +31,9 @@ function tmp_help_award(tbData, nLevel)
 	return str
 end
 
--- °ïÖúÎÄ×Ö
--- ¸ñÊ½1£º
---	{"ÏîÄ¿Ãû³Æ", "°ïÖúÄÚÈİ", 1/2(ÏŞ¶¨£¬¿ÉÑ¡)},
---	ÏŞ¶¨£º1¡¢Ö»Õë¶Ôµ¥ÈËÀàĞÍ£»2¡¢Ö»Õë¶Ô¶àÈË£»nil¡¢È«²¿£¨ÏÂÍ¬£©
--- ¸ñÊ½2£º
---	{"ÏîÄ¿Ãû³Æ", function(·µ»Ø°ïÖúÄÚÈİµÄº¯Êı), 1/2(ÏŞ¶¨£¬¿ÉÑ¡)},
--- ¸ñÊ½3£º
---	{
---		"ÏîÄ¿Ãû³Æ",
---		{
---			"ĞÂĞãÈü°ïÖúÄÚÈİ",
---			"¸ß¼¶Èü°ïÖúÄÚÈİ",
---		},
---		1/2(ÏŞ¶¨£¬¿ÉÑ¡)
---	},
 tmp_help = {
 	{
-		"<t> Giíi thiÖu ",
+		"<t>Giíi thiÖu ",
 		{
 			"    Lo¹i h×nh Vâ l©m kiÖt xuÊt liªn ®Êu lÇn nµy lµ <color=red><s><color>, ng­êi tham gia ®¼ng cÊp ph¶i tõ <color=red>80-119<color>. Ng­êi ch¬i ®Õn gÆp <color=red>Sø gi¶ kiÖt xuÊt<color> b¸o danh thµnh lËp chiÕn ®éi, sau ®ã vµo Héi tr­êng liªn ®Êu KiÖt xuÊt tiÕn hµnh thi ®Êu",
 			"    Lo¹i h×nh Vâ l©m liªn ®Êu lÇn nµy lµ <color=red><s><color>, ng­êi than gia ®¼ng cÊp ph¶i tõ <color=red>120<color>. §Õn gÆp <color=red>Sø gi¶ liªn ®Êu<color>, b¸o danh thµnh lËp chiÕn ®éi, sau ®ã vµo Héi tr­êng vâ l©m liªn ®Êu tiÕn hµnh thi ®Êu",
@@ -103,14 +88,11 @@ tmp_main = {	--officerÖ÷¶Ô»°
 tmp_creat = "    sau khi lËp chiÕn ®éi tham gia <s>, b¹n cã thÓ <color=red>tù m×nh lµ ®éi tr­ëng<color><enter>"
 	.."    Sau khi lËp chiÕn ®éi, bÊt cø lóc nµo b¹n còng cã thÓ mêi ng­êi kh¸c tham gia hoÆc tham gia vµo tæ ®éi ng­êi kh¸c. Mçi chiÕn ®éi chØ ®­îc tèi ®a <d> ng­êi (c¶ ®éi tr­ëng). <color=red>NÕu ch­a ®Õn lóc thi ®Êu<color> vµ còng <color=red>ch­a ®Êu qua trËn nµo<color>, ng­¬i cã thÓ tïy ı ly khai chiÕn ®éi. Ng­¬i x¸c ®Şnh lËp chiÕn ®é cña m×nh chø?"
 
---====Functions====
---·µ»Øµ±Ç°½ÇÉ«¿ÉÒÔ²Î¼ÓµÄ±ÈÈüÀàĞÍ£¬nilÎª²»ÄÜ²ÎÈü
 function tmp_player_type()
 	local nLevel = wlls_player_level()
 	return iif(nLevel > 0, nLevel, nil)
 end
 
---¼ì²éµ±Ç°½ÇÉ«ÊÇ·ñ¿ÉÒÔ¼ÓÈëÖ¸¶¨µÄÕ½¶Ó
 function tmp_check_addmem(n_capidx, n_lid, n_mtype)
 	if (n_mtype ~= wlls_player_type()) then
 	 	return "Xin lçi! §éi viªn trong nhãm:"..GetName().." vµ <color=red>lo¹i h×nh tham gia thi ®Êu<color> cña chiÕn ®éi b¹n kh«ng phï hîp! Cho nªn kh«ng thÓ vµo chiÕn ®éi cña b¹n!"
@@ -125,7 +107,7 @@ function tmp_str(str, tbData)
 end
 
 function tmp_process_data(tbData)
-	-- Ä¬ÈÏÖµ
+	
 	if (not tbData.addmem_ex) then
 		tbData.addmem_ex	= ""
 	end
@@ -139,7 +121,6 @@ function tmp_process_data(tbData)
 		tbData.check_addmem	= tmp_check_addmem
 	end
 
-	--½¨Á¢µØÍ¼Ë÷Òı£¨¿ìËÙÕÒµ½Ä³Ò»µØÍ¼¶ÔÓ¦µÄ±ÈÈüÀàĞÍ¡¢³¡µØ×é±àºÅ¡¢³¡µØÀàĞÍ£©
 	local tbMapIdx = {}
 	for nMType, tbMType in tbData.match_type do
 		for nGroup, tbGroup in tbMType.map do
@@ -150,10 +131,9 @@ function tmp_process_data(tbData)
 	end
 	tbData.map_index = tbMapIdx
 
-	-- ´¦Àí°ïÖúÎÄ×Ö
 	local nCount = 0
 	local nMultiple = iif(tbData.max_member == 1, 1, 2)
-	local tbSpecialHelp	= tbData.help_msg	-- ÌØ¶¨°ïÖúĞÅÏ¢
+	local tbSpecialHelp	= tbData.help_msg
 	if (not tbSpecialHelp) then
 		tbSpecialHelp	= {}
 	end
@@ -161,7 +141,7 @@ function tmp_process_data(tbData)
 	for _, tbTopic in tmp_help do
 		local szTitle	= tmp_str(tbTopic[1], tbData)
 		local varText, nLimit
-		if (tbSpecialHelp[tbTopic[1]]) then	-- ÓĞ×Ô¶¨Òå°ïÖúĞÅÏ¢
+		if (tbSpecialHelp[tbTopic[1]]) then
 			varText	= tbSpecialHelp[tbTopic[1]]
 			nLimit	= nil
 		else
@@ -196,8 +176,6 @@ function tmp_process_data(tbData)
 			end
 		end
 	end
-
-	-- ´¦ÀíOfficerÖ÷¶Ô»°ÎÄ×Ö
 	tbData.text_main[1]	= tmp_main[1]..tbData.text_main[1]
 	tbData.text_main[2]	= tmp_main[2]..tbData.text_main[2]
 end

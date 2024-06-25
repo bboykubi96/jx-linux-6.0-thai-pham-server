@@ -14,7 +14,7 @@ function main(sel)
 	if(times >gioihanVLMT) then                -- Ê¹ÓÃ´ÎÊıÒÑ´ïµ½ÉÏÏŞ
 		Msg2Player("Sö dông lÇn thø: "..times.." - "..str[4])
 		return 1
-	elseif (GetLevel() < 80) then     -- µÈ¼¶Ğ¡ÓÚ80
+	elseif (GetLevel() < 90) then     -- µÈ¼¶Ğ¡ÓÚ80
 		Msg2Player(str[2])
 		return 1
 	else                            	-- ½±Àø1µã¼¼ÄÜµã

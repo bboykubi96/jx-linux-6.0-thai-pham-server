@@ -2,6 +2,7 @@ IncludeLib("ITEM")
 Include("\\script\\tong\\tong_award_head.lua");-- by÷æ…Ω£¨∞Ôª·÷‹ƒø±Íπ±œ◊∂»
 Include("\\script\\item\\huihuangzhiguo_advance.lua")
 Include("\\script\\activitysys\\g_activity.lua")
+Include("\\script\\lib\\awardtemplet.lua")
 
 function main()
 	
@@ -25,22 +26,22 @@ function main()
 		return
 	end
 	
-	if (nPlayerLevel>=40 and nPlayerLevel < 80) then
+	if (nPlayerLevel < 90) then
 		nGetSeedLevel = 1;
-	elseif (nPlayerLevel >= 80 and nPlayerLevel <100) then
+	elseif (nPlayerLevel >= 80 and nPlayerLevel < 90) then
 		nGetSeedLevel = 2;
-	elseif (nPlayerLevel >= 100) then
+	elseif (nPlayerLevel >= 90) then
 		nGetSeedLevel = 3;
 	end
 	
 	if (nGetSeedLevel ~= GetNpcParam(nNpcIdx, 1)) then -- »Áπ˚º∂±≤ª∂‘,≤ªƒ‹Ω¯–– ∞»°
 		--’‚¿Ô∏ÊÀﬂÕÊº“º∂±≤ª∂‘,≤ªƒ‹ ∞»°
 		if (1 == GetNpcParam(nNpcIdx, 1)) then
-			Msg2Player("Chÿ c„ ng≠Íi ch¨i c p 40 Æ’n c p 79 mÌi c„ th” h∏i qu∂ nµy!")
+			Msg2Player("Loπi qu∂ nµy ng≠Íi ch¨i tı c p 90 trÎ xuËng c„ th” h∏i!")
 		elseif (2 == GetNpcParam(nNpcIdx, 1)) then
-			Msg2Player("Loπi qu∂ nµy ng≠Íi ch¨i tı c p 80 Æ’n c p 99 mÌi c„ th” h∏i.")
+			Msg2Player("Loπi qu∂ nµy ng≠Íi ch¨i tı c p 80 Æ’n c p 90 mÌi c„ th” h∏i.")
 		else
-			Msg2Player("Loπi qu∂ nµy ng≠Íi ch¨i tı c p 100 trÎ l™n mÌi c„ th” h∏i!")
+			Msg2Player("Loπi qu∂ nµy ng≠Íi ch¨i tı c p 90 trÎ l™n mÌi c„ th” h∏i!")
 		end
 		return
 	end;
@@ -50,17 +51,22 @@ function main()
 			-- –¬π˚ µ
 			if (huihuangzhiguo_advance:GetGuoZiAvd() == 0) then
 				-- æ…π˚ µ
-				local nItemIndex = AddItem(6,1,904 + nGetSeedLevel - 1,1,0,0,0);
-				ITEM_SetExpiredTime(nItemIndex, 10080);
-	--			local nowdate = tonumber(GetLocalDate("%y%m%d"))
-	--			SetSpecItemParam(nItemIndex, 1, nowdate)
-				SyncItem(nItemIndex)
-				Msg2Player("Bπn nhÀn Æ≠Óc mÈt qu∂ Huy Hoµng");
-				local _, nTongID = GetTongName()
-				if nTongID~=0 then
-				Msg2Tong(nTongID,"ßπi hi÷p "..GetName().." Æ∑ nh∆t Æ≠Óc qu∂ Huy Hoµng")
-				end
-			--	Msg2Tong("ChÛc mıng Æπi hi÷p "..GetName().." Æ∑ nh∆t Æ≠Óc qu∂ Huy Hoµng")
+				local nTimeSv = tonumber(GetLocalDate("%H%M"));
+				local w,x,y = GetWorldPos(); 
+				if nTimeSv>=2020 and nTimeSv<=2300 and (w==959 or w==355)  then
+
+					tbAwardTemplet:GiveAwardByList({tbProp = {6,1,904 + nGetSeedLevel - 2,1,0,0,0}, nExpiredTime = 7*60*24}, "ß™m Huy Hoµng", 1);--905
+						Msg2Player("Bπn nhÀn Æ≠Óc mÈt qu∂ Hoµng Kim");
+						Msg2SubWorld("ChÛc mıng Æπi hi÷p <color=green>"..GetName().."<color> Æ∑ nh∆t Æ≠Óc <color=yellow>qu∂ Hoµng Kim<color>")
+					else 
+					tbAwardTemplet:GiveAwardByList({tbProp = {6,1,904 + nGetSeedLevel-1,1,0,0,0}, nExpiredTime = 7*60*24}, "ß™m Huy Hoµng", 1);--906
+						Msg2Player("Bπn nhÀn Æ≠Óc mÈt qu∂ Huy Hoµng");
+						Msg2SubWorld("ChÛc mıng Æπi hi÷p <color=green>"..GetName().."<color> Æ∑ nh∆t Æ≠Óc <color=yellow>qu∂ Huy Hoµng<color>")				
+					end
+
+				--local _, nTongID = GetTongName()
+				--Msg2Tong(nTongID,"ßπi hi÷p "..GetName().." Æ∑ nh∆t Æ≠Óc qu∂ Huy Hoµng")
+
 			end
 			SetTask(GREADSEED_TIME_TASKID, 0);
 			SetTask(GREADSEED_SEEDID_TASKID, 0);

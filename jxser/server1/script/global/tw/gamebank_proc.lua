@@ -1,495 +1,495 @@
--- ÁÙ°²¡¡Ö°ÄÜ¡¡Ç®×¯ÀÏ°å
--- by£ºDan_Deng(2003-09-16)
--- Update: Dan_Deng(2004-01-06) ´ÓÍ³Ò»¹¦ÄÜÒÆ¶¯´¦ÀíÒøÆ±µ½´Ë¶ÀÓĞ
--- Update: Fanghao_Wu(2004-9-04) Ôö¼ÓÔª±¦¶Ò»»Í­Ç®¹¦ÄÜ
+-- script viet hoa By http://tranhba.com  tr­íc khi an # chøc n¨ng # tiÒn Trang l·o b¶n 
+-- script viet hoa By http://tranhba.com  by#Dan_Deng(2003-09-16) 
+-- script viet hoa By http://tranhba.com  Update: Dan_Deng(2004-01-06) tõ thèng nhÊt chøc n¨ng di ®éng xö lı ng©n phiÕu ®Õn chç nµy cã mét 
+-- script viet hoa By http://tranhba.com  Update: Fanghao_Wu(2004-9-04) gia t¨ng nguyªn b¶o ®æi ®ång tiÒn chøc n¨ng 
 
--- Include("\\script\\global\\Ç®×¯¹¦ÄÜ.lua")
+-- script viet hoa By http://tranhba.com  Include("\\script\\global\\Ç®×¯¹¦ÄÜ.lua")
 
--- function main(sel)
---	Talk(1,"main_proc","Ç®×¯ÀÏ°å£º°³ÕâÇ®×¯ĞÅÓşÒ»Ïò¶¼ºÃµÃºÜ£¬´Ó²»Æ­ÈË¡£")
--- end;
+-- script viet hoa By http://tranhba.com  function main(sel) 
+-- script viet hoa By http://tranhba.com  Talk(1,"main_proc","TiÒn Trang l·o b¶n # ta ®©y tiÒn nµy trang uy tİn lu«n lu«n ®Òu tèt rÊt , tõ kh«ng g¹t ng­êi . ") 
+-- script viet hoa By http://tranhba.com  end; 
 
-Include("\\script\\global\\systemconfig.lua") -- ÏµÍ³ÅäÖÃ
-Include("\\script\\global\\head_qianzhuang.lua") -- Í·¶¨Òå
+Include("\\script\\global\\systemconfig.lua") -- script viet hoa By http://tranhba.com  ÏµÍ³ÅäÖÃ
+Include("\\script\\global\\head_qianzhuang.lua") -- script viet hoa By http://tranhba.com  Í·¶¨Òå
 
-function gamebank_proc()
-	local msg = {
-		"ÎÒÏë¹ÜÀíÎÒµÄÔª±¦/use_ingot",
-		"ÎÒÏë¹ÜÀíÎÒµÄÒøÆ±/use_ticket",
-		"¹ØÓÚÍ­Ç®/onAboutCoin",
-		"Ëæ±ã¹ä¹ä/no"
-	};
+function gamebank_proc() 
+local msg = { 
+" ta muèn qu¶n lı ta nguyªn b¶o /use_ingot", 
+" ta muèn qu¶n lı ta ng©n phiÕu /use_ticket", 
+" liªn quan tíi ®ång tiÒn /onAboutCoin", 
+" tïy tiÖn ®i d¹o mét chót /no" 
+}; 
 
-	local talk = "";  
-	if (GetSex() == 0) then
-		talk = "Ç®×¯ÀÏ°å£º¶ÔÁËÕâÎ»ÉÙÏÀÒªĞ©Ê²Ã´·şÎñ£¿";
-	else
-		talk = "Ç®×¯ÀÏ°å£º¶ÔÁËÕâÎ»¹ÃÄïÒªĞ©Ê²Ã´·şÎñ£¿";
-	end
+local talk = ""; 
+if (GetSex() == 0) then 
+talk = " tiÒn Trang l·o b¶n # ®óng råi vŞ thiÓu hiÖp kia muèn c¸i g× phôc vô ? "; 
+else 
+talk = " tiÒn Trang l·o b¶n # ®óng råi vŞ c« n­¬ng nµy muèn c¸i g× phôc vô ? "; 
+end 
 
-	local btns ={}
-	if  (SYSCFG_GAMEBANK_GOLDSILVER_OPEN) then
-		tinsert(btns, msg[1])
-	end
-	
-	if  (SYSCFG_GAMEBANK_TICKET_OPEN) then
-		tinsert(btns, msg[2])
-	end
-	
-	tinsert(btns, msg[3])
-	tinsert(btns, msg[4])
-	
-	Say(talk,  getn(btns), btns);
-end
+local btns ={} 
+if (SYSCFG_GAMEBANK_GOLDSILVER_OPEN) then 
+tinsert(btns, msg[1]) 
+end 
 
-function use_ticket()
-	local msg = {
-		"ÎÒÏëÈ¡ÕÅÒøÆ±³öÀ´/get_ticket",
-		"ÎÒÏë°ÑÕâÕÅÒøÆ±ÔÚÄãÕâ¶ù¶ÒÏÖÁË/pay_ticket",
-		"ÎÒÏë°ÑÕâÕÅÒøÆ±¶Ò»»³ÉÍ­Ç®/change_ticket_to_coin",
-		"²éÒ»ÏÂÎÒÔÚÕâ´æÁË¶àÉÙÒøÆ±/show_ticket",
-		"Ëæ±ã¹ä¹ä/no"
-	};
+if (SYSCFG_GAMEBANK_TICKET_OPEN) then 
+tinsert(btns, msg[2]) 
+end 
 
-	local talk = "";  
-	if (GetSex() == 0) then
-		talk = "Ç®×¯ÀÏ°å£ºÉÙÏÀĞèÒªĞ©Ê²Ã´·şÎñ£¿";
-	else
-		talk = "Ç®×¯ÀÏ°å£º¹ÃÄïĞèÒªĞ©Ê²Ã´·şÎñ£¿";
-	end
+tinsert(btns, msg[3]) 
+tinsert(btns, msg[4]) 
 
-	local btns ={}
-	if  (SYSCFG_GAMEBANK_TICKET_GET) then
-		tinsert(btns, msg[1])
-	end
+Say(talk, getn(btns), btns); 
+end 
 
-	if  (SYSCFG_GAMEBANK_TICKET_PAY) then
-		tinsert(btns, msg[2])
-	end
-	
-	if  (SYSCFG_GAMEBANK_TICKET_COIN) then
-		tinsert(btns, msg[3])
-	end
-		
-	tinsert(btns, msg[4])
-	tinsert(btns, msg[5])
-	
-	Say(talk, getn(btns), btns);
-end
+function use_ticket() 
+local msg = { 
+" ta muèn lÊy tÊm ng©n phiÕu ®i ra /get_ticket", 
+" ta muèn ®em tê nµy ng©n phiÕu ë ng­¬i n¬i nµy thùc hiÖn liÔu /pay_ticket", 
+" ta muèn ®em tê nµy ng©n phiÕu ®æi thµnh ®ång tiÒn /change_ticket_to_coin", 
+" tra mét chót ta ë n¬i nµy chøa bao nhiªu ng©n phiÕu /show_ticket", 
+" tïy tiÖn ®i d¹o mét chót /no" 
+}; 
 
-function use_ingot()
-	local msg = {
-		"ÎÒÏëÈ¡¸öÔª±¦³öÀ´/get_ingot",
-		"ÎÒÏë°ÑÕâ¸öÔª±¦ÔÚÄãÕâ¶ù¶ÒÏÖÁË/pay_ingot",
-		"ÎÒÏë°ÑÕâ¸öÔª±¦¶Ò»»³ÉÍ­Ç®/change_ingot_to_coin",
-		"²éÒ»ÏÂÎÒÔÚÕâ´æÁË¶àÉÙÔª±¦/show_ingot",
-		"Ëæ±ã¹ä¹ä/no"
-	};
+local talk = ""; 
+if (GetSex() == 0) then 
+talk = " tiÒn Trang l·o b¶n # thiÕu hiÖp cÇn thø g× phôc vô ? "; 
+else 
+talk = " tiÒn Trang l·o b¶n # c« n­¬ng cÇn thø g× phôc vô ? "; 
+end 
 
-	local talk = "";  
-	if (GetSex() == 0) then
-		talk = "Ç®×¯ÀÏ°å£ºÉÙÏÀĞèÒªĞ©Ê²Ã´·şÎñ£¿";
-	else
-		talk = "Ç®×¯ÀÏ°å£º¹ÃÄïĞèÒªĞ©Ê²Ã´·şÎñ£¿";
-	end
+local btns ={} 
+if (SYSCFG_GAMEBANK_TICKET_GET) then 
+tinsert(btns, msg[1]) 
+end 
 
-	local btns ={}
-	if  (SYSCFG_GAMEBANK_GOLD_GET or SYSCFG_GAMEBANK_SILVER_GET) then
-		tinsert(btns, msg[1])
-	end
+if (SYSCFG_GAMEBANK_TICKET_PAY) then 
+tinsert(btns, msg[2]) 
+end 
 
-	if  (SYSCFG_GAMEBANK_GOLD_PAY or SYSCFG_GAMEBANK_SILVER_PAY) then
-		tinsert(btns, msg[2])
-	end
-	
-	if  (SYSCFG_GAMEBANK_GOLD_COIN or SYSCFG_GAMEBANK_SILVER_COIN) then
-		tinsert(btns, msg[3])
-	end
-	
-	tinsert(btns, msg[4])
-	tinsert(btns, msg[5])
-	
-	Say(talk, getn(btns), btns);
-end
+if (SYSCFG_GAMEBANK_TICKET_COIN) then 
+tinsert(btns, msg[3]) 
+end 
 
-------------- ²éÑ¯ÒøÆ± --------------------
-function show_ticket()
+tinsert(btns, msg[4]) 
+tinsert(btns, msg[5]) 
+
+Say(talk, getn(btns), btns); 
+end 
+
+function use_ingot() 
+local msg = { 
+" ta muèn lÊy c¸ nguyªn b¶o ®i ra /get_ingot", 
+" ta muèn ®­a c¸i nµy nguyªn b¶o ë ng­¬i n¬i nµy thùc hiÖn liÔu /pay_ingot", 
+" ta muèn ®­a c¸i nµy nguyªn b¶o ®æi thµnh ®ång tiÒn /change_ingot_to_coin", 
+" tra mét chót ta ë n¬i nµy chøa bao nhiªu nguyªn b¶o /show_ingot", 
+" tïy tiÖn ®i d¹o mét chót /no" 
+}; 
+
+local talk = ""; 
+if (GetSex() == 0) then 
+talk = " tiÒn Trang l·o b¶n # thiÕu hiÖp cÇn thø g× phôc vô ? "; 
+else 
+talk = " tiÒn Trang l·o b¶n # c« n­¬ng cÇn thø g× phôc vô ? "; 
+end 
+
+local btns ={} 
+if (SYSCFG_GAMEBANK_GOLD_GET or SYSCFG_GAMEBANK_SILVER_GET) then 
+tinsert(btns, msg[1]) 
+end 
+
+if (SYSCFG_GAMEBANK_GOLD_PAY or SYSCFG_GAMEBANK_SILVER_PAY) then 
+tinsert(btns, msg[2]) 
+end 
+
+if (SYSCFG_GAMEBANK_GOLD_COIN or SYSCFG_GAMEBANK_SILVER_COIN) then 
+tinsert(btns, msg[3]) 
+end 
+
+tinsert(btns, msg[4]) 
+tinsert(btns, msg[5]) 
+
+Say(talk, getn(btns), btns); 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - tuÇn tra ng©n phiÕu -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function show_ticket() 
 	local count = GetExtPoint(EXTPOINT_TICKET) + GetExtPoint(EXTPOINT_TICKET_NEW);
-	if (count >= EXTPOINT_MAXVAL or count <= 0) then
-		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÏÖÔÚÃ»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£", 1, "ÖªµÀÁË/no")
-	else
-		Say("<#>Ç®×¯ÀÏ°å£º¿ÍÙÄÔÚĞ¡ºÅ×Ü¹²¼Ä´æÁË <color=green>" .. count .. "<color> ÕÅÒøÆ±¡£", 1, "ÖªµÀÁË/no")
-	end
-end
+if (count >= EXTPOINT_MAXVAL or count <= 0) then 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan b©y giê kh«ng cã ë tiÓu sè göi tån ng©n phiÕu . ", 1,"BiÕt /no") 
+else 
+Say("<#> tiÒn Trang l·o b¶n # kh¸ch quan ë tiÓu sè tæng céng göi chøa <color=green>" .. count .. "<color> tÊm ng©n phiÕu . ", 1,"BiÕt /no") 
+end 
+end 
 
-------------- ²éÑ¯Ôª±¦ --------------------
-function show_ingot()
-	i = GetExtPoint(1)
-	if (i >= 32768) then
-		i = 0
-	end
-	if (i <= 0) then
-		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÏÖÔÚÃ»ÓĞÔÚĞ¡ºÅ¼Ä´æ½ğÒøÔª±¦¡£",1,"ÖªµÀÁË/no")
-	else
-		Say("<#>Ç®×¯ÀÏ°å£ºĞ¡ºÅËù¼Ä´æµÄÔª±¦Ò»ÂÉÒÔÒøÔª±¦¼ÆÊı£¬Ã¿Ò»¸ö½ğÔª±¦»áÕÛËã³ÉËÄ¸öÒøÔª±¦¡£¿ÍÙÄÔÚĞ¡ºÅ×Ü¹²¼Ä´æÁË"..i.."<#>¸öÒøÔª±¦¡£",1,"ÖªµÀÁË/no")
-	end
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - tuÇn tra nguyªn b¶o -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function show_ingot() 
+i = GetExtPoint(1) 
+if (i >= 32768) then 
+i = 0 
+end 
+if (i <= 0) then 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan b©y giê kh«ng cã ë tiÓu sè göi tån vµng b¹c nguyªn b¶o . ",1,"BiÕt /no") 
+else 
+Say("<#> tiÒn Trang l·o b¶n # tiÓu sè së göi tån ®İch nguyªn b¶o nhÊt luËt lÊy ng©n nguyªn b¶o ®Õm hÕt , mçi mét kim nguyªn b¶o sÏ chiÕt to¸n thµnh bèn ng©n nguyªn b¶o . kh¸ch quan ë tiÓu sè tæng céng göi chøa "..i.."<#> c¸ ng©n nguyªn b¶o . ",1,"BiÕt /no") 
+end 
+end 
 
-------------- È¡Ôª±¦ -----------------------
-function get_ingot()
---	Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬´ËÏîÒµÎñÕıÔÚ³ï±¸ÖĞ£¬ÔİÊ±»¹Ã»ÓĞ¿ªÍ¨£¬Çë¹ıÁ½ÌìÔÙÀ´¡£")
-	i = GetExtPoint(1)	
-	if (i >= 32768) then
-		i = 0
-	end
-	if (i <= 0) then					-- Ã»ÓĞÀ©Õ¹µãÊı
-		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æ½ğÒøÔª±¦¡£")
-	elseif (i < 4) then				-- ²»×ã4£¬Ö±½Ó¸øÒøÔª±¦
-		if (SYSCFG_GAMEBANK_SILVER_GET) then -- ÊÇ·ñÔÊĞíÈ¡ÒøÔª±¦£¿
-			get_ingot_10()
-		end
---	elseif (mod(i, 4) == 0) then	-- ÊÇ4µÄÕûÊı±¶£¬Ö±½Ó¸ø½ğÔª±¦
---		get_ingot_35()
-	else							-- ÔÊĞí×ÔĞĞÑ¡ÔñÒªÈ¡½ğÔª±¦»¹ÊÇÒøÔª±¦
-		if (SYSCFG_GAMEBANK_GOLD_GET == nil and SYSCFG_GAMEBANK_SILVER_GET) then -- ²»ÔÊĞíÈ¡½ğÔª±¦£¬µ«ÔÊĞíÈ¡ÒøÔª±¦
-			get_ingot_10()
-		elseif (SYSCFG_GAMEBANK_GOLD_GET and SYSCFG_GAMEBANK_SILVER_GET == nil) then -- ²»ÔÊĞíÈ¡ÒøÔª±¦£¬µ«ÔÊĞíÈ¡½ğÔª±¦
-			get_ingot_35()
-		else
-			Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÔÚĞ¡ºÅ¼Ä´æÁË½ğÒøÁ½ÖÖÔª±¦£¬²»ÖªÄúÏëÈ¡ÄÄÖÖÄØ£¿",3,"È¡¸ö½ğÔª±¦/get_ingot_35","È¡¸öÒøÔª±¦/get_ingot_10","²»È¡ÁË/no")
-		end
-	end
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - lÊy nguyªn b¶o -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function get_ingot() 
+-- script viet hoa By http://tranhba.com  Talk(1,"","TiÒn Trang l·o b¶n # thËt xin lçi , nµy h¹ng nghiÖp vô ®ang chuÈn bŞ trung , t¹m thêi cßn ch­a më th«ng , xin/mêi hai ngµy n÷a trë l¹i . ") 
+i = GetExtPoint(1) 
+if (i >= 32768) then 
+i = 0 
+end 
+if (i <= 0) then -- script viet hoa By http://tranhba.com  kh«ng cã ph¸t triÓn ®iÓm ®Õm 
+Talk(1,"","TiÒn Trang l·o b¶n # thËt xin lçi , kh¸ch quan ngµi còng kh«ng cã ë tiÓu sè göi tån vµng b¹c nguyªn b¶o . ") 
+elseif (i < 4) then -- script viet hoa By http://tranhba.com  ch­a ®ñ 4 , trùc tiÕp cho ng©n nguyªn b¶o 
+if (SYSCFG_GAMEBANK_SILVER_GET) then -- script viet hoa By http://tranhba.com  cã hay kh«ng cho phĞp lÊy ng©n nguyªn b¶o ? 
+get_ingot_10() 
+end 
+-- script viet hoa By http://tranhba.com  elseif (mod(i, 4) == 0) then -- script viet hoa By http://tranhba.com  lµ 4 ®İch chØnh sæ lÇn , trùc tiÕp cho kim nguyªn b¶o 
+-- script viet hoa By http://tranhba.com  get_ingot_35() 
+else -- script viet hoa By http://tranhba.com  cho phĞp tù ®i lùa chän muèn lÊy kim nguyªn b¶o cßn lµ ng©n nguyªn b¶o 
+if (SYSCFG_GAMEBANK_GOLD_GET == nil and SYSCFG_GAMEBANK_SILVER_GET) then -- script viet hoa By http://tranhba.com  kh«ng cho phĞp lÊy kim nguyªn b¶o , nh­ng cho phĞp lÊy ng©n nguyªn b¶o 
+get_ingot_10() 
+elseif (SYSCFG_GAMEBANK_GOLD_GET and SYSCFG_GAMEBANK_SILVER_GET == nil) then -- script viet hoa By http://tranhba.com  kh«ng cho phĞp lÊy ng©n nguyªn b¶o , nh­ng cho phĞp lÊy kim nguyªn b¶o 
+get_ingot_35() 
+else 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan ngµi ë tiÓu sè göi chøa vµng b¹c hai lo¹i nguyªn b¶o , kh«ng biÕt ngµi muèn lÊy lo¹i nµo ®©y ? ",3," lÊy c¸ kim nguyªn b¶o /get_ingot_35"," lÊy c¸ ng©n nguyªn b¶o /get_ingot_10","Kh«ng lÊy liÔu /no") 
+end 
+end 
+end 
 
-------------- È¡ÒøÆ± -----------------------
-function get_ticket()
-	if (SYSCFG_GAMEBANK_TICKET_GET == nil) then -- ³ö´íÁË~~
-		print("get_ticket have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - lÊy ng©n phiÕu -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function get_ticket() 
+if (SYSCFG_GAMEBANK_TICKET_GET == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("get_ticket have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
+
 	local count = GetExtPoint(EXTPOINT_TICKET) + GetExtPoint(EXTPOINT_TICKET_NEW);
-	local msg = "";
-	if (count >= EXTPOINT_MAXVAL or count <= 0) then				-- Ã»ÓĞÀ©Õ¹µãÊı
-		msg = "Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£";
-		Talk(1, "", msg)
-	else 
-		Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡ÒøÆ±Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ticketok", "È¡Ïû/no");
-	end
-end
+local msg = ""; 
+if (count >= EXTPOINT_MAXVAL or count <= 0) then -- script viet hoa By http://tranhba.com  kh«ng cã ph¸t triÓn ®iÓm ®Õm 
+msg = " tiÒn Trang l·o b¶n # thËt xin lçi , kh¸ch quan ngµi còng kh«ng cã ë tiÓu sè göi tån ng©n phiÕu . "; 
+Talk(1, "", msg) 
+else 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan ngµi x¸c ®Şnh cÇn ë bæn ®iÕm lÊy ng©n phiÕu sao ? ( ®iÓm x¸c ®Şnh sau thiÕt chí thèi lui ra kh¸ch hµng b­ng #)", 2,"X¸c ®Şnh /get_ticketok","Hñy bá /no"); 
+end 
+end 
 
-function get_ticketok()
-	local nCountOld = GetExtPoint(EXTPOINT_TICKET);
-	local nCountNew = GetExtPoint(EXTPOINT_TICKET_NEW);
-	if (nCountOld > 0) then
-		PayExtPoint(EXTPOINT_TICKET, 1);
-		Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÆ±ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
-	elseif (nCountNew > 0) then
-		PayExtPoint(EXTPOINT_TICKET_NEW, 1);
-		Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÆ±ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
-	else
-		msg = "Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬¿ÍÙÄÄú²¢Ã»ÓĞÔÚĞ¡ºÅ¼Ä´æÒøÆ±¡£";
-		Talk(1, "", msg);
-	end;
-end
+function get_ticketok() 
+local nCountOld = GetExtPoint(EXTPOINT_TICKET); 
+local nCountNew = GetExtPoint(EXTPOINT_TICKET_NEW); 
+if (nCountOld > 0) then 
+PayExtPoint(EXTPOINT_TICKET, 1); 
+Msg2Player("§ang v× ngµi lÊy ®­îc ng©n phiÕu trung # ë chç nµy trong qu¸ tr×nh thiÕt chí thèi lui ra trß ch¬i # xin chê mét chót . . . ") 
+elseif (nCountNew > 0) then 
+PayExtPoint(EXTPOINT_TICKET_NEW, 1); 
+Msg2Player("§ang v× ngµi lÊy ®­îc ng©n phiÕu trung # ë chç nµy trong qu¸ tr×nh thiÕt chí thèi lui ra trß ch¬i # xin chê mét chót . . . ") 
+else 
+msg = " tiÒn Trang l·o b¶n # thËt xin lçi , kh¸ch quan ngµi còng kh«ng cã ë tiÓu sè göi tån ng©n phiÕu . "; 
+Talk(1, "", msg); 
+end; 
+end 
 
-function get_ingot_35()
-	if (SYSCFG_GAMEBANK_GOLD_GET == nil) then -- ³ö´íÁË~~
-		print("get_gold35 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetExtPoint(1) < 4) then
-		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬ÎÒÃÇµÄÕÊ±¾ÖĞÄúµÄ¼ÇÂ¼ºÃÏóÓĞĞ©²»¶Ô¾¢£¬ÇëÄúµÈµÈ£¬ÎÒÃÇ»á¾¡¿ì¸øÄúºËÊµ²éÇå¡£ÊµÔÚ²»ºÃÒâË¼£¬»¹µÃÇëÄú°Ñ½ğÔª±¦ÏÈÔÚÎÒÃÇÕâ¶ù¶à·ÅÒ»Ğ¡¶ÎÊ±¼ä¡£")
-		return
-	end
-	Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡½ğÔª±¦Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ingot35ok", "È¡Ïû/no");
-end
+function get_ingot_35() 
+if (SYSCFG_GAMEBANK_GOLD_GET == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("get_gold35 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-function get_ingot35ok()
-	PayExtPoint(1,4)
-	Msg2Player("ÕıÔÚÎªÄú»ñÈ¡Ôª±¦ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
-end
+if (GetExtPoint(1) < 4) then 
+Talk(1,"","TiÒn Trang l·o b¶n # thËt xin lçi , chóng ta tr­íng vèn trung ngµi ®İch ghi chĞp d­êng nh­ cã c¸i g× kh«ng ®óng , xin/mêi ngµi v©n v©n , chóng ta sÏ mau sím cho ngµi h¹ch thËt tra râ . b©y giê ng­îng ngïng , cßn ph¶i xin/mêi ngµi ®em kim nguyªn b¶o tr­íc tiªn ë chóng ta n¬i nµy nhiÒu ®Ó mét ®o¹n ng¾n thêi gian . ") 
+return 
+end 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan ngµi x¸c ®Şnh cÇn ë bæn ®iÕm lÊy kim nguyªn b¶o sao ? ( ®iÓm x¸c ®Şnh sau thiÕt chí thèi lui ra kh¸ch hµng b­ng #)", 2,"X¸c ®Şnh /get_ingot35ok","Hñy bá /no"); 
+end 
 
-function get_ingot_10()
-	if (SYSCFG_GAMEBANK_SILVER_GET == nil) then -- ³ö´íÁË~~
-		print("get_silver10 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetExtPoint(1) < 1) then		-- Ğ¡¿¨Ïû·Ñ³É¹¦
-		Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬ÎÒÃÇµÄÕÊ±¾ÖĞÄúµÄ¼ÇÂ¼ºÃÏóÓĞĞ©²»¶Ô¾¢£¬ÇëÄúµÈµÈ£¬ÎÒÃÇ»á¾¡¿ì¸øÄúºËÊµ²éÇå¡£ÊµÔÚ²»ºÃÒâË¼£¬»¹µÃÇëÄú°ÑÒøÔª±¦ÏÈÔÚÎÒÃÇÕâ¶ù¶à·ÅÒ»Ğ¡¶ÎÊ±¼ä¡£")
-		return
-	end
-	Say("Ç®×¯ÀÏ°å£º¿ÍÙÄÄúÈ·¶¨ĞèÒªÔÚ±¾µêÈ¡ÒøÔª±¦Âğ£¿(µãÈ·¶¨ºóÇĞÎğÍË³ö¿Í»§¶Ë£¡)", 2, "È·¶¨/get_ingot10ok", "È¡Ïû/no");
-end
+function get_ingot35ok() 
+PayExtPoint(1,4) 
+Msg2Player("§ang v× ngµi lÊy ®­îc nguyªn b¶o trung # ë chç nµy trong qu¸ tr×nh thiÕt chí thèi lui ra trß ch¬i # xin chê mét chót . . . ") 
+end 
 
-function get_ingot10ok()
-	PayExtPoint(1,1)
-	Msg2Player("ÕıÔÚÎªÄú»ñÈ¡ÒøÔª±¦ÖĞ£¡ÔÚ´Ë¹ı³ÌÖĞÇĞÎğÍË³öÓÎÏ·£¡ÇëÉÔµÈ¡£¡£¡£")
-end;
-------------- ¶ÒÏÖÔª±¦ ---------------------
-function pay_ingot()
---	Talk(1,"","Ç®×¯ÀÏ°å£º¶Ô²»Æğ£¬´ËÏîÒµÎñÕıÔÚ³ï±¸ÖĞ£¬ÔİÊ±»¹Ã»ÓĞ¿ªÍ¨£¬Çë¹ıÁ½ÌìÔÙÀ´¡£")
-	i = GetItemCountEx(343)
-	j = GetItemCountEx(342)
-	if (i > 0) and (j > 0) and (SYSCFG_GAMEBANK_GOLD_PAY and SYSCFG_GAMEBANK_SILVER_PAY)then			-- Á½ÖÖ¶¼ÓĞ£¬Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
-		Say("Ç®×¯ÀÏ°å£ºÄúÉíÉÏ´øÁËĞí¶àÔª±¦°¡£¬ÄúÏë¶ÒÏÖÄÄÒ»¸öÄØ£¿",5,"°Ñ½ğÔª±¦¶ÒÏÖ³É25Ìì/pay_ingot_35a","°Ñ½ğÔª±¦¶ÒÏÖ³É600µã/pay_ingot_35b","°ÑÒøÔª±¦¶ÒÏÖ³É6Ìì/pay_ingot_10a","°ÑÒøÔª±¦¶ÒÏÖ³É150µã/pay_ingot_10b","²»¶ÒÏÖÁË/no")
-	elseif (i > 0) and (SYSCFG_GAMEBANK_GOLD_PAY) then						-- Ö»ÓĞ½ğÔª±¦
-		Say("Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=red>½ğÔª±¦<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",3,"°Ñ½ğÔª±¦¶ÒÏÖ³É25Ìì/pay_ingot_35a","°Ñ½ğÔª±¦¶ÒÏÖ³É600µã/pay_ingot_35b","²»¶ÒÏÖÁË/no")
-	elseif (j > 0) and (SYSCFG_GAMEBANK_SILVER_PAY) then						-- Ö»ÓĞÒøÔª±¦
-		Say("Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=green>ÒøÔª±¦<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",3,"°ÑÒøÔª±¦¶ÒÏÖ³É6Ìì/pay_ingot_10a","°ÑÒøÔª±¦¶ÒÏÖ³É150µã/pay_ingot_10b","²»¶ÒÏÖÁË/no")
-	elseif (i <= 0 and SYSCFG_GAMEBANK_GOLD_PAY) or (j <= 0 and SYSCFG_GAMEBANK_SILVER_PAY) then	-- Ò»ÖÖ¶¼Ã»ÓĞ
-		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÔª±¦°¡£¡",1,"¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no")
-	end
-end
+function get_ingot_10() 
+if (SYSCFG_GAMEBANK_SILVER_GET == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("get_silver10 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-------------- ¶ÒÏÖÒøÆ± ---------------------
-function pay_ticket()
-	if (SYSCFG_GAMEBANK_TICKET_PAY == nil) then -- ³ö´íÁË~~
-		print("pay_ticket have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	local msg = {
-		"Ç®×¯ÀÏ°å£ºÃ»ÎÊÌâ£¬ÄúÏë°ÑÉíÉÏµÄ<color=red>ÒøÆ±<color>¶ÒÏÖ³ÉÊ²Ã´ĞÎÊ½ÄØ£¿",
-		"°ÑÒøÆ±¶ÒÏÖ³É30Ğ¡Ê±/pay_ticket_hours",
-		"°ÑÒøÆ±¶ÒÏÖ³É7Ìì/pay_ticket_days",
-		"²»¶ÒÏÖÁË/no"
-	};
+if (GetExtPoint(1) < 1) then -- script viet hoa By http://tranhba.com  tiÓu t¹p tiªu phİ thµnh c«ng 
+Talk(1,"","TiÒn Trang l·o b¶n # thËt xin lçi , chóng ta tr­íng vèn trung ngµi ®İch ghi chĞp d­êng nh­ cã c¸i g× kh«ng ®óng , xin/mêi ngµi v©n v©n , chóng ta sÏ mau sím cho ngµi h¹ch thËt tra râ . b©y giê ng­îng ngïng , cßn ph¶i xin/mêi ngµi ®em ng©n nguyªn b¶o tr­íc tiªn ë chóng ta n¬i nµy nhiÒu ®Ó mét ®o¹n ng¾n thêi gian . ") 
+return 
+end 
+Say("TiÒn Trang l·o b¶n # kh¸ch quan ngµi x¸c ®Şnh cÇn ë bæn ®iÕm lÊy ng©n nguyªn b¶o sao ? ( ®iÓm x¸c ®Şnh sau thiÕt chí thèi lui ra kh¸ch hµng b­ng #)", 2,"X¸c ®Şnh /get_ingot10ok","Hñy bá /no"); 
+end 
+
+function get_ingot10ok() 
+PayExtPoint(1,1) 
+Msg2Player("§ang v× ngµi lÊy ®­îc ng©n nguyªn b¶o trung # ë chç nµy trong qu¸ tr×nh thiÕt chí thèi lui ra trß ch¬i # xin chê mét chót . . . ") 
+end; 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - thùc hiÖn nguyªn b¶o -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function pay_ingot() 
+-- script viet hoa By http://tranhba.com  Talk(1,"","TiÒn Trang l·o b¶n # thËt xin lçi , nµy h¹ng nghiÖp vô ®ang chuÈn bŞ trung , t¹m thêi cßn ch­a më th«ng , xin/mêi hai ngµy n÷a trë l¹i . ") 
+i = GetItemCountEx(343) 
+j = GetItemCountEx(342) 
+if (i > 0) and (j > 0) and (SYSCFG_GAMEBANK_GOLD_PAY and SYSCFG_GAMEBANK_SILVER_PAY)then -- script viet hoa By http://tranhba.com  hai lo¹i ®Òu cã , hái th¨m thùc hiÖn lo¹i nµo 
+Say("TiÒn Trang l·o b¶n # ngµi trªn ng­êi mang theo rÊt nhiÒu nguyªn b¶o a , ngµi muèn thùc hiÖn c¸i nµo ®©y ? ",5,"§em kim nguyªn b¶o thùc hiÖn thµnh 25 ngµy /pay_ingot_35a","§em kim nguyªn b¶o thùc hiÖn thµnh 600 ®iÓm /pay_ingot_35b","§em ng©n nguyªn b¶o thùc hiÖn thµnh 6 ngµy /pay_ingot_10a","§em ng©n nguyªn b¶o thùc hiÖn thµnh 150 ®iÓm /pay_ingot_10b","Kh«ng thùc hiÖn liÔu /no") 
+elseif (i > 0) and (SYSCFG_GAMEBANK_GOLD_PAY) then -- script viet hoa By http://tranhba.com  chØ cã kim nguyªn b¶o 
+Say("TiÒn Trang l·o b¶n # kh«ng thµnh vÊn ®Ò , ngµi muèn ®em trªn ng­êi <color=red> kim nguyªn b¶o <color> thùc hiÖn thµnh c¸i g× h×nh thøc ®©y ? ",3,"§em kim nguyªn b¶o thùc hiÖn thµnh 25 ngµy /pay_ingot_35a","§em kim nguyªn b¶o thùc hiÖn thµnh 600 ®iÓm /pay_ingot_35b","Kh«ng thùc hiÖn liÔu /no") 
+elseif (j > 0) and (SYSCFG_GAMEBANK_SILVER_PAY) then -- script viet hoa By http://tranhba.com  chØ cã ng©n nguyªn b¶o 
+Say("TiÒn Trang l·o b¶n # kh«ng thµnh vÊn ®Ò , ngµi muèn ®em trªn ng­êi <color=green> ng©n nguyªn b¶o <color> thùc hiÖn thµnh c¸i g× h×nh thøc ®©y ? ",3,"§em ng©n nguyªn b¶o thùc hiÖn thµnh 6 ngµy /pay_ingot_10a","§em ng©n nguyªn b¶o thùc hiÖn thµnh 150 ®iÓm /pay_ingot_10b","Kh«ng thùc hiÖn liÔu /no") 
+elseif (i <= 0 and SYSCFG_GAMEBANK_GOLD_PAY) or (j <= 0 and SYSCFG_GAMEBANK_SILVER_PAY) then -- script viet hoa By http://tranhba.com  mét lo¹i ®Òu kh«ng cã 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang nguyªn b¶o a #",1,"§óng råi , ta ®Ó quªn ë nhµ /no") 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - thùc hiÖn ng©n phiÕu -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function pay_ticket() 
+if (SYSCFG_GAMEBANK_TICKET_PAY == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("pay_ticket have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
+
+local msg = { 
+" tiÒn Trang l·o b¶n # kh«ng thµnh vÊn ®Ò , ngµi muèn ®em trªn ng­êi <color=red> ng©n phiÕu <color> thùc hiÖn thµnh c¸i g× h×nh thøc ®©y ? ", 
+" ®em ng©n phiÕu thùc hiÖn thµnh 30 giê /pay_ticket_hours", 
+" ®em ng©n phiÕu thùc hiÖn thµnh 7 ngµy /pay_ticket_days", 
+" kh«ng thùc hiÖn liÔu /no" 
+}; 
 	local count = GetItemCountEx(QUESTKEY_TICKET) + GetItemCountEx(QUESTKEY_TICKET_NEW);
-	if (count > 0) then			-- Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
-		Say(msg[1], 3, msg[2], msg[3], msg[4])
-	else
-		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no")
-	end
-end
+if (count > 0) then -- script viet hoa By http://tranhba.com  hái th¨m thùc hiÖn lo¹i nµo 
+Say(msg[1], 3, msg[2], msg[3], msg[4]) 
+else 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang ng©n phiÕu a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no") 
+end 
+end 
 
---»ñÈ¡¿Û³ıÒøÆ±µÄÖÖÀà
-function pay_ticket_typediff()
-	local tab_TicketType = {
-		{QUESTKEY_TICKET, 2},
-		{QUESTKEY_TICKET_NEW, 3}
-		};
-	local nOldSilverCount = GetItemCountEx(QUESTKEY_TICKET);
-	local nNewSilverCount = GetItemCountEx(QUESTKEY_TICKET_NEW);
-	if (nOldSilverCount > 0) then
-		return tab_TicketType[1];
-	elseif (nNewSilverCount > 0) then
-		return tab_TicketType[2];
-	else
-		return nil;
-	end;
-end;
--- °ÑÒøÆ±¶ÒÏÖ³É30Ğ¡Ê±
-function pay_ticket_hours()
-	local tab_TicketType = pay_ticket_typediff();
-	if (not tab_TicketType) then
-		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
-		return
-	end;
-	DelItemEx(tab_TicketType[1]);
-	UseSilver(tab_TicketType[2], 0, 1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 30 HOUR CHARGE", 0, 0, 0, -1 );
-	Say("Ç®×¯ÀÏ°å£º<color=red>ÒøÆ±<color>¶Ò»»³É<color=red>30Ğ¡Ê±<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no")
-end
+-- script viet hoa By http://tranhba.com  lÊy ®­îc khÊu trõ ng©n phiÕu ®İch chñng lo¹i 
+function pay_ticket_typediff() 
+local tab_TicketType = { 
+{QUESTKEY_TICKET, 2}, 
+{QUESTKEY_TICKET_NEW, 3} 
+}; 
+local nOldSilverCount = GetItemCountEx(QUESTKEY_TICKET); 
+local nNewSilverCount = GetItemCountEx(QUESTKEY_TICKET_NEW); 
+if (nOldSilverCount > 0) then 
+return tab_TicketType[1]; 
+elseif (nNewSilverCount > 0) then 
+return tab_TicketType[2]; 
+else 
+return nil; 
+end; 
+end; 
+-- script viet hoa By http://tranhba.com  ®em ng©n phiÕu thùc hiÖn thµnh 30 giê 
+function pay_ticket_hours() 
+local tab_TicketType = pay_ticket_typediff(); 
+if (not tab_TicketType) then 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang ng©n phiÕu a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no"); 
+return 
+end; 
+DelItemEx(tab_TicketType[1]); 
+UseSilver(tab_TicketType[2], 0, 1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 30 HOUR CHARGE", 0, 0, 0, -1 ); 
+Say("TiÒn Trang l·o b¶n #<color=red> ng©n phiÕu <color> ®æi thµnh <color=red>30 giê <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ", 1,"BiÕt /no") 
+end 
 
--- °ÑÒøÆ±¶ÒÏÖ³É7Ìì
-function pay_ticket_days()
-	local tab_TicketType = pay_ticket_typediff();
-	if (not tab_TicketType) then
-		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
-		return
-	end;
-	DelItemEx(tab_TicketType[1])
-	UseSilver(tab_TicketType[2], 1, 1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 7 DAY CHARGE", 0, 0, 0, -1 );
-	Say("Ç®×¯ÀÏ°å£º<color=red>ÒøÆ±<color>¶Ò»»³É<color=red>7Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no")
-end
+-- script viet hoa By http://tranhba.com  ®em ng©n phiÕu thùc hiÖn thµnh 7 ngµy 
+function pay_ticket_days() 
+local tab_TicketType = pay_ticket_typediff(); 
+if (not tab_TicketType) then 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang ng©n phiÕu a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no"); 
+return 
+end; 
+DelItemEx(tab_TicketType[1]) 
+UseSilver(tab_TicketType[2], 1, 1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a TICKET for 7 DAY CHARGE", 0, 0, 0, -1 ); 
+Say("TiÒn Trang l·o b¶n #<color=red> ng©n phiÕu <color> ®æi thµnh <color=red>7 ngµy <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ", 1,"BiÕt /no") 
+end 
 
-function pay_ingot_35a()
-	if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- ³ö´íÁË~~
-		print("pay_gold35 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
+function pay_ingot_35a() 
+if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("pay_gold35 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-	if (GetItemCountEx(343) > 0) then 
-	DelItemEx(343)
-	UseSilver(0,1,1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 25 DAY CHARGE", -1, 0, 0, 0 );
-	Say("Ç®×¯ÀÏ°å£º<color=red>½ğÔª±¦<color>¶Ò»»³É<color=red>25Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
-	end
-end
+if (GetItemCountEx(343) > 0) then 
+DelItemEx(343) 
+UseSilver(0,1,1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 25 DAY CHARGE", -1, 0, 0, 0 ); 
+Say("TiÒn Trang l·o b¶n #<color=red> kim nguyªn b¶o <color> ®æi thµnh <color=red>25 ngµy <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ",1,"BiÕt /no") 
+end 
+end 
 
-function pay_ingot_35b()
-	if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- ³ö´íÁË~~
-		print("pay_gold35 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetItemCountEx(343) > 0) then
-	DelItemEx(343)
-	UseSilver(0,0,1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 600 POINT CHARGE", -1, 0, 0, 0 );
-	Say("Ç®×¯ÀÏ°å£º<color=red>½ğÔª±¦<color>¶Ò»»³É<color=green>600µã<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
-	end
-end
+function pay_ingot_35b() 
+if (SYSCFG_GAMEBANK_GOLD_PAY == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("pay_gold35 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-function pay_ingot_10a()
-	if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- ³ö´íÁË~~
-		print("pay_silver10 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetItemCountEx(342) > 0) then 
-	DelItemEx(342)
-	UseSilver(1,1,1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 6 DAY CHARGE", 0, -1, 0, 0 );
-	Say("Ç®×¯ÀÏ°å£º<color=green>ÒøÔª±¦<color>¶Ò»»³É<color=red>6Ìì<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
-	end
-end
+if (GetItemCountEx(343) > 0) then 
+DelItemEx(343) 
+UseSilver(0,0,1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a GOLD for 600 POINT CHARGE", -1, 0, 0, 0 ); 
+Say("TiÒn Trang l·o b¶n #<color=red> kim nguyªn b¶o <color> ®æi thµnh <color=green>600 ®iÓm <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ",1,"BiÕt /no") 
+end 
+end 
 
-function pay_ingot_10b()
-	if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- ³ö´íÁË~~
-		print("pay_silver10 have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetItemCountEx(342) > 0) then 
-	DelItemEx(342)
-	UseSilver(1,0,1)
-	-- SaveQuickly()
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 150 POINT CHARGE", 0, -1, 0, 0 );
-	Say("Ç®×¯ÀÏ°å£º<color=green>ÒøÔª±¦<color>¶Ò»»³É<color=green>150µã<color>ÎŞÎó£¬Çë¿ÍÙÄºË²é¡£",1,"ÖªµÀÁË/no")
-	end
-end
+function pay_ingot_10a() 
+if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("pay_silver10 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-------------- È·ÈÏÒøÆ±¶Ò»»Í­Ç®---------------------
-function change_ticket_to_coin()
-	if (SYSCFG_GAMEBANK_TICKET_COIN == nil) then -- ³ö´íÁË~~
-		print("coin_ticket have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
+if (GetItemCountEx(342) > 0) then 
+DelItemEx(342) 
+UseSilver(1,1,1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 6 DAY CHARGE", 0, -1, 0, 0 ); 
+Say("TiÒn Trang l·o b¶n #<color=green> ng©n nguyªn b¶o <color> ®æi thµnh <color=red>6 ngµy <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ",1,"BiÕt /no") 
+end 
+end 
+
+function pay_ingot_10b() 
+if (SYSCFG_GAMEBANK_SILVER_PAY == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("pay_silver10 have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
+
+if (GetItemCountEx(342) > 0) then 
+DelItemEx(342) 
+UseSilver(1,0,1) 
+-- script viet hoa By http://tranhba.com  SaveQuickly() 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") USE a SILVER for 150 POINT CHARGE", 0, -1, 0, 0 ); 
+Say("TiÒn Trang l·o b¶n #<color=green> ng©n nguyªn b¶o <color> ®æi thµnh <color=green>150 ®iÓm <color> kh«ng cã lÇm , mêi kh¸ch quan h¹ch tra . ",1,"BiÕt /no") 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - x¸c nhËn ng©n phiÕu ®æi ®ång tiÒn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function change_ticket_to_coin() 
+if (SYSCFG_GAMEBANK_TICKET_COIN == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("coin_ticket have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
+
 	local count = GetItemCountEx(QUESTKEY_TICKET) + GetItemCountEx(QUESTKEY_TICKET_NEW);
-	if (count > 0) then
-		Say( "Ç®×¯ÀÏ°å£ºÄúÈ·¶¨Òª°ÑÒøÆ±¶Ò»»³ÉÍ­Ç®Âğ£¿", 2, "<#>°ÑÒøÆ±¶Ò»»³É"..COIN_CHANGE_COUNT_OF_TICKET.."<#>¸öÍ­Ç®/confirm_ticket_to_coin", "²»¶Ò»»ÁË/no");
-	else
-		Say( "Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
-	end
-end
+if (count > 0) then 
+Say("TiÒn Trang l·o b¶n # ngµi nhÊt ®Şnh ph¶i ®em ng©n phiÕu ®æi thµnh ®ång tiÒn sao ? ", 2, "<#> ®em ng©n phiÕu ®æi thµnh "..COIN_CHANGE_COUNT_OF_TICKET.."<#> c¸ ®ång tiÒn /confirm_ticket_to_coin","Kh«ng ®æi /no"); 
+else 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang ng©n phiÕu a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no"); 
+end 
+end 
 
-------------- ÒøÆ±¶Ò»»Í­Ç®---------------------
-function confirm_ticket_to_coin()
-	local tab_TicketType = pay_ticket_typediff();
-	if (not tab_TicketType) then
-		Say("Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÒøÆ±°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
-		return
-	end;
-	DelItemEx(tab_TicketType[1]);
-	AddStackItem(COIN_CHANGE_COUNT_OF_TICKET, 4, 417, 1, 1, 0, 0, 0);
-	UseSilver(tab_TicketType[2], 2, 1); -- ÒøÆ±¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
-	-- SaveQuickly();
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a TICKET into "..COIN_CHANGE_COUNT_OF_TICKET.." COINS", 0, 0, COIN_CHANGE_COUNT_OF_TICKET, -1 );
-	Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÆ±ÒÑ³É¹¦¶Ò»»³É" .. COIN_CHANGE_COUNT_OF_TICKET .. "<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ticket_to_coin" );
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - ng©n phiÕu ®æi ®ång tiÒn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function confirm_ticket_to_coin() 
+local tab_TicketType = pay_ticket_typediff(); 
+if (not tab_TicketType) then 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang ng©n phiÕu a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no"); 
+return 
+end; 
+DelItemEx(tab_TicketType[1]); 
+AddStackItem(COIN_CHANGE_COUNT_OF_TICKET, 4, 417, 1, 1, 0, 0, 0); 
+UseSilver(tab_TicketType[2], 2, 1); -- script viet hoa By http://tranhba.com  ng©n phiÕu ®æi v× ®ång tiÒn ®İch tiªu hao thèng kª 
+-- script viet hoa By http://tranhba.com  SaveQuickly(); 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a TICKET into "..COIN_CHANGE_COUNT_OF_TICKET.." COINS", 0, 0, COIN_CHANGE_COUNT_OF_TICKET, -1 ); 
+Say( "<#> tiÒn Trang l·o b¶n # ngµi ®İch ng©n phiÕu ®· thµnh c«ng ®æi thµnh " .. COIN_CHANGE_COUNT_OF_TICKET .. "<#> c¸ ®ång tiÒn , mêi kh¸ch quan h¹ch tra . ", 2,"BiÕt /no","N÷a ®æi mét İt ®ång tiÒn /change_ticket_to_coin" ); 
+end 
 
-------------- Ôª±¦¶Ò»»Í­Ç®---------------------
-function change_ingot_to_coin()	
-	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
-	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
-	
-	if( nGoldCount > 0 and nSilverCount > 0 ) and (SYSCFG_GAMEBANK_GOLD_COIN and SYSCFG_GAMEBANK_SILVER_COIN) then			-- Á½ÖÖ¶¼ÓĞ£¬Ñ¯ÎÊ¶ÒÏÖÄÄÖÖ
-		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 3, "<#>°Ñ½ğÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®/change_gold_to_coin", "<#>°ÑÒøÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®/change_silver_to_coin", "²»¶Ò»»ÁË/no");
-	elseif( nGoldCount > 0 and SYSCFG_GAMEBANK_GOLD_COIN) then							-- Ö»ÓĞ½ğÔª±¦
-		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 2, "<#>°Ñ½ğÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®/change_gold_to_coin", "²»¶Ò»»ÁË/no");
-	elseif( nSilverCount > 0 and SYSCFG_GAMEBANK_SILVER_COIN) then							-- Ö»ÓĞÒøÔª±¦
-		Say( "Ç®×¯ÀÏ°å£ºÄúÏë¶Ò»»ÄÄ¸öÔª±¦ÄØ£¿", 2, "<#>°ÑÒøÔª±¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®/change_silver_to_coin", "²»¶Ò»»ÁË/no");
-	elseif (nGoldCount <= 0 and SYSCFG_GAMEBANK_GOLD_COIN) or (nSilverCount <= 0 and SYSCFG_GAMEBANK_SILVER_COIN) then	-- Ò»ÖÖ¶¼Ã»ÓĞ
-		Say( "Ç®×¯ÀÏ°å£ºÄúÏÖÔÚÃ»´øÔª±¦°¡£¡", 1, "¶ÔÁË£¬ÎÒÍüÔÚ¼ÒÀïÁË/no");
-	end
-end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - nguyªn b¶o ®æi ®ång tiÒn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+function change_ingot_to_coin() 
+local nGoldCount = GetItemCountEx( 343 ); -- script viet hoa By http://tranhba.com  kim nguyªn b¶o c¸ ®Õm 
+local nSilverCount = GetItemCountEx( 342 ); -- script viet hoa By http://tranhba.com  ng©n nguyªn b¶o c¸ ®Õm 
 
-function change_gold_to_coin()
-	if (SYSCFG_GAMEBANK_GOLD_COIN == nil) then -- ³ö´íÁË~~
-		print("coin_gold have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
+if( nGoldCount > 0 and nSilverCount > 0 ) and (SYSCFG_GAMEBANK_GOLD_COIN and SYSCFG_GAMEBANK_SILVER_COIN) then -- script viet hoa By http://tranhba.com  hai lo¹i ®Òu cã , hái th¨m thùc hiÖn lo¹i nµo 
+Say("TiÒn Trang l·o b¶n # ngµi muèn ®æi c¸i nµo nguyªn b¶o ®©y ? ", 3, "<#> ®em kim nguyªn b¶o ®æi thµnh "..COIN_CHANGE_COUNT_OF_GOLD.."<#> c¸ ®ång tiÒn /change_gold_to_coin", "<#> ®em ng©n nguyªn b¶o ®æi thµnh "..COIN_CHANGE_COUNT_OF_SILVER.."<#> c¸ ®ång tiÒn /change_silver_to_coin","Kh«ng ®æi /no"); 
+elseif( nGoldCount > 0 and SYSCFG_GAMEBANK_GOLD_COIN) then -- script viet hoa By http://tranhba.com  chØ cã kim nguyªn b¶o 
+Say("TiÒn Trang l·o b¶n # ngµi muèn ®æi c¸i nµo nguyªn b¶o ®©y ? ", 2, "<#> ®em kim nguyªn b¶o ®æi thµnh "..COIN_CHANGE_COUNT_OF_GOLD.."<#> c¸ ®ång tiÒn /change_gold_to_coin","Kh«ng ®æi /no"); 
+elseif( nSilverCount > 0 and SYSCFG_GAMEBANK_SILVER_COIN) then -- script viet hoa By http://tranhba.com  chØ cã ng©n nguyªn b¶o 
+Say("TiÒn Trang l·o b¶n # ngµi muèn ®æi c¸i nµo nguyªn b¶o ®©y ? ", 2, "<#> ®em ng©n nguyªn b¶o ®æi thµnh "..COIN_CHANGE_COUNT_OF_SILVER.."<#> c¸ ®ång tiÒn /change_silver_to_coin","Kh«ng ®æi /no"); 
+elseif (nGoldCount <= 0 and SYSCFG_GAMEBANK_GOLD_COIN) or (nSilverCount <= 0 and SYSCFG_GAMEBANK_SILVER_COIN) then -- script viet hoa By http://tranhba.com  mét lo¹i ®Òu kh«ng cã 
+Say("TiÒn Trang l·o b¶n # ngµi b©y giê kh«ng cã mang nguyªn b¶o a #", 1,"§óng råi , ta ®Ó quªn ë nhµ /no"); 
+end 
+end 
 
-	if (GetItemCountEx(343) > 0) then
-	DelItemEx( 343 );
-	AddStackItem( COIN_CHANGE_COUNT_OF_GOLD, 4, 417, 1, 1, 0, 0, 0 );
-	UseSilver(0, 2, 1); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
-	-- SaveQuickly();
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a GOLD into "..COIN_CHANGE_COUNT_OF_GOLD.." COINS", -1, 0, COIN_CHANGE_COUNT_OF_GOLD, 0 );
-	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
-	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
-	if( nGoldCount > 0 or nSilverCount > 0 ) then
-		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄ½ğÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ingot_to_coin" );
-	else
-		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄ½ğÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_GOLD.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no" );
-	end
-	end
-end
+function change_gold_to_coin() 
+if (SYSCFG_GAMEBANK_GOLD_COIN == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("coin_gold have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-function change_silver_to_coin()
-	if (SYSCFG_GAMEBANK_SILVER_COIN == nil) then -- ³ö´íÁË~~
-		print("coin_silver have close, but something is wrong...");
-		Msg2Player("¹¦ÄÜ³ö´í£¡");
-		return
-	end
-	
-	if (GetItemCountEx(342) > 0) then
-	DelItemEx( 342 );
-	AddStackItem( COIN_CHANGE_COUNT_OF_SILVER, 4, 417, 1, 1, 0, 0, 0 );
-	UseSilver(1, 2, 1); -- ÒøÆ±¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ
-	-- SaveQuickly();
-	SaveNow(); -- Á¢¼´´æÅÌ
-	WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a SILVER into "..COIN_CHANGE_COUNT_OF_SILVER.." COINS", 0, -1, COIN_CHANGE_COUNT_OF_SILVER, 0 );
-	local nGoldCount = GetItemCountEx( 343 );		-- ½ğÔª±¦¸öÊı
-	local nSilverCount = GetItemCountEx( 342 );		-- ÒøÔª±¦¸öÊı
-	if( nGoldCount > 0 or nSilverCount > 0 ) then
-		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 2, "ÖªµÀÁË/no", "ÔÙ¶Ò»»Ò»Ğ©Í­Ç®/change_ingot_to_coin" );
-	else
-		Say( "<#>Ç®×¯ÀÏ°å£ºÄúµÄÒøÔª±¦ÒÑ³É¹¦¶Ò»»³É"..COIN_CHANGE_COUNT_OF_SILVER.."<#>¸öÍ­Ç®£¬Çë¿ÍÙÄºË²é¡£", 1, "ÖªµÀÁË/no" );
-	end
-	end
-end
+if (GetItemCountEx(343) > 0) then 
+DelItemEx( 343 ); 
+AddStackItem( COIN_CHANGE_COUNT_OF_GOLD, 4, 417, 1, 1, 0, 0, 0 ); 
+UseSilver(0, 2, 1); -- script viet hoa By http://tranhba.com  kim nguyªn b¶o ®æi v× ®ång tiÒn ®İch tiªu hao thèng kª 
+-- script viet hoa By http://tranhba.com  SaveQuickly(); 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a GOLD into "..COIN_CHANGE_COUNT_OF_GOLD.." COINS", -1, 0, COIN_CHANGE_COUNT_OF_GOLD, 0 ); 
+local nGoldCount = GetItemCountEx( 343 ); -- script viet hoa By http://tranhba.com  kim nguyªn b¶o c¸ ®Õm 
+local nSilverCount = GetItemCountEx( 342 ); -- script viet hoa By http://tranhba.com  ng©n nguyªn b¶o c¸ ®Õm 
+if( nGoldCount > 0 or nSilverCount > 0 ) then 
+Say( "<#> tiÒn Trang l·o b¶n # ngµi ®İch kim nguyªn b¶o ®· thµnh c«ng ®æi thµnh "..COIN_CHANGE_COUNT_OF_GOLD.."<#> c¸ ®ång tiÒn , mêi kh¸ch quan h¹ch tra . ", 2,"BiÕt /no","N÷a ®æi mét İt ®ång tiÒn /change_ingot_to_coin" ); 
+else 
+Say( "<#> tiÒn Trang l·o b¶n # ngµi ®İch kim nguyªn b¶o ®· thµnh c«ng ®æi thµnh "..COIN_CHANGE_COUNT_OF_GOLD.."<#> c¸ ®ång tiÒn , mêi kh¸ch quan h¹ch tra . ", 1,"BiÕt /no" ); 
+end 
+end 
+end 
 
------------- ¹ØÓÚÍ­Ç® ------------------
-function onAboutCoin()
-	local msg = {
-		"Ç®×¯ÀÏ°å£ºÍ­Ç®¿ÉÒÔ´ÓÎÒÕâÀïÓÃÔª±¦»òÒøÆ±»»µÃ£¬Ôª±¦»òÒøÆ±»»³ÉÍ­Ç®ºó²»¿ÉÒÔÔÙ»»»Ø¡£",
-		"<#>Ç®×¯ÀÏ°å£ºÒ»¸ö<color=yellow>½ğÔª±¦<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_GOLD.."<color>Ã¶Í­Ç®£¬Ò»¸ö<color=yellow>ÒøÔª±¦<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_SILVER.."<color>Ã¶£¬Ò»ÕÅ<color=yellow>ÒøÆ±<color>¿É¶Ò»»<color=yellow>"..COIN_CHANGE_COUNT_OF_TICKET.."<color>Ã¶¡£",
-		"Ç®×¯ÀÏ°å£ºÓÃÍ­Ç®¿ÉÒÔÔÚ¸÷¸ö³ÇÊĞµÄÁã··´¦¹ºÂò¸÷ÖÖÏ¡ÓĞÎïÆ·¡£",
-		"Ç®×¯ÀÏ°å£º×ó¼üµ¥»÷ĞèÒªµş·ÅµÄÍ­Ç®£¬Êó±êÒÆ¶¯µ½ÁíÒ»¶ÑÍ­Ç®ÉÏ×ó¼üµ¥»÷£¬Á½¶ÑÍ­Ç®¾Í»áµş·Åµ½Ò»Æğ£¬Ã¿¶ÑÍ­Ç®µş·ÅµÄÉÏÏŞÊÇ<color=yellow>100<color>¸ö¡£°´×¡<color=yellow>Shift<color>¼ü£¬×ó¼üµ¥»÷ĞèÒª²ğ·ÖµÄÍ­Ç®£¬ÊäÈëÏë²ğ³öµÄÍ­Ç®¸öÊı£¬¼´¿ÉÍê³É²ğ·Ö¡£"
-	};
-	Talk(4, "", msg[1], msg[2], msg[3], msg[4]);
-end
+function change_silver_to_coin() 
+if (SYSCFG_GAMEBANK_SILVER_COIN == nil) then -- script viet hoa By http://tranhba.com  sai lÇm ~~ 
+print("coin_silver have close, but something is wrong..."); 
+Msg2Player("Chøc n¨ng bŞ lçi #"); 
+return 
+end 
 
-----------------------------------------
-function no()
-end
+if (GetItemCountEx(342) > 0) then 
+DelItemEx( 342 ); 
+AddStackItem( COIN_CHANGE_COUNT_OF_SILVER, 4, 417, 1, 1, 0, 0, 0 ); 
+UseSilver(1, 2, 1); -- script viet hoa By http://tranhba.com  ng©n phiÕu ®æi v× ®ång tiÒn ®İch tiªu hao thèng kª 
+-- script viet hoa By http://tranhba.com  SaveQuickly(); 
+SaveNow(); -- script viet hoa By http://tranhba.com  lËp tøc tån m©m 
+WriteGoldLog( GetAccount().."("..GetName()..") CHANGE a SILVER into "..COIN_CHANGE_COUNT_OF_SILVER.." COINS", 0, -1, COIN_CHANGE_COUNT_OF_SILVER, 0 ); 
+local nGoldCount = GetItemCountEx( 343 ); -- script viet hoa By http://tranhba.com  kim nguyªn b¶o c¸ ®Õm 
+local nSilverCount = GetItemCountEx( 342 ); -- script viet hoa By http://tranhba.com  ng©n nguyªn b¶o c¸ ®Õm 
+if( nGoldCount > 0 or nSilverCount > 0 ) then 
+Say( "<#> tiÒn Trang l·o b¶n # ngµi ®İch ng©n nguyªn b¶o ®· thµnh c«ng ®æi thµnh "..COIN_CHANGE_COUNT_OF_SILVER.."<#> c¸ ®ång tiÒn , mêi kh¸ch quan h¹ch tra . ", 2,"BiÕt /no","N÷a ®æi mét İt ®ång tiÒn /change_ingot_to_coin" ); 
+else 
+Say( "<#> tiÒn Trang l·o b¶n # ngµi ®İch ng©n nguyªn b¶o ®· thµnh c«ng ®æi thµnh "..COIN_CHANGE_COUNT_OF_SILVER.."<#> c¸ ®ång tiÒn , mêi kh¸ch quan h¹ch tra . ", 1,"BiÕt /no" ); 
+end 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  liªn quan tíi ®ång tiÒn -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function onAboutCoin() 
+local msg = { 
+" tiÒn Trang l·o b¶n # ®ång tiÒn cã thÓ tõ ta chç nµy dïng nguyªn b¶o hoÆc ng©n phiÕu ®æi ph¶i , nguyªn b¶o hoÆc ng©n phiÕu ®æi thµnh ®ång tiÒn sau kh«ng thÓ ®æi l¹i trë vÒ . ", 
+"<#> tiÒn Trang l·o b¶n # mét <color=yellow> kim nguyªn b¶o <color> nh­ng ®æi <color=yellow>"..COIN_CHANGE_COUNT_OF_GOLD.."<color> mai ®ång tiÒn , mét <color=yellow> ng©n nguyªn b¶o <color> nh­ng ®æi <color=yellow>"..COIN_CHANGE_COUNT_OF_SILVER.."<color> mai , mét tê <color=yellow> ng©n phiÕu <color> nh­ng ®æi <color=yellow>"..COIN_CHANGE_COUNT_OF_TICKET.."<color> mai . ", 
+" tiÒn Trang l·o b¶n # dïng ®ång tiÒn cã thÓ ë c¸c thµnh phè ®İch sè kh«ng phiÕn chç mua c¸c lo¹i vËt hi h÷u phÈm . ", 
+" tiÒn Trang l·o b¶n # bªn tr¸i kiÖn ®an kİch cÇn ®iÖp ®Ó ®İch ®ång tiÒn , con chuét di ®éng ®Õn kh¸c mét ®èng ®ång tiÒn th­îng bªn tr¸i kiÖn ®an kİch , hai ®èng ®ång tiÒn sÏ ®iÖp th¶ vµo cïng nhau , mçi ®èng ®ång tiÒn ®iÖp ®Ó ®İch th­îng h¹n lµ <color=yellow>100<color> c¸ . ®Ì l¹i <color=yellow>Shift<color> kiÖn , bªn tr¸i kiÖn ®an kİch cÇn hñy ®i ph©n ®İch ®ång tiÒn , ®­a vµo muèn hñy ®i ra ®İch ®ång tiÒn c¸ ®Õm , lµ ®­îc hoµn thµnh hñy ®i ph©n . " 
+}; 
+Talk(4, "", msg[1], msg[2], msg[3], msg[4]); 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+function no() 
+end 

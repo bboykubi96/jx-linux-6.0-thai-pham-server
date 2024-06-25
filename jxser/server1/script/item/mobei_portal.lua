@@ -1,40 +1,36 @@
--- Ä®±±´«ËÍ¾í
--- ÊÇÓÃºó´«ËÍµ½Ä®±±²ÝÔ­·ÇÕ½¶·ÇøÓò
--- Edit: ×Ó·ÇÓã
--- Date: 2007-06-06 19:47
+-- script viet hoa By http://tranhba.com  M¹c B¾c truyÒn tèng quyÓn 
+-- script viet hoa By http://tranhba.com  lµ dïng sau truyÒn tèng ®Õn M¹c B¾c th¶o nguyªn kh«ng ph¶i lµ chiÕn ®Êu khu vùc 
+-- script viet hoa By http://tranhba.com  Edit: tö kh«ng ph¶i lµ c¸ 
+-- script viet hoa By http://tranhba.com  Date: 2007-06-06 19:47 
 Include("\\script\\maps\\checkmap.lua");
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
-
-function main()
-	
-	--dofile("script/item/mobei_portal.lua")
-	--dofile("script/global/g7vn/g7configall.lua")
-	if dimanbacthaonguyen == 0 then
-		Say("M¹c b¾c th¶o nguyªn t¹m thêi ch­a më")
-		return 1;
-	end
-
-	local pMapID, pMx, pMy = GetWorldPos();
-	if GetFightState()>=1 or (IsCityMap(pMapID)~=1 and IsFreshmanMap(pMapID)~=1 and pMapID ~= 175)  then
-		Msg2Player("<color=yellow>Cuén truyÒn tèng M¹c B¾c chØ cã thÓ sö dông t¹i khu vùc phi chiÕn ®Êu cña thµnh thÞ, t©n thñ th«n vµ t©y s¬n th«n<color>");
-		return 1;
-	end;
-	--DinhHQ
-	--20110407: kh«ng cho sö dông m¹c b¾c truyÒn tèng trong v­ît ¶i 30
-	if pMapID == 957 then
-		Msg2Player("<color=yellow>Cuén truyÒn tèng M¹c B¾c chØ cã thÓ sö dông t¹i khu vùc phi chiÕn ®Êu cña thµnh thÞ, t©n thñ th«n vµ t©y s¬n th«n<color>");
-		return 1;
-	end
-	local tbPos = {
-		{1265,2493},
-		{1281,2502},
-		{1291,2546},
-		{1289,2482},
-	};
-	local nrand = random(getn(tbPos));
-	NewWorld(341, tbPos[nrand][1], tbPos[nrand][2]);
-	SetFightState(0);
-	SetRevPos(175,1)	--Éè¶¨ËÀÍöÖØÉúµãÎªÎ÷É½´å
-	return 0;
+function main() 
+local pMapID, pMx, pMy = GetWorldPos(); 
+if GetFightState()>=1 or (IsCityMap(pMapID)~=1 and IsFreshmanMap(pMapID)~=1 and pMapID ~= 175) then 
+Msg2Player("<color=yellow> M¹c B¾c truyÒn tèng s¸ch chØ cã thÓ ë thµnh phè kh«ng ph¶i lµ chiÕn ®Êu khu vùc # tay míi th«n cïng víi t©y s¬n th«n sö dông <color>"); 
+return 1; 
+end; 
+-- script viet hoa By http://tranhba.com DinhHQ 
+-- script viet hoa By http://tranhba.com 20110407: ë x«ng quan 30 kh«ng cho sö dông M¹c B¾c truyÒn tèng 
+if pMapID == 957 then 
+Msg2Player("<color=yellow> M¹c B¾c truyÒn tèng s¸ch chØ cã thÓ ë thµnh phè kh«ng ph¶i lµ chiÕn ®Êu khu vùc # tay míi th«n cïng víi t©y s¬n th«n sö dông <color>"); 
+return 1; 
+end 
+local tbPos = { 
+{1265,2493}, 
+{1281,2502}, 
+{1291,2546}, 
+{1289,2482}, 
+}; 
+local nrand = random(getn(tbPos)); 
+NewWorld(341, tbPos[nrand][1], tbPos[nrand][2]); 
+SetRevPos(175,1) -- script viet hoa By http://tranhba.com  thiÕt ®Þnh tö vong sèng l¹i ®iÓm v× t©y s¬n th«n 
+SetProtectTime(18*5)  --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
+SetFightState(1)
+SetPunish(0);
+	--sieunhanbienhinh()
+	SetPKFlag(1)
+	ForbidChangePK(1);
+return 0; 
 end;

@@ -1,4 +1,4 @@
---by yfeng
+-- script viet hoa By http://tranhba.com by yfeng
 if not BAN_HEAD then
 BAN_HEAD = 1
 
@@ -10,7 +10,7 @@ __YANDIBAOZANG = {851,852,853,854,855,856,857,858,859,860,861,862, 871,872,873,8
 __TONGMAPS = {586,587,588,589,590,591,593,594,595,596,597}
 __NEWPRACTICEMAPS = {917,918,919,920,921,922,923,924}
 
---¼ì²éÊÇ·ñ»î¶¯µØÍ¼
+-- script viet hoa By http://tranhba.com #×²Ğ£######¯##İ#
 __YANDIBAOZANG = {851,852,853,854,855,856,857,858,859,860,861,862, 871,872,873,874, 892,893,894,895, 896, 901}
 function checkActMaps(nMapId)
 	
@@ -31,7 +31,7 @@ function checkYDBZMaps(mapid)
 	return nil
 end
 
-function checkSJMaps(mapid) --¼ì²âmapidÊÇ·ñËÎ½ğ³¡¾°
+function checkSJMaps(mapid) -- script viet hoa By http://tranhba.com #×²©mapid£######ğ³##°
 	for i=1,getn(__SJMAPS) do
 		if(mapid == __SJMAPS[i]) then return 1 end
 	end
@@ -42,8 +42,8 @@ function checkSJMaps(mapid) --¼ì²âmapidÊÇ·ñËÎ½ğ³¡¾°
 	
 end
 
-function checkBWMaps(mapid) --¼ì²âmapidÊÇ·ñÎäÁÖ´ó»á³¡¾°
-	if (mapid >= 540 and mapid <= 579) then	--ÁªÈüµØÍ¼
+function checkBWMaps(mapid) -- script viet hoa By http://tranhba.com #×²©mapid£#####¸#´ã#¸³##°
+	if (mapid >= 540 and mapid <= 579) then	-- script viet hoa By http://tranhba.com ¸#Ì###İ#
 		return 1;
 	end
 	for i=1,getn(__BWMAPS) do
@@ -53,7 +53,7 @@ function checkBWMaps(mapid) --¼ì²âmapidÊÇ·ñÎäÁÖ´ó»á³¡¾°
 end
 
 
-function checkZQMaps(mapid) --¼ì²âmapidÊÇ·ñÖĞÇï»î¶¯³¡¾°
+function checkZQMaps(mapid) -- script viet hoa By http://tranhba.com #×²©mapid£##########¯³##°
 	for i=1,getn(__ZQMAPS) do
 		if(mapid == __ZQMAPS[i]) then return 1 end
 	end
@@ -62,7 +62,7 @@ function checkZQMaps(mapid) --¼ì²âmapidÊÇ·ñÖĞÇï»î¶¯³¡¾°
 end
 
 
-function checkXSMaps(mapid)	--¼ì²émapidÊÇ·ñĞÅÊ¹³¡¾°
+function checkXSMaps(mapid)	-- script viet hoa By http://tranhba.com #×²Ğmapid£####Å£#³##°
 	if (mapid >= 387 and mapid <= 395) then
 		return 1
 	end
@@ -70,21 +70,21 @@ function checkXSMaps(mapid)	--¼ì²émapidÊÇ·ñĞÅÊ¹³¡¾°
 end
 
 
-function checkHFMaps(mapid)	--¼ì²émapidÊÇ·ñ·é»ğÁ¬³Ç³¡¾°
+function checkHFMaps(mapid)	-- script viet hoa By http://tranhba.com #×²Ğmapid£####Ğ#ğ¸#³#³##°
 	for i = 1, getn(__FHMAPS) do
 		if(mapid == __FHMAPS[i]) then return 1 end
 	end
 	return nil
 end
 
-function checkTONGMaps(mapid)	--¼ì²émapidÊÇ·ñÎª°ï»áµØÍ¼»òÊÇ·ñÊ¹ÓÃ°ï»áµØÍ¼Ä£°å
+function checkTONGMaps(mapid)	-- script viet hoa By http://tranhba.com #×²Ğmapid£#####°##¸##İ##ß£###£#ã·°##¸##İ#Ä#°#
 	for i = 1, getn(__TONGMAPS) do
 		if(mapid == __TONGMAPS[i]) then return 1 end
 	end
 	return nil
 end
 
-function checkNEWPRACTICEMaps(mapid)	--¼ì²émapidÊÇ·ñÎªĞÂÁ·¼¶µØÍ¼
+function checkNEWPRACTICEMaps(mapid)	-- script viet hoa By http://tranhba.com #×²Ğmapid£######¢¸#####İ#
 	for i = 1, getn(__NEWPRACTICEMAPS) do
 		if(mapid == __NEWPRACTICEMAPS[i]) then return 1 end
 	end

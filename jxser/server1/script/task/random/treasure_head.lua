@@ -37,6 +37,8 @@ Include("\\script\\lib\\gb_taskfuncs.lua");
 -- ¶ÁÈë¶Ô»°×Ö·û´¦ÀíÎÄ¼þ
 Include("\\script\\task\\system\\task_string.lua");
 
+Include("\\script\\lib\\objbuffer_head.lua")-- thong bao den the gioi
+
 tabTreaPos = new(KTabFileEx, "\\settings\\task\\random\\trea_pos.txt", "TreaPos");
 tabTreaItem = new(KTabFileEx, "\\settings\\task\\random\\trea_item.txt", "TreaItem");
 tabTreaBoss = new(KTabFileEx, "\\settings\\task\\random\\trea_boss.txt", "TreaBoss");
@@ -239,10 +241,11 @@ local nIndex = 0;
 		if GetItemMagicLevel(nIndex, 2)==0 then
 			
 			-- ¿Û³ýÍæ¼ÒµÄ½ðÇ®
-			if Pay(300000)==1 then
+			if Pay(1000000)==1 then
 				SetItemMagicLevel(nIndex, 2, 1);
 				SyncItem(nIndex);
-				Msg2Player("<color=yellow>B¹n ®­a cho Phã L«i Th­ 30 v¹n l­îng!<color>");
+				Msg2Player("<color=yellow>B¹n ®­a cho Phã L«i Th­ 100 v¹n l­îng!<color>");
+				WriteLog(format("Nhan vat %s giam dinh tang bao do", GetName()))
 			else
 				Say("Haha…B¹n trÎ, kh«ng ®ñ tiÒn th× nãi lµm g×, ®õng t­ëng l·o giµ nµy ngu muéi. Ng­¬i vµ vËt kú tr©n dÞ b¶o tuyÖt thÕ nµy cã thÓ lµ v« duyªn råi.",0);
 				return
@@ -274,9 +277,9 @@ local nType = SelectTreasureType();
 	CDebug:MessageOut("B¾t ®Çu ®µo t×m kho b¸u "..nType);
 
 	-- ÏÈËæ»úÅÐ¶ÏÊÇ·ñ²úÉú½ðÇ®£¬ÓÐ 45% µÄ¸ÅÂÊ
-	if random(1, 100)<=45 then
-		SelectTreasureMoney();
-	end;
+	-- if random(1, 100)<=45 then
+		-- SelectTreasureMoney();
+	-- end;
 
 	if nType==1 then   -- µÀ¾ß
 		
@@ -295,15 +298,20 @@ local nType = SelectTreasureType();
 	
 	elseif nType==3 then   -- ÉñÃØÏä×Ó	--by ×Ó·ÇÓã 2008/02/22 È¥³ý±¦Ïä¸ÅÂÊ
 		
-		AddItem(6, 1, 902, 1, 0, 0, 0);
-		Msg2SubWorld("Ng­êi ch¬i <color=yellow>"..GetName().."<color> sö dông Tµng B¶o §å<color=green>"..mapname.."<color> ®· ®µo ®­îc 1 <color=green>B¶o r­¬ng cæ<color>!");
+		AddItem(6, 1, 1384, 1, 0, 0, 0);
+		Msg2AllGS("Ng­êi ch¬i <color=yellow>"..GetName().."<color> sö dông Tµng B¶o §å<color=green>"..mapname.."<color> ®· ®µo ®­îc 1 <color=green>B¸ch b¶o r­¬ng<color>!");
 		return 1;
 	
 	end;
 
 end;
-
-
+function Msg2AllGS(szStr)-- thong bao den toan bo GS
+AddGlobalNews(szStr)
+local handle = OB_Create();
+ObjBuffer:PushObject(handle, szStr)
+RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+OB_Release(handle)
+end
 -- Ñ¡ÔñÍÚ³öÀ´µÄ±¦²ØÀàÐÍ
 -- ·µ»ØÖµ£º1 µÀ¾ß¡¢2 BOSS¡¢3 ÉñÃØÏä×Ó
 function SelectTreasureType()
@@ -333,7 +341,7 @@ function SelectTreasureMoney()
 
 local i=0;
 
-	for i=1, 25 do AddMoneyObj(random(5000, 12000)); end;
+	for i=1, 25 do AddMoneyObj(random(500, 1200)); end;
 	
 	Msg2Player("<color=yellow>B¹n nhËn ®­îc mét ®èng tiÒn lín!<color>");
 
@@ -342,7 +350,8 @@ end;
 
 -- Ñ¡ÔñÍÚ³öµÄ±¦²ØÎïÆ·
 function SelectTreasureItem()
-
+AddItem(6, 1, 71, 1, 0, 0)
+for i=1,5 do
 local nRow = tabTreaItem:countArrayRate("ItemRate");
 
 local nGoods = {"",0,0,0,0,0,0,0};
@@ -363,13 +372,13 @@ local mapname = SubWorldName(mapindex);
 	if (nGoods[2]==1) then
 		AddGoldItem(0, nGoods[3]);
 		Msg2Player("B¹n lÊy ®­îc mét <color=yellow>"..nGoods[1].."<color>!");
-		AddGlobalCountNews("Ng­êi ch¬i "..GetName().." sö dông Tµng B¶o §å"..mapname.."lÊy ®­îc trang bÞ hoµng kim "..nGoods[1].."mét bé!", 2);
+		Msg2AllGS("Ng­êi ch¬i "..GetName().." sö dông Tµng B¶o §å"..mapname.."lÊy ®­îc trang bÞ hoµng kim "..nGoods[1].."mét bé!", 2);
 	else
 		AddItem(nGoods[3],nGoods[4],nGoods[5],nGoods[6],nGoods[7],nGoods[8],0);
 		Msg2Player("B¹n lÊy ®­îc mét <color=yellow>"..nGoods[1].."<color>!");
 		-- Msg2SubWorld("Íæ¼Ò<color=yellow>"..GetName().."<color>ÀûÓÃ²Ø±¦Í¼ÔÚ<color=yellow>"..mapname.."<color>´¦ÍÚµ½ÁË<color=yellow>"..nGoods[1].."<color>£¡");
 	end;
-
+end
 end;
 
 
@@ -396,7 +405,7 @@ local mapindex = SubWorldID2Idx(subworld);
 local mapname = SubWorldName(mapindex);
 
 local nBossNum = random(nMin, nMax);
-
+-- nBossNum = 1;
 local aryOrg, aryDec = {},{};
 
 local i,j = 0,0;
@@ -438,7 +447,7 @@ local i,j = 0,0;
 							1);
 		end;
 					
-		Msg2SubWorld("Ng­êi ch¬i <color=yellow>"..GetName().."<color> khi sö dông Tµng B¶o §å nhËn ®­îc mét<color=green>"..strName.."<color>");
+		Msg2AllGS("Ng­êi ch¬i <color=yellow>"..GetName().."<color> khi sö dông Tµng B¶o §å nhËn ®­îc mét<color=green>"..strName.."<color>");
 		return 1;
 	else
 
@@ -449,7 +458,11 @@ local i,j = 0,0;
 			nFive = tonumber(nFive);
 		end;
 				
-		AddNpcEx(nIndex, 95, nFive, mapindex, x*32, y*32, 1, strName, 1);
+		local npcindex = AddNpcEx(nIndex, 95, nFive, mapindex, x*32, y*32, 1, strName, 1);
+		if npcindex > 0 then
+		SetNpcDeathScript(npcindex, "\\script\\missions\\boss\\bossdeath.lua");
+		Msg2AllGS(format("Ng­êi ch¬i %s trong lóc ®µo tµng b¶o ®å ë %s ®· ®µo nhÇm mé cña cña %s lµm h¾n sèng dËy. Giang hå l¹i cã phen dËy sãng",GetName(),mapname,strName))
+		end
 		
 		-- AddGlobalCountNews("¹«¸æ£ºÍæ¼Ò "..GetName().." ÀûÓÃ²Ø±¦Í¼ÔÚ"..mapname.."ÍÚ±¦Ê±Óöµ½ÁË"..strName.."µÄ×èÄÓ£¡", 2);
 		return 1;

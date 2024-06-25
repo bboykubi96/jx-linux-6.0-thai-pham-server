@@ -20,8 +20,8 @@ Include("\\script\\vng_event\\vip_account_2011\\npc\\volamtruyennhan.lua")
 
 function main()
 	
-	--dofile("script/global/Â·ÈË_ÎäÁÖÃË´«ÈË.lua")
-	--dofile("script/global/g7vn/g7configall.lua")
+	dofile("script/global/Â·ÈË_ÎäÁÖÃË´«ÈË.lua")
+	dofile("script/global/g7vn/g7configall.lua")
 
 	-- ·²ÊÇÉæ¼°µ½»î¶¯µÄÎäÁÖÃË´«ÈË¶Ô»°½Ô²åÈëµ½´ËÊı×é -- ÅåÀ×Ë¹ 2006/03/20
 	local aryTalk  = {};
@@ -52,9 +52,9 @@ function main()
 		--tinsert(aryTalk, "NhËn phóc duyªn c¶ ®éi /OnGain_Team");
 	end;
 	
---	tinsert(aryTalk, "NhËn ®iÓm danh väng /W33_prise");
---	tinsert(aryTalk, "KiÓm tra thêi gian tİch lòy Online /OnQueryTime");
-	tinsert(aryTalk, "Liªn quan tíi phóc duyªn/OnAbout");
+	tinsert(aryTalk, "NhËn ®iÓm danh väng./W33_prise");
+	tinsert(aryTalk, "KiÓm tra thêi gian tİch lòy Online /OnQueryTime");
+	tinsert(aryTalk, "Liªn quan tíi phóc duyªn./OnAbout");
 	tinsert(aryTalk, "Hñy bá/OnCancel");
 	
 	if ( Uworld1000 ==340 ) or ( Uworld1000 == 350 ) then
@@ -69,13 +69,13 @@ end
 --ÁìÈ¡Íæ¼Ò±¾ÈËµÄ¸£ÔµµãÊı
 function OnGain_Self()
 	
-	if 0==0 then
-	--	Say("Chøc n¨ng nhËn ®iÓm phóc duyªn t¹m ®ãng") 
-	--	return 
+	if nhanphucduyenfree == 0 then
+		Say("Chøc n¨ng nhËn ®iÓm phóc duyªn t¹m ®ãng") 
+		return 
 	end
 
-	if GetLevel() < 60 then
-		Say("§¼ng cÊp 60 míi cã thÓ nhËn") 
+	if GetLevel() < levelnhanphucduyen then
+		Say("§¼ng cÊp "..levelnhanphucduyen.." míi cã thÓ nhËn") 
 		return
 	end
 
@@ -190,7 +190,7 @@ if (GetGameTime() - Uworld33 >= 43200) then
 
 	SetTask(33,GetGameTime())
 	Talk(1,"","Vâ l©m minh chñ truyÒn nh©n: Ta nh×n thÊy sù cè g¾ng ë trong m¾t cña ng­¬i, ng­¬i tiÕn bé ta còng rÊt vui mõng. H·y tiÕp tôc cè g¾ng lªn !")
-	local i = random(0,99)
+	i = random(0,99)
 	if (i < 19) then			-- 19%
 		AddRepute(1)
 		Msg2Player("Danh väng t¨ng lªn 1 ®iÓm. ")

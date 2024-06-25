@@ -1,45 +1,45 @@
 Include("\\script\\misc\\vngpromotion\\ipbonus\\ipbonus_2_head.lua");
 
-function main(nItemIndex)
-	if GetItemParam(nItemIndex, 1) == 0 or GetItemParam(nItemIndex, 1) <= tonumber(GetLocalDate("%Y%m%d")) then
-		Talk(1,"", "VËt phÈm nµy ®· hÕt h¹n")
-		return 0
-	end
-	
-	if IsCharged() ~= 1 then 
-		Talk(1,"", "Nh©n vËt ®· n¹p thÎ míi cã thÓ sö dông vËt phÈm nµy.")
-		return 1
-	end
-	
-	if GetLevel() < 50 then
-		Talk(1,"", "§¼ng cÊp kh«ng ®ñ 50, h·y rÌn luyÖn thªm")
-		return 1
-	end
-	
-	IpResetTask();
-	
-	if GetTask(TASKID_USE_TIMES) >= 6 then
-		Talk(1,"", "Mçi ngµy chØ cã thÓ sö dông vËt phÈm  tèi ®a 6 lÇn")
-		return 1
-	end
-		
-	if CalcFreeItemCellCount() < 2 then
-		Talk(1,"", format("Chç trèng hµnh trang kh«ng ®ñ %d chç, h·y s¾p xÕp l¹i.", 2))
-		return 1
-	end
-	
-	if GetTask(TASKID_CUR_EXP) >= MAX_EXP then
-		Talk(1,"","B¹n ®· ®¹t ®Õn giíi h¹n 1500000000 ®iÓm kinh nghiÖm, kh«ng thÓ tiÕp tôc sö dông.")
-		return 1
-	end
-		
-	local nAddExp = ITEM_EXP
+function main(nItemIndex) 
+if GetItemParam(nItemIndex, 1) == 0 or GetItemParam(nItemIndex, 1) <= tonumber(GetLocalDate("%Y%m%d")) then 
+Talk(1,"","Nªn vËt phÈm ®· qua kú ") 
+return 0 
+end 
+
+if IsCharged() ~= 1 then 
+Talk(1,"","§· sung trÞ gi¸ nh©n vËt míi cã thÓ sö dông nªn vËt phÈm .") 
+return 1 
+end 
+
+if GetLevel() < 50 then 
+Talk(1,"","CÊp bËc ch­a ®ñ 50 , luyÖn n÷a tËp ®i ") 
+return 1 
+end 
+
+IpResetTask(); 
+
+if GetTask(TASKID_USE_TIMES) >= 6 then 
+Talk(1,"","Mçi ng­êi chØ cã thÓ sö dông nªn vËt phÈm nhiÒu nhÊt v× 6 lÇn ") 
+return 1 
+end 
+
+if CalcFreeItemCellCount() < 2 then 
+Talk(1,"", format("Trang bÞ chç trèng ch­a ®ñ %d c¸ , xin/mêi lÇn n÷a an bµi .", 2)) 
+return 1 
+end 
+
+if GetTask(TASKID_CUR_EXP) >= MAX_EXP then 
+Talk(1,"","Ng­¬i ®· ®¹t tíi th­îng h¹n 1500000000 kinh nghiÖm trÞ gi¸ , kh«ng thÓ sÏ tiÕp tôc sö dông .") 
+return 1 
+end 
+
+local nAddExp = ITEM_EXP 
 	if GetTask(TASKID_CUR_EXP) + ITEM_EXP > MAX_EXP then
-		nAddExp = MAX_EXP - GetTask(TASKID_CUR_EXP) 
-	end
-	
+nAddExp = MAX_EXP - GetTask(TASKID_CUR_EXP) 
+end 
+
 	SetTask(TASKID_CUR_EXP, GetTask(TASKID_CUR_EXP) + nAddExp)
 	SetTask(TASKID_USE_TIMES, GetTask(TASKID_USE_TIMES) + 1)
-	AddOwnExp(nAddExp)
-	Msg2Player("B¹n nhËn ®­îc "..nAddExp.." ®iÓm kinh nghiÖm.")
+AddOwnExp(nAddExp) 
+Msg2Player("Ngµi ®¹t ®­îc "..nAddExp.." kinh nghiÖm trÞ gi¸ .") 
 end

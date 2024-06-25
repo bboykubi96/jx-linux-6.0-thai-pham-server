@@ -1,13 +1,11 @@
 Include("\\script\\lib\\pfunction.lua")
 Include("\\script\\lib\\composeex.lua")
---Transaction log - Modified by DinhHQ - 20110816
 Include("\\script\\vng_lib\\VngTransLog.lua")
 Include("\\script\\vng_lib\\taskweekly_lib.lua")
 Include("\\script\\vng_lib\\bittask_lib.lua")
 Include("\\script\\lib\\objbuffer_head.lua")
 
 ActivityDetailClass = {}
-
 ActivityDetailClass.tbTemplate = {}
 
 function ActivityDetailClass:_init(pActivity)
@@ -140,7 +138,7 @@ function ActivityDetailClass:LoadConfig(Config, nActivityId, gActivity)
 			tinsert(self.tbCondition, tfn)
 		end
 	end
-	--ÔØÈë¶¯×÷
+	
 	for i=1, getn(Config.tbActition) do
 		local tb = Config.tbActition[i]
 		if tb then

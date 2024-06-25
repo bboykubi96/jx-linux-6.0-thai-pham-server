@@ -10,7 +10,6 @@ function g_ScriptItemClass:_init()
 	
 end
 
-
 function g_ScriptItemClass:Add(tbScriptItem)
 	
 	if self.tbSet[tbScriptItem.szKey] then
@@ -19,7 +18,6 @@ function g_ScriptItemClass:Add(tbScriptItem)
 	end
 	self.tbSet[tbScriptItem.szKey] = tbScriptItem
 end
-
 
 function g_ScriptItemClass:Get(tbProp)
 	local szKey = "";

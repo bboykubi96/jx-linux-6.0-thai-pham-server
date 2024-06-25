@@ -3,7 +3,7 @@
 --   khai s¸ng thêi gian #2014-06-08    -> 2014-07-08
 
 xmas07_makeSnowMan_S = 14060800 
-xmas07_makeSnowMan_E = 18070824 
+xmas07_makeSnowMan_E = 14070824 
 xmas07_makeSnowMan_UseTime = 14070824  --  hîp thµnh ng­êi tuyÕt sö dông ng­êi tuyÕt 
 xmas07_makeSnowMan_ActName = " Ho¹t ®éng t¹o ng­êi tuyÕt "; 
 

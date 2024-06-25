@@ -1,181 +1,181 @@
---ÌôÕ½ÈüÄ£Ê½
+-- script viet hoa By http://tranhba.com  khiªu chiÕn cuéc so tµi m« thøc 
 
---1¡¢ÓÉGM¸ø¸÷¸öÇøµÄ¸ßĞ£¸ºÔğÈË.ÕÊºÅ¼Ó¸½¼Óµã
---2¡¢¸ßĞ£¸ºÔğÈËÔÚ±ÈÈü±¨Ãû½×¶Îµ½Èü³¡£¬ÓëNpc¶Ô»°»ñµÃµÀ¾ß£¬·Ö±ğÊÇÕı¡¢Ğ°¡¢°×¡¢Èı¸öÕóÓª²»Í¬µÄÃÅÅÆ¡£
---3¡¢¸ºÔğÈËÄÃµ½µÀ¾ßºó½»¸ø±ÈÈüË«·½µÄ¶Ó³¤¡£
---4¡¢¶Ó³¤µÃµ½µÀ¾ßºó£¬×é¶Ó×ÔÒÑµÄ5ÈË¶ÓÎé¡£È»ºóÄÃÆ±½ø³¡¡£
---5¡¢½ø³¡ºó£¬×÷ÈüÇ°×¼±¸¡£
---6¡¢±ÈÈü½áÊøºó¡£¸ºÔğÈË¼ÇÂ¼±ÈÈü³É¼¨£¬Ïò¹Ù·½Í¨±¨¡£
-
-
---±£´æµ±Ç°¼¤»îµÄÈÎÎñÊôÓÚÄÄÒ»ÖÖÈÎÎñµÄMissionV±äÁ¿index £¬ÒòÎªÑİÎä³¡³¡µØÄ¿Ç°ÓÃÓÚÆÕÍ¨ÑİÎä³¡ºÍ¸ßĞ£ÌôÕ½ÈüÖĞ£¬
---Í¬Ò»Ê±¶ÎÖ»ÄÜÓĞÒ»¸öÓÃ´¦¡£ËùÒÔÓÃÕâ¸ö±äÁ¿À´Çø·Ö¡£
---0±íÊ¾Ã»ÓĞÈÎÎñÈÎÎñ¼¤»î£¬1±íÊ¾ÆÕÍ¨ÑİÎä³¡£¬2±íÊ¾¸ßĞ£ÌôÕ½Èü
-
-ACTIVEMISSION = 40;
-
-FRAME2TIME = 18;	--18Ö¡ÓÎÏ·Ê±¼äÏàµ±ÓÚ1ÃëÖÓ
-
-TIMER_1 = 20 * FRAME2TIME; --20Ãë¹«²¼Ò»ÏÂÕ½¿ö
-TIMER_2 = 20 * 60  * FRAME2TIME; -- ½»Õ½×ÜÊ±¼äÎª20·ÖÖÓ
-GO_TIME =  300 * FRAME2TIME  / TIMER_1; -- ±¨ÃûÊ±¼äÎª°ëĞ¡Ê±
-
-MS_STATE = 1; --ÈÎÎñÖĞ¼ÇÂ¼ÈÎÎñ×´Ì¬µÄ±äÁ¿ID
---¸Ã±äÁ¿Ö¸ÏòµÄ×´Ì¬Öµ0±íÊ¾Õ½ÒÛÎª´ò¿ª£¬1±íÊ¾Õ½ÒÛ±¨ÃûÖĞ£¬2±íÊ¾Õ½ÒÛÕ½¶·½øĞĞÖĞ£¬3±íÊ¾Õ½ÒÛ¸Õ¸Õ½áÊøÁË
-
-MS_STORETASKID = 240;
-MS_S_DEATHCOUNT = 3; --ÈÎÎñÖĞ¼ÇÂ¼1Íæ¼ÒÉËÍöÊıÁ¿µÄ±äÁ¿ID
-MS_J_DEATHCOUNT = 4; --ÈÎÎñÖĞ¼ÇÂ¼2Íæ¼ÒÉËÍöÊıÁ¿µÄ±äÁ¿ID
-
-MS_S_SIGHCOUNT  = 5;--ÈÎÎñÖĞËÎ·½¹²±¨ÃûµÄÈËÊı
-MS_J_SIGHCOUNT  = 6;--ÈÎÎñÖĞ½ğ·½¹²±¨ÃûµÄÈËÊı
-MS_S_JOINED = 7;  --ÈÎÎñÖĞËÎ·½ÒÑ¾­½øÈë±ÈÈü³¡µØ±äÁ¿ID
-MS_J_JOINED = 8;  --ÈÎÎñÖĞ½ğ·½ÒÑ¾­½øÈë±ÈÈü³¡µØ±äÁ¿ID
-
-MS_NEWSVALUE = 10; --ÈÎÎñÖĞ´æ·ÅĞÂÎÅ±äÁ¿µÄµØ·½
-PLAYER_KILLCOUNT = 240; --ÁÙÊ±±äÁ¿,temptask
-PLAYER_DEATHCOUNT = 241;
-JOINSTATE = 242;
-MISSIONID = 4;
+-- script viet hoa By http://tranhba.com 1# tõ GM cho c¸c khu ®İch cao gi¸o ng­êi phô tr¸ch . sè tr­¬ng môc thªm phô thªm ®iÓm 
+-- script viet hoa By http://tranhba.com 2# cao gi¸o ng­êi phô tr¸ch ë tranh tµi ghi danh giai ®o¹n ®Õn cuéc so tµi trµng , cïng Npc ®èi tho¹i ®¹t ®­îc ®¹o cô , theo thø tù lµ ®ang # tµ # b¹ch # ba trËn doanh bÊt ®ång m«n bµi . 
+-- script viet hoa By http://tranhba.com 3# ng­êi phô tr¸ch b¾t ®­îc ®¹o cô sau giao cho tranh tµi song ph­¬ng ®éi tr­ëng . 
+-- script viet hoa By http://tranhba.com 4# ®éi tr­ëng lÊy ®­îc ®¹o cô sau , häp thµnh ®éi m×nh ®İch 5 ng­êi ®éi ngò . sau ®ã cÇm phiÕu vµo trµng . 
+-- script viet hoa By http://tranhba.com 5# vµo trµng sau , lµm cuéc so tµi chuÈn bŞ tr­íc . 
+-- script viet hoa By http://tranhba.com 6# sau khi cuéc tranh tµi kÕt thóc . ng­êi phô tr¸ch ghi chĞp tranh tµi thµnh tİch , h­íng quan ph­¬ng th«ng b¸o . 
 
 
--------------------------------------------------------------------------
---Íæ¼ÒÒªÇóÀë¿ªÓÎÏ·
-function LeaveGame(leavetype)
---leavetype = 0±íÊ¾£¬½«Î»ÖÃÉèÔÚµØÍ¼µÄ³¡ÍâÇøÓò£¨·ÇÕ½¶·ÇøÓò£©
---leavetype = 1±íÊ¾£¬½«Î»ÖÃÉèÔÚÁíÒ»¸öµØÍ¼£¬¼´³¹µ×Àë¿ªÕ½³¡
-	camp = GetCamp();--»Ö¸´Ô­Ê¼ÕóÓª
-	SetRevPos(CS_RevId, CS_RevData)
-	SetFightState(1)
-	SetPunish(1)--ÉèÖÃPK³Í·£
-	SetPKFlag(0)--¹Ø±ÕPK¿ª¹Ø
-	SetTaskTemp(JOINSTATE, 0);
-	ForbidChangePK(0);
-	SetCreateTeam(1);
-	if (leavetype == 0) then 
-		SetCurCamp(camp)
-		SetFightState(0)
-		SetPos(CS_OuterPos[2], CS_OuterPos[3]);
-	else
-		SetCurCamp(camp);
-		SetLogoutRV(0);--ÉèÖÃÖØÉúµã
-		SetCreateTeam(1);
-		SetDeathScript("");--ÉèÖÃËÀÍö½Å±¾Îª¿Õ
-		NewWorld(GetLeavePos());
-	end;
-end;
+-- script viet hoa By http://tranhba.com  b¶o tån tr­íc mÆt kİch sèng nhiÖm vô thuéc vÒ lo¹i nµo nhiÖm vô MissionV thay ®æi l­îng index , bëi v× diÔn vâ tr­êng n¬i chèn tr­íc m¾t dïng cho b×nh th­êng diÔn vâ tr­êng cïng cao gi¸o khiªu chiÕn cuéc so tµi trung , 
+-- script viet hoa By http://tranhba.com  cïng lóc ®o¹n chØ cã thÓ cã mét chç dïng . cho nªn dïng c¸i nµy thay ®æi l­îng tíi khu ph©n . 
+-- script viet hoa By http://tranhba.com 0 bµy tá kh«ng cã nhiÖm vô nhiÖm vô kİch ho¹t , 1 bµy tá b×nh th­êng diÔn vâ tr­êng , 2 bµy tá cao gi¸o khiªu chiÕn cuéc so tµi 
 
-function GameOver()
-	idx = 0;
-	OldPlayer = PlayerIndex;
-	for i = 1 , 500 do 
-		idx, pidx = GetNextPlayer(MISSIONID,idx, 0);
-		if (idx == 0) then 
-	 		break
-	 	end;
-	 	PlayerIndex = pidx;
-	 	LeaveGame(0);
-	end;
-	PlayerIndex = OldPlayer;
-end;
--------------------------------------------------------------------------
+ACTIVEMISSION = 40; 
 
-function JoinCamp(Camp)
-	--ÔÚµÚ¶şMissionÄÚ¼Óµ±Ç°Íæ¼Ò
-	LeaveTeam()
-	if (GetMSPlayerCount(MISSIONID,Camp) >= MAX_MEMBER_COUNT) then
-		Say("Phe nµy hiÖn ®· ®ñ ng­êi, kh«ng thÓ gia nhËp!",0)
-		return
-	end;
-	
-	AddMSPlayer(MISSIONID, Camp);
-	SetTaskTemp(JOINSTATE, 1);
-	SetCurCamp(Camp);
-	
-	--ÉèÖÃÓë°ï»áÓĞ¹ØµÄ±äÁ¿£¬²»ÔÊĞíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
-	SetTaskTemp(200,1);
+FRAME2TIME = 18; -- script viet hoa By http://tranhba.com 18 tr¸nh trß ch¬i thêi gian t­¬ng ®­¬ng víi 1 gi©y 
 
-	--ÉèÖÃÕ½¶·×´Ì¬
-	SetFightState(0);
-	
-	--Íæ¼ÒÍË³öÊ±£¬±£´æRV²¢£¬ÔÚÏÂ´ÎµÈÈëÊ±ÓÃRV(³ÇÊĞÖØÉúµã£¬·ÇÍË³öµã)
-	SetLogoutRV(1);
-	
-	--ÎŞËÀÍö³Í·£
-	SetPunish(0);
-	
-	--¹Ø±Õ×é¶Ó¹¦ÄÜ
-	SetCreateTeam(0);
-	
-	--´ò¿ªPK¿ª¹Ø
-	SetPKFlag(1)
-	ForbidChangePK(1);
-	
-	--ÉèÖÃÖØÉúµã£¬Ò»°ãÊÇÑ¡Ôñ½øÈë¸ÃÇøµÄ³ÇÊĞ
-	SetRevPos(CS_RevId, CS_RevData);
-	--Íæ¼ÒËÀÍöºó£¬ÖØÉúµÄµØ·½¾ÍÉèÔÚÍæ¼ÒÏëÍË³öµÄµØµã£¨ÔÚ±¾µØÍ¼ÉÏ·ÇÕ½¶·ÇøÓò)
-	W,X,Y = GetWorldPos();
-	
-	--ÉèÖÃµ±Ç°Íæ¼ÒµÄËÀÍö½Å±¾
-	if (Camp == 1) then 
+TIMER_1 = 20 * FRAME2TIME; -- script viet hoa By http://tranhba.com 20 gi©y c«ng bè mét c¸i chiÕn huèng 
+TIMER_2 = 20 * 60 * FRAME2TIME; -- script viet hoa By http://tranhba.com  giao chiÕn tæng thêi gian lµ 20 phót 
+GO_TIME = 300 * FRAME2TIME / TIMER_1; -- script viet hoa By http://tranhba.com  ghi danh thêi gian lµ nöa giê 
+
+MS_STATE = 1; -- script viet hoa By http://tranhba.com  nhiÖm vô trung ghi chĞp nhiÖm vô tr¹ng th¸i thay ®æi l­îng ID 
+-- script viet hoa By http://tranhba.com  nªn thay ®æi l­îng chØ h­íng ®İch tr¹ng th¸i trŞ gi¸ 0 bµy tá chiÕn dŞch v× më ra , 1 bµy tá chiÕn dŞch ghi danh trung , 2 bµy tá chiÕn dŞch chiÕn ®Êu tiÕn hµnh trung , 3 bµy tá chiÕn dŞch míi võa kÕt thóc 
+
+MS_STORETASKID = 240; 
+MS_S_DEATHCOUNT = 3; -- script viet hoa By http://tranhba.com  nhiÖm vô trung ghi chĞp 1 nhµ ch¬i sè th­¬ng vong l­îng ®İch thay ®æi l­îng ID 
+MS_J_DEATHCOUNT = 4; -- script viet hoa By http://tranhba.com  nhiÖm vô trung ghi chĞp 2 nhµ ch¬i sè th­¬ng vong l­îng ®İch thay ®æi l­îng ID 
+
+MS_S_SIGHCOUNT = 5;-- script viet hoa By http://tranhba.com  nhiÖm vô trung tèng ph­¬ng céng ghi danh nh©n sè cña 
+MS_J_SIGHCOUNT = 6;-- script viet hoa By http://tranhba.com  nhiÖm vô trung kim ph­¬ng céng ghi danh nh©n sè cña 
+MS_S_JOINED = 7; -- script viet hoa By http://tranhba.com  nhiÖm vô trung tèng ph­¬ng ®· tiÕn vµo n¬i so tµi thay ®æi l­îng ID 
+MS_J_JOINED = 8; -- script viet hoa By http://tranhba.com  nhiÖm vô trung kim ph­¬ng ®· tiÕn vµo n¬i so tµi thay ®æi l­îng ID 
+
+MS_NEWSVALUE = 10; -- script viet hoa By http://tranhba.com  nhiÖm vô trung cÊt gi÷ tin tøc thay ®æi l­îng ®İch ®Şa ph­¬ng 
+PLAYER_KILLCOUNT = 240; -- script viet hoa By http://tranhba.com  t¹m thêi thay ®æi l­îng ,temptask 
+PLAYER_DEATHCOUNT = 241; 
+JOINSTATE = 242; 
+MISSIONID = 4; 
+
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  nhµ ch¬i yªu cÇu rêi ®i trß ch¬i 
+function LeaveGame(leavetype) 
+-- script viet hoa By http://tranhba.com leavetype = 0 bµy tá , ®em vŞ trİ thiÕt trªn ®Êt ®å ®İch bªn ngoµi s©n khu vùc # kh«ng ph¶i lµ chiÕn ®Êu khu vùc # 
+-- script viet hoa By http://tranhba.com leavetype = 1 bµy tá , ®em vŞ trİ thiÕt ë mét chç kh¸c ®å , tøc hoµn toµn rêi ®i chiÕn tr­êng 
+camp = GetCamp();-- script viet hoa By http://tranhba.com  kh«i phôc nguyªn thñy trËn doanh 
+SetRevPos(CS_RevId, CS_RevData) 
+SetFightState(1) 
+SetPunish(1)-- script viet hoa By http://tranhba.com  thiÕt trİ PK trõng ph¹t 
+SetPKFlag(0)-- script viet hoa By http://tranhba.com  t¾t PK chèt më 
+SetTaskTemp(JOINSTATE, 0); 
+ForbidChangePK(0); 
+SetCreateTeam(1); 
+if (leavetype == 0) then 
+SetCurCamp(camp) 
+SetFightState(0) 
+SetPos(CS_OuterPos[2], CS_OuterPos[3]); 
+else 
+SetCurCamp(camp); 
+SetLogoutRV(0);-- script viet hoa By http://tranhba.com  thiÕt trİ sèng l¹i ®iÓm 
+SetCreateTeam(1); 
+SetDeathScript("");-- script viet hoa By http://tranhba.com  thiÕt trİ tö vong ch©n vèn v× v« İch 
+NewWorld(GetLeavePos()); 
+end; 
+end; 
+
+function GameOver() 
+idx = 0; 
+OldPlayer = PlayerIndex; 
+for i = 1 , 500 do 
+idx, pidx = GetNextPlayer(MISSIONID,idx, 0); 
+if (idx == 0) then 
+break 
+end; 
+PlayerIndex = pidx; 
+LeaveGame(0); 
+end; 
+PlayerIndex = OldPlayer; 
+end; 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+
+function JoinCamp(Camp) 
+-- script viet hoa By http://tranhba.com  ë thø hai Mission bªn trong thªm tr­íc mÆt nhµ ch¬i 
+LeaveTeam() 
+if (GetMSPlayerCount(MISSIONID,Camp) >= MAX_MEMBER_COUNT) then 
+Say("Ph­¬ng nµy b©y giê ng­êi ®· ®ñ , kh«ng thÓ gia nhËp !",0) 
+return 
+end; 
+
+AddMSPlayer(MISSIONID, Camp); 
+SetTaskTemp(JOINSTATE, 1); 
+SetCurCamp(Camp); 
+
+-- script viet hoa By http://tranhba.com  thiÕt trİ cïng bang héi cã liªn quan thay ®æi l­îng , kh«ng cho phĞp ë s©n ®Êu chiÕn söa ®æi mét bang héi trËn doanh ®İch thao t¸c 
+SetTaskTemp(200,1); 
+
+-- script viet hoa By http://tranhba.com  thiÕt trİ tr¹ng th¸i chiÕn ®Êu 
+SetFightState(0); 
+
+-- script viet hoa By http://tranhba.com  nhµ ch¬i thèi lui ra lóc , b¶o tån RV còng , t¹i h¹ lÇn chê vµo lóc dïng RV( thµnh phè sèng l¹i ®iÓm , kh«ng ph¶i lµ thèi lui ra ®iÓm ) 
+SetLogoutRV(1); 
+
+-- script viet hoa By http://tranhba.com  v« tö vong trõng ph¹t 
+SetPunish(0); 
+
+-- script viet hoa By http://tranhba.com  t¾t häp thµnh ®éi chøc n¨ng 
+SetCreateTeam(0); 
+
+-- script viet hoa By http://tranhba.com  më ra PK chèt më 
+SetPKFlag(1) 
+ForbidChangePK(1); 
+
+-- script viet hoa By http://tranhba.com  thiÕt trİ sèng l¹i ®iÓm , mét lo¹i lµ lùa chän tiÕn vµo nªn khu ®İch thµnh phè 
+SetRevPos(CS_RevId, CS_RevData); 
+-- script viet hoa By http://tranhba.com  nhµ ch¬i tö vong sau , sèng l¹i ®İch ®Şa ph­¬ng liÒn thiÕt ®ang ®ïa nhµ muèn thèi lui ra ®İch ®Şa ®iÓm # ë bæn ®Şa ®å th­îng kh«ng ph¶i lµ chiÕn ®Êu khu vùc ) 
+W,X,Y = GetWorldPos(); 
+
+-- script viet hoa By http://tranhba.com  thiÕt trİ tr­íc mÆt nhµ ch¬i ®İch tö vong ch©n vèn 
+if (Camp == 1) then 
 		SetDeathScript("\\script\\missions\\challenge\\challengedeath.lua");
-	elseif (Camp == 2) then 
+elseif (Camp == 2) then 
 		SetDeathScript("\\script\\missions\\challenge\\challengedeath1.lua");
-	end
-	
-	
-	--ÉèÖÃÏÂ´ÎËÀÍöµÄÖØÉúµã
-	if (Camp == 1) then
-		SetTempRevPos(W, CS_OuterPos[2] * 32, CS_OuterPos[3] * 32);
-		str = GetName().."<#> gia nhËp phe Vµng, nh©n sè hiÖn t¹i lµ"..GetMSPlayerCount(MISSIONID,1);
-		SetPos(CS_CampPos1[2], CS_CampPos1[3])
-	elseif (Camp == 2) then
-		SetTempRevPos(W, CS_OuterPos[2] * 32, CS_OuterPos[3] * 32);
-		str = GetName().."<#> gia nhËp phe Tİm, nh©n sè hiÖn t¹i lµ"..GetMSPlayerCount(MISSIONID,2);
-		SetPos(CS_CampPos2[2], CS_CampPos2[3])
-	elseif (Camp == 6) then
-		SetTempRevPos(GetTask(300), GetTask(301) * 32, GetTask(302)* 32);
-		str = GetName().."<#> tham gia quan chiÕn, nh©n sè hiÖn t¹i lµ"..GetMSPlayerCount(MISSIONID,6);
-		SetPos(CS_CampPos0[2], CS_CampPos0[3])
-	end;
-	
-	--ÏòËùÓĞ²ÎÓÚÕß·¢ĞÅÏ¢
-	Msg2MSAll(MISSIONID, str);
-	
-end;
-
--------------------------------------------------------------------------
------½«Ãë´«»»³É·ÖÓëÃë£¬±ÈÈç62s = 1m2s
-function GetMinAndSec(nSec)
-nRestMin = floor(nSec / 60);
-nRestSec = mod(nSec,60)
-return nRestMin, nRestSec;
-end;
----------------------------------------------------------------------------
-
---ÍË³öÓÎÏ·ºóµÄÖØÉúµãID,Ò²¾ÍÊÇ±¨ÃûµÄÄÇ¸öµØ·½°É
-CS_RevId = 80;
-CS_RevData = 36;
-
---Àë¿ª±¾´ÎÓÎÏ·ºóµÄÎ»ÖÃworldid, x, y,Ò»°ã¾ÍÊÇ±¨Ãûµã
---CS_LeavePos = {20, 3546, 6226};
-
---»á³¡ÍâµÄÎ»ÖÃ
-CS_OuterPos = {209, 1548, 3297};
+end 
 
 
---¼ÓÈëË«·½ÕóÓªÊ±µÄÎ»ÖÃ
-CS_CampPos0 = {209, 1631, 3203};   	--°×É«
-CS_CampPos1 = {209, 1608, 3167}; 	--»ÆÉ«
-CS_CampPos2 = {209, 1674, 3246}; 	--ºìÉ«
+-- script viet hoa By http://tranhba.com  thiÕt trİ lÇn sau tö vong sèng l¹i ®iÓm 
+if (Camp == 1) then 
+SetTempRevPos(W, CS_OuterPos[2] * 32, CS_OuterPos[3] * 32); 
+str = GetName().."<#> gia nhËp hoµng ph­¬ng , b©y giê nh©n sè lµ "..GetMSPlayerCount(MISSIONID,1); 
+SetPos(CS_CampPos1[2], CS_CampPos1[3]) 
+elseif (Camp == 2) then 
+SetTempRevPos(W, CS_OuterPos[2] * 32, CS_OuterPos[3] * 32); 
+str = GetName().."<#> gia nhËp tö ph­¬ng , b©y giê nh©n sè lµ "..GetMSPlayerCount(MISSIONID,2); 
+SetPos(CS_CampPos2[2], CS_CampPos2[3]) 
+elseif (Camp == 6) then 
+SetTempRevPos(GetTask(300), GetTask(301) * 32, GetTask(302)* 32); 
+str = GetName().."<#> tham gia qu©n chiÕn , b©y giê nh©n sè lµ "..GetMSPlayerCount(MISSIONID,6); 
+SetPos(CS_CampPos0[2], CS_CampPos0[3]) 
+end; 
+
+-- script viet hoa By http://tranhba.com  h­íng tÊt c¶ tè víi ng­êi ph¸t tin tøc 
+Msg2MSAll(MISSIONID, str); 
+
+end; 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - ®em gi©y truyÖn ®æi thµnh ph©n cïng gi©y , tû nh­ 62s = 1m2s 
+function GetMinAndSec(nSec) 
+nRestMin = floor(nSec / 60); 
+nRestSec = mod(nSec,60) 
+return nRestMin, nRestSec; 
+end; 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+
+-- script viet hoa By http://tranhba.com  thèi lui ra trß ch¬i sau ®İch sèng l¹i ®iÓm ID, còng chİnh lµ ghi danh ®İch chç ®ã ®i 
+CS_RevId = 80; 
+CS_RevData = 36; 
+
+-- script viet hoa By http://tranhba.com  rêi ®i lÇn nµy trß ch¬i sau ®İch vŞ trİ worldid, x, y, mét lo¹i chİnh lµ ghi danh ®iÓm 
+-- script viet hoa By http://tranhba.com CS_LeavePos = {20, 3546, 6226}; 
+
+-- script viet hoa By http://tranhba.com  bªn ngoµi héi tr­êng ®İch vŞ trİ 
+CS_OuterPos = {209, 1548, 3297}; 
 
 
---ÓÎÏ·µÄÃ¿Ò»ÕóÓªµÄ×î´óÈËÊı
-MAX_MEMBER_COUNT = 5;
+-- script viet hoa By http://tranhba.com  gia nhËp song ph­¬ng trËn doanh lóc ®İch vŞ trİ 
+CS_CampPos0 = {209, 1631, 3203}; -- script viet hoa By http://tranhba.com  mµu tr¾ng 
+CS_CampPos1 = {209, 1608, 3167}; -- script viet hoa By http://tranhba.com  mµu vµng 
+CS_CampPos2 = {209, 1674, 3246}; -- script viet hoa By http://tranhba.com  mµu ®á 
 
-MS_CAMP1 = 1; --Ë«·½µÄÕóÓªºÅ
-MS_CAMP2 = 2;
 
-function GetLeavePos()
-	return GetTask(300), GetTask(301), GetTask(302);
-end;
+-- script viet hoa By http://tranhba.com  trß ch¬i mçi mét trËn doanh ®İch lín nhÊt nh©n sè 
+MAX_MEMBER_COUNT = 5; 
+
+MS_CAMP1 = 1; -- script viet hoa By http://tranhba.com  song ph­¬ng trËn doanh sè 
+MS_CAMP2 = 2; 
+
+function GetLeavePos() 
+return GetTask(300), GetTask(301), GetTask(302); 
+end; 

@@ -1,4 +1,4 @@
-function OnLeaveTong()
-	Pay(GetTaskTemp(11))						-- ¿ÛÇ®
-	AddRepute(-1 * GetTaskTemp(12))				-- ½µÉùÍû
-end;
+function OnLeaveTong() 
+Pay(GetTaskTemp(11)) -- script viet hoa By http://tranhba.com  trõ tiÒn 
+AddRepute(-1 * GetTaskTemp(12)) -- script viet hoa By http://tranhba.com  hµng danh väng 
+end; 

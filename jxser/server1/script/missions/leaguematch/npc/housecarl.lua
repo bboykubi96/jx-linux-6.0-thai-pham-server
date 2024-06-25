@@ -1,4 +1,3 @@
---会场侍卫
 
 Include( "\\script\\missions\\leaguematch\\head.lua" )
 Include( "\\script\\missions\\leaguematch\\npc\\head.lua" )
@@ -14,7 +13,7 @@ function wlls_want2leave()
 end
 
 function wlls_sure2leave()
-	SetLogoutRV(0);		--死亡重生与断线重生点不在同一地点
+	SetLogoutRV(0);
 	local n_signmap = wlls_get_mapid(1)
 	NewWorld(n_signmap, WLLS_MAPPOS_SIGN[1], WLLS_MAPPOS_SIGN[2])
 end

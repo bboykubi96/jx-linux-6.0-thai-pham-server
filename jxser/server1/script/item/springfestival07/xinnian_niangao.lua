@@ -1,41 +1,41 @@
---ĞÂÄêÄê¸â
---p=1342	Á«ÈØÊ²½õÄê¸â	100w¾­Ñé
---p=1343	¹ğ»¨°Ù¹ûÄê¸â	200w¾­Ñé
---p=1344	ÀğÓãÏãÃ×Äê¸â	500w¾­Ñé
---½ØÖÁÈÕÆÚ2007-3-6
+-- script viet hoa By http://tranhba.com  n¨m míi n¨m cao 
+-- script viet hoa By http://tranhba.com p=1342 liªn dong thËp cÈm n¨m cao 100w kinh nghiÖm 
+-- script viet hoa By http://tranhba.com p=1343 hoa quÕ tr¨m qu¶ n¨m cao 200w kinh nghiÖm 
+-- script viet hoa By http://tranhba.com p=1344 lı mïi c¸ th­íc n¨m cao 500w kinh nghiÖm 
+-- script viet hoa By http://tranhba.com  chÆn tíi nhËt kú 2007-3-6 
 
 Include("\\script\\item\\springfestival07\\xinnian_head.lua")
 
-function main(nItemIdx)
-	if (isTakeXinNianItem(nItemIdx) ~= 1) then
-		return 1;
-	end;
-	
-	local _, _, np = GetItemProp(nItemIdx);
-	local nCurExp = GetTask(TSK_XINNIANNIANGAO_MAXEXP);
-	if (nCurExp >= XINNIAN_MAXEXP) then
-		Say("Äã³ÔÁË²»ÉÙÄê¸â£¬ÔÙ¿´µ½Äê¸âÒ»µã¶ùÒ²²»Ïë³ÔÁË¡£", 0);
-		return 1;
-	end;
-	
-	if (np == 1342) then
-		nAddExp = 1000000;
-	elseif (np == 1343) then
-		nAddExp = 2000000;
-	elseif (np == 1344) then
-		nAddExp = 5000000;
-	else
-		return 1;
-	end;
-	
-	local szmsg = format("Äã»ñµÃÁË%d¾­ÑéÖµ",nAddExp);
+function main(nItemIdx) 
+if (isTakeXinNianItem(nItemIdx) ~= 1) then 
+return 1; 
+end; 
+
+local _, _, np = GetItemProp(nItemIdx); 
+local nCurExp = GetTask(TSK_XINNIANNIANGAO_MAXEXP); 
+if (nCurExp >= XINNIAN_MAXEXP) then 
+Say("Ng­¬i chŞu kh«ng İt n¨m cao , l¹i nh×n thÊy n¨m cao mét chót còng kh«ng muèn ¨n råi . ", 0); 
+return 1; 
+end; 
+
+if (np == 1342) then 
+nAddExp = 1000000; 
+elseif (np == 1343) then 
+nAddExp = 2000000; 
+elseif (np == 1344) then 
+nAddExp = 5000000; 
+else 
+return 1; 
+end; 
+
+local szmsg = format("Ng­¬i thu ®­îc %d kinh nghiÖm trŞ gi¸ ",nAddExp); 
 	if (nCurExp + nAddExp > XINNIAN_MAXEXP) then
-		nAddExp = XINNIAN_MAXEXP - nCurExp;
-		szmsg = format("Äã»ñµÃÁË%d¾­ÑéÖµ£¬ÔÙÒ²²»Ïë³ÔÄê¸âÁË",nAddExp);
-	end;
-	
-	AddOwnExp(nAddExp);
+nAddExp = XINNIAN_MAXEXP - nCurExp; 
+szmsg = format("Ng­¬i thu ®­îc %d kinh nghiÖm trŞ gi¸ , còng n÷a kh«ng muèn ¨n n¨m cao liÔu ",nAddExp); 
+end; 
+
+AddOwnExp(nAddExp); 
 	SetTask(TSK_XINNIANNIANGAO_MAXEXP, nCurExp+nAddExp);
-	Msg2Player(szmsg);
-	WriteLog(format("[ĞÂÄêÄê¸â]\t%s\tName:%s\tAccount:%s\tÊ¹ÓÃÁËÒ»¸ö%s»ñµÃ%d¾­Ñé",GetLocalDate("%Y-%m-%d %H:%M:%S"), GetName(), GetAccount(), GetItemName(nItemIdx),nAddExp));
+Msg2Player(szmsg); 
+WriteLog(format("[ n¨m míi n¨m cao ]\t%s\tName:%s\tAccount:%s\t sö dông mét %s ®¹t ®­îc %d kinh nghiÖm ",GetLocalDate("%Y-%m-%d %H:%M:%S"), GetName(), GetAccount(), GetItemName(nItemIdx),nAddExp)); 
 end;

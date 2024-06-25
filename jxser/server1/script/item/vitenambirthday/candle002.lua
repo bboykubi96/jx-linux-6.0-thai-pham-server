@@ -1,4 +1,4 @@
-function main()
-		Msg2Player("B¹n ®· th¾p s¸ng mét ngän nÕn 'B×nh an', nhËn ®­îc phÇn th­ëng t¨ng ®«i ®iÓm kinh nghiÖm trong 20 phót.")
-		AddSkillState(440, 1, 1, 21600);
+function main() 
+Msg2Player("Ngµi ®· ®èt mét chi b×nh an c©y nÕn , ë 20 phót bªn trong ®¹t ®­îc gÊp ®«i kinh nghiÖm trŞ gi¸ t­ëng th­ëng .") 
+AddSkillState(440, 1, 1, 21600); 
 end

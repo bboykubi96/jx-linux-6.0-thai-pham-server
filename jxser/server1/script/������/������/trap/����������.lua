@@ -11,11 +11,11 @@ function main(sel)
 		SetPos(1564, 3251)
 		return 1
 	end
-	--if check_faction()==1 then
-		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-		--SetPos(1564, 3251)
-		--return 1
-	--end;
+	if GetLastFactionNumber() < 0 then
+		Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
+		SetPos(1564, 3251)
+		return 1
+	end;
 if ( GetFightState() == 0 ) then -- script viet hoa By http://tranhba.com  nhµ ch¬i xö vu kh«ng ph¶i lµ tr¹ng th¸i chiÕn ®Êu , tøc ë trong thµnh 
 SetPos(1562, 3256) -- script viet hoa By http://tranhba.com  thiÕt trÝ ®i ra Trap ®iÓm , môc ®Ých ®iÓm ë ngoµi thµnh 
 SetFightState(1) -- script viet hoa By http://tranhba.com  chuyÓn ®æi v× tr¹ng th¸i chiÕn ®Êu 

@@ -1,22 +1,19 @@
+-- script viet hoa By http://tranhba.com  tù ®Þnh nghÜa kim tiÒn sè l­îng ®Ých bao tiÒn l× x× 
+IncludeLib("ITEM") 
 
-IncludeLib("ITEM")
-Include("\\script\\lib\\awardtemplet.lua")
-function main(nItemIdx)		
-	dofile("script/item/ruyi_hongbao.lua")
-		if 1==1 then
-		return
-	end
-	if GetTask(3023)>0 then
-		Say("Mçi Nh©n VËt ChØ §­îc Sö Dông 1 LÇn LÔ Bao L× X×")
-		return 1
-	else
+function main(nItemIdx) 
+local nMoney = GetItemParam(nItemIdx, 1) 
+Earn(nMoney) 
+Msg2Player("Ngµi thu ®­îc "..nMoney.." l­îng b¹c ") 
+end 
 
-	local aa=random(50,70)
-		local tbAwardcc={
-	{szName="KNB", tbProp={4,343,1,1},nCount = aa},
-}
-tbAwardTemplet:GiveAwardByList(tbAwardcc, "TiÒn §ång");
-SetTask(3023,2)
-	Msg2SubWorld("<color=green>§¹i hiÖp <color=red>"..GetName().."<color> më <color=cyan>LÔ Bao L× X× 2021<color> nhËn ®­îc "..aa.." <color=yellow>Kim Nguyªn B¶o.")
-	end
-end
+function GetDesc(nItemIdx) 
+local nM1 = GetItemParam(nItemIdx, 2) 
+local nM2 = GetItemParam(nItemIdx, 3) 
+local nM3 = GetItemParam(nItemIdx, 4) 
+	local nMoney = nM1 * 1000000 + nM2 * 1000 + nM3
+-- script viet hoa By http://tranhba.com local szDesc = "" 
+
+local szDesc = "\n bao tiÒn l× x× trung bao hµm b¹c <color=yellow>"..nMoney.."<color=> hai " 
+return szDesc; 
+end 

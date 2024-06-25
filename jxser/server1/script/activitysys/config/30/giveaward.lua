@@ -2,29 +2,22 @@ Include("\\script\\activitysys\\config\\30\\head.lua")
 Include("\\script\\activitysys\\config\\30\\config.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\lib\\log.lua")
-Include("\\script\\activitysys\\config\\30\\variables.lua")
 
 szEventName = "Event_NhaGiaoVN"
 
-tbItem = 
-{
-	[1]={szName="C©y Bót",tbProp={6,1,3040,1,0,0},nExpiredTime=Event_2011End},
+tbItem = {
+	[1]={szName="C©y Bót",tbProp={6,1,3040,1,0,0},nExpiredTime=20111201},
 }
 
-tbBaizhi = 
-{
-	[1]={szName="GiÊy Tr¾ng",tbProp={6,1,3039,1,0,0},nExpiredTime=Event_2011End,nRate=20,}, 
-	[2]={szName="M¶nh ghÐp T«n",tbProp={6,1,1599,1,0,0},nExpiredTime=Event_2011End,nRate=20,}, 
-	[3]={szName="M¶nh ghÐp S­",tbProp={6,1,1600,1,0,0},nExpiredTime=Event_2011End,nRate=20,}, 
-	[4]={szName="M¶nh ghÐp Träng",tbProp={6,1,1601,1,0,0},nExpiredTime=Event_2011End,nRate=20,}, 
-	[5]={szName="M¶nh ghÐp §¹o",tbProp={6,1,1602,1,0,0},nExpiredTime=Event_2011End,nRate=20,}, 
+tbBaizhi = {
+	[1]={szName="GiÊy Tr¾ng",tbProp={6,1,3039,1,0,0},nExpiredTime=20111201,nRate=5,}, 
 }
 
-
+	
+-- nKind »ý·ÖÀàÐÍ£¬1Îª´óÓÚ1000ÇÒÐ¡ÓÚ3000£¬2Îª´óÓÚ3000
 function pActivity:GiveSongjinAward(nKind)
-
-	local tbSongjin = 
-	{
+	--print("ËÎ½ð½áÊø£¬nKind = " .. nKind)
+	local tbSongjin = {
 		[1] = {10, "TongKim1000NhanCayBut"},	
 		[2] = {30, "TongKim3000NhanCayBut"}
 		}
@@ -34,11 +27,10 @@ function pActivity:GiveSongjinAward(nKind)
 	end
 end
 
-
+-- nKind »ý·ÖÀàÐÍ£¬1Îª´³¹Ø17£¬2Îª´³¹Ø28¹Ø
 function pActivity:GiveChuangguanAward(nGuan)
-
-	local tbChuangguan = 
-	{
+--	print("Ê±¼äµÄÌôÕ½´³¹Ø³É¹¦£¬nguan = " .. nGuan)
+	local tbChuangguan = {
 		[17] = {10, "VuotAi17NhanCayBut"},	
 		[28] = {10, "VuotAi28NhanCayBut"}
 		}
@@ -48,16 +40,16 @@ function pActivity:GiveChuangguanAward(nGuan)
 	end
 end
 
-
+-- É±ÊÖ
 function pActivity:GiveShashouAward()
-
+--	print("É±ËÀÉ±ÊÖboss³É¹¦")
 	local tbShashou = {2, "TieuDietBossSatThuNhanCayBut"}
 	tbAwardTemplet:Give(tbItem, tbShashou[1], {szEventName,tbShashou[2]})
 end
 
-
+-- Ñ×µÛ±¦²Ø ´³¹ý10¹Ø
 function pActivity:GiveYDBZAward(nGuan)
-
+--	print("Ñ×µÛ±¦²Ø´³¹ý10¹Ø")
 	local tbYDBZ = {
 		[10] = {15, "VuotAiViemDe10NhanCayBut"},
 	}
@@ -66,9 +58,10 @@ function pActivity:GiveYDBZAward(nGuan)
 	end
 end
 
-
+-- ·çÁê¶É
+-- nKind 1 ÎªÉ±ËÀË®ÔôÍ·Áì£¬2ÎªÉ±ËÀË®Ôô´óÍ·Áì
 function pActivity:GiveFenglinduAward(nKind)
-
+--	print("É±ËÀË®ÔôÍ·Áì³É¹¦, nKind = " .. nKind)
 	local tbFenglingdu = {
 		[1] = {5, "TieuDietThuyTacDauLinhNhanCayBut"},	
 		[2] = {10, "TieuDietThuyTacDaiDauLinhNhanCayBut"}
@@ -79,16 +72,16 @@ function pActivity:GiveFenglinduAward(nKind)
 	end
 end
 
-
+-- »Æ½ðboss
 function pActivity:GiveGoldBossAward()
-
+--	print("É±ËÀ»Æ½ðboss³É¹¦")
 	local tbGoldBoss = {20, "TieuDietBossTheGioiNhanCayBut"}
 	tbAwardTemplet:Give(tbItem, tbGoldBoss[1], {szEventName, tbGoldBoss[2]})
 end
 
-
+-- Ö¸¶¨µØÍ¼Ò°Íâ´ò¹ÖµôÂä°×Ö½µÀ¾ß
 function pActivity:GiveYewaiguaiAward()
-
+--	print("Ò°Íâ´ò¹Ö³É¹¦")
 	local tbMonster = {1, "killedmonstergetpaper"}
 	tbAwardTemplet:Give(tbBaizhi, tbMonster[1], {szEventName, tbMonster[2]})
 end

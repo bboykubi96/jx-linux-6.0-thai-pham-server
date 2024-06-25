@@ -12,7 +12,6 @@ Include("\\script\\global\\fuyuan.lua")
 Include("\\script\\global\\tieungao\\hotrothemtieungao.lua")
 Include("\\script\\global\\tieungao\\huyvatpham.lua")
 
-
 function main()
 	
 	--dofile("script/global/g7vn/xaphubienkinh.lua")
@@ -20,7 +19,7 @@ function main()
 	--dofile("script/global/g7vn/g7giftcodetanthu.lua")
 
 	local playerG7Count = GetPlayerCount()
-	local szTitle = "<npc><color=gold> Gamer_"..GetName().." <color>chµo mõng b¹n ®Õn víi hÖ thèng <color=yellow>Vâ L©m TruyÒn Kú<color> - <color=green>C«ng Thµnh ChiÕn<color> .\nNh÷ng chøc n¨ng bªn d­íi cã thÓ gióp b¹n b«n tÈu giang hå dÔ dµng h¬n \n+Webstie: <color=red>http://huyenthoaivolam.net<color>\n+Facebook: <color=green>https://www.facebook.com/<color>"
+	local szTitle = "<npc><color=gold> Gamer_"..GetName().." <color>chµo mõng b¹n ®Õn víi hÖ thèng <color=yellow>Vâ L©m TruyÒn Kú<color> - <color=green>C«ng Thµnh ChiÕn<color> .\nNh÷ng chøc n¨ng bªn d­íi cã thÓ gióp b¹n b«n tÈu giang hå dÔ dµng h¬n \n+Webstie: <color=red>http://vltruyenky.com<color>\n+Facebook: <color=green>https://www.facebook.com/<color>"
 	local Opt = 
 	{
 		{"§iÓm tËp kÕt A.", gotoA},

@@ -1,0 +1,7 @@
+-- script viet hoa By http://tranhba.com  t©y bæc nam khu v‹nh nhπc tr n cÛc nµng ÆËi thoπi 
+
+function main(sel) 
+
+Say("Nghe n„i ph≠Óng t≠Íng ch¨i r t kh∏ , ba ba n„i sau muËn d…n ta Æi !",0) 
+
+end; 

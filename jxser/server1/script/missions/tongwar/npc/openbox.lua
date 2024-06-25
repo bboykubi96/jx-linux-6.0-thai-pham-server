@@ -1,3 +1,3 @@
-function main()
-OpenBox();		--µ¯³ö´¢ÎïÏäÎïÆ·¿òºÍÍæ¼ÒÎïÆ·¿ò£¬ÒÔ±ãÓÚÍæ¼Ò½øĞĞÎïÆ·ºÍ½ğÇ®µÄ´æÈ¡
+function main() 
+OpenBox(); -- script viet hoa By http://tranhba.com  b¾n ra tr÷ vËt r­¬ng vËt phÈm khu«ng cïng nhµ ch¬i vËt phÈm khu«ng , ®Ó víi nhµ ch¬i tiÕn hµnh vËt phÈm cïng kim tiÒn ®İch tån lÊy 
 end;

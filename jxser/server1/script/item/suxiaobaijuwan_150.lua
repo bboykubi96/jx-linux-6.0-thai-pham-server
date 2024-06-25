@@ -1,113 +1,100 @@
----- ÎÄ¼þÃû¡¡£ºsuxiaobaijuwan_150.lua
----- ´´½¨Õß¡¡£ºwangjingjun
----- ÄÚÈÝ¡¡¡¡£º150¼¶¼¼ÄÜµÄËÙÐ§°×¾ÔÍè
----- ´´½¨Ê±¼ä£º2011-07-28 10:57:36
---
-Include("\\script\\global\\baijuwanhead.lua")
-Include("\\script\\dailogsys\\dailogsay.lua")
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  v¨n kiÖn tªn ##suxiaobaijuwan_150.lua 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  ng­êi khai s¸ng ##wangjingjun 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  néi dung ###150 cÊp kü n¨ng ®Ých tèc hiÖu b¹ch c©u hoµn 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  khai s¸ng thêi gian #2011-07-28 10:57:36 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com Include("\\script\\global\\baijuwanhead.lua")
+-- script viet hoa By http://tranhba.com Include("\\script\\dailogsys\\dailogsay.lua")
 Include("\\script\\vng_event\\tochieukynang150\\head.lua")
-
-
-tbFastSpeedSkill_Banjuwan_150 = {}
-
-tbFastSpeedSkill_Banjuwan_150.nTargetExp = 1540
-
-function tbFastSpeedSkill_Banjuwan_150:AddSkillStatckExp(nSkillId, nExp)
-	local nTotleExp = nExp
-	local nNextExp = GetSkillNextExp(nSkillId) - GetSkillExp(nSkillId)
-	local nNeedAddExp = 0
-	local szSkillName = GetSkillName(nSkillId)
-	while nExp > nNextExp do
-		if GetCurrentMagicLevel(nSkillId, 0) >= GetSkillMaxLevel(nSkillId) then
-			Msg2Player(format("Sö dông B¹ch C©u Hoµn §Æc BiÖt thµnh c«ng, <color=yellow> %s <color> ®é tu luyÖn n©ng cao <color=yellow> %d <color>", szSkillName, nTotleExp))
-			return
-		end
-		nNeedAddExp = nNextExp
-		nExp = nExp - nNeedAddExp
-		AddSkillExp(nSkillId, nNeedAddExp, 1)		
-		nNextExp = GetSkillNextExp(nSkillId)
-	end
-	AddSkillExp(nSkillId, nExp, 1)
-	Msg2Player(format("Sö dông B¹ch C©u Hoµn §Æc BiÖt thµnh c«ng, <color=yellow> %s <color> ®é tu luyÖn n©ng cao <color=yellow> %d <color>", szSkillName, nTotleExp))
-end
-
-function tbFastSpeedSkill_Banjuwan_150:CheckSkill(nSkillId)
-	local nCurSkillLevel = GetCurrentMagicLevel(nSkillId, 0);
-	local nSkillExp = GetSkillExp(nSkillId)
-	
-	if HaveMagic(nSkillId) == -1 then
-		return 0
-	end
---	print("Ñ§Ï°ÁËµ±Ç°µÄ¼¼ÄÜ, nSkillId = " .. nSkillId)
---	print(nSkillExp .. "\t" .. nCurSkillLevel)
-	if nSkillExp ~= -1 and nCurSkillLevel >= 1 and nCurSkillLevel < GetSkillMaxLevel(nSkillId) then
-		return 1
-	end
-end
-
-function tbFastSpeedSkill_Banjuwan_150:AddSkillToList(tbDec, tbSrc)
-	for i = 1, getn(tbSrc) do
-		local nSkillId = tbSrc[i]
-		if self:CheckSkill(nSkillId) == 1 then
-			tinsert(tbDec , nSkillId)
-		end
-	end
-end
-
-function tbFastSpeedSkill_Banjuwan_150:GetCanUpdateSkill()
-	local tbSkill = {};
-	
-	self:AddSkillToList(tbSkill, ARY_UPGRADE_SKILL_150)
-	return tbSkill;
-end
-
-function tbFastSpeedSkill_Banjuwan_150:ShowMenu(nItemIndex)
-	local tbSkill = self:GetCanUpdateSkill()
-	
-	local szTitle = "Xin h·y lùa chän kü n¨ng mµ ng­¬i muèn t¨ng:"
-	
-	tbOpt = {}
-	for i=1, getn(tbSkill) do
-		local nSkillId = tbSkill[i]
-		local szSkillName = GetSkillName(nSkillId)
-		tinsert(tbOpt, 	{szSkillName, self.UseItem, {self, nItemIndex, nSkillId}}	)
-	end
-	tinsert(tbOpt , {"Hñy bá "})
-	CreateNewSayEx(szTitle, tbOpt)
-end
-
-function tbFastSpeedSkill_Banjuwan_150:UseItem(nItemIndex, nSkillId)
-	if not self:CheckSkill(nSkillId) then
-		return
-	end
-	if IsMyItem(nItemIndex) == 1 then
-	
-		self:AddSkillStatckExp(nSkillId, self.nTargetExp)
-		RemoveItemByIndex(nItemIndex)
-	end
-end
-
-Include("\\script\\global\\g7vn\\g7configall.lua")
-
-function main(nItemIndex)
-	--dofile("script/item/suxiaobaijuwan_150.lua")
-	--dofile("script/global/g7vn/g7configall.lua")
-
-	--tbFastSpeedSkill_Banjuwan_150:ShowMenu(nItemIndex)
-	--return 1
-
-	if GetTask(idtaskHocKyNang150G7) == 0 then
-		Msg2Player("§¹i hiÖp ch­a  <color=yellow>vâ c«ng cÊp 150<color> kh«ng thÓ sö dông");
-		Say("§¹i hiÖp ch­a  <color=yellow>vâ c«ng cÊp 150<color> kh«ng thÓ sö dông");
-		return 1;
-	end
-
-	tbTrainSkill150:ResetDailyTask()
-	if tbVNG_BitTask_Lib:CheckBitTaskValue(tbTrainSkill150.tbBIT_BCH_USE, 20, "Mçi nh©n vËt chØ ®­îc sö dông tèi ®a 20 lÇn trong 1 ngµy", "~=") ~= 1 then
-		return 1
-	end
-
-	tbVNG_BitTask_Lib:addTask(tbTrainSkill150.tbBIT_BCH_USE, 1);
-	Msg2Player("Chóc mõng §¹i HiÖp nhËn thµnh c«ng 1 lÇn ®æi ®iÓm tu luyÖn kÜ n¨ng 150.");
-
-end
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com tbFastSpeedSkill_Banjuwan_150 = {} 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com tbFastSpeedSkill_Banjuwan_150.nTargetExp = 1540 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:AddSkillStatckExp(nSkillId, nExp) 
+-- script viet hoa By http://tranhba.com  local nTotleExp = nExp 
+-- script viet hoa By http://tranhba.com  local nNextExp = GetSkillNextExp(nSkillId) - GetSkillExp(nSkillId) 
+-- script viet hoa By http://tranhba.com  local nNeedAddExp = 0 
+-- script viet hoa By http://tranhba.com  local szSkillName = GetSkillName(nSkillId) 
+-- script viet hoa By http://tranhba.com  while nExp > nNextExp do 
+-- script viet hoa By http://tranhba.com  if GetCurrentMagicLevel(nSkillId, 0) >= GetSkillMaxLevel(nSkillId) then 
+-- script viet hoa By http://tranhba.com  Msg2Player(format("Sö dông ®Æc biÖt b¹ch c©u hoµn thµnh c«ng , <color=yellow> %s <color> ®é tu luyÖn t¨ng lªn <color=yellow> %d <color>", szSkillName, nTotleExp)) 
+-- script viet hoa By http://tranhba.com  return 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  nNeedAddExp = nNextExp 
+-- script viet hoa By http://tranhba.com  nExp = nExp - nNeedAddExp 
+-- script viet hoa By http://tranhba.com  AddSkillExp(nSkillId, nNeedAddExp, 1) 
+-- script viet hoa By http://tranhba.com  nNextExp = GetSkillNextExp(nSkillId) 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  AddSkillExp(nSkillId, nExp, 1) 
+-- script viet hoa By http://tranhba.com  Msg2Player(format("Sö dông ®Æc biÖt b¹ch c©u hoµn thµnh c«ng <color=yellow> %s <color> ®é tu luyÖn t¨ng lªn <color=yellow> %d <color>", szSkillName, nTotleExp)) 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:CheckSkill(nSkillId) 
+-- script viet hoa By http://tranhba.com  local nCurSkillLevel = GetCurrentMagicLevel(nSkillId, 0); 
+-- script viet hoa By http://tranhba.com  local nSkillExp = GetSkillExp(nSkillId) 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  if HaveMagic(nSkillId) == -1 then 
+-- script viet hoa By http://tranhba.com  return 0 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  print("Häc tËp tr­íc mÆt ®Ých kü n¨ng , nSkillId = " .. nSkillId) 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  print(nSkillExp .. "\t" .. nCurSkillLevel) 
+-- script viet hoa By http://tranhba.com  if nSkillExp ~= -1 and nCurSkillLevel >= 1 and nCurSkillLevel < GetSkillMaxLevel(nSkillId) then 
+-- script viet hoa By http://tranhba.com  return 1 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:AddSkillToList(tbDec, tbSrc) 
+-- script viet hoa By http://tranhba.com  for i = 1, getn(tbSrc) do 
+-- script viet hoa By http://tranhba.com  local nSkillId = tbSrc[i] 
+-- script viet hoa By http://tranhba.com  if self:CheckSkill(nSkillId) == 1 then 
+-- script viet hoa By http://tranhba.com  tinsert(tbDec , nSkillId) 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:GetCanUpdateSkill() 
+-- script viet hoa By http://tranhba.com  local tbSkill = {}; 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  self:AddSkillToList(tbSkill, ARY_UPGRADE_SKILL_150) 
+-- script viet hoa By http://tranhba.com  return tbSkill; 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:ShowMenu(nItemIndex) 
+-- script viet hoa By http://tranhba.com  local tbSkill = self:GetCanUpdateSkill() 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  local szTitle = " xin/mêi lùa chän ng­¬i nghÜ gia t¨ng ®Ých kü n¨ng :" 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  tbOpt = {} 
+-- script viet hoa By http://tranhba.com  for i=1, getn(tbSkill) do 
+-- script viet hoa By http://tranhba.com  local nSkillId = tbSkill[i] 
+-- script viet hoa By http://tranhba.com  local szSkillName = GetSkillName(nSkillId) 
+-- script viet hoa By http://tranhba.com  tinsert(tbOpt, {szSkillName, self.UseItem, {self, nItemIndex, nSkillId}} ) 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  tinsert(tbOpt , {"Hñy bá "}) 
+-- script viet hoa By http://tranhba.com  CreateNewSayEx(szTitle, tbOpt) 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com function tbFastSpeedSkill_Banjuwan_150:UseItem(nItemIndex, nSkillId) 
+-- script viet hoa By http://tranhba.com  if not self:CheckSkill(nSkillId) then 
+-- script viet hoa By http://tranhba.com  return 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  if IsMyItem(nItemIndex) == 1 then 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  self:AddSkillStatckExp(nSkillId, self.nTargetExp) 
+-- script viet hoa By http://tranhba.com  RemoveItemByIndex(nItemIndex) 
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com end 
+-- script viet hoa By http://tranhba.com  
+function main(nItemIndex) 
+-- script viet hoa By http://tranhba.com  tbFastSpeedSkill_Banjuwan_150:ShowMenu(nItemIndex) 
+-- script viet hoa By http://tranhba.com  return 1 
+tbTrainSkill150:ResetDailyTask() 
+if tbVNG_BitTask_Lib:CheckBitTaskValue(tbTrainSkill150.tbBIT_BCH_USE, 20,"Mçi ng­êi chØ cã thÓ nhiÒu nhÊt sö dông 20 lÇn ", "~=") ~= 1 then 
+return 1 
+end 
+tbVNG_BitTask_Lib:addTask(tbTrainSkill150.tbBIT_BCH_USE, 1); 
+Msg2Player("Chóc mõng ®¹i hiÖp thµnh c«ng ®¹t ®­îc 1 lÇn ®æi lÊy kü n¨ng tu luyÖn ®iÓm 150."); 
+end 

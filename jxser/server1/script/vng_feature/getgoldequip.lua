@@ -1,78 +1,161 @@
---function hæ trî trao th­ëng trang bÞ hoµng kim - Updated by DinhHQ - 20110920
 Include("\\script\\dailogsys\\g_dialog.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\vng_lib\\VngTransLog.lua")
-Include("\\script\\dailogsys\\dailogsay.lua");
-tbVNEquiptInfo =
-{
-	[1] = 
-		{
-			strType = "Thanh C©u",
-			nStartIndex = 905,
-		},
-	[2] =
-		{
-			strType = "V©n Léc",
-			nStartIndex = 1135,
-		},
-	[3] =
-		{
-			strType = "Th­¬ng Lang",
-			nStartIndex = 1365,
-		},
-	[4] =
-		{
-			strType = "HuyÒn Viªn",
-			nStartIndex = 1595,
-		},
-	[5] =
-		{
-			strType = "Tö M·ng",
-			nStartIndex = 1825,
-		},
-	[6] =
-		{
-			strType = "Kim ¤",
-			nStartIndex = 2055,
-		},
-	[7] =
-		{
-			strType = "B¹ch Hæ",
-			nStartIndex = 2285,
-		},
-	[8] =
-		{
-			strType = "Kim ¤ (Max Option)",
-			nStartIndex = 3235,
-		},
+Include("\\script\\dailogsys\\dailogsay.lua")
+-----------------------------------------------
+tbVNEquiptInfo = {
+	[1] = {
+		strType = "Thanh C©u",
+		nStartIndex = 680,
+	},
+	[2] = {
+		strType = "V©n Léc",
+		nStartIndex = 950,
+	},
+	[3] = {
+		strType = "Th­¬ng Lang",
+		nStartIndex = 1220,
+	},
+	[4] = {
+		strType = "HuyÒn Viªn",
+		nStartIndex = 1490,
+	},
+	[5] = {
+		strType = "Tö M·ng",
+		nStartIndex = 1760,
+	},
+	[6] = {
+		strType = "Kim ¤",
+		nStartIndex = 2030,
+	},
+	[7] = {
+		strType = "B¹ch Hæ",
+		nStartIndex = 2300,
+	},
+	[8] = {
+		strType = "XÝch L©n",
+		nStartIndex = 2570,
+	},
+	[9] = {
+		strType = "Minh Ph­îng",
+		nStartIndex = 2840,
+	},
+	[10] = {
+		strType = "§»ng Long",
+		nStartIndex = 3110,
+	},
+	[11] = {
+		strType = "Tinh S­¬ng",
+		nStartIndex = 3380,
+	},
+	[12] = {
+		strType = "NguyÖt KhuyÕt",
+		nStartIndex = 3650,
+	},
+	[13] = {
+		strType = "DiÖu D­¬ng",
+		nStartIndex = 3920,
+	},
+	[14] = {
+		strType = "Anh Hµo",
+		nStartIndex = 4190,
+	},
+	[15] = {
+		strType = "Thiªn MÖnh",
+		nStartIndex = 4460,
+	},
+	[16] = {
+		strType = "Thanh C©u(Max Option)",
+		nStartIndex = 4730,
+	},
+	[17] = {
+		strType = "V©n Léc(Max Option)",
+		nStartIndex = 5000,
+	},
+	[18] = {
+		strType = "Th­¬ng Lang(Max Option)",
+		nStartIndex = 5270,
+	},
+	[19] = {
+		strType = "HuyÒn Viªn(Max Option)",
+		nStartIndex = 5540,
+	},
+	[20] = {
+		strType = "Tö M·ng(Max Option)",
+		nStartIndex = 5810,
+	},
+	[21] = {
+		strType = "Kim ¤(Max Option)",
+		nStartIndex = 6080,
+	},
+	[22] = {
+		strType = "B¹ch Hå(Max Option)",
+		nStartIndex = 6350,
+	},
+	[23] = {
+		strType = "XÝch L©n(Max Option)",
+		nStartIndex = 6620,
+	},
+	[24] = {
+		strType = "Minh Ph­îng(Max Option)",
+		nStartIndex = 6890,
+	},
+	[25] = {
+		strType = "§»ng Long(Max Option)",
+		nStartIndex = 7160,
+	},
+	[26] = {
+		strType = "Tinh S­¬ng(Max Option)",
+		nStartIndex = 7430,
+	},
+	[27] = {
+		strType = "NguyÖt KhuyÕt(Max Option)",
+		nStartIndex = 7700,
+	},
+	[28] = {
+		strType = "DiÖu D­¬ng (Max Option)",
+		nStartIndex = 7970,
+	},
+	[29] = {
+		strType = "Anh Hµo (Max Option)",
+		nStartIndex = 8240,
+	},
+	[30] = {
+		strType = "Thiªn MÖnh (Max Option)",
+		nStartIndex = 8510,
+	},
+
 }
 --chän nh¸nh kü tÊn c«ng chñ ®¹o
-tbVNFactionBranch = 
-	{
-		"ThiÕu L©m quyÒn ph¸p",
-		"ThiÕu L©m c«n ph¸p",
-		"ThiÕu L©m ®ao ph¸p",
-		"Thiªn V­¬ng chïy ph¸p",
-		"Thiªn V­¬ng th­¬ng ph¸p",
-		"Thiªn V­¬ng ®ao ph¸p",
-		"Nga Mi kiÕm ph¸p",
-		"Nga Mi ch­ëng ph¸p",
-		"Thóy Yªn ®ao ph¸p",
-		"Thóy Yªn song ®ao",
-		"Ngò §éc ch­ëng ph¸p",
-		"Ngò §éc ®ao ph¸p", --12
-		"§­êng M«n phi ®ao",
-		"§­êng M«n ná tiÔn",
-		"§­êng M«n phi tiªu",
-		"C¸i Bang ch­ëng ph¸p",
-		"C¸i Bang c«n ph¸p",
-		"Thiªn NhÉn m©u ph¸p",
-		"Thiªn NhÉn ®ao ph¸p",
-		"Vâ §ang quyÒn ph¸p",
-		"Vâ §ang kiÕm ph¸p",
-		"C«n L«n ®ao ph¸p",
-		"C«n L«n kiÕm ph¸p",
-	}
+tbVNFactionBranch = {
+	"ThiÕu L©m quyÒn ph¸p",
+	"ThiÕu L©m c«n ph¸p",
+	"ThiÕu L©m ®ao ph¸p",
+	"Thiªn V­¬ng chïy ph¸p",
+	"Thiªn V­¬ng th­¬ng ph¸p",
+	"Thiªn V­¬ng ®ao ph¸p",
+	"Nga Mi kiÕm ph¸p",
+	"Nga Mi ch­ëng ph¸p",
+	"Thóy Yªn ®ao ph¸p",
+	"Thóy Yªn song ®ao",
+	"Ngò §éc ch­ëng ph¸p",
+	"Ngò §éc ®ao ph¸p",
+	"§­êng M«n phi ®ao",
+	"§­êng M«n ná tiÔn",
+	"§­êng M«n phi tiªu",--15
+	"C¸i Bang ch­ëng ph¸p",
+	"C¸i Bang c«n ph¸p",
+	"Thiªn NhÉn m©u ph¸p",
+	"Thiªn NhÉn ®ao ph¸p",
+	"Vâ §ang quyÒn ph¸p",
+	"Vâ §ang kiÕm ph¸p",
+	"C«n L«n ®ao ph¸p",
+	"C«n L«n kiÕm ph¸p",
+	"Hoa S¬n KhÝ T«ng",
+	"Hoa S¬n KiÕm T«ng",
+	"Vò Hån ThuÉn Ph¸p",
+	"Vò Hån §ao Ph¸p",
+}
 	
 tbVNBranchGroupByFaction = {
 	[0] = {1, 2, 3},
@@ -85,6 +168,8 @@ tbVNBranchGroupByFaction = {
 	[7] = {18, 19},
 	[8] = {20, 21},
 	[9] = {22, 23},
+	[10] = {24, 25},
+	[11] = {26, 27},
 }
 	
 tbVnItemPos = {
@@ -170,7 +255,7 @@ end
 function tbVNGetGoldEquip:ShowEquipBranchDialog(nType, tbItemProp)		
 	local tbDailog = DailogClass:new()
 	tbDailog.szTitleMsg = "Xin chän hÖ tÊn c«ng chñ ®¹o:"
-	for nBranch = 1, 12 do
+	for nBranch = 1, 9 do
 		tbDailog:AddOptEntry(tbVNFactionBranch[nBranch], self.GetGoldEquip, {self, nType, nBranch, tbItemProp})
 	end
 	tbDailog:AddOptEntry("Trang kÕ", self.ShowEquipBranchDialog2, {self, nType, tbItemProp})
@@ -179,10 +264,19 @@ end
 
 function tbVNGetGoldEquip:ShowEquipBranchDialog2(nType, tbItemProp)	
 	local tbDailog = DailogClass:new()
-	for nBranch = 1, 11 do
-		tbDailog:AddOptEntry(tbVNFactionBranch[nBranch + 12], self.GetGoldEquip, {self, nType, nBranch + 12, tbItemProp})
+	for nBranch = 1, 9 do
+		tbDailog:AddOptEntry(tbVNFactionBranch[nBranch + 9], self.GetGoldEquip, {self, nType, nBranch + 9, tbItemProp})
 	end
-	tbDailog:AddOptEntry("Quay l¹i", self.ShowEquipBranchDialog, {self, nType, tbItemProp})
+	tbDailog:AddOptEntry("Trang KÕ", self.ShowEquipBranchDialog3, {self, nType, tbItemProp})
+	tbDailog:Show()	
+end
+
+function tbVNGetGoldEquip:ShowEquipBranchDialog3(nType, tbItemProp)	
+	local tbDailog = DailogClass:new()
+	for nBranch = 1, 5 do
+		tbDailog:AddOptEntry(tbVNFactionBranch[nBranch + 18], self.GetGoldEquip, {self, nType, nBranch + 18, tbItemProp})
+	end
+	tbDailog:AddOptEntry("Quay L¹i", self.ShowEquipBranchDialog, {self, nType, tbItemProp})
 	tbDailog:Show()	
 end
 
@@ -216,7 +310,7 @@ function tbVNGetGoldEquip:GetGoldEquip(nType, nBranch, tbItemProp)
 	if tbItemProp.nIsSkipRoomCheck and tbItemProp.nIsSkipRoomCheck == -1 then	
 	else
 		if nSpecificItem == tbVnItemPos.WHOLE_SET then
-			if CalcFreeItemCellCount() < 59 then
+			if CalcFreeItemCellCount() < 40 then
 				Talk(1, "", "Xin h·y dän trèng hµnh trang råi h·y nhËn th­ëng.")
 				return
 			end		
@@ -321,7 +415,7 @@ function tbVNGetGoldEquip:GiveUIOk(tbParam, nCount)
 	if tbParam.pCallBack then
 		tbParam.pCallBack()
 	end
-	nNewIdx = nItemSettingIdx + 230 * (tbParam.nNewType - tbParam.nOldType)
+	nNewIdx = nItemSettingIdx + 270 * (tbParam.nNewType - tbParam.nOldType)
 	if IsMyItem(nItemIdx) ~= 1 or RemoveItemByIndex(nItemIdx) ~= 1 then
 		return
 	end

@@ -1,24 +1,23 @@
---°ü¸¤ÄÚµÄĞÅ¼ş£¨ĞÂÈÎÎñÏµÍ³ÁúÎåµÄ°ü¸¤£©Ğ°ÅÉ
---by xiaoyang(2004\12\25)
+-- script viet hoa By http://tranhba.com  bäc quÇn ¸o bªn trong ®İch phong th¬ # nhiÖm vô míi hÖ thèng long n¨m ®İch bäc quÇn ¸o # tµ ph¸i 
+-- script viet hoa By http://tranhba.com by xiaoyang(2004\12\25) 
 
 Include("\\script\\task\\newtask\\newtask_head.lua")
 
-function main(sel)
-local curCamp = nt_getCamp()
-	Uworld1001 = nt_getTask(1001)  --ÕıÅÉ
-	Uworld1002 = nt_getTask(1002)
-	Uworld1003 = nt_getTask(1003)
-	Uworld183 = nt_getTask(183)
-	Uworld186 = nt_getTask(186)
-	Uworld189 = nt_getTask(189)
-	local name = GetName()
-	if ( Uworld189 == 20 )  then
-		Describe("<link=image:\\spr\\item\\questkey\\taskobj091.spr>Th­ cña Long Ngò<link><enter>"..name..", h·y ®Õn Chu Tiªn TrÊn t×m V©n Nhi! SÏ cã nhiÖm vô cho ng­¬i! Hµnh sù nªn thËn träng! Long ngò!",1,"NhËn hµm th­ /no")
-		nt_setTask(189,30)
-		if ( Uworld1003 < 10 ) then 
-			nt_setTask(1003,10) --Ğ°ÅÉÈÎÎñ¿ªÊ¼
-		end
-	end
-	return 0
-end
-	
+function main(sel) 
+local curCamp = nt_getCamp() 
+Uworld1001 = nt_getTask(1001) -- script viet hoa By http://tranhba.com  chİnh ph¸i 
+Uworld1002 = nt_getTask(1002) 
+Uworld1003 = nt_getTask(1003) 
+Uworld183 = nt_getTask(183) 
+Uworld186 = nt_getTask(186) 
+Uworld189 = nt_getTask(189) 
+local name = GetName() 
+if ( Uworld189 == 20 ) then 
+Describe("<link=image:\\spr\\item\\questkey\\taskobj091.spr> long n¨m ®İch tin/th¬ <link><enter>"..name..", ®i Chu tiªn trÊn t×m V©n nhi , liªn quan tíi nµng hÕt th¶y ng­¬i còng sÏ tõ tõ biÕt ®­îc , nh­ng ta kh«ng muèn nãi thªm mét ch÷ , ng¾m ng­¬i tr©n träng m×nh . long n¨m . ",1,"Thu håi tİn hµm /no") 
+nt_setTask(189,30) 
+if ( Uworld1003 < 10 ) then 
+nt_setTask(1003,10) -- script viet hoa By http://tranhba.com  tµ ph¸i nhiÖm vô b¾t ®Çu 
+end 
+end 
+return 0 
+end 

@@ -13,7 +13,7 @@ tbConfig[1] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use500Box",	{nil}},
+		{"ThisActivity:NhiemVuViSonDao",	{nil}},
 	},
 }
 tbConfig[2] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
@@ -26,11 +26,11 @@ tbConfig[2] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
+	--	{"NpcFunLib:CheckInMap",	{"342"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use1000Box",	{nil}},
+	--	{"ThisActivity:Use1000Box",	{nil}},
 	},
 }
 tbConfig[3] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
@@ -43,11 +43,11 @@ tbConfig[3] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
+	--	{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use1500Box",	{nil}},
+	--	{"ThisActivity:Use1500Box",	{nil}},
 	},
 }
 tbConfig[4] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
@@ -60,11 +60,11 @@ tbConfig[4] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
+	--	{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use2000Box",	{nil}},
+	--	{"ThisActivity:Use2000Box",	{nil}},
 	},
 }
 tbConfig[5] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
@@ -77,11 +77,11 @@ tbConfig[5] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
+	--	{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use2500Box",	{nil}},
+	--	{"ThisActivity:Use2500Box",	{nil}},
 	},
 }
 tbConfig[6] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
@@ -94,10 +94,10 @@ tbConfig[6] = --B¶n §å §¸nh Qu¸i NhiÖm Vô
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
+	--	{"NpcFunLib:CheckInMap",	{"321,322,75,227,340,93,225,226,340,144,124,924,923,922,921,875"} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:Use3000Box",	{nil}},
+	--	{"ThisActivity:Use3000Box",	{nil}},
 	},
 }

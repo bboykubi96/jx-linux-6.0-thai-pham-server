@@ -2,7 +2,7 @@ Include("\\script\\missions\\citywar_global\\head.lua");
 Include("\\script\\missions\\citywar_city\\head.lua");
 Include("\\script\\missions\\clearskill\\clearhole.lua");
 Include("\\script\\task\\tollgate\\messenger\\wagoner.lua");  --ÌØÊâÐÅÊ¹µØÍ¼
-Include("\\script\\global\\g7vn\\g7configall.lua")
+
 Include("\\script\\task\\newtask\\map_index.lua"); -- ÓÃÓÚ»ñÈ¡ÈÎÎñÁ´µØÍ¼µÄÐÅÏ¢
 Include("\\script\\task\\tollgate\\messenger\\wagoner.lua") --ÓÃÓÚÁ¬½ÓÌØÊâÐÅÊ¹ÈÎÎñµÄ½Å±¾
 Include("\\script\\global\\judgeoffline_special.lua")	--ÓÃÓÚÎÞÃû¹È¡ª¡ªÍÐ¹Ü·þÎñÆ÷µØÍ¼
@@ -11,7 +11,6 @@ Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\event\\zhongqiu_jieri\\200909\\rongshu\\head.lua")
-Include("\\script\\global\\pgaming\\tieubangchien\\api.lua")
 
 Include("\\script\\event\\great_night\\great_night_head.lua")	--Ë«Áú¶´»Æ½ðÖ®ºË
 --§iÒu chØnh reset 5h ch¬i - Modified by DinhHQ - 20110630
@@ -221,7 +220,14 @@ function SelStation(nSel)
 end
 
 function TownPortalFun()	
-
+if GetTask(5859)> 0  then
+		Say("VËn Tiªu §i Råi H·y SD Th©n Hµnh Phï")
+		return 1
+	end;
+        --  if GetTask(3920)> 0  then
+	--	Say("Ng­¬i ®ang vËn chuyÓn Bao L­¬ng . Mau di chuyÓn ®Õn §iÓm tËp kÕt ®i.")
+	--	return 1
+	--end;
 	--local PK_value = GetPK()
 	--if PK_value == 10 then
 	--	Say("Ng­êi hai tay dÝnh ®Çy m¸u trÞ sè <color=red>PK 10<color> ®i ®Õn ch©n trêi gãc bÓ th× còng kh«ng thÓ tho¸t khái luËt ph¸p! <enter>Mau mau ®Õn nhµ lao ®Çu thó ®Ó gi¶m bít trÞ PK", 0);
@@ -395,34 +401,13 @@ CITY_OPTIONS =
 	{"§i n¬i ®Æc biÖt lµm NhiÖm vô TÝn Sø ",	messenger_wagoner},     -- 9
 	--"È¥ÎÞÃû¹È",				GotoAnonymVale"			--10
 	{"Xin h·y ®­a ta ®Õn ChiÕn Long §éng",		OnGoToNewLiangShuiDong},-- 10
-	--{"§i ThÝ LuyÖn Cèc",				goto_shijiangu},		-- 11
+	{"§i ThÝ LuyÖn Cèc(KiÕm Gia Mª Cung)",				goto_shijiangu},		-- 11
 	--{"§i ¸c Lang Cèc",				_GoELangGu},
 }
-function check_faction()
-	local szCurFaction = GetFaction()
-	if szCurFaction ~= nil and szCurFaction ~= "" then
-		return
-	end
-	return 1
-end
+
 -- ³ÇÊÐ³µ·òÍ¨ÓÃ½Å±¾
 -- ×¢Òâ£º¹¥³ÇÕ½Î´Ê¹ÓÃ´Ëº¯ÊýµÄ½Å±¾ [script\missions\citywar_city\zhongzhuan_map\chefu.lua]
 function CityStationCommon(szMsg)	
-local zDate = tonumber(date("%Y%m%d%H%M"))
-	if zDate <= ThoiGianHetHanDiemTP then
-		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chÝnh thøc khai më m¸y chñ");
-	--	SetPos(1628, 3100)
-		return 1
-	end
-	--if check_faction()==1 then
-		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-	--	SetPos(1628, 3100)
-		--return 1
-	--end;
-	if GetExp()<0 then
-		Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
-		return 1
-	end
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex)
 	if NpcName2Replace then
@@ -433,11 +418,7 @@ local zDate = tonumber(date("%Y%m%d%H%M"))
 	
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog)
 	tbDailog.szTitleMsg = szMsg
-	
-	if m_TieuBangChien:api_Station(1) and strTongName ~= "" then
-		tbDailog:AddOptEntry("§i ®Õn b¶n ®å Tiªu Bang ChiÕn", m_TieuBangChien.api_Station, {m_TieuBangChien})
-	end
-	
+
 	--µ¯³ö¶Ô»°¿ò
 	for i = 1, getn(CITY_OPTIONS) do
 		local tb = CITY_OPTIONS[i]
@@ -451,25 +432,10 @@ end;
 
 -- ÐÂÊÖ´å³µ·òÍ¨ÓÃ½Å±¾ (×¢Òâ£ºÄÏÔÀÕò²»ÊÇÐÂÊÖ´å£¬²»µ÷´Ëº¯Êý)
 function NewcomerStationCommon(szMsg)
---	check_update()	
-local zDate = tonumber(date("%Y%m%d%H%M"))
-	if zDate <= ThoiGianHetHanDiemTP then
-		Say("§óng vµo lóc <color=yellow>"..ThoiGianOpenStr.."<color> míi b¾t ®Çu chÝnh thøc khai më m¸y chñ");
-	--	SetPos(1628, 3100)
-		return 1
-	end
-	--if check_faction()==1 then
-		--Say("Ng­êi ch¬i ph¶i gia nhËp m«n ph¸i míi cã thÓ ra khái thµnh.", 0);
-	--	SetPos(1628, 3100)
-		--return 1
-	--end;				-- ¼¼ÄÜ¸üÐÂ¡¢ÃÅÅÉ¼Ó±êÊ¶£¨2004-05-31£©
-	if GetExp()<0 then
-		Say("Kinh nghiÖm bÞ ©m. kh«ng thÓ ®i xa phu.", 0);
-		return 1
-	end
 if GetTask(5859)==1 then
-return Say("§ang VËn Tiªu Xin §õng GÆp Ta")
+return Say("§ang VËn Tiªu Xin §?ng GÆp Ta")
 end
+--	check_update()					-- ¼¼ÄÜ¸üÐÂ¡¢ÃÅÅÉ¼Ó±êÊ¶£¨2004-05-31£©
 	if (GetLevel() >= 5) then
 		if (WhichWarBegin() ~= 0) then
 			Say(szMsg, 5, szStationOp[1], szStationOp[2], szStationOp[3], szStationOp[5], szStationOp_Cancel)

@@ -17,21 +17,19 @@ function tbTop10:LuuDSNhanVat()
 		self:Init()
 	end
 	local strName = GetName()
-	--if CheckTop10(strName) == 1 then
-	--	return
-	--end
+	local lv = GetLevel() + 200*GetTask(5969)
 	if (not self.tbSubcribers[strName]) then
 		self.tbSubcribers[strName] = {}
 		local tbSubcriber = self.tbSubcribers[strName]
 		tinsert(tbSubcriber, ST_GetTransLifeCount())			--level hi÷n tπi
-		tinsert(tbSubcriber, GetLevel())			--level hi÷n tπi
+		tinsert(tbSubcriber, lv)			--level hi÷n tπi
 		tinsert(tbSubcriber, GetExp()/1e9)		--kinh nghi÷m hi÷n tπi
 		tinsert(tbSubcriber, GetExpPercent())		--% hi÷n tπi
 	end
 	if (self.tbSubcribers[strName]) then
 		local tbSubcriber = self.tbSubcribers[strName]
 		tbSubcriber[self.nST1_LVL] =  ST_GetTransLifeCount()
-		tbSubcriber[self.nCUR_LVL] = GetLevel()			--level hi÷n tπi
+		tbSubcriber[self.nCUR_LVL] = lv			--level hi÷n tπi
 		tbSubcriber[self.nCUR_EXP] = GetExp()/1e9		--kinh nghi÷m hi÷n tπi
 		tbSubcriber[self.nCUR_EXP_PERCENT] = GetExpPercent()	--% hi÷n tπi	
 	end

@@ -1,4 +1,4 @@
-function main()
-	CastSkill(763, 10);
-	Msg2Player("B¹n ®· sö dông mét <color=yellow>Ph¸o viªn<color>.");
+function main() 
+CastSkill(763, 10); 
+Msg2Player("Ng­¬i ®· sö dông mét <color=yellow> roi ph¸o <color>."); 
 end;

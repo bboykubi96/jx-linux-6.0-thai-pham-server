@@ -5,16 +5,13 @@ Include("\\script\\lib\\log.lua")
 Include("\\script\\activitysys\\npcdailog.lua")
 Include("\\script\\logevent\\logevent.lua");
 Include("\\script\\logevent\\variables.lua");
-Include("\\script\\task\\system\\task_string.lua");
-IncludeLib("SETTING")
-IncludeLib("ITEM")
 --------------------------------------------------------
-HOAPHUONGTRANG	 = 4997
-NHANTHUONGMOC		 = 4998
+HOAPHUONGTRANG	 = 4999
+NHANTHUONGMOC		 = 4997
 
 ----------------------config-----------
-startdate= 20210830
-endate=20221231
+startdate= 20181204
+endate=20191230
 
 subknmoc1="§å Phæ Tinh S­¬ng Y"
 subknmoc2="Ngùa Ngù Phong"
@@ -58,192 +55,45 @@ dofile("script/global/g7vn/event/hoabonmua/eventmain.lua")
 	if NpcName2Replace then
 		szNpcName = NpcName2Replace(szNpcName);
 	end
-	if GetTask(5334)>=10 then
-		--tbLogEvent:LuuDSNhanVat()
-	--	tbLogEvent:SapXepDSXepHang()
-end
-	local tbDailog = DailogClass:new(szNpcName);
-	tbDailog.szTitleMsg = "<npc>§¹i HiÖp <color=yellow>"..GetName().."<color> ®· sö dông\n <color=red>"..GetTask(4996).."<color> <color=cyan>Phong Ph¸o Trung<color>\n <color=red>"..GetTask(4994).."<color> <color=cyan>Phong Ph¸o §¹i<color>",
-	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex)
-EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
-	local nDate = tonumber(GetLocalDate("%Y%m%d%H%M"));
-	local nTime = tonumber(GetLocalDate("%H%M"));
-	if nDate>=202205221900 and nDate<=202207302359 then
-
---	tbDailog:AddOptEntry("§æi Cµn Kh«n Song TuyÖt Béi", doicankhongstb);
---	
---	tbDailog:AddOptEntry("Mua Hép Diªm (5xu-1hép)", muahopdiem);
-
-	if GetAccount()=="testgame4" or GetAccount()=="thaipham1" then
-
-
-	end
-
-
-		--		tbDailog:AddOptEntry("Mua 100 Hoa Hång (1300 Xu)", MuaEvent500xu);
-		--	tbDailog:AddOptEntry("Mua NÕn (1 Xu - 1 C¸i)", BatDauMuaHoa);
-		--	tbDailog:AddOptEntry("Mua N¬ §á (1 V¹n - 1 C¸i)", BatDauMuaHoa2);
-				 --  tbDailog:AddOptEntry("GhÐp Hoa Cóc Vµng (Event TiÒn V¹n)", GhepBoHoaBonMua3);
-				   	  tbDailog:AddOptEntry("GhÐp Phong Ph¸o Trung (Event V¹n)", GhepBoHoaBonMua2);
-	 tbDailog:AddOptEntry("GhÐp Phong Ph¸o §¹i (Event Xu)", GhepBoHoaBonMua);
-		tbDailog:AddOptEntry("NhËn Th­ëng Mèc 300 Event V¹n + 300 Event Xu", Moc2000);	
-	--tbDailog:AddOptEntry("Show Top L¸ Cê §á ThiÕu Nhi", ShowTopThiep);
-	--tbDailog:AddOptEntry("Reset Mèc Event B¸nh Kem (20xu)", Reset);
-
-
-tbDailog:Show();
 	
+	local tbDailog = DailogClass:new(szNpcName);
+	tbDailog.szTitleMsg = "<npc><bclr=violet>Chµo Mõng Nh©n SÜ Tham Gia Vâ L©m TruyÒn Kú!...<bclr>",
+	
+	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex)
+	
+	local nDate = tonumber(GetLocalDate("%Y%m%d"));
+	local nTime = tonumber(GetLocalDate("%H%M"));
+	if (nDate >= startdate and nDate <= endate and nTime >= 0000 and nTime <= 2359) then
+
+--	tbDailog:AddOptEntry("GhÐp Bã Hoa Bèn Mïa", GhepBoHoaBonMua);
+	--tbDailog:AddOptEntry("NhËn Th­ëng Mèc", NhanMoc);
+----	tbDailog:AddOptEntry("Mua Nguyªn LiÖu Event", MuaNguyenLieuEvent);
+--	tbDailog:AddOptEntry("Reset Mèc Event (10 Xu)", Reset);
+	tbDailog:AddOptEntry("Show Top ThiÖp Chóc Mõng", ShowTopThiep);
+	tbDailog:Show();
 else
-Talk(1,"","<bclr=violet>Event ch­a më hoÆc ®· hÕt h¹n.<bclr>")
+Talk(1,"","<bclr=violet>Ho¹t §éng ChØ Më Tõ 0h Ngµy 04 - 05 - 2018 §Õn 23h 59 Ngµy 30 - 06 - 2018 Xin Mêi Quay L¹i Sau<bclr>")
 return 0;
 end
+end
 
-end
-function doicankhongstb()
-if CalcFreeItemCellCount()<5 then
-	Say("Hµnh trang kh«ng ®ñ 5 « trèng.")
-	return
-end
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local tuthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	local nhatky=CalcEquiproomItemCount(6,1,2126,-1)
-	if lamthuytinh>=10 and lucthuytinh>=10 and tuthuytinh>=10 and nhatky>=2 then
-		local cankhon=random(1,3)
-		if cankhon==1 then
-			local rcankhon=random(1,10)
-			if rcankhon<6 then
-			tbAwardTemplet:GiveAwardByList({{szName = "Cµn kh«n song tuyÖt béi",tbProp={6,1,4377,1,0,0},nCount=1,nExpiredTime=7*24*60},}, "test", 1);
-			Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· ®æi thµnh c«ng <color=cyan> Cµn Kh«n Song TuyÖt Béi 7 Ngµy<color>")
-			elseif rcankhon>=6 and rcankhon<=9 then
-			tbAwardTemplet:GiveAwardByList({{szName = "Cµn kh«n song tuyÖt béi",tbProp={6,1,4446,1,0,0},nCount=1,nExpiredTime=15*24*60},}, "test", 1);
-			Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· ®æi thµnh c«ng <color=cyan> Cµn Kh«n Song TuyÖt Béi 15 Ngµy<color>")
-			elseif rcankhon==10 then
-			tbAwardTemplet:GiveAwardByList({{szName = "Cµn kh«n song tuyÖt béi",tbProp={6,1,2219,1,0,0},nCount=1,nExpiredTime=30*24*60},}, "test", 1);
-			Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· ®æi thµnh c«ng <color=cyan> Cµn Kh«n Song TuyÖt Béi 30 Ngµy<color>")
-			end
-			ConsumeEquiproomItem(10,4,238,1,1)
-			ConsumeEquiproomItem(10,4,239,1,1)
-			ConsumeEquiproomItem(10,4,240,1,1)
-			ConsumeEquiproomItem(2,6,1,2126,-1)
-		else
-		ConsumeEquiproomItem(10,4,238,1,1)
-			ConsumeEquiproomItem(10,4,239,1,1)
-			ConsumeEquiproomItem(10,4,240,1,1)
-			ConsumeEquiproomItem(2,6,1,2126,-1)
-			Msg2SubWorld("<color=green>Xin chia buån cïng cao thñ <color=yellow>"..GetName().."<color> ®· Ðp xÞt <color=cyan>Cµn Kh«n Song TuyÖt Béi<color>")
-		end
-else
-Say("Hµnh trang kh«ng ®ñ <color=yellow>10 Bé Thuû Tinh + <color=red>2 NhÊt Kû Cµn Kh«n Phï")
-return	
-	end
-end
-function muahopdiem()
 
-AskClientForNumber("batdaumuahopdiem", 1, 200, "NhËp sè l­îng")
-
-end
-function batdaumuahopdiem(nNum)
-local tbItem = {
-	{szName="Hép Diªm", tbProp={6,1,30309,1,0,0},nCount = nNum},
-}
-	local nCount_muaban = CalcEquiproomItemCount(4,417,1,1)
-	if  nCount_muaban >= 5*nNum  then
-		ConsumeEquiproomItem(5*nNum, 4,417, 1,-1)
-		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-		Msg2Player("Chóc mõng "..myplayersex().." ®· mua thµnh c«ng <color=cyan>"..nNum.." Hép Diªm ")
-	else
-		Say("Kh«ng ®ñ  Xu, Xin Xem L¹i")
-	end
-
-end
 --------------------------------------
 
 function ShowTopThiep()
 
 tbLogEvent:ShowTopList()
 end
-function MuaEvent500xu()
-local tbItem = {
-	{szName="Hoa Hång", tbProp={6,1,3122,1,0,0},nCount = 100},
-}
-	local nCount_muaban = CalcEquiproomItemCount(4,417,1,1)
-	if  nCount_muaban >= 1300  then
-		ConsumeEquiproomItem(1300, 4,417, 1,-1)
-		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-		Msg2Player("Chóc Mõng "..myplayersex().." §· Mua Thµnh C«ng 100 Hoa Hång")
-		--Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· mua thµnh c«ng <color=red> 200 Bã Hoa 20-10 <color> gi¸ <color=cyan>500xu<color>")
-	else
-		Say("Kh«ng ®ñ  Xu, Xin Xem L¹i")
-	end
-end
-function GhepBoHoaBonMua3 ()
-local phaotieu= CalcEquiproomItemCount(6,1,1436,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4315,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4316,-1)
-local diemtongkim=GetTask(747)
-local tien= CalcEquiproomItemCount(4,417,1,-1)
-local szTitle = "B¹n §ang Cã : \n<color=green>"..phaotieu.." <color>GiÊy Gãi Hoa \n<color=green>"..phaodai.."<color> D©y Cét Hoa\n<color=green>"..hoavang.."<color> ChiÕc N¬\n<color=green>"..diemtongkim.."<color> §iÓm Tèng Kim\n<color=yellow>3 Nguyªn LiÖu + 500 §iÓm Tèng Kim= 1 Hoa Cóc Vµng<color>"
-	local Opt = 
-	{	
-		{"Ta Muèn B¾t §Çu GhÐp", BatDauGhepHoa3},
-		{"KÕt thóc ®èi tho¹i. ", End}
-	}
-	CreateNewSayEx(szTitle,Opt)
-end
-function BatDauGhepHoa3()
-
-AskClientForNumber("BatDauGhepHoa_3", 1, 200, "NhËp sè l­îng")
-
-end
-function BatDauGhepHoa_3(nNum)
-	local tbItem = 
-	{	
-		{szName = "Hoa Cóc Vµng", tbProp = {6, 1, 4311, 1,0,0}, nCount = nNum},	
-	}
-
-local phaotieu= CalcEquiproomItemCount(6,1,1436,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4315,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4316,-1)
-local diemtongkim=GetTask(747)
-	
-if phaotieu>=nNum  and phaodai>=nNum and hoavang>=nNum and diemtongkim>=nNum*500 then
---Msg2Player(""..hoamai..","..hoaphuong..","..nNum.."")
---ConsumeEquiproomItem(nNum, 4,417, 1,-1)
-ConsumeEquiproomItem(nNum, 6,1, 1436,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4315,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4316,-1)
-SetTask(747,GetTask(747)-(nNum*500))
-Msg2Player("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· dïng nguyªn liÖu ghÐp thµnh <color=cyan> "..nNum.." Hoa Cóc Vµng.")
-tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-else 
-	Say("Kh«ng §ñ Nguyªn LiÖu HoÆc 10 Chç Trèng");
-
-end
-end
-function GhepBoHoaBonMua2 ()
-local phaotieu= CalcEquiproomItemCount(6,1,4524,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4525,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4526,-1)
-local diemtongkim=GetCash()
-local tien= CalcEquiproomItemCount(4,417,1,-1)
-local szTitle = "B¹n §ang Cã : \n<color=green>"..phaotieu.." <color>Ph¸o TiÓu \n<color=green>"..phaodai.."<color> Ph¸o Trung\n<color=green>"..hoavang.."<color> Ph¸o §¹i\n<color=yellow>3 Nguyªn LiÖu + 2000 l­îng = 1 Phong Ph¸o Trung<color>"
-	local Opt = 
-	{	
-		{"Ta Muèn B¾t §Çu GhÐp", BatDauGhepHoa2},
-		{"KÕt thóc ®èi tho¹i. ", End}
-	}
-	CreateNewSayEx(szTitle,Opt)
-end
 
 ---------------------------------------
 function GhepBoHoaBonMua ()
-local phaotieu= CalcEquiproomItemCount(6,1,4524,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4525,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4526,-1)
-local diemtongkim=GetCash()
+local hoamai= CalcEquiproomItemCount(6,1,30325,-1)
+local hoaphuong= CalcEquiproomItemCount(6,1,30326,-1)
+local hoagao= CalcEquiproomItemCount(6,1,30327,-1)
+local hoathong= CalcEquiproomItemCount(6,1,30328,-1)
+local kembonmua= CalcEquiproomItemCount(6,1,30329,-1)
 local tien= CalcEquiproomItemCount(4,417,1,-1)
-local szTitle = "B¹n §ang Cã : \n<color=green>"..phaotieu.." <color>Ph¸o TiÓu \n<color=green>"..phaodai.."<color> Ph¸o Trung\n<color=green>"..hoavang.."<color> Ph¸o §¹i\n<color=yellow>3 Nguyªn LiÖu + 1 Xu = 1 Phong Ph¸o §¹i<color>"
+local szTitle = "B¹n §ang Cã : \n<color=green>"..hoamai.." <color>Hoa Mai \n<color=green>"..hoaphuong.." <color>Hoa Ph­îng \n<color=green>"..hoagao.."<color> Hoa G¹o\n<color=green>"..hoathong.."<color> Hoa Th«ng \n<color=green>"..kembonmua.."<color> Kem Bèn Mïa \n<color=green>"..tien.."<color> Xu \n<color=yellow>4 Loµi Hoa + 1 Kem Bèn Mïa + 1 Xu = 1 Bã Hoa Bèn Mïa<color>"
 	local Opt = 
 	{	
 		{"Ta Muèn B¾t §Çu GhÐp", BatDauGhepHoa},
@@ -251,69 +101,34 @@ local szTitle = "B¹n §ang Cã : \n<color=green>"..phaotieu.." <color>Ph¸o TiÓu \n
 	}
 	CreateNewSayEx(szTitle,Opt)
 end
-function BatDauMuaHoa()
 
-AskClientForNumber("MuaKhanChoangDo", 1, 500, "NhËp sè l­îng")
-
-end
-function BatDauMuaHoa2()
-
-AskClientForNumber("MuaKhanChoangDo2", 1, 500, "NhËp sè l­îng")
-
-end
 function BatDauGhepHoa()
 
-AskClientForNumber("BatDauGhepHoa_1", 1, 200, "NhËp sè l­îng")
+AskClientForNumber("BatDauGhepHoa_1", 1, 100, "NhËp sè l­îng")
 
-end
-function BatDauGhepHoa2()
-
-AskClientForNumber("BatDauGhepHoa_2", 1, 200, "NhËp sè l­îng")
-
-end
-function BatDauGhepHoa_2(nNum)
-	local tbItem = 
-	{	
-		{szName = "Phong Ph¸o Trung", tbProp = {6, 1, 4527, 1,0,0}, nCount = nNum},	
-	}
-
-local phaotieu= CalcEquiproomItemCount(6,1,4524,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4525,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4526,-1)
-local diemtongkim=GetCash()
-	
-if phaotieu>=nNum  and phaodai>=nNum and hoavang>=nNum and diemtongkim>=2000*nNum  then
---Msg2Player(""..hoamai..","..hoaphuong..","..nNum.."")
---ConsumeEquiproomItem(nNum, 4,417, 1,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4525,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4524,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4526,-1)
-Pay(2000*nNum)
---Msg2Player("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· dïng nguyªn liÖu ghÐp thµnh <color=cyan> "..nNum.." Phong Ph¸o Trung")
-tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-else 
-	Say("Kh«ng §ñ Nguyªn LiÖu HoÆc 10 Chç Trèng");
-
-end
 end
 function BatDauGhepHoa_1(nNum)
 	local tbItem = 
 	{	
-		{szName = "Phong Ph¸o §¹i", tbProp = {6, 1, 4528, 1,0,0}, nCount = nNum},	
+		{szName = "Bo Hoa Bon Mua", tbProp = {6, 1, 30330, 1,0,0}, nCount = nNum, nExpiredTime=43200},	
 	}
-local phaotieu= CalcEquiproomItemCount(6,1,4524,-1)
-local phaodai= CalcEquiproomItemCount(6,1,4525,-1)
-local hoavang= CalcEquiproomItemCount(6,1,4526,-1)
-local diemtongkim=GetCash()
-local tien= CalcEquiproomItemCount(4,417,1,1)
+
+local hoamai= CalcEquiproomItemCount(6,1,30325,-1)
+local hoaphuong= CalcEquiproomItemCount(6,1,30326,-1)
+local hoagao= CalcEquiproomItemCount(6,1,30327,-1)
+local hoathong= CalcEquiproomItemCount(6,1,30328,-1)
+local kembonmua= CalcEquiproomItemCount(6,1,30329,-1)
+local tien= CalcEquiproomItemCount(4,417,1,-1)
 	
-if phaotieu>=nNum and hoavang>=nNum and phaodai>=nNum and tien>=nNum  then
---Msg2Player(""..hoamai..","..hoaphuong..","..nNum.."")
-ConsumeEquiproomItem(nNum, 6,1, 4525,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4524,-1)
-ConsumeEquiproomItem(nNum, 6,1, 4526,-1)
-ConsumeEquiproomItem(nNum,4,417,1,1)
---Msg2Player("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· dïng nguyªn liÖu ghÐp thµnh <color=cyan> "..nNum.." B¸nh Kem ThiÕu Nhi.")
+if hoamai>=nNum and hoaphuong>=nNum and hoagao>=nNum and hoathong>=nNum and kembonmua>=nNum and tien>=nNum then
+Msg2Player(""..hoamai..","..hoaphuong..","..nNum.."")
+ConsumeEquiproomItem(nNum, 4,417, 1,-1)
+ConsumeEquiproomItem(nNum, 6,1, 30325,-1)
+ConsumeEquiproomItem(nNum, 6,1, 30326,-1)
+ConsumeEquiproomItem(nNum, 6,1, 30327,-1)
+ConsumeEquiproomItem(nNum, 6,1, 30328,-1)
+ConsumeEquiproomItem(nNum, 6,1, 30329,-1)
+
 tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
 
 else 
@@ -327,7 +142,7 @@ end
 function MuaNguyenLieuEvent()
 local tbSay = {}
 
-		tinsert(tbSay,"Mua 10Kg ThÞt Chã <20 Xu> ./MuaKhanChoangDo")
+		tinsert(tbSay,"Mua 10 Kem Bèn Mïa <10 Xu> ./MuaKhanChoangDo")
 		tinsert(tbSay,"Tho¸t/no")
 		Say(" §¹i hiÖp cÇn ta gióp vÊn ®Ò g× ? ", getn(tbSay), tbSay)
 
@@ -335,43 +150,76 @@ local tbSay = {}
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MuaKhanChoangDo2(nNum)
-local tbItem = {
-	{szName="N¬ §á", tbProp={6,1,4493,1,0,0},nCount = nNum},
-}
-	local nCount_muaban = GetCash()
-	if  nCount_muaban >= nNum*10000  then
-		Pay(nNum*10000)
-		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-		Msg2Player("Chóc mõng "..myplayersex().." ®· mua thµnh c«ng <color=cyan>"..nNum.." N¬ §á")
-	else
-		Say("Kh«ng ®ñ  tiÒn v¹n, Xin Xem L¹i")
-	end
 
-end
-function MuaKhanChoangDo(nNum)
+function MuaKhanChoangDo()
 local tbItem = {
-	{szName="NÕn", tbProp={6,1,4496,1,0,0},nCount = nNum},
+	{szName="Kh¨n Chßng §á", tbProp={6,1,30329,1,0,0},nCount = 10},
 }
 	local nCount_muaban = CalcEquiproomItemCount(4,417,1,1)
-	if  nCount_muaban >= nNum  then
-		ConsumeEquiproomItem(nNum, 4,417, 1,-1)
+	if  nCount_muaban >= 10  then
+		ConsumeEquiproomItem(10, 4,417, 1,-1)
 		tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-		Msg2Player("Chóc mõng "..myplayersex().." ®· mua thµnh c«ng <color=cyan>"..nNum.." NÐn")
+		Msg2Player("Chóc Mõng "..myplayersex().." §· Mua Thµnh C«ng 10 10 Kem Bèn Mïa")
 	else
-		Say("Kh«ng ®ñ  Xu, Xin Xem L¹i")
+		Say("Kh«ng ®ñ 50 Xu, Xin Xem L¹i")
 	end
 
 end
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function NhanMoc()
+		Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."<color> Bã Hoa Bèn Mïa<color>\n<color=orange>L­u ý: NhËn Mèc Tèi §a 1000 Bã Hoa Bèn Mïa\nTrong Suèt Thêi Gian Ho¹t §éng<color>\n<color=pink>               T¨ng Thªm LÇn Sö Dông: 0KNB/LÇn<color>",5,"Xem PhÇn Th­ëng Mèc 500/XemMoc2000","Xem PhÇn Th­ëng Mèc 1000/XemMoc4000","Hñy Bá/No")
+end
+function XemMoc2000()
+if (GetTask(NHANTHUONGMOC) == 0) then
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/500<color> Bã Hoa Bèn Mïa<color>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc1.." \n 2. "..pt1moc1.." \n 3. "..pt2moc1.."<color>",2,"NhËn PhÇn Th­ëng Mèc 500/Moc2000","Hñy Bá/No")
+else 
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/500<color> Bã Hoa Bèn Mïa<color>\n<color=red>Kh«ng §ñ §iÒu KiÖn §Ó NhËn Mèc Nµy HoÆc §· NhËn Råi<color=red>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc1.." Kinh NghiÖm\n 2. "..pt1moc1.." \n 3. "..pt2moc1.."<color>",1,"Hñy Bá/No")
+end
+end
 
+function XemMoc4000()
+if (GetTask(NHANTHUONGMOC) == 1) then
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/1000<color> Bã Hoa Bèn Mïa<color>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc2.."\n 2. "..pt1moc2.."\n 3. "..pt2moc2.."\n 4. "..pt3moc2.."<color>",2,"NhËn PhÇn Th­ëng Mèc 1000/Moc4000","Hñy Bá/No")
+else 
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/1000<color> Bã Hoa Bèn Mïa<color>\n<color=red>Kh«ng §ñ §iÒu KiÖn §Ó NhËn Mèc Nµy HoÆc §· NhËn Råi<color=red>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc2.."\n 2. "..pt1moc2.."\n 3. "..pt2moc2.."\n 4. "..pt3moc2.."<color>",1,"Hñy Bá/No")
+end
+end
+function XemMoc6000()
+if (GetTask(NHANTHUONGMOC) == 2) then
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/600<color> Bã Hoa Bèn Mïa<color>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc3.."\n 2. "..pt1moc3.."\n 3. "..pt2moc3.."\n 4. "..pt3moc3.."<color>",2,"NhËn PhÇn Th­ëng Mèc 6000/Moc6000","Hñy Bá/No")
+else 
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/600<color> Bã Hoa Bèn Mïa<color>\n<color=red>Kh«ng §ñ §iÒu KiÖn §Ó NhËn Mèc Nµy HoÆc §· NhËn Råi<color=red>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc3.."\n 2. "..pt1moc3.."\n 3. "..pt2moc3.."\n 4. "..pt3moc3.."<color>",1,"Hñy Bá/No")
+end
+end
+function XemMoc8000()
+if (GetTask(NHANTHUONGMOC) == 3) then
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/800<color> Bã Hoa Bèn Mïa<color>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc4.."\n 2. "..pt1moc4.."\n 3. "..pt2moc4.."\n 4. "..pt3moc4.."<color>",2,"NhËn PhÇn Th­ëng Mèc 8000/Moc8000","Hñy Bá/No")
+else 
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/800<color> Bã Hoa Bèn Mïa<color>\n<color=red>Kh«ng §ñ §iÒu KiÖn §Ó NhËn Mèc Nµy HoÆc §· NhËn Råi<color=red>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc4.."\n 2. "..pt1moc4.."\n 3. "..pt2moc4.."\n 4. "..pt3moc4.."<color>",1,"Hñy Bá/No")
+end
+end
+function XemMoc10k()
+if (GetTask(NHANTHUONGMOC) == 4) then
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/1000<color> Bã Hoa Bèn Mïa<color>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc5.."\n 2. "..pt1moc5.."\n 3. "..pt2moc5.."\n 4. "..pt3moc5.."<color>",2,"NhËn PhÇn Th­ëng Mèc 10000/Moc10000","Hñy Bá/No")
+else 
+Say("<color=green>"..myplayersex().." §· Sö Dông: <color=red>"..GetTask(HOAPHUONGTRANG).."/1000<color> Bã Hoa Bèn Mïa<color>\n<color=red>Kh«ng §ñ §iÒu KiÖn §Ó NhËn Mèc Nµy HoÆc §· NhËn Råi<color=red>\n<color=orange>PhÇn Th­ëng Mèc Nµy Gåm : \n 1. "..subknmoc5.."\n 2. "..pt1moc5.."\n 3. "..pt2moc5.."\n 4. "..pt3moc5.."<color>",1,"Hñy Bá/No")
+end
+end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function Moc2000_cu()
 local tbSay = {
---"Ta Muèn Mèc 3000/#Moc2000(1)",
---"Ta Muèn Mèc 6000/#Moc2000(2)",
-"Ta Muèn Mèc 9000/#Moc2000(3)",
+"Ta Muèn NhËn S­ Tö Hoµng Kim/#Moc2000_ngua(4480)",
+"Ta Muèn NhËn L¹c §µ M«ng Cæ/#Moc2000_ngua(5213)",
+"Ta Muèn NhËn H·n HuyÕt Long C©u/#Moc2000_ngua(5214)",
+"Ta Muèn NhËn B¹ch Hæ TruyÒn ThuyÕt/#Moc2000_ngua(5215)",
+"Ta Muèn NhËn Kim Tinh Hæ V­¬ng/#Moc2000_ngua(5216)",
+"Ta Muèn NhËn Truy §iÖn/#Moc2000_ngua(5217)",
+"Ta Muèn NhËn L­u Tinh /#Moc2000_ngua(5218)",
+"Ta Muèn NhËn D­¬ng Sa /#Moc2000_ngua(5093)",
+"Ta Muèn NhËn Ngù Phong /#Moc2000_ngua(5094)",
+"Ta Muèn NhËn 400® Liªn §Êu/#Moc2000_diemvinhdu()",
 "Th«i ta kh«ng muèn n÷a/no"
 }
 Say("B¹n §i §­êng Nµo ?",getn(tbSay),tbSay)
@@ -379,59 +227,39 @@ Say("B¹n §i §­êng Nµo ?",getn(tbSay),tbSay)
 end
 
 function Moc2000()
-	if CalcFreeItemCellCount() < 20 then
+if CalcFreeItemCellCount() < 20 then
 		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 20 « trèng!")
 		return
 	end
-	if GetTask(4996)>=300 and GetTask(4994)>=300 and GetTask(4995)==0 then
-		local rannnn=random(1,10)
-		if rannnn>=1 and rannnn<=4 then
-			local tbVnNewItemDropAward = {
-				[1] = {
-					{szName="LÖnh Bµi Gäi Boss",tbProp={6,1,4489,1,0,0},nCount=10},
-					{szName="§iÓm Kinh NghiÖm",nExp_tl = 20e6},
-				},
-				}
-			tbAwardTemplet:GiveAwardByList(tbVnNewItemDropAward,"PhÇn Th­ëng Mèc 300")
-			local szNews="<color=green>Chóc mõng ®¹i hiÖp <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=blue>20.000.000 EXP + 10 LÖnh Bµi Gäi Boss<color> ë mèc 300 Phong Ph¸o §¹i"
-			LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-		elseif rannnn>=5 and rannnn<=7 then
-			local tbVnNewItemDropAward = {
-				[1] = {
-						--{szName="Ng©n L­îng",nJxb=20000000,nCount=1},
-						{szName="§iÓm Kinh NghiÖm",nExp_tl = 20e6},
-					},
-					}
-					tbAwardTemplet:GiveAwardByList(tbVnNewItemDropAward,"PhÇn Th­ëng Mèc 300")
-					local raeee=random(1,2)
-					if raeee==1 then
-						tbAwardTemplet:GiveAwardByList({{szName = "TÈy Tñy Kinh",tbProp={6,1,22,1,1},nCount=1,},}, "test", 1);
-						local szNews="<color=green>Chóc mõng ®¹i hiÖp <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=blue>20.000.000 EXP + 1 TÈy Tñy Kinh<color> ë mèc 300 Phong Ph¸o §¹i"
-						LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-					else
-						tbAwardTemplet:GiveAwardByList({{szName = "Vâ L©m MËt TÞch",tbProp={6,1,26,1,1},nCount=1,},}, "test", 1);
-						local szNews="<color=green>Chóc mõng ®¹i hiÖp <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=blue>20.000.000 EXP + 1 Vâ L©m MËt TÞch<color> ë mèc 300 Phong Ph¸o §¹i"
-						LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-					end
-		elseif rannnn>=8 or rannnn<=10 then
-			local tbVnNewItemDropAward = {
-				[1] = {
-					{szName="§iÓm Kinh NghiÖm",nExp_tl = 20e6},
-				},
-				}
-			tbAwardTemplet:GiveAwardByList(tbVnNewItemDropAward,"PhÇn Th­ëng Mèc 300")
-			local szNews="<color=green>Chóc mõng ®¹i hiÖp <color=yellow>"..GetName().."<color> ®· nhËn ®­îc <color=blue>20.000.000 EXP<color> ë mèc 300 Phong Ph¸o §¹i"
-			LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-		end
-		
-		SetTask(4995,1)
+	
+	if (GetTask(HOAPHUONGTRANG) >= 500) and (GetTask(NHANTHUONGMOC) == 0) then
+		local tbAward = {
+			{szName="§å Phæ Tinh S­¬ng Y",tbProp={6,1,4883,1,0,0},nCount=1},	
+			{szName="Tinh S­¬ng Th¹ch (®¹i)",tbProp={6,1,4881,1,0,0},nCount=5},	
+			{szName="MÆt N¹ ChiÕn Tr­êng Vuong Gi¶",tbProp={0,11,647,1,0,0},nCount=1,nExpiredTime=14*24*60},	
+		}
+		tbAwardTemplet:GiveAwardByList({{nExp_tl = 20e9}}, "test", 1);
+		tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng Mèc 300") SetTask(NHANTHUONGMOC,1)
+		Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· NhËn Thµnh C«ng Mèc Event 500")
+		WriteLogPro("dulieu/event_moc1.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da An max Moc 500\n");		
+
 	else
-		Say("§¹i hiÖp ch­a ¨n ®ñ 300 Phong Ph¸o Trung + 300 Phong Ph¸o §¹i hoÆc ®· nhËn th­ëng mèc.")
-		return
+		Talk(1,"","<color=pink>"..myplayersex().." Ch­a §¹t Tíi Mèc Nµy")
 	end
 end
 
+function Moc2000_diemvinhdu()
+	if (GetTask(HOAPHUONGTRANG) >= 300) and (GetTask(NHANTHUONGMOC) == 0) then
+		local tbAward = {
+		{szName="LÖnh bµi vinh dù B¹ch Ng©n",tbProp={6,1,1255,1,0,0},nCount=4},		
+		}
+		tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng Mèc 300") SetTask(NHANTHUONGMOC,1)
+		Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· NhËn Thµnh C«ng Mèc Event 300")	
 
+	else
+		Talk(1,"","<color=pink>"..myplayersex().." Ch­a §¹t Tíi Mèc Nµy")
+	end
+end
 ----------------------------------------------------Nhan Moc 2000 -----------------------------------------------------------------------------------------------------
 function Moc4000()
 if CalcFreeItemCellCount() < 20 then
@@ -449,7 +277,7 @@ if CalcFreeItemCellCount() < 20 then
 			},
 		}	
 		tbAwardTemplet:GiveAwardByList({{nExp_tl = 40e9}}, "test", 1);
-		--WriteLogPro("dulieu/event_moc2.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da An max Moc 1000\n");
+		WriteLogPro("dulieu/event_moc2.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da An max Moc 1000\n");
 		Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· NhËn Thµnh C«ng Mèc Event 1000")
 		tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng Mèc 400") SetTask(NHANTHUONGMOC,2)
 				local a = random(1,20)
@@ -541,15 +369,15 @@ end
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function Reset()
 local Xu = CalcEquiproomItemCount(4,417,1,1)
-	if (GetTask(HOAPHUONGTRANG) >= 1000) and GetTask(NHANTHUONGMOC)==0 then
-		if (Xu >= 20) then
-			SetTask(HOAPHUONGTRANG,0) ConsumeEquiproomItem(20,4,417,1,-1) SetTask(NHANTHUONGMOC,1) 
+	if (GetTask(NHANTHUONGMOC) >= 1) then
+		if (Xu >= 10) then
+			SetTask(HOAPHUONGTRANG,0) ConsumeEquiproomItem(10,4,417,1,-1) SetTask(NHANTHUONGMOC,0)
 			Talk(1,"","<color=red>"..myplayersex().." Chóc Mõng B¹n §· Reset Thµnh C«ng...!")
-	else
-		Talk(1,"","<color=red>"..myplayersex().." Kh«ng §ñ 20 Xu Xin KiÓm Tra L¹i...!")
+		else
+			Talk(1,"","<color=red>"..myplayersex().." Kh«ng §ñ 1 Xu Xin KiÓm Tra L¹i...!")
 		end
 	else
-		Talk(1,"","<color=red>"..myplayersex().." Ch­a ¨n ®ñ 1000 <color=yellow>B¸nh Kem ThiÕu Nhi<color> hoÆc ®· max 2000 c¸i.")
+		Talk(1,"","<color=red>"..myplayersex().." Ch­a Sö Dông §ñ 300 Bã Hoa Bèn Mïa")
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------

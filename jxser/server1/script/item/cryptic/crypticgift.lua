@@ -1,6 +1,6 @@
 
 
 
-function main(nIdx)
-	return 1
-end
+function main(nIdx) 
+return 1 
+end 

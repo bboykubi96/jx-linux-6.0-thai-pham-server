@@ -203,6 +203,8 @@ function _ShowSeed(worldidx, mapid, seedlevel, count, tbPos ,szMapName, nBatch)
             	}
 
             	local nNpcIndex = %basemission_CallNpc(tbNpc, nMap, nPosX*32, nPosY*32)
+				--AddTimer(3500* 18, "OnTimeout", nNpcIdx);
+				SetNpcTimer(nNpcIndex, 120*60*18);
             	if nNpcIndex and nNpcIndex > 0 then
             		--nBeginNumber = nBeginNumber + 1
 					--gb_SetTask("ª‘ªÕ÷Æ÷÷",12,nBeginNumber)
@@ -293,5 +295,11 @@ function _RegPlayerMapScript()
 	
 	t.nRegIdLeave = EventSys:GetType("LeaveMap"):Reg(t.N_FRUIT_MAP_ID, pPlayer.OnLeaveMap, pPlayer)
 	t.nRegIdEnter = EventSys:GetType("EnterMap"):Reg(t.N_FRUIT_MAP_ID, pPlayer.OnEnterMap, pPlayer)
+end
+
+
+function OnTimeout(nNpcIndex)
+DelNpc(nNpcIndex);
+Msg2SubWorld("<color=white>h’t thÍi gian Ti™u bang hÈi Æ∑ bi’n m t!")
 end
 

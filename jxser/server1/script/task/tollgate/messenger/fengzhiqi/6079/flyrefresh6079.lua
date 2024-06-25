@@ -6,7 +6,7 @@
 -------------------------------------------------------------------------
 IncludeLib( "FILESYS" );
 Include("\\script\\task\\tollgate\\messenger\\fengzhiqi\\enemy_flyrefresh.lua") 
-Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀà
+Include("\\script\\task\\newtask\\newtask_head.lua") --µ÷ÓÃ nt_getTask Í¬²½±äÁ¿µ½¿Í»§¶ËµÄÀµ
 Include("\\script\\task\\tollgate\\messenger\\messenger_losetask.lua")  --È¡ÏûÈÎÎñ
 Include("\\script\\task\\tollgate\\messenger\\messenger_timeer.lua")    --µ÷ÓÃ¼ÆÊ±Æ÷
 TabFile_Load( "\\settings\\task\\tollgate\\messenger\\messenger_tollprize.txt" , "tollprize");	 --»ñµÃÍ¬°éĞŞÁ·µÄ±í¸ñ
@@ -22,9 +22,9 @@ function OnDeath()
 	if ( messenger_middletime() == 10  ) then --Íæ¼ÒÔÚµØÍ¼ÖĞµÄÊ±¼ä
 		Msg2Player("Xin lçi! "..name.."! B¹n ®· hÕt thêi gian thùc hiÖn nhiÖm vô Tİn sø! NhiÖm vô thÊt b¹i!.")
 		losemessengertask()
-	--elseif ( Uworld1215 == 0 ) then  --Ã»ÓĞË¢¹ÖµÄÈÎÎñ
-	--	Msg2Player("Õâ¸ö¼Ò»ïÒÑ¾­±»±ğÈË°üÁË£¬Äã´òËûÊÇ²»»áÓĞÈÎºÎ½±ÀøµÃ¡£")
-	--	return
+	elseif ( Uworld1215 == 0 ) then  --Ã»ÓĞË¢¹ÖµÄÈÎÎñ
+		Msg2Player("Ng­êi nµy ®· bŞ ng­êi kh¸c c­íp, ng­¬i ®¸nh h¾n ch¾c lµ sÏ kh«ng cã bÊt kú phÇn th­ëng ph¶i.")
+		return
 	else
 		messenger_killrefresh()
 	end

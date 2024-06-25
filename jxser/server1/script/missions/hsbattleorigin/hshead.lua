@@ -1,29 +1,29 @@
---ÍË³öÓÎÏ·ºóµÄÖØÉúµãID,Ò²¾ÍÊÇ±¨ÃûµÄÄÇ¸öµØ·½°É
-CS_RevId = 2
-CS_RevData = 72;
+-- script viet hoa By http://tranhba.com  thèi lui ra trß ch¬i sau ®İch sèng l¹i ®iÓm ID, còng chİnh lµ ghi danh ®İch chç ®ã ®i 
+CS_RevId = 2 
+CS_RevData = 72; 
 
---Àë¿ª±¾´ÎÓÎÏ·ºóµÄÎ»ÖÃworldid, x, y,Ò»°ã¾ÍÊÇ±¨Ãûµã
---CS_LeavePos = {20, 3546, 6226};
+-- script viet hoa By http://tranhba.com  rêi ®i lÇn nµy trß ch¬i sau ®İch vŞ trİ worldid, x, y, mét lo¹i chİnh lµ ghi danh ®iÓm 
+-- script viet hoa By http://tranhba.com CS_LeavePos = {20, 3546, 6226}; 
 
---»á³¡ÍâµÄÎ»ÖÃ
-CS_OuterPos = {209, 1568, 3278};
+-- script viet hoa By http://tranhba.com  bªn ngoµi héi tr­êng ®İch vŞ trİ 
+CS_OuterPos = {209, 1568, 3278}; 
 
---¼ÓÈëË«·½ÕóÓªÊ±µÄÎ»ÖÃ
-CS_CampPos0 = {209, 1631, 3203};   	--°×É«
-CS_CampPos1 = {209, 1608, 3167}; 	--»ÆÉ«
-CS_CampPos2 = {209, 1674, 3246}; 	--À¼É«
-CS_CampPos4 = {212, 1577, 3288};    --ºìÉ«
+-- script viet hoa By http://tranhba.com  gia nhËp song ph­¬ng trËn doanh lóc ®İch vŞ trİ 
+CS_CampPos0 = {209, 1631, 3203}; -- script viet hoa By http://tranhba.com  mµu tr¾ng 
+CS_CampPos1 = {209, 1608, 3167}; -- script viet hoa By http://tranhba.com  mµu vµng 
+CS_CampPos2 = {209, 1674, 3246}; -- script viet hoa By http://tranhba.com  lan s¾c 
+CS_CampPos4 = {212, 1577, 3288}; -- script viet hoa By http://tranhba.com  mµu ®á 
 
 
---ÓÎÏ·µÄ×î´óÈËÊı
-MAX_MEMBER_COUNT = 100;
+-- script viet hoa By http://tranhba.com  trß ch¬i lín nhÊt nh©n sè 
+MAX_MEMBER_COUNT = 100; 
 
-MS_CAMP1 = 1; --Ë«·½µÄÕóÓªºÅ
-MS_CAMP2 = 2;
+MS_CAMP1 = 1; -- script viet hoa By http://tranhba.com  song ph­¬ng trËn doanh sè 
+MS_CAMP2 = 2; 
 
-MS_SIGN_MONEY = 10000; --±¨Ãû·Ñ
-MS_WIN_MONEY = 6000; -- Ã¿´ÎÊ¤ÀûÊ±£¬»ñµÃµÄÊÕÈë
+MS_SIGN_MONEY = 10000; -- script viet hoa By http://tranhba.com  tiÒn ghi danh 
+MS_WIN_MONEY = 6000; -- script viet hoa By http://tranhba.com  mçi lÇn th¾ng lîi lóc , ®¹t ®­îc ®İch thu vµo 
 
-function GetLeavePos()
-	return GetTask(300), GetTask(301), GetTask(302);
-end;
+function GetLeavePos() 
+return GetTask(300), GetTask(301), GetTask(302); 
+end; 

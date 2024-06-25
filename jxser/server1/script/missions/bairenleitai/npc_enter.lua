@@ -1,45 +1,38 @@
--- ====================== ÎÄ¼þÐÅÏ¢ ======================
+-- script viet hoa By http://tranhba.com  ====================== v¨n kiÖn tin tøc ====================== 
 
--- ½£ÏÀÇéÔµÍøÂç°æ´óÂ½°æ - 
--- ÎÄ¼þÃû¡¡£ºnpc_enter.lua
--- ´´½¨Õß¡¡£º×Ó·Çô~
--- ´´½¨Ê±¼ä£º2011-05-03 16:50:24
+-- script viet hoa By http://tranhba.com  kiÕm hiÖp t×nh duyªn in tê nÕt b¶n ®¹i lôc b¶n - 
+-- script viet hoa By http://tranhba.com  v¨n kiÖn tªn ##npc_enter.lua 
+-- script viet hoa By http://tranhba.com  ng­êi khai s¸ng ## tö kh«ng ph¶i lµ ng­ 
+-- script viet hoa By http://tranhba.com  khai s¸ng thêi gian #2011-05-03 16:50:24 
 
--- ======================================================
+-- script viet hoa By http://tranhba.com  ====================================================== 
 Include("\\script\\activitysys\\npcdailog.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\lib\\log.lua")
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
+function bairen_dialog() 
 
-function bairen_dialog()
-	--dofile("script/missions/bairenleitai/npc_enter.lua")
-	--dofile("script/global/g7vn/g7configall.lua")
-	if loidaihoangthanhtu == 0 then
-		Say("Chøc n¨ng l«i ®µi Hoµng Thµnh T­ t¹m thêi ch­a më");
-		return 1;
-	end
-	local tbOpt = {};
-	tinsert(tbOpt, {"Ta muèn vµo L«i §µi Hoµng Thµnh T­", onEnterHunbredArena});
-	tinsert(tbOpt, {"VÒ L«i §µi Hoµng Thµnh T­", onHelpHunbredArena})
-	tinsert(tbOpt, {"KÕt thóc ®èi tho¹i", oncancel})
-	CreateNewSayEx("<npc>L«i §µi Hoµng Thµnh T­ lµ ®Ó cho nh÷ng cao thñ trªn giang hå cã mét c¬ héi vang danh cña m×nh trong thiªn h¹. Nªu nh­ lµm L«i Chñ liªn tiÕp ®¸nh b¹i nh÷ng ng­êi khiªu chiÕn, sÏ vang danh thiªn h¹, thËm chÝ cã thÓ trùc tiÕp ®I vµo Hoµng Thµnh, v× n­íc mµ b¸o ®Òn ¬n.", tbOpt)
-end
+local tbOpt = {}; 
+tinsert(tbOpt, {"Ta muèn ®i hoµng thµnh ti l«i ®µi ",onEnterHunbredArena}); 
+tinsert(tbOpt, {" liªn quan tíi hoµng thµnh ti l«i ®µi ",onHelpHunbredArena}) 
+tinsert(tbOpt, {"KÕt thóc ®èi tho¹i ", oncancel}) 
+CreateNewSayEx("<npc> hoµng thµnh ti l«i ®µi cho giang hå cao thñ mét næi tiÕng thiªn h¹ ®Ých c¬ héi . nÕu nh­ lµm ®µi chñ liªn tôc ®¸nh b¹i ng­êi khiªu chiÕn sÏ næi danh thiªn h¹ , thËm chÝ cã thÓ trùc tiÕp ®Õn hoµng thµnh ra søc v× n­íc . ", tbOpt) 
+end 
 
-function onEnterHunbredArena()
-	
+function onEnterHunbredArena() 
+
 	DynamicExecuteByPlayer(PlayerIndex, "\\script\\missions\\bairenleitai\\hundred_arena.lua", "HundredArena:NpcEnter")	
-	tbLog:PlayerActionLog("TinhNangKey","BaoDanhBachNhanLoiDai")
-end
+tbLog:PlayerActionLog("TinhNangKey","BaoDanhBachNhanLoiDai") 
+end 
 
-function onHelpHunbredArena()
-	local tbOpt = {};
-	tinsert(tbOpt, {"Ta muèn vµo L«i §µi Hoµng Thµnh T­", onEnterHunbredArena});
-	tinsert(tbOpt, {"KÕt thóc ®èi tho¹i", oncancel});
-	
-	CreateNewSayEx("<npc>L«i §µi Hoµng Thµnh T­ {{sÏ ®­îc më mçi ngµy vµo lóc 12:00 ®Õn 0:00 sÏ kÕt thóc }}. <enter> L«i §µi Hoµng Thµnh T­ t¹m thêi thiÕt kÕ 5 l«i ®µi, trong ®ã {{L«i §µi 1 }} lµ L«i §µi Chñ, chØ cã giµnh th¾ng lîi ë L«i §µi nµy míi cã thÓ ®­îc nh©n sü vâ l©m c«ng nhËn."
-		.."Mçi lÇn lªn ®µi lµ {{3 phót }}, nÕu nh­ trong kho¶ng thêi gian nµy hai bªn bÊt ph©n th¾ng b¹i, lóc ®ã {{sÏ lÊy ng­êi chÞu s¸t th­¬ng Ýt h¬n }} lµm l«i chñ, vµ tiÕp nhËn khiªu chiÕn tiÕp tôc cña c¸c cao thñ kh¸c."
-		.."NÕu kh«ng cã cao thñ nµo d¸m khiªu chiÕn víi L«i Chñ, Hoµng thµnh T­ sÏ ph¸i ra cao thñ cña thËp ®¹i m«n ph¸i lªn ®µi khiªu chiÕn, L«i Chñ cÇn ph¶i trong vßng {{ 3 phót }} ®¸no b¹i, nÕu kh«ng sÏ bÞ tÝnh lµ b¹i trËn"
-		.."<enter>Chó ý: cÇn ph¶i sö dông khinh c«ng nh¶y lªn l«i ®µi tû vâ.",
-		tbOpt);
-end
+function onHelpHunbredArena() 
+local tbOpt = {}; 
+tinsert(tbOpt, {"Ta muèn ®i hoµng thµnh ti l«i ®µi ",onEnterHunbredArena}); 
+tinsert(tbOpt, {"KÕt thóc ®èi tho¹i ", oncancel}); 
+
+CreateNewSayEx("<npc> hoµng thµnh ti l«i ®µi {{ ®em víi mçi ngµy 12:00 khai khëi , ®Õn 0:00 kÕt thóc }}. <enter> hoµng thµnh ti l«i ®µi t¹m thêi thiÕt cã 5 c¸ l«i ®µi , trong ®ã {{ l«i ®µi 1 }} lµ chñ l«i ®µi , chØ cã ë n¬i nµy trªn l«i ®µi lÊy ®­îc th¾ng lîi míi cã thÓ lÊy ®­îc vâ l©m nh©n sÜ ®Ých thõa nhËn ." 
+.." mçi lÇn lªn ®µi lµ {{3 phót }}, nÕu nh­ trong lóc ë chç nµy song ph­¬ng bÊt ph©n th¾ng phô , ®Õn lóc ®ã {{ ®em ®i bÞ giÕt th­¬ng gi¸c khinh ®Ých nhÊt ph­¬ng }} lµm ®µi chñ , tiÕp tôc tiÕp nhËn nh÷ng kh¸c cao thñ khiªu chiÕn ." 
+.." nÕu nh­ kh«ng cã cao thñ d¸m khiªu chiÕn ®µi chñ , hoµng thµnh ti sÏ ph¸i ra thËp ®¹i m«n ph¸i cao thñ lªn ®µi khiªu chiÕn , ®µi chñ muèn ë {{ 3 phót }} bªn trong ®¸nh b¹i , nÕu kh«ng còng sÏ bÞ nhËn ®Þnh v× thÊt b¹i " 
+.."<enter> chó ý # muèn dïng khinh c«ng ch¹y lªn l«i ®µi tû vâ ", 
+tbOpt); 
+end 

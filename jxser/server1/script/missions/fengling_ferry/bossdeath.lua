@@ -4,9 +4,10 @@ Include("\\script\\activitysys\\npcfunlib.lua")
 Include("\\script\\missions\\basemission\\lib.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\lib\\droptemplet.lua")
+Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\event\\jiefang_jieri\\200904\\shuizei\\shuizei.lua");
 Include("\\script\\event\\change_destiny\\mission.lua");	-- ÄæÌì¸ÄÃü
-Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\global\\g7vn\\g7configall.lua")
 SIGNET_DROPCOUNT = 2
 
 local _Message =  function (nItemIndex)
@@ -17,80 +18,51 @@ local _Message =  function (nItemIndex)
 	OB_Release(handle)
 end
 		local tbAward = {
-	[1] = {	
-	---{nExp_tl=500000},	
-	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=15},
-	--	{szName="HuyÒn tinh Kho¸ng Th¹ch",tbProp={6,1,147,2,0},nCount=1},
-	--	{szName="Bã Cá",tbProp={6,1,4415,1,1,0},nCount=5},
-	--		{szName="M¶nh GhÐp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=5},
-	
-	{szName="Truy C«ng LÖnh",tbProp={6,1,2015,1,1},nCount=5},
-	{szName = "Phóc Duyªn TiÓu",tbProp={6,1,122,1,0,0},nCount=1},
-	{szName = "Phóc Duyªn Trung",tbProp={6,1,123,1,0,0},nCount=1},
-	{szName = "Tiªn Th¶o Lé",tbProp={6,1,71,1,0,0},nCount=1},
-		{szName = "B¸ch Qu¶ Lé",tbProp={6,1,73,1,0,0},nCount=1},
+	[1] = {		
+		{nExp_tl=2e9},
+		{szName="Xu ",tbProp={4,417,1,1,0,0},nCount = 300 },
+	    -- {szName="knb",tbProp={4,1496,1,1,0,0},nCount=50},
+		-- {szName = "Tinh Ngäc",tbProp={6,1,4807,1,1},nCount=200},
+            --{szName="even fee",tbProp={6,1,30335,1,0,0},nCount=10,nExpiredTime=20220729},
+
 	},
 	[2] = {
-	{szName="§¹i Lùc Hoµn",tbProp={6,0,3,1,1},nCount=1,nRate=50},
-	{szName="Phi Tèc Hoµn",tbProp={6,0,6,1,1},nCount=1,nRate=50},
---	{szName="M¶nh HiÖp Cèt",tbProp={4,random(1629,1632)},nCount=1,nRate=5,CallBack= _Message},
-	--{szName="M¶nh §Þnh Quèc",tbProp={4,random(1637,1641)},nCount=1,nRate=5,CallBack= _Message},
---		{szName="Ngò Hµnh Ên",tbProp={0,5946},nCount=1,nQuality=1,nRate=10,nExpiredTime=7*24*60},
-	--	{szName="HiÖp Cèt T×nh ý KÕt",tbProp={0,189},nCount=1,nQuality=1,nRate=50},
+
+		--{szName="B¶o R­¬ng Tinh S­¬ng ¸o",tbProp={6,1,6025,1,0,0},nCount=1,tbParam={6,0,0,0,0,0},nRate=0.1,CallBack= _Message},
+		--{szName="B¶o R­¬ng Tinh S­¬ng Vò KhÝ",tbProp={6,1,6026,1,0,0},nCount=1,tbParam={7,0,0,0,0,0},nRate=0.1,CallBack= _Message},
 	},
 	}
 
-		local tbAward22 = {
-	[1] = {	
-	{nExp_tl=3000000},	
-	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=15},
-	--	{szName="HuyÒn tinh Kho¸ng Th¹ch",tbProp={6,1,147,2,0},nCount=1},
-
-	--	{szName="Phóc Duyªn §¹i",tbProp={6,1,124,1,1,0},nCount=1},
-				{szName="Phóc Duyªn TiÓu",tbProp={6,1,122,1,1,0},nCount=1},
-						{szName="Phóc Duyªn Trung",tbProp={6,1,123,1,1,0},nCount=1},
-				{szName="ThiÕt La H¸n",tbProp={6,1,23,1,1,0},nCount=1},
-	--			{szName="PhiÕu Bang Héi",tbProp={4,1621,1,1},nCount=15},
---		{szName="M¶nh Ph«i TÝm",tbProp={4,1622,1,1},nCount=5},
-		
-	},
-	[2] = {
-						{szName = "Phóc Duyªn §¹i",tbProp={6,1,124,1,0,0},nCount=1,nRate=15},
-			{szName = "Tiªn Th¶o Lé",tbProp={6,1,71,1,0,0},nCount=1,nRate=15},
-			{szName = "Thiªn S¬n B¶o Lé",tbProp={6,1,72,1,0,0},nCount=1,nRate=15},
-			{szName = "ThiÕt La H¸n",tbProp={6,1,23,1,0,0},nCount=1,nRate=15},
-			{szName = "Thuû Tinh",tbProp={4,random(238,240),1,1},nCount=1,nRate=5},
-			{szName = "Tinh Hång B¶o Th¹ch",tbProp={4,353,1,1},nCount=1,nRate=5},
-					{szName="HuyÒn Tinh Kho¸ng Th¹ch",tbProp={6,1,147,3,0},nCount=1,nRate=15},
-		{szName="HuyÒn Tinh Kho¸ng Th¹ch",tbProp={6,1,147,4,0},nCount=1,nRate=15},
-	
---		{szName="Ngò Hµnh Ên",tbProp={0,5946},nCount=1,nQuality=1,nRate=10,nExpiredTime=7*24*60},
-	--	{szName="HiÖp Cèt T×nh ý KÕt",tbProp={0,189},nCount=1,nQuality=1,nRate=50},
-	},
-	}
 function OnDeath( nNpcIndex )
 	local x, y, world = GetNpcPos(nNpcIndex);
 	local maxcount = SIGNET_DROPCOUNT;
 	local _, nTongID = GetTongName();
 	if (nTongID > 0) then
-	--	if (IsDoubledMoneyBox(nTongID)) then
-	--		maxcount = getSignetDropRate(SIGNET_DROPCOUNT);
-	--	end;
+		if (IsDoubledMoneyBox(nTongID)) then
+			maxcount = getSignetDropRate(SIGNET_DROPCOUNT);
+		end;
 	end;
 	local nCurtime = GetCurServerTime() + 7 * 24 *60 * 60
 	local nYear = tonumber(FormatTime2String("%Y", nCurtime))
 	local nMonth = tonumber(FormatTime2String("%m", nCurtime))
 	local nDay = tonumber(FormatTime2String("%d", nCurtime))
-
+	for i = 1, maxcount do
+		local nItemIdx = DropItem(world, x, y, PlayerIndex, 6, 1, 1094, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+		SetSpecItemParam(nItemIdx, 1, nCurtime);
+		SetSpecItemParam(nItemIdx, 2, nYear)
+		SetSpecItemParam(nItemIdx, 3, nMonth)
+		SetSpecItemParam(nItemIdx, 4, nDay)
+		SyncItem(nItemIdx);
+	end;
 	
 
-	--if (jf0904_shuizei_IsActtime() == 1) then
-	--	local nItemIdx = DropItem(world, x, y, PlayerIndex, 6,1,2015, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+	if (jf0904_shuizei_IsActtime() == 1) then
+		local nItemIdx = DropItem(world, x, y, PlayerIndex, 6,1,2015, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 		
-	--	local nCurtime = tonumber(GetLocalDate("%H%M"));
-	--	local nRestMin = 24 * 60 - (floor(nCurtime/100)*60+floor(mod(nCurtime, 100)));
-	--	ITEM_SetExpiredTime(nItemIdx, nRestMin);
-	--	SyncItem(nItemIdx);
+		local nCurtime = tonumber(GetLocalDate("%H%M"));
+		local nRestMin = 24 * 60 - (floor(nCurtime/100)*60+floor(mod(nCurtime, 100)));
+		ITEM_SetExpiredTime(nItemIdx, nRestMin);
+		SyncItem(nItemIdx);
 		
 		--local nRate = 0.005;
 		--local nCurRate	= random(10000000)
@@ -98,27 +70,59 @@ function OnDeath( nNpcIndex )
 			--local x, y, world = GetNpcPos(nNpcIndex);
 			--local nItemIdx = DropItem(world, x, y, PlayerIndex, 6,1,2115, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 		--end
---	end
-
-
+	end
+	
 	-- ÄæÌì¸ÄÃü
 	tbChangeDestiny:completeMission_WaterThief();
+		local W,X,Y = GetWorldPos();
+	local nMapId = W;	
+if ( nMapId == 337 ) then
+	-- Earn(20000000)
+end
+if ( nMapId == 338 ) then
+	-- Earn(15000000)
+end
+if ( nMapId == 339 ) then
+	-- Earn(15000000)
+end
 	--tbAwardTemplet:Give(tbAward, 1, {%EVENT_LOG_TITLE, "NhËn PhÇn Th­ëng Tiªu DiÖt Boss Thñy TÆc §Çu LÜnh"})	
---AddOwnExp(10e6)
-	local nhour = tonumber(GetLocalDate("%H"))
-	if nhour==23  then
-		tbAwardTemplet:GiveAwardByList({{nExp_tl=1000000},}, "test", 1);
-			tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbAward,format("killed_%s",GetNpcName(nNpcIndex)))
-	else
-		tbAwardTemplet:GiveAwardByList({{nExp_tl=500000},}, "test", 1);
-		tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbAward,format("killed_%s",GetNpcName(nNpcIndex)))
+	-- tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbAward,format("killed_%s",GetNpcName(nNpcIndex)))
+	TieuDietThuyTac()
+		local a=random(1,400)
+	if a==200 then
+	-- tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,49006,1,1},nCount=1,},}, "test", 1);--B¸ch LuyÖn Thµnh C­¬ng
+	end;
+
+	local a1=random(1,400)
+	if a1==200 then
+		--tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,4817,1,1},nCount=1,},}, "test", 1);--NguyÖt KhuyÕt Tinh Th¹ch
+	end;
+	
+	local a2=random(1,400)
+	if a2==200 then
+		--tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,4912,1,1},nCount=1,},}, "test", 1);--Ngäc Linh Hån
+	end;
+
+
+	local a3=random(1,400)
+	if a3==200 then
+			--tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,4913,1,1},nCount=1,},}, "test", 1);--Ngäc C­êng Hãa Nguyªn LiÖu
+	end;
+	
+	local bltc=random(1,90)
+	if bltc==50 then
+		--tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,4906,1,1},nCount=1,},}, "test", 1);--B¸ch LuyÖn Thµnh C­¬ng
 	end
-		--	tbDropTemplet:GiveAwardByList(nNpcIndex, PlayerIndex,%tbAward,format("killed_%s",GetNpcName(nNpcIndex)))
-	--		tbAwardTemplet:GiveAwardByList(tbAward, "PhÇn Th­ëng")
---	Add120SkillExp(5000000)
---	Clear120SkillExpLimit ()
---	Earn(2000000)
-	Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().." <color=green>®· nhËn ®­îc phÇn th­ëng Tiªu diÖt Thñy TÆc §Çu LÜnh => Phong L¨ng §é.")	
+	
+	local nDate = tonumber(GetLocalDate("%Y%m%d%H%M"))
+				if nDate <= TimeKetThucEventFree then
+			--tbAwardTemplet:GiveAwardByList({{szName = "Event Free", tbProp ={ 6, 1, ideventfree, 1, 0, 0}, nCount=20, nExpiredTime=TimeHetHanEventFree}},  "test", 1)
+			end
+	
+				if nDate <= 202002132359 then
+			--tbAwardTemplet:GiveAwardByList({{szName = "ThiÖp chóc TÕt", tbProp ={ 6,1,1346,1,0,0}, nCount=1, nExpiredTime=2*24*60}},  "test", 1)
+			end
+	Msg2SubWorld("<color=green>Chóc mõng cao thñ <color=yellow>"..GetName().."<color> ®· nhËn ®­îc phÇn th­ëng NhiÒu PhÇn Th­ëng Cã Gi¸ TrÞ khi Tiªu diÖt Thñy TÆc §Çu LÜnh!")	
 
 --------------------them exp thuy tac dau linh
 	local W,X,Y = GetWorldPos();
@@ -126,38 +130,45 @@ function OnDeath( nNpcIndex )
 	if ( nMapId == 337 ) then
 	local tbRoundPlayer, nCount = GetNpcAroundPlayerList(nNpcIndex, 20);
 	for i=1,nCount do
-		local nhour = tonumber(GetLocalDate("%H"))
-	if nhour==23  then
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 500000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
-	else
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 250000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
-	end
+		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 2000000000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc §éc C« CÇu B¹i bÞ tiªu diÖt"));
 	end
 end
 	local W,X,Y = GetWorldPos();
 	local nMapId = W;	
 	if ( nMapId == 338 ) then
 	local tbRoundPlayer, nCount = GetNpcAroundPlayerList(nNpcIndex, 20);
-	for i=1,nCount do
-		local nhour = tonumber(GetLocalDate("%H"))
-	if nhour==23  then
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 500000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
-	else
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 250000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
+		for i=1,nCount do
+			doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 2000000000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc §éc C« CÇu B¹i bÞ tiªu diÖt"));
+		end
 	end
-	end
-end
 	local W,X,Y = GetWorldPos();
 	local nMapId = W;	
 	if ( nMapId == 339 ) then
 	local tbRoundPlayer, nCount = GetNpcAroundPlayerList(nNpcIndex, 20);
 	for i=1,nCount do
-		local nhour = tonumber(GetLocalDate("%H"))
-	if nhour==23  then
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 500000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
-	else
-		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 250000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc BossbÞ tiªu diÖt"));
-	end
+		doFunByPlayer(tbRoundPlayer[i], PlayerFunLib.AddExp, PlayerFunLib, 2000000000, 0, format("%s phÇn th­ëng","Kinh nghiÖm ®øng gÇn lóc §éc C« CÇu B¹i bÞ tiªu diÖt"));
 	end
 end
+end
+
+
+function TieuDietThuyTac()
+	tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1,0},nCount=1000,},}, "test", 1);
+
+	-- tbAwardTemplet:GiveAwardByList({{szName = "Tinh Ngäc",tbProp={6,1,4983,1,0},nCount=100,},}, "test", 1);
+	-- tbAwardTemplet:GiveAwardByList({{szName = "Hµnh HiÖp LÖnh",tbProp={6,1,4981,1,0},nCount=100,},}, "test", 1);
+	-- tbAwardTemplet:GiveAwardByList({{szName = "Tö Tinh Kho¸ng Th¹ch",tbProp={6,1,4982,1,0},nCount=100,},}, "test", 1);
+		-- tbAwardTemplet:GiveAwardByList({{szName = "Tói nguyªn liÖu",tbProp={6,1,4998,1,0},nCount=100},}, "test", 1);
+	-- -- -- tbAwardTemplet:GiveAwardByList({{szName = "B¨ng Thiªm T¬",tbProp={6,1,4633,1,1},nCount=1,nRate=10},}, "test", 1);
+	-- -- -- tbAwardTemplet:GiveAwardByList({{szName = "M¶nh ngäc lung linh",tbProp={6,1,4634,1,1},nCount=1,nRate=10},}, "test", 1);
+	-- -- -- tbAwardTemplet:GiveAwardByList({{szName = "HuyÒn ThiÕt kho¸ng",tbProp={6,1,4635,1,1},nCount=1,nRate=10},}, "test", 1);
+	-- -- -- tbAwardTemplet:GiveAwardByList({{szName = "Ngäc Trai",tbProp={6,1,4636,1,1},nCount=1,nRate=10},}, "test", 1);
+		-- tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng M¶nh HKMP",tbProp={6,1,4638,1,1},nCount=3,nRate=50},}, "test", 1);
+	-- tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng M¶nh HKMP",tbProp={6,1,4637,1,1},nCount=3,nRate=20},}, "test", 1);
+
+	
+	StackExp(2000000000);
+	-- local szNews = format("Chóc mõng cao thñ <color=red>"..GetName().." <color=wood>®· nhËn ®­îc phÇn th­ëng Tiªu diÖt Thñy TÆc §Çu LÜnh => Phong L¨ng §é.");
+	-- AddGlobalNews(szNews);
+	-- LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 end

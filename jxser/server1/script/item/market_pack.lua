@@ -61,34 +61,6 @@ function main(nItemIndex)
 		return 0;
 	end	
 	
-	--Thanh TuyÖt Y lÔ hép
-	if P == 2335 then
-		local tbAwardItem = {tbProp={0,2,28,3,0,0}}
-		tbAwardTemplet:GiveAwardByList(tbAwardItem, "Më ra vËt phÈm mua ë Kú Tr©n C¸c");
-		return
-	end	
-	
-	--Thanh TuyÖt Y lÔ hép
-	if P == 2336 then
-		local tbAwardItem = {tbProp={0,2,28,6,0,0}}
-		tbAwardTemplet:GiveAwardByList(tbAwardItem, "Më ra vËt phÈm mua ë Kú Tr©n C¸c");
-		return
-	end	
-		
-	--Thanh TuyÖt Y lÔ hép
-	if P == 2337 then
-		local tbAwardItem = {tbProp={0,2,28,2,0,0}}
-		tbAwardTemplet:GiveAwardByList(tbAwardItem, "Më ra vËt phÈm mua ë Kú Tr©n C¸c");
-		return
-	end	
-		
-	--Thanh TuyÖt Y lÔ hép
-	if P == 2338 then
-		local tbAwardItem = {tbProp={0,2,28,5,0,0}}
-		tbAwardTemplet:GiveAwardByList(tbAwardItem, "Më ra vËt phÈm mua ë Kú Tr©n C¸c");
-		return
-	end	
-	
 	-- Mo sat thu gian le hop
 	if P == 2339 then
 		SelectSeries(P)
@@ -167,27 +139,63 @@ function main(nItemIndex)
 end
 
 -- Ñ¡ÔñÎåĞĞ
+
 function SelectSeries(nP)
-	local tbTaskSay = {}
-	tinsert(tbTaskSay,"Kim ./#GetSeries(0)")
-	tinsert(tbTaskSay,"Méc ./#GetSeries(1)")
-	tinsert(tbTaskSay,"Thuû ./#GetSeries(2)")
-	tinsert(tbTaskSay,"Ho¶ ./#GetSeries(3)")
-	tinsert(tbTaskSay,"Thæ ./#GetSeries(4)")
-
-
-	tinsert(tbTaskSay,"§Ó sau ./Quit")
-
-	Say("Chän ngò hµnh:", getn(tbTaskSay), tbTaskSay)
+	local tbTaskSay = {"<dec>Vui lßng chän thuéc tİnh:",
+						format("Kim/#GetSeries(%d, %d)", nP, 0),
+						format("Méc/#GetSeries(%d, %d)", nP, 1),
+						format("Thñy/#GetSeries(%d, %d)", nP, 2),
+						format("Háa/#GetSeries(%d, %d)", nP, 3),
+						format("Thæ/#GetSeries(%d, %d)", nP, 4),
+					  };
+	CreateTaskSay(tbTaskSay);
 end
 
-function GetSeries(nSeries)
-
-		
-	-- Sat thu gian le hop
-		local tbAwardItem = {tbProp={6,1,400,90,nSeries,0}, nCount = 5}
-		tbAwardTemplet:GiveAwardByList(tbAwardItem, "Më ra vËt phÈm mua ë Kú Tr©n C¸c");
-		ConsumeEquiproomItem(1,6,1,2339,-1)
+function GetSeries(nP, nSeries)
+	local tbTaskSay = {}
+	local result_isgm = isgm();
+	local result_super_isgm = issupergm();
+	if result_super_isgm == 1 or result_isgm == 1 then
+		tinsert(tbTaskSay,"GM V« hÖ ./gmhotro")
+		tinsert(tbTaskSay,"Super GM V« hÖ ./supergmhotro")
+	tinsert(tbTaskSay,"§Ó sau ./Quit")
+	Say("Chän ngò hµnh:", getn(tbTaskSay), tbTaskSay)
+end
+	if ConsumeItem(3, 1, 6, 1, nP, 1) ~= 1 then
+		Msg2Player("KhÊu trõ vËt phÈm thÊt b¹i")
 		return
-	
+	end
+	-- Çå¾øÒÂ
+	if nP == 2335 then -- Thanh TuyÖt Y lÔ hép
+		local tbAwardItem = {tbProp={0,2,28,3,nSeries,0}}
+		tbAwardTemplet:GiveAwardByList(tbAwardItem, "NhËn ®­îc vËt phÈm!");
+		return
+	end	
+	-- ±ù¾§È¹
+	if nP == 2336 then -- B¨ng Tinh QuÇn lÔ hép
+		local tbAwardItem = {tbProp={0,2,28,6,nSeries,0}}
+		tbAwardTemplet:GiveAwardByList(tbAwardItem, "NhËn ®­îc vËt phÈm!");
+		return
+	end	
+		
+	-- ¾ªÌì¼×
+	if nP == 2337 then -- Kinh Thiªn Gi¸p lÔ hép
+		local tbAwardItem = {tbProp={0,2,28,2,nSeries,0}}
+		tbAwardTemplet:GiveAwardByList(tbAwardItem, "NhËn ®­îc vËt phÈm!");
+		return
+	end	
+		
+	-- ÆüµØÈ¹
+	if nP == 2338 then -- KhÊp §Şa QuÇn lÔ hép
+		local tbAwardItem = {tbProp={0,2,28,5,nSeries,0}}
+		tbAwardTemplet:GiveAwardByList(tbAwardItem, "NhËn ®­îc vËt phÈm!");
+		return
+	end	
+		
+	-- É±ÊÖïµ
+	if nP == 2339 then -- S¸t Thñ Gi¶n lÔ hép
+		local tbAwardItem = {tbProp={6,1,400,90,nSeries,0}, nCount = 5}
+		tbAwardTemplet:GiveAwardByList(tbAwardItem, "NhËn ®­îc vËt phÈm!");
+		return
+	end	
 end

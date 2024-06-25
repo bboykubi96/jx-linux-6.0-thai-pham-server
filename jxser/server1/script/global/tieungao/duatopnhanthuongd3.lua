@@ -101,8 +101,8 @@ return 0
 end;
 
 function main()
-	--dofile("script/global/tieungao/duatopnhanthuongd3.lua");
-	--dofile("script/global/g7vn/g7configall.lua");
+	dofile("script/global/tieungao/duatopnhanthuongd3.lua");
+	dofile("script/global/g7vn/g7configall.lua");
 
 	--do Say("KÕt qu¶ ®ua TOP ®ît 3 ch­a cã") return end
 	do Say("Hìi thÕ gian t×nh lµ chi") return end

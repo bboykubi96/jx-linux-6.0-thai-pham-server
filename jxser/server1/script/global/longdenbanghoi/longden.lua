@@ -6,7 +6,7 @@ Include("\\script\\activitysys\\g_activity.lua")
 IncludeLib("TASKSYS");
 
 NPC_Clickdb = {
-	{1866,80,4,333,1498,2987,0,"Kú Bang Héi",0,"\\script\\global\\longdenbanghoi\\longden.lua","main", 0},   
+	{1220,80,4,53,1633,3309,0,"Lång §Ìn Bang Héi",0,"\\script\\global\\longdenbanghoi\\longden.lua","main", 0},   
 }
 function add_npc_click()
 	call_npc(NPC_Clickdb)
@@ -19,7 +19,7 @@ function call_npc(tbnpc)
 				TabValue6 = tbnpc[i][6] * 32; 
 				local nNpcIdx = AddNpc(tbnpc[i][1],tbnpc[i][2],Mid,TabValue5,TabValue6,tbnpc[i][7],tbnpc[i][8]); 
 				SetNpcScript(nNpcIdx, tbnpc[i][10]); 
-                                                                                                              AddTimer(20*60* 18, "OnTimeout", nNpcIdx);
+                                                                                                              AddTimer(1800* 18, "OnTimeout", nNpcIdx);
 
 			end; 
 	end; 
@@ -56,7 +56,7 @@ local _Limit = function(nNpcIdx)
 	local szTongName, nTongID = GetTongName();
 	local figure = TONGM_GetFigure(nTongID, GetName())
 	if (figure ~= TONG_MASTER) then
-		Msg2Player("<color=green>ChØ cã bang chñ míi cã ®ñ t­ c¸ch ®o¹t kú Bang Héi.");
+		Msg2Player("<color=green>ChØ cã bang chñ míi cã ®ñ t­ c¸ch më lång ®Ìn.");
 		return
 	end;
 
@@ -77,32 +77,35 @@ local _GetFruit = function(nNpcIdx, dwNpcId)
 	DelNpc(nNpcIdx)
 	local tbAwardLDBH = {
 						[1] = {		
-							--		{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=200},	
-	{szName="NhÊt Kû Cµn Kh«n Phï 7 Ngµy",tbProp={6,1,4363,1,1,0},nCount=1,nExpiredTime=7*24*60},
-{szName="Ngùa 8x",tbProp={0,10,5,random(5,9),0,0,0},nCount=1,nExpiredTime=7*24*60},
-{szName="Ngùa 8x",tbProp={0,10,5,random(5,9),0,0,0},nCount=1,nExpiredTime=7*24*60},
-	{szName="M¶nh Ph«i TÝm",tbProp={4,1622,1,1},nCount=20},
---{szName = "NhÉn Kim Quang",tbProp={0,3771},nCount=1,nQuality=1,nExpiredTime=2*24*60},
----{szName = "[Hoµn Mü] HiÖp Cèt T×nh ý KÕt",tbProp={0,5941},nCount=1,nQuality=1,nExpiredTime=2*24*60},
---{szName = "MÆt n¹ V­¬ng Gi¶", tbProp = {0,11,853,1,0,0},nCount=1, nExpiredTime = 1*24*60},
-											
-									{szName = "Lam Thuû Tinh",tbProp={4,238,1,1},nCount=1},
-									{szName = "Tö Thuû Tinh",tbProp={4,239,1,1},nCount=1},
-									{szName = "Lôc Thuû Tinh",tbProp={4,240,1,1},nCount=1},
+									{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=100},	
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=5},
+									{szName="Tran Phai Linh Don",tbProp={6,1,1704,1,0,0},nCount=2},
+									{szName="Tran Phai Linh Duoc",tbProp={6,1,1705,1,0,0},nCount=2},
+	
 								},
 						[2] = {
-
+									--{szName="TÈy Tñy Kinh",tbProp={6,1,22,1,0,0},nCount=1,nRate=25},
 								},
 						}
-	tbAwardTemplet:GiveAwardByList(tbAwardLDBH,"PhÇn th­ëng §o¹t Kú Bang Héi")
-Earn(10000000)
-	Msg2SubWorld("<color=cyan>Bang Chñ <color=green>"..GetName().."<color=yellow> ®o¹t thµnh c«ng Kú Bang Héi vµ<color=green> NhËn nh÷ng phÇn th­ëng cao quý nhÊt dµnh cho bang . .!")	
+	tbAwardTemplet:GiveAwardByList(tbAwardLDBH,"PhÇn th­ëng §Òn Lång Bang Héi")
+	local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*1) SyncItem(Index) --- can khon
+--	local Index = AddGoldItem(0,142) ITEM_SetExpiredTime(Index,24*60*1) SyncItem(Index)
+	Msg2SubWorld("<color=cyan>Bang Chñ <color=green>"..GetName().."<color=yellow> §· më thµnh c«ng lång ®Ìn vµ<color=green> NhËn nh÷ng phÇn th­ëng cao quý nhÊt dµnh cho bang . .!")	
 end
 
 
 local _OnBreak = function()
-	Msg2Player("b¹n bÞ tróng ®ßn hoÆc cö ®éng kh«ng thÓ ®o¹t kú")
-                      Msg2SubWorld("<color=cyan>Bang Chñ <color=green>"..GetName().."<color=yellow> bÞ ®¸nh träng th­¬ng<color=green> kh«ng thÓ tiÕp tôc §o¹t Kú.!")
+	Msg2Player("b¹n bÞ tróng ®ßn hoÆc cö ®éng kh«ng thÓ më lång ®Ìn")
+                      Msg2SubWorld("<color=cyan>Bang Chñ <color=green>"..GetName().."<color=yellow> bÞ ®¸nh träng th­¬ng<color=green> kh«ng thÓ më lång ®Ìn.!")
 end
 
 function main()
@@ -113,18 +116,10 @@ function main()
 		return
 	end
 	--¿ªÆô½ø¶ÈÌõ
-	tbProgressBar:OpenByConfig(23, %_GetFruit, {nNpcIdx, dwNpcId}, %_OnBreak)
+	tbProgressBar:OpenByConfig(20, %_GetFruit, {nNpcIdx, dwNpcId}, %_OnBreak)
 end;
 
 
 function OnTimeout(nNpcIndex)
 DelNpc(nNpcIndex);
-end
-
-local _Message =  function (nItemIndex)
-	local handle = OB_Create()
-	local msg = format("<pic=42><color=red>VËt phÈm <color=pink><%s><color=green><enter> võa r¬i tõ <color=yellow>Lång §Ìn Bang Héi<color>" ,GetItemName(nItemIndex))
-	ObjBuffer:PushObject(handle, msg)
-	RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
-	OB_Release(handle)
 end

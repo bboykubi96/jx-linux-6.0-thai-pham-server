@@ -1,12 +1,13 @@
-IncludeLib("SETTING"); --‘ÿ»ÎSETTINGΩ≈±æ÷∏¡Óø‚
+IncludeLib("SETTING"); -- script viet hoa By http://tranhba.com  t∏i nhÀp SETTING ch©n vËn chÿ thﬁ kho 
 
-function main()
-	--dofile("script/item/tongexpmedicine.lua")
-		if (GetNpcExpRate() <= 250) then
-		AddSkillState(440, 1, 1, 32400);
-	else
-		Say("Hi÷n tπi h÷ thËng Æang cho nh©n Æ´i kinh nghi÷m, tπm thÍi kh´ng th” sˆ dÙng Tu Th©n Hoµn.", 0)
-		return 1
-	end
-	return 0
+function main() 
+-- script viet hoa By http://tranhba.com Msg2Player("Nµy ch¯c n®ng sau nµy mÎ ra . Æa tπ Òng hÈ !") 
+-- script viet hoa By http://tranhba.com return 1 
+if (GetNpcExpRate() <= 100) then 
+AddSkillState(440, 1, 1, 32400); 
+else 
+Say("Tr≠Ìc mæt lµ h÷ thËng g p Æ´i kinh nghi÷m thÍi gian , tπm thÍi kh´ng c∏ch nµo sˆ dÙng b› ch’ tu th©n phÔ . ", 0) 
+return 1 
+end 
+return 0 
 end

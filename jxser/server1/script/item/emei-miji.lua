@@ -1,31 +1,31 @@
---Create by yfeng 2004-3-9
---Modified by fangjieying 2003-5-16
---¶ëáÒÃØ¼®£¬×÷ÓÃ80¼¶ÒÔÉÏµÄ¶ëáÒµÜ×ÓÊ¹ÓÃÖ®ºó£¬¿ÉÒÔ¼Ó1µã¼¼ÄÜµã
---°üÀ¨³öÊ¦£¬²»°üÀ¨×ªÃÅÅÉÒÔÇ°µÄ
---¸ÃÎïÆ·×î¶àÖ»ÄÜÊ¹ÓÃ15´Î
---ÈÎÎñ±äÁ¿80µÍ4Î»±íÊ¾Ê¹ÓÃ¸ÃÎïÆ·µÄ´ÎÊı
-function main(sel)
-	times = mod(GetTask(80),16)
-	party = GetLastAddFaction()
-	str={
-		"B¹n cÇm quyÓnNga Mi MËt TŞchnghiªn cøu ®· nöa ngµy, kÕt qu¶ kh«ng lÜnh ngé ®­îc g×. ",
-		"B¹n cÇm quyÓnNga Mi MËt TŞchnghiªn cøu ®· nöa ngµy, kÕt qu¶ lÜnh ngé chót İt. ",
-		"B¹n cÇm quyÓnNga Mi MËt TŞchnghiªn cøu ®· nöa ngµy, kÕt qu¶ ®¹t ®­îc mét vµi ®iÒu t©m ®¾c ",
-		"B¹n ®· ®äcNga Mi MËt TŞchrÊt kü, ngé ra ®­îc mét vµi ®iÒu t©m ®¾c. "
-		}
-	if(party ~= "emei") then     -- ²»ÊÇ¶ëáÒÅÉ 
-		Msg2Player(str[1])
-		return 1
-	elseif (GetLevel()<80) then    -- ÊÇ¶ëáÒÅÉ£¬µ«µÈ¼¶Ğ¡ÓÚ80
-		Msg2Player(str[2])
-		return 1
-	elseif(times > 14) then        -- Ê¹ÓÃ´ÎÊıÒÑ´ïµ½ÉÏÏŞ
-			Msg2Player(str[4])
-		return 1
-	else
-		AddMagicPoint(1)            -- ¼Ó¼¼ÄÜµã1
+-- script viet hoa By http://tranhba.com Create by yfeng 2004-3-9 
+-- script viet hoa By http://tranhba.com Modified by fangjieying 2003-5-16 
+-- script viet hoa By http://tranhba.com  Nga Mi bİ tŞch , t¸c dông 80 cÊp trë lªn Nga Mi ®Ö tö sö dông sau , cã thÓ thªm 1 ®iÓm kü n¨ng ®iÓm 
+-- script viet hoa By http://tranhba.com  bao gåm xuÊt s­ , kh«ng bao gåm chuyÓn m«n ph¸i tr­íc kia 
+-- script viet hoa By http://tranhba.com  nªn vËt phÈm nhiÒu nhÊt chØ cã thÓ sö dông 15 lÇn 
+-- script viet hoa By http://tranhba.com  nhiÖm vô thay ®æi l­îng 80 thÊp 4 vŞ bµy tá sö dông nªn vËt phÈm ®İch sè lÇn 
+function main(sel) 
+times = mod(GetTask(80),16) 
+party = GetLastAddFaction() 
+str={ 
+" ng­¬i cÇm # Nga Mi bİ tŞch # ®iÒu nghiªn liÔu nöa ngµy , kÕt qu¶ c¸i g× còng kh«ng cã lÜnh ngé ®Õn . ", 
+" ng­¬i cÇm # Nga Mi bİ tŞch # ®iÒu nghiªn liÔu nöa ngµy , kÕt qu¶ lÜnh ngé rÊt İt , kh«ng hiÖu qu¶ g× . ", 
+" ng­¬i cÇm # Nga Mi bİ tŞch # ®iÒu nghiªn liÔu nöa ngµy , kÕt qu¶ thu ®­îc mét İt liªn quan tíi vâ c«ng lßng cña ph¶i . ", 
+" ng­¬i ®· ®em # Nga Mi bİ tŞch # ®iÒu nghiªn thÊu triÖt , tõ trong còng n÷a kh«ng chiÕm ®­îc bÊt kú t©m ®¾c . " 
+} 
+if(party ~= "emei") then -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ ph¸i Nga Mi 
+Msg2Player(str[1]) 
+return 1 
+elseif (GetLevel()<80) then -- script viet hoa By http://tranhba.com  lµ ph¸i Nga Mi , nh­ng cÊp bËc İt h¬n 80 
+Msg2Player(str[2]) 
+return 1 
+elseif(times > 14) then -- script viet hoa By http://tranhba.com  sö dông sè lÇn ®· ®¹t tíi th­îng h¹n 
+Msg2Player(str[4]) 
+return 1 
+else 
+AddMagicPoint(1) -- script viet hoa By http://tranhba.com  thªm kü n¨ng ®iÓm 1 
 		SetTask(80,times+1)
-		Msg2Player(str[3])
-		return 0
-	end
+Msg2Player(str[3]) 
+return 0 
+end 
 end

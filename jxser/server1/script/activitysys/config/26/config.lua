@@ -13,27 +13,28 @@ tbConfig[1] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"Ta muèn th­ëng thøc mãn ¨n",2} },
-		{"SetDialogTitle",	    {"Chóc Mõng N¨m Míi!"} },
+		{"AddDialogOpt",	{"Ta muèn ¨n thøc ¨n",2} },
+		{"AddDialogOpt",	{"Ta muèn §Êu R­îu",3} },
+		{"SetDialogTitle",	{"Chóc Mõng N¨m Míi!"} },
 	},
 }
 tbConfig[2] = --Ò»¸öÏ¸½Ú
 {
 	nId = 2,
 	szMessageType = "nil",
-	szName = "Ta muèn th­ëng thøc mãn ¨n",
+	szName = "Ta muèn ¨n thøc ¨n",
 	nStartDate = nil,
 	nEndDate  = nil,
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"ChØ cã nh÷ng HiÖp Sü cã ®¼ng cÊp 50 vµ 50 trë lªn hoÆc lµ nh÷ng HiÖp Sü ®· trïng sinh míi cã thÓ tham gia ho¹t ®éng nµy.",">="} },
-		--{"ThisActivity:CheckTask",	{TSK_TotalEatExp,nTotalEatUpExp,"ThiÕu HiÖp ng­¬i th­ëng thøc mãn ¨n nhËn ®­îc kinh nghiÖm ®· ®¹t ®Õn giíi h¹n råi, kh«ng thÓ ¨n thªm ®­îc n÷a","<"} },
+		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"ChØ cã nh÷ng HiÖp Sü cã ®¼ng cÊp 150 vµ 150 trë lªn hoÆc lµ nh÷ng HiÖp Sü ®· trïng sinh míi cã thÓ tham gia ho¹t ®éng nµy.",">="} },
+		{"ThisActivity:CheckTask",	{TSK_TotalEatExp,nTotalEatUpExp,"ThiÕu HiÖp ng­¬i ¨n thøc ¨n nhËn ®­îc kinh nghiÖm ®· ®¹t ®Õn giíi h¹n råi, kh«ng thÓ ¨n thªm ®­îc n÷a","<"} },
 		{"ThisActivity:CheckTaskA",	{TSK_EatExp, TSK_EatExpDate, nEatUpExp,"Xin lçi, ThiÕu HiÖp h«m nay ng­¬i ¨n no qóa råi, ngµy mai l¹i ®Õn nhÐ.",nNumber} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:GiveEatAward1",	{TSK_EatExp, TSK_EatExpDate, TSK_TotalEatExp, nNumber} },
+		{"ThisActivity:GiveEatAward",	{TSK_EatExp, TSK_EatExpDate, TSK_TotalEatExp, nNumber} },
 	},
 }
 tbConfig[3] = --Ò»¸öÏ¸½Ú
@@ -46,15 +47,15 @@ tbConfig[3] = --Ò»¸öÏ¸½Ú
 	tbMessageParam = {"§Êu R­îu , §Êu chÝnh lµ trÝ tuÖ vµ vËn may"},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"ChØ cã nh÷ng HiÖp Sü cã ®¼ng cÊp 50 vµ 50 trë lªn hoÆc lµ nh÷ng HiÖp Sü ®· trïng sinh míi cã thÓ tham gia ho¹t ®éng nµy.",">="} },
+		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"ChØ cã nh÷ng HiÖp Sü cã ®¼ng cÊp 150 vµ 150 trë lªn hoÆc lµ nh÷ng HiÖp Sü ®· trïng sinh míi cã thÓ tham gia ho¹t ®éng nµy.",">="} },
 	},
 	tbActition = 
 	{
-		--{"AddDialogOpt",	{"Giíi thiÖu quy t¾c §Êu R­îu",4} },
-		--{"AddDialogOpt",	{"Ta muèn b¾t ®Çu ®Êu r­îu",5} },
-		--{"AddDialogOpt",	{"Ta muèn kiÓm tra kÕt qu¶ ®Êu r­îu",12} },
-		--{"AddDialogOpt",	{"Ta muèn nhËn phÇn th­ëng §Êu R­îu",23} },
-		--{"AddDialogOpt",	{"§Ó ta suy nghÜ l¹i",0} },
+		{"AddDialogOpt",	{"Giíi thiÖu quy t¾c §Êu R­îu",4} },
+		{"AddDialogOpt",	{"Ta muèn b¾t ®Çu ®Êu r­îu",5} },
+		{"AddDialogOpt",	{"Ta muèn kiÓm tra kÕt qu¶ ®Êu r­îu",12} },
+		{"AddDialogOpt",	{"Ta muèn nhËn phÇn th­ëng §Êu R­îu",23} },
+		{"AddDialogOpt",	{"§Ó ta suy nghÜ l¹i",0} },
 	},
 }
 tbConfig[4] = --Ò»¸öÏ¸½Ú
@@ -283,8 +284,7 @@ tbConfig[17] = --Ò»¸öÏ¸½Ú
 		{"SetDialogTitle",	{"<npc>C¸c ch­ vÞ vâ l©m hµo hiÖp, L·o ThÈm t«i ®· bµy lÔ råi, n¨m míi còng gÇn kÒ, Ta ë ®©y ®· bµy s½n s¬n hµo h¶i vÞ chiªu ®·i c¸c ch­ vÞ, xin c¸c vÞ cø tù nhiªn, ®õng kh¸ch s¸o, ¨n uèng no say tho¶i m¸i ®i!"} },
 		{"AddDialogOpt",	{"Giíi thiÖu ho¹t ®éng §¹i YÕn QuÇn HiÖp",18} },
 		{"AddDialogOpt",	{"NhËn hång bao",19} },
-		{"AddDialogOpt",	{"Mua kÕt tinh Méc",37} },
-		
+		{"AddDialogOpt",	{"§æi lÊy Gi¶i Töu Hoµn",20} },
 	},
 }
 tbConfig[18] = --Ò»¸öÏ¸½Ú
@@ -294,7 +294,7 @@ tbConfig[18] = --Ò»¸öÏ¸½Ú
 	szName = "Giíi thiÖu ho¹t ®éng §¹i YÕn QuÇn HiÖp",
 	nStartDate = nil,
 	nEndDate  = nil,
-	tbMessageParam = {"<npc>Thêi gian tõ 09h ngµy 01/01 ®Õn 30/01, ThiÕu HiÖp ng­¬i cã thÓ t¹i chç Ta ë ®©y ®· bµy s½n s¬n hµo h¶i vÞ chiªu ®·i, ¨n uèng no say tho¶i m¸i ®i, Thêi gian tõ 02/01 ®Õn 11/01, ®Ó cÇu may cho con trai xa xø cña ta, ThiÕu HiÖp ng­¬i cã thÓ ®Õn chç cña ta ®©y nhËn 1 §¹i Hång Bao! ThÈm Viªn Ngo¹i ta ®©y kh«ng ph¶i lµ ng­êi keo kiÖt ®©u, ta ®· bá vµo Hång Bao ®Õn kinh nghiÖm, ThiÕu HiÖp ng­¬i ®õng quªn ®Ðn nhËn Hång Bao nhÐ.",0},
+	tbMessageParam = {"<npc>Thêi gian tõ 0h/23/01/2011 ®Õn 24h/20/02/2011, ThiÕu HiÖp ng­¬i cã thÓ t¹i chç Ta ë ®©y ®· bµy s½n s¬n hµo h¶i vÞ chiªu ®·i, ¨n uèng no say tho¶i m¸i ®i, Thêi gian tõ 09/02 ®Õn 11/02, ®Ó cÇu may cho con trai xa xø cña ta, ThiÕu HiÖp ng­¬i cã thÓ ®Õn chç cña ta ®©y nhËn 1 §¹i Hång Bao! ThÈm Viªn Ngo¹i ta ®©y kh«ng ph¶i lµ ng­êi keo kiÖt ®©u, ta ®· bá vµo Hång Bao ®Õn 300.000.000 kinh nghiÖm, ThiÕu HiÖp ng­¬i ®õng quªn ®Ðn nhËn Hång Bao nhÐ.",0},
 	tbCondition = 
 	{
 	},
@@ -313,12 +313,12 @@ tbConfig[19] = --Ò»¸öÏ¸½Ú
 	tbCondition = 
 	{
 		{"ThisActivity:CheckTask",	{TSK_LiBao,1,"ThiÕu HiÖp ng­¬i ®· nhËn Hång Bao ë chç cña ta råi, mçi ng­êi chØ ®­îc nhËn Hång Bao 1 lÇn ë chç cña ta!","<"} },
-		{"lib:CheckDay",	{nGetLiBaoStartDate, nGetLiBaoEndDate, "Vµo kho¶ng ngµy 02 th¸ng 1, con trai cña ta ph¶i lªn ®­êng t×m kiÕm ph­¬ng trêi bu«n b¸n míi, ®Ó cÇu may cho nã, vµo ngµy 02 ®Õn ngµy 11 th¸ng 1, ThiÕu HiÖp ng­¬i cã thÓ ®Õn chç cña ta ®©y nhËn mét §¹i Hång Bao! ThÈm Viªn Ngo¹i ta ®©y kh«ng ph¶i lµ ng­êi keo kiÖt ®©u, ta ®· bá vµo Hång Bao ®Õn kinh nghiÖm, ThiÕu HiÖp ng­¬i ®õng quªn ®Ðn nhËn Hång Bao nhÐ."} },
+		{"lib:CheckDay",	{nGetLiBaoStartDate, nGetLiBaoEndDate, "Vµo kho¶ng ngµy 10 th¸ng 2, con trai cña ta ph¶i lªn ®­êng t×m kiÕm ph­¬ng trêi bu«n b¸n míi, ®Ó cÇu may cho nã, vµo ngµy 09 ®Õn ngµy 11 th¸ng 2, ThiÕu HiÖp ng­¬i cã thÓ ®Õn chç cña ta ®©y nhËn mét §¹i Hång Bao! ThÈm Viªn Ngo¹i ta ®©y kh«ng ph¶i lµ ng­êi keo kiÖt ®©u, ta ®· bá vµo Hång Bao ®Õn 300.000.000 kinh nghiÖm, ThiÕu HiÖp ng­¬i ®õng quªn ®Ðn nhËn Hång Bao nhÐ."} },
 		{"PlayerFunLib:CheckFreeBagCell",	{1,"Hµnh trang kh«ng ®ñ chç trèng, Ýt nhÊt ph¶i 1 c¸i 1*1 kh«ng gian hµnh trang"} },
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2694,1,0,0},nBindState = -2,nExpiredTime=HetHanEventTetTay,},1,"§¹i YÕn QuÇn HiÖp n¨m 2011, Hång Bao ThÈm Viªn Ngo¹i"} },
+		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2694,1,0,0},nBindState = -2,nExpiredTime=20110221,},1,"§¹i YÕn QuÇn HiÖp n¨m 2011, Hång Bao ThÈm Viªn Ngo¹i"} },
 		{"ThisActivity:AddTask",	{TSK_LiBao,1} },
 	},
 }
@@ -336,7 +336,7 @@ tbConfig[20] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2695,1,0,0},nExpiredTime=HetHanEventTetTay,},1,"§¹i YÕn QuÇn HiÖp n¨m 2011, nhËn ®­îc Gi¶i Töu Hoµn"} },
+		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2695,1,0,0},nExpiredTime=20110221,},1,"§¹i YÕn QuÇn HiÖp n¨m 2011, nhËn ®­îc Gi¶i Töu Hoµn"} },
 	},
 }
 tbConfig[21] = --Ò»¸öÏ¸½Ú
@@ -370,9 +370,8 @@ tbConfig[22] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		--{"PlayerFunLib:AddExp",	{nLiBaoExp,1,"§¹i YÕn QuÇn HiÖp n¨m 2011, sö dông Hång Bao ThÈm Viªn Ngo¹i nhËn ®­îc kinh nghiÖm"} },
-		--{"ThisActivity:SetTask",	{TSK_UseLiBao,1} },
-		{"ThisActivity:SuDungHongBao",	{nil} },
+		{"PlayerFunLib:AddExp",	{nLiBaoExp,1,"§¹i YÕn QuÇn HiÖp n¨m 2011, sö dông Hång Bao ThÈm Viªn Ngo¹i nhËn ®­îc kinh nghiÖm"} },
+		{"ThisActivity:SetTask",	{TSK_UseLiBao,1} },
 	},
 }
 tbConfig[23] = --Ò»¸öÏ¸½Ú
@@ -534,8 +533,7 @@ tbConfig[32] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		--{"ThisActivity:AddNpcFromFile",	{"§Çu «ng ®Þa", 1660, "\\settings\\maps\\dayanqunxia\\datouwawa.txt",176} },
-		{"ThisActivity:AddNpcFromFile",	{"§Çu «ng ®Þa", 1660, "\\settings\\maps\\dayanqunxia\\dauongdia.txt",78} },
+		{"ThisActivity:AddNpcFromFile",	{"§Çu «ng ®Þa", 1660, "\\settings\\maps\\dayanqunxia\\datouwawa.txt",176} },
 	},
 }
 tbConfig[33] = --Ò»¸öÏ¸½Ú
@@ -551,8 +549,7 @@ tbConfig[33] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		--{"ThisActivity:AddNpcFromFile",	{"Nam S­ ", 1661, "\\settings\\maps\\dayanqunxia\\wunanshi.txt",176} },
-		{"ThisActivity:AddNpcFromFile",	{"Nam S­ ", 1661, "\\settings\\maps\\dayanqunxia\\namsu.txt",78} },
+		{"ThisActivity:AddNpcFromFile",	{"Nam S­ ", 1661, "\\settings\\maps\\dayanqunxia\\wunanshi.txt",176} },
 	},
 }
 tbConfig[34] = --Ò»¸öÏ¸½Ú
@@ -568,354 +565,6 @@ tbConfig[34] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-		--{"ThisActivity:AddNpcFromFile",	{"B¾c S­ ", 1662, "\\settings\\maps\\dayanqunxia\\wubeishi.txt",176} },
-		{"ThisActivity:AddNpcFromFile",	{"B¾c S­ ", 1662, "\\settings\\maps\\dayanqunxia\\bacsu.txt",78} },
-	},
-}
---================Them event=================
-tbConfig[35] = --Ò»¸öÏ¸½Ú
-{
-	nId = 35,
-	szMessageType = "ServerStart",
-	szName = "Khi më sever ®¨ng t¶i V¨n TuyÕt Nhi",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-	},
-	tbActition = 
-	{
-		{"ThisActivity:AddDialogNpc",	{"V¨n TuyÕt Nhi", 1327, tbYuanWaiPos1} },
-	},
-}
-tbConfig[36] = --Ò»¸öÏ¸½Ú
-{
-	nId = 36,
-	szMessageType = "ClickNpc",
-	szName = "Click vµo V¨n TuyÕt Nhi",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"V¨n TuyÕt Nhi"},
-	tbCondition = 
-	{
-		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"",">="} },
-	},
-	tbActition = 
-	{
-		{"SetDialogTitle",	{"<npc>Chóc mõng n¨m míi 2017. Muéi ë ®©y ®· bµy s½n s¬n hµo h¶i vÞ chiªu ®·i c¸c ch­ vÞ, xin c¸c vÞ cø tù nhiªn, ®õng kh¸ch s¸o, ¨n uèng no say tho¶i m¸i ®i!"} },
-		{"AddDialogOpt",	{"Hîp thµnh Ngò Th¸i KÕt Tinh",49} },
-	},
-}
-tbConfig[37] = --Ò»¸öÏ¸½Ú
-{
-	nId = 37,
-	szMessageType = "CreateCompose",
-	szName = "Mua kÕt tinh Méc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"KÕt tinh Méc",1,1,1,0.02,0,50},
-	tbCondition = 
-	{
-		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=1},9000} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2599,1,0,0},nExpiredTime=HetHanEventTetTay,},1,"§¹i YÕn QuÇn HiÖp n¨m 2011, nhËn ®­îc KÕt Tinh Méc"} },
-	},
-}
-tbConfig[38] = --Ò»¸öÏ¸½Ú
-{
-	nId = 38,
-	szMessageType = "NpcOnDeath",
-	szName = "B¶n ®å ®¸no qu¸i nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-		{"NpcFunLib:CheckNormalMonster",	{"50,60,70,80,90"} },
-	},
-	tbActition = 
-	{
-		{"NpcFunLib:DropSingleItem",	{{szName="KÕt tinh Thæ",tbProp={6,1,2600,1,0,0},nExpiredTime=HetHanEventTetTay,},1,"2"} },
-		{"NpcFunLib:DropSingleItem",	{{szName="KÕt tinh Thñy",tbProp={6,1,2602,1,0,0},nExpiredTime=HetHanEventTetTay,},1,"2"} },
-	},
-}
-
---Tham gia hoat dong ket tinh hoa
-
-tbConfig[39] = --Ò»¸öÏ¸½Ú
-{
-	nId = 39,
-	szMessageType = "FinishSongJin",
-	szName = "§iÓm tÝch lòy Tèng Kim cao cÊp lín h¬n 1000 thÊp h¬n 3000 nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {-2,"3"},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"PlayerFunLib:CheckTask",	{"751",1000,"",">="} },
-		{"PlayerFunLib:CheckTask",	{"751",3000,"","<"} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},25,EVENT_LOG_TITLE,"TongKim1000NhanDuoc"} },
-	},
-}
-tbConfig[40] = --Ò»¸öÏ¸½Ú
-{
-	nId = 40,
-	szMessageType = "FinishSongJin",
-	szName = "§iÓm tÝch lòy Tèng Kim cao cÊp 3000 nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {-2,"3"},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"PlayerFunLib:CheckTask",	{"751",3000,"",">="} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},50,EVENT_LOG_TITLE,"TongKim3000NhanDuoc"} },
-	},
-}
-tbConfig[41] = --Ò»¸öÏ¸½Ú
-{
-	nId = 41,
-	szMessageType = "Chuanguan",
-	szName = "V­ît qua ¶i thø 17 nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"17"},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},25,EVENT_LOG_TITLE,"VuotAi17NhanDuoc"} },
-	},
-}
-tbConfig[42] = --Ò»¸öÏ¸½Ú
-{
-	nId = 42,
-	szMessageType = "Chuanguan",
-	szName = "V­ît qua ¶i thø 28 nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"28"},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},50,EVENT_LOG_TITLE,"VuotAi28NhanDuoc"} },
-	},
-}
-tbConfig[43] = --Ò»¸öÏ¸½Ú
-{
-	nId = 43,
-	szMessageType = "NpcOnDeath",
-	szName = "Thñy TÆc §Çu LÜnh Phong L¨ng §é nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"NpcFunLib:CheckBoatBoss",	{nil} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},15,EVENT_LOG_TITLE,"TieuDietThuyTacDauLinhNhanDuoc"} },
-	},
-
-}
-tbConfig[44] = --Ò»¸öÏ¸½Ú
-{
-	nId = 44,
-	szMessageType = "NpcOnDeath",
-	szName = "Thñy TÆc §¹i §Çu LÜnh Phong L¨ng §é nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"NpcFunLib:CheckId",	{"1692"} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},20,EVENT_LOG_TITLE,"TieuDietThuyTacDaiDauLinhNhanDuoc"} },
-	},
-}
-tbConfig[45] = --Ò»¸öÏ¸½Ú
-{
-	nId = 45,
-	szMessageType = "YDBZguoguan",
-	szName = "Viªm §Õ v­ît qua ¶i thø 10 nhËn ®­îc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {10},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},50,EVENT_LOG_TITLE,"VuotAiViemDe10NhanDuoc"} },
-	},
-}
-tbConfig[46] = --Ò»¸öÏ¸½Ú
-{
-	nId = 46,
-	szMessageType = "NpcOnDeath",
-	szName = "Tiªu diÖt Boss Hoµng Kim",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"NpcFunLib:CheckWorldBoss",	{nil} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},20,EVENT_LOG_TITLE,"TieuDietBossTheGioiNhanDuoc"} },
-	},
-}
-tbConfig[47] = --Ò»¸öÏ¸½Ú
-{
-	nId = 47,
-	szMessageType = "NpcOnDeath",
-	szName = "Tiªu diÖt Boss S¸t Thñ",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-		{"NpcFunLib:CheckKillerdBoss",	{90} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},5,EVENT_LOG_TITLE,"TieuDietBossSatThuNhanDuoc"} },
-	},
-}
-tbConfig[48] = --Ò»¸öÏ¸½Ú
-{
-	nId = 48,
-	szMessageType = "Chuanguan",
-	szName = "V­ît ¶i tiªu diÖt Boss ",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"30"},
-	tbCondition = 
-	{
-		--{"PlayerFunLib:CheckTotalLevel",	{150,"",">="} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},nExpiredTime=HetHanEventTetTay,},4,EVENT_LOG_TITLE,"VuotAiTieuDietBosssNhanDuoc"} },
-	},
-}
-tbConfig[49] = --Ò»¸öÏ¸½Ú
-{
-	nId = 49,
-	szMessageType = "CreateCompose",
-	szName = "Hîp thµnh Ngò Th¸i KÕt Tinh",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"Ngò Th¸i KÕt Tinh",1,1,1,0.02},
-	tbCondition = 
-	{
-		{"AddOneMaterial",	{"KÕt Tinh Kim",{szName="KÕt tinh Kim",tbProp={6,1,2598,1,0,0},},1} },
-		{"AddOneMaterial",	{"KÕt Tinh Méc",{szName="KÕt tinh Méc",tbProp={6,1,2599,1,0,0},},1} },
-		{"AddOneMaterial",	{"KÕt Tinh Thñy",{szName="KÕt tinh Thñy",tbProp={6,1,2600,1,0,0},},1} },
-		{"AddOneMaterial",	{"KÕt Tinh Háa",{szName="KÕt tinh Háa",tbProp={6,1,2601,1,0,0},},1} },
-		{"AddOneMaterial",	{"KÕt Tinh Thæ",{szName="KÕt tinh Thæ",tbProp={6,1,2602,1,0,0},},1} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{tbProp={6,1,2605,1,0,0},nExpiredTime=HetHanEventTetTay,},1,"§¹i YÕn QuÇn HiÖp n¨m 2016, nhËn ®­îc Ngò Th¸i KÕt Tinh"} },
-	},
-}
-tbConfig[50] = 
-{
-	nId = 50,
-	szMessageType = "ItemScript",
-	szName = "Sö dông Ngò Th¸i KÕt Tinh",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {{tbProp={6,1,2605,1,0,0},}},
-	tbCondition = 
-	{
-		{"PlayerFunLib:CheckTotalLevel",	{50,"default",">="} },
-		{"PlayerFunLib:CheckFreeBagCellWH",	{3, 3, 1,"default"} },
-		{"ThisActivity:CheckTask",	{TSK_SuDungNTKT,2000,"ThËt ®¸ng tiÕc hiÖn t¹i sè lÇn sö dông ®· ®ñ, kh«ng thÓ sö dông ®­îc n÷a","<"} },
-	},
-	tbActition = 
-	{
-		{"ThisActivity:UseNTKT",	{nil} },
-	},
-}
-
-tbConfig[51] = --Ò»¸öÏ¸½Ú
-{
-	nId = 51,
-	szMessageType = "ClickNpc",
-	szName = "Click vµo Chñ TiÖm",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"Chñ TiÖm"},
-	tbCondition = 
-	{
-		{"PlayerFunLib:CheckTotalLevel",	{nPlayerLevel,"",">="} },
-	},
-	tbActition = 
-	{
-		{"AddDialogOpt",	{"Mua kÕt tinh Kim",52} },
-		
-	},
-}
-
-ITEM_COIN		= {szName="TiÒn §ång",tbProp={4,417,1,1,0,0},}
-tbConfig[52] = 
-{
-	nId = 52,
-	szMessageType = "CreateCompose",
-	szName = "Mua KÕt Tinh Kim",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {"<npc>Mua KÕt Tinh Kim",1,1,1,0.02,0,50},
-	tbCondition = 
-	{
-		{"PlayerFunLib:CheckFreeBagCell",	{10,"default"} },
-		{"AddOneMaterial",	{"TiÒn §ång",ITEM_COIN,10} },
-	},
-	tbActition = 
-	{
-		{"PlayerFunLib:GetItem",	{{szName="KÕt tinh Kim",tbProp={6,1,2598,1,0,0},nExpiredTime=HetHanEventTetTay,},1,EVENT_LOG_TITLE,"MuaKetTinhKim"} },
-	},
-}
-
-tbConfig[53] = --Ò»¸öÏ¸½Ú
-{
-	nId = 53,
-	szMessageType = "OnLogin",
-	szName = "Ng­êi ch¬i trùc tuyÕn",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-	},
-	tbActition = 
-	{
-		{"ThisActivity:PlayerOnLogin",	{nil} },
+		{"ThisActivity:AddNpcFromFile",	{"B¾c S­ ", 1662, "\\settings\\maps\\dayanqunxia\\wubeishi.txt",176} },
 	},
 }

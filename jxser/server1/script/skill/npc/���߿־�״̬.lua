@@ -1,0 +1,34 @@
+Include("\\script\\skill\\head.lua")
+SKILLS={
+	wudang120_child={ --免疫恐惧
+		--missle_missrate={{{1,85},{15,20},{20,15},{21,15}}},
+		ignorenegativestate_p={
+			{{1,100},{20,100}},
+			{{1,-1},{20,-1}},
+		},
+		statusimmunity_b={
+			{{1,1},{20,1}},
+			{{1,-1},{20,-1}},
+		},
+		fatallystrikeres_p={
+			{{1,95},{20,95}},
+			{{1,-1},{20,-1}},
+		},
+		fasthitrecover_v={
+			{{1,100},{20,100}},
+			{{1,-1},{20,-1}},
+		},
+		freezetimereduce_p={
+			{{1,200},{20,200}},
+			{{1,-1},{20,-1}},
+		},
+		poisontimereduce_p={
+			{{1,300},{20,300}},
+			{{1,-1},{20,-1}},
+		},
+		stuntimereduce_p={
+			{{1,200},{20,200}},
+			{{1,-1},{20,-1}},
+		},
+	}
+}

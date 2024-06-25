@@ -3,7 +3,7 @@
 
 Include("\\script\\global\\skills_table.lua")
 
-function main_com() 
+function main() 
 UTask_cy = GetTask(6) 
 if (GetSeries() == 2) and (GetFaction() == "cuiyan") then -- script viet hoa By http://tranhba.com  nhiÖm vô t­¬ng quan cïng víi m«n ph¸i ®èi tho¹i 
 		if (UTask_cy >= 20*256+10) and (UTask_cy < 30*256) then		-- script viet hoa By http://tranhba.com 20¼¶ÈÎÎñ½øĞĞÖĞ

@@ -28,8 +28,8 @@ MISSION	SCRIPT
 27	\script\missions\newcitydefence\mission.lua
 28	\script\missions\chrismas\ch_mission.lua
 29	\script\missions\chrismas\ch_preparemission.lua
-30	\script\missions\springfestival\festival_preparemission.lua -- Bat Quai THu
-31	\script\missions\springfestival\festival_mission.lua -- Bat Quai Thu
+30	\script\missions\springfestival\festival_preparemission.lua
+31	\script\missions\springfestival\festival_mission.lua
 32	\script\missions\statinfo\mission_goodssale.lua
 33	\script\missions\tongwar\match\mission.lua
 34	\script\missions\finalmatch\glbmission\mission.lua
@@ -68,4 +68,9 @@ MISSION	SCRIPT
 67	\script\missions\dungeon\head.lua
 68	\script\missions\killbossmatch\missionhead_ready.lua
 69	\script\missions\killbossmatch\missionhead.lua
-70	\script\global\pgaming\tieubangchien\m_mission.lua
+70	\script\global\quanlygame\sukien\loidaicacuoc\mission.lua
+71	\script\global\quanlygame\sukien\loidaicacuoc\mission.lua
+73	\script\fwcloud\nguyetcadao\mission.lua
+74	\script\fwcloud\nguyetcadao\mission.lua
+75	\script\fwcloud\nguyetcadao\mission1.lua
+76	\script\global\quanlygame\baucua\baucua.lua

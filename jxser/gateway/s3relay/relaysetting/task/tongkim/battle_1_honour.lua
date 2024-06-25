@@ -1,19 +1,10 @@
--- ------------------------------------------------------------------
--- FileName   : battle_1_honour.lua
--- Author     : panyuyang
--- Version    : 
--- Date       : 2010-10-26 16:00:02
--- Description: 把ID10251改成了10086（宋金高手）
-------------------------------------------------------------------
+-----------***Heart*Doldly***------------
  LG_SONGJINHONOUR = 535;
  LG_TSK_HONOURPOINT = 1;
  LG_TSK_TOTALPOINT = 2;
  
 function TaskShedule()
-	-- 设置方案名称
-	TaskName( "宋金荣誉值" );
-	--星期日23时开始新的一轮
-	-- 一周一个循环
+	TaskName( "Tong Kim Vinh De " );
 	TaskInterval(1440);
 	TaskTime(23, 0);
 	TaskCountLimit(0);

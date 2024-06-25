@@ -1,7 +1,7 @@
 -- description	: 通告定时器，每分钟触发一次
 -- author		: wangbin
 -- datetime		: 2005-06-07
-IncludeLib("TONG")
+
 Include("\\script\\missions\\challengeoftime\\include.lua")
 
 function OnTimer()

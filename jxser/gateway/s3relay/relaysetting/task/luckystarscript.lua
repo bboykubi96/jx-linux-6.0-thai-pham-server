@@ -1,31 +1,53 @@
---–“‘À÷Æ–«Relay∂À¥•∑¢Ω≈±æ
+	-- may mæn ng´i sao Relay Æoan g©y ra kﬁch b∂n gËc
 
-function GameSvrConnected(dwGameSvrIP)
-rolename = GetStringFromSDB("LuckyStar", 0, 0);
-if (rolename ~= "") then
-	NotifySDBRecordChanged("LuckyStar", 0 , 0, 1);
-end;
-	str = format("MAY CHU TRO CHOI: KET NOI %d Relay,LAN TRUOC KET NOI %s", dwGameSvrIP, rolename)
+	function GameSvrConnected(dwGameSvrIP)
+
+	rolename = GetStringFromSDB( "LuckyStar", 0, 0);
+
+	if (rolename ~= " ") then
+
+	NotifySDBRecordChanged( "LuckyStar", 0, 0, 1);
+
+	end;
+
+	str = format( "Trﬂ ch¨i phÙc vÙ kh›: Li™n ti’p %d Relay, tr≠Ìc may mæn tinh vi %s", dwGameSvrIP, rolename)
+
 	OutputMsg(str);
-end;
 
-function GameSvrReady(dwGameSvrIP)
-end
+	end;
 
-function TaskShedule()
-	TaskName("NGOI SAO MAY MAN")
+	function GameSvrReady(dwGameSvrIP)
+
+	end
+
+	function TaskShedule()
+
+	TaskName( "May mæn tinh ")
+
 	TaskTime(12, 0)
-	TaskInterval(360)
-	TaskCountLimit(0)
-end
 
-function TaskContent()
-	accname, rolename = RandomSelAOnlinePlayer()
+	TaskInterval(360)
+
+	TaskCountLimit(0)
+
+	end
+
+	function TaskContent()
+
+	ac vname, rolename = RandomSelAOnlinePlayer()
+
 	date = GetCurrentTime()
-	success = SaveStringToSDBOw("LuckyStarLog", date, 0, rolename)
-	success = SaveStringToSDBOw("LuckyStar", 0, 0, rolename)
-	str = format("MOI PHAT HIEN RA NGOI SAO MAY MAN %s",rolename)
+
+	success = SaveStringToSDBOw( "LuckyStarLog", date, 0, rolename)
+
+	success = SaveStringToSDBOw( "LuckyStar", 0, 0, rolename)
+
+	str = format( "T©n xu t hi÷n may mæn tinh vi %s",rolename)
+
 	OutputMsg(str);
-	NotifySDBRecordChanged("LuckyStar", 0 , 0, 1);
-end
+
+	NotifySDBRecordChanged( "LuckyStar", 0, 0, 1);
+
+	end
+
 

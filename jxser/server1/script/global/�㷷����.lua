@@ -1,4 +1,3 @@
---Hang rong edit by mcteam
 Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\activitysys\\npcfunlib.lua")
@@ -10,257 +9,207 @@ Include("\\script\\lib\\composeex.lua")
 -- script viet hoa By http://tranhba.com ##Ì####µ¸#³#´Ý - modified by DinhHQ - 20110921
 Include("\\script\\vng_event\\doi_hanh_hiep_lenh\\exchangeitem.lua")
 
-sotienmanhvaixanh = 5000
-soxucuonchi = 5
-soxuhoathibich = 10
-
 function OnExit()
 
 end;
 
-
-
-
 function main()
-	
-	--dofile("script/global/Áã··¹¦ÄÜ.lua")
-	
+	-- dofile()
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex);
+	
 	if NpcName2Replace then szNpcName = NpcName2Replace(szNpcName) end
-	local tbDailog = DailogClass:new(szNpcName);
-	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
+	local tbDailog = DailogClass:new("Hµng rong");
+	-- G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
 	
 	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
 	
 	
-	tbDailog.szTitleMsg = "<#><npc>Kh¸ch quan cÇn mua g×?"
+	tbDailog.szTitleMsg = "<#><npc>Chç ta c¸i g× còng cã hÕt. Ng­¬i cÇn c¸i g×?"
 	
---tbVng_Exchange_HHL:AddDialog(tbDailog)
-	--event khai hoan vien
-	--tbDailog:AddOptEntry("Mua m¶nh thiªn th¹ch", Sale, {171}); 
-	--tbDailog:AddOptEntry("Mua Cuén chØ gi¸: "..soxucuonchi.." xu", MuaCuonChi11)
-	--tbDailog:AddOptEntry("Mua Hßa ThÞ BÝch gi¸: "..soxuhoathibich.." xu", MuaHoaThiBich11)
-	--tbDailog:AddOptEntry("Mua M¶nh v¶i mµu xanh l¸ gi¸: "..sotienmanhvaixanh.." l­îng", MuaManhVaiMauXanhLa11)
-	--tbDailog:AddOptEntry("Mua tói Hoµng Kim", MuaTuiHoangKim)
-tbDailog:AddOptEntry("Mua LÖnh Bµi Phong L¨ng §é (10 V¹n)", mualenhbai)
-tbDailog:AddOptEntry("Mua S¸t Thñ Gi·n (10 V¹n)", muasatthugian)
-	--tbDailog:AddOptEntry("¢ß##××¤ï¤×#âÄß", WantBuyHuiTian)
-	--tbDailog:AddOptEntry("¢ß##ß#¸#", WantBuyJinpai)
-	--tbDailog:AddOptEntry("¢ß#ð#ó¸#", WantBuyJinWuJinpai)
+	-- script viet hoa By http://tranhba.com Change request 04/06/2011, ##¤×°##ð#°±#- Modified by DinhHQ - 20110605
+-- script viet hoa By http://tranhba.com 	local w,x,y = GetWorldPos()
+-- script viet hoa By http://tranhba.com 	if w == 176 then
+-- script viet hoa By http://tranhba.com 		tbDailog:AddOptEntry("¢ß××£¯#Ð##.", Sale, {171}); 
+-- script viet hoa By http://tranhba.com 	end
+	-- script viet hoa By http://tranhba.com ##Ì####µ¸#³#´Ý- modified by DinhHQ - 20110921
+	-- tbVng_Exchange_HHL:AddDialog(tbDailog)
+	-- tbDailog:AddOptEntry("¢ß##××¤ï¤×#âÄß", WantBuyHuiTian)
+	-- tbDailog:AddOptEntry("¢ß##ß#¸#", WantBuyJinpai)
+	-- tbDailog:AddOptEntry("¢ß#ð#ó¸#", WantBuyJinWuJinpai)
 	-- script viet hoa By http://tranhba.com tbDailog:AddOptEntry("##Ì#±#£¯", WantBuyBaoshi)
 	
-	--tbDailog:AddOptEntry("Ì·#ß¿´¿´(#Ð#âÐ×#ª)", OpenSecondStore); 
+	-- script viet hoa By http://tranhba.com Change request 04/06/2011 - Modified by DinhHQ - 20110605
+-- script viet hoa By http://tranhba.com 	tbDailog:AddOptEntry("Ì·#ß¿´¿´(#Ð#âÐ×#ª)", OpenSecondStore); 
 -- script viet hoa By http://tranhba.com 	if tbTriumphDrum:CheckCondition_BuyDrum() == 1 then
 -- script viet hoa By http://tranhba.com 		tbDailog:AddOptEntry("¢ß¿####Ä",  tbTriumphDrum.NpcTalk,{tbTriumphDrum});  	
 -- script viet hoa By http://tranhba.com 	end
 
 	-- script viet hoa By http://tranhba.com Change request 04/06/2011 - Modified by DinhHQ - 20110605
 	-- script viet hoa By http://tranhba.com tbDailog:AddOptEntry("µ#¿#", OnExit, {}); 	
+--	tbDailog:AddOptEntry("Mua k× tr©n dÞ b¶o", OpenKTC);
+	-- tbDailog:AddOptEntry("Mua tµng b¶o ®å gi¸ 2 xu", MuaTangBaoDo);
+	-- tbDailog:AddOptEntry("Mua m¶nh thiªn th¹ch sè 1", MuaTangBaoDo);
+	-- tbDailog:AddOptEntry("Hîp thµnh lÖnh bµi boss TBD(cao cÊp)", PreConsume);
 	tbDailog:Show()
 end;
-function muasatthugian()
-	if GetCash()>=100000 then
-		Pay(100000)
-		local tbItem = 
-	{	
 
-		{szName = "satthugian", tbProp = {6, 1, 400, 90,random(0,4),0}, nCount = 1},
-		--{szName = "Than hanh phu", tbProp = {6, 1, 1266, 1,0,0}, nCount = 1, nExpiredTime=10080},
-
-		
+-----------------
+local tbGoods = {
+-- {szName = "M¶nh thiªn th¹ch sè 1",tbProp = {4,1318,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 2",tbProp = {4,1319,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 3",tbProp = {4,1320,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 4",tbProp = {4,1321,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 5",tbProp = {4,1322,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 6",tbProp = {4,1323,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 7",tbProp = {4,1324,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 8",tbProp = {4,1325,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "M¶nh thiªn th¹ch sè 9",tbProp = {4,1326,1,1,0,0},nCount=1,nQuality=1, nCoin = 500},
+-- {szName = "DÞ Dung ThuËt",tbProp = {6,1,4404,1,0,0},nCount=1, nCoin = 200}, --open
+-- {szName = "Thµnh chñ lÔ bao",tbProp = {6,1,1339,1,0,0},nCount=1, nCoin = 25},
+-- {szName = "Méc bµi gäi boss",tbProp = {6,1,1478,1,0,0},nCount=1, nCoin = 2, nCash=100},
+-- {szName = "Phï dung nguyªn th¹ch",tbProp = {6,1,152},nCount=1, nCoin = 2},
+{szName = "ThÎ ®æi tªn",tbProp = {6,1,1534,1,0,0},nCount=1, nCoin = 200}, --open
+{szName = "Lam thñy tinh - sÏ ®ãng khi cã sù kiÖn" ,tbProp= {4,238,1,1,0,0},nCount=1, nCoin=50},
+{szName = "Tö thñy tinh - sÏ ®ãng khi cã sù kiÖn",tbProp = {4,239,1,1,0,0},nCount=1, nCoin=50},
+{szName = "Lôc thñy tinh - sÏ ®ãng khi cã sù kiÖn",tbProp = {4,240,1,1,0,0},nCount=1, nCoin=50},
+{szName = "Tinh Hång B¶o Th¹ch - sÏ ®ãng khi cã sù kiÖn",tbProp = {4,353,1,1,0,0},nCount=1, nCoin=40},
+-- {szName = "Ng­êi tuyÕt",tbProp = {6,1,1319,1,0,0},nCount=1, nPrice = 3},
+-- {szName = "ThÇn hµnh phï 30 ngµy",tbProp = {6,1,1266,1,0,0}, nCash=10,nExpiredTime=24*60*30},
+-- {szName = "Thiªn c¬ lÖnh",tbProp = {6,1,1091,1,0,0},nCount=1, nCoin=5}, --open
+-- {szName = "ThÇn bÝ kho¸ng th¹ch",tbProp = {6,1,398,1,0,0},nCount=1, nCoin=500},
+-- {szName = "Kim tª",tbProp = {4,979,1,1,0,0},nCount=1, nCoin=1000},
+-- {szName = "LÖnh bµi phong l¨ng ®é",tbProp = {4,489,1,1,0,0},nCount=1, nCash=75,nCoin=5}, --open
+-- {szName = "S¸t thñ gi¶n 90",tbProp = {6,1,2339,1,0,0}, nCash=75,nCoin=5}, --open
+-- {szName = "GiÇy th«ng hµnh b¶n ®å ®Æc biÖt",tbProp = {6,1,4390,1,0,0}, nCoin=1},
+-- {szName = "Trèng Kh¶i Hoµn",tbProp = {6,1,2309,1,0,0},nCoin = 5, nCash=125},
+-- {szName = "Thiªn S¬n TuyÕt Liªn",tbProp = {6,1,1431,1,0,0},nCount=1, nCoin = 100,},
+}
+------------------
+function MuaTangBaoDo()
+	Say("Ng­¬i ch¾c ch¾n mua <color=green> Tµng b¶o ®å <color> gi¸ <color=yellow>2 tiÒn ®ång?",2,
+			"Ch¾c ch¾n/MuaTangBaoDo1",
+			"Ta suy nghÜ l¹i ®·/no")
+end
+function MuaTangBaoDo1()
+	local nTotal=2
+	if CalcFreeItemCellCount() < 2 then
+			Say("Hµnh trang kh«ng ®ñ chç trèng. Vui lßng kiÓm tra l¹i.",0);
+			return
+	end
+	if  CalcEquiproomItemCount(4, 417, 1, -1) < nTotal then
+		Say("Ng­¬i kiÓm tra l¹i hµnh trang xem cã ®ñ tiÒn ®ång kh«ng?",0)
+		return
+		end
+	if ConsumeEquiproomItem(nTotal, 4, 417, 1, -1) ~=1 then
+		Say("Cã lçi trong qu¸ tr×nh trõ tiÒn ®ång vui lßng b¸o l¹i víi GM")
+		WriteLog("BÞ lçi trong qu¸ tr×nh trõ tiÒn ®ång ®¸nh b¹c")
+		return
+	end
+	local nRandom = random (2,171)
+	local ITEM_DATAU= {
+			[1]={tbProp={6,2,3,1,0,0},tbParam={nRandom},nCount = 1,nRate=100,}, -- phai tu 2 den 171
 	}
-	tbAwardTemplet:GiveAwardByList(tbItem, "satthugian");
-	else
-		Say("Hµnh trang kh«ng cã ®ñ 10 V¹n L­îng")
+	tbAwardTemplet:GiveAwardByList(ITEM_DATAU, "ITEM_DATAU")
+end
+
+function PreConsume()
+GiveItemUI("Xin ®Æt 2 lÖnh bµi boss vµo ®©y. ","L­u ý cã x¸c xuÊt rít. §¹i hiÖp h·y c©n nh¾c", "ConsumeBossItem", "Cancel");
+end
+
+function ConsumeBossItem(nCount)
+if nCount ~=2 then
+	return Say("Vui long ®Æt ®óng 2 lÖnh bµi boss.",0)
+end
+local nGenre,nDetail,nParticular,nLevel,nGoodsFive,nLuck = 0,0,0,0,0,0;
+for i=1,nCount do
+	nGenre,nDetail,nParticular,nLevel,nGoodsFive,nLuck = GetItemProp(GetGiveItemUnit(i));
+	if nGenre ~= 6 or nDetail ~= 1 or nParticular ~= 4374 then
+		return Say("VËt phÈm ®Æt vµo kh«ng®óng.",0)
+	end
+end
+RemoveItemByIndex(GetGiveItemUnit(1))
+RemoveItemByIndex(GetGiveItemUnit(2))
+local tbItem = {}
+
+
+if random(1,10000)  < 2500 then
+	tinsert(tbItem,1,{szName = "LÖnh bµi gäi boss",tbProp = {6,1,4374,1,0,0},nCount=1})
+	tbAwardTemplet:GiveAwardByList(tbItem, "§Ëp xÞt LB boss",1)
+	Msg2Player("ChÕ t¸c thÊt b¹i. ThËt chia buån.")
+else
+	tinsert(tbItem,1,{szName = "LÖnh bµi gäi boss cao cÊp",tbProp = {6,1,1164,1,0,0},nCount=1})
+	tbAwardTemplet:GiveAwardByList(tbItem, "§Ëp thµnh c«ng LB boss",1)
+	Msg2Player("ChÕ t¸c thµnh c«ng. Chóc mõng ng­¬i.")
+end
+end
+
+function OpenKTC()
+	local szTitle = "<npc>Xin mêi lùa chän mÆt hµng"
+	local tbOpt =	{
+					
+							}
+	for i=1,getn(%tbGoods) do
+		if %tbGoods[i].nCoin then
+			tinsert(tbOpt, 1, {format("Mua %s gi¸ %d tiÒn ®ång",%tbGoods[i].szName,%tbGoods[i].nCoin),GetNumberForBuy,{i,1}})
+		end
+		if %tbGoods[i].nCash then
+			tinsert(tbOpt, 1, {format("Mua %s gi¸ %d v¹n",%tbGoods[i].szName,%tbGoods[i].nCash),GetNumberForBuy,{i,2}})
+		end
+	end
+	tinsert(tbOpt, 1, {"Tho¸t",no})
+	CreateNewSayEx(szTitle, tbOpt)						
+							
+end
+
+function GetNumberForBuy(nItemId,nKind)--1 la tien dong 2 tien van
+-- Msg2Player("GGGO")
+g_AskClientNumberEx(1,60, format("Sè l­îng", 60), {GetNumberFromClient,{nItemId,nKind}})
+end
+function GetNumberFromClient(nItemId,nKind,nNumber)
+if type(nNumber)~="number" or nNumber < 0 or nNumber > 60 then
+return
+end
+if nKind == 1 then
+	Say(format("Ng­¬i ch¾c ch¾n mua <color=green>%d %s <color> gi¸ tæng céng <color=yellow>%d tiÒn ®ång?",nNumber,%tbGoods[nItemId].szName,%tbGoods[nItemId].nCoin*nNumber),2,format("Ch¾c ch¾n/#ConfirmBuy(%d,%d,%d)",nItemId,nKind,nNumber),"Ta suy nghÜ l¹i ®·/no")
+elseif nKind == 2 then
+	Say(format("Ng­¬i ch¾c ch¾n mua <color=green>%d %s <color> gi¸ tæng céng <color=yellow>%d v¹n?",nNumber,%tbGoods[nItemId].szName,%tbGoods[nItemId].nCash*nNumber),2,format("Ch¾c ch¾n/#ConfirmBuy(%d,%d,%d)",nItemId,nKind,nNumber),"Ta suy nghÜ l¹i ®·/no")
+end
+end
+function ConfirmBuy(nItemId,nKind,nNumber)
+local nTotal
+if nKind == 1 then
+	nTotal = %tbGoods[nItemId].nCoin*nNumber
+elseif nKind == 2 then
+	nTotal = %tbGoods[nItemId].nCash*nNumber*10000
+end
+if CalcFreeItemCellCount() < nNumber then
+		Say("Hµnh trang kh«ng ®ñ chç trèng. Vui lßng kiÓm tra l¹i.",0);
+		return
+end
+if nKind == 1 then
+	if  CalcEquiproomItemCount(4, 417, 1, -1) < nTotal then
+		Say("Ng­¬i kiÓm tra l¹i hµnh trang xem cã ®ñ tiÒn ®ång kh«ng?",0)
+		return
+		end
+	if ConsumeEquiproomItem(nTotal, 4, 417, 1, -1) ~=1 then
+		Say("Cã lçi trong qu¸ tr×nh trõ tiÒn ®ång vui lßng b¸o l¹i víi GM")
+		WriteLog("BÞ lçi trong qu¸ tr×nh trõ tiÒn ®ång ®¸nh b¹c")
 		return
 	end
-end
-function mualenhbai()
-	if GetCash()>=100000 then
-		Pay(100000)
-		local Index = AddItem(4,489,1,1,0,0)	
-	else
-		Say("Hµnh trang kh«ng cã ®ñ 10 V¹n L­îng")
+elseif nKind == 2 then
+	if GetCash() < nTotal then
+		Say("Hµnh trang kh«ng ®ñ tiÒn v¹n. Vui lßng kiÓm tra l¹i.",0)
 		return
 	end
-end
-function MuaTuiHoangKim()
-	local tbSay = {}
-	tinsert(tbSay,"Tói hoµng kim An Bang H¹ng Liªn # gi¸: 2000 xu ./tuihoangkimABDayChuyen")
-	tinsert(tbSay,"Tói hoµng kim An Bang Giíi ChØ 1 # gi¸: 1500 xu ./tuihoangkimABGioiChi1")
-	tinsert(tbSay,"Tói hoµng kim An Bang Giíi ChØ 2 # gi¸: 1500 xu ./tuihoangkimABGioiChi2")
-	tinsert(tbSay,"Tói hoµng kim An Bang Ngäc Béi # gi¸: 1000 xu ./tuihoangkimABNgocBoi")
-	tinsert(tbSay,"KÕt thóc ®èi tho¹i ./Quit")
-	Say("Hµng rong: Ta chuyªn b¸n c¸c lo¹i cùc phÈm quý, kh¸ch quan cÇn mua g×?", getn(tbSay), tbSay)
-end
-
-function tuihoangkimABDayChuyen()
-local soxu = 2000 --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-if (nCurTD >= soxu) then
-	Say("Mêi nhËn hµng", 0)
+	Pay(nTotal)
 else
-	Say("Kh¸ch quan kh«ng mang ®ñ TiÒn §ång!", 0)
-	return 1;
+	return
 end
-
-if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-	Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-	return 1;
+local tbItem = {}
+tinsert(tbItem,1,%tbGoods[nItemId])
+tbAwardTemplet:GiveAwardByList(tbItem, format("Mua ki tran cac kieu %d ",nKind),nNumber)
 end
-AddItem(6,1,4257,1,0,0);--Tui hoang kim an bang hang lien
-end
-
-function tuihoangkimABGioiChi1()
-local soxu = 1500 --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-if (nCurTD >= soxu) then
-	Say("Mêi nhËn hµng", 0)
-else
-	Say("Kh¸ch quan kh«ng mang ®ñ TiÒn §ång!", 0)
-	return 1;
-end
-
-if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-	Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-	return 1;
-end
-AddItem(6,1,4258,1,0,0);--Tui hoang kim an bang gioi chi 1
-end
-
-function tuihoangkimABGioiChi2()
-local soxu = 1500 --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-if (nCurTD >= soxu) then
-	Say("Mêi nhËn hµng", 0)
-else
-	Say("Kh¸ch quan kh«ng mang ®ñ TiÒn §ång!", 0)
-	return 1;
-end
-
-if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-	Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-	return 1;
-end
-AddItem(6,1,4259,1,0,0);--Tui hoang kim an bang gioi chi 2
-end
-
-function tuihoangkimABNgocBoi()
-local soxu = 1000 --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-if (nCurTD >= soxu) then
-	Say("Mêi nhËn hµng", 0)
-else
-	Say("Kh¸ch quan kh«ng mang ®ñ TiÒn §ång!", 0)
-	return 1;
-end
-
-if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-	Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-	return 1;
-end
-AddItem(6,1,4260,1,0,0);--Tui hoang kim an bang ngoc boi
-end
-
-function MuaCuonChi11()
-local soxu = soxucuonchi --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-maxsl = nCurTD/soxu
-AskClientForNumber("enter_str_cuonchi", 0, maxsl,"Xin mêi nhËp vµo sè l­îng: "); 
-
-end
-
-function enter_str_cuonchi(n_key)
-local soxu = soxucuonchi --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-maxsl = nCurTD/soxu
-
-if (n_key < 0 or n_key > maxsl) then 
-return 
-end 
-
-for i=1,n_key do
-
-	if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-		Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-		return 1;
-	end
-	AddItem(6,1,3138,1,0,0);
-
-end
-
-Msg2Player("§· nhËn ®­îc "..n_key.." cuén chØ")
-end;
-
-function MuaHoaThiBich11()
-local soxu = soxuhoathibich --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-maxsl = nCurTD/soxu
-
-AskClientForNumber("enter_str_hoathibich", 0, maxsl,"Xin mêi nhËp vµo sè l­îng: "); 
-
-end
-
-function enter_str_hoathibich(n_key)
-local soxu = soxuhoathibich --gia tien xu
-local nCurTD = CalcEquiproomItemCount(4,417,1,1)--so xu tren hanh trang
-maxsl = nCurTD/soxu
-
-if (n_key < 0 or n_key > maxsl) then 
-return 
-end 
-
-
-for i=1,n_key do
-
-	if (ConsumeEquiproomItem(soxu,4,417,1,1)~= 1) then--tru xu tren hanh trang 1 thanh cong khac 1 that bai
-		Msg2Player("Trõ tiÒn ®ång thÊt b¹i !")
-		return 1;
-	end
-
-	AddItem(6,1,3145,1,0,0);
-end
-
-Msg2Player("§· nhËn ®­îc "..n_key.." Hßa thÞ bÝch")
-
-end;
-
-function MuaManhVaiMauXanhLa11()
-
-local sltien = GetCash()
-local sltienphaitra = sotienmanhvaixanh
-maxsl = sltien/sltienphaitra
-
-AskClientForNumber("enter_str_num", 0, maxsl,"Xin mêi nhËp vµo sè l­îng: "); 
-
---if(sltien < sltienphaitra) then
-	--Say("Kh¸ch quan kh«ng mang ®ñ: "..sltienphaitra.." l­îng")
-	--return
---end
-
-
-end
-
-function enter_str_num(n_key) 
-
-local sltien = GetCash()
-local sltienphaitra = sotienmanhvaixanh
-maxsl = sltien/sltienphaitra
-
-if (n_key < 0 or n_key > maxsl) then 
-return 
-end 
-
-for i=1,n_key do
-	AddItem(6,1,3143,1,0,0);
-	Pay(sltienphaitra)
-end
-
-Msg2Player("§· nhËn ®­îc "..n_key.." M¶nh v¶i mµu xanh l¸")
-
-end 
-
 function OpenSecondStore()
 	do return end	
 	CreateStores();

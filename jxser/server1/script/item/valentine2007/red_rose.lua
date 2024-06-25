@@ -1,47 +1,47 @@
---2007ÄêÇéÈË½Ú--Ãµ¹å»¨
---ÍêÃÀµÄºìÃµ¹å	6,1,1362,1,0,0
---ÆÕÍ¨µÄºìÃµ¹å	6,1,1363,1,0,0
---ºìÃµ¹å»¨ÀÙ	6,1,1364,1,0,0
+-- script viet hoa By http://tranhba.com 2007 n¨m lÔ t×nh nh©n -- script viet hoa By http://tranhba.com  hoa hång 
+-- script viet hoa By http://tranhba.com  hoµn mü hoa hång ®á 6,1,1362,1,0,0 
+-- script viet hoa By http://tranhba.com  b×nh th­êng hoa hång ®á 6,1,1363,1,0,0 
+-- script viet hoa By http://tranhba.com  hoa hång ®á hoa l«i 6,1,1364,1,0,0 
 
 Include("\\script\\event\\valentine2007\\head.lua");
 
-function main(nItemIdx)
-	if (checkValentine2007Date(20070306) ~= 1) then
-		Say("Hoa hång nµy ®Ó ®· l©u, b©y giê ®· kh« hĞo", 0);
-		return 0;
-	end;
-	
-	if (checkValentine2007Limit() ~= 1) then
-		Say("ThËt ng¹i qu¸, chØ cã ng­êi ch¬i cÊp trªn 80 <color=yellow>®· n¹p thÎ<color> míi cã thÓ sö dông hoa hång.", 0);
-		return 1;
-	end;
-	
-	local ng, nd, np = GetItemProp(nItemIdx);
-	local nexp = 1;
-	if (np == 1362) then
-		nexp = 1500000;
-	elseif (np == 1363) then
-		nexp = 1000000;
-	elseif (np == 1364) then
-		nexp = 500000;
-	else
-		print("Error!! It's not Rose for Valentine 2007!!");
-		return 1;
-	end;
-	
-	local ncurexp = GetTask(TSK_VALENTINE_ROSE_ADDEXP);
-	if (ncurexp >= 100000000) then
-		Say("B¹n ®· sö dông qu¸ nhiÒu hoa hång, kh«ng thÓ sö dông tiÕp tôc!", 0);
-		Msg2Player("Mçi ng­êi sö dông hoa hång chØ nhËn ®­îc tèi ®a lµ 100 triÖu ®iÓm kinh nghiÖm.");
-		return 1;
+function main(nItemIdx) 
+if (checkValentine2007Date(20070306) ~= 1) then 
+Say("§ãa hoa hång nµy cÊt gi÷ thê× gian qu¸ dµi , ®· kh« hĞo . ", 0); 
+return 0; 
+end; 
+
+if (checkValentine2007Limit() ~= 1) then 
+Say("Ng­îng ngïng , chØ cã chê cÊp ®¹t tíi <color=yellow>80 cÊp <color> trë lªn dông hé , míi cã thÓ sö dông hoa hång . ", 0); 
+return 1; 
+end; 
+
+local ng, nd, np = GetItemProp(nItemIdx); 
+local nexp = 1; 
+if (np == 1362) then 
+nexp = 1500000; 
+elseif (np == 1363) then 
+nexp = 1000000; 
+elseif (np == 1364) then 
+nexp = 500000; 
+else 
+print("Error!! It's not Rose for Valentine 2007!!"); 
+return 1; 
+end; 
+
+local ncurexp = GetTask(TSK_VALENTINE_ROSE_ADDEXP); 
+if (ncurexp >= 100000000) then 
+Say("Ng­¬i sö dông rÊt nhiÒu hoa hång , c¸i nµy ®ãa hoa hång ®èi víi ng­¬i ®· kh«ng cã hiÖu dông liÔu ", 0); 
+Msg2Player("Mçi ng­êi th«ng qua sö dông hoa hång nhiÒu nhÊt ®¹t ®­îc mét øc kinh nghiÖm "); 
+return 1; 
 	elseif ((ncurexp + nexp) > 100000000) then
-		nexp = 100000000 - ncurexp
-	end;
-	
-	AddOwnExp(nexp);
+nexp = 100000000 - ncurexp 
+end; 
+
+AddOwnExp(nexp); 
 	SetTask(TSK_VALENTINE_ROSE_ADDEXP, ncurexp + nexp)
-	Msg2Player(format("B¹n nhËn ®­îc %d ®iÓm kinh nghiÖm", nexp));
-	local szlog = format("[LÔ t×nh nh©n 2007]\t%s\tName:%s\tAccount:%s\t sö dông %s nhËn ®­îc %d ®iÓm kinh nghiÖm",
-				GetLocalDate("%Y-%m-%d %H:%M:%S"),GetName(),GetAccount(),GetItemName(nItemIdx),nexp);
-	WriteLog(szlog);
+Msg2Player(format("Ng­¬i thu ®­îc %d kinh nghiÖm trŞ gi¸ ", nexp)); 
+local szlog = format("[2007 lÔ t×nh nh©n ]\t%s\tName:%s\tAccount:%s\t sö dông %s thu ®­îc %d kinh nghiÖm trŞ gi¸ ", 
+GetLocalDate("%Y-%m-%d %H:%M:%S"),GetName(),GetAccount(),GetItemName(nItemIdx),nexp); 
+WriteLog(szlog); 
 end;

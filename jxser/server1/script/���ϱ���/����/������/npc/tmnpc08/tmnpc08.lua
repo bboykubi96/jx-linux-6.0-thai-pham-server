@@ -7,7 +7,7 @@ Include("\\script\\task\\150skilltask\\g_task.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
 
-function main_com() 
+function main() 
 local nNpcIndex = GetLastDiagNpc() 
 local szNpcName = GetNpcName(nNpcIndex) 
 if NpcName2Replace then 

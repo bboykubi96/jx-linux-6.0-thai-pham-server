@@ -1,0 +1,67 @@
+--====================McTeam LIB==========================
+
+--Des: Thu vien thuong dung trong jx linux
+--GiveItemUI("N©ng cÊp lªn trang bŞ Tö M·ng", "§Ó n©ng cÊp lªn trang bŞ Tö M·ng ®¹i hiÖp cÇn 1 trang bŞ HuyÒn Viªn tu¬ng ­øng, 5 thÇn bİ kho¸ng th¹ch, 500 v¹n", "TuMangUpConfirm", "onCancel", 1);--Hien thi bang giao
+--for i=1, nCount do local nItemIndex = GetGiveItemUnit(i); end --Lay index vat pham trong bang giao
+--local itemgenre, itemdetail, itemParticular = GetItemProp(nItemIndex) --Lay cac thuoc tinh vat pham tu item index
+--GetItemName(nItemIndex) --Lay ten vat pham
+--local goldid = GetGlodEqIndex(itemgenre) --Lay id trang bi hoang kim
+--RemoveItemByIndex(nItemIndex) --Xoa item theo itemindex
+--SetItemBindState(inVatPham,-2) --Khoa trang bi vinh vien
+--ITEM_SetExpiredTime(idex, 10080*2);--10080 1 tuan * 2 --khoa thoi gian luu y khoa thoi gian roi moi khoa vinh vien
+--SyncItem(idex);
+--local nCurrentCash = GetCash() --kiem tra tien
+--local nResult = Pay(nCashToPay) --tru tien
+--IncludeLib("FILESYS") : de dung dc ham doc file
+--IncludeLib("TASKSYS"): DE DUNG TASK SYS FILE
+--TabFile_GetRowCount(path or tªn file muèn ®Æt) : count data trong file
+--TabFile_GetCell(path or tªn file muèn ®Æt,nRow,zNameRow) : dïng ®Ó lÊy th«ng tin tõng roll mÆc ®Şnh bëi tªn ®Çu tiªn cña row
+--TabFile_Load(path,tªn file muèn ®Æt(vd: "duong")) : kiÓm tra file cã tån t¹i ko (1: cã, 0: ko)
+--SetAutoHangMapFlag(id so ) : 1 cÊm b¸n hµng + chat trªn mäi tÇng sè
+--CountFreeRoomByWH(width,height) : tİnh « trèng trong r­¬ng by chiÒu dµi vµ réng
+--CalcFreeItemCellCount() : ®Õm kho¶ng trèng trong hµnh trang by « (1 by 1)
+--CreateTaskSay({"<dec><npc>".." string want to say","ket thuc/oncancel"})
+--GetAccount() : hµm lÊy id ®Ó ®¨ng nhËp nh©n vËt
+--GetLocalDate("%y%m%d") : lÊy ngµy th¸ng cña computer
+--CreateNewSayEx(zTile,tbOption) : t¹o mét hµm say nh­ sau
+--zTile = "test string"
+--tbOption =
+--{
+--{"Option name",function option,paramate}
+--}
+--ITEM_SetExpiredTime(ItemIndex, 10080);
+--SyncItem(ItemIndex); dïng sau khi set thêi gian expired cho 1 trang bŞ hoÆc 1 vËt phÈm nµo.
+--SetItemBindState(index,-2) : khãa b¶o hiÓm vÜnh viÔn (index = AddItem(...) )
+--GetItemName(nItemIdx) : dïng ®Ó lÊy tªn vËt phÈm.
+--RemoveItemByIndex(nItemIdx) : xãa vËt phÈm by index.
+--CalcEquiproomItemCount( 6, 1, Id VËt PhÈm, CÊp §é ) : ®Õm sè l­îng vËt phÈm xÕp chång trong r­¬ng dïng cho hµm AddItem(6,1,0...)
+--ConsumeEquiproomItem(sè l­îng trõ,6,1,Id VËt PhÈm,-1): del vËt phÈm xÕp chång dïng cho vËt phÈm AddItem(6..)
+--CalCEquiproomItem(4,id vËt phÈm,1,-1) : ®Õm sè l­îng xÕp chång cho vËt phÈm questkey
+--ConsumEquiproomItem(sè l­îng,4,id vËt phÈm,1,-1): del vËt phÈm xÕp chång dïng cho questkey
+--ConsumeItem(3,1,lo¹i vËt phÈm (4, or 6 or item),1,Id VËt PhÈm,-1): dïng ®Ó kiÓm tra vËt phÈm cã hay ko nÕu cã th× return 1 vµ xãa lun vËt phÈm hoÆc trang bi
+--ConsumeItem(-1,nItemCount,tbProp[1],tbProp[2],tbProp[3],-1): dïng ®Ó ®Õm sè l­îng(c¶ stack) Item 6 cã bao nhiªu nÕu ®óng sè l­îng nItemCount(lÊy tõ CalcItemCount) lµ 1 if not -1, then nã del vËt phÈm ®ã.
+--CalcItemCount(-1,tbProp[1],tbProp[2],tbProp[3],-1): lÊy sè l­îng Item stack cña item 6 trong b¶ng giao
+--CalcItemCount(3,tbProp[1],tbProp[2],tbProp[3],-1): nÕu return 0: kh«ng or 1: cã : dïng ®Ó x¸c ®Şnh cã vËt phÈm ®ã trong b¶ng giao ko .
+--GiveItemUI("tªn cña b¶n giao","chó thİch cña b¶ng giao","function de thùc hiÖn b¶ng giao") : b¶ng giao vËt phÈm or trang bŞ
+--GetItemBindState(nItemIndex) : lÊy t×nh tr¹ng cña vËt phÈm (khãa hay ko khãa)
+--GetGiveItemUnit(nItemRoom) : tr¶ l¹i lÊy index cña vËt phÈm bá vµo b¶ng giao return IndexItem,nItemRoom: sè « cña vËt phÈm bá vµo b¶ng giao
+--GetItemProp(index item) : return particular,kind of vËt phÈm,id vËt phÈm
+--GetItemStackCount(idxItem): return sè l­îng item xÕp chång bá vµo b¶ng giao by index vËt phÈm bá vµo
+--GetItemQuality(nItemIndex) : return lo¹i trang bŞ bá vµo b¶ng giao bëi index.
+--GetItemName(nItemIndex): return l¹i tªn cña vËt phÈm hoÆc trang bŞ bá vµo bëi index
+--DisabledUseTownP(0 or 1) : khãa sö dông thæ ®Şa phï : 0 më 1: khãa
+--ForbidChangePK(0 or 1) : khãa pk 1: khãa ,0 : ko
+--Msg2Map(id map,str) : dïng th«ng b¸o tin nh¾n ®Õn nh©n vËt trong 1 map nµo ®ã
+--OfflineLive(PlayerIndex) : dïng ®Ó out nh©n vËt d¹ng ñy th¸c.
+--GetLastDiagNpc(); return index npc ®èi tho¹i
+--GetNpcName(nNpcIndex) : return tªn npc ®èi tho¹i b»ng index
+--SetMissionS(id, Name): Dïng ®Ó add tªn cña nh©n vËt ë d¹ng task mission
+--GetMissionS(id) : lÊy tªn nh©n vËt ®­îc set b»ng missions s b»ng id
+--inVatPham = AddItem(6,1,2352,0,0,0,0)--add thuong lang lenh
+--Msg2SubWorld(Thong bao chu do toan sv)
+--AddGlobalCountNews(chu chay toan sv)
+--Talk(1, "", "B¹n sÏ nhËn hæ trî kü n¨ng nµy ®Õn cÊp 90");
+--local tbSay = {}; tinsert(tbSay,"TriÖu håi huynh ®Ö ./#no()");  Say("nhiÒu may m¾n", getn(tbSay), tbSay)
+--Msg2Player(thong bao chu do 1 nguoi)
+--local nW, nX, nY =GetWorldPos() lay toa do nguoi dang dung
+--player_count = GetPlayerCount();  tong so player dang online

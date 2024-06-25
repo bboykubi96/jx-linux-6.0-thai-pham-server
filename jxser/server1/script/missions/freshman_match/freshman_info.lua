@@ -1,21 +1,21 @@
-CP_MAXROUND = 40
+CP_MAXROUND = 40 
 
-CP_HELP_FRESHMAN = {
-					"Thi ®Êu <color=yellow>Vâ L©m kiÖt xuÊt<color> môc ®Ých lµ v× sù tiÕn bé cña c¸c T©n Thñ trong giang hå, t¹o c¬ héi trao ®æi vâ nghÖ víi ng­êi ch¬i kh¸c cïng m«n phµi, n©ng cao kü n¨ng vâ c«ng cña T©n Thñ, t¹o sù giao l­u gi÷a c¸c huynh ®Ö ®ång m«n, gióp T©n Thñ quen dÇn víi cuéc sèng giang hå.",
-					"<color=yellow>§iÒu kiÖn b¸o danh<color>: §¼ng cÊp tõ 50 ®Õn 90, ®Õn gÆp Sø gi¶ kiÖt xuÊt ®Ó b¸o danh."..CP_MAXROUND.."trËn.",
-					"<color=yellow>Thêi gian thi ®Êu<color>: Thi ®Êu Vâ l©m kiÖt xuÊt b¾t ®Çu tõ tõ ngµy 1 th¸ng 6 n¨m 2005 ®Õn ngµy 10 th¸ng 6 n¨m 2005 kÕt thóc. <color=yellow>20:00<color> b¾t ®Çu ®Õn <color=yellow>23:00<color> kÕt thóc. Mçi <color=yellow>3<color> giê cã tæng céng <color=yellow>9<color> trËn. Thêi gian b¸o danh thi ®Êu cña mçi vßng lµ 5 phót, thêi gian th× ®Êu lµ 15 phót.",
-					"Thi ®Êu Vâ l©m kiÖt xuÊt c¨n cø vµo ®iÓm ®Ó chän ra 5 h¹ng. "..CP_MAXROUND.."Trong tr­êng ®Êu, th¾ng 1 trËn ®­îc 3 ®iÓm, hßa ®­îc 1 ®iÓm, thua kh«ng cã ®iÓm. §Õn khi kÕt thóc, sÏ do hÖ thèng tù x¸c ®Þnh chän ra 5 ng­êi ch¬i cao ®iÓm nhÊt cña 5 m«n ph¸i, phong tÆng danh hiÖu kiÖt xuÊt M«n ph¸i.",
-					"Mçi ng­êi ch¬i tham gia b¸o danh trong qu¸ tr×nh tham gia nhËn ®­îc gi¶i th­ëng nhÊt ®Þnh. Mçi lÇn tham gia 1 vßng sÏ ®o¹t ®­îc gi¶i th­ëng nhÊt ®Þnh, ngoµi ra ng­êi ch¬i cßn nhËn ®­îc nh÷ng vËt phÈm nh­: Ph¸o hoa, HuyÒn Tinh Kho¸ng Th¹ch, Phóc Duyªn lé, Tiªn Th¶o Lé, Thñy Tinh) "
-				}
+CP_HELP_FRESHMAN = { 
+" tranh tµi <color=yellow> vâ l©m t©n tó liªn cuéc so tµi <color> môc ®Ých lµ v× giang hå tay míi ®Ých tiÕn bé , v× ®ång m«n nh÷ng kh¸c nhµ ch¬i s¸ng lËp so tµi vâ nghÖ ®Ých c¬ héi , ®Ò cao tay míi ®Ých vâ c«ng kü n¨ng , cho ®ång m«n huynh ®Ö trao ®æi ®Ých c¬ héi , trî gióp tay míi thãi quen giang hå ®Ých cuéc sèng . ", 
+"<color=yellow># ghi danh ®iÒu kiÖn <color>: cÊp bËc tõ 50 ®Õn 90 cÊp , ®i gÆp vâ l©m t©n tó liªn cuéc so tµi quan viªn ghi danh ."..CP_MAXROUND.." trµng .", 
+"<color=yellow> tranh tµi thêi gian <color>: vâ l©m t©n tó liªn cuéc so tµi tõ 2005 n¨m 6 th¸ng 1 ngµy ®Õn 2005 n¨m 6 th¸ng 10 ngµy kÕt thóc . <color=yellow>20:00<color> b¾t ®Çu ®Õn <color=yellow>23:00<color> kÕt thóc . mçi <color=yellow>3<color> giê tæng céng cã <color=yellow>9<color> trµng . mçi ®æi phiªn tranh tµi ghi danh thêi gian lµ 5 phót , tranh tµi thêi gian lµ 15 phót .", 
+" vâ l©m t©n tó liªn cuéc so tµi dùa theo ph©n sè lùa chän tr­íc n¨m tªn . "..CP_MAXROUND.." ë cuéc so tµi trµng , th¾ng mét cuéc ph¶i 3 ph©n , ®¸nh ngang tay v× 1 ph©n , thua còng ch­a cã ph©n . ®Õn kÕt thóc lóc , ®Ó cho tù hÖ thèng chän lùa tr­íc n¨m tªn , s¾c phong m«n ph¸i vâ l©m t©n tó danh hiÖu . ", 
+" mçi tham gia ghi danh ®Ých nhµ ch¬i ë ®· tham gia tr×nh trung , ®em ®¹t ®­îc nhÊt ®Þnh t­ëng th­ëng . mçi lÇn tham gia mét vßng ®em ®¹t ®­îc nhÊt ®Þnh t­ëng th­ëng , ngoµi ra nhµ ch¬i cßn cã thÓ ®¹t ®­îc vËt phÈm , nh­ # ph¸o b«ng , huyÒn tinh qu¸ng th¹ch , phóc duyªn lé , tiªn th¶o lé , thñy tinh . ) " 
+} 
 
-function help_freshmanmatch()
-	Talk( 2, "help_freshmanmatch2", CP_HELP_FRESHMAN[ 1 ], CP_HELP_FRESHMAN[ 2 ])
-end
+function help_freshmanmatch() 
+Talk( 2, "help_freshmanmatch2", CP_HELP_FRESHMAN[ 1 ], CP_HELP_FRESHMAN[ 2 ]) 
+end 
 
-function help_freshmanmatch2()
-	Talk( 2, "help_freshmanmatch3", CP_HELP_FRESHMAN[ 3 ], CP_HELP_FRESHMAN[ 4 ])
-end
+function help_freshmanmatch2() 
+Talk( 2, "help_freshmanmatch3", CP_HELP_FRESHMAN[ 3 ], CP_HELP_FRESHMAN[ 4 ]) 
+end 
 
-function help_freshmanmatch3()
-	Talk( 1, "", CP_HELP_FRESHMAN[ 5 ])
-end
+function help_freshmanmatch3() 
+Talk( 1, "", CP_HELP_FRESHMAN[ 5 ]) 
+end 

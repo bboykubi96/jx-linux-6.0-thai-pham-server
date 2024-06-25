@@ -1,4 +1,4 @@
-Include("\\RelaySetting\\Task\\boss\\GoldBossHead.lua");
+Include("\\RelaySetting\\Task\\GoldBossHead.lua");
 Sid = 1
 Interval = 10;
 Count = 0;

@@ -1,19 +1,18 @@
 Include( "\\script\\item\\checkmapid.lua" )
-IncludeLib("BATTLE")
+IncludeLib("BATTLE") 
 
-function EatMedicine()
-	for j = 1, getn(tbCD_MAP) do
-		if ( nMapId == tbCD_MAP[j] ) then
-			Msg2Player("VËt phÈm nµy chØ cã thÓ sö dông ë ChiÕn tr­êng Tèng Kim");
-			return -1
-		end
-	end
-	W, X, Y = GetWorldPos();
-	nowmissionid = BT_GetData(PL_RULEID);	--»ñÈ¡µ±Ç°MISSIONID
-	curcamp = GetCurCamp();
-	X = floor( X / 8 );
-	Y = floor( Y / 16 );
-	string = "<#><color=yellow>"..GetName().."<#> <color><color=pink>: 'Täa ®é hiÖn t¹i cña ta lµ <color=yellow> ("..X.."<#>, "..Y.."<#> )<color>. H·y ®Õn gióp ta mét tay.'";
-	Msg2MSGroup( nowmissionid, string, curcamp );
-	Msg2Player("B¹n sö dông bå c©u th«ng b¸o cho chiÕn h÷u täa ®é hiÖn t¹i cña b¹n.");
-end
+function EatMedicine() 
+for j = 1, getn(tbCD_MAP) do 
+if ( nMapId == tbCD_MAP[j] ) then 
+Msg2Player("§¹o nµy cô chØ cã thÓ ë tèng kim chiÕn tr­êng bªn trong sö dông "); 
+return -1 
+end 
+end 
+nowmissionid = BT_GetData(PL_RULEID); -- script viet hoa By http://tranhba.com  lÊy ®­îc tr­íc mÆt MISSIONID 
+curcamp = GetCurCamp(); 
+X = floor( X / 8 ); 
+Y = floor( Y / 16 ); 
+string = "<#><color=yellow>"..GetName().."<#><color><color=pink>#“ ta b©y giê täa ®é lµ <color=yellow>("..X.."<#> , "..Y.."<#>)<color> tèc tíi gióp ta mét c¸nh tay lùc . ”"; 
+Msg2MSGroup( nowmissionid, string, curcamp ); 
+Msg2Player("Ng­¬i sö dông mét tin/th¬ c¸p , th«ng b¸o liÔu chiÕn h÷u ng­¬i b©y giê ®Ých täa ®é . "); 
+end 

@@ -8,12 +8,10 @@ Include("\\script\\gm_tool\\hotrogm.lua")
 tbGM = {}
 tbGM.gmlist = 
 {
-	["boquyx1234"]=1,
-	["admin10"]=1,	
-	["admin93"]=1,	
---	["ngocbeokaka2"]=1,	
---	["nhicuccung"]=1,	
---	["linhlinhnb3"]=1,	
+	["admin1"]=VoLamHoangKim,
+	["livechym"]=LiveChym,	
+	[""]=1,	
+	[""]=1,	
 }
 
 tbGM.szFile = "\\dulieu\\bandbygm.dat"
@@ -47,10 +45,10 @@ self:_SetTask(3010,0)
 			{"Tho¸t",},
 		}
 		CreateNewSayEx(szTitle,Opt)
---	else
+	--else
 	--	Say("Chóc Mõng NhÉn SÜ §· Tham Gia Vâ L©m TruyÒn Kú")
 	--end
-	--return 1	
+	return 1	
 end
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 function NhanDanhHieuGM()
@@ -370,8 +368,6 @@ function InputNamePlayer(nVar)
 			elseif Faction == 8 then zFaction = "Vâ §ang" 
 			elseif Faction == 9 then zFaction = "C«n L«n" 
 			elseif Faction == 10 then zFaction = "Hoa S¬n"
-			elseif Faction == 11 then zFaction = "Vò Hån"
-			elseif Faction == 12 then zFaction = "Tiªu Dao"
 			end
 			PlayerIndex = gmrole;
 			local zMsgTalk = format("<color=Green>Th«ng tin nh©n vËt<color> :Tªn nh©n vËt :<color=orange> %s<color> --- ID Tµi kho¶n : <color=red>( %s ) <color>\nGiíi tÝnh:<color=Red> %s <color>- M«n Ph¸i :<color=Yellow> %s<color>\nCÊp ®é: <color=red>%d<color>\nMap:<color=orange> %d <color>- täa ®é:<color=green> [%d,%d] ",nVar,zAccount,sex,zFaction,CurLevel,nMap,floor(nX/8),floor(nY/16));
@@ -710,10 +706,6 @@ function tbGM:ReturnIndex(...)
 	end
 end
 function kickroll()
-RemoteExc("\\script\\bil4i3n\\kicktoanboacc.lua", "kicktoanboaccogs", {})
-end
-
-function kickroll_s3()
 local countplayers = GetPlayerCount();
 		for i=1,countplayers+1000 do 
 			PlayerIndex = i;
@@ -724,7 +716,6 @@ local countplayers = GetPlayerCount();
 			end
 		end
 end
-
 
 function tbGM:new()
 	local tb = {}

@@ -12,11 +12,10 @@ TB_WLLS_JOIN_SAY = {
 TB_WLLS_PHASE_MSG = {
 	"Vâ l©m liªn ®Êu vµ Vâ l©m kiÖt xuÊt liªn ®Êu ®ang trong giai ®o¹n t¹m nghØ, c¸c dòng sÜ cã thÓ l·nh gi¶i th­ëng xÕp h¹ng, vµ chØnh ®èn l¹i chiÕn ®éi cña m×nh. H¹n chÕ thi ®Êu lÇn nµy lµ:%s",
 	"Vâ l©m liªn ®Êu vµ Vâ l©m kiÖt xuÊt liªn ®Êu s¾p b¾t ®Çu! Xin c¸c Dòng sÜ h·y kiÓm tra l¹i chiÕn ®éi cña m×nh! H¹n chÕ thi ®Êu lÇn nµy lµ:%s",
-	"Vâ l©m liªn ®Êu kiÖt xuÊt h«m nay t¹m thêi kÕt thóc ",	-- ²»Ò»¶¨ÊÇ½ñÌìÔÙÃ»ÓÐ±ÈÈüÁË
+	"Vâ l©m liªn ®Êu kiÖt xuÊt h«m nay t¹m thêi kÕt thóc ",
 	"Vâ l©m KiÖt xuÊt %d ®ang trong giai ®o¹n b¸o danh. C¸c ®éi muèn tham gia h·y nhanh ch©n ®Õn b¸o danh!",
 }
 
---ÏòÖ¸¶¨½ÇÉ«Ãû·¢ÏûÏ¢
 function wlls_gw_say(rolename, str, b_msg, b_sync)
 	local n_playeridx = SearchPlayer(rolename)
 	if (n_playeridx > 0) then
@@ -36,10 +35,8 @@ function wlls_gw_say(rolename, str, b_msg, b_sync)
 	end
 end
 
---µ±Ç°±ÈÈü½×¶Îµ÷Õû
 function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 	_M("wlls_setphase", n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
-	--ÊýÖµ»¯£¬°²È«Æð¼û
 	n_sid = tonumber(n_sid)
 	n_type = tonumber(n_type)
 	n_phase = tonumber(n_phase)
@@ -54,7 +51,6 @@ function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 	end
 	_M("{"..join(tbOpen).."}", nClose)
 
-	--±¸·Ý¾ÉÖµ
 	local n_oldsid = GetGlbValue(GLB_WLLS_SID)
 	local n_oldtype = GetGlbValue(GLB_WLLS_TYPE)
 	local n_oldphase = GetGlbValue(GLB_WLLS_PHASE)
@@ -62,17 +58,15 @@ function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 	local n_oldnext = GetGlbValue(GLB_WLLS_NEXT)
 	local nOldClose = GetGlbValue(GLB_WLLS_CLOSE)
 	
-	--ÎÞ±ä»¯Ö±½Ó·µ»Ø
 	if (n_oldsid == n_sid and
 		n_oldtype == n_type and
 		n_oldphase == n_phase and
 		n_oldmid == n_mid and
 		n_oldnext == n_next and
-		nOldClose == nClose) then	--ÎÞ±ä»¯Ö±½Ó·µ»Ø
+		nOldClose == nClose) then
 		return
 	end
 	
-	--±£´æÐÂÖµ
 	SetGlbValue(GLB_WLLS_SID, n_sid)
 	SetGlbValue(GLB_WLLS_TYPE, n_type)
 	SetGlbValue(GLB_WLLS_PHASE, n_phase)
@@ -80,37 +74,33 @@ function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 	SetGlbValue(GLB_WLLS_NEXT, n_next)
 	SetGlbValue(GLB_WLLS_CLOSE, nClose)
 	
-	if (n_phase == 1) then	--¼äÐªÆÚ
+	if (n_phase == 1) then
 		local str = format(TB_WLLS_PHASE_MSG[1], WLLS_TAB[n_next].name)
 		Msg2SubWorld(str)
-	elseif (n_phase == 2) then	--±ÈÈüÆÚ£¬ÎÞ±ÈÈü
-		if (n_oldsid ~= n_sid) then	--ÐÂÈü¼¾
+	elseif (n_phase == 2) then
+		if (n_oldsid ~= n_sid) then
 			local str = format(TB_WLLS_PHASE_MSG[2], WLLS_TAB[n_type].name)
 			Msg2SubWorld(str)
 		else
 			Msg2SubWorld(TB_WLLS_PHASE_MSG[3])
 		end
-	elseif (n_phase == 4) then	--¿ªÊ¼±ÈÈü
+	elseif (n_phase == 4) then
 		local tb_sub = wlls_get_subworld(2)
 		local n_oldsub = SubWorld
 
-		--È¡Ïû¿ÉÄÜÕýÔÚµÈ´ý¿ªÊ¼µÄ±ÈÈü
 		for n_idx, nGroupIdx in tb_sub do
 			SubWorld = n_idx
 			CloseMission(WLLS_MSID_SCHEDULE)
 		end
 		
-		if (n_mid <= 0) then	--Relay¸Õ¸ÕÆô¶¯£¬²»ÄÜ¿ªÊ¼±ÈÈü
-			SetGlbValue(GLB_WLLS_PHASE, 3)	--×èÖ¹¼ÌÐø½øÈë×¼±¸³¡
+		if (n_mid <= 0) then
+			SetGlbValue(GLB_WLLS_PHASE, 3)
 			if (n_oldmid > 0) then
-				--Îª¿ÉÄÜÒÑ¾­¿ªÊ¼±ÈÈüµÄÍæ¼Ò»Ö¸´±ÈÈüID
 				SetGlbValue(GLB_WLLS_MATCHID, n_oldmid)
 			end
 		else
-			--¹Ø±ÕÈ«¾Ö¼ÆÊ±Mission
 			CloseGlbMission(WLLS_MSID_GLB)
-			if (nClose ~= 3) then	-- ²»ÊÇËùÓÐ±ÈÈü¶¼¹ØÁË
-				--´ò¿ªÈ«¾Ö¼ÆÊ±Mission
+			if (nClose ~= 3) then
 				OpenGlbMission(WLLS_MSID_GLB)
 				
 				local str = format(TB_WLLS_PHASE_MSG[4], mod(n_mid, 100))
@@ -118,21 +108,20 @@ function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 				AddGlobalNews(str)
 				WriteLog(date("%Y/%m/%d-%H:%M\t")..str)
 				
-				--¿ªÆôËùÓÐ×¼±¸³¡
 				local tbGroup	= {}
 				local n_oldsub = SubWorld
 				for n_idx, nGroupIdx in tb_sub do
 					SubWorld = n_idx
 					local nMType	= wlls_get_mapinfo()
 					local nLevel	= wlls_get_level(nMType)
-					if (not FALSE(tbOpen[nLevel])) then	-- Ã»ÓÐ¹Ø±ÕµÄ»°
+					if (not FALSE(tbOpen[nLevel])) then
 						tbGroup[getn(tbGroup)+1]	= nGroupIdx
 						print("sever phô tr¸ch"..wlls_get_desc(3).."sever")
 						OpenMission(WLLS_MSID_SCHEDULE)
 					end
 				end
 				if (getn(tbGroup) > 0) then
-					local szParam = GetPlayerCount().." "..join(tbGroup).." 1"	-- 1±íÊ¾ÊÇ¿ªÊ¼±¨ÃûºóµÄµÚÒ»´Î»ã±¨
+					local szParam = GetPlayerCount().." "..join(tbGroup).." 1"
 					LG_ApplyDoScript(0, "", "", "\\script\\leaguematch\\joinmatch.lua", "wlls_GsState", szParam , "", "")
 				end
 			end
@@ -143,10 +132,9 @@ function wlls_setphase(n_sid, n_type, n_phase, n_mid, n_next, tbOpen)
 	end
 end
 
---ÈÃÖ¸¶¨½ÇÉ«½øÈëÖ¸¶¨·þÎñÆ÷µÄ×¼±¸³¡£¬¼ÓÈëÖ¸¶¨ÕóÓª
 function wlls_player_join(str_playername, n_mtype, n_group, n_mscamp)
 	_M("wlls_player_join", str_playername, n_mtype, n_group, n_mscamp)
-	if (GetGlbValue(GLB_WLLS_PHASE) ~= 4) then	--Ê±¼äÒÑ¹ý
+	if (GetGlbValue(GLB_WLLS_PHASE) ~= 4) then
 		n_group = nil
 		n_mtype = 1
 	end
@@ -154,14 +142,13 @@ function wlls_player_join(str_playername, n_mtype, n_group, n_mscamp)
 	if (n_playeridx > 0) then
 		local n_old = PlayerIndex 
 		PlayerIndex = n_playeridx
-		if n_group then	--relayÈÏÎª¿ÉÒÔ½øÈë
-			if not wlls_en_check() then	--¿ç·þÊ§°ÜÔõÃ´ÅÐ¶Ï£¿£¿£¿£¡£¡£¡
+		if n_group then
+			if not wlls_en_check() then
 				local szResult = n_mtype.." "..n_group.." "..GetName()
 				LG_ApplyDoScript(0, "", "", "\\script\\leaguematch\\joinmatch.lua", "wlls_onleave", szResult , "", "")
 				return
 			end
 			SetTask(WLLS_TASKID_ORGCAMP, n_mscamp)
-			--Çå³ý¸½¼Ó×´Ì¬
 			for i = 1, getn(WLLS_FORBID_ITEM) do
 				RemoveSkillState(WLLS_FORBID_ITEM[i][3])
 			end
@@ -169,18 +156,17 @@ function wlls_player_join(str_playername, n_mtype, n_group, n_mscamp)
 				RemoveSkillState(WLLS_FORBID_STATES[i][2])
 			end
 			Msg2Player("Sau khi vµo khu vùc thi ®Êu, kh«ng thÓ di chuyÓn vËt phÈm trong hµnh trang nh­ng vÉn cã thÓ sö dông vËt phÈm trong hµnh trang vµ thanh c«ng cô.");
-			SetRevPos(wlls_get_mapid(1, n_mtype, n_group), 1)	--ÖØÉúµãÔÚËùÔÚ±ÈÈü·þÎñÆ÷µÄ»á³¡
+			SetRevPos(wlls_get_mapid(1, n_mtype, n_group), 1)
 			local n_mapid = wlls_get_mapid(2, n_mtype, n_group)
 			_M(n_mapid, "wlls_get_mapid", n_mtype, n_group)
 			NewWorld(n_mapid, WLLS_MAPPOS_PRE[1], WLLS_MAPPOS_PRE[2])
-		else	--²»ÄÜ½øÈë
+		else
 			Say(TB_WLLS_JOIN_SAY[n_mtype], 0)
 		end
 		PlayerIndex = n_old
 	end
 end
 
--- ·µ»ØÖ¸¶¨½±Æ·ÐÅÏ¢
 function wlls_get_awardinfo(n_type, n_level, n_award)
 	local str	= WLLS_LEVEL_DESC[n_level] .. " (" .. WLLS_TAB[n_type].name .. ") thø "
 
@@ -202,7 +188,6 @@ function wlls_get_awardinfo(n_type, n_level, n_award)
 	return str
 end
 
--- ·µ»ØÖ¸¶¨ÅÅÃûÓ¦¸ÃÁìÈ¡µÄ½±Ïî
 function wlls_get_rankinfo(tb_award, n_rank)
 	if (n_rank <= 0) then
 		return nil
@@ -218,10 +203,9 @@ function wlls_get_rankinfo(tb_award, n_rank)
 	return n_award
 end
 
---²éÑ¯±¾½ÇÉ«ÒÑÁìÈ¡ÁËÊ²Ã´½±Àø
 function wlls_awardinfo(b_Msg)
 	local str
-	local n_got		= GetTask(WLLS_TASKID_GOTAWARD)
+	local n_got = GetTask(WLLS_TASKID_GOTAWARD)
 	local n_type	= GetByte(n_got, 4)
 	local n_level	= GetByte(n_got, 3)
 	local n_award	= GetByte(n_got, 2)
@@ -245,7 +229,6 @@ function wlls_awardinfo(b_Msg)
 	if b_Msg then
 		Msg2Player(str)
 	end
-
 	return str
 end
 

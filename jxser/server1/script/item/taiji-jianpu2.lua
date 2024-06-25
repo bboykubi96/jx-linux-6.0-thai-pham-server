@@ -1,22 +1,22 @@
--- Created by fangjieying 2003-5-17
--- ¡¶Ì«¼«½£Æ×¡¤¾í¶ş¡·
--- Ñ§»á¼¼ÄÜ ÈË½£ºÏÒ»
--- Îäµ±£¬80¼¶ÒÔÉÏ¿ÉÓÃ
-function main(sel)
-	party = GetLastAddFaction()
-	skill = HaveMagic(368)
-	if(party ~= "wudang") then							-- ²»ÊÇÎäµ±
-		Msg2Player("B¹n nghiªn cøu Th¸i Cùc KiÕm Phæ - QuyÓn 2 ®­îc nöa ngµy, nh­ng vÉn ch­a lÜnh ngé ®­îc g×. ")
-		return 1
-	elseif(GetLever < 80) then							-- ÊÇÎäµ±µ«Î´µ½80¼¶
-		Msg2Player("B¹n nghiªn cøu Th¸i Cùc KiÕm Phæ - QuyÓn 2 ®­îc nöa ngµy, lÜnh ngé ®­îc rÊt İt. ")
-		return 1
-	elseif(skill ~= -1) then							-- ÒÑÑ§¹ı¸Ã¼¼ÄÜ
-		Msg2Player("B¹n ®· nghiªn cøu kü Th¸i Cùc KiÕm Phæ - QuyÓn 2, nh­ng vÉn ch­a häc ®­îc g×. ")
-		return 1
-	else
-		AddMagic(368,1)										-- Ñ§»á¼¼ÄÜ
-		Msg2Player("Häc ®­îc kü n¨ng Nh©n KiÕm Hîp NhÊt. ")
-		return 0
-	end
+-- script viet hoa By http://tranhba.com  Created by fangjieying 2003-5-17 
+-- script viet hoa By http://tranhba.com  # Th¸i Cùc kiÕm phæ # cuèn hai # 
+-- script viet hoa By http://tranhba.com  häc ®­îc kü n¨ng ng­êi kiÕm hîp nhÊt 
+-- script viet hoa By http://tranhba.com  Vâ §­¬ng , 80 cÊp trë lªn cã thÓ dïng 
+function main(sel) 
+party = GetLastAddFaction() 
+skill = HaveMagic(368) 
+if(party ~= "wudang") then -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ Vâ §­¬ng 
+Msg2Player("Ngµi nghiªn cøu Th¸i Cùc kiÕm phæ - cuèn 2 ®· l©u , vÉn kh«ng cã lÜnh ngé c¸i g× ") 
+return 1 
+elseif(GetLever < 80) then -- script viet hoa By http://tranhba.com  lµ Vâ §­¬ng nh­ng ch­a tíi 80 cÊp 
+Msg2Player("Ngµi nghiªn cøu Th¸i Cùc kiÕm phæ - cuèn 2 ®· l©u , lÜnh ngé rÊt İt . ") 
+return 1 
+elseif(skill ~= -1) then -- script viet hoa By http://tranhba.com  ®· häc qua nªn kü n¨ng 
+Msg2Player("Ngµi nghiªn cøu Th¸i Cùc kiÕm phæ - cuèn 2 ®· l©u , nh­ng lµ vÉn kh«ng cã häc ®­îc c¸i g× ") 
+return 1 
+else 
+AddMagic(368,1) -- script viet hoa By http://tranhba.com  häc ®­îc kü n¨ng 
+Msg2Player("Häc ®­îc ng­êi kiÕm hîp nhÊt kü n¨ng . ") 
+return 0 
+end 
 end

@@ -155,15 +155,9 @@ function CommonRepair(nItemIdx, nPrice, nItemPrice, nTongID, nWorkshopID)
 			Say("<#>Tæng qu¶n Thiªn c«ng ph­êng: §¼ng cÊp Thiªn c«ng ph­êng hiÖn t¹i kh«ng thÓ söa chöa trang bÞ nµy.", 0)
 			return
 		end
-	end
-	
-	if quality == 4 then
-		Say("<#>Tæng qu¶n thiªn c«ng ph­êng: Trang bÞ b¹ch kim kh«ng thÓ söa ®­îc.", 0)
-		return
-	end
-		
+	end	
 	-- »Æ½ð×°±¸ÐÞÀí¼Û¸ñ¹«Ê½µ÷ÕûÎª£º100*(×°±¸µÈ¼¶^2)/Ã¿µãÄÍ¾Ã¶È	
-	if (quality == 1)then
+	if (quality == 1 or quality == 4)then
 		local nItemLevel = GetItemLevel(nItemIdx);
 		--Ã¿ÄÍ¾Ã¶ÈµÄ¼Û¸ñ
 		local nDurPrice = 100 * nItemLevel * nItemLevel
@@ -216,12 +210,6 @@ function EnhanceRepair(nItemIdx, nPrice, nItemPrice, nTongID, nWorkshopID)
 			return
 		end
 	end
-	
-	if quality == 4 then
-		Say("<#>Tæng qu¶n thiªn c«ng ph­êng: Trang bÞ b¹ch kim kh«ng thÓ söa ®­îc.", 0)
-		return
-	end
-	
 	local nDurPrice = GetRepairDurPrice(nItemIdx);
 	--Ç¿»¯ÐÞÀí¼Ó³ÉµÄ¼ÛÖµ
 	if (nPrice < 0)then
@@ -243,7 +231,7 @@ function EnhanceRepair(nItemIdx, nPrice, nItemPrice, nTongID, nWorkshopID)
 	local nEnhancePrice = nDurPrice * nFixDur * 1.5
 	nPrice = nPrice + nEnhancePrice
 	-- »Æ½ð×°±¸ÐÞÀí¼Û¸ñ¹«Ê½µ÷ÕûÎª£º100*(×°±¸µÈ¼¶^2)/Ã¿µãÄÍ¾Ã¶È	
-	if (quality == 1)then
+	if (quality == 1 or quality == 4)then
 		nFixDur = nMaxDur - nCurDur
 		if (nFixDur < 0)then
 			nFixDur = 0

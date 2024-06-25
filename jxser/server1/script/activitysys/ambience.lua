@@ -5,7 +5,7 @@ tbAmbience.tbNpcList = {}
 tbAmbience.PARAM_LIST_ID = 1
 tbAmbience.PARAM_POS_ID = 2
 tbAmbience.PARAM_PASSTIME_ID = 3
-tbAmbience.TIME = 10 -- 计时器时间
+tbAmbience.TIME = 10
 
 function tbAmbience:CreateNpc(tbAmbienceNpc)
 	local nNpcListSize = getn(self.tbNpcList)

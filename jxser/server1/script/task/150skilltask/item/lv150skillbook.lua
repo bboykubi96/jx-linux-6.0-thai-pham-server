@@ -10,6 +10,8 @@ sbook_150skill_list = {
 		[7] = {1075, 1076},
 		[8] = {1078, 1079},
 		[9] = {1080, 1081},
+		[10] = {1369, 1384},
+                [11] = {1969, 1985},
 }
 
 sbook_factstep_list = {
@@ -23,6 +25,7 @@ sbook_factstep_list = {
 		[8] = 5,
 		[1] = 4,
 		[9] = 5,
+		[10] = 5,
 	}
 
 function main()
@@ -44,11 +47,11 @@ function main()
 	local nFlag = 0
 	for i = 1, getn(tb150Skill) do
 		local nSkillId = tb150Skill[i]
-		if (HaveMagic(nSkillId) == -1) then		-- ±ØÐëÃ»ÓÐ¼¼ÄÜµÄ²Å¸ø¼¼ÄÜ
+		if (HaveMagic(nSkillId) <= 19) then		-- ±ØÐëÃ»ÓÐ¼¼ÄÜµÄ²Å¸ø¼¼ÄÜ
 			if nSkillId == 1110 then
 				AddMagic(nSkillId, 0)
 			else
-				AddMagic(nSkillId, 1)
+				AddMagic(nSkillId, 20)
 			end
 			if nFlag == 1 then
 				szMsg = format("%s,", szMsg)
@@ -62,7 +65,7 @@ function main()
 	SetTask(TSK_LV150_SKILL, SBOOK_150SKILL_TASKSTATE*100+sbook_factstep_list[nFact])
 	if szMsg == "" then
 		--Fix lçi text - Modified By DinhHQ - 20111025
-		szMsg = "Ng­¬i ®· nghiªn cøu l·nh héi ®­îc vâ häc, lµ mét b­íc ®ét ph¸ míi t­ëng chõng nh­ kh«ng thÓ ®¹t ®­îc"
+		szMsg = "Ng­¬i ®· nghiªn cøu l·nh héi ®­îc vâ häc, kh«ng thÓ sö dông thªm."
 		Msg2Player(szMsg)
 		return 1
 	end

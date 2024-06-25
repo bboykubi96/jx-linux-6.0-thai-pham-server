@@ -1,0 +1,16 @@
+TSK_HandInBook		= 11
+TSK_HandInPaper		= 12
+TSK_UsedTianyuhun		= 13
+TSK_UsedZhienhua		= 14
+nMaxBookCount		= 1500 --mac dinh 1500 su dung quyen sach
+nMaxPaperCount		= 20 --mac dinh 2000
+nMaxTianyuhun		= 20
+nMaxZhienhua		= 20
+TSK_TeacherAward		= 15
+TSK_JinwuAward		= 16
+nPerTianyuhun		= 25
+nPerZhienhua		= 50
+Event_2011End = 20161219
+TSK_SuDungHopQua		= 17
+nMaxSuDungHopQua		= 1500 -- su dung hop qua
+EVENT_LOG_TITLE		= "Event_20thang11"

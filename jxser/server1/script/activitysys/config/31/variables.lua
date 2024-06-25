@@ -1,6 +1,2 @@
-TSKG_NaiYouBing		= 1
-TKSG_XiaoDanGao		= 2
-TKSG_DaDanGao		= 3
-TKSG_TeBieShengRiBing		= 4
-TSK_SJMatchCount = 2725
-TSK_COTMatchCount = 2726
+TSK_Date_Give_BK = 2785
+nEXP_Give_BK = 1000000000

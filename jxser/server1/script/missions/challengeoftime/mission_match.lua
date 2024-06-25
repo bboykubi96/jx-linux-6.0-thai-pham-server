@@ -92,15 +92,6 @@ function JoinMission(RoleIndex, camp)
 
 	--Storm 加入风暴积分
 	SetTask(STORM_TASKID_GAMEID_SS, random(100000))	--指定随机的GameKey
---	if (storm_start(2, 1)) then
---		local level = GetTask(TB_STORM_TASKID[2][STORM_TASKIDX_MODE]) + 1
---		str = "参加杀手试炼任务可获得参与奖励—风暴积分<color=yellow>40<color>分。闯关成功的提前时间可转换为风暴积分（最高<color=yellow>60<color>分）。每天两场杀手试炼，取成绩最好的一场计算风暴积分。%s<enter>"
---		local tb_levelstr = {
---			"初级杀手试炼任务，每人每天最多可获得风暴积分<color=yellow>90<color>分。",
---			"高级杀手试炼任务，每人每天最多可获得风暴积分<color=yellow>100<color>分。",
---		}
---		str = format(str, tb_levelstr[level])
---		Talk(1, "", str)
---	end
+
 end
 

@@ -7,7 +7,6 @@ Include("\\script\\lib\\common.lua")
 
 tb_teaminfo_master = {"pid","level","name"}
 tb_teamtask_master = {TKID_DICHUAN_APPRENTICE_COUNT}
-sodode7ngay = 1 --so do de nhan duoc trong vong 7 ngay
 
 function CheckAndAddMaster(masters, player)
 	local degree = GetPlayerDegree(player.pid)
@@ -26,7 +25,7 @@ end
 function FindMaster()
 	print("Call FindMaster")
 	local masters = {}
-	
+	/*
 	local _,others = getTeamInfo(PlayerIndex,{"pid","level","name"},{TKID_DICHUAN_APPRENTICE_COUNT})
 	if(not others) then
 		return nil
@@ -43,7 +42,7 @@ function FindMaster()
 			end
 		end
 	end
-	
+	*/
 	traversalTeam(PlayerIndex, CheckAndAddMaster, masters, tb_teaminfo_master, tb_teamtask_master)
 	if (getn(masters) < 1) then
 		return nil
@@ -101,7 +100,7 @@ function ShoutuList(apps)
 		return
 	end
 	for i=1,getn(apps) do
-		tinsert(btn,"Xem tin tøc cña ®Ö tö "..safeshow(apps[i]).."/#XuanTudi('"..safestr(apps[i]).."')")
+		tinsert(btn,"Xem tin tøc  "..safeshow(apps[i]).." tin tøc cña/#XuanTudi('"..safestr(apps[i]).."')")
 	end
 	tinsert(btn,"§ãng/Quit")
 	Say(str,getn(btn),btn)
@@ -124,7 +123,7 @@ function BaishiList(masters)
 		return
 	end
 	for i=1,getn(masters) do
-		tinsert(btn,"Xem tin tøc cña s­ phô "..safeshow(masters[i]).."/#XuanShifu('"..safestr(masters[i]).."')")
+		tinsert(btn,"Xem tin tøc  "..safeshow(masters[i]).." tin tøc cña/#XuanShifu('"..safestr(masters[i]).."')")
 	end
 	tinsert(btn,"§ãng/Quit")
 	Say(str,getn(btn),btn)
@@ -149,32 +148,32 @@ function XuanTudi(playerName)
 	end
 	-- local app = getPlayerInfo(pid,{"level","sex"},{TKID_MASTER_COUNT},{TTKID_APPRENTICE_FLAG,TTKID_RECRUIT_FLAG})
 	local app = getPlayerInfo(pid, tb_playerinfo_tudi, tb_playertask_tudi, tb_playertemp_tudi)
-	local str = "Ng­êi ch¬i: "..safeshow(playerName).." Giíi tÝnh : "..sex2Word(app.sex).."<enter>"
+	local str = safeshow(playerName)..":"..sex2Word(app.sex).."<enter>"
 	if(app.level <= 25) then
-		str = str.." hiÖn ®¼ng cÊp ë cÊp d­íi 26"
+		str = str.."HiÖn ®¼ng cÊp ë cÊp d­íi 26"
 	elseif(app.level < 50) then
-		str = str.." hiÖn ®¼ng cÊp ë cÊp d­íi 50 "
+		str = str.."HiÖn ®¼ng cÊp ë cÊp d­íi 50 "
 	elseif(app.level < 65) then
-		str = str.." hiÖn ®¼ng cÊp ë cÊp d­íi 65 "
+		str = str.."HiÖn ®¼ng cÊp ë cÊp d­íi 65 "
 	elseif(app.level < 75) then
-		str = str.." hiÖn ®¼ng cÊp ë cÊp d­íi 75 "
+		str = str.."HiÖn ®¼ng cÊp ë cÊp d­íi 75 "
 	elseif(app.level < 80) then
-		str = str.." hiÖn ®¼ng cÊp ë cÊp d­íi 80"
+		str = str.."HiÖn ®¼ng cÊp ë cÊp d­íi 80"
 	else
-		str = str.." hiÖn ®¼ng cÊp ë cÊp 80 trë lªn, "
+		str = str.."HiÖn ®¼ng cÊp ë cÊp 80 trë lªn, "
 	end
 	if(app.task[TKID_MASTER_COUNT] ==0) then
-		str = str.." ch­a b¸i qua s­ phô, "
+		str = str.."ch­a b¸i qua s­ phô, "
 	else
-		str = str.." ®· b¸i s­ "..tostring(app.task[TKID_MASTER_COUNT]).." s­ phô, "
+		str = str.."®· b¸i s­ "..tostring(app.task[TKID_MASTER_COUNT]).." s­ phô, "
 	end
 	if(FALSE(GetShituLeagueId(playerName))) then
 		UpdatePlayerSelfLilian(pid)
 	end
 	if(GetPlayerLilianCount(pid)==0) then
-		str = str.." tr­íc nay ch­a tr·i qua nhiÖm vô thÝ luyÖn giang hå nµo."
+		str = str.."tr­íc nay ch­a tr·i qua nhiÖm vô thÝ luyÖn giang hå nµo."
 	else
-		str = str.." ®· hoµn thµnh"..tostring(GetPlayerLilianCount(pid)).." viÖc thÝ luyÖn giang hå."
+		str = str.."®· hoµn thµnh"..tostring(GetPlayerLilianCount(pid)).." viÖc thÝ luyÖn giang hå."
 	end
 	if(app.tasktmp[TTKID_APPRENTICE_FLAG]==FileName2Id(GetName())) then
 		str = str.."<enter> hiÖn ®· b¸i b¹n lµm s­ phô. H·y sö dông chøc n¨ng <color=yellow>Thu nhËn ®Ö tö<color> trong <color=green>S­ ®å thiÕp<color> ®Ó tr¶ lêi."
@@ -184,7 +183,7 @@ function XuanTudi(playerName)
 	end
 	/*
 	local btn = {
-		"NhËn "..safeshow(playerName).." lµm ®å ®Ö/#Shoutu('"..safestr(playerName).."')",
+		"nhËn "..safeshow(playerName).." lµm ®å ®Ö/#Shoutu('"..safestr(playerName).."')",
 		"Trë l¹i/CallBack_ShoutuList",
 		"§ãng/Quit"
 	}
@@ -192,7 +191,7 @@ function XuanTudi(playerName)
 	*/
 	Say(str,
 		3,
-		"NhËn "..safeshow(playerName).." lµm ®å ®Ö/#Shoutu('"..safestr(playerName).."')",
+		"nhËn "..safeshow(playerName).." lµm ®å ®Ö/#Shoutu('"..safestr(playerName).."')",
 		"Trë l¹i/CallBack_ShoutuList",
 		"§ãng/Quit")	
 	return
@@ -210,15 +209,15 @@ function XuanShifu(playerName)
 	-- local master = getPlayerInfo(pid,{"sex"},{TKID_APPRENTICE_COUNT,TKID_DICHUAN_APPRENTICE_COUNT,TKID_ZHIXI_APPRENTICE_COUNT,TKID_NORMAL_APPRENTICE_COUNT})
 	local master = getPlayerInfo(pid, tb_playerinfo_shifu, tb_playertask_shifu)
 	local btn = {
-		"B¸i "..safeshow(playerName).." lµm s­ phô /#Baishi('"..safestr(playerName).."')",
+		"b¸i "..safeshow(playerName).."lµm s­ phô /#Baishi('"..safestr(playerName).."')",
 		"Trë l¹i/CallBack_BaishiList",
 		"§ãng/Quit"
 	}
-	local str = "S­ phô: "..safeshow(playerName).." Giíi tÝnh : "..sex2Word(master.sex).."<enter>"
+	local str = safeshow(playerName)..":"..sex2Word(master.sex).."<enter>"
 	st_print("XuanShifu(): "..GetName().."master: "..str);
 	local lid = GetShituLeagueId(playerName)
 	if(FALSE(lid) and FALSE(master.task[TKID_APPRENTICE_COUNT])) then
-		str = str.." §Õn nay, ch­a lµm qua s­ phô."
+		str = str.."§Õn nay, ch­a lµm qua s­ phô."
 		Say(str,getn(btn),btn)
 		return
 	end
@@ -226,7 +225,7 @@ function XuanShifu(playerName)
 	str = str.." trong ®ã huÊn luyÖn thµnh c«ng "..tostring(master.task[TKID_DICHUAN_APPRENTICE_COUNT]).." ®Ých truyÒn ®Ö tö, "
 	str = str..tostring(master.task[TKID_ZHIXI_APPRENTICE_COUNT]).." trùc hÖ ®Ö tö, "
 	str = str..tostring(master.task[TKID_NORMAL_APPRENTICE_COUNT]).." phæ th«ng ®Ö tö."
-	str = str.."HiÖn t¹i, "..playerName.." tæng cã thÓ dÉn d¾t "..ComputeMasterLoad(master.task[TKID_DICHUAN_APPRENTICE_COUNT]).." ®å ®Ö,"
+	str = str.."HiÖn t¹i, "..playerName.."tæng cã thÓ dÉn d¾t "..ComputeMasterLoad(master.task[TKID_DICHUAN_APPRENTICE_COUNT]).." ®å ®Ö,"
 	str = str.." H¬n n÷a, hiÖn ®· thu nhËn "..tostring(GetApprenticeNum(playerName)).." ®å ®Ö."
 	Say(str,getn(btn),btn)
 	return
@@ -247,11 +246,11 @@ function Baishi(master) --Í½µÜ´¥·¢
 		local load = ComputeMasterLoad(callPlayerFunction(pid,GetTask,TKID_DICHUAN_APPRENTICE_COUNT))
 		local appNum = GetApprenticeNum(master)
 		if(not appNum) then
-			print("Kh¸c th­êng, master ®ét nhiªn ch­a b¸i s­.")
+			print(" kh¸c th­êng, master ®ét nhiªn ch­a b¸i s­.")
 			return
 		end
 		if(load <= appNum) then --ÈËÊýÒÑÂú£¬²»ÄÜÔÙ°ÝÊ¦
-			Msg2Player(master.." HiÖn ®· dÉn ®Õn qu¸ nhiÒu ®Ö tö, kh«ng liÖu næi b¹n råi.")
+			Msg2Player(master.."HiÖn ®· dÉn ®Õn qu¸ nhiÒu ®Ö tö, kh«ng liÖu næi b¹n råi.")
 			sendMessage(pid,"B¹n hiÖn ®· thu nhËn qu¸ nhiÒu ®Ö tö, ®· lo kh«ng xuÓ "..GetName().." ")
 			return
 		end
@@ -259,7 +258,7 @@ function Baishi(master) --Í½µÜ´¥·¢
 		sendMessage(pid,"B¹n ®· ®ång ý thu nhËn "..GetName().." lµm ®å ®Ö, ®îi hÖ thèng x©y dùng quan hÖ s­ ®å cña c¸c b¹n.")
 		SetTaskTemp(TTKID_RECRUIT_FLAG,0)
 		SetTaskTemp(TTKID_APPRENTICE_FLAG,0)
-		AddGlobalNews("§å ®Ö "..GetName().." ®· b¸i "..master.." lµm s­ phô "..master.." nhÊt ®¹i t«n s­")
+		--AddGlobalNews("¹§Ï²"..GetName().."°ÝÈë"..master.."µÄÃÅÏÂ£¬³ÉÎª"..master.."µÄµÜ×Ó¡£")
 		UpdatePlayerSelfLilian(PlayerIndex)
 		BuildRelationship(GetName(),master)
 		return
@@ -279,9 +278,8 @@ function Shoutu(apprentice) --Ê¦¸¸´¥·¢
 		return
 	end
 	
-	--Edit by MC Team trong 7 ngµy chØ cã thÓ nhËn 5 ®å ®Ö
 	if checkTudiLimit()~=1 then
-		Say("Xin lçi! Néi trong 7 ngµy mçi ng­êi chØ cã thÓ nhËn "..sodode7ngay.." ®å ®Ö!", 0);
+		Say("Xin lçi! Néi trong 7 ngµy mçi ng­êi chØ cã thÓ nhËn 5 ®å ®Ö!", 0);
 		return
 	end;
 	
@@ -301,7 +299,6 @@ function Shoutu(apprentice) --Ê¦¸¸´¥·¢
 			print("kh¸c th­êng, ng­êi nµy ®ét nhiªn kh«ng b¸i s­ ")
 			return
 		end
-
 		if(load <= appNum) then --ÈËÊýÒÑÂú£¬²»ÄÜÔÙ°ÝÊ¦
 			Msg2Player("B¹n hiÖn ®· thu nhËn qu¸ nhiÒu ®Ö tö, ®· lo kh«ng xuÓ "..apprentice.." ")
 			sendMessage(pid,GetName().."HiÖn ®· dÉn ®Õn qu¸ nhiÒu ®Ö tö, kh«ng liÖu næi b¹n råi.")
@@ -315,7 +312,7 @@ function Shoutu(apprentice) --Ê¦¸¸´¥·¢
 		sendMessage(pid,GetName().." ®· ®ång ý thu nhËn b¹n lµm ®å ®Ö, ®îi hÖ thèng x©y dùng quan hÖ s­ ®å cña c¸c b¹n.")
 		callPlayerFunction(pid,SetTaskTemp,TTKID_APPRENTICE_FLAG,0)
 		callPlayerFunction(pid,SetTaskTemp,TTKID_RECRUIT_FLAG,0)
-		AddGlobalNews("§å ®Ö "..GetName().." ®· b¸i s­ phô nhÊt ®¹i t«n s­")
+		--AddGlobalNews("¹§Ï²"..apprentice.."°ÝÈë"..GetName().."µÄÃÅÏÂ£¬³ÉÎª"..GetName().."µÄµÜ×Ó¡£")
 		UpdatePlayerSelfLilian(pid)
 		BuildRelationship(apprentice,GetName())
 		return
@@ -339,7 +336,7 @@ function MasterDialog()
 	end
 	if(FindApprentice() and 
 		num < ComputeMasterLoad(GetTask(TKID_DICHUAN_APPRENTICE_COUNT))) then
-		tinsert(btn,"Thu nhËn ®Ö tö /CallBack_ShoutuList")
+		tinsert(btn,"thu nhËn ®Ö tö /CallBack_ShoutuList")
 	end
 	if(GetEnableChushiApps(masterName)) then
 		tinsert(btn,"§å ®Ö xuÊt s­ /ChushiList")
@@ -419,9 +416,9 @@ function TudiInfoList()
 		if (pid > 0) then
 			state = callPlayerFunction(pid,GetTask,TKID_GOLD_APPRENTICE);
 			if (state == 1 or state == 2) then
-				tinsert(btn,"Xem tin tøc "..safeshow(apps[i]).." Tin tøc t­¬ng quan cña (§Ö tö Hoµng Kim) /#TudiInfo('"..safestr(apps[i]).."')")
+				tinsert(btn,"Xem tin tøc  "..safeshow(apps[i]).."Tin tøc t­¬ng quan cña (§Ö tö Hoµng Kim) /#TudiInfo('"..safestr(apps[i]).."')")
 			else
-				tinsert(btn,"Xem tin tøc "..safeshow(apps[i]).."./#TudiInfo('"..safestr(apps[i]).."')")
+				tinsert(btn,"Xem tin tøc  "..safeshow(apps[i]).."./#TudiInfo('"..safestr(apps[i]).."')")
 			end
 		end
 	end
@@ -441,7 +438,7 @@ function LilianList()
 	end
 	local btn={}
 	for i=1,getn(apps) do
-		tinsert(btn,"§Ö tö "..safeshow(apps[i][1]).." ®· hoµn thµnh míi! "..apps[i][2].." nhiÖm vô rÌn luyÖn!/#ChaLilian('"..safestr(apps[i][1]).."')")
+		tinsert(btn,safeshow(apps[i][1]).."§· hoµn thµnh míi!"..apps[i][2].."nhiÖm vô rÌn luyÖn!/#ChaLilian('"..safestr(apps[i][1]).."')")
 	end
 	tinsert(btn,"Trë l¹i/MasterDialog")
 	tinsert(btn,"§ãng/Quit")
@@ -523,15 +520,15 @@ function ApprenticeDialog()
 	end
 	
 	if(lvl < 80) then
-		tinsert(btn,"NhËn ®­îc n¨ng lùc s­ phô cho b¹n/GetAbility")
+		tinsert(btn,"nhËn ®­îc n¨ng lùc s­ phô cho b¹n/GetAbility")
 	else
 		local master = GetMaster(GetName())
 		if(TRUE(SearchPlayer(master))) then
-			tinsert(btn,"XuÊt s­ /TudiChushi")
+			tinsert(btn,"xuÊt s­ /TudiChushi")
 		end
 	end
 	if(TRUE(HaveNewLilian(PlayerIndex))) then
-		tinsert(btn,"Phôc mÖnh víi s­ phô /Fuming")
+		tinsert(btn,"phôc mÖnh víi s­ phô /Fuming")
 	end
 	tinsert(btn,"Xem t×nh h×nh häc nghÖ /ChaSelfInfo")
 	tinsert(btn,"T×m hiÓu tin tøc s­ phô /TdChaShifu")
@@ -571,7 +568,7 @@ function ShiChushi(appName)
 	end
 	local app = getPlayerInfo(appIdx,{"level"})
 	if(app.level <80) then
-		Msg2Player(appName.."n¨ng lùc cña  ch­a ®ñ tr×nh ®é xuÊt s­. Hay lµ ®îi 2 n¨m sau nhÐ!")
+		Msg2Player(appName.."n¨ng lùc cña   ch­a ®ñ tr×nh ®é xuÊt s­. Hay lµ ®îi 2 n¨m sau nhÐ!")
 		return
 	end
 	setPlayerTaskTemp(appIdx,{[TTKID_MASTER_CHUSHI]=1})
@@ -579,7 +576,7 @@ function ShiChushi(appName)
 	if(app.tasktmp[TTKID_MASTER_CHUSHI]== app.tasktmp[TTKID_APPRENTICE_CHUSHI] and app.tasktmp[TTKID_APPRENTICE_CHUSHI]~=0) then
 		Msg2Player(appName.."®· v­ît tréi h¬n thÇy, b¹n v« cïng vui mõng, quyÕt ®Þnh cho "..appName.." xuÊt s­.")
 		sendMessage(appIdx,GetName().." ®· ®ång ý ®Ó b¹n xuÊt s­, cuèi cïng b¹n còng cã thÓ lµm nªn chuyÖn lÉy lõng!")
-		AddGlobalNews("§å ®Ö"..GetName().." ®· ®­îc s­ phô båi d­ìng nhiÒu n¨m cuèi cïng häc ®· thµnh, dù ®Þnh ra ngoµi tù lËp!")
+		--AddGlobalNews("¹§Ï²"..appName.."Ñ§ÒÕÒÑ³É£¬´Ó"..GetName().."ÃÅÏÂ³öÊ¦¡£")
 		OutShituLeague(appName,GetName())
 		return
 	end
@@ -607,12 +604,12 @@ function TudiChushi() --Í½µÜ¼¤»î
 	if(GetTaskTemp(TTKID_APPRENTICE_CHUSHI)==GetTaskTemp(TTKID_MASTER_CHUSHI) and GetTaskTemp(TTKID_MASTER_CHUSHI)~=0) then
 		Msg2Player("®­îc s­ phô båi d­ìng nhiÒu n¨m, cuèi cïng b¹n häc ®· thµnh, dù ®Þnh ra ngoµi tù lËp!")
 		sendMessage(masterIdx,GetName().."®­îc s­ phô båi d­ìng nhiÒu n¨m, cuèi cïng häc ®· thµnh, dù ®Þnh ra ngoµi tù lËp!")
-		AddGlobalNews("§å ®Ö"..GetName().." ®· ®­îc s­ phô båi d­ìng nhiÒu n¨m cuèi cïng häc ®· thµnh, dù ®Þnh ra ngoµi tù lËp!")
+		--AddGlobalNews("¹§Ï²"..GetName().."Ñ§ÒÕÒÑ³É£¬´Ó"..masterName.."ÃÅÏÂ³öÊ¦¡£")
 		OutShituLeague(GetName(),masterName)
 		return
 	end
-	Msg2Player("B¹n c¶m thÊy häc nghÖ ®· thµnh xin "..masterName.." xuÊt s­, ®ang ®îi s­ phô tr¶ lêi...")
-	sendMessage(masterIdx,GetName().." c¶m thÊy häc nghÖ ®· thµnh, xin b¹n xuÊt s­. H·y sö dông chøc n¨ng <color=green>§å ®Ö xuÊt s­<color> trong <color=yellow>S­ ®å thiÕp<color> tr¶ lêi.")
+	Msg2Player("B¹n c¶m thÊy häc nghÖ ®· thµnh xin"..masterName.."xuÊt s­, ®ang ®îi s­ phô tr¶ lêi...")
+	sendMessage(masterIdx,GetName().."c¶m thÊy häc nghÖ ®· thµnh, xin b¹n xuÊt s­. H·y sö dông chøc n¨ng <color=green>§å ®Ö xuÊt s­<color> trong <color=yellow>S­ ®å thiÕp<color> tr¶ lêi.")
 	return	
 end
 
@@ -792,7 +789,7 @@ function ChaSelfInfo() --Í½µÜ²é×Ô¼ºµÄÐÅÏ¢
 	end
 	local unfinishedLilian = GetLLUnfinishedInfo(GetPlayerLilian(PlayerIndex))
 	if(unfinishedLilian) then
-		str = str.."B¹n cßn<color=red> "..getn(unfinishedLilian).." <color>viÖc ch­a phôc mÖnh, ph©n biÖt lµ:<enter>"
+		str = str.."B¹n cßn<color=red>"..getn(unfinishedLilian).."<color>viÖc ch­a phôc mÖnh, ph©n biÖt lµ:<enter>"
 		for i=1,getn(unfinishedLilian) do
 			str = str.."  "..unfinishedLilian[i].."<enter>"
 		end
@@ -804,7 +801,7 @@ function ChaSelfInfo() --Í½µÜ²é×Ô¼ºµÄÐÅÏ¢
 		"§ãng/Quit"
 	}
 	if(TRUE(newllc)) then
-		tinsert(btn,1,"Cã "..newllc.." viÖc thÝ luyÖn cã thÓ phôc mÖnh víi s­ phô /Fuming")
+		tinsert(btn,1,"Cã "..newllc.."viÖc thÝ luyÖn cã thÓ phôc mÖnh víi s­ phô /Fuming")
 	end
 	Describe(str,getn(btn),btn)
 	return
@@ -815,10 +812,10 @@ function SfChaShifu()
 		"Trë l¹i/MasterDialog",
 		"§ãng/Quit"
 	}
-	local str = "S­ phô : "..safeshow(GetName()).." Giíi tÝnh : "..sex2Word(GetSex()).."<enter>"
+	local str = safeshow(GetName())..":"..sex2Word(GetSex()).."<enter>"
 	local lid = GetShituLeagueId(GetName())
 	if(FALSE(lid) and FALSE(GetTask(TKID_APPRENTICE_COUNT))) then
-		str = str.." §Õn nay, ch­a lµm qua s­ phô."
+		str = str.."§Õn nay, ch­a lµm qua s­ phô."
 		Say(str,getn(btn),btn)
 		return
 	end
@@ -826,7 +823,7 @@ function SfChaShifu()
 	str = str.." trong ®ã huÊn luyÖn thµnh c«ng "..GetTask(TKID_DICHUAN_APPRENTICE_COUNT).." ®Ých truyÒn ®Ö tö, "
 	str = str..GetTask(TKID_ZHIXI_APPRENTICE_COUNT).." trùc hÖ ®Ö tö, "
 	str = str..GetTask(TKID_NORMAL_APPRENTICE_COUNT).." phæ th«ng ®Ö tö."
-	str = str.."HiÖn t¹i, b¹n cã thÓ dÉn d¾t "..ComputeMasterLoad(GetTask(TKID_DICHUAN_APPRENTICE_COUNT)).." ®å ®Ö,"
+	str = str.."HiÖn t¹i, b¹n cã thÓ dÉn d¾t"..ComputeMasterLoad(GetTask(TKID_DICHUAN_APPRENTICE_COUNT)).." ®å ®Ö,"
 	str = str.." H¬n n÷a, hiÖn ®· thu nhËn "..tostring(GetApprenticeNum(GetName())).." ®å ®Ö."
 	Say(str,getn(btn),btn)
 	return
@@ -849,12 +846,12 @@ function TdChaShifu()
 	end
 	local master = getPlayerInfo(masterIdx,{"sex"},{TKID_APPRENTICE_COUNT,
 		TKID_DICHUAN_APPRENTICE_COUNT,TKID_ZHIXI_APPRENTICE_COUNT,TKID_NORMAL_APPRENTICE_COUNT})
-	local str = "S­ phô: "..safeshow(masterName).." Giíi tÝnh : "..sex2Word(master.sex).."<enter>"
+	local str = safeshow(masterName)..":"..sex2Word(master.sex).."<enter>"
 	str = str.."§Õn nay, ®· thu nhËn "..master.task[TKID_APPRENTICE_COUNT].." ®å ®Ö,"
 	str = str.." trong ®ã huÊn luyÖn thµnh c«ng "..master.task[TKID_DICHUAN_APPRENTICE_COUNT].." ®Ých truyÒn ®Ö tö, "
 	str = str..master.task[TKID_ZHIXI_APPRENTICE_COUNT].." trùc hÖ ®Ö tö, "
 	str = str..master.task[TKID_NORMAL_APPRENTICE_COUNT].." phæ th«ng ®Ö tö."
-	str = str.." HiÖn t¹i, "..safeshow(masterName).." tæng cã thÓ dÉn d¾t "..ComputeMasterLoad(master.task[TKID_DICHUAN_APPRENTICE_COUNT]).." ®å ®Ö,"
+	str = str.."HiÖn t¹i, "..safeshow(masterName).."tæng cã thÓ dÉn d¾t "..ComputeMasterLoad(master.task[TKID_DICHUAN_APPRENTICE_COUNT]).." ®å ®Ö,"
 	str = str.." H¬n n÷a, hiÖn ®· thu nhËn "..tostring(GetApprenticeNum(masterName)).." ®å ®Ö."
 	Say(str,getn(btn),btn)
 	return
@@ -960,22 +957,23 @@ function AboutShituGoldCard()
 end
 
 
--- Check 7 ngay chi co the nhan duoc 5 do de
+-- ¼ì²âÆßÌìÖ®ÄÚÊÇ·ñÒÑ¾­ÊÕÁË 5 ¸öÍ½µÜ
 function checkTudiLimit()
 	
-	-- Check 7 ngay chi co the nhan duoc 5 do de
+	-- ÔÚ´ËÅÐ¶ÏÊÇ·ñ³¬¹ýÁË 7 Ìì 5 ¸öÍ½µÜµÄÏÞÖÆ
 	local nNowTime = GetCurServerTime();
 	local nOldTime = GetTask(ID_SHITU_LIMIT_DATE);  -- µÚÒ»´ÎÊÕÍ½µÜµÄ¼ÇÂ¼
 	local nNowCount = GetTask(ID_SHITU_LIMIT_NUM);
 	
 		if nNowTime - nOldTime<CONST_SHITU_LIMIT_TIME then
-			--Edit by MC Team so do de trong 7 ngay co the nhan duoc so do de khai bao tren
-			if nNowCount >= sodode7ngay then
+			-- Èç¹û³¬¹ýÁË´ÎÊýÏÞÖÆ
+			if nNowCount>=5 then
 				return 0;
 			else
 				return 1;
 			end;
 		else
+			-- Èç¹û³¬¹ýÁË 7 Ìì£¬ÔòÖØÖÃ±äÁ¿
 			SetTask(ID_SHITU_LIMIT_NUM, 0);
 			return 1;
 		end;
@@ -995,17 +993,8 @@ function writeTudiLimit()
 	
 end;
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
 
 function main()
-
-	--dofile("script/item/card/card_shitu.lua")
-	--dofile("script/global/g7vn/g7configall.lua")
-	if sudothiep == 0 then
-		Say("Chøc n¨ng S­ ®å thiÕp t¹m thêi ch­a më")
-		return 1
-	end
-
 	if (ST_IsTransLife() == 1 and GetLevel() < 80) then
 		Say("LÜnh héi B¾c §Èu Tr­êng Sinh ThuËt - T©m Ph¸p Thiªn xong, ë cÊp 80 vÒ tr­íc kh«ng thÓ sö dông S­ §å ThiÕp.", 0);
 		return 1

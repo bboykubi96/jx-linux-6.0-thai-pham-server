@@ -18,7 +18,7 @@ function GetNextTime()	--每天息午1点55到晚上23点55 触发报名
     else
     	hour = hour + 1;
     end
-    return hour, 25;
+    return hour, 10;
 end
 
 function TaskShedule()
@@ -29,6 +29,7 @@ function TaskShedule()
 	-- 设置触发时间
 	local h, m = GetNextTime();
 	TaskTime(h, m);
+	-- TaskTime(12, 40);
 	OutputMsg(format("=====> HOAT DONG [VIEM DE BAO TANG] SE BAT DAU VAO LUC %d:%d...", h, m));
 	-- 执行无限次
 	TaskCountLimit(0);
@@ -38,7 +39,7 @@ end
 function TaskContent()
 	local TB_YDBZ_DATE_START =	--启动场次(时)
 	{
-		2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,
+		12,20,23,
 	}
 	
 	local nhour = tonumber(date("%H"))

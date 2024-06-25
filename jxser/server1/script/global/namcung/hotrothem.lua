@@ -21,7 +21,7 @@ function weapon()
 		"Bæng/bong",
 		"Th­¬ng/kick",
 		"Chïy/chuy",
-		--"Song §ao/songdao",
+		"Song §ao/songdao",
 		"Phi Tiªu/phitieu",
 		"Phi §ao/phidao",
 		"Tô TiÔn/tutien",

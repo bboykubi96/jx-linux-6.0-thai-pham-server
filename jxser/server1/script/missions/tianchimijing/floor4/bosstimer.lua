@@ -24,7 +24,7 @@ function GameFloor4:RandomTime()
 	local nMonth = tonumber(GetLocalDate("%m"))
 	local nDay = tonumber(GetLocalDate("%d"))
 	--Change Boss time - Modified By DinhHQ - 20120403
-	local nHour = random(8, 19)--xuat hien tu 8h den 19 hang ngay ngau nhien
+	local nHour = random(8, 19)
 	local nMinute = random(0, 59)
 	local nNextTime = Tm2Time(nYear, nMonth, nDay, nHour, nMinute)
 	local nCurTime = GetCurServerTime()

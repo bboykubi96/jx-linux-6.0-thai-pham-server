@@ -15,128 +15,101 @@ end
 
 tbCOT_Key_Require = {
 	["chiakhoanhuy"] = {6, 1, 2744},
-	["chiakhoavang"] = {6, 1, 30191},
+	["chiakhoavang"] = {6, 1, 4877},
 }
 tbCOT_Box_Award = 
 {
 	["chiakhoanhuy"] = 
 	{
-		{szName = "Tinh hång b¶o th¹ch",							tbProp={4,353,1,1,0,0},nCount=1,nRate =6},
-		{szName = "HuyÒn tinh cÊp 5",								tbProp={6,1,147,5,0,0},nCount=1, nRate =2},
-		--{szName = "Ngò Hµnh Kú Th¹ch",						tbProp = {6,1,2125,1,0,0},nCount=3,nRate=17},
-		{szName = "Tiªn Th¶o Lé ®Æc biÖt",							tbProp={6,1,1181,1,0,0},nCount=1,nRate=7},
-		{szName = "Tiªn Th¶o Lé",										tbProp={6,1,71,1,0,0},nCount=1,nRate=11},
-		--{szName = "Tay Tuy Kinh",										tbProp={6,1,22,1,0,0},nCount=1,nRate=2},
-		--{szName = "Vo Lam Mat Tich",										tbProp={6,1,26,1,0,0},nCount=1,nRate=2},
-		{szName = "NÕn B¸t tr©n phóc nguyÖt",					tbProp = {6, 1, 1817, 1, 0, 0},nCount=1,nRate=12},	
-		--{szName = "MÆt n¹ v­¬ng gi¶ 7 ngµy",						tbProp={0,11,561,1,0,0},nExpiredTime=60*24*7,nRate=5.5},
-
 		{szName="§iÓm kinh nghiÖm 1", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(1000000, "B¶o r­¬ng v­ît ¶i")
 					end,
-					nRate = 20,
+					nRate = 52,
 		},
 		{szName="§iÓm kinh nghiÖm 2", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(1500000, "B¶o r­¬ng v­ît ¶i")
-					end,
-					nRate = 20,
-		},
-		{szName="§iÓm kinh nghiÖm 3", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(1700000, "B¶o r­¬ng v­ît ¶i")
-					end,
-					nRate = 10,
-		},
-		{szName="§iÓm kinh nghiÖm 4", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(1900000, "B¶o r­¬ng v­ît ¶i")
-					end,
-					nRate = 5,
-		},
-		{szName="§iÓm kinh nghiÖm 5", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(2000000, "B¶o r­¬ng v­ît ¶i")
 					end,
-					nRate = 1,
-		},
-
-	},	
-	["chiakhoavang"] = 
-	{
-		{szName = "Ngò Hµnh Kú Th¹ch",							tbProp = {6,1,2125,1,0,0},nCount=10,nRate=30},
-		--{szName = "B«n Tiªu",												tbProp = {0,10,6,1,5,0},nCount=1,nRate=2},
-		--{szName = "NhÊt kû cµn kh«n phï",							tbProp = {6,1,2126,1,0,0},nCount=1,nRate=3},
-
-		{szName="§iÓm kinh nghiÖm 2", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(150000000, "B¶o r­¬ng v­ît ¶i")
-					end,
-					nRate = 40,
+					nRate = 30,
 		},
 		{szName="§iÓm kinh nghiÖm 3", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(250000000, "B¶o r­¬ng v­ît ¶i")
+						%tbvng_ChestExpAward:ExpAward(3000000, "B¶o r­¬ng v­ît ¶i")
 					end,
 					nRate = 10,
 		},
 		{szName="§iÓm kinh nghiÖm 4", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(500000000, "B¶o r­¬ng v­ît ¶i")
+						%tbvng_ChestExpAward:ExpAward(4000000, "B¶o r­¬ng v­ît ¶i")
 					end,
 					nRate = 5,
 		},
 		{szName="§iÓm kinh nghiÖm 5", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(800000000, "B¶o r­¬ng v­ît ¶i")
+						%tbvng_ChestExpAward:ExpAward(5000000, "B¶o r­¬ng v­ît ¶i")
 					end,
-					nRate = 2,
-		},
-			{szName="§iÓm kinh nghiÖm 6", 
-					pFun = function (tbItem, nItemCount, szLogTitle)
-						%tbvng_ChestExpAward:ExpAward(900000000, "B¶o r­¬ng v­ît ¶i")
-					end,
-					nRate = 0.5,
-		},
-			{szName="§iÓm kinh nghiÖm 7", 
+					nRate = 3,
+		},		
+	},	
+	["chiakhoavang"] = 
+	{
+		--{szName="B¶o R­¬ng Tinh S­¬ng Kh«i",tbProp={6,1,6021,1,0,0},nCount=1,tbParam={2,0,0,0,0,0}, nRate=0.004, CallBack = _Message},
+		--{szName="B¶o R­¬ng Tinh S­¬ng Th­îng Giíi",tbProp={6,1,6022,1,0,0},nCount=1,tbParam={3,0,0,0,0,0},nRate=0.002, CallBack = _Message},
+		--{szName="B¶o R­¬ng Tinh S­¬ng Hµi",tbProp={6,1,6027,1,0,0},nCount=1,tbParam={8,0,0,0,0,0},nRate=0.002, CallBack = _Message},
+		--{szName="B¶o R­¬ng Tinh S­¬ng Yªu §¸i",tbProp={6,1,6024,1,0,0},nCount=1,tbParam={5,0,0,0,0,0},nRate=0.002, CallBack = _Message},
+		{szName="B¶o R­¬ng Tinh S­¬ng Hé UyÓn",tbProp={6,1,6023,1,0,0},nCount=1,tbParam={4,0,0,0,0,0},nRate=0.002, CallBack = _Message},		
+		{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nCount=1,nRate=0.005,nExpiredTime=43200},
+              -- {szName="Xu  ",tbProp={4,417,1,1,0,0},nCount=100,nRate=35, CallBack = _Message},
+		-- {szName="Xu  ",tbProp={4,417,1,1,0,0},nCount=200,nRate=20, CallBack = _Message},
+              -- {szName="Xu  ",tbProp={4,417,1,1,0,0},nCount=500,nRate=10, CallBack = _Message},		
+		--{szName="Hoµng Kim Ên (C­êng hãa)",tbProp={0,4881},nCount=1,nRate=0.15,nQuality = 1,nExpiredTime=10080,},
+		--{szName="Hoµng Kim Ên (Nh­îc hãa)",tbProp={0,4892},nCount=1,nRate=0.15,nQuality = 1,nExpiredTime=10080,},
+              {szName="§iÓm kinh nghiÖm 1", 
 					pFun = function (tbItem, nItemCount, szLogTitle)
 						%tbvng_ChestExpAward:ExpAward(1000000000, "B¶o r­¬ng v­ît ¶i")
 					end,
-					nRate = 0.2,
+					nRate = 35, CallBack = _Message,
 		},
+		{szName="§iÓm kinh nghiÖm 2", 
+					pFun = function (tbItem, nItemCount, szLogTitle)
+						%tbvng_ChestExpAward:ExpAward(3000000000, "B¶o r­¬ng v­ît ¶i")
+					end,
+					nRate = 25, CallBack = _Message,
+		},
+
 	},
 }
-
-nWidth = 2
-nHeight = 4
+nWidth = 1
+nHeight = 1
 nFreeItemCellLimit = 1
 
 function main(nIndexItem)	
-	
-	--dofile("script/missions/challengeoftime/item/chuangguanbaoxiang.lua")
-	--dofile("script/vng_event/change_request_baoruong/exp_award.lua")
-
-	--do Say("T¹m thêi ch­a sö ®ông d­îc") return end
-
-	if GetLevel() < 80 then
-		Say("§¼ng cÊp 80 trë lªn míi cã thÓ sö dông")
+	local tbKey1 = tbCOT_Key_Require["chiakhoanhuy"]
+	local tbKey2 = tbCOT_Key_Require["chiakhoavang"]
+	local nCount1 = CalcItemCount(3, tbKey1[1], tbKey1[2], tbKey1[3], -1) 
+	local nCount2 = CalcItemCount(3, tbKey2[1], tbKey2[2], tbKey2[3], -1) 
+	if nCount1 == 0 and nCount2 == 0 then
+		Say("CÇn ph¶i cã Ch×a Khãa Vµng hoÆc Ch×a Khãa Nh­ ý míi cã thÓ më ®­îc B¶o R­¬ng V­ît ¶i", 1, "§ãng/no")
 		return 1
 	end
 
-	local SLSD5LoaiBaoRuong = 1
-	local nDate = tonumber(GetLocalDate("%m%d"))
-	if ( GetTask(1406) ~= nDate ) then
-		SetTask(1406, nDate)
-		SetTask(1407, 0)
-	end
-
-	if ( GetTask(1407) >= SLSD5LoaiBaoRuong ) then
-		Say("H«m nay ®¹i hiÖp ®· sö dông "..SLSD5LoaiBaoRuong.." b¶o r­¬ng c¸c lo¹i, vâ c«ng th¨ng tiÕn qu¸ nhanh dÔ g©y t¸c dông ph¶n nghÞch, ngµy mai h·y tiÕp tôc vËy.")
+	if CountFreeRoomByWH(nWidth, nHeight, nFreeItemCellLimit) < nFreeItemCellLimit then
+		Say(format("§Ó b¶o ®¶m tµi s¶n cña ®¹i hiÖp, xin h·y ®Ó trèng %d %dx%d hµnh trang", nFreeItemCellLimit, nWidth, nHeight))
 		return 1
+	end	
+	local tbOpt = {}
+	if nCount1 ~= 0 then
+		tinsert(tbOpt,format("Sö dông Ch×a khãa nh­ ý/#VnCOTBoxNewAward(%d, '%s')", nIndexItem, "chiakhoanhuy"))
 	end
-AddOwnExp(5e6)
-
+	if nCount2 ~= 0 then
+		tinsert(tbOpt,format("Sö dông Ch×a khãa vµng/#VnCOTBoxNewAward(%d, '%s')", nIndexItem, "chiakhoavang"))
+	end
+	if getn(tbOpt) > 0 then
+		tinsert(tbOpt, "§ãng/Oncancel")
+		Say("Sö dông ch×a khãa ®Ó më r­¬ng:", getn(tbOpt), tbOpt)
+	end
+	return 1
 end
 
 function Oncancel()end
@@ -158,6 +131,4 @@ function VnCOTBoxNewAward(nItemIdx, strKeyType)
 	end	
 	tbAwardTemplet:Give(tbAward, 1, {"chuangguan", "use chuangguanbaoxiang"})
 	AddStatData("baoxiangxiaohao_kaichuangguanbaoxiang", 1)	--Êý¾ÝÂñµãµÚÒ»ÆÚ
-	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> më r­¬ng V­ît ¶i b»ng ch×a khãa nh­ ý <color=yellow>nhËn ®­îc nhiÒu phÇn th­ëng")
-	SetTask(1407, GetTask(1407) + 1)
 end

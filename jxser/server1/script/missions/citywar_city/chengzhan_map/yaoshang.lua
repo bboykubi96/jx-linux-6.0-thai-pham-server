@@ -1,5 +1,5 @@
---攻城战 药商对话
+-- script viet hoa By http://tranhba.com  c玭g th祅h chi課 thu鑓 thng i tho筰 
 
-function main(sel)
-	Sale(53);  --弹出交易框
+function main(sel) 
+Sale(53); -- script viet hoa By http://tranhba.com  b緉 ra giao d辌h khu玭g 
 end;

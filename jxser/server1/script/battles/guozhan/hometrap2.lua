@@ -31,7 +31,8 @@ function main()
 				x,y = bt_getadata(file)
 				SetPos(floor(x/32), floor(y/32))
 			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
-		end;
+		AddSkillState(963, 1, 0, 18*3)
+end;
 end;
 
 

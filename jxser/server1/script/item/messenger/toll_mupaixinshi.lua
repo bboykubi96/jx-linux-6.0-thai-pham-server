@@ -1,54 +1,54 @@
--------------------------------------------------------------------------
--- FileName		:	toll_mupaixinshi.lua
--- Author		:	xiaoyang
--- CreateTime	:	2005-08-16 15:28:15
--- Desc			:  	ĞÅÊ¹ÈÎÎñÄ¾ÅÆÓÒ¼ü´¥·¢½Å±¾
--------------------------------------------------------------------------
-Include("\\script\\task\\newtask\\newtask_head.lua")
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  FileName : toll_mupaixinshi.lua 
+-- script viet hoa By http://tranhba.com  Author : xiaoyang 
+-- script viet hoa By http://tranhba.com  CreateTime : 2005-08-16 15:28:15 
+-- script viet hoa By http://tranhba.com  Desc : tin/th¬ khiÕn cho nhiÖm vô tÊm b¶ng gç bªn ph¶i kiÖn xóc ph¸t ch©n vèn 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+Include("\\script\\task\\newtask\\newtask_head.lua") 
 
-function main(itemindex)
-	local paramvalue = GetItemParam(itemindex, 1)
-	if ( paramvalue >= 5 ) then
-		Msg2Player("Xin lçi! Tİn sø lÖnh - Méc cña b¹n sö dông qu¸ 5 lÇn ®· bŞ hñy ho¹i.")
-	elseif ( nt_getTask(1206) < 1 ) then
-		Msg2Player("Xin lçi! B¹n ch­a nhËn ®­îc danh hiÖu Tİn sø lÖnh - Mécnªn kh«ng thÓ sö dông ®­îc. H·y ®Õn chç DŞch Quan nhËn danh hiÖu nµy, c¸m ¬n!")
-		return 1
-	else
+function main(itemindex) 
+local paramvalue = GetItemParam(itemindex, 1) 
+if ( paramvalue >= 5 ) then 
+Msg2Player("ThËt xin lçi , ng­¬i tin/th¬ khiÕn cho tÊm b¶ng gç ®· sö dông qu¸ 5 lÇn , nã ®em bŞ tiªu hñy . ") 
+elseif ( nt_getTask(1206) < 1 ) then 
+Msg2Player("ThËt xin lçi , ng­¬i cßn kh«ng cã nhËn lÊy ®Õn tÊm b¶ng gç tin/th¬ khiÕn cho ®İch danh hiÖu , kh«ng c¸ch nµo sö dông tin/th¬ khiÕn cho tÊm b¶ng gç . xin/mêi ®i tr­íc t×m dŞch quan th¨ng cÊp danh hiÖu , c¸m ¬n . ") 
+return 1 
+else 
 		if ( SetSpecItemParam(itemindex, 1, paramvalue+1) == 1 ) then
-			SyncItem(itemindex)
-			local Realvalue = 5 - GetItemParam(itemindex, 1)
-			Msg2Player("Tİn sø lÖnh - Méc cña b¹n sau khi sö dông phôc håi 10 ®iÓm ©m trong 1 giê. HiÖn t¹i cßn sö dông ®­îc"..Realvalue.." lÇn.")
-		end
-		
-		if ( GetSeries() == 0 ) then --½ğÏµÈËÎï±»»ğ¿Ë £¬631-635£¬½ğÄ¾Ë®»ğÍÁ
-			AddSkillState( 542, 1, 1, 64800)
-			AddSkillState( 634, 1, 1, 64800)
-		elseif ( GetSeries() == 1 ) then --Ä¾ÏµÈËÎï±»½ğ¿Ë
-			AddSkillState( 542, 1, 1, 64800)
-			AddSkillState( 631, 1, 1, 64800)
-		elseif ( GetSeries() == 2 ) then --Ë®ÏµÈËÎï±»ÍÁ¿Ë
-			AddSkillState( 542, 1, 1, 64800)
-			AddSkillState( 635, 1, 1, 64800)
-		elseif ( GetSeries() == 3 ) then --»ğÏµÈËÎï±»Ë®¿Ë
-			AddSkillState( 542, 1, 1, 64800)
-			AddSkillState( 633, 1, 1, 64800)
-		elseif ( GetSeries() == 4 ) then --ÍÁÏµÈËÎï±»Ä¾¿Ë
-			AddSkillState( 542, 1, 1, 64800)	
-			AddSkillState( 632, 1, 1, 64800)				
-		end
-		
-		return 1
-	end
-end
+SyncItem(itemindex) 
+local Realvalue = 5 - GetItemParam(itemindex, 1) 
+Msg2Player("Ng­¬i tin/th¬ khiÕn cho tÊm b¶ng gç sö dông sau nh­ng ®¹t ®­îc mét giê ®İch 10 ®iÓm bŞ/cha/chŞu kh¸ng . tr­íc m¾t cßn cã thÓ sö dông "..Realvalue.." lÇn . ") 
+end 
 
-function GetDesc( nItem )
-	local szDesc;
-	local nIssueID, nIDCount;
-	local  nPayMonth1
-	local nPayMonth1 = GetItemParam( nItem, 1 )
-	local Realvalue = 5 - nPayMonth1
-	
-	szDesc = ""
-	szDesc = szDesc..format( "Tİn sø lÖnh - Méc cña b¹n sau khi sö dông phôc håi 10 ®iÓm ©m trong 1 giê. HiÖn t¹i cßn sö dông ®­îc"..Realvalue.." lÇn." );
-	return szDesc;
-end
+if ( GetSeries() == 0 ) then -- script viet hoa By http://tranhba.com  kim hÖ nh©n vËt bŞ löa kh¾c , 631-635 , kim méc thñy háa thæ 
+AddSkillState( 542, 1, 1, 64800) 
+AddSkillState( 634, 1, 1, 64800) 
+elseif ( GetSeries() == 1 ) then -- script viet hoa By http://tranhba.com  méc hÖ nh©n vËt bŞ kim kh¾c 
+AddSkillState( 542, 1, 1, 64800) 
+AddSkillState( 631, 1, 1, 64800) 
+elseif ( GetSeries() == 2 ) then -- script viet hoa By http://tranhba.com  thñy hÖ nh©n vËt bŞ ®Êt kh¾c 
+AddSkillState( 542, 1, 1, 64800) 
+AddSkillState( 635, 1, 1, 64800) 
+elseif ( GetSeries() == 3 ) then -- script viet hoa By http://tranhba.com  háa hÖ nh©n vËt bŞ n­íc kh¾c 
+AddSkillState( 542, 1, 1, 64800) 
+AddSkillState( 633, 1, 1, 64800) 
+elseif ( GetSeries() == 4 ) then -- script viet hoa By http://tranhba.com  thæ hÖ nh©n vËt bŞ méc kh¾c 
+AddSkillState( 542, 1, 1, 64800) 
+AddSkillState( 632, 1, 1, 64800) 
+end 
+
+return 1 
+end 
+end 
+
+function GetDesc( nItem ) 
+local szDesc; 
+local nIssueID, nIDCount; 
+local nPayMonth1 
+local nPayMonth1 = GetItemParam( nItem, 1 ) 
+local Realvalue = 5 - nPayMonth1 
+
+szDesc = "" 
+szDesc = szDesc..format("Ng­¬i tin/th¬ khiÕn cho tÊm b¶ng gç sö dông sau nh­ng ®¹t ®­îc mét giê ®İch 10 ®iÓm bŞ/cha/chŞu kh¸ng . tr­íc m¾t cßn cã thÓ sö dông "..Realvalue.." lÇn . " ); 
+return szDesc; 
+end 

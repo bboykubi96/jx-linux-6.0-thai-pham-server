@@ -1,17 +1,13 @@
 Include("\\script\\missions\\leaguematch\\tb_head.lua")
---==============ÃÅÅÉµ¥ÏîÈüÏà¹ØÊı¾İ===============
 
 if (not tmp_process_data) then
 	return
 end
 
---È«²¿ÃÅÅÉµ¥ÏîÈüÏà¹ØÊı¾İ
 local nTmpLadderBase	= 10201
 WLLS_DATA = {
 	
 	name = "Danh s¸ch m«n ph¸i thi ®Êu",
-	
-	--µØÍ¼ĞÅÏ¢
 	match_type = {
 		{
 			name = "ThiÕu L©m",
@@ -136,7 +132,7 @@ WLLS_DATA = {
 	},
 	
 	award_rank = {
-		{	--ÅÅĞĞ½±Àø£¬ĞÂĞã
+		{
 			{1, 1500},	--µÚ1Ãû
 			{2, 1000},	--µÚ2Ãû
 			{3, 800},	--µÚ3Ãû
@@ -146,7 +142,8 @@ WLLS_DATA = {
 			{32, 250},	--µÚ17-32Ãû
 			{64, 200},	--µÚ33-64Ãû
 			{128, 150},	--µÚ65-128Ãû
-		}, {	--ÁªÈü
+		},
+		{
 			{1, 3000},	--µÚ1Ãû
 			{2, 2000},	--µÚ2Ãû
 			{3, 1600},	--µÚ3Ãû
@@ -159,15 +156,13 @@ WLLS_DATA = {
 		}
 	},
 	
-	max_member = 1,	--Ã¿¸öÕ½¶ÓµÄ×î´óÈËÊı
+	max_member = 1,
 	
-	text_main = {	--officerÖ÷¶Ô»°£¨Ä©Î²²îÒì²¿·Ö£©
+	text_main = {
 		"Vâ l©m liªn ®Êu kiÖt xuÊt lÇn nµy lµ M«n ph¸i ®¬n ®Êu, chän ra  ng­êi xuÊt s¾c nhÊt trong mçi m«n ph¸i",
 		"Vâ l©m liªn ®Êu kiÖt xuÊt lÇn nµy lµ M«n ph¸i ®¬n ®Êu, chän ra  ng­êi xuÊt s¾c nhÊt trong mçi m«n ph¸i",
 	},
 	
-	--====Functions====
-	--·µ»Øµ±Ç°½ÇÉ«¿ÉÒÔ²Î¼ÓµÄ±ÈÈüÀàĞÍ£¬nilÎª²»ÄÜ²ÎÈü
 	player_type = function()
 		local n_level = wlls_player_level()
 		if (n_level <= 0) then
@@ -181,7 +176,6 @@ WLLS_DATA = {
 		return (n_level - 1) * 10 + n_fact
 	end,
 	
-	--ÎÒµÄÕ½¶Ó
 	npc_mylg = function()
 		local str_des = wlls_get_desc(1)
 		local n_lid, n_mtype, n_job, str_lgname, n_memcount = wlls_lg_info()
@@ -204,8 +198,7 @@ WLLS_DATA = {
 		tb_option[getn(tb_option)+1] = "Ta chØ tiÖn ghĞ qua/OnCancel"
 		wlls_descript(str, tb_option)
 	end,
-	
-}	--WLLS_DATA
+}
 
 tmp_process_data(WLLS_DATA)	
 wllstab_additem(2,WLLS_DATA)

@@ -119,7 +119,7 @@ local tbSay = {
 Say("B¹n §i §­êng Nµo ?",getn(tbSay),tbSay)
 end
 function addhkmp(idgold)
-		if ConsumeEquiproomItem(1, 6,1, 4370,-1)>0 then 
+
 		local Index = AddGoldItem(0,idgold) ITEM_SetExpiredTime(Index,day*24*60) SyncItem(Index)
-		end
+		ConsumeEquiproomItem(1, 6,1, 4370,-1)
 end

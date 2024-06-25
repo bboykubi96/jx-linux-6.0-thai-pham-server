@@ -3,92 +3,140 @@ Include("\\script\\lib\\awardtemplet.lua");
 Include("\\script\\task\\system\\task_string.lua");
 IncludeLib("SETTING")
 IncludeLib("ITEM")
-Include("\\script\\logevent\\logevent.lua");
-Include("\\script\\logevent\\variables.lua");
 
-function main(nItemIndex)
+function main()
 	dofile("script/global/g7vn/event/hoabonmua/bohoabonmua.lua")
-	local G,D,P,nLevel = GetItemProp(nItemIndex);
-	if P~=4528 then
-	Say("Event ®· kÕt thóc.")
-	return 1
-	end
-local nDate = tonumber(GetLocalDate("%Y%m%d"));
-	if nDate > 20220730 then
-	Say("Event ®· kÕt thóc !!!")
-	return 1
-	end
-	if CalcEquiproomItemCount(6,1,4528,-1) <1 then
-	Say("Bug h¶??? Chim cót")
-	return 1
-	end
 	if CalcFreeItemCellCount() < 10 then
 		Talk(1, "", "Hµnh trang §¹i hiÖp kh«ng ®ñ 10 « trèng!")
 		return 1;
 	end
-	local TSK_BoHoa=4994
+	local TSK_BoHoa=4999
 	local HienTaiSuDung =GetTask(TSK_BoHoa)
-	if (HienTaiSuDung >= 300) then
-	Say("Sö dông event ®· ®¹t giíi h¹n 300 c¸i, kh«ng thÓ sö dông n÷a.",0)
+	if (HienTaiSuDung > 1000) then
+		Say("Sö dông event ®· ®¹t giíi h¹n ®iÓm kinh nghiÖm, kh«ng thÓ sö dông n÷a.",0)
 		return 1;
 	end
-	
-	
 ----------------------------------------------------------------------------------------------------------------------------------------------
+local a = random(1,5)
+if a==2 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Tö Tinh Kho¸ng Th¹ch ",tbProp={6,1,4885,1,1},nCount=1,},}, "test", 1);
+end;
 
-local tbVnNewItemDropAward = {
-	[1] = {
-		--{szName="Ng©n L­îng",nJxb=20000000,nCount=1},
-	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=50},
---	{szName="R­¬ng m¶nh HKMP ",tbProp={6,1,4448,1,1},nCount=20},
---	{szName="M¶nh ¸o Nhu T×nh",tbProp={4,1619,1,1},nCount=1},
---	{szName="Thñy Tinh",tbProp={4,random(238,240),1,1},nCount=1},
---	{szName="B¶o r­¬ng HKMP random 1 Ngµy",tbProp={6,1,4472,1,1},nCount=1,nExpiredTime=60*24},
-	},
-	[2] = {
+local b = random(1,50)
+if b==25 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Hoi Thien",tbProp={6,1,4832,1,1},nCount=1,nExpiredTime=14*24*60},}, "test", 1);
+end;
 
-	{szName="Thñy Tinh",tbProp={4,random(238,240),1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Tinh Hèng B¶o Th¹ch",tbProp={4,353,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Tiªn Th¶o Lé",tbProp={6,1,71,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Tiªn Th¶o Lé §Æt BiÖt",tbProp={6,1,1181,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Thiªn S¬n B¶o Lé",tbProp={6,1,72,1,1},nCount=1,nRate=0.5,CallBack= _Message},
-	{szName="B¸ch Qu¶ Lé",tbProp={6,1,73,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="QuÕ Hoa Töu",tbProp={6,1,125,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Phóc Duyªn TiÓu",tbProp={6,1,122,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Phóc Duyªn Trung",tbProp={6,1,123,1,1},nCount=1,nRate=0.7,CallBack= _Message},
-	{szName="Phóc Duyªn §¹i",tbProp={6,1,124,1,1},nCount=1,nRate=0.5,CallBack= _Message},
-	{szName="Th­ §Æt X¸",tbProp={6,1,1375,1,1},nCount=1,nRate=0.5,CallBack= _Message},
-	{szName="ThiÕt La H¸n",tbProp={6,1,23,1,1},nCount=1,nRate=0.5,CallBack= _Message},
-	{szName="LÔ Bao BÝ KÝp",tbProp={6,1,4347,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="LÔ Bao TiÒn V¹n",tbProp={6,1,4516,1,1},nCount=1,nRate=1,CallBack= _Message},
-	{szName="Bµn Nh­îc T©m Kinh",tbProp={6,1,12,1,1},nCount=1,nRate=0.5,CallBack= _Message},
-	{szName="M· Bµi GhÐp Thó C­ìi",tbProp={6,1,random(4529,4533),1,1},nCount=1,nRate=1,CallBack= _Message},
-	},
-	}
-	tbAwardTemplet:GiveAwardByList(tbVnNewItemDropAward,"PhÇn th­ëng")	
-----------------------------------------------------------------------------------------------------------------------------------------------
-tbAwardTemplet:GiveAwardByList({{nExp_tl = 600000}}, "test", 1);
---tbAwardTemplet:GiveAwardByList({{szName = "ThiÖp Chóc Mõng",tbProp={6,1,2621,1,1},nCount=1,},}, "test", 1);
+local c = random(1,300)
+if c==25 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Tinh S­¬ng Th¹ch (®¹i)",tbProp={6,1,4881,1,1},nCount=1,},}, "test", 1);
+end;
+
+local d = random(1,10000)
+if d==500 then
+	tbAwardTemplet:GiveAwardByList({{szName = "MËt tÞch Kü N¨ng 150 CÊp 21",tbProp={6,1,4369,1,1},nCount=1,},}, "test", 1);
+end;
+
+local e = random(1,300)
+if e==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngu Linh Kiem Dinh Phu",tbProp={6,1,3007,1,1},nCount=1,},}, "test", 1);
+end;
+
+local f = random(1,250)
+if f==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Quy Nguyen Kiem Dinh Phu",tbProp={6,1,3008,1,1},nCount=1,},}, "test", 1);
+end;
+
+local i = random(1,500)
+if f==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò S¾c B¶o Ngäc",tbProp={6,1,4318,1,1},nCount=1,},}, "test", 1);
+end;
+
+local i = random(1,50000)
+if t==1000 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Tinh S­¬ng LÖnh",tbProp={6,1,4811,1,1},nCount=1,},}, "test", 1);
+end;
+
+local g = random(1,10)
+if g==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Tinh Ngäc",tbProp={6,1,4808,1,1},nCount=1,},}, "test", 1);
+end;
+
+local h = random(1,1000)
+if h==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "NhÊt Kû Cµn Kh«n Phï",tbProp={6,1,2126,1,1},nCount=1,nExpiredTime=30*24*60},}, "test", 1);
+end;
+
+local k = random(1,10000)
+if k==5000 then
+	tbAwardTemplet:GiveAwardByList({{szName = "§å Phæ Tinh S­¬ng Y",tbProp={6,1,4883,1,1},nCount=1,},}, "test", 1);
+end;
+
+
+local l = random(1,50000)
+if l==2500 then
+	tbAwardTemplet:GiveAwardByList({{szName = "§å Phæ Tinh S­¬ng KhÝ Giíi",tbProp={6,1,4884,1,1},nCount=1,},}, "test", 1);
+end;
+
+
+local l = random(1,50000)
+if l==2500 then
+	tbAwardTemplet:GiveAwardByList({{szName = "§å Phæ Tinh S­¬ng KhÝ Giíi",tbProp={6,1,4884,1,1},nCount=1,},}, "test", 1);
+end;
+
+local m = random(1,500)
+if m==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "B¹ch Ngäc",tbProp={6,1,2390,1,1},nCount=1,},}, "test", 1);
+end;
+
+
+local n = random(1,500)
+if n==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Tö Ngäc",tbProp={6,1,2391,1,1},nCount=1,},}, "test", 1);
+end;
+
+local p = random(1,500)
+if p==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Xuyªn Y Ph¸ Gi¸p",tbProp={0,3989},nQuality=1,nCount=1,nExpiredTime=14*24*60},}, "test", 1);
+end;
+
+local q = random(1,500)
+if q==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò Hµnh Ên",tbProp={0,3951},nQuality=1,nExpiredTime=14*24*60},}, "test", 1);
+end;
+
+
+local r = random(1,500)
+if r==100 then
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò S¾c B¶o Ngäc",tbProp={6,1,4813,1,1},nCount=1,},}, "test", 1);
+end;
+
+
+local s = random(1,500)
+if s==100 then
+tbAwardTemplet:GiveAwardByList({{nExp_tl = 20e6}}, "test", 1);
+end;
+
+local x = random(1,750)
+if x==100 then
+	tbAwardTemplet:GiveAwardByList({{nExp_tl = 20e6}}, "test", 1);
+end;
+
+local y = random(1,1000)
+if y==100 then
+	tbAwardTemplet:GiveAwardByList({{nExp_tl = 20e6}}, "test", 1);
+end;
+
+local z = random(1,1500)
+if z==100 then
+	tbAwardTemplet:GiveAwardByList({{nExp_tl = 20e6}}, "test", 1);
+end;
+
+tbAwardTemplet:GiveAwardByList({{nExp_tl = 100e6}}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName = "ThiÖp Chóc Mõng",tbProp={6,1,2621,1,1},nCount=1,},}, "test", 1);
 
 	--tbAwardTemplet:Give(tbthuongitem, 1, {"Event_20T11", "SuDungItemXuDuocItem"});
 	SetTask(TSK_BoHoa,GetTask(TSK_BoHoa)+1)
-	Msg2Player("§· sö dông lÇn thø: <color=green>"..HienTaiSuDung+1 .."<color>")
-	--	SetTask(5333,GetTask(5333)+1)
-	--if GetTask(5333)>=500 then
-	--	tbLogEvent:LuuDSNhanVat()
-		--local check = tbLogEvent:checktopeventidnhan()
-	--	tbLogEvent:SapXepDSXepHang()
-	--	tbLogEvent:TopListFromFile()
---	end
+	Msg2Player("§· sö dông lÇn thø: <color=green>"..HienTaiSuDung .."<color>")
 	return 0
-end
-_Message = function (nItemIdx)
-	local strItemName = GetItemName(nItemIdx)
-	local strMessage = format("<color=green>Chóc mõng <color=yellow>%s<color=green> ®· nhËn ®­îc vËt phÈm <color=red>%s<color=green> tõ <color=cyan>Phong Ph¸o §¹i", GetName(), strItemName)
-	--AddGlobalNews(strMessage)
-	local handle = OB_Create();
-	ObjBuffer:PushObject(handle, strMessage)
-	RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
-	OB_Release(handle)
-	--WriteLogPro("dulieu/moruonghkmprandom.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%H%M%d%m%Y")).."   "..GetIP().."\t ®· nhËn ®­îc:"..strItemName.." tõ b¶o r­¬ng HKMP C¸i Bang\n");
 end

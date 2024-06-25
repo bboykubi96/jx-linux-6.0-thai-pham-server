@@ -26,16 +26,16 @@ end
 
 
 function xingianhap()
-if (GetCamp() == 0) and (GetSeries() == 2) and (GetLevel() >= 10) and  (GetTask(169) ~= 10) then		
-Say("<color=red>Hoa S¬n KiÕm Kh¸ch<color>: Ph¸i <color=cyan>Hoa S¬n<color> ta ®· kh«ng tham gia giang hå h¬n 10 n¨m nay, lÇn nµy t¸i xuÊt ¾t sÏ khiÕn bän giang hå tµ ph¸i ph¶i khiÕp sî mét phen!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
+if (GetCamp() == 0) and (GetSeries() == 2) and (GetLevel() >= 100) and  (GetTask(169) ~= 10) then		
+Say("<color=red>Hoa S¬n NhÞ L·o<color>: Ph¸i <color=cyan>Hoa S¬n<color> ta ®· kh«ng tham gia giang hå h¬n 10 n¨m nay, lÇn nµy t¸i xuÊt ¾t sÏ khiÕn bän giang hå tµ ph¸i ph¶i khiÕp sî mét phen!",2, "Cho ta gia nhËp/go", "§Ó ta suy nghÜ kü l¹i xem/no")
 elseif (GetCamp() == 0) and (GetSeries() ~= 2) and (GetLevel() >= 199) and (GetSex() == 0) and  (GetTask(169) ~= 10) then
 Say("<color=white>ChØ cã ng­êi míi tao nh©n vËt lµ hÖ thñy míi cã thÓ gia nhËp hoa s¬n ph¸i")
 elseif (GetTask(169) >= 10)  then
-local szTitle = "<npc>Ng­¬i ®· gia nhËp mèn ph¸i råi quay l¹i lµm chi n÷a, mau ®i ®i ?  "
+local szTitle = "<npc>Ng­¬i cã muèn vÒ ph¸i cïng ta sang ph¼ng câi giang hå nµy kh«ng ?  "
 	local tbOpt =
 	{
 		--{"PhiÒn l·o cho ta mét vÐ",vep},
-		{"KÕt thóc ®èi tho¹i."},
+		{"L·o giµ kia ®Þnh dô  dç ta µ cót."},
 	}
 	
 	CreateNewSayEx(szTitle, tbOpt)
@@ -47,42 +47,35 @@ end
 
 function go() 
 local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
-	--if(nSilverCount < 200) then -- gia xu
---Say("<color=white>ThËt xin lçi hoa s¬n ta lµ 1 ph¸i Èn chøa nhiÒu tuyÖt kü bÝ mËt cã uy lùc m¹nh mÏ triÖt tiªu c¸c ph¸i trong chèn giang hå.VÞ ®¹i hiÖp ®©y muèn gia nhËp ph¸i ta cÇn ®ãng lÖ phÝ 200xu.")
---	return 
---	end
-		AddMagic(1347,0) --Skill Hoa son
-		AddMagic(1372,0) --Skill Hoa son
-		AddMagic(1349,0) --Skill Hoa son
-		AddMagic(1374,0) --Skill Hoa son
-		--AddMagic(1350,0) --duong ngo kiem phap
-		AddMagic(1375,0) --Skill Hoa son
-		AddMagic(1351,0) --Skill Hoa son
-		AddMagic(1376,0) --Skill Hoa son
-		AddMagic(1354,0) --Skill Hoa son
-		AddMagic(1355,0) --Skill Hoa son
-		AddMagic(1379,0) --Skill Hoa son
-		AddMagic(1380,0) --ma van kiem khi
-		AddMagic(1369, 0) --cuu kiem hop nhat
-		--AddMagic(1378,0) --khi chan son ha
-		AddMagic(1358,0) --Skill Hoa son
-		--AddMagic(1380,0) --ma van kiem khi
-		--AddMagic(1360,20) --Skill Hoa son --------Doc Co Cuu Kiem
-		--AddMagic(1364,20) --doat menh lien hoan kiem
-   		--AddMagic(1382, 20)
-   		--AddMagic(1365, 20)
-   		--AddMagic(1384, 20) -- than quang toan nhieu
-   --AddMagic(210, 1)
+	if(nSilverCount < 200) then -- gia xu
+Say("<color=white>ThËt xin lçi hoa s¬n ta lµ 1 ph¸i Èn chøa nhiÒu tuyÖt kü bÝ mËt cã uy lùc m¹nh mÏ triÖt tiªu c¸c ph¸i trong chèn giang hå.VÞ ®¹i hiÖp ®©y muèn gia nhËp ph¸i ta cÇn ®ãng lÖ phÝ 200xu.")
+	return 
+	end
+		AddMagic(1347) --Skill Hoa son
+		AddMagic(1349) --Skill Hoa son
+		AddMagic(1374) --Skill Hoa son
+		AddMagic(1350) --Skill Hoa son
+		AddMagic(1375) --Skill Hoa son
+		AddMagic(1351) --Skill Hoa son
+		AddMagic(1354) --Skill Hoa son
+		AddMagic(1378) --Skill Hoa son
+		AddMagic(1355) --Skill Hoa son
+		AddMagic(1379) --Skill Hoa son
+		AddMagic(1358) --Skill Hoa son
+		AddMagic(1360) --Skill Hoa son
+		AddMagic(1365,20) --Skill Hoa son
+	AddMagic(1368,20) --Skill Hoa son --------Doc Co Cuu Kiem
+	AddMagic(1364,20) --Skill Hoa son --------Doc Co Cuu Kiem
+   AddMagic(1369, 20)
+   AddMagic(210, 1)
    SetTask(169,10)
-   SetFaction("emei");
-   SetFaction("cuiyan")
-   SetFaction("huashan");  
+   SetFaction("emei")   
 		SetLastFactionNumber(10)
-		SetCamp(3)
-		SetCurCamp(3)
-		SetRank(82)
+		SetCamp(4)
+		SetCurCamp(4)
+		SetRank(87)
 SetSeries(2)
---ConsumeEquiproomItem(200,4,417,1,1)
+ConsumeEquiproomItem(200,4,417,1,1)
 SaveNow()		
 Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color=cyan> Gia nhËp thµnh c«ng <color=yellow>Hoa S¬n Ph¸i !!!")
 	--local hoason = "script/global/bil4i3n/bil4i3n_log/Mua_Hoa_Son.log"

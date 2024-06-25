@@ -23,8 +23,7 @@ function main()
 					SetPunish(0);
 	
 					ForbidEnmity( 1 )
-					SetProtectTime(18*3) -- 4 giay bat tu 
-AddSkillState(963, 1, 0, 18*3)
+	                                AddSkillState(963, 1, 0, 18*3)
 					--SetPKFlag(1)				
 				end
 			end;
@@ -34,6 +33,7 @@ AddSkillState(963, 1, 0, 18*3)
 			SetPos(floor(x/32), floor(y/32))
 			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
 			SetFightState(1)
+                        AddSkillState(963, 1, 0, 18*3)
 		end;
 end;
 

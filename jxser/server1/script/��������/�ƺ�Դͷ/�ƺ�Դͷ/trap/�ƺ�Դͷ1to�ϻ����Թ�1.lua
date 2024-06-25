@@ -3,6 +3,7 @@
 
 function main(sel) 
 
+
 SetFightState(1); 
 NewWorld(123, 1698, 3363); 
 AddTermini(219) 

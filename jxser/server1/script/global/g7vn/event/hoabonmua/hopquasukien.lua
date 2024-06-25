@@ -5,36 +5,32 @@ IncludeLib("SETTING")
 IncludeLib("ITEM")
 
 
-NgayBatDauEventHLW = 20101114
-NgayHetHanEventHLW = 20251105
-function main(nItemIndex)
+NgayBatDauEventHLW = 20181114
+NgayHetHanEventHLW = 20191105
+function main()
 	dofile("script/global/g7vn/event/hoabonmua/hopquasukien.lua")
-	local G,D,P,nLevel = GetItemProp(nItemIndex);
-	if P ~= 4499 then
-	Say("Event ®· kÕt thóc.")
-	return 1
-	end
-if CalcEquiproomItemCount(6,1,4499,-1) <1 then
-	Say("Bug h¶??? Chim cót")
-	return 1
-	end
-		local nDate = tonumber(date("%Y%m%d"))
-	if nDate > 20220730 then
-	Say("Event ®· kÕt thóc.")
-	return 1
-	end
-	local a=random(1,3)
-	if a==1 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Ph¸o TiÓu",tbProp={6,1,4524,1,1},nCount=1},}, "test", 1);
-	end
-	if a==2 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Ph¸o Trung",tbProp={6,1,4525,1,1},nCount=1},}, "test", 1);
-	end
-	if a==3 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Ph¸o §¹i",tbProp={6,1,4526,1,1},nCount=1},}, "test", 1);
-	end
-	return 0
---end
 
+		local nDate = tonumber(date("%Y%m%d"))
+		if nDate <= NgayBatDauEventHLW then
+			Say("TÂ¹m thÃªi chÂ­a tÃ­i thÃªi gian cÃ±a Event vui lÃŸng Â®Ã®i")
+			return 1
+		end
+		if nDate >= NgayHetHanEventHLW then
+			Say("ThÃªi gian event Â®Â· kÃ•t thÃ³c")
+			return 1
+		end
+	local tbthuongitem = {
+		
+
+			{szName = "Hoa Mai",tbProp={6,1,30325,1,0,0},nCount=1, nRate=25,nExpiredTime=10080},
+			{szName = "Hoa PhÂ­Ã®ng",tbProp={6,1,30326,1,0,0},nCount=1,nRate=25,nExpiredTime=10080},
+			{szName = "Hoa GÂ¹o",tbProp={6,1,30327,1,0,0},nCount=1,nRate=25,nExpiredTime=10080},
+			{szName = "Hoa ThÂ«ng",tbProp={6,1,30328,1,0,0},nCount=1,nRate=25,nExpiredTime=10080},
+		
+}
+
+
+	tbAwardTemplet:Give(tbthuongitem, 1, {"Event_20T11", "SuDungItemXuDuocItem"});
+	return 0
 end
 

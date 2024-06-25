@@ -1,8 +1,8 @@
--- 文件名　：npcsaichanglaoban.lua
--- 创建者　：zhongchaolong
--- 创建时间：2008-04-17 16:37:43
---赛场内的赛场老板，用于领奖
+-- script viet hoa By http://tranhba.com  v╪ ki謓 t猲 ##npcsaichanglaoban.lua 
+-- script viet hoa By http://tranhba.com  ngi khai s竛g ##zhongchaolong 
+-- script viet hoa By http://tranhba.com  khai s竛g th阨 gian #2008-04-17 16:37:43 
+-- script viet hoa By http://tranhba.com  cu閏 so t礽 b猲 trong s﹏ ch cu閏 so t礽 tr祅g l穙 b秐 , d飊g cho d蒼 tng 
 Include("\\script\\missions\\racegame\\dailog.lua")
-function main()
-	racegame_Award_main()
+function main() 
+racegame_Award_main() 
 end

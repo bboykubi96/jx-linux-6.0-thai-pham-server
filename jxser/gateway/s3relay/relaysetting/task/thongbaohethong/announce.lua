@@ -1,8 +1,14 @@
+-- 定时向一组服务器的所有Gameserver发系统公告
+-- 越南版不触发公告  by peres 2006/05/11
+
 function TaskShedule()
-	TaskName("THONG BAO TIN TUC TU DONG");	
+	TaskName("THONG BAO TIN TUC TU DONG");
 	
-	TaskInterval(10);	
+	-- 10分钟一次
+	TaskInterval(10);
 	
+	-- 不设TaskTme, 则是Relay启动时就开始
+	-- x点y分开始(y%10==0)
 	local n_cur_h	= tonumber(date("%H"));
 	local n_cur_m	= tonumber(date("%M"));
 	
@@ -39,7 +45,7 @@ g_strTipMsg =
 --		"〖奇珍阁〗易容术士、行脚商人、零贩最近合伙兑下了一家百年老铺——<color=yellow>奇珍阁<color>(点击右下角按钮)，新春期间商品优惠热卖(优惠时间：2006年1月24日至2月7日)。(详情参见官网：jx.xoyo.com)",
 	};
 	
-
+-- 新功能预告信息
 g_nFutureDate = 2019010424;
 STR_HEAD_FUTURE = " [Ho箃 чng C鱱 Nguy謙 Phong Ba]";
 g_strFutureMsg = 
@@ -74,10 +80,11 @@ function getTipMsg()
 	return g_strTipMsg[nIndex];
 end
 
+-- 取预告信息
 function getFutureMsg()
 	nCurDate = tonumber(date("%Y%m%d%H"));
 	str = "";
-	if (g_nFutureDate > nCurDate) then
+	if (g_nFutureDate > nCurDate) then -- 是否在指定日期之前，否则不发
 		nCount = getn(g_strFutureMsg);
 		nIndex = random(1, nCount);
 		str = STR_HEAD_FUTURE..(g_strFutureMsg[nIndex]);

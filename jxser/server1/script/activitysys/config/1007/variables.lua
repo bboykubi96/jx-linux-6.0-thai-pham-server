@@ -1,31 +1,18 @@
-nItemExpiredTime = 20171102 -- H¹n sö dông cña Item
-nHoangThachMaxCount = 500
+nItemExpiredTime = 20111028 -- H¹n sö dông cña Item
+nHoangThachMaxCount = 1000
 nPromotionID = 14
 strTranLogFolder = "201110_EventPhuNuVietNam/"
-
-tbGiveBoHoaHongLimit =			--Limit TÆng 1000 VËt phÈm Bã hoa hång
+tbGiveHoangThachLimit =			--Limit TÆng 2000 VËt phÈm Hoµng Th¹ch
 {
-	--TaskID = 3087,
-	nTaskID = 3089,
+	nTaskID = 3085,
 	nStartBit = 1,
 	nBitCount = 14,
-	nMaxValue = 500,
+	nMaxValue = 1000,
 }
 
-
-tbGiveHoangThachLimit =			--Limit TÆng 1000 VËt phÈm Hoµng Th¹ch
+tbUseBTTLimit =		-- Use 1000 vËt phÈm B¨ng Tinh Th¹ch
 {
-	--nTaskID = 3085,
-	nTaskID = 3088,
-	nStartBit = 1,
-	nBitCount = 14,
-	nMaxValue = 500,
-}
-
-tbUseBTTLimit =		-- Use 2000 vËt phÈm B¨ng Tinh Th¹ch
-{
-	--nTaskID = 3086,
-	nTaskID = 3090,
+	nTaskID = 3086,
 	nStartBit = 1,
 	nBitCount = 14,
 	nMaxValue = 1000,

@@ -40,10 +40,10 @@ local nTinvat = GetTask(3001)
 		
 	else	
 		
-	if GetTask(3001) == 0 then
+		if GetTask(3001) == 0 then
 
-			if nNum >= 40 then
-				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 40 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
+			if nNum >= 20 then
+				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 20 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
 				return 0;
 			end;
 		
@@ -52,8 +52,9 @@ local nTinvat = GetTask(3001)
 		end
 
 		if GetTask(3001) == 1 then
-			if nNum >= 40 then
-				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 40 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
+
+			if nNum >= 25 then
+				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 25 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
 				return 0;
 			end;
 		
@@ -61,15 +62,15 @@ local nTinvat = GetTask(3001)
 		end
 		if GetTask(3001) == 2 then
 
-			if nNum >= 40 then
-				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 40 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
+			if nNum >= 30 then
+				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 30 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
 				return 0;
 			end;
 		end
 		if GetTask(3001) == 3 then
 
-			if nNum >= 40 then
-				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 40 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
+			if nNum >= 35 then
+				Say("Ha! Ha! VŞ thiÕu hŞªp nµy! Mçi ngµy lµm 35 lÇn lµ ®ñ råi! Ngµy mai trë l¹i nhĞ!", 0);
 				return 0;
 			end;
 		end
@@ -154,9 +155,9 @@ function Task_NewVersionAward()
 			SetTask(idtaskCodetanthuG7nv3,1)
 			--if nlevel <99 and ntrungs == 0 then
 			if nlevel < 79 then
-			--	local lvthem = 79 - GetLevel()
-			--	ST_LevelUp(lvthem)
-			--	Msg2Player("Chóc mõng ®¹i hiÖp ®· <color=yellow>hoµn thµnh xong nhiÖm vô thø 3<color> trong chuçi nhiÖm vô t©n thñ, vÒ gÆp NPC Hç trî t©n thñ ®Ó xem nhiÖm vô tiÕp theo")
+				local lvthem = 79 - GetLevel()
+				ST_LevelUp(lvthem)
+				Msg2Player("Chóc mõng ®¹i hiÖp ®· <color=yellow>hoµn thµnh xong nhiÖm vô thø 3<color> trong chuçi nhiÖm vô t©n thñ, vÒ gÆp NPC Hç trî t©n thñ ®Ó xem nhiÖm vô tiÕp theo")
 			end
 		end
 	end
@@ -164,76 +165,41 @@ function Task_NewVersionAward()
 	-----=== phan thuong da tau 20 nhiem vu lien tiep==========-----------
 	local nNum = GetTask(ID_TASKLINK_LIMITNUM);
 	local nCancelNum = GetTask(ID_TASKLINK_LIMITCancelCount);	
-		if (nNum - nCancelNum)== 10 then
+	
+	if (nNum - nCancelNum) == 20 then
 		tbAward = 
 			{
-			{szName="§iÓm Kinh NghiÖm",nExp_tl =1e6},
-		--	{szName="Phóc Duyªn §¹i",tbProp={6,1,124,1,1,0},nCount=1},
-			}
-		tbAwardTemplet:Give(tbAward, 1, {"DT", "test"})
-	--	Add120SkillExp(500000)
-	--	Clear120SkillExpLimit ()
---	AddOwnExp(500000)
-		--logplayer("dulieu/moc20dt.txt"Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Da nhan moc 20 dt trong ngay ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-	--	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> hoµn thµnh 10 nhiÖm vô d· tÈu trong ngµy <color> nhËn ®­îc  <color=yellow>200.000 EXP + 1 Phóc Duyªn §¹i<color>")
-	end
-	if (nNum - nCancelNum)== 20 then
-		tbAward = 
-			{
-			{szName="§iÓm Kinh NghiÖm",nExp_tl = 5e6},
-		--	{szName="R­¬ng §å Phæ HKMP",tbProp={6,1,4403,1,1,0},nCount=5,nRate=30},
-			}
-		tbAwardTemplet:Give(tbAward, 1, {"DT", "test"})
-	--	Add120SkillExp(1000000)
-	--	Clear120SkillExpLimit ()
-	--AddOwnExp(1000000)
-		--logplayer("dulieu/moc20dt.txt"Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Da nhan moc 20 dt trong ngay ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
---		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> hoµn thµnh 20 nhiÖm vô d· tÈu trong ngµy <color> nhËn ®­îc  <color=yellow>500.000 EXP + 1 B¸nh ThËp CÈm Phï Dung<color>")
-	end
 
-	if (nNum - nCancelNum)== 30 then
-		tbAward = 
-			{
-			{szName="§iÓm Kinh NghiÖm",nExp_tl = 7e6},
-		--	{szName="TiÒn §ång",tbProp={4,417,1,1},nCount=5},
+	
+			{szName="§iÓm Kinh NghiÖm",nExp = 200e6,nRate=70},
+			{szName="MËt TŞch Kü N¨ng 150 CÊp 21",tbProp={6,1,4345,1,0,0},nCount=1,nRate=3},
+			{szName="MËt TŞch Kü N¨ng 150 CÊp 22",tbProp={6,1,4346,1,0,0},nCount=1,nRate=1},
+			--{szName="MËt TŞch Kü N¨ng 150 CÊp 23",tbProp={6,1,4371,1,0,0},nCount=1,nRate=1},
+			{szName="Cµn kh«n song tuyÖt béi",tbProp={6, 1, 2219, 1, 1, 0},nCount=1,nRate=3},
+			{szName="Tinh Ngäc",tbProp={6, 1, 4807, 1, 1, 0},nCount=random(20,50),nRate=4},
+			
+	
 			}
 		tbAwardTemplet:Give(tbAward, 1, {"DT", "test"})
-	--	Add120SkillExp(2000000)
-	--	Clear120SkillExpLimit ()
-	--	AddOwnExp(2000000)
-		--logplayer("dulieu/moc20dt.txt"Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Da nhan moc 20 dt trong ngay ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-	--	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> hoµn thµnh 30 nhiÖm vô d· tÈu trong ngµy <color> nhËn ®­îc  <color=yellow>1.000.000 EXP + 3 B¸nh ThËp CÈm Phï Dung <color>")
-	end
-		if (nNum - nCancelNum)== 40 then
-		tbAward = 
-			{
-			{szName="§iÓm Kinh NghiÖm",nExp_tl = 10e6},
---			{szName="TiÒn §ång",tbProp={4,417,1,1},nCount=5},
-		--	{szName="M¶nh GhĞp R­¬ng An Bang",tbProp={4,1624,1,1},nCount=20},
-			{szName="Tiªn Th¶o Lé",tbProp={6,1,71,1,1,0},nCount=1,nBindState=-2},
-		--		{szName="LÖnh Bµi",tbProp={6,1,157,1,1,0},nCount=20},
-	--	{szName="Hép trang bŞ xanh th­êng",tbProp={6,1,4476,1,1,0},nCount=random(5,10)},
-			}
-		tbAwardTemplet:Give(tbAward, 1, {"DT", "test"})
-	--	Add120SkillExp(2000000)
-	--	Clear120SkillExpLimit ()
-	--	AddOwnExp(2000000)
-		--logplayer("dulieu/moc20dt.txt"Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Da nhan moc 20 dt trong ngay ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> hoµn thµnh 40 nhiÖm vô d· tÈu trong ngµy <color> nhËn ®­îc  <color=yellow> 10.000.000 EXP + Tiªn Th¶o Lé 1H.")
-	end
 
+
+		--logplayer("dulieu/moc20dt.txt"Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Da nhan moc 20 dt trong ngay ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+
+		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> hoµn thµnhl 20 nhiÖm vô d· tÈu trong ngµy <color> nhËn ®­îc  <color=yellow>NhiÒu phÇn th­ëng gi¸ trŞ<color>")
+	end
+	
 	-----=== phan thuong da tau 40 nhiem vu lien tiep==========-----------
-	--	local nNum = GetTask(ID_TASKLINK_LIMITNUM);
-	--local nCancelNum = GetTask(ID_TASKLINK_LIMITCancelCount);
---	if (nNum - nCancelNum) == 40 then
+		local nNum = GetTask(ID_TASKLINK_LIMITNUM);
+	local nCancelNum = GetTask(ID_TASKLINK_LIMITCancelCount);
+	if (nNum - nCancelNum) == 40 then
 		
-	--	tbAwardTemplet:GiveAwardByList({{szName="R­¬ng §å Phæ HKMP",tbProp={6,1,4403,1,1},nCount=15,},}, "test", 1);	
-	--	Msg2Player("H«m nay hoµn thµnh liªn tôc nhiÖm vô D· TÈu lÇn thø 40 liªn tiÕp kh«ng hñy , nhËn ®îc phÇn th­ëng!");
+		tbAwardTemplet:GiveAwardByList({{szName="MËt TŞch Kü N¨ng 150 CÊp 23",tbProp={6,1,4347,1,0,0},nCount=1,},}, "test", 1);	
+		Msg2Player("H«m nay hoµn thµnh liªn tôc nhiÖm vô D· TÈu lÇn thø 40 liªn tiÕp kh«ng hñy , nhËn ®îc phÇn th­ëng!");
 
 		
 
 
---	end
+	end
 	
 end
 
@@ -243,18 +209,15 @@ end
 
 
 function main()
-	if GetAccount=="testgame4" then
+	
 	dofile("script/global/seasonnpc.lua");
-	end
 	--dofile("script/global/g7vn/g7configall.lua")
 
-	if 1==1 then
-	--Say("T¹m ®ãng chøc n¨ng ®Ó ®ua top")
-	--	return
-	end
+	--do Say("HiÖn  t¹i dang dua top! tinh nang nay se duoc mo khi dua top xong") return end
+
 	
-	if GetLevel() < 40 then
-		Say("§¼ng cÊp 40 trë lªn míi lµm nhiÖm vô d· tÈu .")
+	if GetLevel() < 170 then
+		Say("§¼ng cÊp 170 trë lªn míi lµm nhiÖm vô d· tÈu .")
 		return 1;
 
 	end
@@ -460,10 +423,9 @@ else
 end;
 
 Say(myTitleText,
-	5,
+	4,
 	"BiÕt råi, ®Ó ta hoµn thµnh nhiÖm vô xong míi l¹i t×m ng­¬i/Task_Wait",
 	"Ta ®· hoµn thµnh nhiÖm vô lÇn nµy, xin h·y kiÓm tra l¹i!/Task_Accept",
-	"Ta muèn dïng Tö Thñy Tinh hoÆc D· TÈu Chi LÖnh ®Ó hoµng thµnh nhiÖm vô!/hoanhthanhdatau",
 	--"Ta ®· hoµn thµnh nhiÖm vô lÇn nµy, xin h·y kiÓm tra l¹i!/Task_GiveAward",
 	"NhiÖm vô lÇn nµy khã qu¸, Ta muèn hñy bá kh«ng lµm n÷a/Task_CancelConfirm",
 	"Ta muèn biÕt kh¶o nghiÖm cña ng­¬i nãi cã néi dung ra sao/Task_Info"
@@ -488,7 +450,6 @@ if (myTaskCancel==0) then
 	Say(" HiÖn t¹i b¹n kh«ng cã c¬ héi nµo ®Ó hñy bá nhiÖm vô, b¹n chØ cã thÓ lµm l¹i tõ ®Çu th«i! §ång thêi phÇn th­ëng tİch lòy cña b¹n lóc tr­íc sÏ ®­îc tİnh l¹i tõ ®Çu.",
 		3,
 		"§óng, ta kh«ng muèn lµm nhiÖm vô quû qu¸i nµy ®©u/Task_NormalCancel",
-	--	"Ta muèn sö dông 1 Tö Thñy Tinh ®Ó hñy bá nhiÖm vô lÇn nµy/#Task_TotalCancel",
 		"Ta muèn sö dông 100 m¶nh s¬n Hµ X· T¾c ®Ó hñy bá nhiÖm vô lÇn nµy/#Task_Cancel(2)",
 		"Uhm! §Ó ta suy nghÜ l¹i ®·/Task_Wait");
 	
@@ -510,46 +471,8 @@ Say(" B¹n suy nghÜ kü hñy bá nhiÖm vô lÇn nµy ®óng kh«ng?",2,"§õng l«i th«i n÷a!
 end;
 
 -- 1000 
-function hoanhthanhdatau()
-	GiveItemUI("Hoµn thµnh D· TÈu", "NÕu ng­¬i ®· quyÕt hñy bá chuçi nhiÖm vô, ta còng kh«ng ng¨n c¶n, h·y ®Æt vµo viªn Tö Thñy Tinh hoÆc D· TÈu Chi LÖnh !", "hoanhthanhdatau_ok");
-end;
-
-
-function hoanhthanhdatau_ok(nCount)
-	
-	local nGenre,nDetail,nParticular,nLevel,nGoodsFive,nLuck = 0,0,0,0,0,0;
-	local nIndex = 0;
-	
-	if nCount~=1 then
-		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Tö Thñy Tinh hoÆc 1 D· TÈu Chi lÖnh<color> th«i!", 0);
-		return
-	end;
-	
-	nIndex = GetGiveItemUnit(1);
-	nGenre,nDetail,nParticular,nLevel,nGoodsFive,nLuck = GetItemProp(nIndex);
-	
-	if (nGenre==4 and nDetail==239 and nParticular==1) or (nGenre==6 and nParticular==4407) then
-		if nDetail==239 then
-		ConsumeEquiproomItem(1,4,239,1,1)
-		end
-		if nParticular==4407 then
-		ConsumeEquiproomItem(1,6,1,4407,-1)
-		end
-		Task_AwardRecord()
-		--tl_settaskcourse(2)
-	--	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông <color=yellow>LÖnh bµi Hoµn Thµnh D· TÈu<color> ®Ó v­ît qua nhiÖm vô lÇn nµy")
-		Say("§· hoµn thµnh xong nhiÖm vô, ®èi tho¹i víi D· TÈu ®Ó nhËn th­ëng")
-		nUseTimes = nUseTimes + 1;
-		SetBitTask(DTL_TASK, 0, 8,  nUseTimes);
-		SetBitTask(DTL_TASK, 8, 24, nLastUseDate);
-	else
-		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Tö Thñy Tinh hoÆc 1 D· TÈu Chi lÖnh<color> th«i!", 0);
-		return		
-	end;
-	
-end;
 function Task_TotalCancel()
-	GiveItemUI("Giao thñy tinh cho D· TÈu", "NÕu ng­¬i ®· quyÕt hñy bá chuçi nhiÖm vô, ta còng kh«ng ng¨n c¶n, h·y ®Æt vµo viªn Tö Thñy Tinh!", "Task_TotalCancel_Main", "Task_Wait");
+	GiveItemUI("Giao thñy tinh cho D· TÈu", "NÕu ng­¬i ®· quyÕt hñy bá chuçi nhiÖm vô, ta còng kh«ng ng¨n c¶n, h·y ®Æt vµo viªn Lôc Thñy Tinh!", "Task_TotalCancel_Main", "Task_Wait");
 end;
 
 
@@ -559,17 +482,17 @@ function Task_TotalCancel_Main(nCount)
 	local nIndex = 0;
 	
 	if nCount~=1 then
-		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Tö Thñy Tinh<color> th«i!", 0);
+		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Lôc Thñy Tinh<color> th«i!", 0);
 		return
 	end;
 	
 	nIndex = GetGiveItemUnit(1);
 	nGenre,nDetail,nParticular,nLevel,nGoodsFive,nLuck = GetItemProp(nIndex);
 	
-	if nGenre==4 and nDetail==239 and nParticular==1 then
+	if nGenre==4 and nDetail==240 and nParticular==1 then
 		Task_Cancel(1);  -- È«²¿È¡Ïû
 	else
-		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Tö Thñy Tinh<color> th«i!", 0);
+		Say("D· TÈu: Ng­¬i ®­a g× cho ta vËy? Ta chØ cÇn <color=yellow>1 viªn Lôc Thñy Tinh<color> th«i!", 0);
 		return		
 	end;
 	
@@ -1032,19 +955,19 @@ if (tl_gettaskcourse() == 3) then
 	Say("Ng­¬i ®· l·nh th­ëng råi! §Şnh g¹t giµ nµy µ?",0);
 	return
 end
-	local nAward1 = nAward
-	Earn(nAward1)
-	Msg2Player("B¹n nhËn ®­îc <color=green>"..nAward1.."<color> l­îng  b¹c");
+	local nAward = nAward * 2
+	Earn(nAward)
+	Msg2Player("B¹n nhËn ®­îc <color=green>"..nAward.."<color> l­îng  b¹c");
 	
 	tl_settaskcourse(3)	
 	PayPlayerLinkAward();
 	
-	if nAward1>=300000 then
+	if nAward>=300000 then
 		WriteLog(" [Ghi nhí chuçi nhiÖm vô]"..
 				 date(" [%y n¨m %m th¸ng %d ngµy  %H giê %M phót]")..
 				 " [Tµi kho¶n]"..GetAccount()..
 				 " [Nh©n vËt]"..GetName()..
-				 "Trong nhiÖm vô liªn tiÕp nhËn ®­îc<money>"..nAward1.."</money>phÇn th­ëng lµ l­îng b¹c!");
+				 "Trong nhiÖm vô liªn tiÕp nhËn ®­îc<money>"..nAward.."</money>phÇn th­ëng lµ l­îng b¹c!");
 	end;
 	local nBeishu = greatnight_huang_event(4);
 	local nTongValueGift = GetTaskTemp(TASKID_TONG_TASKLINKTEMP);
@@ -1057,14 +980,14 @@ end
 
 
 function SelectAward_Exp(nAward)
---local nExp = 4318540
+local nExp = 4318540
 local nNum     = GetTask(ID_TASKLINK_LIMITNUM);
---if nNum <= 4 then
---	nAward = nExp + nExp  * (nNum + 1)
---end
---if nNum > 4 then
-	--nAward = nExp * nNum  + nExp * (nNum - 5)
---end
+if nNum <= 4 then
+	nAward = nExp + nExp  * (nNum + 1)
+end
+if nNum > 4 then
+	nAward = nExp * nNum  + nExp * (nNum - 5)
+end
 
 if (tl_gettaskcourse() == 3) then
 	Say("Ng­¬i ®· l·nh th­ëng råi! §Şnh g¹t giµ nµy µ?",0);
@@ -1170,49 +1093,121 @@ Ladder_NewLadder(10118, GetName(), nTotalTask, 1);
 --nTotalTask = 100 --test so lan nhiem vu da tau
 
 tl_getlinkaward(Task_AwardLink, nTotalTask);
-if nTotalTask==100 or nTotalTask==200 or nTotalTask==300 or nTotalTask==400 or nTotalTask==500 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Tiªn Th¶o Lé", tbProp ={ 6,1,71,1,1}, nCount=1}}, format("Get %s", "Tiªn Th¶o Lé"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 Tiªn Th¶o Lé.");
+
+if (nTotalTask == 8000) then
+	nGoldenID = vkhkmp[random(getn(vkhkmp))]
+	AddGoldItem( 0, nGoldenID )
+	--WriteLog("[ÈÎÎñÁ´½±Àø¼ÇÂ¼]"..date("[%yÄê%mÔÂ%dÈÕ%HÊ±%M·Ö]").."£ºÕËºÅ"..GetAccount().."£¬½ÇÉ«"..GetName().."ÔÚÈÎÎñÁ´½±ÀøÖĞÒòÎªÍê³É 8000 ´ÎÈÎÎñµÃµ½ÁË»Æ½ğ×°±¸Ò»¼ş£¬»Æ½ğ×°±¸±àºÅÎª£º"..nGoldenID)
+	logplayer("dulieu/datau8000.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] hoan thanh 8000 da tau nhan duoc [%s] ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),nGoldenID))
+	AddGlobalCountNews("§¹i hiÖp "..GetName().." ®· hoµn thµnh 8000 chuçi nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc trang bŞ HK ", 3);
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 8000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc trang bŞ HK ");
+	end
 	return
 end
-if nTotalTask==1000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "TÈy Tñy Kinh", tbProp ={ 6,1,22,1,1}, nCount=1}}, format("Get %s", "TÈy Tñy Kinh"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 TÈy Tñy Kinh.");
+
+if (nTotalTask == 5000) then
+	nGoldenID = nAnBang[random(getn(nAnBang))]
+	AddGoldItem( 0, nGoldenID )
+	--WriteLog("[ÈÎÎñÁ´½±Àø¼ÇÂ¼]"..date("[%yÄê%mÔÂ%dÈÕ%HÊ±%M·Ö]").."£ºÕËºÅ"..GetAccount().."£¬½ÇÉ«"..GetName().."ÔÚÈÎÎñÁ´½±ÀøÖĞÒòÎªÍê³É 8000 ´ÎÈÎÎñµÃµ½ÁË»Æ½ğ×°±¸Ò»¼ş£¬»Æ½ğ×°±¸±àºÅÎª£º"..nGoldenID)
+	logplayer("dulieu/datau4000.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] hoan thanh 4000 da tau nhan duoc [%s] ! ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),nGoldenID))
+	AddGlobalCountNews("§¹i hiÖp "..GetName().." ®· hoµn thµnh 5000 chuçi nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc trang bŞ an bang", 3);
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 5000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc trang bŞ an bang");
+	end
 	return
 end
-if nTotalTask==2000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "TÈy Tñy Kinh", tbProp ={ 6,1,22,1,1}, nCount=1}}, format("Get %s", "TÈy Tñy Kinh"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 TÈy Tñy Kinh.");
+
+
+if (nTotalTask == 3500) then
+	nGoldenID = nNhuTinh[random(getn(nNhuTinh))]
+	AddGoldItem( 0, nGoldenID )
+	--WriteLog("[ÈÎÎñÁ´½±Àø¼ÇÂ¼]"..date("[%yÄê%mÔÂ%dÈÕ%HÊ±%M·Ö]").."£ºÕËºÅ"..GetAccount().."£¬½ÇÉ«"..GetName().."ÔÚÈÎÎñÁ´½±ÀøÖĞÒòÎªÍê³É 8000 ´ÎÈÎÎñµÃµ½ÁË»Æ½ğ×°±¸Ò»¼ş£¬»Æ½ğ×°±¸±àºÅÎª£º"..nGoldenID)
+	logplayer("dulieu/datau2000.txt",format("Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] hoan thanh 3500 da tau nhan duoc [%s] ! ",GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),nGoldenID))
+	AddGlobalCountNews("§¹i hiÖp "..GetName().." ®· hoµn thµnh 3500 chuçi nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc trang bŞ nhu t×nh", 3);
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 3000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc trang bŞ nhu t×nh");
+	end
 	return
 end
-if nTotalTask==3000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "Vâ L©m MËt TŞch", tbProp ={ 6,1,26,1,1}, nCount=1}}, format("Get %s", "Vâ L©m MËt TŞch"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 Vâ L©m MËt TŞch.");
+
+if (nTotalTask == 3000) then
+	nGoldenID = nDinhQuoc[random(getn(nDinhQuoc))]
+	AddGoldItem( 0, nGoldenID )
+	--WriteLog("[ÈÎÎñÁ´½±Àø¼ÇÂ¼]"..date("[%yÄê%mÔÂ%dÈÕ%HÊ±%M·Ö]").."£ºÕËºÅ"..GetAccount().."£¬½ÇÉ«"..GetName().."ÔÚÈÎÎñÁ´½±ÀøÖĞÒòÎªÍê³É 8000 ´ÎÈÎÎñµÃµ½ÁË»Æ½ğ×°±¸Ò»¼ş£¬»Æ½ğ×°±¸±àºÅÎª£º"..nGoldenID)
+	logplayer("dulieu/datau2000.txt",format("Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] hoan thanh 3000 da tau nhan duoc [%s] ! ",GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),nGoldenID))
+	AddGlobalCountNews("§¹i hiÖp "..GetName().." ®· hoµn thµnh 3000 chuçi nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc trang bŞ ®Şnh quèc", 3);
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 3000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc trang bŞ §Şnh Quèc");
+	end
 	return
 end
-if nTotalTask==4000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BŞ HKMP Lo¹i 3", tbProp ={ 6,1,4542,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 3"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BŞ Hoµng Kim M«n Ph¸i lo¹i 3.");
+
+if (nTotalTask == 2500) then
+	nGoldenID = nHiepCot[random(getn(nHiepCot))]
+	AddGoldItem( 0, nGoldenID )
+	--WriteLog("[ÈÎÎñÁ´½±Àø¼ÇÂ¼]"..date("[%yÄê%mÔÂ%dÈÕ%HÊ±%M·Ö]").."£ºÕËºÅ"..GetAccount().."£¬½ÇÉ«"..GetName().."ÔÚÈÎÎñÁ´½±ÀøÖĞÒòÎªÍê³É 8000 ´ÎÈÎÎñµÃµ½ÁË»Æ½ğ×°±¸Ò»¼ş£¬»Æ½ğ×°±¸±àºÅÎª£º"..nGoldenID)
+	logplayer("dulieu/datau2000.txt",format("Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] hoan thanh 2500 da tau nhan duoc [%s] ! ",GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName(),nGoldenID))
+	AddGlobalCountNews("§¹i hiÖp "..GetName().." ®· hoµn thµnh 2500 chuçi nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc trang bŞ hiÖp cèt", 3);
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 2500 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc trang bŞ hiÖp cèt");
+	end
 	return
 end
-if nTotalTask==5000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BŞ HKMP Lo¹i 3", tbProp ={ 6,1,4542,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 3"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BŞ Hoµng Kim M«n Ph¸i lo¹i 3.");
+
+if (nTotalTask == 200) then
+tbAwardTemplet:GiveAwardByList({{szName = "Tiªn Th¶o Lé 1h ", tbProp ={ 6, 1, 71, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "Tiªn Th¶o Lé"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 200 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc Tiªn Th¶o Lé");
+	end
 	return
 end
-if nTotalTask==6000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BŞ HKMP Lo¹i 2", tbProp ={ 6,1,4541,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 2"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BŞ Hoµng Kim M«n Ph¸i lo¹i 2.");
+
+if (nTotalTask == 400) then
+tbAwardTemplet:GiveAwardByList({{szName = "QuÕ Hoa Töu", tbProp ={ 6, 1, 125, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "QuÕ Hoa Töu"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 400 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc QuÕ Hoa Töu");
+	end
 	return
 end
-if nTotalTask==7000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BŞ HKMP Lo¹i 1", tbProp ={ 6,1,4540,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim M«n Ph¸i lo¹i 1"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BŞ Hoµng Kim M«n Ph¸i lo¹i 1.");
+
+if (nTotalTask == 600) then
+tbAwardTemplet:GiveAwardByList({{szName = "Thñy Tinh", tbProp ={ 4, 239, 1, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "Thñy Tinh"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 600 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc Thñy Tinh");
+	end
 	return
 end
-if nTotalTask==8000 then
-	tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng Trang BŞ Hoµng Kim TrÊn Bang Chi B¶o", tbProp ={ 6,1,4539,1,1}, nCount=1}}, format("Get %s", "Hoµng Kim TrÊn Bang"))
-	Msg2Player("§· hoµn thµnh "..nTotalTask.." nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­îc 1 R­¬ng Trang BŞ Hoµng Kim M«n Ph¸i TrÊn Bang Chi B¶o.");
+
+if (nTotalTask == 800) then
+tbAwardTemplet:GiveAwardByList({{szName = "Tinh Hång B¶o Th¹ch", tbProp ={ 4, 353, 1, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "Tinh Hång B¶o Th¹ch"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 800 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc Tinh Hång B¶o Th¹ch");
+	end
+	return
+end
+
+if (nTotalTask == 1000) then
+tbAwardTemplet:GiveAwardByList({{szName = "Tiªn Th¶o Lé §Æc BiÖt", tbProp ={ 6, 1, 1181, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "Tiªn Th¶o Lé §Æc BiÖt"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 1000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc Tiªn Th¶o Lé §Æc BiÖt");
+	end
+	return
+end
+
+if (nTotalTask == 1500) then
+tbAwardTemplet:GiveAwardByList({{szName = "Vâ L©m MËt TŞch", tbProp ={ 6, 1, 26, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "Vâ L©m MËt TŞch"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 1500 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc Vâ L©m MËt TŞch");
+	end
+	return
+end
+
+if (nTotalTask == 2000) then
+tbAwardTemplet:GiveAwardByList({{szName = "TÈy Tñy Kinh", tbProp ={ 6, 1, 22, 1, 1, 0, 0, 0}, nRate = 100, nCount=1}}, format("Get %s", "TÈy Tñy Kinh"))
+	for i=1,3 do
+		Msg2Player("§· hoµn thµnh 2000 nhiÖm vô d· tÈu liªn tiÕp may m¾n nhËn ®­­îc TÈy Tñy Kinh");
+	end
 	return
 end
 ---------------------------------------------------------------

@@ -54,28 +54,29 @@ function TB_QIANQIU_YINGLIE0904:check_right()
 end
 
 function TB_QIANQIU_YINGLIE0904:check_mask_ex()
-	--if (CalcItemCount(2,0,11,482,-1) > 0) then
-		--return 3;
-	--end
+	if (CalcItemCount(2,0,11,482,-1) > 0) then
+		return 3;
+	end
 	return 1
 end
 
 function TB_QIANQIU_YINGLIE0904:check_mask()
 	--CalcItemCount(2,0,-1,-1,-1)
---	if CalcItemCount(2,0,11,450,-1) > 0 then
-	--	return 1.5;
----	elseif (CalcItemCount(2,0,11,447,-1) > 0) then
-	--	return 2;
---	elseif (CalcItemCount(2,0,11,482,-1) > 0) then
---		return 3;
---	else
-		
-		--if (CalcItemCount(2,0,11,447,-1) > 0) or (CalcItemCount(2,0,11,842,-1) > 0) or (CalcItemCount(2,0,11,843,-1) > 0) or (CalcItemCount(2,0,11,844,-1) > 0) or (CalcItemCount(2,0,11,845,-1) > 0) or (CalcItemCount(2,0,11,846,-1) > 0) or (CalcItemCount(2,0,11,847,-1) > 0) or (CalcItemCount(2,0,11,848,-1) > 0) or (CalcItemCount(2,0,11,849,-1) > 0) or (CalcItemCount(2,0,11,850,-1) > 0) or (CalcItemCount(2,0,11,851,-1) > 0)  or (CalcItemCount(2,0,11,852,-1) > 0) or (CalcItemCount(2,0,11,853,-1) > 0)   then
-		--return 1.5;
-		--else
-		return 1;
-		--end
---	end
+	local tbEquip = GetAllEquipment()
+	for i=1, getn(tbEquip) do
+		local nG, nD, nP = GetItemProp(tbEquip[i])
+		if nP == 647 or nP == 806 or nP == 839 or nP == 840  or nP == 841 then
+			return 2;
+		else
+			return 1;
+		end
+	end
+
+	--if ((CalcItemCount(2,0,11,647,-1) > 0) or (CalcItemCount(2,0,11,806,-1) or (CalcItemCount(2,0,11,839,-1) > 0)) then
+		--return 2;
+	--else
+		--return 1;
+	--end
 end
 
 function TB_QIANQIU_YINGLIE0904:add_sj_point_ex(npoint)
@@ -178,10 +179,10 @@ function TB_QIANQIU_YINGLIE0904:add_rank_awardtoithu7(nrank)
 				if (nrank == 1) then
 					local tbAward1 = 
 					{
-						{szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=10,nRate=25,},
-						{szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=10,nRate=25},
-						{szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=30,nRate=25},
-						{szName = "ChiÕn m· B«n Tiªu",tbProp={0,10,6,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
+						-- {szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=10,nRate=25,},
+						-- {szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=10,nRate=25},
+						-- {szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=30,nRate=25},
+						-- {szName = "ChiÕn m· B«n Tiªu",tbProp={0,10,6,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
 					}
 					tbAwardTemplet:GiveAwardByList(tbAward1, "PhanThuongTongKimToiThu7TOP1")
 					AddGlobalCountNews("Vinh danh <color=green>TOP 1 ®¹i cao thñ Tèng Kim 19h50 ®Õn 21h00<color> tèi thø 7 hµng tuÇn, ®¹i hiÖp <color=red>"..GetName().."<color> ®· nhËn ®­îc phÇn th­ëng quý gi¸.",5)
@@ -190,10 +191,10 @@ function TB_QIANQIU_YINGLIE0904:add_rank_awardtoithu7(nrank)
 				if (nrank == 2) then
 					local tbAward2 = 
 					{
-						{szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=7,nRate=25,},
-						{szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=7,nRate=25},
-						{szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=20,nRate=25},
-						{szName = "ChiÕn m· Phi V©n",tbProp={0,10,8,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
+						-- {szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=7,nRate=25,},
+						-- {szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=7,nRate=25},
+						-- {szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=20,nRate=25},
+						-- {szName = "ChiÕn m· Phi V©n",tbProp={0,10,8,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
 					}
 					tbAwardTemplet:GiveAwardByList(tbAward2, "PhanThuongTongKimToiThu7Top2")
 					AddGlobalCountNews("Vinh danh <color=green>TOP 2 ®¹i cao thñ Tèng Kim 19h50 ®Õn 21h00<color> tèi thø 7 hµng tuÇn, ®¹i hiÖp <color=red>"..GetName().."<color> ®· nhËn ®­îc phÇn th­ëng quý gi¸.",5)
@@ -202,10 +203,10 @@ function TB_QIANQIU_YINGLIE0904:add_rank_awardtoithu7(nrank)
 				if (nrank == 3) then
 					local tbAward3 = 
 					{
-						{szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=5,nRate=25,},
-						{szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=5,nRate=25},
-						{szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=10,nRate=25},
-						{szName = "ChiÕn m· Phi V©n",tbProp={0,10,8,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
+						-- {szName = "Tiªn th¶o lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=5,nRate=25,},
+						-- {szName = "NÕn b¸t tr©n phóc nguyÖt",tbProp={6,1,1817,1,0,0},nCount=5,nRate=25},
+						-- {szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=10,nRate=25},
+						-- {szName = "ChiÕn m· Phi V©n",tbProp={0,10,8,1,5,0},nCount=1,nRate=25,nExpiredTime=7*60*24},
 					}
 					tbAwardTemplet:GiveAwardByList(tbAward3, "PhanThuongTongKimToiThu7")
 					AddGlobalCountNews("Vinh danh <color=green>TOP 3 ®¹i cao thñ Tèng Kim 19h50 ®Õn 21h00<color> tèi thø 7 hµng tuÇn, ®¹i hiÖp <color=red>"..GetName().."<color> ®· nhËn ®­îc phÇn th­ëng quý gi¸.",5)
@@ -221,46 +222,46 @@ function TB_QIANQIU_YINGLIE0904:add_rank_award(nrank)
 		return 
 	end
 	
-	--if (nrank == 1) then
-	--	if CalcFreeItemCellCount()== 0 then
-	--		Msg2Player("Kho¶ng trèng hµnh trang kh«ng ®ñ, kh«ng thÓ nhËn mÆt n¹ ®¹i t­íng qu©n");
-	--	else
-	--		local n_itemidx = AddItem(0,11,446,1,1,0);
-	--		if (n_itemidx > 0) then
+	if (nrank == 1) then
+		if CalcFreeItemCellCount()== 0 then
+			Msg2Player("Kho¶ng trèng hµnh trang kh«ng ®ñ, kh«ng thÓ nhËn mÆt n¹ ®¹i t­íng qu©n");
+		else
+			-- local n_itemidx = AddItem(0,11,446,1,1,0);
+			-- if (n_itemidx > 0) then
 				--ITEM_SetLeftUsageTime(n_itemidx, 60);
 				--ITEM_SetExpiredTime(n_itemidx, self.ItemEnd);
-	--			SyncItem(n_itemidx);
-		--		Msg2Player(format("NhËn ®­îc %d %s", 1, "MÆt n¹ §¹i T­íng qu©n"));
-		--	end
-	--	end
-	--end
+				-- SyncItem(n_itemidx);
+				-- Msg2Player(format("NhËn ®­îc %d %s", 1, "MÆt n¹ §¹i T­íng qu©n"));
+			-- end
+		end
+	end
 
-	--local nLiBaoCount = 0
-	--for i = 1, 3 do
-	--	if CalcFreeItemCellCount() == 0 then
-		--	break
-	--	end
-	--	local n_itemidx = AddItem(6, 1, 2005, 1, 1, 0);
-	--	if (n_itemidx > 0) then
-	--		local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
-	--		ITEM_SetExpiredTime(n_itemidx, nExpiredDate);
-		--	SyncItem(n_itemidx);
-	--		nLiBaoCount = nLiBaoCount + 1;
-		--end
---	end
+	local nLiBaoCount = 0
+	for i = 1, 3 do
+		if CalcFreeItemCellCount() == 0 then
+			break
+		end
+		-- local n_itemidx = AddItem(6, 1, 2005, 1, 1, 0);
+		-- if (n_itemidx > 0) then
+			-- local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
+			-- ITEM_SetExpiredTime(n_itemidx, nExpiredDate);
+			-- SyncItem(n_itemidx);
+			-- nLiBaoCount = nLiBaoCount + 1;
+		-- end
+	end
 	
---	if nLiBaoCount == 3 then
-	--	Msg2Player(format("NhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
---	else
-	--	Msg2Player(format("Do v× chç trèng hµnh trang kh«ng ®ñ, chØ nhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
-	--end
+	if nLiBaoCount == 3 then
+		Msg2Player(format("NhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
+	else
+		Msg2Player(format("Do v× chç trèng hµnh trang kh«ng ®ñ, chØ nhËn ®­îc %d %s", nLiBaoCount, "Tèng Kim lÔ bao"));
+	end
 end
 
 
 function TB_QIANQIU_YINGLIE0904:add_end_award(tb_player, b_win)
 	local game_level = BT_GetGameData(GAME_LEVEL);
 	local nExpiredDate = FormatTime2Date(7 * 24 * 60 *60 + GetCurServerTime());
---	local tb_award = {tbProp = {6,1,2005,1,1,0}, szName = "Tèng Kim lÔ bao",  nCount = 1+b_win, nExpiredTime = nExpiredDate};
+	local tb_award = {tbProp = {6,1,2005,1,1,0}, szName = "Tèng Kim lÔ bao",  nCount = 1+b_win, nExpiredTime = nExpiredDate};
 	 
 	if (game_level == 3) then
 		local old_player = PlayerIndex;
@@ -269,8 +270,8 @@ function TB_QIANQIU_YINGLIE0904:add_end_award(tb_player, b_win)
 			local player_total_point=BT_GetData(PL_TOTALPOINT) --»ñµÃ»ý·Ö
 			
 			if (player_total_point >= 6000 and self:check_right() == 1) then
-				--tbAwardTemplet:GiveAwardByList(tb_award);
-				--Msg2Player(format("Do v× ®iÓm tèng kim trªn 6000, nªn sÏ ®­îc th­ëng %d Tèng Kim lÔ bao", tb_award.nCount))
+				tbAwardTemplet:GiveAwardByList(tb_award);
+				Msg2Player(format("Do v× ®iÓm tèng kim trªn 6000, nªn sÏ ®­îc th­ëng %d Tèng Kim lÔ bao", tb_award.nCount))
 			end
 		end
 		PlayerIndex = old_player;
@@ -309,11 +310,11 @@ function TB_QIANQIU_YINGLIE0904:add_lucky_award(tb_player)
 				 Msg2Player("Hµnh trang kh«ng ®ñ chç trèng, kh«ng thÓ nhËn ®­îc mÆt n¹ nguyªn so¸i");
 			else
 				nLuckyCount=nLuckyCount+1;
-				--local n_itemidx = AddItem(0,11,447,1,1,0);
-			--	if (n_itemidx > 0) then
-					--SyncItem(n_itemidx);
-					--Msg2Player(format("NhËn ®­îc %d %s", 1, "MÆt n¹ Nguyªn so¸i"));
-			--end
+				-- local n_itemidx = AddItem(0,11,447,1,1,0);
+				-- if (n_itemidx > 0) then
+					-- SyncItem(n_itemidx);
+					-- Msg2Player(format("NhËn ®­îc %d %s", 1, "MÆt n¹ Nguyªn so¸i"));
+				-- end
 			end
 		end
 	end 

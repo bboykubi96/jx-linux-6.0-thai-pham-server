@@ -15,6 +15,7 @@ function tl_getUpLevelExp(nLevel, nTransCont)
 	if (not nTransCont or (nTransCont < 0 or nTransCont > 5)) then
 		nTransCont = 0;
 	end
+	
 	-- ·ÀÖ¹²ÎÊı´íÎó
 	if nLevel<=1 or nLevel>200 then
 		return 0;

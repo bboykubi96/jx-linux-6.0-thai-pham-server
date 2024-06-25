@@ -1,26 +1,25 @@
---ÎäÁÖÈÙÓþÁî
 
 Include("\\script\\missions\\leaguematch\\head.lua")
 
 WLLS_HONOUR_ITEM_TB	= {
-	[1254]	= {500, "LÖnh bµi vinh dù Hoµng Kim"},
-	[1255]	= {100, "LÖnh bµi vinh dù B¹ch Ng©n"},
-	[1256]	= {50, "LÖnh bµi vinh dù Thanh ®ång"},
-	[1257]	= {10, "LÖnh bµi vinh dù Hµn thiÕt"},
+[1335] = {3000,"ChÝ T«n Vâ L©m Vinh dù  "},
+[1334] = {1000,"B¹ch Kim Vâ L©m Vinh dù  "},
+[1254] = {500,"Hoµng Kim Vâ L©m Vinh dù  "},
+[1255] = {100,"B¹c Tr¾ng Vâ L©m Vinh dù  "}, 
+[1256] = {50,"§ång Xanh Vâ L©m Vinh dù  "}, 
+[1257] = {10,"H¾c ThiÕt Vâ L©m Vinh dù  "}, 
 }
 
---Ö÷¶Ô»°¿ò
 function main(nItemIndex)
 	local nG, nD, nP	= GetItemProp(nItemIndex)
 	local tbItem	= WLLS_HONOUR_ITEM_TB[nP]
 	if (not tbItem) then
-		Say("CÇn th­¬ng d­îc g× kh«ng?",0)
+		Say("Uèng lén thuèc ? ",0) 
 		return 1
 	end
 	SetTask(WLLS_TASKID_HONOUR, GetTask(WLLS_TASKID_HONOUR) + tbItem[1])
 	SyncTaskValue(WLLS_TASKID_HONOUR)
-	local szlog = format("§· sö dông %s, ®iÓm vinh dù t¨ng thªm <color=yellow>%d<color> ®iÓm.", 
-									tbItem[2], tbItem[1])
+	local szlog = format("Sö dông Vâ L©m Vinh dù lµm ®¹t ®­îc <color=yellow>%d<color> vinh dù ®iÓm .", tbItem[1]) 
 	Msg2Player(szlog)
-	wlls_award_log(format("%s, tæng céng cã %d ®iÓm", szlog, GetTask(WLLS_TASKID_HONOUR)))
+	wlls_award_log(format("%s, sö dông vâ l©m vinh dù lµm ®¹t ®­îc ", szlog, GetTask(WLLS_TASKID_HONOUR))) 
 end

@@ -1,4 +1,4 @@
---Thong bao khi khoi dong server edit by mcteam
+
 Include("\\script\\activitysys\\g_activity.lua")
 Include("\\script\\activitysys\\activity.lua")
 Include("\\script\\activitysys\\detailtype\\itemscript.lua")
@@ -85,19 +85,21 @@ G_ACTIVITY:UnRegisteItemScript(pItemScript.tbItem)
 local bTestCaseRet3 = TestItem(pItemScript.tbItem, -1)
 
 if bTestCaseRet1 == 1 and bTestCaseRet1 == 1 and bTestCaseRet3 == 1 then
-	print("===============================================================")
-	print("======================Vo Lam Truyen Ky==========================")
-	print("==================Viet Hoa Tong Hop Version 1=======================")
-	print("====================By MC Team========================")
-	print("================Chuc Cac Ban Choi Game Vui Ve======================")
-	print("===============================================================")
+	print("==============================================================")
+	print("======Chao Mung Ban Da Den Voi Vo Lam Truyen Ky Phien Ban Sieu Nhan======")
+	print("=================Viet Hoa Tong Hop Version 2022=====================")
+	print("========================By   Kevin     =============================")
+	print("=================Chuc Cac Ban Choi Game Vui Ve======================")
+	print("=====Nhan Cai Game Online or Offline Cho Member Muon Lam Admin======")
+	print("=============Xin Lien He: 0935  999 034 ===================")
 
 else
-	print("===============================================================")
-	print("======================Vo Lam Truyen Ky==========================")
-	print("==================Viet Hoa Tong Hop Version 1=======================")
-	print("====================By MC Team========================")
-	print("================Chuc Cac Ban Choi Game Vui Ve======================")
-	print("===============================================================")
-	print("ItemScript Test --------------- Fail", bTestCaseRet1, bTestCaseRet2, bTestCaseRet3)
+	print("==============================================================")
+	print("======Chao Mung Ban Da Den Voi Vo Lam Truyen Ky Phien Ban Sieu Nhan======")
+	print("=================Viet Hoa Tong Hop Version 2022=====================")
+	print("========================By   Kevin     =============================")
+	print("=================Chuc Cac Ban Choi Game Vui Ve======================")
+	print("=====Nhan Cai Game Online or Offline Cho Member Muon Lam Admin======")
+	print("=============Xin Lien He: 0935  999 034 ===================")
+	print("ItemScript---------------Fail", bTestCaseRet1, bTestCaseRet2, bTestCaseRet3)
 end
