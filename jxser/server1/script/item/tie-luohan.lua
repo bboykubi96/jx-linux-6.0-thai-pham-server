@@ -12,7 +12,7 @@ IncludeLib("SETTING")
 
 TASKIDDAY 	= 2595;
 TASKIDEXP	= 2596;
-GETMAXEXP	= 150000000;	-- Ã¿Ìì¿ÉÒÔ»ñµÃµÄ¾­ÑéÉÏÏÞ
+GETMAXEXP	= 300000000;	-- Ã¿Ìì¿ÉÒÔ»ñµÃµÄ¾­ÑéÉÏÏÞ
 
 Include("\\script\\global\\g7vn\\g7configall.lua")
 
@@ -21,6 +21,14 @@ function main(sel)
 	--dofile("script/global/g7vn/g7configall.lua")
 	if DangDuaTop == 1 then
 		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
+		return 1
+	end
+	if 	GetLevel() <90 then
+			Say("§¼ng cÊp ch­a ®¹t 90 kh«ng thÓ sö dông")
+		return 1
+	end
+if 	GetLevel() >=121 then
+			Say("§¼ng cÊp 121 trë lªn kh«ng thÓ sö dông")
 		return 1
 	end
 
@@ -52,7 +60,7 @@ function main(sel)
 	if(level <1) then 
 		level =1
 	end
-	if(level > 130) then
+	if(level > 120) then
 		Msg2Player(msg[3])
 		return 1
 	end
@@ -67,7 +75,9 @@ function main(sel)
 			Msg2Player(msg[4]);
 			return 1
 		end
-		AddOwnExp(nExp)
+		--AddOwnExp(nExp)
+			local kinhnghiem = random(1000,3000)
+		AddOwnExp(kinhnghiem*1000)
 		Msg2Player(msg[1])
 		SetTask(TASKIDEXP, GetTask(TASKIDEXP) + nExp);
 		SetTask(82,num+1)
@@ -78,7 +88,10 @@ function main(sel)
 		Msg2Player(msg[4]);
 		return 1
 	end
-	AddOwnExp(exps[levelseg][1])
+			local kinhnghiem = random(1000,3000)
+		AddOwnExp(kinhnghiem*1000)
+--	AddOwnExp(exps[levelseg][1])
+
 	Msg2Player(msg[2])
 	SetTask(TASKIDEXP, GetTask(TASKIDEXP) + exps[levelseg][1]);
 	SetTask(82,num+1)

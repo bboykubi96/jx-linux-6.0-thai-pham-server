@@ -633,10 +633,10 @@ function graduateForApprentice(appIdx)
 		return
 	end
 	if (num > 0) then
-		--PayHongbao(appIdx,num)
-		--sendMessage(appIdx,"ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
-		--name = callPlayerFunction(appIdx,GetName);
-		--WriteLog(name.."ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
+		-- PayHongbao(appIdx,num)
+		-- sendMessage(appIdx,"ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
+		name = callPlayerFunction(appIdx,GetName);
+		WriteLog(name.."ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
 	end
 	return
 	
@@ -657,10 +657,10 @@ function graduateForMaster(masterIdx)
 		return
 	end
 	if (num > 0) then
-		--PayHongbao(masterIdx,num)
-		--sendMessage(masterIdx,"ChÛc mıng bπn Æ∑ Æµo tπo Æ≠Óc 1 ÆÂ Æ÷, nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
-		--name = callPlayerFunction(masterIdx,GetName);
-		--WriteLog(name.."ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
+		-- PayHongbao(masterIdx,num)
+		-- sendMessage(masterIdx,"ChÛc mıng bπn Æ∑ Æµo tπo Æ≠Óc 1 ÆÂ Æ÷, nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
+		name = callPlayerFunction(masterIdx,GetName);
+		WriteLog(name.."ChÛc mıng bπn Æ∑ xu t s≠ vµ nhÀn Æ≠Óc Th«n b› ßπi HÂng Bao"..num.."c∏i.")
 	end
 	return
 end;

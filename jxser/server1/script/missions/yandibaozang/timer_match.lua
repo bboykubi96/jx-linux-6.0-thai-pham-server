@@ -1,26 +1,14 @@
--- 炎帝宝藏
--- by 小浪多多
--- 2007.10.24
--- 我..
--- 正在尝试着..
--- 寻找着属于我的天地..
-
 Include("\\script\\missions\\yandibaozang\\include.lua")
 Include("\\script\\missions\\yandibaozang\\readymap\\include.lua")
 Include("\\script\\missions\\yandibaozang\\npc.lua")
+
 function cancel_match()
-	-- Msg2SubWorld(date("[%H:%M:%S]") .. "比赛取消！")
 end
 
--- 开始比赛
 function YDBZ_start_match()
-	-- 设置为比赛状态
 	SetMissionV(YDBZ_VARV_STATE, 4);
-	
 	local player_count = GetMSPlayerCount(YDBZ_MISSION_MATCH);
-	--print("call boss time:"..player_count.." map:"..SubWorldIdx2ID(SubWorld))
 	if (player_count == 0) then
-		-- 取消比赛
 		cancel_match();
 	else
 
@@ -53,7 +41,6 @@ function YDBZ_start_match()
 	
 end
 
--- 关闭比赛定时器
 function YDBZ_close_match_timer()
 	StopMissionTimer(YDBZ_MISSION_MATCH, YDBZ_TIMER_MATCH);
 end
@@ -72,11 +59,8 @@ function YDBZ_broad_limit_time()
 end
 
 function OnTimer()
-
-	-- 比赛开始
 	local ns = floor(YDBZ_LIMIT_FINISH/YDBZ_LIMIT_BOARDTIME)
 	local nstate = GetMissionV(YDBZ_VARV_STATE)
-	--print("start mission onTime"..nstate)
 	if nstate >= 4 and nstate < (3+ns) then
 		YDBZ_broad_limit_time()
 	elseif nstate == (3+ns) then

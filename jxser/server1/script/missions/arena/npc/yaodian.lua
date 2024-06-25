@@ -1,3 +1,3 @@
-function main()
-	Sale(53)
+function main() 
+Sale(53) 
 end

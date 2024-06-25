@@ -12,10 +12,8 @@ ID nhiÖm vô 	Tªn nhiÖm vô 	ID sù kiÖn	TÊt c¶ c¸c vÊn ®Ò liªn quan ®Õn sù kiÖn	 c
 
 201	NgÉu nhiªn_Thu thËp_Tr­êng MÖnh hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 Tr­êng MÖnh hoµn cho vÖ binh L©m An.
 202	NgÉu nhiªn_Thu thËp_Gia Bµo hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 Gia Bµo Hoµn cho vÖ binh L©m An 
-203	Ëæ»ú_ÊÕ¼¯_´óÁ¦Íè	3	Ëæ»ú_ÊÕ¼¯	0	´øÒ»¸ö´óÁ¦Íè¸øÁÙ°²µÄ³ÇÃÅÎÀ±øµÄÈÎÎñ
 204	NgÉu nhiªn_Thu thËp_Cao ThiÓm hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 Cao ThiÓm hoµn cho vÖ binh L©m An 
 205	NgÉu nhiªn_Thu thËp_Cao Trung hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 Cao Trung hoµn cho vÖ binh L©m An 
-206	Ëæ»ú_ÊÕ¼¯_·ÉËÙÍè	3	Ëæ»ú_ÊÕ¼¯	0	´øÒ»¸ö·ÉËÙÍè¸øÁÙ°²µÄ³ÇÃÅÎÀ±øµÄÈÎÎñ
 207	NgÉu nhiªn_Thu thËp_B¨ng Phßng hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 B¨ng Phßng hoµn cho vÖ binh L©m An 
 208	NgÉu nhiªn_Thu thËp_L«i phßng hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 L«i phßng hoµn cho vÖ binh L©m An 
 209	NgÉu nhiªn_Thu thËp_Háa phßng hoµn	3	NgÉu nhiªn_Thu thËp	0	Mang 2 Háa phßng hoµn cho vÖ binh L©m An 
@@ -31,18 +29,12 @@ ID nhiÖm vô 	Tªn nhiÖm vô 	ID sù kiÖn	TÊt c¶ c¸c vÊn ®Ò liªn quan ®Õn sù kiÖn	 c
 219	NgÉu nhiªn_Thu thËp_ S¸t Thñ Gi¶n cÊp 90 (Thñy) 	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_S¸t Thñ Gi¶n cÊp 90 (Thñy) cho NhiÕp Thİ TrÇn (T­¬ng D­¬ng) 
 220	NgÉu nhiªn_Thu thËp_ S¸t Thñ Gi¶n cÊp 90 (Háa) 	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_S¸t Thñ Gi¶n cÊp 90 (Háa) cho NhiÕp Thİ TrÇn (T­¬ng D­¬ng) 
 221	NgÉu nhiªn_Thu thËp_ S¸t Thñ Gi¶n cÊp 90 (Thæ) 	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_S¸t Thñ Gi¶n cÊp 90 (Thæ) cho NhiÕp Thİ TrÇn (T­¬ng D­¬ng) 
-223	Ëæ»ú_ÊÕ¼¯_Åû·ç	3	Ëæ»ú_ÊÕ¼¯	0	ÊÕ¼¯ 2 ¸öÅû·ç¸ø´óÀíÎäÁÖÃË´«ÈËµÄÈÎÎñ
 222	NgÉu nhiªn_Thu thËp_Ph¸o Hoa	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_5 ph¸o hoa cho Häc trß thî rÌn (Thµnh §«) 
 224	NgÉu nhiªn_Thu thËp_T©m T©m	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_1 T©m T©m T­¬ng ¸nh phï cho NguyÖt L·o (Giang T©n th«n) 
 225	NgÉu nhiªn_Thu thËp_Thiªn s¬n  B¶o Lé 	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_1 Thiªn s¬n  B¶o Lé cho Chñ D­îc §iÕm (Long M«n) 
 226	NgÉu nhiªn_Thu thËp_B¸ch Qu¶ Lé 	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_1 B¸ch Qu¶ Lé cho Chñ D­îc §iÕm (L©m An) 
 227	NgÉu nhiªn_Thu thËp_TiÓu Phóc Duyªn	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_1 TiÓu Phóc Duyªn Lé  cho LÔ Quan (BiÖn Kinh) 
 228	NgÉu nhiªn_Thu thËp_§¹i Phóc Duyªn	3	NgÉu nhiªn_Thu thËp	0	Thu thËp_1 §¹i Phóc Duyªn Lé  cho LÔ Quan (BiÖn Kinh) 
-
-229	Ëæ»ú_ÊÕ¼¯_Ò»¼¶Ğş¾§	3	Ëæ»ú_ÊÕ¼¯	0	ÊÕ¼¯ 10 ¸öÒ»¼¶Ğş¾§¸ø·ïÏèÌú½³µÄÈÎÎñ
-230	Ëæ»ú_ÊÕ¼¯_¶ş¼¶Ğş¾§	3	Ëæ»ú_ÊÕ¼¯	0	ÊÕ¼¯ 5 ¸ö¶ş¼¶Ğş¾§¸ø·ïÏèÌú½³µÄÈÎÎñ
-231	Ëæ»ú_ÊÕ¼¯_Èı¼¶Ğş¾§	3	Ëæ»ú_ÊÕ¼¯	0	ÊÕ¼¯ 2 ¸öÈı¼¶Ğş¾§¸ø·ïÏèÌú½³µÄÈÎÎñ
-232	Ëæ»ú_ÊÕ¼¯_ËÄ¼¶Ğş¾§	3	Ëæ»ú_ÊÕ¼¯		ÊÕ¼¯ 1 ¸öËÄ¼¶Ğş¾§¸ø·ïÏèÌú½³µÄÈÎÎñ
 
 301	NgÉu nhiªn_S¸t qu¸i_TÈu Th¹ch	3	NgÉu nhiªn_S¸t qu¸i	0	§Õn M¹c Cao QuËt ®¸nh TÈu Th¹ch 
 302	NgÉu nhiªn_S¸t qu¸i_Phi Sa	3	NgÉu nhiªn_S¸t qu¸i	0	§Õn M¹c Cao QuËt ®¸nh Phi Sa 
@@ -81,8 +73,6 @@ ID nhiÖm vô 	Tªn nhiÖm vô 	ID sù kiÖn	TÊt c¶ c¸c vÊn ®Ò liªn quan ®Õn sù kiÖn	 c
 502	NgÉu nhiªn_MËt §å_Thu thËp S¸t Thñ Gi¶n	4	NgÉu nhiªn_MËt §å	0	Thu thËp S¸t Thñ Gi¶n cÊp 90 cho NhiÕp Thİ TrÇn (T­¬ng D­¬ng) 
 503	NgÉu nhiªn_MËt §å_Thu thËp Kho¸ng Th¹ch	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé Kho¸ng Th¹ch cho Thî rÌn Thµnh §«
 504	NgÉu nhiªn_MËt §å_Thu thËp Hoa hång	4	NgÉu nhiªn_MËt §å	0	Thu thËp 9 Hoa hång cho LÔ Quan (Thµnh §«) 
-505	Ëæ»ú_¾íÖá_ÊÕ¼¯¶¨¹úÍ¼Æ×	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯È«Ì×¶¨¹úÍ¼Æ×¸øÁÙ°²³ÇÃÅÎÀ±øµÄÈÎÎñ
-506	Ëæ»ú_¾íÖá_ÊÕ¼¯°²°îÍ¼Æ×	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯È«Ì×°²°îÍ¼Æ×¸øÁÙ°²³ÇÃÅÎÀ±øµÄÈÎÎñ
 507	NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (§­êng M«n) 	4	NgÉu nhiªn_MËt §å	0	Thu thËp MËt tŞch kü n¨ng §­êng M«n cho Qu¶n gia §­êng M«n
 508	NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (Ngò §éc) 	4	NgÉu nhiªn_MËt §å	0	Thu thËp MËt tŞch kü n¨ng Ngò §éc cho Qu¶n gia §­êng M«n 
 509	NgÉu nhiªn_MËt §å_Thu thËp MËt tŞch kü n¨ng (Nga Mi) 	4	NgÉu nhiªn_MËt §å	0	Thu thËp MËt tŞch kü n¨ng Nga Mi cho Qu¶n gia §­êng M«n
@@ -96,9 +86,6 @@ ID nhiÖm vô 	Tªn nhiÖm vô 	ID sù kiÖn	TÊt c¶ c¸c vÊn ®Ò liªn quan ®Õn sù kiÖn	 c
 517	NgÉu nhiªn_MËt §å_Thu thËp mét bé Thiªn Hoµng 	4	NgÉu nhiªn_MËt §å	0	Thu thËp bé Thiªn Hoµng Long Khİ cho TrÇn Tam B¶o (BiÖn Kinh) 
 518	NgÉu nhiªn_MËt §å_Thu thËp mét bé Kim Phong	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé trang bŞ Kim Phong cho TrÇn Tam B¶o (BiÖn Kinh) 
 519	NgÉu nhiªn_MËt §å_Thu thËp Tµng B¶o §å To¸i PhiÕn 	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét béTµng B¶o §å To¸i PhiÕn cho §inh Viªn Ngo¹i
-520	Ëæ»ú_¾íÖá_ÊÕ¼¯¶¨¹úÈ«Ì×	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯¶¨¹úÈ«Ì×¸øÁÙ°²³ÇÃÅÎÀ±øµÄÈÎÎñ
-521	Ëæ»ú_¾íÖá_ÊÕ¼¯ÏÀ¹ÇÈ«Ì×	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯ÏÀ¹ÇÈ«Ì×¸øÁÙ°²³ÇÃÅÎÀ±øµÄÈÎÎñ
-522	Ëæ»ú_¾íÖá_ÊÕ¼¯ÈáÇéÈ«Ì×	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯ÈáÇéÈ«Ì×¸øÁÙ°²³ÇÃÅÎÀ±øµÄÈÎÎñ
 523	NgÉu nhiªn_MËt §å_Thu thËp HuyÒn ThiÕt KiÕm	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé HuyÒn ThiÕt KiÕm cho Thî rÌn (D­¬ng Ch©u) 
 524	NgÉu nhiªn_MËt §å_Thu thËp §¹i Phong §ao	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé §¹i Phong §ao cho Thî rÌn (D­¬ng Ch©u) 
 525	NgÉu nhiªn_MËt §å_Thu thËp Kim C« Bæng	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé Kim C« Bæng cho Thî rÌn (D­¬ng Ch©u) 
@@ -119,6 +106,3 @@ ID nhiÖm vô 	Tªn nhiÖm vô 	ID sù kiÖn	TÊt c¶ c¸c vÊn ®Ò liªn quan ®Õn sù kiÖn	 c
 540	NgÉu nhiªn_MËt §å_Thu thËp B¹ch Kim yªu ®¸i	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé B¹ch Kim yªu ®¸i cho Qu¶n gia §­êng M«n
 541	NgÉu nhiªn_MËt §å_Thu thËpThiªn Tµm Ngoa	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé Thiªn Tµm Ngoa cho  Qu¶n gia §­êng M«n
 542	NgÉu nhiªn_MËt §å_Thu thËp Phi Phông Ngoa	4	NgÉu nhiªn_MËt §å	0	Thu thËp mét bé Phi Phông Ngoa cho Qu¶n gia §­êng M«n
-
-543	Ëæ»ú_¾íÖá_ÊÕ¼¯È«Ì×Ë®¾§	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯È«Ì×Ë®¾§¸ø·ïÏèÌú½³µÄÈÎÎñ
-544	Ëæ»ú_¾íÖá_ÊÕ¼¯È«Ì×Ğş¾§	4	Ëæ»ú_¾íÖá	0	ÊÕ¼¯ 1ÖÁ6 ¼¶Ğş¾§¸ø·ïÏèÌú½³µÄÈÎÎñ

@@ -13,7 +13,7 @@ Include("\\script\\global\\titlefuncs.lua")  --包含更改称号的脚本
 Include("\\script\\task\\partner\\train\\partner_changgejindi.lua")
 
 function main()
-
+	do return end
 	Describe(DescLink_ChangGeMen.."：江湖十年风吹泪，长笑当歌苦做甜。当年柴门主侠义散财，广纳天下豪杰，我长歌门是何等的盛事。后来柴门主被金贼残害，我门中人也从无一日放弃天下苍生为己任的信条。如今长歌再起，就是要还天下人一个公道！",7,
 		"领取同伴的教育任务/Getpartner_education",
 		"同伴修练任务/Getpartner_allpractice",

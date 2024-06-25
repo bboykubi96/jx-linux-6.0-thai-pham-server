@@ -1,5 +1,5 @@
-function main()
-	Say("§¹i m«n Hoµng cung ®· ®ãng, h·y ®Õn Xa phu rêi khái ®Êu tr­êng!", 0)
---	NewWorld(176,1472,3243)--ÁÙ°²
---	DisabledUseTownP(0)	--»Ö¸´ÆäÊ¹ÓÃ»Ø³Ç·û
+function main() 
+Say("Hoµng cung ®¹i m«n ®· ®ãng , mêi ®­îc phu xe chç rêi ®i cuéc so tµi trµng !", 0) 
+-- script viet hoa By http://tranhba.com  NewWorld(176,1472,3243)-- script viet hoa By http://tranhba.com  tr­íc khi an 
+-- script viet hoa By http://tranhba.com  DisabledUseTownP(0) -- script viet hoa By http://tranhba.com  kh«i phôc kú sö dông trë vÒ thµnh phï 
 end

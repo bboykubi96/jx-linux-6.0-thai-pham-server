@@ -6,6 +6,5 @@
 Include("\\script\\skill\\translife_4\\skilllvlup.lua")
 
 function main()
-	print("Kü n¨ng t¨ng ngo¹i c«ng")
 	return tbZhuansheng_4_Skill.skilllvelup(1123)
 end

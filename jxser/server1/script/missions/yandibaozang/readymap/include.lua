@@ -17,7 +17,7 @@ YDBZ_READY_SIGNUP_POSX	 = 6
 YDBZ_READY_SIGNUP_POSY	 = 7
 YDBZ_MISSION_KEY		 = 8
 YDBZ_READY_BROAD_STATE	 = 9
-YDBZ_TEAM_COUNT_LIMIT	 = 4		--Tæ §éi Ýt NhÊt 1 Ng­êi
+YDBZ_TEAM_COUNT_LIMIT	 = 1		--Tæ §éi Ýt NhÊt 1 Ng­êi
 YDBZ_TEAM_COUNT_MAXLIMIT	 = 8		--Tæ §éi NhiÒu NhÊt 8 Ng­êi
 YDBZ_TEAM_START_LIMIT	 = 1		--Sè L­îng Team Cã ThÓ Më ¶i
 
@@ -121,7 +121,7 @@ function YDBZ_joinmap(RoleIndex,readymap,matchmap,camp)
 			numzimu = CalcItemCount(3,g,d,p,-1)
 			numbeibao = CalcItemCount(23,g,d,p,-1)
 			--Thay ®æi c¸ch b¸o danh viªm ®Õ, lÇn ®Çu tiªn cã thÓ dïng anh hïng thiÕp hoÆc viªm ®Õ lÖnh - Modified By DinhHQ - 20120206
-			local ndg = YDBZ_LIMIT_DOUBEL_ITEM[1][1]									--ÎïÆ·
+			local ndg = YDBZ_LIMIT_DOUBEL_ITEM[1][1]
 			local ndd = YDBZ_LIMIT_DOUBEL_ITEM[1][2]
 			local ndp = YDBZ_LIMIT_DOUBEL_ITEM[1][3]
 		
@@ -189,8 +189,6 @@ function YDBZ_joinmap(RoleIndex,readymap,matchmap,camp)
 				
 		SubWorld = matchmap
 		AddMSPlayer(YDBZ_MISSION_MATCH,camp)
-		
-		----------Ã¿Ìì²Î¼ÓÁË¶àÉÙ´Î----------------------
 		local nCountState = GetTask(2618)
 		local nCurDate = tonumber(GetLocalDate("%y%m%d"))
 		if floor(nCountState/256) ~= nCurDate then
@@ -198,26 +196,16 @@ function YDBZ_joinmap(RoleIndex,readymap,matchmap,camp)
 			nCountState = nCurDate * 256
 			SetTask(2618, nCountState)
 		end
-		SetTask(2618, nCountState + 1)
-		-----------------------------------------------	
+		SetTask(2618, nCountState + 1)	
 		SetTask(YDBZ_TEAMS_TASKID,0)
 		SetMissionV(YDBZ_SIGNUP_WORLD,world)
 		SetMissionV(YDBZ_SIGNUP_POSX,pos_x)
 		SetMissionV(YDBZ_SIGNUP_POSY,pos_y)
-		--if szTeamName ~= "" then
-			--SetMissionS(YDBZ_TEAM_NAME[camp],szTeamName)
-		--end
-		
 		local sf_mapid = SubWorldIdx2ID(SubWorld)
 		NewWorld(sf_mapid, floor(YDBZ_BOAT_POS[camp][1]/32), floor(YDBZ_BOAT_POS[camp][2]/32));
 		SetTempRevPos(sf_mapid, YDBZ_BOAT_POS[camp][1], YDBZ_BOAT_POS[camp][2]);
 		Msg2MSAll(YDBZ_MISSION_MATCH,str);
-		
-	
-		
 		YDBZ_sdl_setTaskByte(YDBZ_ITEM_YANDILING,2,camp)
-		--¼ÇÂ¼¶ÓÎéÃû
-		--¼ÇÂ¼¶ÓÎéÃûend
 		ForbitTrade(0)
 		LeaveTeam()
 		SetCurCamp(camp);
@@ -233,7 +221,6 @@ function YDBZ_joinmap(RoleIndex,readymap,matchmap,camp)
 		SetTaskTemp(200,1)
 		SetDeathType(-1)
 		SubWorld = readymap
-		
 		G_ACTIVITY:OnMessage("SignUpYDBZ", PlayerIndex)
 		PlayerIndex = OldPlayerIndex		
 end
@@ -251,7 +238,6 @@ function YDBZ_ready_start_missions(map,oldsubworld, mission ,readymission)
 	SubWorld = oldsubworld
 	local nteams = GetMissionV(YDBZ_READY_TEAM)
 	local nteamsMax = GetMissionV(YDBZ_READY_TEAM_MAX)
-	--oldsubworld = SubWorld
 	local nstart = 1
 	local curteams = 0
 	local tbteamsort = {}
@@ -317,7 +303,6 @@ function YDBZ_ready_start_missions(map,oldsubworld, mission ,readymission)
 										curcamp = 0
 										break
 									end
-									--YDBZ_debug("team num:"..ni.." tbsort:"..tbteamsort[ni])
 									local tbplayer = {}
 									local ncapter = 0
 									local szteamname = GetMissionS(tonumber(tbteamsort[ni]))
@@ -329,8 +314,7 @@ function YDBZ_ready_start_missions(map,oldsubworld, mission ,readymission)
 												if GetName() == szteamname then
 													ncapter = nj
 												end
-		--								   	YDBZ_joinmap(idx,oldsubworld,index,curcamp)
-										end;
+											end;
 										if (idx <= 0) then
 											break;
 										end;
@@ -341,10 +325,7 @@ function YDBZ_ready_start_missions(map,oldsubworld, mission ,readymission)
 									SetMissionV(YDBZ_TEAM_SUM,nteamscount+1)
 									local nplayernum = getn(tbplayer)
 									for nj = 1,nplayernum do
-										--YDBZ_debug("tbsort:"..tbteamsort[ni])
-										--print(nj,"YDBZ_joinmap")
 										YDBZ_joinmap(tbplayer[nj],oldsubworld,index,curcamp)
-		--								DelMSPlayer(readymission,tbplayer[nj],tbteamsort[ni])
 									end
 									if ncapter > 0 then
 										tbplayer[1],tbplayer[ncapter] = tbplayer[ncapter],tbplayer[1]
@@ -356,9 +337,7 @@ function YDBZ_ready_start_missions(map,oldsubworld, mission ,readymission)
 									PlayerIndex = tbplayer[1]
 									PlayerIndex = GetTeamMember(1)
 									SetMissionS(YDBZ_TEAM_NAME[curcamp],GetName())
-									--print(nplayernum,map[i],curcamp)
 									local szstr = format("[V­ît ¶i b¶o tµng viªm ®Õ] thêi gian %s, chiÕn ®éi %s  thµnh viªn %s ng­êi, ®­îc chuyÓn vµo b¶n ®å sè %s, trËn doanh lµ %s",GetLocalDate("%y-%m-%d %H:%M:%S"),szteamname,nplayernum,map[i],curcamp) 
-									--print(szstr)
 									WriteLog(szstr)
 								end
 								nstart = nstart + 1
@@ -376,7 +355,6 @@ function YDBZ_close_missions(map, mission, status)
 		index = SubWorldID2Idx(map[i]);
 		if (index >= 0) then
 			SubWorld = index;
-			--YDBZ_READY_TEAM_NAME[map[i]] = {};
 			if (GetMissionV(status) ~= 0) then
 				CloseMission(mission);
 
@@ -387,5 +365,4 @@ function YDBZ_close_missions(map, mission, status)
 end
 
 function YDBZ_debug(str)
-	--print(str)
 end

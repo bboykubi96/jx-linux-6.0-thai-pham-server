@@ -1,4 +1,3 @@
-Include("\\script\\activitysys\\config\\29\\variables.lua")
 Include("\\script\\lib\\progressbar.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\activitysys\\functionlib.lua")
@@ -12,15 +11,6 @@ tbLanHuanCaoPos =
 		{153,1745,3213,},
 		{153,1724,3192,},
 		{153,1757,3197,},
-
-		{153,1741,3216,},
-		{153,1747,3218,},
-		{153,1753,3193,},
-
-		{153,1720,3191,},
-		{153,1724,3184,},
-		{153,1728,3195,},
-
 	}
 tbLanHuaCao = {
 		szName = "Bôi Hoa Lan Rõng", 
@@ -42,7 +32,7 @@ local _Limit = function(nNpcIdx)
 		return
 	end
 	
-	if (not PlayerFunLib:CheckTotalLevel(50,"§¼ng cÊp cña ng­¬i ch­a ®ñ 50",">=")) then
+	if (not PlayerFunLib:CheckTotalLevel(120,"§¼ng cÊp cña ng­¬i ch­a ®ñ 120",">=")) then
 		return
 	end
 	
@@ -65,6 +55,7 @@ local _GetFruit = function(nNpcIdx, dwNpcId)
 	end
 
 	local nNpcParam = GetNpcParam(nNpcIdx, 1)
+	--Ò»·ÖÖÓºóÖØÉú
 	--HideNpc(nNpcIdx, 60*18)--²»ÖªµÀÎªÊ²Ã´£¬ÕâÀïÒþ²ØµôNPCºóNPC¾Í²»»áÔÙ³öÏÖÁË,¸Ä³ÉÉ¾µôÔÙcallµÄ·½Ê½
 	DelNpc(nNpcIdx)
 	DynamicExecute("\\script\\activitysys\\config\\29\\lanhuacao.lua","AddTimer", 60*18, "_GenLanHuaCao", nNpcParam)
@@ -73,25 +64,24 @@ local _GetFruit = function(nNpcIdx, dwNpcId)
 	
 	AddStatData("jiefangri_zhailanhua")
 	
-	tbAwardTemplet:Give({tbProp={6,1,4312,1,0,0},nExpiredTime=NGAYHETHAN8THANG3}, 1, {"EventTangHoa042011", "NhanDuocHoaLan"});
+	tbAwardTemplet:Give({tbProp={6,1,1977,1,0,0},nBindState = -2,nExpiredTime=10080}, 1, {"EventTangHoa042011", "NhanDuocHoaLan"});
 	
-	--local nCount = CalcItemCount(-1, 6, 1, 1977, -1)
-	--if nCount > 2 then
-		--Msg2Player(format("Mçi ngµy chØ ®­îc phÐp tÆng 2 Hoa Lan Rõng cho TiÓu Ph­¬ng, trªn ng­êi ng­¬i ®· ®¹t ®Õn %d c¸i råi.",nCount))
-	--end
-
-	Msg2Player("§· h¸i ®­îc 1 nh¸nh lan");
+	local nCount = CalcItemCount(-1, 6, 1, 1977, -1)
+	if nCount > 2 then
+		Msg2Player(format("Mçi ngµy chØ ®­îc phÐp tÆng 2 Hoa Lan Rõng cho Ng­êi LÝnh, trªn ng­êi ng­¬i ®· ®¹t ®Õn %d c¸i råi.",nCount))
+	end
+	--Msg2Player("ÄãµÃµ½ÁËÒ»¶äÀ¼»¨¡£");
 end
 
 function _GenLanHuaCao(nNpcParam)
-	--Fix bug missing LanHuan positions - Modified by DinhHQ - 20110425
+--Fix bug missing LanHuan positions - Modified by DinhHQ - 20110425
 	for i=1, 1 do
 		local nMapId, nPosX, nPosY = unpack(%tbLanHuanCaoPos[nNpcParam])
 		%tbLanHuaCao.tbNpcParam[1] = nNpcParam
 		%basemission_CallNpc(%tbLanHuaCao, nMapId, nPosX*32, nPosY*32)	
 	end
 	--%tbLanHuanCaoPos[nNpcIdx] = nil
-	return 0
+	return 0--·µ»Ø0±íÊ¾²»ÐèÒªÔÙ¶¨Ê±
 end
 
 local _OnBreak = function()
@@ -105,6 +95,6 @@ function main()
 	if not %_Limit(nNpcIdx) then
 		return
 	end
-	
+	--¿ªÆô½ø¶ÈÌõ
 	tbProgressBar:OpenByConfig(7, %_GetFruit, {nNpcIdx, dwNpcId}, %_OnBreak)
 end;

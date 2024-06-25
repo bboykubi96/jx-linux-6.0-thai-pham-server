@@ -1,5 +1,3 @@
---检测玩家状态，改变玩家战斗状态
-
 Include("\\script\\missions\\yandibaozang\\include.lua")
 Include("\\script\\missions\\yandibaozang\\npc.lua")
 
@@ -11,7 +9,6 @@ function OnTimer()
 		if GetMissionV(YDBZ_TEAM_COUNT) == 1 then
 						local x = 1781 * 32
 						local y = 3563 * 32 ;
-						--print(x,y,world)
 						YDBZ_add_final_npc(SubWorld,x,y)
 						Msg2MSAll(YDBZ_MISSION_MATCH,"<color=yellow>Lng Mi Nhi<color> t筰 n琲 s﹗ th糾 nh蕋 c馻 b秓 t祅g Vi猰 д  頲 g鋓 ra")
 						SetMissionV(YDBZ_STATE_SIGN,3)

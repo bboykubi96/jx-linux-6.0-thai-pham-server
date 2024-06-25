@@ -30,7 +30,7 @@ local _Limit = function(nNpcIdx)
 
 	if (nGetSeedLevel ~= 3) then -- Èç¹û¼¶±ð²»¶Ô,²»ÄÜ½øÐÐÊ°È¡
 		--ÕâÀï¸æËßÍæ¼Ò¼¶±ð²»¶Ô,²»ÄÜÊ°È¡
-		Msg2Player("Ng­êi ch¬i ph¶i tõ cÊp 92 trë lªn míi cã thÓ tham gia ")
+		Msg2Player("Ng­êi ch¬i ph¶i tõ cÊp 120 trë lªn míi cã thÓ tham gia ")
 		return
                       end
 	return nGetSeedLevel
@@ -48,11 +48,7 @@ end
 
 
 function main()
-	dofile("script/global/quanlygame/sukien/vantieubanghoi/npcdichden.lua")
-	if 1==1 then
-		--Say("VËn tiªu ®ang t¹m ®ãng.")
-	--	return
-	end
+	-- dofile("script/global/quanlygame/sukien/vantieubanghoi/npcdichden.lua")
 	local szTongName, nTongID = GetTongName();
 	local figure = TONGM_GetFigure(nTongID, GetName())
 	if (figure ~= TONG_MASTER) then
@@ -62,15 +58,19 @@ function main()
 	local nNpcIdx = GetLastDiagNpc();
 	local dwNpcId = GetNpcId(nNpcIdx)
 	local nHour = tonumber(GetLocalDate("%H%M"))
-local nWeek = tonumber(GetLocalDate("%w"))
+
 	if %_Limit(nNpcIdx) == nil then
 		return
 	end
-
-			if (nHour >= 2030 and nHour <= 2055)   then
-		tbProgressBar:OpenByConfig(28, %_GetFruit, {nNpcIdx, dwNpcId}, %_OnBreak)
+	if( nHour >= 2000) then
+		Say("Thêi Gian Tr¶ Tiªu §· HÕt.",0)
+	return  
+	end
+		
+	if( nHour >= 1900 and nHour <= 2000) then
+		tbProgressBar:OpenByConfig(25, %_GetFruit, {nNpcIdx, dwNpcId}, %_OnBreak)
 	else
-     		Say("Thêi gian vËn tiªu bang héi tõ 20h30 ®Õn 20h55 h»ng ngµy. HiÖn t¹i ch­a ®Õn giê ®Ó triÒu ®Þnh cho ta nhËn tiªu bang míi.",0)
+     		Say("Thêi gian vËn tiªu bang héi tõ 19h00 ®Õn 20h00 h»ng ngµy hiÖn t¹i ch­a ®Õn giê ®Ó triÒu ®Þnh cho ta nhËn tiªu bang míi.",0)
 		return
 	end
 end
@@ -107,18 +107,10 @@ RemoveSkillState(874);--BAYMAU
 SetDeathScript("");
 	local tbAward =
 	{
-		--	{szName="Ng©n L­îng",nJxb=50000000,nCount=1},
-			{szName="Xu",tbProp={4,417,1,0,0,0},nCount=500},
-			{szName="TÈy Tñy Kinh",tbProp={6,1,22,1,0,0},nCount=1},	
-			{szName="Vâ L©m MËt TÞch",tbProp={6,1,26,1,0,0},nCount=1},	
-			{szName="R­¬ng §å Xanh",tbProp={6,1,4476,1,0,0},nCount=25},	
-			{szName="D· TÈu Chi LÖnh",tbProp={6,1,4407,1,0,0},nCount=50},	
-		--	{szName="LÖnh Bµi Bang Héi",tbProp={6,1,4466,1,1,0},nCount=50},
-
-
+    	-- {szName="KNB",tbProp={4,1496,1,1,0,0},nCount=9999},
+	{szName="Xu",tbProp={4,417,1,1,0,0},nCount=15000},
 	}
-Earn(10000000)
-	tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn th­ëng VËn Tiªu Bang Héi")
+	tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn th­ëng §Òn Lång Bang Héi")
 
     local szNews = format("Tiªu Bang Héi cña bang Chñ <color=green>"..GetName().."<color=yellow> §· Hoµn thµnh nhiÖm vô nhËn ®­îc phÇn th­ëng.");
 	AddGlobalNews(szNews);
@@ -131,3 +123,51 @@ end
 
 
 
+function ranphanthuong()
+local s = random(1,13)
+
+if s==1 then
+			tbAwardTemplet:GiveAwardByList({{szName = "HiÖp Cèt ThiÕt HuyÕt Sam",tbProp={0,186},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==2 then
+			tbAwardTemplet:GiveAwardByList({{szName = "HiÖp Cèt §a T×nh Hoµn",tbProp={0,187},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==3 then
+			tbAwardTemplet:GiveAwardByList({{szName = "HiÖp Cèt §an T©m Giíi",tbProp={0,188},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==4 then
+			tbAwardTemplet:GiveAwardByList({{szName = "HiÖp Cèt T×nh ý KÕt",tbProp={0,189},nCount=1,nQuality = 1,nRate=10},}, "test", 1);
+			tbAwardTemplet:GiveAwardByList({{szName = "HiÖp Cèt §a T×nh Hoµn",tbProp={0,187},nCount=1,nQuality = 1,nRate=50},}, "test", 1);
+end;
+if s==5 then
+			tbAwardTemplet:GiveAwardByList({{szName = "Nhu T×nh C©n Quèc Nghª Th­êng",tbProp={0,190},nCount=1,nQuality = 1,nRate=10},}, "test", 1);
+			tbAwardTemplet:GiveAwardByList({{szName = "Nhu T×nh  TuÖ T©m Ngäc Béi",tbProp={0,193},nCount=1,nQuality = 1,nRate=50},}, "test", 1);
+end;
+if s==6 then
+			tbAwardTemplet:GiveAwardByList({{szName = "Nhu T×nh Thôc N÷ H¹ng Liªn",tbProp={0,191},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==7 then
+			tbAwardTemplet:GiveAwardByList({{szName = "Nhu T×nh  Phông Nghi Giíi ChØ",tbProp={0,192},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==8 then
+			tbAwardTemplet:GiveAwardByList({{szName = "Nhu T×nh  TuÖ T©m Ngäc Béi",tbProp={0,193},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+	
+if s==9 then
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc Thanh Sa Tr­êng Sam",tbProp={0,159},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==10 then
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc ¤ Sa Ph¸t Qu¸n",tbProp={0,160},nCount=1,nQuality = 1,nRate=10,},}, "test", 1);
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc XÝch Quyªn NhuyÔn Ngoa",tbProp={0,161},nCount=1,nQuality = 1,nRate=50},}, "test", 1);
+end;
+if s==11 then
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc XÝch Quyªn NhuyÔn Ngoa",tbProp={0,161},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+	
+if s==12 then
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc Tö §»ng Hé uyÓn",tbProp={0,162},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+if s==13 then
+			tbAwardTemplet:GiveAwardByList({{szName = "§Þnh Quèc Ng©n Tµm Yªu ®¸i",tbProp={0,163},nCount=1,nQuality = 1,},}, "test", 1);
+end;
+end

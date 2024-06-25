@@ -13,7 +13,7 @@ SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229,1370}; DIEMVIP = 
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"", "thaipham1","thienkim","linhlinhnb","bachvanphi","",""} TENADMIN ={{"testthiennhan",99},{"EmXinhGai",99},{"AdminMaster",99},{"BladeMaster",99},{"",99},{"",99},{"",99},{"",99}}
+local tbGMAccount = {"admin1", "t","","","","",""} TENADMIN ={{"VoLamHoangKim",99},{"S",99},{"Ar",99},{"Bl",99},{"",99},{"",99},{"",99},{"",99}}
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 
@@ -1812,7 +1812,7 @@ local tab_Content = {
 "Bæng/bong",
 "Th­¬ng/kick",
 "Chïy/chuy",
---"Song §ao/songdao",
+"Song §ao/songdao",
 "Phi Tiªu/phitieu",
 "Phi §ao/phidao",
 "Tô TiÔn/tutien",
@@ -1826,7 +1826,7 @@ AddQualityItem(2,0,0,0,10,0,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,0,10,1,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,0,10,2,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,0,10,3,0,-1,-1,-1,-1,-1,-1)
---AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1) 
+AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1) 
 end
 
 function dao()
@@ -1841,7 +1841,7 @@ function bong()
 AddQualityItem(2,0,0,2,10,0,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,2,10,1,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,2,10,2,0,-1,-1,-1,-1,-1,-1)
---AddQualityItem(2,0,0,2,10,3,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,0,2,10,3,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,2,10,4,0,-1,-1,-1,-1,-1,-1) 
 end
 
@@ -1849,8 +1849,8 @@ function kick()
 AddQualityItem(2,0,0,3,10,0,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,3,10,1,0,-1,-1,-1,-1,-1,-1)
 AddQualityItem(2,0,0,3,10,2,0,-1,-1,-1,-1,-1,-1)
---AddQualityItem(2,0,0,3,10,3,0,-1,-1,-1,-1,-1,-1)
---AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1) 
+AddQualityItem(2,0,0,3,10,3,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1) 
 end
 
 function chuy()
@@ -2010,11 +2010,11 @@ AddQualityItem(2,0,2,12,10,4,0,-1,-1,-1,-1,-1,-1)
 end
 
 function tienquan()
-		AddQualityItem(2,0,2,13,10,0,0,-1,-1,-1,-1,-1,-1)
-		--AddQualityItem(2,0,2,13,10,1,0,-1,-1,-1,-1,-1,-1)
-		--AddQualityItem(2,0,2,13,10,2,0,-1,-1,-1,-1,-1,-1)
-		AddQualityItem(2,0,2,13,10,3,0,-1,-1,-1,-1,-1,-1)
-		AddQualityItem(2,0,2,13,10,4,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,2,13,10,0,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,2,13,10,1,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,2,13,10,2,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,2,13,10,3,0,-1,-1,-1,-1,-1,-1)
+AddQualityItem(2,0,2,13,10,4,0,-1,-1,-1,-1,-1,-1)
 end
 --------------------------------------------------------------------
 function hat()
@@ -2477,7 +2477,6 @@ tinsert(tbSay,"Thiªn NhÉn./xunghieu8")
 tinsert(tbSay,"Vâ §ang./xunghieu9")
 tinsert(tbSay,"C«n L«n./xunghieu10")
 tinsert(tbSay,"Hoa S¬n./xunghieu11")
-tinsert(tbSay,"Tiªu Dao./xunghieu12")
 tinsert(tbSay,"Tho¸t/no")
 tinsert(tbSay,"Trë l¹i")
 Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y chän M«n Ph¸i  !", getn(tbSay), tbSay)
@@ -2521,15 +2520,11 @@ Msg2Player("B¹n ®­îc x­ng hiÖu: HuyÒn Vâ Ch©n Nh©n.")
 end
 function xunghieu10()
 SetRank(75)
-Msg2Player("B¹n ®­îc x­ng hiÖu: Hé Ph¸p Ch©n Qu©n.")
+Msg2Player("B¹n ®­îc x­ng hiÖu: Hé Ph¸i Ch©n Qu©n.")
 end
 function xunghieu11()
 SetRank(89)
 Msg2Player("B¹n ®­îc x­ng hiÖu: V« L­îng Thiªn T«n.")
-end
-function xunghieu12()
-SetRank(87)
-Msg2Player("B¹n ®­îc x­ng hiÖu: Thiªn S¬n Tr­ëng L·o.")
 end
 -----------------------------------------------------------------------------------------------
 local tbFaction =
@@ -2841,100 +2836,13 @@ local tbFaction =
 			},
 		},
 	},
-	[11] =
-	{
-		szShowName = "Hoa s¬n",
-		szFaction = "huashan",
-		nShortFaction = "hs",
-		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},	
-	[12] =
-	{
-		szShowName = "Vò Hån",
-		szFaction = "wuhun",
-		nShortFaction = "wh",
-		tbSkill = {1984, },--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},
-	[13] =
-	{
-		szShowName = "Tiªu Dao",
-		szFaction = "xiaoyao",
-		nShortFaction = "xy",
-		tbSkill = {1894, },--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},
 }
 
 local tbFactionSeries =
 {
 [1] = {1, 2},
 [2] = {3, 4},
-[3] = {5, 6, 11},
+[3] = {5, 6},
 [4] = {7, 8},
 [5] = {9, 10},
 }

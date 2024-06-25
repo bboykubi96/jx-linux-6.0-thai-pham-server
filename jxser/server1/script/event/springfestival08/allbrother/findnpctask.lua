@@ -1,10 +1,7 @@
--- ÎÄ¼þÃû¡¡£ºfindnpctask.lua
--- ´´½¨Õß¡¡£ºzhongchaolong
--- ´´½¨Ê±¼ä£º2008-01-19 14:54:47
---ÕÒµ½npc¶Ô»°µÄ½Å±¾
 Include("\\script\\event\\springfestival08\\allbrother\\taskhead.lua")
+--------------------------------------------------------------------------
 function allbrother_0801_FindNpcTaskDialog(nTaskId)
-	local nTaskState	= GetTask(TSK_allbrother_0801_TaskState)
+	local nTaskState = GetTask(TSK_StartNhiemVu_TaskState)
 	if nTaskState == 0 then
 		Say("B¹n d­êng nh­ vÉn ch­a tiÕp nhËn nhiÖm vô cña B¾c §Èu M«n.", 0)
 	end
@@ -17,14 +14,13 @@ function allbrother_0801_FindNpcTaskDialog(nTaskId)
 end
 
 function allbrother_0801_CheckIsDialog(nTaskId)
-	local nTaskState	= GetTask(TSK_allbrother_0801_TaskState)
-	local nDate			= tonumber(GetLocalDate("%y%m%d"))
-	if allbrother_0801_IsAct() ~= 1 then
-		return 0;
-	end
+	local nTaskState	= GetTask(TSK_StartNhiemVu_TaskState)
+	local nDate		= tonumber(GetLocalDate("%y%m%d"))
+
 	if nTaskState == 0 then
 		return 0;
 	end
+
 	if nTaskId ~= nTaskState then
 		return 0
 	end

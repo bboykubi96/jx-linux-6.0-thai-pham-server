@@ -1,22 +1,22 @@
---ÌØµã£ºÊÊÓ¦ÓÚÕâÑùµÄÓ¦ÓÃ¡£
---Ò»µÈ½±¹²10Ãû£¬ÆäÖÐÓÐ1ÈËµÃÄ³ÖÖ½±Æ·£¬Áí4ÈËµÃÄ³ÖÖ½±Æ·£¬Áí5ÈËÓÖµÃÄ³ÖÖ½±Æ·
---¶þµÈ½±¹²50Ãû£¬ÆäÖÐ20ÈËµÃÄ³ÖÖ½±£¬30ÈËµÃÆäËü½±Æ·
---Ä³ÖÖ½±µÄ·¢½±Êý¾Ý£¬±ÈÈçµÚÒ»¼¶±ð½±µÄÇé¿ö£¬
-TASK_LW_TYPECOUNT = 1 --
-TASK_LW_AWARD_MAX = 2 --µ±Ç°µÄ½±Æ·×ÜÊý
-TASK_LW_AWARD_USED = 3 --µ±Ç°µÄ½±Æ·ÒÑ·¢³öÈ¥¶àÉÙ
-TASK_LW_AWARD_TOTAL = 4 --µ±Ç°×î´óµÄÖÐ½±ÈËÊý
-TASK_LW_AWARD_CURPOS = 5 --µ±Ç°ÒÑ¾­ÓÐ¶àÉÙÈËÁì¹ý½±ÁË
---tab = 
---{
---	leagueid, Õ¾¶Óid
---	"awardinfo" = { ½±Æ·Àà±ð
---	{awardUSEDÒÑÓÐ¶àÉÙ·¢³öÈ¥ÁË, total, {{type1max,type1cur}, {type2max,type2cur}, {type3max, type3cur}}},
---	{awardused, total,{type1max,type1cur}, {type2max,type2cur}},
---	},
---}
+-- script viet hoa By http://tranhba.com ×##·#º££ã#ãóâ©#ï#Äã#ã·##
+-- script viet hoa By http://tranhba.com ß##Ì#±#²10·#######ã#1Ì##·Ä³###±####¸Ý4Ì##·Ä³###±####¸Ý5Ì#ã##·Ä³###±##
+-- script viet hoa By http://tranhba.com ###Ì#±#²50·#######20Ì##·Ä³###±##30Ì##·#####±##
+-- script viet hoa By http://tranhba.com Ä³###±#Ä###±£ý#ý##±ÌÌ##óß###±ð#±#Ä#Ð¿###
+TASK_LW_TYPECOUNT = 1 -- script viet hoa By http://tranhba.com 
+TASK_LW_AWARD_MAX = 2 -- script viet hoa By http://tranhba.com #±#°#Ä#±####£ý
+TASK_LW_AWARD_USED = 3 -- script viet hoa By http://tranhba.com #±#°#Ä#±##ß###³#Ì##µÐï
+TASK_LW_AWARD_TOTAL = 4 -- script viet hoa By http://tranhba.com #±#°##´ã#Ä###±Ì#£ý
+TASK_LW_AWARD_CURPOS = 5 -- script viet hoa By http://tranhba.com #±#°ß###ã##µÐïÌ#¸×#ý#±¸#
+-- script viet hoa By http://tranhba.com tab = 
+-- script viet hoa By http://tranhba.com {
+-- script viet hoa By http://tranhba.com 	leagueid, â##ãid
+-- script viet hoa By http://tranhba.com 	"awardinfo" = { #±##µµ±ð
+-- script viet hoa By http://tranhba.com 	{awardUSEDß#ã##µÐï##³#Ì#¸#, total, {{type1max,type1cur}, {type2max,type2cur}, {type3max, type3cur}}},
+-- script viet hoa By http://tranhba.com 	{awardused, total,{type1max,type1cur}, {type2max,type2cur}},
+-- script viet hoa By http://tranhba.com 	},
+-- script viet hoa By http://tranhba.com }
 
---ÔÚRELAY²úÉúÐÂµÄÓÐÏÞ½±ÀøÊý¾Ý£¨Õ½¶Ó£©
+-- script viet hoa By http://tranhba.com ¤óRELAY²óÐó#¢#Äã####±µ#£ý#ý##â##ã##
 function limit_create_info(tab)
 	leagueid = tab["leaguetype"]
 	for i = 1, getn(tab["awardinfo"]) do 
@@ -34,7 +34,7 @@ function limit_create_info(tab)
 				local membername = "type"..j
 				local memberObj = LGM_CreateMemberObj()
 				LGM_SetMemberInfo(memberObj,membername, 0, leagueid, leaguename)
-				--LG_AddMemberToObj(lid, memberObj)
+				-- script viet hoa By http://tranhba.com LG_AddMemberToObj(lid, memberObj)
 				LGM_ApplyAddMember(memberObj)
 				LG_ApplySetMemberTask(leagueid, leaguename, membername, TASK_LW_AWARD_MAX, some_tab[3][j][1])
 				LG_ApplySetMemberTask(leagueid, leaguename, membername, TASK_LW_AWARD_USED, some_tab[3][j][2])
@@ -46,7 +46,7 @@ end
 
 function limit_show_info(leagueid, msgfun)
 	local levelcount = limit_getcount(leagueid)
-	msgfun("---------------LIMITED_AWARD REPORT------------------")
+	msgfun("-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -LIMITED_AWARD REPORT-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com ")
 	msgfun("AWARD LEVEL COUNT:"..levelcount)
 	for i = 1, levelcount do 
 		local awardcount, curpos, total = limit_get_level_awardinfo(leagueid, i)
@@ -56,7 +56,7 @@ function limit_show_info(leagueid, msgfun)
 			msgfun("	["..j.."]:GOT & MAX:"..awardused.."/"..awardmax)
 		end
 	end
-	msgfun("------------------------------------------------------")
+	msgfun("-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com ")
 end
 
 function limit_clear_awardinfo(award_leaguetype)
@@ -74,7 +74,7 @@ function limit_clear_awardinfo(award_leaguetype)
 	return count	
 end
 
---»ñµÃÄ³ÖÖÀàÐÍ½±µÄÇé¿ö
+-- script viet hoa By http://tranhba.com ###·Ä³##µµ#Ý#±#Ä#Ð¿#
 function limit_get_level_awardinfo(award_leaguetype, awardlevel)
 	local lid = LG_GetLeagueObj(award_leaguetype, tostring(awardlevel)) ;
 	if (lid ~= 0 and lid ~= nil) then 
@@ -110,34 +110,34 @@ function limit_append_curcount(award_leaguetype, awardlevel, appendnum)
 	LG_ApplyAppendLeagueTask(award_leaguetype, tostring(awardlevel), TASK_LW_AWARD_CURPOS, appendnum)
 end
 
------------------------------------------------------------------
---[1]->leaguename Õ½¶ÓÃû Ò»Àà½±Àø
---typecount = 3 Ò»Àà½±ÀøÓÐ3ÖÖ½±Æ·
---maxcount = 10 ×î¶àËÍ³ö10¸ö½±Æ·
---total = 10000
---curpos = 100
---
---	[type1]member Ò»ÀàµÄµÚÒ»ÖÖ½±Æ·
---	max = 1	Ò»ÀàµÄµÚÒ»ÖÖ½±Æ·×î¶àËÍ³öÒ»·Ý
---	cur = 0 Ä¿Ç°ËÍ³ö¼¸·ÝÁË
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -
+-- script viet hoa By http://tranhba.com [1]->leaguename â##ã·# ß#µµ#±µ#
+-- script viet hoa By http://tranhba.com typecount = 3 ß#µµ#±µ#ã#3###±##
+-- script viet hoa By http://tranhba.com maxcount = 10 ###µ#Ý³#10###±##
+-- script viet hoa By http://tranhba.com total = 10000
+-- script viet hoa By http://tranhba.com curpos = 100
+-- script viet hoa By http://tranhba.com 
+-- script viet hoa By http://tranhba.com 	[type1]member ß#µµ#Ä#óß####±##
+-- script viet hoa By http://tranhba.com 	max = 1	ß#µµ#Ä#óß####±#####µ#Ý³#ß##ý
+-- script viet hoa By http://tranhba.com 	cur = 0 Ä¿#°#Ý³####ý¸#
 
---	[type2]member Ò»ÀàµÄµÚ¶þÖÖ½±Æ·
---	max = 4
---	cur = 0
+-- script viet hoa By http://tranhba.com 	[type2]member ß#µµ#Ä#ó#####±##
+-- script viet hoa By http://tranhba.com 	max = 4
+-- script viet hoa By http://tranhba.com 	cur = 0
 	
---	[type3]member Ò»ÀàµÄµÚÈýÖÖ½±Æ·
---	max = 5
---	cur = 0
+-- script viet hoa By http://tranhba.com 	[type3]member ß#µµ#Ä#óÌý###±##
+-- script viet hoa By http://tranhba.com 	max = 5
+-- script viet hoa By http://tranhba.com 	cur = 0
 
---[2]						Õ½¶ÓÃû ¶þÀà½±Àø
---typecount = 2
---maxcount = 50
---	[type1]			³ÉÔ±Ãû
---	max=20
---	cur=0
---	[type2]			³ÉÔ±Ãû
---	max=30
---	cur=0
---¡£¡£¡£
---¡£¡£¡£
--------------------------------------------------------------------
+-- script viet hoa By http://tranhba.com [2]						â##ã·# ##µµ#±µ#
+-- script viet hoa By http://tranhba.com typecount = 2
+-- script viet hoa By http://tranhba.com maxcount = 50
+-- script viet hoa By http://tranhba.com 	[type1]			³Ð¤±·#
+-- script viet hoa By http://tranhba.com 	max=20
+-- script viet hoa By http://tranhba.com 	cur=0
+-- script viet hoa By http://tranhba.com 	[type2]			³Ð¤±·#
+-- script viet hoa By http://tranhba.com 	max=30
+-- script viet hoa By http://tranhba.com 	cur=0
+-- script viet hoa By http://tranhba.com ######
+-- script viet hoa By http://tranhba.com ######
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -

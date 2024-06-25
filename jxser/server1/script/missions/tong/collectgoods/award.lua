@@ -1,4 +1,4 @@
--- ½±Àø.lua (°ï»áÕÐÄ¼µÜ×Ó»î¶¯)
+-- script viet hoa By http://tranhba.com  #±µ#.lua (°##¸â#Ä####ã###¯)
 if (not __COLLG_AWARD_H__) then
 	__COLLG_AWARD_H__ = 1;
 Include([[\script\missions\tong\collectgoods\head.lua]]);
@@ -17,42 +17,42 @@ tabExp = {
 1000000
 };
 
-collg_tabRate = {--Ð¡¸£Ôµ ÏÉ²ÝÂ¶ Ëæ»úPKÍè ÖÐ¸£Ôµ 4¼¶Ðþ¾§ ´ó¸£Ôµ 5¼¶Ðþ¾§ Ëæ»úË®¾§ ÈÎÎñ¾íÖá 6¼¶Ðþ¾§ 7¼¶Ðþ¾§ 8¼¶Ðþ¾§
-	{0, 0, 0, 0, 0, 0.27, 0.2755, 0.12, 0.2, 0.1, 0.03, 0.0045},	--µÚÒ»Ãû
-	{0, 0, 0, 0, 0.2, 0.172, 0.2, 0.1, 0.2, 0.1, 0.025, 0.003},	--
-	{0, 0, 0, 0.061, 0.2, 0.137, 0.2, 0.1, 0.2, 0.08, 0.02, 0.002},	--
-	{0.04, 0.04, 0.04, 0.061, 0.17, 0.137, 0.2, 0.05, 0.18, 0.072, 0.01, 0},	--
-	{0.05, 0.05, 0.06, 0.068, 0.17, 0.137, 0.2, 0.05, 0.15, 0.06, 0.005, 0},	--
-	{0.059, 0.06, 0.1, 0.1, 0.12, 0.15, 0.15, 0.05, 0.15, 0.06, 0.001, 0},		--
-	{0.15, 0.12, 0.14, 0.1, 0.1, 0.1, 0.1, 0.01, 0.12, 0.06, 0, 0},	--
-	{0.18, 0.17, 0.14, 0.1, 0.1, 0.05, 0.1, 0.01, 0.1, 0.05, 0, 0},	--
-	{0.17, 0.15, 0.1, 0.2, 0.1, 0.05, 0.1, 0.01, 0.1, 0.02, 0, 0},	--
-	{0.15, 0.13, 0.16, 0.25, 0.15, 0.05, 0.1, 0.01, 0, 0, 0, 0}	--µÚÊ®Ãû
+collg_tabRate = {-- script viet hoa By http://tranhba.com ####¤# #Ð²ý¢# ###óPKÝÌ ####¤# 4###### ´ã##¤# 5###### ###ó#### Ì####Ý#¸ 6###### 7###### 8######
+	{0, 0, 0, 0, 0, 0.27, 0.2755, 0.12, 0.2, 0.1, 0.03, 0.0045},	-- script viet hoa By http://tranhba.com #óß#·#
+	{0, 0, 0, 0, 0.2, 0.172, 0.2, 0.1, 0.2, 0.1, 0.025, 0.003},	-- script viet hoa By http://tranhba.com 
+	{0, 0, 0, 0.061, 0.2, 0.137, 0.2, 0.1, 0.2, 0.08, 0.02, 0.002},	-- script viet hoa By http://tranhba.com 
+	{0.04, 0.04, 0.04, 0.061, 0.17, 0.137, 0.2, 0.05, 0.18, 0.072, 0.01, 0},	-- script viet hoa By http://tranhba.com 
+	{0.05, 0.05, 0.06, 0.068, 0.17, 0.137, 0.2, 0.05, 0.15, 0.06, 0.005, 0},	-- script viet hoa By http://tranhba.com 
+	{0.059, 0.06, 0.1, 0.1, 0.12, 0.15, 0.15, 0.05, 0.15, 0.06, 0.001, 0},		-- script viet hoa By http://tranhba.com 
+	{0.15, 0.12, 0.14, 0.1, 0.1, 0.1, 0.1, 0.01, 0.12, 0.06, 0, 0},	-- script viet hoa By http://tranhba.com 
+	{0.18, 0.17, 0.14, 0.1, 0.1, 0.05, 0.1, 0.01, 0.1, 0.05, 0, 0},	-- script viet hoa By http://tranhba.com 
+	{0.17, 0.15, 0.1, 0.2, 0.1, 0.05, 0.1, 0.01, 0.1, 0.02, 0, 0},	-- script viet hoa By http://tranhba.com 
+	{0.15, 0.13, 0.16, 0.25, 0.15, 0.05, 0.1, 0.01, 0, 0, 0, 0}	-- script viet hoa By http://tranhba.com #ó£#·#
 };
 
---ÎïÆ·ÖÖÀà
+-- script viet hoa By http://tranhba.com ######µµ
 tab_goods = {
-	{122, 0, "Phóc Duyªn (tiÓu) "},
-	{71, 0, "Tiªn Th¶o Lé "},
-	{"PK hoµn"},
-	{123, 0, "Phóc Duyªn (trung) "},
-	{147, 4, "HuyÒn Tinh cÊp 4"},
-	{124, 0, "Phóc Duyªn (®¹i) "},
-	{147, 5, "HuyÒn Tinh cÊp 5"},
-	{"Thñy tinh"},
-	{"MËt ®å nhiÖm vô "},
-	{147, 6, "HuyÒn Tinh cÊp 6"},
-	{147, 7, "HuyÒn Tinh cÊp 7"},
-	{147, 8, "HuyÒn Tinh cÊp 8"},
+	{122, 0, "##¤#¢#(##) "},
+	{71, 0, "#Ð²ý¢# "},
+	{"PK ÝÌ"},
+	{123, 0, "##¤#¢#(##) "},
+	{147, 4, "####4##"},
+	{124, 0, "##¤#¢#(´ã) "},
+	{147, 5, "####5##"},
+	{"####"},
+	{"Ì###·#Ý# "},
+	{147, 6, "####6##"},
+	{147, 7, "####7##"},
+	{147, 8, "####8##"},
 }
 
 
 function collg_about()
-	Say("Mét ®ît ho¹t ®éng diÔn ra trong <color=red>15<color> phót. Trong ®ã cã <color=red>5<color> phót chuÈn bÞ. Sau khi b¸o danh tham gia, ng­êi ch¬i sÏ ®­îc ®­a ®Õn khu vùc chuÈn bÞ. Khi ho¹t ®éng b¾t ®Çu th× trong khu vùc sÏ xuÊt hiÖn 'Tói hµng hãa', ng­êi ch¬i chØ cÇn nhÆt c¸c 'Tói hµng hãa' nµy; nh­ng cÇn ph¶i cÈn thËn nh÷ng con 's©u næ' ngÉu nhiªn xuÊt hiÖn b¸m vµo th©n ng­êi vµ ph¸t næ.", 1, "Trang kÕ /collg_about_next");
+	Say("·¿´####¯#ï## <color=red>15<color>###ã######ã#<color=red>5<color> 5###ã##±###±#·#²##ãºã##Ý##ß##±##Ý####±###ãß#####¯¿#£#£±####ãßÄó#¸³####â##´###Ý##ß###Ìß####ðâ©###â##´#####£##Ìß####ÄÄ###±#â##Ä³##ã##Ý#Ì#³####Ð##Ì#ÐÝÐ#±#â###", 1, "#¢ß#ß³ /collg_about_next");
 end;
 
 function collg_about_next()
-	Say("NÕu nh­ ng­êi ch¬i bÞ s©u ph¸t næ th× nh÷ng 'Tói hµng hãa' sÏ bÞ r¬i ra ë gÇn ®ã, ®ång thêi bÞ cho¸ng trong 30 gi©y. Trong thêi gian bÞ cho¸ng sÏ kh«ng bÞ 's©u næ' tÊn c«ng. Khi bÞ s©u næ b¸m vµo th× sÏ cã thªm kü n¨ng 'nÐm chuyÒn', cã thÓ dïng kü n¨ng nµy ®Ó nÐm s©u vµo ng­êi ch¬i kh¸c. Sau khi ho¹t ®éng kÕt thóc, '<color=yellow>Tæng qu¶n Ho¹t ®éng ph­êng<color>' sÏ c¨n cø vµo b¶ng xÕp h¹ng sè l­îng 'Tói hµng hãa' ®Ó ph¸t th­ëng.", 0);
+	Say("Ì###Ý##ß±#µ#³#â######â##´##Ý#¸#«¢###Ý#£±¤###30·###¤ó¤###£±######²#±#±#â#³#######Ì###±#±#â#³#×ï¤óÐÝÐ####ÝÄ#×Ý#ãÌã####Ä###¿Ðß¤ã·#·##Ä###³##ãÌã#ß##Ì######¯#¸£#ºã##'<color=yellow>###¯######<color>' ###ï#ý#â##´#ÅÅ·#£ý¸¿###±µ#.", 0);
 end;
 
 function collg_aword()
@@ -66,12 +66,12 @@ function collg_aword()
 	SetTask(COLLG_COUNT_ONETIME, 0);
 	SetTask(COLLG_TK_RANK, 0);
 	if (nCount == 0 or nRank == 0) then
-		Say("Tæng qu¶n Ho¹t ®éng ph­êng: Ng­¬i muèn nhËn th­ëng ­, h·y mau ®i t×m tói hµng hãa ®·, nÕu kh«ng cã th× t×m ta còng lµ phÝ thêi gian mµ th«i.", 1, "Theo có phÊt tay bay ra/oncancel");
+		Say("###¯######: Ä·##¸×#±°###¿×Ì#âß#â##´##Ì°Ð##Ì###·#ã##Ýµ´âß#ß##ß²£#µ###£±##.", 1, "°´ââ#ã£######Ð³#/oncancel");
 		SetTaskTemp(193, 0);
 		return
 	end;
 	
-	Say("Tæng qu¶n Ho¹t ®éng ph­êng: Lµm rÊt tèt, ng­¬i t×m ®­îc <color=yellow>"..nCount.."<color> tói hµng hãa, xÕp h¹ng thø <color=yellow>"..nRank.."<color>, ®©y lµ phÇn th­ëng dµnh cho ng­¬i, xin h·y nhËn lÊy.", 1, "NhËn lÊy lÔ vËt./oncancel");
+	Say("###¯######: ###Äº#º·##Ä·âß## <color=yellow>"..nCount.."<color> #â##´###ÅÅ·##ó<color=yellow>"..nRank.."<color>, â©£###Ä·#Ä#±µ#####£â#¢.", 1, "¸×Ì##±µ#./oncancel");
 	collg_giveaward(nRank);
 	SetTaskTemp(193, 0);
 end;
@@ -82,40 +82,40 @@ function collg_giveaward(nRank)
 	collg_goodsaward(nRank);
 end;
 
-function collg_festival_addpkwan()--¼ÓPKÍè
+function collg_festival_addpkwan()-- script viet hoa By http://tranhba.com #ãPKÝÌ
     local itemidx = random(1, 10);
     AddItem(6, 0, itemidx, 1, 0, 0, 0);
-    tab_pkwan_name = {"Tr­êng MÖnh hoµn", "Gia Bµo hoµn", "§¹i Lùc hoµn", "Cao ThiÓm hoµn", "Cao Trung hoµn", "Phi Tèc hoµn", "B¨ng Phßng hoµn", "L«i Phßng hoµn", "Háa Phßng hoµn", "§éc Phßng hoµn"};
-    Msg2Player("B¹n nhËn ®­îc mét"..tab_pkwan_name[itemidx]);
+    tab_pkwan_name = {"³#·#ÝÌ", "#ãÅ#ÝÌ", "´ã¸#ÝÌ", "##Ð¸ÝÌ", "####ÝÌ", "#Ð#ïÝÌ", "±ï#µÝÌ", "µ##µÝÌ", "#ð#µÝÌ", "###µÝÌ"};
+    Msg2Player("Ä·###·ß###"..tab_pkwan_name[itemidx]);
 end;
 
 function collg_goodsaward(nRank)
 	local nGoodsType = collg_getgoodtype(nRank);
 	
-	if (nGoodsType == 3) then	--¼ÓÒ»¸öPKÍè
+	if (nGoodsType == 3) then	-- script viet hoa By http://tranhba.com #ãß###PKÝÌ
 		collg_festival_addpkwan();
 		return
 	end;
 	
-	if (nGoodsType == 8) then	--Ëæ»úÒ»¸öË®¾§
+	if (nGoodsType == 8) then	-- script viet hoa By http://tranhba.com ###óß#######
 		collg_givecrystal();
 		return
 	end;
 	
-	if (nGoodsType == 9) then	--¼ÓÒ»¸öÈÎÎñ¾íÖá
+	if (nGoodsType == 9) then	-- script viet hoa By http://tranhba.com #ãß###Ì####Ý#¸
 		collg_giveTaskBook();
 		return
 	end;
 	AddItem(6, 1, tab_goods[nGoodsType][1], tab_goods[nGoodsType][2], 0, 0, 0);
-	local strsay = "B¹n nhËn ®­îc mét"..tab_goods[nGoodsType][3];
+	local strsay = "Ä·###·ß###"..tab_goods[nGoodsType][3];
 	Msg2Player(strsay);
 end;
 
 function collg_givecrystal()
 	local nIdx = random(1, 3);
-	local tab_Crystal = {{238, "Lam Thñy Tinh"}, {239, "Tö Thñy Tinh"}, {240, "Lôc Thñy Tinh"}};
+	local tab_Crystal = {{238, "µ#####"}, {239, "######"}, {240, "¢×####"}};
 	AddItem(4, tab_Crystal[nIdx][1], 0, 0, 0, 0, 0);
-	Msg2Player("B¹n nhËn ®­îc <color=yellow>"..tab_Crystal[nIdx][2].."<color>.");
+	Msg2Player("Ä·###· <color=yellow>"..tab_Crystal[nIdx][2].."<color>.");
 end;
 
 function collg_getgoodtype(nRank)
@@ -131,31 +131,31 @@ function collg_getgoodtype(nRank)
 	end;
 end;
 
--- Éú³ÉÒ»¸öÈÎÎñ¾íÖá
+-- script viet hoa By http://tranhba.com  Ðó³Ðß###Ì####Ý#¸
 function collg_giveTaskBook()
 	local nRandomTaskID, nRandomItemIndex = 0, 0;
-	-- Ñ¡ÔñÒ»¸öµÚ¶þ²ãµÄËæ»úÈÎÎñ
+	-- script viet hoa By http://tranhba.com  ##¤#ß####ó##²·#Ä###óÌ###
 	nRandomTaskID = TaskNo(selectNextTask());
-	-- Éú³ÉÒ»¸öÈÎÎñ¾íÖá
+	-- script viet hoa By http://tranhba.com  Ðó³Ðß###Ì####Ý#¸
 	nRandomItemIndex = AddItem(6, 2, 2, 0, 1, 0, 0);
 	SetItemMagicLevel(nRandomItemIndex, 1, nRandomTaskID);
-	-- Í¬²½ÎïÆ·Ä§·¨ÊôÐÔ
+	-- script viet hoa By http://tranhba.com  Ý#²#####Ä###£«#¤
 	SyncItem(nRandomItemIndex);	
-	Msg2Player("B¹n nhËn ®­îc mét <color=green>quyÓn nhiÖm vô<color>!");
-	WriteTaskLog("NhËn ®­îc 1 mËt tÞch nhiÖm vô, m· sè lµ:"..nRandomTaskID);
+	Msg2Player("Ä·###·ß### <color=green>Ì###²¸color>!");
+	WriteTaskLog("###·ß###Ì###·#####ºÅ¢### "..nRandomTaskID);
 	return nRandomTaskID;
 end;
 
 
--- ÈÎÎñÏµÍ³µÄÐ´Èë LOG ¹ý³Ì
+-- script viet hoa By http://tranhba.com  Ì#####Ý³#Ä#´Ì# LOG #ý³×
 function WriteTaskLog(strMain)
-	-- Èç¹ûÊÇ¿ÕÖµÔò²»Ð´Èë
+	-- script viet hoa By http://tranhba.com  Ì###£#¿â##¤ß²##´Ì#
 	if strMain==nil then return end;
-	WriteLog("[Ho¹t ®éng thu thËp vËt phÈm bang héi n¨m 2006]"..GetLocalDate(" [%y n¨m %m th¸ng %d ngµy  %H giê %M phót]").." [mËt m·:"..GetAccount().."] [nh©n vËt:"..GetName().."]:"..strMain);
+	WriteLog("[2006Äª°##¸####£â#¯###¯]"..GetLocalDate(" [%y Äª %m ¤¢ %d Ìâ %H £±%M ##]").." [·#¢# "..GetAccount().."] [Ì###:"..GetName().."]:"..strMain);
 end;
 
-function oncancel()	--È¡Ïû
+function oncancel()	-- script viet hoa By http://tranhba.com Ì###
 
 end;
 
-end; --// end of __COLLG_AWARD_H__
+end; -- script viet hoa By http://tranhba.com // end of __COLLG_AWARD_H__

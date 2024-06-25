@@ -1,4 +1,3 @@
---§æi lÖnh bµi thî rÌn thÇn bİ l©m an edit by mcteam
 -- ====================== ÎÄ¼şĞÅÏ¢ ======================
 
 -- ½£ÏÀÇéÔµÍøÂç°æÔ½ÄÏÊÕ·Ñ°æ - ¶Ò»»ĞÂ×°±¸ÁîÅÆ£¨×ÏòşµÈ£©
@@ -14,11 +13,7 @@ Include("\\script\\misc\\itemexchangevalue\\ex_goldequip_head.lua")	-- ¶Ò»»ĞÂ×°±
 Include( "\\script\\task\\system\\task_string.lua" );
 Include("\\script\\lib\\log.lua");
 
-Include("\\script\\misc\\itemexchangevalue\\ex_goldequip_head.lua");
-
 function exchange_lingpai2goldequip()
-	--dofile("script/misc/itemexchangevalue/ex_goldequip_lingpai.lua");
-	--dofile("script/misc/itemexchangevalue/ex_goldequip_head.lua");
 	local aryDescribe =
 	{
 		"<dec><npc>Ng­¬i muèn ®æi lo¹i trang bŞ nµo?",
@@ -26,9 +21,9 @@ function exchange_lingpai2goldequip()
 		format("Bé trang bŞ V©n Léc/#take_xp_equip_1(2,%d)", 1135),
 		format("Bé trang bŞ Th­¬ng Lang/#take_xp_equip_1(3,%d)", 1365),
 		format("Bé trang bŞ HuyÒn Viªn/#take_xp_equip_1(4, %d)", 1595),
-		format("Bé trang bŞ Tö M·ng/#take_xp_equip_1(5, %d)", 1825),
-		format("Bé trang bŞ Kim ¤/#take_xp_equip_1(6, %d)", 2055),
-		format("Bé Trang bŞ B¹ch Hæ/#take_xp_equip_1(7, %d)", 2285),
+--		format("Bé trang bŞ Tö M·ng/#take_xp_equip_1(5, %d)", 1825),
+--		format("½ğÎÚÌ××°/#take_xp_equip_1(6, %d)", 2055),
+--		format("°×»¢Ì××°/#take_xp_equip_1(7, %d)", 2285),
 		"L¸t n÷a quay l¹i /no",
 	};
 	
@@ -81,9 +76,9 @@ end
 function take_xp_equip_2(n_g, n_d, n_p)
 	local n_count = 10;
 	
-	--if (n_g == 5) then		
-		--n_count = 5;
-	--end
+	if (n_g == 5) then		
+		n_count = 5;
+	end
 	
 	local n_s =(n_p - 1)*n_count + 1;
 	

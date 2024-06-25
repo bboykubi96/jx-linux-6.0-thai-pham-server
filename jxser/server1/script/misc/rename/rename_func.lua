@@ -27,9 +27,20 @@ function query_rolename()
 end
 
 function on_query_rolename(new_name)
+	if CheckSpecialString(new_name) == 1 then
+		return Say("Vui lßng kh«ng sö dông kİ tù ®Æc biÖt")
+	end
 	QueryRoleName(new_name);
 end
-
+function CheckSpecialString(szName)
+local tbForbidenKey = {"!","@","°","Ä","•","”","…","_",}
+for i=1,getn(tbForbidenKey) do
+	if strfind(szName,tbForbidenKey[i]) then
+		return 1
+	end
+end
+return 0
+end
 -- ÖØÃûÍæ¼Ò¸ü¸Ä½ÇÉ«Ãû
 function change_rolename()
 	Say("<#> C¸c b­íc cô thÓ: Rêi Bang Héi nÕu cã, ®èi tho¹i víi NPC, nhËp tªn nh©n vËt cÇn thay ®æi vµo, b¹n sÏ tù ®éng rêi m¹ng. Sau 3 phót ®¨ng nhËp l¹i, nÕu tªn nh©n vËt ®· thay ®æi th× ®­îc xem ®æi tªn thµnh c«ng; nÕu ch­a thay ®æi, mêi b¹n thùc hiÖn l¹i c¸c b­íc trªn. NÕu xuÊt hiÖn mét sè hiÖn t­îng l¹ xin liªn hÖ GM gi¶i quyÕt.",
@@ -48,6 +59,9 @@ function change_rolename2()
 end
 
 function on_change_rolename(new_name)
+	if CheckSpecialString(new_name) == 1 then
+		return Say("Vui lßng kh«ng sö dông kİ tù ®Æc biÖt")
+	end
 	if (check_renamerole() == 1) then
 		if (GetName() == new_name) then
 			Talk(1, "", "<#> B¹n muèn ®æi tªn g×?")

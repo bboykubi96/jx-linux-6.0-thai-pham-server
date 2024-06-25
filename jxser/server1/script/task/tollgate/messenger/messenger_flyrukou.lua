@@ -6,7 +6,7 @@
 -------------------------------------------------------------------------
 Include("\\script\\task\\tollgate\\killbosshead.lua") --包含了图象调用
 Include("\\script\\task\\newtask\\newtask_head.lua");
-Include("\\script\\task\\tollgate\\messenger\\posthouse.lua"); 	--包含玩家任务数据表格的类
+Include("\\script\\task\\tollgate\\messenger\\posthouse.lua"); 	--包含玩家任务数据表格的赖
 Include("\\script\\event\\birthday_jieri\\200905\\class.lua");	-- 越南资料片生日活动
 Include("\\script\\event\\birthday_jieri\\200905\\message\\message.lua");
 Include("\\script\\lib\\common.lua");

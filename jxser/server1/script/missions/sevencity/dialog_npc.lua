@@ -51,7 +51,7 @@ function main()
 		"Ta muèn xem sè l­îng khiªu chiÕn lÖnh cña bang/ViewTiaoZhanLing",
 		"B¸o danh tham gia thÊt thµnh ®¹i chiÕn/dlg_signup",
 		"Vµo chiÕn tr­êng thÊt thµnh ®¹i chiÕn/dlg_enter",
-		"NhËn phÇn th­ëng thÊt thµnh ®¹i chiÕn/dlg_query",
+	--	"NhËn phÇn th­ëng thÊt thµnh ®¹i chiÕn/dlg_query",
 		--"NhËn phÇn th­ëng ChiÕm lÜnh T­¬ng D­¬ng Thµnh/nhanTDCTLB",
 		"Kh«ng muèn g× c¶ /Cancel")
 end
@@ -99,8 +99,12 @@ function dlg_query()
 	--Change request 14/06/2011 - Modified by DinhHQ
 	local nWeekDay = tonumber(GetLocalDate("%w"))
 	local nHour = tonumber(GetLocalDate("%H%M"))
-	if nWeekDay ~= 5  or nHour < 2145 or nHour > 2250 then
-		Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	if nWeekDay==5 and (nHour < 2145 or nHour > 2350) then
+	Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	end
+	
+	if nWeekDay ~= 5  and nWeekDay ~= 6 and nWeekDay ~= 7 then
+		Talk(1, "", "Thø <color=red>7-CN<color>,míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
 		return
 	end
 	
@@ -110,8 +114,8 @@ function dlg_query()
 	if tbVngLimitTime[name] then
 		local nLastAwardTime = tbVngLimitTime[name]
 		local nRestTime =(nTime - nLastAwardTime)
-		if nRestTime < 60*2  then
-			Talk(1, "", format("Mçi lÇn nhËn th­ëng ph¶i c¸ch nhau <color=red>2<color> phót. VÞ §¹i hiÖp nµy <color=red>%d<color> gi©y n÷a h·y thö l¹i.", (60*2 - nRestTime)))
+		if nRestTime < 30  then
+			Talk(1, "", format("Mçi lÇn nhËn th­ëng ph¶i c¸ch nhau <color=red>30<color> s. VÞ §¹i hiÖp nµy <color=red>%d<color> gi©y n÷a h·y thö l¹i.", (30 - nRestTime)))
 			return
 		end	
 	end	
@@ -128,18 +132,11 @@ function dlg_query()
 		QUERY_TABLE[name] = PlayerIndex
 		local buff = ObjBuffer:New()
 		buff:Push(name)
-	local	tbAward = {
-	[1] = {	
-	{nExp_tl=100e6},	
-	{szName="D· TÈu Chi LÖnh",tbProp={6,1,4407,1,0,0},nCount=10},
-		{szName="R­¬ng §å Xanh",tbProp={6,1,4517,1,0,0},nCount=1},
-	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=1},
-	
-		--{szName="Thien Thach",tbProp={4,random(1317,1325),1,1,0,0},nCount=1},	
-		
-			},
-}
-tbAwardTemplet:GiveAwardByList(tbAward, "PhÇn th­ëng");
+		RemoteExecute(
+			REMOTE_SCRIPT,
+			"Protocol:QueryAward",
+			buff.m_Handle,
+			"process_award")
 		buff:Destroy()
 	end
 end
@@ -198,10 +195,10 @@ function process_award(param, result)
 						info.ExpAward)
 	local options = {}
 	if (info.BoxCount > 0) and (GetName() == GetTongMaster())  then
-	--	tinsert(options, format("Ta muèn nhËn C«ng Thµnh LÔ Bao/#action_awardbox(%d)", info.BoxCount))
+		tinsert(options, format("Ta muèn nhËn C«ng Thµnh LÔ Bao/#action_awardbox(%d)", info.BoxCount))
 	end
 	if (info.GuardAwardCount > 0) then
-	--	tinsert(options, format("Ta muèn nhËn VÖ Trô LÔ Bao/#action_guardaward(%d)", info.GuardAwardCount))
+		tinsert(options, format("Ta muèn nhËn VÖ Trô LÔ Bao/#action_guardaward(%d)", info.GuardAwardCount))
 	end
 	if (info.ExpAward > 0) then
 		tinsert(options, format("Ta muèn nhËn phÇn th­ëng kinh nghiÖm/#action_expaward(%d)", info.ExpAward))
@@ -214,16 +211,20 @@ function action_expaward(exp)
 	--Change request 14/06/2011 - Modified by DinhHQ
 	local nWeekDay = tonumber(GetLocalDate("%w"))
 	local nHour = tonumber(GetLocalDate("%H%M"))
-	if nWeekDay ~= 5  or nHour < 2145 or nHour > 2350 then
-		Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	if nWeekDay==5 and (nHour < 2145 or nHour > 2350) then
+	Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	end
+	
+	if nWeekDay ~= 5  and nWeekDay ~= 6 and nWeekDay ~= 7 then
+		Talk(1, "", "Thø <color=red>7-CN<color>,míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
 		return
 	end
-	StackExp(50000000)
+	StackExp(exp)
 	local buff = ObjBuffer:New()
 	buff:Push(GetName())
 	RemoteExecute(REMOTE_SCRIPT, "Protocol:ClearExpAward", buff.m_Handle)
 	buff:Destroy()
-	tbLog:PlayerActionLog("SEVENCITY", "PhanThuongExp", 50000000)
+	tbLog:PlayerActionLog("SEVENCITY", "PhanThuongExp", exp)
 end
 
 function action_guardaward(count)
@@ -235,7 +236,7 @@ function action_awardbox(count)
 		Talk(1, "", "ChØ cã bang chñ míi cã quyÒn nhËn th­ëng")
 		return
 	end	
-	action_awarditem(count, AWARD_BOX, 20)
+	action_awarditem(count, AWARD_BOX, 50)
 end
 
 function action_awarddew(count)
@@ -247,8 +248,12 @@ function action_awarditem(count, award, max_count)
 --20110318:Fix bug nhËn c«ng thµnh chiÕn lÔ bao	
 	local nWeekDay = tonumber(GetLocalDate("%w"))
 	local nHour = tonumber(GetLocalDate("%H%M"))
-	if nWeekDay ~= 5  or nHour < 2145 or nHour > 2350 then
-		Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	if nWeekDay==5 and (nHour < 2145 or nHour > 2350) then
+	Talk(1, "", "Thø <color=red>6<color>, tõ <color=red>21h45<color> ®Õn <color=red>23h50<color> míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
+	end
+	
+	if nWeekDay ~= 5  and nWeekDay ~= 6 and nWeekDay ~= 7 then
+		Talk(1, "", "Thø <color=red>7-CN<color>,míi lµ thêi gian nhËn th­ëng, xin ®¹i hiÖp h·y quay l¹i sau.")
 		return
 	end
 	if (CalcFreeItemCellCount() < 60) then

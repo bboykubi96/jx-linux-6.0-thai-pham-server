@@ -1,0 +1,18 @@
+-- Edit by giangleloi, them ham add tu dong khi dung manh 1000 tam SHXT
+
+Include("\\script\\task\\newtask\\newtask_head.lua")
+WORLDAPS_ITEM    =          -- ID Nhung vat pham co cong dung cong them ban do SHXT
+    {                    -- Cau truc [ID ITEM] = {So diem}
+        [440]    = {100}, 
+        [2514]    = {1000},
+    }
+    
+function main(nItemIndex)
+    local nWorldMaps = nt_getTask(1027) -- Task luu thong tin manh ban do son ha xa tac
+    local nG, nD, nP = GetItemProp(nItemIndex)
+    local GItem = WORLDAPS_ITEM[nP]
+    nWorldMaps = nWorldMaps + GItem[1];
+    nt_setTask(1027,nWorldMaps);
+    Msg2Player("B¹n nhËn ®­îc "..GItem[1].." m¶nh b¶n ®å S¬n Hµ X· T¾c! HiÖn t¹i b¹n cã tæng céng "..nWorldMaps.." m¶nh b¶n ®å S¬n Hµ X· T¾c.");
+    return 0
+end

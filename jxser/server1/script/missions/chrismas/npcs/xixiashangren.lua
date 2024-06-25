@@ -1,14 +1,14 @@
-Include([[\script\missions\chrismas\ch_head.lua]]);
+Include([[\script\missions\chrismas\ch_head.lua]]); 
 
-function shangrensay()
-	--Say("<color=yellow>Î÷ÏÄÉÌÈË<color>£ºÌıËµÖ»Òª°ïÄÇ¸öÊ¥µ®ÀÏÈËÈ¥ÕÒ¾«Áé¾Í»áµÃµ½Ïàµ±²»´íµÄ»Ø±¨£¬ËùÒÔ×î½üÎÅÑ¶¸ÏÀ´µÄÈË»¹ÕæÊÇ²»ÉÙÄØ¡£ÎÒÕâÀïÓĞĞ©ÃØÖÆµÄµÀ¾ß£¬¾ø¶ÔÄÜÈÃÄã±È±ğÈË¸ü¿ì¡¢¸ü¶àµØÕÒµ½¾«ÁéµÄ£¬ºÙºÙ~ÔõÃ´Ñù£¬Òª²»ÒªÀ´µã£¿ºÜ±ãÒËµÄ¡£", 2, "ÕæµÄÕâÃ´ÉñÆæ£¿ÎÒ¿´¿´¡£/maidongxi", "Ã»ÓĞĞËÈ¤¡£/oncancal");
-	Say("<color=yellow>T©y H¹ Th­¬ng Nh©n<color>:GÇn ®©y Minh NguyÖt TrÊn xuÊt hiÖn mét «ng l·o sím h«m nhê ng­êi ta t×m ®å bŞ mÊt, kh«ng râ lµ t¹i sao. Nh­ng dï sao, ta thÊy ®©y còng lµ mét c¬ héi cho ta lµm giµu ha ha.", 0);
-end;
+function shangrensay() 
+-- script viet hoa By http://tranhba.com Say("<color=yellow> t©y h¹ th­¬ng nh©n <color># nghe nãi chØ cÇn gióp c¸i ®ã «ng giµ n« en ®i t×m tinh linh sÏ bŞ ®Õn t­¬ng ®èi kh¸ ®İch håi b¸o , cho nªn gÇn nhÊt nghe thÊy tin ch¹y tíi ng­êi thËt ®óng lµ kh«ng İt ®©y . ta chç nµy cã chót bİ chÕ nãi cô , tuyÖt ®èi cã thÓ ®Ó cho ng­¬i so ng­êi kh¸c nhanh h¬n # nhiÒu h¬n ®Şa t×m ®­îc tinh linh , h¾c h¾c ~ nh­ thÕ nµo , cã muèn tíi hay kh«ng ®iÓm ? rÊt tiÖn nghi . ", 2,"ThËt thÇn kú nh­ vËy ? ta xem mét chót . /maidongxi","Kh«ng cã høng thó . /oncancal"); 
+Say("<color=yellow> t©y h¹ th­¬ng nh©n <color>: ch¼ng biÕt t¹i sao , ngµy gÇn ®©y tíi tr¨ng s¸ng trÊn xuÊt hiÖn mét l·o nh©n sím muén ®Ó cho ng­êi t×m thÇn bİ vËt phÈm . nh­ng lµ bÊt kÓ nh­ thÕ nµo , ta xem ®©y còng lµ c¸ ta ph¸t tµi c¬ héi .", 0); 
+end; 
 
-function maidongxi()
-	Sale(CHRIMAS_SALEID, 3);
-end;
+function maidongxi() 
+Sale(CHRIMAS_SALEID, 3); 
+end; 
 
-function oncancal()
-	
+function oncancal() 
+
 end;

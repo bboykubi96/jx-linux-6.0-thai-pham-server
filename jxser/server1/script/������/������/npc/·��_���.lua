@@ -12,16 +12,16 @@ Include("\\script\\activitysys\\npcfunlib.lua")
 
 function main() 
 
---dofile("script/Á½ºþÇø/ÄÏÔÀÕò/npc/Â·ÈË_Éò¾Ô.lua")
+dofile("script/Á½ºþÇø/ÄÏÔÀÕò/npc/Â·ÈË_Éò¾Ô.lua")
 
 UWorld97 = GetTask(97) 
 str, result = GetTong() 
 -- script viet hoa By http://tranhba.com  if (UWorld97 >= 10) then -- script viet hoa By http://tranhba.com  ®· mua qua 
 -- script viet hoa By http://tranhba.com  Talk(1,"","TrÇm c©u # ng­¬i nhÊt ®Þnh ph¶i thËt tèt ®èi ®·i con ngùa , mçi ngµy cÊp cho nã t¾m , ®Ëu bÝnh bªn trong muèn s¶m th­îng tinh mÆt ......") 
 if (UWorld97 < 100) and (result == 1) and (GetTongFigure() == TONG_MASTER) then -- script viet hoa By http://tranhba.com  lµ bang chñ , kh«ng cã h­ëng thô qu¸ ­u ®·i mua m· 
-SetTaskTemp(17,3000) 
+SetTaskTemp(17,1000) 
 else -- script viet hoa By http://tranhba.com  b×nh th­êng mua m· 
-SetTaskTemp(17,3000) 
+SetTaskTemp(17,1500) 
 -- script viet hoa By http://tranhba.com  Talk(1,"","TrÇm c©u # thiªn lý m· th­êng cã , mµ b¸ nh¹c kh«ng th­êng cã . ®å h« # kh«ng biÕt sao #") 
 end 
 
@@ -32,84 +32,11 @@ local tbDailog = DailogClass:new(szNpcName);
 tbDailog.szTitleMsg = "<#><npc> ®¹i hiÖp ch¨n ngùa rÊt nhiÒu n¨m , chØ nh×n mét c¸i còng biÕt cã ®­îc hay kh«ng !" 
 
 G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex); 
---tbDailog:AddOptEntry("Khi ®ã lµ ng­¬i kªu ta ?", horse_get); 
-tbDailog:AddOptEntry("§æi 15 M¶nh ChiÕu D¹ + 1 D©y C­¬ng --> Ngùa ChiÕu D¹ Ngäc S­ Tö", nguachieuda); 
-tbDailog:AddOptEntry("§æi 15 M¶nh ¤ V©n + 1 D©y C­¬ng --> Ngùa ¤ V©n §¹p TuyÕt", ovan); 
-tbDailog:AddOptEntry("§æi 15 M¶nh XÝch Thè + 1 D©y C­¬ng --> Ngùa XÝch Thè", xichtho); 
-tbDailog:AddOptEntry("§æi 15 M¶nh TuyÖt ¶nh + 1 D©y C­¬ng --> Ngùa TuyÕt ¶nh", tuyetanh); 
-tbDailog:AddOptEntry("§æi 15 M¶nh §Ých L« + 1 D©y C­¬ng --> Ngùa §Ých L«", dichlo); 
+tbDailog:AddOptEntry("Khi ®ã lµ ng­¬i kªu ta ?", horse_get); 
+
 tbDailog:Show(); 
 end 
-function nguachieuda()
-	if CalcFreeItemCellCount()<10 then
-		Say("Hµnh trang cÇn cã 10 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4529,-1)>=15 and CalcEquiproomItemCount(6,1,4416,-1)>=1 then
-		ConsumeEquiproomItem(15,6,1,4529,-1)
-		ConsumeEquiproomItem(1,6,1,4416,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Ngùa ChiÕu D¹ Ngäc S­ Tö",tbProp={0,10,5,5,0,0,0},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 15 M¶nh Ngùa ChiÕu D¹ + 1 D©y C­¬ng (Mua KTC)")
-		return
-	end
-end
-function ovan()
-	if CalcFreeItemCellCount()<10 then
-		Say("Hµnh trang cÇn cã 10 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4530,-1)>=15 and CalcEquiproomItemCount(6,1,4416,-1)>=1 then
-		ConsumeEquiproomItem(15,6,1,4530,-1)
-		ConsumeEquiproomItem(1,6,1,4416,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Ngùa ¤ V©n §¹p TuyÕt",tbProp={0,10,5,6,0,0,0},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 15 M¶nh Ngùa ¤ V©n + 1 D©y C­¬ng (Mua KTC)")
-		return
-	end
-end
-function xichtho()
-	if CalcFreeItemCellCount()<10 then
-		Say("Hµnh trang cÇn cã 10 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4531,-1)>=15 and CalcEquiproomItemCount(6,1,4416,-1)>=1 then
-		ConsumeEquiproomItem(15,6,1,4531,-1)
-		ConsumeEquiproomItem(1,6,1,4416,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Ngùa XÝch Thè",tbProp={0,10,5,7,0,0,0},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 15 M¶nh Ngùa XÝch Thè + 1 D©y C­¬ng (Mua KTC)")
-		return
-	end
-end
-function tuyetanh()
-	if CalcFreeItemCellCount()<10 then
-		Say("Hµnh trang cÇn cã 10 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4532,-1)>=15 and CalcEquiproomItemCount(6,1,4416,-1)>=1 then
-		ConsumeEquiproomItem(15,6,1,4532,-1)
-		ConsumeEquiproomItem(1,6,1,4416,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Ngùa TuyÕt ¶nh",tbProp={0,10,5,8,0,0,0},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 15 M¶nh Ngùa TuyÕt ¶nh + 1 D©y C­¬ng (Mua KTC)")
-		return
-	end
-end
-function dichlo()
-	if CalcFreeItemCellCount()<10 then
-		Say("Hµnh trang cÇn cã 10 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4533,-1)>=15 and CalcEquiproomItemCount(6,1,4416,-1)>=1 then
-		ConsumeEquiproomItem(15,6,1,4533,-1)
-		ConsumeEquiproomItem(1,6,1,4416,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "Ngùa §Ých L«",tbProp={0,10,5,9,0,0,0},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 15 M¶nh Ngùa §Ých L« + 1 D©y C­¬ng (Mua KTC)")
-		return
-	end
-end
+
 function horse_get() 
 Talk(4,"sele_color","Anh hïng xin dõng b­íc . ","Huynh ®µi , cã c¸i g× muèn chØ gi¸o ®Ých ","T¹i h¹ lµ ThÈm C©u #, b©y giê cã mét thÊt tuÊn m·, cã thÓ bay ®i ngµn dÆm . vÞ nµy anh hïng phong th¸i bÊt phµm , nhÊt ®Þnh lµ cao thñ . ®¹i hiÖp ®Ých tuÊn m· ch­a tõng bÞ thÊt phu thuÇn phôc . ","§Ó cho ta thö nh×n tuÊn m· mét chót  ,,, ") 
 end 
@@ -135,6 +62,12 @@ the_buy(4)
 end 
 
 function buy_white() 
+--if GetCash() < 30000000 then
+--Talk(1,"","cÇn cã 3000 v¹n míi mua ®­îc chiÕu d¹ !")
+--return 
+--end
+--Pay(30000000)
+--AddItem(0,10,5,5,0,0,0)
 the_buy(5) 
 end 
 
@@ -144,22 +77,22 @@ end
 
 function the_buy(i) 
 SetTaskTemp(49,i) 
-x = 1500--GetTaskTemp(17) 
-if (x == 1500) then 
-Say("Kh«ng sai ! ng­¬i thËt lµ anh hïng . t¹i h¹ vèn lµ kh«ng muèn b¸n con ngùa nµy , nh­ng b©y giê tíi lóc gÊp rót cÇn 1500 v¹n , nh×n anh hïng còng thËt thÝch nã v× vËy kh¾c chÕ néi t©m kh«ng th«i b¸n cho anh hïng , hy väng anh hïng cã thÓ ®èi xö tö tÕ nã . ",2,"Ta nhÊt ®Þnh thËt tèt ®èi víi nã /buy_yes","NhÊt thêi ®i ®©u t×m nhiÒu tiÒn nh­ vËy /buy_no") 
+x = GetTaskTemp(17) 
+if (x == 3000) then 
+Say("Kh«ng sai ! ng­¬i thËt lµ anh hïng . t¹i h¹ vèn lµ kh«ng muèn b¸n con ngùa nµy , nh­ng b©y giê tíi lóc gÊp rót cÇn 3000 v¹n , nh×n anh hïng còng thËt thÝch nã v× vËy kh¾c chÕ néi t©m kh«ng th«i b¸n cho anh hïng , hy väng anh hïng cã thÓ ®èi xö tö tÕ nã . ",2,"Ta nhÊt ®Þnh thËt tèt ®èi víi nã /buy_yes","NhÊt thêi ®i ®©u t×m nhiÒu tiÒn nh­ vËy /buy_no") 
 else 
-Say("Kh«ng sai ! ng­¬i thËt lµ anh hïng . t¹i h¹ vèn lµ kh«ng muèn b¸n con ngùa nµy , nh­ng b©y giê tíi lóc gÊp rót cÇn 1500 v¹n , nh×n anh hïng còng thËt thÝch nã v× vËy kh¾c chÕ néi t©m kh«ng th«i b¸n cho anh hïng , hy väng anh hïng cã thÓ ®èi xö tö tÕ nã ",2,"Ta nhÊt ®Þnh thËt tèt ®èi víi nã /buy_yes","NhÊt thêi ®i ®©u t×m nhiÒu tiÒn nh­ vËy /buy_no") 
+Say("Kh«ng sai ! ng­¬i thËt lµ anh hïng . t¹i h¹ vèn lµ kh«ng muèn b¸n con ngùa nµy , nh­ng b©y giê tíi lóc gÊp rót cÇn 3000 v¹n , nh×n anh hïng còng thËt thÝch nã v× vËy kh¾c chÕ néi t©m kh«ng th«i b¸n cho anh hïng , hy väng anh hïng cã thÓ ®èi xö tö tÕ nã ",2,"Ta nhÊt ®Þnh thËt tèt ®èi víi nã /buy_yes","NhÊt thêi ®i ®©u t×m nhiÒu tiÒn nh­ vËy /buy_no") 
 end 
 end 
 
 function buy_yes() 
-x = 1500--GetTaskTemp(17) 
-if (GetCash() >= x * 10000) then 
+x = GetTaskTemp(17) 
+if (GetCash() >= 3000 * 10000) then 
 i = GetTaskTemp(49) 
-if (x == 1500) then -- script viet hoa By http://tranhba.com  lµ gi¸ ­u ®·i mua , v× thay ®æi l­îng phó trÞ gi¸ , h¬n n÷a nhí mua lµ c¸i g× mµu s¾c m· 
+if (x == 3000) then -- script viet hoa By http://tranhba.com  lµ gi¸ ­u ®·i mua , v× thay ®æi l­îng phó trÞ gi¸ , h¬n n÷a nhí mua lµ c¸i g× mµu s¾c m· 
 			SetTask(97,100+i)
 end 
-Pay(x * 10000) 
+Pay(3000 * 10000) 
 AddItem(0,10,5,i,0,0,0) 
 Talk(1,"","Con ngùa a con ngùa ! tõ nay vÒ sau ng­¬i liÒn theo vÞ nµy anh hïng , nhÊt ®Þnh ph¶i nghe lêi a !") 
 else 

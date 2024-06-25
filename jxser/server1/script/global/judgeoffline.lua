@@ -1,14 +1,15 @@
 -- script viet hoa By http://tranhba.com  dông hé lùa chän c¸ch tuyÕn bµy qu¶n lóc ch©n cña vèn 
 -- script viet hoa By http://tranhba.com 2004.11.24 
 Include("\\script\\global\\baijuwanhead.lua");
-Include("\\script\\global\\judgeoffline_limit.lua");		-- script viet hoa By http://tranhba.com  2006Äê10ÔÂ30ÈÕ¼ÓÈëÏÞÖÆÔÚËùÓÐ³ÇÊÐ³µ·òÅÔºÍÌìÍõ°ïÍÐ¹ÜµÄ½Å±¾  by peres
+Include("\\script\\global\\judgeoffline_limit.lua");		-- script viet hoa By lechung  2006Äê10ÔÂ30ÈÕ¼ÓÈëÏÞÖÆÔÚËùÓÐ³ÇÊÐ³µ·òÅÔºÍÌìÍõ°ïÍÐ¹ÜµÄ½Å±¾  by peres
 Include("\\script\\item\\ib\\zimudai.lua");
 Include("\\script\\lib\\player.lua")
 Include("\\script\\trip\\define.lua")
 --Include("\\script\\t9team\\t9_hwid_head.lua")
-
+Include("\\script\\lib\\remoteexc.lua")
 arraymap = 
 { 
+["1007"] = " §¶o §µo Hoa", 
 ["1"] = " ph­îng t­êng ", 
 ["11"] = " thµnh ®« ", 
 ["37"] = " biÖn kinh ", 
@@ -60,11 +61,11 @@ arraymap =
 ["595"] = " c«ng céng bang héi b¶n ®å ", 
 ["596"] = " c«ng céng bang héi b¶n ®å ", 
 ["597"] = " c«ng céng bang héi b¶n ®å ", 
-["325"] = " B¸o danh Tèng Kim ", 
 }; 
 
+
 Include("\\script\\global\\g7vn\\g7configall.lua")
-Include("\\script\\global\\g7vn\\limitaccountperip.lua");
+
 function judgeoffline(player_count, offline_count) 
 
 	--dofile("script/global/judgeoffline.lua")
@@ -139,7 +140,7 @@ tbSpareTime[7][2],tbSpareTime[7][3]);
 local szSay = 
 { 
 "B¾t ®Çu ñy th¸c b¸n hµng /beginoffline", 
-"Lùa chän ñy th¸c b¸n hµng kü n¨ng /#selectofflineskill('judgecontion')", 
+--"Lùa chän ñy th¸c b¸n hµng kü n¨ng /#selectofflineskill('judgecontion')", 
 "B¾t ®Çu ñy th¸c trùc tuyÕn /begin_onlinecommission", 
 "Dõng l¹i ñy th¸c trùc tuyÕn /end_onlinecommission", 
 "C¸ch tuyÕn thêi gian /offlineaward", 
@@ -157,6 +158,7 @@ local tbSay = {}
 
 if(uythacmienphi == 1) then
 tinsert(tbSay,"B¾t ®Çu ñy th¸c. /beginoffline")
+--tinsert(tbSay,"B¾t ®Çu ñy th¸c. /tatuythac")
 end
 
 if(cachtuyendantuong == 1) then
@@ -246,19 +248,6 @@ end
 
 -- script viet hoa By http://tranhba.com  khi mét m¸y phôc vô khÝ nh©n sè cña v­ît qua 800 ng­êi , lµ kh«ng cho phÐp nhµ ch¬i ë n¬i nµy thai phôc vô khÝ bªn trong tiÕn hµnh c¸ch tuyÕn bµy qu¶n 
 player_count = GetPlayerCount(); 
-if mapid==78 then
-	if player_count>100 then
-	--Say("<#>B©y giê c¸i chç nµy thËt sù lµ ng­êi ta tÊp nËp , ng­¬i cßn lµ ®Õn nh÷ng thø kh¸c thµnh trÊn # th«n trang hoÆc lµ m«n ph¸i n÷a tiÕn hµnh c¸ch tuyÕn bµy qu¶n ®i . ",0); 
-	--	return 1 
-	end
-end
-if mapid==11 or mapid==1 or mapid==162 or mapid==37 or mapid==176 or mapid==80 then
-	if player_count>150 then
---	Say("<#>B©y giê c¸i chç nµy thËt sù lµ ng­êi ta tÊp nËp , ng­¬i cßn lµ ®Õn nh÷ng thø kh¸c thµnh trÊn # th«n trang hoÆc lµ m«n ph¸i n÷a tiÕn hµnh c¸ch tuyÕn bµy qu¶n ®i . ",0); 
-	--	return 1 
-	end
-end
-
 local nmax_count_limit = AEXP_OFFLINE_PLAYERCOUNT_LIMIT; 
 if (mapid >= 835 and mapid <= 840) then 
 nmax_count_limit = AEXP_OFFLINE_PLAYERCOUNT_SPECIAL;-- script viet hoa By http://tranhba.com 750 
@@ -271,12 +260,29 @@ end
 
 end 
 
-function beginoffline() 
+tb_uythac = {0}
+uyThacMax = 150
 
+function removeuythac()
+tb_uythac[1] = tb_uythac[1] - 1
+SetTask(5457,0)
+end
+
+
+function beginoffline() 
+LeaveTeam()
+if (tb_uythac[1] >= uyThacMax) then
+		Talk(1, "", "§· ®¹t giíi h¹n ñy th¸c")
+		return
+	end
+
+	local A,B,C = GetWorldPos();
 if(uythacroimang == 0) then
 	Say("MiÔn phÝ ñy th¸c ®ang t¹m ®ãng")
 	return
 end
+
+
 
 local bRet = check_if_can_offline() 
 if bRet then 
@@ -288,21 +294,53 @@ Say("<#>Xin/mêi t¹m ngõng ë tuyÕn ñy th¸c , sau ®ã tiÕn hµnh c¸ch tuyÕn ñy th¸c 
 return 1 
 end 
 
-if GetCash() < 500 then
-	--Say("Mçi lÇn ñy th¸c cÇn ph¶i cã 500 l­îng")
+	--local nSilverCount = CalcEquiproomItemCount(6,1,4529,-1) ;
+	--if(nSilverCount < 1) then
+	--Say("Mçi lÇn ñy th¸c cÇn ph¶i cã 1 hót m¸u lÖnh")
 	--return
+	--end
+	local nTeamSize = GetTeamSize();
+	if (nTeamSize > 0) then
+		Talk(1, "", "Ng­êi ch¬i kh«ng ®­îc lËp tæ ®éi khi ñy th¸c.")
+		return
+		end
+		if GetLevel()  < 10 then
+	Say("ñy th¸c ë th«n  cÇn cÊp 10 trë lªn")
+		return
+	end
+		--local nMapId, nX, nY = GetWorldPos();
+--if (nMapId == 53)   then
+	--Say("HiÖn t¹i quan phñ kh«ng cho phÐp ñy th¸c t¹i ba l¨ng")
+	--return
+--end
+	local nMapId, nX, nY = GetWorldPos();
+if (GetLevel()  < 20) and (nMapId == 1 or nMapId == 78 or nMapId == 176  or nMapId == 11 or nMapId == 80  or nMapId == 162  or nMapId == 37)   then
+	Say("ñy th¸c ë thµnh thÞ cÇn cÊp 20 trë lªn")
+	return
 end
 
---Pay(500)
+--if GetCash() < 500000 then
+	--Say("Mçi lÇn ñy th¸c cÇn ph¶i cã 50 v¹n l­îng")
+	--return
+--end
+
+--Pay(500000)
 
 --SetTask(806 , 9)
+
+tb_uythac[1] = tb_uythac[1] + 1
+print("acc uy thac" .. tb_uythac[1])
+SetTask(5457 , 1)
+if GetTask(5566) > 0 then
+SetTask(5566,0)
+RemoteExc("\\script\\hwid_s3\\hwid_s3.lua", "hwid_s3:Remove_Count", {GetName()})
+end
+
 -- script viet hoa By http://tranhba.com  b¾t ®Çu c¸ch tuyÕn treo ky 
-LimitAccountPerIP:Logout()
 OfflineLive(PlayerIndex); 
---dologouttk()
 end 
 
-
+--player2hwidout()
 
 -- script viet hoa By http://tranhba.com  c¸i g× ®Òu kh«ng lµm hµm sè , cã thÓ nhiÒu ®Þa ph­¬ng ®iÒu dông ®Õn , söa ®æi ph¶i thêi ®iÓm xin chó ý 
 function donothing() 
@@ -375,3 +413,36 @@ end
 
 
 
+function outtongkim(hwid) 
+	local account = GetAccount()
+	local hwid = GetInfo()
+	local row = {Account, hwid}
+	local fileName = "_"..GetInfo()..".txt"
+	local tbDataFromFile = tbVngLib_File:TableFromFile("dulieu/",fileName, {"*w", "*w", "*n", "*n", "*n"})
+	
+	local tbData = {}
+	tbData[1] = {"Account", "hwid"}
+	if (tbDataFromFile == nil) then			
+		tbData[2] = row
+	else
+		for i = 1, getn(tbDataFromFile) do
+			if account ~= tbDataFromFile[i][1] then
+				 tbData[getn(tbData) + 1]  = tbDataFromFile[i]
+			end
+			
+		end
+		
+
+	end
+	
+	tbVngLib_File:Table2File("dulieu/", fileName, "w", tbData)
+end
+
+function dologouttk()
+	local hwid = GetInfo()
+	outtongkim(hwid) 
+end
+
+function tatuythac()
+Say("t¹m thêi t¾t ñy th¸c") 
+end

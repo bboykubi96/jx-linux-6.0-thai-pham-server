@@ -10,7 +10,7 @@ Include("\\script\\dailogsys\\g_dialog.lua")
 ---------------------------------------------------------------
 function main(sel)
 
-	--dofile("script/中原南区/扬州/npc/扬州_码头船夫对话.lua")
+	dofile("script/中原南区/扬州/npc/扬州_码头船夫对话.lua")
 
 	local nNpcIndex = GetLastDiagNpc();
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M"))

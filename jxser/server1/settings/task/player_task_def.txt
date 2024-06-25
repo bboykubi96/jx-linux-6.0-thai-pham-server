@@ -636,3 +636,38 @@ TASK_ID_FIRST	TASK_ID_LAST	TASK_NAME	SYNC_FLAG	CLIENT_FLAG	TASK_DESCRIBE
 3160		玩家每天完成皇城司训练营次数	1		
 3172	3178	单人竞技场任务	1		
 3182	3185	千重楼	1		
+3204	Task UsedDay cua map train
+3205		Event 26/3	1		
+3206	Task HWID 1
+3207		Task HWID 2		
+3208		Task Event 30-4		
+3209		Task Event 30-4	
+3210		Task Event 2044
+3211		Task Event 2044	
+3212		Reset event 2044
+3213,14,15,16		Event 2045 Tho Duong
+3217,3218 		Task nh薾 g閜 sv
+3219,3220		Task Event 2046 Ruoc den Trung Thu
+3005 		Task Event 2015 TET 2019
+3006		Task Event 2016 - 8/3/2019
+3007		Task Event 2017 - Gio to Hung Vuong 2019
+3008		Task Event 2018 - 30/4 2019
+3009		Task Event 2019 - 1/6 2019
+3010		Task Event 2020 - Tra 2019
+3011		3012	Task tien don, huyet don.
+3013		Task Event 2021 - Hao Huu Tuong Phung
+3014		Task Event 2022 - Chao He
+3015		Task Event 2021 - Hao Huu Tuong Phung lan 2
+3016		Task Event 2019 - 1/6 2019 lan 2
+3017		Task Event 2019 Lan 3
+3018		Task Event 2019 Lan 4
+3019		Task Event 2024 Lan 1
+3020		Task Event 2025 Lan 1 - WorldCup
+3021		Task Event 2025 Lan 2 - WorldCup
+3022		Task Event 2026 Lan 1 - Phu nu Viet Nam
+3023		Task Event 2025 Lan 3 - WorldCup
+3024		Task Giang Sinh 2019
+3025		Task Event Tet tay 2020
+3026		Task Event Tet ta 2020
+3027		Task Event Tet ta 2020 1
+3028		Task Event 8/3 2020

@@ -20,19 +20,11 @@ if nParTaskState==nil then nParTaskState = 0; end;
 -- script viet hoa By http://tranhba.com tinsert(aryTalk, ); 
 
 -- script viet hoa By http://tranhba.com T cao #ng t v·n h n#g t v·n s? - Modified by DinhHQ - 20110427 
-	local nTime = tonumber(GetLocalDate("%H%M"));
-
 tinsert(aryTalk,"Ta muèn v× triÒu ®×nh ra chót lùc /especiallymessenger"); 
 tinsert(aryTalk,"Ta ch¼ng qua lµ tíi tïy tiÖn chuyÓn chuyÓn /no"); 
-if 1==1 then
-Talk(1,"","<color=green>TÝn Sø T¹m §ãng")
-return
-end
-if (nTime>=1000 and nTime<=1200) or (nTime>=1800 and nTime<=2100)  or (nTime>=0000 and nTime<=0200) then
+
 CreateTaskSay(aryTalk); 
-else
-Talk(1,"","<color=green>TÝn Sø ChØ Më Vµo 10h-12h vµ 18h-21h  vµ 00h-02h NhÐ Huynh §µi")
-end
+
 end 
 
 function lastdefault_talk(letter_station) 

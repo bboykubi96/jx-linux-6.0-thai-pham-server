@@ -29,7 +29,7 @@ RUNGAME_TIME = 30 * 60 * FRAME2TIME / TIMER_1; --±¨Ãû30·ÖÖÓÖ®ºó£¬×Ô¶¯½øÈëÕ½¶·½×¶
 VANISHGAME_TIME = 70 * 60 * FRAME2TIME/ TIMER_1; --Õ½¶·×îºó20·ÖÖÓÊ±£¬±ØÐëËùÒÔNpcÈ«²¿²úÉú
 GO_TIME =  1800 * FRAME2TIME  / TIMER_1; -- ±¨ÃûÊ±¼äÎª°ëÐ¡Ê±
 
-MAX_MEMBERCOUNT = 150 
+MAX_MEMBERCOUNT = 150 -- gioi han mem thien tu
 TIME_PLAYER_REV = 8 ; -- Íæ¼ÒËÀÍö»òÍË³öÓÎÏ·ÔÙ½øÈëÊ±£¬±ØÐë3·ÖÖÓÖ®ºó²ÅÄÜÀë¿ªºóÓªµ½´óÓª
 
 

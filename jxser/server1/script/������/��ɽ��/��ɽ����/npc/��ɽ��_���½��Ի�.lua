@@ -11,6 +11,10 @@ Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 
 function main()
+if GetLevel() < 80 then
+Say("CÊp 80 h·y quay l¹i !")
+return
+end
 
 	local nNpcIndex = GetLastDiagNpc();
 	local szNpcName = GetNpcName(nNpcIndex);
@@ -18,7 +22,7 @@ function main()
 	local tbDailog = DailogClass:new(szNpcName);
 	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
 	tbDailog.szTitleMsg = "<npc>L©u ngµy kh«ng gÆp! T×m ta cã viÖc g×?"
---	tbDailog:AddOptEntry("Ta ®Õn b¸i pháng Minh chñ.", old_main)
+	tbDailog:AddOptEntry("Ta ®Õn b¸i pháng Minh chñ.", old_main)
 	--tbDailog:AddOptEntry("Minh Chñ ng­êi cã biÕt NguyÖt Ca §¶o nµy cã tån t¹i thËt hay kh«ng?", yuegedao_help)--Nguyet ca Dao hoc Skill 150
 	tbDailog:Show()
 	
@@ -59,7 +63,7 @@ function U39_yes()
 	Talk(1,"", 11340)
 	SetTask(39,10)
 	SetTask(40,0)
-	Earn(10000)
+	--Earn(10000)
 	Msg2SubWorld("§¹i hiÖp "..GetName().." ®· tiÕp nhËn nhiÖm vô Liªn KÕt Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
 	AddNote("TiÕp nhËn nhiÖm vô Liªn KÕt Vâ L©m: Thay §éc C« KiÕm ®i th¨m dß th¸i ®é c¸c m«n ph¸i cã ®ång lßng liªn kÕt diÖt n­íc Kim hay kh«ng. ")
 end

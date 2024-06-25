@@ -3,6 +3,8 @@ Include("\\script\\missions\\basemission\\class.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\missions\\dangboss\\taskctrl.lua")
 Include("\\script\\lib\\gb_modulefuncs.lua")
+IncludeLib("LEAGUE")
+
 local tbMissionData = 
 {
 	nMissionId	= 62,--
@@ -27,18 +29,18 @@ local tbMissionData =
 		[1] = 
 		{
 			{nId = 933, nLevel = 20},
-			{nId = 939, nLevel = 20, szType = "aura", nTime = 5 * 60 * 18},
+			{nId = 939, nLevel = 15, szType = "aura", nTime = 5 * 60 * 18},
 			
 		},
 		[2] = 
 		{
 			{nId = 935, nLevel = 20},
-			{nId = 941, nLevel = 20, szType = "aura", nTime = 5 * 60 * 18},
+			{nId = 941, nLevel = 15, szType = "aura", nTime = 5 * 60 * 18},
 		},
 		[3] = 
 		{
 			{nId = 937, nLevel = 20},
-			{nId = 943, nLevel = 20, szType = "aura", nTime = 5 * 60 * 18},
+			{nId = 943, nLevel = 15, szType = "aura", nTime = 5 * 60 * 18},
 		},
 	},
 }
@@ -66,7 +68,7 @@ end
 
 
 function tbDangBoss:OnInit()
-	AddGlobalCountNews("Ho¹t ®éng ®Êu ng­u b¾t ®Çu råi, mäi ng­êi cã thÓ ®Õn ch­ëng ®¨ng cung n÷ ë L©m An ®Ó b¸o danh")
+	AddGlobalCountNews("Ho¹t ®éng ®Êu ng­u b¾t ®Çu råi, mäi ng­êi cã thÓ ®Õn ch­ëng NPC b¸o danh ë L©m An ®«ng ®Ó b¸o danh")
 	SetMissionV(self.tbMissionV.MISSION_STATE, self.READY_STATE)
 	local nMapId = SubWorldIdx2ID(SubWorld)
 	SetMissionV(self.tbMissionV.CUR_MAPID, nMapId)
@@ -102,7 +104,7 @@ function tbDangBoss:OnPlayerJoin()
 	
 	
 	if nMissionState == self.BATTLE_STATE then
-		nMoney = nContinueCount * 1e5
+		nMoney = nContinueCount * 3e5
 	end
 	
 	if self:IsPlayerEligible() ~= 1 then
@@ -350,8 +352,12 @@ function tbDangBoss:BecomeBoss()
 	local szFile = "\\settings\\maps\\chunfenggu\\niu.txt"
 	local nPosX, nPosY = getadata(szFile);
 	SetPos(floor(nPosX / 32), floor(nPosY / 32));
-	Msg2MSAll(self.nMissionId, format("<color=yellow>%s<color> biÕn th©n thµnh <color=yellow>%s<color>, h·y mau truy b¾t , hiÖn t¹i ®ang ë (%d,%d)", GetName(), tbBossName[nLevel], floor(nPosX / 32 / 8), floor(nPosY / 32 / 16)))
+	--Msg2MSAll(self.nMissionId, format("<color=yellow>%s<color> biÕn th©n thµnh <color=yellow>%s<color>, h·y mau truy b¾t , hiÖn t¹i ®ang ë (%d,%d)", GetName(), tbBossName[nLevel], floor(nPosX / 32 / 8), floor(nPosY / 32 / 16)))
+	local szNews = format("<pic=78> <color=green>ThËt khñng khiÕp Ng­u §iªn ®· giÕt h¹i vµ m­în th©n x¸c kÎ bÊt h¹nh <color=pink>"..GetName().."<color=yellow> c¸c binh sÜ cßn l¹i h·y mau ®Õn L©m An ®«ng tham gia diÖt ng­u ®Ó ®­îc nhµ vua bang th­ëng");
+	AddGlobalNews(szNews);
+	--LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 end
+
 
 function tbDangBoss:RefreshBox()
 	Msg2MSAll(self.nMissionId, "Xung quanh xuÊt hiÖn rÊt nhiÒu b¶o r­¬ng, chóng ta h·y mau chãng më r­¬ng th«i!")
@@ -367,7 +373,6 @@ function tbDangBoss:RefreshBox()
 		self:Debug(tbPoint[i][1]/32,tbPoint[i][2]/32)
 		basemission_CallNpc(self.tbBox, nMapId, tbPoint[i][1],tbPoint[i][2])
 	end
-	
 end
 
 function tbDangBoss:BossOnDeath(nNpcIndex)	
@@ -386,6 +391,9 @@ function tbDangBoss:BossOnDeath(nNpcIndex)
 	self:BecomeNormal()
 end
 
+
+
+
 function tbDangBoss:GiveKillPlayerExp()
 	local nExp = self.nKillPlayerExp
 	if self.tbTask:GetKillPlayerExp() < self.tbTask.nMaxKillPlayerExp then
@@ -394,7 +402,6 @@ function tbDangBoss:GiveKillPlayerExp()
 	else
 		Msg2Player("§¸nh b¹i ng­êi ch¬i nhËn ®¹t ®­îc kinh nghiÖm cao nhÊt.")
 	end
-	
 end
 
 function tbDangBoss:PlayerOnDeath(nNpcIndex)
@@ -406,11 +413,11 @@ function tbDangBoss:PlayerOnDeath(nNpcIndex)
 		
 		local szBossName = doFunByPlayer(nPlayerIndex, GetName)
 		local szName = GetName()
-		Msg2MSPlayer(self.nMissionId, format("Kim ng­u %s ®¸nh b¹i %s!", szBossName, szName))
+	local szNews = format("<pic=78> <color=green>Ng­u §iªn <color=green>®· lÊy m¹ng binh sÜ <color=pink> %s ", szName);
+	AddGlobalNews(szNews);
+	--LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 	end
-	
-	
-end
+	end
 
 function tbDangBoss:IsBoss(nPlayerIndex)
 	local nBossNameId = tonumber(format("%u", GetMissionV(self.tbMissionV.BOSS_NAME_ID)))

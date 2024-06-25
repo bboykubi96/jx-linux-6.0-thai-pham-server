@@ -15,7 +15,7 @@ function main()
 			SetPunish(0);
 	
 			ForbidEnmity( 1 )
-	
+	AddSkillState(963, 1, 0, 18*3)
 			--SetPKFlag(1)
 		end;
 end;

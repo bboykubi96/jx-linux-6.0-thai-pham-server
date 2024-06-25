@@ -3,9 +3,9 @@
 --2007-09-06
 
 DA_ZHONGQIU2007_START = 0709220000	--¿ªÊ¼Ê±¼ä
-DA_ZHONGQIU2007_END 	= 1810182400	--½áÊøÊ±¼ä
-NZHONGQIU2007_LIHE_MAX = 4000000000	--ÀñºĞ¾­ÑéÉÏÏŞ
-NZHONGQIU2007_MAX = 4000000000				--ÔÂ±ı¾­ÑéÉÏÏŞ
+DA_ZHONGQIU2007_END 	= 0710142400	--½áÊøÊ±¼ä
+NZHONGQIU2007_LIHE_MAX = 400000000	--ÀñºĞ¾­ÑéÉÏÏŞ
+NZHONGQIU2007_MAX = 400000000				--ÔÂ±ı¾­ÑéÉÏÏŞ
 TSK_ZHONGQIU2007_LIHE = 1844				--ÀñºĞ¾­ÑéÉÏÏŞ±äÁ¿
 TSK_ZHONGQIU2007 = 1843							--ÔÂ±ı¾­ÑéÉÏÏŞ±äÁ¿
 ZHONGQIU_LEVEL = 50		--µÈ¼¶ÏŞÖÆ
@@ -20,7 +20,7 @@ tb_content =
 	szgetlianzi = "Ta muèn lµm 1 c¸i b¸nh h¹t sen/#makeyuebing(2)",
 	szgetkaoji = "Ta muèn lµm 1 c¸i b¸nh Trung Thu gµ n­íng/#makeyuebing(3)",
 	szkaozhu = "Ta muèn lµm 1 c¸i b¸nh Trung Thu heo quay/#makeyuebing(4)",
-	--szlihe = "Ta muèn lµm 1 hép b¸nh Trung Thu/#makeyuebing(5)",
+	szlihe = "Ta muèn lµm 1 hép b¸nh Trung Thu/#makeyuebing(5)",
 	szno = "Nh©n tiÖn ghĞ qua th«i/NoChoice",
 	szmakeItemUI = "§óng vËy, ta muèn lµm b¸nh Trung Thu/makeItemUI",
 	szlevel = "ThËt ®¸ng tiÕc, ®¼ng cÊp kh«ng ®ñ 50, kh«ng thÓ tham gia ho¹t ®éng nµy.",

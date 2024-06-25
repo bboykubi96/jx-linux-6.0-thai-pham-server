@@ -49,7 +49,6 @@ allbrother_0801_tbItemList =
 	[46] = 	{szName="Toµn Th¹ch H¹ng Liªn hÖ Thñy",		tbProp={0, 4, 0, 10, 2}								},
 	[47] = 	{szName="Long Tiªn Hu¬ng Nang hÖ Thæ",		tbProp={0, 9, 0, 10, 4}								},
 	[48] = 	{szName="Ph¸ Thiªn chïy hÖ Kim",		tbProp={0, 0, 4, 10, 0}								},
-	
 	[49] =	{szName="§å phæ Hoµng Kim - §Þnh Quèc Thanh Sa Tr­êng Sam", tbProp={6, 1, 383}},
 	[50] =	{szName="§å phæ Hoµng Kim - §Þnh Quèc Ng©n Tµm Yªu ®¸i", tbProp={6, 1, 387}},
 	[51] =	{szName="§å phæ Hoµng Kim - §Þnh Quèc ¤ Sa Ph¸t Qu¸n", tbProp={6, 1, 384}},
@@ -195,7 +194,12 @@ allbrother_0801_tbItemList =
 	[191] = {szName="D­¬ng chi b¹ch ngäc - hÖ thæ",		tbProp={0, 9, 1, 10, 4}},
 	[192] = {szName="Toµn th¹ch giíi chØ - hÖ háa",		tbProp={0, 3, 0, 10, 3}								},
 	[193] = {szName="Toµn th¹ch h¹ng liªn - hÖ kim",		tbProp={0, 4, 0, 10, 0}								},
-	[194] =	 {szName="Long tiªn h­¬ng nang - hÖ háa",		tbProp={0, 9, 0, 10,3}								},
+	[194] = {szName="Long tiªn h­¬ng nang - hÖ háa",		tbProp={0, 9, 0, 10,3}								},
 	[195] = {szName="Toµn th¹ch giíi chØ - hÖ thæ",		tbProp={0, 3, 0, 10, 4}								},
 	[196] = {szName="Toµn th¹ch h¹ng liªn - hÖ háa",		tbProp={0, 4, 0, 10, 3}								},
+	[197] = {szName="Long HuyÕt Hoµn", tbProp={6, 1, 2117}, nCount = 1},
+	[198] = {szName="H¶i Long Ch©u", tbProp={6, 1, 2115}, nCount = 1},
+	[199] = {szName="LÖnh Bµi Thñy TÆc", tbProp={6, 1, 2745}, nCount = 1},
+	[200] = {szName="Thiªn B¶o Khè LÖnh", tbProp={6, 1, 2813}, nCount = 1},
+	[201] = {szName="B¾c §Èu HuyÕt Linh §¬n", tbProp={6, 1, 3523}, nCount = 1},
 }

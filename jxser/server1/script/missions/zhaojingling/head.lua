@@ -1,111 +1,110 @@
-PREPARE_MAP = 961 --×¼±¸³¡µØÍ¼
-GAME_MAP = 958 --±ÈÈü³¡µØÍ¼
-MAXGAMETIME = 3 --Ã¿Ìì×î¶à²Î¼Ó³¡Êı
+PREPARE_MAP = 961 -- script viet hoa By http://tranhba.com  chuÈn bŞ n¬i chèn ®å 
+GAME_MAP = 958 -- script viet hoa By http://tranhba.com  n¬i so tµi ®å 
+MAXGAMETIME = 3 -- script viet hoa By http://tranhba.com  mçi ngµy nhiÒu nhÊt tham gia trµng ®Õm 
 
-----------------------²âÊÔ
-MAXPLAYERCOUNT = 10 --Ã¿¸ö±ÈÈü³¡×î¶à10ÈË£¬×Ü¹²12¸ö±ÈÈü³¡
-GAMECOUNT = 12 --Ã¿³¡ÓĞ12ÕÅµØÍ¼,GAMECOUNT = 1 
-ALL_MAXPLAYERCOUNT = 120 --Ã¿³¡×î¶à120ÈË£¬Ã¿´Î¿ªÆô±ÈÈü¿ÉÒÔÓĞºÜ¶à³¡
-ALLPLAYERCOUNT = 360 --Ã¿¿ªÆôÒ»´Î×î¶àÔÊĞí360¸öÍæ¼Ò²Î¼Ó
-LEASTPLAYERCOUNT = 6 --Ã¿³¡ÔÊĞíµÄ×îÉÙÍæ¼ÒÊı
---------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  kh¶o nghiÖm 
+MAXPLAYERCOUNT = 10 -- script viet hoa By http://tranhba.com  mçi ®Êu tr­êng nhiÒu nhÊt 10 ng­êi , tæng céng 12 c¸ ®Êu tr­êng 
+GAMECOUNT = 12 -- script viet hoa By http://tranhba.com  mçi trµng cã 12 tÊm b¶n ®å ,GAMECOUNT = 1 
+ALL_MAXPLAYERCOUNT = 120 -- script viet hoa By http://tranhba.com  mçi trµng nhiÒu nhÊt 120 ng­êi , mçi lÇn më ra tranh tµi cã thÓ cã rÊt nhiÒu trµng 
+ALLPLAYERCOUNT = 360 -- script viet hoa By http://tranhba.com  mçi më ra mét lÇn nhiÒu nhÊt cho phĞp 360 c¸ nhµ ch¬i tham gia 
+LEASTPLAYERCOUNT = 2 -- script viet hoa By http://tranhba.com  mçi trµng cho phĞp ®İch İt nhÊt nhµ ch¬i ®Õm 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
 
--------------------------²âÊÔ
-PREPARETIME = 5 --×¼±¸Ê±¼ä£¬µ¥Î»·ÖÖÓ
-GAMETIME = 10 --±ÈÈüÊ±¼ä£¬µ¥Î»·ÖÖÓ
--------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - kh¶o nghiÖm 
+PREPARETIME = 5 -- script viet hoa By http://tranhba.com  chuÈn bŞ thêi gian , ®¬n vŞ phót 
+GAMETIME = 10 -- script viet hoa By http://tranhba.com  tranh tµi thêi gian , ®¬n vŞ phót 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
 
-MINLEVEL = 125   --Íæ¼ÒµÈ¼¶ÏŞÖÆ£¬ÖÁÉÙ125¼¶£¬×ªÉí²»ÏŞÖÆµÈ¼¶
-PREPAREPOSENDLINE = 15 --"\\settings\\maps\\chrismas\\player.txt"ÖĞÍù×¼±¸³¡´«ËÍµãµÄ½áÊøĞĞ
-GAMEPOSLINECOUNT = 7 --"\\settings\\maps\\chrismas\\player.txt"ÖĞÍù¸÷¸ö±ÈÈü³¡´«ËÍµãµÄĞĞÊı
-TSK_LEAVERMAPID = 2323	--´æ´¢Àë¿ª±¨ÃûµãµÄmapid
-TSK_LEAVERPOSX = 2324	--´æ´¢Àë¿ª±¨ÃûµãµÄx×ø±êµã
-TSK_LEAVERPOSY = 2325	--´æ´¢Àë¿ª±¨ÃûµãµÄy×ø±êµã
+MINLEVEL = 125 -- script viet hoa By http://tranhba.com  nhµ ch¬i cÊp bËc h¹n chÕ , İt nhÊt 125 cÊp , xoay ng­êi kh«ng h¹n chÕ cÊp bËc 
+PREPAREPOSENDLINE = 15 -- script viet hoa By http://tranhba.com "\\settings\\maps\\chrismas\\player.txt"ÖĞÍù×¼±¸³¡´«ËÍµãµÄ½áÊøĞĞ
+GAMEPOSLINECOUNT = 7 -- script viet hoa By http://tranhba.com "\\settings\\maps\\chrismas\\player.txt"ÖĞÍù¸÷¸ö±ÈÈü³¡´«ËÍµãµÄĞĞÊı
+TSK_LEAVERMAPID = 2323 -- script viet hoa By http://tranhba.com  tån tr÷ rêi ®i ghi danh ®iÓm ®İch mapid 
+TSK_LEAVERPOSX = 2324 -- script viet hoa By http://tranhba.com  tån tr÷ rêi ®i ghi danh ®iÓm ®İch x täa ®é ®iÓm 
+TSK_LEAVERPOSY = 2325 -- script viet hoa By http://tranhba.com  tån tr÷ rêi ®i ghi danh ®iÓm ®İch y täa ®é ®iÓm 
 
-TSK_DAYKEY = 2326	--¼ÇÂ¼ÊÇÄÄÒ»Ìì
-TSK_PLAYTIMES = 2327 --¼ÇÂ¼Ò»ÌìÄÚÍæµÄ´ÎÊı
+TSK_DAYKEY = 2326 -- script viet hoa By http://tranhba.com  ghi chĞp lµ mét ngµy kia 
+TSK_PLAYTIMES = 2327 -- script viet hoa By http://tranhba.com  ghi chĞp mét ngµy bªn trong ch¬i sè lÇn 
 
-TSK_COUNT_ONETIME = 2328	--¼ÇÂ¼Ò»³¡µãÁË¶àÉÙ¸ö
-TSK_RANK = 2329		--¼ÇÂ¼Ò»³¡µÄÅÅÃû£»
+TSK_COUNT_ONETIME = 2328 -- script viet hoa By http://tranhba.com  ghi chĞp mét cuéc ®iÓm bao nhiªu c¸ 
+TSK_RANK = 2329 -- script viet hoa By http://tranhba.com  ghi chĞp mét cuéc ®İch ®øng hµng # 
 
-TSK_GROUPID = 2330	--¼ÇÂ¼Íæ¼ÒµÄGroupºÅ
+TSK_GROUPID = 2330 -- script viet hoa By http://tranhba.com  ghi chĞp nhµ ch¬i ®İch Group sè 
 
-TSK_IS_AWARD = 2331 --¼ÇÂ¼ÊÇ·ñÒÑ¾­Áì½±
-TSK_IS_AWARD_DAYKEY = 2332 --¼ÇÂ¼ÊÇÄÄÌìµÄÁì½±
+TSK_IS_AWARD = 2331 -- script viet hoa By http://tranhba.com  ghi chĞp cã hay kh«ng ®· dÉn t­ëng 
+TSK_IS_AWARD_DAYKEY = 2332 -- script viet hoa By http://tranhba.com  ghi chĞp lµ ngµy nµo ®ã ®İch dÉn t­ëng 
 
 POSPATH = "\\settings\\maps\\chrismas\\player.txt"
 
-function ResetTaskA(TSK_A, TSK_DATE_A)
-	local nCurDate = tonumber(GetLocalDate("%Y%m%d"))
-	local nRecordDate = GetTask(TSK_DATE_A)
-	
-	if nCurDate ~= nRecordDate then
-		SetTask(TSK_DATE_A, nCurDate)
-		SetTask(TSK_A, 0)
-	end
-end
+function ResetTaskA(TSK_A, TSK_DATE_A) 
+local nCurDate = tonumber(GetLocalDate("%Y%m%d")) 
+local nRecordDate = GetTask(TSK_DATE_A) 
 
-function AddTaskA(TSK_A, TSK_DATE_A, nAddValue)
-	ResetTaskA(TSK_A, TSK_DATE_A)
-	local nValue = GetTask(TSK_A)
+if nCurDate ~= nRecordDate then 
+SetTask(TSK_DATE_A, nCurDate) 
+SetTask(TSK_A, 0) 
+end 
+end 
+
+function AddTaskA(TSK_A, TSK_DATE_A, nAddValue) 
+ResetTaskA(TSK_A, TSK_DATE_A) 
+local nValue = GetTask(TSK_A) 
 	return SetTask(TSK_A, nValue + nAddValue)	
-end
+end 
 
-function GetTaskA(TSK_A, TSK_DATE_A)
-	ResetTaskA(TSK_A, TSK_DATE_A)
-	return GetTask(TSK_A)
-end
+function GetTaskA(TSK_A, TSK_DATE_A) 
+ResetTaskA(TSK_A, TSK_DATE_A) 
+return GetTask(TSK_A) 
+end 
 
-function setentermapstate()
-		ForbitSkill(1)
+function setentermapstate() 
+ForbitSkill(1) 
 
-		--ÉèÖÃÓë°ï»áÓĞ¹ØµÄ±äÁ¿£¬²»ÔÊĞíÔÚ¾º¼¼³¡Õ½¸Ä±äÄ³¸ö°ï»áÕóÓªµÄ²Ù×÷
-		SetTaskTemp(200,1)
-		--ÉèÖÃÕ½¶·×´Ì¬
-		SetFightState(0)
-		--Íæ¼ÒÍË³öÊ±£¬±£´æRV²¢£¬ÔÚÏÂ´ÎµÈÈëÊ±ÓÃRV(³ÇÊĞÖØÉúµã£¬·ÇÍË³öµã)
-		SetLogoutRV(1)
-		--ÎŞËÀÍö³Í·£
-		SetPunish(0)
-		--¹Ø±Õ×é¶Ó¹¦ÄÜ
-		SetCreateTeam(0)
-		
-		--½ûÖ¹¹â»·
-		ForbitAura(1)
-		--ÉèÖÃ³ğÉ±
-		ForbidEnmity(1)
-		--½ûÖ¹pk
-		SetPKFlag(0)
-		--½ûÖ¹½»Ò×
-		DisabledStall(1)
-		ForbitTrade(0)
-		--½ûÖ¹¸Ä±äPK×´Ì¬
-		ForbidChangePK(1)
-		--½ûÖ¹Ê¹ÓÃ»Ø³Ì
-		DisabledUseTownP(1)
-end
+-- script viet hoa By http://tranhba.com  thiÕt trİ cïng bang héi cã liªn quan thay ®æi l­îng , kh«ng cho phĞp ë s©n ®Êu chiÕn söa ®æi mét bang héi trËn doanh ®İch thao t¸c 
+SetTaskTemp(200,1) 
+-- script viet hoa By http://tranhba.com  thiÕt trİ tr¹ng th¸i chiÕn ®Êu 
+SetFightState(0) 
+-- script viet hoa By http://tranhba.com  nhµ ch¬i thèi lui ra lóc , b¶o tån RV còng , t¹i h¹ lÇn chê vµo lóc dïng RV( thµnh phè sèng l¹i ®iÓm , kh«ng ph¶i lµ thèi lui ra ®iÓm ) 
+SetLogoutRV(1) 
+-- script viet hoa By http://tranhba.com  v« tö vong trõng ph¹t 
+SetPunish(0) 
+-- script viet hoa By http://tranhba.com  t¾t häp thµnh ®éi chøc n¨ng 
+SetCreateTeam(0) 
 
-function setleavemapstate()
-		ForbitSkill(0)
+-- script viet hoa By http://tranhba.com  cÊm chØ hµo quang 
+ForbitAura(1) 
+-- script viet hoa By http://tranhba.com  thiÕt trİ thï giÕt 
+ForbidEnmity(1) 
+-- script viet hoa By http://tranhba.com  cÊm chØ pk 
+SetPKFlag(0) 
+-- script viet hoa By http://tranhba.com  cÊm chØ giao dŞch 
+DisabledStall(1) 
+ForbitTrade(0) 
+-- script viet hoa By http://tranhba.com  cÊm chØ söa ®æi PK tr¹ng th¸i 
+ForbidChangePK(1) 
+-- script viet hoa By http://tranhba.com  cÊm chØ sö dông håi tr×nh 
+DisabledUseTownP(1) 
+end 
 
-		SetTaskTemp(200,0)
-		SetFightState(0)
-		SetPunish(1)
-		SetCreateTeam(1)
-		
-		ForbitAura(0)
-		ForbidEnmity(0)
-		SetPKFlag(0)
-		DisabledStall(0)
-		ForbitTrade(0)
-		
-		ForbidChangePK(0)
-		DisabledUseTownP(0)
-end
+function setleavemapstate() 
+ForbitSkill(0) 
 
-function getplayermapid(nPlayerIndex)
-	local _, _, nMapIndex = CallPlayerFunction(nPlayerIndex, GetPos)
-	local nMapId = SubWorldIdx2ID(nMapIndex)
-	return nMapId
-end
+SetTaskTemp(200,0) 
+SetFightState(0) 
+SetPunish(1) 
+SetCreateTeam(1) 
 
+ForbitAura(0) 
+ForbidEnmity(0) 
+SetPKFlag(0) 
+DisabledStall(0) 
+ForbitTrade(0) 
+
+ForbidChangePK(0) 
+DisabledUseTownP(0) 
+end 
+
+function getplayermapid(nPlayerIndex) 
+local _, _, nMapIndex = CallPlayerFunction(nPlayerIndex, GetPos) 
+local nMapId = SubWorldIdx2ID(nMapIndex) 
+return nMapId 
+end 

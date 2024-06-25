@@ -64,24 +64,38 @@ arraymap =
 
 function judgeoffline(player_count, offline_count) 
 
+-- script viet hoa By http://tranhba.com  szHour = date("%H"); 
+-- script viet hoa By http://tranhba.com  nHour = tonumber(szHour); 
 
+-- script viet hoa By http://tranhba.com  sparetime = GetTask(AEXP_TASKID); 
+-- script viet hoa By http://tranhba.com  if (nHour >= AEXP_INVALIDTIMEBEGIN and nHour < AEXP_INVALIDTIMEEND) then 
+-- script viet hoa By http://tranhba.com  Say("<#> ng­¬i ë ®©y <color=red>"..AEXP_INVALIDTIMEBEGIN..":00<color>-<color=red>"..AEXP_INVALIDTIMEEND..":00<color> thêi gian ®o¹n bªn trong lùa chän c¸ch tuyÕn bµy qu¶n , cã thÓ tiÕp tôc bµy s¹p giao dÞch , nh­ng lµ sÏ kh«ng ®¹t ®­îc kinh nghiÖm trÞ gi¸ , sÏ kh«ng tù ®éng nhËn lÊy phóc duyªn . kho¶ng thêi gian nµy hÖ thèng sÏ kh«ng khÊu trõ ng­¬i c¸ch tuyÕn bµy qu¶n thêi gian , mµ ng­¬i nh­ng tiÕn hµnh trß ch¬i thêi gian lµ sÏ tiÕp tôc tÝnh to¸n . ", 2,"Ng­¬i nhÊt ®Þnh ph¶i tiÕn vµo c¸ch tuyÕn bµy qu¶n sao ?/judgecontion","T¹m thêi kh«ng cÇn . /donothing"); 
+-- script viet hoa By http://tranhba.com  return 5 
+-- script viet hoa By http://tranhba.com  else 
+-- script viet hoa By http://tranhba.com  judgecontion(); 
+-- script viet hoa By http://tranhba.com  end 
 judgecontion(); 
 
 return 0 
 end 
 
 function judgecontion() 
+-- script viet hoa By http://tranhba.com  do 
+-- script viet hoa By http://tranhba.com  Talk(1, "","C¸ch tuyÕn bµy qu¶n chøc n¨ng t¾t ") 
+-- script viet hoa By http://tranhba.com  return 
+-- script viet hoa By http://tranhba.com  end 
 
+-- script viet hoa By http://tranhba.com  nÕu nh­ tíi b­íc nµy nh­ vËy thµnh c«ng b¾t ®Çu c¸ch tuyÕn bµy qu¶n 
 local tbSpareTime = {}; 
-
+-- script viet hoa By http://tranhba.com  ®Æc hiÖu râ rµng c©u hoµn b×nh th­êng râ rµng c©u hoµn b¹ch c©u hoµn 
 local tbAexpTask = {AEXP_TIANXING_TIME_TASKID,AEXP_SPECIAL_TIME_TASKID,AEXP_TASKID, AEXP_SMALL_TIME_TASKID, 
-
+-- script viet hoa By http://tranhba.com  ®Æc hiÖu kü n¨ng râ rµng c©u hoµn kü n¨ng râ rµng c©u hoµn kü n¨ng b¹ch c©u hoµn 
 AEXP_SPECIAL_SKILL_TASKID, AEXP_SKILL_TIME_TASKID, AEXP_SMALL_SKILL_TASKID}; 
 local btime = 0; 
 for i = 1, getn(tbAexpTask) do 
 tbSpareTime[i] = {}; 
 tbSpareTime[i][1] = GetTask(tbAexpTask[i]); 
-tbSpareTime[i][2], tbSpareTime[i][3] = getFrame2MinAndSec(tbSpareTime[i][1]); 
+tbSpareTime[i][2], tbSpareTime[i][3] = getFrame2MinAndSec(tbSpareTime[i][1]); -- script viet hoa By http://tranhba.com  cho dông hé ®Ò kú biÓu hiÖn ®Õn phót 
 if (tbSpareTime[i][1] >= FRAME2TIME * 60 and btime ~= 1) then 
 btime = 1; 
 end; 
@@ -126,6 +140,8 @@ if (IsCharged() ~= 1) then
 Talk(1, "", "<#> thiÕu phÝ sung trÞ gi¸ nh¾c nhë ? "); 
 return 
 end; 
+-- script viet hoa By http://tranhba.com beginoffline(); 
+-- script viet hoa By http://tranhba.com  dông hé cßn thõa l¹i thêi gian 
 Say("<#>Th ¸ch gian c# l t¹c # th# kinh nghi# B ®ång h C# Ho yªu c# b# l?color=red>0<color> ph©n . Ng#i c?th?s?d#g #i B ®ång h C# Ho yªu #c Bi khiªm ho s« l?#i B ®ång h C# Ho yªu # t#g th ¸ch gian # th# c# m#h. <enter>ho s« l?ch#<color=yellow> # th# r ¸ch m#g mi cù ph?color>, c# n phô ch?c?th?nh nhÜ ## m# ch l©u triÕp kinh nghi#.", 
 3, 
 " b¾t ®Çu c¸ch tuyÕn bµy qu¶n /beginoffline", 
@@ -134,14 +150,14 @@ Say("<#>Th ¸ch gian c# l t¹c # th# kinh nghi# B ®ång h C# Ho yªu c# b# l?color=r
 end 
 end 
 
-
+-- script viet hoa By http://tranhba.com  b¾t ®Çu ë tuyÕn bµy qu¶n 
 function begin_onlinecommission() 
 local bRet = check_if_can_offline() 
 if bRet then 
 return bRet 
 end 
 
-
+-- script viet hoa By http://tranhba.com  ph¸n ®o¸n dông hé cßn thõa l¹i thêi gian 
 local sparetime = getsparetime(); 
 if (sparetime <= 0) then 
 Say("<#> ng­¬i cßn thõa l¹i c¸ch tuyÕn bµy qu¶n thêi gian lµ 0 phót . mêi/xin ng­¬i sö dông c¸ch tuyÕn bµy qu¶n vËt phÈm , sö dông n÷a nªn chøc n¨ng . ", 0); 
@@ -155,17 +171,17 @@ Msg2Player("B¾t ®Çu ë tuyÕn bµy qu¶n #")
 SetOnlineCommissionStatus(1) 
 WriteLog(format("[OfflineLive]\t%s\tAccount:%s\tName:%s\tbegin_onlinecommission, last online time:%s", 
 GetLocalDate("%Y-%m-%d %X"), GetAccount(), GetName(), getBaiJutimeinfo())); 
-
+-- script viet hoa By http://tranhba.com EnableClientInput(0) 
 end 
 end 
 
-
+-- script viet hoa By http://tranhba.com  kÕt thóc ë tuyÕn bµy qu¶n 
 function end_onlinecommission() 
 if (GetOnlineCommissionStatus() == 0) then 
 Msg2Player("<#> ë tuyÕn bµy qu¶n b¾t ®Çu #") 
 else 
 SetOnlineCommissionStatus(0) 
-
+-- script viet hoa By http://tranhba.com EnableClientInput(1) 
 Msg2Player("<#> ë tuyÕn bµy qu¶n kÕt thóc #") 
 WriteLog(format("[OfflineLive]\t%s\tAccount:%s\tName:%s\tend_onlinecommission, last online time:%s", 
 GetLocalDate("%Y-%m-%d %X"), GetAccount(), GetName(), getBaiJutimeinfo())); 
@@ -179,7 +195,7 @@ if nTripMode == TRIP_MODE_SERVER then
 Talk(1, "", "Xin #i hi# l#ng th?kh tÇn g th?s?d#g t#h n#g # th# t t¹c server c tÇn g c#g") 
 return 1 
 end 
-
+-- script viet hoa By http://tranhba.com  ®Çu tiªn ph¸n ®o¸n dông hé chç ë khu vùc 
 mapid = SubWorldIdx2MapCopy(SubWorld); 
 strmapid = ""..mapid..""; 
 -- script viet hoa By http://tranhba.com  kh«ng cã ë tr­íc mÆt trªn b¶n ®å 
@@ -222,6 +238,7 @@ end
 end 
 
 function beginoffline() 
+LeaveTeam()
 local bRet = check_if_can_offline() 
 if bRet then 
 return bRet 

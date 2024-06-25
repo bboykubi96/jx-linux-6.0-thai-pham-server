@@ -1,11 +1,11 @@
-if (not _H_ITEM_)then
-	_H_ITEM_ = 1;
+if (not _H_ITEM_)then 
+_H_ITEM_ = 1; 
 
---Éú³ÉÒ»¸öÏà¶ÔÓÚµ±Ç°Íæ¼ÒµÄÑ¡Ïî
-function festival_make_option(szFunName)
-	local szName = GetName()
-	return safeshow(szName).."/#"..szFunName.."('"..safestr(szName).."')"
-end
+-- script viet hoa By http://tranhba.com  sinh thµnh mét t­¬ng ®èi vu tr­íc mÆt nhµ ch¬i ®Ých chän h¹ng 
+function festival_make_option(szFunName) 
+local szName = GetName() 
+return safeshow(szName).."/#"..szFunName.."('"..safestr(szName).."')" 
+end 
 
 
-end;	--	end of _H_ITEM_
+end; -- script viet hoa By http://tranhba.com  end of _H_ITEM_

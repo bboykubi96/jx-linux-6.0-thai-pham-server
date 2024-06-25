@@ -1,4 +1,5 @@
- Include("\\script\\task\\newtask\\newtask_head.lua")
+-- Viethoa by Giangleloi WwW.Clbgamesvn.COM
+Include("\\script\\task\\newtask\\newtask_head.lua")
  
 function IsPickable( nItemIndex, nPlayerIndex )
 	return 1

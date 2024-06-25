@@ -8,7 +8,6 @@ ScriptProtocol.KE_SCRIPT_PROTOCOL =
 {
 	"emSCRIPT_PROTOCOL_ECHO",
 	"emSCRIPT_PROTOCOL_EQUIP_RANK",
-	--"emSCRIPT_PROTOCOL_CLIENT_CMD",
 	"emSCRIPT_PROTOCOL_STORES_REQUEST_ITEM",
 	"emSCRIPT_PROTOCOL_REQUESTTABLE",
 	"emSCRIPT_PROTOCOL_BATTLE",
@@ -23,29 +22,8 @@ ScriptProtocol.KE_SCRIPT_PROTOCOL =
 	"emSCRIPT_PROTOCOL_OPEN_CREDITS_SHOP",
 	"emSCRIPT_PROTOCOL_SIGNUP_AREAN",
 	"emSCRIPT_PROTOCOL_QIANCHONGLOU",
-	"emSCRIPT_PROTOCOL_OPEN_JIAOZI_SHOP",
-	"emSCRIPT_PROTOCOL_FULI_REPORT",
-	"emSCRIPT_PROTOCOL_SECURITY_LOCK",
-	"emSCRIPT_PROTOCOL_SECURITY_UNLOCK",
-	"emSCRIPT_PROTOCOL_SECURITY_CONFIG",
-	"emSCRIPT_PROTOCOL_SECURITY_RESET",
-	"emSCRIPT_PROTOCOL_LUCKY_TURNTABLE",
-	"emSCRIPT_PROTOCOL_POP_BLACK_TIPS",
-	"emSCRIPT_PROTOCOL_OFFLINE",
-	"emSCRIPT_PROTOCOL_ONLINE_AWARD",
-	"emSCRIPT_PROTOCOL_CLIENT_EVENT",
-	"emSCRIPT_PROTOCOL_ACHIEVEMENT_REWARD",
-	"emSCRIPT_PROTOCOL_ACHIEVEMENT_ACHIEVED",
-	"emSCRIPT_PROTOCOL_TONG_GUTA",
-	---------------------签到系统 Begin--------------------------
-	"emSCRIPT_PROTOCAL_SIGNIN_FETCH_DATA",
-	"emSCRIPT_PROTOCAL_SIGNIN_DO",
-	"emSCRIPT_PROTOCAL_SIGNIN_AWARD",
-	"emSCRIPT_PROTOCAL_SIGNIN_SYNC_DATE",
-	"emSCRIPT_PROTOCAL_SIGNIN_SYNC_AWARD",
-	"emSCRIPT_PROTOCOL_OPEN_MNS",
-	---------------------签到系统 End--------------------------
-	"emSCRIPT_PROTOCOL_TONG_PKMESSAGE",
+	"emSCRIPT_PROTOCOL_ACCOUNT",
+	"emSCRIPT_PROTOCOL_EVBRESV",
 }
 
 function ScriptProtocol:_InitProtocolEnum()
@@ -56,8 +34,11 @@ end
 
 
 function ScriptProtocol:RegProtocol(szProtocolEnum, szFile, szFun, tbParamFormat)
-	self.tbProtocolDef = self.tbProtocolDef or {}	
-	local nProtocolId =  self[szProtocolEnum]	
+	self.tbProtocolDef = self.tbProtocolDef or {}
+	
+	
+	local nProtocolId =  self[szProtocolEnum]
+	
 	if type(nProtocolId) ~= "number" then
 		print("reg script protocol fail because it's nil"..szProtocolEnum)
 		return
@@ -99,9 +80,7 @@ function ScriptProtocol:ProtocolProcess(nProtolId, nHandle)
 		if MODEL_GAMESERVER == 1 then
 			DynamicExecuteByPlayer(PlayerIndex, szFile, szFun, unpack(tbParam))
 		elseif MODEL_GAMECLIENT == 1 then
-			if szFile ~= "" then
-				Require(szFile)
-			end
+			Require(szFile);
 			DynamicExecute(szFile, szFun, unpack(tbParam))
 		end
 	end
@@ -116,6 +95,9 @@ function ScriptProtocol:RegProtocolSet(tbDefSet)
 	end
 end
 
+
+
+
 function ScriptProtocol:Echo(nHandle)
 end
 
@@ -126,12 +108,6 @@ ScriptProtocol:_InitProtocolEnum()
 if MODEL_GAMECLIENT == 1 then
 	local Def = 
 	{
-		{
-			"emSCRIPT_PROTOCOL_CLIENT_CMD",
-			"\\script\\lib\\clientcmd.lua",
-			"ClientCmd:LuaExecute",
-			{OBJTYPE_STRING}
-		},
 		{
 			"emSCRIPT_PROTOCOL_STORES_REQUEST_ITEM",
 			"\\script\\item\\dynamic_shop\\logic_c.lua",
@@ -176,67 +152,7 @@ if MODEL_GAMECLIENT == 1 then
 			"emSCRIPT_PROTOCOL_QIANCHONGLOU",
 			"\\script\\missions\\qianchonglou\\ui.lua",
 			"process_protocol",
-			{OBJTYPE_NUMBER, OBJTYPE_TABLE},
-		},
-		{
-			"emSCRIPT_PROTOCOL_FULI_REPORT",
-			"\\script\\missions\\miniencounter\\report_ui.lua",
-			"DataUpdated",
-			{OBJTYPE_TABLE},
-		},
-		{
-			"emSCRIPT_PROTOCOL_LUCKY_TURNTABLE",
-			"\\script\\event\\luckyturntable\\client.lua",
-			"LuckyTurntable:ProtocolProcess",
-			{OBJTYPE_NUMBER, OBJTYPE_TABLE},
-		},
-		{
-			"emSCRIPT_PROTOCOL_POP_BLACK_TIPS",
-			"",
-			"PopBlackTips",
-			{OBJTYPE_STRING},
-		},
-		{
-			"emSCRIPT_PROTOCOL_OFFLINE",
-			"\\script\\event\\offline\\offline_c.lua",
-			"tbOffline:ProtocolProcess",
-			{OBJTYPE_NUMBER},
-		},
-		{
-			"emSCRIPT_PROTOCOL_ONLINE_AWARD",
-			"\\script\\event\\online_award\\client.lua",
-			"tbOnlineAward:OnSyncGsData",
-			{OBJTYPE_NUMBER, OBJTYPE_NUMBER, OBJTYPE_NUMBER, OBJTYPE_NUMBER},
-		},
-		{
-			"emSCRIPT_PROTOCOL_ACHIEVEMENT_ACHIEVED",
-			"",
-			"PopAchievement",
-			{OBJTYPE_NUMBER},
-		},
-		{
-			"emSCRIPT_PROTOCOL_TONG_GUTA",
-			"\\script\\missions\\tong_guta\\ui_client.lua",
-			"GuTaUI:OnReceiveData",
-			{OBJTYPE_NUMBER, OBJTYPE_TABLE},
-		},
-		{
-        "emSCRIPT_PROTOCAL_SIGNIN_SYNC_DATE",
-        "\\script\\ui\\signinsystem_c.lua",
-        "ProcessSignInSyncDate",
-        {OBJTYPE_TABLE},
-    },
-    {
-        "emSCRIPT_PROTOCAL_SIGNIN_SYNC_AWARD",
-        "\\script\\ui\\signinsystem_c.lua",
-        "ProcessSignInSyncAward",
-        {OBJTYPE_TABLE},
-    },
-		{
-			"emSCRIPT_PROTOCOL_OPEN_MNS",
-			"\\script\\miniskill\\ui.lua",
-			"open_miniskill",
-			{OBJTYPE_TABLE},
+			{OBJTYPE_NUMBER, OBJTYPE_NUMBER},
 		},
 	}
 	ScriptProtocol:RegProtocolSet(Def)

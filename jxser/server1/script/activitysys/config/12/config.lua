@@ -1,63 +1,62 @@
 Include("\\script\\activitysys\\config\\12\\variables.lua")
 tbConfig = {}
-tbConfig[1] = --Ò»¸öÏ¸½Ú
+tbConfig[1] = 
 {
 	nId = 1,
 	szMessageType = "ClickNpc",
 	szName = "click npc1",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
-	tbMessageParam = {"L©m Tiªu §Çu"},
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Tæng Tiªu §Çu"},
 	tbCondition = 
 	{
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"Ta muèn vËn tiªu",2} },
-		{"SetDialogTitle",	{"Giao nép 1 Kim Nguyªn B¶o míi cã thÓ tiÕp nhËn nhiÖm vô hé tèng, hé tèng hµng ®Õn th­¬ng bu«n ==> nhËn ®­îc phÇn th­ëng ,nhËn nhiÖm vô tèi ®a 3 lÇn trong ngµy, ®¹i hiÖp cÇn ph¶i b¶o vÖ sù an toµn cña Xe Ngùa, nÕu Xe Ngùa bÞ chÕt, th× sÏ r¬i ra tÝch lòy bao nhiÖm vô sÏ thÊt b¹i."} },
+		{"AddDialogOpt",	{"Ta Muèn Hé Tèng",2} },
 	},
 }
-tbConfig[2] = --Ò»¸öÏ¸½Ú
+tbConfig[2] = 
 {
 	nId = 2,
 	szMessageType = "nil",
 	szName = "give task",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
+	nStartDate = nil,
+	nEndDate  = nil,
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{80,szLEVEL_TIP,">="} },
-		{"ThisActivity:CheckCamp",	{0, szCAMP_TIP} },
-		{"ThisActivity:CheckTaskDaily",	{TSKI_DAILY_COUNT,MAX_DAILY_COUNT,"H«m nay ®¹i hiÖp ®· hé tèng 3 lÇn råi, ®îi ngµy mai tiÕp tôc nhÐ.","<"} },
+		{"PlayerFunLib:CheckTotalLevel",	{150,szLEVEL_TIP,">="} },
+		{"ThisActivity:CheckCamp",		{0, szCAMP_TIP} },
+		{"ThisActivity:CheckTaskDaily",	{TSKI_DAILY_COUNT,MAX_DAILY_COUNT,"H«m nay ®¹i hiÖp ®· hé tèng 2 lÇn råi, ®îi ngµy mai tiÕp tôc nhÐ.","<"} },
 	},
 	tbActition = 
 	{
 		{"ThisActivity:GiveTask",	{nil} },
 	},
 }
-tbConfig[3] = --Ò»¸öÏ¸½Ú
+tbConfig[3] = 
 {
 	nId = 3,
 	szMessageType = "nil",
 	szName = "give award",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
+	nStartDate = nil,
+	nEndDate  = nil,
 	tbMessageParam = {nil},
 	tbCondition = 
 	{
-		{"ThisActivity:IsWinner",	{nil} },
-		{"PlayerFunLib:CheckTotalLevel",	{80,szLEVEL_TIP,">="} },
-		{"ThisActivity:CheckCamp",	{0, szCAMP_TIP} },
+		{"ThisActivity:IsWinner",		{nil} },
+		{"PlayerFunLib:CheckTotalLevel",	{150,szLEVEL_TIP,">="} },
+		{"ThisActivity:CheckCamp",		{0, szCAMP_TIP} },
 	},
 	tbActition = 
 	{
-		{"ThisActivity:DelWinner",	{nil} },
+		{"ThisActivity:DelWinner",		{nil} },
 		{"ThisActivity:AddTaskDaily",	{TSKI_DAILY_COUNT,1} },
-		{"ThisActivity:GiveAward",	{nil} },
+		{"ThisActivity:GiveAward",		{nil} },
 	},
 }
-tbConfig[4] = --Ò»¸öÏ¸½Ú
+tbConfig[4] = 
 {
 	nId = 4,
 	szMessageType = "ServerStart",
@@ -71,57 +70,56 @@ tbConfig[4] = --Ò»¸öÏ¸½Ú
 	tbActition = 
 	{
 		{"ThisActivity:ServerStart",	{nil} },
-	--	{"NpcFunLib:AddDialogNpc",	{"Th­¬ng Bu«n",311,{{53,1668,3408}}} },
-	--	{"NpcFunLib:AddDialogNpc",	{"L©m Tiªu §Çu",367,{{53,1563,3242}}} },
+		{"NpcFunLib:AddDialogNpc",		{"Th­¬ng Bu«n T©y Vùc",244,{{1,1865,2755}}} },
+		{"NpcFunLib:AddDialogNpc",		{"Tæng Tiªu §Çu",376,{{1,1564,2759}}} },
+		
 	},
 }
-tbConfig[5] = --Ò»¸öÏ¸½Ú
+tbConfig[5] = 
 {
 	nId = 5,
 	szMessageType = "ClickNpc",
 	szName = "click npc2",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
-	tbMessageParam = {"Th­¬ng Bu«n"},
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Th­¬ng Bu«n T©y Vùc"},
 	tbCondition = 
 	{
 	},
 	tbActition = 
 	{
-		{"AddDialogOpt",	{"NhËn phÇn th­ëng",3} },
-		{"SetDialogTitle",	{"LÊy hµng tõ L©m Tiªu §Çu giao cho ta, ta sÏ th­ëng cho ng­¬i thËt hËu hÜnh"} },
+		{"AddDialogOpt",	{"NhËn PhÇn Th­ëng NhiÖm Vô Hé Tèng",3} },
+		{"SetDialogTitle",	{"Tiªu Xa §©u Mang §Õn Giao Cho Ta, Ta SÏ Th­ëng HËu HÜnh"} },
 	},
 }
-tbConfig[6] = --Ò»¸öÏ¸½Ú
+tbConfig[6] = 
 {
 	nId = 6,
 	szMessageType = "ClickNpc",
 	szName = "Click lingfan",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
-	tbMessageParam = {"Hµng rong"},
+	nStartDate = nil,
+	nEndDate  = nil,
+	tbMessageParam = {"Hµng rong "},
 	tbCondition = 
 	{
-		{"PlayerFunLib:CheckTotalLevel",	{80,"",">="} },
 		{"ThisActivity:CheckCamp",	{0} },
 	},
 	tbActition = 
 	{
-	--	{"AddDialogOpt",	{"Mua Gia HuyÕt Phï",7} },
+		{"AddDialogOpt",	{"Mua Gia HuyÕt Phï",7} },
 	},
 }
-tbConfig[7] = --Ò»¸öÏ¸½Ú
+tbConfig[7] =
 {
 	nId = 7,
 	szMessageType = "CreateCompose",
 	szName = "buy healing bag",
-	nStartDate = 201204020000,
-	nEndDate  = 203005010000,
+	nStartDate = nil,
+	nEndDate  = nil,
 	tbMessageParam = {"Gia HuyÕt Phï",1,1,1,0.02},
 	tbCondition = 
 	{
 		{"AddOneMaterial",	{"Ng©n l­îng",{nJxb=50000},1} },
-		{"PlayerFunLib:CheckTotalLevel",	{80,"",">="} },
 		{"ThisActivity:CheckCamp",	{0, szCAMP_TIP} },
 	},
 	tbActition = 
@@ -129,7 +127,7 @@ tbConfig[7] = --Ò»¸öÏ¸½Ú
 		{"PlayerFunLib:GetItem",	{{szName="Gia HuyÕt Phï",tbProp={6,1,3146,1,0,0},nExpiredTime=10080},1,EVENT_LOG_TITLE,"Mua Gia HuyÕt Phï"} },
 	},
 }
-tbConfig[8] = --Ò»¸öÏ¸½Ú
+tbConfig[8] = 
 {
 	nId = 8,
 	szMessageType = "nil",
@@ -144,7 +142,7 @@ tbConfig[8] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[9] = --Ò»¸öÏ¸½Ú
+tbConfig[9] = 
 {
 	nId = 9,
 	szMessageType = "nil",
@@ -159,7 +157,7 @@ tbConfig[9] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[10] = --Ò»¸öÏ¸½Ú
+tbConfig[10] = 
 {
 	nId = 10,
 	szMessageType = "nil",
@@ -174,7 +172,7 @@ tbConfig[10] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[11] = --Ò»¸öÏ¸½Ú
+tbConfig[11] = 
 {
 	nId = 11,
 	szMessageType = "nil",
@@ -189,7 +187,7 @@ tbConfig[11] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[12] = --Ò»¸öÏ¸½Ú
+tbConfig[12] = 
 {
 	nId = 12,
 	szMessageType = "nil",
@@ -204,7 +202,7 @@ tbConfig[12] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[13] = --Ò»¸öÏ¸½Ú
+tbConfig[13] =
 {
 	nId = 13,
 	szMessageType = "nil",
@@ -219,7 +217,7 @@ tbConfig[13] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[14] = --Ò»¸öÏ¸½Ú
+tbConfig[14] = 
 {
 	nId = 14,
 	szMessageType = "nil",
@@ -234,7 +232,7 @@ tbConfig[14] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[15] = --Ò»¸öÏ¸½Ú
+tbConfig[15] = 
 {
 	nId = 15,
 	szMessageType = "nil",
@@ -249,7 +247,7 @@ tbConfig[15] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[16] = --Ò»¸öÏ¸½Ú
+tbConfig[16] = 
 {
 	nId = 16,
 	szMessageType = "nil",
@@ -264,7 +262,7 @@ tbConfig[16] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[17] = --Ò»¸öÏ¸½Ú
+tbConfig[17] = 
 {
 	nId = 17,
 	szMessageType = "nil",
@@ -279,7 +277,7 @@ tbConfig[17] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[18] = --Ò»¸öÏ¸½Ú
+tbConfig[18] = 
 {
 	nId = 18,
 	szMessageType = "nil",
@@ -294,7 +292,7 @@ tbConfig[18] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[19] = --Ò»¸öÏ¸½Ú
+tbConfig[19] = 
 {
 	nId = 19,
 	szMessageType = "nil",
@@ -309,7 +307,7 @@ tbConfig[19] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[20] = --Ò»¸öÏ¸½Ú
+tbConfig[20] =
 {
 	nId = 20,
 	szMessageType = "nil",
@@ -324,7 +322,7 @@ tbConfig[20] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[21] = --Ò»¸öÏ¸½Ú
+tbConfig[21] = 
 {
 	nId = 21,
 	szMessageType = "nil",
@@ -339,7 +337,7 @@ tbConfig[21] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[22] = --Ò»¸öÏ¸½Ú
+tbConfig[22] = 
 {
 	nId = 22,
 	szMessageType = "nil",
@@ -354,7 +352,7 @@ tbConfig[22] = --Ò»¸öÏ¸½Ú
 	{
 	},
 }
-tbConfig[23] = --Ò»¸öÏ¸½Ú
+tbConfig[23] = 
 {
 	nId = 23,
 	szMessageType = "nil",
@@ -367,21 +365,5 @@ tbConfig[23] = --Ò»¸öÏ¸½Ú
 	},
 	tbActition = 
 	{
-	},
-}
-tbConfig[24] = --Add NPC
-{
-	nId = 24,
-	szMessageType = "ServerStart",
-	szName = "Khëi §éng Npc",
-	nStartDate = nil,
-	nEndDate  = nil,
-	tbMessageParam = {nil},
-	tbCondition = 
-	{
-	},
-	tbActition = 
-	{
-		{"ThisActivity:AddInitNpc",	{nil} },
 	},
 }

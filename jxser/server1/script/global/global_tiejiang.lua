@@ -1,1103 +1,579 @@
---Thî rÌn 7 thµnh thÞ edit by mcteam
-Include("\\script\\global\\recoin_goldenequip.lua")
+-----------------------------***Script*By*Heart*Doldly***--------------------------------------
+Include("\\script\\vng_feature\\trungluyen\\refine_equip.lua")
+Include("\\script\\global\\recoin_goldenequip.lua") 
 Include("\\script\\global\\equipenchase_help.lua") 
 Include("\\script\\task\\newtask\\education\\jiaoyutasknpc.lua") 
-Include("\\script\\task\\newtask\\newtask_head.lua")
+Include("\\script\\task\\newtask\\newtask_head.lua") 
 Include("\\script\\global\\×ÏÉ«¼°»Æ½ð×°±¸ÖýÔì.lua")
-Include("\\script\\global\\shenmi_chapman.lua");	--ÐÞ×°±¸¹¦ÄÜ
-Include("\\script\\lib\\awardtemplet.lua")
-Include("\\script\\activitysys\\npcdailog.lua")
+Include("\\script\\global\\shenmi_chapman.lua"); 
+Include("\\script\\activitysys\\npcdailog.lua") 
 Include("\\script\\misc\\eventsys\\type\\npc.lua")
-Include("\\script\\global\\tieungao\\dotim.lua")
-Include("\\script\\global\\g7vn\\g7configall.lua")
-Include("\\script\\dailogsys\\dailogsay.lua")
-Include("\\script\\dailogsys\\g_dialog.lua")
-Include("\\script\\global\\tieungao\\thorentieungao.lua")
-Include("\\script\\global\\tieungao\\dotim.lua")
-Include("\\script\\global\\shenmi_chapman.lua")
-Include("\\script\\activitysys\\g_activity.lua")
-Include("\\script\\lib\\composeex.lua")
-Include("\\script\\activitysys\\npcfunlib.lua")
-Include("\\script\\activitysys\\playerfunlib.lua")
---Include("\\script\\activitysys\\config\\6\\doitrangbi_ex.lua")
-IncludeLib("ITEM")
-function myreloadfile()
---dofile("script/global/tieungao/thorentieungao.lua")
---dofile("script/global/tieungao/dotim.lua")
-dofile("script/global/global_tiejiang.lua")
---dofile("script/global/shenmi_chapman.lua")
---dofile("script/global/g7vn/g7configall.lua")
---dofile("script/activitysys/config/6/doitrangbi_ex.lua")
+Include("\\script\\update_feature\\nangcaptrangbi\\nangcapphiphong\\equip_nangcapphiphong.lua")
+Include("\\script\\update_feature\\nangcaptrangbi\\nangcapphiphong\\fftangsao.lua")
+Include("\\script\\update_feature\\nangcaptrangbi\\epdopho\\epdopho.lua")
+Include("\\script\\update_feature\\nangcaptrangbi\\equipment\\equipment.lua")
+------------------------------------------------------------------------------
+function myplayersex()
+	if GetSex() == 1 then 
+		return "N÷ HiÖp";
+	else
+		return "§¹i HiÖp";
+	end
 end
-
---------¹Ì¶¨¶Ô»° ³ÇÊÐ--------
+-------------------------------------------------
 function tiejiang_city(...)
-	
-	local nNpcIndex = GetLastDiagNpc();
-	--local szNpcName = GetNpcName(nNpcIndex);
-	--if NpcName2Replace then szNpcName = NpcName2Replace(szNpcName) end
-	local szNpcName = "Thî rÌn trong thµnh"
-	local tbDailog = DailogClass:new(szNpcName);
-	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex);
-	
-	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex)
-	
-	local aryParam = arg;
-	
-	if (getn(aryParam) == 0) then
-		tbDailog.szTitleMsg = TIEJIANG_DIALOG
-	else
-		for i = 1, getn(aryParam) do
-			if (i == 1) then
-				tbDailog.szTitleMsg = TIEJIANG_DIALOG
-			else
+	local nNpcIndex = GetLastDiagNpc(); 
+	local szNpcName = "Thî rÌn" 
+	local tbDailog = DailogClass:new(szNpcName); 
+	G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex); 
+	EventSys:GetType("AddNpcOption"):OnEvent(szNpcName, tbDailog, nNpcIndex) 
+	local aryParam = arg; 
+	if (getn(aryParam) == 0) then 
+		tbDailog.szTitleMsg = TIEJIANG_DIALOG 
+	else 
+		for i = 1, getn(aryParam) do 
+			if (i == 1) then 
+				tbDailog.szTitleMsg = TIEJIANG_DIALOG 
+			else 
 				local _,_, szOpt, szFun = strfind(aryParam[i], "([^/]+)/([^/]+)")
-				local fn = getglobal(szFun)
-				if fn then
-					tbDailog:AddOptEntry(szOpt, fn);	
-				end
-			end;
-		end;
-	end;
-	
-	--myreloadfile();--reload file tho ren tieu ngao
-	
+				local fn = getglobal(szFun) 
+				if fn then 
+					tbDailog:AddOptEntry(szOpt, fn); 
+				end 
+			end 
+		end 
+	end
 	tbDailog.szTitleMsg = gsub(tbDailog.szTitleMsg, "<dec>", "")
+	tbDailog:AddOptEntry("Giao DÞch", yes);
+		-- tbDailog:AddOptEntry("Phi Phong T¨ng Sao - §ét Ph¸", PhiPhongTangSao.Register, {PhiPhongTangSao});
+		--tbDailog:AddOptEntry("N©ng CÊp Phi Phong", tbNangCapPhiPhong.NangCapPhiPhong, {tbNangCapPhiPhong});
+		--tbDailog:AddOptEntry("N©ng CÊp §å Phæ", NangCapDoPho)
+		-- tbDailog:AddOptEntry("§æi §¹i Tinh Ngäc", DoiDaiTinhNgoc)
+		--tbDailog:AddOptEntry("§æi Thiªn Tinh Ngäc", DoiThienTinhNgoc)
+	tbDailog:AddOptEntry("§æi Trang BÞ", DoiTrangBi)
+	tbDailog:AddOptEntry("Trïng LuyÖn trang bÞ", Kevin_trungluyentrangbi)
+	tbDailog:AddOptEntry("VËt phÈm v©y quanh ", jewel_yes);
+	tbDailog:AddOptEntry("Xö Lý < Trang bÞ  Tæn H¹i >", deal_brokenequip); 
+	tbDailog:AddOptEntry("Ta ®Ðn nhËn nhiÖm vô s¬ nhËp ", education_tiejiang); 
+	tbDailog:Show() 
+end;
+
+-- 3008 Ngäc Quy Nguyªn
+
+
+
+
+
+function Kevin_trungluyentrangbi()
+GiveItemUI("Trïng LuyÖn Trang BÞ", "Trïng luyÖn ngäc : 1", "Kevin_trungluyentrangbi_b1", "onCancel",1)
+end
+
+function Kevin_trungluyentrangbi_b1(nCount)
+	if nCount ~= 1 then
+		CreateTaskSay({"ChØ ®­îc bá vµo 1 trang bÞ ", "µ ta nhÇm, ®Ó ta bá vµo l¹i./Kevin_trungluyentrangbi", "µ ta nhÇm, ®Ó ta ®i 1 lóc l¸t quay l¹i./onCancel"});
+		return
+	end
+	local nItemIndex	= GetGiveItemUnit(1)
+	local nQuality		= GetItemQuality(nItemIndex);	--Æ·ÖÊ
+	local GetIdGoldItem = GetGlodEqIndex(nItemIndex)
+	local idnew = GetIdGoldItem
+	local Khoa = GetItemBindState(nItemIndex)
+	local nExpiredTime 		= ITEM_GetExpiredTime(nItemIndex);
+		-- print(idnew)
+	if (Khoa == -2) then						
+			Talk(1, "", "VËt phÈm khãa råi, kh«ng thÓ trïng luyÖn !");
+				return
+			end
+		if (nExpiredTime > 0) then 
+			Talk(1, "", "VËt phÈm cña nhµ cã thêi h¹n sö dông, kh«ng thÓ quy ®æi!");
+				return
+			end
+	if nQuality ~= 1 then
+		Talk(1,"","Trang bÞ nµy ®· bÞ  kh«ng thÓ trïng luyÖn");
+		return
+	end
+       if CalcEquiproomItemCount(6,1,8017,-1) < 1 then
+		CreateTaskSay({"Ng­¬i kh«ng cã ®ñ nguyªn liÖu ", "§Ó ta bá vµo l¹i./Kevin_trungluyentrangbi", "Ta kh«ng muèn ®æi n÷a./onCancel"});
+		return
+	end
+	k = RemoveItemByIndex(nItemIndex)
+	if ( k ~= 1 ) then
+		Say("Ng­êi tÝnh qua mÆt l·o giµ nh­ ta sao ? BiÕn ®i chæ kh¸c.",0)
+		return 0
+	end
 	
-	tbDailog:AddOptEntry("Giao dÞch", yes);
-	tbDailog:AddOptEntry("§æi 3 BÝ KÝp --> 1 BÝ KÝp NgÉu Nhiªn", doibikip);
-	--tbDailog:AddOptEntry("Cöa hµng tinh lùc", energy_sale);
-	--tbDailog:AddOptEntry("Giao dÞch", yes);
-	if GetAccount() == "testgame4" or GetAccount()=="thaipham1" then
-	--	tbDailog:AddOptEntry("Trang bÞ tÝm ", gmtrangbitim);
-	--	tbDailog:AddOptEntry("VËt phÈm ®óc", onFoundry);
-	--	tbDailog:AddOptEntry("N©ng cÊp trang bÞ hoµng kim", gmnangcaptrangbi_hk);
-	--tbDailog:AddOptEntry("§æi 3 BÝ KÝp --> 1 BÝ KÝp NgÉu Nhiªn", doibikip);
+	if (RemoveItemByIndex(nItemIndex) ~= 1) then
+		WriteLog(format("[%s]\t Date:%s\t Account:%s\t Name:%s\t %s",
+			"§æi m«n ph¸i trang bÞ hoµng kim",
+			GetLocalDate("%y-%m-%d %H:%M:%S"),
+			GetAccount(),
+			GetName(),
+			"§æi m«n ph¸i trang bÞ hoµng kim thÊt b¹i:\t"..GetItemName(nItemIndex)));
 	end
-	if vatphamkhamnam == 1 then
-		tbDailog:AddOptEntry("VËt phÈm kh¶m n¹m", jewel_yes);
-	end
-	if phuchoitrangbihong == 1 then
-		tbDailog:AddOptEntry("Xö lý <trang bÞ ®· bÞ háng>", deal_brokenequip);
-	end
---	tbDailog:AddOptEntry("Ta ®Õn nhËn nhiÖm vô S¬ nhËp", education_tiejiang);	
-	if GetAccount()=="testgame4" or GetAccount()=="thaipham1" then
-			
-		--	tbDailog:AddOptEntry("GhÐp M¶nh An Bang --> Trang BÞ An Bang", ghepmanhratrangbi);	
-	end
-	--	tbDailog:AddOptEntry("VËt phÈm ®óc", onFoundry);
---	tbDailog:AddOptEntry("§æi HÖ D· TÈu Méc Bµi", doihemocbai);
---	tbDailog:AddOptEntry("N©ng CÊp D· TÈu Méc Bµi", nangcapdataumocbai);
---	tbDailog:AddOptEntry("§æi M¶nh GhÐp R­¬ng An Bang --> R­¬ng M¶nh An Bang", doiruongmanhanbang);	
---	tbDailog:AddOptEntry("§æi 500 Tinh Ngäc --> 1 §¹i Tinh Ngäc", doitinhngoc);	
-	--tbDailog:AddOptEntry("§æi 500 Bã Cá --> 1 D©y Thõng", doiboco);	
-	--	tbDailog:AddOptEntry("N©ng CÊp Phi Phong", nangcapphiphong);	
-	--	tbDailog:AddOptEntry("N©ng CÊp Ngùa", nangcapngua);	
-	--tbDailog:AddOptEntry("§æi B¶o R­¬ng HuyÒn Tho¹i", doibaoruong);	
-
-	--	tbDailog:AddOptEntry("VËt phÈm kh¶m n¹m", jewel_yes);
-	--tbDailog:AddOptEntry("Nh©n tiÖn ghÐ qua th«i", no, {});
-
-	--tbDailog:AddOptEntry("§æi R­¬ng Hoµng Kim LÊy Trang BÞ", exchange_lingpai2goldequip)
-
-	tbDailog:Show()
-end;
-function doibikip()
-	if CalcFreeItemCellCount() < 5 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 5 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("§æi BÝ KÝp", "Bá 3 BÝ KÝp vµo. \nThµnh c«ng nhËn ®­îc 1 BÝ KÝp NgÉu Nhiªn","doibikip_ok")
+       -- ConsumeEquiproomItem(50, 4, 417, 1, -1)
+	ConsumeEquiproomItem(1, 6, 1, 8017, -1)
+	local nItemIndex = AddGoldItem(0,idnew)
+	logplayer("dulieu/TRUNGLUYEN_TRANGBI.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] ®· r· thµnh c«ng trang bÞ id: "..idnew.." ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	-- SetItemBindState(nItemIndex,Khoa)
+	Msg2Player("<color=yellow>Trïng luyÖn trang bÞ thµnh c«ng<color>!");
 end
-function doibikip_ok(ncount)
-local scrollarray = {}
-	local scrollcount = 0
-	local scrollidx = {}
-	local y = 0
-	for i=1, ncount do
-		local nItemIdx = GetGiveItemUnit(i);
-		itemgenre, detailtype, parttype = GetItemProp(nItemIdx)
-		if itemgenre == 6 and detailtype == 1 and ((parttype >=27 and parttype<=28) or (parttype >=33 and parttype<=43) or (parttype >=45 and parttype<=59)) then	
-			y = y + 1
-			scrollidx[y] = nItemIdx;
-			scrollarray[i] = GetItemStackCount(nItemIdx)
-			scrollcount = scrollcount + scrollarray[i]
-		end
-	end
-	if (y ~= ncount) then
-		Say("Xin h·y bá ®óng 3 BÝ KÝp ®¹i hiÖp muèn ®æi.", 2, "µ! Th× ra ®Æt nhÇm ®Ó ta thö l¹i./doibikip", "§Ó ta kiÓm tra xem sao/no")
-		return
-	end
-	if (scrollcount > 3) then
-		Say("Ta chØ cÇn 3 cuèn BÝ KÝp, cßn l¹i ng­¬i ®em vÒ ®i!", 2, "µ! Th× ra ®Æt nhÇm ®Ó ta thö l¹i./doibikip", "§Ó ta kiÓm tra xem sao/no")
-		return
-	end
-	if (scrollcount < 3) then
-		Say("VÉn ch­a ®ñ 3 cuèn BÝ KÝp! H·y thö l¹i xem!", 2, "µ! Th× ra ®Æt nhÇm ®Ó ta thö l¹i./doibikip", "§Ó ta kiÓm tra xem sao/no")
-		return
-	end
-	if (scrollcount == 3) then
-		for i = 1, y do
-			RemoveItemByIndex(scrollidx[i])
-		end
-		lebaoskill()
-	end;	
+
+function logplayer(zFile,szMsg)
+	local handle = openfile(zFile,"a")
+	write(handle,format("%s\n",szMsg));
+	closefile(handle);
 end
-function lebaoskill()
-local s = random(1,49)
 
 
-if s==1 then
-tbAwardTemplet:GiveAwardByList({{szName="Th¸i cùc quyÓn 3",tbProp={6,1,33,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Th¸i cùc quyÓn 3 <color> tõ lÔ  bao BÝ KÝp  ");
-end;
-if s==2 then
-tbAwardTemplet:GiveAwardByList({{szName="Th¸i cùc kiÕm phæ 2",tbProp={6,1,34,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Th¸i cùc kiÕm phæ 2 <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==3 then
-tbAwardTemplet:GiveAwardByList({{szName="V©n Long KÝch",tbProp={6,1,35,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>V©n Long KÝch <color> tõ lÔ bao bÝ kÝp ");
-end;
-if s==4 then
-tbAwardTemplet:GiveAwardByList({{szName="L­u tinh ®ao ph¸p",tbProp={6,1,36,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>L­u tinh ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==5 then
-tbAwardTemplet:GiveAwardByList({{szName="Thiªn v­¬ng chïy ph¸p 1",tbProp={6,1,37,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Thiªn v­¬ng chïy ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==6 then
-tbAwardTemplet:GiveAwardByList({{szName="Thiªn v­¬ng th­¬ng ph¸p 2",tbProp={6,1,38,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Thiªn v­¬ng th­¬ng ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==7 then
-tbAwardTemplet:GiveAwardByList({{szName="Thiªn v­¬ng ®ao ph¸p",tbProp={6,1,39,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Thiªn v­¬ng ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==8 then
-tbAwardTemplet:GiveAwardByList({{szName="Thóy yªn ®ao",tbProp={6,1,40,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Thóy yªn ®ao <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==9 then
-tbAwardTemplet:GiveAwardByList({{szName="Thóy yªn song ®ao",tbProp={6,1,41,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Thóy yªn song ®ao<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==10 then
-tbAwardTemplet:GiveAwardByList({{szName="DiÖt kiÕm mËt tÞch",tbProp={6,1,42,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>DiÖt kiÕm mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==11 then
-tbAwardTemplet:GiveAwardByList({{szName="Nga my phæ quang",tbProp={6,1,43,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Nga my phæ quang <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==12 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi ®ao thuËt",tbProp={6,1,45,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi ®ao thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==13 then
-tbAwardTemplet:GiveAwardByList({{szName="Lo¹n hoµn kÝch",tbProp={6,1,28,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Lo¹n hoµn kÝch<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==14 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi tiªu thuËt",tbProp={6,1,46,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi tiªu thuËt<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==15 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ch­ëng ph¸p",tbProp={6,1,47,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ch­ëng ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==16 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ®ao ph¸p",tbProp={6,1,48,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==17 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù Phong thuËt",tbProp={6,1,49,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù Phong thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==18 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù l«i thuËt",tbProp={6,1,50,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù l«i thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==19 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù T©m thuËt",tbProp={6,1,51,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù T©m thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==20 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù T©m thuËt",tbProp={6,1,52,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù T©m thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==21 then
-tbAwardTemplet:GiveAwardByList({{szName="NhiÕp hån chó",tbProp={6,1,53,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Nhi?p hån chó<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==22 then
-tbAwardTemplet:GiveAwardByList({{szName="C¸i bang ch­ëng ph¸p",tbProp={6,1,54,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>C¸i bang ch­ëng ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==23 then
-tbAwardTemplet:GiveAwardByList({{szName="C¸i bang c«n ph¸p",tbProp={6,1,55,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>C¸i bang c«n ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==24 then
-tbAwardTemplet:GiveAwardByList({{szName="ThiÕu l©m quyÒn ph¸p",tbProp={6,1,56,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>ThiÕu l©m QuyÒn ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==25 then
-tbAwardTemplet:GiveAwardByList({{szName="ThiÕu l©m c«n ph¸p",tbProp={6,1,57,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>ThiÕu l©m c«n ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==26 then
-tbAwardTemplet:GiveAwardByList({{szName="ThiÕu l©m ®ao ph¸p",tbProp={6,1,58,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>ThiÕu l©m ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==27 then
-tbAwardTemplet:GiveAwardByList({{szName="Phæ ®é mËt tõch",tbProp={6,1,59,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phæ ®é mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==28 then
-tbAwardTemplet:GiveAwardByList({{szName="Phæ ®é mËt tõch",tbProp={6,1,59,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phæ ®é mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==29 then
-tbAwardTemplet:GiveAwardByList({{szName="Phæ ®é mËt tõch",tbProp={6,1,59,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phæ ®é mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==30 then
-tbAwardTemplet:GiveAwardByList({{szName="Phæ ®é mËt tõch",tbProp={6,1,59,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phæ ®é mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==31 then
-tbAwardTemplet:GiveAwardByList({{szName="Nga my phæ quang",tbProp={6,1,43,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Nga my phæ quang <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==32 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi ®ao thuËt",tbProp={6,1,45,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi ®ao thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==33 then
-tbAwardTemplet:GiveAwardByList({{szName="Lo¹n hoµn kÝch",tbProp={6,1,28,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Lo¹n hoµn kÝch<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==34 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi tiªu thuËt",tbProp={6,1,46,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi tiªu thuËt<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==35 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ch­ëng ph¸p",tbProp={6,1,47,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ch­ëng ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==36 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ®ao ph¸p",tbProp={6,1,48,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==37 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù Phong thuËt",tbProp={6,1,49,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù Phong thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==38 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù l«i thuËt",tbProp={6,1,50,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù l«i thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==39 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù T©m thuËt",tbProp={6,1,51,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù T©m thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==40 then
-tbAwardTemplet:GiveAwardByList({{szName="Phæ ®é mËt tõch",tbProp={6,1,59,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phæ ®é mËt tõch <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==41 then
-tbAwardTemplet:GiveAwardByList({{szName="Nga my phæ quang",tbProp={6,1,43,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Nga my phæ quang <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==42 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi ®ao thuËt",tbProp={6,1,45,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi ®ao thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==43 then
-tbAwardTemplet:GiveAwardByList({{szName="Lo¹n hoµn kÝch",tbProp={6,1,28,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Lo¹n hoµn kÝch<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==44 then
-tbAwardTemplet:GiveAwardByList({{szName="Phi tiªu thuËt",tbProp={6,1,46,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Phi tiªu thuËt<color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==45 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ch­ëng ph¸p",tbProp={6,1,47,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ch­ëng ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==46 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngò ®éc ®ao ph¸p",tbProp={6,1,48,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngò ®éc ®ao ph¸p <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==47 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù Phong thuËt",tbProp={6,1,49,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù Phong thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==48 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù l«i thuËt",tbProp={6,1,50,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù l«i thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-if s==49 then
-tbAwardTemplet:GiveAwardByList({{szName="Ngù T©m thuËt",tbProp={6,1,51,1,0,0},nCount=1,},}, "test", 1);
---Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> nhËn ®­îc<color=yellow>Ngù T©m thuËt <color> tõ lÔ bao BÝ KÝp ");
-end;
-end
-function nangcapdataumocbai()
-local tbSay = 
-{
-"N©ng DÉ TÈu Méc Bµi CÊp 1 --> CÊp 2 /#nangdatau1()",
-"N©ng DÉ TÈu Méc Bµi CÊp 2 --> CÊp 3 /#nangdatau2()",
-"N©ng DÉ TÈu Méc Bµi CÊp 3 --> CÊp 4 /#nangdatau3()",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("B¹n Chän Chøc N¨ng Nµo?",getn(tbSay),tbSay)
-end
-function nangdatau3()
-	if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp", "Bá D· TÈu Méc Bµi vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-Hån Ngäc CÊp 4","nangdatau3_ok")
-end
-function nangdatau3_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/nangdatau3", "Ta xin th«i")
-		return 0
-	end
 
-	local tiendong=CalcEquiproomItemCount(6,1,30058,-1)
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF>=6263 and nGoldEquipIdxFF<=6266 then
-			if tiendong>=1 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(1,6,1,30058,-1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,nGoldEquipIdxFF+4},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng cã 1 Hån Ngäc CÊp 4")
-				return
-			end
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+function tiejiang_village(...) 
+	local aryParam = arg; 
+	local aryDescribe = { 
+	"Giao DÞch /yes",
+	"VËt phÈm §óc/onFoundry",
+	"Ta ®Õn nhËn nhiÖm vô s¬ nhËp /tboss", 
+	"KÕt thóc ®èi tho¹i /no", 
+}; 
+
+if (getn(aryParam) == 0) then 
+	tinsert(aryDescribe, 1, TIEJIANG_DIALOG) 
+else 
+for i = 1, getn(aryParam) do 
+if (i == 1) then 
+tinsert(aryDescribe, 1, aryParam[i]); 
+else 
+tinsert(aryDescribe, 2, aryParam[i]); 
+end; 
+end; 
+end; 
+CreateTaskSay(aryDescribe); 
+end; 
+  
+function jewel_yes() 
+CreateTaskSay({"<dec><npc> thñy tinh v©y quanh thiÖp cËp ngò hµnh th¨ng b»ng # linh khÝ vËn chuyÓn ph­¬ng ph¸p , tuyÖt kh«ng ph¶i nh©n lùc nh­ng tr¾c , ch­a ch¾c thËt cã thÓ nh­ ng­¬i hy väng biÕn thµnh tuyÖt thÕ cùc phÈm # mµ vò khÝ ®å phæ cïng vùc ngo¹i kú tr©n lµ cã thÓ thµnh c«ng söa ®æi trang bÞ ®Ých cÊp bËc . ng­¬i thËt quyÕt ®Þnh v©y quanh trang bÞ cña ng­¬i sao ? ","B¾t ®Çu v©y quanh /jewel_yes1", " liªn quan tíi v©y quanh /help","Ta suy nghÜ l¹i mét chót /no"}); 
+end 
+
+function jewel_yes1() 
+EnchaseItem() 
+end 
+  
+function no() 
+end; 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function energy_sale() 
+CreateStores();
+AddShop2Stores(108,"Cöa Hµng Tinh Lùc", 15, 100, "fBuyCallBack(%d,%d)"); 
+AddShop2Stores(107,"T¹p Hãa Cao CÊp", 1, 100, "fBuyCallBack(%d,%d)"); 
+AddShop2Stores(98,"Tèng Kim", 4, 100, "fBuyCallBack(%d,%d)"); 
+AddShop2Stores(93,"Phóc Duyªn", 2, 100, "fBuyCallBack(%d,%d)");
+AddShop2Stores(101,"Liªn §Êu", 11, 100, "fBuyCallBack(%d,%d)"); 
+OpenStores(); 
+end 
+
+function fBuyCallBack(nItemIdx, nPrice) 
+local nCount = 1 
+local itemgenre, itemdetail, itemParticular = GetItemProp(nItemIdx) 
+if itemgenre == 6 and itemdetail == 1 and itemParticular == 2317 then 
+
+AddStatData("jlxiaohao_shiliantiegoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2355 then 
+
+AddStatData("jlxiaohao_xuantiangoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2369 then 
+ 
+AddStatData("jlxiaohao_qingjulinggoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2353 then 
+ 
+AddStatData("jlxiaohao_yunlulinggoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2352 then 
+ 
+AddStatData("jlsxiaohao_canglanglinggoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2351 then 
+ 
+AddStatData("jlxiaohao_xuanyuanlinggoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2350 then 
+ 
+AddStatData("jlxiaohao_zimanglinggoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2744 then 
+
+AddStatData("jlxiaohao_ruyiyaoshigoumai", nCount) 
+elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 1617 then 
+ 
+AddStatData("jlxiaohao_yandilinggoumai", nCount) 
+end 
+return 1 
+end 
+------------------------------------------------------------------------------------------------
+function DoiDaiTinhNgoc()
+	AskClientForNumber("DaiTinhNgoc",0,1000,"NhËp Sè L­îng")
+end
+
+function DaiTinhNgoc(num)
+local nTinhNgoc = CalcEquiproomItemCount(6,1,4807,1)
+local tbTinhNgoc = num*10
+	if (nTinhNgoc >= tbTinhNgoc) then
+		ConsumeEquiproomItem(tbTinhNgoc,6,1,4807,-1)
+		tbAwardTemplet:GiveAwardByList({tbProp={6,1,4873,1,0,0},},"§¹i Tinh Ngäc",num)
 	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ D· TÈu Méc Bµi CÊp 3")
-		return
+		Talk(1,"","Ng­¬i Muèn §æi "..num.." §¹i Tinh Ngäc , Cßn ThiÕu "..tbTinhNgoc-nTinhNgoc.." Tinh Ngäc")
 	end
 end
-function nangdatau2()
-	if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp", "Bá D· TÈu Méc Bµi vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-Hån Ngäc CÊp 3","nangdatau2_ok")
-end
-function nangdatau2_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/nangdatau2", "Ta xin th«i")
-		return 0
-	end
 
-	local tiendong=CalcEquiproomItemCount(6,1,30057,-1)
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF>=6259 and nGoldEquipIdxFF<=6262 then
-			if tiendong>=1 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(1,6,1,30057,-1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,nGoldEquipIdxFF+4},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng cã 1 Hån Ngäc CÊp 3")
-				return
-			end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ D· TÈu Méc Bµi CÊp 2")
-		return
-	end
+function DoiThienTinhNgoc()
+	AskClientForNumber("ThienTinhNgoc",0,1000,"NhËp Sè L­îng")
 end
-function nangdatau1()
-	if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp", "Bá D· TÈu Méc Bµi vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-Hån Ngäc CÊp 2","nangdatau1_ok")
-end
-function nangdatau1_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/nangdatau1", "Ta xin th«i")
-		return 0
-	end
 
-	local tiendong=CalcEquiproomItemCount(6,1,30056,-1)
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF>=6255 and nGoldEquipIdxFF<=6258 then
-			if tiendong>=1 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(1,6,1,30056,-1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,nGoldEquipIdxFF+4},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng cã 1 Hån Ngäc CÊp 2")
-				return
-			end
+function ThienTinhNgoc(num)
+local nDaiTinhNgoc = CalcEquiproomItemCount(6,1,4873,1)
+local tbDaiTinhNgoc = num*10
+	if (nDaiTinhNgoc >= tbDaiTinhNgoc) then
+		ConsumeEquiproomItem(tbDaiTinhNgoc,6,1,4873,-1)
+		tbAwardTemplet:GiveAwardByList({tbProp={6,1,4806,1,0,0},},"Thiªn Tinh Ngäc",num)
 	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ D· TÈu Méc Bµi CÊp 1")
-		return
+		Talk(1,"","Ng­¬i Muèn §æi "..num.." Thiªn Tinh Ngäc , Cßn ThiÕu "..tbDaiTinhNgoc-nDaiTinhNgoc.." §¹i Tinh Ngäc")
 	end
 end
-function doihemocbai()
-local tbSay = 
-{
-"§æi Sang Søc M¹nh /#doitrangsuc(6255)",
-"§æi Sang Th©n Ph¸p /#doitrangsuc(6256)",
-"§æi Sang Sinh KhÝ /#doitrangsuc(6257)",
-"§æi Sang Néi C«ng /#doitrangsuc(6258)",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("B¹n Chän Chøc N¨ng Nµo?",getn(tbSay),tbSay)
+----------------------------------------------------------------------------Che Tao Vu Khi Phat Sang-------------------------------------------------------------------------------------------------------------------------
+function Make_Weapons()
+	szDescription = format("+1 Lam Thñy Tinh\n+1 Tö Thñy Tinh\n+1 Lôc Thñy Tinh\n+100 TiÒn Xu")
+	GiveItemUI("Vò KhÝ Ph¸t S¸ng",szDescription,"Run_MakeWeapons","",1)
 end
-IDtrangss=0
-function doitrangsuc(IDtrangsuc)
-	IDtrangss=IDtrangsuc
-	if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp", "Bá D· TÈu Méc Bµi vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-50 Xu","doitrangsuc_ok")
-end
-function doitrangsuc_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/doitrangsuc", "Ta xin th«i")
-		return 0
-	end
 
-	local tiendong=CalcEquiproomItemCount(4,417,1,1)
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF>=6255 and nGoldEquipIdxFF<=6270 then
-		if nGoldEquipIdxFF>=6255 and nGoldEquipIdxFF<=6258 then
-			if tiendong>=50 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(50,4,417,1,1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,IDtrangss},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng ®ñ 50 Xu")
-				return
-			end
-		elseif nGoldEquipIdxFF>=6259 and nGoldEquipIdxFF<=6262 then
-			if tiendong>=50 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(50,4,417,1,1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,IDtrangss+4},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng ®ñ 50 Xu")
-				return
-			end
-		elseif nGoldEquipIdxFF>=6263 and nGoldEquipIdxFF<=6266 then
-			if tiendong>=50 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(50,4,417,1,1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,IDtrangss+8},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng ®ñ 50 Xu")
-				return
-			end
-		elseif nGoldEquipIdxFF>=6267 and nGoldEquipIdxFF<=6270 then
-			if tiendong>=50 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(50,4,417,1,1)
-				tbAwardTemplet:GiveAwardByList({{szName = "D· TÈu Méc Bµi",tbProp={0,IDtrangss+12},nQuality=1,nCount=1},}, "test", 1);
-		--		Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-			else
-				Say("Hµnh trang kh«ng ®ñ 50 Xu")
-				return
-			end
-		end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ D· TÈu Méc Bµi")
-		return
-	end
-end
-function doiboco()
-	if CalcFreeItemCellCount()<5 then
-		Say("Hµnh trang kh«ng ®ñ 5 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4415,-1)>=500 then
-		ConsumeEquiproomItem(500,6,1,4415,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "D©y Thõng",tbProp={6,1,4416,1,1},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 500 Bã Cá.")
-		return
-	end
-end
-function doitinhngoc()
-	if CalcFreeItemCellCount()<5 then
-		Say("Hµnh trang kh«ng ®ñ 5 « trèng.")
-		return
-	end
-	if CalcEquiproomItemCount(6,1,4409,-1)>=500 then
-		ConsumeEquiproomItem(500,6,1,4409,-1)
-		tbAwardTemplet:GiveAwardByList({{szName = "§¹i Tinh Ngäc",tbProp={6,1,4410,1,1},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 500 Tinh Ngäc.")
-		return
-	end
-end
-function doiruongmanhanbang()
-	local manhghep=CalcEquiproomItemCount(4,1624,1,1)
-	local xu=CalcEquiproomItemCount(4,417,1,1)
-	if CalcFreeItemCellCount() < 5 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 5 « trèng råi h·y më.",0);
-		return 0;
-	end
-	if manhghep>=50 and xu>=50 then
-		ConsumeEquiproomItem(50,4,1624,1,1)
-		ConsumeEquiproomItem(50,4,417,1,1)
-		tbAwardTemplet:GiveAwardByList({{szName = "R­¬ng M¶nh An Bang",tbProp={6,1,4470,1,1},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 50 M¶nh GhÐp R­¬ng An Bang + 50 Xu.")
-		return
-	end
-end
-function ghepmanhratrangbi()
-local tbSay = 
-{
-"An Bang B¨ng Tinh Th¹ch H¹ng Liªn /#nangphivan()",
-"An Bang Cóc Hoa Th¹ch ChØ hoµn /#nangbontieu()",
-"An Bang §iÒn Hoµng Th¹ch Ngäc Béi /#nangbontieu()",
-"An Bang Kª HuyÕt Th¹ch Giíi ChØ /#nangbontieu()",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("B¹n Chän Chøc N¨ng Nµo?",getn(tbSay),tbSay)
-end
-function nangcapngua()
-local tbSay = 
-{
-"N©ng CÊp Ngùa 8x --> Ngùa Phi V©n /#nangphivan()",
-"N©ng CÊp Ngùa Phi V©n --> Ngùa B«n Tiªu /#nangbontieu()",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("B¹n Chän Chøc N¨ng Nµo?",getn(tbSay),tbSay)
-end
-function nangphivan()
-if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp Ngùa", "Bá ngùa 3 8x vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-200 Bã Cá\n-1 D©y Thõng\n-2 Bé Thuû Tinh\n Tû lÖ thµnh c«ng: 100%","nangphivan_ok")
-end
-function nangphivan_ok(nCount)
-local daythung= CalcEquiproomItemCount(6,1,4416,-1)--D©y Thõng
-local coxanh= CalcEquiproomItemCount(6,1,4415,-1)--Cá Xanh
-local nguabontieu= CalcEquiproomItemCount(0,10,5,-1)--B«n Tiªu
-local lamthuytinh = CalcEquiproomItemCount(4,238,1,1)
-local lucthuytinh = CalcEquiproomItemCount(4,239,1,1)
-local tuthuytinh = CalcEquiproomItemCount(4,240,1,1)
-if (nCount == 0) then 
-			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ta chØ cÇn 3 ngùa 8x vµo th«i cßn l¹i tÊt c¶ thø kh¸c ®Ó bªn ngoµi",0);
-		return
-	end
-	if (nCount ~= 3) then 
-			Say("C¸c h¹ chØ cÇn bá vµo 3 ngùa vµo trong.",0);
-		return
-	end
-for i=1,nCount do
-local nItemIndex = GetGiveItemUnit(i)
-		local nG, nD, nP, nL, nS = GetItemProp(nItemIndex)
-		local szItemName = GetItemName(nItemIndex)
-		local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-		local nCurItemQuality = GetItemQuality(nCurItemIdx);
-local nCurTime = GetCurServerTime()
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nD~=10 and nP~=5 then
-	Say("Thø ng­¬i bá vµo kh«ng ph¶i lµ Ngùa 8x")
-	return
-	end
-end		
-		local tbItem = 
-	{	
-		{szName = "Phi V©n", tbProp = {0,10,8,10,0,0,0}, nCount = 1},	
+function Run_MakeWeapons(nCount)
+
+	local tbDatabase = {
+		tbWeapons = {},
+		tbItem = {},
+		tbStone1 = {},
+		tbStone2 = {},
+		tbStone3 = {},
 	}
-	if  nguabontieu>=3 and coxanh>=200 and daythung>=1 and lamthuytinh>=2 and lucthuytinh>=2 and tuthuytinh>=2 then
-				ConsumeEquiproomItem(3, 0,10, 5,-1)
-				ConsumeEquiproomItem(2,4,238,1,1)
-				ConsumeEquiproomItem(2,4,239,1,1)
-				ConsumeEquiproomItem(2,4,240,1,1)
-				ConsumeEquiproomItem(200,6,1,4415,-1)
-				ConsumeEquiproomItem(1,6,1,4416,-1)
-				tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-				Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· luyÖn thµnh c«ng <color=red> Phi V©n.")
-				WriteLogPro("dulieu/dulieuepngua.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t  Ðp thµnh c«ng Phi V©n\n");	
-	else 
-			Say("Kh«ng §ñ Nguyªn LiÖu.");
-	end
-end
-function nangbontieu()
-if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng CÊp Ngùa", "Bá 2 Phi V©n vµo. \nKh«ng bá Nguyªn LiÖu vµo.\nNguyªn liÖu:\n-400 Bã Cá\n-2 D©y Thõng\n-4 Bé Thuû Tinh\n Tû lÖ thµnh c«ng: 100%","nangbontieu_ok")
-end
-function nangbontieu_ok(nCount)
-local daythung= CalcEquiproomItemCount(6,1,4416,-1)--D©y Thõng
-local coxanh= CalcEquiproomItemCount(6,1,4415,-1)--Cá Xanh
-local nguabontieu= CalcEquiproomItemCount(0,10,8,-1)--B«n Tiªu
-local lamthuytinh = CalcEquiproomItemCount(4,238,1,1)
-local lucthuytinh = CalcEquiproomItemCount(4,239,1,1)
-local tuthuytinh = CalcEquiproomItemCount(4,240,1,1)
-if (nCount == 0) then 
-			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ta chØ cÇn 2 Phi V©n vµo th«i cßn l¹i tÊt c¶ thø kh¸c ®Ó bªn ngoµi",0);
-		return
-	end
-	if (nCount ~= 2) then 
-			Say("C¸c h¹ chØ cÇn bá vµo 2 ngùa Phi V©n vµo trong.",0);
-		return
-	end
-for i=1,nCount do
-local nItemIndex = GetGiveItemUnit(i)
+	
+	for i = 1, nCount do
+		local nItemIndex = GetGiveItemUnit(i)
 		local nG, nD, nP, nL, nS = GetItemProp(nItemIndex)
-		local szItemName = GetItemName(nItemIndex)
-		local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-		local nCurItemQuality = GetItemQuality(nCurItemIdx);
-local nCurTime = GetCurServerTime()
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nD~=10 and nP~=8 then
-	Say("Thø ng­¬i bá vµo kh«ng ph¶i lµ Ngùa Phi V©n")
-	return
-	end
-end		
-		local tbItem = 
-	{	
-		{szName = "B«n Tiªu", tbProp = {0,10,6,10,0,0,0}, nCount = 1},	
-	}
-	if  nguabontieu>=2 and coxanh>=400 and daythung>=2 and lamthuytinh>=4 and lucthuytinh>=4 and tuthuytinh>=4 then
-				ConsumeEquiproomItem(2, 0,10, 8,-1)
-				ConsumeEquiproomItem(4,4,238,1,1)
-				ConsumeEquiproomItem(4,4,239,1,1)
-				ConsumeEquiproomItem(4,4,240,1,1)
-				ConsumeEquiproomItem(400,6,1,4415,-1)
-				ConsumeEquiproomItem(2,6,1,4416,-1)
-				tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-				Msg2SubWorld("<color=green>Chóc mõng <color=yellow>"..GetName().."<color> ®· luyÖn thµnh c«ng <color=red> B«n Tiªu.")
-				WriteLogPro("dulieu/dulieuepngua.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t  Ðp thµnh c«ng B«n Tiªu\n");	
-	else 
-			Say("Kh«ng §ñ Nguyªn LiÖu.");
-	end
-end
-function nangcapphiphong()
-local tbSay = 
-{
-"N©ng CÊp Phi Phong CÊp 1 --> CÊp 2 /#phiphong2()",
-"N©ng CÊp Phi Phong CÊp 2 --> CÊp 3 /#phiphong3()",
-"§ét Ph¸ Phi Phong CÊp 3 --> CÊp 4 - 1 Sao /#phiphong4()",
-"N©ng Sao Phi Phong CÊp 4 /#nangsaophiphong()",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("B¹n Chän Chøc N¨ng Nµo?",getn(tbSay),tbSay)
-end
-function phiphong2()
-if CalcFreeItemCellCount() < 10 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng cÊp phi phong.", "Bá Phi Phong CÊp 1 vµo.\nKh«ng bá nguyªn liÖu vµo.\n-200 Tinh Ngäc\n-1 §¹i Tinh Ngäc\n-2 Bé Thuû Tinh\n-3000 V¹n L­îng.", "phiphong2_ok")
-end
-function phiphong2_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/phiphong2", "Ta xin th«i")
-		return 0
-	end
-	local tinhngoc=CalcEquiproomItemCount(6,1,4409,-1)
-	local daitinhngoc=CalcEquiproomItemCount(6,1,4410,-1)
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local tuhuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	local tienvan=GetCash()
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF==3467 then
-		if tinhngoc>=200 and daitinhngoc>=1 and lamthuytinh>=2 and tuhuytinh>=2 and lucthuytinh>=2 and tienvan>=30000000 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(2,4,238,1,1)
-				ConsumeEquiproomItem(2,4,239,1,1)
-				ConsumeEquiproomItem(2,4,240,1,1)
-				ConsumeEquiproomItem(200,6,1,4409,-1)
-				ConsumeEquiproomItem(1,6,1,4410,-1)
-				Pay(30000000)
-				tbAwardTemplet:GiveAwardByList({{szName = "Phi Phong CÊp 2",tbProp={0,3468},nQuality=1,nCount=1},}, "test", 1);
-				Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 2.<color>")
-		else
-			Say("Hµnh trang kh«ng ®ñ 200 Tinh Ngäc + 1 §¹i Tinh Ngäc + 2 Bé Thuû Tinh + 3000 V¹n L­îng")
-			return
-		end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ Phi Phong CÊp 1")
-		return
-	end
-end
-function phiphong3()
-if CalcFreeItemCellCount() < 10 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng cÊp phi phong.", "Bá Phi Phong CÊp 1 vµo.\nKh«ng bá nguyªn liÖu vµo.\n-400 Tinh Ngäc\n-2 §¹i Tinh Ngäc\n-4 Bé Thuû Tinh\n-6000 V¹n L­îng.", "phiphong3_ok")
-end
-function phiphong3_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/phiphong3", "Ta xin th«i")
-		return 0
-	end
-	local tinhngoc=CalcEquiproomItemCount(6,1,4409,-1)
-	local daitinhngoc=CalcEquiproomItemCount(6,1,4410,-1)
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local tuhuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	local tienvan=GetCash()
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF==3468 then
-		if tinhngoc>=400 and daitinhngoc>=2 and lamthuytinh>=4 and tuhuytinh>=4 and lucthuytinh>=4 and tienvan>=60000000 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(4,4,238,1,1)
-				ConsumeEquiproomItem(4,4,239,1,1)
-				ConsumeEquiproomItem(4,4,240,1,1)
-				ConsumeEquiproomItem(400,6,1,4409,-1)
-				ConsumeEquiproomItem(2,6,1,4410,-1)
-				Pay(60000000)
-				tbAwardTemplet:GiveAwardByList({{szName = "Phi Phong CÊp 3",tbProp={0,3469},nQuality=1,nCount=1},}, "test", 1);
-				Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng cÊp thµnh c«ng <color=yellow>Phi Phong CÊp 3.<color>")
-		else
-			Say("Hµnh trang kh«ng ®ñ 400 Tinh Ngäc + 2 §¹i Tinh Ngäc + 4 Bé Thuû Tinh + 6000 V¹n L­îng")
-			return
-		end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ Phi Phong CÊp 2")
-		return
-	end
-end
-function phiphong4()
-if CalcFreeItemCellCount() < 10 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng cÊp phi phong.", "Bá Phi Phong CÊp 3 vµo.\nKh«ng bá nguyªn liÖu vµo.\n-400 Tinh Ngäc\n-2 §¹i Tinh Ngäc\n-4 Bé Thuû Tinh\n-6000 V¹n L­îng.", "phiphong4_ok")
-end
-function phiphong4_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/phiphong4", "Ta xin th«i")
-		return 0
-	end
-	local tinhngoc=CalcEquiproomItemCount(6,1,4409,-1)
-	local daitinhngoc=CalcEquiproomItemCount(6,1,4410,-1)
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local tuhuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	local tienvan=GetCash()
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF==3469 then
-		if tinhngoc>=400 and daitinhngoc>=2 and lamthuytinh>=4 and tuhuytinh>=4 and lucthuytinh>=4 and tienvan>=60000000 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(4,4,238,1,1)
-				ConsumeEquiproomItem(4,4,239,1,1)
-				ConsumeEquiproomItem(4,4,240,1,1)
-				ConsumeEquiproomItem(400,6,1,4409,-1)
-				ConsumeEquiproomItem(2,6,1,4410,-1)
-				Pay(60000000)
-				tbAwardTemplet:GiveAwardByList({{szName = "Phi Phong CÊp 4",tbProp={0,6241},nQuality=1,nCount=1},}, "test", 1);
-				Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> ®ét ph¸ thµnh c«ng <color=yellow>Phi Phong CÊp 4.<color>")
-		else
-			Say("Hµnh trang kh«ng ®ñ 400 Tinh Ngäc + 2 §¹i Tinh Ngäc + 4 Bé Thuû Tinh + 6000 V¹n L­îng")
-			return
-		end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ Phi Phong CÊp 3")
-		return
-	end
-end
-function nangsaophiphong()
-if CalcFreeItemCellCount() < 10 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
-		return 0;
-	end
-GiveItemUI("N©ng sao phi phong.", "Bá Phi Phong CÊp 4 vµo.\nKh«ng bá nguyªn liÖu vµo.\n-150 Tinh Ngäc\n-1 §¹i Tinh Ngäc.", "nangsaophiphong_ok")
-end
-function nangsaophiphong_ok(nCount)
-	if nCount~=1 then
-		Say("Ng­¬i d¸m g¹t ta µ! ThËt to gan.", 2, "ThËt xin lçi ngµi, t¹i h¹ muèn ®Æt l¹i/nangsaophiphong", "Ta xin th«i")
-		return 0
-	end
-	local tinhngoc=CalcEquiproomItemCount(6,1,4409,-1)
-	local daitinhngoc=CalcEquiproomItemCount(6,1,4410,-1)
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local tuhuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	local tienvan=GetCash()
-	local nItemIndex = GetGiveItemUnit(1)
-	local nGoldEquipIdxFF = GetGlodEqIndex(nItemIndex)
-	local nItemTime = ITEM_GetExpiredTime(nItemIndex)
-	local nQuality = GetItemQuality(nItemIndex)
-	if (nItemTime > 0) then
-		Talk(1,"","VËt phÈm cã thêi h¹n kh«ng n©ng cÊp ®­îc.")
-		return
-	end
-	local bindState = GetItemBindState(nItemIndex)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bi ®ang trong tr¹ng th¸i khãa, kh«ng thÓ n©ng cÊp")
-		return
-	end
-	if nQuality~=1 then
-	Talk(1,"", "Thø nµy kh«ng ph¶i lµ trang bÞ hoµng kim.")
-		return
-	end
-	if nGoldEquipIdxFF>=6241 and nGoldEquipIdxFF<=6250 then
-		if tinhngoc>=150 and daitinhngoc>=1 then
-				RemoveItemByIndex(nItemIndex)
-				ConsumeEquiproomItem(150,6,1,4409,-1)
-				ConsumeEquiproomItem(1,6,1,4410,-1)
-				tbAwardTemplet:GiveAwardByList({{szName = "Phi Phong CÊp 4",tbProp={0,nGoldEquipIdxFF+1},nQuality=1,nCount=1},}, "test", 1);
-				Msg2SubWorld("<color=green>Chóc mõng ®¹i hiÖp <color=red>"..GetName().."<color> n©ng sao thµnh c«ng <color=yellow>Phi Phong CÊp 4.<color>")
-		else
-			Say("Hµnh trang kh«ng ®ñ 150 Tinh Ngäc + 1 §¹i Tinh Ngäc")
-			return
-		end
-	else
-		Say("Trang bÞ ®¹i hiÖp bá vµo kh«ng ph¶i lµ Phi Phong CÊp 4")
-		return
-	end
-end
-function doibaoruong()
-	if CalcFreeItemCellCount()<5 then
-		Say("Hµnh trang kh«ng ®ñ 5 « trèng")
-		return
-	end
-	local manh=CalcEquiproomItemCount(4,1622,1,1)
-	local lamthuytinh=CalcEquiproomItemCount(4,238,1,1)
-	local tuthuytinh=CalcEquiproomItemCount(4,239,1,1)
-	local lucthuytinh=CalcEquiproomItemCount(4,240,1,1)
-	if manh>=20 and GetCash()>=500000 then
-		ConsumeEquiproomItem(20,4,1622,1,1)
-		--ConsumeEquiproomItem(1,4,239,1,1)
-		Pay(500000)
-		tbAwardTemplet:GiveAwardByList({{szName = "B¶o R­¬ng HuyÒn Tho¹i",tbProp={6,1,4443,1,1},nCount=1},}, "test", 1);
-	else
-		Say("Hµnh trang kh«ng ®ñ 20 M¶nh Ph«i TÝm + 50 V¹n L­îng")
-		return
-	end
-	
-end
---------¹Ì¶¨¶Ô»° ÐÂÊÖ´å------
-function tiejiang_village(...)
-	local aryParam = arg;
-	local aryDescribe = {
-		--szDialog,		--Ìú½³µÄËµ»°£¬ÔÚ¸÷³ÇÊÐÌú½³´¦
-		"Giao dÞch/yes",
+		szItemName = GetItemName(nItemIndex)
+		nItemTime = ITEM_GetExpiredTime(nItemIndex)
+		nQuality = GetItemQuality(nItemIndex)
+		local tbMagicItem = {
+			[4] = {
+				[238] = 1,
+				[239] = 1,
+				[240] = 1,                                                                                                                                                                                                                                                                                                             [417] = 1,
+			},
+		}
 		
-		--Change request 04/06/2011, ®ãng chÕ t¹o trang bÞ b¹ch kim - Modified by DinhHQ - 20110605
---	"VËt phÈm ®óc/onFoundry",
-		
-		"Ta ®Õn nhËn nhiÖm vô S¬ nhËp/tboss",
-		"Nh©n tiÖn ghÐ qua th«i/no",
-	};
-	
-	if (getn(aryParam) == 0) then
-		tinsert(aryDescribe, 1, TIEJIANG_DIALOG)
-	else
-		for i = 1, getn(aryParam) do
-			if (i == 1) then
-				tinsert(aryDescribe, 1, aryParam[i]);
+		local nIndex = 0
+		if nG == 4 then
+			nIndex = nD
+		end
+
+		if nG == 4 then
+			if nIndex == 238 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone1, nItemIndex)
+				end
+			elseif nIndex == 239 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone2, nItemIndex)
+				end
+			elseif nIndex == 240 then
+				if tbMagicItem[nG][nIndex] then
+					tinsert(tbDatabase.tbStone3, nItemIndex)
+				end
+			end
+		end
+
+		if nG == 0 then
+			if nD == 0 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 and nP ~= 3 and nP ~= 4 and nP ~= 5 then
+					Talk(1,"","Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
+			elseif nD == 1 then
+				if nP ~= 0 and nP ~= 1 and nP ~= 2 then
+					Talk(1,"","Ngo¹i trõ vò khÝ ra th× kh«ng thÓ n©ng cÊp trang bÞ nµo kh¸c!")
+					return
+				end
 			else
-				tinsert(aryDescribe, 2, aryParam[i]);
-			end;
-		end;
-	end;
-	CreateTaskSay(aryDescribe);
-end;
+				Talk(1,"","ThËt thø lçi! Kh¶ n¨ng cña ta ca giíi h¹n, kh«ng thÓ n©ng cÊp <color=red>trang bÞ<color> nµy ®­îc.")
+				return
+			end
+		end
+		
+		local TAB_WEAPONS = {
+			["0,0,0"] = {},
+			["0,0,1"] = {},
+			["0,0,2"] = {},
+			["0,0,3"] = {},
+			["0,0,4"] = {},
+			["0,0,5"] = {},
+			["0,1,0"] = {},
+			["0,1,1"] = {},
+			["0,1,2"] = {},
+		}
 
---------ÏâÇ¶--------
-function jewel_yes()
-	CreateTaskSay({"<dec><npc>Thñy tinh kh¶m n¹m liªn quan ®Õn sù c©n b»ng ngò hµnh, ph­¬ng ph¸p chuyÓn linh khÝ tuyÖt nhiªn kh«ng thÓ dïng søc ng­êi ®­îc, kh«ng h¼n nh­ ®¹i hiÖp hi väng thµnh vËt phÈm tuyÖt thÕ nh©n gian, mµ vò khÝ ®å phæ vµ vùc ngoµi kú tr©n chØ gióp chuyÓn ®æi ®¼ng cÊp cña trang bÞ. C¸c h¹ muèn kh¶m n¹m trang bÞ nµy kh«ng?", "B¾t ®Çu kh¶m n¹m/jewel_yes1", "Liªn quan kh¶m n¹m/help", "§Ó ta suy nghÜ kü l¹i xem/no"});
+		local tbIndex = format("%d,%d,%d", nG, nD, nP)
+		if TAB_WEAPONS[tbIndex] then
+			tinsert(tbDatabase.tbWeapons, nItemIndex)
+		end
+		
+		local nFaction = GetLastFactionNumber()
+		nRandomAccess = random(1,100)
+		nRandomRes = random(1, 100)
+		nSucces = 1
+		if nG == 0 and nD == 0 and nP == 0 then
+			if nFaction == 8 then			--Kiem Vo Dang
+				if nRandomAccess > 1 then
+					nIndexRes = 59
+				else
+					nSucces = 0
+				end
+			 elseif nFaction == 4 then			--Kiem Nga Mi
+				if nRandomAccess > 1 then
+					nIndexRes = 57
+				else
+					nSucces = 0
+				end
+			 elseif nFaction == 9 then			--Kiem Con Lon
+				if nRandomAccess > 1 then
+					nIndexRes = 58
+				else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 0 and nRandomRes < 33 then
+					if nRandomAccess > 1 then
+						nIndexRes = 57
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 33 and nRandomRes < 66 then
+					if nRandomAccess > 1 then
+						nIndexRes = 58
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 66 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 59
+					else
+						nSucces = 0
+					end
+				end
+			 end
+		elseif nG == 0 and nD == 0 and nP == 1 then
+			if nFaction == 0 or nFaction == 1 then	--ThiÕu L©m - Thiªn V­¬ng
+				if nRandomAccess > 1 then
+					nIndexRes = 52
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			elseif nFaction == 3 then			--Dao Ngu Doc
+				if nRandomAccess > 1 then
+					nIndexRes = 53
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			elseif nFaction == 5 then			--Dao Thuy Yen
+				if nRandomAccess > 1 then
+					nIndexRes = 54
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			elseif nFaction == 9 then			--Dao Con Lon
+				if nRandomAccess > 1 then
+					nIndexRes = 56
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			else
+				if nRandomRes >= 1 and nRandomRes < 25 then
+					if nRandomAccess > 1 then
+						nIndexRes = 52
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 25 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 53
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 50 and nRandomRes < 75 then
+					if nRandomAccess > 1 then
+						nIndexRes = 54
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 75 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 56
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				end
+			end
+		elseif nG == 0 and nD == 0 and nP == 2 then
+			if nFaction == 0 then			--Bong Thieu Lam
+				if nRandomAccess > 1 then
+					nIndexRes = 40
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			 elseif nFaction == 6 then			--Bong Cai Bang
+				if nRandomAccess > 1 then
+					nIndexRes = 41
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 1 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 40
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				elseif nRandomRes >= 50 and nRandomRes < 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 41
+						nSucces = 1
+					else
+
+						nSucces = 0
+					end
+				end
+			end
+		elseif nG == 0 and nD == 0 and nP == 3 then
+			if nFaction == 7 then			--Thien Nhan
+				if nRandomAccess > 1 then
+					nIndexRes = 51
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			 elseif nFaction == 1 then			--Thien Vuong
+				if nRandomAccess > 1 then
+					nIndexRes = 50
+					nSucces = 1
+				else
+					nSucces = 0
+				end
+			 else
+				if nRandomRes >= 1 and nRandomRes < 50 then
+					if nRandomAccess > 1 then
+						nIndexRes = 51
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				 elseif nRandomRes >= 50 and nRandomRes <= 100 then
+					if nRandomAccess > 1 then
+						nIndexRes = 50
+						nSucces = 1
+					else
+						nSucces = 0
+					end
+				end
+			end
+		elseif nG == 0 and nD == 0 and nP == 4 then
+			if nRandomAccess > 1 then
+			nIndexRes = 60
+				nSucces = 1
+			else
+				nSucces = 0
+			end
+		elseif nG == 0 and nD == 0 and nP == 5 then
+			if nRandomAccess > 1 then
+				nIndexRes = 61
+				nSucces = 1
+			else
+				nSucces = 0
+			end
+		elseif nG == 0 and nD == 1 and nP == 0 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			else
+				nSucces = 0
+			end
+		elseif nG == 0 and nD == 1 and nP == 1 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			else
+				nSucces = 0
+			end
+		elseif nG == 0 and nD == 1 and nP == 2 then
+			if nRandomAccess > 1 then
+				nIndexRes = 46
+				nSucces = 1
+			 else
+				nSucces = 0
+			end
+		end
+	end
+	
+	if nItemTime ~= 0 then
+		Talk(1,"","Kh«ng thÓ ®Æt vµo vËt phÈm cã thêi h¹n!")
+		return
+	end
+
+	local nCountWeapon = getn(tbDatabase.tbWeapons)
+	if nCountWeapon ~= 1 then
+		Talk(1,"","Ng­¬i ch­a ®Æt vò khÝ cÇn n©ng cÊp vµo « trèng")
+		return
+	end
+	
+	local nCountStone1 = getn(tbDatabase.tbStone1)
+	local nCountStone2 = getn(tbDatabase.tbStone2)
+	local nCountStone3 = getn(tbDatabase.tbStone3)
+	local nSilverCount = CalcEquiproomItemCount(4,417,1,1)
+	if (nCountStone1 ~= 1 and nCountStone2 ~= 1 and nCountStone3 ~= 1 and nSilverCount ~= 100) then
+		Say("<color=yellow>ChÕ T¹o Vò KhÝ Ph¸t S¸ng CÇn Ph¶i Thu ThËp §ñ<color>\n               <color=fire>* Nguyªn LiÖu:<color>\n                 <color=blue>Lam Thñy Tinh<color>\n                 <color=pink>Tö Thñy Tinh<color>\n                 <color=green>Lôc Thñy Tinh<color>\n                 <color=orange>100 TiÒn Xu<color>")
+		return
+	end
+	
+	ConsumeEquiproomItem(100,4,417,1,1)
+	RemoveItemByIndex(tbDatabase.tbStone1[1])
+	RemoveItemByIndex(tbDatabase.tbStone2[1])
+	RemoveItemByIndex(tbDatabase.tbStone3[1])
+	RemoveItemByIndex(tbDatabase.tbItem[1])
+
+	if nSucces == 0 then
+		Msg2Player("RÊt tiÕc! ThÊt b¹i lµ chuyÖn b×nh th­êng cña binh gia,huynh ®µi ®õng n¶n chÝ h·y cè g¾ng lÇn n÷a sÏ ®­îc nh­ ý.")
+	elseif nSucces == 1 then
+		_Weapons(tbDatabase.tbWeapons[1], nIndexRes)
+		Msg2Player("<color=yellow>Chóc mõng b¹n ®· n©ng cÊp thµnh c«ng vò khÝ ph¸t quang.")
+	else
+		print("Bug tinh nang nang cap Vu Khi phat quang")
+	end
 end
 
-function jewel_yes1()
-	EnchaseItem()
+function _Weapons(nItemIndex, nIndexRes)
+	SetItemNewFeature(nItemIndex, nIndexRes)
+	print(nIndexRes)
 end
 
--------No--------
-function no()
-end;
-
-------¾«Á¦-------
-function energy_sale()
-	CreateStores();
-	AddShop2Stores(174, "Cöa hµng tinh lùc", 15, 100, "fBuyCallBack(%d,%d)");
-	OpenStores();
-end
-
-function fBuyCallBack(nItemIdx, nPrice)
-	local nCount = 1
-	local itemgenre, itemdetail, itemParticular = GetItemProp(nItemIdx)
-	if itemgenre == 6 and itemdetail == 1 and itemParticular == 2317 then
-		-- ÊÔÁ¶Ìû
-		AddStatData("jlxiaohao_shiliantiegoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2355 then
-		-- ÐþÌì½õÄÒ
-		AddStatData("jlxiaohao_xuantiangoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2369 then
-		-- Çà¾ÔÁî
-		AddStatData("jlxiaohao_qingjulinggoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2353 then
-		-- ÔÆÂ¹Áî
-		AddStatData("jlxiaohao_yunlulinggoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2352 then
-		-- ²ÔÀÇÁî
-		AddStatData("jlsxiaohao_canglanglinggoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2351 then
-		-- ÐþÔ³Áî
-		AddStatData("jlxiaohao_xuanyuanlinggoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2350 then
-		-- ×ÏòþÁî
-		AddStatData("jlxiaohao_zimanglinggoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 2744 then
-		-- ÈçÒâÔ¿³×
-		AddStatData("jlxiaohao_ruyiyaoshigoumai", nCount)
-	elseif itemgenre == 6 and itemdetail == 1 and itemParticular == 1617 then
-		-- Ñ×µÛÁî
-		AddStatData("jlxiaohao_yandilinggoumai", nCount)
-	end											
-	return 1
-end
-
-function WriteLogPro(data,str)
-	local Data2 = openfile(""..data.."", "a+");
-	write(Data2,tostring(str));
-	closefile(Data2);
-end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

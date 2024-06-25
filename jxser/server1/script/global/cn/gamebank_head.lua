@@ -1,7 +1,7 @@
 
----------------------------------------------------------------
--- ´óÂ½°æ±¾ÓÐÈýÖÖÔª±¦(½ð¡¢ÒøÔª±¦¡¢ÒøÆ±)
-COIN_CHANGE_COUNT_OF_GOLD 		= 50;			-- 1¸ö½ðÔª±¦¶Ò»»Í­Ç®µÄ¸öÊý
-COIN_CHANGE_COUNT_OF_SILVER 	= 12;		-- 1¸öÒøÔª±¦¶Ò»»Í­Ç®µÄ¸öÊý
-COIN_CHANGE_COUNT_OF_TICKET 	= 15;		-- 1¸öÒøÆ±¶Ò»»Í­Ç®µÄ¸öÊý(Õý³£°æ±¾)
---COIN_CHANGE_COUNT_OF_TICKET = 20;		-- 1¸öÒøÆ±¶Ò»»Í­Ç®µÄ¸öÊý(´ÙÏú¼Û)
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  ®¹i lôc b¶n bæn cã ba lo¹i nguyªn b¶o ( kim # ng©n nguyªn b¶o # ng©n phiÕu ) 
+COIN_CHANGE_COUNT_OF_GOLD = 50; -- script viet hoa By http://tranhba.com  1 c¸ kim nguyªn b¶o ®æi ®ång tiÒn ®Ých c¸ ®Õm 
+COIN_CHANGE_COUNT_OF_SILVER = 12; -- script viet hoa By http://tranhba.com  1 c¸ ng©n nguyªn b¶o ®æi ®ång tiÒn ®Ých c¸ ®Õm 
+COIN_CHANGE_COUNT_OF_TICKET = 15; -- script viet hoa By http://tranhba.com  1 c¸ ng©n phiÕu ®æi ®ång tiÒn ®Ých c¸ ®Õm ( b×nh th­êng b¶n bæn ) 
+-- script viet hoa By http://tranhba.com COIN_CHANGE_COUNT_OF_TICKET = 20; -- script viet hoa By http://tranhba.com  1 c¸ ng©n phiÕu ®æi ®ång tiÒn ®Ých c¸ ®Õm ( xóc tiªu giíi )

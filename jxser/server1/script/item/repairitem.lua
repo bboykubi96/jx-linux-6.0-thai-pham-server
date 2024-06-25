@@ -15,31 +15,27 @@ TTID_CostlyPrice= 107;
 -- ¿ÉÏâÇ¶×°±¸Î¬ĞŞ·ÑÓÃ±í
 ENCHASABLE_EQUIP_PRICE =
 {
-	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },			-- Ã÷1Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
-	{ 10, 22, 36, 52, 70, 90, 112, 136, 162, 190 },		-- °µ1Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
-	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },			-- Ã÷2Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
-	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- °µ2Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
-	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- Ã÷3Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
-	{ 5, 11, 18, 26, 35, 45, 56, 68, 81, 95 },				-- °µ3Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- Ã÷1Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 100, 220, 360, 520, 700, 900, 1120, 1360, 1620, 1900 },		-- °µ1Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- Ã÷2Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- °µ2Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- Ã÷3Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
+	{ 50, 110, 180, 260, 350, 450, 560, 680, 810, 950 },			-- °µ3Î»ÖÃ10¼¶Ä§·¨ÊôĞÔµÄ·ÑÓÃÖµ
 }
 
 -- RPGE_RESTORMAX = 25;
 function repair_goldequip(nItemIndex, nGenre, nQuality, nDetailType, nParticularType, nOrgMaxDur, nCurMaxDur, nCurDur, nEquipPrice)
 	-- ²»ÊÇ»Æ½ğ×°±¸£¬²»ÔÚ½Å±¾ÖĞ´¦Àí(ÓÉ³ÌĞò´¦Àí)
-	if (nQuality ~= 1 and nQuality ~= 4) then
+	if (nQuality ~= 1) then
 		return -1;
 	end
 	
-	szAboutMsg = get_repair_qualityname(nQuality).."H­íng dÉn söa ch÷a trang bŞ.../RePairGE_About";
+	szAboutMsg = "Gi¶i thİch söa ch÷a trang bŞ Hoµng Kim… /RePairGE_About";
 
-	if (nQuality == 4 and GetPlatinaLevel(nItemIndex) >= 6) then
-		Say("Chñ tiÖm: T¹i tiÖm cña ta ®©y kh«ng thÓ söa trang bŞ b¹ch kim +6 trë lªn", 0);
-		return 1
-	end
 	-- ²»ĞèÎ¬ĞŞ
 	nFixDur = nCurMaxDur - nCurDur;
 	if (nFixDur <= 0) and (nCurMaxDur == nOrgMaxDur) then
-		Say("Chñ tiÖm: Trang bŞ "..get_repair_qualityname(nQuality).." nµy t¹m thêi kh«ng cÇn söa. Muèn söa chöa "..get_repair_qualityname(nQuality).." thÕ nµo", 2, szAboutMsg, "§· biÕt råi/RepairGE_Cancel")
+		Say("Bé Trang bŞ Hoµng Kim nµy t¹m thêi kh«ng cÇn söa! Cã muèn t×m hiÓu vÒ c¸ch s÷a ch÷a Trang bŞ Hoµng Kim?", 2, szAboutMsg, "§· biÕt råi/RepairGE_Cancel")
 		return 1;
 	end;
 	
@@ -60,8 +56,8 @@ function repair_goldequip(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 	-- »Æ½ğ×°±¸ĞŞÀí¼Û¸ñ¹«Ê½µ÷ÕûÎª£º100*(×°±¸µÈ¼¶^2)/Ã¿µãÄÍ¾Ã¶È
 	-- Ô½ÄÏ°æ±¾µÄĞŞÀí¼Û¸ñ½µ10±¶
 	nItemLevel = GetItemLevel(nItemIndex);
-	nCheapPrice = 1 * nItemLevel * nItemLevel * nFixDur;
-	nCostlyPrice = nCheapPrice * 2; -- ¼òĞŞµÄÈı±¶
+	nCheapPrice = 10 * nItemLevel * nItemLevel * nFixDur;
+	nCostlyPrice = nCheapPrice * 3; -- ¼òĞŞµÄÈı±¶
 
 	SetTaskTemp(TTID_LostDur, nLostDur);
 	SetTaskTemp(TTID_CheapPrice, nCheapPrice);
@@ -77,15 +73,14 @@ function repair_goldequip(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 	{
 		"Söa ®¬n gi¶n [".._nCheapW.." v¹n".._nCheap.." l­îng, ®é bÒn lín nhÊt gi¶m xuèng"..nLostDur.."®iÓm]/RePairGE_Cheap", -- 1	
 		"Söa kü [".._nCostlyW.." v¹n".._nCostly.." l­îng]/RePairGE_Costly",  -- 2
-		"Sö dông Thñy Tinh söa ch÷a cã ®é bÒn lín nhÊt/RepairGE_ReStoreMax", --3
-		"Sö dông Tu Phôc ThÇn Du söa ch÷a ®é bÒn tèi ®a/RepairGE_ReStoreMax_Oil", --4
+		"Sö dông Thñy Tinh söa ch÷a cã ®é bÒn lín nhÊt/RepairGE_ReStoreMax" --3
 	}
 	szCancelMsg = "T¹m thêi kh«ng söa/RepairGE_Cancel";
 	
 	szSayMsg = 
 	{
-		"Chñ tiÖm:  "..get_repair_qualityname(nQuality).."trang bŞ nµy lµ b¸u vËt vâ l©m, söa ch÷a kh«ng dÔ dµng, ®¹i hiÖp muèn söa ®¬n gi¶n h·y lµ söa kü?",	
-		"Chñ tiÖm: §é bÒn "..get_repair_qualityname(nQuality).." trªn trang bŞ ®¹i hiÖp ®· bŞ hao mßn, cã muèn söa kh«ng?",		
+		"¤ng chñ: Trang bŞ Hoµng Kim vèn lµ b¶o vËt cña vâ l©m, söa ch÷a kh«ng ®¬n gi¶n. §¹i hiÖp muèn söa ®¬n gi¶n hay söa kü ®©y?",	
+		"¤ng chñ: §é bÒn lín nhÊt trªn trang bŞ Hoµng Kim cña ®¹i hiÖp cã chót hñy ho¹i, ngµi muèn söa ch÷a kh«ng?",		
 	}
 	
 	--print("»Æ½ğ°ü×°±¸Î¬ĞŞ(FixDur, CurMaxDur, OrgMaxDur): "..nFixDur..","..nCurMaxDur..","..nOrgMaxDur);
@@ -96,11 +91,11 @@ function repair_goldequip(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 	elseif (nFixDur <= 0) and (nCurMaxDur < nOrgMaxDur) then
 		-- Ö»ÄÜĞŞÄÍ¾Ã¶ÈÉÏÏŞ
 		--print("Ö»ÄÜĞŞÄÍ¾Ã¶ÈÉÏÏŞ");
-		Say(szSayMsg[2], 4, szFixMsg[3], szFixMsg[4], szAboutMsg, szCancelMsg)
+		Say(szSayMsg[2], 3, szFixMsg[3], szAboutMsg, szCancelMsg)
 	else
 		-- ĞŞ¾«ĞŞ¡¢¼òĞŞ¡¢ÉÏÏŞ
 		--print("ĞŞ¾«ĞŞ¡¢¼òĞŞ¡¢ÉÏÏŞ");
-		Say(szSayMsg[1], 6, szFixMsg[1], szFixMsg[2], szFixMsg[3], szFixMsg[4],szAboutMsg, szCancelMsg)
+		Say(szSayMsg[1], 5, szFixMsg[1], szFixMsg[2], szFixMsg[3], szAboutMsg, szCancelMsg)
 	end
 	
 	return 1;
@@ -115,7 +110,7 @@ function RePairGE_Costly()
 		Pay(nCostlyPrice)
 		-- Msg2Player("ĞŞ¸´×°±¸£¡")
 		SetCurDurability(nItemIndex, nCurMaxDur);
-		WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông ("..nCostlyPrice..") l­îng b¹c, söa kü  "..get_repair_qualityname(nQuality).."trang bŞ(ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..nCurMaxDur..")");
+		WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông ("..nCostlyPrice..") l­îng b¹c, söa kü trang bŞ Hoµng Kim (ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..nCurMaxDur..")");
 	else
 		-- ÒÔÍòÁ½×÷ÏÔÊ¾µ¥Î»
 		_nCostlyW = floor(nCostlyPrice / 10000);
@@ -141,7 +136,7 @@ function RePairGE_Cheap()
 		SetMaxDurability(nItemIndex, nFixMaxDur);
 		SetCurDurability(nItemIndex, nFixMaxDur);
 		
-		WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông ("..nCheapPrice..") l­îng b¹c, söa ®¬n gi¶n "..get_repair_qualityname(nQuality).."trang bŞ(ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..nFixMaxDur..") , ®é bÒn lín nhÊt gi¶m xuèng, "..nLostDur.."®iÓm");
+		WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông ("..nCheapPrice..") l­îng b¹c, söa ®¬n gi¶n trang bŞ Hoµng Kim (ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..nFixMaxDur..") , ®é bÒn lín nhÊt gi¶m xuèng, "..nLostDur.."®iÓm");
 		
 	else
 		-- ÒÔÍòÁ½×÷ÏÔÊ¾µ¥Î»
@@ -190,50 +185,8 @@ function RepairGE_ReStoreMax()
 	end
 	
 	SetMaxDurability(nItemIndex, nCurMaxDur + nAddMaxDur);
-	WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông 1 viªn thñy tinh,  "..get_repair_qualityname(nQuality).."trang bŞ(ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..GetCurDurability(nItemIndex)..") ®é bÒn lín nhÊt t¨ng lªn"..nAddMaxDur.."®iÓm");
+	WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..") sö dông mét viªn Thñy Tinh, Trang bŞ Hoµng Kim (ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..GetCurDurability(nItemIndex)..") ®é bÒn lín nhÊt t¨ng lªn"..nAddMaxDur.."®iÓm");
 	Msg2Player("B¹n sö dông mét viªn Thñy Tinh, ®é bÒn lín nhÊt trªn trang bŞ ®· t¨ng lªn."..nAddMaxDur.."®iÓm");
-end;
-
-function RepairGE_ReStoreMax_Oil()
-	nItemIndex = GetTaskTemp(TTID_ItemIndex);
-	nOrgMaxDur = GetTaskTemp(TTID_OrgMaxDur);
-	nCurMaxDur = GetTaskTemp(TTID_CurMaxDur);
-	-- if (nCurMaxDur > nOrgMaxDur) then
-	--	WriteLog(GetLoop()..date("%m%d-%H:%M").."»Æ½ğ×°±¸ÄÍ¾Ã¶ÈÉÏÏŞÓĞ´í!")
-	--	return -1;
-	-- end
-	
-	if (nCurMaxDur == nOrgMaxDur) then
-		Talk(1, "", "Bé trang bŞ nµy t¹m thêi kh«ng cÇn söa!")
-		return 1;
-	end
-	
-	local nBindState = GetItemBindState(nItemIndex);
-	if (nBindState == 0) then
-		Talk(1, "", "Chñ tiÖm: <color=yellow> Tu Phôc ThÇn Du<color> chØ cã thÓ söa ch÷a<color=red> trang bŞ ë tr¹ng th¸i khãa <color>")
-		return 1;
-	end
-	
-	local nOilCount = CalcEquiproomItemCount(6, 1, 2565, -1);
-
-	-- ¿Û¼¼ÄÜ±¦Ê¯(Ë®¾§)
-	if (nOilCount > 0) then
-		ConsumeEquiproomItem(1, 6, 1, 2565, -1);
-	else
-		Talk(1,"","Chñ tiÖm: Ng­¬i kh«ng mang theo Tu Phôc ThÇn Du")
-		return -1;
-	end
-
-	-- ¼ÓÄÍ¾Ã¶ÈÉÏÏŞ
-	nAddMaxDur = 25; -- Ò»¿ÅË®¾§£¬¼Ó25µãÉÏÏŞ
-	nDelta = nOrgMaxDur - nCurMaxDur;
-	if (nDelta < nAddMaxDur) then
-		nAddMaxDur = nDelta;
-	end
-	
-	SetMaxDurability(nItemIndex, nCurMaxDur + nAddMaxDur);
-	WriteLog(date("%H%M%S")..":"..GetAccount().."("..GetName()..")Sö dông 1 c¸i Tu Phôc ThÇn Du"..get_repair_qualityname(nQuality).."trang bŞ(ItemGenTime:"..GetItemGenTime(nItemIndex).." CurDur:"..GetCurDurability(nItemIndex)..") ®é bÒn lín nhÊt t¨ng lªn"..nAddMaxDur.."®iÓm");
-	Msg2Player("Ng­¬i ®· sö dông mét c¸i Tu Phôc ThÇn Du, ®é bÒn tèi ®a cña trang bŞ ®· ®­îc t¨ng lªn"..nAddMaxDur.."®iÓm");
 end;
 
 -- È¡Ïû
@@ -246,10 +199,9 @@ function RePairGE_About()
 	{
 		"<color=green>Söa ®¬n gi¶n:<color> gi¸ rÏ h¬n, sau khi söa ch÷a ®é bÒn trang bŞ lín nhÊt sÏ gi¶m xuèng<enter>",	
 		"<color=green>Söa kü:<color> gi¸ cao h¬n, sau khi söa ch÷a ®é bÒn lín nhÊt trang kh«ng bŞ gi¶m xuèng<enter>",		
-		"<color=green>Kh«i phôc giíi h¹n ®é bÒn: <color>Sö dông thñy tinh ®Ó kh«i phôc l¹i giíi h¹n "..get_repair_qualityname(nQuality).."®é bÒn trªn trang bŞ.",
-		" <enter>Tu Phôc ThÇn Du chØ cã thÓ söa ch÷a trang bŞ khãa",
+		"<color=green>§é bÒn söa ch÷a lín nhÊt:<color> Sö dông Thñy Tinh cã thÓ söa ch÷a mét bé phËn víi ®é bÒn lín nhÊt trªn trang bŞ Hoµng Kim"
 	}
-	szInfo = _szInfo[1].._szInfo[2].._szInfo[3].._szInfo[4];
+	szInfo = _szInfo[1].._szInfo[2].._szInfo[3];
 
 	Talk(1, "", szInfo)
 end;
@@ -284,7 +236,7 @@ function get_repair_price(nItemIndex, nGenre, nQuality, nDetailType, nParticular
 		end
 		nRepairPrice = nRepairPrice * ( nCurMaxDur - nCurDur )
 	end
-	return nRepairPrice/10;
+	return nRepairPrice;
 end;
 
 -- Î¬ĞŞ×°±¸ --
@@ -293,14 +245,4 @@ function repair_equip(nItemIndex, nGenre, nQuality, nDetailType, nParticularType
 	-- SetMaxDurability(nItemIndex, 10);
 	-- SetCurDurability(nItemIndex, 10);
 	return -1;
-end;
-
-function get_repair_qualityname(nQ)
-	if (nQ == 1) then
-		return "Hoµng Kim";
-	elseif (nQ == 4) then
-		return "B¹ch Kim";
-	else
-		return "";
-	end;
 end;

@@ -2,6 +2,10 @@
 -- Update: Dan_Deng(2003-08-21) 加入卖道具只卖给本帮
 Include ("\\script\\event\\springfestival08\\allbrother\\findnpctask.lua")
 function main(sel)
+		Talk(1,"","NPC Ch鴆 n╪g t筸 ng!")
+end
+
+function dongroi()
 	if allbrother_0801_CheckIsDialog(208) == 1 then
 		allbrother_0801_FindNpcTaskDialog(208)
 		return 0;

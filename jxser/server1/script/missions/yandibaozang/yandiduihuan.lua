@@ -1,12 +1,8 @@
--- ÎÄ¼þÃû¡¡£ºyandiduihuan.lua
--- ´´½¨Õß¡¡£ºzhongchaolong
--- ´´½¨Ê±¼ä£º2008-05-14 16:38:43
---Ñ×µÛ×°±¸ÖØÖý
 Include("\\script\\task\\system\\task_string.lua");
 Include("\\script\\lib\\awardtemplet.lua")
 IncludeLib("ITEM")
-yandiduihuan_tbItemList = 
-{
+
+yandiduihuan_tbItemList = {
 	{szName="To¹i Nh©n XÝch HuyÕt Nguyªn Vò Gi¸p", nQuality=1, tbProp={0, 442}},
 	{szName="To¹i Nh©n B¸ch LuyÖn Kh«i", nQuality=1, tbProp={0, 443}},
 	{szName="To¹i Nh©n Trôc Thiªn Ngoa", nQuality=1, tbProp={0, 445}},
@@ -26,15 +22,14 @@ yandiduihuan_tbItemList =
 	{szName="ThÇn N«ng Tr¶m Nh¹c", nQuality=1, tbProp={0, 487}},
 }
 
-yandiduihuan_Material = 
-{
+yandiduihuan_Material = {
 	{szName="Ph­îng Minh Chïy", tbProp={6, 1, 1746}},
 	{szName="HuyÒn tinh kho¸ng th¹ch cÊp 8", tbProp={6, 1, 147, 8}},
 	{szName="M¶nh Bæ Thiªn Th¹ch (trung)", tbProp={6, 1, 1309}},
 	{szName="ThÇn bÝ kho¸ng th¹ch", tbProp={6, 1, 398}},
 }
-yandiduihuan_CostMoney = 10000000 --1QW
 
+yandiduihuan_CostMoney = 10000000
 
 function yandiduihuan_CalcItemCount(tbMaterial)
 	if type(tbMaterial[1]) == "table" then
@@ -100,6 +95,7 @@ function yandiduihuan_GiveStep(nCount)
 			end
 		end
 			
+
 	end	
 	if (nNeedCount == 0) then
 		if  Pay(yandiduihuan_CostMoney) == 1 then 

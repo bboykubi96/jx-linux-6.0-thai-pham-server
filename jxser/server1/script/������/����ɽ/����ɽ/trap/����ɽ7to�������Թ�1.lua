@@ -2,6 +2,7 @@
 -- script viet hoa By http://tranhba.com TrapID# hai hå khu 25 
 
 function main(sel) 
+
 SetFightState(1) 
 NewWorld(72, 1700, 2865); 
 AddTermini(85) 

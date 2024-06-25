@@ -1,81 +1,81 @@
-IncludeLib("ITEM");
-IncludeLib("FILESYS")
+IncludeLib("ITEM"); 
+IncludeLib("FILESYS") 
 
-TB_PLATINAEQ_GOLDEQ ={
---[°×½ðID] = {°×½ðID, »Æ½ðID,×°±¸Éý¼¶¼ÛÖµÁ¿ÏµÊý,×°±¸Ãû};
---[1] = {1, 1, 4, "ÃÎÁúÖ®Õý»ÆÉ®Ã±"},
-}
+TB_PLATINAEQ_GOLDEQ ={ 
+-- script viet hoa By http://tranhba.com [ b¹ch kim ID] = { b¹ch kim ID, hoµng kim ID, trang bÞ th¨ng cÊp gi¸ trÞ l­îng hÖ sè , trang bÞ tªn }; 
+-- script viet hoa By http://tranhba.com [1] = {1, 1, 4,"Méng long chi ®ang hoµng t¨ng m¹o "}, 
+} 
 
-function LoadPlatinaEquipSetting()
-	
+function LoadPlatinaEquipSetting() 
+
 	local b1 = TabFile_Load("\\settings\\task\\equipex\\platina_def.txt", "PlatinaData")
-	if b1~=1 then
-		print("T¶i tËp tin th¨ng cÊp trang bÞ B¹ch Kim thÊt b¹i!")
-		return
-	end
-	local nRowCount = TabFile_GetRowCount("PlatinaData", "EQUIPNAME")
-	
-	for y = 2, nRowCount do
-		local platinaid = tonumber(TabFile_GetCell("PlatinaData", y, "PLATINAID"));
-		
-		local goldid = tonumber(TabFile_GetCell("PlatinaData", y, "GOLDID"));
-		local taskrate = tonumber(TabFile_GetCell("PlatinaData", y, "TASKRATE"));
-		local name = TabFile_GetCell("PlatinaData", y, "EQUIPNAME");
-		
-		TB_PLATINAEQ_GOLDEQ[platinaid] = {platinaid, goldid, taskrate, name};
-	end	
-end;
+if b1~=1 then 
+print("KÕ tiÕp th¨ng cÊp b¹ch kim trang bÞ tin tøc thÊt b¹i !") 
+return 
+end 
+local nRowCount = TabFile_GetRowCount("PlatinaData", "EQUIPNAME") 
 
-LoadPlatinaEquipSetting()
+for y = 2, nRowCount do 
+local platinaid = tonumber(TabFile_GetCell("PlatinaData", y, "PLATINAID")); 
 
---°×½ð×°±¸¸÷µÈ¼¶Éý¼¶µÄ¼ÛÖµÁ¿
-PLATINAEQ_UPGRADERATE_BASIC = 10000;
-TB_PLATINAEQ_UPGRADERATE = {
-	[0] = 2000*PLATINAEQ_UPGRADERATE_BASIC,
-	[1] = 4000*PLATINAEQ_UPGRADERATE_BASIC,
-	[2] = 6000*PLATINAEQ_UPGRADERATE_BASIC,
-	[3] = 8000*PLATINAEQ_UPGRADERATE_BASIC,
-	[4] = 10000*PLATINAEQ_UPGRADERATE_BASIC,
-	[5] = 15000*PLATINAEQ_UPGRADERATE_BASIC,
-	[6] = 30000*PLATINAEQ_UPGRADERATE_BASIC,
-	[7] = 50000*PLATINAEQ_UPGRADERATE_BASIC,
-	[8] = 80000*PLATINAEQ_UPGRADERATE_BASIC,
-	[9] = 120000*PLATINAEQ_UPGRADERATE_BASIC,
-};
+local goldid = tonumber(TabFile_GetCell("PlatinaData", y, "GOLDID")); 
+local taskrate = tonumber(TabFile_GetCell("PlatinaData", y, "TASKRATE")); 
+local name = TabFile_GetCell("PlatinaData", y, "EQUIPNAME"); 
 
--- °×½ðÉý¼¶µÄ±ØÐèµÄ²ÄÁÏ
-tb_upgrade_material	=
-{
-	--[²ÄÁÏID] = {²ÄÁÏÃû£¬¼ÛÖµÁ¿£¬²ÄÁÏLevel£¬ËùÐèÊýÁ¿£¬Éý¼¶¼¸¼¶°×½ð}
-	["6,1,1308"] 	= {szName = "Bæ Thiªn Th¹ch (tiÓu)", nValue = 20000000},
-	["6,1,1309"] 	= {szName = "Bæ Thiªn Th¹ch (trung)", nValue = 100000000},
-	["6,1,1310"]	= {szName = "Bæ Thiªn Th¹ch (®¹i)", nValue = 1000000000},
-	["6,1,2127"]	= {szName = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 1)", nValue = 0, nCount = 1, nUpgradeLevel = 6},
-	["6,1,2160"]	= {szName = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 2)", nValue = 0, nCount = 1, nUpgradeLevel = 7},
-	["6,1,2161"]	= {szName = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 3)", nValue = 0, nCount = 1, nUpgradeLevel = 8},
-	["6,1,2162"]	= {szName = "B¾c ®Èu luyÖn kim thuËt (QuyÓn 4)", nValue = 0, nCount = 1, nUpgradeLevel = 9},
-};
+TB_PLATINAEQ_GOLDEQ[platinaid] = {platinaid, goldid, taskrate, name}; 
+end 
+end; 
 
-tb_gold2planita_material =
-{
-	["6,1,398"] 	= {szName = "ThÇn bÝ kho¸ng th¹ch", nCount = 1},
-	["6,1,147"] 	= {szName = "HuyÒn Tinh Kho¸ng Th¹ch cÊp 8", nItemLevel = 8, nCount = 1},
-	["6,1,1309"]	= {szName = "Bæ Thiªn Th¹ch (trung)", nCount = 1},
-};
+LoadPlatinaEquipSetting() 
 
-tbUpGradeProcess = {
-[1] = {
-				tbUpItemList = tb_gold2planita_material,
-				szErrorMsg = "<dec><npc>Ngoµi <color=yellow>trang bÞ B¹ch Kim<color>, ta cßn cÇn <color=yellow>ThÇn bÝ kho¸ng th¹ch<color>, color=yellow>HuyÒn Tinh Kho¸ng Th¹ch cÊp 8<color> vµ <color=yellow>m¶nh Bæ Thiªn Th¹ch (trung)<color>, xin h·y gi÷ l¹i nh÷ng thø kh¸c.",
-				nItemQuality = 1,
-				szGetEquipIDFunc = "GetGlodEqIndex",
-				szContinueFunc = "want_upgoldeq",
-				szDoProcessFunc = "UpgradePlatinaFromGoldItem"},
-[3] = {
-				tbUpItemList = tb_upgradematerial,
-				szErrorMsg = "<dec><npc>Ngoµi <color=yellow>trang bÞ B¹ch Kim<color>, ta cßn cÇn  <color=yellow>m¶nh Bæ Thiªn Th¹ch<color> n÷a, xin h·y gi÷ l¹i nh÷ng thø kh¸c.",
-				nItemQuality = 4,
-				szGetEquipIDFunc = "GetPlatinaEquipIndex",
-				szContinueFunc = "want_upplatinaeq",
-				szDoProcessFunc = "UpgradePlatinaItem"},
-}
+-- script viet hoa By http://tranhba.com  b¹ch kim trang bÞ c¸c cÊp bËc th¨ng cÊp ®Ých gi¸ trÞ l­îng 
+PLATINAEQ_UPGRADERATE_BASIC = 10000; 
+TB_PLATINAEQ_UPGRADERATE = { 
+[0] = 2000*PLATINAEQ_UPGRADERATE_BASIC, 
+[1] = 4000*PLATINAEQ_UPGRADERATE_BASIC, 
+[2] = 6000*PLATINAEQ_UPGRADERATE_BASIC, 
+[3] = 8000*PLATINAEQ_UPGRADERATE_BASIC, 
+[4] = 10000*PLATINAEQ_UPGRADERATE_BASIC, 
+[5] = 15000*PLATINAEQ_UPGRADERATE_BASIC, 
+[6] = 30000*PLATINAEQ_UPGRADERATE_BASIC, 
+[7] = 50000*PLATINAEQ_UPGRADERATE_BASIC, 
+[8] = 80000*PLATINAEQ_UPGRADERATE_BASIC, 
+[9] = 120000*PLATINAEQ_UPGRADERATE_BASIC, 
+}; 
+
+-- script viet hoa By http://tranhba.com  b¹ch kim th¨ng cÊp ®Ých b¾t buéc tµi liÖu 
+tb_upgrade_material = 
+{ 
+-- script viet hoa By http://tranhba.com [ tµi liÖu ID] = { tµi liÖu tªn , gi¸ trÞ l­îng , tµi liÖu Level , cÇn sè l­îng , th¨ng cÊp mÊy cÊp b¹ch kim } 
+["6,1,1308"] = {szName = " bæ ngµy ®¸ bÓ phiÕn # tiÓu #", nValue = 20000000}, 
+["6,1,1309"] = {szName = " bæ ngµy ®¸ bÓ phiÕn # trung #", nValue = 100000000}, 
+["6,1,1310"] = {szName = " bæ ngµy ®¸ bÓ phiÕn # ®¹i #", nValue = 1000000000}, 
+["6,1,2127"] = {szName = " b¾c ®Èu luyÖn kim thuËt ( phÇn ®Çu tiªn )", nValue = 0, nCount = 1, nUpgradeLevel = 6}, 
+["6,1,2160"] = {szName = " b¾c ®Èu luyÖn kim thuËt # cuèn hai #", nValue = 0, nCount = 1, nUpgradeLevel = 7}, 
+["6,1,2161"] = {szName = " b¾c ®Èu luyÖn kim thuËt # cuèn ba #", nValue = 0, nCount = 1, nUpgradeLevel = 8}, 
+["6,1,2162"] = {szName = " b¾c ®Èu luyÖn kim thuËt # cuèn bèn #", nValue = 0, nCount = 1, nUpgradeLevel = 9}, 
+}; 
+
+tb_gold2planita_material = 
+{ 
+["6,1,398"] = {szName = " thÇn bÝ qu¸ng th¹ch ", nCount = 1}, 
+["6,1,147"] = {szName = " cÊp t¸m huyÒn tinh qu¸ng th¹ch ", nItemLevel = 8, nCount = 1}, 
+["6,1,1309"] = {szName = " bæ ngµy ®¸ bÓ phiÕn # trung #", nCount = 1}, 
+}; 
+
+tbUpGradeProcess = { 
+[1] = { 
+tbUpItemList = tb_gold2planita_material, 
+szErrorMsg = "<dec><npc> sai lÇm <color=yellow> b¹ch kim trang bÞ <color>, ta cßn cÇn <color=yellow> thÇn bÝ qu¸ng th¹ch <color>, color=yellow> cÊp t¸m huyÒn tinh qu¸ng th¹ch <color> , <color=yellow> bæ ngµy ®¸ bÓ phiÕn # trung #<color>, xin/mêi l­u l¹i nh÷ng vËt kh¸c .", 
+nItemQuality = 1, 
+szGetEquipIDFunc = "GetGlodEqIndex", 
+szContinueFunc = "want_upgoldeq", 
+szDoProcessFunc = "UpgradePlatinaFromGoldItem"}, 
+[3] = { 
+tbUpItemList = tb_upgradematerial, 
+szErrorMsg = "<dec><npc> sai lÇm <color=yellow> b¹ch kim trang bÞ <color>, ta cßn cÇn <color=yellow> bæ ngµy ®¸ bÓ phiÕn <color> xin/mêi l­u l¹i nh÷ng vËt kh¸c .", 
+nItemQuality = 4, 
+szGetEquipIDFunc = "GetPlatinaEquipIndex", 
+szContinueFunc = "want_upplatinaeq", 
+szDoProcessFunc = "UpgradePlatinaItem"}, 
+} 

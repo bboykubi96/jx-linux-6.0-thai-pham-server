@@ -1,3 +1,5 @@
 testgame4  hoasonn	 01:54_21-02-2024   192.168.1.2 : 64708	 NhËn th­ëng Cµng Kh«n Song TuyÖt Béi 
 testgame4  hoasonn	 23:51_03-03-2024   192.168.1.2 : 51851	 NhËn th­ëng NhÉn Cµn Kh«n 
 testgame4  hoasonn	 23:53_03-03-2024   192.168.1.2 : 51851	 NhËn th­ëng Thiªn Tö 
+testgame4  hoasonn	 18:45_17-06-2024   73.182.239.113 : 56655	 NhËn th­ëng Cµng Kh«n Song TuyÖt Béi 
+testgame4  hoasonn	 18:45_17-06-2024   73.182.239.113 : 56655	 NhËn th­ëng Thiªn Tö 

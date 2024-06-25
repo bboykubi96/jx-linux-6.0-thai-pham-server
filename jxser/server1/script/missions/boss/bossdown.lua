@@ -1,3 +1,4 @@
+---------------------------------***Edit*By*Heart*Doldly***------------------------------------
 IncludeLib("FILESYS")
 tangburan = "\\settings\\maps\\西北北区\\莫高窟\\tangburanboss.txt"
 wangzuo = "\\settings\\maps\\东北区\\漠北草原\\wangzuoboss.txt"
@@ -11,26 +12,27 @@ xuanjuedashi = "\\settings\\maps\\东北区\\长白山麓\\xuanjuedashiboss.txt"
 hanmeng = "\\settings\\maps\\江南区\\西山屿\\hanmengboss.txt"
 DAMAHUFILE = "\\settings\\maps\\damahuboss.txt"
 DAMAHUMAP = {321, 321, 322, 340, 322, 340, 321}
-DAMAHUID = {
-			{751, 0},
-			{752, 0},
-			{753, 1},
-			{754, 1},
-			{755, 2},
-			{756, 2},
-			{757, 3},
-			{758, 3},
-			{759, 4},
-			{760, 4}
-			}
 
+DAMAHUID = 
+{
+	{751, 0},
+	{752, 0},
+	{753, 1},
+	{754, 1},
+	{755, 2},
+	{756, 2},
+	{757, 3},
+	{758, 3},
+	{759, 4},
+	{760, 4}
+}
 
 function main()
 	if (tonumber(date("%H")) == 21) then
 		damahu_boss()
 	end
 end
-			
+		
 function getadata(file)
 	local totalcount = GetTabFileHeight(file) - 1;
 	id = random(totalcount);

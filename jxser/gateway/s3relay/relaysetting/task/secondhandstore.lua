@@ -1,55 +1,75 @@
-local _GetNexStartTime = function(nStartHour, nStartMinute, nInterval)
-	
-	
+	local _GetNexStartTime = function(nStartHour, nStartMinute, nInterval)
+
 	local nNextHour = nStartHour
+
 	local nNextMinute = nInterval * ceil(nStartMinute / nInterval)
-	
+
 	if nNextMinute >= 60 then
-		
-		nNextHour = nNextHour + floor(nNextMinute / 60)
-		nNextMinute = mod(nNextMinute, 60) 
+
+	nNextHour = nNextHour + floor(nNextMinute / 60)
+
+	nNextMinute = mod(nNextMinute, 60)
+
 	end
-	
+
 	if (nNextHour >= 24) then
-		nNextHour = mod(nNextHour, 24);
+
+	nNextHour = mod(nNextHour, 24);
+
 	end;
+
 	return nNextHour, nNextMinute
-end
 
-Include("\\script\\second_hand_store\\second_hand_gc.lua")
+	end
 
+	Include( "\\script\\second_hand_store\\second_hand_gc.lua")
 
-function TaskShedule()
-	--ÉèÖÃ·½°¸Ãû³Æ
-	TaskName("¾É»õµê")
-	
-	local  nInterval = 30
-	
-	local nStartHour = tonumber(date("%H")) ;
-	local nStartMinute = tonumber(date("%M"));
-	
+	function TaskShedule()
+
+	-- thiÕt trÝ ph­¬ng ¸n tªn gäi
+
+	TaskName( "§å cò ®iÕm ")
+
+	local nInterval = 30
+
+	local nStartHour = tonumber(date( "%H ")) ;
+
+	local nStartMinute = tonumber(date( "%M "));
+
 	local nNextHour, nNextMinute = %_GetNexStartTime(nStartHour, nStartMinute, nInterval)
-	
+
 	TaskTime(nNextHour, nNextMinute);
 
-	--ÉèÖÃ¼ä¸ôÊ±¼ä£¬µ¥Î»Îª·ÖÖÓ
-	TaskInterval(nInterval) --nInterval·ÖÖÓÒ»´Î
-	--ÉèÖÃ´¥·¢´ÎÊý£¬0±íÊ¾ÎÞÏÞ´ÎÊý	
+	-- thiÕt trÝ kho¶ng c¸ch thêi gian, ®¬n vÞ vi phót
+
+	TaskInterval(nInterval) --nInterval phót mét lÇn
+
+	-- thiÕt trÝ g©y ra sè lÇn, 0 biÓu thÞ v« h¹n sè lÇn
+
 	TaskCountLimit(0)
+
 	SecondHandStore:LoadFromDb()
+
 	SecondHandStore:CheckAllItem()
-	local szMsg = format("=====>%s BAT DAU %d:%d VA %d PHUT KET THUC<=====", " TIEM DO CU(SECOND HAND STORE)",nNextHour, nNextMinute, nInterval)
+
+	local szMsg = format( "=====%s ## %d:%d ### %d #  ###=======", "Tiem do cu",nNextHour, nNextMinute, nInterval)
+
 	OutputMsg(szMsg);
-end
 
-function TaskContent()
-	
+	end
+
+	function TaskContent()
+
 	SecondHandStore:CheckAllItem()
-end
+
+	end
+
+	function GameSvrConnected(dwGameSvrIP)
+
+	end
+
+	function GameSvrReady(dwGameSvrIP)
+
+	end
 
 
-
-function GameSvrConnected(dwGameSvrIP)
-end
-function GameSvrReady(dwGameSvrIP)
-end

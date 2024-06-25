@@ -11,36 +11,20 @@ Include("\\script\\vonghoa\\item\\head.lua");
 
 LOGINMSG_EXTPOINTID		= 7;
 LOGINMSG_BITL			= 1;
-LOGINMSG_BITH			= 5; 	--So dong hien thi trong TB_LOGINMSG_BYBIT
+LOGINMSG_BITH			= 2; 	--So dong hien thi trong TB_LOGINMSG_BYBIT
 TB_LOGINMSG_BYBIT = {
---[1]	= "",
---[2]	= "",
+[1]	= "<color=green>JxGiangHo.Net<color=wood> N¬i héi tô nh÷ng Bang Héi Lín<color>",
+[2]	= "<color=green>JxGiangHo.Net Giíi h¹n 6 Acc/IP/PC <color=yellow> CÊm TuyÖt §èi KÐo Liªn M¸y, d­íi mäi h×nh thøc<color=green> Vi ph¹m Khãa VÜnh ViÔn Tµi Kho¶n kh«ng cÇn b¸o tr­íc",
 };
 
 function extpoint_loginmsg()
-	--XHDauHoi()
-	--tbTop10:TinhLucXH(GetName())
-	--tbTop10:LuuDSNhanVat()
-	--dofile("script/misc/extpoint_loginmsg/login_msg.lua")
-	
 	if (not SYSCFG_EXTPOINTID7_LOGINMSG) then
 		return
 	end;
-	
-	-- Ö»ÓÐÔ½ÄÏ°æ±¾²ÅÓÐ´Ë¹¦ÄÜ
 	if (SYSCFG_PRODUCT_REGION_ID ~= DEF_PRODUCT_REGION_VN) then
 		return
 	end
 	SetTask(Task_IsCurUse_VongHoa,0)--set task su dung vong hoa	
-	--local nExtP = GetExtPoint(LOGINMSG_EXTPOINTID);
-	--if (nExtP ~= 0) then
-		--for i = LOGINMSG_BITL, LOGINMSG_BITH do
-			--if (GetBit(nExtP, i) == 1 and TB_LOGINMSG_BYBIT[i]) then
-				--Msg2Player(TB_LOGINMSG_BYBIT[i])
-			--end;
-		--end;
-	--end;
-
 	for i = LOGINMSG_BITL, LOGINMSG_BITH do
 		Msg2Player(TB_LOGINMSG_BYBIT[i])
 	end

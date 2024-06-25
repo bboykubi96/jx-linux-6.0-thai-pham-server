@@ -4,78 +4,78 @@ Include("\\script\\missions\\battle\\protocol.lua")
 Include("\\script\\lib\\common.lua")
 
 STATE2STR = 
-{
-	[1] = "±¨ÃûÖÐ",
-	[2] = "×¼±¸ÖÐ",
-	[3] = "½øÐÐÖÐ",
-	[4] = "½áÊøÖÐ",
-}
+{ 
+[1] = " ghi danh trung ", 
+[2] = " chuÈn bÞ trung ", 
+[3] = " tiÕn hµnh trung ", 
+[4] = " kÕt thóc trung ", 
+} 
 
-function show_battle_select(tbInfo)
-	OpenBattleSelect()
-	local nCurRow = tbInfo.nCurPage
-	local nMaxRow = tbInfo.nMaxPage
-	SetBattleSelectPage(nCurRow, nMaxRow)	
-	for i=1, 4 do
-		local pInfo = tbInfo[i]
-		if pInfo then
-			local szId = strfill_center(format("µÚ%d³¡ËÎ½ð", pInfo.nId), 12)
-			local szState = strfill_center(STATE2STR[pInfo.nState], 12)
-			local szCount1 = strfill_center(format("ËÎ%dÈË", pInfo.nCount1), 12)
-			local szWaiting1 = strfill_center(format("µÈ´ý%dÈË", pInfo.nWaiting1), 12)
-			local szCount2 = strfill_center(format("½ð%dÈË", pInfo.nCount2), 12)
-			local szWaiting2 = strfill_center(format("µÈ´ý%dÈË", pInfo.nWaiting2), 12)
-			
-			local szInfo = format(" %s%s<enter> %s%s<enter> %s%s", 
-				szId, szState,
-				szCount1, szWaiting1,
-				szCount2, szWaiting2)
-			SetBattleSelectInfo(i - 1, szInfo, pInfo.nId)	
-		else
-			SetBattleSelectInfo(i - 1, "")	
-		end
-	end
-	
-end
+function show_battle_select(tbInfo) 
+OpenBattleSelect() 
+local nCurRow = tbInfo.nCurPage 
+local nMaxRow = tbInfo.nMaxPage 
+SetBattleSelectPage(nCurRow, nMaxRow) 
+for i=1, 4 do 
+local pInfo = tbInfo[i] 
+if pInfo then 
+local szId = strfill_center(format("Thø %d trµng tèng kim ", pInfo.nId), 12) 
+local szState = strfill_center(STATE2STR[pInfo.nState], 12) 
+local szCount1 = strfill_center(format("Tèng %d ng­êi ", pInfo.nCount1), 12) 
+local szWaiting1 = strfill_center(format("Chê ®îi %d ng­êi ", pInfo.nWaiting1), 12) 
+local szCount2 = strfill_center(format("Kim %d ng­êi ", pInfo.nCount2), 12) 
+local szWaiting2 = strfill_center(format("Chê ®îi %d ng­êi ", pInfo.nWaiting2), 12) 
 
-function prev_page(nCurRow, nMaxRow)
-	local nRow = nCurRow - 4
-	if nRow < 0 then
-		nRow = 1
-	end
-	local nHandle = OB_Create()
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE)
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow)
-	ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle)
-	OB_Release(nHandle)
-end
+local szInfo = format(" %s%s<enter> %s%s<enter> %s%s", 
+szId, szState, 
+szCount1, szWaiting1, 
+szCount2, szWaiting2) 
+SetBattleSelectInfo(i - 1, szInfo, pInfo.nId) 
+else 
+SetBattleSelectInfo(i - 1, "") 
+end 
+end 
 
-function next_page(nCurRow, nMaxRow)
-	
+end 
+
+function prev_page(nCurRow, nMaxRow) 
+local nRow = nCurRow - 4 
+if nRow < 0 then 
+nRow = 1 
+end 
+local nHandle = OB_Create() 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE) 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow) 
+ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle) 
+OB_Release(nHandle) 
+end 
+
+function next_page(nCurRow, nMaxRow) 
+
 	local nRow = nCurRow + 4
-	if nRow > nMaxRow then
-		nRow = nMaxRow
-	end
-	local nHandle = OB_Create()
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE)
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow)
-	ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle)
-	OB_Release(nHandle)
-end
+if nRow > nMaxRow then 
+nRow = nMaxRow 
+end 
+local nHandle = OB_Create() 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE) 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow) 
+ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle) 
+OB_Release(nHandle) 
+end 
 
-function on_select(nId)
-	local nHandle = OB_Create()
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_ON_SELECT)
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nId)
-	ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle)
-	OB_Release(nHandle)
-end
+function on_select(nId) 
+local nHandle = OB_Create() 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_ON_SELECT) 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nId) 
+ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle) 
+OB_Release(nHandle) 
+end 
 
 
-function mouse_wheel(nRow)
-	local nHandle = OB_Create()
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE)
-	ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow)
-	ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle)
-	OB_Release(nHandle)
+function mouse_wheel(nRow) 
+local nHandle = OB_Create() 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, OPERATION_CHANGE_PAGE) 
+ObjBuffer:PushByType(nHandle, OBJTYPE_NUMBER, nRow) 
+ScriptProtocol:SendData("emSCRIPT_PROTOCOL_BATTLE", nHandle) 
+OB_Release(nHandle) 
 end

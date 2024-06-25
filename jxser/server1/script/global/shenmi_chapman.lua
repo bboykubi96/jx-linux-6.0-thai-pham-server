@@ -221,7 +221,7 @@ end;
 function buy_silk()
 	str=
 	{
-		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>B¨ng Tµm V« Cùc T¬<color> chø? <color=red>10 TiÒn §ång<color> ®æi ®­îc <color=red>1 B¨ng Tµm V« Cùc T¬<color>.",
+		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>B¨ng Tµm V« Cùc T¬<color> chø? <color=red>20 TiÒn §ång<color> ®æi ®­îc <color=red>1 B¨ng Tµm V« Cùc T¬<color>.",
 		"<#> Sö dông/sure10",
 		"<#> Hñy bá /no",
 	};
@@ -229,24 +229,24 @@ function buy_silk()
 end;
 
 function sure10()
-	if (CalcEquiproomItemCount(4, 417, 1, 1)>=10) then 
-		Talk(1,"","Ha! Ha! §· nhËn ®­îc 10 TiÒn §ång. §©y lµ <color=red>B¨ng Tµm V« Cùc T¬<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ th¨ng cÊp y phôc, kh«i m·o!")
-	  	ConsumeEquiproomItem(10, 4, 417, 1, 1)
+	if (CalcEquiproomItemCount(4, 417, 1, 1)>=20) then 
+		Talk(1,"","Ha! Ha! §· nhËn ®­îc 20 TiÒn §ång. §©y lµ <color=red>B¨ng Tµm V« Cùc T¬<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ th¨ng cÊp y phôc, kh«i m·o!")
+	  	ConsumeEquiproomItem(20, 4, 417, 1, 1)
 	  	AddEventItem(415)
 	  	UseSilver(1, 2, 2); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ(Ö±½ÓÏûºÄµÄÔª±¦ÒøÆ±£¬ÓëÍ­Ç®¶Ò»»µÈÍ¬´¦Àí)
 	  	SaveNow(); -- Á¢¼´´æÅÌ
 	  	-- writeChapManLog("ÄãµÃµ½±ù²ÏÎŞ¼«Ë¿¡£")
-	  	writeChapManGoldLog("Dïng 10 tiÒn ®ång ®æi ®­îc B¨ng Tµm V« Cùc T¬", 1, 0, 0, 0);
+	  	writeChapManGoldLog("Dïng 20 tiÒn ®ång ®æi ®­îc B¨ng Tµm V« Cùc T¬", 1, 0, 0, 0);
 	  	Msg2Player("B¹n nhËn ®­îc B¨ng Tµm V« Cùc T¬.")
 	else
-	  	Talk(1,"","B¨ng Tµm V« Cùc T¬ ph¶i ®æi b»ng 30 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
+	  	Talk(1,"","B¨ng Tµm V« Cùc T¬ ph¶i ®æi b»ng 20 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
 	end
 end;
 
 function buy_stone()
 	str=
 	{
-		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>Nam Minh Chi Tinh<color> chø? <color=red>10 TiÒn ®ång<color> ®æi ®­îc <color=red>1 Nam Minh Chi Tinh<color>.",
+		"<#> Kh¸ch quan x¸c ®Şnh mua <color=red>Nam Minh Chi Tinh<color> chø? <color=red>20 TiÒn ®ång<color> ®æi ®­îc <color=red>1 Nam Minh Chi Tinh<color>.",
 		"<#> Sö dông/sure11",
 		"<#> Hñy bá /no",
 	};
@@ -254,18 +254,18 @@ function buy_stone()
 end;
 
 function sure11()
-	if (CalcEquiproomItemCount(4, 417, 1, 1)>=10) then 
-		Talk(1,"","Ha! Ha! §· nhËn ®­îc 10 TiÒn §ång. §©y lµ <color=red>Nam Minh Chi Tinh<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ gi¶m cÊp y phôc, kh«i m·o!")
-	  	ConsumeEquiproomItem(1, 4, 417, 1, 1)
+	if (CalcEquiproomItemCount(4, 417, 1, 1)>=20) then 
+		Talk(1,"","Ha! Ha! §· nhËn ®­îc 20 TiÒn §ång. §©y lµ <color=red>Nam Minh Chi Tinh<color>. §¹i hiÖp xem! §¶m b¶o cã thÓ gi¶m cÊp y phôc, kh«i m·o!")
+	  	ConsumeEquiproomItem(20, 4, 417, 1, 1)
 	  	AddEventItem(416)
 		UseSilver(1, 2, 2); -- ½ğÔª±¦¶Ò»»ÎªÍ­Ç®µÄÏûºÄÍ³¼Æ(Ö±½ÓÏûºÄµÄÔª±¦ÒøÆ±£¬ÓëÍ­Ç®¶Ò»»µÈÍ¬´¦Àí)
 		SaveNow(); -- Á¢¼´´æÅÌ
 		
 	  	-- writeChapManLog("ÄãµÃµ½ÄÏÃ÷Ö®¾«¡£")
-	  	writeChapManGoldLog("Dïng 30 TiÒn ®ång ®æi ®­îc Nam Minh Chi Tinh", 1, 0, 0, 0);
+	  	writeChapManGoldLog("Dïng 20 TiÒn ®ång ®æi ®­îc Nam Minh Chi Tinh", 1, 0, 0, 0);
 	  	Msg2Player("B¹n nhËn ®­îc Nam Minh Chi Tinh.")
 	else
-	  	Talk(1,"","Nam Minh Chi Tinh ph¶i ®æi b»ng 10 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
+	  	Talk(1,"","Nam Minh Chi Tinh ph¶i ®æi b»ng 20 TiÒn ®ång, §¹i hiÖp d­êng nh­ ch­a ®ñ TiÒn ®ång!")
 	end
 end;
 
@@ -275,7 +275,7 @@ function deal_brokenequip()
 		Say("Muèn söa <color=red><trang bŞ tæn h¹i><color>, cÇn ph¶i më mËt m· r­¬ng ra. R­¬ng cña b¹n trong tr¹ng th¸i ®ang ®­îc<color=red> khãa l¹i<color>! CÇn ph¶i më khãa tr­íc!", 0)
 		return
 	end
-	Say("B¹n cã <color=red><trang bŞ tæn h¹i><color>kh«ng? Muèn söa nh­ thÕ nµo?", 2, "Ta muèn sö dông TiÒn ®ång ®Ó kh«i phôc l¹i/restore_brokenequip", "ta kh«ng cÇn ®©u! H·y gi÷ l¹i ®i!/throw_brokenequip")	
+	Say("B¹n cã <color=red><trang bŞ tæn h¹i><color>kh«ng? Muèn söa nh­ thÕ nµo?", 1, "Ta muèn sö dông TiÒn ®ång ®Ó kh«i phôc l¹i/restore_brokenequip")	
 end
 
 function check_brokenequip(nCount, szDealFunc)

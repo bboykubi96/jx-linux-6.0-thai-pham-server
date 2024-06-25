@@ -1,84 +1,84 @@
--- Created by tsh 2004-12-09
--- Ãµ¹å¿¨
--- »ñµÃËæ»úÁùÕÅ¿¨
+-- script viet hoa By http://tranhba.com  Created by tsh 2004-12-09 
+-- script viet hoa By http://tranhba.com  hoa hång t¹p 
+-- script viet hoa By http://tranhba.com  ®¹t ®­îc ngÉu nhiªn s¸u tê t¹p 
 
-szTitle="<#> H·y chän c©u chóc:"
-Bless=
-{
-	"<#> Hy väng chóng ta sÏ b¸ch niªn giai l·o. Ta sÏ m·i m·i yªu nµng. Ng­êi yªu ¬i!",
---	"<#>ÄãµÄÑÛ¾¦Õ£Ò»ÏÂ,ÎÒ¾ÍËÀÈ¥,ÄãµÄÑÛ¾¦ÔÙÕ£Ò»ÏÂ,ÎÒ¾Í»î¹ýÀ´,ÄãµÄÑÛ¾¦²»Í£µØÕ£À´Õ£È¥,ÓÚÊÇÎÒ±ãËÀÈ¥»îÀ´!",
-	"<#> Yªu em lµ duyªn trêi xu«i khiÕn, cïng em ®i suèt qu·ng ®­êng ®êi lµ niÒm h¹nh phóc nhÊt ®êi ta!",
-	"<#> C¶m ¬n NguyÖt L·o ®· cho chóng ta ë bªn nhau, ta ph¶i tr©n träng mèi se duyªn nµy!",
-	"<#> T«i yªu em, em lµ ng­êi duy nhÊt trong cuéc ®êi t«i.",
-}
+szTitle="<#> xin/mêi lùa chän chóc phóc ng÷ #" 
+Bless= 
+{ 
+"<#> thËt hy väng phông båi ng­¬i m·i cho ®Õn l·o , ®Ó cho ng­¬i lµm tay ta trong lßng ®Ých b¶o . b¶o bèi , ta sÏ vÜnh viÔn yªu ng­¬i . ", 
+-- script viet hoa By http://tranhba.com  "<#> con m¾t cña ng­¬i nh¸y m¾t mét c¸i , ta sÏ chÕt ®i , con m¾t cña ng­¬i n÷a nh¸y m¾t mét c¸i , ta liÒn sèng l¹i , con m¾t cña ng­¬i kh«ng ngõng nh¸y m¾t tíi nh¸y m¾t ®i , v× vËy ta liÒn chÕt ®i sèng l¹i !", 
+"<#> gÆp ng­¬i lµ cña ta may m¾n , yªu ng­¬i lµ trêi cao ®Ých an bµi , cïng ng­¬i ®i hÕt c¶ ®êi , ®óng lµ h¹nh phóc cña ta #", 
+"<#> c¶m t¹ nguyÖt l·o ®em ta ng­¬i ngay c¶ ë cïng nhau , bëi v× ta biÕt : ng­¬i lµ cña ta thÝch nhÊt mµ ta lµ ng­¬i duy nhÊt #", 
+"<#> ta yªu ng­¬i , ta th­¬ng ng­¬i , nh­ng ta kh«ng thÓ c­ng ch×u ng­¬i , b¶o bèi ta sÏ yªu ng­¬i c¶ ®êi . ", 
+} 
 
-ITEM_TASK_TEMP=26
-UNIQUE_USE_TASK_TEMP=20
---±£Ö¤Ò»¸ö×£¸£Ã»³öÀ´Ç°²»ÄÜÊ¹ÓÃµÚ¶þ¸ö¡£
+ITEM_TASK_TEMP=26 
+UNIQUE_USE_TASK_TEMP=20 
+-- script viet hoa By http://tranhba.com  b¶o ®¶m mét chóc phóc kh«ng cã ®i ra tr­íc kh«ng thÓ sö dông thø hai . 
 
-ITEM_GENRE=6
-ITEM_DETAIL=1
-ITEM_PARTI=138
+ITEM_GENRE=6 
+ITEM_DETAIL=1 
+ITEM_PARTI=138 
 
-FuncBless={}
+FuncBless={} 
 
-function main(sel)
-	if (GetTaskTemp(UNIQUE_USE_TASK_TEMP) > 0) then
-		Msg2Player("B¹n hiÖn ®ang ph¸t c©u chóc! Xin vui lßng ®îi mét l¸t!");
-		return 1
-	end
-	SetTaskTemp(UNIQUE_USE_TASK_TEMP, 1);
+function main(sel) 
+if (GetTaskTemp(UNIQUE_USE_TASK_TEMP) > 0) then 
+Msg2Player("Ng­¬i b©y giê ®ang tiÕn hµnh nh÷ng kh¸c chóc phóc , xin hËu thö l¹i . "); 
+return 1 
+end 
+SetTaskTemp(UNIQUE_USE_TASK_TEMP, 1); 
 
-	local nSelectCount = getn(Bless);
-	for i=1, nSelectCount do
-		FuncBless[i] = Bless[i].."/PlayerSelect"
-	end
+local nSelectCount = getn(Bless); 
+for i=1, nSelectCount do 
+FuncBless[i] = Bless[i].."/PlayerSelect" 
+end 
 
 	nSelectCount = nSelectCount + 1;
-	FuncBless[nSelectCount] = "Hñy bá /QueryWiseManCancel"
+FuncBless[nSelectCount] = "H# b? /QueryWiseManCancel" 
 
-	Say(szTitle, getn(Bless), FuncBless);
-	SetTaskTemp(ITEM_TASK_TEMP,sel);
---ÏÈ²»É¾³ýÍæ¼ÒµÄ¿¨Æ¬£¬ÔÚÊµ¼Ê·¢ËÍÁË×£¸£Ê±ÔÙÉ¾£¨ÁÙÊ±¼ÇÂ¼ÏÂÀ´×°±¸±àºÅ£©
-	return 1;
+Say(szTitle, getn(Bless), FuncBless); 
+SetTaskTemp(ITEM_TASK_TEMP,sel); 
+-- script viet hoa By http://tranhba.com  tr­íc kh«ng thñ tiªu nhµ ch¬i ®Ých thÎ , ë thùc tÕ gëi liÔu chóc phóc lóc n÷a san # t¹m thêi ghi chÐp xuèng trang bÞ biªn sè # 
+return 1; 
 
-end
+end 
 
-function PlayerSelect(nSelect)
-	QueryWiseMan("BlessPlayerOnline", "BlessPlayerOffline", nSelect);
-end
+function PlayerSelect(nSelect) 
+QueryWiseMan("BlessPlayerOnline", "BlessPlayerOffline", nSelect); 
+end 
 
-function BlessPlayerOnline(TargetName, nSelect, LifeMax, ManaMax, PKValue, PlayerLevel, MapName, nPosX, nPosY, nSex, nWorldRank)
-	local ItemIdx
-	ItemIdx = GetTaskTemp(ITEM_TASK_TEMP);
-	local ItemGenre
-	local DetailType
-	local ParticularType
-	local Level
-	local Series
-	local Luck
-	ItemGenre,DetailType,ParticularType,Level,Series,Luck = GetItemProp(ItemIdx)
-	if (ItemIdx > 0 and ItemGenre == ITEM_GENRE and DetailType == ITEM_DETAIL and ParticularType == ITEM_PARTI) then
-		if (RemoveItemByIndex(ItemIdx) == 1) then
-			local szMsg
-			szMsg = GetName().."<#> nãi víi "..TargetName.."<#> "..Bless[nSelect + 1]
-			AddGlobalCountNews(szMsg,1);
-		else
-			Msg2Player("Kh«ng t×m ®­îc thÎ! Xin thö l¹i 1 lÇn!.")
-		end
-	else
-		Msg2Player("Sö dông thÎ thÊt b¹i, xin thö l¹i 1 lÇn.")
-	end
-	SetTaskTemp(ITEM_TASK_TEMP,0)
-	SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0);
-end
+function BlessPlayerOnline(TargetName, nSelect, LifeMax, ManaMax, PKValue, PlayerLevel, MapName, nPosX, nPosY, nSex, nWorldRank) 
+local ItemIdx 
+ItemIdx = GetTaskTemp(ITEM_TASK_TEMP); 
+local ItemGenre 
+local DetailType 
+local ParticularType 
+local Level 
+local Series 
+local Luck 
+ItemGenre,DetailType,ParticularType,Level,Series,Luck = GetItemProp(ItemIdx) 
+if (ItemIdx > 0 and ItemGenre == ITEM_GENRE and DetailType == ITEM_DETAIL and ParticularType == ITEM_PARTI) then 
+if (RemoveItemByIndex(ItemIdx) == 1) then 
+local szMsg 
+			szMsg = GetName().."<#>¶Ô"..TargetName.."<#>Ëµ£º"..Bless[nSelect + 1]
+AddGlobalCountNews(szMsg,1); 
+else 
+Msg2Player("Kh«ng t×m ®­îc thÎ , xin/mêi thö l¹i mét lÇn . ") 
+end 
+else 
+Msg2Player("ThÎ sö dông thÊt b¹i , xin/mêi thö l¹i mét lÇn . ") 
+end 
+SetTaskTemp(ITEM_TASK_TEMP,0) 
+SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0); 
+end 
 
-function BlessPlayerOffline(TargetName, nSelect)
-	Msg2Player("Ng­êi mµ b¹n muèn chóc phóc hiÖn kh«ng cã trªn m¹ng! §îi lóc sau thö l¹i!.");
-	SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0);
-end
+function BlessPlayerOffline(TargetName, nSelect) 
+Msg2Player("Ng­¬i nghÜ chóc phóc ®Ých nhµ ch¬i b©y giê kh«ng cã ë ®©y tuyÕn , xin hËu thö l¹i . "); 
+SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0); 
+end 
 
-function QueryWiseManCancel()
-	SetTaskTemp(ITEM_TASK_TEMP,0);
-	SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0);
+function QueryWiseManCancel() 
+SetTaskTemp(ITEM_TASK_TEMP,0); 
+SetTaskTemp(UNIQUE_USE_TASK_TEMP, 0); 
 end

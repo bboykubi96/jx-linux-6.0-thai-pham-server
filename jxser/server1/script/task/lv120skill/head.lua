@@ -1,4 +1,3 @@
---§æi s¸ch kü n¨ng 120 edit by mcteam do Say("Tİnh n¨ng 120 skill ®ang t¹m ®ãng") return end
 Include("\\script\\global\\login_head.lua")
 -- 120¼¶¼¼ÄÜÈÎÎñÍ·ÎÄ¼ş
 
@@ -115,7 +114,7 @@ DIALOG_UI_TEXT =			-- ¶Ô»°UIÏÔÊ¾
 
 LV120SKILL_LIST =			-- 120¼¶¼¼ÄÜÁĞ±í
 {
-	[0] = {709, 1, 0, 120, "Kü n¨ng cÊp 120",	"§¹i Thõa Nh­ Lai Chó"},	-- ÉÙÁÖ
+	[0] = {709, 1, 0, 120, "Kü n¨ng cÊp 120", "§¹i Thõa Nh­ Lai Chó"},	-- ÉÙÁÖ
 	[1] = {708, 1, 1, 120, "Kü n¨ng cÊp 120",	"§¶o H­ Thiªn"},		-- ÌìÍõ
 	[2] = {710, 1, 2, 120, "Kü n¨ng cÊp 120",	"Mª ¶nh Tung"},		-- ÌÆÃÅ
 	[3] = {711, 1, 3, 120, "Kü n¨ng cÊp 120",	"HÊp Tinh YÓm"},		-- Îå¶¾
@@ -125,9 +124,6 @@ LV120SKILL_LIST =			-- 120¼¶¼¼ÄÜÁĞ±í
 	[7] = {715, 1, 7, 120, "Kü n¨ng cÊp 120",	"Ma ¢m PhÖ Ph¸ch"},	-- ÌìÈÌ
 	[8] = {716, 1, 8, 120, "Kü n¨ng cÊp 120",	"XuÊt ø BÊt NhiÔm"},	-- Îäµ±
 	[9] = {717, 1, 9, 120, "Kü n¨ng cÊp 120",	"L­ìng Nghi Ch©n Khİ"},	-- À¥ÂØ
-	[10] = {1365, 1, 10, 120, "Kü n¨ng cÊp 120",	"Tö Hµ KiÕm Khİ"},	-- hoa son
-	[11] = {1984, 1, 11, 120, "Kü n¨ng cÊp 120",	"Trung Vò L­u Phong"},	-- vuhon
-	[12] = {1894, 1, 12, 120, "Kü n¨ng cÊp 120",	"§¹m Chİch Tr× Th­¬ng"},	-- tieudao
 }
 
 g_DescTable = {}		-- È«¾ÖÁÙÊ±¶Ô»°×Ö·û´®Êı×é
@@ -369,19 +365,9 @@ end
 function quit()
 end
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
+
 -- 120¼¶¼¼ÄÜÊé¶Ò»»
 function lvl120skill_learn()
-
-	--dofile("script/global/g7vn/g7configall.lua")
-	--dofile("script/task/lv120skill/head.lua")
-	
-	if(hockynang120chuongmon == 0) then
-		Say("Häc kü n¨ng 120 t¹m thêi ch­a më.")
-		return 1;
-	end
-
-	--do Say("Tİnh n¨ng 120 skill ®ang t¹m ®ãng") return end
 	Describe("Cã ®iÒu g× nan gi¶i kh«ng?",4,
 		"Ta muèn ®æi s¸ch kü n¨ng cÊp 120/lvl120skill_getbook",
 		"Lµm sao ®Ó häc ®­îc kü n¨ng cÊp 120/lvl120skill_learninfo",
@@ -409,7 +395,7 @@ function lvl120skill_skillinfo()
 end;
 
 function lvl120skill_learninfo()
-	Describe("Nh÷ng cao thñ ®¹t cÊp 120 cã thÓ ®Õn m«n ph¸i cña m×nh ®Ó ®æi s¸ch kü n¨ng cÊp 120. Sau khi sö dông s¸ch sÏ häc ®­îc kü n¨ng cÊp 120, mçi nh©n vËt chØ cã thÓ ®æi mét lÇn. <enter>§Ó ®æi lÊy s¸ch cÇn ph¶i thu thËp ®ñ: 1 quyÓn Bµn Nh­îc T©m Kinh, 1 tÈy tñy kinh, 1 vâ l©m mËt tŞch, 1 viªn Tinh Hång B¶o Th¹ch vµ 1 bé 3 viªn tö, lôc, lam Thñy Tinh.", 
+	Describe("Nh÷ng cao thñ ®¹t cÊp 120 cã thÓ ®Õn m«n ph¸i cña m×nh ®Ó ®æi s¸ch kü n¨ng cÊp 120. Sau khi sö dông s¸ch sÏ häc ®­îc kü n¨ng cÊp 120, mçi nh©n vËt chØ cã thÓ ®æi mét lÇn. <enter>§Ó ®æi lÊy s¸ch cÇn ph¶i thu thËp ®ñ: 1 quyÓn Bµn Nh­îc T©m Kinh, 1 bé s¸ch kü n¨ng 90 cña m«n ph¸i m×nh, 1 viªn Tinh Hång B¶o Th¹ch vµ 1 viªn Thñy Tinh.", 
 		2,
 		"Trë vÒ/lvl120skill_learn",
 		"KÕt thóc ®èi tho¹i/no")
@@ -435,7 +421,7 @@ function lvl120skill_getbook()
 				GetLocalDate("%Y-%m-%d %X"),GetName(), GetAccount()))
 		else
 			Describe("ThËt ®¸ng tiÕc, vËt phÈm mang ®Õn kh«ng ®óng yªu cÇu, h·y kiÓm tra l¹i!", 1,"KÕt thóc ®èi tho¹i/no");
-			Msg2Player("VËt phÈm cÇn thu thËp: 1 quyÓn Bµn Nh­îc T©m Kinh, 1 tÈy tñy kinh, 1 vâ l©m mËt tŞch, 1 viªn Tinh Hång B¶o Th¹ch vµ 1 bé  3 viªn t÷, lôc, lam Thñy Tinh.");
+			Msg2Player("VËt phÈm cÇn thu thËp: 1 quyÓn Bµn Nh­îc T©m Kinh, 1 bé s¸ch kü n¨ng 90 cña m«n ph¸i m×nh, 1 viªn Tinh Hång B¶o Th¹ch vµ 1 viªn Thñy Tinh.");
 		end;
 	end;
 end;

@@ -1,262 +1,262 @@
--- ¼ÛÖµÁ¿½Å±¾Í·ÎÄ¼ş
--- Fanghao_Wu 2005.1.12
+-- script viet hoa By http://tranhba.com  gi¸ trŞ l­îng ch©n vèn ®Çu v¨n kiÖn 
+-- script viet hoa By http://tranhba.com  Fanghao_Wu 2005.1.12 
 
---------------------------------------------------------------------------------------------------------------------------------
--- ¹¦ÄÜ£ºÎïÆ·¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı¶ÔÍâ½Ó¿Ú
--- ²ÎÊı£ºdSrcItemVal Ô´ÎïÆ·¼ÛÖµÁ¿£¬arydDesItemVal Ä¿±êÎïÆ·¼ÛÖµÁ¿Êı×é
--- ·µ»Ø£ºÑ¡ÖĞµÄÄ¿±êÎïÆ·Ë÷Òı£¨0±íÊ¾³ö´í»òÕßÃ»ÓĞÑ¡ÖĞÈÎºÎÒ»¸öÄ¿±êÎïÆ·£©£¬¸÷¸öÄ¿±êÎïÆ·µÄÑ¡ÖĞ¸ÅÂÊÊı×é£¬ËùÓĞÄ¿±êÎïÆ·µÄÑ¡ÖĞ¸ÅÂÊÖ®ºÍ
-function TransItemVal( dSrcItemVal, arydDesItemVal )
-	if( dSrcItemVal <= 0 or getn( arydDesItemVal ) <= 0 ) then
-		return 0, nil, 0;
-	end
-	
-	local nDesItemCount = getn( arydDesItemVal );
-	local dProbRandNum = random();
-	local arydDesItemValSort = {};
-	local arynDesItemValIdx = {};
-	local arydDesItemValTemp = {};
-	local arydDesItemProbSort = {};
-	local arydDesItemProb = {};
-	local dDesItemProbSum = 0;
-	local nSelDesItemIdx = 0;
-	
-	-- ³õÊ¼»¯
-	for i = 1, nDesItemCount do
-		arydDesItemValSort[i] = arydDesItemVal[i];
-		arydDesItemValTemp[i] = arydDesItemVal[i];
-		arydDesItemProbSort[i] = 0;
-	end
-	-- ´ÓĞ¡µ½´óÅÅĞò
-	inssort( arydDesItemValSort, 1, nDesItemCount );
-	-- ±£´æÅÅĞòºó£¨arydDesItemValSort£©µÄºÍÅÅĞòÇ°£¨arydDesItemVal£©µÄË÷Òı¶ÔÓ¦¹ØÏµ£º arynDesItemValIdx[ÅÅĞòºóË÷Òı] = ÅÅĞòÇ°Ë÷Òı
-	for i = 1, nDesItemCount do
-		for j = 1, nDesItemCount do
-			if( arydDesItemValSort[i] == arydDesItemValTemp[j] ) then
-				arynDesItemValIdx[i] = j;
-				arydDesItemValTemp[j] = -1;
-				break;
-			end
-		end
-	end
-	-- ¼ÆËã¼ÛÖµÁ¿×ªÒÆ¸ÅÂÊ
-	transItemValImpl( dSrcItemVal, arydDesItemValSort, arydDesItemProbSort );
-	-- Ëæ»úÑ¡ÔñÄ¿±êÎïÆ·
-	for i = 1, nDesItemCount do
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  chøc n¨ng # vËt phÈm gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè ®èi ngo¹i tiÕp lêi 
+-- script viet hoa By http://tranhba.com  tham sæ #dSrcItemVal nguyªn vËt phÈm gi¸ trŞ l­îng , arydDesItemVal môc tiªu vËt phÈm gi¸ trŞ l­îng ®Õm tæ 
+-- script viet hoa By http://tranhba.com  trë vÒ # chän tróng ®İch môc tiªu vËt phÈm t¸c dÉn #0 bµy tá bŞ lçi hoÆc lµ kh«ng cã chän tróng bÊt kú mét c¸i nµo môc tiªu vËt phÈm # , c¸c môc tiªu vËt phÈm ®İch chän tróng x¸c suÊt ®Õm tæ , tÊt c¶ môc tiªu vËt phÈm ®İch chän tróng x¸c suÊt chi cïng 
+function TransItemVal( dSrcItemVal, arydDesItemVal ) 
+if( dSrcItemVal <= 0 or getn( arydDesItemVal ) <= 0 ) then 
+return 0, nil, 0; 
+end 
+
+local nDesItemCount = getn( arydDesItemVal ); 
+local dProbRandNum = random(); 
+local arydDesItemValSort = {}; 
+local arynDesItemValIdx = {}; 
+local arydDesItemValTemp = {}; 
+local arydDesItemProbSort = {}; 
+local arydDesItemProb = {}; 
+local dDesItemProbSum = 0; 
+local nSelDesItemIdx = 0; 
+
+-- script viet hoa By http://tranhba.com  míi b¾t ®Çu hãa 
+for i = 1, nDesItemCount do 
+arydDesItemValSort[i] = arydDesItemVal[i]; 
+arydDesItemValTemp[i] = arydDesItemVal[i]; 
+arydDesItemProbSort[i] = 0; 
+end 
+-- script viet hoa By http://tranhba.com  tõ nhá ®Õn lín s¾p xÕp thø tù 
+inssort( arydDesItemValSort, 1, nDesItemCount ); 
+-- script viet hoa By http://tranhba.com  b¶o tån s¾p xÕp thø tù sau #arydDesItemValSort# ®İch cïng s¾p xÕp thø tù tr­íc #arydDesItemVal# ®İch t¸c dÉn ®èi øng quan hÖ # arynDesItemValIdx[ s¾p xÕp thø tù sau t¸c dÉn ] = s¾p xÕp thø tù tr­íc t¸c dÉn 
+for i = 1, nDesItemCount do 
+for j = 1, nDesItemCount do 
+if( arydDesItemValSort[i] == arydDesItemValTemp[j] ) then 
+arynDesItemValIdx[i] = j; 
+arydDesItemValTemp[j] = -1; 
+break; 
+end 
+end 
+end 
+-- script viet hoa By http://tranhba.com  tİnh to¸n gi¸ trŞ l­îng dêi ®i x¸c suÊt 
+transItemValImpl( dSrcItemVal, arydDesItemValSort, arydDesItemProbSort ); 
+-- script viet hoa By http://tranhba.com  ngÉu nhiªn lùa chän môc tiªu vËt phÈm 
+for i = 1, nDesItemCount do 
 		dDesItemProbSum = dDesItemProbSum + arydDesItemProbSort[i];
-		if( nSelDesItemIdx == 0 and dDesItemProbSum > 0 and dProbRandNum <= dDesItemProbSum ) then
-			nSelDesItemIdx = arynDesItemValIdx[i];
-		end
-	end
-	-- ÉèÖÃÅÅĞòÇ°µÄ¸ÅÂÊÊı×é
-	for i = 1, nDesItemCount do
-		arydDesItemProb[arynDesItemValIdx[i]] = arydDesItemProbSort[i];
-	end
+if( nSelDesItemIdx == 0 and dDesItemProbSum > 0 and dProbRandNum <= dDesItemProbSum ) then 
+nSelDesItemIdx = arynDesItemValIdx[i]; 
+end 
+end 
+-- script viet hoa By http://tranhba.com  thiÕt trİ s¾p xÕp thø tù tr­íc ®İch x¸c suÊt ®Õm tæ 
+for i = 1, nDesItemCount do 
+arydDesItemProb[arynDesItemValIdx[i]] = arydDesItemProbSort[i]; 
+end 
 
---	local fileLog = openfile( "./Logs/KSG_CompoundLog_Prob.txt", "a+" );
---	local dDesItemProbSum = 0;
---	local dGenVal = 0;
---	print( format( "SrcVal\t%0.0f", dSrcItemVal ) );
---	Msg2Player( format( "SrcVal\t%0.0f", dSrcItemVal ) );
---	write( fileLog, format( "SrcVal\t%0.0f\r\n", dSrcItemVal ) );
---	for i = 1, nDesItemCount do
---		print( format( "DesVal\t%0.0f\t%0.4f%%", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) );
---		Msg2Player( format( "DesVal\t%0.0f\t%0.4f%%", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) );
---		write( fileLog, format( "DesVal\t%0.0f\t%0.4f%%\r\n", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) );
---		dDesItemProbSum = dDesItemProbSum + arydDesItemProbSort[i];
---		dGenVal = dGenVal + arydDesItemVal[arynDesItemValIdx[i]] * arydDesItemProbSort[i];
---	end
---	Msg2Player( "ProbSum:"..dDesItemProbSum );
---	Msg2Player( "GenVal:"..dGenVal );
-	return nSelDesItemIdx, arydDesItemProb, dDesItemProbSum;
-end
+-- script viet hoa By http://tranhba.com 	local fileLog = openfile( "./Logs/KSG_CompoundLog_Prob.txt", "a+" );
+-- script viet hoa By http://tranhba.com  local dDesItemProbSum = 0; 
+-- script viet hoa By http://tranhba.com  local dGenVal = 0; 
+-- script viet hoa By http://tranhba.com  print( format( "SrcVal\t%0.0f", dSrcItemVal ) ); 
+-- script viet hoa By http://tranhba.com  Msg2Player( format( "SrcVal\t%0.0f", dSrcItemVal ) ); 
+-- script viet hoa By http://tranhba.com  write( fileLog, format( "SrcVal\t%0.0f\r\n", dSrcItemVal ) ); 
+-- script viet hoa By http://tranhba.com  for i = 1, nDesItemCount do 
+-- script viet hoa By http://tranhba.com  print( format( "DesVal\t%0.0f\t%0.4f%%", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) ); 
+-- script viet hoa By http://tranhba.com  Msg2Player( format( "DesVal\t%0.0f\t%0.4f%%", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) ); 
+-- script viet hoa By http://tranhba.com  write( fileLog, format( "DesVal\t%0.0f\t%0.4f%%\r\n", arydDesItemVal[arynDesItemValIdx[i]], arydDesItemProbSort[i] * 100 ) ); 
+-- script viet hoa By http://tranhba.com 		dDesItemProbSum = dDesItemProbSum + arydDesItemProbSort[i];
+-- script viet hoa By http://tranhba.com 		dGenVal = dGenVal + arydDesItemVal[arynDesItemValIdx[i]] * arydDesItemProbSort[i];
+-- script viet hoa By http://tranhba.com  end 
+-- script viet hoa By http://tranhba.com  Msg2Player( "ProbSum:"..dDesItemProbSum ); 
+-- script viet hoa By http://tranhba.com  Msg2Player( "GenVal:"..dGenVal ); 
+return nSelDesItemIdx, arydDesItemProb, dDesItemProbSum; 
+end 
 
---------------------------------------------------------------------------------------------------------------------------------
--- ¹¦ÄÜ£º¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı½Ó¿Ú
---       ¸ù¾İĞèÒªÑ¡Ôñ²»Í¬°æ±¾ºÅµÄ¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı£¬¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯ÊıµÄ²ÎÊıºÍ¹¦ÄÜ±ØĞë·ûºÏ¸Ã½Ó¿Ú¶¨Òå
--- ²ÎÊı£ºdSrcItemVal Ô´ÎïÆ·¼ÛÖµÁ¿£¬ arydDesItemValSort °´´ÓµÍµ½¸ßÅÅĞòµÄÄ¿±êÎïÆ·¼ÛÖµÁ¿Êı×é£¬ arydDesItemProbSort Ä¿±êÎïÆ·±»Ñ¡ÖĞµÄ¸ÅÂÊ
--- transItemValImpl(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort) = ...
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  chøc n¨ng # gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè tiÕp lêi 
+-- script viet hoa By http://tranhba.com  c¨n cø cÇn lùa chän bÊt ®ång b¶n bæn sè ®İch gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè , gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè ®İch tham sæ cïng chøc n¨ng nhÊt ®Şnh ph¶i phï hîp nªn tiÕp lêi ®Şnh nghÜa 
+-- script viet hoa By http://tranhba.com  tham sæ #dSrcItemVal nguyªn vËt phÈm gi¸ trŞ l­îng , arydDesItemValSort theo nh­ tõ thÊp ®Õn cao s¾p xÕp thø tù ®İch môc tiªu vËt phÈm gi¸ trŞ l­îng ®Õm tæ , arydDesItemProbSort môc tiªu vËt phÈm bŞ chän tróng ®İch x¸c suÊt 
+-- script viet hoa By http://tranhba.com  transItemValImpl(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort) = ... 
 
-	----------------------------------------------------------------------------------------------------------------------------
-	-- ¹¦ÄÜ£º¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı£¬°æ±¾1£¨2005.1.12£©£º
-	--       ÔÚ´«ÈëµÄÕû¸öÄ¿±êÎïÆ·Êı×éÖĞ¼ÆËãÌôÑ¡Ä¿±êÎïÆ·
-	--       Ô½½Ó½üÔ´ÎïÆ·¼ÛÖµÁ¿µÄÄ¿±êÎïÆ·±»Ñ¡ÖĞµÄ¸ÅÂÊÔ½´ó£¬¶øÔ½Ô¶ÀëÔ´ÎïÆ·¼ÛÖµÁ¿µÄÄ¿±êÎïÆ·±»Ñ¡ÖĞµÄ¸ÅÂÊÔ½Ñ¸ËÙ½µµÍ
-	function _transItemValImpl_1(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort)
-		for i = 1, getn(arydDesItemValSort) do
-			arydDesItemProbSort[i] = 1;
-		end
-		_calcProbLoop(arydDesItemValSort, arydDesItemProbSort, 1, getn(arydDesItemValSort), dSrcItemVal);
-	end
-	-- ÄÚ²¿µİ¹éº¯Êı
-	function _calcProbLoop( arydValue, arydProb, nStartIdx, nEndIdx, dDivVal )
-		-- Èç¹ûÈ«²¿µÈÖµÇÒµÈÓÚÇĞ·ÖÖµdDivVal£¬Ôò¾ù·Ö¸ÅÂÊ
-		if( nStartIdx < nEndIdx and arydValue[nStartIdx] == arydValue[nEndIdx] and dDivVal == arydValue[nStartIdx] ) then
-			for i = nStartIdx, nEndIdx do
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  chøc n¨ng # gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè , b¶n bæn 1#2005.1.12## 
+-- script viet hoa By http://tranhba.com  ë truyÒn vµo ®İch toµn bé môc tiªu vËt phÈm ®Õm tæ tróng kÕ coi lµ chän lùa môc tiªu vËt phÈm 
+-- script viet hoa By http://tranhba.com  cµng ®Õn gÇn nguyªn vËt phÈm gi¸ trŞ l­îng ®İch môc tiªu vËt phÈm bŞ chän tróng ®İch x¸c suÊt cµng lín , mµ cµng xa c¸ch nguyªn vËt phÈm gi¸ trŞ l­îng ®İch môc tiªu vËt phÈm bŞ chän tróng ®İch x¸c suÊt cµng nhanh chãng rít xuèng 
+function _transItemValImpl_1(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort) 
+for i = 1, getn(arydDesItemValSort) do 
+arydDesItemProbSort[i] = 1; 
+end 
+_calcProbLoop(arydDesItemValSort, arydDesItemProbSort, 1, getn(arydDesItemValSort), dSrcItemVal); 
+end 
+-- script viet hoa By http://tranhba.com  néi bé ®Ö thuéc vÒ hµm sè 
+function _calcProbLoop( arydValue, arydProb, nStartIdx, nEndIdx, dDivVal ) 
+-- script viet hoa By http://tranhba.com  nÕu nh­ toµn bé chê trŞ gi¸ th¶ t­¬ng ®­¬ng víi thiÕt ph©n trŞ gi¸ dDivVal , lµ ®Òu ph©n x¸c suÊt 
+if( nStartIdx < nEndIdx and arydValue[nStartIdx] == arydValue[nEndIdx] and dDivVal == arydValue[nStartIdx] ) then 
+for i = nStartIdx, nEndIdx do 
 				arydProb[i] = arydProb[i] / ( nEndIdx - nStartIdx + 1 );
-			end
-		-- Èç¹ûÇĞ·ÖÖµdDivValĞ¡ÓÚµÈÓÚ×îĞ¡Öµ
-		elseif( dDivVal <= arydValue[nStartIdx] ) then
-			local nEqualCount = 0;
-			for i = nStartIdx, nEndIdx do
-				if( arydValue[nStartIdx] == arydValue[i] ) then
+end 
+-- script viet hoa By http://tranhba.com  nÕu nh­ thiÕt ph©n trŞ gi¸ dDivVal İt h¬n t­¬ng ®­¬ng víi nhá nhÊt trŞ gi¸ 
+elseif( dDivVal <= arydValue[nStartIdx] ) then 
+local nEqualCount = 0; 
+for i = nStartIdx, nEndIdx do 
+if( arydValue[nStartIdx] == arydValue[i] ) then 
 					nEqualCount = nEqualCount + 1;
-				else
-					break;
-				end
-			end
+else 
+break; 
+end 
+end 
 			for i = nStartIdx, nStartIdx + nEqualCount - 1 do
-				arydProb[i] = arydProb[i] * ( dDivVal / arydValue[i] ) / nEqualCount;
-			end
+arydProb[i] = arydProb[i] * ( dDivVal / arydValue[i] ) / nEqualCount; 
+end 
 			for i = nStartIdx + nEqualCount, nEndIdx do
-				arydProb[i] = 0;
-			end
-		-- Èç¹ûÇĞ·ÖÖµdDivVal´óÓÚµÈÓÚ×î´óÖµ
-		elseif( dDivVal >= arydValue[nEndIdx] ) then
-			local nEqualCount = 0;
-			for i = nEndIdx, nStartIdx, -1 do
-				if( arydValue[nEndIdx] == arydValue[i] ) then
+arydProb[i] = 0; 
+end 
+-- script viet hoa By http://tranhba.com  nÕu nh­ thiÕt ph©n trŞ gi¸ dDivVal lín h¬n t­¬ng ®­¬ng víi lín nhÊt trŞ gi¸ 
+elseif( dDivVal >= arydValue[nEndIdx] ) then 
+local nEqualCount = 0; 
+for i = nEndIdx, nStartIdx, -1 do 
+if( arydValue[nEndIdx] == arydValue[i] ) then 
 					nEqualCount = nEqualCount + 1;
-				else
-					break;
-				end
-			end
-			for i = nStartIdx, nEndIdx - nEqualCount do
-				arydProb[i] = 0;
-			end
+else 
+break; 
+end 
+end 
+for i = nStartIdx, nEndIdx - nEqualCount do 
+arydProb[i] = 0; 
+end 
 			for i = nEndIdx - nEqualCount + 1, nEndIdx do
-				arydProb[i] = arydProb[i] / nEqualCount;
-			end
-		-- Èç¹ûÇĞ·ÖÖµdDivVal½éÓÚ×îĞ¡ºÍ×î´óÖµÖ®¼ä
-		else
-			local nDivIdx = nStartIdx;
-			local dLessSum = 0;
-			local dMoreSum = 0;
-			
-			for i = nStartIdx, nEndIdx do
-				if( arydValue[i] <= dDivVal ) then
+arydProb[i] = arydProb[i] / nEqualCount; 
+end 
+-- script viet hoa By http://tranhba.com  nÕu nh­ thiÕt ph©n trŞ gi¸ dDivVal giíi vu nhá nhÊt cïng lín nhÊt trŞ gi¸ gi÷a 
+else 
+local nDivIdx = nStartIdx; 
+local dLessSum = 0; 
+local dMoreSum = 0; 
+
+for i = nStartIdx, nEndIdx do 
+if( arydValue[i] <= dDivVal ) then 
 					dLessSum = dLessSum + arydValue[i];
 					nDivIdx = nDivIdx + 1;
-				else
+else 
 					dMoreSum = dMoreSum + arydValue[i];
-				end
-			end
-			
+end 
+end 
+
 			local dLessMean = ( dLessSum / (nDivIdx - nStartIdx) + arydValue[nDivIdx-1] ) / 2;
 			local dMoreMean = ( dMoreSum / (nEndIdx - nDivIdx + 1) + arydValue[nDivIdx] ) / 2;
-			local dLessProb = ( dMoreMean - dDivVal ) / ( dMoreMean - dLessMean );
-			local dMoreProb = 1 - dLessProb;
-	
-			for i = nStartIdx, nDivIdx - 1 do
-				arydProb[i] = arydProb[i] * dLessProb;
-			end
-			for i = nDivIdx, nEndIdx do
-				arydProb[i] = arydProb[i] * dMoreProb;
-			end
-	
-			if( nStartIdx < nDivIdx - 1 ) then
-				calcProbLoop( arydValue, arydProb, nStartIdx, nDivIdx - 1, dLessMean );
-			end
-			if( nDivIdx < nEndIdx ) then
-				calcProbLoop( arydValue, arydProb, nDivIdx, nEndIdx, dMoreMean );
-			end
-		end
-	end
-	
-	----------------------------------------------------------------------------------------------------------------------------
-	-- ¹¦ÄÜ£º¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı£¬°æ±¾2£¨2006.9.16£©£º
-	--       Ö»ÔÚ´«ÈëµÄÕû¸öÄ¿±êÎïÆ·Êı×éÖĞ¼ÛÖµÁ¿ÎªÔ´ÎïÆ·¼ÛÖµÁ¿¸ßµÍ2¼¶µÄ4¸öÎïÆ·ÖĞ¼ÆËãÌôÑ¡Ä¿±êÎïÆ·
-	
-	--       [¸÷ÎïÆ·¼ÛÖµÁ¿±äÁ¿¹ØÏµ]£º
-	--       arydLowVal[1] <= arydLowVal[2] <  £¨dSrcItemVal£©  <= arydHiVal[1] <= arydHiVal[2]
-	
-	--       [¼ÆËãº¯Êı]£º
-	--       dSrcItemVal = dLowProb * (arydLowVal[1] * (1 - LOW_NEAR_PERCENT) + arydLowVal[2] * LOW_NEAR_PERCENT) + 
-	--                     dHiProb * (arydHiVal[1] * HI_NEAR_PERCENT + arydHiVal[2] * (1 - HI_NEAR_PERCENT))
-	--       dLowProb + dHiProb = 1
-	
-	--       [¸÷Ä¿±êÎïÆ·¸ÅÂÊ½á¹û]£º
-	--       arydLowProb[1]	=	dLowProb * (1 - LOW_NEAR_PERCENT)
-	--       arydLowProb[2]	=	dLowProb * LOW_NEAR_PERCENT
-	--       arydHiProb[1]	=	dHiProb * HI_NEAR_PERCENT
-	--       arydHiProb[2]	=	dHiProb * (1 - HI_NEAR_PERCENT)
-	
-	LOW_NEAR_PERCENT	= 0.95;		-- Ô´ÎïÆ·¼ÛÖµÁ¿µÍ1¼¶ÎïÆ·ËùÕ¼¸ÅÂÊ
-	HI_NEAR_PERCENT		= 0.95;		-- Ô´ÎïÆ·¼ÛÖµÁ¿¸ß1¼¶ÎïÆ·ËùÕ¼¸ÅÂÊ
-	
-	function _transItemValImpl_2(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort)
-		-- ÕÒÄ¿±êÎïÆ·ÖĞ¼ÛÖµÁ¿ > Ô´ÎïÆ·¼ÛÖµÁ¿ÖĞ×îµÍµÄÒ»¸öÄ¿±êÎïÆ·Ë÷Òı
-		local nSrcItemValIdx = 0;
-		for i = 1, getn(arydDesItemValSort) do
-			if (arydDesItemValSort[i] > dSrcItemVal) then
-				nSrcItemValIdx = i;
-				break;
-			end
-		end
-		
-		-- Ô´ÎïÆ·¼ÛÖµÁ¿ >= ËùÓĞµ¥¸öÄ¿±êÎïÆ·µÄ¼ÛÖµÁ¿£¬Ôò100%Ñ¡ÖĞ×î¸ß¼ÛÖµÁ¿µÄÄ¿±êÎïÆ·
-		if (nSrcItemValIdx == 0) then
-			arydDesItemProbSort[getn(arydDesItemValSort)] = 1;
-			return
-		end
-		-- Ô´ÎïÆ·¼ÛÖµÁ¿ < ËùÓĞµ¥¸öÄ¿±êÎïÆ·µÄ¼ÛÖµÁ¿£¬ÔòÑ¡²»ÖĞÈÎºÎÄ¿±êÎïÆ·£¬ËùÓĞÄ¿±êÎïÆ·¸ÅÂÊ¶¼±£³Ö0%
-		if (nSrcItemValIdx == 1) then
-			return
-		end
-		
-		-- ¼ÆËãµÍ2¼¶Ä¿±êÎïÆ·¼ÛÖµÁ¿»ìºÏÖµ
-		local dLowValSum = 0;
-		if (nSrcItemValIdx > 2) then
+local dLessProb = ( dMoreMean - dDivVal ) / ( dMoreMean - dLessMean ); 
+local dMoreProb = 1 - dLessProb; 
+
+for i = nStartIdx, nDivIdx - 1 do 
+arydProb[i] = arydProb[i] * dLessProb; 
+end 
+for i = nDivIdx, nEndIdx do 
+arydProb[i] = arydProb[i] * dMoreProb; 
+end 
+
+if( nStartIdx < nDivIdx - 1 ) then 
+calcProbLoop( arydValue, arydProb, nStartIdx, nDivIdx - 1, dLessMean ); 
+end 
+if( nDivIdx < nEndIdx ) then 
+calcProbLoop( arydValue, arydProb, nDivIdx, nEndIdx, dMoreMean ); 
+end 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  chøc n¨ng # gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè , b¶n bæn 2#2006.9.16## 
+-- script viet hoa By http://tranhba.com  chØ ë truyÒn vµo ®İch toµn bé môc tiªu vËt phÈm ®Õm tæ trung gi¸ trŞ l­îng v× nguyªn vËt phÈm gi¸ trŞ l­îng cao thÊp 2 cÊp ®İch 4 c¸ vËt phÈm tróng kÕ coi lµ chän lùa môc tiªu vËt phÈm 
+
+-- script viet hoa By http://tranhba.com  [ c¸c vËt phÈm gi¸ trŞ l­îng thay ®æi l­îng quan hÖ ]# 
+-- script viet hoa By http://tranhba.com  arydLowVal[1] <= arydLowVal[2] < #dSrcItemVal# <= arydHiVal[1] <= arydHiVal[2] 
+
+-- script viet hoa By http://tranhba.com  [ tİnh to¸n hµm sè ]# 
+	-- script viet hoa By http://tranhba.com        dSrcItemVal = dLowProb * (arydLowVal[1] * (1 - LOW_NEAR_PERCENT) + arydLowVal[2] * LOW_NEAR_PERCENT) + 
+	-- script viet hoa By http://tranhba.com                      dHiProb * (arydHiVal[1] * HI_NEAR_PERCENT + arydHiVal[2] * (1 - HI_NEAR_PERCENT))
+	-- script viet hoa By http://tranhba.com        dLowProb + dHiProb = 1
+
+-- script viet hoa By http://tranhba.com  [ c¸c môc tiªu vËt phÈm x¸c suÊt kÕt qu¶ ]# 
+-- script viet hoa By http://tranhba.com  arydLowProb[1] = dLowProb * (1 - LOW_NEAR_PERCENT) 
+-- script viet hoa By http://tranhba.com  arydLowProb[2] = dLowProb * LOW_NEAR_PERCENT 
+-- script viet hoa By http://tranhba.com  arydHiProb[1] = dHiProb * HI_NEAR_PERCENT 
+-- script viet hoa By http://tranhba.com  arydHiProb[2] = dHiProb * (1 - HI_NEAR_PERCENT) 
+
+LOW_NEAR_PERCENT = 0.95; -- script viet hoa By http://tranhba.com  nguyªn vËt phÈm gi¸ trŞ l­îng thÊp 1 cÊp vËt phÈm chiÕm ®o¹t x¸c suÊt 
+HI_NEAR_PERCENT = 0.95; -- script viet hoa By http://tranhba.com  nguyªn vËt phÈm gi¸ trŞ l­îng cao 1 cÊp vËt phÈm chiÕm ®o¹t x¸c suÊt 
+
+function _transItemValImpl_2(dSrcItemVal, arydDesItemValSort, arydDesItemProbSort) 
+-- script viet hoa By http://tranhba.com  t×m môc tiªu vËt phÈm trung gi¸ trŞ l­îng > nguyªn vËt phÈm gi¸ trŞ l­îng trung thÊp nhÊt mét c¸i môc tiªu vËt phÈm t¸c dÉn 
+local nSrcItemValIdx = 0; 
+for i = 1, getn(arydDesItemValSort) do 
+if (arydDesItemValSort[i] > dSrcItemVal) then 
+nSrcItemValIdx = i; 
+break; 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com  nguyªn vËt phÈm gi¸ trŞ l­îng >= tÊt c¶ ®an c¸ môc tiªu vËt phÈm ®İch gi¸ trŞ l­îng , lµ 100% chän tróng gi¸ cao nhÊt trŞ gi¸ l­îng ®İch môc tiªu vËt phÈm 
+if (nSrcItemValIdx == 0) then 
+arydDesItemProbSort[getn(arydDesItemValSort)] = 1; 
+return 
+end 
+-- script viet hoa By http://tranhba.com  nguyªn vËt phÈm gi¸ trŞ l­îng < tÊt c¶ ®an c¸ môc tiªu vËt phÈm ®İch gi¸ trŞ l­îng , lµ chän kh«ng tróng bÊt kú môc tiªu vËt phÈm , tÊt c¶ môc tiªu vËt phÈm x¸c suÊt còng gi÷ v÷ng 0% 
+if (nSrcItemValIdx == 1) then 
+return 
+end 
+
+-- script viet hoa By http://tranhba.com  tİnh to¸n thÊp 2 cÊp môc tiªu vËt phÈm gi¸ trŞ l­îng hçn hîp trŞ gi¸ 
+local dLowValSum = 0; 
+if (nSrcItemValIdx > 2) then 
 			dLowValSum = arydDesItemValSort[nSrcItemValIdx - 1] * LOW_NEAR_PERCENT + 
-						 arydDesItemValSort[nSrcItemValIdx - 2] * (1 - LOW_NEAR_PERCENT);
-		else
-			dLowValSum = arydDesItemValSort[1];
-		end
-		-- ¼ÆËã¸ß2¼¶Ä¿±êÎïÆ·¼ÛÖµÁ¿»ìºÏÖµ
-		local dHiValSum = 0;
-		if (nSrcItemValIdx < getn(arydDesItemValSort)) then
+arydDesItemValSort[nSrcItemValIdx - 2] * (1 - LOW_NEAR_PERCENT); 
+else 
+dLowValSum = arydDesItemValSort[1]; 
+end 
+-- script viet hoa By http://tranhba.com  tİnh to¸n cao 2 cÊp môc tiªu vËt phÈm gi¸ trŞ l­îng hçn hîp trŞ gi¸ 
+local dHiValSum = 0; 
+if (nSrcItemValIdx < getn(arydDesItemValSort)) then 
 			dHiValSum = arydDesItemValSort[nSrcItemValIdx] * HI_NEAR_PERCENT +
 						arydDesItemValSort[nSrcItemValIdx + 1] * (1 - HI_NEAR_PERCENT);
-		else
-			dHiValSum = arydDesItemValSort[getn(arydDesItemValSort)];
-		end
-		
-		-- ¼ÆËãµÍ2¼¶Ä¿±êÎïÆ·¸ÅÂÊºÍ
-		local dLowProb = (dHiValSum - dSrcItemVal) / (dHiValSum - dLowValSum);
-		-- ¼ÆËã¸ß2¼¶Ä¿±êÎïÆ·¸ÅÂÊºÍ
-		local dHiProb = 1 - dLowProb;
-		
-		-- ¼ÆËãµÍ2¼¶Ä¿±êÎïÆ·µÄ×îÖÕ¸ÅÂÊ
-		if (nSrcItemValIdx > 2) then
-			arydDesItemProbSort[nSrcItemValIdx - 1] = dLowProb * LOW_NEAR_PERCENT;
-			arydDesItemProbSort[nSrcItemValIdx - 2] = dLowProb * (1 - LOW_NEAR_PERCENT);
-		else
-			arydDesItemProbSort[1] = dLowProb;
-		end
-		-- ¼ÆËã¸ß2¼¶Ä¿±êÎïÆ·µÄ×îÖÕ¸ÅÂÊ
-		if (nSrcItemValIdx < getn(arydDesItemValSort)) then
-			arydDesItemProbSort[nSrcItemValIdx] = dHiProb * HI_NEAR_PERCENT;
+else 
+dHiValSum = arydDesItemValSort[getn(arydDesItemValSort)]; 
+end 
+
+-- script viet hoa By http://tranhba.com  tİnh to¸n thÊp 2 cÊp môc tiªu vËt phÈm x¸c suÊt cïng 
+local dLowProb = (dHiValSum - dSrcItemVal) / (dHiValSum - dLowValSum); 
+-- script viet hoa By http://tranhba.com  tİnh to¸n cao 2 cÊp môc tiªu vËt phÈm x¸c suÊt cïng 
+local dHiProb = 1 - dLowProb; 
+
+-- script viet hoa By http://tranhba.com  tİnh to¸n thÊp 2 cÊp môc tiªu vËt phÈm ®İch cuèi cïng x¸c suÊt 
+if (nSrcItemValIdx > 2) then 
+arydDesItemProbSort[nSrcItemValIdx - 1] = dLowProb * LOW_NEAR_PERCENT; 
+arydDesItemProbSort[nSrcItemValIdx - 2] = dLowProb * (1 - LOW_NEAR_PERCENT); 
+else 
+arydDesItemProbSort[1] = dLowProb; 
+end 
+-- script viet hoa By http://tranhba.com  tİnh to¸n cao 2 cÊp môc tiªu vËt phÈm ®İch cuèi cïng x¸c suÊt 
+if (nSrcItemValIdx < getn(arydDesItemValSort)) then 
+arydDesItemProbSort[nSrcItemValIdx] = dHiProb * HI_NEAR_PERCENT; 
 			arydDesItemProbSort[nSrcItemValIdx + 1] = dHiProb * (1 - HI_NEAR_PERCENT);
-		else
-			arydDesItemProbSort[getn(arydDesItemValSort)] = dHiProb;
-		end		
-	end
-	
-	----------------------------------------------------------------------------------------------------------------------------
+else 
+arydDesItemProbSort[getn(arydDesItemValSort)] = dHiProb; 
+end 
+end 
 
--- Ê¹ÓÃ°æ±¾2µÄ¼ÛÖµÁ¿¸ÅÂÊ×ªÒÆº¯Êı
-transItemValImpl = _transItemValImpl_2;
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
 
---------------------------------------------------------------------------------------------------------------------------------
+-- script viet hoa By http://tranhba.com  sö dông b¶n bæn 2 ®İch gi¸ trŞ l­îng x¸c suÊt dêi ®i hµm sè 
+transItemValImpl = _transItemValImpl_2; 
 
--- ²åÈëÅÅĞò
-function inssort( aryNumber, nStartIdx, nEndIdx )
-	if( nStartIdx >= nEndIdx ) then
-		return
-	end
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
+
+-- script viet hoa By http://tranhba.com  c¾m vµo s¾p xÕp thø tù 
+function inssort( aryNumber, nStartIdx, nEndIdx ) 
+if( nStartIdx >= nEndIdx ) then 
+return 
+end 
 	for i = nStartIdx + 1, nEndIdx do
 		for j = i, nStartIdx + 1, -1 do
-			if( aryNumber[j] < aryNumber[j-1] ) then
-				aryNumber[j-1], aryNumber[j] = aryNumber[j], aryNumber[j-1];
-			end
-		end
-	end
+if( aryNumber[j] < aryNumber[j-1] ) then 
+aryNumber[j-1], aryNumber[j] = aryNumber[j], aryNumber[j-1]; 
+end 
+end 
+end 
 end

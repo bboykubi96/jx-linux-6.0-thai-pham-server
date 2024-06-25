@@ -1,19 +1,19 @@
 
--- ====================== ÎÄ¼şĞÅÏ¢ ======================
+-- script viet hoa By http://tranhba.com  ====================== #Ä###Å## ======================
 
--- ½£ÏÀÇéÔµonline Ò°ÛÅÕÙ»½µÀ¾ß ¡ª¡ª¡ª Å®¶ùºì
--- Edited by peres
--- 2006/12/26 PM 15:39
+-- script viet hoa By http://tranhba.com  ###µ#Ğ¤#online ß°ÛÅâï###µ## ###### Å##ïº×
+-- script viet hoa By http://tranhba.com  Edited by peres
+-- script viet hoa By http://tranhba.com  2006/12/26 PM 15:39
 
--- æÌÊ¦½ãÎªÎÒ´©ÉÏÒÂ·şÊ±Í»È»Ğ¦×ÅËµµÀ£¬ÃÃÃÃ³öÂäµÃÔ½À´Ô½Ë®ÁéÁË¡£
--- ²»¶®ÕâÏÉÅ®°ãµÄÓñÌåÒÔºó»áÍĞ¸¶¸øÄÄ¸öÄĞÈËÄØ¡£
--- Å®×Ó³¤´óÒÔºóÒ»¶¨»á½«Éí×ÓÍĞ¸¶¸øÄĞÈËÂğ£¿ÎÒµÄÁ³Î¢Î¢ÕÇºìÁËÒ»ÏÂ¡£
--- æÌÊ¦½ãÍäÏÂÑü°ïÎÒ°ÑÈ¹´øÊøºÃ£¬ËıËµ£¬ÊÇµÄ¡£
--- ÒòÎª£¬ÕâÊÇÅ®×ÓÒ»ÉúµÄËŞÃü¡£
+-- script viet hoa By http://tranhba.com  #×£##·###ß´#Ğ#ß¢##£±İ#Ì####Å###µ##····³#¢##·¤#µ´¤###¸Ğ¸###
+-- script viet hoa By http://tranhba.com  ²###â©#ĞÅ#°·#Äã#×#ß¤ºã#¸İ#####ÄÄ##Ä#Ì#Ä###
+-- script viet hoa By http://tranhba.com  Å##ã³#´ãß¤ºãß####¸##Ğİ#ãİ#####Ä#Ì#¢ğ#¿#ß#Ä¸³####â#º×¸#ß##¢##
+-- script viet hoa By http://tranhba.com  #×£##·İ##¢##°##ß°#Ì#´#£#º·###ı####£##Ä##
+-- script viet hoa By http://tranhba.com  ßß####â©£#Å##ãß#Ğó#Ä##·###
 
--- ======================================================
+-- script viet hoa By http://tranhba.com  ======================================================
 
--- ÈÎÎñÏµÍ³¿âÖ§³Ö
+-- script viet hoa By http://tranhba.com  Ì#####İ³¿©##³#
 IncludeLib("TASKSYS");
 
 Include("\\script\\global\\forbidmap.lua");
@@ -24,29 +24,29 @@ function main()
 	local mapindex = SubWorldID2Idx(subworld);
 	local mapname = SubWorldName(mapindex);	
 		
-	-- ·ÇÕ½¶·×´Ì¬²»ÄÜÊ¹ÓÃ
+	-- script viet hoa By http://tranhba.com  ##â####´×#²#Ä#£#ã·
 	if GetFightState()==0 then
-		Say("VËt phÈm nµy chØ cã thÓ sö dông ë c¸c khu vùc luyÖn c«ng vµ chiÕn ®Êu!", 0);
+		Say("##Ä#¤ó³#£#ã##¢£#´##Äâ#####ãß#ßâ#¸#####İ#²ÅÄ#£#ã·´#######", 0);
 		return 1;
 	end;
 	
 	if CheckAllMaps(subworld)==1 then
-		Say("VËt phÈm nµy chØ cã thÓ sö dông ë c¸c khu vùc luyÖn c«ng vµ chiÕn ®Êu!", 0);
+		Say("##Ä#¤ó³#£#ã##¢£#´##Äâ#####ãß#ßâ#¸#####İ#²ÅÄ#£#ã·´#######", 0);
 		return 1;
 	end;
 	
-	-- Ò°ÛÅµÄÀàĞÍ£¬1ÎªÆÕÍ¨µÄ£¬2Îª½ÏÇ¿µÄ
+	-- script viet hoa By http://tranhba.com  ß°ÛÅ#Äµµ#İ##1###âİ##Ä##2#####¿#Ä
 	local nBossType = random(1,2);	
 	
-	-- Ò°ÛÅµÄÍ·ÏÎ
+	-- script viet hoa By http://tranhba.com  ß°ÛÅ#Äİ###
 	local aryBossTitle = {
-		[1] = {"nghØ ng¬i",
-			   "l¬ ®·ng",
-			   "l­êi biÕng",},
+		[1] = {"ã####Ä",
+			   "#Ä²#¤ó#Ğ#Ä",
+			   "ã#µ¸#Ä",},
 			   
-		[2] = {"phÉn né",
-			   "hung ¸c",
-			   "linh ho¹t",},	
+		[2] = {"##Å##Ä",
+			   "##ºı#Ä",
+			   "·«#ı#Ä",},	
 	}
 	
 	local nBossIndex  = {
@@ -58,15 +58,15 @@ function main()
 					95,
 					random(0,4),
 					mapindex,
-					x*32, -- ¼ÆËã X Æ«ÒÆ
-					y*32, -- ¼ÆËã Y Æ«ÒÆ
+					x*32, -- script viet hoa By http://tranhba.com  ###· X ##ß#
+					y*32, -- script viet hoa By http://tranhba.com  ###· Y ##ß#
 					1,
-					" ("..aryBossTitle[nBossType][random(1,getn(aryBossTitle[nBossType]))]..") D· TÈu",
+					"##"..aryBossTitle[nBossType][random(1,getn(aryBossTitle[nBossType]))].."##ß°ÛÅ",
 					1);
 		
 		SetNpcScript(nNpcIndex, "\\script\\global\\seasonnpc_death.lua");
 		
-		Msg2SubWorld("Ng­êi ch¬i <color=yellow>"..GetName().."<color> ®ang <color=green>"..mapname.."<color> cïng D· TÈu thao luyÖn vâ nghÖ!");
+		Msg2SubWorld("#####ºİ##ß <color=yellow>"..GetName().."<color> âı¤ó<color=green>"..mapname.."<color>ã#ß°ÛÅ##´Ì##ßâ##");
 		
 		return 0;
 end;

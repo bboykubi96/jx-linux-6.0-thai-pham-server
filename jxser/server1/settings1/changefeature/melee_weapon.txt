@@ -1,0 +1,16 @@
+Name	Feature	Price	nGenre	nDetail	nParticular
+Ki”u 1	57	3	0	0	0
+Ki”u 2	58	3	0	0	0
+Ki”u 3	59	3	0	0	0
+Ki”u 4	52	3	0	0	1
+Ki”u 5	53	3	0	0	1
+Ki”u 6	54	3	0	0	1
+Ki”u 7	55	3	0	0	1
+Ki”u 8	56	3	0	0	1
+Ki”u 9	40	3	0	0	2
+Ki”u 10	41	3	0	0	2
+Ki”u 11	51	3	0	0	3
+Ki”u 12	50	3	0	0	3
+Ki”u 13	60	3	0	0	4
+Ki”u 14	61	3	0	0	5
+Ki”u 15	46	3	0	1	-1

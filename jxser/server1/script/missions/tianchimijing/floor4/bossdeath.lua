@@ -10,22 +10,32 @@ function OnDeath(nNpcIndex,nBelongerIndex)
 		return
 	end
 	--New drop award when boss down - Modified By DinhHQ - 20120405
-	--Phan thuong boss Thien Tri Tang 4 - Modified By MC Team - 20160919
 	local tbAwardForNew = 
 	{
-		{szName = "HuyÒn tinh cÊp 8", tbProp={6,1,147,8,0,0},nCount=1},		
-		{szName = "Ch×a Khãa Nh­ ý", tbProp={6,1,2744,1,0,0},nCount=1,},
-		{szName = "LÖnh bµi th«ng hµnh",tbProp={6,1,2590,1,0,0},nCount=5,},
-		{szName = "Tiªn th¶o lé §Æc BiÖt",tbProp={6,1,1181,1,0,0},nCount=7,},
-		{szName = "ThiÕt huyÕt ®¬n",tbProp={6,1,2163,1,0,0},nCount=3,},
-		{szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=20,},
+		[1] = {
+			
+			{szName="TiÒn Xu",tbProp={4,1506,1,1,0,0},nCount=10},
+			},
+		[2] = {
+			--[1]={{szName="Kim ¤ LÖnh",tbProp={6,1,2349,1,0,0},nCount=1,nRate=5},},
+			--[2]={{szName="§å Phæ B¹ch Hæ Kh«i",tbProp={6,1,3173,1,0,0},nCount=1,nRate=2},},
+			--[3]={{szName="B¹ch Hæ LÖnh",tbProp={6,1,2357,1,0,0},nRate=0.8},},
+			--[4]={{szName="LÖnh bµi th«ng hµnh",tbProp={6,1,2590,1,0,0},nCount=1,nRate=10},},
+			--[5]={{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=2,nRate=100},},
+			--[6]={{szName="Phi tèc hoµn lÔ bao",tbProp={6,1,2520,1,0,0},nCount=2,nRate=100},},
+		},
+	}
+	local tbAwardForOld = 
+	{
+		{szName="TiÒn Xu",tbProp={4,1506,1,1,0,0},nCount=10},		
 	}
 	--local nBelongerIndex = GetPlayerIndex(nNpcIndex)
+	--DynamicExecuteByPlayer(nBelongerIndex, "\\script\\lib\\awardtemplet.lua", "tbAwardTemplet:GiveAwardByList", tbAwardForOld, "É±ËÀÌì³ØÃØ¾³ËÄ²ãbossÍêÑÕ¹ãÑô»ñµÃ½±Àø", 10)
 	tbDropTemplet:GiveAwardByList(nNpcIndex, -1, tbAwardForNew, "Boss tÇng 4 Thiªn Tr× MËt C¶nh r¬i ra", 1)
 	
 	--Exp award for player or team who killed boss - Modified By DinhHQ - 20120405
 	local nOldPlayer = PlayerIndex
-	local tbExpAward = {szName = "§iÓm Kinh NghiÖm", nExp = 50e6}
+	local tbExpAward = {szName = "§iÓm Kinh NghiÖm", nExp = 20e6}
 	local nNpcX, nNpcY, nNpcMapIdx = GetNpcPos(nNpcIndex) 
 	if GetTeamSize() <= 1 then
 		tbAwardTemplet:Give(tbExpAward, 1, {"ThienTriMatCanh", "KillBossExp"})

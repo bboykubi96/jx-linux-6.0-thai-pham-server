@@ -21,7 +21,7 @@ Include("\\script\\bonusvlmc\\head.lua");
 
 -- script viet hoa By http://tranhba.com tinhpn 20100817: Online Award 
 Include("\\script\\bonus_onlinetime\\head.lua")
-Include("\\script\\global\\g7vn\\g7configall.lua")
+
 
 BAIJU_DOUBLEEXP_TIME = 051008 
 -- script viet hoa By http://tranhba.com  ®Þnh nghÜa ®Ých cung bªn ngoµi hµm sè ®iÒu dông ch©n cña vèn 
@@ -154,7 +154,7 @@ if (IsDaHuanDanValid() == 1) then
 return nExp, GetTask(1741) 
 end 
 
-return nExp 
+return 0 
 end; 
 
 -- script viet hoa By http://tranhba.com  gia t¨ng kinh nghiÖm 
@@ -200,7 +200,7 @@ end
 if (nAddExp and nSpecialD ~= 0.5) then 
 			nEnExp = nEnExp + nAddExp
 end 
-AddOwnExp(nEnExp); -- script viet hoa By http://tranhba.com  thªm kinh nghiÖm 
+-- AddOwnExp(nEnExp); -- script viet hoa By http://tranhba.com  thªm kinh nghiÖm 
 end 
 
 -- script viet hoa By http://tranhba.com  gia t¨ng ®ång b¹n kinh nghiÖm 
@@ -270,12 +270,9 @@ end
 function addoofflinefuyuna() 
 if (IsTimeValid() == 0) then 
 return 
-end
- 
-if nhanphucduyenfree == 1 then
-nRet = FuYuan_Gain(); 
-end
+end 
 
+nRet = FuYuan_Gain(); 
 -- script viet hoa By http://tranhba.com  return nRet 
 end 
 

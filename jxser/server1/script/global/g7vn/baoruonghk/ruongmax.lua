@@ -66,9 +66,8 @@ function AddHoangKim(x,y)
 		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 4 « trèng råi h·y më.",0);
 		return 1;
 	end
-	if 	ConsumeEquiproomItem(1, 6,1, 4371,-1)>0 then
 	for i=(x-1),(y-1) do
 			AddGoldItem(0, i);
 	end
-end
+	ConsumeEquiproomItem(1, 6,1, 4371,-1)
 end

@@ -1,2 +1,2 @@
-function OnDeath()
+function OnDeath() 
 end

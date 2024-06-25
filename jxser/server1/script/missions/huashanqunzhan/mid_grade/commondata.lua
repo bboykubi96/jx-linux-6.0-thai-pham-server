@@ -11,7 +11,7 @@ tbhuashanqunzhan_M_Data =
 
 tbhuashanqunzhan_M_Data_Ready = 
 {
-	tbLevelLimit		= {50,80},
+	tbLevelLimit		= {50,119},
 	nMissionId			= 54,
 	tbTimer				= {{94,18*60}},	
 	nMapId				= 866,

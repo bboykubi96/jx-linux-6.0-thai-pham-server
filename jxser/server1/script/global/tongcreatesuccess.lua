@@ -1,8 +1,8 @@
---°ï»á´´½¨³É¹¦ºóµ÷ÓÃµÄ½Å±¾(80¼¶×¨ÓÃÂí)
---By Dan_Deng(2003-11-18)
+-- script viet hoa By http://tranhba.com °##¸´´##³Ð##ºã##ã·#Ä#Å±#(80####ã·¢Ý)
+-- script viet hoa By http://tranhba.com By Dan_Deng(2003-11-18)
 
 function OnCreateTong()
-	if (GetTask(97) < 1) then		-- Ö»ÓÐÒÔÇ°Ã»Âò¹ýÂí²ÅÐÐ
+	if (GetTask(97) < 1) then		-- script viet hoa By http://tranhba.com  ##ã#ß¤#°·#¢ß#ý¢Ý²Å##
 		SetTask(97,1)
 	end
 end

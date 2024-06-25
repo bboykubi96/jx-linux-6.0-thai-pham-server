@@ -15,10 +15,10 @@ function main(idxItem)
 		return 1;
 	end;
 	
-	if GetTask(LV120_SKILL_ID)>0 then
-		Msg2Player("<color=yellow>§· lÜnh héi ®­îc kü n¨ng 120 råi, cßn muèn häc thªm n÷a sao?<color>");
-		return 1;
-	end;
+	-- if GetTask(LV120_SKILL_ID)>0 then
+		-- Msg2Player("<color=yellow>§· lÜnh héi ®­îc kü n¨ng 120 råi, cßn muèn häc thªm n÷a sao?<color>");
+		-- return 1;
+	-- end;
 	
 	if (LearnSkillByBook(GetLastFactionNumber(), LV120SKILL_LIST) == 0) then
 		SetTask(LV120_SKILL_ID, LV120SKILL_LIST[GetLastFactionNumber()][1])

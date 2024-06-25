@@ -162,9 +162,9 @@ function tbEquipTryOn:Proc(nIdx, nCount)
 		return 
 	end
 	
-	local tbItem = {szName="Xu", tbProp={4,417,1,1}}
+	local tbItem = {szName="TiÒn §ång", tbProp={4,417,1,1}}
 	local tbProp = tbItem.tbProp
-	local nCount = 20--so hanh hiep lenh can thiet
+	local nCount = 1000--so hanh hiep lenh can thiet
 	--local nCount = pData.nPrice
 	
 	--local sotienchiphi = 5000000
@@ -174,7 +174,7 @@ function tbEquipTryOn:Proc(nIdx, nCount)
 	--end
 
 	if CalcEquiproomItemCount(tbProp[1], tbProp[2], tbProp[3], tbProp[4]) < nCount then
-		Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ Xu, cÇn %d Xu", nCount))
+		Talk(1, "", format("C¸c h¹ vÉn ch­a mang ®ñ TiÒn §ång, cÇn %d TiÒn §ång", nCount))
 		return 
 	end
 

@@ -2,177 +2,174 @@ Include("\\script\\missions\\zhaojingling\\templet\\gametemplet.lua")
 Include("\\script\\missions\\zhaojingling\\head.lua")
 Include("\\script\\global\\autoexec_head.lua")
 
-Game = GameTemplet:new()
-Game.szMapType = "§Êu tr­êng t×m Méc Nh©n"
-Game.nGameState = 0 --±ÈÈü³¡µÄ±ÈÈü×´Ì¬£¬0±íÊ¾»¹Ã»¿ªÊ¼£¬1±íÊ¾±ÈÈü½øÐÐÖÐ
-Game.nMuRenCount = 10 --Ã¿¸ö·¿¼äÄ¾ÈËÃ¿15ÃëµÄË¢ÐÂÊýÁ¿
+Game = GameTemplet:new() 
+Game.szMapType = " t×m méc nh©n cuéc so tµi trµng " 
+Game.nGameState = 0 -- script viet hoa By http://tranhba.com  ®Êu tr­êng ®Ých tranh tµi tr¹ng th¸i , 0 bµy tá cßn ch­a b¾t ®Çu , 1 bµy tá tranh tµi tiÕn hµnh trung 
+Game.nMuRenCount = 10 -- script viet hoa By http://tranhba.com  mçi c¨n phßng méc nh©n mçi 15 gi©y ®Ých cµ míi sè l­îng 
 
 Game.Player = 
-{
+{ 
 	szPath = "\\script\\missions\\zhaojingling\\game\\gameplayer.lua",
-	szClassName = "GamePlayer",
-}
+szClassName = "GamePlayer", 
+} 
 
 Game.tbNpcTypeList = 
-{
-	["muren"] = 
-	{
-		nNpcId = 1749,
-		szName = "Méc Nh©n",
-		nLevel = 95,
-		nTime = 10,
+{ 
+["muren"] = 
+{ 
+nNpcId = 1749, 
+szName = " méc nh©n ", 
+nLevel = 95, 
+nTime = 10, 
 		szScriptPath = "\\script\\missions\\zhaojingling\\game\\muren.lua"
-	},
-}
+}, 
+} 
 
 Game.tbForbitItemType = 
-{
-	"PK", "CITYWAR", "SONGJIN", "SONGJIN_SP", "TRANSFER", "MATE", "SPECIAL", "CALLNPC", "SPRING", "DUANWUJIE", "ADDEXP", "YAOXIANG", "EXPBONUS", "CHRISTMAS"
-}
+{ 
+"PK", "CITYWAR", "SONGJIN", "SONGJIN_SP", "TRANSFER", "MATE", "SPECIAL", "CALLNPC", "SPRING", "DUANWUJIE", "ADDEXP", "YAOXIANG", "EXPBONUS", "CHRISTMAS" 
+} 
 
-function Game:AddMuRenOneRoom(szKey, szPosPath, nMapId)
-	local tbNpc = self.tbNpcTypeList[szKey]
-	
-	if (TabFile_Load(szPosPath, szPosPath) == 0) then
-		print("Load TabFile Error!"..szPosPath)
-		return 0
-	end
-	
-	if not tbNpc then
-		return
-	end
-	
-	local nRowCount = TabFile_GetRowCount(szPosPath)
-	local nTotalCount = nRowCount - 1
-	if self.nMuRenCount >= nTotalCount then
-		for nRow=2, nRowCount do
-			local nX = TabFile_GetCell(szPosPath, nRow, "POSX")
-			local nY = TabFile_GetCell(szPosPath, nRow, "POSY")
-			if self.tbMapList[nMapId] then
-				basemission_CallNpc(tbNpc, nMapId, nX, nY)
-			end
-		end
-	else	
-		local nBeginPos = random(1, nTotalCount)
-		local nDistance = floor(nTotalCount / self.nMuRenCount)
-		for i=1, self.nMuRenCount do
+function Game:AddMuRenOneRoom(szKey, szPosPath, nMapId) 
+local tbNpc = self.tbNpcTypeList[szKey] 
+
+if (TabFile_Load(szPosPath, szPosPath) == 0) then 
+print("Load TabFile Error!"..szPosPath) 
+return 0 
+end 
+
+if not tbNpc then 
+return 
+end 
+
+local nRowCount = TabFile_GetRowCount(szPosPath) 
+local nTotalCount = nRowCount - 1 
+if self.nMuRenCount >= nTotalCount then 
+for nRow=2, nRowCount do 
+local nX = TabFile_GetCell(szPosPath, nRow, "POSX") 
+local nY = TabFile_GetCell(szPosPath, nRow, "POSY") 
+if self.tbMapList[nMapId] then 
+basemission_CallNpc(tbNpc, nMapId, nX, nY) 
+end 
+end 
+else 
+local nBeginPos = random(1, nTotalCount) 
+local nDistance = floor(nTotalCount / self.nMuRenCount) 
+for i=1, self.nMuRenCount do 
 			local nPos = nBeginPos + nDistance * (i - 1)
 			nPos = mod(nPos, nTotalCount) + 1
 			local nX = TabFile_GetCell(szPosPath, nPos + 1, "POSX")
 			local nY = TabFile_GetCell(szPosPath, nPos + 1, "POSY")		
-			if self.tbMapList[nMapId] then
-				basemission_CallNpc(tbNpc, nMapId, nX, nY)
-			end
-		end
-	end
-end
+if self.tbMapList[nMapId] then 
+basemission_CallNpc(tbNpc, nMapId, nX, nY) 
+end 
+end 
+end 
+end 
 
-function Game:AddAllMuRen()
-	if self.tbMap == nil then
-		return
-	end
-	for key, value in self.tbMap do
-		self:AddMuRenOneMap(value)
-	end
-end
+function Game:AddAllMuRen() 
+if self.tbMap == nil then 
+return 
+end 
+for key, value in self.tbMap do 
+self:AddMuRenOneMap(value) 
+end 
+end 
 
-function Game:AddMuRenOneMap(nMapId)
-	if self.tbPlayer == nil or self.tbPlayer[nMapId] == nil then
-		return
-	end
-	for key, value in self.tbPlayer[nMapId] do
+function Game:AddMuRenOneMap(nMapId) 
+if self.tbPlayer == nil or self.tbPlayer[nMapId] == nil then 
+return 
+end 
+for key, value in self.tbPlayer[nMapId] do 
 		self:AddMuRenOneRoom("muren", format("\\settings\\maps\\chrismas\\elf_%d.txt", key), nMapId)
-	end
-end
+end 
+end 
 
---±ÈÈü¿ªÊ¼
-function Game:Start(nMapCount)
-	if nMapCount == 0 then
-		return
-	end
-	self:ApplyMap(nMapCount)
-	self:RegAll()
-	self:SetForbitItem(GAME_MAP)
-	self.nGameState = 1
-	return self.tbMap
-end
+-- script viet hoa By http://tranhba.com  tranh tµi b¾t ®Çu 
+function Game:Start(nMapCount) 
+if nMapCount == 0 then 
+return 
+end 
+self:ApplyMap(nMapCount) 
+self:RegAll() 
+self:SetForbitItem(GAME_MAP) 
+self.nGameState = 1 
+return self.tbMap 
+end 
 
---±ÈÈü½áÊø
-function Game:Over()
-	self.nGameState = 0 --Ò»¶¨ÒªÔÚÍæ¼Ò³öµØÍ¼Ö®Ç°ÉèÎª0
-	self:GoOutGame()
-	self:FreeMap()	
-	self.tbMap = nil
-end
+-- script viet hoa By http://tranhba.com  tranh tµi kÕt thóc 
+function Game:Over() 
+self.nGameState = 0 -- script viet hoa By http://tranhba.com  nhÊt ®Þnh ph¶i ®ang ®ïa nhµ ra b¶n ®å tr­íc thiÕt v× 0 
+self:GoOutGame() 
+self:FreeMap() 
+self.tbMap = nil 
+end 
 
---½«ËùÓÐÍæ¼Ò´«³öµØÍ¼
-function Game:GoOutGame()
-	if self.tbPlayer == nil then
-		return
-	end
-	for key, value in self.tbPlayer do
-		self:GoOutMap(key, value)
-	end
-	self.tbPlayer = nil
-end
+-- script viet hoa By http://tranhba.com  ®em tÊt c¶ nhµ ch¬i truyÒn ra b¶n ®å 
+function Game:GoOutGame() 
+if self.tbPlayer == nil then 
+return 
+end 
+for key, value in self.tbPlayer do 
+self:GoOutMap(key, value) 
+end 
+self.tbPlayer = nil 
+end 
 
-function Game:GoOutMap(nMapId, tbMapPlayer)
-	for key, value in tbMapPlayer do
-		self:GoOutRoom(nMapId, value)
-	end
-end
+function Game:GoOutMap(nMapId, tbMapPlayer) 
+for key, value in tbMapPlayer do 
+self:GoOutRoom(nMapId, value) 
+end 
+end 
 
-function Game:GoOutRoom(nMapId, tbRoomPlayer)
-	for key, value in tbRoomPlayer do
-		local nPlayerIndex = SearchPlayer(value)
-		if nPlayerIndex > 0 then
-			local nCurMapId = getplayermapid(nPlayerIndex)
-			if nCurMapId == nMapId then				
-				local nOriMapId = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERMAPID)
-				local nX = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERPOSX)
-				local nY = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERPOSY)
-				CallPlayerFunction(nPlayerIndex, NewWorld, nOriMapId, nX, nY)
-			end
-		end
-	end
-end
+function Game:GoOutRoom(nMapId, tbRoomPlayer) 
+for key, value in tbRoomPlayer do 
+local nPlayerIndex = SearchPlayer(value) 
+if nPlayerIndex > 0 then 
+local nCurMapId = getplayermapid(nPlayerIndex) 
+if nCurMapId == nMapId then 
+local nOriMapId = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERMAPID) 
+local nX = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERPOSX) 
+local nY = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERPOSY) 
+CallPlayerFunction(nPlayerIndex, NewWorld, nOriMapId, nX, nY) 
+end 
+end 
+end 
+end 
 
-function Game:ApplyMap(nMapCount)
-	self.tbMap = self.tbMap or {}
-	for i=1, nMapCount do
-		self.tbMap[i] = ApplyDungeonMap(GAME_MAP)
-		self:AssociateMap(self.tbMap[i])
-	end
-end
+function Game:ApplyMap(nMapCount) 
+self.tbMap = self.tbMap or {} 
+for i=1, nMapCount do 
+self.tbMap[i] = ApplyDungeonMap(GAME_MAP) 
+self:AssociateMap(self.tbMap[i]) 
+end 
+end 
 
-function Game:FreeMap()
-	if self.tbMap == nil then
-		return
-	end
-	local nMapCount = getn(self.tbMap)
-	for i=1, nMapCount do
-		ReturnDungenonMap(GAME_MAP, self.tbMap[i])
-	end
-end
+function Game:FreeMap() 
+if self.tbMap == nil then 
+return 
+end 
+local nMapCount = getn(self.tbMap) 
+for i=1, nMapCount do 
+ReturnDungenonMap(GAME_MAP, self.tbMap[i]) 
+end 
+end 
 
-function Game:SetForbitItem(nMapId)
-	local szMapType = self.szMapType
-	set_MapType(nMapId, szMapType)
-	for i=1, getn(self.tbForbitItemType) do
-		if self.tbForbitItemType[i] == "MATE" then
-			FORBITMAP_LIST[nMapId] = 1	
-		end
-		
-		tb_MapType[szMapType] = tb_MapType[szMapType] or {}
-		tinsert(tb_MapType[szMapType], self.tbForbitItemType[i])
-	end
-end
+function Game:SetForbitItem(nMapId) 
+local szMapType = self.szMapType 
+set_MapType(nMapId, szMapType) 
+for i=1, getn(self.tbForbitItemType) do 
+if self.tbForbitItemType[i] == "MATE" then 
+FORBITMAP_LIST[nMapId] = 1 
+end 
 
-function initialize()	
-	PreApplyDungeonMap(GAME_MAP, 0, 1)
-end
+tb_MapType[szMapType] = tb_MapType[szMapType] or {} 
+tinsert(tb_MapType[szMapType], self.tbForbitItemType[i]) 
+end 
+end 
 
-AutoFunctions:Add(initialize)
+function initialize() 
+PreApplyDungeonMap(GAME_MAP, 0, 1) 
+end 
 
-
-
+AutoFunctions:Add(initialize) 

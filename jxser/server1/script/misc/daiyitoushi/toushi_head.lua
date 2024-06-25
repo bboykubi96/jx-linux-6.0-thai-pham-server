@@ -1,17 +1,9 @@
--- ====================== ÎÄ¼þÐÅÏ¢ ======================
-
--- ½£ÏÀÇéÔµÍøÂç°æÒ»¡°´øÒÕÍ¶Ê¦¡±Í·ÎÄ¼þÎÄ¼þ
-
--- Edited by ×Ó·Çô~
--- 2008/02/28 12:10
-
--- ======================================================
 
 IncludeLib("FILESYS");
 IncludeLib("SETTING");
-Include("\\script\\global\\skills_table.lua");				-- ¸÷ÃÅÅÉ¡¢¸÷µÈ¼¶¼¼ÄÜ×Ü±í
-Include("\\script\\task\\metempsychosis\\task_func.lua");	-- ¼ÞÒÂÉñ¹¦ÐÄ·¨Í·ÎÄ¼þ:Çå¼¼ÄÜµã,ÇåÇ±ÄÜµã
-Include("\\script\\task\\system\\task_string.lua");			-- ¶Ô»°ÎÄ×Ö´¦Àí
+Include("\\script\\global\\skills_table.lua");				-- thu muc skill
+Include("\\script\\task\\metempsychosis\\task_func.lua");	-- tassk
+Include("\\script\\task\\system\\task_string.lua");			-- dinh dang
 Include("\\script\\lib\\common.lua");						--
 
 
@@ -39,46 +31,43 @@ function toushiLoadMagicLevelExp()
 end
 toushiLoadMagicLevelExp();
 
-LV120_SKILL_ID				=	2463					-- ¼ÍÂ¼Íæ¼Ò120¼¶¼¼ÄÜID
-TSK_LV150_SKILL				=	2885					-- 150¼¶¼¼ÄÜÈÎÎñTaskID
-TSK_TOUSHI_FLAG				=	1881					-- ¡°´øÒÕÍ¶Ê¦¡±ÍË³öÃÅÅÉµÄ±ê¼Ç
-													--	 0£ºÎ´ÉêÇë×ªÍ¶ÃÅÅÉ»ò×ªÍ¶ÃÅÅÉ³É¹¦£¨Óë×ªÖ°´ÎÊýÒ»Æð¾ö¶¨£©£»1£º³É¹¦ÉêÇë×ªÍ¶ÃÅÅÉ£»
-TSK_ZHENPAILINGDAN_USECNT	=	1882;
-TSK_TOUSHI_COUNT			=	1883;					-- ¡°´øÒÕÍ¶Ê¦¡±×ªÖ°µÄ´ÎÊý
-TSK_LAST_CHANGE_FACTION     =   2604;                   -- ÉÏ´Î×ªÃÅÅÉÊ±¼ä Ïà¶ÔÊ±¼ä(µ¥Î»:Ãë)
+LV120_SKILL_ID				=	2463					-- ID skill 120
+TSK_LV150_SKILL				=	2885					-- 150skill ID
+TSK_TOUSHI_FLAG				=	5928--1881					-- Xac nhan da nop tin vat													
+TSK_ZHENPAILINGDAN_USECNT	=	5926--1882;
+TSK_TOUSHI_COUNT			=	1883;					-- so lan nop
+TSK_LAST_CHANGE_FACTION     =   2604;                   -- thay doi gia tri mon phai
+TOUSHI_FACTION_CHUSHI	=	70*256;					-- ko biet
+TOUSHI_FACTION_HUISHI	=	80*256;					-- ko biet
+TOUSHI_90SKILL_TASK		=	255;					-- 90skill task
+TOUSHI_150SKILL_TASKSTATE	=	14;					-- 150 skill task
+TOUSHI_COLDDOWN_TIME    =   60*24*60*60;                     -- thoi gian co the chuyen phai
+TOUSHI_UNKNOWN		= -1;				-- ko biet
+TOUSHI_SUCCEED		= 1;				-- thanh cong
+TOUSHI_LVLERR		= 2;				-- ko biet
+TOUSHI_FLAGERR		= 3;				-- ko biet
+TOUSHI_LGERR		= 4;				-- ko biet
+TOUSHI_EQUIPERR		= 5;				-- xx
+TOUSHI_REDOERR		= 6;				-- xx
+TOUSHI_EQFACTERR	= 7;				-- xx
+TOUSHI_MALEERR		= 8;				-- xx
+TOUSHI_FEMALEERR	= 9;				-- xx
+TOUSHI_TWFEMALEERR	= 10;				-- xx
+TOUSHI_NOFACTERR	= 11;				-- xx
+TOUSHI_NOFREEBAG	= 12;				-- xx
+TOUSHI_TIMEERR	    = 13;				-- xx
 
-TOUSHI_FACTION_CHUSHI	=	70*256;					-- ÃÅÅÉÈÎÎñ³öÊ¦×´Ì¬
-TOUSHI_FACTION_HUISHI	=	80*256;					-- ÃÅÅÉÈÎÎñ³öÊ¦×´Ì¬
-TOUSHI_90SKILL_TASK		=	255;					-- 90¼¶¼¼ÄÜÈÎÎñ×´Ì¬
-TOUSHI_150SKILL_TASKSTATE	=	14;					-- 150¼¶¼¼ÄÜÈÎÎñ×´Ì¬
-TOUSHI_COLDDOWN_TIME    =   60*24*60*60;                     -- ×ªÃÅÅÉÀäÈ´Ê±¼ä(µ¥Î»:Ãë)
-
-TOUSHI_UNKNOWN		= -1;				-- Î´Öª´íÎó
-TOUSHI_SUCCEED		= 1;				-- Ìõ¼þÅÐ¶Ï³É¹¦
-TOUSHI_LVLERR		= 2;				-- ½ÇÉ«µÈ¼¶²»Âú×ã
-TOUSHI_FLAGERR		= 3;				-- ½ÇÉ«²»¾ßÓÐ×ªÍ¶Ê¦ÃÅµÄ±ê¼Ç£¨×Ê¸ñ£©
-TOUSHI_LGERR		= 4;				-- ½ÇÉ«²»Âú×ã½âÉ¢»òÍË³öÕ½¶ÓÌõ¼þ
-TOUSHI_EQUIPERR		= 5;				-- ½ÇÉ«²»Âú×ãÐ¶ÏÂ×°±¸Ìõ¼þ
-TOUSHI_REDOERR		= 6;				-- ½ÇÉ«ÒÑ×ªÍ¶¹ýÐÂÊ¦ÃÅ£¬²»ÄÜÔÙ´Î×ªÍ¶
-TOUSHI_EQFACTERR	= 7;				-- ×ªÍ¶ÃÅÅÉ²»ÄÜÊÇµ±Ç°ÃÅÅÉ
-TOUSHI_MALEERR		= 8;				-- ´äÑÌ¶ëÃ¼²»½ÓÊÜÄÐµÜ×Ó
-TOUSHI_FEMALEERR	= 9;				-- ÉÙÁÖÅÉ²»½ÓÊÜÅ®µÜ×Ó
-TOUSHI_TWFEMALEERR	= 10;				-- Å®ÐÔ½ÇÉ«Ã»ÓÐ¡°ÑîçøµÄÐÅÎï¡±²»ÄÜ¼ÓÈëÌìÍõ°ï
-TOUSHI_NOFACTERR	= 11;				-- °×Ãû½ÇÉ«²»ÄÜ¡°´øÒÕÍ¶Ê¦¡±
-TOUSHI_NOFREEBAG	= 12;				-- ±³°ü¿Õ¼ä²»×ã
-TOUSHI_TIMEERR	    = 13;				-- ×ªÃÅÅÉÀäÈ´Ê±¼äÎ´µ½
-
-TB_TOUSHI_MENPAIXINWU		= {6, 1, 1670}				-- ÃÅÅÉÐÅÎïIDKey
-TB_TOUSHI_YANGYINGXINWU		= {6, 1, 1671}				-- ÑîçøÐÅÎïIDKey
-TB_TOUSHI_ZHENPAILINGDAN	= {6, 1, 1704, 1, 0, 0}		-- ÕòÅÉÁéµ¤
-TB_TOUSHI_ZHENPAILINGYAO	= {6, 1, 1705, 1, 0, 0}		-- ÕòÅÉÁéÒ©
-TB_TOUSHI_HIERARCH			= {"Ch­ëng m«n", "Gi¸o chñ", "Bang chñ "};	-- ¸÷ÃÅÅÉ¶ÔÕÆÃÅµÄ²»Í¬³Æºô
-TB_TOUSHI_ERR_MSG			= 							-- ´íÎóÌáÊ¾ÐÅÏ¢
+TB_TOUSHI_MENPAIXINWU		= {6, 1, 1670}				-- xx ID Key
+TB_TOUSHI_YANGYINGXINWU		= {6, 1, 1671}				-- xx ID Key
+TB_TOUSHI_ZHENPAILINGDAN	= {6, 1, 1704, 1, 0, 0}		-- xx
+TB_TOUSHI_ZHENPAILINGYAO	= {6, 1, 1705, 1, 0, 0}		-- xx
+TB_TOUSHI_HIERARCH			= {"Ch­ëng m«n", "Gi¸o chñ", "Bang chñ "};	-- xung ho tuy mon phai
+TB_TOUSHI_ERR_MSG			= 							-- doi thoai
 	{
 		[TOUSHI_UNKNOWN]		= "<dec><npc>Kh«ng thÓ lµm nh­ vËy ®­îc.",
-		[TOUSHI_LVLERR]			= "<dec><npc>HiÖn t¹i ng­¬i vÉn ch­a ®ñ {cÊp 70}, h·y ®i rÌn luyÖn thªm ®i!",
+		[TOUSHI_LVLERR]			= "<dec><npc>HiÖn t¹i ng­¬i vÉn ch­a ®ñ {cÊp 120}, h·y ®i rÌn luyÖn thªm ®i!",
 		[TOUSHI_FLAGERR]		= "<dec><npc>Muèn gia nhËp bæn bang, ch­ëng m«n cña ng­¬i ®· ®ång ý ch­a?",
-		[TOUSHI_LGERR]			= "<dec><npc>CÇn ph¶i {gi¶i t¸n quan hÖ chiÕn ®éi liªn ®Êu} nÕu kh«ng gi¶i t¸n chiÕn ®éi ®­îc th× b¾t buéc ph¶i dïng 10 tói tÝch lòy tèng kim ®Ó vµo hµnh trang míi chuyÓn ®­îc.",
+		[TOUSHI_LGERR]			= "<dec><npc>Muèn gia nhËp bæn bang, cÇn ph¶i {gi¶i t¸n quan hÖ chiÕn ®éi liªn ®Êu}.",
 		[TOUSHI_EQUIPERR]		= "<dec><npc>Muèn gia nhËp bæn bang, cÇn ph¶i cëi hÕt trang bÞ trªn ng­êi xuèng!",
 		[TOUSHI_REDOERR]		= "<dec><npc><sex> ®· chuyÓn thµnh c«ng sang m«n ph¸i míi.",
 		[TOUSHI_EQFACTERR]		= "<dec><npc>S­ phô cho phÐp ng­¬i xuèng nói t×m con ®­êng vâ häc míi, vµ còng hi väng ng­¬i cã ngµy hïng b¸ thiªn h¹",
@@ -91,59 +80,60 @@ TB_TOUSHI_ERR_MSG			= 							-- ´íÎóÌáÊ¾ÐÅÏ¢
 
 TB_TOUSHI_ERR_MSG[TOUSHI_FEMALEERR] = TB_TOUSHI_ERR_MSG[TOUSHI_MALEERR];
 
-TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
+TB_DAIYITOUSHI_FACTS = 					-- xxx
 	{
---		{-- 
---			ÃÅÅÉÃû,	ÃÅÅÉID,	ÕóÓª,	Í·ÏÎID,	ÊôÐÔ
---			ÈÎÎñID, 
---			137µÄ±äÁ¿,	137±äÁ¿µÄÖµ,		// ¾ÍÕâÒ»ÏîÀ´Ëµ£¬¸ã²»Ã÷°×ÊÇ×öÊ²Ã´µÄ£¬ÈëÃÅµÄÊ±ºòÉèÖÃ
---			¼¼ÄÜTab,
---			ÈëÃÅ¹«¸æ,
---		},	
-		{-- ÉÙÁÖ
+		{-- Thieu Lam
 			szFacName		=	"shaolin",	nFacNumb	=	0,	nCamp	=	1,	nRankId	=	72,	nSeries	=	0,
 			nTaskId_Fact	=	7,
 			nTaskId_90Skill	=	122,
 			nTaskId_137 	=	137,		nValue_137	=	67,
 			tbSkillID		=	{
 							[10]	=	{
-											14,		-- ÐÐÁú²»Óê[14]
-											10,		-- ½ð¸Õ·üÄ§[10]£¨ÈëÃÅ£©
+											14,		
+											10,		
 										},
 										
 							[20]	=	{
-											8,		-- ÉÙÁÖÈ­·¨[8]
-											4,		-- ÉÙÁÖ¹÷·¨[4]£¨10¼¶£©
-											6,		-- ÉÙÁÖµ¶·¨[6]£¨10¼¶£©
+											8,		
+											4,		
+											6,		
 										},
 										
 							[30]	=	{
-											15,		-- ²»¶¯Ã÷Íõ[15]£¨20¼¶£©
+											15,		
 										},
 										
 							[40]	=	{
-											16,		-- ÂÞººÕó[16]£¨30¼¶£©
+											16,		
 										},
 										
 							[50]	=	{
-											20,		-- Ê¨×Óºð [20]£¨40¼¶£©
+											20,		
 										},
 										
 							[60]	=	{
-											271,	-- Áú×¦»¢×¥[271]
-											11,		-- ºáÉ¨ÁùºÏ [11]£¨50¼¶£©
-											19,		-- Ä¦Ú­ÎÞÁ¿ [19]£¨50¼¶£©
+											271,	
+											11,		
+											19,		
 										},
 										
 							[70]	=	{
-											273,	-- ÈçÀ´Ç§Ò¶[273]
-											21,		-- Ò×½î¾­[21]£¨60¼¶£©
+											273,	
+											21,	
+											318,
+											319,
+											321,
+											709,
+											1055,
+											1056,
+											1057,
+												
 										},
 										
 							[90]	=	{
-											{318, 1, "QuyÒn ph¸p"},	-- ´ïÄ¦¶É½­[318]			Ìí¼ÓÊìÁ·¶È¼¼ÄÜ ÖÁÉÙÌí¼ÓÎª1¼¶
-											{319, 1, "C«n ph¸p"},	-- ºáÉ¨Ç§¾ü[319]£¨90¼¶£©
-											{321, 1, "§ao ph¸p"},	-- ÎÞÏàÕ¶  [321]£¨90¼¶£©
+											{318, 1, "QuyÒn ph¸p"},			
+											{319, 1, "C«n ph¸p"},
+											{321, 1, "§ao ph¸p"},	
 										},
 										
 							[120]	=	{
@@ -151,61 +141,68 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 										},
 										
 							[150]	=	{
-											{1055, 1, "QuyÒn ph¸p"},	-- ´óÁ¦½ð¸ÕÕÆ[318]			Ìí¼ÓÊìÁ·¶È¼¼ÄÜ ÖÁÉÙÌí¼ÓÎª1¼¶
-											{1056, 1, "C«n ph¸p"},	-- Î¤ÍÓÏ×èÆ[319]£¨90¼¶£©
-											{1057, 1, "§ao ph¸p"},	-- Èþ½ä¹éìø[321]£¨90¼¶£©
+											{1055, 1, "QuyÒn ph¸p"},	
+											{1056, 1, "C«n ph¸p"},	
+											{1057, 1, "§ao ph¸p"},	
 										},
 						},
 			szMsg = "KÓ tõ h«m nay %s gia nhËp m«n ph¸i ThiÕu L©m, sau nµy nhê c¸c huynh chØ gi¸o!",
 		},	
 		
-		{-- ÌìÍõ
+		{-- Thien Vuong
 			szFacName		=	"tianwang",	nFacNumb	=	1,	nCamp	=	3,	nRankId	=	69,	nSeries	=	0,
 			nTaskId_Fact	=	3,
 			nTaskId_90Skill	=	121,
 			nTaskId_137		=	137,		nValue_137	=	63,
 			tbSkillID		=	{
 							[10]	=	{
-											34,		-- ¾ªÀ×Õ¶[34]  £¨ÈëÃÅ£©
-											30,		-- »Ø·çÂäÑã[30]£¨ÈëÃÅ£©
-											29,		-- Õ¶Áú¾÷[29]  £¨ÈëÃÅ£©
+											34,		
+											30,		
+											29,		
 										},
 										
 							[20]	=	{
-											26,		-- ÌìÍõ´¸·¨[26]£¨10¼¶£©
-											23,		-- ÌìÍõÇ¹·¨[23]£¨10¼¶£©
-											24,		-- ÌìÍõµ¶·¨[24]£¨10¼¶£©
+											26,		
+											23,		
+											24,		
 										},
 										
 							[30]	=	{
-											33,		-- ¾²ÐÄ¾÷[33]  £¨20¼¶£©
+											33,		
 										},
 										
 							[40]	=	{
-											37,		-- ÆÃ·çÕ¶  [37]£¨30¼¶£©
-											35,		-- Ñô¹ØÈýµþ[35]£¨30¼¶£©
-											31,		-- ÐÐÔÆ¾÷  [31]£¨30¼¶£©
+											37,		
+											35,		
+											31,		
 										},
 										
 							[50]	=	{
-											40,		-- ¶Ï»ê´Ì  [40]£¨40¼¶£©
+											40,		
 										},
 										
 							[60]	=	{
-											42,		-- ½ðÖÓÕÖ  [42]£¨50¼¶£©
+											42,		
 										},
 										
 							[70]	=	{
-											32,		-- ÎÞÐÄÕ¶  [32] £¨60¼¶£©
-											36,		-- ÌìÍõÕ½Òâ[36]£¨ÕòÅÉ£©
-											41,		-- ÑªÕ½°Ë·½[41] £¨60¼¶£©
-											324,	-- ³ËÁú¾÷  [324]£¨60¼¶£©
+											32,		
+											36,		
+											41,		
+											324,
+											322,
+											323,
+											325,
+											708,
+											1058,
+											1060,
+											1059,
 										},
 										
 							[90]	=	{
-											{322, 1, "§ao ph¸p"},	-- ÆÆÌìÕ¶  £¨90¼¶£©
-											{323, 1, "Th­¬ng ph¸p"},	-- ×·ÐÇÖðÔÂ£¨90¼¶£©
-											{325, 1, "Chïy ph¸p"},	-- ×··ç¾÷  £¨90¼¶£©
+											{322, 1, "§ao ph¸p"},	
+											{323, 1, "Th­¬ng ph¸p"},	
+											{325, 1, "Chïy ph¸p"},	
 										},
 										
 							[120]	=	{
@@ -213,15 +210,15 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 										},
 										
 							[150]	=	{
-											{1058, 1, "§ao ph¸p"},	-- ºÀÐÛÕ¶
-											{1060, 1, "Th­¬ng ph¸p"},	-- °ÔÍõöÉ½ð
-											{1059, 1, "Chïy ph¸p"},	-- ×Ýºá°Ë»Ä
+											{1058, 1, "§ao ph¸p"},	
+											{1060, 1, "Th­¬ng ph¸p"},	
+											{1059, 1, "Chïy ph¸p"},	
 										},
 						},
 			szMsg = "KÓ tõ h«m nay %s gia nhËp Thiªn V­¬ng, nhê c¸c s­ huynh chØ gi¸o!",
 		},
 		
-		{-- ÌÆÃÅ
+		{-- Ngu Doc
 			szFacName		=	"tangmen",	nFacNumb	=	2,	nCamp	=	3,	nRankId	=	76,	nSeries	=	1,
 			nTaskId_Fact	=	2,
 			nTaskId_90Skill	=	123,
@@ -259,7 +256,17 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 											249,	-- Ð¡Àî·Éµ¶[249]£¨60¼¶£©
 											48,		-- ÐÄÑÛ  [48 ]£¨ÕòÅÉ£©
 											58,		-- ÌìÂÞµØÍø[58 ]£¨60¼¶£©
-											341,	-- É¢»¨ïÚ  [341]£¨60¼¶£©
+											341,
+											339,-------
+											302,
+											342,
+											351,
+											710,
+											1069,
+											1070,
+											1071,
+											1110,
+											-- É¢»¨ïÚ  [341]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -283,7 +290,7 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp §­êng m«n, c¶m phiÒn c¸c s­ huynh s­ tû chØ gi¸o!",
 		},
 		
-		{-- Îå¶¾
+		{-- Duong Mon
 			szFacName		=	"wudu",	nFacNumb	=	3,	nCamp	=	2,	nRankId	=	80,	nSeries	=	1,
 			nTaskId_Fact	=	10,
 			nTaskId_90Skill	=	124,
@@ -325,7 +332,14 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 							[70]	=	{
 											71,		-- Ììî¸µØÉ·ÊÖ[71 ]£¨60¼¶£©
 											75,		-- Îå¶¾Ææ¾­[75]£¨ÕòÅÉ£©
-											74,		-- Öì¸òÇàÚ¤  [74 ]£¨60¼¶£©
+											74,	
+											353,----------------
+											355,
+											390,
+											711,
+											1066,
+											1067,
+											-- Öì¸òÇàÚ¤  [74 ]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -346,51 +360,58 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp m«n Ngò §éc gi¸o, c¶m phiÒn c¸c s­ huynh s­ tû chØ gi¸o!",
 		},
 		
-		{-- ¶ëÃ¼
+		{-- Nga My
 			szFacName		=	"emei",	nFacNumb	=	4,	nCamp	=	1,	nRankId	=	64,	nSeries	=	2,
 			nTaskId_Fact	=	1,
 			nTaskId_90Skill	=	125,
 			nTaskId_137		=	137,	nValue_137 = 61,
 			tbSkillID		=	{
 							[10]	=	{
-											85,		-- Ò»Ò¶ÖªÇï[85]£¨ÈëÃÅ£©
-											80,		-- Æ®Ñ©´©ÔÆ[80]£¨ÈëÃÅ£©
+											85,		
+											80,		
 										},
 										
 							[20]	=	{
-											77,		-- ¶ëáÒ½£·¨[77]£¨10¼¶£©
-											79,		-- ¶ëáÒÕÆ·¨[79]£¨10¼¶£©
+											77,		
+											79,		
 										},
 										
 							[30]	=	{
-											93,		-- ´Èº½ÆÕ¶É[93]£¨20¼¶£©
+											93,		
 										},
 										
 							[40]	=	{
-											385,	-- ÍÆ´°ÍûÔÂ[385]£¨30¼¶£©
-											82,		-- ËÄÏóÍ¬¹é[82]£¨30¼¶£©
-											89,		-- ÃÎµû    [89]£¨30¼¶£©
+											385,	
+											82,		
+											89,		
 										},
 										
 							[50]	=	{
-											86,		-- Á÷Ë®    [86 ]£¨40¼¶£©
+											86,		
 										},
 										
 							[60]	=	{
-											92,		-- ·ðÐÄ´ÈÓÓ[92]£¨50¼¶£©
+											92,		
 										},
 										
 							[70]	=	{
-											88,		-- ²»Ãð²»¾ø[88]£¨60¼¶£©
-											252,	-- ·ð·¨ÎÞ±ß[252]£¨ÕòÅÉ£©
-											91,		-- ·ð¹âÆÕÕÕ[91]£¨60¼¶£©
-											282,	-- ÇåÒôèó³ª[282]£¨60¼¶£©	
+											88,		
+											252,	
+											91,		
+											282,
+											328,---------
+											380,
+											332,
+											712,
+											1061,
+											1062,
+											1114,
 										},
 										
 							[90]	=	{
-											{328, 1, "KiÕm ph¸p"},	-- Èý¶ëö«Ñ©[328]£¨90¼¶£©
-											{380, 1, "Ch­ëng ph¸p"},	-- ·çËªËéÓ°[380]£¨90¼¶£©
-											332,	-- ÆÕ¶ÉÖÚÉú[332]£¨90¼¶£©
+											{328, 1, "KiÕm ph¸p"},	
+											{380, 1, "Ch­ëng ph¸p"},	
+											332,	
 										},
 										
 							[120]	=	{
@@ -398,15 +419,15 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 										},
 										
 							[150]	=	{
-											{1061, 1, "KiÕm ph¸p"},	-- ½£»¨Íì¾§
-											{1062, 1, "Ch­ëng ph¸p"},	-- ±ùÓêçó¾§
-											{1114, 1, "Hç trî "},	-- ÓñÈªÐÄ¾­
+											{1061, 1, "KiÕm ph¸p"},	
+											{1062, 1, "Ch­ëng ph¸p"},	
+											{1114, 1, "Hç trî "},	
 										},
 						},
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp Nga My ph¸i, c¶m phiÒn c¸c s­ tû chØ gi¸o",
 		},
 		
-		{-- ´äÑÌ
+		{-- Thuy Yen
 			szFacName		=	"cuiyan",	nFacNumb	=	5,	nCamp	=	3,	nRankId	=	67,	nSeries	=	2,
 			nTaskId_Fact	=	6,
 			nTaskId_90Skill	=	126,
@@ -442,7 +463,13 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 							[70]	=	{
 											108,	-- ÄÁÒ°Á÷ÐÇ[108]£¨60¼¶£©
 											114,	-- ±ù¹ÇÑ©ÐÄ[114]£¨ÕòÅÉ£©
-											111,	-- ±Ìº£³±Éú[111]£¨60¼¶£©
+											111,
+											336,----------------------------
+											337,
+											713,
+											1063,
+											1065,
+											-- ±Ìº£³±Éú[111]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -462,7 +489,7 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp Thóy Yªn m«n, c¶m phiÒn c¸c s­ tû chØ gi¸o!",
 		},
 		
-		{-- Ø¤°ï
+		{-- Cai Bang
 			szFacName		=	"gaibang",	nFacNumb	=	6,	nCamp	=	1,	nRankId	=	78,	nSeries	=	3,
 			nTaskId_Fact	=	8,
 			nTaskId_90Skill	=	128,
@@ -498,7 +525,12 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 										
 							[70]	=	{
 											130,	-- ×íµû¿ñÎè[130]£¨ÕòÅÉ£©
-											360,	-- åÐÒ£¹¦[360]£¨60¼¶£©
+											360,
+											357,---------
+											359,
+											714,
+											1073,
+											1074,	-- åÐÒ£¹¦[360]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -518,7 +550,7 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp C¸i Bang, c¶m phiÒn c¸c tiÒn bèi chØ gi¸o!",
 		},
 		
-		{-- ÌìÈÌ
+		{-- Thien Nhan
 			szFacName		=	"tianren",	nFacNumb	=	7,	nCamp	=	2,	nRankId	=	81,	nSeries	=	3,
 			nTaskId_Fact	=	4,
 			nTaskId_90Skill	=	127,
@@ -556,7 +588,13 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 							[70]	=	{
 											142,	-- ÍµÌì»»ÈÕ[142]£¨60¼¶£©
 											150,	-- ÌìÄ§½âÌå[150]£¨ÕòÅÉ£©
-											148,	-- Ä§ÑæÆßÉ±[148]£¨60¼¶£©
+											148,
+											361,----------------
+											362,
+											391,
+											715,
+											1075,
+											1076,	-- Ä§ÑæÆßÉ±[148]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -577,7 +615,7 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp Thiªn NhÉn gi¸o, b¸i kiÕn c¸c s­ huynh s­ tû!",
 		},
 		
-		{-- Îäµ±
+		{-- Vo Dang
 			szFacName		=	"wudang",	nFacNumb	=	8,	nCamp	=	1,	nRankId	=	73,	nSeries	=	4,
 			nTaskId_Fact	=	5,
 			nTaskId_90Skill	=	129,
@@ -613,7 +651,12 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 							[70]	=	{
 											165,	-- ÎÞÎÒÎÞ½£[165]£¨60¼¶£©
 											166,	-- Ì«¼«Éñ¹¦[166]£¨ÕòÅÉ£©
-											267,	-- Èý»·Ì×ÔÂ[267]£¨60¼¶£©
+											267,
+											365,-------------------------
+											368,
+											716,
+											1078,
+											1079,	-- Èý»·Ì×ÔÂ[267]£¨60¼¶£©
 										},
 										
 							[90]	=	{
@@ -633,7 +676,7 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp Vâ §ang ph¸i, tham kiÕn c¸c s­ huynh s­ tû!",
 		},
 		
-		{-- À¥ÂØ
+		{-- Con Lon
 			szFacName		=	"kunlun",	nFacNumb	=	9,	nCamp	=	3,	nRankId	=	75,	nSeries	=	4,
 			nTaskId_Fact	=	9,
 			nTaskId_90Skill	=	130,
@@ -675,7 +718,13 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 							[70]	=	{
 											275,	-- Ëª°ÁÀ¥ÂØ[275]£¨ÕòÅÉ£©
 											182,	-- ÎåÀ×Õý·¨[182]£¨60¼¶£©
-											630,;	-- µÚÈý×ÊÁÏÆ¬£¬Ôö¼ÓÀ¥ÂØÐÂ¼¼ÄÜ"ÐþÌìÎÞ¼«"
+											630,
+											372,---------
+											375,
+											394,
+											717,
+											1080,
+											1081,	-- µÚÈý×ÊÁÏÆ¬£¬Ôö¼ÓÀ¥ÂØÐÂ¼¼ÄÜ"ÐþÌìÎÞ¼«"
 										},
 										
 							[90]	=	{
@@ -695,9 +744,177 @@ TB_DAIYITOUSHI_FACTS = 					-- ¸÷ÃÅÅÉ ¼¼ÄÜ ³ÆºÅµÈ
 						},
 			szMsg = "KÓ tõ h«m nay, %s gia nhËp C«n L«n ph¸i, b¸i kiÕn c¸c vÞ ®¹o huynh!",
 		},
+		
+		{-- Hoa Son
+			szFacName		=	"huashan",  nFacNumb	=	10,	nCamp	=	3,	nRankId	=	89,	nSeries	=	2,
+			nTaskId_Fact	=	11,
+			nTaskId_90Skill	=	131,
+			nTaskId_137		=	137,	nValue_137 = 71,
+			
+			tbSkillID		=	{
+							[10]	=	{
+											1372,	-- Thanh Van Tong Sang
+											1347,	-- Bach Hong Quan Nhat
+										},
+										
+							[20]	=	{
+											1374,	-- Long Nhuyen Than
+											1349,	-- Kiem Tong Tong Quyet
+											1375,	-- Hai Nap Bach Xuan
+											1350,	-- Duong Ngo Kiem Phap
+											
+										},
+										
+							[30]	=	{
+											1376,	-- Long Huyen Kiem Khi
+											1351,	-- Kim Nhan Hoanh Khong
+											
+										},
+										
+							[40]	=	{
+											1378,	-- Khi Chan Son Ha
+											1354,	-- Ha Di Kiem Phap
+											
+											
+										},
+										
+							[50]	=	{
+											1379,	-- Ki Quan Truong Hong
+											1355,	-- Thien Than Dao Huyen
+																							
+										},
+										
+							[60]	=	{
+											1360, -- Thuong Tung Nghenh Khach	
+											1380,	---Ma van Kiem KHi
+											
+										},
+										
+							[70]	=	{	
+											1358, ---Huyen Nhan Chan Vien
+											1370,---Hao Nhien Chi Khi
+											1363,-------Thai Nhac Tam Thanh Phong
+											1365,----Tu Ha Kiem Khi
+											1382,-------------------------
+											1364,
+											1368,
+											1384,
+										},
+										
+							[90]	=	{
+											{1382, 1, "KiÕm T«ng"},	-- Phach Thach Pha Ngoc
+											{1364, 1, "KhÝ T«ng"},	-- Doat Menh Lien Hoan
+										
+										},
+										
+							[120]	=	{
+											{1365, 1} --------Xoa Skill
+										},
+										
+							[150]	=	{
+											{1368, 1, "KiÕm T«ng"},	--Cuu Kiem Hop Nhat
+											{1384, 1, "KhÝ T«ng"},	-- Than Quang Toan Nhieu
+										},
+						},
+			szMsg = "KÓ tõ h«m nay, %s gia nhËp Hoa S¬n ph¸i, b¸i kiÕn c¸c vÞ ®¹o huynh!",
+		},
+				{-- Nga My
+			szFacName		=	"huashan",	nFacNumb	=	10,	nCamp	=	3,	nRankId	=	89,	nSeries	=	2,
+			nTaskId_Fact	=	11,
+			nTaskId_90Skill	=	131,
+			nTaskId_137		=	137,	nValue_137 = 71,
+			
+			tbSkillID		=	{
+							[10]	=	{
+											1372,	-- Thanh Van Tong Sang
+											1347,	-- Bach Hong Quan Nhat
+										},
+										
+							[20]	=	{
+											1374,	-- Long Nhuyen Than
+											1349,	-- Kiem Tong Tong Quyet
+											1375,	-- Hai Nap Bach Xuan
+											1350,	-- Duong Ngo Kiem Phap
+											
+										},
+										
+							[30]	=	{
+											1376,	-- Long Huyen Kiem Khi
+											1351,	-- Kim Nhan Hoanh Khong
+											
+										},
+										
+							[40]	=	{
+											1378,	-- Khi Chan Son Ha
+											1354,	-- Ha Di Kiem Phap
+											
+											
+										},
+										
+							[50]	=	{
+											1379,	-- Ki Quan Truong Hong
+											1355,	-- Thien Than Dao Huyen
+																							
+										},
+										
+							[60]	=	{
+											1360, -- Thuong Tung Nghenh Khach	
+											1380,	---Ma van Kiem KHi
+											--1358, ---Huyen Nhan Chan Vien
+											
+										},
+										
+							[70]	=	{	
+											1358, ---Huyen Nhan Chan Vien
+											1370,---Hao Nhien Chi Khi
+											1363,-------Thai Nhac Tam Thanh Phong
+											1365,----Tu Ha Kiem Khi
+											1382,-------------------------
+											1364,
+											1368,
+											1384,
+										},
+										
+							[90]	=	{
+											{1382, 1, "KiÕm T«ng"},	-- Phach Thach Pha Ngoc
+											{1364, 1, "KhÝ T«ng"},	-- Doat Menh Lien Hoan
+										
+										},
+										
+							[120]	=	{
+											{1365, 1} --------Xoa Skill
+										},
+										
+							[150]	=	{
+											{1369, 1, "KiÕm T«ng"},	--Cuu Kiem Hop Nhat
+											{1384, 1, "KhÝ T«ng"},	-- Than Quang Toan Nhieu
+										},
+						},
+			szMsg = "KÓ tõ h«m nay, %s gia nhËp Hoa S¬n ph¸i, b¸i kiÕn c¸c vÞ ®¹o huynh!",
+		},
+           {--Vò Hån
+		szFacName		=	"wuhun",	nFacNumb	=	11,	nCamp	=	1,	nRankId	=	90,	nSeries	=	3,
+	nTaskId_Fact	=	4406,
+	nTaskId_90Skill	=	4407,
+	nTaskId_137		=	137,	nValue_137	=	71,
+	tbSkillID		=	{
+		[10]	=	{1972,1974,},
+		[20]	=	{1964,1975,},
+		[30]	=	{1976},
+		[40]	=	{1965,1977,},
+		[50]	=	{1963,1979},
+		[60]	=	{1980},
+		[70]	=	{1982,1971,1981,},
+		[90]	=	{{1967, 1, "Vò Hån hÖ ThuÉn"},{1983, 1, "Vò Hån hÖ §ao"},},
+		[120]	=	{{1984, 1}},
+		[150]	=	{{1969, 1, "Vò Hån hÖ ThuÉn"},{1985, 1, "Vò Hån hÖ §ao"},},
+
+	},
+			szMsg = "KÓ tõ h«m nay, %s gia nhËp Vò Hån §­êng, tham kiÕn c¸c s­ huynh s­ tû!",
+
+		},
 
 	}
-
 
 TB_WUXING_SKILL_ID	= 
 	{
@@ -706,5 +923,5 @@ TB_WUXING_SKILL_ID	=
 		{nMagicId1	=	447, nMagicId2	=	536},
 		{nMagicId1	=	448, nMagicId2	=	537},
 		{nMagicId1	=	449, nMagicId2	=	538},
+		{nMagicId1	=	450, nMagicId2	=	539},-----moi them
 	}
-

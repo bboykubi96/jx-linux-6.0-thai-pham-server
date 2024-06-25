@@ -11,15 +11,7 @@
 
 
 function main() 
-if 1==1 then
-Talk(1, "", "Kh«ng thÓ duy chuyÓn lªn map nµy !!!");
-		return
-end
-	if GetLevel()<80 then
-		Talk(1, "", "CÊp 80 míi lªn ®­îc map nµy. !!!");
-		return
-	end
 SetFightState(1); -- script viet hoa By http://tranhba.com  c­ìng chÕ v× chiÕn ®Êu 
-NewWorld(875, 1553, 3173); -- script viet hoa By http://tranhba.com  truyÒn tèng ®Õn h¾c sa ®éng 
+NewWorld(875, 1556, 3178); -- script viet hoa By http://tranhba.com  truyÒn tèng ®Õn h¾c sa ®éng 
 AddTermini(226) 
 end; 

@@ -1,5 +1,4 @@
 -------------------------------------------------------------------------
--- Tİnh n¨ng Hoµn ba tiªn tö edit by mcteam search key "Hoµnh ba tiªn tö t¹m thêi ch­a më."
 -- FileName		:	spreader.lua
 -- Author		:	lailigao
 -- CreateTime	:	2005-06-03 10:15:37
@@ -17,27 +16,16 @@ Include("\\script\\global\\rename_head.lua")
 Include("\\script\\misc\\rename\\rename_func.lua")
 --Include("\\script\\misc\\lostgolditem\\restore_goldeqitem.lua")		--ÁìÈ¡¶ªÊ§»Æ½ğ×°±¸
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
-
-function main()
-	--DinhHQ
-	--20110322: Hæ trî copy nh©n vËt cho gi¶i ®Êu VLMC
-	
-	--dofile("script/misc/spreader/spreader.lua");
-	--dofile("script/global/g7vn/g7configall.lua")
-	
-	if(doitennhanvat == 0) then
-		Say("Chøc n¨ng ®æi tªn nh©n vËt t¹m thêi ch­a më.")
-		return 1;
-	end
-
-	local now = tonumber(GetLocalDate("%Y%m%d"));
-	if now >= 20110328 and now <= 20110401 then
-		Talk(1, "", "Chøc n¨ng t¹m ®ãng")
-		return
-	end
-	game_spreader()
-end
+-- function main()
+-- DinhHQ
+-- 20110322: Hæ trî copy nh©n vËt cho gi¶i ®Êu VLMC
+	-- local now = tonumber(GetLocalDate("%Y%m%d"));
+	-- if now >= 20110328 and now <= 20110401 then
+		-- Talk(1, "", "Chøc n¨ng t¹m ®ãng")
+		-- return
+	-- end
+	-- game_spreader()
+-- end
 function game_spreader()
 	if (SWITCH_SPREADER ~= 1) then
 		Talk(1, "", "<color=green>Th«ng c¸o<color>: chøc n¨ng nµy ch­a ®­îc më, xin xem th«ng b¸o cña trang web!");
@@ -45,16 +33,16 @@ function game_spreader()
 	end
 	local szOp = 
 	{
-		"NhËp cd-key kİch ho¹t tµi kho¶n/gsp_input_cdkey",
-		"NhËn ®­îc phÇn th­ëng! /gsp_phase_prize",
+		-- "NhËp cd-key kİch ho¹t tµi kho¶n/gsp_input_cdkey",
+		-- "NhËn ®­îc phÇn th­ëng! /gsp_phase_prize",
 		-- "ÁìÈ¡»Æ½ğÊ¦Í½¿¨/gsp_accept_goldcard",
-		"Liªn quan Th«ng c¸o.../gsp_about",
-		"Båi th­êng cho bang héi ®ang chiÕm thµnh/about_castellan_remedy",
+		-- "Liªn quan Th«ng c¸o.../gsp_about",
+		-- "Båi th­êng cho bang héi ®ang chiÕm thµnh/about_castellan_remedy",
 		"§Æt l¹i tªn cho nh©n vËt/about_rename_role",		
-		"§Æt l¹i tªn cho bang héi/about_rename_tong",
-		"Ng­êi ch¬i ®æi tªn nh©n vËt khi chuyÓn sang Server míi/rename_role_tranfer",
-		"Nh©n tiÖn ghĞ qua th«i/gsp_cancel",
-		"NhËn l¹i trang bŞ Hoµng Kim ®· mÊt!/restore_golditem",
+		-- "§Æt l¹i tªn cho bang héi/about_rename_tong",
+		-- "Ng­êi ch¬i ®æi tªn nh©n vËt khi chuyÓn sang Server míi/rename_role_tranfer",
+		-- "Nh©n tiÖn ghĞ qua th«i/gsp_cancel",
+		-- "NhËn l¹i trang bŞ Hoµng Kim ®· mÊt!/restore_golditem",
 	};
 	
 	if (SYSCFG_PRODUCT_REGION_ID	== DEF_PRODUCT_REGION_CN) then -- ´óÂ½°æ±¾
@@ -70,8 +58,7 @@ function game_spreader()
 		Say("Xin hái cã thÓ gióp g× cho quı kh¸ch?", 3,
 			szOp[6],
 			szOp[7],
-			szOp[8]
-			);
+			szOp[8]);
 	else
 		Say("Xin hái cã thÓ gióp g× cho quı kh¸ch?", 1,
 			szOp[8]);	
@@ -328,7 +315,7 @@ end
 -- ÖØÃûÍæ¼Ò¸ü¸Ä½ÇÉ«Ãû¶Ô»°
 function about_rename_role()
 	local strInfo = "<#> Chµo b¹n! V× tªn nh©n vËt cña b¹n vµ ng­êi ch¬i kh¸c gièng nhau, cho nªn hÖ thèng ®· gióp b¹n ®æi tªn, b¹n cã thÓ söa tªn nh©n vËt cña b¹n tr­íc ®©y, cã thÓ kiÓm tra xem tªn ®ã cã dïng ®­îc kh«ng. Chó ı! B¹n chØ cã 1 c¬ héi duy nhÊt ®Ó ®æi tªn, xin h·y cÈn thËn tõng b­íc.";
-	local strError= "<#> Xin lçi! B¹n kh«ng thÓ tiÕn hµnh thao t¸c nµy. ( ChØ cã thÓ thay ®æi tªn Nh©n vËt, tªn Bang héi, tªn bang chñ cña bang héi chiÕm thµnh) . Xin liªn hÖ víi GM ®Ó biÕt thªnm chi tiÕt";
+	local strError= "<#> Xin lçi! B¹n kh«ng thÓ tiÕn hµnh thao t¸c nµy. Muèn ®æi tªn vui lßng mua DŞ danh phï trªn k× tr©n c¸c";
 	func_online_rename_role(strInfo, strError);
 end
 

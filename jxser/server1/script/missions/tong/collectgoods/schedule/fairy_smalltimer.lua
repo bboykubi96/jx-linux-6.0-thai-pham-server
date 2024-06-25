@@ -3,7 +3,7 @@ Include([[\script\missions\tong\collectgoods\head.lua]]);
 function OnTimer()
 	local nTimerState = GetMissionV(COLLG_MS_TIMERSTATE) + 1;
 	nTimerState = mod(nTimerState, 3);
-	SetMissionV(COLLG_MS_TIMERSTATE, nTimerState);	--进行0, 1, 2之间转换0－清除怪，1刷怪
+	SetMissionV(COLLG_MS_TIMERSTATE, nTimerState);	-- script viet hoa By http://tranhba.com ####0, 1, 2########0####除####1####
 	
 	if (1 == nTimerState) then
 		collg_putfairy();

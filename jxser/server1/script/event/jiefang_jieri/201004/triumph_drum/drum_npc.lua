@@ -1,6 +1,9 @@
 -- ¿­Ðý¹Ä
 Include("\\script\\event\\jiefang_jieri\\201004\\triumph_drum\\head.lua")
 Include("\\script\\task\\system\\task_string.lua");
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\global\\Â·ÈË_Àñ¹Ù.lua")
 
 tbDrumNpc = {};
 tbDrumNpcList = {};
@@ -33,7 +36,7 @@ function tbDrumNpc:New(szTongName, nTongId)
 end
 
 function tbDrumNpc:OnTime()
-	
+
 	self.TimerCount = self.TimerCount - 1;
 	
 	if self.TimerCount < 0 then
@@ -56,12 +59,22 @@ function tbDrumNpc:OnTime()
 		if nTongId == self.nTongId and GetLevel() >= tbTriumphDrum.nLimit_Level then
 			tbGoodPlayer[getn(tbGoodPlayer)+ 1] = PlayerIndex;
 		end 
+			local nDate = tonumber(GetLocalDate("%d"))
+			local nHour = tonumber(GetLocalDate("%H%M"))
+	local nWeek	= tonumber(date("%w"))
+	local nSilverCount = CalcEquiproomItemCount(6,1,4412,1) ;
+	if (nSilverCount >= 1) and ( GetTask(3017) ~= nDate ) then -- gia xu
+	tl_addPlayerExp(20000000)
+    ConsumeEquiproomItem(1,6,1,4412,1)
+	SetTask(3017, nDate); --set ngay 6
+	Msg2Player("B¹n nhËn ®­îc thªm 20tr kinh nghiÖm..")
 	end
+end
 		
 	local nGoodPlayerCount = getn(tbGoodPlayer);
 	local nGoodPlayerExp = tbTriumphDrum:GetExp(nGoodPlayerCount);
 	local tbAwardItem = {nExp = nGoodPlayerExp};
-	local szMsg = format("HiÖn t¹i cã %d thµnh viªn ®øng c¹nh trèng kh¶i hoµn. Cã thÓ nhËn ®­îc %d kinh nghiÖm.", nGoodPlayerCount, nGoodPlayerExp);
+	local szMsg = format("HiÖn t¹i cã %d thµnh viªn ®øng c¹nh trèng kh¶i hoµn. Cã thÓ nhËn ®­îc %d kinh nghiÖm111111.", nGoodPlayerCount, nGoodPlayerExp);
 	local nCurDay = tonumber(GetLocalDate("%Y%m%d"));
 	Msg2Tong(self.nTongId, szMsg);
 	

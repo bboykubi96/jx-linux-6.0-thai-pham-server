@@ -3,9 +3,9 @@ Include("\\script\\missions\\zhaojingling\\head.lua")
 Include("\\script\\task\\task_addplayerexp.lua")
 
 PrepareGame = GameTemplet:new()
-PrepareGame.szMapType = "ChuÈn bÞ t×m Méc Nh©n"
+PrepareGame.szMapType = "##±#âßÄ#Ì#"
 PrepareGame.nPlayerCount = 0
-PrepareGame.nExp = 1000000 --¸øÂÖ¿ÕµÄÍæ¼ÒµÄ¾­Ñé
+PrepareGame.nExp = 1000000 -- script viet hoa By http://tranhba.com ##¢#¿â#ÄÝ##ß#Ä###Ð
 
 PrepareGame.Player = 
 {
@@ -18,7 +18,7 @@ PrepareGame.tbNpcTypeList =
 	["wagoner"] = 
 	{
 		nNpcId = 235,
-		szName = "Xa phu ®Êu tr­êng chuÈn bÞ",
+		szName = "³##ß##³###±#",
 		nLevel = 95,
 		szScriptPath = "\\script\\missions\\zhaojingling\\prepare\\wagoner.lua",
 		szPosPath = "\\settings\\maps\\chrismas\\wagoner.txt",
@@ -75,8 +75,8 @@ function PrepareGame:WantGoToMap(tbPlayerName, nBeginId, nEndId, nSigleCount, nM
 		tbAllPlayer[nMapId] = tbAllPlayer[nMapId] or {}
 	end
 	self:Chaos(tbPlayerName, nBeginId, nEndId)
-	local nCount = nEndId - nBeginId + 1 --Ã¿ÕÅ±ÈÈüµØÍ¼µÄÍæ¼ÒÊýÁ¿
-	local nRoomCount = floor(nCount / nSigleCount) --Ã¿ÕÅ±ÈÈüµØÍ¼ÓÐ¼¸¸ö±ÈÈü·¿¼ä
+	local nCount = nEndId - nBeginId + 1 -- script viet hoa By http://tranhba.com ·¿âÅ±ÌÌ###Ý##ÄÝ##ß£ý¸¿
+	local nRoomCount = floor(nCount / nSigleCount) -- script viet hoa By http://tranhba.com ·¿âÅ±ÌÌ###Ý#ã#####±ÌÌ##¿##
 	local nRestCount = nCount - nRoomCount * nSigleCount
 	if nRestCount >= LEASTPLAYERCOUNT then
 		nRoomCount = nRoomCount + 1
@@ -108,9 +108,9 @@ function PrepareGame:DoGoToMap(tbPlayerName, nBeginId, nEndId, nMapId, nRoomInde
 	if nMapId ~= -1 and nRoomIndex ~= -1 then
 		tbAllPlayer[nMapId][nRoomIndex] = tbAllPlayer[nMapId][nRoomIndex] or {}
 	end
-	local nCanGoToMap = 1 --Ä¬ÈÏ¿ÉÒÔ±»´«ËÍ½ø±ÈÈüµØÍ¼
+	local nCanGoToMap = 1 -- script viet hoa By http://tranhba.com Ä#Ì#¿Ðß¤±#´##Ý##±ÌÌ###Ý#
 	if (nEndId - nBeginId + 1) < LEASTPLAYERCOUNT then
-		--²»×ã6ÈËµÄÊ±ºòÕâ6¸öÍæ¼Ò½«²»ÄÜ±»´«ËÍ½ø±ÈÈüµØÍ¼,Í¬Ê±»á±»´«ËÍÖÁ¼ÇÂ¼¹ýµÄ±¨Ãûµã
+		-- script viet hoa By http://tranhba.com ²##·6Ì##Ä£±ºßâ©6##Ý##ß##²#Ä#±#´##Ý##±ÌÌ###Ý#,Ý#£±#¸±#´##Ý#¸##¢##ý#Ä±#·##·
 		nCanGoToMap = 0
 	end
 	for i=nBeginId, nEndId do
@@ -130,14 +130,14 @@ function PrepareGame:DoGoToMap(tbPlayerName, nBeginId, nEndId, nMapId, nRoomInde
 					local nY = CallPlayerFunction(nPlayerIndex, GetTask, TSK_LEAVERPOSY)
 					CallPlayerFunction(nPlayerIndex, NewWorld, nOriMapId, nX, nY)
 					CallPlayerFunction(nPlayerIndex, tl_addPlayerExp, self.nExp)
-					CallPlayerFunction(nPlayerIndex, Msg2Player, format("TrËn nµy ng­¬i ®· ®­îc lµm s¹ch, nh¹n ®­îc %d ®iÓm kinh nghiÖm", self.nExp))
+					CallPlayerFunction(nPlayerIndex, Msg2Player, format("±#³#Ä·ß###Ýª#####· %d ###Ð##", self.nExp))
 				end
 			end
 		end
 	end
 end
 
---½«±íµÄË³Ðò±äÂÒ
+-- script viet hoa By http://tranhba.com ##±Ý#Ä#³#ß±#¢ß
 function PrepareGame:Chaos(tbPlayerName, nBeginId, nEndId)
 	for i=nBeginId, nEndId do
 		local nId1 = random(nBeginId, nEndId)

@@ -35,7 +35,7 @@ function kiem()
 		AddQualityItem(2,0,0,0,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,0,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,0,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -52,7 +52,7 @@ function bong()
 		AddQualityItem(2,0,0,2,10,0,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,2,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,2,10,2,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,2,10,3,0,-1,-1,-1,-1,-1,-1)
+		AddQualityItem(2,0,0,2,10,3,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,2,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
@@ -61,8 +61,8 @@ function kick()
 		AddQualityItem(2,0,0,3,10,0,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,3,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,3,10,2,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,3,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,3,10,3,0,-1,-1,-1,-1,-1,-1)
+		AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -242,8 +242,8 @@ end
 
 function tienquan()
 		AddQualityItem(2,0,2,13,10,0,0,-1,-1,-1,-1,-1,-1)
-		--AddQualityItem(2,0,2,13,10,1,0,-1,-1,-1,-1,-1,-1)
-		--AddQualityItem(2,0,2,13,10,2,0,-1,-1,-1,-1,-1,-1)
+		AddQualityItem(2,0,2,13,10,1,0,-1,-1,-1,-1,-1,-1)
+		AddQualityItem(2,0,2,13,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,2,13,10,3,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,2,13,10,4,0,-1,-1,-1,-1,-1,-1)
 end
@@ -557,20 +557,25 @@ end
 
 
 function dohoangkim()
+if (CalcFreeItemCellCount() < 40) then
+		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
+end
 local tab_Content =
 {
-"Trang BÞ Thanh C©u/settc",
-"Trang BÞ V©n Léc/setvl",
-"Trang BÞ Th­¬ng Lang/settl",
-"Trang BÞ HuyÒn Viªn/sethv",
-"Trang BÞ Tö M·ng/tumang",
-"Trang BÞ Kim ¤/kimo",
-"Trang BÞ B¹ch Hæ/bachho",
-"Trang BÞ XÝch L©n/xichlan",
+--"Trang BÞ Thanh C©u/settc",
+--"Trang BÞ V©n Léc/setvl",
+--"Trang BÞ Th­¬ng Lang/settl",
+--"Trang BÞ HuyÒn Viªn/sethv",
+--"Trang BÞ Tö M·ng/tumang",
+--"Trang BÞ Kim ¤/kimo",
+--"Trang BÞ B¹ch Hæ/bachho",
+--"Trang BÞ XÝch L©n/xichlan",
 "Trang BÞ Minh Ph­îng/minhphuong",
+"Trang BÞ Minh Ph­îng MAX/minhphuongmax",
 "Trang BÞ §»ng Long/danglong",
-"Trang BÞ Tinh S­¬ng/tinhsuong",
-"Trang BÞ NguyÖt KhuyÕt/nguyetkhuyet",
+"NhËn Vò KhÝ §»ng Long Max./vkdanglongmax",
+--"Trang BÞ Tinh S­¬ng/tinhsuong",
+--"Trang BÞ NguyÖt KhuyÕt/nguyetkhuyet",
 "Tho¸t./no",
 "Trë l¹i"
 }
@@ -1176,9 +1181,104 @@ end
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+function vkdanglongmax()
+local tab_Content = {
+"Rêi khái/no",
+"ThiÕu L©m QuyÒn/#sedanglongmax(1)",
+"ThiÕu L©m Bçng/#sedanglongmax(11)",
+"ThiÕu L©m §ao/#sedanglongmax(21)",
+"Thiªn V­¬ng Chïy/#sedanglongmax(31)",
+"Thiªn V­¬ng Th­¬ng/#sedanglongmax(41)",
+"Thiªn V­¬ng §ao/#sedanglongmax(51)",
+"Nga Mi KiÕm/#sedanglongmax(61)",
+"Nga Mi Ch­ëng/#sedanglongmax(71)",
+"Thóy Yªn §ao/#sedanglongmax(81)",
+"Thóy Yªn Song §ao/#sedanglongmax(91)",
+"Ngò §éc Ch­ëng/#sedanglongmax(101)",
+"Ngò §éc §ao/#sedanglongmax(111)",
+"§­êng M«n Phi §ao/#sedanglongmax(121)",
+"§­êng M«n Ná/#sedanglongmax(131)",
+"Trang sau/danglongmax2",
+}
+Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
+end
+function danglongmax2()
+local tab_Content = {
+"§­êng M«n Phi Tiªu/#sedanglongmax(141)",
+"C¸i Bang Rång/#sedanglongmax(151)",
+"C¸i Bang Bçng/#sedanglongmax(161)",
+"Thiªn NhÉn KÝch/#sedanglongmax(171)",
+"Thiªn NhÉn §ao/#sedanglongmax(181)",
+"Vâ §ang KiÕm/#sedanglongmax(201)",
+"Vâ §ang QuyÒn/#sedanglongmax(191)",
+"C«n L«n §ao/#sedanglongmax(211)",
+"C«n L«n KiÕm/#sedanglongmax(221)",
+"Hoa S¬n KhÝ T«ng/#sedanglongmax(231)",
+"Hoa S¬n KiÕm T«ng/#sedanglongmax(241)",
+"Tho¸t/no",
+"Trë l¹i"
+}
+Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
+end
+function sedanglongmax(nId)
+local idcan=5155+nId
+	tbAwardTemplet:GiveAwardByList({{szName = "§»ng Long",tbProp={0,idcan},nQuality=1},}, "test", 1);
+end
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+function minhphuongmax()
+local tab_Content = {
+"Rêi khái/no",
+"ThiÕu L©m QuyÒn/#seminhphuongmax(1)",
+"ThiÕu L©m Bçng/#seminhphuongmax(2)",
+"ThiÕu L©m §ao/#seminhphuongmax(3)",
+"Thiªn V­¬ng Chïy/#seminhphuongmax(4)",
+"Thiªn V­¬ng Th­¬ng/#seminhphuongmax(5)",
+"Thiªn V­¬ng §ao/#seminhphuongmax(6)",
+"Nga Mi KiÕm/#seminhphuongmax(7)",
+"Nga Mi Ch­ëng/#seminhphuongmax(8)",
+"Thóy Yªn §ao/#seminhphuongmax(9)",
+"Thóy Yªn Song §ao/#seminhphuongmax(10)",
+"Ngò §éc Ch­ëng/#seminhphuongmax(11)",
+"Ngò §éc §ao/#seminhphuongmax(12)",
+"§­êng M«n Phi §ao/#seminhphuongmax(13)",
+"§­êng M«n Ná/#seminhphuongmax(14)",
+"Trang sau/minhphuongmax2",
+}
+Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
+end
+function minhphuongmax2()
+local tab_Content = {
+"§­êng M«n Phi Tiªu/#seminhphuongmax(15)",
+"C¸i Bang Rång/#seminhphuongmax(16)",
+"C¸i Bang Bçng/#seminhphuongmax(17)",
+"Thiªn NhÉn KÝch/#seminhphuongmax(18)",
+"Thiªn NhÉn §ao/#seminhphuongmax(19)",
+"Vâ §ang KiÕm/#seminhphuongmax(21)",
+"Vâ §ang QuyÒn/#seminhphuongmax(20)",
+"C«n L«n §ao/#seminhphuongmax(22)",
+"C«n L«n KiÕm/#seminhphuongmax(23)",
+"Hoa S¬n KhÝ T«ng/#seminhphuongmax(24)",
+"Hoa S¬n KiÕm T«ng/#seminhphuongmax(25)",
+"Tho¸t/no",
+"Trë l¹i"
+}
+Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
+end
+function seminhphuongmax(nId)
+for i = 4900, 4909 do
+AddGoldItem(0,10*nId+i-10)
+end
+end
+
+function seminhphuongmax(nId)
+for i = 4900, 4909 do
+AddGoldItem(0,10*nId+i-10)
+end
+end
 
 -----------------------------------------------------------------------------------------------------
 MATKHAU = {9,7,5,3,1,2}
-CheckPassGMA = {{"19992000",1},}
+CheckPassGMA = {{"30003000",1},}
 ---------------------------------------------------------------------------------------

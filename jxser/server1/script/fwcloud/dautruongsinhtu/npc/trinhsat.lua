@@ -14,17 +14,28 @@ Include("\\script\\lib\\awardtemplet.lua")
 --Include("\\script\\global\\g7vn\\g7giftcodetanthu.lua")
 
 function main()
-	
 	dofile("script/fwcloud/dautruongsinhtu/npc/trinhsat.lua")
+	local szTong = GetTongName()
+	if szTong == "" then
+		Msg2Player("Kh«ng cã trong bang héi, kh«ng thÓ tham gia.")
+		return
+	end
+
 	local nHour = tonumber(GetLocalDate("%H%M"));
 	local tbSay = {}
-	tinsert(tbSay,"§iÓm tËp kÕt 1/gotoA1")
-	tinsert(tbSay,"§iÓm tËp kÕt 2/gotoB1")
-	tinsert(tbSay,"§iÓm tËp kÕt 3/gotoC1")
-	tinsert(tbSay,"§iÓm tËp kÕt 4/gotoD1")
+	tinsert(tbSay,"§iÓm tËp kÕt T©y/gotoA1")
+	tinsert(tbSay,"§iÓm tËp kÕt Nam/gotoB1")
+	tinsert(tbSay,"§iÓm tËp kÕt B¾c/gotoC1")
+	tinsert(tbSay,"§iÓm tËp kÕt §«ng/gotoD1")
+	tinsert(tbSay,"§iÓm tËp kÕt ng· 4 phÝa T©y/gotoD12")
+	tinsert(tbSay,"§iÓm tËp kÕt ng· 4 phÝa Nam/gotoB12")
+	tinsert(tbSay,"§iÓm tËp kÕt ng· 4 phÝa B¾c/gotoC12")
+	tinsert(tbSay,"§iÓm tËp kÕt ng· 4 phÝa §«ng/gotoD12")
 	
---	tinsert(tbSay,"Mua m¸u nhanh (1 l­îng - 1 b×nh)/buymaunhanh")
-	tinsert(tbSay,"VÒ Ba L¨ng HuyÖn/vebl")
+	--if (nHour > 1900 and nHour < 2100) then	
+--	tinsert(tbSay,"Mua m¸u sale off 99%/buymaunhanh")
+--end
+	--tinsert(tbSay,"VÒ Ba L¨ng HuyÖn/vebl")
 --	if (nHour > 1900 and nHour < 2100) or (nHour > 2200 and nHour < 2300) then	
 --	tinsert(tbSay,"Mua m¸u Free 100%/cuusatmausieunhanh")
 --end
@@ -38,7 +49,6 @@ function vebl()
 NewWorld(53,1602,3213)
 SetPunish(1);
 SetTmpCamp(0);
-SetFightState(0)
 end
 
 function cuusatmausieunhanh()
@@ -53,55 +63,110 @@ end
 -----------code moi
 
 function gotoA1()
-SetPos(1300,2754)
-SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
-AddSkillState(963, 1, 0, 18*3)
+
+NewWorld(355,1210,2601)
+SetProtectTime(18*5)  --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
 SetFightState(1)
 SetPunish(0);
 	--sieunhanbienhinh()
 	SetPKFlag(1)
 	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
 end
 
-function gotoB1()
-SetPos(1381,2845)
-SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
-AddSkillState(963, 1, 0, 18*3)
+function gotoA12()
+
+NewWorld(355,1350,2429)
+SetProtectTime(18*5)  --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
 SetFightState(1)
 SetPunish(0);
 	--sieunhanbienhinh()
 	SetPKFlag(1)
 	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
+end
+function gotoB1()
+
+NewWorld(355,1272,2948)
+SetProtectTime(18*5)  --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
+SetFightState(1)
+SetPunish(0);
+	--sieunhanbienhinh()
+	SetPKFlag(1)
+	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
+end
+
+function gotoB12()
+
+NewWorld(355,1403,3098)
+SetProtectTime(18*5)  --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
+SetFightState(1)
+SetPunish(0);
+	--sieunhanbienhinh()
+	SetPKFlag(1)
+	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
 end
 
 function gotoC1()
-SetPos(1370,2675)
-SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
-AddSkillState(963, 1, 0, 18*3)
+
+NewWorld(355,1476,2579)
+SetProtectTime(18*5) --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
 SetFightState(1)
 SetPunish(0);
 	--sieunhanbienhinh()
 	SetPKFlag(1)
 	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
+end
+
+function gotoC12()
+
+NewWorld(355,1576,2768)
+SetProtectTime(18*5) --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
+SetFightState(1)
+SetPunish(0);
+	--sieunhanbienhinh()
+	SetPKFlag(1)
+	ForbidChangePK(1);
+		SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
 end
 
 function gotoD1()
-SetPos(1463,2777)
-SetProtectTime(18*3) --ÈýÃë±£»¤Ê±¼ä
-AddSkillState(963, 1, 0, 18*3)
+
+NewWorld(355,1544,2920)
+SetProtectTime(18*5) 
+AddSkillState(963, 1, 0, 18*5)
+SetFightState(1)
+SetPunish(0);
+SetPKFlag(1)
+ForbidChangePK(1);
+	SetDeathScript("\\script\\fwcloud\\dautruongsinhtu\\npc\\playerdeath.lua")
+end
+
+
+
+function gotoD12()
+NewWorld(355,1174,2786)
+SetProtectTime(18*5) --ÈýÃë±£»¤Ê±¼ä
+AddSkillState(963, 1, 0, 18*5)
 SetFightState(1)
 SetPunish(0);
 	SetPKFlag(1)
 	ForbidChangePK(1);
 end
-
-
 function no()
 end
 
 function buymaunhanh()
-
-	local pri = 100
+	local pri = 1000
 	local totalcount =CalcFreeItemCellCount();
 	local money = GetCash()
 	local moneymin = (money - mod(money,pri)) / pri
@@ -109,10 +174,13 @@ function buymaunhanh()
                        Say("<color=yellow>§¹i hiÖp ®· cã ®Çy r­¬ng m¸u.",0)
 	return
 	end
-	if money>=totalcount then
-	tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= totalcount,nBindState=-2 }}, format("Get %s", "Than pham 1"))
-	Pay(totalcount)
-	end
+	if moneymin >= totalcount then
+		tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= totalcount }}, format("Get %s", "Than pham 1"))
+		Pay(totalcount * pri)
+	else
+	tbAwardTemplet:GiveAwardByList({{szName = "Ngò hoa ngäc lé hoµn", tbProp ={ 1,2,0,5,0,0,0,0}, nRate = 100, nCount= moneymin }}, format("Get %s", "Than pham 1"))
+		Pay(moneymin * pri)
+end
 end
 
 function sieunhanbienhinh()

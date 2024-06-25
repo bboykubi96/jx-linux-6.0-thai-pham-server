@@ -1,6 +1,6 @@
--- æ±À¶µ¤ 30·ÖÖÓÄÚ£¬ÄÚÁ¦ÖµÔö¼Ó50%
+-- script viet hoa By http://tranhba.com  x¸ lam ®an 30 phót bªn trong , néi lùc trŞ gi¸ gia t¨ng 50% 
 
-function main()
-	AddSkillState(451, 1, 1, 32400);
-	return 0
+function main() 
+AddSkillState(451, 1, 1, 32400); 
+return 0 
 end

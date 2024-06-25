@@ -1,25 +1,9 @@
 IncludeLib("FILESYS")
 
---show_riddle(0, "ÃÕÌâÈçÏÂ£º<enter>" )
-
 tbRiddle = {}
-
-Include("\\script\\global\\g7vn\\g7configall.lua")
 
 tbRiddle.PlayerData = {}
 function tbRiddle:Show(szFile, nTotalCount, caption, szMsg, szFunFinalOk, szFunStepOk, szFunStepFail, count)
---	print(format("g_count:%d", g_count))
-
-	--dofile("script/global/g7vn/g7configall.lua")
-	if DangDuaTop == 1 then
-		Say("§ang trong qu¸ tr×nh ®ua top, kh«ng thÓ thùc hiÖn thao t¸c nµy")
-		return 1
-	end
-
-	if doanhoadang == 0 then
-		Say("Ho¹t ®éng §o¸n Hoa §¨ng t¹m thêi ch­a më")
-		return 1
-	end
 
 	if szFile then
 		self.PlayerData[PlayerIndex] = 
@@ -85,7 +69,6 @@ function tbRiddle:ReSort(options)
 	end
 end
 
--- µÆÃÕ»Ø´ðÕýÈ·
 function tbRiddle:answer_ok(count)
 	if not self.PlayerData[PlayerIndex] then
 		return
@@ -116,7 +99,6 @@ function tbRiddle:answer_ok(count)
 	end
 end
 
--- µÆÃÕ»Ø´ð´íÎó
 function tbRiddle:answer_fail()
 	if (self.PlayerData[PlayerIndex].pFunStepFail ~= nil) then  
 			self.PlayerData[PlayerIndex].pFunStepFail:GetGlobal()

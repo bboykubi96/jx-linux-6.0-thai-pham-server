@@ -15,24 +15,46 @@ Include("\\script\\global\\ÌØÊâÓÃµØ\\ËÎ½ð±¨Ãûµã\\npc\\songjin_shophead.lua")
 Include("\\script\\global\\global_tiejiang.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\battles\\vngbattlesign.lua")
-Include("\\script\\lib\\awardtemplet.lua")
 
+
+
+IncludeLib("ITEM")
+IncludeLib("SETTING")
+IncludeLib("QUESTKEY")
+IncludeLib("LEAGUE")
+Include("\\script\\activitysys\\npcfunlib.lua")
+Include("\\script\\lib\\composelistclass.lua")
+Include("\\script\\event\\jiefang_jieri\\201004\\triumph_drum\\npc.lua")
+Include("\\script\\misc\\eventsys\\type\\npc.lua")
+Include("\\script\\lib\\composeex.lua")
+Include("\\script\\vng_event\\doi_hanh_hiep_lenh\\exchangeitem.lua")
+Include("\\script\\missions\\dragonboat\\npc\\dragonboat_main.lua")
+Include("\\script\\dailogsys\\dailogsay.lua")
+SLSD5LoaiBaoRuong=20
 --§iÒu chØnh ®iÓm kinh nghiÖm giíi h¹n khi ®æi ®iÓm tÝch luü - Modified by DinhHQ - 20110810
 --Limit_Exp = 550000
---Limit_Exp = 700000
-SLSD5LoaiBaoRuong=20
+Limit_Exp = 200000
 tbLimit_Exp = {
-						[0] = 700000,
-						[3] = 800000,
-						[4] = 1000000, 
+						[0] = 7000000,
+						[3] = 8000000,
+						[4] = 10000000, 
 					};
 YUEWANGHUN_STONECOUNT = 100
 nState = 0;
 
+function main1(sel)
+
+	dofile("script/global/ÌØÊâÓÃµØ/ËÎ½ð±¨Ãûµã/npc/jin_shop.lua")
+	dofile("script\battles\battlehead.lua")
+		Talk(1, "", "Chøc n¨ng t¹m  ®ãng tíi s¸ng mai.")
+return
+end
+
+
 function main(sel)
 
-	--dofile("script/global/ÌØÊâÓÃµØ/ËÎ½ð±¨Ãûµã/npc/jin_shop.lua")
-	--dofile("script\battles\battlehead.lua")
+	dofile("script/global/ÌØÊâÓÃµØ/ËÎ½ð±¨Ãûµã/npc/jin_shop.lua")
+	dofile("script\battles\battlehead.lua")
 	
 	local nWorld, _, _ = GetWorldPos()
 --	if nWorld ~= 162 then
@@ -63,15 +85,15 @@ function main(sel)
 	SubWorld = battlemap
 	state = GetMissionV(MS_STATE);
 	
----	if (state == 0 or state == 1) then
+	if (state == 0 or state == 1) then
 		maintalk()
-	--	SubWorld = tempSubWorld;
-	--	return
---	else
-	--	Talk(1,"","Qu©n Nhu quan: ChiÕn tranh ®ang diÔn ra ¸c liÖt phÝa tr­íc, c¸c vÞ nªn t¹m l¸nh mét chót!")
-	--	SubWorld = tempSubWorld;
-	--	return
---	end;
+		SubWorld = tempSubWorld;
+		return
+	else
+		Talk(1,"","Qu©n Nhu quan: ChiÕn tranh ®ang diÔn ra ¸c liÖt phÝa tr­íc, c¸c vÞ nªn t¹m l¸nh mét chót!")
+		SubWorld = tempSubWorld;
+		return
+	end;
 	SubWorld = nOldSW;	
 end;
 
@@ -104,12 +126,12 @@ function maintalk()
 	
 	tbDailog.szTitleMsg = "Qu©n Nhu Quan: Ng­¬i cÇn ta gióp g×?"
 	tbDailog:AddOptEntry("Ta muèn mua ®¹o cô", jinshop_sell)
---	tbDailog:AddOptEntry("Ta muèn mua ®¹o cô ®Æc biÖt", jinshop_sell2)
---tbDailog:AddOptEntry("Ta muèn mua 100 G¹o NÕp = 5.000 §iÓm", giaykienlam)	
---	tbDailog:AddOptEntry("Ta muèn mua 2 M¶nh Ph«i TÝm = 5.000 §iÓm", quockhanhxanh)	
-tbDailog:AddOptEntry("§æi 1 §iÓm Tèng Kim --> 200 §iÓm Kinh NghiÖm", muaevent)
+	tbDailog:AddOptEntry("Ta muèn ®æi ®iÓm kinh nghiÖm", exp_exchange)	
+--	tbDailog:AddOptEntry("§æi bÝ b¶o lÊy r­¬ng thÇn bÝ", doibibao)
+--	tbDailog:AddOptEntry("XÕp h¹ng v« song m·nh t­íng",wushuangmengjiang)--ÎÞË«ÃÍ½«	
+	--tbDailog:AddOptEntry("Ta muèn mua ®¹o cô ®Æc biÖt", jinshop_sell2)
+	--tbDailog:AddOptEntry("Ta muèn ®æi ®iÓm kinh nghiÖm", exp_exchange)	
 	tbDailog:AddOptEntry("Sö dông Nh¹c V­¬ng Hån Th¹ch ®Ó ®óc luyÖn Nh¹c V­¬ng KiÕm", yuewang_want)	
-	tbDailog:AddOptEntry("ChiÕn tr­êng v« song m·nh t­íng",wushuangmengjiang)--ÎÞË«ÃÍ½«	
 	--tbDailog:AddOptEntry("Cöa hµng tinh lùc", energy_sale);
 	--tbDailog:AddOptEntry("§æi BÝ B¶o", duihuangmibao)
 	--T¹m ®ãng kiÕm gia mª cung - Modified by DinhHQ - 20110810
@@ -117,24 +139,32 @@ tbDailog:AddOptEntry("§æi 1 §iÓm Tèng Kim --> 200 §iÓm Kinh NghiÖm", muaevent)
 
 	tbDailog:Show()
 end
-function muaevent()
-	local nDate = tonumber(GetLocalDate("%m%d"))
-	if ( (GetTask(3033)+7) == nDate ) then
-		SetTask(3033, nDate)
-		SetTask(3034, 0)
-	end
-AskClientForNumber("muaevent_ok", 1, 10000, "NhËp sè l­îng")
+
+
+function doibibao()
+local  _Message =  function (nItemIndex)
+	local handle = OB_Create()
+	local msg = format("<color=green>§¹i hiÖp <color=yellow>%s ®æi thµnh c«ng <color=gold><%s><color=green><enter><color=yellow>< T¹i Qu©n Nhu Quan ><color>" ,GetName(),GetItemName(nItemIndex))
+	ObjBuffer:PushObject(handle, msg)
+	--RemoteExecute("\\script\\event\\msg2allworld.lua", "broadcast", handle)
+	OB_Release(handle)
 end
-function  muaevent_ok(nNum)
-	if nt_getTask(747) >=nNum and (GetTask(3034)+(nNum*200))<70000000 then
-		tbAwardTemplet:GiveAwardByList({{nExp_tl = nNum*200}}, "test", 1);
-		nt_setTask(747, floor(nt_getTask(747) - nNum));
-		SetTask(3034,GetTask(3034)+(nNum*200))
-	else
-		Say("Trªn ng­êi §¹i HiÖp kh«ng ®ñ ®iÓm tÝch luü tèng kim ®Ó ®æi hoÆc trong 7 ngµy ®· ®æi ®­îc 70.000.000 exp råi.")
-		return
-	end
-end
+local tbFormula = 
+	{
+			tbMaterial = 
+			{
+		{szName="Tèng Kim BÝ B¶o",tbProp={6,1,4457,1,1},nCount=5},
+			},
+		tbProduct = {szName="Thµnh PhÈm",tbProp={6,1,4458,1,1},nCount = 1,CallBack= _Message},
+		nWidth = 1,
+		nHeight = 3,
+		nFreeItemCellLimit = 1,	
+	}
+	local p = tbActivityCompose:new(tbFormula, "xingxialin1huitian", INVENTORY_ROOM.room_giveitem)
+	p:ComposeDailog()
+end 
+
+
 function xunzhang_exchange()
 	if( GetLevel() < 40 ) then
 		Talk( 1, "", "Qu©n Nhu Quan : ChØ cã ng­êi ch¬i cÊp tõ 50 trë lªn míi cã thÓ nhËn Huy ch­¬ng");
@@ -149,26 +179,7 @@ function xunzhang_exchange()
 		Say("Qu©n Nhu Quan: Ng­êi cã muèn dïng 500 ®iÓm tÝch lòy ®Ó ®æi lÊy Huy ch­¬ng kh«ng?", 2,"§æi lÊy Huy ch­¬ng/xunzhang_do", "HiÖn t¹i kh«ng muèn ®æi/no");
 	end
 end
-function giaykienlam()
-	if nt_getTask(747) < 5000 then
-		Say("§iÓm tÝch lòy kh«ng ®ñ 5000, kh«ng thÓ ®æi.",0);
-		return 0;
-	end
-	nt_setTask(747, floor(nt_getTask(747) - 5000));
-	tbAwardTemplet:GiveAwardByList({{szName="G¹o NÕp",tbProp={6,1,1654,1,1},nCount=100},}, "test", 1);
-	--WriteLog(format("[GetZhanGongXunZhang]\t date:%s \t Account:%s \t Name:%s \t GetItem:%s Del:500SongJinJiFen\t",GetLocalDate("%Y-%m-%d %H:%M:%S"),GetAccount(),GetName(),GetItemName(nidx)));
-	--Say("§· nhËn thµnh c«ng 1 Huy ch­¬ng",0);
-end
-function quockhanhxanh()
-	if nt_getTask(747) < 5000 then
-		Say("§iÓm tÝch lòy kh«ng ®ñ 5000, kh«ng thÓ ®æi.",0);
-		return 0;
-	end
-	nt_setTask(747, floor(nt_getTask(747) - 5000));
-	tbAwardTemplet:GiveAwardByList({{szName="M¶nh Ph«i TÝm",tbProp={4,1622,1,1},nCount=2},}, "test", 1);
-	--WriteLog(format("[GetZhanGongXunZhang]\t date:%s \t Account:%s \t Name:%s \t GetItem:%s Del:500SongJinJiFen\t",GetLocalDate("%Y-%m-%d %H:%M:%S"),GetAccount(),GetName(),GetItemName(nidx)));
-	--Say("§· nhËn thµnh c«ng 1 Huy ch­¬ng",0);
-end
+
 function xunzhang_do()
 	if nt_getTask(747) < 500 then
 		Say("§iÓm tÝch lòy kh«ng ®ñ 500, kh«ng thÓ nhËn Huy ch­¬ng",0);
@@ -190,14 +201,14 @@ function exp_exchange()
 		else
 			local tbOpt = 
 			{
-			--	"500 ®iÓm tÝch lòy/#wantpay(500)", 
-			--	"1000 ®iÓm tÝch lòy/#wantpay(1000)",
-		---"2000 ®iÓm tÝch lòy/#wantpay(2000)",
-			--	"5000 ®iÓm tÝch lòy/#wantpay(5000)",
-			--	"TÊt c¶ ®iÓm tÝch lòy/#wantpay(9999)",
+					--"500 ®iÓm tÝch lòy/#wantpay(500)", 
+					--"1000 ®iÓm tÝch lòy/#wantpay(1000)",
+					---"2000 ®iÓm tÝch lòy/#wantpay(2000)",
+					--"5000 ®iÓm tÝch lòy/#wantpay(5000)",
+					--"TÊt c¶ ®iÓm tÝch lòy/#wantpay(9999)",
 					"5.000 ®iÓm tÝch lòy = 50tr KN/#doitichluythuong()",
 					"5.000 ®iÓm tÝch lòy + Toµn N¨ng LÖnh= 100tr KN/#doitichluyxu()",
-				"HiÖn t¹i kh«ng muèn ®æi/no"
+					"HiÖn t¹i kh«ng muèn ®æi/no"
 			}
 			local nDate = tonumber(GetLocalDate("%Y%m%d"))
 			local nHM	= tonumber(GetLocalDate("%%H%M"))
@@ -208,7 +219,7 @@ function exp_exchange()
 			end
 			--»î¶¯ÆÚ¼ä(2009/09/25ÖÁ2009/11/01)´Ó12h30 ÖÁ 23h30
 			
-			Say("Qu©n Nhu quan: B¹n muèn tèn bao nhiªu ®iÓm tÝch lòy ®Ó ®æi ®iÓm kinh nghiÖm?", getn(tbOpt), tbOpt);
+			Say("Qu©n Nhu quan: B¹n ®ang cã <color=green>"..GetTask(747).." <color>®iÓm kinh nghiÖm", getn(tbOpt), tbOpt);
 		end;
 	end
 end;
@@ -332,7 +343,7 @@ function wantpay(mark)
 		Say("Qu©n Nhu quan: Kh«ng cã ®iÓm tÝch lòy mµ muèn ®æi ®iÓm kinh nghiÖm µh, ®óng lµ chuyÖn hoang ®­êng.", 1, "§ãng/no");
 	else
 		local level = GetLevel();
-		local bonus = bt_exchangeexp(level, mark)
+		local bonus = bt_exchangeexp(level, mark)*105
 		Say("Qu©n Nhu quan: B¹n cã thÓ ®æi ®­îc <color=red>"..bonus.." <color>§iÓm kinh nghiÖm, x¸c ®Þnh ®æi ph¶i kh«ng?", 2, "§óng, ta cÇn ®æi/#paymark("..mark..")", "Uhm, §Ó ta suy nghÜ l¹i!/no")
 	end	
 end
@@ -348,7 +359,7 @@ function paymark(mark)
 		Say("Qu©n Nhu quan: Kh«ng cã ®iÓm tÝch lòy mµ muèn ®æi ®iÓm kinh nghiÖm µh, ®óng lµ chuyÖn hoang ®­êng.", 1, "§ãng/no");
 	else
 		local level = GetLevel();
-		local bonus = bt_exchangeexp(level, mark)
+		local bonus = bt_exchangeexp(level, mark)*105
 		if (expchange_limit(mark) == 1) then
 			nt_setTask(747, floor(nt_getTask(747) - mark))
 			AddOwnExp( bonus);
@@ -361,15 +372,15 @@ end
 
 
 function expchange_limit(cost)
-	--local ww = tonumber(date("%W"))
-	--local yy = tonumber(date("%Y")) - 2000
+	local ww = tonumber(date("%W"))
+	local yy = tonumber(date("%Y")) - 2000
 	local nNumber = tbVNG2011_ChangeSign:GetTransLife()	
-	local Limit_Exp = tbLimit_Exp[nNumber]
+	--local Limit_Exp = tbLimit_Exp[nNumber]
 	if ( (nt_getTask(1017) + cost) <= Limit_Exp) then
 		nt_setTask(1017, nt_getTask(1017) + cost)
 		return 1
 	else
-		Say("Qu©n Nhu quan: §õng tham lam nh­ vËy, trong mét tuÇn kh«ng thÓ ®æi qu¸<color=red>"..Limit_Exp.."<color>®iÓm kinh nghiÖm cña tÝch lòy", 0)
+		Say("Qu©n Nhu quan: §õng tham lam nh­ vËy, trong mét tuÇn kh«ng thÓ ®æi qu¸<color=red>"..Limit_Exp.."<color>®iÓm tÝch lòy", 0)
 		return -1
 	end
 end
@@ -446,7 +457,6 @@ end
 function goldenitem_menu()
 	Sale( 103, 4);
 end
-
 
 function WriteLogPro(data,str)
 	local Data2 = openfile(""..data.."", "a+");

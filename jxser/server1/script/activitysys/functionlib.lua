@@ -240,7 +240,6 @@ function lib:ShowMessage(szMsg)
 	end
 end
 
-
 function lib:ShuffleTable(tb, nStart, nEnd)
 	
 	for i=nStart, nEnd - nStart do
@@ -276,7 +275,6 @@ function lib:CheckTime(tbAllowTime, szMessage)
 	lib:ShowMessage(szMessage);
 end
 
-
 function lib:CheckTimeAndWeekDay(nStartTime, nEndTime, szWeekDayList, szMessage)
 	local nCurTime = tonumber(GetLocalDate("%H%M"));
 	local nCurWeekDay = tonumber(GetLocalDate("%w"));
@@ -302,7 +300,6 @@ function lib:Pack(...)
 	return arg
 end
 
-
 function lib:DoFunByPlayer(nPlayerIndex, fun, ...)	
 	local nOldPlayer = PlayerIndex;
 	PlayerIndex = nPlayerIndex
@@ -311,8 +308,6 @@ function lib:DoFunByPlayer(nPlayerIndex, fun, ...)
 	return unpack(re)
 end
 
-
---
 function lib:DoFunInWorld(nSubWorld, fun, ...)
 	local nOldSubWorld = SubWorld;
 	SubWorld = nSubWorld

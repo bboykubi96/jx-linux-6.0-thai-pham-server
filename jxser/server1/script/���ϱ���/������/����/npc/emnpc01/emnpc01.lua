@@ -18,7 +18,7 @@ Include("\\script\\dailogsys\\g_dialog.lua")
 
 Include("\\script\\item\\skillbook.lua")
 
-function main_com() 
+function main() 
 
 local nNpcIndex = GetLastDiagNpc(); 
 local nCurDate = tonumber(GetLocalDate("%Y%m%d%H%M")) 

@@ -2,26 +2,26 @@ Include("\\script\\missions\\dungeon\\dungeons\\shiliantang\\shiliantang.lua")
 Include("\\script\\missions\\dungeon\\npcdialog.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 
-local _CallTower = function()
-	tbDungeonManager:DoTempletFun("Th› Luy÷n ß≠Íng", "CallTower")
-end
+local _CallTower = function() 
+tbDungeonManager:DoTempletFun("Thˆ luy÷n Æ≠Íng ", "CallTower") 
+end 
 
-local _CallBackTower = function()
-	tbDungeonManager:DoTempletFun("Th› Luy÷n ß≠Íng", "CallBackTower")
-end
+local _CallBackTower = function() 
+tbDungeonManager:DoTempletFun("Thˆ luy÷n Æ≠Íng ", "CallBackTower") 
+end 
 
-function main()
-	local szTitle = "<color=yellow>Tri÷u tÀp phÔ<color> nµy tπi Æﬁa Æi”m chÿ Æﬁnh c„ th” tri÷u tÀp<color=red>cung ti‘n thÒ<color>, cÚng c„ th” tri÷u tÀp <color=red> cung ti‘n thÒ<color> tπi vﬁ tr› kh∏c."
-	
-	if tbDungeonManager:DoTempletFun("Th› Luy÷n ß≠Íng", "CheckOwnerInDungeon") then
-		local tbOpt = 
-		{
-			{"Tπi Æ©y tri÷u tÀp cung ti‘n thÒ", %_CallTower},
-			{"Tri÷u tÀp cung ti‘n thÒ vµo Æﬁa Æi”m nµy", %_CallBackTower},
-			{"HÒy b· "}
-		}
-		CreateNewSayEx(szTitle, tbOpt)
-	end
+function main() 
+local szTitle = "<color=yellow> cho g‰i phÔ <color> Î chÿ Æﬁnh Æﬁa Æi”m , c„ th” cho g‰i <color=red> cung ti’n thÒ <color>, cÚng c„ th” cho g‰i <color=red> nh˜ng vﬁ tr› kh∏c Æ›ch cung ti’n thÒ <color> ." 
 
-	return 1
+if tbDungeonManager:DoTempletFun("Thˆ luy÷n Æ≠Íng ", "CheckOwnerInDungeon") then 
+local tbOpt = 
+{ 
+{" Î chÁ nµy cho g‰i cung ti’n thÒ ", %_CallTower}, 
+{" Î chÁ nµy cho g‰i cung ti’n thÒ ", %_CallBackTower}, 
+{"HÒy b· "} 
+} 
+CreateNewSayEx(szTitle, tbOpt) 
+end 
+
+return 1 
 end

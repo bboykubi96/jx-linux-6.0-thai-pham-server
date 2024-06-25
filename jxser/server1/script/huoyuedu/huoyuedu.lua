@@ -55,6 +55,7 @@ function tbHuoYueDu:LoadTable(szPath)
 end
 
 function tbHuoYueDu:AddHuoYueDu(szActivity)
+	do return end-- tam bo do nang dong by Zhu
 	local nActivityId = tbActivity2ID[szActivity]
 	if not nActivityId then
 		return 

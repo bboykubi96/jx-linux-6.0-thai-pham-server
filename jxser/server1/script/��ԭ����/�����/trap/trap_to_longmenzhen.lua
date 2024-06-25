@@ -7,4 +7,5 @@ NewWorld( 121, 2209, 4179);
 DisabledUseTownP(0) -- script viet hoa By http://tranhba.com  kh«ng h¹n chÕ kú rêi ®i phong l¨ng ®é sau sö dông trë vÒ thµnh phï 
 			SetProtectTime(18*3) --ÈuAë±£»¤Ê±¼ä
 			AddSkillState(963, 1, 0, 18*3)
+			ForbidChangePK(0);	-- dc doi pk
 end

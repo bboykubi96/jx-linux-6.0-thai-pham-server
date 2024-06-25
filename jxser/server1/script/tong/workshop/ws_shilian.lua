@@ -36,7 +36,7 @@ function ws_main(nTongID, nWorkshopID)
 	end
 	local aryszContent = {
 		"Ta muèn nhËn Tu th©n hoµn/#use_g_1_ok".."("..nTongID..","..nWorkshopID..")",
-		"NhËn ®­îc Méc nh©n/#use_xiulianmuren("..nTongID..","..nWorkshopID..")",
+	--	"NhËn ®­îc Méc nh©n/#use_xiulianmuren("..nTongID..","..nWorkshopID..")",
 	}
 	-- Ô½ÄÏ°æÈ¡Ïû´ó»¹µ¤
 	if (GetProductRegion() == "cn") then
@@ -98,8 +98,8 @@ function use_xiulianmuren(nTongID, nWorkshopID)
 	local nTime = tonumber(GetLocalDate("%H%M"))
 	if (nTime >= 1230 and nTime <= 2200) then
 			Say("<#>Tæng qu¶n Thİ luyÖn ph­êng: C¸ch luyÖn c«ng nhanh chãng nhÊt dÜ nhiªn lµ thùc chiÕn, nh­ng t×m mét ng­êi ®Ó cïng nhau luyÖn tËp thËt kh«ng ph¶i dÔ dµng, v× thÕ ta ®· s¸ng t¹o ra mét lo¹i méc nh©n, cã thÓ gióp ng­¬i luyÖn c«ng bÊt cø khi nµo, chØ cÇn nhÊp chuét ph¶i sö dông th× sÏ gäi ra mét méc nh©n ®Ó gióp ng­¬i luyÖn c«ng, ®¸nh b¹i nã th× sÏ nhËn ®­îc rÊt nhiÒu ®iÓm kinh nghiÖm, méc nh©n cÊp cµng cao th× ®iÓm kinh nghiÖm sÏ cµng nhiÒu. Ng­¬i cã thÓ sö dông <color=yellow>"..VALUE_MUREN_CONTRIBUTION.."<color> ®iÓm cèng hiÕn ®Ó ®æi, cã ®ång ı kh«ng?", 3,
-			"§æi 1 méc nh©n/#sl_sure2muren("..nTongID..","..nWorkshopID..")",
-			"Méc nh©n lµ g×?/sl_helpmuren",
+	--		"§æi 1 méc nh©n/#sl_sure2muren("..nTongID..","..nWorkshopID..")",
+	--		"Méc nh©n lµ g×?/sl_helpmuren",
 			"Kh«ng cÇn ®©u/cancel")
 	else
 			Talk(1,"","Thêi gian nhËn vËt phÈm lµ tõ 12h30 ®Õn 22h h»ng ngµy !")

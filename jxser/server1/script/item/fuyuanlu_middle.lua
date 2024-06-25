@@ -1,13 +1,11 @@
--- ¸£ÔµÂ¶£¨ÖÐ£©
--- Fanghao_Wu 2004.9.6
+-- script viet hoa By http://tranhba.com  phóc duyªn lé # trung # 
+-- script viet hoa By http://tranhba.com  Fanghao_Wu 2004.9.6 
 
 Include( "\\script\\global\\fuyuan.lua" )
 
-function main()
-	--dofile("script/item/fuyuanlu_middle.lua")
-	FuYuan_Start();
-	if( FuYuan_Add( 20 ) ~= 1 ) then
-		Msg2Player( "B¹n t¹m thêi ch­a thÓ sö dông Phóc Duyªn, tr­íc tiªn h·y ®i t×m Vâ L©m Minh TruyÒn Nh©n ë c¸c thµnh phè lín ®Ó më c«ng n¨ng nµy. " );
-		return 1;
-	end	
+function main() 
+if( FuYuan_Add( 20 ) ~= 1 ) then 
+Msg2Player("Ngµi t¹m thêi vÉn kh«ng thÓ sö dông phóc duyªn lé , xin/mêi ®i tr­íc c¸c ®¹i thµnh thÞ vâ l©m minh truyÒn nh©n chç më ra phóc duyªn chøc n¨ng . " ); 
+return 1; 
+end 
 end

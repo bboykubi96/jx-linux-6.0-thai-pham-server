@@ -1,10 +1,3 @@
--- 炎帝图腾碎片
--- by 小浪多多
--- 2008.02.25
--- 我..
--- 正在尝试着..
--- 寻找着属于我的天地..
-
 Include("\\script\\lib\\composeclass.lua");
 
 function YDBZ_tradeYandiTuTeng()
@@ -62,7 +55,6 @@ function YDBZ_SureDoTradeLingQi(n_sel)
 			},
 	};
 	
-	--如果输入为空，使用默认值
 	local szLogTitle	= "yandi_tradeLingQi";
 	
 	local tbMaterial	= tbFormula[n_sel].tbMaterial

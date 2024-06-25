@@ -30,16 +30,16 @@ BATTLE_LIST = {
 }
 
 PARAM_LIST = {
-	FIELD_TONGMEMBER 	= 150, 			-- 每个场地每个帮会最大人数限制 so mem trong 1 map
-	WORLD_TONGMEMBER 	= 150,			-- 整个城战每个帮会最大人数限制 so nguoi trong bang co the vao ctc
+	FIELD_TONGMEMBER 	= 100, 			-- 每个场地每个帮会最大人数限制
+	WORLD_TONGMEMBER 	= 200,			-- 整个城战每个帮会最大人数限制
 	EXPTIMER_INTERVAL	= 1 * 60 * 18,	-- 给经验奖励的间隔（帧数）
 	TIMEOUT_MONSTER		= 35 * 60 * 18,	-- 龙柱无敌时间（帧数）
 	TIMEOUT_SCORE		= 300 * 18,		-- 龙柱积分奖励时间（帧数）
 }
 
 CAMP_MONSTER 				= 1
-SIGNUP_MONEY 				= 1					--so tien bao danh tham gia cong thanh chien
-SIGNUP_TIAOZHANLINGCOUNT	= 1			--so khieu chien lenh bao danh tham gia cong thanh chien mac dinh 2000
+SIGNUP_MONEY 				= 10000000					--so tien bao danh tham gia cong thanh chien
+SIGNUP_TIAOZHANLINGCOUNT	= 0			--so khieu chien lenh bao danh tham gia cong thanh chien mac dinh 2000
 TIMEAWARD_EXP				= 300000
 TIMEAWARD_SCORE				= 1
 

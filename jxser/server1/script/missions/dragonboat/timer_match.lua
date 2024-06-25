@@ -1,53 +1,53 @@
--- description	: ±ÈÈü¶¨Ê±Æ÷
--- author		: wangbin
--- datetime		: 2005-06-04
+-- script viet hoa By http://tranhba.com  description : tranh tµi ®Şnh lóc khİ 
+-- script viet hoa By http://tranhba.com  author : wangbin 
+-- script viet hoa By http://tranhba.com  datetime : 2005-06-04 
 
 Include("\\script\\missions\\dragonboat\\include.lua")
 Include("\\script\\missions\\dragonboat\\npc.lua")
 
-function cancel_match()
-	-- Msg2SubWorld(date("[%H:%M:%S]") .. "ÁúÖÛ±ÈÈüÈ¡Ïû£¡")
-end
+function cancel_match() 
+-- script viet hoa By http://tranhba.com  Msg2SubWorld(date("[%H:%M:%S]") .. " long chu tranh tµi hñy bá #") 
+end 
 
--- ¿ªÊ¼±ÈÈü
-function start_match()
-	-- ÉèÖÃÎª±ÈÈü×´Ì¬
-	SetMissionV(VARV_STATE, 2);
+-- script viet hoa By http://tranhba.com  b¾t ®Çu tranh tµi 
+function start_match() 
+-- script viet hoa By http://tranhba.com  thiÕt trİ v× tranh tµi tr¹ng th¸i 
+SetMissionV(VARV_STATE, 2); 
 
-	local player_count = GetMSPlayerCount(MISSION_MATCH);
-	if (player_count == 0) then
-		-- È¡Ïû±ÈÈü
-		cancel_match();
-	else
-		-- Í¨¸æ
-		broadcast("Cuéc ®ua thuyÒn Rång ®· chİnh thøc b¾t ®Çu, c¸c h¶o thñ ®ang ra søc tranh tµi!");
+local player_count = GetMSPlayerCount(MISSION_MATCH); 
+if (player_count == 0) then 
+-- script viet hoa By http://tranhba.com  hñy bá tranh tµi 
+cancel_match(); 
+else 
+-- script viet hoa By http://tranhba.com  th«ng b¸o 
+broadcast(" long chu tranh tµi chİnh thøc b¾t ®Çu , chÌo thuyÒn thñ m«n ®ang cè g¾ng chÌo thuyÒn !"); 
 
-		-- ³õÊ¼»¯±äÁ¿
-		SetMissionV(VARV_NPC_BATCH, 1);	-- ¹ÖµÄÅú´Î
-    	
-		-- ÇåÀíµØÍ¼
-		world = SubWorldIdx2ID(SubWorld);
-		ClearMapNpc(world);
-		ClearMapTrap(world); 
-		ClearMapObj(world);
-    	
-		-- Éú³ÉµÚ1Åú¹Ö
-		create_npc(1);
-	end
-	
-	-- ÉèÖÃÍæ¼ÒÊıÁ¿
-	SetMissionV(VARV_PLAYER_COUNT, player_count);
-end
+-- script viet hoa By http://tranhba.com  míi b¾t ®Çu hãa thay ®æi l­îng 
+SetMissionV(VARV_NPC_BATCH, 1); -- script viet hoa By http://tranhba.com  tr¸ch ®İch nhãm lÇn 
 
--- ¹Ø±Õ±ÈÈü¶¨Ê±Æ÷
-function close_match_timer()
-	StopMissionTimer(MISSION_MATCH, TIMER_MATCH);
-end
+-- script viet hoa By http://tranhba.com  dän dÑp b¶n ®å 
+world = SubWorldIdx2ID(SubWorld); 
+ClearMapNpc(world); 
+ClearMapTrap(world); 
+ClearMapObj(world); 
 
-function OnTimer()
-	-- ±¨Ãû½áÊø
-	close_match_timer();
-	-- ±ÈÈü¿ªÊ¼
-	start_match();
-	start_board_timer();
-end
+-- script viet hoa By http://tranhba.com  sinh thµnh thø 1 nhãm tr¸ch 
+create_npc(1); 
+end 
+
+-- script viet hoa By http://tranhba.com  thiÕt trİ nhµ ch¬i sè l­îng 
+SetMissionV(VARV_PLAYER_COUNT, player_count); 
+end 
+
+-- script viet hoa By http://tranhba.com  t¾t tranh tµi ®Şnh lóc khİ 
+function close_match_timer() 
+StopMissionTimer(MISSION_MATCH, TIMER_MATCH); 
+end 
+
+function OnTimer() 
+-- script viet hoa By http://tranhba.com  ghi danh kÕt thóc 
+close_match_timer(); 
+-- script viet hoa By http://tranhba.com  tranh tµi b¾t ®Çu 
+start_match(); 
+start_board_timer(); 
+end 

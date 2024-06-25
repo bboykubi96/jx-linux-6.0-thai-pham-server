@@ -20,7 +20,7 @@ function main(sel)
 		"B¹n ®· xem kü quyÓn TÈy Tñy kinh nh­ng kh«ng thÓ hiÓu: ( "
 	}
 	level = GetLevel()
-	if(level < 80) then  --µÈ¼¶Ì«µÍ£¬²»ÈÃÊ¹ÓÃ
+	if(level < 90) then  --µÈ¼¶Ì«µÍ£¬²»ÈÃÊ¹ÓÃ
 		Msg2Player(str[1])
 		return 1
 	end
@@ -32,7 +32,7 @@ function main(sel)
 		level = 89
 	end
 	index = floor((level -80)/2) +1
-	AddProp(point[5].pot)
+	AddProp(point[index].pot)
 	SetTask(81,times+1)
 	Msg2Player("Sö dông lÇn thø: "..times.." - "..format(str[2],point[index].msg))
 	return 0

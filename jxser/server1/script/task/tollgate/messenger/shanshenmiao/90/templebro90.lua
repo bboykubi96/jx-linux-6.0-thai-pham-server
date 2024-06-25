@@ -22,9 +22,9 @@ function OnDeath()
 	if (  messenger_middletime() == 10 ) then --Íæ¼ÒÔÚµØÍ¼ÖĞµÄÊ±¼ä
 		Msg2Player("Xin lçi! "..name.."! B¹n ®· hÕt thêi gian thùc hiÖn nhiÖm vô Tİn sø! NhiÖm vô thÊt b¹i!.")
 		losemessengertask()
-	--elseif ( Uworld1215 == 0 ) then  --Ã»ÓĞË¢¹ÖµÄÈÎÎñ
-		--Msg2Player("Õâ¸ö¼Ò»ïÒÑ¾­±»±ğÈË°üÁË£¬Äã´òËûÊÇ²»»áÓĞÈÎºÎ½±ÀøµÃ¡£")
-		--return
+	elseif ( Uworld1215 == 0 ) then  --Ã»ÓĞË¢¹ÖµÄÈÎÎñ
+		Msg2Player("Õâ¸ö¼Ò»ïÒÑ¾­±»±ğÈË°üÁË£¬Äã´òËûÊÇ²»»áÓĞÈÎºÎ½±ÀøµÃ¡£")
+		return
 	else
 		temple_killrefresh()
 	end

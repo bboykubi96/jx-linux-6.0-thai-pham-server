@@ -1,48 +1,48 @@
--- ====================== ÎÄ¼şĞÅÏ¢ ======================
+-- script viet hoa By http://tranhba.com  ====================== v¨n kiÖn tin tøc ====================== 
 
--- ½£ÏÀÇéÔµÍøÂç°æÒ»ÕòÅÉÁéµ¤
--- Ê³ÓÃºóÄÜÌáÉı£±µã¼¼ÄÜµã
--- ÓëÕòÅÉÁéÒ©¹²ÓÃ±äÁ¿£¬µÚÒ»¸öByte¼ÇÂ¼Áéµ¤Ê¹ÓÃ´ÎÊı£¬µÚ¶ş¸öByte¼ÇÂ¼ÁéÒ©Ê¹ÓÃ´ÎÊı
+-- script viet hoa By http://tranhba.com  kiÕm hiÖp t×nh duyªn in tê nÕt b¶n mét trÊn ph¸i linh ®an 
+-- script viet hoa By http://tranhba.com  ¨n vµo sau cã thÓ t¨ng lªn # ®iÓm kü n¨ng ®iÓm 
+-- script viet hoa By http://tranhba.com  cïng trÊn ph¸i linh d­îc céng dïng thay ®æi l­îng , thø nhÊt Byte ghi chĞp linh ®an sö dông sè lÇn , thø hai Byte ghi chĞp linh d­îc sö dông sè lÇn 
 
--- Edited by ×Ó·Çô~
--- 2008/03/03 23:29
+-- script viet hoa By http://tranhba.com  Edited by tö kh«ng ph¶i lµ ng­ 
+-- script viet hoa By http://tranhba.com  2008/03/03 23:29 
 
--- ======================================================
+-- script viet hoa By http://tranhba.com  ====================================================== 
 Include("\\script\\lib\\gb_modulefuncs.lua")
 
 
-TSK_ZHENPAILINGDAN_USECNT	=	1882;
-TSK_TOUSHI_FLAG				=	1881						-- ¡°´øÒÕÍ¶Ê¦¡±ÍË³öÃÅÅÉµÄ±ê¼Ç
-														--	 0£ºÎ´ÉêÇë×ªÍ¶ÃÅÅÉ»ò×ªÍ¶ÃÅÅÉ³É¹¦£¨Óë×ªÖ°´ÎÊıÒ»Æğ¾ö¶¨£©£»1£º³É¹¦ÉêÇë×ªÍ¶ÃÅÅÉ£»
-TSK_TOUSHI_COUNT			=	1883						-- ¡°´øÒÕÍ¶Ê¦¡±×ªÖ°µÄ´ÎÊı
+TSK_ZHENPAILINGDAN_USECNT = 1882; 
+TSK_TOUSHI_FLAG = 5928 -- script viet hoa By http://tranhba.com  “ mang nghÖ ®Çu s­ ” thèi lui ra m«n ph¸i dÊu hiÖu 
+-- script viet hoa By http://tranhba.com  0# kh«ng th©n thØnh chuyÓn ®Çu m«n ph¸i hoÆc chuyÓn ®Çu m«n ph¸i thµnh c«ng # cïng chuyÓn chøc sè lÇn cïng nhau quyÕt ®Şnh ##1# thµnh c«ng th©n thØnh chuyÓn ®Çu m«n ph¸i # 
+TSK_TOUSHI_COUNT = 1883 -- script viet hoa By http://tranhba.com  “ mang nghÖ ®Çu s­ ” chuyÓn chøc ®İch sè lÇn 
 
-function main(nItemIdx)
-	if (gb_GetModule("SWITH_DAIYITOUSHI") ~= 1) then
-		Say("Xin lçi, c«ng n¨ng nµy t¹m thêi ®· bŞ ®ãng, thêi gian më l¹i sÏ ®ùoc th«ng b¸o sau ", 0);
-		return 1;
-	end
-	
-	local nValue	= GetTask(TSK_ZHENPAILINGDAN_USECNT);
-	local nTimes = GetByte(nValue, 1);
-	local str={
-		"Nghiªn cøu mét håi trÊn ph¸i linh ®¬n mµ vÉn kh«ng biÕt c¸ch sö dông. (ch­a chuyÓn m«n ph¸i kh«ng thÓ sö dông)",
-		"Võa míi uèng xong trÊn ph¸i linh ®¬n c¶m thÊy mét luång sinh lùc ch¹y quanh ng­êi (T¨ng 1 ®iÓm kü n¨ng)",
-		"Tay cÇm lÊy trÊn ph¸i linh ®¬n mµ ph¸t hiÖn ra r»ng nã kh«ng cßn t¸c dông g× n÷a (®· sö dông ®Õn sè lÇn giíi h¹n cao nhÊt)"
-		}
-	if(nTimes >= 15) then              	-- Ê¹ÓÃ´ÎÊıÒÑ´ïµ½ÉÏÏŞ
-		Msg2Player(str[3])
-		return 1;
-	elseif (GetTask(TSK_TOUSHI_FLAG) == 0 and GetTask(TSK_TOUSHI_COUNT) <= 0) then     	-- ×ªÍ¶ÃÅÅÉ³É¹¦²Å¿ÉÊ¹ÓÃ
-		Msg2Player(str[1])
-		return 1;
-	else                            	-- ½±Àø1µã¼¼ÄÜµã
-		AddMagicPoint(1);
+function main(nItemIdx) 
+-- script viet hoa By http://tranhba.com  if (gb_GetModule("SWITH_DAIYITOUSHI") ~= 1) then 
+-- script viet hoa By http://tranhba.com  Say("ThËt xin lçi , nªn chøc n¨ng t¹m thêi bŞ nhèt , më ra thêi gian sÏ ë chê mét chót th«ng b¸o ", 0); 
+-- script viet hoa By http://tranhba.com  return 1; 
+-- script viet hoa By http://tranhba.com  end 
+
+local nValue = GetTask(TSK_ZHENPAILINGDAN_USECNT); 
+local nTimes = GetByte(nValue, 1); 
+local str={ 
+" nghiªn cøu mét håi trÊn ph¸i linh ®an cßn ch­a ph¶i sÏ sö dông ( kh«ng chuyÓn m«n ph¸i kh«ng thÓ sö dông )", 
+" míi võa uèng xong trÊn ph¸i linh ®an c¶m gi¸c mét cæ søc sèng t¹i th©n thÓ l­u ®éng ( gia t¨ng 1 c¸ kü n¨ng ®iÓm )", 
+" tay cÇm trÊn ph¸i linh ®an ph¸t hiÖn nã kh«ng cã c«ng hiÖu liÔu ( ®· sö dông ®Õn cao nhÊt th­îng h¹n liÔu )" 
+} 
+if(nTimes >= 15) then -- script viet hoa By http://tranhba.com  sö dông sè lÇn ®· ®¹t tíi th­îng h¹n 
+Msg2Player(str[3]) 
+return 1; 
+-- elseif (GetTask(TSK_TOUSHI_FLAG) == 0 and GetTask(TSK_TOUSHI_COUNT) <= 0) then -- script viet hoa By http://tranhba.com  chuyÓn ®Çu m«n ph¸i thµnh c«ng míi cã thÓ sö dông 
+-- Msg2Player(str[1]) 
+-- return 1; 
+else -- script viet hoa By http://tranhba.com  t­ëng th­ëng 1 ®iÓm kü n¨ng ®iÓm 
+AddMagicPoint(1); 
 		SetTask(TSK_ZHENPAILINGDAN_USECNT, SetByte(nValue, 1, nTimes + 1));
-		Msg2Player(str[2]);
-		WriteLog(format("[%s]\t%s\tName:%s\tAccount:%s\tAdd MagicPoint 1 by ZhenPaiLingDan",
-						"TrÊn ph¸i linh ®¬n",
-						GetLocalDate("%Y-%m-%d %X"),
-						GetName(), GetAccount()));
-		return 0;
-	end
-end
+Msg2Player(str[2]); 
+WriteLog(format("[%s]\t%s\tName:%s\tAccount:%s\tAdd MagicPoint 1 by ZhenPaiLingDan", 
+" trÊn ph¸i linh ®an ", 
+GetLocalDate("%Y-%m-%d %X"), 
+GetName(), GetAccount())); 
+return 0; 
+end 
+end 

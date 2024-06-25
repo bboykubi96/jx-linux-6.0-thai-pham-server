@@ -4,15 +4,15 @@ Include("\\script\\activitysys\\config\\12\\head.lua")
 Include("\\script\\activitysys\\config\\12\\carriage.lua")
 Include("\\script\\activitysys\\config\\12\\variables.lua")
 
-local StartDate = 20120402
-local EndDate = 20200430
+local StartDate = nil
+local EndDate = nil
 
 local tbItem2Skill =
 {
-	["6,1,3146"] = {tbParam = {462, 30, 1, 3 * 18}, nCD = 3, nTaskIndex = 4},  --¼ÓÑª·û
-	["6,1,3147"] = {tbParam = {493, 10, 1, 10 * 18}, nCD = 15, nTaskIndex = 5}, --¼ÓËÙ·û
-	["6,1,3148"] = {tbParam = {1008, 1, 1, 7 * 18}, nCD = 15, nTaskIndex = 6},  --¸ñµ²·û
-	["6,1,3149"] = {tbParam = {1206, 1, 1, 10 * 18}, nCD = 15, nTaskIndex = 7}, --ÒşÉí·û
+	["6,1,3146"] = {tbParam = {462, 30, 1, 3 * 18}, nCD = 3, nTaskIndex = 4},
+	["6,1,3147"] = {tbParam = {493, 10, 1, 10 * 18}, nCD = 15, nTaskIndex = 5},
+	["6,1,3148"] = {tbParam = {1008, 1, 1, 7 * 18}, nCD = 15, nTaskIndex = 6},
+	["6,1,3149"] = {tbParam = {1206, 1, 1, 10 * 18}, nCD = 15, nTaskIndex = 7},
 }
 
 function main(nItemIndex)
@@ -35,7 +35,7 @@ function main(nItemIndex)
 		return 1
 	end
 	
-	if PlayerFunLib:CheckTotalLevel(80,%szLEVEL_TIP,">=") ~= 1 then
+	if PlayerFunLib:CheckTotalLevel(120,%szLEVEL_TIP,">=") ~= 1 then
 		return 1
 	end
 	

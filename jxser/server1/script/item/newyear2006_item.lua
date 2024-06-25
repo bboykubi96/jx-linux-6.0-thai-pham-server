@@ -1,229 +1,229 @@
 
--- ====================== ÎÄ¼şĞÅÏ¢ ======================
+-- script viet hoa By http://tranhba.com  ====================== v¨n kiÖn tin tøc ====================== 
 
--- ½£ÏÀÇéÔµonline 2006 Ôªµ©»î¶¯ÎäÁÖÃËÖ÷Ú¯ÊéÎÄ¼ş
--- Edited by peres
--- 2005/12/22 PM 15:12
+-- script viet hoa By http://tranhba.com  kiÕm hiÖp t×nh duyªn online 2006 nguyªn ®¸n ho¹t ®éng minh chñ vâ l©m chiÕu s¸ch v¨n kiÖn 
+-- script viet hoa By http://tranhba.com  Edited by peres 
+-- script viet hoa By http://tranhba.com  2005/12/22 PM 15:12 
 
--- ÑÌ»¨¡£ÄÇÒ»Ò¹µÄÑÌ»¨¡£
--- Ëı¼ÇµÃËûÔÚ´óÓêµÄÈËÈºÖĞ£¬Õ¾ÔÚËıµÄ±³ºóÓµ±§×¡Ëı¡£
--- ËûÎÂÅ¯µÄÆ¤·ô£¬ËûÊìÏ¤µÄÎ¶µÀ¡£ÑÌ»¨ÕÕÁÁËıµÄÑÛ¾¦¡£
--- Ò»ÇĞÎŞ¿ÉÍì»Ø¡­¡­
+-- script viet hoa By http://tranhba.com  ph¸o b«ng . ®ªm h«m ®ã ®İch ph¸o b«ng . 
+-- script viet hoa By http://tranhba.com  nµng nhí h¾n ë m­a to ng­êi cña bÇy trung , ®øng ë sau l­ng cña nµng «m ë nµng . 
+-- script viet hoa By http://tranhba.com  h¾n Êm ¸p ®İch da , h¾n mïi vŞ ®¹o quen thuéc . ph¸o b«ng chiÕu s¸ng ¸nh m¾t cña nµng . 
+-- script viet hoa By http://tranhba.com  hÕt th¶y kh«ng thÓ v·n håi …… 
 
--- ======================================================
+-- script viet hoa By http://tranhba.com  ====================================================== 
 
--- ÈÎÎñÏµÍ³¿âÖ§³Ö
-IncludeLib("TASKSYS");
+-- script viet hoa By http://tranhba.com  nhiÖm vô hÖ thèng kho ñng hé 
+IncludeLib("TASKSYS"); 
 
--- ¶ÁÈë 2006 Ôªµ©»î¶¯Í·ÎÄ¼ş
+-- script viet hoa By http://tranhba.com  häc vµo 2006 nguyªn ®¸n ho¹t ®éng ®Çu v¨n kiÖn 
 Include("\\script\\event\\newyear_2006\\newyear_head.lua");
 
--- Ëæ»úÈÎÎñµÄ´¦ÀíÖ§³Ö
+-- script viet hoa By http://tranhba.com  ngÉu nhiªn nhiÖm vô xö lı ñng hé 
 Include("\\script\\task\\random\\task_head.lua");
 
-function main()
+function main() 
 
-Say("§Ó tri ©n c¸c anh hïng hiÖp kh¸ch, vµo dŞp TÕt ¢m LŞch, ta muèn tÆng mét sè lÔ vËt, vµo ngµy <color=yellow>30/12 ®Õn 01/01<color> cã thÓ ®Õn chç ta nhËn quµ--§éc C« KiÕm",
-	7,
-	"NhËn ®iÓm kinh nghiÖm t¨ng gÊp ®«i trong 8 giê mçi ngµy/getDoubleExp",
-	"NhËn phÇn th­ëng ®iÓm kinh nghiÖm mçi ngµy/getMoreExp_Confirm",
-	"NhËn mËt tŞch nhiÖm vô mçi ngµy/getTaskBook",
-	"Liªn quan vÒ tû lÖ t¨ng ®iÓm kinhn nghiÖm cña nhiÖm vô ngÉu nhiªn/getRandomTaskInfo",
-	"Tin tøc míi vÒ B¹ch C©u hoµn/getBaijuInfo",
-	"Cã thÓ sö dông TiÒn ®ång mua dông cô míi/getCoppercashInfo",
-	"§· ®äc xong/OnExit");
-	
-	return 1;
+Say("Minh chñ vâ l©m chiÕu s¸ch # trong lóc lo¹n thÕ , c¸c vŞ vÉn v× ta vâ l©m minh tËn t©m tËn lùc , ®éc c« kiÕm v« cïng c¶m kİch . võa gÆp n«ng lŞch n¨m míi bu«ng xuèng , nguyªn ®¸n giai tiÕt , ®Æc ñy ph¸i m«n h¹ cña ta truyÒn nh©n v× c¸c vŞ ®­a lªn nguyªn ®¸n quµ tÆng , mäi ng­êi cã thÓ ë <color=yellow>12 th¸ng 30 ngµy tíi 1 th¸ng 1 ngµy <color> nhËn lÊy , cuèi cïng chóc hîp nhµ an khang , n¨m míi nh­ ı # —— ®éc c« kiÕm ", 
+7, 
+" nhËn lÊy mçi ngµy ®İch t¸m giê gÊp ®«i kinh nghiÖm /getDoubleExp", 
+" nhËn lÊy mçi ngµy ®İch kinh nghiÖm t­ëng th­ëng /getMoreExp_Confirm", 
+" nhËn lÊy mçi ngµy ®İch nhiÖm vô quyÓn trôc /getTaskBook", 
+" liªn quan tíi ngÉu nhiªn nhiÖm vô xóc ph¸t x¸c suÊt gÊp béi ®İch tin tøc /getRandomTaskInfo", 
+" cã liªn quan b¹ch c©u hoµn ®İch míi tin tøc /getBaijuInfo", 
+" cã thÓ dïng ®ång tiÒn mua míi ®¹o cô /getCoppercashInfo", 
+" ®äc xong /OnExit"); 
 
-end;
+return 1; 
 
-
-function getDoubleExp()
-
--- È¡µÃÈÕÆÚ
-local nDate  = tonumber(GetLocalDate("%y%m%d"));
-	
-	-- Èç¹ûÈÕÆÚ²»¶Ô£¬Ö±½Ó·µ»Ø
-	if isNewYearTime()==0 then
-		Say("Giê ®· hÕt Nguyªn §¸n råi!", 0);
-		return
-	end;
-
-	-- Èç¹ûµÈ¼¶Î´´ïµ½ 80 ¼¶
-	if GetLevel()<80 then
-		Say("ChØ cã ng­êi ch¬i tõ cÊp 80 trë lªn míi cã thÓ nhËn ®­îc phÇn th­ëng gÊp ®«i ®iÓm kinh nghiÖm!", 0);
-		return
-	end;
-
-	if nDate~= GetTask(ID_GETDOUBLEEXP_DATE) then
-	
-		SetTask(ID_GETDOUBLEEXP_DATE, nDate);
-		SetTask(ID_GETDOUBLEEXP_NUM, 1);	
-		
-	elseif GetTask(ID_GETDOUBLEEXP_NUM)>=1 then
-	
-		Say("H«m nay b¹n ®· nhËn phÇn th­ëng gÊp ®«i ®iÓm kinh nghiÖm råi!", 0);
-		return
-		
-	else
-	
-		SetTask(ID_GETDOUBLEEXP_DATE, nDate);
-		SetTask(ID_GETDOUBLEEXP_NUM, 1);
-			
-	end;
-	
-	-- 80 ¼¶ÒÔÉÏµÄÈËÃ¿Ìì¿ÉÒÔÁìÈ¡Ò»´Î 8 Ğ¡Ê±¾­ÑéË«±¶
-	if GetLevel()>=80 then
-	
-		AddSkillState(531,10,1,8*60*60*18);
-		AddSkillState(461,1, 1,8*60*60*18);
-		
-		Msg2Player("B¹n nhËn ®­îc <color=green>PhÇn th­ëng ®iÓm kinh nghiÖm gÊp ®«i trong 8 giê!<color>");
-		WriteTaskLog("NhËn ®­îc phÇn th­ëng ®iÓm kinh nghiÖm gÊp ®«i trong 8 giê!");
-		
-	else
-		Say("ChØ cã ng­êi ch¬i tõ cÊp 80 trë lªn míi cã thÓ nhËn ®­îc phÇn th­ëng gÊp ®«i ®iÓm kinh nghiÖm!", 0);
-	end;
-
-end;
+end; 
 
 
-function getTaskBook()
+function getDoubleExp() 
 
-local nRandomTaskID, nRandomItemIndex = 0, 0;
+-- script viet hoa By http://tranhba.com  lÊy ®­îc nhËt kú 
+local nDate = tonumber(GetLocalDate("%y%m%d")); 
 
--- È¡µÃÈÕÆÚ
-local nDate  = tonumber(GetLocalDate("%y%m%d"));
-	
-	-- Èç¹ûÈÕÆÚ²»¶Ô£¬Ö±½Ó·µ»Ø
-	if isNewYearTime()==0 then
-		Say("Giê ®· hÕt Nguyªn §¸n råi!", 0);
-		return
-	end;
-	
-	-- Èç¹ûÊÇ·Ç³å¿¨ÓÃ»§
-	if IsCharged()==0 then
-		Say("Ho¹t ®éng Nguyªn §¸n lÇn nµy chØ cã n¹p thÎ míi sö dông ®­îc!", 0);
-		return
-	end;
-	
-	-- Èç¹ûµÈ¼¶Î´´ïµ½ 80 ¼¶
-	if GetLevel()<80 then
-		Say("ChØ cã ng­êi ch¬i tõ cÊp 80 trë lªn míi cã thÓ nhËn ®­îc mËt tŞch nhiÖm vô nµy!", 0);
-		return
-	end;
-	
-	if nDate~= GetTask(ID_GETTASKBOOK_DATE) then
-	
-		SetTask(ID_GETTASKBOOK_DATE, nDate);
-		SetTask(ID_GETTASKBOOK_NUM, 1);	
-		
-	elseif GetTask(ID_GETTASKBOOK_NUM)>=1 then
-	
-		Say("H«m nay b¹n ®· nhËn mét mËt tŞch nhiÖm vô råi!", 0);
-		return
-		
-	else
-	
-		SetTask(ID_GETTASKBOOK_DATE, nDate);
-		SetTask(ID_GETTASKBOOK_NUM, 1);	
-		
-	end;
-	
-	-- Ñ¡ÔñÒ»¸öµÚ¶ş²ãµÄËæ»úÈÎÎñ
-	nRandomTaskID = TaskNo(selectNextTask());
-		
-	-- Éú³ÉÒ»¸öÈÎÎñ¾íÖá
-	nRandomItemIndex = AddItem(6, 2, 2, 0, 1, 0, 0);
-	SetItemMagicLevel(nRandomItemIndex, 1, nRandomTaskID);
-	
-	-- Í¬²½ÎïÆ·Ä§·¨ÊôĞÔ
-	SyncItem(nRandomItemIndex);
+-- script viet hoa By http://tranhba.com  nÕu nh­ nhËt kú kh«ng ®óng , trùc tiÕp trë vÒ 
+if isNewYearTime()==0 then 
+Say("B©y giê ®· kh«ng ph¶i lµ nguyªn ®¸n liÔu nga #", 0); 
+return 
+end; 
 
-	Msg2Player("B¹n nhËn ®ù¬c <color=green>nhiÖm vô ngÉu nhiªn!<color>");
-	
-	WriteTaskLog("NhËn ®­îc 1 mËt tŞch nhiÖm vô, m· sè lµ:"..nRandomTaskID);
-	
-end;
+-- script viet hoa By http://tranhba.com  nÕu nh­ cÊp bËc kh«ng ®¹t tíi 80 cÊp 
+if GetLevel()<80 then 
+Say("ChØ cã 80 cÊp trë lªn ng­êi míi cã thÓ nhËn lÊy gÊp ®«i kinh nghiÖm nga #", 0); 
+return 
+end; 
+
+if nDate~= GetTask(ID_GETDOUBLEEXP_DATE) then 
+
+SetTask(ID_GETDOUBLEEXP_DATE, nDate); 
+SetTask(ID_GETDOUBLEEXP_NUM, 1); 
+
+elseif GetTask(ID_GETDOUBLEEXP_NUM)>=1 then 
+
+Say("Ng­¬i h«m nay ®· nhËn lÊy qua gÊp ®«i kinh nghiÖm nga #", 0); 
+return 
+
+else 
+
+SetTask(ID_GETDOUBLEEXP_DATE, nDate); 
+SetTask(ID_GETDOUBLEEXP_NUM, 1); 
+
+end; 
+
+-- script viet hoa By http://tranhba.com  80 cÊp trë lªn ng­êi mçi ngµy cã thÓ nhËn lÊy mét lÇn 8 giê kinh nghiÖm gÊp ®«i 
+if GetLevel()>=80 then 
+
+AddSkillState(531,10,1,8*60*60*18); 
+AddSkillState(461,1, 1,8*60*60*18); 
+
+Msg2Player("Ngµi lÊy ®­îc <color=green> 8 giê ®İch gÊp ®«i kinh nghiÖm #<color>"); 
+WriteTaskLog(" lÊy ®­îc 8 giê ®İch gÊp ®«i kinh nghiÖm #"); 
+
+else 
+Say("ChØ cã 80 cÊp trë lªn ng­êi míi cã thÓ nhËn lÊy gÊp ®«i kinh nghiÖm nga #", 0); 
+end; 
+
+end; 
 
 
--- Ñ¯ÎÊÍæ¼ÒÊÇ·ñÁìÈ¡¾­Ñé
-function getMoreExp_Confirm()
-	Say("Trong kho¶ng thêi gian tõ <color=yellow>20-12-2005 ®Õn 01-01-2006<color>, mçi ngµy lªn m¹ng ®Òu nhËn ®­îc ®iÓm kinh nghiÖm do Vâ l©m minh chñ tÆng.<color=yellow>Trong vßng 3 ngµy nµy cã thÓ nhËn 1 lÇn <color>, nh­ng 2 lÇn nhËn ph¶i c¸ch nhau <color=yellow>trªn mét giê trªn m¹ng<color>. Ng­¬i ®ång ı nhËn kh«ng?",2,
-		"§­îc råi! Ta muèn nhËn l·nh!/getMoreExpMain",
-		"Th«i ®Ó l¸t ®i/OnExit");
-	return
-end;
+function getTaskBook() 
+
+local nRandomTaskID, nRandomItemIndex = 0, 0; 
+
+-- script viet hoa By http://tranhba.com  lÊy ®­îc nhËt kú 
+local nDate = tonumber(GetLocalDate("%y%m%d")); 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ nhËt kú kh«ng ®óng , trùc tiÕp trë vÒ 
+if isNewYearTime()==0 then 
+Say("B©y giê ®· kh«ng ph¶i lµ nguyªn ®¸n liÔu nga #", 0); 
+return 
+end; 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ kh«ng ph¶i lµ h­íng t¹p dông hé 
+if IsCharged()==0 then 
+Say(" lÇn nµy nguyªn ®¸n ho¹t ®éng chØ cã h­íng t¹p dông hé míi cã thÓ tham dù nga #", 0); 
+return 
+end; 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ cÊp bËc kh«ng ®¹t tíi 80 cÊp 
+if GetLevel()<80 then 
+Say("ChØ cã 80 cÊp trë lªn ng­êi míi cã thÓ nhËn lÊy nhiÖm vô nµy quyÓn trôc nga #", 0); 
+return 
+end; 
+
+if nDate~= GetTask(ID_GETTASKBOOK_DATE) then 
+
+SetTask(ID_GETTASKBOOK_DATE, nDate); 
+SetTask(ID_GETTASKBOOK_NUM, 1); 
+
+elseif GetTask(ID_GETTASKBOOK_NUM)>=1 then 
+
+Say("Ng­¬i h«m nay ®· nhËn lÊy qua mét c¸i nhiÖm vô quyÓn trôc nga #", 0); 
+return 
+
+else 
+
+SetTask(ID_GETTASKBOOK_DATE, nDate); 
+SetTask(ID_GETTASKBOOK_NUM, 1); 
+
+end; 
+
+-- script viet hoa By http://tranhba.com  lùa chän mét tÇng thø hai ®İch ngÉu nhiªn nhiÖm vô 
+nRandomTaskID = TaskNo(selectNextTask()); 
+
+-- script viet hoa By http://tranhba.com  sinh thµnh mét c¸i nhiÖm vô quyÓn trôc 
+nRandomItemIndex = AddItem(6, 2, 2, 0, 1, 0, 0); 
+SetItemMagicLevel(nRandomItemIndex, 1, nRandomTaskID); 
+
+-- script viet hoa By http://tranhba.com  cïng b­íc vËt phÈm ma ph¸p thuéc tİnh 
+SyncItem(nRandomItemIndex); 
+
+Msg2Player("Ngµi lÊy ®­îc <color=green> nhiÖm vô quyÓn trôc mét #<color>"); 
+
+WriteTaskLog(" lÊy ®­îc mét c¸i nhiÖm vô quyÓn trôc , biªn sè v× #"..nRandomTaskID); 
+
+end; 
 
 
--- ÁìÈ¡Ã¿ÈÕµÄ¾­Ñé
-function getMoreExpMain()
-
-local nExp = countMoreExpNum();
-
--- È¡µÃÈÕÆÚ
-local nDate  = tonumber(GetLocalDate("%y%m%d"));
-	
-	-- Èç¹ûÈÕÆÚ²»¶Ô£¬Ö±½Ó·µ»Ø
-	if isNewYearTime()==0 then
-		Say("Giê ®· hÕt Nguyªn §¸n råi!", 0);
-		return
-	end;
-	
-	-- Èç¹ûÊÇ·Ç³å¿¨ÓÃ»§
-	if IsCharged()==0 then
-		Say("Ho¹t ®éng Nguyªn §¸n lÇn nµy chØ cã n¹p thÎ míi sö dông ®­îc!", 0);
-		return
-	end;
-	
-	if canGetMoreExp()==1 then
-		if GetLevel()<50 then
-			addPlayerExpForLimit(nExp, 5); -- ÏŞÖÆÖ»ÄÜÉı 5 ¼¶
-		else
-			addPlayerExpForLimit(nExp, 0); -- ²»ÏŞÖÆ
-		end;
-		
-		Msg2Player("B¹n nhËn ®­îc phÇn th­ëng trong ho¹t ®éng Nguyªn §¸n:<color=yellow>"..nExp.."<color> ®iÓm kinh nghiÖm!");
-		
-		writeMoreExpData();  -- ¼ÇÂ¼ÁìÈ¡¾­ÑéµÄÏà¹ØÊı¾İ
-	
-		WriteTaskLog("nhËn ®­îc phÇn th­ëng ®iÓm kinh nghiÖm mçi ngµy:"..nExp);
-		
-	else
-		Say("HiÖn t¹i ng­¬i kh«ng ®ñ ®iÒu kiÖn ®Ó nhËn.<color=yellow>Trong vßng 3 ngµy mçi ngµy sÏ nhËn 1 lÇn<color>, nh­ng 2 lÇn nhËn ph¶i c¸ch nhau <color=yellow>trªn 1 giê trªn m¹ng<color>!", 0);
-		return
-	end;
+-- script viet hoa By http://tranhba.com  hái th¨m nhµ ch¬i cã hay kh«ng nhËn lÊy kinh nghiÖm 
+function getMoreExp_Confirm() 
+Say("Ngµi ë <color=yellow>2005 n¨m 12 th¸ng 30 ngµy tíi 2006 n¨m 1 th¸ng 1 ngµy <color> trong lóc , mçi ngµy th­îng tuyÕn còng sÏ ®¹t ®­îc ®éc c« minh chñ tÆng ®İch nhãm lín kinh nghiÖm . <color=yellow> ba ngµy nay bªn trong mçi ngµy cã thÓ dÉn mét lÇn <color> , nh­ng hai lÇn nhËn lÊy kinh nghiÖm gi÷a c¸ch nhau cÇn <color=yellow> ë tuyÕn v­ît qua 1 giê <color> . ng­¬i muèn b©y giê nhËn lÊy sao ? ",2, 
+" h¶o a , ta mÊu chèt lÊy /getMoreExpMain", 
+" cßn lµ chê thªm chót n÷a ®i /OnExit"); 
+return 
+end; 
 
 
-end;
+-- script viet hoa By http://tranhba.com  nhËn lÊy mçi ngµy ®İch kinh nghiÖm 
+function getMoreExpMain() 
+
+local nExp = countMoreExpNum(); 
+
+-- script viet hoa By http://tranhba.com  lÊy ®­îc nhËt kú 
+local nDate = tonumber(GetLocalDate("%y%m%d")); 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ nhËt kú kh«ng ®óng , trùc tiÕp trë vÒ 
+if isNewYearTime()==0 then 
+Say("B©y giê ®· kh«ng ph¶i lµ nguyªn ®¸n liÔu nga #", 0); 
+return 
+end; 
+
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ kh«ng ph¶i lµ h­íng t¹p dông hé 
+if IsCharged()==0 then 
+Say(" lÇn nµy nguyªn ®¸n ho¹t ®éng chØ cã h­íng t¹p dông hé míi cã thÓ tham dù nga #", 0); 
+return 
+end; 
+
+if canGetMoreExp()==1 then 
+if GetLevel()<50 then 
+addPlayerExpForLimit(nExp, 5); -- script viet hoa By http://tranhba.com  h¹n chÕ chØ cã thÓ th¨ng 5 cÊp 
+else 
+addPlayerExpForLimit(nExp, 0); -- script viet hoa By http://tranhba.com  kh«ng h¹n chÕ 
+end; 
+
+Msg2Player("Ngµi lÊy ®­îc nguyªn ®¸n ho¹t ®éng ®İch kinh nghiÖm t­ëng th­ëng #<color=yellow>"..nExp.."<color> chót kinh nghiÖm #"); 
+
+writeMoreExpData(); -- script viet hoa By http://tranhba.com  ghi chĞp nhËn lÊy kinh nghiÖm t­¬ng quan sè liÖu 
+
+WriteTaskLog(" lÊy ®­îc mçi ngµy ®İch t­ëng th­ëng kinh nghiÖm #"..nExp); 
+
+else 
+Say("Ng­¬i b©y giê ®İch ®iÒu kiÖn kh«ng thÓ nhËn lÊy mçi ngµy ®İch kinh nghiÖm , ë 12 th¸ng 30 ngµy tíi 1 th¸ng 1 nhËt kú ®ang lóc , mçi ngµy th­îng tuyÕn còng sÏ ®¹t ®­îc ®éc c« minh chñ tÆng ®İch nhãm lín kinh nghiÖm . <color=yellow> ba ngµy nay bªn trong mçi ngµy cã thÓ dÉn mét lÇn <color> , nh­ng hai lÇn nhËn lÊy kinh nghiÖm gi÷a c¸ch nhau cÇn <color=yellow> ë tuyÕn v­ît qua 1 giê <color> nga #", 0); 
+return 
+end; 
 
 
--- »ñÈ¡Í­Ç®µÄÌáÊ¾
-function getCoppercashInfo()
-
-	Say("GÇn ®©y DŞ dung thuËt sÜ ë L©m An cã b¸n mét sè MÆt n¹ Tinh Linh, MÆt n¹ T©n Niªn HiÖp Kh¸ch, MÆt n¹ T©n Niªn HiÖp N÷, MÆt n¹ ThuÇn Léc…Bªn c¹nh ®ã Hµnh c­íc th­¬ng nh©n mét sè n¬i còng cã nhËp vµo mét sè hép lÔ vËt mµu xanh, hép hoa, n¬i Hµng Rong còng cã b¸n ThiÖp Nh­ ı cho ng­êi ch¬i cã thÓ viÕt lêi chóc phóc lªn ®ã, hoan nghªnh mäi ng­êi ®Õn mua!", 0);
-	return
-	
-end;
+end; 
 
 
-function getBaijuInfo()
+-- script viet hoa By http://tranhba.com  lÊy ®­îc ®ång tiÒn ®İch ®Ò kú 
+function getCoppercashInfo() 
 
-	Say("Trong thêi gian <color=yellow>30/12/2005 ®Õn 01/01/2006<color> mçi ngµy tõ <color=red>0:00~18:00<color>, sö dông B¹ch C©u hoµn treo m¸y nhËn ®­îc t¨ng ®«i ®iÓm kinh nghiÖm, Kü n¨ng B¹ch C©u hoµn treo m¸y nhËn ®­îc kü n¨ng t¨ng 1.5 lÇn ", 0);
-	return
+Say("Ngµy gÇn ®©y tr­íc khi an ®İch thuËt dŞch dung sÜ míi khai ph¸ liÔu gi¸ng sinh tinh linh # n¨m míi hiÖp kh¸ch # n¨m míi hiÖp n÷ # tuÇn léc chê mét nhãm mÆt n¹ , ®ång thêi c¸c n¬i ®İch ®­îc ch©n th­¬ng nh©n chç còng t©n tiÕn liÔu mµu xanh da trêi yªu c¬ hép quµ , ngµy lÔ lÔ hoa hép quµ cïng b«ng tuyÕt hép quµ , h¬n n÷a c¸c n¬i sè kh«ng phiÕn chç t©n tiÕn liÔu mét lo¹i cã thÓ m×nh biªn tËp chóc phóc ng«n ng÷ ®İch nh­ ı t¹p , hoan nghªnh mäi ng­êi ®i tr­íc chän mua . ", 0); 
+return 
 
-end;
-
-
-function getRandomTaskInfo()
-
-	Say("Trong thêi gian <color=yellow>30-12-2005 ®Õn 01-01-2006<color> nhËn ®­îc nhiÖm vô ngÉu nhiªn - phÇn th­ëng nh©n ®«i!", 0);
-	return
-
-end;
+end; 
 
 
+function getBaijuInfo() 
 
-function OnExit()
+Say("Ngµi ë <color=yellow>2005 n¨m 12 th¸ng 30 ngµy tíi 2006 n¨m 1 th¸ng 1 ngµy <color> mçi ngµy <color=red>0#00~18#00<color> , sö dông b¹ch c©u hoµn treo ky ®¹t ®­îc ®İch kinh nghiÖm ®em gÊp béi # kü n¨ng b¹ch c©u hoµn treo ky ®¹t ®­îc ®é thuÇn thôc ®em lËt 1.5 lÇn . ", 0); 
+return 
+
+end; 
+
+
+function getRandomTaskInfo() 
+
+Say("Ngµi ë <color=yellow>2005 n¨m 12 th¸ng 30 ngµy tíi 2006 n¨m 1 th¸ng 1 ngµy <color> thu ®­îc ngÉu nhiªn nhiÖm vô xóc ph¸t x¸c suÊt gÊp béi ®İch quµ tÆng #", 0); 
+return 
+
+end; 
+
+
+
+function OnExit() 
 
 end;

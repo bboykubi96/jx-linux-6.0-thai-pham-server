@@ -14,22 +14,20 @@ Include("\\script\\global\\platina_upgrade.lua")
 Include("\\script\\½­ÄÏÇø\\ÁÙ°²\\ÁÙ°²\\npc\\Ö°ÄÜ_ÉñÃØÉÌÈË.lua")
 --Include("\\script\\global\\tamhiep\\ephanche.lua")
 Include("\\script\\task\\metempsychosis\\npc_saodiseng.lua")
-Include("\\script\\activitysys\\playerfunlib.lua")
 
 DANH_HIEU={72,69,76,80,64,67,78,81,73,75}
 tbChat = 
 {
---"<color=yellow>OKOK",
-"\n<color=cyan>-Qu¶ Huy Hoµng : 21h00<color>\n<color=cyan>-Boss TiÓu HK: 21h30<color>\n<color=cyan>-B¸o Danh Tèng Kim: 21h50<color>\n<color=cyan>-PLD §Æc BiÖt: 23h00",
---"<color=yellow> Anh em nµo gÆp khã kh¨n trong qu¸ tr×nh b«n tÈu giang hå th× vui lßng liªn hÖ FanPage sÏ cã ®éi ngò hç trî nhÐ!",
---"<color=yellow>Anh Em l­u ý: Mäi hµnh vi kÐo xe hoÆc theo sau trªn 3 acc (ngo¹i trõ VA vµ V§) sÏ bÞ <color=cyan>Band Acc VÜnh ViÔn<color>. C¸c Bang Chñ l­u ý liªn ®íi tr¸ch nhiÖm. ",
+"<color=green>NhËn Full hç trî miÔn phÝ hoµn toµn <pic=115><pic=115><pic=115>",
+"<color=blue> Trang chñ: volamkiemtong.com <pic=5>",
+"<color=red><pic=137>18 giê 30 phót ngµy 26 th¸ng 4 - Opend m¸y chñ PhËt S¬n.<pic=115>",
 }
 
 ----------------------------------------
 function main1()
  
-	npcchat_npcmacdinh1()
---	dialog_mainTN()
+--	npcchat_npcmacdinh1()
+	dialog_mainTN()
 end
 ----------------------------------------------------------------
 function npcchat_npcmacdinh1()
@@ -37,7 +35,7 @@ local nNpcIndex = GetLastDiagNpc();
 local nTaskChat = GetNpcParam(nNpcIndex,1);
 if nTaskChat == 0 then 
 SetNpcParam(nNpcIndex,1,1); --set index ®Çu tiªn cña table npc chat.
-SetNpcTimer(nNpcIndex,18*600); --Tuú chØnh thêi gian npc tù chat (20 s)
+SetNpcTimer(nNpcIndex,500); --Tuú chØnh thêi gian npc tù chat (20 s)
 end
 end
 function OnTimer(nNpcIndex,nTimeOut)
@@ -51,12 +49,10 @@ end
 if nTaskChat > getn(tbChat) then 
 nTaskChat = 1;
 end
---Msg2SubWorld("<color=yellow>21h00 B¶o Tr× SV 5 Phót Nha Anh Em, Mong Anh Em Th«ng C¶m.<color>")
---Msg2SubWorld(tbChat[nTaskChat])
-LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", tbChat[nTaskChat] , "", "");
---Msg2SubWorld("1")
+
+NpcChat(nNpcIndex,tbChat[nTaskChat],1);
 SetNpcParam(nNpcIndex,1,nTaskChat)
-SetNpcTimer(nNpcIndex,18*600);
+SetNpcTimer(nNpcIndex,500);
 end
 
 ----------------------------------------
@@ -66,15 +62,15 @@ function dialog_mainTN()
 	local szTitle = "<npc>Xin chµo ! Ta cã thÓ gióp g× ®¹i hiÖp ®iÒu g× ?"
 	local tbOpt =
 	{
-		{"Hç trî Kinh NghiÖm.",testgame1},
+		--{"Hç trî Kinh NghiÖm.",testgame1},
 	--	{"Hç trî Kü n¨ng 10-120.",hockynang},
-		{"Hç trî c¸c lo¹i TiÒn.",testgame4},
-		{"Hç trî c¸c lo¹i Trang BÞ xanh.",laydoxanh},
+		--{"Hç trî c¸c lo¹i TiÒn.",testgame4},
+		--{"Hç trî c¸c lo¹i Trang BÞ xanh.",laydoxanh},
 	--	{"Hç trî c¸c lo¹i Trang BÞ AB DQ.",layabdq},
 	--	{"Hç trî Trang BÞ M«n Ph¸i.",sethkmp},
-		{"Hç trî Ngùa.",ngua},
+	--	{"Hç trî Ngùa.",ngua},
 	--	{"Hç trî Vßng S¸ng.",vongsang},
-		{"TÈy tñy Nh©n VËt.",clear_attibute_point},
+	--	{"TÈy tñy Nh©n VËt.",clear_attibute_point},
 	--	{"Thµnh lËp bang héi",dmcreattongtest},
 		{"Tho¸t."},
 	}
@@ -438,17 +434,15 @@ end;
 function tbhoangkimbk()
 	local tbOpt =
 	{
-		{"500 KNB. ", laytiendong},
+		{"500 tiÒn ®ång. ", laytiendong},
 		{"10 ngµn v¹n.", laytienvan},
-		--{"300 Event.", layevent},
 		--{"Lªn cÊp 199", level_up_to199},
 		--{"Gia nhËp m«n ph¸i vµ häc skill 10 - 120", choose_faction},
 		{"§iÓm Phóc Duyªn.",diemphucduyen},
-	--	{"Trang bÞ xanh", tbtim1},
+		{"Trang bÞ xanh", tbtim1},
 		--{"Set Trang bÞ M«n ph¸i", sethkmp},
 		--{"Trang bÞ H¹n chÕ.", settbhanche},
 		--{"ChÕ t¹o Trang BÞ B¹ch Kim.", chetaoBachKim},
-				{"NhËn Ngùa Theo Ngµy",LuaChonNguaTheoNgay},
 		{"NhÉn V« Danh", nhanvodanh},
 		{"NhËn set An Bang, §Þnh Quèc.",setabkphcnt},
 		{"§¹i Thµnh BÝ KÝp", daithanhbk}, 
@@ -457,62 +451,13 @@ function tbhoangkimbk()
 	CreateNewSayEx("<npc> Ng­¬i muèn lÊy mãn g×?", tbOpt)
 end
 
-function LuaChonNguaTheoNgay()
-	local tbOpt = {
-		{"Siªu Quang",SieuQuangLuaChon_xanh},		
-		{"XÝch Long C©u",XichLongCauLuaChon_xanh},		
-		{"Phiªn Vò",PhienVuLuaChon_xanh},		
-		{"H·n HuyÕt",HanHuyetLuaChon_xanh},		
-		{"Tho¸t"},		
-	}
-	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Mêi Chän Ngùa<bclr>", tbOpt)
-end
 
-------------------------------ngua---------------------------
-function SieuQuangLuaChon_xanh()
-AskClientForNumber("SieuQuangLuaChon_xanh_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
-end
-function SieuQuangLuaChon_xanh_d(num)
-local Index = AddItem(0,10,13,10,0,0,0)  ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-end
-
-function XichLongCauLuaChon_xanh()
-AskClientForNumber("XichLongCauLuaChon_xanh_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
-end
-function XichLongCauLuaChon_xanh_d(num)
-local Index = AddItem(0,10,9,10,0,0,0)  ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-end
-
-function PhienVuLuaChon_xanh()
-AskClientForNumber("PhienVuLuaChon_xanh_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
-end
-function PhienVuLuaChon_xanh_d(num)
-local Index = AddItem(0,10,7,10,0,0,0)  ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-end
-
-function HanHuyetLuaChon_xanh()
-AskClientForNumber("HanHuyetLuaChon_xanh_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
-end
-function HanHuyetLuaChon_xanh_d(num)
-local Index = AddItem(0,10,18,10,0,0,0)  ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-end
-
-
-function layevent()
-	local tbItem = 
-	{	
-		{szName = "Bo Hoa Bon Mua", tbProp = {6, 1, 30330, 1,0,0}, nCount = 300, nExpiredTime=43200},	
-	}
-	tbAwardTemplet:GiveAwardByList(tbItem, "PhÇn Th­ëng");
-
-end
 function chetaoBachKim()
 	local tbOpt =
 	{
-		{"ChÕ t¹o Trang BÞ B¹ch Kim.", platina_main},
-		--{"ChÕ t¹o Trang BÞ B¹ch Kim (®Æc biÖt).", dialog_mainBK},
+		{"ChÕ t¹o Trang BÞ B¹ch Kim (th­êng).", platina_main},
+		{"ChÕ t¹o Trang BÞ B¹ch Kim (®Æc biÖt).", dialog_mainBK},
 		{"Nguyªn liÖu chÕ t¹o trang bÞ B¹ch Kim.", nguyenlieuBK},
-		{"Nguyªn liÖu n©ng cÊp trang bÞ B¹ch Kim +7 .", nguyenlieuBK7},
 		{"Tho¸t"},
 	}
 	CreateNewSayEx("<npc> Ng­¬i muèn lÊy mãn g×?", tbOpt)
@@ -532,17 +477,6 @@ function nguyenlieuBK()
 	end
 end
 
-function nguyenlieuBK7()
-	if(CalcFreeItemCellCount() < 20)then
-		Talk(1,"no","§Ó ®¶m b¶o kh«ng r¬i vËt phÈm ra ngoµi, cÇn 20 « trèng trong hµnh trang.")
-	return end
-	AddItem(6,1,2160,1,0,0)	
-	AddItem(6,1,2161,1,0,0)
-	AddItem(6,1,2162,1,0,0)
-	for i=1,10 do
-		AddItem(6,1,1310,1,0,0)
-	end
-end
 
 function daithanhbk() 
 	local ttltem ={
@@ -751,8 +685,8 @@ function laytiendong()
 	if (CalcEquiproomItemCount(4,417,1,-1)>=2000) then
 		Talk(1, "", "TiÒn ®ång trong tói ng­¬i dïng ch­a hÕt th× lÊy lµm g× cho nhiÒu.")
 	else
-		AddStackItem(100,4,343,1,1,0,0,0)	-- nhan 100 tien dong
-		AddStackItem(100,4,343,1,1,0,0,0)	-- nhan 100 tien dong
+		AddStackItem(100,4,417,1,1,0,0,0)	-- nhan 100 tien dong
+		AddStackItem(100,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(100,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(100,4,417,1,1,0,0,0)	-- nhan 100 tien dong
 		AddStackItem(100,4,417,1,1,0,0,0)	-- nhan 100 tien dong
@@ -890,7 +824,7 @@ function kiem()
 		AddQualityItem(2,0,0,0,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,0,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,0,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,0,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -899,7 +833,7 @@ function dao()
 		AddQualityItem(2,0,0,1,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,1,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,1,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,1,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,1,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -908,7 +842,7 @@ function bong()
 		AddQualityItem(2,0,0,2,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,2,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,2,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,2,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,2,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -917,7 +851,7 @@ function kick()
 		AddQualityItem(2,0,0,3,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,3,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,3,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,3,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -926,7 +860,7 @@ function chuy()
 		AddQualityItem(2,0,0,4,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,4,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,4,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,4,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,4,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -935,7 +869,7 @@ function songdao()
 		AddQualityItem(2,0,0,5,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,5,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,0,5,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,0,5,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,0,5,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -944,7 +878,7 @@ function phitieu()
 		AddQualityItem(2,0,1,0,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,0,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,0,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,1,0,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,1,0,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -953,7 +887,7 @@ function phidao()
 		AddQualityItem(2,0,1,1,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,1,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,1,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,1,1,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,1,1,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -962,7 +896,7 @@ function tutien()
 		AddQualityItem(2,0,1,2,10,1,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,2,10,2,0,-1,-1,-1,-1,-1,-1)
 		AddQualityItem(2,0,1,2,10,3,0,-1,-1,-1,-1,-1,-1)
-	--	AddQualityItem(2,0,1,2,10,4,0,-1,-1,-1,-1,-1,-1)	
+		AddQualityItem(2,0,1,2,10,4,0,-1,-1,-1,-1,-1,-1)	
 end
 
 
@@ -2507,27 +2441,6 @@ local tbFaction =
 		nShortFaction = "kl",
 		tbSkill = {372, 375, 717, 1080, 1081},
 	},
-	[11] =
-	{
-		szShowName = "Hoa s¬n",
-		szFaction = "huashan",
-		nShortFaction = "hs",
-		tbSkill = {1364, 1382, 1365, 1369, 1384},
-	},
-	[12] =
-	{
-		szShowName = "Vò Hån",
-		szFaction = "wuhun",
-		nShortFaction = "wh",
-		tbSkill = {1984, },
-	},
-	[13] =
-	{
-		szShowName = "Tiªu Dao",
-		szFaction = "xiaoyao",
-		nShortFaction = "xy",
-		tbSkill = {1894, },
-	},
 }
 
 local tbEquipFreeCell =
@@ -2541,9 +2454,9 @@ local tbFactionSeries =
 {
 	[1] = {1, 2},
 	[2] = {3, 4},
-	[3] = {5, 6, 11},
-	[4] = {7, 8, 12},
-	[5] = {9, 10, 13},
+	[3] = {5, 6},
+	[4] = {7, 8},
+	[5] = {9, 10},
 }
 
 function check_faction()

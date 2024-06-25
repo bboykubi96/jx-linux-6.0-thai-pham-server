@@ -28,19 +28,28 @@ function join_shuizei_act()
 end
 
 function join_shuizei_act_cf()
-	if GetLevel() < 80  then
+	if (GetLevel() < 80 or GetExtPoint(0) < 1) then
 		Say("§¹i hiÖp vÉn ch­a ®ñ cÊp 80 hoÆc vÉn ch­a nép thÎ, v× vËy kh«ng thÓ tham gia ho¹t ®éng", 0);
 		return
 	end
 
 	if (GetTask(jf0904_TSK_shuizei_FulfilTaskTime) <= 0) then
-		Say("H«m nay kh«ng thÓ nhËn thªm nhiÖm vô Tiªu diÖt thñy tÆc n÷a.", 0);
+		Say("Mçi ngµy chØ nhËn 1 lÇn h«m nay kh«ng thÓ nhËn thªm nhiÖm vô Tiªu diÖt thñy tÆc n÷a.NÕu cã nh· ý muèn ®i thªm lÇn n÷a xin h·y sö dông h¶i long ch©u.", 0);
 		return
 	end
-	
+	local nDate = tonumber(GetLocalDate("%d"))		
+	-- if ( GetTask(4139) == nDate) then -- neu khac se
+			-- Say("Mçi ngµy chØ nhËn 1 lÇn h«m nay kh«ng thÓ nhËn thªm nhiÖm vô Tiªu diÖt thñy tÆc n÷a.NÕu cã nh· ý muèn ®i thªm lÇn n÷a xin h·y sö dông h¶i long ch©u.", 0);
+			-- return 
+	-- end
+local nDate = tonumber(GetLocalDate("%d"))		
+if ( GetTask(4139) ~= nDate) then -- neu khac se
+SetTask(4139, nDate);
+	--SetTask(jf0904_TSK_shuizei_FulfilTaskTime, 0);
 	Say("NhËn nhiÖm vô tiªu diÖt thñy tÆc thµnh c«ng!", 0);
 	SetTask(jf0904_TSK_shuizei_FulfilTaskTime, GetTask(jf0904_TSK_shuizei_FulfilTaskTime) - 1);
 	SetTask(jf0904_TSK_shuizei_GetTask, 1);
+end
 end
 
 function fullfill_shuizei_act()
@@ -59,10 +68,6 @@ end
 
 
 function give_shuizei_award_lingpai()
-	if (GetTask(jf0904_TSK_shuizei_FulfilTaskTime) <= 0) then
-		--Say("H«m nay kh«ng thÓ tr¶ thªm nhiÖm vô Tiªu diÖt thñy tÆc n÷a.", 0);
-	--	return
-	end
 	GiveItemUI("Giao truy c«ng lÖnh", "Xin mêi bá truy c«ng lÖnh vµo « bªn d­íi, mçi lÇn chØ ®­îc bá 1 c¸i.", "submit_zhuigongling", "no")
 end
 
@@ -98,14 +103,13 @@ function give_shuizei_award_exp()
 		ncurstep = ncurstep + tbjf0904_shuizei_exp[i].nRate * 100000;
 	end
 	--AddOwnExp(naddedexp * 1000000);
-	local rannnnn=random(1,3)
-	if rannnnn==1 then
-	AddOwnExp(5e6);
-	elseif rannnnn==2 then
-	AddOwnExp(7e6);
-	elseif rannnnn==3 then
-	AddOwnExp(10e6);
-	end
+	AddOwnExp(2000000000);
+-- kinhnghiem()
+	tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1,0},nCount=100,},}, "test", 1);
+   tbAwardTemplet:GiveAwardByList({{szName = "Tö Tinh Kho¸ng Th¹ch",tbProp={6,1,8000,1,1,0},nCount=50,},}, "test", 1);
+
+--SetTask(5110,GetTask(5110)+5)
+--Msg2Player("<color=green>Chóc mõng ®¹i hiÖp nhËn ®­îc<color=pink> 5 ®iÓm n¨ng ®éng.")	
 end
 
 function jf0904_shuizei_IsActtime()
@@ -114,5 +118,29 @@ function jf0904_shuizei_IsActtime()
 end
 
 function about_shuizei()
-	Say("LÔ quan: Ho¹t ®éng tiªu diÖt thñy tÆc b¾t ®Çu tõ ngµy 28/04/2009. Trong thêi gian ho¹t ®éng ®¹i hiÖp cã thÓ ®Õn 6 ®iÓm cña bê b¾c nam Phong L¨ng §é ®Ó lÜnh th­ëng.", 0);
+	Say("LÔ quan: Ho¹t ®éng tiªu diÖt thñy tÆc b¾t ®Çu tõ 27-3. Trong thêi gian ho¹t ®éng ®¹i hiÖp cã thÓ ®Õn 6 ®iÓm cña bê b¾c nam Phong L¨ng §é ®Ó lÜnh th­ëng.", 0);
+end
+
+
+function kinhnghiem()
+local s = random(1,4)
+
+if s==1 then
+AddOwnExp(8000000);
+--tbAwardTemplet:GiveAwardByList({{szName="Vâ hån chu t­íc",tbProp={6,1,4465,1,1},nCount=10,},}, "test", 1);	
+
+end;
+if s==2 then
+AddOwnExp(9000000);
+--tbAwardTemplet:GiveAwardByList({{szName="Vâ hån chu t­íc",tbProp={6,1,4465,1,1},nCount=10,},}, "test", 1);	
+
+end;
+if s==3 then
+AddOwnExp(10000000);
+--tbAwardTemplet:GiveAwardByList({{szName="Vâ hån chu t­íc",tbProp={6,1,4465,1,1},nCount=10,},}, "test", 1);	
+end;
+if s==4 then
+AddOwnExp(8000000);
+--tbAwardTemplet:GiveAwardByList({{szName="Vâ hån chu t­íc",tbProp={6,1,4465,1,1},nCount=10,},}, "test", 1);	
+end;
 end

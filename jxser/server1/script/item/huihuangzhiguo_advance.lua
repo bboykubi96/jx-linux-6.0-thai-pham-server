@@ -2,13 +2,13 @@ Include("\\script\\activitysys\\playerfunlib.lua");
 
 huihuangzhiguo_advance = {}
 
-huihuangzhiguo_advance.nDailyCountLimit = 5;
-huihuangzhiguo_advance.nLevelLimit = 100;
+huihuangzhiguo_advance.nDailyCountLimit = 1;
+huihuangzhiguo_advance.nLevelLimit = 90;
 huihuangzhiguo_advance.tbEXP =  --¹û×Ó¶ÔÓ¦¾­Ñé±í
 {
-	{1500000, "B¸ch Niªn Huy Hoµng qu¶"},
-	{3000000, "Thiªn Niªn Huy Hoµng qu¶"},
-	{10000000, "V¹n Niªn Huy Hoµng qu¶"},
+	{150000, "B¸ch Niªn Huy Hoµng qu¶"},
+	{5000000, "Thiªn Niªn Huy Hoµng qu¶"},
+	{50000000, "V¹n Niªn Huy Hoµng qu¶"},
 };
 
 huihuangzhiguo_advance.tbZhenLuTSK =  --Ê¹ÓÃÕäÂ¶TSKIDºÍ¸øÓè¶ÔÓ¦ÎïÆ·±í
@@ -32,7 +32,7 @@ function huihuangzhiguo_advance:UseGuoZi(nGuoziLevel)
 	end
 	
 	PlayerFunLib:AddExp(self.tbEXP[nGuoziLevel][1], 0, format("%s phÇn th­ëng",self.tbEXP[nGuoziLevel][2]));
-	SetTask(2313, GetTask(2313) + 1)
+	SetTask(2316, GetTask(2316) + 1)
 	return 1;
 end
 
@@ -59,12 +59,12 @@ end
 
 function huihuangzhiguo_advance:CheckCountLimit()
 	local nDate = tonumber(GetLocalDate("%m%d"))
-	if ( GetTask(2312) ~= nDate ) then
-		SetTask(2312, nDate)
-		SetTask(2313, 0)
+	if ( GetTask(2315) ~= nDate ) then
+		SetTask(2315, nDate)
+		SetTask(2316, 0)
 	end
 	
-	if (GetTask(2313) >= self.nDailyCountLimit) then
+	if (GetTask(2316) >= self.nDailyCountLimit) then
 		lib:ShowMessage(format("H«m nay c¸c h¹ ®· sö dông %d qu¶ huy hoµng råi, c«ng lùc t¨ng qu¸ nhanh còng sÏ bÞ ph¶n t¸c dông ®ã. §îi ngµy mai råi h·y dïng nhÐ.", self.nDailyCountLimit));
 		return 0;
 	end

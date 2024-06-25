@@ -10,9 +10,12 @@ tbVnExtAward = {
 function tbVnExtAward:VnBonusAward()	
 	if PlayerFunLib:CheckTaskDaily(3086, 2, "H«m nay ng­¬i ®· nhËn 2 lÇn phÇn th­ëng nµy, kh«ng thÓ nhËn thªm.", "<") then
 		local tbVnBonusAward = {
-			{szName = "§iÓm Kinh NghiÖm", nExp=10000000},			
-			--{szName="Tu ch©n yÕu quyÕt (Thiªn tr× mËt c¶nh)",tbProp={6,1,30164,1,0,0},nCount=1,nExpiredTime=10080},
-			{szName="Thiªn Tr× Bİ B¶o",tbProp={6,1,30193,1,0,0},nCount=3},
+		{szName="§iÓm Kinh NghiÖm",nExp = 10e8},
+		{szName="Tinh Ngoc",tbProp={6,1,4806,1,0,0},nCount=50},
+                 {szName="KNB",tbProp={4,1506,1,1,0,0},nCount=20},
+                {szName = "B¸ch NghÖ Tinh Ngäc",tbProp={6,1,49004,1,0,0},nCount=2},
+		{szName = "B¸ch NghÖ Thiªn Th¹ch",tbProp={6,1,30355,1,0,0},nCount=2},
+		{szName = "B¸ch LuyÖn Thµnh C­¬ng",tbProp={6,1,49006,1,0,0},nCount=2},			
 		}
 		PlayerFunLib:AddTaskDaily(3086, 1)
 		tbAwardTemplet:Give(tbVnBonusAward, 1, {"ThienTriMatCanh", "NhanThuongTaiAnSi"})

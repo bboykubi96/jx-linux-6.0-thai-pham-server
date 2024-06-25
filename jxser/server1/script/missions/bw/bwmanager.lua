@@ -1,10 +1,98 @@
 Include("\\script\\task\\newtask\\branch\\branch_bwsj.lua")
 Include("\\script\\missions\\bw\\bwhead.lua");
 
-
+WLLS_FORBID_ITEM = {
+	{	"C«ng Tèc hoµn", {6, 1, 218, -1, 0, 0}, 511	},
+	{	"Bµo Tèc hoµn", {6, 1, 219, -1, 0, 0}, 512	},
+	{	"Phæ Phßng hoµn", {6, 1, 220, -1, 0, 0}, 513	},
+	{	"§éc Phßng hoµn", {6, 1, 221, -1, 0, 0}, 514	},
+	{	"B¨ng Phßng hoµn", {6, 1, 222, -1, 0, 0}, 515	},
+	{	"Háa Phßng hoµn", {6, 1, 223, -1, 0, 0}, 516	},
+	{	"L«i Phßng hoµn", {6, 1, 224, -1, 0, 0}, 517	},
+	{	"Gi¶m Th­¬ng hoµn", {6, 1, 225, -1, 0, 0}, 518	},
+	{	"Gi¶m H«n hoµn", {6, 1, 226, -1, 0, 0}, 519	},
+	{	"Gi¶m §éc hoµn", {6, 1, 227, -1, 0, 0}, 520	},
+	{	"Gi¶m B¨ng hoµn", {6, 1, 228, -1, 0, 0}, 521	},
+	{	"Phæ C«ng hoµn", {6, 1, 229, -1, 0, 0}, 522	},
+	{	"§éc C«ng hoµn", {6, 1, 230, -1, 0, 0}, 523	},
+	{	"B¨ng C«ng hoµn", {6, 1, 231, -1, 0, 0}, 524	},
+	{	"Háa C«ng hoµn", {6, 1, 232, -1, 0, 0}, 525	},
+	{	"L«i C«ng hoµn", {6, 1, 233, -1, 0, 0}, 526	},
+	{	"Tr­êng MÖnh hoµn", {6, 1, 234, -1, 0, 0}, 527	},
+	{	"Tr­êng Néi hoµn", {6, 1, 235, -1, 0, 0}, 528	},
+	{	"Yªn Hång ®an", {6, 1, 115, -1, 0, 0}, 450	},
+	{	"X¸ Lam ®an", {6, 1, 116, -1, 0, 0}, 451	},
+	{	"Néi Phæ hoµn", {6, 1, 117, -1, 0, 0}, 453	},
+	{	"Néi §éc hoµn", {6, 1, 118, -1, 0, 0}, 454	},
+	{	"Néi B¨ng hoµn", {6, 1, 119, -1, 0, 0}, 455	},
+	{	"Néi Háa hoµn", {6, 1, 120, -1, 0, 0}, 456	},
+	{	"Néi L«i hoµn", {6, 1, 121, -1, 0, 0}, 457	},
+	{	"Tr­êng MÖnh hoµn", {6, 0, 1, -1, 0, 0}, 256	},
+	{	"Gia Bµo hoµn", {6, 0, 2, -1, 0, 0}, 257	},
+	{	"§¹i Lùc hoµn", {6, 0, 3, -1, 0, 0}, 258	},
+	{	"§¹i Lùc hoµn", {6, 0, 4707, -1, 0, 0}, 258	},
+	{	"Phi Tèc hoµn", {6, 0, 4710, -1, 0, 0}, 261	},
+	{	"Cao ThiÓm hoµn", {6, 0, 4, -1, 0, 0}, 259	},
+	{	"Cao Trung hoµn", {6, 0, 5, -1, 0, 0}, 260	},
+	{	"Phi Tèc hoµn", {6, 0, 6, -1, 0, 0}, 261	},
+	{	"B¨ng Phßng hoµn", {6, 0, 7, -1, 0, 0}, 262	},
+	{	"L«i Phßng hoµn", {6, 0, 8, -1, 0, 0}, 263	},
+	{	"Háa Phßng hoµn", {6, 0, 9, -1, 0, 0}, 264	},
+	{	"§éc Phßng hoµn", {6, 0, 10, -1, 0, 0}, 265	},
+	{	"B¸nh ch­ng H¹t dÎ ", {6, 0, 60, -1, 0, 0}, 401	},
+	{	"B¸nh ch­ng ThÞt heo", {6, 0, 61, -1, 0, 0}, 402	},
+	{	"B¸nh ch­ng ThÞt bß ", {6, 0, 62, -1, 0, 0}, 403	},
+	{	"B¸ch Qu¶ Lé ", {6, 1, 73, -1, 0, 0}, 442	},
+	{	"C¸t t­êng hång bao", {6, 1, 19, -1, 0, 0}, 442	},
+	{	"Hoµng Kim B¶o r­¬ng",	{6,	1,	69,	-1,	0,	0},	442},
+	{	"TÝn Sø Méc yªu bµi",	{6,	1,	885,	-1,	0	,0},	542},
+	{	"TÝn Sø §ång yªu bµi",	{6,	1,	886,	-1,	0	,0},	543},
+	{	"TÝn Sø Ng©n yªu bµi",	{6,	1,	887,	-1,	0	,0},	544},
+	{	"TÝn Sø Kim yªu bµi",	{6,	1,	888,	-1,	0	,0},	545},
+	{	"Ngù Tø TÝn Sø yªu bµi",	{6,	1,	889,	-1,	0	,0},	546},
+	{	"Bao D­îc hoµn ",	{6,	1,	910,	-1,	0	,0},	635},
+	{	"Hép lÔ vËt Hång bao thÇn bÝ",	{6,	1,	1074,	-1,	0	,0},	635},
+	{	"Hép lÖ vËt [qu¶ Huy Hoµng]",	{6,	1,	1075,	-1,	0	,0},	635},
+	{	"H×nh ném",		{6,	1,	1389,	-1,	0,	0},	635	},
+	--tinhpn 20100720: forbid item
+	{	"CÈm nang thay ®æi trêi ®Êt", {6, 1, 1781, -1, 0, 0},635},	
+	{	"Méc ChÕ B¶o H¹p", {6, 1, 2318, -1, 0, 0},635},	
+	{	"§ång ChÕ B¶o H¹p", {6, 1, 2319, -1, 0, 0},635},	
+	{	"Ng©n ChÕ B¶o H¹p", {6, 1, 2320, -1, 0, 0},635},	
+	{	"Hoµng Kim B¶o r­¬ng", {6, 1, 2321, -1, 0, 0},635},	
+	{	"B¶o r­¬ng B¹ch Kim", {6, 1, 2322, -1, 0, 0},635},	
+	{	"S¸t Thñ BÝ B¶o", {6, 1, 2347, -1, 0, 0},635},	
+	{	"B¶o r­¬ng thÇn bÝ cña D· TÈu", {6, 1, 2374, -1, 0, 0},635},	
+	{	"ChÝ T«n BÝ B¶o", {6, 1, 2375, -1, 0, 0},635},	
+	{	"Tµi B¶o Thñy TÆc", {6, 1, 2376, -1, 0, 0},635},	
+	{	"Håi thiªn t¸i t¹o lÔ bao", {6, 1, 2527, -1, 0, 0},635},
+	{	"Phi tèc hoµn lÔ bao", {6, 1, 2520, -1, 0, 0},635},
+	{	"§¹i lùc hoµn lÔ bao", {6, 1, 2517, -1, 0, 0},635},
+	--Updated by DinhHQ - 20110425
+	{	"C«ng Thµnh ChiÕn LÔ Bao", {6, 1, 2377, -1, 0, 0},635},
+	{	"§éc phßng hoµn lÔ bao", {6, 1, 2524, -1, 0, 0},635},
+	{	"Tr­êng mÖnh hoµn lÔ bao", {6, 1, 2515, -1, 0, 0},635},
+	{	"Gia tèc hoµn lÔ bao", {6, 1, 2516, -1, 0, 0},635},
+	{	"Cao thiÓm hoµn lÔ bao", {6, 1, 2518, -1, 0, 0},635},
+	{	"Cao trung hoµn lÔ bao", {6, 1, 2519, -1, 0, 0},635},
+	{	"Phi tèc hoµn lÔ bao", {6, 1, 2520, -1, 0, 0},635},
+	{	"B¨ng phßng hoµn lÔ bao", {6, 1, 2521, -1, 0, 0},635},
+	{	"L«i phßng hoµn lÔ bao", {6, 1, 2522, -1, 0, 0},635},
+	{	"Háa phßng hoµn lÔ bao", {6, 1, 2523, -1, 0, 0},635},
+	{	"§éc phßng hoµn lÔ bao", {6, 1, 2524, -1, 0, 0},635},
+	{	"LÖnh bµi vi s¬n ®¶o lÔ bao", {6, 1, 2525, -1, 0, 0},635},
+	{	"Hoµn Hån §¬n LÔ Bao", {6, 1, 2830, -1, 0, 0},635},
+		{	"Tiªu Diªu T¸n", {6, 1, 2831, -1, 0, 0},635},
+	 { "Håi thiªn t¸i t¹o lÔ bao(900)", {6, 1, 4832, -1, 0, 0},635},
+	 { "Håi thiªn t¸i t¹o lÔ bao(300)", {6, 1, 4903, -1, 0, 0},635},
+	 { "KÝch C«ng Trî Lùc Hoµn", {6, 1, 2952, -1, 0, 0},635}, 
+	 { "¢m D­¬ng Ho¹t HuyÕt §¬n", {6, 1, 2953, -1, 0, 0},635},
+	 { "LÖnh bµi T©n Thñ", {6, 1, 4265, -1, 0, 0},635},
+	 { "Xu khãa", {6, 1, 4893, -1, 0, 0},635},
+}
 szCaptainName = {};
 function main()
---do Talk(1, "", "L«i ®µi t¹m thêi ch­a më.") return end
+do Talk(1, "", "L«i ®µi t¹m thêi ch­a më.") return end
 	--ÉèÖ··µ»Øµã
 	x,y,z = GetWorldPos();
 	SetTask(BW_SIGNPOSWORLD, x);
@@ -23,7 +111,7 @@ function main()
 	local MemberCount =GetMissionV(MS_MAXMEMBERCOUNT)
 	ms_state = GetMissionV(MS_STATE);
 	if (ms_state == 0) then 
-		Say("§©y lµ ®Êu tr­êng thi ®Êu l«i ®µi, n¬i c¸c nh©n sÜ trªn giang hå ®¬n ®Êu hoÆc tæ chøc thi ®Êu ®éi. HiÖn t¹i ch­a cã ai b¸o danh thi ®Êu, c¸c h¹ cã muèn b¸o danh kh«ng<color=yellow>HiÖn t¹i më miÔn phÝ l«i ®µi<color>", 3, "§­îc th«i/OnRegister", "Quy t¾c thi ®Êu ra sao?/OnHelp", "§Ó suy nghÜ c¸i ®·!/OnCancel");
+		Say("N¬i ®©y lµ ®Êu tr­êng thi ®Êu l«i ®µi, n¬i c¸c nh©n sÜ trªn giang hå ®¬n ®Êu hoÆc tæ chøc thi ®Êu ®éi. HiÖn t¹i ch­a cã ai b¸o danh thi ®Êu, c¸c h¹ cã muèn b¸o danh kh«ng<color=yellow>HiÖn t¹i më miÔn phÝ l«i ®µi<color>", 3, "§­îc th«i/OnRegister", "Quy t¾c thi ®Êu ra sao?/OnHelp", "§Ó suy nghÜ c¸i ®·!/OnCancel");
 	elseif (ms_state == 1) then
 		Say("§©y lµ diÖn vâ tr­êng, §éi<color=yellow>"..szCaptainName[1].."<color>cïng ®éi<color=yellow>"..szCaptainName[2].."<color> tranh tµi<color=yellow>"..MemberCount.." vs "..MemberCount.."<color>, Ng­¬i cã yªu cÇu g×?",4,"Ta lµ tuyÓn thñ, muèn th­îng l«i ®µi./OnEnterMatch", "Ta lµ kh¸n gi¶, muèn vµo xem thi ®Êu./OnShowKey", "Ta muèn xem thi ®Êu./OnLook", "Ta kh«ng cã høng thó./OnCancel")
 	elseif (ms_state == 2) then 
@@ -124,10 +212,49 @@ end;
 
 
 function OnHelp()
-	Talk(5, "",	"L«i ®µi lµ n¬i ®Ó häc hái kinh nghiÖm lÉn nhau.",	"Muèn tham gia l«i ®µi, tr­íc hÕt ph¶i ®Õn chç ta ghi danh.",	"ghi danh tham gia l«i ®µi tranh tµi liÒn hoµn thµnh , bëi v× cuéc so tµi cã giíi h¹n , ®ang cã ng­êi thi ®Êu, c¸c h¹ kh«ng thÓ ghi danh!",	format("Ghi danh sau thµnh c«ng, cã thÓ ®Õn chuÈn bÞ khu , chuÈn bÞ thêi gian lµ <color=yellow>%d<color> ·Ö, ×¼±¸Ê±¼ä½áÊøºó£¬±ÈÈü½«ÕýÊ½¿ªÊ¼!", floor(GO_TIME/3)) , 	format("¹«Æ½Ë¾: ±ÈÈüÊ±¼äÊÇ<color=yellow>%d<color> ·Ö, Èç¹ûÔó %d·ÖÖÓ»¹·»ÓÐÈ·¶¨Ó®µÄ¶Ó£¬±ÈÈüÎªºÝ¾Ö.", floor(TIMER_2/(60*FRAME2TIME))-floor(GO_TIME/3), floor(TIMER_2/(60*FRAME2TIME))-floor(GO_TIME/3) ));
+	Talk(5, "",	"L«i ®µi lµ n¬i ®Ó c¸c cao thñ thi thè tµi nghÖ víi nhau vµ còng lµ n¬i thi ®Êu c«ng b»ng nhÊt cho ®«i bªn.",	"Muèn tham gia thi ®Êu l«i ®µi, tr­íc hÕt ph¶i ®Õn chç ta ghi danh.",	"Sau khi ®Æt c­îc xong, b¸o danh tham gia l«i ®µi sÏ hoµn tÊt. Lý do ®Êu tr­êng cã giíi h¹n nªn trong lóc ng­êi kh¸c ®ang thi ®Êu, th× ng­êi kh¸c kh«ng thÓ b¸o danh !",	format("Sau khi ®¨ng ký thµnh c«ng, hai bªn cã thÓ vµo khu vùc chuÈn bÞ, thêi gian chuÈn bÞ lµ <color=yellow>%d<color> phót, sau khi thêi gian chuÈn bÞ kÕt thóc, trËn ®Êu sÏ chÝnh thøc b¾t ®Çu!", floor(GO_TIME/3)) , 	format("C«ng B×nh Tö: thêi gian thi ®Êu lµ <color=yellow>%d<color> phót, nÕu trong <color=yellow>%d<color> phót kh«ng x¸c ®Þnh ®­îc ®éi th¾ng, trËn ®Êu sÏ ®­îc x÷ hßa.", floor(TIMER_2/(60*FRAME2TIME))-floor(GO_TIME/3), floor(TIMER_2/(60*FRAME2TIME))-floor(GO_TIME/3) ));
 end;
 
 function OnEnterMatch()
+-------------------------------------------------------------------------------------
+
+	local forbiditem_con = 0
+	local forbiditem_key = 0
+	local keyitem = {}
+	local keyitem_g = {}
+	local keyitem_d = {}
+	local keyitem_p = {}
+	for i = 1, 3 do
+		keyitem[i] = ITEM_GetImmediaItemIndex (i)
+		if (keyitem[i] ~= 0) then
+			keyitem_g[i], keyitem_d[i], keyitem_p[i] = GetItemProp(keyitem[i])
+		else
+			keyitem_g[i] = 0
+			keyitem_d[i] = 0
+			keyitem_p[i] = 0
+		end
+	end
+	for i = 1, getn(WLLS_FORBID_ITEM) do
+		forbiditem_con = CalcEquiproomItemCount( WLLS_FORBID_ITEM[i][2][1], WLLS_FORBID_ITEM[i][2][2], WLLS_FORBID_ITEM[i][2][3], WLLS_FORBID_ITEM[i][2][4] )
+		if (forbiditem_con > 0) then
+			break
+		end
+		forbiditem_con = CalcItemCount( 1, WLLS_FORBID_ITEM[i][2][1], WLLS_FORBID_ITEM[i][2][2], WLLS_FORBID_ITEM[i][2][3], WLLS_FORBID_ITEM[i][2][4] )
+		if (forbiditem_con > 0) then
+			break
+		end
+		for j = 1, 3 do 
+			if (keyitem_g[j] == WLLS_FORBID_ITEM[i][2][1] and keyitem_d[j] == WLLS_FORBID_ITEM[i][2][2] and keyitem_p[j] == WLLS_FORBID_ITEM[i][2][3]) then
+				forbiditem_key = 1
+				break
+			end
+		end
+	end
+	if(forbiditem_con > 0 or forbiditem_key > 0) then
+		Say("L«i ®µi lµ n¬i thi thè tµi n¨ng c«ng b»ng! Kh«ng ®­îc mang thuèc trî lùc vµo ®©y h·y kiÓm tra l¹i hµnh trang ! kh«ng ®­îc gian lËn !", 0)
+		return nil
+	end
+-----------------------------------------------------------------------------
 	local OldSubWorld = SubWorld;
 	SubWorld = SubWorldID2Idx(BW_COMPETEMAP[1]);
 	if (SubWorld < 0) then
@@ -147,12 +274,14 @@ function OnEnterKey()
 end
 
 function OnEnterKey1(Key)
+
 	local OldSubWorld = SubWorld;
 	SubWorld = SubWorldID2Idx(BW_COMPETEMAP[1]);
 	if (SubWorld < 0) then
 		SubWorld = OldSubWorld;
 		return
 	end;
+
 	if (Key == GetMissionV(MS_TEAMKEY[1])) then
 		OnJoin(1)
 	elseif (Key == GetMissionV(MS_TEAMKEY[2])) then
@@ -164,6 +293,7 @@ function OnEnterKey1(Key)
 end
 
 function OnLook()
+	do return Say("§¸nh nh­ ccc hä xem lµm c¸i g× cho mÊt thêi gian.",0) end
 	idx = SubWorldID2Idx(BW_COMPETEMAP[1]);
 	OldSubWorld = SubWorld;
 	SubWorld = idx;
@@ -255,3 +385,5 @@ function ErrorMsg(ErrorId)
 	end;
 	return
 end;
+
+

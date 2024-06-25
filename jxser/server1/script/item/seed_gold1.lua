@@ -1,5 +1,5 @@
-function main()
-	strTalk = "H¹t Hoµng Kim bŞ h­, ®¸ng tiÕc thËt!";
-	Msg2Player(strTalk);
-	Talk(1, "", strTalk);
+function main() 
+strTalk = " hoµng kim mÇm mãng ®· ph¸t m«i liÔu , thËt ®¸ng tiÕc . "; 
+Msg2Player(strTalk); 
+Talk(1, "", strTalk); 
 end

@@ -10,7 +10,7 @@ Include("\\script\\activitysys\\playerfunlib.lua")
 LEVEL_MIN = 120
 
 LIMITS = {
-	MIN_TEAMSIZE = 6,
+	MIN_TEAMSIZE = 2,
 	FLAG_CHECKTIME = 1,
 }
 
@@ -103,7 +103,15 @@ NpcXiaozhuzhu = {
 }
 NpcXiaozhuzhu.tbTSK_JoinTotal = 3075
 function NpcXiaozhuzhu:Say(player)
-	return self.m_Caption, self.m_Options
+-- Talk(1,"","TÝnh N¨ng Nµy §· T¹m §ãng")
+		local nHour = tonumber(GetLocalDate("%H%M"))
+	if  (nHour >= 1000 and nHour < 1030) or (nHour >= 1200 and nHour < 1230) or (nHour >= 1200 and nHour < 1230) or (nHour >= 1400 and nHour < 1430) or (nHour >= 1600 and nHour < 1630) or (nHour >= 1800 and nHour < 1830) or (nHour >= 2000 and nHour < 2030) or (nHour >= 2200 and nHour < 2230)  then
+		return self.m_Caption, self.m_Options
+		else
+			Say("Thêi gian ho¹t  ®éng giê ch½n tõ 10h00 ®Õn 22h00 hµng ngµy !",0);
+			return
+	end
+	-- return self.m_Caption, self.m_Options
 end
 
 function NpcXiaozhuzhu:CheckTime()
@@ -121,7 +129,7 @@ end
 function NpcXiaozhuzhu:CheckTeam(player)
 	local count = player:GetTeamSize()
 	if (count < LIMITS.MIN_TEAMSIZE) then
-		player:Say("Tõ 6-8 ng­êi cÊp 120 trë lªn cïng nhau tæ ®éi míi ®­îc ®i vµo.")
+		player:Say("Tõ 1-2 ng­êi cÊp 120 trë lªn cïng nhau tæ ®éi míi ®­îc ®i vµo.")
 		return 0
 	elseif (self:CheckTime() == 0) then
 		player:Say("ChØ cã thÓ b¸o danh sau ®Çu mçi giê vµ tr­íc 30 phót.")

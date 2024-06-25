@@ -1,22 +1,22 @@
---Created by fangjieying 2003-5-17
---¡¶Ø¤°ïÕÆ·¨¡·
---Ñ§»á·ÉÁúÔÚÌì¼¼ÄÜ
---Ø¤°ï£¬80¼¶ÒÔÉÏ¿ÉÓÃ
+-- script viet hoa By http://tranhba.com Created by fangjieying 2003-5-17
+-- script viet hoa By http://tranhba.com ####°#â#####
+-- script viet hoa By http://tranhba.com ###¸#Ğ¸ó¤ó××##Ä#
+-- script viet hoa By http://tranhba.com ##°###80##ß¤Ğ#¿Ğã·
 function main(sel)
 	party = GetLastAddFaction()
 	skill = HaveMagic(357)
-	if(party ~= "gaibang") then							-- ²»ÊÇØ¤°ï
-		Msg2Player("B¹n nghiªn cøu quyÓn C¸i Bang C«n Ph¸p ®­îc nöa ngµy, nh­ng vÉn ch­a lÜnh ngé ®­îc g×. ")
+	if(party ~= "gaibang") then							-- script viet hoa By http://tranhba.com  ²#£###°#
+		Msg2Player("Ä·Ä·#Å####°#â########¿¸#°#××###¸##£²·´ß²·#¸×#ß####")
 		return 1
-	elseif(GetLever < 80) then							-- ÊÇØ¤°ïµ«Î´µ½80¼¶
-		Msg2Player("B¹n nghiªn cøu quyÓn C¸i Bang C«n Ph¸p ®­îc nöa ngµy, lÜnh ngé ®­îc rÊt İt, kh«ng hiÖu qu¶. ")
+	elseif(GetLever < 80) then							-- script viet hoa By http://tranhba.com  £###°####´##80##
+		Msg2Player("Ä·Ä·#Å####°#â######ª##¸#°#××###¸##¸×#ßĞâĞï##·#£²·´######")
 		return 1
-	elseif(skill ~= -1) then							-- ÒÑÑ§¹ı¸Ã¼¼ÄÜ
-		Msg2Player("B¹n ®· nghiªn cøu kü quyÓn C¸i Bang C«n Ph¸p, nh­ng vÉn ch­a häc ®­îc g×. ")
+	elseif(skill ~= -1) then							-- script viet hoa By http://tranhba.com  ß####ı#·##Ä#
+		Msg2Player("Ä·ß###°#####°#â######ª##İ#³###´ã##¤ïß²##²###Ì#º#######")
 		return 1
 	else
 		AddMagic(357,1)
-		Msg2Player("Häc ®­îc kü n¨ng Phi Long T¹i Thiªn ")
+		Msg2Player("###¸¸###Ä##°#Ğ¸ó¤ó××#±##")
 		return 0
 	end
 end

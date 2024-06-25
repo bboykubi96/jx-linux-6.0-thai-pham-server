@@ -22,9 +22,9 @@ function ScriptItemClass:Use(nItemIndex, nCurDate)
 	end
 	
 	 if self.pFunctionSet:Exec(self, nItemIndex) then
-	 	return 0; --使用成功删掉物品
+	 	return 0; 
 	end
-	return 1; --使用失败，保留物品
+	return 1;
 	
 end
 

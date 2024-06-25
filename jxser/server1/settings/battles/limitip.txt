@@ -1,0 +1,11 @@
+IP	Char1	Char2	Char3	Char4	Char5	Char6	Char7	Char8	Char9	Char10	Char11	Char12	Char13	Char14	Char15	Char16	Char17	Char18	Char19	Char20
+1	HoangTiGer	DangÙTho	NghiaÙHungÙMoc	HoangTiGer1	TlBienthai	NgaMyÙFull	CXÙDocThamVaoTim	MuaThuyTinh	TLTraiMat	HaSang	HuyenhChanVo									
+2	RongÙBayÙVaoÙMat	ÙLaoÙDaiÙ	Nga7MY																	
+3	ÙKuÙTiÙ	KuÙBjn	ÙS­¬ngT©yB¾c																	
+4	ChuÙÙDu	AlexisÙSanchez																		
+5	69ÙTuÊnÙTóÙ	Ù69ÙHoµngÙDuyÙ	PhócÙ§inh	69ÙGiaÙC¸tÙL­îng	§õngÙLµmÙEmÙSî	Ù69ÙNhËtÙThiªnÙ	69ÙSyn													
+6	TiÓuMi	Xo¸yÙN¸tÙTöÙCung																		
+7	Ho¶ÙS¸tÙNh©n	§­êngÙM«nÙDuÙHı																		
+8	HaSang	¡nÙXinÙ9Ù§êi	HuyenhChanVo																	
+9	BarackÙObama	BabyÙTÌo	QuangAka	Ho¶ÙS¸tÙNh©n	MrsLam	§­êngÙM«nÙDuÙHı	ÆÆÆoãÖóÒ¸													
+10	TinhÙTócÙL·oÙQuû	ZhuYingTai																		

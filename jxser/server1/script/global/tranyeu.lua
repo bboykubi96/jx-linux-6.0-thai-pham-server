@@ -1,9 +1,9 @@
---tranyeu.lua
---ÕäÑş
+-- script viet hoa By http://tranhba.com tranyeu.lua 
+-- script viet hoa By http://tranhba.com  tr©n dao 
 Include("\\script\\task\\system\\task_string.lua");
-function main()
-	CreateTaskSay({"<dec><npc>Giät n­íc m¾t ®· l¨n dµi trªn m¸, ®· k×m lßng nh­ng...<enter>Buån vêi vîi kÌo dµi trong ®ªm lª thª. <enter>KiÕp sèng nhá nhoi, lÆn ngôp trong dßng dêi gi«ng b·o.<enter>Con thuyÒn cuéc ®êi ®øt d©y neo, tr«i m·i vÒ phİa bªn kia.<enter>§Şnh mÖnh trí trªu liÖu cã s¾p ®Æt mét cuéc hÑn.<enter>Cho ngµy gÆp l¹i xa x¨m... ë n¬i mái mßn. <enter>Chê ®îi mét niÒm tin cho ngµy héi ngé.<enter>LiÖu cã cßn tån t¹i chót nh©n duyªn nho nhá.<enter>¤i kiÕp sau, cã kh«ng ???", "KÕt thóc ®èi tho¹i/OnCancel"});
-end;
+function main() 
+CreateTaskSay({"<dec><npc> n­íc m¾t ch¶y th¶ng ë trªn mÆt , trong lßng kh¾c chÕ , nh­ng lµ ...<enter> ­u th­¬ng ë tõ tõ ®ªm dµi kĞo dµi <enter> h¬i nhá sinh m¹ng , ë cuéc sèng ®İch sãng giã trung ch×m næi .<enter> sinh m¹ng chi phµm g¶y c¸i neo , l­u h­íng kia mét con .<enter> thiªn mÖnh chí trªu ng­êi , cã hay kh«ng cã mét ­íc ®Şnh .<enter> cã mét ngµy , ë phİa xa gÆp nhau . <enter> chê ®îi gÆp nhau ngµy ®İch tİn niÖm <enter> hay kh«ng cßn cßn cã mét tia duyªn phËn <enter># ®êi sau , cã sao ? ? ?","KÕt thóc ®èi tho¹i /OnCancel"}); 
+end; 
 
-function OnCancel()
-end;
+function OnCancel() 
+end; 

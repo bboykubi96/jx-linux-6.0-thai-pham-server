@@ -1,9 +1,8 @@
 Include("\\script\\missions\\fengling_ferry\\fld_head.lua")
 
 function OnDeath(Launcher)
-	--Msg2Player("B¹n kh«ng may tö vong trong lóc ®i thuyÒn.")
---	Msg2MSAll("<color=yellow>"..GetName().."<color> kh«ng may tö vong trong lóc ®i thuyÒn t¹i bÕn thuyÒn Phong L¨ng §é")
- Msg2SubWorld("C¸c h¹ <color=yellow>"..GetName().." <color> ®· léi s«ng tr«i vÒ T­¬ng D­¬ng ");
+	Msg2Player("B¹n kh«ng may tö vong trong lóc ®i thuyÒn.")
+	Msg2MSAll("<color=yellow>"..GetName().."<color> kh«ng may tö vong trong lóc ®i thuyÒn t¹i bÕn thuyÒn Phong L¨ng §é")
 	camp = GetCamp()
 	SetCurCamp(camp)
 --	SetCreateTeam(1)

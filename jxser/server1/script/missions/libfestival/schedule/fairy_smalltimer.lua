@@ -1,8 +1,8 @@
-Include([[\script\missions\libfestival\head.lua]]);
+Include([[\script\missions\libfestival\head.lua]]); 
 
-function OnTimer()
+function OnTimer() 
 	local nTimerState = GetMissionV(MS_CO_TIMERSTATE) + 1;
-	SetMissionV(MS_CO_TIMERSTATE, nTimerState);	
-	
-	ontimer_add(nTimerState);
-end;
+SetMissionV(MS_CO_TIMERSTATE, nTimerState); 
+
+ontimer_add(nTimerState); 
+end; 

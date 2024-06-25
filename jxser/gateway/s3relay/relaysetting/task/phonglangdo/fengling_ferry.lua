@@ -1,5 +1,5 @@
+----------***Heart*Doldly***-------------
 function TaskShedule()
-	
 	TaskName("Phong L¨ng §é")
 	local nStartHour = tonumber(date("%H")) + 1;
 	
@@ -9,16 +9,14 @@ function TaskShedule()
 	
 	TaskTime(nStartHour, 0);
 	
-	
-	TaskInterval(60);
+	TaskInterval(720)
 	
 	TaskCountLimit(0)
-	OutputMsg("=================Phong Lang Do==================");
+	OutputMsg("Cuoc Dua Thuyen Phong Lang Do");
 end
 
-function TaskContent()	
-	GlobalExecute("dwf \\script\\missions\\fengling_ferry\\fldmap_boat1.lua fenglingdu_main()")
-	OutputMsg("=====> [phonglangdo] Phong Lang Do");
+function TaskContent()
+    GlobalExecute("dwf \\script\\missions\\fengling_ferry\\fldmap_boat1.lua fenglingdu_main()")
 end
 
 function GameSvrConnected(dwGameSvrIP)

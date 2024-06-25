@@ -1,32 +1,32 @@
-Include([[\script\missions\chrismas\ch_head.lua]]);
+Include([[\script\missions\chrismas\ch_head.lua]]); 
 Include("\\script\\lib\\gb_taskfuncs.lua")
 
-function InitMission()
-	local i;
-	for i = 1, 40 do
-		SetMissionV(i, 0);
-	end;
-	
-	for i = 1, 10 do
-		SetMissionS(i, "");
-	end;
-	
-	strGlbNews = "L¹i thªm mét nhãm ng­êi míi ®i t×m quµ thÊt l¹c."
-	AddGlobalNews(strGlbNews);
-	gb_SetTask("Ho¹t ®éng Gi¸ng Sinh", 1, 1);
-	SetGlbValue(GLB_CH_PHASE, 1);	--¿ÉÒÔ¿ªÊ¼±¨ÃûÁË
-	StartMissionTimer(CH_PREPAREMISSIONID, CH_PREPARETIME, CH_RUNINTERVER); --
-end;
+function InitMission() 
+local i; 
+for i = 1, 40 do 
+SetMissionV(i, 0); 
+end; 
 
-function RunMission()
-	SetGlbValue(GLB_CH_PHASE, 2); --½ûÖ¹ÔÙ½øÀ´±¨Ãû
-end;
+for i = 1, 10 do 
+SetMissionS(i, ""); 
+end; 
 
-function EndMission()
-	StopMissionTimer(CH_PREPAREMISSIONID, CH_PREPARETIME);
-	SetGlbValue(GLB_CH_PHASE, 3); --½ûÖ¹ÔÙ½øÀ´±¨Ãû
-	gb_SetTask("Ho¹t ®éng Gi¸ng Sinh", 1, 2);
-end;
+strGlbNews = " l¹i cã mét nhãm ng­êi míi ®Õn t×m mÊt m¸c ®Ých lÔ vËt . " 
+AddGlobalNews(strGlbNews); 
+gb_SetTask("Gi¸ng sinh ho¹t ®éng ", 1, 1); 
+SetGlbValue(GLB_CH_PHASE, 1); -- script viet hoa By http://tranhba.com  cã thÓ b¾t ®Çu b¸o danh 
+StartMissionTimer(CH_PREPAREMISSIONID, CH_PREPARETIME, CH_RUNINTERVER); -- script viet hoa By http://tranhba.com  
+end; 
 
-function OnLeave()
-end
+function RunMission() 
+SetGlbValue(GLB_CH_PHASE, 2); -- script viet hoa By http://tranhba.com  cÊm chØ ®i vµo n÷a ghi danh 
+end; 
+
+function EndMission() 
+StopMissionTimer(CH_PREPAREMISSIONID, CH_PREPARETIME); 
+SetGlbValue(GLB_CH_PHASE, 3); -- script viet hoa By http://tranhba.com  cÊm chØ ®i vµo n÷a ghi danh 
+gb_SetTask("Gi¸ng sinh ho¹t ®éng ", 1, 2); 
+end; 
+
+function OnLeave() 
+end 

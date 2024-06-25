@@ -88,7 +88,7 @@ local curCamp = nt_getCamp()
 	if (curCamp==2) then
 		AddOwnExp(30000)
 		AddItem(0,10,2,1,1,1)  --Ôö¼Ó20¼¶Âí
-		AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
+		-- AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
 		ex_add_xp_level20();
 		
 		Msg2Player("B¹n nhËn ®­îc"..myText1);
@@ -236,7 +236,7 @@ local curCamp = nt_getCamp()
 	if (curCamp==2) then
 	
 		AddOwnExp(80000)	
-		AddGoldItem(0,177)
+		-- AddGoldItem(0,177)
 		ex_add_xp_level30();
 		
 		Msg2Player("B¹n nhËn ®­îc"..myText1);
@@ -425,17 +425,18 @@ local curCamp = nt_getCamp()
 	Msg2Player("B¹n chiÕn th¾ng §å §¬n §¹i nh©n!");
 	-- Íæ¼ÒÔÚÓëÍ½µ¥´óÈË¶Ô»°½áÊøºó£¬µ¯³öÈÎÎñÃæ°æ
 	if (curCamp==2) then
-		AddOwnExp(350000)
-		AddExp_Skill_Extend(350000)
-		AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+		AddOwnExp(35000)
+		AddExp_Skill_Extend(35000)
+		local nIndex = AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+		SetItemBindState(nIndex ,-2)
 		ex_add_xp_level50();
 	
-		Msg2Player("B¹n nhËn ®­îc 350.000 ®iÓm kinh nghiÖm");
+		Msg2Player("B¹n nhËn ®­îc 35.000 ®iÓm kinh nghiÖm");
 		Msg2Player("B¹n nhËn ®­îc mét b×nh Tiªn Th¶o Lé ");
 	else
-		AddOwnExp(350000)
-		AddExp_Skill_Extend(350000)
-		Msg2Player("B¹n nhËn ®­îc 350.000 ®iÓm kinh nghiÖm");
+		AddOwnExp(35000)
+		AddExp_Skill_Extend(35000)
+		Msg2Player("B¹n nhËn ®­îc 35.000 ®iÓm kinh nghiÖm");
 	end
 	
 	Talk(8,"","Ng­¬i......T¹i sao ng­¬i l¹i truy s¸t ta?","RÊt ®¬n gi¶n! Ta muèn lÊy 'Bµn Long C«i' cña «ng","Hõ......Th× ra lµ v× thø nµy.","RÊt tiÕc mét th¸ng tr­íc ®· bŞ Hoµn Nhan Hïng Khang c­íp ®i......","Hoµn Nhan Hïng Khang?","Lµ Quèc s­ §¹i Kim Hoµn Nhan Hïng Khang! Cã b¶n lÜnh th× h·y ®Õn t×m h¾n!",".....….","Sî g× chø! Ta sÏ ®Õn <color=yellow>Thiªn NhÉn Gi¸o<color> xem thö!");

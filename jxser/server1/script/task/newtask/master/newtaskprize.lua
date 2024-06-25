@@ -19,13 +19,13 @@ local curCamp = nt_getCamp()
 		if ( Uworld1001 == 50 ) then  --and ( )  È±ÉÙ½±Àø±äÁ¿ÅĞ¶Ï
 			if ( curCamp == 0 ) then
 				AddItem(0,10,2,1,1,1)  --Ôö¼Ó20¼¶Âí
-				AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
+				-- AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
 				Msg2Player("B¹n nhËn ®­îc 1 con tuÊn m· cÊp 20 vµ 1 ®«i giµy tèc ®é")
 			end
 				nt_setTask(1001,60)
 		elseif ( Uworld1001 == 120 ) then
 			if ( curCamp == 0 ) then
-				AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
+				-- AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
 				Msg2Player("B¹n nhËn ®­îc 1 chiÕc mò.")
 			end
 				nt_setTask(1001,130)
@@ -37,31 +37,32 @@ local curCamp = nt_getCamp()
 				nt_setTask(1001,200)
 		elseif ( Uworld1001 == 260 ) then
 			if ( curCamp == 0 ) then
-				AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+				local nIndex = AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+				SetItemBindState(nIndex ,-2)
 				Msg2Player("B¹n nhËn ®­îc 1 b×nh Tiªn Th¶o Lé ")	
 			end	
 				nt_setTask(1001,270)
 		elseif ( Uworld1001 == 320 )  or ( Uworld1002 == 310 ) or ( Uworld1003 == 430 ) then  
-			local	taskgoldenprize = random(1,9)
-					if ( taskgoldenprize == 1 ) then
-						AddGoldItem(0,168)  --Ôö¼ÓÒ»¼ş»Æ½ğ×°±¸
-					elseif ( taskgoldenprize == 2 ) then
-						AddGoldItem(0,169)
-					elseif ( taskgoldenprize == 3 ) then
-						AddGoldItem(0,170)
-					elseif ( taskgoldenprize == 4 ) then
-						AddGoldItem(0,171)
-					elseif ( taskgoldenprize == 5 ) then
-						AddGoldItem(0,172)
-					elseif ( taskgoldenprize == 6 ) then
-						AddGoldItem(0,173)
-					elseif ( taskgoldenprize == 7 ) then
-						AddGoldItem(0,174)
-					elseif ( taskgoldenprize == 8 ) then
-						AddGoldItem(0,175)
-					elseif ( taskgoldenprize == 9 ) then
-						AddGoldItem(0,176)
-					end
+			-- local	taskgoldenprize = random(1,9)
+					-- if ( taskgoldenprize == 1 ) then
+						-- AddGoldItem(0,168)  --Ôö¼ÓÒ»¼ş»Æ½ğ×°±¸
+					-- elseif ( taskgoldenprize == 2 ) then
+						-- AddGoldItem(0,169)
+					-- elseif ( taskgoldenprize == 3 ) then
+						-- AddGoldItem(0,170)
+					-- elseif ( taskgoldenprize == 4 ) then
+						-- AddGoldItem(0,171)
+					-- elseif ( taskgoldenprize == 5 ) then
+						-- AddGoldItem(0,172)
+					-- elseif ( taskgoldenprize == 6 ) then
+						-- AddGoldItem(0,173)
+					-- elseif ( taskgoldenprize == 7 ) then
+						-- AddGoldItem(0,174)
+					-- elseif ( taskgoldenprize == 8 ) then
+						-- AddGoldItem(0,175)
+					-- elseif ( taskgoldenprize == 9 ) then
+						-- AddGoldItem(0,176)
+					-- end
 					if ( Uworld1001 == 320 ) then
 						nt_setTask(1001,1000)
 					elseif ( Uworld1002 == 310) then
@@ -69,6 +70,13 @@ local curCamp = nt_getCamp()
 					elseif ( Uworld1003 == 430 ) then
 						nt_setTask(1003,1000)
 					end
+							-- local nLevel = GetLevel()
+		local nRound = 80 - GetLevel()
+		if nRound > 0 then
+			for i=1,nRound do
+				AddOwnExp(1000000000)
+			end
+		end
 					Msg2Player("B¹n nhËn ®­îc 1 mãn b¶o khİ ")	
 					WriteLog(date("%H%M%S")..": Tµi kho¶n"..GetAccount()..", nh©n vËt"..GetName().."NhËn ®­îc 1 bé trang bŞ Hoµng Kim sau khi hoµn thµnh nhiÖm vô chİnh tuyÕn")	
 		end
@@ -83,13 +91,13 @@ local curCamp = nt_getCamp()
 		if ( Uworld1002 == 50 ) then 
 			if ( curCamp == 1 ) then
 				AddItem(0,10,2,1,1,1)  --Ôö¼Ó20¼¶Âí
-				AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
+				-- AddGoldItem(0,184) --Ôö¼ÓÒ»Ë«20ÅÜµÄĞ¬×Ó
 				Msg2Player("B¹n nhËn ®­îc 1 con tuÊn m· cÊp 20 vµ 1 ®«i giµy tèc ®é")
 			end
 			nt_setTask(1002,60)
 		elseif ( Uworld1002 == 100 ) then
 			if ( curCamp == 1 ) then
-				AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
+				-- AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
 				Msg2Player("B¹n nhËn ®­îc 1 chiÕc mò.")
 			end
 			nt_setTask(1002,110)
@@ -101,9 +109,11 @@ local curCamp = nt_getCamp()
 			nt_setTask(1002,180)
 		elseif  ( Uworld1002 == 230 ) then
 			if ( curCamp == 1 ) then
-				AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+				local nIndex = AddItem(6,1,71,1,1,1)  --Ôö¼ÓÒ»¸öÏÉ²İÂ¶
+				SetItemBindState(nIndex ,-2)
 				Msg2Player("B¹n nhËn ®­îc 1 b×nh Tiªn Th¶o Lé ")
 			end
 			nt_setTask(1002,240)		
 		end
+
 end

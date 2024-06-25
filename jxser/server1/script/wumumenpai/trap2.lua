@@ -1,0 +1,21 @@
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\activitysys\\functionlib.lua")
+Include("\\script\\lib\\awardtemplet.lua")
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\global\\fuyuan.lua")
+Include("\\script\\lib\\log.lua")
+Include("\\script\\lib\\timerlist.lua")
+Include("\\script\\lib\\player.lua")
+Include("\\script\\lib\\basic.lua") 
+
+function main(sel)
+	if GetTask(14) == 10*256 and GetLevel() >= 90 then
+		Talk(2,"nv9x2","Th× ra lµ mét c¸i bÉy, giÕt hÕt bän chóng vµ tho¸t khái vßng v©y")
+	end
+end;
+
+function nv9x2() 
+SetTask(14,20*256)
+Msg2Player("GiÕt hÕt bän qu©n Kim.")  
+end 

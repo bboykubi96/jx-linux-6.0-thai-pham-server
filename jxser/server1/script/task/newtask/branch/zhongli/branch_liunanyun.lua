@@ -389,21 +389,21 @@ function allprize_zhongli()
 	end
 	Msg2Player("Chóc mõng b¹n nhËn ®­îc 1 m¶nh Tµng B¶o ®å.")
 	if ( Uworld1054 == 1000 ) and ( GetBit(GetTask(197),1) ~= 1 ) then
-		AddGoldItem(0,179)
+		-- AddGoldItem(0,179)
 		SetTask(197,SetBit(GetTask(197),1,1))
-	Msg2Player("Chóc mõng b¹n nhËn ®­îc 1  Kim Phong Tr¹c Liªn Quang")
+	-- Msg2Player("Chóc mõng b¹n nhËn ®­îc 1  Kim Phong Tr¹c Liªn Quang")
 	elseif ( Uworld1055 == 1000 ) and ( GetBit(GetTask(197),2) ~= 1) then
-		AddGoldItem(0,180)
+		-- AddGoldItem(0,180)
 		SetTask(197,SetBit(GetTask(197),2,1))
-	Msg2Player("Chóc mõng b¹n ®¹t ®­îc 1  Kim Phong C«ng CÈn Tam Th¸n.")
+	-- Msg2Player("Chóc mõng b¹n ®¹t ®­îc 1  Kim Phong C«ng CÈn Tam Th¸n.")
 	elseif ( Uworld1056 == 1000 ) and ( GetBit(GetTask(197),3) ~= 1 ) then
-		AddGoldItem(0,183)
+		-- AddGoldItem(0,183)
 		SetTask(197,SetBit(GetTask(197),3,1))
-	Msg2Player("Chóc mõng b¹n nhËn ®­îc 1  Kim Phong Lan §×nh Ngäc")
+	-- Msg2Player("Chóc mõng b¹n nhËn ®­îc 1  Kim Phong Lan §×nh Ngäc")
 	elseif ( Uworld1057 == 1000 ) and ( GetBit(GetTask(197),4) ~= 1 ) then
-		AddGoldItem(0,185)
+		-- AddGoldItem(0,185)
 		SetTask(197,SetBit(GetTask(197),4,1))
-	Msg2Player("Chóc mõng b¹n nhËn ®­îc 1 Kim Phong §ång T­íc Xu©n Th©m.")
+	-- Msg2Player("Chóc mõng b¹n nhËn ®­îc 1 Kim Phong §ång T­íc Xu©n Th©m.")
 	end	
 	Msg2Player("B¹n ®· hoµn thµnh nhiÖm vô cña ®¼ng cÊp nµy.")
 end

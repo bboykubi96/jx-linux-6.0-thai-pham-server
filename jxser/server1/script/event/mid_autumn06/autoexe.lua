@@ -8,19 +8,20 @@ if (not __H_MIDAUTUMN_AUTO_06__) then
 -- Include("\\script\\event\\mid_autumn06\\head.lua");	by ◊”∑«Ù~ 2009-06-01 π˝∆⁄…æ≥˝
 -- AU06_KIDNPCSCRIPT = "\\script\\event\\funv_jieri\\200803\\meirenxianhua.lua";	by ◊”∑«Ù~ 2009-06-01 π˝∆⁄…æ≥˝
 
---AU06_KIDNPCSCRIPT = "\\script\\event\\birthday_jieri\\200905\\npc\\npc_zhanxin_zunzhe.lua";
-
---AU06_KIDNPCSCRIPT = "\\script\\global\\g7vn\\g7testgame.lua";
+AU06_KIDNPCSCRIPT = "\\script\\event\\birthday_jieri\\200905\\npc\\npc_zhanxin_zunzhe.lua";
 
 au06_tab_kidnpc = {
-	--{665,	20,		3545,	6196,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --Ω≠ΩÚ
-	--{665,	53,		1622,	3193,	AU06_KIDNPCSCRIPT,	"NPC HÁ TrÓ Test"}, --Ba lang huyen
-	--{665,	101,	1673,	3179,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --µæœ„¥Â
-	--{665,	174,	1628,	3209,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --¡˙»™¥Â
-	--{665,	121,	1950,	4516,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --¡˙√≈’Ú
-	--{665,	99,		1610,	3183,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --”¿¿÷’Ú
-	--{665,	100,	1628,	3188,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, --÷Ïœ…’Ú
-	--{665,	153,	1603,	3234,	AU06_KIDNPCSCRIPT,	"Chi’n T©m T´n Gi∂"}, -- Øπƒ’Ú
+	-- {1464,	20,		3545,	6196,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --Ω≠ΩÚ
+	-- {1464,	53,		1629,   3184,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --∞Õ¡Í
+	-- {1464,	53,		1622,	3193,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --∞Õ¡Í
+	-- {1464,	53,		1600,	3200,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --∞Õ¡Í
+	-- {1464,	101,	1673,	3179,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --µæœ„¥Â
+	-- {1464,	174,	1628,	3209,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --¡˙»™¥Â
+	-- {1464,	121,	1950,	4516,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --¡˙√≈’Ú
+	-- {1464,	99,		1610,	3183,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --”¿¿÷’Ú
+	-- {1464,	100,	1628,	3188,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, --÷Ïœ…’Ú
+	-- {1464,	153,	1603,	3234,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, -- Øπƒ’Ú
+	-- {1464,	614,	1603,	3234,	AU06_KIDNPCSCRIPT,	"H?Tr?T©n Th?}, -- Øπƒ’Ú
 }
 
 

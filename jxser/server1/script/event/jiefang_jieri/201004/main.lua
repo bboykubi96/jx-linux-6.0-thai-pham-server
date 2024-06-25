@@ -220,7 +220,7 @@ FreedomEvent2010.tbBuyItem =
 				{
 					pFun = function (self, nCount, szLogTilte)
 						szAllNews = format("Cao thñ <color=yellow>%s<color> ®· nhËn ®­îc <color=green>%d<color> [<color=yellow>%s<color>], giang hå tõ ®©y dËy sãng trë l¹i", GetName(), 1, "NhÊt Kû Cµn Kh«n Phï");
-						LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szAllNews , "", "")
+						--LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szAllNews , "", "")
 					end
 				},
 			},

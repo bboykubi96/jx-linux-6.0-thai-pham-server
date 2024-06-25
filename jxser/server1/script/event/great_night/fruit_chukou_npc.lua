@@ -2,6 +2,10 @@
 
 
 function main()
+if GetTask(5859)> 0  then
+		Say("VËn Tiªu §i Råi H·y Trë VÒ ")
+		return 1
+	end;
 	local tbDialog =
 	{
 		--"<desc><npc>Äã´òËãÈÃÎÒËÍÄã³öÈ¥Âğ£¿",

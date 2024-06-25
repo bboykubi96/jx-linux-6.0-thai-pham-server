@@ -6,7 +6,7 @@ TSK_WEEKLY_COT = 2717 --Sè trËn v­ît ¶i trong tuÇn
 WEEKLY_SJ_REQUIRE = 10
 WEEKLY_COT_REQUIRE = 6
 function main(nItemIdx)
-	if ST_GetTransLifeCount() ~= 4 then
+	if ST_GetTransLifeCount() == 4 then
 		Talk(1, "", "ChØ nh÷ng nh©n vËt trïng sinh 4 míi sö dông ®­îc vËt phÈm nµy!")
 		return 1
 	end

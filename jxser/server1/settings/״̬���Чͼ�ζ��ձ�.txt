@@ -191,16 +191,8 @@ Status189	spr\skill\门派进阶\木.spr	Body	Loop	0	0	20	1	40	1	进阶boss木系光环
 Status190	spr\skill\门派进阶\水.spr	Body	Loop	0	0	20	1	40	1	进阶boss水系光环
 Status191	spr\skill\门派进阶\火.spr	Body	Loop	0	0	20	1	40	1	进阶boss火系光环
 Status192	spr\skill\门派进阶\土.spr	Body	Loop	0	0	20	1	40	1	进阶boss土系光环
-Status193	\spr\skill\others\jianghugaoshou.spr	Foot	Loop	0	0	15	1	60	1	"T鑞g Kim Long H?Vi謙 Nam ""V?H鋍 K?T礽"""
-Status194	\spr\skill\others\wulinhaojie.spr	Foot	Loop	0	0	15	1	60	1	"T鑞g Kim Long H?Vi謙 Nam ""Vang Danh T?Phng"""
-Status195	\spr\skill\others\jianxiazhizun.spr	Foot	Loop	0	0	15	1	60	1	"T鑞g Kim Long H?Vi謙 Nam ""Th﹏ Th?B蕋 Ph祄"""
-Status196	\spr\skill\others\dubutianxia.spr	Foot	Loop	0	0	15	1	60	1	"T鑞g Kim Long H?Vi謙 Nam ""Thi猲 H?V?Song"""
+Status193	\spr\skill\others\jianghugaoshou.spr	Foot	Loop	0	0	15	1	60	1	T鑞g Kim Long H?Vi謙 Nam "V?H鋍 K?T礽"
+Status194	\spr\skill\others\wulinhaojie.spr	Foot	Loop	0	0	15	1	60	1	T鑞g Kim Long H?Vi謙 Nam "Vang Danh T?Phng"
+Status195	\spr\skill\others\jianxiazhizun.spr	Foot	Loop	0	0	15	1	60	1	T鑞g Kim Long H?Vi謙 Nam "Th﹏ Th?B蕋 Ph祄"
+Status196	\spr\skill\others\dubutianxia.spr	Foot	Loop	0	0	15	1	60	1	T鑞g Kim Long H?Vi謙 Nam "Thi猲 H?V?Song"
 Status197	\spr\skill\partner\skill_bairenzhan.spr	Foot	Loop	0	0	20	1	25	1	Ci ng鵤
-Status198	\spr\skill\danhhieu\doccocaubai.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status199	\spr\skill\danhhieu\bachchienbachthang.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status200	\spr\skill\danhhieu\hoangdobanghiep.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status201	\spr\skill\danhhieu\hungbathienha.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status202	\spr\skill\danhhieu\thienhavodich.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status203	\spr\skill\danhhieu\thienhavosong.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status204	\spr\skill\danhhieu\vangdanhgiangho.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1
-Status205	\spr\skill\danhhieu\volamminhchu.spr	Head	Loop	0	0	15	1	35	1	Danh Hi謚 V.I.P 1

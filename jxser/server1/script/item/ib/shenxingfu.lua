@@ -7,199 +7,108 @@ Include("\\script\\missions\\sevencity\\war.lua")
 Include("\\script\\global\\playerlist.lua")
 Include("\\script\\item\\ib\\headshenxingfu.lua")
 Include("\\script\\global\\g7vn\\g7configall.lua")
-Include("\\script\\global\\station.lua")
-IncludeLib("TONG")
-IncludeLib("TITLE");
+Include("\\script\\lib\\log.lua")
+---------------------------------------------------------------------------
+function myplayersex()
+	if GetSex() == 1 then 
+		return "N˜ Hi÷p";
+	else
+		return "ßπi Hi÷p";
+	end
+end
+------------------------------------------------------
 function main(sel)
-	if GetAccount()=="boquyx123" or GetAccount=="thaipham1" or GetAccount=="testgame4" then
-		dofile("script/item/ib/shenxingfu.lua")
-	end
-	--Msg2Player(""..IsDisabledTeam().."")
-	local szTongName, nTongID = GetTongName();
-if szTongName ~= nil and szTongName ~= "" then
-
-if TONG_GetMemberCount(nTongID) > 120 then
-Say("Bang v≠Ót qu∏ 120 thµnh vi™n kh´ng th” sˆ dÙng th«n thµnh phÔ.Xin h∑y t´n tr‰ng s©n ch¨i kh´ng gian lÀn trong vi÷c s∏p nhÀp bang hÈi Æ” tr∏nh phi“n ph¯c cho ch›nh bÊn bang m◊nh.");
-return 1
-end
-end
-
-SetTask(3077,0)
-	if GetLevel()>=60 then
-	--RemoveSkillState(1512,20,3,559872000,1) 
-	--RemoveSkillState(1679,20,3,559872000,1) 
-	end
-	if GetSkillState(1682)>=1 then
-		 local ntime2 = 18*60*60*24*10
-		Title_AddTitle(236, 2, ntime2)
-		Title_ActiveTitle(236)
-	elseif GetSkillState(1683)>=1 then
-		 local ntime2 = 18*60*60*24*10
-		Title_AddTitle(237, 2, ntime2)
-		Title_ActiveTitle(237)
-	elseif GetSkillState(1684)>=1 then
-		 local ntime2 = 18*60*60*24*10
-		Title_AddTitle(238, 2, ntime2)
-		Title_ActiveTitle(238)
-	elseif GetSkillState(1685)>=1 then
-		 local ntime2 = 18*60*60*24*10
-		Title_AddTitle(239, 2, ntime2)
-		Title_ActiveTitle(239)
-	end
-	--dofile("script/global/g7vn/g7configall.lua")
-	if HaveMagic(361)~=-1 then
-	--Msg2Player("aaaaaaaa"..GetSkillState(1078).."")
-	--DelMagic(361) 
-	end
-
-	local nDate = tonumber(date("%Y%m%d%H%M"))
+       local CheckXu = GetExtPoint(1)
+       local SoXuCon = CheckXu *1
+       local nMapChuyen = GetWorldPos();
+       local KNB =CalcItemCount(3,4,1496,1,1) +  CalcItemCount(4,4,1496,1,1) + CalcItemCount(9,4,1496,1,1) + CalcItemCount(10,4,1496,1,1)	
+       local tiendong =CalcItemCount(3,4,417,1,1) +  CalcItemCount(4,4,417,1,1) + CalcItemCount(9,4,417,1,1) + CalcItemCount(10,4,417,1,1)
+       local tinhngoc =CalcItemCount(3,6,1,4807,1) +  CalcItemCount(4,6,1,4807,1) + CalcItemCount(9,6,1,4807,1) + CalcItemCount(10,6,1,4807,1)
+ local exp = GetLevel()
+local phantram =GetExpPercent()
+       local nFaction = GetLastFactionNumber()
+  local nDate = tonumber(date("%Y%m%d%H%M"))
 		if nDate <= ThoiGianHetHanDiemTP then
 		Say("ßÛng vµo lÛc <color=yellow>"..ThoiGianOpenStr.."<color> mÌi bæt Æ«u ch›nh th¯c khai mÎ m∏y chÒ");
 		return 1
 	end
+	local nMap,_,_ = GetWorldPos();
+	local listmapband = {1002,867,527,535,337,338,339,378,379,380,323,324,325,464,465,466,467,468,469,470,471,342,336,595,900}
+	for k=1,getn(listmapband) do 
+		if nMap == listmapband[k] then 
+			Msg2Player("Khu V˘c ß∆t Bi÷t Kh´ng Th” Sˆ DÙng Th«n Hµnh PhÔ Tπi N¨i ß©y.");
+			return 1;
+		end
+	end
 
-	if ( GetTaskTemp(200) == 1 ) or ( SubWorldIdx2ID( SubWorld ) >= 387 and SubWorldIdx2ID( SubWorld ) <= 395)then
-		Msg2Player("Hi÷n tπi ng≠¨i kh´ng th” sˆ dÙng th«n hµnh phÔ!");
-		return 1
-	end
-	
-	if GetTask(5859) == 1 then
-		Msg2Player("Hi÷n tπi ng≠¨i kh´ng th” sˆ dÙng th«n hµnh phÔ!");
-		return 1
-	end
-	
-	local nSubWorldID = GetWorldPos();
-	if (nSubWorldID >= 375 and nSubWorldID <= 386) then
-		Msg2Player("B∂n ÆÂ hi÷n tπi ng≠¨i Æang Æ¯ng thuÈc khu v˘c Æ∆c thÔ, kh´ng th” sˆ dÙng th«n hµnh phÔ.");
-		return 1
-	end
-	
-	if (nSubWorldID >= 416 and nSubWorldID <= 511) then
-		Msg2Player("B∂n ÆÂ hi÷n tπi ng≠¨i Æang Æ¯ng thuÈc khu v˘c Æ∆c thÔ, kh´ng th” sˆ dÙng th«n hµnh phÔ.");
-		return 1
-	end
-	
-	if (nSubWorldID == 44 or nSubWorldID == 197 or nSubWorldID == 208 or nSubWorldID == 209 or nSubWorldID == 210 or nSubWorldID == 211 or nSubWorldID == 212 or (nSubWorldID >= 213 and nSubWorldID <= 223)	or nSubWorldID == 336 or nSubWorldID == 341 or nSubWorldID == 342	or nSubWorldID == 175	or nSubWorldID == 337	or nSubWorldID == 338	or nSubWorldID == 339 or ( nSubWorldID >= 387 and  nSubWorldID <= 395 ) )then 
-		Msg2Player("B∂n ÆÂ hi÷n tπi ng≠¨i Æang Æ¯ng thuÈc khu v˘c Æ∆c thÔ, kh´ng th” sˆ dÙng th«n hµnh phÔ.");
+	if (GetLevel() < 5) then
+		Say("ßºng C p 5 TrÎ L™n MÌi C„ Th” Sˆ DÙng Th«n Hµnh PhÔ")
 		return 1
 	end;
-
-	--Œ¿π˙’Ω’˘÷Æ∑Èª¡¨≥«µÿÕº£¨≤ªƒ‹ π”√
-	if (CheckAllMaps(nSubWorldID) == 1) then
-		Msg2Player("B∂n ÆÂ hi÷n tπi ng≠¨i Æang Æ¯ng thuÈc khu v˘c Æ∆c thÔ, kh´ng th” sˆ dÙng th«n hµnh phÔ.");
+	if GetTask(5859)> 0  then
+		Say("VÀn Ti™u ßi RÂi H∑y SD Th©n Hµnh PhÔ")
 		return 1
 	end;
-	
-	--if (GetLevel() < 5) or check_faction()==1 then
-		--Say("Ng≠Íi ch¨i ph∂i Æπt Æºng c p 5 trÎ l™n + Æ∑ gia nhÀp m´n ph∏i mÌi c„ th” sˆ dÙng th«n hµnh phÔ.", 0);
-		--return 1
+        --  if GetTask(3920)> 0  then
+	--	Say("Ng≠¨i Æang vÀn chuy”n Bao L≠¨ng . Mau di chuy”n Æ’n ßi”m tÀp k’t Æi.")
+	--	return 1
 	--end;
-
-	local PK_value = GetPK()
-	if PK_value == 10 then
-		--Say("Ng≠Íi hai tay d›nh Æ«y m∏u trﬁ sË <color=red>PK 10<color> Æi Æ’n ch©n trÍi g„c b” th◊ cÚng kh´ng th” tho∏t kh·i luÀt ph∏p! <enter>Mau mau Æ’n nhµ lao Æ«u thÛ Æ” gi∂m bÌt trﬁ PK", 0);
-		--return 1
-	end
-	
-	Say("Th«n hµnh phÔ c„ th” Æ∆t Æi”m hÂi sinh, vµ cÚng c„ th” Æi Æ’n n¨i thµnh thﬁ tr n nµo Æ„.", 4, 
-		"RÍi kh·i/no",
+   --WriteLogPro("dulieu/thanhanhphu/dichuyen"..date("%d_%m_%Y")..".txt",format("[ThÍi gian : %s  - Tµi kho∂n [ %s]  - Nh©n vÀt : [%s ] --Cap Do  ["..exp.." ]--phan tram  ["..phantram.." ]--tinh_ngoc  ["..tinhngoc.." ]-- Di Chuyen Den Map :  ["..nMapChuyen.."]   \n",GetLocalDate("%H:%M:%S"),GetAccount(),GetName(),exp,phantram,tinhngoc))	     
+    --  if KNB>0 or tiendong>0 or SoXuCon>0  then
+      --WriteLogPro("dulieu/thanhanhphu/BaoHiemXu"..date("%d_%m_%Y")..".txt",format("[ThÍi gian : %s  - Tµi kho∂n [ %s]  - Nh©n vÀt : [%s ] - KNB : [%s ] -- Xu : [%s ]-- Ti“n Trang ["..SoXuCon.." KNB]-- Di Chuyen Den Map :  ["..nMapChuyen.."]  \n",GetLocalDate("%H:%M:%S"),GetAccount(),GetName(),KNB,tiendong))	     
+	--end	
+	Say("Th«n Hµnh PhÔ C„ Th” ß∆t ßi”m HÂi Sinh, Vµ CÚng C„\nTh” ßi ß’n N¨i Thµnh Thﬁ Tr n Nµo ß„", 6, 
+		"RÍi Kh·i/no",
 		"Thi’t Æ∆t Æi”m hÂi sinh, l«n sau n’u Æπi hi÷p sˆ dÙng thÊ Æﬁa phÔ sœ Æ’n n¨i nµy./set_backpos", 
-		"Sˆ dÙng thuÀt th«n hµnh c„ th” Æ≠a Æπi hi÷p Æ’n thµnh thﬁ th´n tr n chÿ Æﬁnh./gototown",
-		--"Chi’n Long ßÈng./congchienlongdong"
-	--	"ßi Hoa S¨n Ph∏i./dennoidanhcobac"
-		"ß u Tr≠Íng Sinh Tˆ./vaodautruong"
+		"Sˆ dÙng thuÀt th«n hµnh c„ th” Æ≠a Æπi hi÷p Æ’n thµnh thﬁ th´n tr n chÿ Æﬁnh./gototown"
+	--	"ßi ß∏nh Bπc./dennoidanhcobac"
+		
 		--"ßi Æ’n vﬁ tr› kh∏c./#tbVNGWORDPOS:GotoOtherMap()"
 		--"ßi Æ’n vﬁ tr› kh∏c./Goto_OtherMap"
 		);
 
 	return 1	
 end;
-function vaodautruong()
---checkip()
-	--local _, nTongID = GetTongName()
---	if (nTongID == 0) then
-	--	Msg2Player("Kh´ng c„ trong bang hÈi, kh´ng th” sˆ tham gia.")
-	--	return
---	end
---	local szTong = GetTongName()
---	if szTong == "" then
---		Msg2Player("Kh´ng c„ trong bang hÈi, kh´ng th” sˆ tham gia.")
-----		return
---	end
+function checkruongnguyetkhuyet()
+local daychuyen =CalcItemCount(3,6,1,4516,1) +  CalcItemCount(4,6,1,4516,1) + CalcItemCount(9,6,1,4516,1) + CalcItemCount(10,6,1,4516,1)	
+local khoi =CalcItemCount(3,6,1,4517,1) +  CalcItemCount(4,6,1,4517,1) + CalcItemCount(9,6,1,4517,1) + CalcItemCount(10,6,1,4517,1)	
+local nhantren =CalcItemCount(3,6,1,4518,1) +  CalcItemCount(4,6,1,4518,1) + CalcItemCount(9,6,1,4518,1) + CalcItemCount(10,6,1,4518,1)	
+local houyen =CalcItemCount(3,6,1,4519,1) +  CalcItemCount(4,6,1,4519,1) + CalcItemCount(9,6,1,4519,1) + CalcItemCount(10,6,1,4519,1)	
+local dailung =CalcItemCount(3,6,1,4520,1) +  CalcItemCount(4,6,1,4520,1) + CalcItemCount(9,6,1,4520,1) + CalcItemCount(10,6,1,4520,1)	
+local ao =CalcItemCount(3,6,1,4521,1) +  CalcItemCount(4,6,1,4521,1) + CalcItemCount(9,6,1,4521,1) + CalcItemCount(10,6,1,4521,1)	
+local vukhi =CalcItemCount(3,6,1,4522,1) +  CalcItemCount(4,6,1,4522,1) + CalcItemCount(9,6,1,4522,1) + CalcItemCount(10,6,1,4522,1)	
+local giay =CalcItemCount(3,6,1,4523,1) +  CalcItemCount(4,6,1,4523,1) + CalcItemCount(9,6,1,4523,1) + CalcItemCount(10,6,1,4523,1)	
+local ngocboi =CalcItemCount(3,6,1,4524,1) +  CalcItemCount(4,6,1,4524,1) + CalcItemCount(9,6,1,4524,1) + CalcItemCount(10,6,1,4524,1)	
+local hagioi =CalcItemCount(3,6,1,4525,1) +  CalcItemCount(4,6,1,4525,1) + CalcItemCount(9,6,1,4525,1) + CalcItemCount(10,6,1,4525,1)	
+	if daychuyen>0 or khoi>0 or nhantren>0 or houyen>0 or dailung>0 or ao>0 or vukhi>0 or giay>0 or ngocboi>0 or hagioi>0 then
+	WriteLogPro("dulieu/coruongnguyenkhuyet.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t daychuyen:"..daychuyen.." \n");	
+	end
+end
+function checkdonguyetkhuyet()
+		local tbEquip = GetAllEquipment()
+	for i=1, getn(tbEquip) do
+	local	nItemTime = ITEM_GetExpiredTime(tbEquip[i])
+	local nGoldEquipIdxFF = GetGlodEqIndex(tbEquip[i])
+		local nCurItemExpiredTime = ITEM_GetExpiredTime(tbEquip[i])
+		local nCurTime = GetCurServerTime()
+	local ntime= nCurItemExpiredTime - nCurTime 
+--	local nIDX=
+		if nGoldEquipIdxFF>=3655 and nGoldEquipIdxFF<=3904 and nItemTime>0 then
+			if ntime>60 then
+			ITEM_SetExpiredTime(tbEquip[i],1)
+			SyncItem(tbEquip[i])
+			SetItemBindState(tbEquip[i], -2)
+			end
+		--Msg2Player(" ChÛc mıng "..nItemTime.."   +++ id="..nGoldEquipIdxFF.."    " )
+		
+		--	Say("Kh´ng th” mang ÆÂ test vµo Æ©y nh– bπn")
 
---	if (TONGM_GetFigure(nTongID, GetName()) == TONG_RETIRE) then
-	--	Say("»n s¸ kh´ng th” tham gia .")
-	--	return
---	end	
-	local tbSay = {}
-	tinsert(tbSay,"HÀu Doanh Bæc./#gotoDT(1572,2438)")
-	tinsert(tbSay,"HÀu Doanh Nam./#gotoDT(1206,3156)")
-	tinsert(tbSay,"HÀu Doanh  ß´ng./#gotoDT(1545,3110)")
-	tinsert(tbSay,"HÀu Doanh T©y./#gotoDT(1218,2452)")
-	tinsert(tbSay,"Th´i ta kh´ng muËn Æi./no")
-	Say("MÍi l˘a ch‰n khu v˘c tham Æ u", getn(tbSay), tbSay)
-	return 1	
-end;
-function gotoDT(nX,nY)
-	local nHour = tonumber(GetLocalDate("%H%M"))
---	if  (nHour >= 1900 and nHour < 2030) or (nHour>=1200 and nHour<1250) then
---		else
---			Say("ThÍi gian vµo Æ u tr≠Íng sinh tˆ lµ 19h Æ’n 20h30 hªng ngµy. .",0);
---			return
---		end
-NewWorld(355,nX,nY)
-SetPunish(0)
-SetLogoutRV(1);
---BienHinh()
-	local szTong = GetTong()
-	if not szTong or  szTong == "" then
-		SetCreateTeam(0);
-		SetCurCamp(4);
---BienHinh()
-end
-end
-function congchienlongdong()
-if GetLevel()<60 then
- --Say("C p ÆÈ 60 mÌi c„ th” l™n b∂n ÆÂ nµy.")
- --return
-end
-local tbSay = {
-
-"L™n CÊng T≠Íng V©n./congtuongvan",
-"L™n CÊng VÚ Di S¨n./congvudison",
-"L™n CÊng La Ti™u S¨n./conglatieuson",
-"Th´i ta kh´ng muËn n˜a./no"
-}
-Say("Bπn ch‰n ch¯c n®ng nµo ?",getn(tbSay),tbSay)
-end
-function congtuongvan()
-NewWorld(959 , floor(1551), floor(2989))
-SetFightState(1)
-SetProtectTime(18*0) -- 4 giay bat tu 
-AddSkillState(963, 1, 0, 18*0)
-end
-function congvudison()
-NewWorld(959 , floor(1425), floor(2997))
-SetFightState(1)
-SetProtectTime(18*0) -- 4 giay bat tu 
-AddSkillState(963, 1, 0, 18*0)
-end
-function conglatieuson()
-NewWorld(959 , floor(1690), floor(3158))
-SetFightState(1)
-SetProtectTime(18*0) -- 4 giay bat tu 
-AddSkillState(963, 1, 0, 18*0)
+			end
+	end
 end
 function dennoidanhcobac()
-if GetLevel()<60 then
- Say("C p ÆÈ 60 mÌi c„ th” l™n b∂n ÆÂ nµy.")
- return
-end
-local idx={1286,1321,1544}
-	local idy={3209,2884,3206}
-	local toado=random(1,3)
-	NewWorld(333 , idx[toado], idy[toado])
-	SetFightState(0)
+NewWorld(523 , floor(1590), floor(3218))
+SetFightState(0)
 end
 -------------------------------Luyen cong tan thu----------------------------------------------
 
@@ -223,19 +132,9 @@ tab_lv80map = {
 		{320,1147,3123	,"Ch©n nÛi Tr≠Íng Bπch",},
 		{181,1425,2999	,"L≠Ïng ThÒy ßÈng",},
 		{201,1616,3195	,"B®ng Hµ ßÈng",},
-				{202,1787,2823	,"PhÔ Dung ÆÈng",},
-		{203,1548,2990	,"V´ Danh ßÈng",},
 	}
 
 function gopos_step2lv80(ns, ne)
-	if GetExp()<0 then
-		Say("Kinh nghi÷m ©m n™n kh´ng th” sˆ dÙng Th«n Hµnh PhÔ.");
-		return 1
-	end
-if GetLevel()<70 then
-	Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	return
-end
 	local nFact = GetLastFactionNumber()
 	if nFact == -1 then	
 	Talk(1, "", "H∑y gia nhÀp m´n ph∂i Æ” ti’p tÙc b´n t»u !!!");
@@ -243,7 +142,7 @@ end
 	end 
 	local n_count = getn(tab_lv80map);
 	local tab_Content = {};
-	for i = 1, 7 do
+	for i = 1, 5 do
 		tinsert(tab_Content, tab_lv80map[i][4].."/#gopos_step3lv80( "..i..")");
 	end
 	
@@ -265,16 +164,10 @@ tab_lv70map = {
 		{319,1630,3587	,"L©m Du Quan",},
 		{123,1702,3350	,"L∑o HÊ ßÈng",},
 		{206,1603,3215	,"T«n L®ng t«ng 2",},
-		{72,1659,3308	,"ßπi tÔ ÆÈng",},
-		{169,1596,3213	,"Long Nh∑n ÆÈng",},
-		{130,1541,3147	,"L≠u Ti™n ÆÈng t«ng 6",},
+		
 	}
 
 function gopos_step2lv70(ns, ne)
-if GetLevel()<60 then
-	--Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	--return
-end
 	local nFact = GetLastFactionNumber()
 	if nFact == -1 then	
 	Talk(1, "", "H∑y gia nhÀp m´n ph∂i Æ” ti’p tÙc b´n t»u !!!");
@@ -282,7 +175,7 @@ end
 	end 
 	local n_count = getn(tab_lv70map);
 	local tab_Content = {};
-	for i = 1, 6 do
+	for i = 1, 3 do
 		tinsert(tab_Content, tab_lv70map[i][4].."/#gopos_step3lv70( "..i..")");
 	end
 	
@@ -304,23 +197,13 @@ tab_lv60map = {
 		{79,1600,3206	,"T≠¨ng D≠¨ng Nha M´n MÀt ßπo",},
 		{56,1516,3443	,"Hoµnh S¨n Ph∏i",},
 		{166,1649,3231	,"Thi™n T©m Th∏p t«ng 3",},
-		{118,1590,3182	,"T≠Íng V©n ßÈng t«ng 3",},
-		{114,1613,3202	,"108 La H∏n TrÀn",},
-		{51,1592,3205	,"Thi™n Nh…n Gi∏o Th∏nh ßÈng",},
-		{196,1539,3267	,"D≠¨ng Gi∏c ßÈng",},
-		{149,1610,3220	,"Tuy’t B∏o ßÈng t«ng 3",},
-		{94,1598,3151	,"Linh CËc ßÈng",},
-		{68,1625,3228	,"Thanh Loa ß∂o",},
+		
 	}
 
 function gopos_step2lv60(ns, ne)
-if GetLevel()<50 then
-	--Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	--return
-end
 	local n_count = getn(tab_lv60map);
 	local tab_Content = {};
-	for i = 1, 10 do
+	for i = 1, 3 do
 		tinsert(tab_Content, tab_lv60map[i][4].."/#gopos_step3lv60( "..i..")");
 	end
 	
@@ -341,25 +224,13 @@ end
 tab_lv50map = {
 		{182,1777,2982	,"Nghi÷t Long ßÈng",},
 		{164,1611,3187	,"Thi™n T©m Th∏p",},
-		{38,1601,3193	,"M™ Cung Thi’t Th∏p",},
-		{194,1599,3199	,"Ng‰c Hoa ßÈng",},
-		{163,1596,3217	,"∏c B∏ ßﬁa ßπo",},
-		{24,1611,3207	,"H≠Îng ThÒy ßÈng",},
-		{182,1633,3213	,"Nghi÷t Long ßÈng",},
-		{42,1617,3226	,"Thi™n T©m ßÈng",},
-		{116,1607,3203	,"T≠Íng V©n ßÈng",},
-		{66,1606,3206	,"ß∏y ßÈng ß◊nh HÂ",},
 		
 	}
 
 function gopos_step2lv50(ns, ne)
-if GetLevel()<40 then
-	--Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	--return
-end
 	local n_count = getn(tab_lv50map);
 	local tab_Content = {};
-	for i = 1, 10 do
+	for i = 1, 2 do
 		tinsert(tab_Content, tab_lv50map[i][4].."/#gopos_step3lv50( "..i..")");
 	end
 	
@@ -391,10 +262,6 @@ tab_lv40map = {
 	}
 
 function gopos_step2lv40(ns, ne)
-if GetLevel()<30 then
-	Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	return
-end
 	local n_count = getn(tab_lv40map);
 	local tab_Content = {};
 	for i = 1, 2 do
@@ -421,10 +288,6 @@ tab_lv30map = {
 	}
 
 function gopos_step2lv30(ns, ne)
-if GetLevel()<20 then
-	Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	return
-end
 	local n_count = getn(tab_lv30map);
 	local tab_Content = {};
 	for i = 1, 2 do
@@ -453,10 +316,6 @@ tab_lv20map = {
 	}
 
 function gopos_step2lv20(ns, ne)
-if GetLevel()<10 then
-	Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	return
-end
 	local n_count = getn(tab_lv20map);
 	local tab_Content = {};
 	for i = 1, 2 do
@@ -534,7 +393,7 @@ tab_RevivePos = {
 		{"Ba L®ng huy÷n", 19, 53},{"Giang T©n Th´n", 10, 20},{"V‹nh Lπc tr n", 43, 99},{"Chu Ti™n tr n", 45, 100},{"ßπo H≠¨ng th´n", 47, 101},{"Long M´n tr n", 55, 121},{"Thπch CÊ tr n", 59, 153},{"Long Tuy“n th´n", 65, 174},{"T©y S¨n th´n", 1, 175}
 	},
 	[9] = {	--"√≈≈…"
-		{"Thi™n V≠¨ng Bang", 21, 59},{"Thi’u L©m ph∏i", 52, 103},{"ß≠Íng M´n", 15, 25},{"NgÚ ßÈc Gi∏o", 71, 183},{"Nga My ph∏i", 13, 13},{"ThÛy Y™n m´n", 61, 154},{"Thi™n Nh…n gi∏o", 28, 49},{"C∏i Bang", 53, 115},{"V‚ ßang ph∏i", 40, 81},{"C´n L´n ph∏i", 58, 131},{"Hoa S¨n ph∏i", 987, 987}
+		{"Thi™n V≠¨ng Bang", 21, 59},{"Thi’u L©m ph∏i", 52, 103},{"ß≠Íng M´n", 15, 25},{"NgÚ ßÈc Gi∏o", 71, 183},{"Nga My ph∏i", 13, 13},{"ThÛy Y™n m´n", 61, 154},{"Thi™n Nh…n gi∏o", 28, 49},{"C∏i Bang", 53, 115},{"V‚ ßang ph∏i", 40, 81},{"C´n L´n ph∏i", 58, 131}
 	},
 };
 --…Ë∂®÷ÿ…˙µ„£®—°≥« –£©
@@ -588,12 +447,41 @@ function gototown()
 		"M´n ph∏i/#gopos_step2(9)",
 		"B∂n ÆÂ luy÷n c´ng t©n thÒ 2x Æ’n 8x/#luyencongtanthu()",
 		"B∂n ÆÂ c p 90/#gopos_step2lv90()",
+		--	"ß u tr≠Íng Sinh Tˆ/vaodautruong",
 		--"B∂n ÆÂ mÌi tr™n 90/#gopos_step2lv130()",
 		"Chi’n tr≠Íng tËng TËng Kim/gopos_step2battle",
-	--	"Chi’n tr≠Íng Th t Thµnh ßπi Chi’n/gopos_sevencityfield"
+		"Chi’n tr≠Íng Th t Thµnh ßπi Chi’n/gopos_sevencityfield"
 	}
 	Say("Th«n hµnh phÔ, Æi Æ’n n¨i ng≠¨i muËn.", getn(tab_Content), tab_Content);
 end;
+
+function vaodautruong()
+
+	local tbSay = {}
+	tinsert(tbSay,"HÀu Doanh Bæc./#gotoDT(1572,2438)")
+	tinsert(tbSay,"HÀu Doanh Nam./#gotoDT(1206,3156)")
+	tinsert(tbSay,"HÀu Doanh  ß´ng./#gotoDT(1545,3110)")
+	tinsert(tbSay,"HÀu Doanh T©y./#gotoDT(1218,2452)")
+	tinsert(tbSay,"Th´i ta kh´ng muËn Æi./no")
+	Say("MÍi l˘a ch‰n khu v˘c tham Æ u", getn(tbSay), tbSay)
+
+	return 1	
+end;
+
+function gotoDT(nX,nY)
+if GetLevel() < 80 then
+Say("C p ÆÈ 80 trÎ l™n mÌi c„ th” vµo")
+return
+end
+NewWorld(355,nX,nY)
+SetPunish(0)
+	local szTong = GetTong()
+	if not szTong or  szTong == "" then
+		SetCreateTeam(0);
+		SetCurCamp(4);
+
+end
+end
 
 
 function gopos_step2town()
@@ -723,14 +611,6 @@ tab_lv90map = {
 	}
 
 function gopos_step2lv90(ns, ne)
-	if GetExp()<0 then
-		Say("Kinh nghi÷m ©m n™n kh´ng th” sˆ dÙng Th«n Hµnh PhÔ.");
-		return 1
-	end
-if GetLevel()<80 then
-	--Say("Ch≠a ÆÒ Æºng c p Æ” l™n map nµy luy÷n c´ng.")
-	--return
-end
 	local nFact = GetLastFactionNumber()
 	if nFact == -1 then	
 	Talk(1, "", "H∑y gia nhÀp m´n ph∂i Æ” ti’p tÙc b´n t»u !!!");
@@ -783,8 +663,8 @@ function gopos_step3lv90(nIdx)
 			Say("ßπi hi÷p kh´ng mang ÆÒ 1 l≠Óng")
 			return
 		end
-		--SetProtectTime(18*4) -- 4 giay bat tu 
-		--AddSkillState(963, 1, 0, 18*4)
+		SetProtectTime(18*4) -- 4 giay bat tu 
+		AddSkillState(963, 1, 0, 18*4)
 		Pay(1)
 		else
 			if GetCash() < 0 then
@@ -795,8 +675,6 @@ function gopos_step3lv90(nIdx)
 	end
 
 	NewWorld(tab_lv90map[nIdx][1], tab_lv90map[nIdx][2], tab_lv90map[nIdx][3])
-			--SetProtectTime(18*4) -- 4 giay bat tu 
-		--AddSkillState(963, 1, 0, 18*4)
 	SetFightState(1);
 	Msg2Player("Xin h∑y ngÂi y™n, chÛng ta Æi <color=yellow>"..tab_lv90map[nIdx][4].."<color> nµo");
 	
@@ -809,40 +687,35 @@ function gopos_step2battle()
 	--else
 		--Say ( "Trong TËng Kim, b™n lÓi th’ v“ sË ng≠Íi tuy c„ chi’m ≠u th’ nh≠ng sœ nhÀn Æ≠Óc Æi”m t›ch lÚy ›t h¨n, c∏c hπ muËn ch‰n b∏o danh b™n nµo?", 3, "Vµo Æi”m b∏o danh phe Vµng (T)/#DoRescriptFunc(1)", "Vµo Æi”m b∏o danh phe T›m (K)/#DoRescriptFunc(2)","ß” ta suy ngh‹ lπi./no" );
 	--end;
-	if ( GetLevel() < 80 ) then
-		Talk( 1, "", "TËng Kim lµ n¨i r t nguy hi”m, ch≠a Æπt c p 80 kh´ng th” tham gia chi’n tr≠Íng." );
+	if ( GetLevel() < 40 ) then
+		Talk( 1, "", "TËng Kim lµ n¨i r t nguy hi”m, ch≠a Æπt c p 40 kh´ng th” tham gia chi’n tr≠Íng." );
 	else
 		Say ( "Trong TËng Kim, b™n lÓi th’ v“ sË ng≠Íi tuy c„ chi’m ≠u th’ nh≠ng sœ nhÀn Æ≠Óc Æi”m t›ch lÚy ›t h¨n, c∏c hπ muËn ch‰n b∏o danh b™n nµo?", 3, "Vµo Æi”m b∏o danh phe TËng /ToSong", "Vµo Æi”m b∏o danh phe Kim /ToJin","ß” ta suy ngh‹ lπi./no" );
 	end;
 end
 
 function gopos_sevencityfield()
+	local tbEquip = GetAllEquipment()
+	for i=1, getn(tbEquip) do
+	local	nItemTime = ITEM_GetExpiredTime(tbEquip[i])
+	local nGoldEquipIdxFF = GetGlodEqIndex(tbEquip[i])
+		if nGoldEquipIdxFF>=3655 and nGoldEquipIdxFF<=3904 and nItemTime>0 then
+	--	Msg2Player(" ChÛc mıng "..nItemTime.."   --id="..nGoldEquipIdxFF.."    " )
+			Say("Kh´ng th” mang ÆÂ test vµo Æ©y nh– bπn")
+			return 0
+			end
+	end
 	Say("Ng≠¨i muËn Æi chi’n tr≠Íng nµo cÒa Th t Thµnh ßπi Chi’n?", 8,
-		"Chi’n tr≠Íng Thµnh ß´/#goto_sevencityfield1(1)",
-		"Chi’n tr≠Íng Bi÷n Kinh/#goto_sevencityfield1(2)",
-		"Chi’n tr≠Íng ßπi L˝/#goto_sevencityfield1(3)",
-		"Chi’n tr≠Íng Ph≠Óng T≠Íng/#goto_sevencityfield1(4)",
-		"Chi’n tr≠Íng L©m An/#goto_sevencityfield1(5)",
-		"Chi’n tr≠Íng T≠¨ng D≠¨ng/#goto_sevencityfield1(6)",
-		"Chi’n tr≠Íng D≠¨ng Ch©u/#goto_sevencityfield1(7)",
+		"Chi’n tr≠Íng Thµnh ß´/#goto_sevencityfield(1)",
+		"Chi’n tr≠Íng Bi÷n Kinh/#goto_sevencityfield(2)",
+		"Chi’n tr≠Íng ßπi L˝/#goto_sevencityfield(3)",
+		"Chi’n tr≠Íng Ph≠Óng T≠Íng/#goto_sevencityfield(4)",
+		"Chi’n tr≠Íng L©m An/#goto_sevencityfield(5)",
+		"Chi’n tr≠Íng T≠¨ng D≠¨ng/#goto_sevencityfield(6)",
+		"Chi’n tr≠Íng D≠¨ng Ch©u/#goto_sevencityfield(7)",
 		"ß” ta suy ngh‹ lπi/Cancel")
 end
-function goto_sevencityfield1(nIndex)
-	local player = Player:New(PlayerIndex)
-	local mapid = FIELD_LIST[nIndex]
-	local err = {}
-	if (BattleWorld:CheckPermission(mapid, player, err) == 0) then
-		player:Say(err.Msg)
-	else
-		local field = BattleWorld:FindField(mapid)
-		if (not field) then
-			player:Say("Ch≠a tıng nghe qua c„ n¨i nµy")
-			BattleWorld:Log(format("[ERROR SEVENCITY]field(%d) not found", mapid))
-		elseif (field:Login(player) == 0) then
-			BattleWorld:Log(format("[ERROR SEVENCITY]failed to login field(%d)", mapid))
-		end
-	end
-end
+
 function goto_sevencityfield(nIndex)
 	local player = PlayerList:GetPlayer(PlayerIndex)
 	local tbErr = {}
@@ -864,13 +737,13 @@ function ToSong()	-- Ω¯»ÎÀŒ∑Ω±®√˚µ„
 		return
 	end
 	Pay(7)
-	if ( GetLevel() < 80 ) then
-		Talk( 1, "", "Chi’n tr≠Íng TËng Kim gian khÊ khËc li÷t, ng≠¨i ch≠a Æπt Æ’n c p 80 h∑y v“ luy÷n th™m rÂi h∑y t›nh." );
-	elseif ( GetLevel() >= 40 and GetLevel() < 70 ) then
+	if ( GetLevel() < 40 ) then
+		Talk( 1, "", "Chi’n tr≠Íng TËng Kim gian khÊ khËc li÷t, ng≠¨i ch≠a Æπt Æ’n c p 40 h∑y v“ luy÷n th™m rÂi h∑y t›nh." );
+	elseif ( GetLevel() >= 40 and GetLevel() < 80 ) then
 			NewWorld( 323, 1541, 3178);
 			DisabledUseTownP(0); -- ≤ªœﬁ÷∆∆‰ π”√ªÿ≥«∑˚
 			Msg2Player( "ß’n n¨i b∏o danh Chi’n Tr≠Íng TËng Kim S¨ C p" );
-	elseif ( GetLevel() >= 70 and GetLevel() < 80 ) then
+	elseif ( GetLevel() >= 80 and GetLevel() < 120 ) then
 			NewWorld( 324, 1541, 3178);
 			DisabledUseTownP(0); -- ≤ªœﬁ÷∆∆‰ π”√ªÿ≥«∑˚
 			Msg2Player( "ß’n n¨i b∏o danh Chi’n Tr≠Íng TËng Kim Trung C p" );
@@ -887,13 +760,13 @@ function ToJin()	-- Ω¯»ÎΩ∑Ω±®√˚µ„
 		return
 	end
 	Pay(7)
-	if ( GetLevel() < 80 ) then
-		Talk( 1, "", "Chi’n tr≠Íng TËng Kim gian khÊ khËc li÷t, ng≠¨i ch≠a Æπt Æ’n c p 80 h∑y v“ luy÷n th™m rÂi h∑y t›nh." );
-	elseif ( GetLevel() >= 40 and GetLevel() < 70 ) then
+	if ( GetLevel() < 40 ) then
+		Talk( 1, "", "Chi’n tr≠Íng TËng Kim gian khÊ khËc li÷t, ng≠¨i ch≠a Æπt Æ’n c p 40 h∑y v“ luy÷n th™m rÂi h∑y t›nh." );
+	elseif ( GetLevel() >= 40 and GetLevel() < 80 ) then
 			NewWorld( 323, 1570, 3085);
 			DisabledUseTownP(0); -- ≤ªœﬁ÷∆∆‰ π”√ªÿ≥«∑˚
 			Msg2Player( "ß’n n¨i b∏o danh Chi’n Tr≠Íng TËng Kim S¨ C p" );
-	elseif ( GetLevel() >= 70 and GetLevel() < 80 ) then
+	elseif ( GetLevel() >= 80 and GetLevel() < 120 ) then
 			NewWorld( 324, 1570, 3085);
 			DisabledUseTownP(0); -- ≤ªœﬁ÷∆∆‰ π”√ªÿ≥«∑˚
 			Msg2Player( "ß’n n¨i b∏o danh Chi’n Tr≠Íng TËng Kim Trung C p" );
@@ -933,7 +806,17 @@ function DoRescriptFunc(nSel)
 		Msg2Player( "ß∑ Æ’n thµnh ßπi L˝" );
 	end
 end
-
+function logplayer(zFile,szMsg)
+  local handle = openfile(zFile,"a")
+  write(handle,format("%s\n",szMsg));
+  closefile(handle);
+ end
+ 
 
 function no()
+end
+function WriteLogPro(data,str)
+	local Data2 = openfile(""..data.."", "a+");
+	write(Data2,tostring(str));
+	closefile(Data2);
 end

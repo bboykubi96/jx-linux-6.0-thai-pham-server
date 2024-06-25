@@ -1,3 +1,4 @@
+-- Viethoa by Giangleloi WwW.Clbgamesvn.COM
 --2005-1-11 修改显示内容，为恭贺新禧大礼包宣传相关内容
 --by yfeng
 

@@ -4,6 +4,9 @@ function main()
 	if PlayerFunLib:CheckLevel(80,"default",">=") ~= 1 then
 		return 1
 	end
+			local checkcankhon = GetSkillState(980)
+		local checkcankhon1 = GetSkillState(966)
+		if checkcankhon >= 1 and checkcankhon1 >= 1then Say("B¹n ®ang cã Cµn Kh«n Song TuyÖt Béi Råi,\n Kh«ng nªn tham lam") return 1 end
 	PlayerFunLib:AddSkillState(966,1,3,18*60*60*24,1)
 	PlayerFunLib:AddSkillState(979,1,3,18*60*60*24,1)
 	WriteLog(date("%Y%m%d %H%M%S").."\t".."Sö dông NhÊt Kû Cµn Kh«n Phï".."\t".. GetAccount().."\t"..GetName())

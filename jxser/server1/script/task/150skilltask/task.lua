@@ -28,6 +28,7 @@ function TaskClass:AddStep(nAddValue, nTaskId, nBase)
 end
 
 function TaskClass:LoadConfig(tbTask, g_Task)
+	do return end
 	local tb = self:New()
 	for key, value in tbTask do 
 		if key ~= "tbConfig" and key ~= "tbMissionDialog" then

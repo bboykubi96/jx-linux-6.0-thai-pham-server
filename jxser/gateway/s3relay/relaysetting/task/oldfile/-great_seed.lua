@@ -14,7 +14,7 @@ greatseed_configtab = {
 	{200,1,25,"\\settings\\maps\\great_night\\古阳洞迷宫.txt","古阳洞迷宫"},	-- 长白山南
 	{92,1,25,"\\settings\\maps\\great_night\\蜀冈山.txt","蜀冈山"},				-- 长白山南
 
-	{341, 4, 1, "\\settings\\maps\\great_night\\漠北草原.txt","漠北草原"},		-- 漠北草原
+--	{341, 4, 1, "\\settings\\maps\\great_night\\漠北草原.txt","漠北草原"},		-- 漠北草原
 --	{333, 4, 1, "\\settings\\maps\\great_night\\华山派.txt","华山派"},			-- 华山派
 --	{319, 4, 1, "\\settings\\maps\\great_night\\临渝关.txt","临渝关"},			-- 临渝关
 	{959, 4, 3, "\\settings\\maps\\great_night\\双龙洞.txt","战龙洞"},			-- 双龙洞

@@ -14,7 +14,6 @@ function wlls_want2transback()
 	end
 end
 
---¼ì²éÊÇ·ñ¿ÉÒÔ½øÈë×¼±¸³¡£¬³É¹¦·µ»Ø£¨n_matchtype,leagueid£©£¬·ñÔò·µ»Ønil
 function wlls_ready2join()
 	local n_mtype, n_group = wlls_get_mapinfo()
 	local n_lid = wlls_check_player(GetName(), nil, n_mtype)
@@ -30,20 +29,18 @@ function wlls_ready2join()
 	end
 	
 	local tb_option = wlls_add_option({}, "Kh«ng cÇn")
-	if (n_matchphase == 3) then	--¼äĞªÊ±¼ä
-		--Èç¹û²»ÊÇ×îºóÒ»³¡£¿
+	if (n_matchphase == 3) then
 		Say("Xin h·y t¹m nghØ ë ®©y! HiÖn vÉn ch­a b¾t ®Çu thi ®Êu, ng­¬i cßn yªu cÇu nµo kh«ng?", getn(tb_option), tb_option)
 		return nil
 	end
 	
-	--ÅĞ¶ÏÊÇ·ñÔ½¼¶
 	local str = wlls_levelcheck(n_lid)
 	if (str) then
 		Say("Quan viªn héi tr­êng:"..str, 2, "Ta muèn rêi khái héi tr­êng!/wlls_want2transback", "Kh«ng cÇn!/OnCancel")
 		return nil
 	end
 
-	if (n_matchphase == 5) then	--±ÈÈüÊ±¼ä
+	if (n_matchphase == 5) then
 		local n_combatmap = wlls_get_mapid(3, n_mtype, n_group)
 		local n_resttime = WLLS_TIMER_FIGHT_TOTAL - GetGlbValue(GLB_WLLS_TIME)
 		n_resttime = ceil(n_resttime*WLLS_TIMER_FIGHT_FREQ/60)
@@ -51,7 +48,7 @@ function wlls_ready2join()
 		return nil
 	end
 
-	if (n_matchphase == 4) then	--×¼±¸Ê±¼ä
+	if (n_matchphase == 4) then
 		return n_mtype, n_lid
 	end
 	
@@ -77,7 +74,7 @@ function main()
 	local n_type = GetGlbValue(GLB_WLLS_TYPE)
 	local n_maxmem = WLLS_TAB[n_type].max_member
 	if (n_count < n_maxmem) then
-		Msg2Player("Nhãm cña b¹n hiÖn chØ cßn <color=yellow>"..n_count.."<color> thµnh viªn, chiÕn ®éi cña b¹n cã thÓ gia nhËp nhiÒu nhÊt <color=yellow>"..n_maxmem.."<color> thµnh viªn.")
+		Msg2Player("Nhãm cña b¹n hiÖn chØ cßn<color=yellow>"..n_count.."<color>thµnh viªn, chiÕn ®éi cña b¹n cã thÓ gia nhËp nhiÒu nhÊt<color=yellow>"..n_maxmem.."<color>thµnh viªn.")
 	end
 end
 

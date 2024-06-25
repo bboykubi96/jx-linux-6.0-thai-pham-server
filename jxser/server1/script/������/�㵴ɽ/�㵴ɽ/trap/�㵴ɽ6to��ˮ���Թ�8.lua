@@ -2,6 +2,7 @@
 -- script viet hoa By http://tranhba.com Trap ID# Giang Nam khu 69 
 
 function main(sel) 
+
 SetFightState(1); 
 NewWorld(181, 1772, 3131); 
 end; 

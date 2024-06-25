@@ -1,92 +1,92 @@
--- description	: ±ÈÈüÈÎÎñ
--- author		: wangbin
--- datetime		: 2005-06-04
+-- script viet hoa By http://tranhba.com  description : tranh tµi nhiÖm vô 
+-- script viet hoa By http://tranhba.com  author : wangbin 
+-- script viet hoa By http://tranhba.com  datetime : 2005-06-04 
 
 Include("\\script\\missions\\dragonboat\\include.lua")
 
--- Æô¶¯±ÈÈü¶¨Ê±Æ÷
-function start_match_timer()
-	-- 10·ÖÖÓºóÆô¶¯±ÈÈüÈÎÎñ
-	StartMissionTimer(MISSION_MATCH, TIMER_MATCH, LIMIT_SIGNUP * 18);
-end
+-- script viet hoa By http://tranhba.com  khëi ®éng tranh tµi ®Þnh lóc khÝ 
+function start_match_timer() 
+-- script viet hoa By http://tranhba.com  10 phót sau khëi ®éng tranh tµi nhiÖm vô 
+StartMissionTimer(MISSION_MATCH, TIMER_MATCH, LIMIT_SIGNUP * 18); 
+end 
 
--- ½áÊø±ÈÈü
-function close_match()
-	-- °ÑÍæ¼ÒÌß³öµØÍ¼
-	kickout();
-	
-	-- ÇåÀíµØÍ¼
-	world = SubWorldIdx2ID(SubWorld);
-	ClearMapNpc(world, 1);	-- Ò²ÇåÀíÍæ¼Ò
-	ClearMapTrap(world); 
-	ClearMapObj(world);
-end
+-- script viet hoa By http://tranhba.com  kÕt thóc tranh tµi 
+function close_match() 
+-- script viet hoa By http://tranhba.com  ®em nhµ ch¬i ®¸ ra b¶n ®å 
+kickout(); 
 
--- ¿ªÊ¼±¨Ãû
-function start_signup()
-	-- ÉèÖÃÎª±¨Ãû×´Ì¬
-	SetMissionV(VARV_STATE, 1);
-	SetMissionV(VARV_BOARD_TIMER, 0);
-	SetMissionS(VARS_TEAM_NAME, "");
-	-- Í¨¸æÁúÖÛ±ÈÈü±¨Ãû¿ªÊ¼
-	local min = floor(LIMIT_SIGNUP / 60);
-	broadcast("<#> Ho¹t ®éng ®ua thuyÒn rång TÕt §oan Ngä ®· b¾t ®Çu b¸o danh. Mêi mäi ng­êi nhanh ch©n ®Õn LÔ quan b¸o danh, ®éi nhãm do ®éi tr­ëng b¸o danh, thêi gian b¸o danh lµ " .. min .. "phót");
-end
+-- script viet hoa By http://tranhba.com  dän dÑp b¶n ®å 
+world = SubWorldIdx2ID(SubWorld); 
+ClearMapNpc(world, 1); -- script viet hoa By http://tranhba.com  còng dän dÑp nhµ ch¬i 
+ClearMapTrap(world); 
+ClearMapObj(world); 
+end 
 
-function InitMission()
-	start_signup();
-	start_match_timer();
-end
+-- script viet hoa By http://tranhba.com  b¾t ®Çu ghi danh 
+function start_signup() 
+-- script viet hoa By http://tranhba.com  thiÕt trÝ v× ghi danh tr¹ng th¸i 
+SetMissionV(VARV_STATE, 1); 
+SetMissionV(VARV_BOARD_TIMER, 0); 
+SetMissionS(VARS_TEAM_NAME, ""); 
+-- script viet hoa By http://tranhba.com  th«ng b¸o long chu tranh tµi ghi danh b¾t ®Çu 
+local min = floor(LIMIT_SIGNUP / 60); 
+broadcast("<#> tiÕt ®oan ngä cuéc so tµi long chu tranh tµi b¾t ®Çu ghi danh , xin mäi ng­êi nhanh ®Õn lÔ quan chç ghi danh , tiÓu tæ tõ ®éi tr­ëng ghi danh , ghi danh thêi gian lµ " .. min .. " phót "); 
+end 
 
-function EndMission()
-	close_match();
-	close_board_timer();
-end
+function InitMission() 
+start_signup(); 
+start_match_timer(); 
+end 
 
--- Íæ¼ÒÍË³ö
-function OnLeave(index)
-	local old_index = PlayerIndex;
-	PlayerIndex = index;
-	
-	SetCurCamp(GetCamp());
-	SetTaskTemp(200,0)
-	SetFightState(0);
-	SetPunish(1);
-	SetCreateTeam(1);
-	SetPKFlag(0)
-	ForbidChangePK(0);
-	SetDeathScript("");
-	
-	SetTask(1505, 0)
-	DisabledUseTownP(0)
-	
-	str = GetName().."Rêi khái thuyÒn rång nµy"
-	Msg2MSAll(MISSION_MATCH,str);
-	
-	PlayerIndex = old_index;
-end
+function EndMission() 
+close_match(); 
+close_board_timer(); 
+end 
 
-function JoinMission(RoleIndex, camp)
-	PlayerIndex = RoleIndex;
-	if (camp ~= 1) then
-		return
-	end
-	
-	LeaveTeam()
-	AddMSPlayer(MISSION_MATCH,camp);
-	SetCurCamp(camp);
-	SetTaskTemp(200,1)
-	SetFightState(1);
-	SetLogoutRV(1);
-	SetPunish(0);
-	str = GetName().."Thªm vµo thuyÒn rång nµy"
-	local sf_mapid = SubWorldIdx2ID(SubWorld)
-	NewWorld(sf_mapid, BOAT_POSX,BOAT_POSY);
-	SetCreateTeam(0);
-	Msg2MSAll(MISSION_MATCH,str);
-	SetPKFlag(1)
-	ForbidChangePK(1);
+-- script viet hoa By http://tranhba.com  nhµ ch¬i thèi lui ra 
+function OnLeave(index) 
+local old_index = PlayerIndex; 
+PlayerIndex = index; 
+
+SetCurCamp(GetCamp()); 
+SetTaskTemp(200,0) 
+SetFightState(0); 
+SetPunish(1); 
+SetCreateTeam(1); 
+SetPKFlag(0) 
+ForbidChangePK(0); 
+SetDeathScript(""); 
+
+SetTask(1505, 0) 
+DisabledUseTownP(0) 
+
+str = GetName().." rêi ®i long chu " 
+Msg2MSAll(MISSION_MATCH,str); 
+
+PlayerIndex = old_index; 
+end 
+
+function JoinMission(RoleIndex, camp) 
+PlayerIndex = RoleIndex; 
+if (camp ~= 1) then 
+return 
+end 
+
+LeaveTeam() 
+AddMSPlayer(MISSION_MATCH,camp); 
+SetCurCamp(camp); 
+SetTaskTemp(200,1) 
+SetFightState(1); 
+SetLogoutRV(1); 
+SetPunish(0); 
+str = GetName().." gia nhËp nªn long chu " 
+local sf_mapid = SubWorldIdx2ID(SubWorld) 
+NewWorld(sf_mapid, BOAT_POSX,BOAT_POSY); 
+SetCreateTeam(0); 
+Msg2MSAll(MISSION_MATCH,str); 
+SetPKFlag(1) 
+ForbidChangePK(1); 
 	SetDeathScript("\\script\\missions\\dragonboat\\player_death.lua");
-	SetTask(1505, 1)
-	DisabledUseTownP(1)
+SetTask(1505, 1) 
+DisabledUseTownP(1) 
 end

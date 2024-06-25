@@ -8,9 +8,9 @@ Include("\\script\\item\\heart_head.lua")
 
 GameTemplet = {}
 
-GameTemplet.szMapType = "T×m Méc Nh©n" --¸Ä±äµØÍ¼±íÊ¾
+GameTemplet.szMapType = "âßÄ#Ì#" -- script viet hoa By http://tranhba.com #Ä±###İ#±İ£#
 
-GameTemplet.tbForbitItemType = --ÖØÔØ Î¥½ûµÀ¾ß
+GameTemplet.tbForbitItemType = -- script viet hoa By http://tranhba.com ##¤# #####µ##
 {
 	"PK",
 }
@@ -21,32 +21,32 @@ GameTemplet.Player =
 	szClassName = "Player"
 }
 
-GameTemplet.tbNpcTypeList = --npcµÄÀàĞÍ
+GameTemplet.tbNpcTypeList = -- script viet hoa By http://tranhba.com npc#Äµµ#İ
 {
-	["Tªn qu¸i vËt"] = 
+	["âß####"] = 
 	{
 		nNpcId = 1234,
-		szName = "Tªn qu¸i vËt",
+		szName = "âß####",
 		nLevel = 90,
-		nIsboss = 1, --¶Ô»°npc¿ÉÒÔ²»ĞèÒªÕâ¸ö
-		szScriptPath = "\\script\\missions\\zhaojingling\\gametemplet\\npc_script.lua",--¸ù¾İÓÎÏ·ÄÚÈİ¶¨ÖÆµÄÄ³¸önpc½Å±¾,Ö÷ÒªÕë¶Ô¶Ô»°npc
+		nIsboss = 1, -- script viet hoa By http://tranhba.com #¤#°npc¿Ğß¤²##Ìß#â©##
+		szScriptPath = "\\script\\missions\\zhaojingling\\gametemplet\\npc_script.lua",-- script viet hoa By http://tranhba.com ¸ù¾İÓÎÏ·ÄÚÈİ¶¨ÖÆµÄÄ³¸önpc½Å±¾,Ö÷ÒªÕë¶Ô¶Ô»°npc
 	},
-	["Tªn qu¸i vËt 2"] = 
-	{--ÁíÍâÒ»¸ö¹ÖÎï
+	["âß#### 2"] = 
+	{-- script viet hoa By http://tranhba.com ¸İİ©ß#######
 		nNpcId = 2354,
-		szName = "Tªn 1 qu¸i vËt kh¸c",
+		szName = "¸İß########Ä·#³#",
 		nLevel = 90,
-		nIsboss = 1, --¶Ô»°npc¿ÉÒÔ²»ĞèÒªÕâ¸ö
-		szScriptPath = "\\script\\missions\\zhaojingling\\gametemplet\\npc_script.lua",--¸ù¾İÓÎÏ·ÄÚÈİ¶¨ÖÆµÄÄ³¸önpc½Å±¾
+		nIsboss = 1, -- script viet hoa By http://tranhba.com #¤#°npc¿Ğß¤²##Ìß#â©##
+		szScriptPath = "\\script\\missions\\zhaojingling\\gametemplet\\npc_script.lua",-- script viet hoa By http://tranhba.com ¸ù¾İÓÎÏ·ÄÚÈİ¶¨ÖÆµÄÄ³¸önpc½Å±¾
 	},	
 }
 GameTemplet.tbTrapList = 
 {
-	["Trap ®iÓm danh, dïng cho c¸c lËp tr×nh viªn ®Ó ph©n biÖt vai trß cña m×nh"] =
+	["Trap ±#·###ã·ãó³×#ß¤±##±ğ#¤#º#Ä##Ğ#"] =
 	{
 		
-		szPosPath = "",--TrapµãµÄ×ø±êÎÄ¼ş
-		szTrapFile = "",--Trap½Å±¾µÄÂ·¾¶
+		szPosPath = "",-- script viet hoa By http://tranhba.com Trap#·#Ä##±ª#Ä##
+		szTrapFile = "",-- script viet hoa By http://tranhba.com Trap#Å±##Ä¢###
 	}
 }
 

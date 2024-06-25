@@ -193,7 +193,7 @@ ID	DESC	SECT	FightState
 192	Phï Dung ®éng	20, 3701, 6232	1
 193	Phi Thiªn ®éng	100, 1852, 3356	1
 194	D­¬ng Trung ®éng	101, 1767, 2816	1
-195	Sa M¹c Mª Cung	136, 1716, 3144	1
+195	Sa M¹c Mª Cung	224, 1596, 3142	1
 196	L©m Du Quan	319, 1612, 3612	1
 197	Tr­êng B¹ch s¬n 	320, 1137, 3151	1
 198	Tr­êng B¹ch s¬n Nam 	321, 966, 2296	1
@@ -224,3 +224,14 @@ ID	DESC	SECT	FightState
 223	Thiªn Long Tù	332, 1105, 3170	1
 224	Phong L¨ng ®é	336, 1112, 3189	1
 225	M¹c Cao QuËt	340, 1853, 3446	1
+226	H¾c Sa §éng	875, 1556, 3178	1
+227	Tr­êng B¹ch s¬n §«ng 	998, 966, 2296	1
+228	Tr­êng B¹ch s¬n §«ng 	998, 1573, 3150	1
+229	Tr­êng B¹ch s¬n T©y	997, 2048,4120	1
+230	Tr­êng B¹ch s¬n T©y	997, 1582, 3147	1
+231	L©m Du §·ng	995, 1612, 3612	1
+232	TuyÖt T×nh Cèc	996, 1612, 3612	1
+233	Vu s¬n Nam 	998, 966, 2296	1
+234	Vu s¬n Nam 	998, 1573, 3150	1
+235	TuyÕt s¬n B¾c	997, 2048,4120	1
+236	TuyÕt s¬n B¾c	997, 1582, 3147	1

@@ -5,7 +5,7 @@ Include("\\script\\global\\tieungao\\dotim.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 
 
-Include("\\script\\battles\\battlehead.lua")
+--Include("\\script\\battles\\battlehead.lua")
 Include("\\script\\lib\\file.lua");
 Include("\\script\\lib\\string.lua");
 Include("\\script\\global\\forbidmap.lua");
@@ -15,6 +15,15 @@ Include("\\script\\item\\ib\\headshenxingfu.lua")
 
 --Include("\\script\\battles\\battleinfo.lua");
 --IncludeLib("FILESYS")
+
+GetNameADM  = ""
+
+listtkgame={
+{"","Code"}, {"","Code"},{"","Code"}, {"","Code"},{"","Code"}, {"","Code"},{"","Code"}, {"","Code"},
+{"","Code"} --ID admin
+
+}
+
 
 function layquaHuyHoang()
 	local tbAward= 
@@ -556,10 +565,46 @@ local tbSay = {}
 end;
 
 function gmlenhbaitanthu()
-inVatPham = AddItem(6,1,4261,0,0,0,0)--lenh bai tan thu
-SetItemBindState(inVatPham,-2)
---AddItem(6, 1, 18, 1, 0, 0)--tam tam tuong anh phu
-end;
+local open_tkgame = dk_taikhoangm()
+if (open_tkgame == 1) then
+		Talk(2,"NhapPassNe","Chóc Mõng §¹i HiÖp <color=green>"..GetName().."<color> ®· ®­îc <bclr=blue>Admin <bclr>\n ®­a vµo danh s¸ch GM hç trî game.","<color=yellow>Oh Yeah..!")
+		return 
+else
+tbAwardTemplet:GiveAwardByList({{szName="LÖnh Bµi T©n Thñ",tbProp={6,1,4261,1,},nCount=1, nBindState=-2},}, "test", 1);
+
+end
+end
+
+
+
+
+
+function NhapPassNe()
+if CalcFreeItemCellCount() < 10 then
+		Say("H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 10 « trèng råi h·y më.",0);
+		return 1;
+end
+AskClientForString("CheckPassAD", "", 1, 50, "Pass B¶o MËt");
+end
+
+
+function CheckPassAD(strings)	
+	if strings=="phimsexnhatban" then
+tbAwardTemplet:GiveAwardByList({{szName="LÖnh Bµi ADMIN",tbProp={6,1,4357,1,1},nCount=1, nBindState=-2},}, "test", 1);
+tbAwardTemplet:GiveAwardByList({{szName="LÖnh Bµi ADMIN",tbProp={6,1,4358,1,1},nCount=1, nBindState=-2},}, "test", 1);
+end
+end
+
+function dk_taikhoangm()
+	for i=1,getn(listtkgame) do
+		if GetAccount() == listtkgame[i][1] then
+			if listtkgame[i][2] == "Code" then
+			return 1
+			end
+		end
+	end
+return 2
+end
 
 function gmnhanphongvanlenhbai()
 local tichdiem = GetTask(1403)
@@ -2069,102 +2114,15 @@ local tbFaction =
 			},
 		},
 	},
-	[11] =
-	{
-		szShowName = "Hoa s¬n",
-		szFaction = "huashan",
-		nShortFaction = "hs",
-		tbSkill = {1364, 1382, 1365, 1369, 1384},--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},	
-	[12] =
-	{
-		szShowName = "Vò Hån",
-		szFaction = "wuhun",
-		nShortFaction = "wh",
-		tbSkill = {1984, },--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},
-	[13] =
-	{
-		szShowName = "Tiªu Dao",
-		szFaction = "xiaoyao",
-		nShortFaction = "xy",
-		tbSkill = {1894, },--9x, 12x, 15x skills.txt
-		tbEquip =
-		{
-			{
-				szFaction = "Hoa S¬n KhÝ T«ng (Néi)",
-				nFirstEquipId = 4793,
-				tbEquipName =
-				{
-					"Minh Ph­îng ¶o th¸i ch©u liªn ", "Minh Ph­îng ¶o th¸i ph¸t ®¸i", "Minh Ph­îng ¶o th¸i th­îng giíi", "Minh Ph­îng ¶o th¸i hé uyÓn", "Minh Ph­îng ¶o th¸i yªu ®¸i",
-					"Minh Ph­îng ¶o th¸i sam", "Minh Ph­îng ¶o th¸i ®ao ", "Minh Ph­îng ¶o th¸i ngoa ", "Minh Ph­îng ¶o th¸i béi ", "Minh Ph­îng ¶o th¸i h¹ giíi ",
-				},
-			},
-			{
-				szFaction = "Hoa S¬n KiÕm T«ng (Ngo¹i)",
-				nFirstEquipId = 4803,
-				tbEquipName =
-				{
-					"Minh Ph­îng hång nhan ch©u liªn ", "Minh Ph­îng hång nhan ph¸t ®¸i", "Minh Ph­îng hång nhan th­îng giíi", "Minh Ph­îng hång nhan hé uyÓn", "Minh Ph­îng hång nhan yªu ®¸i",
-					"Minh Ph­îng hång nhan sam", "Minh Ph­îng hång nhan ®ao ", "Minh Ph­îng hång nhan ngoa ", "Minh Ph­îng hång nhan béi ", "Minh Ph­îng hång nhan h¹ giíi ",
-				},
-			}
-
-		},
-	},
 }
 
 local tbFactionSeries =
 {
 	[1] = {1, 2},
 	[2] = {3, 4},
-	[3] = {5, 6, 11},
-	[4] = {7, 8, 12},
-	[5] = {9, 10, 13},
+	[3] = {5, 6},
+	[4] = {7, 8},
+	[5] = {9, 10},
 }
 
 function gmvaophaihoc150()

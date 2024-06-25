@@ -5,5 +5,7 @@ function main(sel)
 
 SetFightState(1); 
 NewWorld(336, 1590, 2514); 
-
+SetPunish(1);
+SetTmpCamp(0);
+ForbidChangePK(0)
 end;

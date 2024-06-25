@@ -1,41 +1,24 @@
-function main()
-	dofile("script/item/biggift.lua")
-	switch_check_feature()
-	return 1
-end
+-- script viet hoa By http://tranhba.com  míi xu©n ®¹i lÔ tói 
+-- script viet hoa By http://tranhba.com Suyu 2004.1.12 
 
-function switch_check_feature()
-	local szTitle = "Xin chµo! §¹i hiÖp muèn kiÓm ngo¹i trang g×?"
-	local tbOpt =
-	{
-		"Ngùa/#choose_check_feature(4)",
-		"Vò KhÝ/#choose_check_feature(3)",
-		"Ao gi¸p/#choose_check_feature(2)",
-		"Mò/#choose_check_feature(1)",
-		"NhËn bao l× x×/nhanlixi",
-		"check skill state/check_skill",
-		"Tho¸t/no",
-	}
-	Say(szTitle, getn(tbOpt), tbOpt)
-end
+function main(sel) 
+-- script viet hoa By http://tranhba.com  trang bÞ #10# tû lÖ ®­a huyÕn khèc phi phong mét mãn 
+p=random(1,100); 
+if(p<=10)then 
+AddItem(6,1,15,1,0,0,0) 
+end; 
 
-function check_skill()
-	local skill_id = {15,202,273,206}
-	for i = 1, gentn(skill_id) do
-		if GetSkillState(skill_id[i]) > 0 then
-			Msg2Player("Có skill "..GetSkillName(skill_id[i]))
-		--else
-			--Msg2Player("không có skill")
-		end
-	end		
-end
+-- script viet hoa By http://tranhba.com  b¶o th¹ch #50# tû lÖ ®­a b¶o th¹ch mét viªn # 
+p=random(1,100); 
+if(p<=50)then 
+		AddEventItem((238+mod(p,3)))
+end; 
 
-function nhanlixi()
-	AddItem(6,1,13,1,0,0,0)
-	AddItem(6,1,14,1,0,0,0)
-	Msg2Player("§· nhËn 2 bao l× x×.")
-end
+-- script viet hoa By http://tranhba.com  bao tiÒn l× x× # gi¸ trÞ 100000 ®Ých bao tiÒn l× x× mét # 
+AddItem(6,1,13,1,0,0,0); 
 
-function choose_check_feature(num)
-	SetTaskTemp(168, num)
+-- script viet hoa By http://tranhba.com  ph¸o b«ng #2 c¸ ph¸o b«ng # 
+AddItem(6,0,11,1,0,0,0); 
+AddItem(6,0,11,1,0,0,0); 
+return 0 
 end

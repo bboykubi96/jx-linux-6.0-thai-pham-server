@@ -32,7 +32,7 @@ function TongFundAdd(nTongID, nCurValue)
 			-- ∞Ôª· ¬º˛º«¬º
 			cTongLog:WriteInf("FUND", "THRESHOLD\t"..tostring(TONG_GetName(nTongID)).."\tTongWeek:\t"..
 				TONG_GetWeek(nTongID).."\tTongDay:\t"..TONG_GetDay(nTongID))
-			TONG_ApplyAddEventRecord(nTongID, "Ng©n s∏ch ki’n thi’t nhÀn Æ≠Óc v≠Ót qu∏ giÌi hπn tu«n, ng©n s∏ch ki’n thi’t d≠ ra sœ chuy÷n sang ng©n s∏ch ki’n thi’t d˘ bﬁ")
+			TONG_ApplyAddEventRecord(nTongID, "Ng©n s∏ch ki’n thi’t nhÀn Æ≠Óc v≠Ót qu?giÌi hπn tu«n, ng©n s∏ch ki’n thi’t d?ra s?chuy÷n sang ng©n s∏ch ki’n thi’t d?b?")
 			TONG_ApplyAddStoredBuildFund(nTongID, nBuildFund - nLeft)
 			nBuildFund = nLeft
 		end

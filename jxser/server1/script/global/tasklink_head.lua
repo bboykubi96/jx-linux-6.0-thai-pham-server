@@ -1,42 +1,42 @@
 
--- Ò°ÛÅÈÎÎñÁ´½Å±¾Í·ÎÄ¼ş
--- Edited by peres
--- 2004/12/25 Ê¥µ®½ÚÔçÉÏ
+-- script viet hoa By http://tranhba.com  d· tÈu nhiÖm vô liªn ch©n vèn ®Çu v¨n kiÖn 
+-- script viet hoa By http://tranhba.com  Edited by peres 
+-- script viet hoa By http://tranhba.com  2004/12/25 lÔ gi¸ng sinh buæi s¸ng 
 
-IncludeLib("FILESYS");
+IncludeLib("FILESYS"); 
 
-TL_MAXTIMES = 20 -- Ã¿¸öÁ´ÓĞ 20 ¸öÈÎÎñ
-TL_MAXLINKS = 20 -- Ã¿¸ö»·ÓĞ 20 ¸öÁ´
-TL_MAXLOOPS = 10 -- Íæ¼Ò×Ü¹²¿ÉÒÔ×ö 10 »·µÄÈÎÎñ
-TL_MAXLINKSCOUNT = 4 -- Ã¿¸öÁ´×î¶àÖ»ÄÜ×ö 4 ´Î
+TL_MAXTIMES = 20 -- script viet hoa By http://tranhba.com  mçi liªn cã 20 c¸ nhiÖm vô 
+TL_MAXLINKS = 20 -- script viet hoa By http://tranhba.com  mçi hoµn cã 20 c¸ liªn 
+TL_MAXLOOPS = 10 -- script viet hoa By http://tranhba.com  nhµ ch¬i tæng céng cã thÓ lµm 10 hoµn ®İch nhiÖm vô 
+TL_MAXLINKSCOUNT = 4 -- script viet hoa By http://tranhba.com  mçi liªn nhiÒu nhÊt chØ cã thÓ lµm 4 lÇn 
 
-TL_UPLEVELEXP = "TaskLink_UpLevel"
-
-
--- ¶ÁÈ¡ÎÄ¼şÊ±µÄ×Ö·û´®¶¨Òå
-TL_BUYGOODS = "TaskLink_BuyGoods"
-TL_FINDGOODS = "TaskLink_FindGoods"
-TL_SHOWGOODS = "TaskLink_ShowGoods"
-TL_FINDMAPS = "TaskLink_FindMaps"
-TL_UPGROUND = "TaskLink_UpGround"
-TL_WORLDMAPS = "TaskLink_WorldMaps"
-TL_LEVELLINK = "TaskLink_Level"
-TL_MAINTASKLEVEL = "TaskLink_MainLevel"
-TL_AWARDBASIC = "Award_Basic"
-TL_AWARDLINK = "Award_Link"
-TL_AWARDLOOP = "Award_Loop"
+TL_UPLEVELEXP = "TaskLink_UpLevel" 
 
 
--- ÈÎÎñÁ´ TABLE FILE µÄÔ¤ÔØÈë
+-- script viet hoa By http://tranhba.com  häc lÊy v¨n kiÖn lóc ®İch tù phï chuçi ®Şnh nghÜa 
+TL_BUYGOODS = "TaskLink_BuyGoods" 
+TL_FINDGOODS = "TaskLink_FindGoods" 
+TL_SHOWGOODS = "TaskLink_ShowGoods" 
+TL_FINDMAPS = "TaskLink_FindMaps" 
+TL_UPGROUND = "TaskLink_UpGround" 
+TL_WORLDMAPS = "TaskLink_WorldMaps" 
+TL_LEVELLINK = "TaskLink_Level" 
+TL_MAINTASKLEVEL = "TaskLink_MainLevel" 
+TL_AWARDBASIC = "Award_Basic" 
+TL_AWARDLINK = "Award_Link" 
+TL_AWARDLOOP = "Award_Loop" 
+
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô liªn TABLE FILE ®İch dù t¸i nhËp 
 TabFile_Load("\\settings\\task\\tasklink_buygoods.txt",TL_BUYGOODS)
 TabFile_Load("\\settings\\task\\tasklink_findgoods.txt",TL_FINDGOODS)
 TabFile_Load("\\settings\\task\\tasklink_showgoods.txt",TL_SHOWGOODS)
 TabFile_Load("\\settings\\task\\tasklink_findmaps.txt",TL_FINDMAPS)
 TabFile_Load("\\settings\\task\\tasklink_upground.txt",TL_UPGROUND)
 TabFile_Load("\\settings\\task\\tasklink_worldmaps.txt",TL_WORLDMAPS)
-TabFile_Load("\\settings\\task\\levellink.txt",TL_LEVELLINK) -- Ã¿¸öµÈ¼¶Ïà¶ÔÓ¦µÄ³õÊ¼µÈ¼¶
-TabFile_Load("\\settings\\task\\tasklink_mainlink.txt",TL_MAINTASKLEVEL) -- Ã¿¸öÈÎÎñÀàĞÍÔÚÏàÓ¦µÄµÈ¼¶ÀïÃæ³öÏÖµÄ¼¸ÂÊ
-TabFile_Load("\\settings\\npc\\player\\level_exp.txt",TL_UPLEVELEXP) -- Éı¼¶ËùĞèµÄ¾­Ñé±í
+TabFile_Load("\\settings\\task\\levellink.txt",TL_LEVELLINK) -- script viet hoa By http://tranhba.com  Ã¿¸öµÈ¼¶Ïà¶ÔÓ¦µÄ³õÊ¼µÈ¼¶
+TabFile_Load("\\settings\\task\\tasklink_mainlink.txt",TL_MAINTASKLEVEL) -- script viet hoa By http://tranhba.com  Ã¿¸öÈÎÎñÀàĞÍÔÚÏàÓ¦µÄµÈ¼¶ÀïÃæ³öÏÖµÄ¼¸ÂÊ
+TabFile_Load("\\settings\\npc\\player\\level_exp.txt",TL_UPLEVELEXP) -- script viet hoa By http://tranhba.com  Éı¼¶ËùĞèµÄ¾­Ñé±í
 
 TabFile_Load("\\settings\\task\\award_basic.txt",TL_AWARDBASIC)
 TabFile_Load("\\settings\\task\\award_link.txt",TL_AWARDLINK)
@@ -44,1058 +44,1058 @@ TabFile_Load("\\settings\\task\\award_loop.txt",TL_AWARDLOOP)
 
 
 
--- È·¶¨Íæ¼Òµ±Ç°µÄÈÎÎñ×´Ì¬Ó¦¸ÃÊÇÊôÓÚµÚ¼¸»·
-function GetFirstLoop()
-	-- ÓÉÓÚÔİÊ±Ã»ÓĞ»·µÄ²î±ğ£¬ËùÒÔÖ»ÄÜÎª 1 
-	return 1
-end
+-- script viet hoa By http://tranhba.com  x¸c ®Şnh nhµ ch¬i tr­íc mÆt ®İch nhiÖm vô tr¹ng th¸i ph¶i lµ thuéc vÒ thø mÊy hoµn 
+function GetFirstLoop() 
+-- script viet hoa By http://tranhba.com  bëi v× t¹m thêi kh«ng cã hoµn ®İch sù kh¸c biÖt , cho nªn chØ cã thÓ v× 1 
+return 1 
+end 
 
 
--- ×îÖÕµÄÊä³öº¯Êı£¬¸øÓèÍæ¼ÒÈÎÎñ²¢ÇÒÖÃÓÚÈÎÎñ±äÁ¿ÖĞ
-function DealTask()
+-- script viet hoa By http://tranhba.com  cuèi cïng ®İch th©u xuÊt hµm sè , cho nhµ ch¬i nhiÖm vô h¬n n÷a ®­a víi nhiÖm vô thay ®æi l­îng trung 
+function DealTask() 
 
--- Ê×ÏÈÈ·¶¨Íæ¼ÒµÄÈÎÎñµÈ¼¶
-local myTaskLevel = GetTaskState(2)
+-- script viet hoa By http://tranhba.com  ®Çu tiªn x¸c ®Şnh nhµ ch¬i ®İch nhiÖm vô cÊp bËc 
+local myTaskLevel = GetTaskState(2) 
 
-print ("Get The TaskLevel:  "..myTaskLevel)
+print ("Get The TaskLevel: "..myTaskLevel) 
 
--- È»ºóËæ»úËã³ö¸ÃµÈ¼¶Ó¦¸Ã½øĞĞÊ²Ã´ÀàĞÍµÄÈÎÎñ
-local myTaskType = GetTaskType(myTaskLevel)
+-- script viet hoa By http://tranhba.com  sau ®ã ngÉu nhiªn tİnh ra nªn cÊp bËc h¼n tiÕn hµnh c¸i g× lo¹i h×nh nhiÖm vô 
+local myTaskType = GetTaskType(myTaskLevel) 
 
-SetPlayerTaskTpye(myTaskType)
+SetPlayerTaskTpye(myTaskType) 
 
-print ("Get The TaskType:  "..myTaskType)
+print ("Get The TaskType: "..myTaskType) 
 
--- ×îºóÔÙ¶ÁÏàÓ¦µÄ±íÈ·¶¨¾ßÌåµÄÈÎÎñÔÚ±í¸ñÖĞµÄĞĞºÅ 
-local myTaskID = GetTaskLink(myTaskType,myTaskLevel)
+-- script viet hoa By http://tranhba.com  cuèi cïng n÷a häc t­¬ng øng biÓu x¸c ®Şnh cô thÓ nhiÖm vô ë biÓu c¸ch trung ®İch ®­îc sè 
+local myTaskID = GetTaskLink(myTaskType,myTaskLevel) 
 
-SaveTaskTableCol(myTaskID)
+SaveTaskTableCol(myTaskID) 
 
-print ("Get The TaskColID:  "..myTaskID)
+print ("Get The TaskColID: "..myTaskID) 
 
--- Èç¹ûÊÇÊÕ¼¯µØÍ¼ÈÎÎñµÄ»°Ôò¼ÇÂ¼µØÍ¼µÄ±àºÅºÍÒªÊÕ¼¯µÄ¾íÖáÀàĞÍ
-local myTaskMapID = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"MapID"))
-local myMapType = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"MapType"))
-local myMapNum = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num"))
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ thu tËp b¶n ®å nhiÖm vô lµ ghi chĞp b¶n ®å ®İch biªn sè cïng muèn thu tËp ®İch quyÓn trôc lo¹i h×nh 
+local myTaskMapID = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"MapID")) 
+local myMapType = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"MapType")) 
+local myMapNum = tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num")) 
 
--- µÚ5ÀàÈÎÎñµÄÅĞ¶ÏÌõ¼ş
-local myTaskValueType
+-- script viet hoa By http://tranhba.com  thø 5 lo¹i nhiÖm vô ph¸n ®o¸n ®iÒu kiÖn 
+local myTaskValueType 
 
--- ¼ÇÂ¼ÈÎÎñ±äÁ¿
--- ¼ÇÂ¼Íæ¼ÒµÄÈÎÎñÀàĞÍ
-SetPlayerTaskTpye(myTaskType)
+-- script viet hoa By http://tranhba.com  ghi chĞp nhiÖm vô thay ®æi l­îng 
+-- script viet hoa By http://tranhba.com  ghi chĞp nhµ ch¬i ®İch nhiÖm vô lo¹i h×nh 
+SetPlayerTaskTpye(myTaskType) 
 
--- ¼ÇÂ¼Íæ¼ÒµÄÈÎÎñ¾ßÌå±í¸ñĞĞÊı
-SaveTaskTableCol(myTaskID)
+-- script viet hoa By http://tranhba.com  ghi chĞp nhµ ch¬i ®İch nhiÖm vô cô thÓ biÓu c¸ch ®­îc ®Õm 
+SaveTaskTableCol(myTaskID) 
 
--- ¶ÔÓ¦²»Í¬µÄÈÎÎñ×÷²»Í¬µÄ±äÁ¿´æ´¢´¦Àí
+-- script viet hoa By http://tranhba.com  ®èi øng bÊt ®ång nhiÖm vô lµm bÊt ®ång thay ®æi l­îng tån tr÷ xö lı 
 
-	if ( myTaskType == 1 ) then
-	elseif ( myTaskType == 2 ) then
-	elseif ( myTaskType == 3 ) then
-	elseif ( myTaskType == 4 ) then
-		SetTask(1031,myTaskMapID)
-		SetTask(1032,SetByte(GetTask(1032),1,myMapType))
-		SetTask(1032,SetByte(GetTask(1032),2,myMapNum))
-		SetTask(1025,0) -- Çå¿ÕÔ­À´µÄµØÍ¼Ö¾ÊıÁ¿
-	elseif ( myTaskType == 5 ) then -- Èç¹ûÊÇÊôÓÚÊıÖµÉı¼¶µÄÈÎÎñµÄ»°£¬ÔòÅĞ¶ÏÊÇÄÄÖÖÊıÖµ
-	
-		myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType"))
-		
-		if (myTaskValueType == 2) then
-			print("NhËn ®­îc nhiÖm vô t¨ng kinh nghiÖm!")
-			SetTask(1033,GetLevel())
-			SetTask(1034,GetExp())
-		elseif (myTaskValueType == 3) then
-			print("NhËn ®­îc nhiÖm vô t¨ng danh väng!")
-			SetTask(1026,GetRepute())
-		elseif (myTaskValueType == 4) then
-			print("NhËn ®­îc nhiÖm vô t¨ng phóc duyªn!")
-			SetTask(1026,FuYuan_Get())
-		elseif (myTaskValueType == 5) then
-			print("NhËn ®­îc nhiÖm vô t¨ng PK!")
-			SetTask(1026,GetPK())
-		end
-		
-	elseif ( myTaskType == 6 ) then
-	end
-	
-	SetTaskCourse(1) -- ÉèÖÃÈÎÎñ½øÕ¹½ø¶ÈÎª 1 
+if ( myTaskType == 1 ) then 
+elseif ( myTaskType == 2 ) then 
+elseif ( myTaskType == 3 ) then 
+elseif ( myTaskType == 4 ) then 
+SetTask(1031,myTaskMapID) 
+SetTask(1032,SetByte(GetTask(1032),1,myMapType)) 
+SetTask(1032,SetByte(GetTask(1032),2,myMapNum)) 
+SetTask(1025,0) -- script viet hoa By http://tranhba.com  thanh kh«ng th× ra lµ b¶n ®å chİ sè l­îng 
+elseif ( myTaskType == 5 ) then -- script viet hoa By http://tranhba.com  nÕu nh­ lµ thuéc vÒ trŞ sè th¨ng cÊp ®İch nhiÖm vô , lµ ph¸n ®o¸n lµ lo¹i nµo trŞ sè 
 
-end
+myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType")) 
+
+if (myTaskValueType == 2) then 
+print(" lÊy ®­îc th¨ng cÊp kinh nghiÖm nhiÖm vô #") 
+SetTask(1033,GetLevel()) 
+SetTask(1034,GetExp()) 
+elseif (myTaskValueType == 3) then 
+print(" lÊy ®­îc th¨ng cÊp danh väng ®İch nhiÖm vô #") 
+SetTask(1026,GetRepute()) 
+elseif (myTaskValueType == 4) then 
+print(" lÊy ®­îc th¨ng cÊp phóc duyªn ®İch nhiÖm vô #") 
+SetTask(1026,FuYuan_Get()) 
+elseif (myTaskValueType == 5) then 
+print(" lÊy ®­îc th¨ng cÊp PK trŞ gi¸ ®İch nhiÖm vô #") 
+SetTask(1026,GetPK()) 
+end 
+
+elseif ( myTaskType == 6 ) then 
+end 
+
+SetTaskCourse(1) -- script viet hoa By http://tranhba.com  thiÕt trİ nhiÖm vô tiÕn triÓn tiÕn ®é v× 1 
+
+end 
 
 
--- ÈÎÎñµÄÑ­»·µ½ÏÂÒ»ÂÖ
-function TaskProcess()
+-- script viet hoa By http://tranhba.com  nhiÖm vô tuÇn hoµn khi ®Õn mét vßng 
+function TaskProcess() 
 
-local myTaskTimes = GetTaskState(1) -- Íæ¼Ò½øĞĞµ½µÄ´ÎÊı
-local myTaskLinks = GetTaskState(2) -- Íæ¼Ò½øĞĞµ½µÄÁ´Êı
-local myTaskLoops = GetTaskState(3) -- Íæ¼Ò½øĞĞµ½µÄ»·Êı
-local myTaskCancel = GetTaskState(4)
-local myTaskLinksCount = GetTaskState(6) -- ¼ì²âÍæ¼ÒÔÚµ±Ç°µÄÁ´ÖĞÒÑ¾­½øĞĞÁË¼¸´Î
+local myTaskTimes = GetTaskState(1) -- script viet hoa By http://tranhba.com  nhµ ch¬i tiÕn hµnh ®­îc ®İch sè lÇn 
+local myTaskLinks = GetTaskState(2) -- script viet hoa By http://tranhba.com  nhµ ch¬i tiÕn hµnh ®­îc ®İch liªn ®Õm 
+local myTaskLoops = GetTaskState(3) -- script viet hoa By http://tranhba.com  nhµ ch¬i tiÕn hµnh ®­îc ®İch hoµn ®Õm 
+local myTaskCancel = GetTaskState(4) 
+local myTaskLinksCount = GetTaskState(6) -- script viet hoa By http://tranhba.com  kiÓm tr¾c nhµ ch¬i ë tr­íc mÆt ®İch liªn trung ®· tiÕn hµnh mÊy lÇn 
 
-if (myTaskTimes ~= 0) then
+if (myTaskTimes ~= 0) then 
 	myTaskTimes = myTaskTimes + 1
 	if (myTaskTimes >= TL_MAXTIMES + 1) then
-		myTaskTimes = 1
+myTaskTimes = 1 
 		myTaskLinksCount = myTaskLinksCount + 1
-		myTaskCancel = 0 -- È¡Ïû´ÎÊıÎª0
+myTaskCancel = 0 -- script viet hoa By http://tranhba.com  hñy bá sè lÇn v× 0 
 		if (myTaskLinksCount >= TL_MAXLINKSCOUNT + 1) then
 			myTaskLinks = myTaskLinks + 1
-			myTaskLinksCount = 0
-		end
-			
-	end
-	
+myTaskLinksCount = 0 
+end 
+
+end 
+
 	if (myTaskLinks >= TL_MAXLINKS + 1) then
-		myTaskLinks = GetFirstLink()
+myTaskLinks = GetFirstLink() 
 		myTaskLoops = myTaskLoops + 1
-	end
-end
+end 
+end 
 
-SetTaskState(1,myTaskTimes)
-SetTaskState(2,myTaskLinks)
-SetTaskState(3,myTaskLoops)
-SetTaskState(4,myTaskCancel)
-SetTaskState(6,myTaskLinksCount)
+SetTaskState(1,myTaskTimes) 
+SetTaskState(2,myTaskLinks) 
+SetTaskState(3,myTaskLoops) 
+SetTaskState(4,myTaskCancel) 
+SetTaskState(6,myTaskLinksCount) 
 
-DealTask()
+DealTask() 
 
-main()
+main() 
 
-end
-
-
-
--- ¼ì²âº¯Êı£¬ÓÃÒÔÈ·ÈÏÍæ¼ÒÊÇ·ñÒÑ¾­Íê³ÉÁËÈÎÎñ
--- ·µ»ØÖµ
--- 1£ºÒÑ¾­´ï³ÉÌõ¼ş
--- 0£º»¹Î´ÄÜÍê³É
--- ´«Èë²ÎÊı nTaskGoods ÓĞ¶à¸ö±í´ï·½Ê½
--- Èç¹ûÊÇÈÎÎñ 1 µÄ»°£ºÖÖÀà¡¢Àà±ğ¡¢Ï¸Àà¡¢ÎåĞĞ¡¢µÈ¼¶
--- Èç¹ûÊÇÈÎÎñ 2 µÄ»°£ºÖÖÀà¡¢Àà±ğ¡¢Ï¸Àà¡¢ÎåĞĞ¡¢µÈ¼¶¡¢Ä§·¨ÊôĞÔID¡¢Ä§·¨ÊôĞÔÏÂÏŞ¡¢Ä§·¨ÊôĞÔÉÏÏŞ
--- Èç¹ûÊÇÈÎÎñ 3 µÄ»°£ºÄ§·¨ÊôĞÔID¡¢Ä§·¨ÊôĞÔÏÂÏŞ¡¢Ä§·¨ÊôĞÔÉÏÏŞ
-function CheckTask(nTaskGoods)
-
-local i,j
-
--- ÈÎÎñËùĞèÇóµÄÎïÆ·
-local myTaskGoods
-
--- ÈÎÎñËùĞèÇóÎïÆ·µÄÖÖÀà¡¢Àà±ğ¡¢Ï¸Àà¡¢ÎåĞĞ¡¢µÈ¼¶
-local myGenre,myDetail,myParticular,myGoodsFive,myLevel,myMagicID,myMagicMax,myMagicMin
-
--- ÈÎÎñËùĞèÇóÎïÆ·µÄÖÖÀà£¬²»´øÄ§·¨ÊôĞÔºÍ´øÄ§·¨ÊôĞÔ
-local myGoodsClean,myGoodsMagic
-
--- ÈÎÎñËùÒªÇóµÄµØÍ¼Ö¾ ID, µØÍ¼Ö¾µÄÊıÁ¿ºÍµØÍ¼Ö¾µÄÀàĞÍ
-local myTaskMaps,myTaskMapNum,myTaskMapType
-
--- ÈÎÎñËùÒªÇóÉı¼¶µÄÊıÖµºÍÊıÖµÀàĞÍ
-local myTaskValue,myTaskValueType
-
--- ÈÎÎñËùÒªÇóµÄÉ½ºÓÉçğ¢Í¼ÊıÁ¿
-local myWorldMaps,nWorldMaps
-
--- »ñÈ¡Íæ¼Òµ±Ç°Ëù½ÓµÄÈÎÎñÀàĞÍ
-local myTaskType = GetPlayerTaskType()
-local myTaskID = GetTaskTableCol()
-
-	if ( myTaskType == 1) then
-		
-		myGenre = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Genre"))
-		myDetail = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Detail"))
-		myParticular = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Particular"))
-		myGoodsFive = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"GoodsFive"))
-		myLevel = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Level"))
-		
-		myTaskGoods = {myGenre,myDetail,myParticular,myGoodsFive,myLevel}
-		
-		print("VËt phÈm nhiÖm vô cÇn:"..myGenre..myDetail..myParticular..myLevel..myGoodsFive)
-		if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[4] == myTaskGoods[4]) and (nTaskGoods[5] == myTaskGoods[5]) then
-			return 1
-		else
-			return 0
-		end
-		
-	elseif ( myTaskType == 2) then
-	
-		myGenre = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Genre"))
-		myDetail = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Detail"))
-		myParticular = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Particular"))
-		myGoodsFive = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"GoodsFive"))
-		myLevel = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Level"))
-		myMagicID = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MagicEnName"))
-		myMagicMax = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MaxValue"))
-		myMagicMin = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MinValue"))
-		
-		myTaskGoods = {myGenre,myDetail,myParticular,myGoodsFive,myLevel,myMagicID,myMagicMin,myMagicMax}
-		myGoodsClean = {nTaskGoods[1],nTaskGoods[2],nTaskGoods[3],nTaskGoods[4],nTaskGoods[5]} -- Èç¹û²»ÓÃÅĞ¶ÏÄ§·¨ÊôĞÔÔòÈ¡´ËÖµ
-		myGoodsMagic = {nTaskGoods[1],nTaskGoods[2],nTaskGoods[3],nTaskGoods[4],nTaskGoods[5],nTaskGoods[6],nTaskGoods[7],nTaskGoods[8]}
-		
-		if (myMagicID == "n") then
-			print("VËt phÈm nhiÖm vô cÇn:"..myGenre..myDetail..myParticular..myLevel..myGoodsFive)
-			if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[4] == myTaskGoods[4]) and (nTaskGoods[5] == myTaskGoods[5]) then
-				return 1
-			else
-				return 0
-			end			
-		else
-			print("VËt phÈm nhiÖm vô cÇn:"..myGenre..myDetail..myParticular..myLevel..myGoodsFive.."Thuéc tİnh ma ph¸p:"..myMagicID.." TrŞ nhá nhÊt:"..myMagicMin.." TrŞ lín nhÊt:"..myMagicMax)
-			if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[6] == myTaskGoods[6]) and (tonumber(nTaskGoods[7]) >= myTaskGoods[7]) then
-				return 1
-			else
-				return 0
-			end
-		end 
-		
-	elseif ( myTaskType == 3) then
-	
-		myMagicID = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MagicEnName"))
-		myMagicMin = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MinValue"))
-		myMagicMax = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MaxValue"))
-		
-		print("VËt phÈm nhiÖm vô cÇn:"..myMagicID..myMagicMin..myMagicMax)
-		
-		if ( nTaskGoods[1] == myMagicID) and ( nTaskGoods[2] >= myMagicMin ) then
-			return 1
-		else
-			return 0
-		end
-		
-	elseif ( myTaskType == 4) then
-	
-		myTaskMapNum = GetTask(1025)
-
-		print ("Sè l­îng ®Şa ®å nhiÖm vô cÇn:"..tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num")));
-
-		if (myTaskMapNum>=tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num"))) then
-			myTaskMapNum = 0
-			SetTask(1025,myTaskMapNum) -- ÖØĞÂÖÃ 0
-			return 1
-		else
-			return 0
-		end
-		
-	elseif (myTaskType == 5) then
-	
-		myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType"))
-		
-		if (myTaskValueType == 2) then
-		
-		print("NhiÖm vô hiÖn t¹i lµ t¨ng kinh nghiÖm")
-			if (CountUpLevelExp(GetTask(1033),GetTask(1034)) >= tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericValue"))) then
-				return 1
-			else
-				return 0
-			end
-		elseif (myTaskValueType == 3) then -- ÉùÍûÖµ
-		
-		print("NhiÖm vô hiÖn t¹i lµ t¨ng danh väng")
-			if (GetRepute() >= GetTask(1026)) then
-				return 1
-			else
-				return 0
-			end
-		elseif (myTaskValueType == 4) then -- ¸£ÔµÖµ
-		
-		print("NhiÖm vô hiÖn t¹i lµ t¨ng phóc duyªn")
-			if (FuYuan_Get() >= GetTask(1026)) then
-				return 1
-			else
-				return 0
-			end
-		elseif (myTaskValueType == 5) then -- PK Öµ
-		
-		print("NhiÖm vô hiÖn t¹i lµ t¨ng PK")
-			if (GetPK() >= GetTask(1026)) then
-				return 1
-			else
-				return 0
-			end
-		end
-		
-	elseif (myTaskType == 6) then
-		myWorldMaps = tonumber(TabFile_GetCell(TL_WORLDMAPS,myTaskID,"Num"))
-		if (GetTask(1027) >= myWorldMaps) then
-			nWorldMaps = GetTask(1027) - myWorldMaps -- ÔÚÕâÀïÉ¾ÁËĞèÒªµÄÉ½ºÓÉçğ¢Í¼²ĞÆ¬
-			SetTask(1027,nWorldMaps)
-			return 1
-		else
-			return 0
-		end
-	end
-	
-end
+end 
 
 
 
--- ¸øÍæ¼Ò·¢½±ÀøµÄ×Üº¯Êı
-function GivePlayerAward()
+-- script viet hoa By http://tranhba.com  kiÓm tr¾c hµm sè , dïng ®Ó x¸c nhËn nhµ ch¬i cã hay kh«ng ®· hoµn thµnh nhiÖm vô 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ 
+-- script viet hoa By http://tranhba.com  1# ®· ®¹t thµnh ®iÒu kiÖn 
+-- script viet hoa By http://tranhba.com  0# vÉn ch­a/kh«ng thÓ hoµn thµnh 
+-- script viet hoa By http://tranhba.com  truyÒn vµo tham sæ nTaskGoods cã nhiÒu c¸ ph­¬ng thøc biÓu ®¹t 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ nhiÖm vô 1 lêi cña # chñng lo¹i # lo¹i kh¸c # tÕ lo¹i # ngò hµnh # cÊp bËc 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ nhiÖm vô 2 lêi cña # chñng lo¹i # lo¹i kh¸c # tÕ lo¹i # ngò hµnh # cÊp bËc # ma ph¸p thuéc tİnh ID# ma ph¸p thuéc tİnh h¹ h¹n # ma ph¸p thuéc tİnh th­îng h¹n 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ nhiÖm vô 3 lêi cña # ma ph¸p thuéc tİnh ID# ma ph¸p thuéc tİnh h¹ h¹n # ma ph¸p thuéc tİnh th­îng h¹n 
+function CheckTask(nTaskGoods) 
 
-	-- ´«¸ø½±ÀøÃæ°æµÄ²ÎÊı£º
-	-- Èç¹ûÊÇÎïÆ·µÄ»°ÔòÒÀ´ÎÎª£º½±ÀøÀàĞÍ£¬Quality¡¢Genre¡¢Detail¡¢Particular¡¢Level¡¢GoodsFive¡¢Magiclevel£¬ºÍËµÃ÷ÎÄ×Ö
-	-- Èç¹ûÊÇ½ğÇ®µÄ»°ÔòÒÀ´ÎÎª£º½±ÀøÀàĞÍ£¬½ğÇ®µÄÊıÁ¿
-	-- Èç¹ûÊÇ¾­ÑéµÄ»°ÔòÒÀ´ÎÎª£º½±ÀøÀàĞÍ£¬¾­ÑéµÄÊıÁ¿
-	-- Èç¹ûÊÇËæ»ú»ú»á»òÕßÊÇÈ¡Ïû»ú»áÔòÖ»¼ÇÂ¼µÚÒ»Î»Îª½±ÀøÀàĞÍ
-	local myAwardArry = {
-							{0,0,0,0,0,0,0,0,""}, 
-						 	{0,0,0,0,0,0,0,0,""},
-						 	{0,0,0,0,0,0,0,0,""}
-				        }
-	
-	-- ½±ÀøµÄÊı×é£¬·Ö±ğÎª¸÷ÖÖ½±ÀøµÄÈ¨ÖØ
-	-- ÒÀ´ÎÎª£º½ğÇ®¡¢¾­Ñé¡¢ÎïÆ·¡¢ÔÙËæ»úÒ»´ÎµÄ»ú»á¡¢È¡ÏûÈÎÎñµÄ»ú»á
-	-- 0 ÔòÊÇÄÄ¸ö½±ÀøÀàĞÍÒÑ¾­±»Ñ¡³ö
-	local myMainAwardRate = {30,30,30,9,1}
-	
-	local myTaskValue1,myTaskValue2,myMainValue -- ÁÙÊ±±äÁ¿£¬ÓÃÒÔ¼ÇÂ¼¶Áµ½µÄÊıÖµ
-	-- ÓÃÓÚ½±Àø´«ÈëµÄ×Ö·û´®
-	local myAwardGoods,myAwardExp,myAwardMoney,myAwardCancal,myAwardChange = "","","","",""
-	
-	local myArawdGoods = {0,0,0,0,0,0} -- ½±ÀøÎïÆ·Ïà¶ÔÓ¦µÄÊı×é
-	
-	local myAwardType
-	
-	local myAwardArryIndex = 1 -- ÓÃÒÔ¼ÇÂ¼½±ÀøÊı×éÀïÒÑ¾­¼ÇÂ¼ÁË¶àÉÙ¸ö
-	
-	local myRandomNum,myRandomSeed -- Ëæ»úÊıºÍËæ»úÖÖ×Ó
-	
-	myTimes = GetTaskState(1)
-	myLinks = GetTaskState(2)
-	
-	myTaskType = GetPlayerTaskType()
-	
-	local _nSeed = SetRandSeed(GetTask(1037))
-	
-	
-	print("B¾t ®Çu chän h×nh thøc ph¸t th­ëng!")
-	
-	for i=1,3 do -- Ñ­»·Ñ¡³öÈı¸ö½±ÀøÖÖÀà
-		
-		myAwardType,myMainAwardRate = GetAwardTypeForRate(myMainAwardRate)
-		
-		print("vßng quay thø  "..i.."®· chän ®­îc lo¹i h×nh gi¶i th­ëng: "..myAwardType);
-		
-		if (myAwardType==1) then -- Èç¹û½±ÀøÀàĞÍÊÇÇ®
-		
-			print ("Lo¹i nhiÖm vô hŞªn t¹i lµ:"..GetTaskTextID(myTaskType)..", sè hµng (ID) cña nhiÖm vô hiÖn t¹i lµ:"..GetTaskTableCol());
-			
-			myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1"))
-			myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2"))
-			-- ¾­¹ı¼Ó³ËÖµ¼ÆËãºóµÄÈÎÎñ½±Àø¼ÛÖµ
+local i,j 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô cÇn cÇu vËt phÈm 
+local myTaskGoods 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô cÇn cÇu xin vËt phÈm ®İch chñng lo¹i # lo¹i kh¸c # tÕ lo¹i # ngò hµnh # cÊp bËc 
+local myGenre,myDetail,myParticular,myGoodsFive,myLevel,myMagicID,myMagicMax,myMagicMin 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô cÇn cÇu xin vËt phÈm ®İch chñng lo¹i , kh«ng mang theo ma ph¸p thuéc tİnh cïng mang ma ph¸p thuéc tİnh 
+local myGoodsClean,myGoodsMagic 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô muèn cÇu b¶n ®å chİ ID, b¶n ®å chİ ®İch sè l­îng cïng b¶n ®å chİ ®İch lo¹i h×nh 
+local myTaskMaps,myTaskMapNum,myTaskMapType 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô muèn cÇu xin th¨ng cÊp ®İch trŞ sè cïng trŞ sè lo¹i h×nh 
+local myTaskValue,myTaskValueType 
+
+-- script viet hoa By http://tranhba.com  nhiÖm vô muèn cÇu nói s«ng x· t¾c ®å sè l­îng 
+local myWorldMaps,nWorldMaps 
+
+-- script viet hoa By http://tranhba.com  lÊy ®­îc nhµ ch¬i tr­íc mÆt së nhËn ®İch nhiÖm vô lo¹i h×nh 
+local myTaskType = GetPlayerTaskType() 
+local myTaskID = GetTaskTableCol() 
+
+if ( myTaskType == 1) then 
+
+myGenre = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Genre")) 
+myDetail = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Detail")) 
+myParticular = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Particular")) 
+myGoodsFive = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"GoodsFive")) 
+myLevel = tonumber(TabFile_GetCell(TL_BUYGOODS,myTaskID,"Level")) 
+
+myTaskGoods = {myGenre,myDetail,myParticular,myGoodsFive,myLevel} 
+
+print("NhiÖm vô muèn cÇu vËt phÈm v× #"..myGenre..myDetail..myParticular..myLevel..myGoodsFive) 
+if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[4] == myTaskGoods[4]) and (nTaskGoods[5] == myTaskGoods[5]) then 
+return 1 
+else 
+return 0 
+end 
+
+elseif ( myTaskType == 2) then 
+
+myGenre = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Genre")) 
+myDetail = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Detail")) 
+myParticular = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Particular")) 
+myGoodsFive = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"GoodsFive")) 
+myLevel = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"Level")) 
+myMagicID = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MagicEnName")) 
+myMagicMax = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MaxValue")) 
+myMagicMin = tonumber(TabFile_GetCell(TL_FINDGOODS,myTaskID,"MinValue")) 
+
+myTaskGoods = {myGenre,myDetail,myParticular,myGoodsFive,myLevel,myMagicID,myMagicMin,myMagicMax} 
+myGoodsClean = {nTaskGoods[1],nTaskGoods[2],nTaskGoods[3],nTaskGoods[4],nTaskGoods[5]} -- script viet hoa By http://tranhba.com  nÕu nh­ kh«ng cÇn ph¸n ®o¸n ma ph¸p thuéc tİnh lµ lÊy nµy trŞ gi¸ 
+myGoodsMagic = {nTaskGoods[1],nTaskGoods[2],nTaskGoods[3],nTaskGoods[4],nTaskGoods[5],nTaskGoods[6],nTaskGoods[7],nTaskGoods[8]} 
+
+if (myMagicID == "n") then 
+print("NhiÖm vô muèn cÇu vËt phÈm v× #"..myGenre..myDetail..myParticular..myLevel..myGoodsFive) 
+if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[4] == myTaskGoods[4]) and (nTaskGoods[5] == myTaskGoods[5]) then 
+return 1 
+else 
+return 0 
+end 
+else 
+print("NhiÖm vô muèn cÇu vËt phÈm v× #"..myGenre..myDetail..myParticular..myLevel..myGoodsFive.." ma ph¸p thuéc tİnh #"..myMagicID.." nhá nhÊt trŞ gi¸ #"..myMagicMin.." lín nhÊt trŞ gi¸ #"..myMagicMax) 
+if (nTaskGoods[1] == myTaskGoods[1]) and (nTaskGoods[2] == myTaskGoods[2]) and (nTaskGoods[3] == myTaskGoods[3]) and (nTaskGoods[6] == myTaskGoods[6]) and (tonumber(nTaskGoods[7]) >= myTaskGoods[7]) then 
+return 1 
+else 
+return 0 
+end 
+end 
+
+elseif ( myTaskType == 3) then 
+
+myMagicID = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MagicEnName")) 
+myMagicMin = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MinValue")) 
+myMagicMax = tonumber(TabFile_GetCell(TL_SHOWGOODS,myTaskID,"MaxValue")) 
+
+print("NhiÖm vô muèn cÇu vËt phÈm v× #"..myMagicID..myMagicMin..myMagicMax) 
+
+if ( nTaskGoods[1] == myMagicID) and ( nTaskGoods[2] >= myMagicMin ) then 
+return 1 
+else 
+return 0 
+end 
+
+elseif ( myTaskType == 4) then 
+
+myTaskMapNum = GetTask(1025) 
+
+print ("NhiÖm vô muèn cÇu b¶n ®å sè l­îng v× #"..tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num"))); 
+
+if (myTaskMapNum>=tonumber(TabFile_GetCell(TL_FINDMAPS,myTaskID,"Num"))) then 
+myTaskMapNum = 0 
+SetTask(1025,myTaskMapNum) -- script viet hoa By http://tranhba.com  lÇn n÷a ®­a 0 
+return 1 
+else 
+return 0 
+end 
+
+elseif (myTaskType == 5) then 
+
+myTaskValueType = tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericType")) 
+
+if (myTaskValueType == 2) then 
+
+print("Tr­íc m¾t ®İch nhiÖm vô lµ th¨ng cÊp kinh nghiÖm lo¹i h×nh ") 
+if (CountUpLevelExp(GetTask(1033),GetTask(1034)) >= tonumber(TabFile_GetCell(TL_UPGROUND,myTaskID,"NumericValue"))) then 
+return 1 
+else 
+return 0 
+end 
+elseif (myTaskValueType == 3) then -- script viet hoa By http://tranhba.com  danh väng trŞ gi¸ 
+
+print("Tr­íc m¾t ®İch nhiÖm vô lµ th¨ng cÊp danh väng ®İch lo¹i h×nh ") 
+if (GetRepute() >= GetTask(1026)) then 
+return 1 
+else 
+return 0 
+end 
+elseif (myTaskValueType == 4) then -- script viet hoa By http://tranhba.com  phóc duyªn trŞ gi¸ 
+
+print("Tr­íc m¾t ®İch nhiÖm vô lµ th¨ng cÊp phóc duyªn ®İch lo¹i h×nh ") 
+if (FuYuan_Get() >= GetTask(1026)) then 
+return 1 
+else 
+return 0 
+end 
+elseif (myTaskValueType == 5) then -- script viet hoa By http://tranhba.com  PK trŞ gi¸ 
+
+print("Tr­íc m¾t ®İch nhiÖm vô lµ th¨ng cÊp PK trŞ gi¸ ®İch lo¹i h×nh ") 
+if (GetPK() >= GetTask(1026)) then 
+return 1 
+else 
+return 0 
+end 
+end 
+
+elseif (myTaskType == 6) then 
+myWorldMaps = tonumber(TabFile_GetCell(TL_WORLDMAPS,myTaskID,"Num")) 
+if (GetTask(1027) >= myWorldMaps) then 
+nWorldMaps = GetTask(1027) - myWorldMaps -- script viet hoa By http://tranhba.com  ë chç nµy san liÔu cÇn nói s«ng x· t¾c ®å m¶nh vôn 
+SetTask(1027,nWorldMaps) 
+return 1 
+else 
+return 0 
+end 
+end 
+
+end 
+
+
+
+-- script viet hoa By http://tranhba.com  cho nhµ ch¬i ph¸t t­ëng th­ëng ®İch tæng hµm sè 
+function GivePlayerAward() 
+
+-- script viet hoa By http://tranhba.com  truyÒn cho t­ëng th­ëng mÆt b¶n ®İch tham sæ # 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ vËt phÈm lêi cña lµ theo thø tù v× # t­ëng th­ëng lo¹i h×nh , Quality#Genre#Detail#Particular#Level#GoodsFive#Magiclevel , cïng nãi râ ch÷ viÕt 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ kim tiÒn lµ theo thø tù v× # t­ëng th­ëng lo¹i h×nh , kim tiÒn ®İch sè l­îng 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ kinh nghiÖm tho¹i lµ theo thø tù v× # t­ëng th­ëng lo¹i h×nh , kinh nghiÖm sè l­îng 
+-- script viet hoa By http://tranhba.com  nÕu nh­ lµ ngÉu nhiªn c¬ héi hoÆc lµ hñy bá c¬ héi lµ chØ ghi chĞp vŞ thø nhÊt v× t­ëng th­ëng lo¹i h×nh 
+local myAwardArry = { 
+{0,0,0,0,0,0,0,0,""}, 
+{0,0,0,0,0,0,0,0,""}, 
+{0,0,0,0,0,0,0,0,""} 
+} 
+
+-- script viet hoa By http://tranhba.com  t­ëng th­ëng ®İch ®Õm tæ , chia ra lµm c¸c lo¹i t­ëng th­ëng ®İch quyÒn nÆng 
+-- script viet hoa By http://tranhba.com  theo thø tù v× # kim tiÒn # kinh nghiÖm # vËt phÈm # n÷a ngÉu nhiªn mét lÇn c¬ héi # hñy bá nhiÖm vô c¬ héi 
+-- script viet hoa By http://tranhba.com  0 cßn l¹i lµ c¸i nµo t­ëng th­ëng lo¹i h×nh ®· bŞ chän lùa 
+local myMainAwardRate = {30,30,30,9,1} 
+
+local myTaskValue1,myTaskValue2,myMainValue -- script viet hoa By http://tranhba.com  t¹m thêi thay ®æi l­îng , dïng ®Ó ghi chĞp häc ®Õn ®İch trŞ sè 
+-- script viet hoa By http://tranhba.com  dïng cho t­ëng th­ëng truyÒn vµo ®İch tù phï chuçi 
+local myAwardGoods,myAwardExp,myAwardMoney,myAwardCancal,myAwardChange = "","","","","" 
+
+local myArawdGoods = {0,0,0,0,0,0} -- script viet hoa By http://tranhba.com  t­ëng th­ëng vËt phÈm t­¬ng ®èi øng ®İch ®Õm tæ 
+
+local myAwardType 
+
+local myAwardArryIndex = 1 -- script viet hoa By http://tranhba.com  dïng ®Ó ghi chĞp t­ëng th­ëng ®Õm tæ lı ®· ghi chĞp bao nhiªu c¸ 
+
+local myRandomNum,myRandomSeed -- script viet hoa By http://tranhba.com  ngÉu nhiªn ®Õm cïng ngÉu nhiªn mÇm mãng 
+
+myTimes = GetTaskState(1) 
+myLinks = GetTaskState(2) 
+
+myTaskType = GetPlayerTaskType() 
+
+local _nSeed = SetRandSeed(GetTask(1037)) 
+
+
+print("B¾t ®Çu tiÕn hµnh t­ëng th­ëng lo¹i h×nh lùa chän #") 
+
+for i=1,3 do -- script viet hoa By http://tranhba.com  tuÇn hoµn chän lùa ba t­ëng th­ëng chñng lo¹i 
+
+myAwardType,myMainAwardRate = GetAwardTypeForRate(myMainAwardRate) 
+
+print("Thø "..i.." c¸ tuÇn hoµn tróng tuyÓn tr¹ch liÔu t­ëng th­ëng lo¹i h×nh #"..myAwardType); 
+
+if (myAwardType==1) then -- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng lo¹i h×nh lµ tiÒn 
+
+print ("Tr­íc mÆt ®İch nhiÖm vô lo¹i h×nh lµ #"..GetTaskTextID(myTaskType).." , tr­íc mÆt ®İch nhiÖm vô biÓu c¸ch ®­îc sè lµ #"..GetTaskTableCol()); 
+
+myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1")) 
+myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2")) 
+-- script viet hoa By http://tranhba.com  tr¶i qua thªm ngåi trŞ gi¸ tİnh to¸n sau ®İch nhiÖm vô t­ëng th­ëng gi¸ trŞ 
 			myMainValue = myTaskValue1 + (myTaskValue2 * (1+(myLinks+myTimes)*0.1))
-			
-			myMainValue = floor((myMainValue / 2) * (C_Random(80,120) * 0.01)) -- ¼ÆËãºóµÃ³öµÄÊµ¼Ê½ğÇ®Á¿
-			
-			myAwardMoney = format("%s%s",myMainValue," tiÒn ");
-			
-			myAwardArry[myAwardArryIndex] = {1,myMainValue,0,0,0,0,0,0,myAwardMoney}
+
+myMainValue = floor((myMainValue / 2) * (C_Random(80,120) * 0.01)) -- script viet hoa By http://tranhba.com  tİnh to¸n sau cho ra thùc tÕ kim tiÒn l­îng 
+
+myAwardMoney = format("%s%s",myMainValue,"Kim tiÒn "); 
+
+myAwardArry[myAwardArryIndex] = {1,myMainValue,0,0,0,0,0,0,myAwardMoney} 
 			myAwardArryIndex = myAwardArryIndex + 1
-			
-			print("NhËn ®­îc  tiÒn th­ëng: "..myAwardMoney);
-			
-		elseif (myAwardType==2) then -- Èç¹û½±ÀøµÄÊÇ¾­Ñé
-		
-			myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1"))
-			myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2"))
-			-- ¾­¹ı¼Ó³ËÖµ¼ÆËãºóµÄÈÎÎñ½±Àø¼ÛÖµ
+
+print(" lÊy ®­îc mét kim tiÒn ®İch t­ëng th­ëng #"..myAwardMoney); 
+
+elseif (myAwardType==2) then -- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng chİnh lµ kinh nghiÖm 
+
+myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1")) 
+myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2")) 
+-- script viet hoa By http://tranhba.com  tr¶i qua thªm ngåi trŞ gi¸ tİnh to¸n sau ®İch nhiÖm vô t­ëng th­ëng gi¸ trŞ 
 			myMainValue = myTaskValue1 + (myTaskValue2 * (1+(myLinks+myTimes)*0.1))
-			
-			myMainValue = floor((myMainValue / 2) * (C_Random(80,120) * 0.01)) -- ¼ÆËãºóµÃ³öµÄÊµ¼Ê¾­ÑéÖµÁ¿
-			
-			myAwardExp = format("%s%s",myMainValue," ®iÓm kinh nghiÖm")
-			
-			myAwardArry[myAwardArryIndex] = {2,myMainValue,0,0,0,0,0,0,myAwardExp}
+
+myMainValue = floor((myMainValue / 2) * (C_Random(80,120) * 0.01)) -- script viet hoa By http://tranhba.com  tİnh to¸n sau cho ra thùc tÕ kinh nghiÖm trŞ gi¸ l­îng 
+
+myAwardExp = format("%s%s",myMainValue,"Chót kinh nghiÖm trŞ gi¸ ") 
+
+myAwardArry[myAwardArryIndex] = {2,myMainValue,0,0,0,0,0,0,myAwardExp} 
 			myAwardArryIndex = myAwardArryIndex + 1
-			
-			print("NhËn ®­îc mét phÇn th­ëng ®iÓm kinh nghiÖm:"..myAwardExp);
-			
-		elseif (myAwardType==3) then -- Èç¹û½±ÀøµÄÊÇÎïÆ·
-			
-			myTaskValue1 = GivePlayerAward_Goods(1) -- Ê×ÏÈµÃµ½½±ÀøÎïÆ·µÄĞĞÊı
-			
-			myQuality = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Quality"))
-			myGenre = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Genre"))
-			myDetail = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Detail"))
-			myParticular = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Particular"))
-			myLevel = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Level"))
-			myGoodsFive = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"GoodsFive"))
-			
-			
-			myArawdGoods = TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Name")
-			
-			myAwardArry[myAwardArryIndex] = {3,myMainValue,myQuality,myGenre,myDetail,myParticular,myLevel,myGoodsFive,myArawdGoods}
+
+print(" lÊy ®­îc mét kinh nghiÖm trŞ gi¸ ®İch t­ëng th­ëng #"..myAwardExp); 
+
+elseif (myAwardType==3) then -- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng chİnh lµ vËt phÈm 
+
+myTaskValue1 = GivePlayerAward_Goods(1) -- script viet hoa By http://tranhba.com  ®Çu tiªn lÊy ®­îc t­ëng th­ëng vËt phÈm ®İch ®­îc ®Õm 
+
+myQuality = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Quality")) 
+myGenre = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Genre")) 
+myDetail = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Detail")) 
+myParticular = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Particular")) 
+myLevel = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Level")) 
+myGoodsFive = tonumber(TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"GoodsFive")) 
+
+
+myArawdGoods = TabFile_GetCell(TL_AWARDBASIC,myTaskValue1,"Name") 
+
+myAwardArry[myAwardArryIndex] = {3,myMainValue,myQuality,myGenre,myDetail,myParticular,myLevel,myGoodsFive,myArawdGoods} 
 			myAwardArryIndex = myAwardArryIndex + 1
-			
-			print("NhËn ®­îc mét phÇn th­ëng: "..myArawdGoods);
-			
-		elseif (myAwardType==4) then -- Èç¹û½±ÀøµÄÊÇÖØĞÂËæ»úÒ»´ÎµÄ»ú»á
-			
-			myAwardChange = "Chän l¹i tõ ®Çu"
-			myAwardArry[myAwardArryIndex] = {4,0,0,0,0,0,0,0,myAwardExp}
+
+print(" lÊy ®­îc mét vËt phÈm ®İch t­ëng th­ëng #"..myArawdGoods); 
+
+elseif (myAwardType==4) then -- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng chİnh lµ lÇn n÷a ngÉu nhiªn mét lÇn c¬ héi 
+
+myAwardChange = " lÇn n÷a n÷a lùa chän mét lÇn " 
+myAwardArry[myAwardArryIndex] = {4,0,0,0,0,0,0,0,myAwardExp} 
 			myAwardArryIndex = myAwardArryIndex + 1
-			
-			print("NhËn ®­îc c¬ héi");
-		
-		elseif (myAwardType==5) then -- Èç¹û½±ÀøµÄÊÇÒ»´ÎÈ¡ÏûÈÎÎñµÄ»ú»á
-		
-			myAwardChange = "1 lÇn  hñy bá nhiÖm vô "
-			myAwardArry[myAwardArryIndex] = {5,0,0,0,0,0,0,0,myAwardExp}
+
+print(" lÊy ®­îc mét c¬ héi lùa chän ®İch t­ëng th­ëng "); 
+
+elseif (myAwardType==5) then -- script viet hoa By http://tranhba.com  nÕu nh­ t­ëng th­ëng chİnh lµ mét lÇn hñy bá nhiÖm vô c¬ héi 
+
+myAwardChange = " mét lÇn cã thÓ hñy bá nhiÖm vô c¬ héi " 
+myAwardArry[myAwardArryIndex] = {5,0,0,0,0,0,0,0,myAwardExp} 
 			myAwardArryIndex = myAwardArryIndex + 1	
-			
-			print("NhËn ®­îc c¬ héi 1 lÇn hñy bá nhiÖm vô ");	
-		
-		end
-	end
-	
-	SetRandSeed(_nSeed)
-	-- ·µ»ØÒÑ¾­¹¹ÔìºÃµÄ½±ÀøÊı×é
-	return myAwardArry
 
-end
+print(" lÊy ®­îc mét lÇn hñy bá c¬ héi t­ëng th­ëng "); 
+
+end 
+end 
+
+SetRandSeed(_nSeed) 
+-- script viet hoa By http://tranhba.com  trë vÒ ®· cÊu t¹o tèt t­ëng th­ëng ®Õm tæ 
+return myAwardArry 
+
+end 
 
 
--- ×Óº¯Êı£¬¸ù¾İ½±ÀøÁ´Ê£ÓàµÄÀàĞÍÈ¡³ö½±Àø
-function GetAwardTypeForRate(myAwardRate)
+-- script viet hoa By http://tranhba.com  tö hµm sè , c¨n cø t­ëng th­ëng liªn cßn thõa l¹i lo¹i h×nh lÊy ra t­ëng th­ëng 
+function GetAwardTypeForRate(myAwardRate) 
 
-local i,j,k = 0,0,0
-local myAwardMainRate = 0
+local i,j,k = 0,0,0 
+local myAwardMainRate = 0 
 
-for i=1,getn(myAwardRate) do
+for i=1,getn(myAwardRate) do 
 	myAwardMainRate = myAwardMainRate + myAwardRate[i]
-end
+end 
 
-j=C_Random(1,myAwardMainRate)
+j=C_Random(1,myAwardMainRate) 
 
-for i=1,getn(myAwardRate) do
+for i=1,getn(myAwardRate) do 
 	k = k + myAwardRate[i]
-	if (i<k) then
-		myAwardRate[i] = 0 -- ÔÚÈ«¾Ö±äÁ¿ TL_MainAwardRate ÖĞ¼õÈ¥Ò»¸öÖµ
-		return i,myAwardRate
-	end
-end
+if (i<k) then 
+myAwardRate[i] = 0 -- script viet hoa By http://tranhba.com  ë toµn côc thay ®æi l­îng TL_MainAwardRate trung gi¶m ®i mét trŞ gi¸ 
+return i,myAwardRate 
+end 
+end 
 
-print ("Chän phÇn th­ëng xuÊt hiÖn sù cè!!!");
+print ("Ch©n vèn chän lÊy nhiÖm vô t­ëng th­ëng lo¹i h×nh lóc bŞ lçi #"); 
 
-end
+end 
 
 
--- ËÑÑ°½±ÀøÁĞ±í£¬µÃµ½ÏàÓ¦µÄ½±Àø
--- myAwardType£º½±ÀøµÄÀàĞÍ
--- 1£ºÈÎÎñ»ù±¾½±Àø 2£ºÈÎÎñÁ´Íê³É½±Àø 3:ÈÎÎñ»·Íê³É½±Àø
-function GivePlayerAward_Goods(myAwardType)
+-- script viet hoa By http://tranhba.com  s­u tÇm t­ëng th­ëng liÖt biÓu , lÊy ®­îc t­¬ng øng t­ëng th­ëng 
+-- script viet hoa By http://tranhba.com  myAwardType# t­ëng th­ëng ®İch lo¹i h×nh 
+-- script viet hoa By http://tranhba.com  1# nhiÖm vô c¨n b¶n t­ëng th­ëng 2# nhiÖm vô liªn hoµn thµnh t­ëng th­ëng 3: nhiÖm vô hoµn hoµn thµnh t­ëng th­ëng 
+function GivePlayerAward_Goods(myAwardType) 
 
-local myTaskValue1,myTaskValue2 -- ´ÓÈÎÎñ±í¸ñÀï¶ÁÈ¡µÄÈÎÎñ½±Àø¼ÛÖµ
-local myLinks,myTimes -- Á¬ĞøÍê³ÉµÄ´ÎÊıÓëÁ´Êı
-local myMainValue -- ¾­¹ı¼Ó³ËÖµ¼ÆËãºóµÄÈÎÎñ½±Àø¼ÛÖµ
-local myTaskType = GetPlayerTaskType()
-local myAwardTextID
+local myTaskValue1,myTaskValue2 -- script viet hoa By http://tranhba.com  tõ nhiÖm vô biÓu c¸ch trong häc lÊy nhiÖm vô t­ëng th­ëng gi¸ trŞ 
+local myLinks,myTimes -- script viet hoa By http://tranhba.com  liªn tôc hoµn thµnh sè lÇn cïng liªn ®Õm 
+local myMainValue -- script viet hoa By http://tranhba.com  tr¶i qua thªm ngåi trŞ gi¸ tİnh to¸n sau ®İch nhiÖm vô t­ëng th­ëng gi¸ trŞ 
+local myTaskType = GetPlayerTaskType() 
+local myAwardTextID 
 
-local myAwardTable
+local myAwardTable 
 
-local FinalAward -- ×îÖÕ·µ»ØµÄ½±Àø
-	
-	if (myAwardType == 1) then
-		myAwardTextID = TL_AWARDBASIC
-	elseif (myAwardType == 2) then
-		myAwardTextID = TL_AWARDLINK
-	elseif (myAwardType == 3) then
-		myAwardTextID = TL_AWARDLOOP
-	end
-	
-	myTimes = GetTaskState(1)
-	myLinks = GetTaskState(2)
-	
-	myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1"))
-	myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2"))
-	
-	-- ¾­¹ı¼Ó³ËÖµ¼ÆËãºóµÄÈÎÎñ½±Àø¼ÛÖµ
+local FinalAward -- script viet hoa By http://tranhba.com  cuèi cïng trë vÒ ®İch t­ëng th­ëng 
+
+if (myAwardType == 1) then 
+myAwardTextID = TL_AWARDBASIC 
+elseif (myAwardType == 2) then 
+myAwardTextID = TL_AWARDLINK 
+elseif (myAwardType == 3) then 
+myAwardTextID = TL_AWARDLOOP 
+end 
+
+myTimes = GetTaskState(1) 
+myLinks = GetTaskState(2) 
+
+myTaskValue1 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue1")) 
+myTaskValue2 = tonumber(TabFile_GetCell(GetTaskTextID(myTaskType),GetTaskTableCol(),"TaskValue2")) 
+
+-- script viet hoa By http://tranhba.com  tr¶i qua thªm ngåi trŞ gi¸ tİnh to¸n sau ®İch nhiÖm vô t­ëng th­ëng gi¸ trŞ 
 	myMainValue = myTaskValue1 + (myTaskValue2 * (1+(myLinks+myTimes)*0.1))
-	
-	myAwardTable = AssignValue_AwardRate(Task_AwardBasic,myMainValue)
-	
-	FinalAward = TabFile_GetCell(myAwardTextID,GetAward(myAwardTable),"Name")
-	
---	print ("»ñÈ¡ÁË "..myTaskTextID.." ÈÎÎñÀàĞÍÖĞµÄ "..FinalAward.."½±Àø")
-	
-return GetAward(myAwardTable) -- ·µ»Ø½±ÀøËùÔÚµÄĞĞÊı
 
-end
+myAwardTable = AssignValue_AwardRate(Task_AwardBasic,myMainValue) 
+
+FinalAward = TabFile_GetCell(myAwardTextID,GetAward(myAwardTable),"Name") 
+
+-- script viet hoa By http://tranhba.com  print (" lÊy ®­îc liÔu "..myTaskTextID.." nhiÖm vô lo¹i h×nh trung ®İch "..FinalAward.." t­ëng th­ëng ") 
+
+return GetAward(myAwardTable) -- script viet hoa By http://tranhba.com  trë vÒ t­ëng th­ëng chç ë ®­îc ®Õm 
+
+end 
 
 
--- ÔÚÒÑ¾­ĞÎ³ÉÈ¨ÖØÁĞ±íµÄ½±ÀøÖĞÌôÑ¡³öÒ»¸ö½±Àø£¬·µ»ØÖµÎª½±ÀøËùÔÚµÄ±í¸ñĞĞÊı
-function GetAward(myAwardVariable)
+-- script viet hoa By http://tranhba.com  ë ®· t¹o thµnh quyÒn nÆng liÖt biÓu ®İch t­ëng th­ëng trung chän lùa ra mét t­ëng th­ëng , trë vÒ trŞ gi¸ lµ t­ëng th­ëng chç ë biÓu c¸ch ®­îc ®Õm 
+function GetAward(myAwardVariable) 
 
-local i,j,k = 0,0,0
-local myMainRate = 0 -- ×ÜµÄ½±ÀøÈ¨ÖØ
-	
-	for i=1,getn(myAwardVariable) do
+local i,j,k = 0,0,0 
+local myMainRate = 0 -- script viet hoa By http://tranhba.com  tæng ®İch t­ëng th­ëng quyÒn nÆng 
+
+for i=1,getn(myAwardVariable) do 
 		myMainRate = myMainRate + myAwardVariable[i][2]
-	end
-	
-	j = C_Random(1,myMainRate)
-	
-	for i=1,getn(myAwardVariable) do
+end 
+
+j = C_Random(1,myMainRate) 
+
+for i=1,getn(myAwardVariable) do 
 		k = k + myAwardVariable[i][2]
-		if (j<k) then
-			return i
-		end
-	end
+if (j<k) then 
+return i 
+end 
+end 
 
-end
-
-
--- ×Óº¯Êı£¬ÓÃÒÔÈ·¶¨µ±Ç°Íæ¼ÒËù½Óµ½µÄÈÎÎñ¾ßÌåÊÇÄÄÒ»ÖÖÀàĞÍµÄÈÎÎñ
--- ·µ»ØÖµÎª 1~6£¬Èç¹ûÎª 0 ÔòÍæ¼Ò»¹Ã»ÓĞ´¥·¢ÈÎÎñÁ´
-function GetPlayerTaskType()
-
-local myTaskType
-
---	myTaskType = strsub(format("%d",GetTask(1021),1,1))
-myTaskType = GetTask(1021)
-
-return myTaskType
-
-end
+end 
 
 
--- ×Óº¯Êı£¬ÓÃÒÔÉè¶¨µ±Ç°Íæ¼ÒËù½Óµ½µÄÈÎÎñ¾ßÌåÊÇÄÄÒ»ÖÖÀàĞÍµÄÈÎÎñ
-function SetPlayerTaskTpye(myTaskType)
-	SetTask(1021,myTaskType)
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , dïng ®Ó x¸c ®Şnh tr­íc mÆt nhµ ch¬i së nhËn ®­îc ®İch nhiÖm vô cô thÓ lµ lo¹i nµo lo¹i h×nh nhiÖm vô 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ lµ 1~6 , nÕu v× 0 lµ nhµ ch¬i cßn kh«ng cã xóc ph¸t nhiÖm vô liªn 
+function GetPlayerTaskType() 
+
+local myTaskType 
+
+-- script viet hoa By http://tranhba.com  myTaskType = strsub(format("%d",GetTask(1021),1,1)) 
+myTaskType = GetTask(1021) 
+
+return myTaskType 
+
+end 
 
 
--- ×Óº¯Êı£¬ÓÃÒÔ»ñÈ¡Íæ¼ÒµÄĞÔ±ğ£¬Ö±½Ó·µ»Ø×Ö·û´®
-function GetPlayerSex()
-local mySex -- ÓÃÒÔÏÔÊ¾ÈËÎïĞÔ±ğµÄ×Ö·û
-
-	if (GetSex() == 0) then
-		mySex = "C«ng tö "
-	else
-		mySex = "N÷ hiÖp"
-	end
-	
-return mySex
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , dïng ®Ó thiÕt nhÊt ®Şnh tr­íc nhµ ch¬i së nhËn ®­îc ®İch nhiÖm vô cô thÓ lµ lo¹i nµo lo¹i h×nh nhiÖm vô 
+function SetPlayerTaskTpye(myTaskType) 
+SetTask(1021,myTaskType) 
+end 
 
 
--- ×Óº¯Êı£¬ÓÃÒÔ¼ÇÂ¼Íæ¼Òµ±Ç°ÈÎÎñËù¾ßÌå¶ÔÓ¦µÄ±í¸ñĞĞÊı
-function SaveTaskTableCol(myTaskCol)
-	SetTask(1030,myTaskCol)
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , dïng ®Ó lÊy ®­îc nhµ ch¬i ®İch giíi tİnh , trùc tiÕp trë vÒ tù phï chuçi 
+function GetPlayerSex() 
+local mySex -- script viet hoa By http://tranhba.com  dïng ®Ó biÓu hiÖn nh©n vËt giíi tİnh ®İch tù phï 
+
+if (GetSex() == 0) then 
+mySex = " c«ng tö " 
+else 
+mySex = " n÷ hiÖp " 
+end 
+
+return mySex 
+end 
 
 
--- ×Óº¯Êı£¬ÓÃÒÔ¶ÁÈ¡Íæ¼Òµ±Ç°ÈÎÎñËù¶ÔÓ¦µÄ¾ßÌå±í¸ñĞĞÊı
-function GetTaskTableCol()
-	return GetTask(1030)
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , dïng ®Ó ghi chĞp nhµ ch¬i nhiÖm vô tr­íc mÆt së cô thÓ ®èi øng biÓu c¸ch ®­îc ®Õm 
+function SaveTaskTableCol(myTaskCol) 
+SetTask(1030,myTaskCol) 
+end 
 
 
--- ×Óº¯Êı£¬¼ì²âÈÎÎñµÄ×´Ì¬
--- 1£ºµ±Ç°½øĞĞµÄ´ÎÊı
--- 2£ºµ±Ç°½øĞĞµÄÁ´Êı
--- 3£ºµ±Ç°½øĞĞµÄ»·Êı
--- 4£ºÊ£ÓàÈ¡ÏûµÄ´ÎÊı
--- 5£ºÍæ¼Òµ±Ç°Ëù½ÓµÄÈÎÎñºÅ´¢´æÔÚ 1021 ÉÏ
--- 6£ºÍæ¼ÒÔÚÃ¿Ò»»·µÄ¸ÃÁ´ÖĞÒÑ¾­×öÁË¼¸´Î£¬×î´óÎª 4
-function GetTaskState(myTaskState)
-
-local n
-
-if ( myTaskState <= 4) then
-	n = GetByte(GetTask(1020),myTaskState)
-elseif ( myTaskState == 5) then
-	n = GetTask()
-elseif ( myTaskState == 6) then
-	n = GetTask(1035)
-end
-
-return n
-
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , dïng ®Ó häc lÊy nhµ ch¬i nhiÖm vô tr­íc mÆt së ®èi øng cô thÓ biÓu c¸ch ®­îc ®Õm 
+function GetTaskTableCol() 
+return GetTask(1030) 
+end 
 
 
--- ×Óº¯Êı£¬ÉèÖÃÈÎÎñµÄ×´Ì¬
--- 1£ºµ±Ç°½øĞĞµÄ´ÎÊı
--- 2£ºµ±Ç°½øĞĞµÄÁ´Êı
--- 3£ºµ±Ç°½øĞĞµÄ»·Êı
--- 4£ºÊ£ÓàÈ¡ÏûµÄ´ÎÊı
--- 5£ºÍæ¼Òµ±Ç°Ëù½ÓµÄÈÎÎñºÅ´¢´æÔÚ 1021 ÉÏ
--- 6£ºÍæ¼ÒÔÚÃ¿Ò»»·µÄ¸ÃÁ´ÖĞÒÑ¾­×öÁË¼¸´Î£¬×î´óÎª 4
-function SetTaskState(myTaskState,myTaskValue)
+-- script viet hoa By http://tranhba.com  tö hµm sè , kiÓm tr¾c nhiÖm vô tr¹ng th¸i 
+-- script viet hoa By http://tranhba.com  1# tr­íc mÆt tiÕn hµnh ®İch sè lÇn 
+-- script viet hoa By http://tranhba.com  2# tr­íc mÆt tiÕn hµnh ®İch liªn ®Õm 
+-- script viet hoa By http://tranhba.com  3# tr­íc mÆt tiÕn hµnh ®İch hoµn ®Õm 
+-- script viet hoa By http://tranhba.com  4# cßn thõa l¹i hñy bá ®İch sè lÇn 
+-- script viet hoa By http://tranhba.com  5# nhµ ch¬i tr­íc mÆt së nhËn ®İch nhiÖm vô sè chøa ®ùng ë 1021 th­îng 
+-- script viet hoa By http://tranhba.com  6# nhµ ch¬i ë mçi mét vßng ®İch nªn liªn trung ®· lµm mÊy lÇn , lín nhÊt v× 4 
+function GetTaskState(myTaskState) 
 
-local n
+local n 
 
-	if ( myTaskState <= 4) then
-		n = GetTask(1020)
-		SetTask(1020,SetByte(n,myTaskState,myTaskValue))
-	elseif ( myTaskState == 5) then -- Èç¹ûÊÇ 5 µÄ»°ÔòÊÇ¼ÇÂ¼Íæ¼Òµ±Ç°Ëù½ÓµÄÈÎÎñºÅÔÚ 1021 ÉÏ
-		SetTask(1021,myTaskValue)
-	elseif ( myTaskState == 6) then
-		SetTask(1035,myTaskValue)
-	end
+if ( myTaskState <= 4) then 
+n = GetByte(GetTask(1020),myTaskState) 
+elseif ( myTaskState == 5) then 
+n = GetTask() 
+elseif ( myTaskState == 6) then 
+n = GetTask(1035) 
+end 
 
-end
+return n 
 
-
--- ×Óº¯Êı£¬ÉèÖÃµ±Ç°ÈÎÎñµÄ½ø³Ì×´Ì¬£¬1¡¢2¡¢3
-function SetTaskCourse(myTaskCourse)
-	SetTask(1028,myTaskCourse)
-end
+end 
 
 
--- ×Óº¯Êı£¬»ñÈ¡µ±Ç°ÈÎÎñµÄ½ø³Ì×´Ì¬£¬1¡¢2¡¢3
-function GetTaskCourse()
-	return GetTask(1028)
-end
+-- script viet hoa By http://tranhba.com  tö hµm sè , thiÕt trİ nhiÖm vô tr¹ng th¸i 
+-- script viet hoa By http://tranhba.com  1# tr­íc mÆt tiÕn hµnh ®İch sè lÇn 
+-- script viet hoa By http://tranhba.com  2# tr­íc mÆt tiÕn hµnh ®İch liªn ®Õm 
+-- script viet hoa By http://tranhba.com  3# tr­íc mÆt tiÕn hµnh ®İch hoµn ®Õm 
+-- script viet hoa By http://tranhba.com  4# cßn thõa l¹i hñy bá ®İch sè lÇn 
+-- script viet hoa By http://tranhba.com  5# nhµ ch¬i tr­íc mÆt së nhËn ®İch nhiÖm vô sè chøa ®ùng ë 1021 th­îng 
+-- script viet hoa By http://tranhba.com  6# nhµ ch¬i ë mçi mét vßng ®İch nªn liªn trung ®· lµm mÊy lÇn , lín nhÊt v× 4 
+function SetTaskState(myTaskState,myTaskValue) 
+
+local n 
+
+if ( myTaskState <= 4) then 
+n = GetTask(1020) 
+SetTask(1020,SetByte(n,myTaskState,myTaskValue)) 
+elseif ( myTaskState == 5) then -- script viet hoa By http://tranhba.com  nÕu nh­ lµ 5 lêi cña cßn l¹i lµ ghi chĞp nhµ ch¬i tr­íc mÆt së nhËn ®İch nhiÖm vô sè ë 1021 th­îng 
+SetTask(1021,myTaskValue) 
+elseif ( myTaskState == 6) then 
+SetTask(1035,myTaskValue) 
+end 
+
+end 
+
+
+-- script viet hoa By http://tranhba.com  tö hµm sè , thiÕt trİ nhiÖm vô tr­íc mÆt ®İch tiÕn tr×nh tr¹ng th¸i , 1#2#3 
+function SetTaskCourse(myTaskCourse) 
+SetTask(1028,myTaskCourse) 
+end 
+
+
+-- script viet hoa By http://tranhba.com  tö hµm sè , lÊy ®­îc nhiÖm vô tr­íc mÆt ®İch tiÕn tr×nh tr¹ng th¸i , 1#2#3 
+function GetTaskCourse() 
+return GetTask(1028) 
+end 
 
 
 
---  //////////////////////////////////////////////////////////////
--- //                  ¶Á±íÓëÈÎÎñµÄÊıÖµ´¦Àí                    //
---//////////////////////////////////////////////////////////////
+-- script viet hoa By http://tranhba.com  ////////////////////////////////////////////////////////////// 
+-- script viet hoa By http://tranhba.com  // häc biÓu cïng nhiÖm vô trŞ sè xö lı // 
+-- script viet hoa By http://tranhba.com ////////////////////////////////////////////////////////////// 
 
--- ËÑÑ°µÈ¼¶Ïà¶ÔÓ¦ÈÎÎñ±í£¬È·¶¨Íæ¼Òµ±Ç°µÄÈÎÎñÁ´µÚÒ»µÈ¼¶ÊÇÊôÓÚÄÄÒ»¼¶
-function GetFirstLink()
+-- script viet hoa By http://tranhba.com  s­u tÇm cÊp bËc t­¬ng ®èi øng nhiÖm vô biÓu , x¸c ®Şnh nhµ ch¬i tr­íc mÆt ®İch nhiÖm vô liªn ®Ö nhÊt ®¼ng cÊp lµ thuéc vÒ cÊp nµo 
+function GetFirstLink() 
 
-	local i
-	local myLevel = GetLevel()
-	local myTotalCol = tonumber(TabFile_GetRowCount(TL_LEVELLINK))
-	
-	for i = 2,myTotalCol do
-		if (myLevel > tonumber(TabFile_GetCell(TL_LEVELLINK,i,"level"))) then
-			
-		elseif (myLevel <= tonumber(TabFile_GetCell(TL_LEVELLINK,i,"level"))) then
-			if (i == 2) then
-				return tonumber(TabFile_GetCell(TL_LEVELLINK,2,"task"))
-			end
-			return tonumber(TabFile_GetCell(TL_LEVELLINK,i-1,"task"))
-		end
-	end
-	
---	return tonumber(TabFile_GetCell(TL_LEVELLINK,j,"task"))
-end
+local i 
+local myLevel = GetLevel() 
+local myTotalCol = tonumber(TabFile_GetRowCount(TL_LEVELLINK)) 
+
+for i = 2,myTotalCol do 
+if (myLevel > tonumber(TabFile_GetCell(TL_LEVELLINK,i,"level"))) then 
+
+elseif (myLevel <= tonumber(TabFile_GetCell(TL_LEVELLINK,i,"level"))) then 
+if (i == 2) then 
+return tonumber(TabFile_GetCell(TL_LEVELLINK,2,"task")) 
+end 
+return tonumber(TabFile_GetCell(TL_LEVELLINK,i-1,"task")) 
+end 
+end 
+
+-- script viet hoa By http://tranhba.com  return tonumber(TabFile_GetCell(TL_LEVELLINK,j,"task")) 
+end 
 
 
--- ËÑÑ°ÈÎÎñÁ´×Ü±í£¬»ñÈ¡ÏàÓ¦µÈ¼¶µÄËæ»úÀàĞÍÈÎÎñ
--- ´«Èë²ÎÊı myTaskLevel ÎªÈÎÎñÁ´µÄµÈ¼¶ 1~20
--- ·µ»ØÖµÎª 1~6 1£ºÎïÆ·¹ºÂò 2£ºÎïÆ·Ñ°ÕÒ 3£ºÎïÆ·Õ¹Ê¾ 4£ºµØÍ¼ÊÕ¼¯ 5£ºÊıÖµÉı¼¶ 6£ºÉ½ºÓÉçğ¢
-function GetTaskType(myTaskLevel)
+-- script viet hoa By http://tranhba.com  s­u tÇm nhiÖm vô liªn tæng biÓu , lÊy ®­îc t­¬ng øng cÊp bËc ®İch ngÉu nhiªn lo¹i h×nh nhiÖm vô 
+-- script viet hoa By http://tranhba.com  truyÒn vµo tham sæ myTaskLevel v× nhiÖm vô liªn ®İch cÊp bËc 1~20 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ lµ 1~6 1# vËt phÈm mua 2# vËt phÈm t×m kiÕm 3# vËt phÈm biÓu diÔn 4# b¶n ®å thu tËp 5# trŞ sè th¨ng cÊp 6# nói s«ng x· t¾c 
+function GetTaskType(myTaskLevel) 
 
-	local i,j,k = 0,0,0
-	local myMainRate = 0 -- ËùÓĞÈÎÎñÀàĞÍÔÚÒ»¸öµÈ¼¶ÀïµÄ×Ü±ÈÂÊ
-	local myTaskType -- ·µ»ØµÄÈÎÎñÀàĞÍ
-	
-	print("mylevel:   "..myTaskLevel)
-	
-	for i = 1,getn(Task_MainLevelRate[myTaskLevel]) do
+local i,j,k = 0,0,0 
+local myMainRate = 0 -- script viet hoa By http://tranhba.com  tÊt c¶ nhiÖm vô lo¹i h×nh ë mét c¸i cÊp bËc dÆm tæng so tû sè 
+local myTaskType -- script viet hoa By http://tranhba.com  trë vÒ ®İch nhiÖm vô lo¹i h×nh 
+
+print("mylevel: "..myTaskLevel) 
+
+for i = 1,getn(Task_MainLevelRate[myTaskLevel]) do 
 		myMainRate = myMainRate + Task_MainLevelRate[myTaskLevel][i]
-	end
-	
-	print ("Tæng cÊp bËc cña nhiÖm vô lµ:"..myMainRate)
-	
-	
-	-- ¸ù¾İÈ¨ÖØ¹«Ê½×îºóËæ»ú¼ÆËã³öÈÎÎñÀàĞÍ
-	j = C_Random(1,myMainRate)
-	
-	print ("Sè cÊp bËc ngÉu nhiªn cña nhiÖm vô lµ:"..j)
-	
-	for i = 1,getn(Task_MainLevelRate[myTaskLevel]) do
+end 
+
+print ("NhiÖm vô lo¹i h×nh quyÒn nÆng tæng sè # "..myMainRate) 
+
+
+-- script viet hoa By http://tranhba.com  c¨n cø quyÒn nÆng c«ng thøc cuèi cïng ngÉu nhiªn tİnh to¸n ra nhiÖm vô lo¹i h×nh 
+j = C_Random(1,myMainRate) 
+
+print ("NhiÖm vô lo¹i h×nh quyÒn nÆng ngÉu nhiªn ®Õm # "..j) 
+
+for i = 1,getn(Task_MainLevelRate[myTaskLevel]) do 
 		k = k + Task_MainLevelRate[myTaskLevel][i]
-		if ( j < k) then
-		print ("KÕt thóc tuÇn hoµn, chän lo¹i nhiÖm vô:"..i)
-			return i
-		end
-		print ("HiÖn t¹i tuÇn hoµn ch­a chän lo¹i nhiÖm vô. Tæng cÊp bËc cña nhiÖm vô lµ:"..k)
-	end
-	
-	-- Òì³£´¦Àí£¬Èç¹ûÍæ¼Ò¶¼Ñ¡²»µ½ÈÎÎñÀàĞÍµÄ»°¾ÍÑ¡ 4
-	
-	print("Chän lo¹i nhiÖm vô bŞ sù cè!");
-	
-	return 0
+if ( j < k) then 
+print ("TuÇn hoµn kÕt thóc , lùa chän nhiÖm vô lo¹i h×nh #"..i) 
+return i 
+end 
+print ("Tr­íc m¾t tuÇn hoµn lóc kh«ng cã lùa chän ®Õn nhiÖm vô lo¹i h×nh . nhiÖm vô quyÒn nÆng ®İch mÖt mái thªm tæng trŞ gi¸ lµ # "..k) 
+end 
 
-end
+-- script viet hoa By http://tranhba.com  dŞ th­êng xö lı , nÕu nh­ nhµ ch¬i còng chän kh«ng tíi nhiÖm vô lo¹i h×nh tho¹i liÒn chän 4 
 
+print("Ch©n vèn ®ang chän tr¹ch nhiÖm vô lo¹i h×nh thêi ®iÓm bŞ lçi #"); 
 
--- ËÑÑ°ÈÎÎñÁ´£¬È¡µÃÏàÓ¦µÄÈÎÎñ
--- ·µ»ØÖµÊÇ¸ÃÈÎÎñÔÚ±íÖĞµÄĞĞºÅ
-function GetTaskLink(myTaskType,myTaskLevel)
+return 0 
 
-	local myTaskCol -- ¼ÇÂ¼ÈÎÎñµÄĞĞºÅ
-
-	if ( myTaskType == 1 ) then -- Èç¹ûÊÇ¹ºÂòÎïÆ·µÄÈÎÎñ
-		myTaskCol = SelectTask(Task_BuyGoods,myTaskLevel)
-	elseif ( myTaskType == 2 ) then
-		myTaskCol = SelectTask(Task_FindGoods,myTaskLevel)	
-	elseif ( myTaskType == 3 ) then
-		myTaskCol = SelectTask(Task_ShowGoods,myTaskLevel)	
-	elseif ( myTaskType == 4 ) then
-		myTaskCol = SelectTask(Task_FindMaps,myTaskLevel)
-	elseif ( myTaskType == 5 ) then
-		myTaskCol = SelectTask(Task_UpGround,myTaskLevel)
-	elseif ( myTaskType == 6 ) then
-		myTaskCol = SelectTask(Task_WorldMaps,myTaskLevel)
-	end
-
-	return myTaskCol
-
-end
+end 
 
 
+-- script viet hoa By http://tranhba.com  s­u tÇm nhiÖm vô liªn , lÊy ®­îc t­¬ng øng nhiÖm vô 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ lµ nªn nhiÖm vô ë biÓu trung ®İch ®­îc sè 
+function GetTaskLink(myTaskType,myTaskLevel) 
+
+local myTaskCol -- script viet hoa By http://tranhba.com  ghi chĞp nhiÖm vô ®­îc sè 
+
+if ( myTaskType == 1 ) then -- script viet hoa By http://tranhba.com  nÕu nh­ lµ mua vËt phÈm ®İch nhiÖm vô 
+myTaskCol = SelectTask(Task_BuyGoods,myTaskLevel) 
+elseif ( myTaskType == 2 ) then 
+myTaskCol = SelectTask(Task_FindGoods,myTaskLevel) 
+elseif ( myTaskType == 3 ) then 
+myTaskCol = SelectTask(Task_ShowGoods,myTaskLevel) 
+elseif ( myTaskType == 4 ) then 
+myTaskCol = SelectTask(Task_FindMaps,myTaskLevel) 
+elseif ( myTaskType == 5 ) then 
+myTaskCol = SelectTask(Task_UpGround,myTaskLevel) 
+elseif ( myTaskType == 6 ) then 
+myTaskCol = SelectTask(Task_WorldMaps,myTaskLevel) 
+end 
+
+return myTaskCol 
+
+end 
 
 
 
 
 
--- ¸ù¾İÈÎÎñÁĞ±íÀïµÄÈ¨ÖØËæ»úÌô³öÈÎÎñ£¬·µ»ØÖµÎªÏàÓ¦ÈÎÎñ±í¸ñµÄĞĞºÅ
-function SelectTask(myTaskTable,myTaskLevel)
 
-local i,j,k = 0,0,0
-local myMainRate  = 0 -- ÈÎÎñµÄ×ÜÈ¨ÖØ
 
-	print ("Chän ®¼ng cÊp nhiÖm vô:"..myTaskLevel.."  ")
-	
-	print ("Trong ®¼ng cÊp nhiÖm vô tæng céng cã "..getn(myTaskTable[myTaskLevel]).."  nhiÖm vô ")
+-- script viet hoa By http://tranhba.com  c¨n cø nhiÖm vô liÖt biÓu dÆm quyÒn nÆng ngÉu nhiªn lùa ra nhiÖm vô , trë vÒ trŞ gi¸ lµ t­¬ng øng nhiÖm vô biÓu c¸ch ®İch ®­îc sè 
+function SelectTask(myTaskTable,myTaskLevel) 
 
-	for i=1,getn(myTaskTable[myTaskLevel]) do
+local i,j,k = 0,0,0 
+local myMainRate = 0 -- script viet hoa By http://tranhba.com  nhiÖm vô tæng quyÒn nÆng 
+
+print (" lùa chän nhiÖm vô cÊp bËc : "..myTaskLevel.." ") 
+
+print ("NhiÖm vô cÊp bËc trong tæng céng cã "..getn(myTaskTable[myTaskLevel]).." c¸ nhiÖm vô ") 
+
+for i=1,getn(myTaskTable[myTaskLevel]) do 
 		myMainRate = myMainRate + myTaskTable[myTaskLevel][i][2]
-	end
-	
-	print ("Chän tæng cÊp bËc nhiÖm vô cô thÓ:"..myMainRate)
-	
-	-- ¸ù¾İÈ¨ÖØ¹«Ê½×îºóËæ»ú¼ÆËã³ö¾ßÌåµÄÈÎÎñ
-	j = C_Random(1,myMainRate)
-	
---	print ("ÈÎÎñµÄ×ÜÈ¨ÖØ:  "..myMainRate)
---	print ("Ëæ»úµ½µÄÈÎÎñÈ¨ÖØ  :  "..j)
-	
-	for i=1,getn(myTaskTable[myTaskLevel]) do
-	
+end 
+
+print (" lùa chän ®Õn ®İch cô thÓ nhiÖm vô tæng quyÒn nÆng #"..myMainRate) 
+
+-- script viet hoa By http://tranhba.com  c¨n cø quyÒn nÆng c«ng thøc cuèi cïng ngÉu nhiªn tİnh to¸n ra cô thÓ nhiÖm vô 
+j = C_Random(1,myMainRate) 
+
+-- script viet hoa By http://tranhba.com  print ("NhiÖm vô tæng quyÒn nÆng : "..myMainRate) 
+-- script viet hoa By http://tranhba.com  print ("NgÉu nhiªn ®Õn ®İch nhiÖm vô quyÒn nÆng : "..j) 
+
+for i=1,getn(myTaskTable[myTaskLevel]) do 
+
 		k = k + myTaskTable[myTaskLevel][i][2]
-		
-		if ( j < k ) then
---			print ("Ñ¡Ôñµ½ÁË±í¸ñÖĞµÄµÚ  "..myTaskTable[myTaskLevel][i][1].."  ĞĞ¡£")
-			return myTaskTable[myTaskLevel][i][1]
-		end
-			
-	end
-	
-	-- Òì³£´¦Àí£¬Èç¹ûÍæ¼ÒÑ¡²»µ½µÄ»°Ôò·µ»Ø 0
-	print ("Chän nhiÖm vô cô thÓ bŞ sù cè!")
-	return 0
-	
-end
+
+if ( j < k ) then 
+-- script viet hoa By http://tranhba.com  print (" lùa chän ®Õn biÓu c¸ch trung ®İch thø "..myTaskTable[myTaskLevel][i][1].." ®­îc . ") 
+return myTaskTable[myTaskLevel][i][1] 
+end 
+
+end 
+
+-- script viet hoa By http://tranhba.com  dŞ th­êng xö lı , nÕu nh­ nhµ ch¬i chän kh«ng ®­îc lµ trë vÒ 0 
+print ("Ch©n vèn ®ang chän tr¹ch cô thÓ nhiÖm vô lóc bŞ lçi #") 
+return 0 
+
+end 
 
 
 
--- ×Óº¯Êı£¬·´»ØÒ»¸öÈÎÎñÀàĞÍËù¶ÔÓ¦±í¸ñµÄ×Ö·û±êÊ¶
-function GetTaskTextID(myTaskType)
+-- script viet hoa By http://tranhba.com  tö hµm sè , ph¶n trë vÒ mét c¸i nhiÖm vô lo¹i h×nh së ®èi øng biÓu c¸ch ®İch tù phï tiªu chİ 
+function GetTaskTextID(myTaskType) 
 
-local myTaskTextID
+local myTaskTextID 
 
-	if (myTaskType == 1) then
-		myTaskTextID = TL_BUYGOODS
-	elseif (myTaskType == 2) then
-		myTaskTextID = TL_FINDGOODS
-	elseif (myTaskType == 3) then
-		myTaskTextID = TL_SHOWGOODS
-	elseif (myTaskType == 4) then
-		myTaskTextID = TL_FINDMAPS
-	elseif (myTaskType == 5) then
-		myTaskTextID = TL_UPGROUND
-	elseif (myTaskType == 6) then
-		myTaskTextID = TL_WORLDMAPS
-	end
-	
-	return myTaskTextID
-end
+if (myTaskType == 1) then 
+myTaskTextID = TL_BUYGOODS 
+elseif (myTaskType == 2) then 
+myTaskTextID = TL_FINDGOODS 
+elseif (myTaskType == 3) then 
+myTaskTextID = TL_SHOWGOODS 
+elseif (myTaskType == 4) then 
+myTaskTextID = TL_FINDMAPS 
+elseif (myTaskType == 5) then 
+myTaskTextID = TL_UPGROUND 
+elseif (myTaskType == 6) then 
+myTaskTextID = TL_WORLDMAPS 
+end 
+
+return myTaskTextID 
+end 
 
 
--- ¼ÆËãÒ»¸öÈÎÎñµÄÈ¨ÖØÔÚÆäµ±Ç°µÈ¼¶ÖĞËùÕ¼µÄ°Ù·Ö±È
--- myTableName ´«ÈëµÄÒª¶ÁÈ¡±í¸ñµÄ×Ö·û
--- myTaskRate µ±Ç°ÈÎÎñµÄÈ¨ÖØ
--- myTableCol Ëù¶Á±íµÄÁĞ(×Ö·û»òÕßÊı×Ö)
-function CountTaskRate(myTableName,myTaskRate,myTableCol)
+-- script viet hoa By http://tranhba.com  tİnh to¸n mét c¸i nhiÖm vô ®İch quyÒn nÆng ë kú tr­íc mÆt cÊp bËc trung chiÕm ®o¹t ®İch phÇn tr¨m so 
+-- script viet hoa By http://tranhba.com  myTableName truyÒn vµo ®İch muèn häc lÊy biÓu c¸ch ®İch tù phï 
+-- script viet hoa By http://tranhba.com  myTaskRate nhiÖm vô tr­íc mÆt ®İch quyÒn nÆng 
+-- script viet hoa By http://tranhba.com  myTableCol së häc biÓu ®İch nhãm ( tù phï hoÆc lµ con sè ) 
+function CountTaskRate(myTableName,myTaskRate,myTableCol) 
 
-local i
-local myTotalRate = 0
-local myReadRate
-local myPercent
+local i 
+local myTotalRate = 0 
+local myReadRate 
+local myPercent 
 
-local myTableRow = TabFile_GetRowCount(myTableName) -- »ñÈ¡TABLEÎÄ¼şµÄ×ÜĞĞÊı
+local myTableRow = TabFile_GetRowCount(myTableName) -- script viet hoa By http://tranhba.com  lÊy ®­îc TABLE v¨n kiÖn ®İch tæng ®­îc ®Õm 
 
-	for i = 3,myTableRow-1 do
-		myReadRate = tonumber(TabFile_GetCell(myTableName,myTableRow,myTableCol))
+for i = 3,myTableRow-1 do 
+myReadRate = tonumber(TabFile_GetCell(myTableName,myTableRow,myTableCol)) 
 		myTotalRate = myTotalRate + myReadRate
 		i = i + 1
-	end
+end 
 
-myPercent = (myTaskRate / myTotalRate) * 100
+myPercent = (myTaskRate / myTotalRate) * 100 
 
-return myPercent
+return myPercent 
 
-end
-
-
-
--- ¼ÆËã´Ó¾ÉµÈ¼¶Éı¼¶µ½Íæ¼ÒÄ¿Ç°µÄµÈ¼¶ĞèÒª¶àÉÙ¾­ÑéÖµ
-function CountUpLevelExp(myOldLevel,myOldExp)
-
-local i
-local myLevel = GetLevel()
-local myExp = GetExp()
-
-local myTotalExp = 0
-
-if (myOldLevel<myLevel) then
+end 
 
 
-	for i=myOldLevel,myLevel do
+
+-- script viet hoa By http://tranhba.com  tİnh to¸n tõ cùu cÊp bËc th¨ng cÊp ®Õn nhµ ch¬i tr­íc m¾t ®İch cÊp bËc cÇn bao nhiªu kinh nghiÖm trŞ gi¸ 
+function CountUpLevelExp(myOldLevel,myOldExp) 
+
+local i 
+local myLevel = GetLevel() 
+local myExp = GetExp() 
+
+local myTotalExp = 0 
+
+if (myOldLevel<myLevel) then 
+
+
+for i=myOldLevel,myLevel do 
 		myTotalExp = myTotalExp + tonumber(TabFile_GetCell(TL_UPLEVELEXP,i+1,2))
-	end
-	
-	myTotalExp = (myTotalExp - myOldExp) - myExp
+end 
 
-	return myTotalExp
-else
-	return myExp - myOldExp
-end
+myTotalExp = (myTotalExp - myOldExp) - myExp 
 
-end
+return myTotalExp 
+else 
+return myExp - myOldExp 
+end 
 
-
-
--- ×Óº¯Êı£¬È¡µÃÈÎÎñÏàÓ¦µÄËµÃ÷£¬·µ»ØÒ»¶Î×Ö·û´®
-function GetTaskInfo()
-
-local myTaskMainInfo,myTaskOrder,myTaskInfo1,myTaskInfo2,myTaskInfo3
-
-	local myTaskType = GetPlayerTaskType()
-	
-	if (myTaskType == 1) then
-		
-		print("NhËn ®­îc ID:"..GetTaskTableCol())
-		
-		-- ÎïÆ·Ãû³Æ
-		myTaskOrder = TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo1")
-		
-		print("ThuyÕt minh nhiÖm vô:"..TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo1"))
-		
-		-- Ä¿µÄµØÃû³Æ
-		myTaskInfo1 = TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo")
-		
-		myTaskMainInfo = format("%s%s%s%s%s","®Õn  ",myTaskInfo1," mua  ",myTaskOrder," gióp ta.");
-		
-	elseif (myTaskType == 2) then
-	 
-		-- Ä§·¨ÊôĞÔ
-		myTaskOrder = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MagicCnName")
-		-- ¾ßÌåµÄÎäÆ÷Àà±ğ
-		myTaskInfo1 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"TaskInfo")
-		-- ×îĞ¡Ä§·¨ÊôĞÔ
-		myTaskInfo2 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MinValue")
-		-- ×î´óÄ§·¨ÊôĞÔ
-		myTaskInfo3 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MaxValue")
-		
-		if (myTaskOrder=="n") then
-		
-			myTaskMainInfo = format("%s%s%s","§i t×m <color=red>",myTaskInfo1,"<color> gióp ta.");
-		else
-			myTaskMainInfo = format("%s%s%s%s%s%s%s","§i t×m <color=red>",myTaskOrder,"<color> tèi thiÓu",myTaskInfo2," ",myTaskInfo1," gióp ta.");
-		end
-		
-	elseif (myTaskType == 3) then 
-		
-		-- Ä§·¨ÊôĞÔÖĞÎÄÃû
-		myTaskOrder = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MagicCnName")
-		-- Ä§·¨ÊôĞÔµÄ×îĞ¡Öµ
-		myTaskInfo1 = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MinValue")
-		-- Ä§·¨ÊôĞÔµÄ×î´óÖµ
-		myTaskInfo2 = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MaxValue")
-		
-		myTaskMainInfo = format("%s%s%s%s%s%s%s","§i t×m  trang bŞ hoÆc kho¸ng th¹ch <color=red>",myTaskOrder,"<color> thÊp nhÊt lµ ",myTaskInfo1," cao nhÊt lµ ",myTaskInfo2," ");
-		
-	elseif (myTaskType == 4) then 
-		
-		-- µØÍ¼µÄÃû³Æ
-		myTaskOrder = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"TaskInfo1")
-		
-		-- ËùÒªµÄµØÍ¼ÊıÁ¿
-		myTaskInfo1 = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"Num")
-		
-		-- µØÍ¼µÄÀàĞÍ
-		myTaskInfo2 = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"MapType")
-		
-		if (tonumber(myTaskInfo2) == 1) then
-			myTaskInfo3 = "§Şa §å chİ "
-		else
-			myTaskInfo3 = "MËt chİ "
-		end
-		
-		myTaskMainInfo = format("%s%s%s%s%s%s%s%s","§Õn <color=red>",myTaskOrder,"<color> t×m gióp ta",myTaskInfo1," quyÓn",myTaskOrder,myTaskInfo3,"vÒ ®©y.")
-		
-	elseif (myTaskType == 5) then
-		
-		-- ĞèÒªÌáÉıµÄÊıÖµÀàĞÍ
-		myTaskOrder = TabFile_GetCell(TL_UPGROUND,GetTaskTableCol(),"NumericType")
-		
-		-- ĞèÒªÌáÉıµÄÊıÖµ×ÜÊı
-		myTaskInfo1 = TabFile_GetCell(TL_UPGROUND,GetTaskTableCol(),"NumericValue")
-		
-		if (tonumber(myTaskOrder) == 1) then
-			myTaskInfo2 = " cÊp"
-		elseif (tonumber(myTaskOrder) == 2) then
-			myTaskInfo2 = "®iÓm kinh nghiÖm "
-		elseif (tonumber(myTaskOrder) == 3) then
-			myTaskInfo2 = "®iÓm danh väng"
-		elseif (tonumber(myTaskOrder) == 4) then
-			myTaskInfo2 = "®iÓm phóc duyªn"
-		elseif (tonumber(myTaskOrder) == 5) then
-			myTaskInfo2 = "®iÓm PK"
-		end
-		
-		myTaskMainInfo = format("%s%s%s%s","§i n©ng cÊp   ",myTaskInfo1," ",myTaskInfo2)
-		
-	elseif (myTaskType == 6) then
-		-- ĞèÒªÊÕ¼¯µÄÉ½ºÓÉçğ¢Í¼²ĞÆ¬
-		myTaskOrder = TabFile_GetCell(TL_WORLDMAPS,GetTaskTableCol(),"Num")
-		
-		myTaskMainInfo = format("%s%s%s","gióp ta thu thËp",myTaskOrder," m¶nh b¶n ®å S¬n Hµ X· T¾c.")
-	end
-
-	return myTaskMainInfo
- 
-end
+end 
 
 
 
-function AssignValue(myTaskVariable,myTaskTextID)
+-- script viet hoa By http://tranhba.com  tö hµm sè , lÊy ®­îc nhiÖm vô t­¬ng øng nãi râ , trë vÒ mét ®o¹n tù phï chuçi 
+function GetTaskInfo() 
 
-local i,j,k = 0,0,0
-local myTaskIndex = {}
-myTaskVariable = {}
-myTaskVariable[1] = {}
-myTaskVariable[1][1] = {}
+local myTaskMainInfo,myTaskOrder,myTaskInfo1,myTaskInfo2,myTaskInfo3 
 
-local myTableRow = TabFile_GetRowCount(myTaskTextID)
-local myColText
-local myReadRate
+local myTaskType = GetPlayerTaskType() 
 
---	print (format("%s%s%s",myTaskTextID,"  :  ",myTableRow))
-	
-	for i = 1,20 do
-		myTaskVariable[i]={}
-		for j=1,myTableRow - 1 do
-			myTaskVariable[i][j] = {0,0}
-		end
-	end
+if (myTaskType == 1) then 
 
-	for i = 1,20 do
-		myTaskIndex[i] = 0
-	end
+print(" lÊy ®­îc ®İch ®­îc sè #"..GetTaskTableCol()) 
 
-	for i = 1,20 do  -- ´ÓµÚÒ»¼¶µ½µÚ¶şÊ®¼¶µÄÀú±éÑ­»·
-		for j = 2,myTableRow do
-			myColText = format("%s%s","TaskRate",i)
-			myReadRate = tonumber(TabFile_GetCell(myTaskTextID,j,myColText))
-			
-			if (myReadRate ~= nil) then -- Èç¹ûÔÚÈÎÎñÁ´µÈ¼¶È¨ÖØÀïÃæÓĞÊıÖµµÄ»°£¬ÔòÊôÓÚÕâ¸öµÈ¼¶
+-- script viet hoa By http://tranhba.com  vËt phÈm tªn 
+myTaskOrder = TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo1") 
+
+print("NhiÖm vô nãi râ #"..TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo1")) 
+
+-- script viet hoa By http://tranhba.com  môc ®İch ®Şa tªn 
+myTaskInfo1 = TabFile_GetCell(TL_BUYGOODS,GetTaskTableCol(),"TaskInfo") 
+
+myTaskMainInfo = format("%s%s%s%s%s","§i ",myTaskInfo1,"Chç mua ",myTaskOrder,"Véi tíi ta . "); 
+
+elseif (myTaskType == 2) then 
+
+-- script viet hoa By http://tranhba.com  ma ph¸p thuéc tİnh 
+myTaskOrder = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MagicCnName") 
+-- script viet hoa By http://tranhba.com  cô thÓ vò khİ lo¹i kh¸c 
+myTaskInfo1 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"TaskInfo") 
+-- script viet hoa By http://tranhba.com  nhá nhÊt ma ph¸p thuéc tİnh 
+myTaskInfo2 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MinValue") 
+-- script viet hoa By http://tranhba.com  lín nhÊt ma ph¸p thuéc tİnh 
+myTaskInfo3 = TabFile_GetCell(TL_FINDGOODS,GetTaskTableCol(),"MaxValue") 
+
+if (myTaskOrder=="n") then 
+
+myTaskMainInfo = format("%s%s%s","§i t×m <color=red>",myTaskInfo1,"<color> véi tíi ta . "); 
+else 
+myTaskMainInfo = format("%s%s%s%s%s%s%s","§i t×m <color=red>",myTaskOrder,"<color> İt nhÊt ",myTaskInfo2,"§İch ",myTaskInfo1,"Véi tíi ta . "); 
+end 
+
+elseif (myTaskType == 3) then 
+
+-- script viet hoa By http://tranhba.com  ma ph¸p thuéc tİnh Trung v¨n tªn 
+myTaskOrder = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MagicCnName") 
+-- script viet hoa By http://tranhba.com  ma ph¸p thuéc tİnh ®İch nhá nhÊt trŞ gi¸ 
+myTaskInfo1 = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MinValue") 
+-- script viet hoa By http://tranhba.com  ma ph¸p thuéc tİnh ®İch lín nhÊt trŞ gi¸ 
+myTaskInfo2 = TabFile_GetCell(TL_SHOWGOODS,GetTaskTableCol(),"MaxValue") 
+
+myTaskMainInfo = format("%s%s%s%s%s%s%s","§i t×m mét d¹ng <color=red>",myTaskOrder,"<color> İt nhÊt v× ",myTaskInfo1,"Cao nhÊt v× ",myTaskInfo2,"§İch trang bŞ hoÆc lµ qu¸ng th¹ch cho ta . "); 
+
+elseif (myTaskType == 4) then 
+
+-- script viet hoa By http://tranhba.com  b¶n ®å ®İch tªn 
+myTaskOrder = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"TaskInfo1") 
+
+-- script viet hoa By http://tranhba.com  muèn ®İch b¶n ®å sè l­îng 
+myTaskInfo1 = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"Num") 
+
+-- script viet hoa By http://tranhba.com  b¶n ®å ®İch lo¹i h×nh 
+myTaskInfo2 = TabFile_GetCell(TL_FINDMAPS,GetTaskTableCol(),"MapType") 
+
+if (tonumber(myTaskInfo2) == 1) then 
+myTaskInfo3 = " b¶n ®å chİ " 
+else 
+myTaskInfo3 = " bİ chİ " 
+end 
+
+myTaskMainInfo = format("%s%s%s%s%s%s%s%s","§Õn <color=red>",myTaskOrder,"<color> chç cho ta t×m ",myTaskInfo1,"Cuèn ",myTaskOrder,myTaskInfo3,"Tíi . ") 
+
+elseif (myTaskType == 5) then 
+
+-- script viet hoa By http://tranhba.com  cÇn t¨ng lªn trŞ sè lo¹i h×nh 
+myTaskOrder = TabFile_GetCell(TL_UPGROUND,GetTaskTableCol(),"NumericType") 
+
+-- script viet hoa By http://tranhba.com  cÇn t¨ng lªn trŞ sè tæng sè 
+myTaskInfo1 = TabFile_GetCell(TL_UPGROUND,GetTaskTableCol(),"NumericValue") 
+
+if (tonumber(myTaskOrder) == 1) then 
+myTaskInfo2 = " cÊp cÊp bËc " 
+elseif (tonumber(myTaskOrder) == 2) then 
+myTaskInfo2 = " chót kinh nghiÖm trŞ gi¸ " 
+elseif (tonumber(myTaskOrder) == 3) then 
+myTaskInfo2 = " ®iÓm danh väng " 
+elseif (tonumber(myTaskOrder) == 4) then 
+myTaskInfo2 = " ®iÓm phóc duyªn " 
+elseif (tonumber(myTaskOrder) == 5) then 
+myTaskInfo2 = " ®iÓm PK trŞ gi¸ " 
+end 
+
+myTaskMainInfo = format("%s%s%s%s","§i t¨ng lªn ",myTaskInfo1," ",myTaskInfo2) 
+
+elseif (myTaskType == 6) then 
+-- script viet hoa By http://tranhba.com  cÇn b¾t ®­îc nói s«ng x· t¾c ®å m¶nh vôn 
+myTaskOrder = TabFile_GetCell(TL_WORLDMAPS,GetTaskTableCol(),"Num") 
+
+myTaskMainInfo = format("%s%s%s","§i cho ta thu tËp ",myTaskOrder,"Tê nói s«ng x· t¾c ®å ®İch m¶nh vôn tíi . ") 
+end 
+
+return myTaskMainInfo 
+
+end 
+
+
+
+function AssignValue(myTaskVariable,myTaskTextID) 
+
+local i,j,k = 0,0,0 
+local myTaskIndex = {} 
+myTaskVariable = {} 
+myTaskVariable[1] = {} 
+myTaskVariable[1][1] = {} 
+
+local myTableRow = TabFile_GetRowCount(myTaskTextID) 
+local myColText 
+local myReadRate 
+
+-- script viet hoa By http://tranhba.com  print (format("%s%s%s",myTaskTextID," : ",myTableRow)) 
+
+for i = 1,20 do 
+myTaskVariable[i]={} 
+for j=1,myTableRow - 1 do 
+myTaskVariable[i][j] = {0,0} 
+end 
+end 
+
+for i = 1,20 do 
+myTaskIndex[i] = 0 
+end 
+
+for i = 1,20 do -- script viet hoa By http://tranhba.com  tõ ®Ö nhÊt cÊp ®Õn thø hai m­¬i cÊp ®İch lŞch lÇn tuÇn hoµn 
+for j = 2,myTableRow do 
+myColText = format("%s%s","TaskRate",i) 
+myReadRate = tonumber(TabFile_GetCell(myTaskTextID,j,myColText)) 
+
+if (myReadRate ~= nil) then -- script viet hoa By http://tranhba.com  nÕu nh­ ë nhiÖm vô liªn cÊp bËc quyÒn nÆng bªn trong cã mÊy trŞ gi¸ lêi cña , lµ thuéc vÒ c¸i nµy cÊp bËc 
 
 					myTaskIndex[i] = myTaskIndex[i] + 1
-					myTaskVariable[i][myTaskIndex[i]] = {j,myReadRate}
-			end
-		end
---		print ("The "..myTaskTextID.." 's Task: "..i.." have: "..getn(myTaskVariable[i]).." members.");
-	end
-	
---	print (format("%s%s%s",myTaskTextID,"  :  ","finshed!!!"))
-	
-return myTaskVariable
+myTaskVariable[i][myTaskIndex[i]] = {j,myReadRate} 
+end 
+end 
+-- script viet hoa By http://tranhba.com  print ("The "..myTaskTextID.." 's Task: "..i.." have: "..getn(myTaskVariable[i]).." members."); 
+end 
 
-end
+-- script viet hoa By http://tranhba.com  print (format("%s%s%s",myTaskTextID," : ","finshed!!!")) 
 
+return myTaskVariable 
 
--- ËùÓĞÈÎÎñÀàĞÍÔÚÃ¿¸öµÈ¼¶ÖĞ±ÈÂÊµÄË÷Òı
-function AssignValue_TaskRate(myTaskVariable,myTaskTextID)
-
-local i,j,k
-
-myTaskVariable = {}
-myTaskVariable[1] = {}
-
-local myTableRow = TabFile_GetRowCount(myTaskTextID) -- »ñÈ¡TABLEÎÄ¼şµÄ×ÜĞĞÊı
-local myTableCol -- ºÏ²¢×Ö·û´®£¬¹¹Ôì±íÍ·±êÊ¶£º"level20"
-local myRate
-
-	for i = 1,TL_MAXLINKS do
-		myTaskVariable[i]={}
-		for j=1,6 do
-			myTaskVariable[i][j] = 0
-		end
-	end
-	
-	k = 0
-	
-	for i = 1,TL_MAXLINKS do
-		for j = 2,myTableRow do
-			k = j - 1 
-			myTableCol = format("%s%s","level",i)
-			myRate = tonumber(TabFile_GetCell(myTaskTextID,j,myTableCol))
-			myTaskVariable[i][k] = myRate
---			print ("MyTaskLevel: "..i.."  MyTaskType: "..k.." MyRate:  "..myRate)
-		end
-	end
-
-return myTaskVariable
-
-end
+end 
 
 
--- ¹¹Ôì½±ÀøÄÚ´æ±í¸ñ
-function AssignValue_Award(myTaskVariable,myTaskTextID)
+-- script viet hoa By http://tranhba.com  tÊt c¶ nhiÖm vô lo¹i h×nh ë mçi cÊp bËc trung so tû sè ®İch t¸c dÉn 
+function AssignValue_TaskRate(myTaskVariable,myTaskTextID) 
 
-local i,j = 0,1
+local i,j,k 
 
-myTaskVariable = {}
-myTaskVariable[1] = {}
+myTaskVariable = {} 
+myTaskVariable[1] = {} 
 
-local myTableRow = TabFile_GetRowCount(myTaskTextID)
+local myTableRow = TabFile_GetRowCount(myTaskTextID) -- script viet hoa By http://tranhba.com  lÊy ®­îc TABLE v¨n kiÖn ®İch tæng ®­îc ®Õm 
+local myTableCol -- script viet hoa By http://tranhba.com  thèng nhÊt tù phï chuçi , cÊu t¹o biÓu ®Çu tiªu chİ #"level20" 
+local myRate 
 
-	for i = 1,myTableRow - 1 do
-		myTaskVariable[i]={}
-	end
-	
-	for i = 1,myTableRow - 1 do
+for i = 1,TL_MAXLINKS do 
+myTaskVariable[i]={} 
+for j=1,6 do 
+myTaskVariable[i][j] = 0 
+end 
+end 
+
+k = 0 
+
+for i = 1,TL_MAXLINKS do 
+for j = 2,myTableRow do 
+k = j - 1 
+myTableCol = format("%s%s","level",i) 
+myRate = tonumber(TabFile_GetCell(myTaskTextID,j,myTableCol)) 
+myTaskVariable[i][k] = myRate 
+-- script viet hoa By http://tranhba.com  print ("MyTaskLevel: "..i.." MyTaskType: "..k.." MyRate: "..myRate) 
+end 
+end 
+
+return myTaskVariable 
+
+end 
+
+
+-- script viet hoa By http://tranhba.com  cÊu t¹o t­ëng th­ëng néi tån biÓu c¸ch 
+function AssignValue_Award(myTaskVariable,myTaskTextID) 
+
+local i,j = 0,1 
+
+myTaskVariable = {} 
+myTaskVariable[1] = {} 
+
+local myTableRow = TabFile_GetRowCount(myTaskTextID) 
+
+for i = 1,myTableRow - 1 do 
+myTaskVariable[i]={} 
+end 
+
+for i = 1,myTableRow - 1 do 
 		j = i + 1
-		myTaskVariable[i] = {j,tonumber(TabFile_GetCell(myTaskTextID,j,"TaskValue"))}
-		print("Lo¹i phÇn th­ëng:"..myTaskTextID.."   PhÇn th­ëng nhiÖm vô ID:"..j.."   Gi¸ trŞ phÇn th­ëng:"..myTaskVariable[i][2])
-	end
-	
-return myTaskVariable
-	
-end
+myTaskVariable[i] = {j,tonumber(TabFile_GetCell(myTaskTextID,j,"TaskValue"))} 
+print("T­ëng th­ëng lo¹i h×nh #"..myTaskTextID.." nhiÖm vô t­ëng th­ëng ®­îc sè #"..j.." t­ëng th­ëng gi¸ trŞ #"..myTaskVariable[i][2]) 
+end 
+
+return myTaskVariable 
+
+end 
 
 
--- ½¨Á¢½±ÀøÈ¨ÖØË÷Òı±í
--- ´«Èë²ÎÊı£ºmyTaskVariable ÊÇÔ­Ê¼µÄ½±Àø¼ÛÖµÁĞ±í£¬myAwardValue ÊÇ¼ÆËãºóµÄÎïÆ·×Ü¼ÛÖµÁ¿
--- ·µ»ØÖµÎªÃ¿¸ö½±ÀøµÄ±í¸ñÎÄ¼şĞĞºÅË÷ÒıÓëÆäÈ¨ÖØ
-function AssignValue_AwardRate(myAwardVariable,myAwardValue)
+-- script viet hoa By http://tranhba.com  thµnh lËp t­ëng th­ëng quyÒn nÆng t¸c dÉn biÓu 
+-- script viet hoa By http://tranhba.com  truyÒn vµo tham sæ #myTaskVariable lµ nguyªn thñy ®İch t­ëng th­ëng gi¸ trŞ liÖt biÓu , myAwardValue lµ tİnh to¸n sau ®İch vËt phÈm tæng gi¸ trŞ l­îng 
+-- script viet hoa By http://tranhba.com  trë vÒ trŞ gi¸ lµ mçi t­ëng th­ëng ®İch biÓu c¸ch v¨n kiÖn ®­îc sè t¸c dÉn thay v× quyÒn nÆng 
+function AssignValue_AwardRate(myAwardVariable,myAwardValue) 
 
-local i,j = 0,0
-local myAwardRate = {} -- ×ª»»ºóµÄÈ¨ÖØ±í
-local myAwardNum = getn(myAwardVariable)
-	
-	for i = 1,myAwardNum do
-		myAwardRate[i]={}
-	end
-	
-	for i=1,myAwardNum do
-		j=floor((myAwardValue/(myAwardNum*(myAwardVariable[i][2])))*10000000)
-		myAwardRate[i] = {i,j}
-	end
-	
-	return myAwardRate
-	
+local i,j = 0,0 
+local myAwardRate = {} -- script viet hoa By http://tranhba.com  chuyÓn ®æi sau ®İch quyÒn nÆng biÓu 
+local myAwardNum = getn(myAwardVariable) 
+
+for i = 1,myAwardNum do 
+myAwardRate[i]={} 
+end 
+
+for i=1,myAwardNum do 
+j=floor((myAwardValue/(myAwardNum*(myAwardVariable[i][2])))*10000000) 
+myAwardRate[i] = {i,j} 
+end 
+
+return myAwardRate 
+
 end

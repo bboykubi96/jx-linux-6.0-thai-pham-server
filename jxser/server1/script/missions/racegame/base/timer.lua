@@ -1,6 +1,6 @@
 
 
 
-function OnTimer()
-	tbMissionClass:OnTimer()
+function OnTimer() 
+tbMissionClass:OnTimer() 
 end;

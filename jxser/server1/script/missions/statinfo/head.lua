@@ -1,30 +1,30 @@
 
----------------------------------------------------------
-MSID_STAT_GOODS_SALE		= 32 -- ÎïÆ·ÏúÊÛÍ³¼Æ- Mission ID
-TMID_STAT_GOODS_SALE		= 60 -- ÎïÆ·ÏúÊÛÍ³¼Æ- ¶¨Ê±Æ÷ID
-INTERVAL_STAT_GOODS_SALE	= 60*60*18 -- 60·ÖÖÓÍ³¼ÆÒ»´Î
----------------------------------------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+MSID_STAT_GOODS_SALE = 32 -- script viet hoa By http://tranhba.com  vËt phÈm tiªu thô thèng kª - Mission ID 
+TMID_STAT_GOODS_SALE = 60 -- script viet hoa By http://tranhba.com  vËt phÈm tiªu thô thèng kª - ®Þnh lóc khÝ ID 
+INTERVAL_STAT_GOODS_SALE = 60*60*18 -- script viet hoa By http://tranhba.com  60 phót thèng kª mét lÇn 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
 
--- Í³¼ÆÕ½¶ÓÐÅÏ¢
-LGTYPE_STATINFO 			= 10000 -- Õ½¶ÓÀàÐÍ
-LGNAME_STAT_GOODS_SALE 		= "stat_goodssale" -- Õ½¶ÓÃû³Æ
+-- script viet hoa By http://tranhba.com  thèng kª chiÕn ®éi tin tøc 
+LGTYPE_STATINFO = 10000 -- script viet hoa By http://tranhba.com  chiÕn ®éi lo¹i h×nh 
+LGNAME_STAT_GOODS_SALE = "stat_goodssale" -- script viet hoa By http://tranhba.com  chiÕn ®éi tªn 
 
----------------------------------------------------------
--- Í³¼ÆÏîÄ¿ÈÎÎñ±äÁ¿ID¶¨Òå
-LG_STATITEM_TASKID_TOTAL	= 0; -- ×ÜÍ³¼Æ¼ÇÊý(LeagueMember TaskID)
-LG_STATITEM_TASKID_TODAY	= 1; -- µ±ÌìÍ³¼Æ¼ÇÊý(LeagueMember TaskID)
--- 1 ~ 12 12¸öÔÂ·ÝµÄÍ³¼Æ¼ÇÊý
-	-- 2005Äê£º501~512
-	-- 2006Äê£º601~612
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  thèng kª bé m«n nhiÖm vô thay ®æi l­îng ID ®Þnh nghÜa 
+LG_STATITEM_TASKID_TOTAL = 0; -- script viet hoa By http://tranhba.com  Tæng thèng kÕ nhí ®Õm (LeagueMember TaskID) 
+LG_STATITEM_TASKID_TODAY = 1; -- script viet hoa By http://tranhba.com  ngµy ®ã thèng kª nhí ®Õm (LeagueMember TaskID) 
+-- script viet hoa By http://tranhba.com  1 ~ 12 12 th¸ng ph©n ®Ých thèng kª nhí ®Õm 
+-- script viet hoa By http://tranhba.com  2005 n¨m #501~512 
+-- script viet hoa By http://tranhba.com  2006 n¨m #601~612 
 
-LG_STAT_TASKID_CURDATE		= 0; -- µ±Ç°Í³¼ÆÈÕÆÚ(League TaskID)
----------------------------------------------------------
--- »õ±ÒÀàÐÍ
-CURRENCYTYPE_MONEY			= 1; -- ½£ÏÀ±Ò
-CURRENCYTYPE_FUYUAN			= 2; -- ¸£Ôµ
-CURRENCYTYPE_COIN			= 3; -- Í­Ç®
-CURRENCYTYPE_SCORE			= 4; -- »ý·Ö
+LG_STAT_TASKID_CURDATE = 0; -- script viet hoa By http://tranhba.com  tr­íc mÆt thèng kª nhËt kú (League TaskID) 
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com - 
+-- script viet hoa By http://tranhba.com  hãa tÖ lo¹i h×nh 
+CURRENCYTYPE_MONEY = 1; -- script viet hoa By http://tranhba.com  kiÕm hiÖp tiÒn 
+CURRENCYTYPE_FUYUAN = 2; -- script viet hoa By http://tranhba.com  phóc duyªn 
+CURRENCYTYPE_COIN = 3; -- script viet hoa By http://tranhba.com  ®ång tiÒn 
+CURRENCYTYPE_SCORE = 4; -- script viet hoa By http://tranhba.com  tÝch ph©n 
 
--- Í³¼ÆÊý¾ÝÀàÐÍ
-STATDATA_LATECACHE 		= 0; -- ×î½ü»º´æ
-STATDATA_TOTALFORSTART	= 1; -- ´Ó·þÎñÆ÷Æô¶¯ºóµÄ×ÜÊý
+-- script viet hoa By http://tranhba.com  thèng kª sè liÖu lo¹i h×nh 
+STATDATA_LATECACHE = 0; -- script viet hoa By http://tranhba.com  gÇn nhÊt chËm tån 
+STATDATA_TOTALFORSTART = 1; -- script viet hoa By http://tranhba.com  tõ phôc vô khÝ khëi ®éng sau ®Ých tæng sè 

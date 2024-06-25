@@ -1,33 +1,30 @@
-Include([[\script\missions\libfestival\head.lua]]);
+Include([[\script\missions\libfestival\head.lua]]); 
 
-function InitMission()
-	local i;
-	for i = 1, 40 do
-		SetMissionV(i, 0);
-	end;
-	
-	for i = 1, 10 do
-		SetMissionS(i, "");
-	end;
-	
-	SetMissionV(MS_CO_TIMERSTATE, 1);
+function InitMission() 
+local i; 
+for i = 1, 40 do 
+SetMissionV(i, 0); 
+end; 
 
-	local OldSubWorld = SubWorld;
-	SubWorld = SubWorldID2Idx(CO_MAPID[2]);
-	StartMissionTimer(CO_MISSIONID, CO_FAIRY_SMALLTIMERID, CO_INTERVER);	--Ë¢¹Ö¼ÆÊ±Æ÷
-	StartMissionTimer(CO_MISSIONID, CO_REPORT_SMALLTIMERID, CO_RUNINTERVER);     --±¨µÀ¼ÆÊ±Æ÷
-	SubWorld = OldSubWorld;
-end;
+for i = 1, 10 do 
+SetMissionS(i, ""); 
+end; 
 
-function EndMission()
-	EndMission_add();
-	StopMissionTimer(CO_MISSIONID, CO_FAIRY_SMALLTIMERID);
-	StopMissionTimer(CO_MISSIONID, CO_REPORT_SMALLTIMERID);
-end;
+SetMissionV(MS_CO_TIMERSTATE, 1); 
 
-function OnLeave()
-	SetLogoutRV(0);
-end
+local OldSubWorld = SubWorld; 
+SubWorld = SubWorldID2Idx(CO_MAPID[2]); 
+StartMissionTimer(CO_MISSIONID, CO_FAIRY_SMALLTIMERID, CO_INTERVER); -- script viet hoa By http://tranhba.com  cµ tr¸ch tÝnh giê khÝ 
+StartMissionTimer(CO_MISSIONID, CO_REPORT_SMALLTIMERID, CO_RUNINTERVER); -- script viet hoa By http://tranhba.com  b¸o c¸o tÝnh giê khÝ 
+SubWorld = OldSubWorld; 
+end; 
 
+function EndMission() 
+EndMission_add(); 
+StopMissionTimer(CO_MISSIONID, CO_FAIRY_SMALLTIMERID); 
+StopMissionTimer(CO_MISSIONID, CO_REPORT_SMALLTIMERID); 
+end; 
 
-
+function OnLeave() 
+SetLogoutRV(0); 
+end 

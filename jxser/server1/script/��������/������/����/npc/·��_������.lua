@@ -10,7 +10,7 @@ Include("\\script\\misc\\daiyitoushi\\toushi_function.lua")	-- script viet hoa B
 
 Include("\\script\\item\\skillbook.lua")
 
-function main_com() 
+function main() 
 
 if (GetLevel() >= 120 and GetTask(LV120_SKILL_STATE) ~= 19 and GetLastFactionNumber() == 5) then 
 Describe("T×m ta cã chuyÖn g× ", 2, 

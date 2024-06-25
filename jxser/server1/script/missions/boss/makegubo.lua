@@ -1,4 +1,4 @@
-
+---------------------------------***Edit*By*Heart*Doldly***------------------------------------
 function main()
 	mapindex = SubWorldID2Idx(225)
 	if (mapindex < 0 ) then

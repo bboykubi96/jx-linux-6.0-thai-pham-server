@@ -1,8 +1,11 @@
+
+
 SOSkillLevelUp={}
 MESSAGES={
 	"V× c¨n b¶n cña [%s] b¹n qu¸ thÊp, h¹n chÕ [%s] luyÖn cÊp.",
 	"V× c¨n b¶n cña [%s] b¹n qu¸ thÊp, h¹n chÕ [%s] t¨ng cÊp.",
-	" [%s] cña b¹n ®· ®Õn tèi ®a, kh«ng thÓ tiÕp tôc th¨ng cÊp ®­îc!"
+	"CÊp ®é tu luyÖn cña b¹n ®· ®¹t ®Ønh råi, kh«ng thÓ n©ng cao h¬n n÷a.",
+	"Ng­¬i vÉn ch­a lÜnh héi ®­îc ?%s? kÜ x¶o tu luyÖn cÊp cao h¬n, kh«ng thÓ tu luyÖn kÜ n¨ng nµy"
 }
 
 --¶ëáÒÆÕ¶ÉÖÚÉúÉý¼¶ÏÞÖÆ
@@ -71,12 +74,18 @@ end
 function SOSkillLevelUp.Pililuanhuan_ji()
 	local perSkills={{45,"TÝch LÞch ®¬n"},{351,"Lo¹n Hoµn KÝch"}}
 	local mainSkill = {1110,"TÝch LÞch Lo¹n Hoµn KÝch"}
+	local nMaxLevel = GetSkillMaxLevel(mainSkill[1])
 	local mlvl = HaveMagic(mainSkill[1]),plvl
 	local i
-	if(mlvl>19) then
+	if(mlvl>=nMaxLevel) then
 		Msg2Player(format(MESSAGES[3],mainSkill[2]))
 		return 0
 	end
+	if mlvl == 30 and tbLvUp150L21Limit:IsAvailable(mainSkill[1]) == 0 then
+		Msg2Player(format(MESSAGES[4],mainSkill[2]))
+		return 0
+	end
+	
 	for i=1,getn(perSkills) do
 		plvl = HaveMagic(perSkills[i][1])
 		if(plvl < 5) then

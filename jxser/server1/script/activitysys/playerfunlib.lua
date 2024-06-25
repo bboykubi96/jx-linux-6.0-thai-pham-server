@@ -30,9 +30,6 @@ function PlayerFunLib:GetTaskDailyCount(nTaskId)
 	return mod(nTaskValue, 256)
 end
 
-
---主角有关的 判断
-
 function PlayerFunLib:CheckInMap(szMapList, szFailMsg)
 	
 	local nMapId = GetWorldPos();
@@ -546,8 +543,7 @@ function PlayerFunLib:ShowSubDailog(szNpcName, szTitle, pDailog)
 end
 
 function PlayerFunLib:AddExp(nExp, bFlag, szLogTitle, szAction)
-	Add120SkillExp(nExp/10)
-	Clear120SkillExpLimit ()
+	
 	nExp = lib:NumberParamTrans(nExp) 
 	local tbExp = {}
 	if bFlag == 1 then
@@ -558,7 +554,6 @@ function PlayerFunLib:AddExp(nExp, bFlag, szLogTitle, szAction)
 	szAction = szAction or ""
 	
 	tbAwardTemplet:Give(tbExp, 1, {szLogTitle, szAction})
-	
 end
 
 

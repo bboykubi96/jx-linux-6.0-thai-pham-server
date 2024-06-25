@@ -1,36 +1,22 @@
---Trung sinh bac dau lao nhan minh nguyet tran edit by mcteam
+-- ====================== ÎÄ¼şĞÅÏ¢ ======================
+
+-- ½£ÏÀÇéÔµÍøÂç°æÔ½ÄÏ°æ - NPC¶Ô»°´¦Àí
+-- ÎÄ¼şÃû¡¡£ºnpc_saodiseng.lua
+-- ´´½¨Õß¡¡£º×Ó·Çô~
+-- ´´½¨Ê±¼ä£º2009-02-04 16:25:15
+
+-- ======================================================
 
 Include("\\script\\task\\metempsychosis\\task_func.lua")
 Include("\\script\\task\\metempsychosis\\translife_4.lua")
 --Phong V©n LÖnh Bµi - §iÒu chØnh thêi gian trïng sinh ®èi víi c¸c t©n thñ - Modified By DinhHQ - 20110926
 Include("\\script\\activitysys\\config\\1005\\check_func.lua")
-Include("\\script\\global\\g7vn\\g7configall.lua")
-
-Include("\\script\\task\\metempsychosis\\task_head.lua");
-Include("\\script\\task\\metempsychosis\\task_func.lua");
+-- ±»Ô½ÄÏÇ¿ÖÆÇ¨ÒÆµ½ ±±¶·ÀÏÈË´¦
 function beidou_translife_main()
-
-	--dofile("script/task/metempsychosis/npc_saodiseng.lua");
-	--dofile("script/task/metempsychosis/task_head.lua");
-	--dofile("script/task/metempsychosis/task_func.lua");
-	--dofile("script/global/g7vn/g7configall.lua")
-	if(trungsinhbacdaulaonhan == 0) then
-		Say("Chøc n¨ng trïng sinh t¹m thêi ch­a më.")
-		return 1;
-	end
-
-	local n_transcount = ST_GetTransLifeCount();
-	Msg2Player(transcount)
-	if n_transcount >= solantrungsinh then
-	local solantrungsinhtt = solantrungsinh + 1
-		Say("Chøc n¨ng trïng sinh lÇn thø "..solantrungsinhtt.." t¹m thêi ch­a më.")
-		return 1;
-	end 
-
 	CreateTaskSay({"<dec><npc>L¹i ®Õn 1 ng­êi n÷a? Xem ra chuyÖn ta ®¹t ®­îc <B¾c §Èu Tr­êng Sinh ThuËt - T©m Ph¸p Thiªn> kh«ng cßn lµ bİ mËt n÷a råi. LÏ nµo viÖc phÕ vâ c«ng kh«ng lµm cho thiªn h¹ sî h·i hay sao. ViÖc ®· nh­ thÕ nµy råi, ng­¬i t×m ta cã viÖc g×.",
 		"PhÕ vâ c«ng? Ng­êi ®õng däa ta chø?/zhuansheng_ondialog",
-		--"KiÓm tra kü n¨ng trïng sinh 4 cßn d­ ®iÓm kü n¨ng/querySkillPoint_4",
-		--"TÈy ®iÓm kü n¨ng trïng sinh 4/wantClearSkillPoint_4",
+		"KiÓm tra kü n¨ng trïng sinh 4 cßn d­ ®iÓm kü n¨ng/querySkillPoint_4",
+		"TÈy ®iÓm kü n¨ng trïng sinh 4/wantClearSkillPoint_4",
 		"Vâ c«ng, t©m ph¸p c¸i g×! L¹i thªm 1 kÎ ®iªn khïng/OnCancel"
 		});
 end
@@ -74,7 +60,7 @@ function zhuansheng_help_require()
 		.."<enter>  ".."3. Cëi bá tÊt c¶ trang bŞ vµ ngùa trªn ng­êi."
 		.."<enter>  ".."4. B¾t buéc ph¶i tho¸t khái chiÕn ®éi vâ l©m liªn ®Êu."
 		.."<enter>  ".."5. Kh«ng ®­îc cßn nhiÖm vô ch­a hoµn thµnh (S¸t thñ, tİn sø, D· TÈu)."
-		.."<enter>  ".."6. ChuyÓn sinh lÇn thø 1 ®Õn thø 3 cÇn cã 10.000 v¹n l­îng, chuyÓn sinh lÇn thø 4 cÇn cã 20.000 v¹n l­îng"
+		.."<enter>  ".."6. ChuyÓn sinh lÇn thø 1 ®Õn thø 3 cÇn cã 100 v¹n l­îng, chuyÓn sinh lÇn thø 4 cÇn cã 200 v¹n l­îng"
 		.."<enter>  "..format("7. ChuyÓn sinh lÇn 4 cÇn cã %d c¸i %s.", TBITEMNEED_4[1].nCount, TBITEMNEED_4[1].szName)
 		.."<enter>  "..format("8. ChuyÓn sinh lÇn 4 cÇn cã %d c¸i %s.", TBITEMNEED_4[2].nCount, TBITEMNEED_4[2].szName)
 		.."<enter>  ".."9. Ch­a nhËn hoÆc ch­a hoµn thµnh nhiÖm vô kÜ n¨ng cÊp 150",
@@ -112,7 +98,7 @@ end
 function zhuansheng_want_learn()
 	local n_transcount = ST_GetTransLifeCount()
 	
-	if (n_transcount >= 6) then
+	if (n_transcount >= 4) then
 		CreateTaskSay({"<dec><npc>"..format("LÇn chuyÓn sinh thø %d vÉn ch­a më, thêi gian cô thÓ sÏ cËp nhËt sau", 5), 
 			"KÕt thóc ®èi tho¹i/OnCancel"});
 		return 0;
@@ -172,6 +158,7 @@ function zhuansheng_sure_learn(n_resist)
 	local nlevel = GetLevel();
 	--×ªÉúÊ±µÄ´¦Àí
 	LeaveTeam();	--½âÉ¢×é¶Ó¹ØÏµ
+	
 	ST_DoTransLife();		--Ö´ĞĞ×ªÉú£¬»á×Ô¶¯µ÷ÓÃ\\script\\global\\translife.luaµÄmainº¯Êı ·µ»ØÖµÎª1Îª³É¹¦£¬³É¹¦ºó»á¼ÇÂ¼×ªÉúÇ°µÄµÈ¼¶¡£
 	
 	CreateTaskSay({"<dec><npc>Ng­¬i ®· häc <B¾c §Èu Tr­êng Sinh ThuËt - T©m Ph¸p Thiªn> råi.", "§a ta s­ phô ®· chØ gi¸o/OnCancel"});
@@ -183,21 +170,21 @@ function check_zhuansheng()
 		return 0;
 	end
 	local ntranscount = ST_GetTransLifeCount();
-	--if (ntranscount ~= 0) then
+	if (ntranscount ~= 0) then
 		--Phong V©n LÖnh Bµi - §iÒu chØnh thêi gian trïng sinh ®èi víi c¸c t©n thñ - Modified By DinhHQ - 20110926
-		--if tbPVLB_Check:IsNewPlayer() == 1 and tbPVLB_Check:CheckTime() == 1 then
-			--local tb = {6, 10, 180, 180, 180}
-			--if (GetTask(TSK_ZHUANSHENG_LASTTIME) + tb[ntranscount]*24*60*60 >= GetCurServerTime()) then
-				--CreateTaskSay({format(TB_TRANSLIFE_ERRORMSG[12], tb[ntranscount]), "§­îc råi./OnCancel"});
-				--return 0;
-			--end
-		--else
-			--if (GetTask(TSK_ZHUANSHENG_LASTTIME) + TB_TRANSTIME_LIMIT[ntranscount]*24*60*60 >= GetCurServerTime()) then
-				--CreateTaskSay({format(TB_TRANSLIFE_ERRORMSG[12], TB_TRANSTIME_LIMIT[ntranscount]), "§­îc råi./OnCancel"});
-				--return 0;
-			--end
-		--end	
-	--end
+		if tbPVLB_Check:IsNewPlayer() == 1 and tbPVLB_Check:CheckTime() == 1 then
+			local tb = {6, 10, 180, 180, 180}
+			if (GetTask(TSK_ZHUANSHENG_LASTTIME) + tb[ntranscount]*24*60*60 >= GetCurServerTime()) then
+				CreateTaskSay({format(TB_TRANSLIFE_ERRORMSG[12], tb[ntranscount]), "§­îc råi./OnCancel"});
+				return 0;
+			end
+		else
+			if (GetTask(TSK_ZHUANSHENG_LASTTIME) + TB_TRANSTIME_LIMIT[ntranscount]*24*60*60 >= GetCurServerTime()) then
+				CreateTaskSay({format(TB_TRANSLIFE_ERRORMSG[12], TB_TRANSTIME_LIMIT[ntranscount]), "§­îc råi./OnCancel"});
+				return 0;
+			end
+		end	
+	end
 	
 	--type=2 ºÃÏñÊÇÉíÉÏ
 	--type=3 Ó¦¸ÃÊÇ±³°ü
@@ -210,11 +197,10 @@ function check_zhuansheng()
 	--	return 0;
 	--end
 	--T¹m bá ®iÒu kiÖn rêi ®éi liªn ®Êu khi trïng sinh 4 - Modified By DinhHQ - 20110813
-	--Bo dieu kien roi chien doi lien dau edi by mcteam
-	--if ntranscount < 3 and (check_zhuansheng_league(LG_WLLSLEAGUE) == 1) then	--Õ½¶Ó¹ØÏµ
-		--CreateTaskSay({TB_TRANSLIFE_ERRORMSG[6], "§­îc råi./OnCancel"});
-		--return 0;
-	--end
+	if ntranscount < 3 and (check_zhuansheng_league(LG_WLLSLEAGUE) == 1) then	--Õ½¶Ó¹ØÏµ
+		CreateTaskSay({TB_TRANSLIFE_ERRORMSG[6], "§­îc råi./OnCancel"});
+		return 0;
+	end
 	if (GetTask(TSK_KILLER_ID) ~= 0) then	--É±ÊÖÈÎÎñÍê³É
 		CreateTaskSay({TB_TRANSLIFE_ERRORMSG[8], "§­îc råi./OnCancel"});
 		return 0;
@@ -238,34 +224,31 @@ function check_zhuansheng()
 		return 0;
 	end
 	
-	--§iÒu chØnh phİ trïng sinh ®èi víi c¸c t©n thñ - Modified By MCTeam 06092016
-	if ntranscount == 0 then
-		if GetCash() < 100000000 then
-			CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>10.000 v¹n<color>.", "§­îc råi./OnCancel"});
-			return 0;
+	--Phong V©n LÖnh Bµi - §iÒu chØnh phİ trïng sinh ®èi víi c¸c t©n thñ - Modified By DinhHQ - 20110926
+	if tbPVLB_Check:IsNewPlayer() == 1 and tbPVLB_Check:CheckTime() == 1 then
+		if ntranscount == 0 then
+		 	if GetCash() < 1000000 then
+				CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>1000000<color>.", "§­îc råi./OnCancel"});
+				return 0;
+			end
+		elseif ntranscount == 1 then
+			if GetCash() < 20000000 then
+				CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>20000000<color>.", "§­îc råi./OnCancel"});
+				return 0;
+			end
+		else
+			if (ntranscount < 3 and GetCash() < ZHUANSHENG_TUITION) then				--jxbÒª1ÒÚ
+				CreateTaskSay({TB_TRANSLIFE_ERRORMSG[2], "§­îc råi./OnCancel"});
+				return 0;
+			end
 		end
-	elseif ntranscount == 1 then
-		if GetCash() < 200000000 then
-			CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>20.000 v¹n<color>.", "§­îc råi./OnCancel"});
-			return 0;
-		end
-	elseif ntranscount == 2 then
-		if GetCash() < 500000000 then
-			CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>50.000 v¹n<color>.", "§­îc råi./OnCancel"});
-			return 0;
-		end
-	elseif ntranscount == 3 then
-		if GetCash() < 700000000 then
-			CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>70.000 v¹n<color>.", "§­îc råi./OnCancel"});
-			return 0;
-		end
-	elseif ntranscount == 4 then
-		if GetCash() < 900000000 then
-			CreateTaskSay({"H×nh nh­ tiÒn vÉn ch­a ®ñ <color=red>90.000 v¹n<color>.", "§­îc råi./OnCancel"});
+	else
+		if (ntranscount < 3 and GetCash() < ZHUANSHENG_TUITION) then				--jxbÒª1ÒÚ
+			CreateTaskSay({TB_TRANSLIFE_ERRORMSG[2], "§­îc råi./OnCancel"});
 			return 0;
 		end
 	end
-	
+	-- ĞèÒªµÚ4´Î×ªÉú£¬ÅĞ¶ÏÊÇ·ñ¾ßÓĞ999¸öÅùö¨µ¯£¬±±¶·³¤ÉúÊõ¡ª´ó³ËĞÄ·¨ ºÍ ¶şÒÚjxb
 	if ntranscount == 3 then
 		for i=1,getn(TBITEMNEED_4) do
 			local tbProb = TBITEMNEED_4[i].tbProb

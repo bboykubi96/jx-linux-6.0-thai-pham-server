@@ -1,0 +1,7 @@
+TSKI_DAILY_COUNT		= 4066
+MAX_DAILY_COUNT		= 3
+MOSTER_POS_LTT	= {{174,1695,3179},{174,1691,3184},{174,1687,3170},{174,1692,3143},{174,1698,3151},{174,1701,3142},{174,1692,3141},{174,1715,3115},{174,1716,3122},{174,1721,3114},{174,1716,3117},{174,1736,3105},{174,1734,3107},{174,1745,3087},{174,1749,3095},}
+nIdx_LAST_USE_TIME		= {4,5,6,7}
+EVENT_LOG_TITLE		= "NhiemVuHoTieuLTT"
+szLEVEL_TIP		= "Yªu cÇu ®¼ng cÊp ph¶i ®¹t ®Õn cÊp<color=yellow>60<color>."
+szCAMP_TIP		= "Ng­êi ch¬i tªn ch÷ tr¾ng kh«ng thÓ tham gia ho¹t ®éng nµy"

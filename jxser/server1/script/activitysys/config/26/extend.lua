@@ -5,28 +5,6 @@ Include("\\script\\lib\\objbuffer_head.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
 local szRemoteScript = "\\script\\event\\2011dayanqunxia\\event.lua"
 
-function pActivity:SuDungHongBao()
-	local tbTeacherEXP = { {nExp_tl=1,nCount = 200000000,}, }
-	tbAwardTemplet:Give(tbTeacherEXP,1,{%szEventName, "SuDungHongBaoVienNgoai", "SuDungHongBaoVienNgoai"})
-	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông <color=yellow>Hång Bao<color> t¹i npc ThÈm Viªn Ngo¹i (T­¬ng D­¬ng 199/200)")
-	self:AddTask(%TSK_UseLiBao, 1)
-end
-
-function pActivity:PlayerOnLogin()
-
-	if GetTask(3907) ~= 3 then
-		SetTask(3907,3)--task kiem tra event dot truoc moi dot event tang len 1
-		SetTask(3908,0)--task nhan moc 1000
-		SetTask(3909,0)--task event loai 3
-		SetTask(3910,0) --ev kvan
-		SetTask(3911,0) --ev xu
-		SetTask(3912,0) --thuong free event
-		--self:SetTask(TSK_UseLiBao,0)
-		--self:SetTask(TSK_LiBao,0)
-		--self:SetTask(TSK_SuDungNTKT,0)
-	end
-end
-
 function pActivity:ResetTaskA(TSK_EXP_A, TSK_DATE_A)
 	local nCurDate = tonumber(GetLocalDate("%Y%m%d"))
 	local nRecordDate = self:GetTask(TSK_DATE_A)
@@ -49,12 +27,6 @@ end
 
 function pActivity:CheckTaskA(TSK_EXP_A, TSK_DATE_A, nUpExpA, szMsgA, nNumber)
 	local nCurExpA = self:GetTaskA(TSK_EXP_A, TSK_DATE_A)
-	
-	local diemtoida = nUpExpA * 1000
-	local diemnhanduoc = nCurExpA * 10000
-
-	Msg2Player("H«m nay ®· nhËn ®­îc: "..diemnhanduoc.." ®iÓm kinh nghiÖm")
-
 	if nCurExpA >= nUpExpA then
 		if szMsgA ~= nil then
 			Talk(1, "", szMsgA)
@@ -112,59 +84,6 @@ function pActivity:GiveEatAward(TSK_EXP_A, TSK_DATE_A, TSK_EXP_B, nNumber)
 		},
 	}
 	tbAwardTemplet:GiveAwardByList(tbAward, "§¹i YÕn QuÇn HiÖp n¨m 2011, ¨n thøc ¨n nhËn ®­îc kinh nghiÖm.", 1)
-end
-
-function pActivity:ExpAwardThucAn(nValue, strItemName)
-PlayerFunLib:AddExp(nValue, 1, "§¹i YÕn QuÇn HiÖp n¨m 2011, ¨n thøc ¨n nhËn ®­îc kinh nghiÖm")
-Talk(1, "", strItemName)
-end
-
-function pActivity:GiveEatAward1(TSK_EXP_A, TSK_DATE_A, TSK_EXP_B, nNumber)
-	local tbAward = 
-	{
-		{szName="§iÓm kinh nghiÖm 1", 
-				pFun = function (tbItem, nItemCount, szLogTitle)
-					%self:ExpAwardThucAn(200000,"Ng­¬i ¨n mét miÕng ' S­ên Xµo Chua Ngät'  nhËn ®­îc  200.000 kinh nghiÖm")
-					%self:AddTaskA(%TSK_EXP_A, %TSK_DATE_A, nItemCount * 200000 / %nNumber)
-					%self:AddTask(%TSK_EXP_B, nItemCount * 200000 / %nNumber)
-				end,
-				nRate = 40,
-		},
-		{szName="§iÓm kinh nghiÖm 2", 
-				pFun = function (tbItem, nItemCount, szLogTitle)
-					%self:ExpAwardThucAn(300000,"Ng­¬i g¾p mét miÕng 'C¸ ChÐp Kho Om' ¨n ngon lµnh, nhËn ®­îc 300.000 kinh nghiÖm")
-					%self:AddTaskA(%TSK_EXP_A, %TSK_DATE_A, nItemCount * 300000 / %nNumber)
-					%self:AddTask(%TSK_EXP_B, nItemCount * 300000 / %nNumber)
-				end,
-				nRate = 30,
-		},
-		{szName="§iÓm kinh nghiÖm 3", 
-				pFun = function (tbItem, nItemCount, szLogTitle)
-					%self:ExpAwardThucAn(700000,"Ng­¬i lÊy mét miÕng 'Gµ Trèng T¬' ¨n ngon lµnh, nhËn ®­îc 700.000 kinh nghiÖm")
-					%self:AddTaskA(%TSK_EXP_A, %TSK_DATE_A, nItemCount * 700000 / %nNumber)
-					%self:AddTask(%TSK_EXP_B, nItemCount * 700000 / %nNumber)
-				end,
-				nRate = 20,
-		},
-		{szName="§iÓm kinh nghiÖm 4", 
-				pFun = function (tbItem, nItemCount, szLogTitle)
-					%self:ExpAwardThucAn(1000000,"Ng­¬i cÇm lªn mét miÕng ' Heo S÷a Quay' ¨n mét miÕng ngon lµnh, nhËn ®­îc 1.000.000 kinh nghiÖm")
-					%self:AddTaskA(%TSK_EXP_A, %TSK_DATE_A, nItemCount * 1000000 / %nNumber)
-					%self:AddTask(%TSK_EXP_B, nItemCount * 1000000 / %nNumber)
-				end,
-				nRate = 10,
-		},
-	}
-	local nTraTienAn = 50000
-	local sltien = GetCash()
-	if sltien < nTraTienAn then
-		Say("§¹i hiÖp kh«ng mang theo ®ñ <color=green>"..nTraTienAn.."<color> ng©n l­îng")
-		return
-	end
-
-	tbAwardTemplet:GiveAwardByList(tbAward, "§¹i YÕn QuÇn HiÖp n¨m 2011, ¨n thøc ¨n nhËn ®­îc kinh nghiÖm.", 1)
-	Pay(nTraTienAn)
-	Msg2SubWorld("§¹i hiÖp <color=green>"..GetName().."<color> th­ëng thøc Mãn ¨n <color=yellow>t¹i Bµn TiÖc T­¬ng D­¬ng 197/201<color> nhËn ®­îc ®iÓm kinh nghiÖm")
 end
 
 function pActivity:CheckNotGetDrunk(nSkillId, szMsg)
@@ -541,128 +460,6 @@ function pActivity:CheckRePaiMing(nParam, ResultHandle)
 		DynamicExecuteByPlayer(nPlayerIndex, "\\script\\activitysys\\config\\26\\extend.lua", "pActivity:SetTask", %TSK_LastTimeDate, 0)
 		DynamicExecuteByPlayer(nPlayerIndex, "\\script\\activitysys\\config\\26\\extend.lua", "pActivity:pCreateDialog")
 	end
-end
-
-function pActivity:UseNTKT()
-
-	local nUsedCount = self:GetTask(%TSK_SuDungNTKT)
-	local nCurCount = nUsedCount + 1
-	Msg2Player("Sö dông lÇn thø: " ..nCurCount.."")
-
-	if nCurCount > 1000 then
-		Talk(1, "", "Sö dông vËt phÈm ®¹t giíi h¹n, kh«ng thÓ sö dông thªm.")
-		return nil
-	end
-	self:SetTask(%TSK_SuDungNTKT, nCurCount)	
-
-	--Diem kn mac dinh
-	local tbExpAward = 
-	{
-		[1] = {szName = "§iÓm kinh nghiÖm", nExp = 1500000},
-	}
-	tbAwardTemplet:Give(tbExpAward, 1 , {EVENT_LOG_TITLE, "SuDungNguThaiKetTinh"})
-
-	--Diem kn dat moc
-	local tbBonusAward = {
-		[500] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 150000000},},
-		[600] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 160000000},},
-		[700] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 170000000},},
-		[800] = {{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 180000000},},
-		[900] = 
-		{
-			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp = 190000000},
-			{szName = "MÆt n¹ V­¬ng Gi¶", tbProp = {0,11,561,1,0,0}, nExpiredTime = 60*24*15, nCount=1},
-			{szName = "ThÊt tinh th¶o", tbProp={6,1,1673,1,0,0},nCount=1, },
-			{szName = "B¸ch niªn thÊt tinh th¶o", tbProp={6,1,1674,1,0,0},nCount=1, },
-			{szName = "Thiªn niªn thÊt tinh th¶o", tbProp={6,1,1675,1,0,0},nCount=1, },
-			{szName = "B¾c §Èu truyÒn c«ng thuËt", tbProp={6,1,1672,1,0,0},nCount=1, },
-		},
-		[1000] = 
-		{
-			{szName = "§iÓm kinh nghiÖm kh«ng céng dån", nExp_tl = 7000000000}, 
-			{szName = "NhÊt kû cµn kh«n phï",	tbProp = {6,1,2126,1,0,0},nCount=1,},
-			{szName = "HuyÒn tinh cÊp 8", tbProp={6,1,147,8,0,0},nCount=1,},
-			{szName = "§¹i thµnh bÝ kÝp 90",tbProp={6,1,2424,1,0,0},nCount=1},
-			{szName = "Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=50,},
-		},
-	}
-
-	if tbBonusAward[nCurCount] then
-		tbAwardTemplet:Give(tbBonusAward[nCurCount], 1 , {EVENT_LOG_TITLE, format("SuDung%dlanVatPhamNguThaiKetTinh", nCurCount)})
-		local msgtbao = "Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông vËt phÈm Event ®Õn mèc <color=yellow>"..nCurCount.."<color>, nhËn ®­îc phÇn th­ëng nh­ ý"
-		Msg2SubWorld(msgtbao)
-	end
-
-	--Phan thuong them
-	local tbItemAward = 
-	{
-			{szName = "Kim tª",tbProp={4,979,1,1,0,0},nCount=1,nRate=0.1},
-			{szName = "ThÇn bÝ kho¸ng th¹ch", tbProp={6,1,398,1,0,0},nCount=1, nRate =0.1},
-
-			{szName = "HuyÒn tinh cÊp 1", tbProp={6,1,147,1,0,0},nCount=1, nRate =5},--25 cai
-			{szName = "HuyÒn tinh cÊp 2", tbProp={6,1,147,2,0,0},nCount=1, nRate =0.5},
-			{szName = "HuyÒn tinh cÊp 3", tbProp={6,1,147,3,0,0},nCount=1, nRate =0.3},
-			{szName = "HuyÒn tinh cÊp 4", tbProp={6,1,147,4,0,0},nCount=1, nRate =0.2},
-			{szName = "HuyÒn tinh cÊp 5", tbProp={6,1,147,5,0,0},nCount=1, nRate =0.1},
-
-			{szName = "Tiªn th¶o lé §Æc BiÖt",tbProp={6,1,1181,1,0,0},nCount=1, nRate=0.2},--1 cai
-			{szName = "Tiªn th¶o lé",tbProp={6,1,71,1,0,0},nCount=1, nRate=2},--10 cai
-			{szName = "NÕn B¸t tr©n phóc nguyÖt", nRate = 0.2,   tbProp = {6, 1, 1817, 1, 0, 0}, nCount=1},	
-			{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0},nCount=1, nRate =0.1},
-			{szName = "Tö mÉu lÖnh",tbProp={6,1,1427,1,0,0},nCount=1,nRate=0.1},
-			{szName = "Tinh hång b¶o th¹ch",					tbProp={4,353,1,1,0,0},nCount=1,nRate=0.4},--2 vien
-			{szName = "Tö thñy tinh",								tbProp={4,239,1,1,0,0},nCount=1,nRate=0.1},
-			{szName = "Lôc thñy tinh",								tbProp={4,240,1,1,0,0},nCount=1,nRate=0.1},
-			{szName = "Lam thñy tinh",							tbProp={4,238,1,1,0,0},nCount=1,nRate=0.1},
-			{szName = "QuÕ hoa töu",tbProp={6,1,125,1,0,0},nCount=1,nRate=0.4},--2 vien
-			{szName = "Vâ l©m mËt tÞch",tbProp={6,1,26,1,0,0},nCount=1,nRate=0.1},
-			{szName = "TÈy tñy kinh",tbProp={6,1,22,1,0,0},nCount=1,nRate=0.1},
-			{szName= "Tói danh väng",tbProp={6,1,4338,1,0,0},nCount=1,nRate=2},--10 cai
-
-			{szName="M¶nh Tµng B¶o §å 1",tbProp={4,490,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 2",tbProp={4,491,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 3",tbProp={4,492,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 4",tbProp={4,493,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 5",tbProp={4,494,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 6",tbProp={4,495,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 7",tbProp={4,496,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 8",tbProp={4,497,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 9",tbProp={4,498,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 10",tbProp={4,499,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 11",tbProp={4,500,1,1,0,0},nCount=1,nRate=0.02},
-			{szName="M¶nh Tµng B¶o §å 12",tbProp={4,501,1,1,0,0},nCount=1,nRate=0.02},
-
-			{szName = "§iÓm Kinh NghiÖm", nExp=2000000,nRate=1},
-			{szName = "§iÓm Kinh NghiÖm", nExp=4000000,nRate=1},
-			{szName = "§iÓm Kinh NghiÖm", nExp=6000000,nRate=1},
-			{szName = "§iÓm Kinh NghiÖm", nExp=8000000,nRate=1},
-			{szName = "§iÓm Kinh NghiÖm", nExp=10000000,nRate=0.01},
-			{szName = "§iÓm Kinh NghiÖm", nExp=15000000,nRate=0.01},
-
-			{szName = "LÖnh bµi hoµn thµnh D· TÈu",tbProp={6,1,4336,1,0,0},nCount=1,nRate=0.1},
-			{szName = "Cèng HiÕn LÔ bao",tbProp={6,1,30214,1,0,0},nCount=1,nRate=0.02},
-			{szName = "Cèng HiÕn §¹i LÔ bao",tbProp={6,1,30215,1,0,0},nCount=1,nRate=0.01},
-			{szName = "KiÕn ThiÕt LÔ Bao",tbProp={6,1,30216,1,0,0},nCount=1,nRate=0.02},
-			{szName = "KiÕn ThiÕt §¹i LÔ Bao",tbProp={6,1,30217,1,0,0},nCount=1,nRate=0.01},
-			{szName = "ChiÕn BÞ LÔ Bao",tbProp={6,1,30218,1,0,0},nCount=1,nRate=0.02},
-			{szName = "ChiÕn BÞ §¹i LÔ Bao",tbProp={6,1,30219,1,0,0},nCount=1,nRate=0.01},
-
-			{szName = "Tiªn th¶o lé §Æc BiÖt",tbProp={6,1,1181,1,0,0},nCount=1, nRate=1},
-			{szName = "NÕn B¸t tr©n phóc nguyÖt", nRate = 0.5,   tbProp = {6, 1, 1817, 1, 0, 0}, nCount=1},	
-			{szName = "Th­ ®Æc x¸ triÒu ®×nh", tbProp={6,1,1375,1,0,0},nCount=1, nRate =0.1},
-			{szName = "Tö mÉu lÖnh",tbProp={6,1,1427,1,0,0},nCount=1,nRate=0.1},
-
-			{szName = "TÝn sø yªu bµi", tbProp={6,1,888,1,0,0},nCount=1, nRate =0.05},
-			{szName = "Cóc hoa th¹ch", tbProp={4,963,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "B¨ng th¹ch kÕt tinh", tbProp={4,967,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "B¨ng thiÒm t¬", tbProp={4,965,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "Kª huyÕt th¹ch", tbProp={4,966,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "M· n·o", tbProp={4,964,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "M¶nh thiªn th¹ch", tbProp={4,968,1,1,0,0},nCount=1, nRate =0.05},
-			{szName = "§iÒn hoµng th¹ch", tbProp={4,969,1,1,0,0},nCount=1, nRate =0.2},
-	}
-	tbAwardTemplet:Give(tbItemAward, 1 , {EVENT_LOG_TITLE, "SuDungNguThaiKetTinh"})
-
 end
 
 function pActivity:pCreateDialog()

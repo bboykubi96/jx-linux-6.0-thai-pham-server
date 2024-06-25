@@ -1,778 +1,830 @@
---Edit by NamCungNhatThien
---Date: 31-08-2015
---http://www.clbgamesvn.com/
---*****************************************
-
-IncludeLib("LEAGUE")
-IncludeLib("TONG")
+IncludeLib("LEAGUE") 
+IncludeLib("TONG") 
 Include("\\script\\missions\\citywar_arena\\head.lua");
 Include("\\script\\missions\\citywar_global\\head.lua");
 Include("\\script\\missions\\citywar_global\\citywar_function.lua");
 Include("\\script\\task\\system\\task_string.lua")
 Include("\\script\\lib\\common.lua")
 Include("\\script\\missions\\citywar_global\\ladder.lua")
+MapTab = {}; 
+MapTab[1]= {213, 1633, 3292}; 
+MapTab[2]= {214, 1633, 3292}; 
+MapTab[3]= {215, 1633, 3292}; 
+MapTab[4]= {216, 1633, 3292}; 
+MapTab[5]= {217, 1633, 3292}; 
+MapTab[6]= {218, 1633, 3292}; 
+MapTab[7]= {219, 1633, 3292}; 
+MapTab[8]= {220, 1633, 3292}; 
+MapCount = getn(MapTab); 
 
---*****************Lib Dev NamCungNhatThien thªm tham gia c«ng thµnh************
-Include("\\script\\global\\station.lua")
+LGTSK_QINGTONGDING_COUNT = 1; -- script viet hoa By http://tranhba.com  ghi danh c¹nh ®Çu ®Ých khiªu chiÕn lÖnh sè l­îng 
+LGTSK_CITYWAR_SIGNCOUNT = 2; -- script viet hoa By http://tranhba.com  tr­íc mÆt c¹nh ®Çu ®Ých sè lÇn 
 
---******************************LG task**********************************************************
-LGTSK_QINGTONGDING_COUNT = 1;			--BiÕn save sè l­îng khiªu chiÕn lªnh cña bang héi¿
-LGTSK_CITYWAR_SIGNCOUNT = 2;			--BiÕn save sè l­îng khiªu chiÕn lªnh b¸o danh c«ng thµnh
+LEAGUETYPE_CITYWAR_SIGN = 508; 
+LEAGUETYPE_CITYWAR_FIRST = 509; 
+nCityWar_Item_ID_G = 6 -- script viet hoa By http://tranhba.com  c«ng thµnh chiÕn th­ vËt G ID 
+nCityWar_Item_ID_D = 1 -- script viet hoa By http://tranhba.com  c«ng thµnh chiÕn th­ vËt D ID 
+nCityWar_Item_ID_P = 1499 -- script viet hoa By http://tranhba.com  c«ng thµnh chiÕn th­ vËt P ID 
+TIAOZHANLING_TASK_DATE = 1839 -- script viet hoa By http://tranhba.com  khiªu chiÕn lÖnh ghi chÐp nhËn lÊy thêi kú ,1. thêi gian ( n¨m %y),2. thêi gian ( th¸ng ) , 3. thêi gian ( ngµy ),4. nhËn lÊy sè lÇn 
+TIAOZHANLING_TASK_COUNT = 1840 -- script viet hoa By http://tranhba.com  khiªu chiÕn lÖnh giao n¹p sè lÇn 
 
---******************************LG LeagueObj***************************************************
-LEAGUETYPE_CITYWAR_SIGN = 508;			--LG save bang héi b¸o danh
-LEAGUETYPE_CITYWAR_FIRST = 509;			--LG save bang héi h¹ng 1
+function OnCancel() 
+end; 
 
-nCityWar_Item_ID_G = 6		--¹¥³ÇÕ½ÐÅÎïG ID
-nCityWar_Item_ID_D = 1	--¹¥³ÇÕ½ÐÅÎïD ID
-nCityWar_Item_ID_P = 1499		--¹¥³ÇÕ½ÐÅÎïP ID
-
---****************************Task save giíi h¹n nép khiªu chiÕn lÖnh 1 ngµy cña nh©n vËt********************
-TIAOZHANLING_TASK_DATE = 1839 			--Task save ngµy th¸ng n¨m nép khiªu chiÕn lÖnh gÇn nhÊt --ÌôÕ½Áî¼ÇÂ¼ÁìÈ¡Ê±ÆÚ,1.Ê±¼ä(Äê%y),2.Ê±¼ä(ÔÂ)£¬3.Ê±¼ä(ÈÕ),4.ÁìÈ¡´ÎÊý
-TIAOZHANLING_TASK_COUNT = 1840 			--Task save mâi ngµy nh©n vËt nép tèi ®a 300 khiªu chiÕn lÖnh
-	
-function OnCancel()
-end;
--- function main()
-	--
---	ArenaMain();
+function PreEnterGame() 
+-- kiem tra xem co phai doi truong hay ko
+-- local szTongName, nTongID = GetTongName(); 
+-- if (nTongID == 0 or ( GetTongFigure() ~= TONG_MASTER and GetTongFigure() ~= TONG_ELDER and GetTongFigure() ~= TONG_MANAGER)) then 
+-- Say("ChØ cã ®éi tr­ëng trë lªn míi cã thÓ tham gia tÝnh n¨ng nµy.")
+-- return 
 -- end
+---
+-- script viet hoa By http://tranhba.com  nÕu nh­ nhµ ch¬i chç ë bang héi ®ang tiÕn hµnh l«i ®µi cuéc so tµi , lµ tù ®éng tiÕn vµo nªn n¬i chèn 
+TongName, result = GetTong() 
+if (TongName ~= "") then 
+for i = 0, 7 do 
+if (IsArenaBegin(i) == 1) then 
+Tong1, Tong2 = GetArenaBothSides(i); 
+if (Tong1 == TongName or Tong2 == TongName) then 
+EnterBattle(i); 
+return 
+end; 
+end; 
+end; 
+end; 
+
+-- script viet hoa By http://tranhba.com  nÕu kh«ng , xin/mêi nhµ ch¬i m×nh lùa chän tiÕn vµo c¸i nµo 
+EnterGame(); 
+end; 
+
+function EnterGame() 
+ExtraArenaInfo = {"<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) ", "<#> ( ®Êt trèng ) "}; 
+for i = 0, 7 do 
+if (IsArenaBegin(i) == 1) then 
+Tong1, Tong2 = GetArenaBothSides(i); 
+			ExtraArenaInfo[i + 1] = " ("..Tong1.." vs "..Tong2..") "
+end; 
+end; 
+
+Say("Ng­¬i nghÜ tiÕn c«ng thµnh chiÕn l«i ®µi dù chän cuéc so tµi sao ??", 9, "<#> l«i ®µi 1"..ExtraArenaInfo[1].."/EnterBattle", "<#> l«i ®µi 2"..ExtraArenaInfo[2].."/EnterBattle", "<#> l«i ®µi 3"..ExtraArenaInfo[3].."/EnterBattle", "<#> l«i ®µi 4"..ExtraArenaInfo[4].."/EnterBattle", "<#> l«i ®µi 5"..ExtraArenaInfo[5].."/EnterBattle", "<#> l«i ®µi 6"..ExtraArenaInfo[6].."/EnterBattle", "<#> l«i ®µi 7"..ExtraArenaInfo[7].."/EnterBattle", "<#> l«i ®µi 8"..ExtraArenaInfo[8].."/EnterBattle","Kh«ng ®i /OnCancel"); 
+end; 
+
+function EnterBattle(nBattleId) 
+
+if (IsArenaBegin(nBattleId) ~= 1) then 
+return 
+end; 
+-- DisabledStall(1)	--½ûÖ¹°ÚÌ¯
+-- ForbitTrade(1);		--½ûÖ¹½»Ò×
+SetFightState(0) 
+local tbRoom= GetRoomItems(0)
+	for _,v in tbRoom do
+	local G,D,P,nLevel = GetItemProp(v);
+	if G == 1 then
+		-- Msg2Player("fff")
+		SetItemBindState(v ,-2)
+		SyncItem(v)
+	end
+	end
+-- script viet hoa By http://tranhba.com  thiÕt trÝ trë vÒ ®iÓm 
+M,X,Y = GetWorldPos(); 
+SetTask(300, M); 
+SetTask(301, X); 
+SetTask(302, Y); 
+
+	NewWorld(MapTab[nBattleId + 1][1], MapTab[nBattleId + 1][2], MapTab[nBattleId + 1][3]);
+end; 
 
 
---************************************************************************************************************
-function ArenaMain()
---	dofile("script/missions/citywar_global/infocenter_head.lua")
+-- script viet hoa By http://tranhba.com  function main() 
+-- script viet hoa By http://tranhba.com  
+-- script viet hoa By http://tranhba.com  ArenaMain(); 
+-- script viet hoa By http://tranhba.com  end 
 
-	local nCityId = getSigningUpCity(1);--GetArenaTargetCity()
-	if (tonumber(GetLocalDate("%H"))>= 18 and tonumber(GetLocalDate("%H")) < 19 and getSignUpState(nCityId) == 1) then
-		Say(format("HiÖn t¹i c«ng thµnh chiÕn thµnh <color=yellow>%s<color> ®ang cho b¸o danh, ng­¬i muèn ®¨ng ký kh«ng?",GetCityAreaName(nCityId)), 
-			7, 
-			"B¸o danh c«ng thµnh chiÕn/SignUpCityWar", 
-			"Ta muèn xem t×nh h×nh b¸o danh c«ng thµnh chiÕn/ViewCityWarTong",
-			"Ta muèn xem sè l­îng khiªu chiÕn lÖnh cña bang/ViewTiaoZhanLing",
-			"T×m hiÓu t×nh h×nh c«ng thµnh chiÕn/GameInfo", 
-			"Sù nghÞ Thµnh chiÕn lÖnh bµi/TokenCard", 
-			"Mua dông cô hç trî C«ng thµnh chiÕn/AskDeal", "Kh«ng muèn g× c¶ /OnCancel");
-	else
-		--******Thªm tham gia c«ng thµnh**********************
-		if (WhichWarBegin() ~= 0) then
-			Say("§©y lµ n¬i nghÞ sù c«ng thµnh chiÕn, ng­¬i ®Õn cã viÖc g×?",
-				8,
-				"Ta ®Õn giao lÖnh bµi/GiveTiaoZhanLing",
-				"Tham gia c«ng thµnh chiÕn tr­êng/GoCityWar",
-				"Xem t×nh h×nh ®Êu gi¸ khiªu chiÕn lÖnh/citywar_CheckVotes" ,
-				"Ta muèn xem sè l­îng khiªu chiÕn lÖnh cña bang/ViewTiaoZhanLing",
-				"T×m hiÓu t×nh h×nh c«ng thµnh chiÕn/GameInfo",
-				"Sù nghÞ Thµnh chiÕn lÖnh bµi/TokenCard",
-				"Mua dông cô hç trî C«ng thµnh chiÕn/AskDeal",
-				"Kh«ng muèn g× c¶ /Cancel");
-		else
-			Say("§©y lµ n¬i nghÞ sù c«ng thµnh chiÕn, ng­¬i ®Õn cã viÖc g×?",
-				7,
-				"Ta ®Õn giao lÖnh bµi/GiveTiaoZhanLing",
-				"Xem t×nh h×nh ®Êu gi¸ khiªu chiÕn lÖnh/citywar_CheckVotes" ,
-				"Ta muèn xem sè l­îng khiªu chiÕn lÖnh cña bang/ViewTiaoZhanLing",
-				"T×m hiÓu t×nh h×nh c«ng thµnh chiÕn/GameInfo",
-				"Sù nghÞ Thµnh chiÕn lÖnh bµi/TokenCard",
-				"Mua dông cô hç trî C«ng thµnh chiÕn/AskDeal",
-				"Kh«ng muèn g× c¶ /Cancel");
-		end
-	end;
-end;
---****************************Hµm xem t×nh h×nh ®Êu gi¸ khiªu chiÕn lÖnh************************
-function citywar_CheckVotes()
-	local nCityId = getSigningUpCity(1);
-	local tbVotes = citywar_tbLadder:GetInfo()
-	local szMsg = format("<dec><npc>Bªn d­íi lµ bang héi tham gia ®Êu gi¸ khiªu chiÕn lÖnh <%s>: <enter>%s%s%s<enter>", GetCityAreaName(nCityId), strfill_center("STT",4, " "), strfill_center("Bang héi", 20, " "), strfill_center("Sè l­îng", 20, " "))
-	local res = {}
-	for i = 1, getn(tbVotes) do
-		tinsert(res, strfill_center(i, 4, " "))
-		tinsert(res, strfill_center(tbVotes[i].szName, 20, " "))
-		tinsert(res, strfill_center(tbVotes[i].nValue, 20, " "))
-		tinsert(res, "<enter>")
-	end
-	PushString(szMsg)
-	for i = 1, getn(res) do
-		AppendString(res[i])
-	end
-	szMsg = PopString()
-	TaskSayList(szMsg, "C¸m ¬n! Ta ®· râ råi./OnCancel")
-end
---**************************Hµm xem t×nh h×nh b¸o danh c«ng thµnh chiÕn**************************
-function ViewCityWarTong()
-	local caption = nil
-	local nCityId = getSigningUpCity(1);
-	local nlgID = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId)) 
-	--LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId),
-	local nlgcount = LG_GetMemberCount(nlgID)
+-- script viet hoa By http://tranhba.com  ghi danh chØ ®Þnh thµnh phè l«i ®µi cuéc so tµi [wxb 2004-3-31]( bá hoang 2006-11-22) 
+function SignupACity(sel) 
+	CityID = sel + 1;
+if (IsSigningUp(CityID) == 1) then 
+SetTaskTemp(15, CityID); 
+AskClientForNumber("SignUpFinal", 1000000, 99999999,"Xin/mêi ®­a vµo ®Çu ngän ®Ých sè tiÒn :"); 
+else 
+Say("<#><"..GetCityAreaName(CityID).."<#> > thµnh , l«i ®µi ghi danh cßn ch­a b¾t ®Çu ", 0); 
+end; 
+end; 
 
-	--***************Dev NamCungNhatThien bang hoi xep hang 1******
-	tonghang1=getCityWarElector(cityid_to_lgname(nCityId));
+-- script viet hoa By http://tranhba.com  ghi danh duy nhÊt ®ang ghi danh giai ®o¹n ®Ých l«i ®µi cuéc so tµi [wxb 2004-3-31]( bá hoang 2006-11-22) 
+function SignUpTheOne() 
+CityID = 0; 
+for i = 1, 7 do 
+if (IsSigningUp(i) == 1) then 
+CityID = i; 
+end; 
+end; 
 
-	if nlgcount == 0 then
-		caption = "<dec>HiÖn tai ch­a cã bang héi nµo b¸o danh c«ng thµnh."	
-	else
-		caption = "<dec>Bang héi <color=yellow>"..tonghang1.."<color> t¹m thêi xÕp h¹ng 1. C¸c bang héi b¸o danh c«ng thµnh chiÕn: \n"
-		--caption = "<dec>Bang héi b¸o danh c«ng thµnh chiÕn: \n"
-		PushString(caption)
-		for nindex=0,nlgcount do
-			szTongName = LG_GetMemberInfo(nlgID,nindex)
-			AppendString("<color=yellow>")
-			AppendString(szTongName)
-			AppendString("<color>\t")
-		end
-		caption = PopString()
-	end
-	local option = {"Trë vÒ/ArenaMain", "Tho¸t ra/OnCancel"}
-	TaskSay(caption, option)
-end
+if (IsSigningUp(CityID) == 1) then 
+SetTaskTemp(15, CityID); 
+AskClientForNumber("SignUpFinal", 1000000, 99999999,"Xin/mêi ®­a vµo ®Çu ngän ®Ých sè tiÒn :"); 
+else 
+Say("<#><"..GetCityAreaName(CityID).."<#> > thµnh , l«i ®µi ghi danh cßn ch­a b¾t ®Çu ", 0); 
+end; 
+end; 
 
---*************************Hµm giao lÖnh bµi***********************************************
-function GiveTiaoZhanLing()
-	if checkBangHuiLimit() == 0 then
-			Say("Xin lçi! §¹i hiÖp ch­a gia nhËp bang héi nµo c¶!",0);
-			return 0;
-	end
-	local nDate = tonumber(tonumber(GetLocalDate("%y"))..tonumber(GetLocalDate("%m"))..tonumber(GetLocalDate("%d")));
-	local nLibao = GetTask(TIAOZHANLING_TASK_DATE);
-	local nOlddate = tonumber(GetByte(nLibao,1)..GetByte(nLibao,2)..GetByte(nLibao,3));
-	local nCount = GetTask(TIAOZHANLING_TASK_COUNT);
-	if ( nOlddate == nDate and nCount >= 300) then
-			Say("Mçi ngµy giao n¹p tèi ®a 300 lÖnh bµi. H«m nay ng­¬i ®· giao 300 lÖnh bµi råi, ngµy mai h·y tiÕp tôc.",0)
-			return 0;
-	end
-	if ( nOlddate ~= nDate ) then
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),1,tonumber(GetLocalDate("%y"))));
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),2,tonumber(GetLocalDate("%m"))));
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),3,tonumber(GetLocalDate("%d"))));
-		SetTask(TIAOZHANLING_TASK_COUNT,0);
-	end
+-- script viet hoa By http://tranhba.com  nhµ ch¬i ®­a vµo ®Çu ngän kim sau tíi ®©y [wxb 2004-3-31]( bá hoang 2006-11-22) 
+function SignUpFinal(Fee) 
+CityID = GetTaskTemp(15); 
+SignUpCityWarArena(CityID, Fee); 
+end; 
 
-	local szlgname = GetTongName();
-	--****ÅÐ¶ÏÊÇ·ñ´´½¨ÁË¸ÃÉçÍÅ
-	checkCreatLG(szlgname);
-	
-	--**ÅÐ¶ÏÊÇ·ñ¼ÓÈëÁË¸ÃÉçÍÅ
-	checkJoinLG(szlgname);
-	local szTongName, nTongID = GetTongName();
-	local nsum = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT)
-	if nsum >= 2000000000 then   --ÉÏÏÞ´ï20ÒÚÔò²»ÄÜÔÙÌá½»
-		Say("Tæng sè vâ l©m lÖnh ®· ®¹t giíi h¹n. Lóc kh¸c thö l¹i vËy.",0)
-		return 0;
-	end
-	--**Ìá½»ÌôÕ½Áî
-	GiveItemUI("Giao nép khiªu chiÕn lÖnh", "Khiªu chiÕn lÖnh dïng ®Ó b¸o danh c«ng thµnh chiÕn cho bang héi.", "sure_GiveTiaoZhanLing", "OnCancel");
-end
+-- script viet hoa By http://tranhba.com  tuÇn tra ngµy h«m qua c¹nh ®Çu khiªu chiÕn lÖnh ®Ých t×nh huèng 
+function citywar_CheckVotes() 
+local nCityId = getSigningUpCity(1); 
+local tbVotes = citywar_tbLadder:GetInfo() 
+local szMsg = format("<dec><npc> phÝa d­íi lµ bang héi tham gia c¹nh ®Çu khiªu chiÕn lÖnh <%s>: <enter>%s%s%s<enter>", GetCityAreaName(nCityId), strfill_center("STT",4, " "), strfill_center("Bang héi ", 20, " "), strfill_center("Sè l­îng ", 20, " ")) 
+local res = {} 
+for i = 1, getn(tbVotes) do 
+tinsert(res, strfill_center(i, 4, " ")) 
+tinsert(res, strfill_center(tbVotes[i].szName, 20, " ")) 
+tinsert(res, strfill_center(tbVotes[i].nValue, 20, " ")) 
+tinsert(res, "<enter>") 
+end 
+PushString(szMsg) 
+for i = 1, getn(res) do 
+AppendString(res[i]) 
+end 
+szMsg = PopString() 
+TaskSayList(szMsg,"C¸m ¬n ! ta hiÓu ./OnCancel") 
+end 
+-- script viet hoa By http://tranhba.com  nhËp khÈu 
+function ArenaMain() 
+-- CityID = 0; 
+-- for i = 1, 7 do 
+-- if (IsSigningUp(i) == 1) then 
+-- CityID = i; 
+-- end;
+-- end
+-- if CityID == 0 then
+-- Say("L«i ®µi bang héi b¸o danh lóc 18h h»ng ngµy. Ng­¬i quay l¹i sau nhÐ",0)
+-- return
+-- end
+Say(format("L«i ®µi bang héi %s ®ang b¸o danh, bang chñ hoÆc tr­ëng l·o nhanh tay b¸o danh",GetCityAreaName(CityID)),5,
+--"Ta muèn b¸o danh/SignUpTheOne",
+--"Ta muèn vµo l«i ®µi bang héi/PreEnterGame",
+--" th­¬ng nghÞ chiÕm thµnh lÖnh bµi /TokenCard",
+--" mua c«ng thµnh chiÕn phô trî dông cô /AskDeal",
+"Ta chØ xem qua/OnCancel")
+-- local nCityId = getSigningUpCity(1);-- script viet hoa By http://tranhba.com GetArenaTargetCity() 
+-- if (tonumber(GetLocalDate("%H"))>= 18 and tonumber(GetLocalDate("%H")) < 19 and getSignUpState(nCityId) == 1) then 
+-- Say(format("B©y giê c«ng thµnh chiÕm thµnh <%s> ®ang ghi danh , ng­¬i muèn ghi danh sao ?",GetCityAreaName(nCityId)), 7,"Ghi danh c«ng thµnh chiÕn /SignUpCityWar","Ta muèn xem mét chót c«ng thµnh chiÕn ®Ých ghi danh t×nh huèng /ViewCityWarTong","Ta muèn xem mét chót bang héi khiªu chiÕn lÖnh ®Ých sè l­îng /ViewTiaoZhanLing","HiÓu râ c«ng thµnh chiÕn t×nh huèng /GameInfo","Th­¬ng nghÞ chiÕm thµnh lÖnh bµi /TokenCard","Mua c«ng thµnh chiÕn phô trî dông cô /AskDeal","C¸i g× ®Òu kh«ng cÇn /OnCancel"); 
+-- else 
+-- Say("§©y lµ th­¬ng nghÞ c«ng thµnh chiÕn ®Ých ®Þa ph­¬ng , ng­¬i cã chuyÖn g× kh«ng ?", 
+-- 7, 
+-- " ta tíi ®ãng lÖnh bµi /GiveTiaoZhanLing", 
+-- " nh×n khiªu chiÕn lÖnh ®Çu ngän t×nh huèng /citywar_CheckVotes" , 
+-- " ta muèn xem mét chót bang héi khiªu chiÕn lÖnh ®Ých sè l­îng /ViewTiaoZhanLing", 
+-- " hiÓu râ c«ng thµnh chiÕn t×nh huèng /GameInfo", 
+-- " th­¬ng nghÞ chiÕm thµnh lÖnh bµi /TokenCard", 
+-- " mua c«ng thµnh chiÕn phô trî dông cô /AskDeal", 
+-- " c¸i g× ®Òu kh«ng cÇn /Cancel"); 
+-- end; 
+end; 
 
-function sure_GiveTiaoZhanLing(nCount)
-	if nCount <= 0 then
-		Say("ThËt ®¸ng tiÕc, ng­¬i ch­a giao vËt phÈm nhiÖm vô cho ta",2,"Giao l¹i vËt phÈm/GiveTiaoZhanLing","§Ó ta suy nghÜ l¹i/OnCancel");
-		return 0;
-	end
-	for i = 1, nCount do
-		local nItemidx = GetGiveItemUnit(i);
-		local g, d, p = GetItemProp(nItemidx);
-		if (g ~= nCityWar_Item_ID_G or d ~= nCityWar_Item_ID_D or p ~= nCityWar_Item_ID_P) then
-			Say("Ta kh«ng nhËn nh÷ng thø kh¸c, chØ cÇn ®­a ta <color=yellow>Khiªu chiÕn lÖnh<color> lµ ®­îc råi.", 2,"Giao l¹i vËt phÈm/GiveTiaoZhanLing","§Ó ta suy nghÜ l¹i/OnCancel");
-			return 0;
-		end;
-	end;
-	local nDate = tonumber(tonumber(GetLocalDate("%y"))..tonumber(GetLocalDate("%m"))..tonumber(GetLocalDate("%d")));
-	local nLibao = GetTask(TIAOZHANLING_TASK_DATE);
-	local nOlddate = tonumber(GetByte(nLibao,1)..GetByte(nLibao,2)..GetByte(nLibao,3));
-	local nCountall = GetTask(TIAOZHANLING_TASK_COUNT);
+-- script viet hoa By http://tranhba.com  tra xÐt ®· ghi danh tham gia c«ng thµnh chiÕn ®Ých bang héi 
+function ViewCityWarTong() 
+local caption = nil 
+local nCityId = getSigningUpCity(1); 
+local nlgID = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId)) 
+-- script viet hoa By http://tranhba.com LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), 
+local nlgcount = LG_GetMemberCount(nlgID) 
+if nlgcount == 0 then 
+caption = "<dec> b©y giê kh«ng cã bang héi ghi danh c«ng thµnh ." 
+else 
+caption = "<dec> ghi danh c«ng thµnh chiÕn ®Ých bang héi : \n" 
+PushString(caption) 
+for nindex=0,nlgcount do 
+szTongName = LG_GetMemberInfo(nlgID,nindex) 
+AppendString("<color=yellow>") 
+AppendString(szTongName) 
+AppendString("<color>\t") 
+end 
+caption = PopString() 
+end 
+local option = {"Trë vÒ /ArenaMain","Rêi ®i /OnCancel"} 
+TaskSay(caption, option) 
+end 
+
+-- script viet hoa By http://tranhba.com  giao n¹p khiªu chiÕn lÖnh 
+function GiveTiaoZhanLing() 
+if checkBangHuiLimit() == 0 then 
+Say("Ng­îng ngïng ! ng­¬i cßn kh«ng cã gia nhËp bÊt kú bang ph¸i #",0); 
+return 0; 
+end 
+local nDate = tonumber(tonumber(GetLocalDate("%y"))..tonumber(GetLocalDate("%m"))..tonumber(GetLocalDate("%d"))); 
+local nLibao = GetTask(TIAOZHANLING_TASK_DATE); 
+local nOlddate = tonumber(GetByte(nLibao,1)..GetByte(nLibao,2)..GetByte(nLibao,3)); 
+local nCount = GetTask(TIAOZHANLING_TASK_COUNT); 
+if ( nOlddate == nDate and nCount >= 300) then 
+Say("Mçi ngµy nhiÒu nhÊt ®Ò giao 300 tÊm lÖnh bµi . h«m nay ng­¬i ®· ®Ò giao liÔu 300 tÊm lÖnh bµi , ngµy mai tiÕp tôc ®i ",0) 
+return 0; 
+end 
+if ( nOlddate ~= nDate ) then 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),1,tonumber(GetLocalDate("%y")))); 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),2,tonumber(GetLocalDate("%m")))); 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),3,tonumber(GetLocalDate("%d")))); 
+SetTask(TIAOZHANLING_TASK_COUNT,0); 
+end 
+
+local szlgname = GetTongName(); 
+-- script viet hoa By http://tranhba.com **** ph¸n ®o¸n cã hay kh«ng s¸ng lËp nªn x· ®oµn 
+checkCreatLG(szlgname); 
+
+-- script viet hoa By http://tranhba.com ** ph¸n ®o¸n cã hay kh«ng gia nhËp nªn x· ®oµn 
+checkJoinLG(szlgname); 
+local szTongName, nTongID = GetTongName(); 
+local nsum = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT) 
+if nsum >= 2000000000 then -- script viet hoa By http://tranhba.com  th­îng h¹n ®¹t 20 øc lµ kh«ng thÓ nh¾c l¹i ®ãng 
+Say("Vâ l©m lµm tæng sè ®· ®¹t th­îng h¹n . lóc/khi kh¸c thö l¹i lÇn n÷a ®i .",0) 
+return 0; 
+end 
+-- script viet hoa By http://tranhba.com ** ®Ò giao khiªu chiÕn lÖnh 
+GiveItemUI("§Ò giao khiªu chiÕn lÖnh ","Khiªu chiÕn lÖnh cã thÓ ®æi 20 v¹n kinh nghiÖm , bang héi dïng ®Ó ghi danh c«ng thµnh chiÕn .", "sure_GiveTiaoZhanLing", "OnCancel"); 
+end 
+
+function sure_GiveTiaoZhanLing(nCount) 
+if nCount <= 0 then 
+Say("ThËt ®¸ng tiÕc , ng­¬i cßn kh«ng cã ®ãng khiªu chiÕn vËt phÈm cho ta ",2,"§ãng vËt phÈm /GiveTiaoZhanLing","Ta muèn võa nghÜ /OnCancel"); 
+return 0; 
+end 
+for i = 1, nCount do 
+local nItemidx = GetGiveItemUnit(i); 
+local g, d, p = GetItemProp(nItemidx); 
+if (g ~= nCityWar_Item_ID_G or d ~= nCityWar_Item_ID_D or p ~= nCityWar_Item_ID_P) then 
+Say("Ta kh«ng muèn kh¸c , chØ cÇn mang cho ta <color=yellow> khiªu chiÕn lÖnh <color> lµ ®­îc råi .", 2,"§ãng vËt phÈm /GiveTiaoZhanLing","Ta muèn võa nghÜ /OnCancel"); 
+return 0; 
+end; 
+end; 
+local nDate = tonumber(tonumber(GetLocalDate("%y"))..tonumber(GetLocalDate("%m"))..tonumber(GetLocalDate("%d"))); 
+local nLibao = GetTask(TIAOZHANLING_TASK_DATE); 
+local nOlddate = tonumber(GetByte(nLibao,1)..GetByte(nLibao,2)..GetByte(nLibao,3)); 
+local nCountall = GetTask(TIAOZHANLING_TASK_COUNT); 
 	if ( nOlddate == nDate and nCountall+nCount > 300) then
-			Say(format("ThËt ®¸ng tiÕc, h«m nay ng­¬i ®· nép vµo %d khiªu chiÕn lÖnh, chØ cÇn nép %d lÖnh bµi n÷a lµ ®­îc råi.",nCountall,300-nCountall),0)
-			return 0;
-	end
-	if ( nOlddate ~= nDate ) then
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),1,tonumber(GetLocalDate("%y"))));
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),2,tonumber(GetLocalDate("%m"))));
-		SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),3,tonumber(GetLocalDate("%d"))));
-		SetTask(TIAOZHANLING_TASK_COUNT,0);
-	end
-	local nCityId = getSigningUpCity(1);
-	local szTongName, nTongID = GetTongName();
-	--local szplayName = GetName()
-	--local nlg = LG_GetLeagueObj(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName);
-	--local nlid = LG_GetLeagueObjByRole(TIAOZHANLING_LGTYPE, szTongName);
-	--local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE, szTongName, szplayName, LGTSK_QINGTONGDING_COUNT);
-	local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT)
-	--ConsumeEquiproomItem(nCount, nCityWar_Item_ID_G, nCityWar_Item_ID_D, nCityWar_Item_ID_P, -1);
-	for i = 1, nCount do
-		local nItemidx = GetGiveItemUnit(i);
-		RemoveItemByIndex(nItemidx)
-	end;
+Say(format("ThËt tiÕc nuèi , h«m nay ng­¬i ®· nép lªn %d khiªu chiÕn lÖnh , chØ cÇn trë/mang lªn ®ãng %d lÖnh bµi lµ ®­îc råi .",nCountall,300-nCountall),0) 
+return 0; 
+end 
+if ( nOlddate ~= nDate ) then 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),1,tonumber(GetLocalDate("%y")))); 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),2,tonumber(GetLocalDate("%m")))); 
+SetTask(TIAOZHANLING_TASK_DATE,SetByte(GetTask(TIAOZHANLING_TASK_DATE),3,tonumber(GetLocalDate("%d")))); 
+SetTask(TIAOZHANLING_TASK_COUNT,0); 
+end 
+local nCityId = getSigningUpCity(1); 
+local szTongName, nTongID = GetTongName(); 
+-- script viet hoa By http://tranhba.com local szplayName = GetName() 
+-- script viet hoa By http://tranhba.com local nlg = LG_GetLeagueObj(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName); 
+-- script viet hoa By http://tranhba.com local nlid = LG_GetLeagueObjByRole(TIAOZHANLING_LGTYPE, szTongName); 
+-- script viet hoa By http://tranhba.com local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE, szTongName, szplayName, LGTSK_QINGTONGDING_COUNT); 
+local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT) 
+-- script viet hoa By http://tranhba.com ConsumeEquiproomItem(nCount, nCityWar_Item_ID_G, nCityWar_Item_ID_D, nCityWar_Item_ID_P, -1); 
+for i = 1, nCount do 
+local nItemidx = GetGiveItemUnit(i); 
+RemoveItemByIndex(nItemidx) 
+end; 
 	SetTask(TIAOZHANLING_TASK_COUNT,nCountall+nCount);
-	--LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_CITYWAR_SIGNCOUNT, 1, "", "")
-	
-	LG_ApplyAppendMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, nCount, "", "");
-	
-	
-	--print(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, nCount, "", "")
-	--Ôö¼Ó¾­Ñé,Ìá½»1¸öÔö¼Ó5Íò¾­Ñé
-	--nAddExp = nCount * 50000
---	AddOwnExp(nAddExp)
-	Msg2Player(format("B¹n ®· nép vµo %d khiªu chiÕn lÖnh.",nCount))
-	WriteLog(format("[C«ng thµnh chiÕn_giao khiªu chiÕn lÖnh]Date:%s Account:%s Name:%s Tong:%s Count:%d",GetLocalDate("%y-%m-%d %H:%M:%S"),GetAccount(),GetName(),szTongName,nCount))
-end;
+-- script viet hoa By http://tranhba.com LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_CITYWAR_SIGNCOUNT, 1, "", "") 
 
---*********************************Hµm xem sè l­îng khiªu chiÕn lÖnh cña bang********************************
-function ViewTiaoZhanLing()
-		local szTongName, nTongID = GetTongName();
-		if (nTongID == 0 or ( GetTongFigure() ~= TONG_MASTER and GetTongFigure() ~= TONG_ELDER)) then
-			Say("ThËt ®¸ng tiÕc, chØ cã bang chñ vµ tr­ëng l·o míi cã thÓ xem th«ng tin sè l­îng Khiªu ChiÕn LÖnh.", 0);
-			return 0
-		end
-		--local szlgname = GetTongName();
-		--****ÅÐ¶ÏÊÇ·ñ´´½¨ÁË¸ÃÉçÍÅ
-		checkCreatLG(szTongName);
-	
-		--**ÅÐ¶ÏÊÇ·ñ¼ÓÈëÁË¸ÃÉçÍÅ
-		checkJoinLG(szTongName);
-		--local nCityId = getSigningUpCity(1);
-		--local szTongName, nTongID = GetTongName();
-		--local nlg = LG_GetLeagueObj(TIAOZHANLING_LGTYPE, szTongName);
-		--local szplayName = GetName()
-		--local nlid = LG_GetLeagueObjByRole(TIAOZHANLING_LGTYPE, szTongName);
-		--Msg2Player(nlid)
-		--local nCurCount = LG_GetMemberTask(nlid, LGTSK_TIAOZHANLING_COUNT)
-		local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT)
-		
-		Say(format("QuÝ bang ®· nép vµo <color=yellow>%d<color> khiªu chiÕn lÖnh.",nCurCount),0)
-end
+LG_ApplyAppendMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, nCount, "", ""); 
 
---*******************************Hµm thµnh chiÕn lÖnh bµi*******************************
-function TokenCard()
-	Say("Thµnh ChiÕn lÖnh bµi dµnh cho nh÷ng ng­êi muèn vµo chi viÖn cho bang héi c«ng thñ thµnh! Xin cho hái môc ®Ých cña nghÜa sÜ?", 4, "Mua Thµnh chiÕn lÖnh bµi/BuyCard", "Thö lÖnh bµi/CheckCard", "Tr¶ l¹i lÖnh bµi/ReturnCard", "Kh«ng lµm g× c¶ /OnCancel");
-end;
 
-function BuyCard()
-	if (GetName() == GetTongMaster()) then
-		TongName, result = GetTong()
-		for i = 1, 7 do
-			Tong1, Tong2 = GetCityWarBothSides(i);
-			if (Tong1 == TongName) then
-				SetTaskTemp(15, CardTab[i * 2 - 1]);
-				str_format = format("Th× ra ®¹i hiÖp lµ ng­êi khiªu chiÕn thµnh %s, lîi h¹i qu¸, ë ®©y cã b¸n lÖnh bµi c«ng thµnh cã hiÖu lùc trong 5 ngµy dµnh liªn minh cña quÝ bang, mçi lÖnh bµi gi¸ %s l­îng.",GetCityAreaName(i),CardPrice);
-				Say(str_format, 2, "Mua mét Ýt/DealBuyCard", "T¹m thêi kh«ng cÇn/OnCancel");
-				return
-			elseif (Tong2 == TongName) then
-				SetTaskTemp(15, CardTab[i * 2]);
-				str_format = format("Th× ra ®¹i hiÖp lµ th¸i thó thµnh %s, t¹i ®©y cã b¸n lÖnh bµi thñ thµnh cã hiÖu lùc 5 ngµy dµnh cho liªn minh cña quÝ bang, mçi lÖnh bµi gi¸ %s l­îng.",GetCityAreaName(i),CardPrice);
-				Say(str_format, 2, "Mua mét Ýt/DealBuyCard", "T¹m thêi kh«ng cÇn/OnCancel");
-				return
-			end;
-		end;
-		Say("B¹n kh«ng cã quan hÖ g× víi c¸c bang ph¸i c«ng thñ thµnh! Kh«ng thÓ sö dông Thµnh chiÕn lÖnh bµi!", 0);
-	else
-		Say("ChØ cã bang chñ míi ®­îc mua Thµnh ChiÕn lÖnh bµi", 0);
-	end;
-end;
+-- script viet hoa By http://tranhba.com print(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, nCount, "", "") 
+-- script viet hoa By http://tranhba.com  gia t¨ng kinh nghiÖm , ®Ò giao 1 c¸ gia t¨ng 20 v¹n kinh nghiÖm 
+nAddExp = nCount * 5000 
+AddOwnExp(nAddExp) 
+Msg2Player(format("Ng­¬i ®· nép lªn %d khiªu chiÕn lÖnh , lÊy ®­îc %d kinh nghiÖm ",nCount,nAddExp)) 
+WriteLog(format("[ c«ng thµnh chiÕn _ ®ãng khiªu chiÕn lÖnh ]Date:%s Account:%s Name:%s Tong:%s Count:%d Exp:%d",GetLocalDate("%y-%m-%d %H:%M:%S"),GetAccount(),GetName(),szTongName,nCount,nAddExp)) 
+end; 
 
-function DealBuyCard(CardID)
-	AskClientForNumber("PayForCard", 1, 30, "B¹n cÇn bao nhiªu?");
-end;
+-- script viet hoa By http://tranhba.com  tuÇn tra khiªu chiÕn lÖnh 
+function ViewTiaoZhanLing() 
+local szTongName, nTongID = GetTongName(); 
+if (nTongID == 0 or ( GetTongFigure() ~= TONG_MASTER and GetTongFigure() ~= TONG_ELDER)) then 
+Say("ThËt ®¸ng tiÕc , chØ cã trî gióp cïng tr­ëng l·o míi cã thÓ nh×n khiªu chiÕn lÖnh ®Ých sè l­îng tin tøc .", 0); 
+return 0 
+end 
+-- script viet hoa By http://tranhba.com local szlgname = GetTongName(); 
+-- script viet hoa By http://tranhba.com **** ph¸n ®o¸n cã hay kh«ng s¸ng lËp nªn x· ®oµn 
+checkCreatLG(szTongName); 
 
-function PayForCard(count)
-	CardItemID = GetTaskTemp(15);
-	if (CardItemID > 0 and count > 0) then
-		if (Pay(count * CardPrice) ~= 0) then
-			for i = 1,count do
-				AddEventItem(CardItemID);
-			end;
-			Say("Xin h·y gi÷ kü! LÖnh bµi nµy dïng ®Ó kiÓm chøng ®ång minh trªn chiÕn tr­êng! Xin chó ý thêi gian trªn lÖnh bµi, chØ cã hiÖu lùc 5 ngµy, nÕu qu¸ thêi gian sÏ kh«ng sö dông ®­îc,cã thÓ quay l¹i ®©y tr¶ l¹i vµ lÊy l¹i phÝ ", 0);
-		end;
-	end;
-end;
+-- script viet hoa By http://tranhba.com ** ph¸n ®o¸n cã hay kh«ng gia nhËp nªn x· ®oµn 
+checkJoinLG(szTongName); 
+-- script viet hoa By http://tranhba.com local nCityId = getSigningUpCity(1); 
+-- script viet hoa By http://tranhba.com local szTongName, nTongID = GetTongName(); 
+-- script viet hoa By http://tranhba.com local nlg = LG_GetLeagueObj(TIAOZHANLING_LGTYPE, szTongName); 
+-- script viet hoa By http://tranhba.com local szplayName = GetName() 
+-- script viet hoa By http://tranhba.com local nlid = LG_GetLeagueObjByRole(TIAOZHANLING_LGTYPE, szTongName); 
+-- script viet hoa By http://tranhba.com Msg2Player(nlid) 
+-- script viet hoa By http://tranhba.com local nCurCount = LG_GetMemberTask(nlid, LGTSK_TIAOZHANLING_COUNT) 
+local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT) 
 
-function CheckCard()
-	count = 0;
-	CardItemID = 0;
-	for i=1,14 do
+Say(format("§¾t gióp ®· nép lªn liÔu <color=yellow>%d<color> khiªu chiÕn lÖnh .",nCurCount),0) 
+end 
+
+-- script viet hoa By http://tranhba.com  liªn quan tíi lÖnh bµi ®Ých xö lý start************************************************ 
+function TokenCard() 
+Say("Khiªu chiÕn lÖnh bµi muèn ®Ó l¹i cho muèn ®i tiÕp viÖn bang héi c«ng thñ thµnh ng­êi cña ! xin hái mét chót nghÜa sÜ ®Ých môc ®Ých lµ c¸i g× ?", 4,"Mua chiÕm thµnh lÖnh bµi /BuyCard","Thñ lÖnh bµi /CheckCard", " lui vÒ lÖnh bµi /ReturnCard","Kh«ng lµm c¸i g× /OnCancel"); 
+end; 
+
+function BuyCard() 
+if (GetName() == GetTongMaster()) then 
+TongName, result = GetTong() 
+for i = 1, 7 do 
+Tong1, Tong2 = GetCityWarBothSides(i); 
+if (Tong1 == TongName) then 
+SetTaskTemp(15, CardTab[i * 2 - 1]); 
+str_format = format("Th× ra lµ ®¹i hiÖp lµ khiªu chiÕn thµnh %s ng­êi cña , thËt lµ lîi h¹i , n¬i nµy cã b¸n c«ng thµnh lÖnh bµi , lÖnh bµi nµy cã cÊt gi÷ ®¾t gióp liªn minh 5 ngµy ®Ých hiÖu lùc , mçi lÖnh bµi gi¸ %s hai .",GetCityAreaName(i),CardPrice); 
+Say(str_format, 2,"Mua mét chót /DealBuyCard","T¹m thêi kh«ng cÇn /OnCancel"); 
+return 
+elseif (Tong2 == TongName) then 
+SetTaskTemp(15, CardTab[i * 2]); 
+str_format = format("Th× ra lµ ®¹i hiÖp lµ %s thµnh ®Ých Th¸i thó , n¬i nµy cã b¸n thñ thµnh lÖnh bµi , lÖnh bµi nµy cã cÊt gi÷ ®¾t gióp liªn minh 5 ngµy ®Ých hiÖu lùc , mçi lÖnh bµi gi¸ %s hai .",GetCityAreaName(i),CardPrice); 
+Say(str_format, 2,"Mua mét chót /DealBuyCard","T¹m thêi kh«ng cÇn /OnCancel"); 
+return 
+end; 
+end; 
+Say("Ng­¬i cïng c«ng thñ thµnh ®Ých bang ph¸i kh«ng cã quan hÖ # kh«ng thÓ sö dông chiÕm thµnh lÖnh bµi !", 0); 
+else 
+Say("ChØ cã bang chñ míi cã thÓ mua chiÕm thµnh lÖnh bµi ", 0); 
+end; 
+end; 
+
+function DealBuyCard(CardID) 
+AskClientForNumber("PayForCard", 1, 30,"Ng­¬i ph¶i nhiÒu thiÓu ?"); 
+end; 
+
+function PayForCard(count) 
+CardItemID = GetTaskTemp(15); 
+if (CardItemID > 0 and count > 0) then 
+if (Pay(count * CardPrice) ~= 0) then 
+for i = 1,count do 
+AddEventItem(CardItemID); 
+end; 
+Say("Xin/mêi thÝch ®¸ng b¶o tån # lÖnh bµi nµy lµ trªn chiÕn tr­êng ®ång minh ®Ých chøng kiÕn # xin chó ý lÖnh bµi ®Ých thêi gian , chØ cã 5 ngµy ®Ých hiÖu lùc , nÕu nh­ qu¸ h¹n th× kh«ng thÓ sö dông , cã thÓ ®Õn c¸i nµy lui ®æi cïng cÇm trë vÒ phÝ dông ", 0); 
+end; 
+end; 
+end; 
+
+function CheckCard() 
+count = 0; 
+CardItemID = 0; 
+for i=1,14 do 
 		newcount = count + GetItemCountEx(CardTab[i])
-		if (newcount > count) then
-			CardItemID = CardTab[i];
-			count = newcount;
-		end;
-	end;
-	if (count == 0) then
-		Say("B¹n kh«ng hÒ cã lÖnh bµi nµo trong ng­êi!", 0);
-	elseif (count > 1) then
-		Say("B¹n mang qu¸ nhiÒu Thµnh ChiÕn lÖnh bµi, kh«ng biÕt b¹n muèn kiÓm chøng c¸i nµo! Xin chØ mang mét lÖnh bµi th«i!", 0);
-	elseif (CardItemID ~= 0) then
-		life = GetItemLife(CardItemID);
-		if (life < 0) then
-			Say("T×nh tr¹ng tÊm lÖnh bµi nµy lµ.......", 0);
-		elseif (life < 7200) then
-			Say(format("Sè lÖnh bµi c«ng thµnh nµy ph¶i ®­îc ph¸t tr­íc %s ngµy, hiÖn vÉn cßn hiÖu lùc.",floor(life/1440)), 0)
-		else
-			Say(format("Sè lÖnh bµi c«ng thµnh nµy ph¶i ®­îc ph¸t tr­íc %s ngµy, hiÖn ®· qu¸ h¹n, kh«ng cßn hiÖu lùc sö dông.",floor(life/1440)), 0);
-		end;
-	end;
-end;
+if (newcount > count) then 
+CardItemID = CardTab[i]; 
+count = newcount; 
+end; 
+end; 
+if (count == 0) then 
+Say("Trªn ng­êi ng­¬i kh«ng cã bÊt kú lÖnh bµi !", 0); 
+elseif (count > 1) then 
+Say("Ng­¬i mang theo qu¸ nhiÒu chiÕm thµnh lÖnh bµi , kh«ng biÕt ng­¬i muèn nghiÖm chøng kia khèi # xin/mêi chØ mang mét tÊm lÖnh bµi lµ tèt råi !", 0); 
+elseif (CardItemID ~= 0) then 
+life = GetItemLife(CardItemID); 
+if (life < 0) then 
+Say("Khèi nµy lÖnh bµi ®Ých t×nh huèng lµ ......", 0); 
+elseif (life < 7200) then 
+Say(format("Nh÷ng thø nµy c«ng thµnh lÖnh bµi ®Ých sè l­îng muèn ë %s ngµy tr­íc ph¸t ra , b©y giê vÉn nh­ cò h÷u hiÖu lùc .",floor(life/1440)), 0) 
+else 
+Say(format("Nh÷ng thø nµy c«ng thµnh lÖnh bµi ®Ých sè l­îng muèn ë %s ngµy tr­íc ph¸t ra , b©y giê ®· qu¸ h¹n , kh«ng cã sö dông hiÖu lùc .",floor(life/1440)), 0); 
+end; 
+end; 
+end; 
 
-function ReturnCard()
-	count = 0;
-	for i=1,14 do
+function ReturnCard() 
+count = 0; 
+for i=1,14 do 
 		count = count + GetItemCountEx(CardTab[i]);
-	end;
-	if (count <= 0) then
-		Say("B¹n kh«ng hÒ cã lÖnh bµi nµo trong ng­êi!", 0);
-	else
-		str_format = format("LÖnh bµi c«ng thµnh ®­îc thu l¹i víi gi¸ %s l­îng, ng­¬i ®ång ý tr¶ l¹i kh«ng?",count*ReturnCardPrice);
-		Say(str_format, 2, "ta muèn tr¶ l¹i /DealReturnCard", "Kh«ng, ta chØ hái chót th«i/OnCancel");
-	end;
-end;
+end; 
+if (count <= 0) then 
+Say("Trªn ng­êi ng­¬i kh«ng cã bÊt kú lÖnh bµi !", 0); 
+else 
+str_format = format("C«ng thµnh lÖnh bµi cã thÓ dïng %s hai thu vÒ , ng­¬i ®ång ý tr¶ l¹i sao ?",count*ReturnCardPrice); 
+Say(str_format, 2,"Ta muèn tr¶ l¹i /DealReturnCard","Kh«ng , ta ch¼ng qua lµ hái mét chót /OnCancel"); 
+end; 
+end; 
 
-function DealReturnCard()
-	money = 0;
-	for i=1,14 do
-		count = GetItemCountEx(CardTab[i]);
-		if (count > 0) then
+function DealReturnCard() 
+money = 0; 
+for i=1,14 do 
+count = GetItemCountEx(CardTab[i]); 
+if (count > 0) then 
 			money = money + count * ReturnCardPrice;
-			for j=1,count do DelItemEx(CardTab[i]) end;
-		end;
-	end;
-	Earn(money);
-end;
+for j=1,count do DelItemEx(CardTab[i]) end; 
+end; 
+end; 
+Earn(money); 
+end; 
+-- script viet hoa By http://tranhba.com  liªn quan tíi lÖnh bµi ®Ých xö lý end************************************************** 
 
---***********************************Hµm t×m hiÓu t×nh h×nh c«ng thµnh chiÕn**************************
-function GameInfo()
-	Say("Muèn t×m hiÓu th«ng tin thµnh thÞ nµo?", 9, GetCityAreaName(1).."/CityInfo", GetCityAreaName(2).."/CityInfo", GetCityAreaName(3).."/CityInfo", GetCityAreaName(4).."/CityInfo", GetCityAreaName(5).."/CityInfo", GetCityAreaName(6).."/CityInfo", GetCityAreaName(7).."/CityInfo", "Trë vÒ/ArenaMain", "Kh«ng cÇn ®©u/OnCancel");
-end;
+-- script viet hoa By http://tranhba.com AskDeal c«ng thµnh chiÕn phô trî ®¹o cô chuyÓn tíi citywar_global\\citywar_function.lua 
 
---"Èü³Ì°²ÅÅ/ArenaInfo", 
---"±ÈÎä½á¹û/AllArenaInfo", 
-function CityInfo(nSel)
+-- script viet hoa By http://tranhba.com  hiÓu râ c«ng thµnh chiÕn t×nh huèng start************************************************ 
+function GameInfo() 
+Say("Muèn mæ thµnh thÞ nµo ?", 9, GetCityAreaName(1).."/CityInfo", GetCityAreaName(2).."/CityInfo", GetCityAreaName(3).."/CityInfo", GetCityAreaName(4).."/CityInfo", GetCityAreaName(5).."/CityInfo", GetCityAreaName(6).."/CityInfo", GetCityAreaName(7).."/CityInfo", "Tr?v?ArenaMain","Kh«ng cÇn /OnCancel"); 
+end; 
+
+-- script viet hoa By http://tranhba.com " cuéc so tµi tr×nh an bµi /ArenaInfo", 
+-- script viet hoa By http://tranhba.com " tû vâ kÕt qu¶ /AllArenaInfo", 
+function CityInfo(nSel) 
 	local nCityId =  nSel + 1;
-	SetTaskTemp(245, nCityId);
-	if (nCityId < 1 or nCityId > 7) then 
-		return
-	end;
-	Say(format("Muèn t×m hiÓu th«ng tin g× vÒ c«ng thµnh chiÕn %s?",GetCityAreaName(nCityId)), 4, 
-		"T×nh h×nh b¸o danh/RegisterInfo", 
-		"C«ng thµnh chiÕn sù /CityWarInfo", 
-		"Trë vÒ/GameInfo", 
-		"Kh«ng cÇn ®©u/OnCancel");
-end;
+SetTaskTemp(245, nCityId); 
+if (nCityId < 1 or nCityId > 7) then 
+return 
+end; 
+Say(format("Muèn mæ c«ng thµnh chiÕn %s ®Ých tin tøc g× ?",GetCityAreaName(nCityId)), 4, 
+" ghi danh t×nh huèng /RegisterInfo", 
+" c«ng thµnh chiÕn sù /CityWarInfo", 
+" trë vÒ /GameInfo", 
+" kh«ng cÇn /OnCancel"); 
+end; 
 
-function RegisterInfo()
-	local nCityId = GetTaskTemp(245);
-	
-	if (nCityId < 1 or nCityId > 7) then 
-		return
-	end;
-	
-	local nHour = tonumber(GetLocalDate("%H"));
-	if (nHour<18 or nHour>=19) then
-		Say("HiÖn t¹i kh«ng ph¶i lµ thêi gian b¸o danh c«ng thµnh chiÕn.", 2, "Trë vÒ/GameInfo", "Kh«ng cÇn ®©u/OnCancel");
-		return 0;
-	end;
-	if (nCityId ~= getSigningUpCity(1) or getSignUpState(nCityId) ~= 1) then
-		Say(format("HiÖn t¹i c«ng thµnh chiÕn <%s> kh«ng ë giai ®o¹n b¸o danh.",GetCityAreaName(nCityId)), 2, "Trë vÒ/GameInfo", "Kh«ng cÇn ®©u/OnCancel");
-		return 0;
-	end;
-	
-	local szElector = getCityWarElector(cityid_to_lgname(nCityId))--"<ÔÝÎÞ>"
-	if (szElector == "" or szElector == nil) then
-		szElector = "<T¹m thêi kh«ng>";
-	end;
-	Say(format("C«ng thµnh chiÕn <%s> ®ang ®­îc chuÈn bÞ, bang héi thi ®ua lÖnh bµi xÕp h¹ng thø nhÊt lµ : %s<color=red><enter>NÕu cã bang nµo cã sè l­îng lÖnh bµi b»ng víi bang xÕp thø 1, th× hÖ thèng sÏ ngÉu nhiªn chän ra bang c«ng thµnh cho ngµy mai.<color>",GetCityAreaName(nCityId),szElector), 2, "Trë vÒ/GameInfo", "Kh«ng cÇn ®©u/OnCancel");
-end;
+function RegisterInfo() 
+local nCityId = GetTaskTemp(245); 
+
+if (nCityId < 1 or nCityId > 7) then 
+return 
+end; 
+
+local nHour = tonumber(GetLocalDate("%H")); 
+if (nHour<18 or nHour>=19) then 
+Say("B©y giê kh«ng ph¶i lµ c«ng thµnh chiÕn ®Ých ghi danh thêi gian .", 2,"Trë vÒ /GameInfo","Kh«ng cÇn /OnCancel"); 
+return 0; 
+end; 
+if (nCityId ~= getSigningUpCity(1) or getSignUpState(nCityId) ~= 1) then 
+Say(format("B©y giê c«ng thµnh chiÕn <%s> kh«ng cã ë ®©y ghi danh giai ®o¹n .",GetCityAreaName(nCityId)), 2,"Trë vÒ /GameInfo","Kh«ng cÇn /OnCancel"); 
+return 0; 
+end; 
+
+local szElector = getCityWarElector(cityid_to_lgname(nCityId))-- script viet hoa By http://tranhba.com "< t¹m v« >" 
+if (szElector == "" or szElector == nil) then 
+szElector = "< t¹m thêi kh«ng >"; 
+end; 
+Say(format("C«ng thµnh chiÕn <%s> ®ang chuÈn bÞ , dù thi bang héi lÖnh bµi ®øng hµng thø ®Çu tiªn lµ : %s<color=red><enter> nÕu nh­ cã bang héi ®Ých lÖnh bµi sè l­îng cïng thø nhÊt gièng nhau , lµ tõ hÖ thèng ngÉu nhiªn chän lùa ngµy mai c«ng thµnh gióp .<color>",GetCityAreaName(nCityId),szElector), 2,"Trë vÒ /GameInfo","Kh«ng cÇn /OnCancel"); 
+end; 
 
 
-function getCityWarElector(szLeagueName)
-	local leagueObj = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName)
+function getCityWarElector(szLeagueName) 
+local leagueObj = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName) 
 
-	if (leagueObj == 0) then
-		return 
-	end;
-	local nMem = LG_GetMemberCount(leagueObj);
-	if (nMem < 1) then
-		return
-	end;
-	local szMem = "";
-	local tbMem = {};
-	for i = 0, nMem - 1 do
-		szMem = LG_GetMemberInfo(leagueObj, i);
-		ncount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, szLeagueName, szMem, LGTSK_QINGTONGDING_COUNT);
-		if (getn(tbMem) == 0) then
-			tbMem[1] = {szMem, ncount};
-		else
-			if (ncount == tbMem[1][2]) then
+if (leagueObj == 0) then 
+return 
+end; 
+local nMem = LG_GetMemberCount(leagueObj); 
+if (nMem < 1) then 
+return 
+end; 
+local szMem = ""; 
+local tbMem = {}; 
+for i = 0, nMem - 1 do 
+szMem = LG_GetMemberInfo(leagueObj, i); 
+ncount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, szLeagueName, szMem, LGTSK_QINGTONGDING_COUNT); 
+if (getn(tbMem) == 0) then 
+tbMem[1] = {szMem, ncount}; 
+else 
+if (ncount == tbMem[1][2]) then 
 				tbMem[getn(tbMem) + 1] = {szMem, ncount};
-			elseif (ncount > tbMem[1][2]) then
-				tbMem = {};
+elseif (ncount > tbMem[1][2]) then 
+tbMem = {}; 
 				tbMem[getn(tbMem) + 1] = {szMem, ncount};
-			end;
-		end;
-	end;
-	--local szMem = LG_GetMemberInfo(leagueObj, 0)
-	return tbMem[random(getn(tbMem))][1];
-	--return LG_GetMemberInfo(leagueObj, 0)
-end;
+end; 
+end; 
+end; 
+-- script viet hoa By http://tranhba.com local szMem = LG_GetMemberInfo(leagueObj, 0) 
+return tbMem[random(getn(tbMem))][1]; 
+-- script viet hoa By http://tranhba.com return LG_GetMemberInfo(leagueObj, 0) 
+end; 
 
---Èü³Ì°²ÅÅ-(·ÏÆú2006-11-22)
-function ArenaInfo()
-	nCityId = GetTaskTemp(245);
-	
-	if (nCityId < 1 or nCityId > 7) then 
-		return
-	end;
-	Say(GetArenaSchedule(nCityId), 0);
-end;
+-- script viet hoa By http://tranhba.com  cuéc so tµi tr×nh an bµi -( bá hoang 2006-11-22) 
+function ArenaInfo() 
+nCityId = GetTaskTemp(245); 
 
-function AllArenaInfo()
-	nCityId = GetTaskTemp(245);
-	
-	if (nCityId < 1 or nCityId > 7) then 
-		return
-	end;
-	--Say(GetArenaInfoByCity(nCityId), 0);
-end;
+if (nCityId < 1 or nCityId > 7) then 
+return 
+end; 
+Say(GetArenaSchedule(nCityId), 0); 
+end; 
 
-function CityWarInfo()
-	local nCityId = GetTaskTemp(245);
-	
-	if (nCityId < 1 or nCityId > 7) then 
-		return
-	end;
-	local str_format = format("C«ng thµnh chiÕn <%s> ngµy mai: ",GetCityAreaName(nCityId));
-	local str1, str2 = GetCityWarBothSides(nCityId);
-	if (str1 ~= "" and str2 ~= "" ) then
-		if (nCityId == getSigningUpCity(2)) then
-			str_format = format("C«ng thµnh chiÕn <%s> h«m nay: ",GetCityAreaName(nCityId));
-			if (HaveBeginWar(nCityId) == 1) then 
-				str_format = format("Tr­íc m¾t <%s> ®ang ë giai ®o¹n c«ng thµnh chiÕn: ",GetCityAreaName(nCityId));
-			end;
-		end;
-		str_format = format("Phe thñ %s lµ %s, phe c«ng lµ %s!",str_format,str2,str1);
-		Say(str_format , 2, "Trë vÒ/GameInfo", "Kh«ng cÇn ®©u/OnCancel");
-	else
-		Say(format("Tr­íc m¾t %s ch­a b­íc vµo giai ®o¹n c«ng thµnh chiÕn!",GetCityAreaName(nCityId)) , 2, "Trë vÒ/GameInfo", "Kh«ng cÇn ®©u/OnCancel");
-	end;
-end;
+function AllArenaInfo() 
+nCityId = GetTaskTemp(245); 
+
+if (nCityId < 1 or nCityId > 7) then 
+return 
+end; 
+-- script viet hoa By http://tranhba.com Say(GetArenaInfoByCity(nCityId), 0); 
+end; 
+
+function CityWarInfo() 
+local nCityId = GetTaskTemp(245); 
+
+if (nCityId < 1 or nCityId > 7) then 
+return 
+end; 
+local str_format = format("C«ng thµnh chiÕn <%s> ngµy mai : ",GetCityAreaName(nCityId)); 
+local str1, str2 = GetCityWarBothSides(nCityId); 
+if (str1 ~= "" and str2 ~= "" ) then 
+if (nCityId == getSigningUpCity(2)) then 
+str_format = format("C«ng thµnh chiÕn <%s> h«m nay : ",GetCityAreaName(nCityId)); 
+if (HaveBeginWar(nCityId) == 1) then 
+str_format = format("D­íi m¾t <%s> xö vu c«ng thµnh chiÕn giai ®o¹n : ",GetCityAreaName(nCityId)); 
+end; 
+end; 
+str_format = format("Thñ ph­¬ng %s lµ %s, c«ng míi lµ %s!",str_format,str2,str1); 
+Say(str_format , 2,"Trë vÒ /GameInfo","Kh«ng cÇn /OnCancel"); 
+else 
+Say(format("D­íi m¾t %s cßn kh«ng cã tiÕn vµo c«ng thµnh chiÕn giai ®o¹n !",GetCityAreaName(nCityId)) , 2,"Trë vÒ /GameInfo","Kh«ng cÇn /OnCancel"); 
+end; 
+end; 
 
 
---ÁË½â¹¥³ÇÕ½Çé¿ö end**************************************************
+-- script viet hoa By http://tranhba.com  hiÓu râ c«ng thµnh chiÕn t×nh huèng end************************************************** 
 
---ÁìÈ¡¹¥³ÇÐÅÎï start**************************************************
-function checkIsTakeQingtongDing(szTongName, nTongID, nCityId)
-		if (nTongID == 0 or GetTongMaster()~= GetName()) then
-			Say("ChØ cã bang chñ bang b¸o danh c«ng thµnh vµ bang thÊt b¹i trong cuéc thi thè lÖnh bµi míi cã thÓ nhËn l¹i tÝn vËt.", 0);
-			return 0;
-		end;
-		if (nCityId < 1 or nCityId > 7) then
-			return 0;
-		end;
-		
-		local nHour = tonumber(GetLocalDate("%H"));
-		if (nHour < 19) then
-			Say("Thêi gian nhËn l¹i tÝn vËt c«ng thµnh chiÕn ®· hÕt, trong kho¶ng thêi gian tõ 19h00 ®Õn 24h00 mçi ngµy, bang héi tranh ®ua lÖnh bµi thÊt b¹i cã thÓ ®Õn chç ta ®Ó nhËn l¹i khiªu chiÕn lÖnh.", 0)
-			return 0;
-		end;
-		
-		if (getSignUpState(nCityId) == 1) then
-			Say(format("B¸o danh tham gia tranh ®ua lÖnh bµi thµnh %s cho ngµy mai vÉn ch­a kÕt thóc, h·y tiÕp tôc tham gia.",GetCityAreaName(nCityId)), 0);
-			return 0;
-		end;
-		
-		local szChallenger = GetCityWarBothSides(nCityId);
-		if (szChallenger == szTongName) then
-			Say(format("QuÝ bang ®· trë thµnh bang c«ng thµnh %s vµo ngµy mai, tÝn vËt c«ng thµnh ta ®· giao l¹i cho th¸i thó råi.",GetCityAreaName(nCityId)), 0);
-			return 0;
-		end;
-		
-		local szChallenger = GetCityOwner(nCityId);
-		if (szChallenger == szTongName) then
-			Say(format("Ng­¬i ®· lµ th¸i thó thµnh %s, kh«ng cÇn ph¶i nhËn tÝn vËt c«ng thµnh n÷a.",GetCityAreaName(nCityId)), 0);
-			return 0;
-		end;
-		
-		local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName);
-		if (FALSE(nlid)) then
-			Say("Ch­a b¸o danh tham gia c«ng thµnh chiÕn ngµy mai, ë ®©y kh«ng cã tÝn vËt cña ng­¬i.", 0);
-			return 0;
-		end;
-		return 1;
-end;
-	
-function getSignUpState(nCityId)
-	return LG_GetLeagueTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), 1);
-end;
-	
-function TakeQingtongDing()
-	local szTongName, nTongID = GetTongName();
-	local nCityId = getSigningUpCity(1);
-	if (checkIsTakeQingtongDing(szTongName, nTongID, nCityId) ~= 1) then
-		return 0
-	end;
-	local ncount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT);
-	
-	if (ncount < 1) then
-		Say("TÝn vËt b¸o danh c«ng thµnh ta ®· tr¶ l¹i hÕt cho ng­¬i råi.", 0);
-	else
-		Say(format("Ng­¬i cã %s khiªu chiÕn lÖnh, h·y s¾p xÕp l¹i hµnh trang tr­íc khi nhËn l¹i lÖnh bµi.",ncount), 3, "Ta muèn nhËn l·nh/#sure_takeQingtongDing("..ncount..")", "Trë vÒ/ArenaMain", "L¸t n÷a quay l¹i /OnCancel");
-	end;
-end;
+-- script viet hoa By http://tranhba.com  nhËn lÊy c«ng thµnh tÝn vËt start************************************************** 
+function checkIsTakeQingtongDing(szTongName, nTongID, nCityId) 
+if (nTongID == 0 or GetTongMaster()~= GetName()) then 
+Say("ChØ cã ghi danh c«ng thµnh bang héi ®Ých bang chñ cïng ë lÖnh bµi tranh tµi trung thÊt b¹i bang héi bang chñ míi cã thÓ dÉn tÝn vËt .", 0); 
+return 0; 
+end; 
+if (nCityId < 1 or nCityId > 7) then 
+return 0; 
+end; 
 
-function sure_takeQingtongDing(ncount)
-	local szTongName, nTongID = GetTongName();
-	local nCityId = getSigningUpCity(1);
-	if (checkIsTakeQingtongDing(szTongName, nTongID, nCityId) == 1) then
-		local nFree = CalcFreeItemCellCount();
-		if (nFree > 6) then
-			local szMsg = format("§©y lµ <color=yellow>%s<color> khiªu chiÕn lÖnh cña ng­¬i.",ncount);
-			if (nFree < ncount) then
-				szMsg = format("Ng­¬i cã <color=yellow>%s<color> khiªu chiÕn lÖnh, v× hµnh trang kh«ng ®ñ, ta tr¶ l¹i tr­íc %s c¸i. VÉn cßn <color=yellow>%s<color> c¸i ch­a nhËn, h·y nhËn tr­íc 24h00 ngµy h«m nay!",ncount,nFree,(ncount - nFree));
-				ncount = nFree;
-			end;
-			for i =1, ncount do
-				AddItem(nCityWar_Item_ID_G,nCityWar_Item_ID_D,nCityWar_Item_ID_P,1,1,1);--qingtongding
-			end;
-			LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, -nFree);
-			WriteLog(format("[Tranh ®ua c«ng thµnh chiÕn]%s Name:%s Account:%s Tong:%s Thµnh thÞ: %s NhËn l¹i khiªu chiÕn lÖnh %s",date(),GetName(),GetAccount(),szTongName,cityid_to_lgname(nCityId),ncount));
-			Say(szMsg, 0);
-		else
-			Say("Hµnh trang kh«ng ®ñ chç trèng. Chó ý lµ tr­íc 24h00 ph¶i ®Õn nhËn l¹i tÝn vËt, nÕu kh«ng sÏ kh«ng thÓ nhËn l¹i n÷a.", 0);
-		end;
-	end;
-end;
+local nHour = tonumber(GetLocalDate("%H")); 
+if (nHour < 19) then 
+Say("NhËn lÊy c«ng thµnh tÝn vËt ®Ých thêi gian ®· kÕt thóc , mçi ngµy ë 19h00 ®Õn 24h00 ®o¹n thêi gian nµy trung , tranh ®o¹t lÖnh bµi thÊt b¹i bang héi cã thÓ ®Õn ta chç nµy tíi nhËn lÊy khiªu chiÕn lÖnh .", 0) 
+return 0; 
+end; 
 
---*****************************Hµm b¸o danh**********************************
-function SignUpCityWar()
-	local nCityId = getSigningUpCity(1);
-	
-	local szTongName, nTongID = GetTongName();
-	
-	if (checkSignUpCityWar(szTongName, nTongID, nCityId) ~= 1) then
-		return 0;
-	end;
-	
-	local szMsg = format("<dec>HiÖn t¹i ®ang tiÕn hµnh b¸o danh thµnh <color=yellow>%s<color>.",GetCityAreaName(nCityId));
-	local szElector = getCityWarElector(cityid_to_lgname(nCityId))--"<ÔÝÎÞ>"
-	
-	if (szElector == "" or szElector == nil) then
-		szElector = "<T¹m thêi kh«ng>";
-	end;
+if (getSignUpState(nCityId) == 1) then 
+Say(format("Ghi danh tham gia %s thµnh ngµy mai tranh ®o¹t lÖnh bµi cßn ch­a kÕt thóc , cã thÓ tiÕp tôc tham gia .",GetCityAreaName(nCityId)), 0); 
+return 0; 
+end; 
 
-	local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName);
-	
-	if (FALSE(nlid)) then
-		szMsg = szMsg.."ChØ cÇn cã <color=yellow>'Khiªu chiÕn lÖnh'<color> th× cã thÓ tham gia tranh ®ua. Qui t¾c tranh ®ua: Bang héi ch­a chiÕm thµnh cã thÓ sö dông <color=yellow>'Khiªu chiÕn lÖnh'<color> ®Ó tham gia tranh ®ua. Thêi gian tranh ®ua lµ <color=yellow>18h00<color> ®Õn <color=yellow>19h00<color> mçi ngµy. Tr­íc <color=yellow>19h00<color>, bang héi nµo ®Æt vµo sè l­îng khiªu chiÕn lÖnh nhiÒu nhÊt sÏ nhËn ®­îc quyÒn c«ng thµnh chiÕn ngµy mai. <color=red><enter>Bang héi hiÖn t¹i xÕp thø 1 lµ:<color> <color=yellow>"..szElector.."<enter>"
-	else
-		
-		local nCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT);
-		
-		--print(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT)
-		--szMsg = format("%sQui t¾c tranh ®ua : Bang héi ch­a chiÕm thµnh cã thÓ sö dông 'Khiªu chiÕn lÖnh' ®Ó tham gia tranh ®ua. Thêi gian tranh ®ua lµ <color=yellow>18h00<color> ®Õn <color=yellow>19h00<color> mçi ngµy. Tr­íc <color=yellow>19h00<color>, bang héi nµo ®Æt vµo sè l­îng khiªu chiÕn lÖnh nhiÒu nhÊt sÏ nhËn ®­îc quyÒn c«ng thµnh chiÕn ngµy mai.<color=red><enter>NÕu cã bang héi cã cïng sè lÖnh bµi víi bang xÕp thø 1 th× hÖ thèng sÏ ngÉu nhiªn chän ra mét bang c«ng thµnh cho ngµy mai.<color><enter>Bang héi hiÖn t¹i xÕp thø 1 lµ: %s<enter>Sè l­îng khiªu chiÕn lÖnh tranh ®ua %s cña quÝ bang lµ: %s",szMsg,szElector,szTongName,nCount)
-		szMsg = format("%sQui t¾c tranh ®ua : Bang héi ch­a chiÕm thµnh cã thÓ sö dông <color=yellow>'Khiªu chiÕn lÖnh'<color> ®Ó tham gia tranh ®ua. Thêi gian tranh ®ua lµ <color=yellow>18h00<color> ®Õn <color=yellow>19h00<color> mçi ngµy. Tr­íc <color=yellow>19h00<color>, bang héi nµo ®Æt vµo sè l­îng khiªu chiÕn lÖnh nhiÒu nhÊt sÏ nhËn ®­îc quyÒn c«ng thµnh chiÕn ngµy mai.<color=red><enter>Bang héi hiÖn t¹i xÕp thø 1 lµ: <color=yellow>%s<color><enter>Sè l­îng khiªu chiÕn lÖnh tranh ®ua <color=yellow>%s<color> cña quÝ bang lµ: <color=yellow>%s<color><color>",szMsg,szElector,szTongName,nCount)
-	
-	end;
-	TaskSayList(szMsg, "Ta muèn tranh ®ua lÖnh bµi/want_signupcitywar", "Trë vÒ/ArenaMain", "§Ó ta suy nghÜ l¹i/OnCancel");
-end;
+local szChallenger = GetCityWarBothSides(nCityId); 
+if (szChallenger == szTongName) then 
+Say(format("§¾t gióp ®· thµnh v× ngµy mai c«ng thµnh %s ®Ých bang héi , c«ng thµnh tÝn vËt ®· tr¶ l¹i cho Th¸i thó liÔu .",GetCityAreaName(nCityId)), 0); 
+return 0; 
+end; 
 
---************************************Hµm ®ång ý tranh ®ua lÖnh bµi*******************************
-function want_signupcitywar()
-	--local nCityId = getSigningUpCity(1);
-	local szTongName, nTongID = GetTongName();
-	--local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName);
-	
-	--KiÓm tra sè l­îng khiªu chiÕn lÖnh hiÖn cã ch­a b¸o danh
-	local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT)
-	if nCurCount <= 0 then
-		Say("QuÝ bang kh«ng cã khiªu chiÕn lÖnh, kh«ng thÓ giao nép, h·y thu thËp khiªu chiÕn lÖnh råi h·y ®Õn t×m ta.",0)
-		return 0
-	end
+local szChallenger = GetCityOwner(nCityId); 
+if (szChallenger == szTongName) then 
+Say(format("Ng­¬i lµ %s thµnh ®Ých Th¸i thó , kh«ng nªn ®ãn thªm bÞ c«ng thµnh tÝn vËt .",GetCityAreaName(nCityId)), 0); 
+return 0; 
+end; 
 
-	if nCurCount > 1000000 then
-		nCurCount = 1000000
-	end
+local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName); 
+if (FALSE(nlid)) then 
+Say("Cßn kh«ng cã ghi danh tham gia ngµy mai c«ng thµnh chiÕn , n¬i nµy kh«ng cã ng­¬i tÝn vËt .", 0); 
+return 0; 
+end; 
+return 1; 
+end; 
 
-	AskClientForNumber("sure_signupcitywar", 0,nCurCount,"Giao nép khiªu chiÕn lÖnh")
-	
-	
-	--if (FALSE(nlid)) then
-		--if (GetCash() >= 10000000) then
-			--GiveItemUI("¹¥³ÇÕ½ÐÅÎï", "Çë½«¹¥³ÇÕ½ÐÅÎï¡ª¡ªÌôÕ½Áî·Å½øÈ¥°É¡£", "sure_signupcitywar", "OnCancel");
-		--else
-			--Say("µÚÒ»´Î±¨Ãû¹¥³ÇÕ½ÐèÒª½ÏÄÉ<color=yellow>1000WÁ½<color>Òø×Ó£¬ÄãÉíÉÏÃ»ÓÐ´øÕâÃ´¶àÇ®¡£ÄãÏÈ×¼±¸ºÃ±¨Ãû·ÑÔÙÀ´°É¡£", 0);
-		--end;
-	--else
-		--local nNum = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName,LGTSK_CITYWAR_SIGNCOUNT);
-		--if (nNum >= 3) then
-			--Say("ÄúµÄ¾ºÍ¶´ÎÊýÒÑ¾­´ïµ½<color=yellow>3´Î<color>£¬ÄúÏÖÔÚ²»ÄÜ¼ÌÐøÍ¶×¢£¬ÇëÄúµÈ´ý¾ºÍ¶½á¹ûµÄ¹«²¼¡£", 0);
-		--else
-			--GiveItemUI("¹¥³ÇÕ½ÐÅÎï", "Ã¿¸öÌôÕ½Áî¿ÉÒÔ»»È¡5Íòµã¾­Ñé£¬ÌôÕ½Áî¿ÉÓÃÀ´±¨Ãû°ï»á¹¥³ÇÕ½¡£", "sure_signupcitywar", "OnCancel");
-		--end;
-	--end;
+function getSignUpState(nCityId) 
+return LG_GetLeagueTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), 1); 
+end; 
 
-end;
+function TakeQingtongDing() 
+local szTongName, nTongID = GetTongName(); 
+local nCityId = getSigningUpCity(1); 
+if (checkIsTakeQingtongDing(szTongName, nTongID, nCityId) ~= 1) then 
+return 0 
+end; 
+local ncount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT); 
 
---*********************Hµm ®ång ý nhËp sè l­îng kiªu chiÕn lÖnh tham gia ®Êu gi¸***********************
-function sure_signupcitywar(nCount)
-	local nCityId = getSigningUpCity(1);		--GetArenaTargetCity()
-	if not (tonumber(GetLocalDate("%H"))>= 18 and tonumber(GetLocalDate("%H")) < 19 and getSignUpState(nCityId) == 1) then
-		Talk(1, "", "HiÖn t¹i kh«ng ph¶i lµ thêi gian b¸o danh c«ng thµnh chiÕn.")
-		return 1
-	end
-	
-	local szTongName, nTongID = GetTongName();
+if (ncount < 1) then 
+Say("Ghi danh c«ng thµnh tÝn vËt ta ®· còng cßn cho ng­¬i liÔu .", 0); 
+else 
+Say(format("Ng­¬i cã %s khiªu chiÕn lÖnh , dÉn lÖnh bµi tr­íc xin/mêi tr­íc söa sang l¹i tói ®eo l­ng .",ncount), 3,"Ta muèn dÉn lµm /#sure_takeQingtongDing("..ncount..")","Trë vÒ /ArenaMain","Mét c¸i trë l¹i /OnCancel"); 
+end; 
+end; 
 
-	--**********§Õm khiªu chiÕn lÖnh hiÖn cã**********************
-	local nTongCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT)
-	
-	
+function sure_takeQingtongDing(ncount) 
+local szTongName, nTongID = GetTongName(); 
+local nCityId = getSigningUpCity(1); 
+if (checkIsTakeQingtongDing(szTongName, nTongID, nCityId) == 1) then 
+local nFree = CalcFreeItemCellCount(); 
+if (nFree > 6) then 
+local szMsg = format("§©y lµ <color=yellow>%s<color> khiªu chiÕn cña ng­¬i lµm .",ncount); 
+if (nFree < ncount) then 
+szMsg = format("Ng­¬i cã <color=yellow>%s<color> khiªu chiÕn lÖnh , bëi v× tói ®eo l­ng kh«ng gian ch­a ®ñ , ta tr¶ l¹i tíi tr­íc ®Ých %s khèi . cßn cã <color=yellow>%s<color> kh«ng cã nhËn lÊy , h«m nay 24h00 tr­íc nhËn lÊy !",ncount,nFree,(ncount - nFree)); 
+ncount = nFree; 
+end; 
+for i =1, ncount do 
+AddItem(nCityWar_Item_ID_G,nCityWar_Item_ID_D,nCityWar_Item_ID_P,1,1,1);-- script viet hoa By http://tranhba.com qingtongding 
+end; 
+LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, -nFree); 
+WriteLog(format("[ tranh ®o¹t c«ng thµnh lµm ]%s Name:%s Account:%s Tong:%s thµnh phè %s nhËn lÊy khiªu chiÕn lÖnh %s",date(),GetName(),GetAccount(),szTongName,cityid_to_lgname(nCityId),ncount)); 
+Say(szMsg, 0); 
+else 
+Say("Tói ®eo l­ng kh«ng gian ch­a ®ñ . chó ý muèn ë 24h00 tr­íc ®Õn c¸i nµy dÉn th¬ håi ©m vËt , nÕu nh­ kh«ng ®Õn th× kh«ng thÓ n÷a nhËn lÊy .", 0); 
+end; 
+end; 
+end; 
 
-	if nCount > nTongCurCount or nCount > 1000000 then
-		Say("Khiªu chiÕn lÖnh kh«ng ®ñ, kh«ng thÓ giao nép, xin h·y thu thËp tiÕp råi quay l¹i.",0)
-		return 1
-	end
+-- script viet hoa By http://tranhba.com  nhËn lÊy c«ng thµnh tÝn vËt end**************************************************** 
 
-	local nCityId = getSigningUpCity(1);
-	local nlg = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId));	--cityid_to_lgname LÊy tªn thµnh theo idcity
-	local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName);	
-	if (FALSE(nlid)) then
-			local nMemberID = LGM_CreateMemberObj() -- Éú³ÉÉçÍÅ³ÉÔ±Êý¾Ý¶ÔÏó(·µ»Ø¶ÔÏóID)
-			--ÉèÖÃÉçÍÅ³ÉÔ±µÄÐÅÏ¢(½ÇÉ«Ãû¡¢Ö°Î»¡¢ÉçÍÅÀàÐÍ¡¢ÉçÍÅÃû³Æ)
-			LGM_SetMemberInfo(nMemberID, szTongName, 0, LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId));
-			LG_AddMemberToObj(nlg, nMemberID);
-			local ret = LGM_ApplyAddMember(nMemberID, "", "")
-			LGM_FreeMemberObj(nMemberID)
-	end;
+-- script viet hoa By http://tranhba.com  ghi danh c«ng thµnh chiÕn start**************************************************** 
+function SignUpCityWar() 
+local nCityId = getSigningUpCity(1); 
 
-	--LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_CITYWAR_SIGNCOUNT, 1, "", "")
-	
-	--**************LÊy sè l­îng khiªu chiÕn lÖnh b¸o danh tr­íc ®ã******************
-	local nCurCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT);	
+local szTongName, nTongID = GetTongName(); 
 
-	--*********Céng dån khiªu chiÕn lÖnh b¸o danh*******************
-	--LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, nCount, "", "");
-	--print(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, nCount)
-	citywar_tbLadder:AddOneInGameServer(nTongID, cityid_to_lgname(nCityId), szTongName, nCount)
-	
-	
-	--**********Trõ sè l­îng khiªu chiÕn nép b¸o danh****************
-	LG_ApplyAppendMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, -nCount, "", "");
-	
-	WriteLog(format("[Tranh ®ua c«ng thµnh chiÕn]%s Name:%s Account:%s TongName:%s Thµnh thÞ: %s Sè l­îng tranh ®ua c«ng thµnh: %s",date(),GetName(),GetAccount(),szTongName,cityid_to_lgname(nCityId),(nCount + nCurCount)));
-	
-	--***************KiÓm tra bang héi xÕp h¹ng 1******************
+if (checkSignUpCityWar(szTongName, nTongID, nCityId) ~= 1) then 
+return 0; 
+end; 
+
+local szMsg = format("<dec> b©y giê ®ang tiÕn hµnh %s thµnh ghi danh .",GetCityAreaName(nCityId)); 
+local szElector = getCityWarElector(cityid_to_lgname(nCityId))-- script viet hoa By http://tranhba.com "< t¹m v« >" 
+
+if (szElector == "" or szElector == nil) then 
+szElector = "< t¹m thêi kh«ng >"; 
+end; 
+
+local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName); 
+
+if (FALSE(nlid)) then 
+szMsg = szMsg.." chØ cÇn cã ' khiªu chiÕn lÖnh ' liÒn cã thÓ tham gia tranh ®o¹t . tranh ®o¹t quy t¾c : cßn kh«ng cã chiÕm thµnh ®Ých 18 cÊp trë lªn bang héi cã thÓ sö dông ' khiªu chiÕn lÖnh ' tham gia c¹nh tranh . c¹nh tranh thêi gian lµ mçi ngµy 18h00 ®Õn 19h00. 19h00 tr­íc , lÊy ®­îc khiªu chiÕn lÖnh nhiÒu nhÊt bang héi cã quyÒn tham gia ngµy mai tham gia c«ng thµnh chiÕn .<color=red><enter> nÕu nh­ cã bang héi ®Ých lÖnh bµi sè l­îng còng liÖt vµo ®Ö nhÊt tho¹i hÖ thèng ®em ngÉu nhiªn rót ra lÊy mét tiÕn hµnh ngµy mai c«ng thµnh .<color><enter> b©y giê xÕp hµng thø nhÊt ®Ých bang héi lµ #"..szElector 
+else 
+
+local nCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT); 
+
+-- script viet hoa By http://tranhba.com print(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT) 
+szMsg = format("%s tranh ®o¹t quy t¾c : cßn kh«ng cã chiÕm thµnh ®Ých 18 cÊp trë lªn bang héi cã thÓ sö dông ' khiªu chiÕn lÖnh ' tham gia c¹nh tranh . c¹nh tranh thêi gian lµ mçi ngµy 18h00 ®Õn 19h00. 19h00 tr­íc , lÊy ®­îc khiªu chiÕn lÖnh nhiÒu nhÊt bang héi cã quyÒn tham gia ngµy mai tham gia c«ng thµnh chiÕn .<color=red><enter> nÕu nh­ cã bang héi ®Ých lÖnh bµi sè l­îng còng liÖt vµo ®Ö nhÊt tho¹i hÖ thèng ®em ngÉu nhiªn rót ra lÊy mét tiÕn hµnh ngµy mai c«ng thµnh .<color><enter> b©y giê xÕp hµng thø nhÊt ®Ých bang héi lµ #%s<enter> ®¾t gióp tranh ®o¹t %s ®Ých khiªu chiÕn lÖnh sè l­îng lµ %s",szMsg,szElector,szTongName,nCount) 
+end; 
+TaskSayList(szMsg,"Ta muèn c¹nh tranh lÖnh bµi /want_signupcitywar","Trë vÒ /ArenaMain","Ta muèn mét c¸i /OnCancel"); 
+end; 
+
+function want_signupcitywar() 
+-- script viet hoa By http://tranhba.com local nCityId = getSigningUpCity(1); 
+local szTongName, nTongID = GetTongName(); 
+-- script viet hoa By http://tranhba.com local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName); 
+
+
+local nCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT) 
+if nCurCount <= 0 then 
+Say("§¾t gióp kh«ng cã khiªu chiÕn lÖnh , kh«ng thÓ nép lªn , xin/mêi gãp nhÆt khiªu chiÕn lÖnh sau nµy tíi t×m ta n÷a .",0) 
+return 0 
+end 
+if nCurCount > 1000000 then 
+nCurCount = 1000000 
+end 
+AskClientForNumber("sure_signupcitywar", 0,nCurCount,"Nép lªn khiªu chiÕn lÖnh ") 
+-- script viet hoa By http://tranhba.com if (FALSE(nlid)) then 
+-- script viet hoa By http://tranhba.com if (GetCash() >= 10000000) then 
+-- script viet hoa By http://tranhba.com GiveItemUI("C«ng thµnh chiÕn th­ vËt ","Xin/mêi ®em c«ng thµnh chiÕn th­ vËt —— khiªu chiÕn lÖnh bá vµo ®i . ", "sure_signupcitywar", "OnCancel"); 
+-- script viet hoa By http://tranhba.com else 
+-- script viet hoa By http://tranhba.com Say(" lÇn ®Çu tiªn ghi danh c«ng thµnh chiÕn cÇn gi¸c d©ng/®ãng <color=yellow>1000W hai <color> b¹c , trªn ng­êi ng­¬i kh«ng cã mang nhiÒu tiÒn nh­ vËy . ng­¬i tr­íc chuÈn bÞ xong tiÒn ghi danh trë l¹i ®i . ", 0); 
+-- script viet hoa By http://tranhba.com end; 
+-- script viet hoa By http://tranhba.com else 
+-- script viet hoa By http://tranhba.com local nNum = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName,LGTSK_CITYWAR_SIGNCOUNT); 
+-- script viet hoa By http://tranhba.com if (nNum >= 3) then 
+-- script viet hoa By http://tranhba.com Say("Ngµi ®Ých c¹nh ®Çu sè lÇn ®· ®¹t tíi <color=yellow>3 lÇn <color> , ngµi b©y giê kh«ng thÓ tiÕp tôc ®Çu chó , xin/mêi ngµi chê ®îi c¹nh ®Çu kÕt qu¶ c«ng bè . ", 0); 
+-- script viet hoa By http://tranhba.com else 
+-- script viet hoa By http://tranhba.com GiveItemUI("C«ng thµnh chiÕn th­ vËt ","Mçi khiªu chiÕn lÖnh cã thÓ ®æi lÊy 5 v¹n chót kinh nghiÖm , khiªu chiÕn lÖnh cã thÓ dïng ®Ó ghi danh bang héi c«ng thµnh chiÕn . ", "sure_signupcitywar", "OnCancel"); 
+-- script viet hoa By http://tranhba.com end; 
+-- script viet hoa By http://tranhba.com end; 
+end; 
+
+function sure_signupcitywar(nCount) 
+-- script viet hoa By http://tranhba.com Msg2Player(nCount) 
+
+local nCityId = getSigningUpCity(1);-- script viet hoa By http://tranhba.com GetArenaTargetCity() 
+if not (tonumber(GetLocalDate("%H"))>= 18 and tonumber(GetLocalDate("%H")) < 19 and getSignUpState(nCityId) == 1) then 
+Talk(1, "","B©y giê kh«ng ph¶i lµ c«ng thµnh chiÕn ®Ých ghi danh thêi gian .") 
+return 1 
+end 
+
+
+
+
+local szTongName, nTongID = GetTongName(); 
+local nTongCurCount = LG_GetMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName,szTongName,LGTSK_TIAOZHANLING_COUNT) 
+if nCount > nTongCurCount or nCount > 1000000 then 
+Say("Khiªu chiÕn lÖnh kh«ng ®ñ , kh«ng thÓ nép lªn , xin/mêi tiÕp tôc thu tËp sau trë l¹i .",0) 
+return 1 
+end 
+local nCityId = getSigningUpCity(1); 
+local nlg = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId)); 
+local nlid = LG_GetLeagueObjByRole(LEAGUETYPE_CITYWAR_SIGN, szTongName); 
+if (FALSE(nlid)) then 
+local nMemberID = LGM_CreateMemberObj() -- script viet hoa By http://tranhba.com  sinh thµnh x· ®oµn thµnh viªn sè liÖu ®èi t­îng ( trë vÒ ®èi t­îng ID) 
+-- script viet hoa By http://tranhba.com  thiÕt trÝ x· ®oµn thµnh viªn ®Ých tin tøc ( vai trß tªn # chøc vÞ # x· ®oµn lo¹i h×nh # x· ®oµn tªn ) 
+LGM_SetMemberInfo(nMemberID, szTongName, 0, LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId)); 
+LG_AddMemberToObj(nlg, nMemberID); 
+local ret = LGM_ApplyAddMember(nMemberID, "", "") 
+LGM_FreeMemberObj(nMemberID) 
+end; 
+
+-- script viet hoa By http://tranhba.com LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_CITYWAR_SIGNCOUNT, 1, "", "") 
+
+local nCurCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT); 
+
+-- script viet hoa By http://tranhba.com LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, nCount, "", ""); 
+-- script viet hoa By http://tranhba.com print(LEAGUETYPE_CITYWAR_SIGN, cityid_to_lgname(nCityId), szTongName, LGTSK_QINGTONGDING_COUNT, nCount) 
+citywar_tbLadder:AddOneInGameServer(nTongID, cityid_to_lgname(nCityId), szTongName, nCount) 
+
+
+LG_ApplyAppendMemberTask(TIAOZHANLING_LGTYPE,TIAOZHANLING_LGName, szTongName, LGTSK_TIAOZHANLING_COUNT, -nCount, "", ""); 
+
+	WriteLog(format("[Õù¶á¹¥³ÇÁî]%s Name:%s Account:%s TongName:%s ³ÇÊÐ %s Õù¶á¹¥³ÇÊýÁ¿: %s",date(),GetName(),GetAccount(),szTongName,cityid_to_lgname(nCityId),(nCount + nCurCount)));
+
 	local szFirstTong = checkFirstSignUpChallenger(cityid_to_lgname(nCityId), szTongName, nCount + nCurCount);
-	--if (szFirstTong == szTongName) then
-	--	Say(format("Sè l­îng khiªu chiÕn lÖnh bang <color=yellow>%s<color> hiÖn t¹i lµ: <color=yellow>%s<color> c¸i, t¹m thêi xÕp thø 1, tuy nhiªn, h·y lu«n theo dâi t×nh h×nh biÕn ®éng.",szTongName,(nCount + nCurCount)), 0);
-	--else
-	--	Say(format("Sè l­îng khiªu chiÕn lÖnh bang <color=yellow>%s<color> hiÖn t¹i lµ: <color=yellow>%s<color> c¸i. Bang héi xÕp thø 1 lµ <color=yellow>%s<color>, quÝ bang h·y tiÕp tôc nç lùc.",szTongName,(nCount + nCurCount),szFirstTong), 0);
-	--end;
-	Say(format("Sè l­îng khiªu chiÕn lÖnh bang <color=yellow>%s<color> hiÖn t¹i lµ: <color=yellow>%s<color> c¸i, h·y xem t×nh h×nh b¸o danh ®Ó biÕt bang héi hiÖn ®ang xÕp thø 1 lµ bang nµo!!.",szTongName,(nCount + nCurCount)), 0);
-	
-end;
+if (szFirstTong == szTongName) then 
+		Say(format(" %s°ï»áÌôÕ½ÁîÅÆµÄÊýÁ¿ÏÖÔÚÊÇ£º<color=yellow>%s<color>¿é, ÔÝÁÐµÚÒ», ¾¡¹ÜÈç´Ë£¬»¹ÊÇÒª¹Ø×¢Çé¿ö±ä»¯.",szTongName,(nCount + nCurCount)), 0);
+else 
+		Say(format(" %s°ï»áÌôÕ½ÁîÅÆµÄÊýÁ¿ÏÖÔÚÊÇ£º<color=yellow>%s<color>¿é. ÔÝÁÐµÚÒ»µÄÊÇ%s,¹ó°ïÐè¼ÌÐøÅ¬Á¦.",szTongName,(nCount + nCurCount),szFirstTong), 0);
+end; 
+end; 
 
-function checkFirstSignUpChallenger(szLeagueName, szTongName, nCurCount)
-	local szFirstTong = getCityWarElector(szLeagueName)
-	local nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName)
-	
-	--***************Dang ky dau tien tao moi****************************
-	if (FALSE(szFirstTong)) then
+function checkSignUpCityWar(szTongName, nTongID, nCityId) 
+local nHour = tonumber(GetLocalDate("%H")); 
+if (nTongID == 0 or GetTongMaster() ~= GetName()) then 
+Say("Ng­¬i kh«ng ph¶i lµ bang chñ . ë 18h00 ®Õn 19h00, ®o¹n thêi gian nµy , cßn kh«ng cã chiÕm thµnh ®Ých 18 cÊp trë lªn bang héi bang chñ cã thÓ ghi danh tham gia h«m nay sau ®Ých c«ng thµnh chiÕn .", 0); 
+elseif (nHour < 18 or nHour >= 19) then 
+Say("B©y giê kh«ng ph¶i lµ c«ng thµnh chiÕn ®Ých ghi danh thêi gian . mçi ngµy 18h00 ®Õn 19h00, cßn kh«ng cã chiÕm thµnh ®Ých 18 cÊp trë lªn bang héi cã thÓ ®Õn c¸i nµy ghi danh tham gia h«m nay sau ®Ých c«ng thµnh chiÕn .", 0); 
+--elseif (TONG_GetExpLevel(nTongID) < 18) then 
+--Say("Yªu cÇu muèn 18 cÊp trë lªn bang héi míi cã thÓ ghi danh h«m nay sau ®Ých c«ng thµnh chiÕn .", 0); 
+elseif (checkCityOwner(szTongName) ~= 0) then 
+Say("Ng­¬i lµ thµnh chñ , kh«ng cÇn ghi danh c«ng thµnh .", 0); 
+elseif (checkCItyChallenger(szTongName) ~= 0) then 
+Say(format("Ng­¬i ®· lµ khiªu chiÕn ph­¬ng %s, kh«ng thÓ tranh ®o¹t h«m nay lÖnh bµi .",GetCityAreaName(checkCItyChallenger(szTongName))), 0); 
+elseif (getSignUpState(nCityId) ~= 1) then 
+Say("B©y giê cßn kh«ng cã b¾t ®Çu ghi danh c«ng thµnh , d­ìng tóc tinh thÇn chuÈn bÞ ", 0); 
+else 
+return 1; 
+end; 
+return 0; 
+end; 
 
-		local nMemberID = LGM_CreateMemberObj() -- Éú³ÉÉçÍÅ³ÉÔ±Êý¾Ý¶ÔÏó(·µ»Ø¶ÔÏóID)
-		--ÉèÖÃÉçÍÅ³ÉÔ±µÄÐÅÏ¢(½ÇÉ«Ãû¡¢Ö°Î»¡¢ÉçÍÅÀàÐÍ¡¢ÉçÍÅÃû³Æ)
-		LGM_SetMemberInfo(nMemberID, szTongName, 0, LEAGUETYPE_CITYWAR_FIRST, szLeagueName);
-		LG_AddMemberToObj(nlid, nMemberID);
-		local ret = LGM_ApplyAddMember(nMemberID, "", "") ;
-		LGM_FreeMemberObj(nMemberID);
-		if (ret == 1) then
-			--***************Add khiªu chiÕn lÖnh khi b¸o danh******************
-			LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szTongName, LGTSK_QINGTONGDING_COUNT, nCurCount);
-		end;
-		return szTongName;
-	end;
-	
-	nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, szLeagueName);
-	local nCount = LG_GetMemberCount(nlid);
-	
-	local szTemTong = szFirstTong;
-	for i = 0, nCount - 1 do
-		local szMem = LG_GetMemberInfo(nlid, i);
-		if (szMem == szFirstTong) then
-			local nMemCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, szLeagueName, szMem, LGTSK_QINGTONGDING_COUNT);
-			
-			if (nMemCount <= nCurCount) then
-				szTemTong = szTongName;
-				break
-			end;
-		end;
-	end;
-	
-	nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName);
-	if (szTemTong ~= szFirstTong) then
-		local nMemberID = LGM_CreateMemberObj() -- Éú³ÉÉçÍÅ³ÉÔ±Êý¾Ý¶ÔÏó(·µ»Ø¶ÔÏóID)
-		--ÉèÖÃÉçÍÅ³ÉÔ±µÄÐÅÏ¢(½ÇÉ«Ãû¡¢Ö°Î»¡¢ÉçÍÅÀàÐÍ¡¢ÉçÍÅÃû³Æ)
-		LGM_SetMemberInfo(nMemberID, szTemTong, 0, LEAGUETYPE_CITYWAR_FIRST, szLeagueName);
-		LG_AddMemberToObj(nlid, nMemberID);
-		local ret = LGM_ApplyAddMember(nMemberID, "", "") ;
-		LGM_FreeMemberObj(nMemberID);
-		--LG_ApplyDoScript(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szFirstTong, "\\script\\event\\citywar.lua", "citywar_removemem", szLeagueName.." "..szFirstTong);
-		--LGM_ApplyRemoveMember(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szFirstTong);
-	end;
-	return getCityWarElector(szLeagueName);
-end;
+function checkCityOwner(szTongName) 
+for i=1, 7 do 
+if (GetCityOwner(i) == szTongName) then 
+return i; 
+end; 
+end; 
+return 0; 
+end; 
 
---************************Check ®iÒu kiÖn ghi danh************************************
-function checkSignUpCityWar(szTongName, nTongID, nCityId)
-	local nHour = tonumber(GetLocalDate("%H"));
-	if (nTongID == 0 or GetTongMaster() ~= GetName()) then
-		Say("Ng­¬i kh«ng ph¶i lµ bang chñ. Trong kho¶ng thêi gian tõ 18h00 ®Õn 19h00, bang chñ bang héi ch­a chiÕm thµnh cÊp 18 trë lªn cã thÓ ®Õn b¸o danh tham gia c«ng thµnh chiÕn cho ngµy h«m sau.", 0);
-	elseif (nHour < 18 or nHour >= 19) then
-		Say("HiÖn t¹i kh«ng ph¶i lµ thêi gian b¸o danh c«ng thµnh chiÕn. Mçi ngµy tõ 18h00 ®Õn 19h00, bang héi ch­a chiÕm thµnh cÊp 18 trë lªn cã thÓ ®Õn ®©y b¸o danh tham gia c«ng thµnh chiÕn cho ngµy h«m sau.", 0);
-	
-	--****************Bá yªu cÇu bang héi cÊp 18 trë lªn********************************
-	--elseif (TONG_GetExpLevel(nTongID) < 18) then
-	--	Say("§ßi hái ®¼ng cÊp bang héi ®¹t cÊp 18 trë lªn míi cã thÓ b¸o danh c«ng thµnh chiÕn cho ngµy h«m sau.", 0);
-	
-	elseif (checkCityOwner(szTongName,nCityId) ~= 0) then
-		Say("Ng­¬i ®· lµ chñ thµnh, kh«ng cÇn ph¶i b¸o danh c«ng thµnh.", 0);
-	elseif (checkCityChiemThanh(szTongName) ~= 0) then
-		Say("Bang héi ®· chiÕm thµnh kh«ng ®­îc b¸o danh", 0);
-	elseif (checkCItyChallenger(szTongName) ~= 0) then
-		Say(format("Ng­¬i ®· lµ phe khiªu chiÕn <color=yellow>%s<color>, kh«ng thÓ tranh ®ua lÖnh bµi trong ngµy h«m nay.",GetCityAreaName(checkCItyChallenger(szTongName))), 0);
-	elseif (getSignUpState(nCityId) ~= 1) then
-		Say("HiÖn t¹i b¸o danh c«ng thµnh vÉn ch­a b¾t ®Çu, h·y chuÈn bÞ tinh thÇn s½n sµng", 0);
-	else
-		return 1;
-	end;
-	return 0;
-end;
---*******************KiÓm tra bang héi chiÕm thµnh nCityld*************************
-function checkCityOwner(szTongName,nCityId)
-	if (GetCityOwner(nCityId) == szTongName) then
-		return nCityId;
-	end;
-	return 0;
+function checkCItyChallenger(szTongName) 
+for i=1, 7 do 
+if (GetCityWarBothSides(i) == szTongName) then 
+return i; 
+end; 
+end; 
+return 0; 
+end; 
 
-	--for i=1, 7 do
-	--	if (GetCityOwner(i) == szTongName) then
-	--		return i;
-	--	end;
-	--end;
-	--return 0;
-end;
---*******************KiÓm tra bang héi ®· chiÕm thµnh nµo ch­a*************************
-function checkCityChiemThanh(szTongName)
-	for i=1, 7 do
-		if (GetCityOwner(i) == szTongName) then
-			return i;
-		end;
-	end;
-	return 0;
-end;
---*******************KiÓm tra bang héi khiªu chiÕn ko*************************
-function checkCItyChallenger(szTongName)
-	for i=1, 7 do
-		if (GetCityWarBothSides(i) == szTongName) then
-			return i;
-		end;
-	end;
-	return 0;
-end;
+function checkFirstSignUpChallenger(szLeagueName, szTongName, nCurCount) 
+local szFirstTong = getCityWarElector(szLeagueName) 
+local nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName) 
+
+if (FALSE(szFirstTong)) then 
+local nMemberID = LGM_CreateMemberObj() -- script viet hoa By http://tranhba.com  sinh thµnh x· ®oµn thµnh viªn sè liÖu ®èi t­îng ( trë vÒ ®èi t­îng ID) 
+-- script viet hoa By http://tranhba.com  thiÕt trÝ x· ®oµn thµnh viªn ®Ých tin tøc ( vai trß tªn # chøc vÞ # x· ®oµn lo¹i h×nh # x· ®oµn tªn ) 
+LGM_SetMemberInfo(nMemberID, szTongName, 0, LEAGUETYPE_CITYWAR_FIRST, szLeagueName); 
+LG_AddMemberToObj(nlid, nMemberID); 
+local ret = LGM_ApplyAddMember(nMemberID, "", "") ; 
+
+LGM_FreeMemberObj(nMemberID); 
+if (ret == 1) then 
+LG_ApplyAppendMemberTask(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szTongName, LGTSK_QINGTONGDING_COUNT, nCurCount); 
+end; 
+return szTongName; 
+end; 
+
+nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_SIGN, szLeagueName); 
+local nCount = LG_GetMemberCount(nlid); 
+local szTemTong = szFirstTong; 
+for i = 0, nCount - 1 do 
+local szMem = LG_GetMemberInfo(nlid, i); 
+if (szMem == szFirstTong) then 
+local nMemCount = LG_GetMemberTask(LEAGUETYPE_CITYWAR_SIGN, szLeagueName, szMem, LGTSK_QINGTONGDING_COUNT); 
+
+if (nMemCount <= nCurCount) then 
+szTemTong = szTongName; 
+break 
+end; 
+end; 
+end; 
+
+nlid = LG_GetLeagueObj(LEAGUETYPE_CITYWAR_FIRST, szLeagueName); 
+if (szTemTong ~= szFirstTong) then 
+local nMemberID = LGM_CreateMemberObj() -- script viet hoa By http://tranhba.com  sinh thµnh x· ®oµn thµnh viªn sè liÖu ®èi t­îng ( trë vÒ ®èi t­îng ID) 
+-- script viet hoa By http://tranhba.com  thiÕt trÝ x· ®oµn thµnh viªn ®Ých tin tøc ( vai trß tªn # chøc vÞ # x· ®oµn lo¹i h×nh # x· ®oµn tªn ) 
+LGM_SetMemberInfo(nMemberID, szTemTong, 0, LEAGUETYPE_CITYWAR_FIRST, szLeagueName); 
+LG_AddMemberToObj(nlid, nMemberID); 
+local ret = LGM_ApplyAddMember(nMemberID, "", "") ; 
+LGM_FreeMemberObj(nMemberID); 
+		-- script viet hoa By http://tranhba.com LG_ApplyDoScript(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szFirstTong, "\\script\\event\\citywar.lua", "citywar_removemem", szLeagueName.." "..szFirstTong);
+-- script viet hoa By http://tranhba.com LGM_ApplyRemoveMember(LEAGUETYPE_CITYWAR_FIRST, szLeagueName, szFirstTong); 
+end; 
+return getCityWarElector(szLeagueName); 
+end; 
+-- script viet hoa By http://tranhba.com  ghi danh c«ng thµnh chiÕn end****************************************************** 

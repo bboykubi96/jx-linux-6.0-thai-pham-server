@@ -2,7 +2,7 @@
 IncludeLib("FILESYS");
 IncludeLib("RELAYLADDER");	--Ã…Ã…ÃÃÂ°Ã±
 Include("\\script\\task\\newtask\\tasklink\\tasklink_head.lua"); -- ÃˆÃŽÃŽÃ±ÃÂ´ÂµÃ„ÃÂ·ÃŽÃ„Â¼Ã¾
-Include("\\script\\task\\newtask\\tasklink\\tasklink_award.lua"); -- ÃˆÃŽÃŽÃ±ÃÂ´ÂµÃ„Â½Â±Ã€Ã¸ÃÂ·ÃŽÃ„Â¼Ã
+Include("\\script\\task\\newtask\\tasklink\\tasklink_award.lua"); -- ÃˆÃŽÃŽÃ±ÃÂ´ÂµÃ„Â½Â±Ã€Ã¸ÃÂ·ÃŽÃ„Â¼Ã¾
 Include("\\script\\event\\storm\\function.lua")	--Storm
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\lib\\log.lua")
@@ -14,7 +14,7 @@ IncludeLib("SETTING")
 IncludeLib("ITEM")
 
 DTL_TASK = 5800
-DTL_LIMIT= 40
+DTL_LIMIT= 50
 
 function main()
 
@@ -27,7 +27,7 @@ function main()
 		nUseTimes = 0;
 	end
 	if (nUseTimes >= DTL_LIMIT) then
-		Say(format("Mét ngµy chØ cã thÓ sö dông 40 D· TÈu LÖnh", DTL_LIMIT), 0)
+		Say(format("Mét ngµy chØ cã thÓ sö dông 41 D· TÈu LÖnh", DTL_LIMIT), 0)
 		return 1;
 	end		
 	if tl_gettaskcourse() == 0  then
@@ -36,7 +36,7 @@ function main()
 	elseif tl_gettaskcourse() == 1 then
 		Task_AwardRecord()
 		--tl_settaskcourse(2)
-	--	Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông <color=yellow>LÖnh bµi Hoµn Thµnh D· TÈu<color> ®Ó v­ît qua nhiÖm vô lÇn nµy")
+		Msg2SubWorld("Chóc mõng ®¹i hiÖp <color=green>"..GetName().."<color> ®· sö dông <color=yellow>LÖnh bµi Hoµn Thµnh D· TÈu<color> ®Ó v­ît qua nhiÖm vô lÇn nµy")
 		Say("§· hoµn thµnh xong nhiÖm vô, ®èi tho¹i víi D· TÈu ®Ó nhËn th­ëng")
 		nUseTimes = nUseTimes + 1;
 		SetBitTask(DTL_TASK, 0, 8,  nUseTimes);

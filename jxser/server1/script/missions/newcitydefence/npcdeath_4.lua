@@ -1,2 +1,2 @@
-rank = 4;
+rank = 4; 
 Include("\\script\\missions\\newcitydefence\\npcdeath.lua")

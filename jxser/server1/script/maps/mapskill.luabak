@@ -1,0 +1,43 @@
+Include("\\script\\maps\\newworldscript_default.lua")
+
+tbNewSkillMap = {};
+tbNewSkillMap.MapId_9x		= {10,143,150,151,181,198,199,200,201,202,203,204,205,207,224,320,75,93,124,144,152,225,226,227,340,875,321,322,319,998,336};	-- AÐÍµØÍ¼ID
+
+
+
+function OnNewWorld(szParam)
+--Msg2Player("chay ham time")
+local checkexp = GetExpPercent()
+if checkexp < -50 then
+Say("HiÖn t¹i ®iÓm kinh nghiÖm v­ît -50% kh«ng thÓ di chuyÓn lªn map")
+NewWorld (53,1600,3200)
+--return 1
+end
+
+	SetFightState(1)
+	if GetTask(5827) == 0 then
+	return 0
+	end
+	TM_SetTimer(18*60*5, 128, 1, 0);
+	SetFightState(1)
+	OnNewWorldDefault(szParam)
+end
+
+function OnLeaveWorld(szParam)
+--	SetDeathScript("")
+	TM_StopTimer(128);
+	OnLeaveWorldDefault(szParam)
+end
+
+
+function tbNewSkillMap:checkMapId()	
+	
+	local nSubWorldID = SubWorldIdx2ID();
+	
+	for i = 1, getn(self.MapId_9x) do
+		if(nSubWorldID == self.MapId_9x[i]) then 
+			return 1;
+		end
+	end
+	return 0;	
+end

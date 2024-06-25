@@ -11,6 +11,15 @@ NewWorld(nW, nX/32, nY/32);
 return 
 end 
 
+if nSubWorldId == 997 then 
+local nW, nX, nY = RevID2WXY(GetPlayerRev()); 
+AddTermini(229) 
+NewWorld(nW, nX/32, nY/32); 
+
+return 
+end 
+
+
 SetFightState(1); 
 NewWorld(320, 1386, 2253); 
 end;

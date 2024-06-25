@@ -20,7 +20,7 @@ local myGolden = {168,169,170,171,172,173,174,175,176}
 	elseif (myTaskLevel==2) then -- Èç¹ûÊÇ 30 ¼¶ÈÎÎñ
 		
 		AddOwnExp(80000)
-		AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
+		-- AddGoldItem(0,177)  --Ôö¼ÓÀ¶Ã±×Ó
 
 		myAwardText1 = "80.000 ®iÓm kinh nghiÖm"
 		myAwardText2 = "B¹n nhËn ®­îc 1 kh«i m·o"
@@ -49,10 +49,9 @@ local myGolden = {168,169,170,171,172,173,174,175,176}
 		myAwardText2 = "1 phÇn th­ëng"
 				
 	elseif (myTaskLevel==5) then -- Èç¹ûÊÇ 60 ¼¶ÈÎÎñ
-
-		AddOwnExp(800000)		
-		i = random(1,getn(myGolden))
-		AddGoldItem(0,myGolden[i])
+		-- AddOwnExp(800000)		
+		-- i = random(1,getn(myGolden))
+		-- AddGoldItem(0,myGolden[i])
 		
 		myAwardText1 = "800.000 ®iÓm kinh nghiÖm"
 		myAwardText2 = "1 bé B¶o khİ tuyÖt thÕ "

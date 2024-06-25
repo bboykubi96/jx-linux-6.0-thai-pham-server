@@ -1,86 +1,86 @@
---Ê¹ÓÃÌØĞ§´ó°×¾ÔÍè½Å±¾
---2006.08.29
---80Ğ¡Ê±ÀëÏßÍĞ¹ÜÊ±¼ä
---¾­ÑéÎªÔ­°×¾ÔµÄ2±¶
+-- script viet hoa By http://tranhba.com  sö dông ®Æc hiÖu râ rµng c©u hoµn ch©n vèn 
+-- script viet hoa By http://tranhba.com 2006.08.29 
+-- script viet hoa By http://tranhba.com 80 giê c¸ch tuyÕn bµy qu¶n thêi gian 
+-- script viet hoa By http://tranhba.com  kinh nghiÖm v× nguyªn b¹ch c©u ®İch 2 lÇn 
 
 Include("\\script\\global\\baijuwanhead.lua")
 
-function main(itemindex)
-	SetTaskTemp(AEXP_TEMPOFFLINETASKID, itemindex)
-	str=
-	{	"<#>Mét viªn ®¹i b¹ch c©u hoµn ®Æc biÖt, sau khi sö dông ®­îc <color=red>8 tiÕng<color> ñy th¸c rêi m¹ng. D­íi cÊp 130 thu ®­îc kinh nghiÖm gÊp 2 lÇn b¹ch c©u hoµn th­êng, cÊp 130 trë lªn thu ®­îc kinh nghiÖm gÊp 4 lÇn.",
-		"<#>Sö dông B¹ch C©u Hoµn ®Æc biÖt/confirmlevel",
-		"<#> §Ó ta suy nghÜ l¹i!/cancel",
-		"<#> Tra xem thêi gian treo m¸y cßn l¹i cña ta/get_left_time",
-		"<#> Giíi thiÖu chi tiÕt vÒ c¸ch ch¬i treo m¸y/help"
-	};
-	Say(str[1], 4,str[2],str[3],str[4],str[5]);
-	return 1
-end
+function main(itemindex) 
+SetTaskTemp(AEXP_TEMPOFFLINETASKID, itemindex) 
+str= 
+{ "<#> mét viªn ®Æc hiÖu râ rµng c©u hoµn , sö dông sau nh­ng ®¹t ®­îc <color=red>80 giê <color> ®İch c¸ch tuyÕn bµy qu¶n thêi gian . trong lóc ë chç nµy ®¹t ®­îc ®İch bµy qu¶n kinh nghiÖm lµ b×nh th­êng b¹ch c©u hoµn hiÖu qu¶ 2 lÇn . ", 
+"<#> sö dông ®Æc hiÖu râ rµng c©u hoµn /confirmlevel", 
+"<#> ta suy nghÜ mét chót n÷a /cancel", 
+"<#> tuÇn tra ta cßn thõa l¹i c¸ch tuyÕn bµy qu¶n thêi gian /get_left_time", 
+"<#> liªn quan tíi c¸ch tuyÕn bµy qu¶n cÆn kÏ giíi thiÖu /help" 
+}; 
+Say(str[1], 4,str[2],str[3],str[4],str[5]); 
+return 1 
+end 
 
---ÅĞ¶ÏµÈ¼¶ÔÙ´ÎÈ·ÈÏ
-function confirmlevel()
-	str=
-	{	"<#>§¼ng cÊp cña b¹n thÊp h¬n <color=red>50<color>. V× thÕ, ë tr¹ng th¸i ñy th¸c trªn m¹ng, b¹n cã thÓ tiÕn hµnh bµy b¸n giao dŞch vµ nhËn ®iÓm phóc duyªn, nh­ng kh«ng thÓ nhËn ®­îc <color=red>®iÓm kinh nghiÖm<color>. B¹n thËt sù muèn sö dông B¹ch C©u Hoµn ®Æc biÖt kh«ng#¿",
-		"<#> Sö dông/use",
-		"<#> §Ó ta suy nghÜ l¹i!/cancel",
-		"<#> V× b¹n kh«ng ph¶i lµ kh¸ch hµng n¹p thÎ, nªn kh«ng thÓ sö dông chøc n¨ng rêi m¹ng. Vui lßng n¹p thÎ råi sö dông vËt phÈm nµy!"
-	};
+-- script viet hoa By http://tranhba.com  ph¸n ®o¸n cÊp bËc lÇn n÷a x¸c nhËn 
+function confirmlevel() 
+str= 
+{ "<#> bëi v× ng­¬i ®İch cÊp bËc thÊp h¬n <color=red>50 cÊp <color> , cho nªn c¸ch tuyÕn bµy qu¶n tr¹ng th¸i bªn trong , ng­¬i cã thÓ tiÕn hµnh bµy s¹p giao dŞch , nh­ng sÏ kh«ng ®¹t ®­îc <color=red> kinh nghiÖm trŞ gi¸ <color> . ng­¬i nhÊt ®Şnh ph¶i sö dông ®Æc hiÖu râ rµng c©u hoµn sao ? ", 
+"<#> x¸c ®Şnh /use", 
+"<#> ta suy nghÜ mét chót n÷a /cancel", 
+"<#> bëi v× ng­¬i kh«ng ph¶i lµ sung trŞ gi¸ dông hé , cho nªn kh«ng thÓ sö dông c¸ch tuyÕn bµy qu¶n chøc n¨ng . mêi/xin ng­¬i sung trŞ gi¸ sau sö dông n÷a nªn vËt phÈm . " 
+}; 
 
-    -- ³ä¿¨ÓÃ»§²ÅÄÜÊ¹ÓÃ´ó°×¾ÔÍè
-	if (IsCharged()~=1) then
-	    Talk(1, "", str[4]);
-	    return
-	end
+-- script viet hoa By http://tranhba.com  sung t¹p dông hé míi cã thÓ sö dông râ rµng c©u hoµn 
+if (IsCharged()~=1) then 
+Talk(1, "", str[4]); 
+return 
+end 
 
-	nLevel = GetLevel();
-	if (nLevel < AEXP_NEEDLEVEL) then
-		Say(str[1], 2,str[2],str[3]);	
-	else
-		use();
-	end
-end
+nLevel = GetLevel(); 
+if (nLevel < AEXP_NEEDLEVEL) then 
+Say(str[1], 2,str[2],str[3]); 
+else 
+use(); 
+end 
+end 
 
---Ñ¡ÔñÊ¹ÓÃÌØĞ§´ó°×¾ÔÍè
-function use()
-	local sparetime = GetTask(AEXP_SPECIAL_TIME_TASKID);
-	if (sparetime == nil) then
-		sparetime = 0;	
-	end
+-- script viet hoa By http://tranhba.com  lùa chän sö dông ®Æc hiÖu râ rµng c©u hoµn 
+function use() 
+local sparetime = GetTask(AEXP_SPECIAL_TIME_TASKID); 
+if (sparetime == nil) then 
+sparetime = 0; 
+end 
 
-	--showtime = floor(sparetime / (FRAME2TIME * 60));		--¸øÓÃ»§ÌáÊ¾ÏÔÊ¾µ½·ÖÖÓ
+-- script viet hoa By http://tranhba.com showtime = floor(sparetime / (FRAME2TIME * 60)); -- script viet hoa By http://tranhba.com  cho dông hé ®Ò kú biÓu hiÖn ®Õn phót 
 	if ((sparetime + AEXP_SPECIALCHANGE) > AEXP_MAXTIME) then
-		local hours, minutes = getFrame2MinAndSec(sparetime);
-		Say("Thêi gian ñy th¸c kinh nghiÖm rêi m¹ng cßn l¹i lµ: <color=red>"..hours.."<color>giê<color=red>"..minutes.."<color> phót. Thêi gian ñy th¸c kinh nghiÖm tİch lòy kh«ng ®­îc v­ît qu¸ <color=red>10000 giê<color>.", 0);
-	else	
-		itemindex = GetTaskTemp(AEXP_TEMPOFFLINETASKID);
-		if (IsMyItem(itemindex) ~= 1) then
-			return
-		end
-		
-		local g, d, p = GetItemProp(itemindex);
-		
-		if ( g ~= 6
-			or d ~= 1
-			or p ~= 1157) then
-			return --²»ÊÇÌØĞ§´ó°×¾Ô
-		end 
-		
-		nresult = RemoveItemByIndex(itemindex);
+local hours, minutes = getFrame2MinAndSec(sparetime); 
+Say("Ng­¬i tr­íc m¾t ®İch ®Æc hiÖu râ rµng c©u hoµn c¸ch tuyÕn kinh nghiÖm bµy qu¶n cßn thõa l¹i thêi gian lµ <color=red>"..hours.."<color> giê <color=red>"..minutes.."<color> phót , mµ ng­¬i c¸ch tuyÕn kinh nghiÖm bµy qu¶n thêi gian mÖt mái kÕ kh«ng thÓ v­ît qua <color=red>10000 giê <color> , mêi/xin ng­¬i qu¸ mét ®o¹n thêi gian sö dông n÷a ®Æc hiÖu râ rµng c©u hoµn . ", 0); 
+else 
+itemindex = GetTaskTemp(AEXP_TEMPOFFLINETASKID); 
+if (IsMyItem(itemindex) ~= 1) then 
+return 
+end 
 
-		if (nresult == 1) then 
+local g, d, p = GetItemProp(itemindex); 
+
+if ( g ~= 6 
+or d ~= 1 
+or p ~= 1157) then 
+return -- script viet hoa By http://tranhba.com  kh«ng ph¶i lµ ®Æc hiÖu râ rµng c©u 
+end 
+
+nresult = RemoveItemByIndex(itemindex); 
+
+if (nresult == 1) then 
 			ntotaltime = sparetime + AEXP_SPECIALCHANGE;
-			SetTask(AEXP_SPECIAL_TIME_TASKID, ntotaltime);
-			local hours, minutes = getFrame2MinAndSec(ntotaltime);
-			Say("Sö dông thµnh c«ng! Thêi gian ñy th¸c rêi mang B¹ch C©u Hoµn ®Æc biÖt cßn l¹i lµ: <color=red>"..hours.."<color>giê<color=red>"..minutes.."<color> phót",0);
-			writeUseBaiJulog("offlineitem_special", hours, minutes);
-		else
-			Say("Kh«ng cã B¹ch C©u Hoµn ®Æc biÖt, cã thÓ sö dông ", 0);	
-		end
-	end
-end
+SetTask(AEXP_SPECIAL_TIME_TASKID, ntotaltime); 
+local hours, minutes = getFrame2MinAndSec(ntotaltime); 
+Say("Sö dông thµnh c«ng , ng­¬i cßn thõa l¹i ®Æc hiÖu râ rµng c©u hoµn c¸ch tuyÕn bµy qu¶n thêi gian lµ <color=red>"..hours.."<color> giê <color=red>"..minutes.."<color> phót ",0); 
+writeUseBaiJulog("offlineitem_special", hours, minutes); 
+else 
+Say("Kh«ng cã ®Æc hiÖu râ rµng c©u hoµn cã thÓ sö dông ", 0); 
+end 
+end 
+end 
 
---Ñ¡ÔñÔÙ¿¼ÂÇ¿¼ÂÇ
-function cancel()
-	return 0
+-- script viet hoa By http://tranhba.com  lùa chän suy nghÜ mét chót n÷a 
+function cancel() 
+return 0 
 end

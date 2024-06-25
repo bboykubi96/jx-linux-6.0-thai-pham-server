@@ -1,65 +1,65 @@
-IncludeLib("FILESYS")
+IncludeLib("FILESYS") 
 
-------------------------------------------------------------------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
 
--- ´ò¿ªÅäÖÃÎÄ¼þ
-function ini_loadfile(filename, is_create)
-	if (IniFile_Load(filename, filename) == 0) and (is_create ~= nil) then
-		File_Create(filename)
-	end
-end
+-- script viet hoa By http://tranhba.com  më ra phèi trÝ v¨n kiÖn 
+function ini_loadfile(filename, is_create) 
+if (IniFile_Load(filename, filename) == 0) and (is_create ~= nil) then 
+File_Create(filename) 
+end 
+end 
 
---»ñµÃÎÄ¼þÖÐµÄszSectionµÄkeyµÄÖµ
-function ini_getdata(filename, szsect, szkey)
-	return IniFile_GetData(filename, szsect, szkey)
-end
+-- script viet hoa By http://tranhba.com  ®¹t ®­îc v¨n kiÖn trung ®Ých szSection ®Ých key ®Ých trÞ gi¸ 
+function ini_getdata(filename, szsect, szkey) 
+return IniFile_GetData(filename, szsect, szkey) 
+end 
 
---ÉèÖÃÎÄ¼þÖÐµÄszSectionµÄkeyÖµÎªszValue
-function ini_setdata(filename, szsect, szkey, szvalue)
-	IniFile_SetData(filename, szsect, szkey, szvalue)	
-end
+-- script viet hoa By http://tranhba.com  thiÕt trÝ v¨n kiÖn trung ®Ých szSection ®Ých key trÞ gi¸ lµ szValue 
+function ini_setdata(filename, szsect, szkey, szvalue) 
+IniFile_SetData(filename, szsect, szkey, szvalue) 
+end 
 
--- ÅäÖÃÎÄ¼þ´æµµ
-function ini_save(filename)
-	IniFile_Save(filename, filename)
-end
+-- script viet hoa By http://tranhba.com  phèi trÝ v¨n kiÖn tån ®­¬ng 
+function ini_save(filename) 
+IniFile_Save(filename, filename) 
+end 
 
---------------------------------------------------------------------------------------
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com  
 
-function GetIniFileData(mapfile, sect, key)
-	if (IniFile_Load(mapfile, mapfile) == 0) then 
-		print("Load IniFile Error!"..mapfile)
-		return ""
-	else
-		return IniFile_GetData(mapfile, sect, key)	
-	end
-end
+function GetIniFileData(mapfile, sect, key) 
+if (IniFile_Load(mapfile, mapfile) == 0) then 
+print("Load IniFile Error!"..mapfile) 
+return "" 
+else 
+return IniFile_GetData(mapfile, sect, key) 
+end 
+end 
 
-function GetTabFileHeight(mapfile)
-	if (TabFile_Load(mapfile, mapfile) == 0) then
-		print("Load TabFileError!"..mapfile);
-		return 0
-	end
-	return TabFile_GetRowCount(mapfile) - 1
-end;
+function GetTabFileHeight(mapfile) 
+if (TabFile_Load(mapfile, mapfile) == 0) then 
+print("Load TabFileError!"..mapfile); 
+return 0 
+end 
+return TabFile_GetRowCount(mapfile) - 1 
+end; 
 
-function GetTabFileData(mapfile, row, col)
-	if (TabFile_Load(mapfile, mapfile) == 0) then
-		print("Load TabFile Error!"..mapfile)
-		return 0
-	else
-		return tonumber(TabFile_GetCell(mapfile, row, col))
-	end
-end
+function GetTabFileData(mapfile, row, col) 
+if (TabFile_Load(mapfile, mapfile) == 0) then 
+print("Load TabFile Error!"..mapfile) 
+return 0 
+else 
+return tonumber(TabFile_GetCell(mapfile, row, col)) 
+end 
+end 
 
---´Ó×ø±êÎÄ¼þÖÐËæ»ú»ñµÃÒ»¸ö×ø±ê
-function GetRandomAData(mapfile)
-	local totalcount = GetTabFileHeight(mapfile);
-	if (totalcount == 0) then
-		return 0
-	end
-	local id = random(totalcount);
+-- script viet hoa By http://tranhba.com  tõ täa ®é v¨n kiÖn trung ngÉu nhiªn ®¹t ®­îc mét täa ®é 
+function GetRandomAData(mapfile) 
+local totalcount = GetTabFileHeight(mapfile); 
+if (totalcount == 0) then 
+return 0 
+end 
+local id = random(totalcount); 
 	local x = GetTabFileData(mapfile, id + 1, 1);
 	local y = GetTabFileData(mapfile, id + 1, 2);
-	return x,y
-end
+return x,y 
+end 

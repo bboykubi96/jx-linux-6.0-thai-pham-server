@@ -74,7 +74,7 @@ end
 citymap = {586,587,588,589,590,591,593,594,595,596,597};
 --µÚ¶þÁÐ±íÊ¾×ø±êÔÚ±íÖÐµÄÎ»ÖÃ
 citytong_npc={
-{198,1,"\\script\\tong\\npc\\bingjia_zongguan.lua","Tæng qu¶n Binh gi¸p ph­êng"},
+--{198,1,"\\script\\tong\\npc\\bingjia_zongguan.lua","Tæng qu¶n Binh gi¸p ph­êng"},
 {200,2,"\\script\\tong\\npc\\tiangong_zongguan.lua","Tæng qu¶n Thiªn c«ng ph­êng"},
 {375,3,"\\script\\tong\\npc\\mianju_zongguan.lua","Tæng qu¶n DÞ dung ph­êng"},
 {455,4,"\\script\\tong\\npc\\tianyi_zongguan.lua","Tæng qu¶n Thiªn ý ph­êng"},

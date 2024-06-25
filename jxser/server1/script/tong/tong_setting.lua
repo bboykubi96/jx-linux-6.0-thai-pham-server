@@ -31,13 +31,13 @@ LoadTongSetting()
 
 
 	TB_STUNTID_INFO = {
-	[1] = {stuntid = 1,name = "Phông Hoµng Ên", func = "stunt_fenghuang",},
-	[2] = {stuntid = 2,name = "LuyÖn vâ hån", func = "stunt_duanwuhun",},
-	[3] = {stuntid = 3,name = "V« Song S¸t TrËn", func = "stunt_wushuang",},
-	[4] = {stuntid = 4,name = "§µo Chu TiÒn", func = "stunt_moneybox",},
-	[5] = {stuntid = 5,name = "Vâ thÇn tø phóc", func = "stunt_wushenbless",},--ÔÝ¶¨
-	[6] = {stuntid = 6,name = "Linh S©m Lùc", func = "stunt_lingshenli",},
-	[7] = {stuntid = 7,name = "Hoµng Kim LÖnh", func = "stunt_huangjinling",},
+--	[1] = {stuntid = 1,name = "Phông Hoµng Ên", func = "stunt_fenghuang",},
+--	[2] = {stuntid = 2,name = "LuyÖn vâ hån", func = "stunt_duanwuhun",},
+--	[3] = {stuntid = 3,name = "V« Song S¸t TrËn", func = "stunt_wushuang",},
+--	[4] = {stuntid = 4,name = "§µo Chu TiÒn", func = "stunt_moneybox",},
+--	[5] = {stuntid = 5,name = "Vâ thÇn tø phóc", func = "stunt_wushenbless",},--ÔÝ¶¨
+--	[6] = {stuntid = 6,name = "Linh S©m Lùc", func = "stunt_lingshenli",},
+--	[7] = {stuntid = 7,name = "Hoµng Kim LÖnh", func = "stunt_huangjinling",},
 	}
 	function LoadStuntData()
 		local b1 = TabFile_Load("\\settings\\tong\\tongstunt_setting.txt", "stuntData")
@@ -65,7 +65,7 @@ LoadTongSetting()
 		end
 		--TabFile_UnLoad("stuntData")
 	end
-	LoadStuntData()
+--	LoadStuntData()
 
 
 if MODEL_GAMESERVER == 1 or MODEL_RELAY == 1 then

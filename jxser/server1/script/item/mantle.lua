@@ -1,10 +1,10 @@
--- Åû·ç£ºÊ¹ÓÃºóµ±Ç°ÒÂ·ş±ä³É´øÅû·çµÄ°æ±¾
--- By Asmik(2004-01-02)
+-- script viet hoa By http://tranhba.com  phi phong # sö dông sau tr­íc mÆt y phôc biÕn thµnh mang phi phong ®İch b¶n bæn 
+-- script viet hoa By http://tranhba.com  By Asmik(2004-01-02) 
 
-function main()
-	if(Mantle()== 0)then
-		return 1
-		--AddItem(6,1,15,1,0,0,0)
-	end
-	return 0
+function main() 
+if(Mantle()== 0)then 
+return 1 
+-- script viet hoa By http://tranhba.com AddItem(6,1,15,1,0,0,0) 
+end 
+return 0 
 end

@@ -8,8 +8,8 @@ function OnDeath(nNpcIndex)
 	local tbAward = 
 	{
 		--DC thiªn tr× mËt c¶nh - Modifie By DinhHQ - 20120403
-		{nJxb = 100000},
-		--{nExp = 50000},
+		--{nJxb = 100000},
+		{nExp = 50000},
 	}
 	local nBelongerIndex = GetPlayerIndex(nNpcIndex)
 	DynamicExecuteByPlayer(nBelongerIndex, "\\script\\lib\\awardtemplet.lua", "tbAwardTemplet:GiveAwardByList", tbAward, "GiÕt chÕt qu¸i vËt ë tÇng 3 Thiªn Tr× MËt C¶nh nhËn ®­îc phÇn th­ëng.", 1)

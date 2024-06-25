@@ -1,3 +1,3 @@
-function main()
-	OpenBox();
+function main() 
+OpenBox(); 
 end

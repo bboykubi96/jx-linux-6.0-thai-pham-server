@@ -11,7 +11,6 @@ local tbData =
 
 }
 
---TaskId 用法， 0~15位记录第几届联赛，16~32位记录使用次数
 local _AddBitTask = function (nTaskId, nBitPos, nBitCount, nValue)
 	local nOldValue = GetBitTask(nTaskId, nBitPos, nBitCount)
 	SetBitTask(nTaskId, nBitPos, nBitCount, nOldValue + nValue)

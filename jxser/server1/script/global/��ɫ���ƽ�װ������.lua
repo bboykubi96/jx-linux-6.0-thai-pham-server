@@ -8,11 +8,12 @@ end
 
 -- script viet hoa By http://tranhba.com  b¾t ®Çu chÕ t¹o 
 function onFoundryItem() 
---if( isCompoundableToday() == 1 ) then 
+-- do return end-- tat do tim by Zhu
+-- if( isCompoundableToday() == 1 ) then 
 FoundryItem(); 
---else 
---Say("Thî rÌn # l·o phu vèn ngµy ®· kiÖt søc , hiÖp sÜ cßn lµ ngµy mai trë l¹i chÕ t¹o trang bŞ ®i . ", 1,"H¶o , vËy ta c¸o tõ tr­íc /onCancel" ); 
---end 
+-- else 
+-- Say("Thî rÌn # l·o phu vèn ngµy ®· kiÖt søc , hiÖp sÜ cßn lµ ngµy mai trë l¹i chÕ t¹o trang bŞ ®i . ", 1,"H¶o , vËy ta c¸o tõ tr­íc /onCancel" ); 
+-- end 
 end 
 
 function onQueryPiece() 

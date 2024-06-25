@@ -28,6 +28,6 @@ function tbZhuansheng_4_Skill.skilllvelup(nSkillId)
 	SetTask(TSK_LEAVE_SKILL_POINT_4, nLeaveSkillPoint) -- ¼õÉÙ¿ÉÊ¹ÓÃµÄ¼¼ÄÜµãÁ¿
 	SetTask(TSK_USED_SKILL_POINT_4, (GetTask(TSK_USED_SKILL_POINT_4) + 1))	-- Ôö¼ÓÒÑÊ¹ÓÃµÄ¼¼ÄÜµãÖµ
 	AddMagic(nSkillId, mlvl + 1)
-	Msg2Player(format("Tu luyÖn <color=green>%s<color> cña ng­¬i ®· ®­îc th¨ng cÊp, VÉn cã thÓ sö dông ®iÓm kü n¨ng trïng sinh 4 lµ %d.", szSkillName, nLeaveSkillPoint))
+	Msg2Player(format("Tu luyÖn [%s]cña ng­¬i ®· ®­îc th¨ng cÊp, VÉn cã thÓ sö dông ®iÓm kü n¨ng trïng sinh 4 lµ %d.", szSkillName, nLeaveSkillPoint))
 	return 1
 end

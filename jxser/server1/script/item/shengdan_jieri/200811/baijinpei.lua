@@ -1,15 +1,15 @@
 Include("\\script\\item\\shengdan_jieri\\200811\\head.lua");
 
-function main()
-	christmas_resettask();
-	if (GetLevel() < 50 or GetExtPoint(0) < 1) then
-		Say("Ng­êi ch¬i ph¶i qua n¹p thÎ vµ ®¼ng cÊp tõ 50 trë lªn míi cã thÓ sö dông B¹ch Kim Béi", 0);
-	end
+function main() 
+christmas_resettask(); 
+if (GetLevel() < 50 or GetExtPoint(0) < 1) then 
+Say("Nhµ ch¬i cÇn sung trÞ gi¸ cïng víi ®¹t tíi 50 cÊp trë lªn míi cã thÓ sö dông b¹ch kim béi ", 0); 
+end 
 	if (GetTask(christmas_yupei_taskid) + 40000000 <= 200000000) then	
 		SetTask(christmas_yupei_taskid, GetTask(christmas_yupei_taskid) + 40000000);
-		AddOwnExp(40000000);
-	else
-		Say("§· ®¹t ®Õn giíi h¹n kinh nghiÖm cho phÐp, kh«ng thÓ sö dông thªm B¹ch Kim  Béi.", 0);
-		return 1;
-	end
+AddOwnExp(40000000); 
+else 
+Say("§· ®¹t kinh nghiÖm th­îng h¹n , kh«ng thÓ sö dông n÷a b¹ch kim béi liÔu .", 0); 
+return 1; 
+end 
 end

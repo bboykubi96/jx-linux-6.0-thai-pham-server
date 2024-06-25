@@ -1,6 +1,6 @@
 Include("\\script\\lib\\awardtemplet.lua");
 function main()
-	--dofile("script/event/birthday_jieri/200905/npc/npc_zhanxin_zunzhe.lua")
+	----dofile("script/event/birthday_jieri/200905/npc/npc_zhanxin_zunzhe.lua")
 	local tbSay = {}
 	tinsert(tbSay,"NhËn kü n¨ng hæ trî t©n thñ./hotrotanthu")
 	tinsert(tbSay,"NhËn m¸u hæ trî t©n thñ./nhanmau")

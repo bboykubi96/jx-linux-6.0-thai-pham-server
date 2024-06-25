@@ -12,6 +12,13 @@ end
 
 --  π”√
 function tbTriumphDrum:OnUse(nItemIndex)
+	local nW,_,_ = GetWorldPos()
+	if ( nW ~= 54) then
+		Msg2Player("TrËng kh∂i hoµn chÿ c„ th” mÎ tπi Nam Nhπc Tr n");
+		return 1;
+	end
+	
+
 	
 	-- ªÓ∂ØΩ· ¯
 	if tbTriumphDrum:IsCarryOn() ~= 1 then

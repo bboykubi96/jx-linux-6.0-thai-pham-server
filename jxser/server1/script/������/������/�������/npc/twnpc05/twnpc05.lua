@@ -8,7 +8,7 @@
 
 Include("\\script\\global\\skills_table.lua")
 
-function main_com() 
+function main() 
 UTask_tw = GetTask(3) 
 if (GetSeries() == 0) and (GetFaction() == "tianwang") then 
 if (UTask_tw == 40*256) and (GetLevel() >= 40) then 

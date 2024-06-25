@@ -12,7 +12,7 @@ function main()
 			else
 				RestTime =  GetGameTime() - BT_GetData(PL_LASTDEATHTIME) 
 				if ( RestTime < TIME_PLAYER_REV) then
-					Say((TIME_PLAYER_REV - RestTime) .. " gi©y sau b¹n míi c?th?rêi khái hËu doanh! Xin ®îi chót n÷a!", 0)
+					Say((TIME_PLAYER_REV - RestTime) .. " gi©y sau b¹n míi cã thÓ rêi khái hËu doanh! Xin ®îi chót n÷a!", 0)
 				else
 					file = GetMissionS(2)
 					x,y = bt_getadata(file)
@@ -23,8 +23,7 @@ function main()
 					SetPunish(0);
 	
 					ForbidEnmity( 1 )
-					SetProtectTime(18*3) -- 4 giay bat tu 
-AddSkillState(963, 1, 0, 18*3)
+	
 					--SetPKFlag(1)
 				end
 			end;
@@ -32,8 +31,9 @@ AddSkillState(963, 1, 0, 18*3)
 				file = GetMissionS(2)
 				x,y = bt_getadata(file)
 				SetPos(floor(x/32), floor(y/32))
-			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n c?phôc binh! B¹n kh«ng nªn t?tiÖn x«ng lªn!")
-		end;
+			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
+			AddSkillState(963, 1, 0, 18*3)
+end;
 end;
 
 

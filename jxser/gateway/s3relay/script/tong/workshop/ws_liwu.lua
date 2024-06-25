@@ -103,20 +103,14 @@ function USE_G_1(nTongID, nWorkshopID)
 end
 
 function use_g_1_ok(nTongID, nWorkshopID)
-	local nTime = tonumber(GetLocalDate("%H%M"))
-	if (nTime >= 1230 and nTime <= 2200) then
-			local nLevel = TWS_GetUseLevel(nTongID, nWorkshopID)
-			_dbgMsg("Sè nhËp vµo cßn l¹i *100: "..TWS_GetDayOutput(nTongID, nWorkshopID))
-			if (TWS_GetDayOutput(nTongID, nWorkshopID) < 100) then
-				Say("<#>Tæng qu¶n LÔ phÈm ph­êng: ThËt ®¸ng tiÕc, h«m nay lÔ phÈm ®· ph¸t xong, ngµy mai h·y ®Õn vËy!", 0)
-				return 0;
-			end
-			Say("<#>Tæng qu¶n LÔ phÈm ph­êng: CÇn sö dông <color=yellow>"..aLevelHongBaoPrice[nLevel].."<color> ®iÓm cèng hiÕn ®Ó ®æi lÊy 1 hång bao", 2, 
-			"§­îc. /#use_g_1_ok2".."("..nTongID..","..nWorkshopID..")", "Kh«ng muèn/cancel");
-	else
-		Talk(1,"","Thêi gian nhËn vËt phÈm lµ tõ 12h30 ®Õn 22h h»ng ngµy !")
-			return
+	local nLevel = TWS_GetUseLevel(nTongID, nWorkshopID)
+	_dbgMsg("Sè nhËp vµo cßn l¹i *100: "..TWS_GetDayOutput(nTongID, nWorkshopID))
+	if (TWS_GetDayOutput(nTongID, nWorkshopID) < 100) then
+		Say("<#>Tæng qu¶n LÔ phÈm ph­êng: ThËt ®¸ng tiÕc, h«m nay lÔ phÈm ®· ph¸t xong, ngµy mai h·y ®Õn vËy!", 0)
+		return 0;
 	end
+	Say("<#>Tæng qu¶n LÔ phÈm ph­êng: CÇn sö dông <color=yellow>"..aLevelHongBaoPrice[nLevel].."<color> ®iÓm cèng hiÕn ®Ó ®æi lÊy 1 hång bao", 2, 
+		"§­îc. /#use_g_1_ok2".."("..nTongID..","..nWorkshopID..")", "Kh«ng muèn/cancel");
 end
 
 function use_g_1_ok2(nTongID, nWorkshopID)
@@ -128,10 +122,6 @@ function use_g_1_ok2(nTongID, nWorkshopID)
 	if (GetTaskTemp(196) ~= 0)then
 		Say("<#>Tæng qu¶n LÔ phÈm ph­êng: VËt phÈm nµy ch­a cã, h·y ®îi khi kh¸c!", 0)
 		return
-	end
-	if CalcFreeItemCellCount() < 2 then
-		Talk(1, "", "Hµnh trang ph¶i cã hai « trèng.");
-		return 
 	end
 	SetTaskTemp(196, 1)
 	TWS_ApplyUse(nTongID, nWorkshopID);

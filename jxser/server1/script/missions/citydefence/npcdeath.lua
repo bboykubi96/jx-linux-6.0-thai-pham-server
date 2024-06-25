@@ -1,11 +1,11 @@
-----------------------------------------------------------------
---FileName:	npcdeath.lua
---Creater:	firefox
---Date:		2005-09-01
---Comment:	ÖÜÄ©»î¶¯£ºÎÀ¹úÕ½ÕùÖ®·é»ðÁ¬³Ç
---			¹¦ÄÜ£ºNPCËÀÍö½Å±¾
------------------------------------------------------------------
---rank = 1, 2, 3, 4, 5
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com 
+-- script viet hoa By http://tranhba.com FileName:	npcdeath.lua
+-- script viet hoa By http://tranhba.com Creater:	firefox
+-- script viet hoa By http://tranhba.com Date:		2005-09-01
+-- script viet hoa By http://tranhba.com Comment:	##Ä####¯#º#µ#óâ#âï###Ð#ð¸#³#
+-- script viet hoa By http://tranhba.com 			##Ä##ºNPC#µÝ##Å±#
+-- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -- script viet hoa By http://tranhba.com -
+-- script viet hoa By http://tranhba.com rank = 1, 2, 3, 4, 5
 Include("\\script\\missions\\citydefence\\head.lua")
 function OnDeath( nNpcIndex )
 	local state = GetMissionV(MS_STATE) ;
@@ -13,7 +13,7 @@ function OnDeath( nNpcIndex )
 		return
 	end;
 	
-	--Èç¹ûÊÇËÀÓÚÆäËüNpcÔò²»Í³¼ÆÅÅÐÐ
+	-- script viet hoa By http://tranhba.com Ì###£##µãó####Npc¤ß²#Ý³##ÅÅ##
 	if (PlayerIndex == nil or PlayerIndex == 0) then
 		return
 	end;
@@ -64,16 +64,16 @@ function cd_callboss5down()
 	end
 	local citycamp = GetMissionV( MS_CITYCAMP )
 	local npccamp = 1
-	local npcname = "Qu©n Tèng"
+	local npcname = "####"
 	if ( citycamp == 1 ) then
 		npccamp = 2
-		npcname = "Qu©n Kim"
+		npcname = "#ð##"
 	end
 	cd_addgoldennpc(npcfile, tbTNPC_SOLDIER[npccamp][5], tbSOLDIER_LEVEL[5], npcname..tbSOLDIER_NAME[5], 1, npccamp, tbFILE_NPCDEATH[5])
-	cd_writelog(date("%m%d%H%M ")..format(" call yuanshuai = %d", filehigh))
+	cd_writelog(date("%m%d%H%M ")..format("Call yuanshuai = %d", filehigh))
 
 	SetMissionV( MS_BOSS5_DOWN, 1 )
-	Msg2MSAll( MISSIONID, npcname..tbSOLDIER_NAME[5].."®· xuÊt hiÖn" )
+	Msg2MSAll( MISSIONID, npcname..tbSOLDIER_NAME[5].."ß#³###" )
 end
 
 
@@ -87,17 +87,17 @@ function cd_callboss4down()
 	end
 	local citycamp = GetMissionV( MS_CITYCAMP )
 	local npccamp = 1
-	local npcname = "Qu©n Tèng"
+	local npcname = "####"
 	if ( citycamp == 1 ) then
 		npccamp = 2
-		npcname = "Qu©n Kim"
+		npcname = "#ð##"
 	end
 	local npcid = tbTNPC_SOLDIER[npccamp][4]
 	cd_addfightnpc(npcfile, 1, filehigh, npcid, tbSOLDIER_LEVEL[4], npcname..tbSOLDIER_NAME[4], 1, npccamp, tbFILE_NPCDEATH[4], 1)
-	cd_writelog(date("%m%d%H%M ")..format(" call zhujiang = %d", filehigh))
+	cd_writelog(date("%m%d%H%M ")..format("Call zhujiang = %d", filehigh))
 
 	SetMissionV( MS_BOSS4_DOWN, 1 )
-	Msg2MSAll( MISSIONID, npcname..tbSOLDIER_NAME[4].."®· xuÊt hiÖn" )
+	Msg2MSAll( MISSIONID, npcname..tbSOLDIER_NAME[4].."ß#³###" )
 end
 
 function cd_addgoldennpc(npcfile, npcid, npclevel, npcname, boss, npccamp, deathscript)
@@ -121,7 +121,7 @@ function cd_addgoldennpc(npcfile, npcid, npclevel, npcname, boss, npccamp, death
 		series = floor((i - 1) / 2);
 		npcindex = AddNpcEx( (npcid + i - 1), npclevel, series, SubWorld, posx, posy, 1, npcname, boss );
 		if( npcindex > 0 ) then
-			--SetNpcCurCamp( npcindex, npccamp )
+			-- script viet hoa By http://tranhba.com SetNpcCurCamp( npcindex, npccamp )
 			SetNpcDeathScript( npcindex, deathscript )
 		end
 	end

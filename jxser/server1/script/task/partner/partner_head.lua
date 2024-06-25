@@ -6,15 +6,6 @@
 -------------------------------------------------------------------------
 
 partner_parserby = {
-
-{945,1,1546,3236,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,11,3129,5101,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,37,1654,3159,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,78,1464,3238,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,80,1669,3002,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,162,1606,3199,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-{945,176,1588,2954,"\\script\\task\\partner\\changge_people.lua","Tr­êng Ca M«n nh©n"},
-
 {946,512,1682,3290,"\\script\\task\\partner\\education\\swordking_people.lua","KiÕm Hoµng ®Ö tö "},
 {946,512,1692,3310,"\\script\\task\\partner\\education\\swordking_people.lua","KiÕm Hoµng ®Ö tö "},
 {946,512,1669,3320,"\\script\\task\\partner\\education\\swordking_people.lua","KiÕm Hoµng ®Ö tö "},

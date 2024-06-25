@@ -20,10 +20,12 @@ function main()
 					SetPos(floor(x/32), floor(y/32))
 					bt_RankEffect(BT_GetData(PL_CURRANK))
 					SetFightState(1)
-					--SetPKFlag(1)
-										SetPunish(0);
+					SetPunish(0);
 	
 					ForbidEnmity( 1 )
+	AddSkillState(963, 1, 0, 18*3)
+					--SetPKFlag(1)
+
 				end
 			end;
 		elseif (GetCurCamp() == 2) then
@@ -32,6 +34,11 @@ function main()
 			SetPos(floor(x/32), floor(y/32))
 			Msg2Player("PhÝa tr­íc s¬n cèc chËp trïng, ch¾c ch¾n cã phôc binh! B¹n kh«ng nªn tù tiÖn x«ng lªn!")
 			SetFightState(1)
+			SetPunish(0);
+	
+ForbidEnmity( 1 )
+	AddSkillState(963, 1, 0, 18*3)
+--SetPKFlag(1)
 		end;
 end;
 

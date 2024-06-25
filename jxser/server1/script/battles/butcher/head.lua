@@ -79,8 +79,8 @@ FILE_TRANSPORT2 = 	"\\script\\battles\\butcher\\transport.lua";
 
 --NpcµÄÄ£°åºÅID
 
-MAX_S_COUNT = 200;
-MAX_J_COUNT = 200;
+MAX_S_COUNT = 100;
+MAX_J_COUNT = 100;
 
 --×îÐ¡ÔÊÐíµÄÄ³Ò»ÕóÓªµÄÍæ¼ÒÊýÁ¿£¬Èç¹ûÔÚÕ½¶·ÖÐÕóÓªµÄÍæ¼ÒÊýÁ¿ÉÙÓÚ¸ÃÊýÄ¿Ôò¸ÃÕóÓªÅÐÊä£¬ÎÞÂÛ»ý·ÖÇé¿öÈçºÎ
 MIN_PLAYER_COUNT_LIMIT = 0
@@ -186,19 +186,19 @@ function sf_winbouns(n_camp)
 		
 		--print(format("%d %d",player_total_point,JG_T_Value))
 		if(player_total_point >= 1000 and JG_T_Value < jg_ndate) then
-			--local ItemIdx = AddItem(6,1,JUNGONGPAI,1,0,0);
+			local ItemIdx = AddItem(6,1,JUNGONGPAI,1,0,0);
 			
-		--	local Tdate=FormatTime2Number(GetCurServerTime()+24*60*60)--ÁìÈ¡µÄµÚ¶þÌì
-	--		Tdate=floor(Tdate/10000) --È¡Äê,ÔÂ,ÈÕ
-	--		nEndYear=floor(Tdate/10000)+2000
-		--	nEndMonthDay=floor(mod(Tdate,10000))
-		--	SetSpecItemParam(ItemIdx, 1,nEndYear);--ÉèÖÃÎïÆ·Äê
-		--	SetSpecItemParam(ItemIdx, 2,nEndMonthDay);--ÉèÖÃÎïÆ·ÔÂÈÕ
-		--	SyncItem(ItemIdx)
-		--	SetItemBindState(ItemIdx, -2);-- °ó¶¨
-		--	Msg2Player("B¹n nhËn ®­îc 1 Hu©n c«ng bµi Tèng Kim")
-		--	WriteLog(format("[ChiÕn tr­êng Tèng Kim]\t%s\tName:%s\tAccount:%s\t 1000 ®iÓm tÝch lòy trë lªn sÏ nhËn ®­îc 1 Hu©n c«ng bµi Tèng Kim",
-		--			GetLocalDate("%y%m%d %X"), GetName(), GetAccount()));
+			local Tdate=FormatTime2Number(GetCurServerTime()+24*60*60)--ÁìÈ¡µÄµÚ¶þÌì
+			Tdate=floor(Tdate/10000) --È¡Äê,ÔÂ,ÈÕ
+			nEndYear=floor(Tdate/10000)+2000
+			nEndMonthDay=floor(mod(Tdate,10000))
+			SetSpecItemParam(ItemIdx, 1,nEndYear);--ÉèÖÃÎïÆ·Äê
+			SetSpecItemParam(ItemIdx, 2,nEndMonthDay);--ÉèÖÃÎïÆ·ÔÂÈÕ
+			SyncItem(ItemIdx)
+			SetItemBindState(ItemIdx, -2);-- °ó¶¨
+			Msg2Player("B¹n nhËn ®­îc 1 Hu©n c«ng bµi Tèng Kim")
+			WriteLog(format("[ChiÕn tr­êng Tèng Kim]\t%s\tName:%s\tAccount:%s\t 1000 ®iÓm tÝch lòy trë lªn sÏ nhËn ®­îc 1 Hu©n c«ng bµi Tèng Kim",
+					GetLocalDate("%y%m%d %X"), GetName(), GetAccount()));
 			if(JG_T_Value == (jg_ndate-1)) then --ÁìÈ¡ÁË2´Î	
 				SetTask(JUNGONGPAI_Task_ID,jg_ndate);
 			elseif(JG_T_Value ~= jg_ndate) then --ÁìÈ¡ÁË1´Î	
@@ -645,8 +645,7 @@ function nt_getTask(nTaskID)
 	return GetTask(nTaskID)
 end
 
-
-function but_pop2home(camp)
+function but_pop2home( camp )
 local nTime = tonumber(GetLocalDate("%H%M"));							 
 	oldPlayerIndex = PlayerIndex
 	tbPlayer = { }
@@ -658,23 +657,22 @@ local nTime = tonumber(GetLocalDate("%H%M"));
 		idx, pidx = GetNextPlayer( MISSIONID,idx, camp );
 		if( pidx > 0 ) then
 		 	PlayerIndex = pidx
-		--	local W,nx,ny = GetWorldPos();
-		--	local toadox=floor(nx/8)
-		--	local toadoy=floor(ny/16)
-		--		if GetFightState( ) >= 0 and GetTask(3060)==toadox and GetTask(3061)==toadoy and (GetTask(3062)+3==nTime) then
-		--			count = count + 1
-		-- 		tbPlayer[ count ] = pidx
-		--		--Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." 1")
-		--		else
-		--			if GetTask(3060)~=toadox or GetTask(3061)~=toadoy then
-		--				SetTask(3062,nTime)
-		--			end
-		--			SetTask(3060,toadox)
-		--			SetTask(3061,toadoy)
+			local W,nx,ny = GetWorldPos();
+			local toadox=floor(nx/8)
+			local toadoy=floor(ny/16)
+				if GetFightState( ) >= 0 and GetTask(3060)==toadox and GetTask(3061)==toadoy and (GetTask(3062)+3==nTime) then
+					count = count + 1
+		 		tbPlayer[ count ] = pidx
+				Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." 1")
+				else
+					if GetTask(3060)~=toadox or GetTask(3061)~=toadoy then
+						SetTask(3062,nTime)
+					end
+					SetTask(3060,toadox)
+					SetTask(3061,toadoy)
 					
-				--	Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." -1")
-				--	Msg2Player(""..GetTask(3060).."--"..GetTask(3061).."--"..GetTask(3062).." -2")
-			--	end
+					Msg2Player(""..toadox.."--"..toadoy.."--"..nTime.." -2")
+				end
 		 	if ( GetFightState( ) == 0 and ( ( GetGameTime() - BT_GetData( PL_LASTDEATHTIME ) ) >= TIME_PLAYER_STAY ) ) then
 		 		count = count + 1
 		 		tbPlayer[ count ] = pidx
@@ -705,14 +703,14 @@ local nTime = tonumber(GetLocalDate("%H%M"));
  
 			if (l_curcamp == 1) then
 				SetRevPos(tbGAME_SIGNMAP[game_level], 1)
-			--	NewWorld(bt_getsignpos(1))
-			NewWorld(968,1574,3174)
+				NewWorld(bt_getsignpos(1))
+			--NewWorld(968,1574,3174)
 			SetFightState(0)
 			DisabledUseTownP(0);
 			else	
 				SetRevPos(tbGAME_SIGNMAP[game_level], 2)
-				--NewWorld(bt_getsignpos(2))
-				NewWorld(968,1574,3174)
+				NewWorld(bt_getsignpos(2))
+				--NewWorld(968,1574,3174)
 			SetFightState(0)
 			DisabledUseTownP(0);
 			end;
@@ -737,5 +735,3 @@ local nTime = tonumber(GetLocalDate("%H%M"));
 	end
 	PlayerIndex = oldPlayerIndex
 end
-
-

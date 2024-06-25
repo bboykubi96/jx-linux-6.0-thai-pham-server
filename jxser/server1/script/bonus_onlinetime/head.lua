@@ -1,8 +1,8 @@
 Include("\\script\\lib\\awardtemplet.lua")
 
 --Start_Date = 20090623;
-BNCQ_End_Date = 20110220;	--ket thuc ho¹t dong
-BNCQ_Start_Date = 20110127;
+BNCQ_End_Date = 20200717;	--ket thuc ho¹t dong
+BNCQ_Start_Date = 20200517;
 BNCQ_OneDayTime = 60 * 24;
 --BNCQ_OnlineAwardItem = "B¸ch niªn chu qu¶"
 
@@ -28,7 +28,7 @@ end
 
 function OnlineAward_Check_TransferLife()
 	if (ST_GetTransLifeCount() < 1) then
-		if (GetLevel() >= 150) then
+		if (GetLevel() >= 90) then
 			return 1
 		else
 			return 0

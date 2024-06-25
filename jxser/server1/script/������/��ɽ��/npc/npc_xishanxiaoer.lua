@@ -1,109 +1,103 @@
---TÝnh n¨ng vi s¬n ®¶o t©y s¬n tiÓu nhÞ edit by mcteam
-
-Include("\\script\\task\\newtask\\newtask_head.lua")
-Include("\\script\\task\\newtask\\xishancun\\xishancun_head.lua")
-Include("\\script\\task\\system\\task_string.lua"); 
-Include("\\script\\activitysys\\g_activity.lua")
+-------------------------------------------------Script*By*Heart*Doldly***-----------------------------------------
+IncludeLib("LEAGUE");
+Include("\\script\\dailogsys\\dailogsay.lua")
+Include("\\script\\lib\\composeex.lua")
 Include("\\script\\dailogsys\\g_dialog.lua")
-Include("\\script\\activitysys\\playerfunlib.lua")
-
+Include("\\script\\activitysys\\npcdailog.lua")
 Include("\\script\\global\\g7vn\\g7configall.lua")
-
-function main() 
-
-dofile("script/½­ÄÏÇø/Î÷É½´å/npc/npc_xishanxiaoer.lua")
+----------------------------------------------------------------
+NhiemVuViSonDao			 = 5955
+TieuDietQuaiViSonDao			 = 5954
+TSK_NhiemVuViSonDao_TaskLimit	 = 5953
+TSKV_NhiemVuViSonDao_TaskLimit	 = 1;
+-------------------------------------------------------------------------------
+function myplayersex()
+	if GetSex() == 1 then 
+		return "N÷ HiÖp";
+	else
+		return "§¹i HiÖp";
+	end
+end
+--------------------------------------------------------------------------------
+function main()
 dofile("script/global/g7vn/g7configall.lua")
+dofile("script/½­ÄÏÇø/Î÷É½´å/npc/npc_xishanxiaoer.lua")
 
-if divisondao == 0 then
-	Say("Vi S¬n §¶o t¹m thêi ch­a më")
+	if GetLevel() < 150 and ST_IsTransLife() ~= 1 then
+		Talk(1,"","<bclr=violet>ChØ Nh÷ng "..myplayersex().." CÊp 150 Trë Lªn Trïng Sinh Th×\nKh«ng Giíi H¹n §¼ng CÊp Míi Cã ThÓ Tham Gia Ho¹t §éngNµy")
+		return 0;
+	end
+	Say("<bclr=violet>"..myplayersex().." Ta Cã NhiÖm Vô Cho Ng­¬i Muèn Lµm Kh«ng",4,
+		"Ta Muèn Lªn §¶o H·y §­a Ta §i/LenVSD",
+		"Ta Muèn Lµm H·y Cho Ta BiÕt Kh¶o NghiÖm Cña Ng­¬i §i/NhanNhiemVu",
+		"Ta §· Hoµn Thµnh §Õn Tr¶ NhiÖm Vô Cho Ng­¬i §©y/TraNhiemVu",
+		"Th«i Ta BËn Råi/No")
+end
+------------------------------------------------------------------------------------------------------------------
+function NhanNhiemVu()
+if NhiemVuViSonDao_CheckTaskLimit() == 0 then
+	return 1
+end
+	if GetTask(NhiemVuViSonDao) == 1 then
+		Talk(1,"","<bclr=violet>"..myplayersex().." §· NhËn NhiÖm Vô Nµy Råi\n                Mau §i Hoµn Thµnh §i Råi NhËn Th­ëng")
+		return
+	end
+	SetTask(NhiemVuViSonDao,1); Talk(1,"","<bclr=red>H·y §i Tiªu DiÖt 10 Con Qu¸i BÊt Kú")
+end
+------------------------------------------------------------------------------------------------------------------------------
+function NhiemVuViSonDao_CheckTaskLimit()
+	local nTaskLimit = GetTask(TSK_NhiemVuViSonDao_TaskLimit)
+	local nDate = tonumber(GetLocalDate("%y%m%d"))
+	if nDate ~= floor(nTaskLimit/256) then
+		nTaskLimit = nDate * 256
+		SetTask(TSK_NhiemVuViSonDao_TaskLimit, nTaskLimit)
+	end
+	if mod(nTaskLimit, 256) < TSKV_NhiemVuViSonDao_TaskLimit then
+		return 1;
+	else
+		Say(format("<bclr=violet>%s H«m Nay §· Hoµn Thµnh %s LÇn NhiÖm Vô Nµy Råi.\n<bclr=red>                               Ngµy Mai H·y Quay L¹i", myplayersex(), TSKV_NhiemVuViSonDao_TaskLimit))
+		return 0;
+	end
+	return 0;
+end
+--------------------------------------------------------------------------------------------------------------------------------
+function TraNhiemVu()
+if GetTask(NhiemVuViSonDao) == 0 then
+	Talk(1,"","<bclr=violet>"..myplayersex().." Ch­a NhËn NhiÖm Vô")
 	return
 end
+	if GetTask(TieuDietQuaiViSonDao) >= 10 then
+		Say("<bclr=violet>Chóc Mõng "..myplayersex().." §· Lµm Tèt L¾m Hay PhÇn Quµ Cña Ta",2,
+			"NhËn Th­ëng/NhanThuong",
+			"Th«i/No")
+	else
+		Talk(1,"","<bclr=violet>"..myplayersex().." Ch­a §¹t Kh¶o NghiÖm Cña Ta\n                                 H·y Cè G¾ng H¬n N÷a")
+	end
+end
+--------------------------------------------------------------------------------------------------------------
+function NhanThuong()
+local nCurtime = tonumber(GetLocalDate("%H%M"));
+local nWeekday = tonumber(date("%w"));
+local nRestMin = 24 * 60 - (floor(nCurtime/100)*60+floor(mod(nCurtime, 100)));
+	local tbAward = {
+	--	{nExp_tl=100e6},
+	--	{szName="TiÒn §ång",tbProp={4,417,1,1,0,0},nCount=20},
+		--{szName="B¶o r­¬ng Giíi H¹n Random(2 Ngµy)",tbProp={6,1,4365,1,0,0},nCount=1},	
+		{szName = "Kim Bµi Vi S¬n §¶o",tbProp={6,1,4984,1,0,0},nCount=1, nBindState = -2,nExpiredTime=ThoiHanHanhHiepKy},
+	}
+	SetTask(NhiemVuViSonDao,0); SetTask(TieuDietQuaiViSonDao,0);
+	SetTask(TSK_NhiemVuViSonDao_TaskLimit,GetTask(TSK_NhiemVuViSonDao_TaskLimit)+1)
+	DynamicExecuteByPlayer(PlayerIndex, "\\script\\huoyuedu\\huoyuedu.lua", "tbHuoYueDu:AddHuoYueDu", "NhiemVuViSonDao")
+	tbAwardTemplet:GiveAwardByList(tbAward, "PhÇn Th­ëng NhiÖm Vô Vi S¬n §¶o")
 
--- script viet hoa By http://tranhba.com  Uworld1064 = nt_getTask(1064) 
--- script viet hoa By http://tranhba.com  local name = GetName() 
--- script viet hoa By http://tranhba.com  if ( Uworld1064 < 2) then -- script viet hoa By http://tranhba.com  ph¸n ®o¸n ch­a hoµn thµnh t©y s¬n tù nhiÖm vô 
--- script viet hoa By http://tranhba.com  Talk(1,"","T©y s¬n tiÓu nhÞ # mÊy ngµy nay khÝ trêi ph¶n phôc v« th­êng , ta còng kh«ng t©m t­ ra biÓn ®¸nh c¸ liÔu . ") 
--- script viet hoa By http://tranhba.com  elseif ( Uworld1064 == 2 ) then -- script viet hoa By http://tranhba.com  ph¸n ®o¸n ®· hoµn thµnh t©y s¬n tù nhiÖm vô , nh­ng ch­a ®i t©y s¬n tù , h¬n n÷a kh«ng cïng t©y s¬n tiÓu nhÞ ®èi tho¹i qu¸ 
--- script viet hoa By http://tranhba.com  -- script viet hoa By http://tranhba.com  Say("T©y s¬n tiÓu nhÞ # ng­¬i muèn ®i t©y s¬n tù ? ®¸ng tiÕc t©y s¬n tù cßn ch­a më ®Ó , t¹m thêi kh«ng thÓ qu¸ khø . bÊt qu¸ ng­¬i yªn t©m , ta ®· nhí ng­¬i , qua mÊy ngµy ng­¬i trùc tiÕp tíi t×m ta tèt l¾m , ta dÉn ng­¬i th­îng t©y s¬n tù . ",0) 
--- script viet hoa By http://tranhba.com  Describe(DescLink_XiShanXiaoEr.."<#># vÞ kh¸ch quan kia , t×m ta cã g× quý kiÒn ? cã ph¶i hay kh«ng muèn mua c¸ ®©y ? <enter>" 
--- script viet hoa By http://tranhba.com  ..name.."<#># kh«ng ph¶i vËy , ph¶i kh«ng tØnh nh©n sÜ ®Ó cho ta tíi t×m ng­¬i . <enter> t©y s¬n tiÓu nhÞ # lµ h¾n , ta biÕt . ng­¬i còng ph¶i ®i t©y s¬n tù ®i , ®i th«i , ta ®©y liÒn dÉn ng­¬i ®i . bÊt qu¸ t©y s¬n tù c¸i chç nµy qua còng kh«ng ph¶i lµ nh­ vËy ph­¬ng tiÖn , h¬n n÷a hung hiÓm dÞ th­êng , ng­¬i ph¶i nhiÒu thªm cÈn thËn yªu . <enter>", 
--- script viet hoa By http://tranhba.com  2,"Chóng ta lªn ®­êng ®i /task007","Ta cßn lµ sau ®ã l¹i ®i ®i /task006") 
--- script viet hoa By http://tranhba.com  elseif ( Uworld1064 == 3) then -- script viet hoa By http://tranhba.com  ph¸n ®o¸n ®· hoµn thµnh t©y s¬n tù nhiÖm vô , th¶ cïng t©y s¬n tiÓu nhÞ ®èi tho¹i qu¸ mét lÇn , nh­ng ch­a ®i t©y s¬n tù 
--- script viet hoa By http://tranhba.com  Say("T©y s¬n tiÓu nhÞ # ng­¬i b©y giê ®· chuÈn bÞ xong ®i t©y s¬n tù liÔu sao ? ",2,"Chóng ta lªn ®­êng ®i /task007","Ta cßn lµ sau ®ã l¹i ®i ®i /task006"); 
--- script viet hoa By http://tranhba.com  end; 
-
-local nNpcIndex = GetLastDiagNpc(); 
-local szNpcName = GetNpcName(nNpcIndex); 
-if NpcName2Replace then szNpcName = NpcName2Replace(szNpcName) end 
-local tbDailog = DailogClass:new(szNpcName); 
-tbDailog.szTitleMsg = "T©y S¬n tiÓu nhÞ # ®¹i hiÖp muèn ®i T©y S¬n ®¶o ? muèn ®ãng 100 tê thÇn bÝ mËt ®å míi cã thÓ ®i ." 
---tbDailog:AddOptEntry("Ta cßn lµ sau ®ã l¹i ®i ®i  .", task006, {}); 
---tbDailog:AddOptEntry("§ång ý # ta lËp tøc ®i t×m .", task007, {}); 
-tbDailog:AddOptEntry("T¹m kh«ng ®i .", no, {}); 
-
-G_ACTIVITY:OnMessage("ClickNpc", tbDailog, nNpcIndex); 
-
-tbDailog:Show(); 
-
-end; 
-function task006() 
-Uworld1064 = nt_getTask(1064) 
-nt_setTask(1064,3) 
-end; 
-
-function task007() 
-if (GetLevel() < 100) then 
-Say("T©y s¬n tiÓu nhÞ #100 cÊp trë xuèng kh«ng thÓ ®i !",0); 
-return 
-end 
-
-GiveItemUI("§ãng mÆt tra phÝ .","§em mËt ®å ®Æt ë phÝa d­íi ", "task008", "no") 
-
---Uworld1064 = nt_getTask(1064) 
---nt_setTask(1064,0) 
---SetFightState(1); 
---NewWorld(342,1177,2410); 
---DisabledUseTownP(1) -- script viet hoa By http://tranhba.com  h¹n chÕ kú ë t©y s¬n tù bªn trong sö dông trë vÒ thµnh phï 
---SetRevPos(175,1); -- script viet hoa By http://tranhba.com  thiÕt trÝ sèng l¹i ®iÓm 
-
-end; 
-
-function task008(ncount) 
-local scrollarray = {} 
-local scrollcount = 0 
-local scrollidx = {} 
-local y = 0 
-for i=1, ncount do 
-local nItemIdx = GetGiveItemUnit(i); 
-itemgenre, detailtype, parttype = GetItemProp(nItemIdx) 
-if (itemgenre == 6 and detailtype == 1 and parttype ==196) then 
-			y = y + 1
-scrollidx[y] = nItemIdx; 
-scrollarray[i] = GetItemStackCount(nItemIdx) 
-			scrollcount = scrollcount + scrollarray[i]
-end 
-end 
-if (y ~= ncount) then 
-Talk(1,"","ThÇn bÝ mËt ®å kh«ng ®ñ , ë kiÓm tra xem mét chót !") 
-return 
-end 
-if (scrollcount > 100) then 
-Talk(1,"","Ta chØ cÇn 100 tê thÇn bÝ mËt ®å , kh«ng cÇn cho ta mang ®Õn nhiÒu nh­ vËy ") 
-return 
-end 
-if (scrollcount < 100) then 
-Talk(1,"","Ng­¬i giao cho ta thÇn bÝ mËt ®å kh«ng ®ñ , n÷a kiÓm tra xem mét chót !") 
-return 
-end 
-if (scrollcount == 100) then 
-for i = 1, y do 
-RemoveItemByIndex(scrollidx[i]) 
-end 
-end; 
--- script viet hoa By http://tranhba.com SetFightState(0); 
-NewWorld(342,1178,2412) 
-SetFightState(1); 
-end 
-
-function no() 
-end 
+end
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function LenVSD()
+local lbvsd = CalcEquiproomItemCount(6,1,2432,1)
+	if (lbvsd >= 1) then
+		NewWorld(342, 1177, 2409) SetFightState(1); ConsumeEquiproomItem(1,6,1,2432,-1)
+	else
+		Talk(1,"","<bclr=violet>"..myplayersex().." Kh«ng Cã LÖnh Bµi Vi S¬n §¶o")
+	end
+end
+----------------------------------------------------------------------------------------------------------------------------

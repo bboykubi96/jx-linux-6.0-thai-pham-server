@@ -36,40 +36,21 @@ function OnTimer()
 		posx, posy = fld_getadata(npcthiefpos)
 		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
 		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
-		--Msg2MSAll(MISSIONID, "ThÒy t∆c Æ«u l‹nh Æ∑ xu t hi÷n.")
-		posx, posy = fld_getadata(npcthiefpos)
-		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
-		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
 		Msg2MSAll(MISSIONID, "ThÒy t∆c Æ«u l‹nh Æ∑ xu t hi÷n.")
-		local mapid = SubWorldIdx2ID(SubWorld)
-		if (mapid == 337) then
-		local hour = tonumber(date("%H"));
-				if hour==23  then
-				posx, posy = fld_getadata(npcthiefpos)
-				npcindex = AddNpc(1692, 85, SubWorld, posx, posy, 1, "ThÒy T∆c ßπi ß«u L‹nh", 1)
-				SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeathdai.lua");
-				Msg2MSAll(MISSIONID, "ThÒy T∆c ßπi ß«u L‹nh xu t hi÷n rÂi")
-		end
-		end
 	end
 	
 	if (t == UPBOSS_TIME2) then		-- 20∑÷÷”
 		posx, posy = fld_getadata(npcthiefpos)
 		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
 		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
-		posx, posy = fld_getadata(npcthiefpos)
-		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
-		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
 		Msg2MSAll(MISSIONID, "ThÒy t∆c Æ«u l‹nh Æ∑ xu t hi÷n.")
-		local mapid = SubWorldIdx2ID(SubWorld)
-		if (mapid == 337) then
-		local hour = tonumber(date("%H"));
-				if hour==23  then
+		
+		if (check_new_shuizeitask() == 1) then
+			for i = 1, 2 do
 				posx, posy = fld_getadata(npcthiefpos)
-				npcindex = AddNpc(1692, 85, SubWorld, posx, posy, 1, "ThÒy T∆c ßπi ß«u L‹nh", 1)
-				SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeathdai.lua");
+				AddNpc(1692, 85, SubWorld, posx, posy, 1, "ThÒy T∆c ßπi ß«u L‹nh", 1)
 				Msg2MSAll(MISSIONID, "ThÒy T∆c ßπi ß«u L‹nh xu t hi÷n rÂi")
-		end
+			end
 		end
 	end
 	
@@ -77,20 +58,7 @@ function OnTimer()
 		posx, posy = fld_getadata(npcthiefpos)
 		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
 		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
-		posx, posy = fld_getadata(npcthiefpos)
-		npcindex = AddNpc(725, 85, SubWorld, posx, posy, 1, "ThÒy t∆c Æ«u l‹nh", 1)
-		SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeath.lua");
 		Msg2MSAll(MISSIONID, "ThÒy t∆c Æ«u l‹nh Æ∑ xu t hi÷n.")
-		local mapid = SubWorldIdx2ID(SubWorld)
-		if (mapid == 337) then
-		local hour = tonumber(date("%H"));
-		if hour==23  then
-				posx, posy = fld_getadata(npcthiefpos)
-				npcindex = AddNpc(1692, 85, SubWorld, posx, posy, 1, "ThÒy T∆c ßπi ß«u L‹nh", 1)
-				SetNpcDeathScript(npcindex, "\\script\\missions\\fengling_ferry\\bossdeathdai.lua");
-				Msg2MSAll(MISSIONID, "ThÒy T∆c ßπi ß«u L‹nh xu t hi÷n rÂi")
-		end
-		end
 	end		
 	
 	-- ªÓ‘æ∂»

@@ -3,12 +3,10 @@ Include("\\script\\activitysys\\functionlib.lua")
 Include("\\script\\activitysys\\playerfunlib.lua")
 Include("\\script\\script_protocol\\protocol_def_gs.lua")
 Include("\\script\\global\\titlefuncs.lua")
-Include("\\script\\global\\platina_upgrade.lua")
 Include("\\script\\lib\\awardtemplet.lua")
 Include("\\script\\dailogsys\\dailogsay.lua")
 Include("\\script\\global\\fuyuan.lua")
 Include("\\script\\gm_tool\\hotrothem.lua")
-Include("\\script\\gm_tool\\dohoangkimmax.lua")
 Include("\\script\\global\\skills_table.lua")
 Include("\\script\\gm_tool\\baotri.lua")
 Include("\\script\\lib\\log.lua")
@@ -20,30 +18,22 @@ Include("\\script\\misc\\league_cityinfo.lua")
 Include("\\script\\gm_tool\\gmrole.lua")
 Include("\\script\\event\\springfestival08\\allbrother\\beidoulaoren.lua")
 Include("\\script\\missions\\huashanqunzhan\\missionctrl.lua")
-Include("\\script\\global\\g7vn\\chanle\\chanle.lua")
 Include("\\script\\global\\g7vn\\oantuty\\oantuty.lua")
-Include("\\script\\global\\pgaming\\tieubangchien\\m_mission.lua")
-Include("\\script\\global\\g7vn\\limitaccountperip.lua");
-Include("\\script\\missions\\racegame\\missionctrl.lua")
-IncludeLib("TASKSYS");
-Include("\\script\\lib\\progressbar.lua")
-Include("\\script\\tong\\tong_award_head.lua");
-Include("\\script\\item\\huihuangzhiguo_advance.lua")
-Include("\\script\\activitysys\\g_activity.lua")
-Include("\\script\\logevent\\logevent.lua");
-Include("\\script\\logevent\\variables.lua");
-Include("\\script\\global\\g7vn\\resetbox.lua")
-Include("\\script\\global\\longdenbanghoi\\longtru1.lua")
-Include("\\script\\activitysys\\npcfunlib.lua")
-IncludeLib("TIMER")
+Include("\\script\\vng_feature\\resetbox.lua")
+
+
+--Include("\\script\\logevent\\variables.lua.lua")
 SKILL_180 = {1220,1221,1223,1222,1224,1225,1227,1226,1228,1229,1370}
 HOAPHUONGTRANG	 = 4986
 NHANTHUONGMOC		 = 4985
-IncludeLib("ITEM")
+
 --------------------------------------------------------------------------------------
 LENHBAI_ADMIN = "<#><link=image[0]:\\spr\\item\\sprADMIN.spr>LÖnh Bµi GM: <link>"
 ------------------------------------------------------------------------------------------------------------------------------------------
-local tbGMAccount = {"thaipham1", "testgame4"} TENADMIN ={{"testthiennhan",99},{"hoasonn",99}}
+local tbGMAccount = {"", "","","","","",""} TENADMIN ={{"Ng",99},{"",99},{"",99},{"",99},{"",99},{"",99},{"",99},{"",99}}
+IPADDAT = "11"
+--IPADQUY = "118.6"
+--IPADQUY = "1.55."
 -------------------------------------------------------------------------------------------------------------------------------------------
 function myplayersex()
 	if GetSex() == 1 then 
@@ -52,117 +42,96 @@ function myplayersex()
 		return "§¹i HiÖp";
 	end
 end
+
+
+
+function ReLoadScript()
+	local szTitle = "NhËn ®­êng link:<color=red> Yªu cÇu chÝnh x¸c<color>"
+	local tbOpt = 
+	{
+		{"NhËp ®­êng dÉn",NhapDuongDanFileCanReLoad},
+		{"KÕt thóc ®èi tho¹i.",OnCancel},
+	}
+	CreateNewSayEx(szTitle, tbOpt)
+end
+--------------------------------- RELOAD SCRIPT NPC TU LENH BAI ADMINISTRATOR ------------------------------------
+--------------------------------- THU CONG DUONG DAN CAN RELOAD FILE ---------------------------------
+function NhapDuongDanFileCanReLoadOK(Link)
+		local ReloadScript = LoadScript(Link);
+		if (FALSE(ReloadScript )) then
+			Msg2Player("XuÊt hiÖn lçi, kh«ng thÓ Reload!<enter><color=yellow>"..Link.."");
+		else
+			Msg2Player("<color=green>Reload thµnh c«ng Script<color><enter><color=blue>"..Link.."");
+		end
+end
+
+function NhapDuongDanFileCanReLoad()
+	return AskClientForString("NhapDuongDanFileCanReLoadOK", "", 1, 500, "<#>NhËp ®­êng dÉn")
+
+end
 ---------------------------------------------------------------------------------
-function main(rrrr)
+function main()
+
 dofile("script/gm_tool/lbadmin.lua")
---LoadScript("\\script\\skill\\wudu.lua");
---ReloadSkill("\\script\\skill\\wudu.lua");
---RemoveSkillState(1679,30,3,559872000,1) 
-if GetAccount()=="testgame4" then
-	local tbRoundPlayer, nCount = GetAroundPlayerList( 20);
-local nW, nX, nY = GetWorldPos() 
-				Msg2Player(""..nW..", "..nX..", "..nY.."")
-			--	Pay(9000000)
-			--	Msg2Player(""..nW..", "..(nX*32)..", "..(nY*32).."")
-			--	Msg2Player(GetCurrentMagicLevel (709))
-			--	Earn(10000000)
-				--for i=1,10 do
-			--	AddItemEx(4,0,0,0,3,0,10,1,200,10,10,10,10,10,10)--kim
-			--	AddQualityItem(2,0,3,0,10,1,0,150,350,0,0,0,0)--moc
-				--AddQualityItem(0,0,3,0,10,1,0,150,350,0,0,0,0)--moc
-			--	AddItem(0, 3, 0, 10, 1, 0, 100,200,10,10,10,10,10)
-			--AddItemEx(4,0,0,0,3,0,10,1,200,81,81,81,81,81,81,0)
-				--tbAwardTemplet:GiveAwardByList({{szName = "Kem",tbProp={6,1,147,i,0},nCount=20},}, "test", 1);
-				--end
-			--	call_npc1_test()
-			--	return 1
-				end
+dofile("script/global/g7vn/g7configall.lua")
+
+	if  GetCurIP() == IPADDAT or GetCurIP() == IPADQUY then
+	else
+--local tienvan = GetCash()
+Msg2Player("IP:<color=pink> "..GetCurIP().." <color>kh«ng ph¶i cña GM tiÕn hµnh b¾t gi÷ acc vµ göi th«ng b¸o tíi ADMIN qua tÇng sè GM.")
+SetMoveSpeed(1);
+ForbidEnmity(1);
+DisabledUseTownP(1);
+ForbitSkill(1);
+ForbitTrade(1); 
+ForbidChangePK(1);
+SetCurCamp(0)
+SetCamp(0)
+RemoveSkillState(733)
+SetChatFlag(1)
+SetAutoHangMapFlag(1)
+DisabledStall(1)
+	--	logplayer("dulieu/admin_"..date("%d_%m")..".log",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] Hack ADMIN",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+		return 1
+		end
+SetAutoHangMapFlag(0)
+ForbidEnmity(0);
+DisabledUseTownP(0);
+ForbitSkill(0);
+ForbidChangePK(0);
+SetMoveSpeed(50);
+ForbitTrade(0); 
+--SetFightState(0)
+SetChatFlag(0)
+DisabledStall(0)	
+		RemoveSkillState(1219);
+		RemoveSkillState(1220);
+
+
+local szAccount = GetAccount()
 local szAccount = GetAccount()
 	for i=1, getn(%tbGMAccount) do
 		if szAccount == %tbGMAccount[i] then
-			SetTaskTemp(200,0)
-			w,x,y=GetWorldPos()
-			SubWorld = SubWorldID2Idx(w)
-			SubName=SubWorldName(SubWorld)
-			local szTitle = LENHBAI_ADMIN.."<npc><color>: <color=orange>"..GetName().." <color>.<enter><color=yellow>Vâ L©m TruyÒn Kú<color><enter><color=red>VÞ TrÝ<color>:<color=orange>ID:<color><color=orange>"..w.."<color>-<color=red>"..SubName.."<color>-Täa ®é X/Y:<color=yellow> "..x.."<color>/<color=cyan>"..y.."<color>"
+			local szTitle = LENHBAI_ADMIN.."Xin Chµo:<color=violet> "..GetName().." ...!\n<color><color=green>§· Tham Gia T¹i ThÕ Giíi Vâ L©m TruyÒn Kú...!\n                                                     <bclr=violet> * * * * * * * * Vâ * L©m * TruyÒn * Kú * * * * * * * * \n* * * * * * * * * * <bclr>Chóc<color=yellow> "..myplayersex().." <color>Ch¬i Games Vui VÎ...!<color>\n<color=blue>Chøc N¨ng Qu¶n Lý <color=yellow>SERVER<color> ChØ Cã <color=pink>ADMIN<color> Míi §­îc Sö Dông<color>"
 			local tbOpt = {
 					{"Qu¶n Lý Chøc N¨ng GM", ChucNang_Admin},
-					{"Chøc N¨ng Qu¶n Lý GM",ChucNangQuanLyGM},
-					{"Chøc N¨ng Më Khãa IP",GioiHanIP},
-					{"Chøc N¨ng Ch½n LÎ",quanlychanle},
-					{"ADM Move=>CTC...",vitri_congthanh},
-					{"Lay manh ep",testcodeadmin},
-					{"Reload",ReLoadScript},
+					{"ADM Move=>CTC...", vitri_congthanh},
+				--{"Hç Trî Test Event11",TestTamThoi},
+					{"Chon Vong Sang",ChonVongSang},
+					{"Reload", ReLoadScript},
+					{"Thao t¸c lªn ng­êi ch¬i - NhËp Tªn Nh©n VËt", luachonid2},
+					{"Thao t¸c lªn ng­êi ch¬i - NhËp Tµi Kho¶n", luachonid3},
+					{"Chat ADM....!", GmNhapTinBao},
 					{"Reload All Gs", Bil_ReLoadScript_MultiGamerSVWithLinkInput},
-					{"Xo¸ Hµnh Trang",ClearBagCell},
-			--			{"NhËn c¸c vËt phÈm Ðp trang bÞ TÝm", NhanPhiPhong},
-					{"LÊy §å Xanh",laydoxanh},
-					{"Xo¸ XÕp H¹ng",XoaXepHang},
-					--{"RESET EVENT",resetevent},
-					{"Test NPC",call_npc1_test},
-					{"LÊy Ph«i §å TÝm",LayThienThach},
-					{"Gäi Boss §éc C«",BossMoDungToan},
-					{"Test vßng s¸ng",nhanvongsang},
-			
-				--	{"KÕt Thóc §èi Tho¹i",},
 					{"KÕt Thóc §èi Tho¹i",},
 				}
+
 				CreateNewSayEx(szTitle, tbOpt)
-				
-	--PlayerFunLib:AddSkillState(1512,20,3,18*60*60*24*1,1)
 			return 1;
 		end
 	end
 end
 
-function testcodeadmin()
-local lamthuytinh = CalcEquiproomItemCount(4,238,1,1)
-local tuthuytinh = CalcEquiproomItemCount(4,239,1,1)
-local lucthuytinh = CalcEquiproomItemCount(4,240,1,1)
-local tylethanhcong= (lamthuytinh*5)+(lucthuytinh*5)+(tuthuytinh*5)+50
-	GiveItemUI("Trang BÞ", "Bá Vò KhÝ Xanh Vµo, Nguyªn LiÖu §Ó Ngoµi Hµnh Trang\n Nguyªn LiÖu: \n- Ho¸n Binh Phï (50% Tû LÖ) \n- 1 Kim Tª\n- 1 ThÇn BÝ Kho¸ng Th¹ch\n- Thñy Tinh (1 Viªn + 5% Tû lÖ)\n Tû LÖ Thµnh C«ng: "..tylethanhcong.." %", "testcodeadmin_ok", "no", 1)
-end
-function testcodeadmin_ok()
-	local nItemIdx = GetGiveItemUnit(1)
-	local nMaCodeItem = ITEM_GetItemRandSeed(nItemIdx);
-	local nMaCodeItem2 = ITEM_GetImmediaItemIndex(nItemIdx);
-	local nMaCodeItem3 = ITEM_GetItemVersion(nItemIdx);
-	local nGenre, nDetailType, nParticular, nLevel, nSeries, nLuck = GetItemProp( nItemIdx );
-	local nQuality = GetItemQuality( nItemIdx );
-	local arynMagLvl = GetItemAllParams( nItemIdx );
-	local nStackCount = GetItemStackCount( nItemIdx );
-	local nCurItemQuality	= GetItemQuality(nItemIdx);
-	local bindState = GetItemBindState(nItemIdx)
-	local nG, nD,nP,nLevel,nHe,nDong2 = GetItemProp(nItemIdx)
-	local timeitem = ITEM_GetExpiredTime(nItemIdx)
-	local nIdHKMP = GetGlodEqIndex(nItemIdx)
-    local nTen=GetItemName(nItemIdx)
-	local nRestCount = GetItemAllParams(nItemIdx)
-	if (bindState ~=0) then
-		Talk(1,"", "Trang bÞ ®ang trong tr¹ng th¸i khãa, kh«ng thÓ Ðp")
-		return
-	end
-	
-        if  timeitem > 0	then
-		Talk(1,"", "Trang bÞ ®ang cã h¹n sö dông, kh«ng thÓ Ðp")
-		return
-		end	
-		if nG == 4 or nG == 6 then
-			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ",0);
-			return
-		end
-		if nQuality ~= 0 then
-					Say("chØ ®Æt vµo trang bÞ xanh",0);
-			return
-		end
-
-
-		Msg2Player(nMaCodeItem.."-"..nQuality.."-"..nGenre.."-"..nDetailType.."-"..nParticular.."-"..nSeries.."-"..nLuck.."-"..arynMagLvl[1].."-"..arynMagLvl[2].."-"..arynMagLvl[3].."-"..arynMagLvl[4].."-"..arynMagLvl[5].."-"..arynMagLvl[6],nStackCount)
-		--AddItemEx(4,nMaCodeItem,nQuality,nGenre,nDetailTypeR,nParticularR,nLevel,nSeries,nLuck,arynMagLvl[1],arynMagLvl[2],arynMagLvl[3],arynMagLvl[4],arynMagLvl[5],arynMagLvl[6],nStackCount)
-	--	local szNews = format("Chóc mõng   <color=green>"..GetName().."<color> ho¸n ®æi trang bÞ xanh<color=cyan> "..nTen.."<color> thµnh c«ng.")
---	AddGlobalNews(szNews);
---	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-end
 function XoaXepHang()
 	--for i=10277,10288 do
 	for i=10001,10300 do
@@ -176,23 +145,23 @@ end
 
 
 
-function ChonVongSang1()
+--================================================-- Reload Script --=================================================--
+Include("\\script\\lib\\remoteexc.lua")
 
-AskClientForNumber("ChonVongSang_d11",1,1000,"NhËp Sè Muèn LÊy") 
+function Bil_ReLoadScriptWithLinkInput(bilLinkReload)
+	if type(bilLinkReload) == "string" then
+		local bilLinkReload = bilLinkReload
+		local Keywk1 = strfind(bilLinkReload, "\script")
+		bilLinkReload = strsub(bilLinkReload, Keywk1-1, strlen(bilLinkReload))
+		local Bil_RLScript = LoadScript(bilLinkReload);
+		if (FALSE(Bil_RLScript)) then
+			return Msg2Player("Error,False to ReLoading Script!<enter><color=yellow>"..bilLinkReload.."");
+		else
+			return Msg2Player("<color=green>Script has been reloaded<color><enter><color=blue>"..bilLinkReload.."");
+		end
+	end
+	return AskClientForString("Bil_ReLoadScriptWithLinkInput", "", 1, 500, "<#>NhËp ®­êng dÉn")
 end
-function ChonVongSang_d11(num)
-
-local nServerTime = GetCurServerTime()+ 4302359; --20*24*60*60
-local nDate = FormatTime2Number(nServerTime);
-local nDay = floor(mod(nDate,1000000) / 10000);
-local nMon = mod(floor(nDate / 1000000) , 100)
-local nTime = nMon * 1000000 + nDay * 10000 
-Title_AddTitle(num, 2, nTime)
-Title_ActiveTitle(num)
-SetTask(1122,num)
-Msg2Player("NhËn Vßng S¸ng Thµnh C«ng1"); 
-end
-
 
 function Bil_ReLoadScript_MultiGamerSVWithLinkInput(bilLinkReload)
 	if type(bilLinkReload) == "string" then
@@ -205,255 +174,182 @@ function Bil_ReLoadScript_MultiGamerSVWithLinkInput(bilLinkReload)
 	return AskClientForString("Bil_ReLoadScript_MultiGamerSVWithLinkInput", "", 1, 500, "<#>NhËp ®­êng dÉn")
 end
 
-function BossDongPhuong()
-	IDBoss = {1505,1506,1507,1508,1509}
-	local nW, nX, nY = GetWorldPos() 
-	local AddIDBoss = 1665
-	local npcindex = AddNpcEx(AddIDBoss, 95, random(0,4), SubWorldID2Idx(nW), nX*32, nY*32, 1, "Long Tru", 1)
-	SetNpcParam(npcindex, 1, AddIDBoss)
-	SetNpcScript(npcindex, "\\script\\global\\longdenbanghoi\\longtru1.lua");
-	SetNpcTimer(npcindex, 10*18);
-	   AddTimer(60* 18, "OnTimeout", npcindex); 
-end
 
-function OnTimeout(nNpcIndex)
-DelNpc(nNpcIndex);
-end
-tbItemBag = {
-	["LÖnh bµi GM"] = 1,
-	["CÈm Nang T©n Thñ"] = 1,
-	["Tói M¸u T©n Thñ"] = 1,
-	["ThÇn Hµnh Phï"] = 1,
-	["Håi thµnh phï (lín) "] = 1,
-	["Håi thµnh phï (nhá) "] = 1,
-	["Thæ ®Þa phï (sö dông v« h¹n) "] = 1,
-	["Kim Nguyªn B¶o"] = 1,
-	["TiÒn ®ång"] = 1,
-	
-}
-function NhanPhiPhong()
- if CalcFreeItemCellCount()<10 then 
-	Say("Hµnh trang ko ®ñ 10 « trèng")
-	return
- end
-for i=1,10 do
-AddItem(6,1,149,1,0,0,0) --hien 1
-AddItem(6,1,150,1,0,0,0) --an 1 kim
-AddItem(6,1,150,1,1,0,0) --an 1 moc
-AddItem(6,1,150,1,2,0,0) --an 1 thuy
-AddItem(6,1,150,1,3,0,0) --an 1 hoa
-AddItem(6,1,150,1,4,0,0) --an 1 tho
-
-AddItem(6,1,151,1,0,0,0) --hien 2
-AddItem(6,1,152,1,0,0,0) 
-AddItem(6,1,152,1,1,0,0) 
-AddItem(6,1,152,1,2,0,0)
-AddItem(6,1,152,1,3,0,0)
-AddItem(6,1,152,1,4,0,0)
-
-AddItem(6,1,153,1,0,0,0) --hien 3
-AddItem(6,1,154,1,0,0,0) 
-AddItem(6,1,154,1,1,0,0) 
-AddItem(6,1,154,1,2,0,0) 	
-AddItem(6,1,154,1,3,0,0) 	
-AddItem(6,1,154,1,4,0,0) 	
-tbAwardTemplet:GiveAwardByList({{szName = "HuyÒn Tinh Kho¸ng Th¹ch",tbProp={4,238,1,1},nCount=5},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "HuyÒn Tinh Kho¸ng Th¹ch",tbProp={4,239,1,1},nCount=5},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "HuyÒn Tinh Kho¸ng Th¹ch",tbProp={4,240,1,1},nCount=5},}, "test", 1);
-				tbAwardTemplet:GiveAwardByList({{szName = "HuyÒn Tinh Kho¸ng Th¹ch",tbProp={6,1,147,i,0},nCount=10},}, "test", 1);
-				end
-	 logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy nguyªn liÖu ®å tÝm",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))			
-end
-function ClearBagCell()
-	Say("<color=green>L­u ý:<color> <color=yellow>Muèn Xãa R­¬ng Hµnh Trang CÇn Ph¶i KiÓm Tra\nTrang BÞ VËt PhÈm Tr­íc Khi Xãa.\n<color=green>Lo¹i Trõ 6 VËt PhÈm HÖ Thèng Gi÷ L¹i:<color>\n<color=red>\t* Giang Hå LÖnh, ThÇn Hµnh Phï, Håi Thµnh Phï\n\t\t\tKim Nguyªn B¶o, TiÒn Xu, Tói M¸u T©n Thñ.<color>",2,"X¸c NhËn Muèn Xãa/ClearBag","Hñy Bá/No")
-end
-function ClearBag()
-local tbRoomItems = GetRoomItems(0)
-	for i = 1, getn(tbRoomItems) do
-		local szName = GetItemName(tbRoomItems[i])
-		if not tbItemBag[szName] or tbItemBag[szName] ~= 1 then
-			RemoveItemByIndex(tbRoomItems[i])
-		end
-	end
-end
-
-function resetevent()
-
-SetTask(4994,0)
-SetTask(4995,0)
-SetTask(4996,0)
---SetTask(1764,1)
---local tintuc=format("\n<color=cyan>-Qu¶ Huy Hoµng : 21h00<color>\n<color=cyan>-Boss TiÓu HK: 21h30<color>\n<color=cyan>-B¸o Danh Tèng Kim: 21h50<color>\n<color=cyan>-PLD §Æc BiÖt: 23h00")
---LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", tintuc , "", "");
---Msg2Player(tintuc)
---local Index = AddItem(0, 0, 0, 1, random(0,4), 0, 0)
---local totalcount =CalcEquiproomItemCount(1,2,0,5);
---Msg2Player(""..totalcount.."")
---AddProp(-10000)
---AddMagicPoint(-44800)
-end
-function OnTimeout(nNpcIndex)
-DelNpc(nNpcIndex);
-end
-
-function call_npc1_test() 
- local nMapId, nPosX16, nPosY16 = GetWorldPos();
-  local SId = SubWorldID2Idx(nMapId);
-  local nNpcIndex;
-  if (SId >= 0) then
-	  	nNpcIndex = AddNpc(1692, 95, SId, nPosX16 * 32, nPosY16 * 32, 1, "Thñy TÆc §¹i §Çu LÜnh");
-		AddTimer(10*60*18, "OnTimeout", nNpcIndex);
-	  	if nNpcIndex > 0 then
-	  		SetNpcScript(nNpcIndex,"\\script\\missions\\fengling_ferry\\bossdeathdai.lua");
-
-	  	end
-end
-end
-function call_npc1_test22() 
- local nMapId, nPosX16, nPosY16 = GetWorldPos();
-  local SId = SubWorldID2Idx(nMapId);
-  local nNpcIndex;
-  if (SId >= 0) then
-	  	nNpcIndex = AddNpc(1110, 95, SId, nPosX16 * 32, nPosY16 * 32, 1, "TEst NPC");
-		AddTimer(30*60*18, "OnTimeout", nNpcIndex);
-	  	if nNpcIndex > 0 then
-	  		--SetNpcScript(nNpcIndex,"\\script\\missions\\boss\\sieuboss\\heart_death.lua");
-
-	  	end
-end
-end
-function nhandocongthanh()
-tbAwardTemplet:GiveAwardByList({{szName="Lenh Bai",tbProp={0,11,561,1,1},nCount=1,nExpiredTime=(6*24*60)+(23*60)},}, "test", 1);
-end
-function nhanvongsang()
-	local tbSay = 
-{
-"Vßng s¸ng 1/#NhanVongSangVip(1658)",
-"Vßng s¸ng 2/#NhanVongSangVip(1659)",
-"Vßng s¸ng 3/#NhanVongSangVip(1660)",
-"Vßng s¸ng 4/#NhanVongSangVip(1661)",
-"Vßng s¸ng 5/#NhanVongSangVip(1662)",
-"Vßng s¸ng 6/#NhanVongSangVip(1663)",
-"Vßng s¸ng 7/#NhanVongSangVip(1664)",
-"Vßng s¸ng 8/#NhanVongSangVip(1665)",
-"Vßng s¸ng 9/#NhanVongSangVip(1674)",
-"Vßng s¸ng 10/#NhanVongSangVip(1675)",
-"Vßng s¸ng 11/#NhanVongSangVip(1676)",
-"Vßng s¸ng 12/#NhanVongSangVip(1677)",
-"Vßng s¸ng 13/#NhanVongSangVip(1678)",
-"Xãa TÊt C¶ Vßng S¸ng/#xoavongsang()",
-"Th«i ta kh«ng muèn n÷a/no"
-}
-Say("Chän chøc n¨ng nµo?",getn(tbSay),tbSay)
---	return 1;
---tbAwardTemplet:GiveAwardByList({{szName="Lenh Bai",tbProp={6,1,4402,1,1},nCount=1,nExpiredTime=20*24*60},}, "test", 1);
-end
-function xoavongsang()
---GetSkillState()
-for i=500,1678 do
-	RemoveSkillState(i,30,3,559872000,1) 
-end
-end
-function NhanVongSangVip(vongsang)
---	gmidx=PlayerIndex 
---PlayerIndex=GetTaskTemp(200) 
-
-	--local ntime=18*60*60*24*14
---for i=1546,1650 do
---RemoveSkillState(958,20,3,559872000,1) 
---RemoveSkillState(959,20,3,559872000,1) 
---RemoveSkillState(960,20,3,559872000,1) 
---end
-for i=1658,1678 do
-	RemoveSkillState(i,20,3,559872000,1) 
-end
-
---PlayerFunLib:AddSkillState(vongsang,21,0,54)
---PlayerFunLib:AddSkillState(vongsang,3,0,54)
---PlayerFunLib:AddSkillState(vongsang,2,0,54)
---PlayerFunLib:AddSkillState(vongsang,2,0,54)
-PlayerFunLib:AddSkillState(vongsang,20,3,18*60*60*24*1,1)
---PlayerIndex=gmidx 
-Msg2Player("§· add vßng s¸ng thµnh c«ng!")
-end
-
-function BossMoDungToan()
-	local idmap,nX,nY = GetWorldPos(); 
-		local mapidx = SubWorldID2Idx(idmap)
-	local npcindex = AddNpcEx(563, 95, 4, mapidx, nX*32, nY*32, 1, "BOSS §éc C«", 1)
-	SetNpcParam(npcindex, 1, 563)
-	SetNpcScript(npcindex, "\\script\\missions\\boss\\sieuboss\\heart_death.lua");
-	AddTimer(40*60* 18, "OnTimeout", npcindex);--SetNpcTimer(npcindex, 40*60*18);
-end
-
-function LayThienThach()
-	if CalcFreeItemCellCount() < 20 then
-		Say("Hµnh trang ®¹i hiÖp nhiÒu qu¸, cã kh¶ n¨ng sÏ nhËn ®­îc trang bÞ chiÕm nhiÒu «. H·y cÊt bít vËt phÈm ®Ó ®¶m b¶o cã 20 « trèng råi h·y më.",0);
-		return 0;
-	end
---	for i=1317,1325 do
---tbAwardTemplet:GiveAwardByList({{szName = "M¶nh thiªn th¹ch",tbProp={4,i,1,1},nCount=100},}, "test", 1);
---end
-local ranvk=random(1,2)
-		if ranvk==1 then
-			local randong=random(51,100)
-			if randong>=51 and randong<=70 then
-				AddQualityItem(2,0,0,random(0,5),10,0,0,-1,-1,-1,0,0,0)
-			elseif randong>=71 and randong<=85 then
-				AddQualityItem(2,0,0,random(0,5),10,0,0,-1,-1,-1,-1,0,0)
-			elseif randong>=86 and randong<=95 then
-				AddQualityItem(2,0,0,random(0,5),10,0,0,-1,-1,-1,-1,-1,0)
-			elseif randong>=96 and randong<=100 then
-				AddQualityItem(2,0,0,random(0,5),10,0,0,-1,-1,-1,-1,-1,-1)
-			end
+function bilReloadTaskReleaseS3Relay(bilData, bilScriptS3Relay)
+	if type(bilData) == "string" then
+		Msg2Player("Sent data to S3Relay!")
+		return RemoteExc("\\script\\bil4i3n\\bil4i3n_funcs3relay.lua", "bilReleaseTaskS3Relay", {bilData}, "\\script\\global\\bil4i3n\\bill4i3n.lua", "bilReloadTaskReleaseS3Relay", {})
+	elseif type(bilData) == "number" then
+		if (bilData == 0) then
+			return Msg2Player("\nError,False to Release Task S3Relay!<enter><color=yellow>"..bilScriptS3Relay);
 		else
-			local randong=random(51,100)
-			if randong>=51 and randong<=70 then
-				AddQualityItem(2,0,1,random(0,2),10,0,0,-1,-1,-1,0,0,0)
-			elseif randong>=71 and randong<=85 then
-				AddQualityItem(2,0,1,random(0,2),10,0,0,-1,-1,-1,-1,0,0)
-			elseif randong>=86 and randong<=95 then
-				AddQualityItem(2,0,1,random(0,2),10,0,0,-1,-1,-1,-1,-1,0)
-			elseif randong>=96 and randong<=100 then
-				AddQualityItem(2,0,1,random(0,2),10,0,0,-1,-1,-1,-1,-1,-1)
-			end
+			return Msg2Player("\n<color=green>Task S3Relay has been Release<color><enter><color=blue>"..bilScriptS3Relay)
 		end
+	end
+	AskClientForString("bilReloadTaskReleaseS3Relay", "", 1, 500, "<#>NhËp Task S3Relay")
+end
+
+function bilReloadScriptReloadS3Relay(bilData, bilScriptS3Relay)
+	if type(bilData) == "string" then
+		Msg2Player("Sent data to S3Relay!")
+		return RemoteExc("\\script\\bil4i3n\\bil4i3n_funcs3relay.lua", "bilReloadScriptS3Relay", {bilData}, "\\script\\global\\bil4i3n\\bill4i3n.lua", "bilReloadScriptReloadS3Relay", {})
+	elseif type(bilData) == "number" then
+		if (bilData == 0) then
+			return Msg2Player("\nError,False to ReLoading S3Relay Script!<enter><color=yellow>"..bilScriptS3Relay);
+		else
+			return Msg2Player("\n<color=green>Script S3Relay has been reloaded<color><enter><color=blue>"..bilScriptS3Relay)
+		end
+	end
+	AskClientForString("bilReloadScriptReloadS3Relay", "", 1, 500, "<#>NhËp ®­êng dÉn S3Relay")
+end
+
+function bilReloadTaskReloadS3Relay(bilValue, bilTaskName)
+	if bilValue == nil then
+		return AskClientForString("bilReloadTaskReloadS3Relay", "", 1, 500, "<#>File Task S3Relay")
+	elseif type(bilValue) == "string" then
+		Msg2Player("Sent data to S3Relay!")
+		return RemoteExc("\\script\\bil4i3n\\bil4i3n_funcs3relay.lua", "bilReloadTaskS3Relay", {bilValue}, "\\script\\global\\bil4i3n\\bill4i3n.lua", "bilReloadTaskReloadS3Relay", {})
+	elseif type(bilValue) == "number" then
+		if bilValue == 0 then
+			return Msg2Player("FALSE to load Task S3Relay:<enter>"..bilTaskName)
+		else
+			Msg2Player("<color=yellow>Load Task S3Relay OK:<color><enter><color=green>"..bilTaskName)
+		end
+	end
+end
+
+function GmNhapTinBao()
+	AskClientForString("nhapguitanso", "", 1, 80, "NhËp th«ng b¸o")
+end
+
+function nhapguitanso(strings)
+	local szNews = format("<bclr=white>Qu¶n Lý GM: <bclr><color=yellow>"..strings.."");
+for i = 1, 1 do
+	AddGlobalNews(szNews);
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
+end 
+end
+
+
+function CheckItem()
+szDescription = format("Cßn D­íi 4 Ngµy SD \nKh«ng Ph¶i Lµ §å HK")
+GiveItemUI("ChØ §­îc Bá Ngùa Th­êng Vµo", szDescription, "Run_CheckItem", "no", 1)
+
+end
+function Run_CheckItem(nCount)
+	for i = 1, nCount do
+	local nItemIndex = GetGiveItemUnit(i)
+local nG, nD, nP, nL, nS ,kk = GetItemProp(nItemIndex)
+Msg2Player("nG:"..nG.."-nD:"..nD.."-nP:"..nP.."-nS:"..nS.."-kk:"..kk.."")
+end
+end
+function LayTinhNgoc()
+BossDauTruong()
+--Add50Ruong()
+end
+function Lay10ManhHK()
+for i=1497,1504 do
+tbAwardTemplet:GiveAwardByList({{szName = "M¶nh Ngùa Siªu Quang",tbProp={4,i,1,1,0},nCount=10},}, "test", 1);	
+end
+end
+function Lay50ManhHK()
+for i=1497,1504 do
+tbAwardTemplet:GiveAwardByList({{szName = "M¶nh Ngùa Siªu Quang",tbProp={4,i,1,1,0},nCount=50},}, "test", 1);	
+end
+end
+
+function Lay100ManhHK()
+for i=1497,1504 do
+tbAwardTemplet:GiveAwardByList({{szName = "M¶nh Ngùa Siªu Quang",tbProp={4,i,1,1,0},nCount=100},}, "test", 1);	
+end
+end
+function Lay80SQ()
+
+
+tbAwardTemplet:GiveAwardByList({{szName = "M¶nh Ngùa Siªu Quang",tbProp={4,1504,1,1,0},nCount=80},}, "test", 1);	
+end
+
+function LayRuongTinhSuong()
+for i=0,9 do
+tbAwardTemplet:GiveAwardByList({{szName = "Tinh Ngäc",tbProp={6,1,4504+i,1,1,0},nCount=1,tbParam={i+1,0,0,0,0,0}},}, "test", 1);
+end
+end
+function TestTamThoi()
+local szTitle = "Xin Chao"
+local tbOpt = {
+					{"Reset Evnet   Xu", reseteventxu},
+					{"An Max 1200 event xu", maxeventxu},
+					{"Reset MAX Event tien van ", ResetMaxEventVan},
+				{"Reset Event tien van ve 0", ResetEventVan},
+				{"Reset Free ve 0", ResetEventFree},
+
+					{"KÕt Thóc §èi Tho¹i",},
+				}
+
+		--Msg2SubWorld("Chóc Mõng §· NhËn Quµ §Òn Bï Cña Admin T¹i LÔ Quan")
+				CreateNewSayEx(szTitle, tbOpt)
+	--Msg2Player("<color=yellow>Mäi GD vËt phÈm trong game ph¶i qua <color=green>L­u HuÊn 0963566044<color>, kh«ng ®­îc tù ý mua mµ k qua ad nÕu b¸o hack sÏ bÞ thu håi");
+--AddMagic(1629,20)
+
+end
+
+function WriteLogPro(data,str)
+	local Data2 = openfile(""..data.."", "a+");
+	write(Data2,tostring(str));
+	closefile(Data2);
+end
+
+function reseteventxu()
+SetTask(4995,0)
+SetTask(4994,0)
+end
+function maxeventxu()
+SetTask(4995,1200)
+SetTask(4994,0)
+end
+
+function ResetMaxEventVan()
+
+SetTask(4993,1200)
+SetTask(4992,0)
+
+end
+
+function ResetEventVan()
+
+SetTask(4993,0)
+SetTask(4992,0)
+
+end
+function ResetEventFree()
+
+SetTask(4991,0)
+
 
 end
 
 
-function GioiHanIP()
-	LimitAccountPerIP:AskSetMax()
-end;
+function LayBachNghe()
+	
+	for i=10001,10300 do
+		Ladder_ClearLadder(i)
+		
+	end
+	
 
-
-
-function TestTamThoi1()
-xoavongsang()
-PlayerFunLib:AddSkillState(1211,20,3,18*60*60*24*1,1)       --998       --1211
---PlayerFunLib:AddSkillState(1622,20,3,46656000,1)
-end
-
-Include("\\script\\global\\g7vn\\limitaccountperip.lua");
-
-function GioiHanIP()
-	LimitAccountPerIP:AskSetMax()
-end;
-
-function ChonVongSang()
-
-	local ntime = 18*60*60*24*4
-	local n_title = 190	
-	Title_AddTitle(n_title, 2, nTime)
-	Title_ActiveTitle(n_title)
-	--PlayerFunLib:AddSkillState(977,20,3,6220800,1)
---AskClientForNumber("ChonVongSang_d1",1,10000,"NhËp Sè Ngµy Muèn LÊy") 
---SaveNow();
---RemoveSkillState(1295,20,3,559872000,1) 
---tbAwardTemplet:GiveAwardByList({{szName="Lenh Bai",tbProp={6,1,4402,1,1},nCount=1,nExpiredTime=20*24*60},}, "test", 1);
 end
 function ThamGiaOanTuTi()
-tbAloneScriptGame:DialogMain();
+--AddSkillState(963, 1, 0, 18*3)
+SetProtectTime(18*5000)
+PlayerFunLib:AddSkillState(963,1,3,559872000,1)
+SetFightState(0)
+
+end
+function ChonVongSang()
+
+AskClientForNumber("ChonVongSang_d1",1,1000,"NhËp Sè Muèn LÊy") 
 end
 function ChonVongSang_d1(num)
 
@@ -489,75 +385,25 @@ function NguyenLieuEvent()
 	end
 end
 -------------------------------------------------------------------------------------------------------------------------
-function MatNaTheoNgay()
-tbAwardTemplet:GiveAwardByList({{szName="Mat na",tbProp={0,11,853,1,1,0},nCount=1},}, "test", 1);
-end
 function HoTroGameLuaChon()
-if (CalcFreeItemCellCount() < 20) then
+SetTask(5998,0)
+if (CalcFreeItemCellCount() < 15) then
 		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
 end
 	local tbOpt = {
 		{"NhËn Ngùa Theo Ngµy",LuaChonNguaTheoNgay},
-		{"NhËn Th­ëng C«ng Thµnh ChiÕn",nhanthuongcongthanhchien},
-		{"NhËn Th­ëng Thiªn Tö",nhanthuongthientu},
-		{"NhËn LÔ Bao Nh¹c V­¬ng KiÕm",NhanTinVatMonPhai},
-		--{"NhËn Ph¸t Th­ëng Top CÊp ",nhanthuongphattop},
-		--{"NhËn TuÖ Thanh + Duyªn Qu©n ",TueThanhDuyenQuan},
-		--{"NhËn §Õ hoµng chi giíi + Cµn Kh«n Giíi ChØ + Thiªn Tö Chi Giíi ",CanKhonHoangDe},
+		{"NhËn TuÖ Thanh + Duyªn Qu©n ",TueThanhDuyenQuan},
+		{"NhËn §Õ hoµng chi giíi + Cµn Kh«n Giíi ChØ + Thiªn Tö Chi Giíi ",CanKhonHoangDe},
 		{"NhËn Cµn Kh«n Song TuyÖt Béi",NhanCanKhonSongTuyetBoi},
-		--{"Set M·nh S­ Theo Ngµy",NhanDoVat},				
-	--	{"NhËn MÆt ChiÕn Tr­êng V­¬ng Gi¶",MatNaTheoNgay},
-		--{"NhËn MÆt N¹ 3 CÊp Theo Ngµy",MatNaTheoNgay3},
-		{"Phi Phong V« Cùc( §¹i Th¸nh)",VoCucDaiThanh},
-		--{"T©n NhËm Hµnh Ên Gi¸m (H¹)",TanNhamHa},
-		--{"T©n NhËm Hµnh Ên Gi¸m (Trung)",TanNhamTrung},
-		--{"T©n NhËm Hµnh Ên Gi¸m (Th­îng)",TanNhamThuong},
-		--{"Set H¾c ThÇn Theo Ngµy",HacThanTheoNgay},
-		--{"Set H¾c ThÇn Míi Theo Ngµy",HacThanMoiTheoNgay},
-		--{"Set Vò LiÖt Theo Ngµy",VuLietTheoNgay},
-	--	{"NhÉn Cµn Kh«n",CanKhonLuaChon},
-		--{"NhÉn 5 NhÉn Max",CanKhonLuaChonMax},
-		--{"NhËn Nhat ky 7 ngay",NhanTinVatMonPhai},
-		--{"NhÉn Nguyªn LiÖu Test",NhanNguyenLieuTest},
-		{"NhÉn 5000 HHL",HHL5000},
+		--{"Set M·nh S­ Theo Ngµy",ManhSuTheoNgay},				
+		{"NhËn MÆt N¹ 2 CÊp Theo Ngµy",MatNaTheoNgay},
+		{"NhËn MÆt N¹ 3 CÊp Theo Ngµy",MatNaTheoNgay3},
+		{"NhËn MÆt N¹ 3 CÊp Theo Ngµy(Thien Tu)",MatNaTheoNgay31}, 
+		{"NhËn MÆt N¹ 4 CÊp Theo Ngµy",MatNaTheoNgay4}, 
+		
 		{"Tho¸t"},	
 	}
 	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Chän Chøc N¨ng CÇn Hç Trî<bclr>", tbOpt)
-end
-function nhanthuongphattop()
-for i=0,4 do
-local Index = AddGoldItem(0,6207+i) 
-end
-end
-function nhanthuongthientu()
-local Index = AddItem(0,11,561,1,0,0) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1},nCount=500},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1},nCount=500},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1},nCount=500},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1},nCount=500},}, "test", 1);
-local Index = AddItem(4,1326,1,1,0,0) SyncItem(Index)
-local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddGoldItem(0,6224) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddGoldItem(0,6224) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-WriteLogPro("dulieu/admin_buff_ho_tro.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M_%d-%m-%Y").."   "..GetIP().."\t NhËn th­ëng Thiªn Tö \n");
-end
-function nhanthuongcongthanhchien()
-local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddItem(0,10,13,10,0,0) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddItem(0,10,13,10,0,0) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---tbAwardTemplet:GiveAwardByList({{szName="Tói Tèng Kim",tbProp={6,1,4361,1,1},nCount=100},}, "test", 1);
-local Index = AddGoldItem(0,3879) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-local Index = AddGoldItem(0,3879) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
---local Index = AddItem(6,1,4377,1,0,0) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-for i=1,8 do
-tbAwardTemplet:GiveAwardByList({{szName="Xu",tbProp={4,417,1,1},nCount=500},}, "test", 1);
-end
-for i=1,2 do
-local Index = AddItem(0,11,561,1,0,0) ITEM_SetExpiredTime(Index,24*60*7) SyncItem(Index)
-end
-WriteLogPro("dulieu/admin_buff_ho_tro.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M_%d-%m-%Y").."   "..GetIP().."\t NhËn th­ëng C«ng Thµnh ChiÕn \n");
 end
 ----------------------------------------------------------------------
 function LuaChonNguaTheoNgay()
@@ -567,25 +413,15 @@ function LuaChonNguaTheoNgay()
 		{"Phiªn Vò",PhienVuLuaChon_xanh},		
 		{"H·n HuyÕt",HanHuyetLuaChon_xanh},		
 		{"NhËn MÆt N¹  1 Skill",NhanMatNa1Skill},		
-		--{"Phiªn Vò TruyÒn ThuyÕt",PhiVanLuaChon},		
-		--{"XÝch Long C©u TruyÒn ThuyÕt",XichLongCauLuaChon},
-		--{"S­ Tö TruyÒn ThuyÕt",SuTuLuaChon},
-	--	{"B¹ch Hæ TruyÒn ThuyÕt",BachHoLuaChon},
-		--{"D­¬ng Sa TruyÒn ThuyÕt",DuongSaLuaChon},
-	--	{"Ngù Phong TruyÒn ThuyÕt",NguPhongLuaChon1},
-	--	{"H·n HuyÕt Long C©u TruyÒn ThuyÕt",HanHuyetLuaChon},
-		--{"Hång Mao TruyÒn ThuyÕt",HongMaoLuaChon},
-		--{"B¹ch Hå Ly TruyÒn ThuyÕt",BachHoLyLuaChon},		
+		{"NhËn MÆt N¹ Nguyen Soai",NhanMatNaNugyenSoai},		
 		{"Tho¸t"},		
 	}
 	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Mêi Chän Ngùa<bclr>", tbOpt)
 end
 ----------------------------------------------------------------------
-----------------------------------------------------------------------
 function NhanCanKhonSongTuyetBoi()
 --local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-local Index = AddItem(6,1,2219,1,0,0) ITEM_SetExpiredTime(Index,24*60*30) SyncItem(Index)
-WriteLogPro("dulieu/admin_buff_ho_tro.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M_%d-%m-%Y").."   "..GetIP().."\t NhËn th­ëng Cµng Kh«n Song TuyÖt Béi \n");
+local Index = AddItem(6,1,2219,1,0,0) SyncItem(Index)
 end
 
 
@@ -604,7 +440,6 @@ function CanKhonHoangDe_d(num)
 local Index = AddGoldItem(0,428) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
 local Index = AddGoldItem(0,530) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
 local Index = AddGoldItem(0,531) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
-WriteLogPro("dulieu/admin_buff_ho_tro.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M_%d-%m-%Y").."   "..GetIP().."\t NhËn th­ëng NhÉn Cµn Kh«n \n");
 end
 
 ----------------------------------------------------------------------
@@ -612,19 +447,40 @@ function MatNaTheoNgay()
 AskClientForNumber("MatNaTheoNgay_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
 end
 function MatNaTheoNgay_d(num)
-local Index = AddItem(0,11,446,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+local Index = AddItem(0,11,806,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
 end
 function MatNaTheoNgay3()
 AskClientForNumber("MatNaTheoNgay3_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
 end
 function MatNaTheoNgay3_d(num)
-local Index = AddItem(0,11,817,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+local Index = AddItem(0,11,839,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
 end
+
+function MatNaTheoNgay31()
+AskClientForNumber("MatNaTheoNgay31_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
+end
+function MatNaTheoNgay31_d(num)
+local Index = AddItem(0,11,840,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+end
+
+function MatNaTheoNgay4()
+AskClientForNumber("MatNaTheoNgay4_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
+end
+function MatNaTheoNgay4_d(num)
+local Index = AddItem(0,11,841,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+end
+
 function NhanMatNa1Skill()
 AskClientForNumber("NhanMatNa1Skill_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
 end
 function NhanMatNa1Skill_d(num)
 local Index = AddItem(0,11,647,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+end
+function NhanMatNaNugyenSoai()
+AskClientForNumber("NhanMatNaNugyenSoai_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
+end
+function NhanMatNaNugyenSoai_d(num)
+local Index = AddItem(0,11,447,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
 end
 ------------------------------ngua---------------------------
 function SieuQuangLuaChon_xanh()
@@ -802,10 +658,12 @@ end
 end
 
 function NhanTinVatMonPhai()
-local Index = AddItem(6,1,2340,1,0,0) SyncItem(Index)
+AskClientForNumber("NhanTinVatMonPhai_d",1,100,"NhËp Sè Ngµy Muèn LÊy") 
 end
 function NhanTinVatMonPhai_d(num)
-local Index = AddItem(6,1,4377,1,0,0) SyncItem(Index)
+for i=1,5 do
+local Index = AddItem(6,1,1670,1,0,0) ITEM_SetExpiredTime(Index,24*60*num) SyncItem(Index)
+end
 end
 ----------------------------------------------------------------------
 function NhanNguyenLieuTest()
@@ -862,7 +720,7 @@ function CheckPassGM()
 	if GetTaskTemp(57) == 1 then
 		ChucNangGM()
 	else
-		AskClientForString("MOCHUCNANGGM","",1,999999999,"MK 19992000")
+		AskClientForString("MOCHUCNANGGM","",1,999999999,"NhËp MËt KhÈu")
 	end
 end
 function MOCHUCNANGGM(nVar)
@@ -880,174 +738,105 @@ end
 ------------------------------------------------------------------------------------------------------------------------------------------------
 function ChucNangGM()
 	local tbOpt = {
+		{"Chøc N¨ng Qu¶n Lý Kh¸c",ChucNangLBGM},
 		{"NhËn Hç Trî Game",HoTroGameLuaChon},
-		--{"Hñy VËt PhÈm",DisposeItem},
-		{"Chøc N¨ng LÊy §å Theo ID",LayDoTheoID},
-		{"LÊy §å TÝm Max OPT",laydotimmaxopt},
-		{"LÊy VËt PhÈm.....", layvatpham},		
-	--	{"Chøc N¨ng Bang Héi",BangHoi},
+		{"Hñy VËt PhÈm",DisposeItem},
+		{"LÊy VËt PhÈm.....", layvatpham},	
 		{"Qu¶n Lý Gamer", thongtingamer},
 		{"N©ng §iÓm Kinh NghiÖm", diemexp},
 		{"NhËn §iÓm - Vßng S¸ng", hotro},
-	--	{"Gäi Siªu Boss", CallBossad},
-		--{"NhËn Trang BÞ", dohoangkim},
-		--{"NhËn Trang BÞ Maxop", dohoangkimmax},
-		{"Thó C­ìi - Ngo¹i Trang", fifong},
-		{"Ta Muèn LÊy VËt PhÈm - Giíi ChØ", show_item},
-		{"Thay §æi Tr¹ng Th¸i", trangthai},
-	--	{"Më §ua Ngùa", MoDuaNgua},
-		--{"Më Hoa S¬n Lo¹n ChiÕn", hosonloanchienttt},
-		{"Admin BiÕn H×nh", AdminBienHinh},
-		--{"Më Tiªu Bang ChiÕn", MoTieuBangChien},
-		{"NhËn Skill", nhanskill},
-		--{"Trang BÞ H¾c ThÇn - Long T­¬ng",TrangBiHiem},
-		--{"LÊy Nguyªn LiÖu Kho¸ng Th¹ch",khoangth},
-		{"Hoµng Kim M«n Ph¸i - §å Xanh - §å TÝm", hkmpdoxanh},
+		{"Mo Hoa Son", CallBossad},
 		{"Tho¸t",},
 	}
-	if GetAccount() == "testgame4" then
-	--tinsert(tbOpt, 2, {"LÊy §å Theo ID", LayDoTheoID}) 
-	--tinsert(tbOpt, 4, {"LÊy Xu", layxuadmin}) 
-	--tinsert(tbOpt, 4, {"LÊy §å Test", laydotesst}) 
-	end
 	CreateNewSayEx("<bclr=violet>Xin Mêi "..myplayersex().." Chän Chøc N¨ng CÇn Hç Trî<bclr>", tbOpt)
 end
-function laydotesst()
-for i=747,770 do
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,i,1,1,0,0},nCount=10,},}, "test", 1);
-end
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,238,1,1,0,0},nCount=10,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,239,1,1,0,0},nCount=10,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,240,1,1,0,0},nCount=10,},}, "test", 1);
---tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={6,1,398,1,1},nCount=10,},}, "test", 1);
-end
-function layxuadmin()
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1,0,0},nCount=500,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1,0,0},nCount=500,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1,0,0},nCount=500,},}, "test", 1);
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1,0,0},nCount=500,},}, "test", 1);
-end
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function AdminBienHinh()
-AddMagicPoint(5000)
-AddProp(40000)
-AddStrg(10000);
-AddDex(10000);
-AddVit(10000);
-AddEng(10000);
-
-end
-function MoDuaNgua()
-
-Msg2SubWorld("<color=pink>§Êu Tr­êng §ua Ngùa<color=cyan> ®ang b¾t ®Çu nhËn b¸o danh. Quý nh©n sÜ h·y ®Õn <color=yellow>Nha M«n D­¬ng Ch©u<color=cyan> ®Ó b¸o danh thêi gian b¸o danh lµ <color=green>10<color> phót!")
-startRaceMission()
-end
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function MoTieuBangChien()
-local TimeForPreparing = 10
-Msg2SubWorld("<color=pink>Tiªu Bang ChiÕn<color=cyan> ®ang b¾t ®Çu nhËn b¸o danh. Quý nh©n sÜ h·y ®Õn <color=yellow>Xa Phu Thµnh ThÞ <color=cyan> ®Ó b¸o danh")
-m_TieuBangChien:m_RemoteStart(TimeForPreparing)
-end
-function hosonloanchienttt()
-	local tbOpt = {
-		{"Ta ThËt Sù Muèn Më", MoHoaSonLoanChien},
-
-		{"Tho¸t"},
-	}
-	CreateNewSayEx("<npc>X×n Mêi Anh L©m Ng¸o Chän Chøc N¨ng.", tbOpt)
+function ChucNangLBGM()
+tbGmRole:GMC_Menu()
 end
 function MoHoaSonLoanChien()
 
 Msg2SubWorld("<color=pink>Hoa S¬n §¹i ChiÕn<color=cyan> ®ang b¾t ®Çu nhËn b¸o danh. Quý nh©n sÜ h·y ®Õn <color=yellow>Hoa S¬n L·o TÈu t¹i c¶nh kü tr­êng<color=cyan> ®Ó b¸o danh thêi gian b¸o danh lµ <color=green>10<color> phót!")
+
 startHuaShanQunZhanMission()
 end
 
 function layvatpham()
 	local tbOpt = {
 		{"LÊy VËt PhÈm Magic", TaoItem},
-		{"LÊy VËt PhÈm Queskey", TaoItemQK},
-		{"LÊy VËt PhÈm Magic_han sd", TaoItemhsd},
+				{"LÊy VËt PhÈm Quest..", TaoItem_quest},
 		{"LÊy VËt PhÈm Goldequip..", Glodequip},
-		{"Tho¸t",},
 	}
 	CreateNewSayEx("<npc>Xin Mêi Chän Chøc N¨ng", tbOpt)
-end
-
-function TaoItemhsd() 
-g_AskClientStringEx("",1,9000,"NhËp Vµo Item Code:",{TaoItemID_hsd}) 
-end
-
-
-function TaoItemID_hsd(szItem)
-	local szICode = lib:Split(szItem, ",");
-	local n = getn(szICode);
-	local itclass = tonumber(szICode[1]); 
-	local ittype = tonumber(szICode[2]); 
-
-	
-	tbAwardTemplet:GiveAwardByList({{szName="VËt phÈm",tbProp={6,1,itclass,1,0,0,0},nCount=1,nExpiredTime=ittype*24*60},}, "test", 1);
-	
-	    logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..ittype.." item magic "..itclass.."",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
 end
 
 function TaoItem() 
 g_AskClientStringEx("",1,9000,"NhËp Vµo Item Code:",{TaoItemID}) 
 end
 
+function TaoItemID_old(szItem)
+	local szICode = lib:Split(szItem, ",");
+	local n = getn(szICode);
+	if (n ~= 1) then
+	if (n < 6) then Talk(1, "", format("Sai Item Code. ThiÕu tr­êng yªu cÇu <color=yellow>%s<color>",n)); return end
+	if (n > 7) then Talk(1, "", format("Sai Item Code. Qu¸ nhiÒu tr­êng d÷ liÖu <color=yellow>%s<color>",n)); return end
+	local itclass = tonumber(szICode[1]); 
+	local ittype = tonumber(szICode[2]); 
+	local itid = tonumber(szICode[3]); 
+	local itlv = tonumber(szICode[4]); 
+	local itseri = tonumber(szICode[5]); 
+	local itluck = tonumber(szICode[6]); 
+	local itmagic = tonumber(szICode[7]); 
+	if (itlv < 0) then Talk(1, "", format("CÊp ®é man ®å kh«ng ®­îc thÊp qu¸ <color=yellow>%s<color>",itlv)); return end
+	if (itlv > 10) then Talk(1, "", format("ChØ hæ trî ®Õn cÊp 10. HiÖn t¹i nhËp vµo <color=yellow>%s<color>",itlv)); return end
+	if (itmagic == nil) then itmagic=0; end
+	AddItem(itclass,ittype,itid,itlv,itseri,itluck,itmagic);
+	else
+	local EquipId = tonumber(szICode[1]); 
+	AddGoldItem(0, EquipId);
+	end
+end
 function TaoItemID(szItem)
 	local szICode = lib:Split(szItem, ",");
 	local n = getn(szICode);
 	local itclass = tonumber(szICode[1]); 
 	local ittype = tonumber(szICode[2]); 
-	if szICode[2]==nil then
-		ittype=1
-	end
-	--AddItem(6,1,itclass,1,0,0,0);
-	tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,itclass,1,0,0},nCount=ittype},}, "test", 1);
-logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..ittype.." item magic "..itclass.."",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={6,1,itclass,1,1},nCount=ittype},}, "test", 1);
 end
 
 
-function TaoItemQK() 
-g_AskClientStringEx("",1,9000,"NhËp Vµo Item Code:",{TaoItemIDQK}) 
+function TaoItem_quest() 
+g_AskClientStringEx("",1,9000,"NhËp Vµo Item Code:",{TaoItem_questID}) 
 end
 
-function TaoItemIDQK(szItem)
+
+function TaoItem_questID(szItem)
 	local szICode = lib:Split(szItem, ",");
 	local n = getn(szICode);
 	local itclass = tonumber(szICode[1]); 
 	local ittype = tonumber(szICode[2]); 
-	if szICode[2]==nil then
-		ittype=1
-	end
-	--AddItem(6,1,itclass,1,0,0,0);
-	tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={4,itclass,1,0,0},nCount=ittype},}, "test", 1);
-logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..ittype.." item magic "..itclass.."",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
+	tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={4,itclass,1,1,0},nCount=ittype},}, "test", 1);
 end
+
 
 function Glodequip() 
 g_AskClientStringEx("",1,9000,"NhËp Vµo Glodequip Code:",{TaoItemGlodequip}) 
 end
 function TaoItemGlodequip(idgq)
 
-Msg2Player("LÊy vËt phÈm thµnh c«ng.")
+Msg2Player("TÈy tñy thµnh c«ng®iÓm kü n¨ng ®Ó ph©n phèi l¹i.")
 local szICode1 = lib:Split(idgq, ",");
-	local itclass1 = szICode1[1]; 
-	local ittype1 = szICode1[2]; 
+	local itclass1 = tonumber(szICode1[1]); 
+	local ittype1 = tonumber(szICode1[2]); 
 --AddGoldItem(0, ""..itclass1.."") 
-if ittype1~=nil then
 local Index = AddGoldItem(0,itclass1) ITEM_SetExpiredTime(Index,ittype1*24*60) SyncItem(Index)
-logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy item gold "..itclass1.." han "..ittype1.." ngay",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-else
-local Index = AddGoldItem(0,itclass1)  SyncItem(Index)
-logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy item gold "..itclass1.."",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
 --	local tbAward = {
 --		{szName="Hoa Ph­îng TÝm",tbProp={0,"..itclass1.."},nQuality=1,nCount=1,nExpiredTime=24*60},
 --	}
 --	tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng GiftCode")
-
-
+Msg2Player("TÈy tñy thµnh c«ng! Ng­¬m kü n¨ng ®Ó ph©n phèi l¹i.")
+--
 
 end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1062,38 +851,21 @@ local nW, nX, nY = GetWorldPos()
 local nIdPlay = PlayerIndex 
 local tbSay = {}
 	tinsert(tbSay,"ADM Move=>CTC.../vitri_congthanh")
-	--tinsert(tbSay,"Th«ng tin ng­êi ch¬i./Show")
+	tinsert(tbSay,"Th«ng tin ng­êi ch¬i./Show")
 --	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i./luachonid1")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp ID/luachonid1")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp Tªn NhËn VËt/luachonid2")
 	tinsert(tbSay,"Thao t¸c lªn ng­êi ch¬i - NhËp Tµi Kho¶n/luachonid3")
---	tinsert(tbSay,"HÖ Thèng Pet/Pet")
-	tinsert(tbSay,"LÊy Täa §é/toado1")
 	tinsert(tbSay,"Th«ng B¸o B¶o Tr×/OnTimer")
-	--tinsert(tbSay,"LÊy ID Vßng S¸ng/kiemtra_spr")
-	tinsert(tbSay,"Chat ADM....!/GmNhapTinBao")
---	tinsert(tbSay,"Chat GM....!/Gm")
 	tinsert(tbSay,"Tho¸t/no")
 	tinsert(tbSay,"Trë l¹i")
-	Say("Xin Chµo <color=red>"..GetName().."<color>!\nTäa ®é hiÖn t¹i: <color=green>"..nW.."<color> <color=blue>"..nX.."/"..nY.."<color> \n<color>Index:           <color=green>"..nIdPlay.."<color>\nSè SHXT: <color=green>        "..GetTask(T_SonHaXaTac).."<color> m¶nh.\nHiÖn §ang Cã:    <bclr=red><color=yellow>["..GetPlayerCount().."]<color><bclr> ng­êi ch¬i trong game.\n", getn(tbSay), tbSay)
+	Say("Xin Chµo <color=red>"..GetName().."<color>!\nTäa ®é hiÖn t¹i: <color=green>"..nW.."<color> <color=blue>"..nX.."/"..nY.."<color> \n<color>Index:           <color=green>"..nIdPlay.."<color>\nSè SHXT: <color=green>        "..GetTask(5998).."<color> m¶nh.\nHiÖn §ang Cã:    <bclr=red><color=yellow>["..GetPlayerCount().."]<color><bclr> ng­êi ch¬i trong game.\n", getn(tbSay), tbSay)
 end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function GmNhapTinBao()
---	tbAwardTemplet:GiveAwardByList({{szName="Phiªn Vò Hoµng Kim",tbProp={0,4367},nCount=1,nQuality=1},}, "test", 1);
-	AskClientForString("nhapguitanso", "", 1, 200, "NhËp th«ng b¸o")
-end
 
-function nhapguitanso(strings)
-	local szNews = format("<bclr=violet>Th«ng B¸o:<color=green>"..strings.."");
-for i = 1, 5 do
-	AddGlobalNews(szNews);
-	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
-end 
-end
 function vitri_congthanh()
 local tab_Content = {
-		"Vµo Tï/goto_nha_tu",
 		"L©m An/goto_lam_an",
 		"BiÖn Kinh/goto_bien_kinh",		
 		"Thµnh §«/goto_thanh_do",
@@ -1101,12 +873,12 @@ local tab_Content = {
 		"Ph­îng T­êng/goto_phuong_tuong",
 		"D­¬ng Ch©u/goto_duong_chau",
 		"§¹i Lý/goto_dai_ly",
-		"Ba L¨ng HuyÖn/goto_ba_lang",
+		"VÜnh L¹c TrÊn/goto_ba_lang",
 		"§ua Ngùa/goto_dua_ngua",	
 		"Tèng - Kim/goto_tong_kim",	
 		"Loi dai/goto_loidai",
 		"Lien dau/goto_liendau",
-		"Tong -Kim/goto_tongkim",
+		"Thiªn Tö/goto_tongkim",
 		"NguyÖt Ca §¶o/goto_ca_dao",
 		"KÕt thóc..!/No"
 	}
@@ -1146,11 +918,6 @@ local tbDialog = {
 CreateTaskSay(tbDialog) 
 end
 -----------------------------------------------------------------------------
-function goto_nha_tu()----------
-SetFightState(0)
-	DisabledUseTownP(0);
-NewWorld(208,1785,3058)
-end
 function goto_tong_kim()----------
 NewWorld(900,180*8,208*16)
 end
@@ -1233,14 +1000,14 @@ NewWorld(928,1727,3295)
 end
 function goto_ba_lang()
 SetFightState(0)
-NewWorld(53,1598,3191)
+NewWorld(99,1627,3201)
 end
 function goto_loidai()
 SetFightState(0)
 NewWorld(209,1612,3197)
 end
 function goto_tongkim()
-SetFightState(0)
+SetFightState(1)
 NewWorld(380,1568,3195)
 end
 function goto_liendau()
@@ -1308,38 +1075,20 @@ function one(num)
 		xinxi = GetInfo() 
 		ObjName=GetName() 
 		ObjAccount=GetAccount() 
+		anbanhdauxanh=GetTask(4993)
+		anbanhdacbiet=GetTask(4995)
+		
 		PlayerIndex=gmidx 
 		Msg2Player("Nh©n vËt tªn:<color=metal> "..ObjName.."<color>"); 
 		local tbSay =  {}
-		--tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
+		tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
 		tinsert(tbSay,"§iÒu ChØnh CÊp §é/CapDo")
-		tinsert(tbSay,"N©ng Kinh NghiÖm Nh©n VËt/KinhNghiem")
-	--	tinsert(tbSay,"Add Danh HiÖu Fan Cøng/DanhHieuFanCung")
-		tinsert(tbSay,"Thªm Kim Nguyªn B¶o/AddKNB")
-		tinsert(tbSay,"ChuyÓn Kho¶n Kim Nguyªn B¶o/ChuyenKhoan")
-	--	tinsert(tbSay,"ChuyÓn Kho¶n (Kh«ng KNB)/ChuyenKhoanKhongKNB")
-		tinsert(tbSay,"Hç Trî Live Stream/HoTroTanThuMoi")
-	--	tinsert(tbSay,"Hç Trî T©n Thñ Trïng Sinh 5/NhanHoTroTrungSinh3")
-	--	tinsert(tbSay,"Add Vip ( Mçi NV chØ nªn add 1 lÇn )/AddDiemVip")
-	--	tinsert(tbSay,"Xãa Th«ng Tin Vip/XoaDiemVip")
-	--	tinsert(tbSay,"Fix Vßng S¸ng ChuyÓn Sinh /FixVongSangChuyenSinh")
-	--	tinsert(tbSay,"Thªm Vßng S¸ng ChuyÓn Sinh /ThemVongSangChuyenSinh")
-	--	tinsert(tbSay,"N©ng Lªn Danh HiÖu Vip 6/NangDanhHieu6")
---		tinsert(tbSay,"Hç Trî Reset Event VÒ 0/HoTroMocEvent0")
---tinsert(tbSay,"Hç Trî Reset Event VÒ 2k/HoTroMocEvent2k")
-	--	tinsert(tbSay,"Hç Trî Reset Event VÒ 4k/HoTroMocEvent4k")
-		--tinsert(tbSay,"Hæ Trî KNB/AddKNB")
-	--	tinsert(tbSay,"Hæ trî tiÒn ®ång./bufskillsgm1")
-	--	tinsert(tbSay,"Hæ trî tiÒn v¹n./themtienvan1")
-		tinsert(tbSay,"Di chuyÓn nh©n vËt vÒ BLH./move")
-	--	tinsert(tbSay,"Add ®iÓm cho ng­êi ch¬i../kynang")
-	--	tinsert(tbSay,"Më Chøc N¨ng Hç Trî Ng­êi Ch¬i/MoChucNang")
 		tinsert(tbSay,"KÝch nh©n vËt./kicknv")
 		tinsert(tbSay,"CÊm Ch¸t./camchat")
 		tinsert(tbSay,"Më Ch¸t./mochat")
 		tinsert(tbSay,"Tho¸t./no")
 		tinsert(tbSay,"Trë l¹i.")            
-		Say("Tµi Kho¶n:<color=green> "..tk.."<color> - Nh©n VËt   :<color=green> "..ObjName.."<color>\nCÊp ®é   :<color=green> "..lev.."<color>           - Kinh nghiÖm: <color=green>"..xp.."%<color>\nMµu      :<color=green> "..cam.."<color>             - M«n ph¸i   :<color=green>"..fac.."<color>\nTiÒn V¹n :<color=green> "..(cash/10000).." v¹n<color> - TiÒn §ång  :<color=green>"..lif.." ®ång<color>\nVÞ trÝ   : <color=blue>"..w.."<color>,<color=green>"..x.."<color>,<color=green>"..y.."<color>", getn(tbSay), tbSay)
+		Say("Tµi Kho¶n:<color=green> "..tk.."<color> - Nh©n VËt   :<color=green> "..ObjName.."<color>\nCÊp ®é   :<color=green> "..lev.."<color>           - Kinh nghiÖm: <color=green>"..xp.."%<color>\n¡n B¸nh §Ëu Xanh  :<color=green> "..anbanhdauxanh.."<color>             - ¡n B¸nh §Æc BiÖt  :<color=green>"..anbanhdacbiet.."<color>\nTiÒn V¹n :<color=green> "..(cash/10000).." v¹n<color> - TiÒn §ång  :<color=green>"..lif.." ®ång<color>\nVÞ trÝ   : <color=blue>"..w.."<color>,<color=green>"..x.."<color>,<color=green>"..y.."<color>", getn(tbSay), tbSay)
 		Msg2Player("Ng­êi ch¬i <color=cyan>"..xinxi) 
 	end 
 end
@@ -1355,9 +1104,6 @@ for i = 1, nNum+500 do
 		PlayerIndex=i
 		TarName=GetName()
 		PlayerIndex=gmidx
---	if ((i)> GetPlayerCount()) then
---		Msg2Player("Nh©n vËt Nµy HiÖn Kh«ng Online Vui Lßng Quay L¹i Sau...!");  
---	else
 	if TarName == nNameChar then
 		SetTaskTemp(200,i) 
 		gmName=GetName() 
@@ -1387,79 +1133,29 @@ for i = 1, nNum+500 do
 		dex=GetDex() 
 		strg=GetStrg() 
 		vit=GetVit() 
-		viemde=YDBZ_sdl_getTaskByte(1852,2)
-		vuotai=1-GetTask(1550)
 		w,x,y=GetWorldPos() 
 		xinxi = GetInfo() 
 		ObjName=GetName() 
 		ObjAccount=GetAccount() 
+				anbanhdauxanh=GetTask(4993)
+		anbanhdacbiet=GetTask(4995)
 		PlayerIndex=gmidx 
 		Msg2Player("Nh©n vËt tªn:<color=metal> "..ObjName.."<color> - ID: <color=green> "..i.."<color>"); 
 		local tbSay =  {}
-	--	tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
-			tinsert(tbSay,"§­a Nh©n VËt Vµo Tï/DuaVaoTu")
-			tinsert(tbSay,"§­a Nh©n VËt Lªn NguyÖt Ca §¶o/dualennguyetcadao")
-		tinsert(tbSay,"§iÒu ChØnh CÊp §é/CapDo")
-		tinsert(tbSay,"N©ng Kinh NghiÖm Nh©n VËt/KinhNghiem")
-		
-	--	tinsert(tbSay,"Add Danh HiÖu Fan Cøng/DanhHieuFanCung")
-		tinsert(tbSay,"Thªm Kim Nguyªn B¶o/AddKNB")
-	tinsert(tbSay,"Trõ Kim Nguyªn B¶o Add NhÇm/LayKNB")
-	tinsert(tbSay,"Trõ §iÓm TiÒm N¨ng/DanhHieuFanCung")
-		tinsert(tbSay,"Trõ §iÓm Kü N¨ng/DanhHieuFanCung2")
-	tinsert(tbSay,"Xo¸ Pass R­¬ng/mokhoapassruong")
---	tinsert(tbSay,"Buff Thiªn H¹ §Ö NhÊt Sña/thienhadenhatsua")
---	tinsert(tbSay,"Ph¸t Th­ëng Vâ L©m Minh Chñ/thuongvolamminhchu")
-	--	tinsert(tbSay,"ChuyÓn Kho¶n (Kh«ng KNB)/ChuyenKhoanKhongKNB")
-	--	tinsert(tbSay,"Hç Trî Live Stream/HoTroTanThuMoi")
-		--tinsert(tbSay,"Hç Trî T©n Thñ Trïng Sinh 5/NhanHoTroTrungSinh3")
-	--	tinsert(tbSay,"Add Vip ( Mçi NV chØ nªn add 1 lÇn )/AddDiemVip")
-	--	tinsert(tbSay,"Xãa Th«ng Tin Vip/XoaDiemVip")
-	--	tinsert(tbSay,"Fix Vßng S¸ng ChuyÓn Sinh /FixVongSangChuyenSinh")
-	--	tinsert(tbSay,"Thªm Vßng S¸ng ChuyÓn Sinh /ThemVongSangChuyenSinh")
-		tinsert(tbSay,"Di chuyÓn nh©n vËt vÒ BLH./move")
---		tinsert(tbSay,"Më Chøc N¨ng Hç Trî Ng­êi Ch¬i/MoChucNang")
-		--tinsert(tbSay,"Top 1 tèng kim./top1tongkim")
-	--	tinsert(tbSay,"Top 2 tèng kim./top2tongkim")
-	--	tinsert(tbSay,"Top 3 tèng kim./top3tongkim")
+		tinsert(tbSay,"§­a Nh©n VËt Lªn NguyÖt Ca §¶o/DuaLenNguyetCa")
 		tinsert(tbSay,"KÝch nh©n vËt./kicknv")
 		tinsert(tbSay,"CÊm Ch¸t./camchat")
 		tinsert(tbSay,"Më Ch¸t./mochat")
 		--tinsert(tbSay,"Qu¶n Lý Chøc N¨ng Kh¸c./AddKNB_FullHD")
 		tinsert(tbSay,"Tho¸t./no")
 		tinsert(tbSay,"Trë l¹i.")            
-		Say("<color=green>Tµi Kho¶n: "..tk.." - Nh©n VËt: "..ObjName.."\nCÊp ®é: "..lev.." - Kinh nghiÖm: "..xp.."\nMµu: "..cam.." - M«n ph¸i: "..fac.."\nNg©n L­îng: "..(cash/10000).." v¹n - Kim Nguyªn B¶o: "..lif.." Viªn\nVÞ trÝ: "..w..","..x..","..y.." - TiÒn §ång: "..nTienDong.." Xu\nVip: "..nDiemVip.." §iÓm - Trïng Sinh: "..nTransLife.."/"..CaiLao.." LÇn\n §iÓm Tèng Kim: "..pr.." §iÓm - IP : <color=yellow>"..GetIP().."<color> ", getn(tbSay), tbSay)
+		Say("Tµi Kho¶n:<color=green> "..tk.."<color> - Nh©n VËt   :<color=green> "..ObjName.."<color>\nCÊp ®é   :<color=green> "..lev.."<color>           - Kinh nghiÖm: <color=green>"..xp.."%<color>\n¡n B¸nh §Ëu Xanh  :<color=green> "..anbanhdauxanh.."<color>             - ¡n B¸nh §Æc BiÖt  :<color=green>"..anbanhdacbiet.."<color>\nTiÒn V¹n :<color=green> "..(cash/10000).." v¹n<color> - TiÒn §ång  :<color=green>"..lif.." ®ång<color>\nVÞ trÝ   : <color=blue>"..w.."<color>,<color=green>"..x.."<color>,<color=green>"..y.."<color>", getn(tbSay), tbSay)
 		return end
 --	end 
 end
 	if TarName ~= nNameChar then
 		Msg2Player("Kh«ng t×m thÊy nh©n vËt tªn <color=green>"..nNameChar.."<color>"); 
 	end
-end
-function top1tongkim()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-local Index = AddItem(4,1326,1,1,0,0) SyncItem(Index)
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
-end
-
-function top2tongkim()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-tbAwardTemplet:GiveAwardByList({{szName="B«n Tiªu",tbProp={0,10,6,10,0,0,0},nCount=1,nExpiredTime=1*22*60},}, "test", 1);
-PlayerFunLib:AddSkillState(1644,20,3,18*60*60*22*1,1)
-PlayerFunLib:AddSkillState(1663,20,3,18*60*60*22*1,1)
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
-end
-function top3tongkim()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-PlayerFunLib:AddSkillState(1645,20,3,18*60*60*23*1,1)
-PlayerFunLib:AddSkillState(1662,20,3,18*60*60*23*1,1)
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
 end
 -----------------------------------------------------------------------Tim Theo Ten Tai Khoan------------------------------------------------------------------------------------------------------------------------
 function luachonid3() 
@@ -1473,9 +1169,6 @@ for i = 1, nNum+500 do
 		PlayerIndex=i
 		TarName=GetAccount()
 		PlayerIndex=gmidx
---	if ((i)> GetPlayerCount()) then
-	--	Msg2Player("Nh©n vËt Nµy HiÖn Kh«ng Online Vui Lßng Quay L¹i Sau...!");  
---	else
 	if TarName == nNameChar then
 		SetTaskTemp(200,i) 
 		gmName=GetName() 
@@ -1489,7 +1182,7 @@ for i = 1, nNum+500 do
 		cash=GetCash() 
 		lif=GetExtPoint(1)
 		nTienDong=CalcEquiproomItemCount(4,417,1,1)
-		nDiemVip=GetTask(5991)
+		nDiemVip=GetTask(5995)
 		nTransLife=ST_GetTransLifeCount()
 		CaiLao=GetTask(5971)
 		DiemPhucLoi=GetTask(5994)
@@ -1509,146 +1202,109 @@ for i = 1, nNum+500 do
 		xinxi = GetInfo() 
 		ObjName=GetName() 
 		ObjAccount=GetAccount() 
+				anhoahong=GetTask(4998)
+				anbanhdauxanh=GetTask(4993)
+		anbanhdacbiet=GetTask(3000)
 		PlayerIndex=gmidx 
 		Msg2Player("Nh©n vËt tªn:<color=metal> "..ObjName.."<color> - ID: <color=green> "..i.."<color>"); 
 		local tbSay =  {}
-	--	tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
-		tinsert(tbSay,"§­a Nh©n VËt Vµo Tï/DuaVaoTu")
-		tinsert(tbSay,"§­a Nh©n VËt Lªn NguyÖt Ca §¶o/dualennguyetcadao")
-		tinsert(tbSay,"N©ng Kinh NghiÖm Nh©n VËt/KinhNghiem")
+			tinsert(tbSay,"§­a Nh©n VËt Lªn NguyÖt Ca §¶o/DuaLenNguyetCa")
+			tinsert(tbSay,"KÐo Nh©n VËt VÒ GM/KeoNhanVatVeGM")
+		tinsert(tbSay,"NhËn Vßng S¸ng Míi/DanhHieuBuff")
+		tinsert(tbSay,"Thªm Vßng S¸ng Lùa Chän/ChonVongSangBuff")
+		tinsert(tbSay,"Thªm Xu Khãa/ThemXuKhoa")
 		tinsert(tbSay,"§iÒu ChØnh CÊp §é/CapDo")
-		
-		--	tinsert(tbSay,"Hµnh Qu©n LÖnh/HanhQuanLenh")
-		tinsert(tbSay,"Thªm Kim Nguyªn B¶o/AddKNB")
-		tinsert(tbSay,"Trõ Kim Nguyªn B¶o Add NhÇm/LayKNB")
-		tinsert(tbSay,"Xo¸ Pass R­¬ng/mokhoapassruong")
-		tinsert(tbSay,"Trõ §iÓm TiÒm N¨ng/DanhHieuFanCung")
-		tinsert(tbSay,"Trõ §iÓm Kü N¨ng/DanhHieuFanCung2")
-	--	tinsert(tbSay,"Buff Thiªn H¹ §Ö NhÊt Sña/thienhadenhatsua")
-	--	tinsert(tbSay,"Chøc N¨ng ChuyÓn Kho¶n/ChuyenKhoan")
-		--tinsert(tbSay,"ChuyÓn Kho¶n (Kh«ng KNB)/ChuyenKhoanKhongKNB")
-	--	tinsert(tbSay,"Hç Trî Live Stream/HoTroTanThuMoi")
-	--	tinsert(tbSay,"Buff Accc AD/HoTroTanThuMoi2")
-	--	tinsert(tbSay,"Ph¸t Tói Tèng Kim/HoTroTuiTongKim")
-	--	tinsert(tbSay,"Ph¸t Th­ëng Vâ L©m Minh Chñ/thuongvolamminhchu")
-	--	tinsert(tbSay,"Test Full Acc/NhanHoTroTrungSinh3")
-	if GetAccount()=="testgame4" then
-		tinsert(tbSay,"Add Vip ( Mçi NV chØ nªn add 1 lÇn )/AddDiemVip")
-	--	tinsert(tbSay,"Add 3000 Xu/addtiendong")
-		
-	end
-	--	tinsert(tbSay,"Xãa Th«ng Tin Vip/XoaDiemVip")
-	--	tinsert(tbSay,"NhËn Vßng S¸ng/DanhHieuBuff")
-	---	tinsert(tbSay,"Fix Vßng S¸ng ChuyÓn Sinh /FixVongSangChuyenSinh")
-		--tinsert(tbSay,"Thªm Vßng S¸ng ChuyÓn Sinh /ThemVongSangChuyenSinh")
-		tinsert(tbSay,"Di chuyÓn nh©n vËt vÒ BLH./move")
-	--	tinsert(tbSay,"Add ®iÓm cho ng­êi ch¬i../buffpoint")
-	--	tinsert(tbSay,"Më Chøc N¨ng Hç Trî Ng­êi Ch¬i/pointkynang11")
-		--tinsert(tbSay,"Top 1 tèng kim./top1tongkim")
-	---	tinsert(tbSay,"Top 2 tèng kim./top2tongkim")
-	--	tinsert(tbSay,"Top 3 tèng kim./top3tongkim")
-		tinsert(tbSay,"KÝch nh©n vËt./kicknv")
-		tinsert(tbSay,"CÊm Ch¸t./camchat")
-		tinsert(tbSay,"Më Ch¸t./mochat")
-	--	tinsert(tbSay,"Qu¶n Lý Chøc N¨ng Kh¸c./AddKNB_FullHD")
+		tinsert(tbSay,"Nang diem kinh nghiem/NangDiemKinhNghiem")
+		tinsert(tbSay,"Xãa Pass R­¬ng/FixSkill2122")
+		tinsert(tbSay,"Fix Skill 21/FixSkill22")
+		tinsert(tbSay,"Fix vong sang lang hao 14 ngay/FixNhan100XuKhoa")
 		tinsert(tbSay,"Tho¸t./no")
 		tinsert(tbSay,"Trë l¹i.")            
-		Say("<color=green>Tµi Kho¶n: "..tk.." - Nh©n VËt: "..ObjName.."\nCÊp ®é: "..lev.." - Kinh nghiÖm: "..xp.."\nMµu: "..cam.." - M«n ph¸i: "..fac.."\nNg©n L­îng: "..(cash/10000).." v¹n - Kim Nguyªn B¶o: "..lif.." Viªn\nVÞ trÝ: "..w..","..x..","..y.." - TiÒn §ång: "..nTienDong.." Xu\nVip: "..nDiemVip.." §iÓm - Trïng Sinh: "..nTransLife.."/"..CaiLao.." LÇn\n §iÓm Tèng Kim: "..pr.." §iÓm - IP : <color=yellow>"..GetIP().."<color> ", getn(tbSay), tbSay)
+Say("Tµi Kho¶n:<color=green> "..tk.."<color> - Nh©n VËt   :<color=green> "..ObjName.."<color>\nCÊp ®é   :<color=green> "..lev.."<color>           - - Kinh nghiÖm: <color=green>"..xp.."%<color>\n¡n B¸nh §Ëu Xanh  :<color=green> "..anbanhdauxanh.."<color>     - Moc hoc Bk :<color=green>"..anbanhdacbiet.."<color>\n¡n Hoa Hång :<color=green> "..anhoahong.." <color> - TiÒn §ång  :<color=green>"..lif.." ®ång<color>\nVÞ trÝ   : <color=blue>"..w.."<color>,<color=green>"..x.."<color>,<color=green>"..y.."<color>", getn(tbSay), tbSay)
 		return end
 	--end 
 end
 	if TarName ~= nNameChar then
-		Msg2Player("Kh«ng t×m thÊy tµi kho¶n: <color=green>"..nNameChar.."<color>"); 
+		Msg2Player("Kh«ng t×m thÊy nh©n vËt tªn <color=green>"..nNameChar.."<color>"); 
 	end
 end --------------------------0-LÊt TiÒn V¹n--------------------------------------------
-Include("\\script\\missions\\yandibaozang\\include.lua")
-function thienhadenhatsua()
+function DuaLenNguyetCa()
+	local nMapId,nX,nY = GetWorldPos();	
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
-RemoveSkillState(980,20,3,559872000,1) 
-RemoveSkillState(966,20,3,559872000,1) 
---Msg2Player("B¹n ®· ®­îc ADMIN §Ñp Trai phong cho danh hiÖu Thiªn h¹ §Ö NhÊt Sña"); 
-PlayerIndex=gmidx 
-Msg2Player("§· add thµnh c«ng"); 
-end
-function thuongvolamminhchu()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-PlayerFunLib:AddSkillState(1673,20,3,18*60*60*24*30,1)
-PlayerFunLib:AddSkillState(1665,20,3,18*60*60*24*30,1)
 
-Msg2Player("B¹n ®· ®­îc ADMIN §Ñp Trai ph¸t th­ëng Vâ L©m Minh Chñ"); 
+			NewWorld(968,1574,3174)
+			Msg2Player("B¹n ®· ®­îc<color=orange> GM<color> triÖu håi.")
 PlayerIndex=gmidx 
-Msg2Player("§· add thµnh c«ng"); 
+Msg2Player("Thµnh C«ng"); 
 end
-function mokhoapassruong()
+
+function NangDiemKinhNghiem()
+AskClientForNumber("NangDiemKinhNghiem_d",0,9999999,"NhËp EXP §¬n VÞ Tû") 
+end
+function NangDiemKinhNghiem_d(nNum)
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
+sothuc=nNum*1000000000
+tl_addPlayerExp(sothuc)
+Msg2Player("Thµnh C«ng"); 
+PlayerIndex=gmidx 
+Msg2Player("Thµnh C«ng"); 
+end
+function KeoNhanVatVeGM()
+	local nMapId,nX,nY = GetWorldPos();	
+gmidx=PlayerIndex 
+PlayerIndex=GetTaskTemp(200) 
+
+			NewWorld(nMapId,nX,nY);
+			Msg2Player("B¹n ®· ®­îc<color=orange> GM<color> triÖu håi.")
+PlayerIndex=gmidx 
+Msg2Player("Thµnh C«ng"); 
+end
+function FixSkill2122()
+gmidx=PlayerIndex 
+PlayerIndex=GetTaskTemp(200) 
+
 ResetBox:ConfirmResetBox()
-Msg2Player("B¹n ®· ®­îc ADMIN §Ñp Trai xo¸ pass r­¬ng"); 
+Msg2Player("Thµnh C«ng"); 
 PlayerIndex=gmidx 
-Msg2Player("§· më kho¸ thµnh c«ng"); 
+Msg2Player("Thµnh C«ng"); 
 end
-function addtiendong()
+function FixSkill22()
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
-for i=1,6 do
-tbAwardTemplet:GiveAwardByList({{szName = "Xu",tbProp={4,417,1,1},nCount=500}}, "test", 1);
-end
-PlayerIndex=gmidx 
---Msg2Player("NhËn §iÓm Kü N¨ng"); 
-end
-function DanhHieuFanCung()
 
-AskClientForNumber("DanhHieuFanCung_d",0,100000,"NhËp Sè L­îng:") 
+SetTask(3000,1)
+Msg2Player("Thµnh C«ng"); 
+PlayerIndex=gmidx 
+Msg2Player("Thµnh C«ng"); 
 end
-function DanhHieuFanCung_d(num)
+
+function FixNhan100XuKhoa()
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
-AddProp(-num)
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm TiÒm N¨ng"); 
-end
-function DanhHieuFanCung2()
+		local tm = GetSkillState(1532)
 
-AskClientForNumber("DanhHieuFanCung2_d",0,100000,"NhËp Sè L­îng:") 
-end
-function DanhHieuFanCung2_d(num)
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-AddMagicPoint(-num)
+		if tm==-1 then
+			RemoveSkillState(1546,20,3,559872000,1) 
+			local ntime = 18*60*60*24*14
+			local n_title = 255	
+			Title_AddTitle(n_title, 2, nTime)
+			Title_ActiveTitle(n_title)
+			PlayerFunLib:AddSkillState(1547,1,3,18*60*60*24*14,1)
+			
+		--	SetTask(4101,3)
+			--Msg2SubWorld("<color=green>Chóc mõng <color=pink>"..GetName().." <color><color=green>võa tham gia VoLamVietPK nhËn ®­îc phÇn th­ëng vßng s¸ng 3 ngµy")
+			end
+Msg2Player("Thµnh C«ng"); 
 PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
-end
-function HoTroTuiTongKim()
-
-AskClientForNumber("HoTroTuiTongKim_ok",0,100000,"NhËp Sè L­îng:") 
-end
-function HoTroTuiTongKim_ok(num)
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-tbAwardTemplet:GiveAwardByList({{szName = "Tói tÝch lòy Tèng Kim",tbProp={6,1,4361,1,1},nCount=num,nExpiredTime=1*24*60,nBindState = -2}}, "test", 1);
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
-end
-
---------------------------------------------
-function HanhQuanLenh()
-
-AskClientForNumber("HanhQuanLenh_d",0,100000,"NhËp Sè L­îng:") 
-end
-function HanhQuanLenh_d(num)
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-tbAwardTemplet:GiveAwardByList({{szName = "Hµnh Qu©n LÖnh",tbProp={6,1,30395,1,1},nCount=1,nExpiredTime=num*24*60,nBindState = -2}}, "test", 1);
-PlayerIndex=gmidx 
-Msg2Player("NhËn §iÓm Kü N¨ng"); 
+Msg2Player("Thµnh C«ng"); 
 end
 
 
 --------------------------0-LÊt TiÒn V¹n--------------------------------------------
 function pointkynang11()
-AskClientForNumber("pointkynang12",0,100000,"NhËp Sè L­îng:") 
+AskClientForNumber("pointkynang12",0,100000,"NhËp Sè L­îng:")
 end;
 function pointkynang12(nNum)
 gmidx=PlayerIndex 
@@ -1658,7 +1314,29 @@ Msg2Player("<color=yellow>Chóc Mõng "..myplayersex().." NhËn §­îc "..nNum.." §iÓ
 PlayerIndex=gmidx 
 Msg2Player("NhËn §iÓm Kü N¨ng"); 
 end
-function ChonVongSangBuff0()
+
+function ThemXuKhoa()
+AskClientForNumber("ThemXuKhoa_d",1,10000,"NhËp Sè Xu Muèn LÊy") 
+end
+
+function ThemXuKhoa_d(num)
+gmidx=PlayerIndex 
+PlayerIndex=GetTaskTemp(200) 
+if (CountFreeRoomByWH(3,3,1) < 1) then
+		Talk(1, "", "Kh«ng ®ñ chç trèng, xin söa sang l¹i hµnh trang 3x3 « trèng");
+		return 1;
+	end
+	local tbAward100k ={
+
+		{szName="200 Xu khãa",tbProp={6,1,4893,1,0,0},nCount=num,nBindState = -2,nExpiredTime=60*24*30},
+		}
+			tbAwardTemplet:GiveAwardByList(tbAward100k,"PhÇn Th­ëng Bï Sù Cè")
+Msg2Player("NhËn Vßng S¸ng Thµnh C«ng"); 
+PlayerIndex=gmidx 
+Msg2Player("NhËn Vßng S¸ng Thµnh C«ng"); 
+end
+
+function ChonVongSangBuff()
 AskClientForNumber("ChonVongSang_d",1,10000,"NhËp Sè Ngµy Muèn LÊy") 
 end
 
@@ -1779,43 +1457,7 @@ Msg2Player("Qu¶n lý <color=pink>GM<color> §· T¨ng §iÓm Theo Yªu CÇu");
 PlayerIndex=gmidx 
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM T¨ng §iÓm Theo Yªu CÇu Thµnh C«ng"); 
 end; 
---------------------------------------------------dua vao tu---------------------------------------
-function DuaVaoTu()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-Msg2Player("Qu¶n lý <color=pink>GM<color> §· §­a B¹n Vµo Tï"); 
-
-NewWorld(968,1586,3172)
-SetTask(3907,1)
-SetFightState(0)
-	DisabledUseTownP(0);
-PlayerIndex=gmidx 
-Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> BÞ GM §­a vµo Tï Thµnh C«ng"); 
-Msg2SubWorld("Nh©n vËt <color=green>"..ObjName.."<color> Vi Ph¹m Néi Qui. BÞ GM Cho ¡n C¬m Tï FREE.")
-end; 
-
-function dualennguyetcadao()
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-
-NewWorld(968,1574,3174)
-SetFightState(0)
-	DisabledUseTownP(0);
-PlayerIndex=gmidx 
-Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> BÞ GM §­a vµo Tï Thµnh C«ng"); 
-end
 -----------------------------------------------------------------------------------------
-function KinhNghiem() 
-AskClientForNumber("KinhNghiem_ok",1,999999999,"NhËp Kinh NghiÖm") 
-end 
-function KinhNghiem_ok(num) 
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-Msg2Player("Qu¶n lý <color=pink>GM<color> §· §iÒu ChØnh <color=metal>"..num.."<color> Kinh NghiÖm Cho B¹n"); 
-tbAwardTemplet:GiveAwardByList({{nExp_tl = num}}, "test", 1);
-PlayerIndex=gmidx 
-Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §îc GM T¨ng <color=metal>"..num.."<color> Kinh NghiÖm Thµnh C«ng"); 
-end; 
 function CapDo() 
 AskClientForNumber("Level",0,200,"NhËp CÊp §é") 
 end 
@@ -1838,12 +1480,8 @@ w,x,y=GetWorldPos()
 if (w~=53) then 
 SetFightState(0) 
 NewWorld(53,200*8,200*16) 
-SetTask(3907,0)
-SetCreateTeam(1)
 else 
 SetPos(1630, 3255) 
-SetTask(3907,0)
-SetCreateTeam(1)
 end 
 Msg2Player("Qu¶n lý <color=pink>GM<color> §· Di ChuyÓn B¹n VÒ Ba L¨ng HuyÖn"); 
 PlayerIndex=gmidx 
@@ -1854,10 +1492,9 @@ function kicknv()
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
 Msg2Player("Qu¶n lý <color=pink>GM<color> §· KÝch Nh©n VËt Chèng KÑt Acc Thµnh C«ng"); 
-KickOutSelf() 
-IsDisabledTeam()
-SetCreateTeam(1)
---DisabledUseTownP(1)
+OfflineLive(PlayerIndex)
+			KickOutSelf();
+
 PlayerIndex=gmidx 
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM KÝch kÑt Tµi Kho¶n Thµnh C«ng"); 
 end; 
@@ -1914,10 +1551,8 @@ KickOutSelf()
 end
 end
 end
-for i=1,3 do
-Msg2SubWorld("<bclr=white>ADMIN: <bclr><color=violet>"..zVar.."")
-end
-AddGlobalCountNews(" ADMIN Xin Th«ng B¸o §Õn C¸c Nh©n SÜ <bclr=blue>Vâ L©m TruyÒn Kú H·y L¾ng Nghe Th«ng B¸o Víi Néi Dung Nh­ Sau: "..zVar.."<bclr>")
+Msg2SubWorld("<bclr=white>Qu¶n Lý GM: <bclr><color=yellow>"..zVar.."")
+AddGlobalCountNews(" GM Xin Th«ng B¸o §Õn C¸c Nh©n SÜ <bclr=blue>Vâ L©m TruyÒn Kú H·y L¾ng Nghe Th«ng B¸o Víi Néi Dung Nh­ Sau: "..zVar.."<bclr>")
 end
 ---------------------------------------------Ch¸t GM-----------------------------------------------------------
 function Gm()
@@ -1939,10 +1574,8 @@ KickOutSelf()
 end
 end
 end
-for i=1,3 do
-Msg2SubWorld("<bclr=white>ADMIN: <bclr><color=violet>"..zVar.."")
-end
-AddGlobalCountNews("ADMIN Xin Th«ng B¸o §Õn C¸c Nh©n SÜ <bclr=blue>Vâ L©m TruyÒn Kú H·y L¾ng Nghe Th«ng B¸o Víi Néi Dung Nh­ Sau: "..zVar.."<bclr>")
+Msg2SubWorld("<bclr=white>Qu¶n Lý GM: <bclr><color=yellow>"..zVar.."")
+AddGlobalCountNews(" GM Xin Th«ng B¸o §Õn C¸c Nh©n SÜ <bclr=blue>Vâ L©m TruyÒn Kú H·y L¾ng Nghe Th«ng B¸o Víi Néi Dung Nh­ Sau: "..zVar.."<bclr>")
 end
 
 Include("\\script\\missions\\boss\\sieuboss\\call_boss_dpbb.lua")
@@ -2134,8 +1767,6 @@ AskClientForNumber("kinhnghiem1",0,9999999999999999,"NhËp EXP")
 end
 function kinhnghiem1(nNum)
 tl_addPlayerExp(nNum)
-Add120SkillExp(nNum)
-Clear120SkillExpLimit ()
 Msg2Player("B¹n nhËn ®­îc <color=yellow>"..nNum.."<color> kinh nghiÖm.") 
 end
 
@@ -2186,12 +1817,10 @@ end
 function CallBossad()
 	local tbOpt = {
 		{"Gäi Boss §«ng Ph­¬ng BÊt B¹i",BossDongPhuong},
-		{"Gäi Boss KiÕm Tiªn Lý B¹ch",BossLyBach},
-		{"Gäi Boss C«n L«n Tam Th¸nh",BossTamThanh},
-		{"Gäi Boss §«ng Ph­¬ng BÊt B¹i(3lh)",BossDongPhuong_Random},
-		{"Gäi Boss KiÕm Tiªn Lý B¹ch(3lh)",ConLonTamThanh_Random},
-		{"Gäi Boss C«n L«n Tam Th¸nh(3lh))",KiemTienLyBach_Random},
+		{"Gäi Boss KiÕm Tiªn Lý B¹ch",BossLyBach1},
+		{"Gäi Boss LOL L­u huÊn ",BossTamThanh},
 		{"Siªu HuyÒn Gi¸c §¹i S­",HuyenGiac_Random},
+			{"Më Hoa S¬n Lo¹n ChiÕn", MoHoaSonLoanChien},
 		{"KÕt Thóc §èi Tho¹i",},
 	}
 	CreateNewSayEx("Xin Chµo Admin "..GetName().." H·y Lùa Boss Muèn Gäi Ra", tbOpt)
@@ -2218,6 +1847,19 @@ end
 WriteLogPro("dulieu/admin_log_xu.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t nhan "..sltiendong.." Xu\n");
 Msg2Player("B¹n nhËn ®­îc <color=yellow>"..sltiendong.." <color>tiÒn ®ång.")
 end
+
+-------------------------------NhËn TiÒn §ång----------------------------------------------------------
+function lauknbadm()
+AskClientForNumber("tiendongdong2",0,2000,"NhËp Sè L­îng:") 
+end;
+function tiendongdong2(sltiendong)
+for i = 1, sltiendong do
+AddStackItem(1,4,1496,1,1,0,0,0)
+end
+WriteLogPro("dulieu/admin_log_xu.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t nhan "..sltiendong.." Xu\n");
+Msg2Player("B¹n nhËn ®­îc <color=yellow>"..sltiendong.." <color>tiÒn ®ång.")
+end
+
 ---------------------------------NhËn Ng©n L­îng------------------------------------------------------------------------
 function tienvan()
 AskClientForNumber("nhantienvan",0,999999999,"Xin NhËp Sè L­îng")
@@ -2344,6 +1986,43 @@ local tab_Content =
 }
 Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y Chän Chøc N¨ng", getn(tab_Content), tab_Content)
 end
+
+
+
+function ThuocTinhADM()
+local tab_Content =
+{
+"§iÓm Kü N¨ng/pointkynang_adm",
+"§iÓm TiÒm N¨ng/pointtiemnang_adm",
+"Trë L¹i/hotro",
+"Th«i/no",
+}
+Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y Chän Chøc N¨ng", getn(tab_Content), tab_Content)
+end
+-----------------------------Point Kü N¨ng---------------------------------------------------------------------------------
+function pointkynang_adm()
+AskClientForNumber("pointkynang_adm1",0,100000,"NhËp Sè L­îng:") 
+end;
+function pointkynang_adm1(nNum)
+gmidx=PlayerIndex 
+PlayerIndex=GetTaskTemp(200) 
+AddMagicPoint(nNum)
+PlayerIndex=gmidx 
+Msg2Player("<color=yellow>Chóc Mõng "..myplayersex().." NhËn §­îc "..nNum.." §iÓm Kü N¨ng...!<color>")
+
+end
+---------------------------Point TiÒm N¨ng-------------------------------------------------------------------------------
+function pointtiemnang_adm()
+
+AskClientForNumber("pointtiemnang_adm1",0,10000,"NhËp Sè L­îng:") 
+end;
+function pointtiemnang_adm1(nNum)
+gmidx=PlayerIndex 
+PlayerIndex=GetTaskTemp(200) 
+AddProp(nNum)
+PlayerIndex=gmidx 
+Msg2Player("<color=yellow>Chóc Mõng "..myplayersex().." NhËn §­îc "..nNum.." §iÓm Kü N¨ng...!<color>")
+end
 -----------------------------Point Kü N¨ng---------------------------------------------------------------------------------
 function pointkynang()
 AskClientForNumber("pointkynang1",0,100000,"NhËp Sè L­îng:") 
@@ -2422,10 +2101,13 @@ AddEng(base_eng[player_series] - GetEng(1) + GetByte(Utask88, 4))
 end
 ----------------------------------------------------------------------------------------------------------------
 function fifong()
+if (CalcFreeItemCellCount() < 40) then
+		return Talk(1,"","H·y S¾p XÕp L¹i Hµnh Trang")
+end
 	local tab_Content = {
-		--"Phi phong/PhiPhong", --trang bi hkmp Thieu lam (sai)
-		--"Ngò Hµnh Ên/NguHanhAn", --trang bi hkmp  tvb, nm (sai)
-		--"Trang søc/TrangSuc",
+		"Phi phong/PhiPhong",
+		"Ngò Hµnh Ên/NguHanhAn",
+		"Trang søc/TrangSuc",
 		"LÊy Ngùa/Ngua",
 		"Tho¸t./no",
 		"Trë l¹i"
@@ -2435,7 +2117,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function PhiPhong()
 for i = 3905,3939 do
-AddGoldItem(0,i)
+tbAwardTemplet:GiveAwardByList({{szName = "Xuyªn Y Ph¸ Gi¸p 3",tbProp={0,i},nQuality=1,nCount=1,nExpiredTime=14*24*60},}, "test", 1);
 end
 end
 
@@ -2459,7 +2141,7 @@ local tab_Content =
 "Ngùa nhãm 3./vip3",
 "Ngùa nhãm 4./vip4",
 "Ngùa nhãm 5./vip5",
---"S­ tö hoµng kim./sutu",
+"S­ tö hoµng kim./sutu",
 "Tho¸t./no",
 "Trë l¹i"
 }
@@ -2603,6 +2285,7 @@ end
 function trangthai()
 local tbSay = {}
 tinsert(tbSay,"Hç Trî ChiÕn §Êu/GMSkill")
+tinsert(tbSay,"GM BÊt Tö.../GMBatTu")
 tinsert(tbSay,"GM Èn Th©n.../GManthan")
 tinsert(tbSay,"GM HiÖn Th©n.../XoaSkillGM")
 tinsert(tbSay,"ChÝnh Ph¸i./mauvang")
@@ -2618,6 +2301,11 @@ tinsert(tbSay,"Trë l¹i")
 Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y chän tr¹ng th¸i mµ b¹n muèn !", getn(tbSay), tbSay)
 end
 -----------------------------------------------------------------------------------------------------------------------
+function GMBatTu()
+SetProtectTime(18*5000)
+PlayerFunLib:AddSkillState(963,1,3,559872000,1)
+SetFightState(0)
+end
 function GMSkill()
 AddMagic(1003,20)
 AddMagic(1310,20)
@@ -3175,7 +2863,6 @@ end
 function laydoxanh4(nIndex, nType, nSeries, nCount)
 local tbEquipSelect = %tbDoXanh[nType]["tbEquip"][nIndex]
 for i=1,nCount do AddItem(tbEquipSelect[2], tbEquipSelect[3], tbEquipSelect[4], 10, nSeries, 200, 10) end
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy §å Xanh",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))			
 end
 -----------------------------------------------------------------------------------------------------------------------------------------------
 function anbang()
@@ -4843,18 +4530,18 @@ gmidx=PlayerIndex
 PlayerIndex=GetTaskTemp(200) 
 if num==0 then
 	for i=0,11 do
-	RemoveSkillState(1648+i,20,3,559872000,1) 
+	RemoveSkillState(1472+i,20,3,559872000,1) 
 	end
 	PayExtPoint(3,GetExtPoint(3))
-	--Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §· §­îc Xãa Vip"); 
+	Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §· §­îc Xãa Vip"); 
 	PlayerIndex=gmidx 
 	Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §· §­îc Xãa Vip"); 
 else
 for i=0,11 do
-RemoveSkillState(1648+i,20,3,559872000,1) 
+RemoveSkillState(1472+i,20,3,559872000,1) 
 end
-PlayerFunLib:AddSkillState(1647+num,20,3,559872000,1)-- PayExtPoint(3,GetExtPoint(3)) AddExtPoint(3,num-GetExtPoint(3))
---Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM N©ng Thµnh C«ng Vip <color=metal>"..num..""); 
+PlayerFunLib:AddSkillState(1471+num,20,3,559872000,1)-- PayExtPoint(3,GetExtPoint(3)) AddExtPoint(3,num-GetExtPoint(3))
+Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM N©ng Thµnh C«ng Vip <color=metal>"..num..""); 
 PlayerIndex=gmidx 
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM N©ng Thµnh C«ng Vip <color=metal>"..num..""); 
 end
@@ -4890,10 +4577,9 @@ function AddKNB1(num)
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
 Msg2Player("Qu¶n lý <color=pink>GM<color> §· ChuyÓn <color=metal>"..num.."<color> Kim Nguyªn B¶o Thµnh C«ng"); 
-AddExtPoint(1,num)
-
+AddExtPoint(6,num)
 PlayerIndex=gmidx 
-WriteLogPro("dulieu/admin_log_xu.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M _ %d/%m/%Y").."   "..GetIP().."\t Da Them "..ObjAccount.."  "..ObjName.." "..num.." KNB\n");
+WriteLogPro("dulieu/admin_log_xu.txt",""..GetAccount().."  "..GetName().."\t "..tonumber(GetLocalDate("%Y%m%d%H%M")).."   "..GetIP().."\t Da Them "..ObjAccount.."  "..ObjName.." "..num.." KNB\n");
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> §­îc GM Tr¶ <color=metal>"..num.."<color> Kim Nguyªn B¶o Thµnh C«ng"); 
 
 end;
@@ -4905,10 +4591,7 @@ function LayKNB1(num)
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
 Msg2Player("Qu¶n lý <color=pink>GM<color> §· Trõ <color=metal>"..num.."<color> Kim Nguyªn B¶o Thµnh C«ng"); 
-for i = 1, num do
-	ConsumeEquiproomItem(1,4,343,1,-1)
-end
---PayExtPoint(1,num)
+PayExtPoint(1,num)
 PlayerIndex=gmidx 
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> BÞ GM Trõ <color=metal>"..num.."<color> Kim Nguyªn B¶o Thµnh C«ng"); 
 end;
@@ -5040,32 +4723,22 @@ end
 -------
 function HoTroTanThuMoi()
 	local tbAward = {
-	--	{szName="NhÊt Kû Cµn Kh«n Phï", tbProp={6,1,2126,1,0,0},nCount = 30,nExpiredTime=10*24*60},
-	--	{szName="Long Dam", tbProp={0,5943},nCount = 1,nExpiredTime=30*24*60,nQuality=1,nBindState = -2},
-	--	{szName="NhÉn Kim Quang", tbProp={0,3771},nCount = 2,nExpiredTime=30*24*60,nQuality=1,nBindState = -2},
-	--	{szName="Han Huyet", tbProp={0,5214},nCount = 1,nExpiredTime=30*24*60,nQuality=1,nBindState = -2},
-	--	{szName="Phi Phong 2", tbProp={0,3468},nCount = 1,nQuality=1,nBindState = -2},
-	--	{szName="TÈy tuû kinh", tbProp={6,1,22,1,0,0},nCount = 15,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="Vâ l©m mËt tÞch", tbProp={6,1,26,1,0,0},nCount = 15,nExpiredTime=7*24*60,nBindState = -2},
-----	{szName="R­¬ng vò khÝ HKMP Max", tbProp={6,1,4402,1,0,0},nCount = 1,nBindState = -2},
---	{szName="LÏ Bao MÆt N¹ Tèng Kim", tbProp={6,1,4443,1,0,0},nCount = 1,nBindState = -2},
-	--	{szName="tran phai linh duoc", tbProp={6,1,1705,1,0,0},nCount = 60},
-	--	{szName="tran phai linh duoc", tbProp={6,1,1704,1,0,0},nCount = 60},
-	--	{szName="tin vat mon phai", tbProp={6,1,1670,1,0,0},nCount = 2},
-	--	{szName="Tu Luyen Chau", tbProp={6,1,1827,1,0,0},nCount = 1,nExpiredTime=30*24*60,nBindState = -2},
-		--{szName="Huy HiÖu Sao Vµng", tbProp={6,1,4378,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="B¶o r­¬ng giíi h¹n lùa chän ", tbProp={6,1,4374,1,0,0},nCount = 1,nExpiredTime=30*24*60,nBindState = -2},
---		{szName="Tói tÝch lòy Tèng Kim", tbProp={6,1,4361,1,0,0},nCount = 10,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="B«n Tiªu", tbProp={0,10,6,10,0,0,0},nCount = 1,nExpiredTime=30*24*60,nBindState = -2},
-	--	{szName="MÆt N¹ ChiÕn Tr­êng Th¸nh Gi¶",tbProp={0,11,647,1,0,0},nCount=1,nExpiredTime=30*24*60,nBindState = -2},
-	--	{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Phong V©n Phæ Phßng hoµn", tbProp={6,1,191,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Phong V©n B¨ng Phßng hoµn", tbProp={6,1,192,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Chuyªn dïng cho Phong V©n L«i phßng hoµn", tbProp={6,1,193,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Chuyªn dïng cho Phong V©n Háa phßng hoµn", tbProp={6,1,194,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-		--{szName="Chuyªn dïng cho Phong V©n §éc phßng hoµn", tbProp={6,1,195,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
---	{szName="KÝch C«ng Trî Lùc Hoµn", tbProp={6,1,2952,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="¢m D­¬ng Ho¹t HuyÕt §¬n", tbProp={6,1,2953,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},		
+	--	{szName="V« Danh ChØ Hoµn",tbProp={0,141},nQuality=1,nCount=1,nExpiredTime=30*24*60,nBindState = -2},
+		--{szName="V« Danh Giíi ChØ",tbProp={0,142},nQuality=1,nCount=1,nExpiredTime=30*24*60,nBindState = -2},
+		{szName="NhÊt Kû Cµn Kh«n Phï (1 Ngµy)", tbProp={6,1,4362,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
+		---{szName="B¶o r­¬ng Giíi H¹n Lùa Chän(7 Ngµy)", tbProp={6,1,4369,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
+		{szName="Tói tÝch lòy Tèng Kim", tbProp={6,1,4361,1,0,0},nCount = 10,nExpiredTime=1*24*60,nBindState = -2},
+		--{szName="TÝn vËt m«n ph¸i", tbProp={6,1,1670,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
+		{szName="Sieu Quang", tbProp={0,10,13,10,0,0,0},nCount = 1,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="MÆt N¹ ChiÕn Tr­êng Th¸nh Gi¶",tbProp={0,11,647,1,0,0},nCount=1,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="Phong V©n Phæ Phßng hoµn", tbProp={6,1,191,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="Phong V©n B¨ng Phßng hoµn", tbProp={6,1,192,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="Chuyªn dïng cho Phong V©n L«i phßng hoµn", tbProp={6,1,193,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="Chuyªn dïng cho Phong V©n Háa phßng hoµn", tbProp={6,1,194,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="Chuyªn dïng cho Phong V©n §éc phßng hoµn", tbProp={6,1,195,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="KÝch C«ng Trî Lùc Hoµn", tbProp={6,1,2952,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
+		{szName="¢m D­¬ng Ho¹t HuyÕt §¬n", tbProp={6,1,2953,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},		
 	}
 	
 gmidx=PlayerIndex 
@@ -5073,58 +4746,14 @@ PlayerIndex=GetTaskTemp(200)
 tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng GiftCode")
 
 PlayerIndex=gmidx 
-Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> NhËn Hç Trî  Live Stream Thµnh C«ng")
-end
-
-function HoTroTanThuMoi2()
-	local tbAward = {
-	--	{szName="NhÊt Kû Cµn Kh«n Phï (7 Ngµy)", tbProp={6,1,4364,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
-		{szName="le bao mat na", tbProp={6,1,4443,1,0,0},nCount = 1,nExpiredTime=7*24*60},
---		{szName="vlmt", tbProp={6,1,26,1,0,0},nCount = 15,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="vlmt", tbProp={0,3772},nCount = 2,nExpiredTime=7*24*60,nQuality=1,nBindState = -2},
-	--	{szName="Huy HiÖu Sao Vµng", tbProp={6,1,4378,1,0,0},nCount = 1,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="2 r­¬ng h¹n chÕ", tbProp={6,1,4369,1,0,0},nCount = 2,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="tin vat mon phai", tbProp={6,1,1670,1,0,0},nCount = 2,nExpiredTime=30*24*60,nBindState = -2},
---		{szName="Tói tÝch lòy Tèng Kim", tbProp={6,1,4361,1,0,0},nCount = 10,nExpiredTime=1*24*60,nBindState = -2},
---		{szName="Sieu Quang", tbProp={0,10,13,10,0,0,0},nCount = 1,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="MÆt N¹ ChiÕn Tr­êng Th¸nh Gi¶",tbProp={0,11,647,1,0,0},nCount=1,nExpiredTime=7*24*60,nBindState = -2},
-	--	{szName="ChiÕn cæ ", tbProp={6,1,156,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Phong V©n Phæ Phßng hoµn", tbProp={6,1,191,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Phong V©n B¨ng Phßng hoµn", tbProp={6,1,192,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Chuyªn dïng cho Phong V©n L«i phßng hoµn", tbProp={6,1,193,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	---	{szName="Chuyªn dïng cho Phong V©n Háa phßng hoµn", tbProp={6,1,194,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="Chuyªn dïng cho Phong V©n §éc phßng hoµn", tbProp={6,1,195,1,0,0},nCount = 50,nExpiredTime=1*24*60,nBindState = -2},
-	--	{szName="KÝch C«ng Trî Lùc Hoµn", tbProp={6,1,2952,1,0,0},nCount = 50,nExpiredTime=10*24*60,nBindState = -2},
-		--{szName="¢m D­¬ng Ho¹t HuyÕt §¬n", tbProp={6,1,2953,1,0,0},nCount = 50,nExpiredTime=10*24*60,nBindState = -2},		
-	--	{szName="Cong Kick", tbProp={6,1,1704,1,0,0},nCount = 15,nExpiredTime=10*24*60,nBindState = -2},		
-	--	{szName="¢m D­¬ng", tbProp={6,1,1705,1,0,0},nCount = 15,nExpiredTime=10*24*60,nBindState = -2},		
-		{szName="Kim Quang", tbProp={0,3771},nQuality=1,nCount = 2,nExpiredTime=15*24*60},		
-	}
-	
-gmidx=PlayerIndex 
-PlayerIndex=GetTaskTemp(200) 
-	if CalcFreeItemCellCount() <= 20 then
-	Say("Kh«ng §ñ 20 ¤ Trèng, xãa vËt phÈm råi nhê GM add l¹i")
-	return
-	end
-tbAwardTemplet:GiveAwardByList(tbAward,"PhÇn Th­ëng GiftCode")
-
-PlayerIndex=gmidx 
-WriteLogPro("dulieu/admin_buff_ho_tro.txt",""..GetAccount().."  "..GetName().."\t "..GetLocalDate("%H:%M_%d-%m-%Y").."   "..GetIP().."\t ®· hç trî "..ObjAccount.."  "..ObjName.." 1 MÆt n¹ + 2 NhÉn Kim Quang 15 Ngµy \n");
 Msg2Player("Nh©n vËt <color=green>"..ObjName.."<color> NhËn Hç Trî Thµnh C«ng")
 end
-
 function NhanHoTroTrungSinh3()
 gmidx=PlayerIndex 
 PlayerIndex=GetTaskTemp(200) 
-for i=3000,3500 do
-if GetTask(i)>=1 then
+  SetFaction("huashan")
+  Say("OK")
 PlayerIndex=gmidx 
-Msg2Player("---------Task-"..i.."--------Gia Tri:"..GetTask(i).."------------")
-end
-end
-PlayerIndex=gmidx 
-
 end
 
 --------------------------------------------------------ReLoadFile---------------------------------------
@@ -5245,998 +4874,57 @@ Msg2Player("Fix OK")
 PlayerIndex=gmidx 
 Msg2Player("Fix OK")
 end
+
+function NhanVongSangVip_mn()
+
+
+
+local tbSay = 
+{
+"NhËn Vßng S¸ng 1/#NhanVongSangVip(1553,30)",
+"NhËn Vßng S¸ng 2/#NhanVongSangVip(1554,30)",
+"NhËn Vßng S¸ng 3/#NhanVongSangVip(1555,30)",
+"NhËn Vßng S¸ng 4/#NhanVongSangVip(1556,30)",
+"NhËn Vßng S¸ng 5/#NhanVongSangVip(1557,30)",
+"NhËn Vßng S¸ng 6/#NhanVongSangVip(1558,30)",
+"NhËn Vßng S¸ng 7/#NhanVongSangVip(1559,30)",
+"NhËn Vßng S¸ng 8/#NhanVongSangVip(1560,30)",
+"NhËn Vßng S¸ng 9/#NhanVongSangVip(1561,30)",
+"NhËn Vßng S¸ng 10/#NhanVongSangVip(1562,30)",
+"NhËn Vßng S¸ng 11/#NhanVongSangVip(1563,30)",
+"NhËn Vßng S¸ng 12/#NhanVongSangVip(1564,30)",
+"NhËn Vßng S¸ng 13/#NhanVongSangVip(1565,30)",
+"Xãa TÊt C¶ Vßng S¸ng/#NhanVongSangVip(0,30)",
+"Th«i ta kh«ng muèn n÷a/no"
+}
+--Say("B¹n Muèn Mua G×",getn(tbSay),tbSay)
+--tbAwardTemplet:GiveAwardByList({{nExp_tl = 100e9}}, "test", 1);1607
+	--local npcindex = AddNpcEx(1950, 100,random(0,4), SubWorldID2Idx(53), 194*8*32, 204*16*32, 1, "LOL L­u HuÊn", 1)
+
+for i=0,1700 do
+DellSkill(i)
+end
+	--AddMagic(1528,20)
+--tbAwardTemplet:GiveAwardByList({{szName = "Xuyªn Y Ph¸ Gi¸p 3",tbProp={0,7395},nQuality=1,nCount=1,nExpiredTime=30*24*60},}, "test", 1);
+end
+
+
+function NhanVongSangVip(idskill,ngay)
+
+for i=1553,1565 do
+RemoveSkillState(i,20,3,559872000,1) 
+end
+PlayerFunLib:AddSkillState(idskill,1,3,18*60*60*24*ngay,1)
+
+
+end
+function GetCurIP()
+	local IPAD = split(GetIP()," :");
+	return IPAD[1];
+end;
 ----------------------------------------------------------
 function WriteLogPro(data,str)
 	local Data2 = openfile(""..data.."", "a+");
 	write(Data2,tostring(str));
 	closefile(Data2);
 end
-
-
-function NhapTenNguoiCanXem()
-	local nSilverCount = CalcEquiproomItemCount(4, 417, 1, 1) ;
-	if(nSilverCount < 100) then -- gia xu
-		Talk(1,"","CÇn cã <color=pink>100<color> TiÒn ®ång míi cã thÓ xem toµn bé th«ng tin vÒ tiÒm n¨ng hiÖn t¹i cña 1 nh©n vËt cÇn t×m.NÕu t×m thÊt b¹i sÏ kh«ng mÊt xu - t×m thµnh c«ng sÏ mÊt 100 tiÒn ®ång vµ ng­êi bÞ xem tiÒm n¨ng sÏ nhËn ®­îc 50 tiÒn ®ång.") -- go
-	return
-end
-	local a = GetTask(5864)
-	local b = GetGameTime()
-	local c = 0
-	
-	if (b - a) < 25 then
-		_, c = bil.SplitTime(25 - (b - a))
-		return bil.Talk("B¹n ph¶i chê thªm "..c.." míi cã thÓ t×m lÇn kÕ tiÕp!")
-	end
-	
-	SetTask(5864, b)
-	return AskClientForString("KiemTraTiemNang", "", 1, 20, "NhËp tªn nh©n vËt");
-end
-
-function KiemTraTiemNang(Name)
-	local Keywk1 = strfind(Name, "/")
-	if FALSE(Keywk1) then
-		return BatDauKiemTra(Name)
-	end
-	local Name = strsub(Name, Keywk1 + 1)
-	return BatDauKiemTra(Name)
-end
-
-
-function BatDauKiemTra(rolename)
-	if (FALSE(rolename)) then rolename = GetName();end
-	if XemCoOnline(rolename) then return end
-	SetTaskTemp(245, SearchPlayer(rolename));
-	local PlayerIndexGamer = GetTaskTemp(245);
-	local img = "<link=image[0,0]:\\spr\\skill\\others\\title_zw.spr>"
-	local strTitle = ""..img.."Chµo mõng b¹n ®Õn víi <color=green>Vâ L©m TruyÒn Kú<color> H·y chóng tá m×nh lµ 1 gamer ch©n chÝnh ®õng v× thua ng­êi kh¸c mµ n¶n chÝ trai.QuyÕt t©m Êt chiÕn th¾ng tr­íc mäi cao thñ.Kh«ng cã kÎ nµo yÕu nhÊt chØ cã nh÷ng kÎ kh«ng biÕt chøng tá tr×nh pk cña m×nh."
-	local tbOpt = 
-	{
-		--{"Set Camp cho nh©n vËt "..rolename.."",bilSetCamp4Player},
-		{"KÕt thóc ®èi tho¹i.", OnCancel},
-	}
-	CreateNewSayEx(strTitle , tbOpt)
-ConsumeEquiproomItem(100,4,417,1,1)
-Msg2SubWorld(""..GetName()..": <color=Blue>§· KiÓm Tra TiÒm N¨ng Cña Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> KÕt Qu¶ Nh­ Sau:") 
-Msg2SubWorld("<color=Pink>Søc M¹nh  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetStrg).." <pic=48>") 
-Msg2SubWorld("<color=Pink>Sinh KhÝ  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetVit).." <pic=48>")
-Msg2SubWorld("<color=Pink>Th©n Ph¸p :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetDex).." <pic=48>") 
-Msg2SubWorld("<color=Pink>Néi C«ng  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetEng).." <pic=48>")
-Msg2SubWorld("<color=Pink>Cßn L¹i   :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetProp).." <pic=48>")
-Msg2SubWorld("<color=Pink>Cßn L¹i   :<color=green> "..CallPlayerFunction(PlayerIndexGamer, sotiendong ).." <pic=48>")
-
-Msg2SubWorld("=> Nh©n VËt <color=yellow>"..CallPlayerFunction(PlayerIndexGamer, GetName).."<color=Blue> NhËn §­îc <color=green>50<color> TiÒn §ång") 
-
-AddGlobalCountNews("<color=Pink>Søc M¹nh Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetStrg).." <pic=48><pic=26>") 
-AddGlobalCountNews("<color=Pink>Sinh KhÝ Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetVit).." <pic=48><pic=15>")
-AddGlobalCountNews("<color=Pink>Th©n Ph¸p Nh©n VËt <color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).." :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetDex).." <pic=48><pic=18>") 
-AddGlobalCountNews("<color=Pink>Néi C«ng Nh©n VËt<color=yellow> "..CallPlayerFunction(PlayerIndexGamer, GetName).."  :<color=green> "..CallPlayerFunction(PlayerIndexGamer, GetEng).." <pic=48><pic=22>")
-
-callPlayerFunction(PlayerIndexGamer, AddStackItem,50,4, 417, 1, 1, 0, 0, 0)
-CallPlayerFunction(PlayerIndexGamer, Say, "<color=green>Chóc mõng b¹n nhËn ®­îc 50 tiÒn ®ång khi cã ai ®ã võa xem th«ng tin vÒ b¶ng tiÒm n¨ng cña b¹n..", 0);
-end
-
-
-function XemCoOnline(Name)
-	if CallPlayerFunction(SearchPlayer(Name), GetTask, 5998) == 1 then
-		local bilPlayerOfflineLive_W, bilPlayerOfflineLive_X, bilPlayerOfflineLive_Y = CallPlayerFunction(SearchPlayer(Name), GetWorldPos)
-		Say("<color=pink>Nh©n vËt ®ang ñy th¸c kh«ng thÓ kiÓm tra lóc nµy")
-		return 1
-	end
-	if (SearchPlayer(Name) <= 0) or (SearchPlayer(Name) == nil) or (SearchPlayer(Name) == "") or not (SearchPlayer(Name)) then
-		Talk(1, "", "<color=pink>Cã thÓ b¹n ®¸nh : Sai tªn nh©n vËt - nh©n vËt kh«ng tån t¹i - nh©n vËt ®· rêi m¹ng - hoÆc b¹n kh«ng ®øng cïng b¶n ®å víi nh©n vËt cÇn kiÓm tra")
-		return 1
-	else
-		return nil
-	end
-end
-function LayDoTheoID()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy §å Hoµng Kim (-1)",LayMenuHKMP},
-{"LÊy §å Queskey (ID)",LayMenuQueskey},
-{"LÊy §å Magic (ID)",LayMenuMagic},
-{"LÊy Ngùa (ID)",LayMenuNgua},
-{"LÊy MÆt N¹ (ID)",LayMenuMatNa},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-
-function LayMenuMatNa()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy 1 MÆt N¹ Ko HSD",LayMatNaHan},
-{"LÊy 1 MÆt N¹ HSD 1 Ngµy",LayMatNaHSD1},
-{"LÊy 1 MÆt N¹ HSD 3 Ngµy",LayMatNaHSD3},
-{"LÊy 1 MÆt N¹ HSD 7 Ngµy",LayMatNaHSD7},
-{"LÊy 1 MÆt N¹ HSD 15 Ngµy",LayMatNaHSD15},
-{"LÊy 1 MÆt N¹ HSD 30 Ngµy",LayMatNaHSD30},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-
-function LayMatNaHan()
-AskClientForNumber("LayMatNaHan1",1,10000000,"ID Item")
-end
-function LayMatNaHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayMatNaHSD1()
-AskClientForNumber("LayMatNaHSD11",1,10000000,"ID Item")
-end
-function LayMatNaHSD11(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,nExpiredTime=1440,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayMatNaHSD3()
-AskClientForNumber("LayMatNaHSD31",1,10000000,"ID Item")
-end
-function LayMatNaHSD31(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,nExpiredTime=1440*3,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayMatNaHSD7()
-AskClientForNumber("LayMatNaHSD71",1,10000000,"ID Item")
-end
-function LayMatNaHSD71(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,nExpiredTime=1440*7,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayMatNaHSD15()
-AskClientForNumber("LayMatNaHSD151",1,10000000,"ID Item")
-end
-function LayMatNaHSD151(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,nExpiredTime=1440*15,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayMatNaHSD30()
-AskClientForNumber("LayMatNaHSD301",1,10000000,"ID Item")
-end
-function LayMatNaHSD301(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,11,num,1,0},nCount=1,nExpiredTime=1440*30,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  mÆt n¹ ",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayMenuNgua()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy 1 Ngua Ko HSD",LayNguaKoHan},
-{"LÊy 1 Ngua HSD 1 Ngµy",LayNguaHSD1},
-{"LÊy 1 Ngua HSD 3 Ngµy",LayNguaHSD3},
-{"LÊy 1 Ngua HSD 7 Ngµy",LayNguaHSD7},
-{"LÊy 1 Ngua HSD 15 Ngµy",LayNguaHSD15},
-{"LÊy 1 Ngua HSD 30 Ngµy",LayNguaHSD30},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-function LayNguaKoHan()
-AskClientForNumber("LayNguaKoHan1",1,10000000,"ID Item")
-end
-function LayNguaKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayNguaHSD1()
-AskClientForNumber("LayNguaHSD11",1,10000000,"ID Item")
-end
-function LayNguaHSD11(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,nExpiredTime=1440,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayNguaHSD3()
-AskClientForNumber("LayNguaHSD31",1,10000000,"ID Item")
-end
-function LayNguaHSD31(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,nExpiredTime=1440*3,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayNguaHSD7()
-AskClientForNumber("LayNguaHSD71",1,10000000,"ID Item")
-end
-function LayNguaHSD71(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,nExpiredTime=1440*7,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function LayNguaHSD15()
-AskClientForNumber("LayNguaHSD151",1,10000000,"ID Item")
-end
-function LayNguaHSD151(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,nExpiredTime=1440*15,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayNguaHSD30()
-AskClientForNumber("LayNguaHSD301",1,10000000,"ID Item")
-end
-function LayNguaHSD301(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,10,num,10,0},nCount=1,nExpiredTime=1440*30,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Ngùa",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayMenuMagic()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy 1 Magic Ko HSD",LayMaGicKoHan},
-{"LÊy 10 Magic Ko HSD",Lay100MaGicKoHan},
-{"LÊy 100 Magic Ko HSD",Lay1000MaGicKoHan},
-{"LÊy 1000 Magic Ko HSD",Lay10000MaGicKoHan},
-
-{"LÊy 1 Magic HSD 7 Ngµy",LayMaGicCoHan},
-{"LÊy 10 Magic HSD 7 Ngµy",Lay100MaGicCoHan},
-{"LÊy 100 Magic HSD 7 Ngµy",Lay1000MaGicyCoHan},
-{"LÊy 100 Magic HSD 30 Ngµy",Lay1000MaGicCoHan30},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-
-function LayMaGicKoHan()
-AskClientForNumber("LayMaGicKoHan1",1,10000000,"ID Item")
-end
-function LayMaGicKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=1,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay100MaGicKoHan()
-AskClientForNumber("Lay100MaGicKoHan1",1,10000000,"ID Item")
-end
-function Lay100MaGicKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=10,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay1000MaGicKoHan()
-AskClientForNumber("Lay1000MaGicKoHan1",1,10000000,"ID Item")
-end
-function Lay1000MaGicKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=100,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay10000MaGicKoHan()
-AskClientForNumber("Lay10000MaGicKoHan1",1,10000000,"ID Item")
-end
-function Lay10000MaGicKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=1000,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayMaGicCoHan()
-AskClientForNumber("LayMaGicCoHan1",1,10000000,"ID Item")
-end
-function LayMaGicCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=1,nExpiredTime=10080,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay100MaGicCoHan()
-AskClientForNumber("Lay100MaGicCoHan1",1,10000000,"ID Item")
-end
-function Lay100MaGicCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=10,nExpiredTime=10080,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay1000MaGicyCoHan()
-AskClientForNumber("Lay1000MaGicyCoHan1",1,10000000,"ID Item")
-end
-function Lay1000MaGicyCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=100,nExpiredTime=10080,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay1000MaGicCoHan30()
-AskClientForNumber("Lay1000MaGicCoHan301",1,10000000,"ID Item")
-end
-function Lay1000MaGicCoHan301(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={6,1,num,1,0},nCount=100,nExpiredTime=43200,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  MaGic",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-
-
-function LayMenuQueskey()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy 1 Queskey Ko HSD",LayQuekeyKoHan},
-{"LÊy 10 Queskey Ko HSD",Lay100QuekeyKoHan},
-{"LÊy 100 Queskey Ko HSD",Lay1000QuekeyKoHan},
-{"LÊy 1 Queskey HSD 7 Ngµy",LayQuekeyCoHan},
-{"LÊy 10 Queskey HSD 7 Ngµy",Lay100QuekeyCoHan},
-{"LÊy 100 Queskey HSD 7 Ngµy",Lay1000QuekeyCoHan},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-function LayQuekeyCoHan()
-AskClientForNumber("LayQuekeyCoHan1",1,10000000,"ID Item")
-end
-function LayQuekeyCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=1,nExpiredTime=10080},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay100QuekeyCoHan()
-AskClientForNumber("Lay100QuekeyCoHan1",1,10000000,"ID Item")
-end
-function Lay100QuekeyCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=10,nExpiredTime=10080,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay1000QuekeyCoHan()
-AskClientForNumber("Lay1000QuekeyCoHan1",1,10000000,"ID Item")
-end
-function Lay1000QuekeyCoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=100,nExpiredTime=10080,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayQuekeyKoHan()
-AskClientForNumber("LayQuekeyKoHan1",1,10000000,"ID Item")
-end
-function LayQuekeyKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=1,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay100QuekeyKoHan()
-AskClientForNumber("Lay100QuekeyKoHan1",1,10000000,"ID Item")
-end
-function Lay100QuekeyKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=10,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function Lay1000QuekeyKoHan()
-AskClientForNumber("Lay1000QuekeyKoHan1",1,10000000,"ID Item")
-end
-function Lay1000QuekeyKoHan1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={4,num,1,1},nCount=100,},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  QuestKey",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function LayMenuHKMP()			
-local szTitle = "Vâ L©m h©n hoan chµo ®ãn c¸c vÞ anh hïng b¹n h÷u ®Õn víi server.";
-local tbOpt = 
-{
-{"LÊy 1 HKMP Kh«ng HSD",HKMPKoHan},
-{"LÊy 1 HKMP HSD 1 Ngµy",HKMP1Ngay},
-{"LÊy 1 HKMP HSD 3 Ngµy",HKMP3Ngay},
-{"LÊy 1 HKMP HSD 7 Ngµy",HKMP7Ngay},
-{"LÊy 1 HKMP HSD 15 Ngµy",HKMP15Ngay},
-{"LÊy 1 HKMP HSD 30 Ngµy",HKMP30Ngay},
-{"LÊy 1 HKMP HSD 60 Ngµy",HKMP60Ngay},
-{"Tho¸t",OnCancel},
-}
-CreateNewSayEx(szTitle, tbOpt)
-end
-
-
-function HKMPKoHan()
-AskClientForNumber("HKMPKoHan1",1,10000,"ID")
-end
-function HKMPKoHan1(num)
---for i=1,20 do
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1},}, "test", 1);
---end
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function HKMP1Ngay()
-AskClientForNumber("HKMP1Ngay1",1,10000,"ID")
-end
-function HKMP1Ngay1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=1440},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-
-function HKMP3Ngay()
-AskClientForNumber("HKMP3Ngay1",1,10000,"ID")
-end
-function HKMP3Ngay1(num)
---for i=1,6 do
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=4320},}, "test", 1);
---end
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function HKMP7Ngay()
-AskClientForNumber("HKMP7Ngay1",1,10000,"ID")
-end
-function HKMP7Ngay1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=10080},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function HKMP15Ngay()
-AskClientForNumber("HKMP15Ngay1",1,10000,"ID")
-end
-function HKMP15Ngay1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=21600},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function HKMP30Ngay()
-AskClientForNumber("HKMP30Ngay1",1,10000,"ID")
-end
-function HKMP30Ngay1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=43200},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-
-function HKMP60Ngay()
-AskClientForNumber("HKMP60Ngay1",1,10000,"ID")
-end
-function HKMP60Ngay1(num)
-tbAwardTemplet:GiveAwardByList({{szName="Item",tbProp={0,num},nCount=1,nQuality=1,nExpiredTime=43200*2},}, "test", 1);
- logplayer("dulieu/gmlayitem.txt",format("[IP : %s ] - Thêi gian : %s  - Tµi kho¶n [ %s] - Nh©n vËt : [%s ] lÊy "..num.." item  Hoµng Kim",GetIP(),GetLocalDate("%m/%d/%Y_%H:%M:%S"),GetAccount(),GetName()))
-end
-function ChucNangQuanLyGM()
-tbGmRole:GMC_Menu()
-
-end
-
-function ReLoadScript()
-	local szTitle = "NhËn ®­êng link:<color=red> Yªu cÇu chÝnh x¸c<color>"
-	local tbOpt = 
-	{
-		{"NhËp ®­êng dÉn",NhapDuongDanFileCanReLoad},
-		{"KÕt thóc ®èi tho¹i.",OnCancel},
-	}
-	CreateNewSayEx(szTitle, tbOpt)
-end
---------------------------------- RELOAD SCRIPT NPC TU LENH BAI ADMINISTRATOR ------------------------------------
---------------------------------- THU CONG DUONG DAN CAN RELOAD FILE ---------------------------------
-function NhapDuongDanFileCanReLoadOK(Link)
-		local ReloadScript = LoadScript(Link);
-		if (FALSE(ReloadScript )) then
-			Msg2Player("XuÊt hiÖn lçi, kh«ng thÓ Reload!<enter><color=yellow>"..Link.."");
-		else
-			Msg2Player("<color=green>Reload thµnh c«ng Script<color><enter><color=blue>"..Link.."");
-		end
-end
-
-function NhapDuongDanFileCanReLoad()
-	return AskClientForString("NhapDuongDanFileCanReLoadOK", "", 1, 500, "<#>NhËp ®­êng dÉn")
-end
-function logplayer(zFile,szMsg)
-  local handle = openfile(zFile,"a")
-  write(handle,format("%s\n",szMsg));
-  closefile(handle);
- end
----------------------------------------------------------------------------------
-
-----LÊy §å TÝm MaxOpt-----------------------------------------
-tbDoTimMaxOpt =
-{
-[1]=
-{
-szName = "D©y ChuyÒn",
-tbEquip =
-{
-{"Toµn th¹ch h¹ng liªn",0,4,0},
-{"Lôc PhØ Thóy Hé Th©n phï ",0,4,1},
-}
-},
-[2]=
-{
-szName = "Gi¸p",
-tbEquip =
-{
-{"ThÊt B¶o Cµ Sa",0,2,0},
-{"Ch©n Vò Th¸nh Y",0,2,1},
-{"Thiªn NhÉn MËt Trang",0,2,2},
-{"Gi¸ng Sa Bµo",0,2,3},
-{"§­êng Nghª gi¸p",0,2,4},
-{"V¹n L­u Quy T«ng Y",0,2,5},
-{"TuyÒn Long bµo",0,2,6},
-{"Long Tiªu ®¹o Y",0,2,8},
-{"Cöu VÜ B¹ch Hå trang",0,2,9},
-{"TrÇm H­¬ng sam",0,2,10},
-{"TÝch LÞch Kim Phông gi¸p",0,2,11},
-{"V¹n Chóng TÒ T©m Y",0,2,12},
-{"L­u Tiªn QuÇn",0,2,13},
-}
-},
-[3]=
-{
-szName = "§ai L­ng",
-tbEquip =
-{
-{"Thiªn Tµm Yªu §¸i",0,6,0},
-{"B¹ch Kim Yªu §¸i",0,6,1},
-}
-},
-[4]=
-{
-szName = "Giµy",
-tbEquip =
-{
-{"Cöu TiÕt X­¬ng VÜ Ngoa",0,5,0},
-{"Thiªn Tµm Ngoa",0,5,1},
-{"Kim Lò hµi",0,5,2},
-{"Phi Phông Ngoa",0,5,3},
-}
-},
-[5]=
-{
-szName = "Bao Tay",
-tbEquip =
-{
-{"Long Phông HuyÕt Ngäc Tr¹c",0,8,0},
-{"Thiªn Tµm Hé UyÓn",0,8,1},
-}
-},
-[6]=
-{
-szName = "Nãn",
-tbEquip =
-{
-{"Tú L« m·o",0,7,0},
-{"Ngò l·o qu¸n",0,7,1},
-{"Tu La Ph¸t kÕt",0,7,2},
-{"Th«ng Thiªn Ph¸t Qu¸n",0,7,3},
-{"YÓm NhËt kh«i",0,7,4},
-{"TrÝch Tinh hoµn",0,7,5},
-{"¤ Tµm M·o",0,7,6},
-{"Quan ¢m Ph¸t Qu¸n",0,7,7},
-{"¢m D­¬ng V« Cùc qu¸n",0,7,8},
-{"HuyÒn Tª DiÖn Tr¸o",0,7,9},
-{"Long HuyÕt §Çu hoµn",0,7,10},
-{"Long L©n Kh«i",0,7,11},
-{"Thanh Tinh Thoa",0,7,12},
-{"Kim Phông TriÓn SÝ ",0,7,13},
-}
-},
-[7]=
-{
-szName = "Ngäc Béi",
-tbEquip =
-{
-{"Long Tiªn H­¬ng Nang",0,9,0},
-{"D­¬ng Chi B¹ch Ngäc",0,9,1},
-}
-},
-[8]=
-{
-szName = "NhÉn",
-tbEquip =
-{
-{"Toµn Th¹ch Giíi ChØ ",0,3,0},
-}
-},
-[9]=
-{
-szName = "Vò KhÝ CËn ChiÕn",
-tbEquip =
-{
-{"HuyÒn ThiÕt KiÕm",0,0,0},
-{"§¹i Phong §ao",0,0,1},
-{"Kim C« Bæng",0,0,2},
-{"Ph¸ Thiªn KÝch",0,0,3},
-{"Ph¸ Thiªn chïy",0,0,4},
-{"Th«n NhËt Tr·m",0,0,5},
-}
-},
-[10]=
-{
-szName = "Vò KhÝ TÇm Xa",
-tbEquip =
-{
-{"B¸ V­¬ng Tiªu",0,1,0},
-{"To¸i NguyÖt §ao",0,1,1},
-{"Khæng T­íc Linh",0,1,2},
-}
-},
-}
---------------------------------------------------DONG HIEN AN------------------------------------------------------------------------------
-tbHienAnKim =
-{
-[1]=
-{
-szDong = "Dßng HiÖn",
-tbThuottinh =
-{
-{"Sinh lùc t¨ng",150},
-{"Néi lùc t¨ng",160},
-{"T¨ng thÓ lùc",170},
-{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",10},
-{"T¨ng tèc ®é xuÊt chiªu Ngo¹i c«ng",30},
-{"T¨ng chÝnh x¸c",20},
-}
-},
-[2]=
-{
-szDong = "Dßng Èn",
-tbThuottinh =
-{
-{"Phßng ®éc t¨ng",290},
-{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",220},
-{"Søc m¹nh t¨ng",210},
-{"ChuyÓn hãa s¸t th­¬ng thµnh Néi lùc",270},
-}
-},
-}
-tbHienAnMoc =
-{
-[1]=
-{
-szDong = "Dßng HiÖn",
-tbThuottinh =
-{
-{"Sinh lùc t¨ng",150},
-{"Néi lùc t¨ng",160},
-{"T¨ng thÓ lùc",170},
-{"T¨ng s¸t th­¬ng vËt lý Ngo¹i c«ng",10},
-{"T¨ng tèc ®é xuÊt chiªu Ngo¹i c«ng",30},
-{"T¨ng chÝnh x¸c",20},
-}
-},
-[2]=
-{
-szDong = "Dßng Èn",
-tbThuottinh =
-{
-{"Phßng L«i t¨ng ",320},
-{"Gi¶m thêi gian tróng ®éc",380},
-{"Chèng cho¸ng",340},
-{"ChuyÓn hãa s¸t th­¬ng thµnh Néi lùc",270},
-}
-},
-}
-tbHe =
-{
-[1]=
-{
-szhe = "Kim",
-},
-[2]=
-{
-szhe = "Méc",
-},
-[3]=
-{
-szhe = "Thñy",
-},
-[4]=
-{
-szhe = "Háa",
-},
-[5]=
-{
-szhe = "Thæ",
-},
-}
-----------------------------------------------------HET-----------------------------------------------------------------------
-function laydotimmaxopt()
-local tbOpt = {}
-for i=1, getn(tbDoTimMaxOpt) do
-tinsert(tbOpt, {tbDoTimMaxOpt[i].szName, laydotimmaxopt1, {i}}) 
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>Trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmaxopt1(nType)
-local tbEquip = %tbDoTimMaxOpt[nType]["tbEquip"]
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local tbOpt = {}
-for i=1, getn(tbEquip) do
-tinsert(tbOpt, {tbEquip[i][1], laydotimmaxopt2, {i, nType}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow><Ch­a chän><color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmaxopt2(nIndex, nType)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local tbOpt = {}
-tinsert(tbOpt, {"Kim", laydotimkim, {nIndex, nType, 0}})
-tinsert(tbOpt, {"Méc", laydotimkim, {nIndex, nType, 1}})
-tinsert(tbOpt, {"Thñy", laydotimmaxopt3, {nIndex, nType, 2}})
-tinsert(tbOpt, {"Háa", laydotimmaxopt3, {nIndex, nType, 3}})
-tinsert(tbOpt, {"Thæ ", laydotimmaxopt3, {nIndex, nType, 4}})
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän trang bÞ:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow><Ch­a chän><color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim(nIndex, nType, nSeries)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nSeries.." <color>.")
-if nSeries == 0 then 
-local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim1, {nIndex, nType, nSeries, i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-if nSeries == 1 then
-local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
-local nHeChon = "Méc"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc1, {nIndex, nType, nSeries, i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-end
-----------------------------KIM-------------------------------------------------------
-function laydotimkim1(nIndex, nType, nSeries, nHien1)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctth1.." <color>.")
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim2, {nIndex, nType, nSeries, nHien1, i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh Èn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim2(nIndex, nType, nSeries, nHien1, nAn1)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctta1.." <color>.")
-local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim3, {nIndex, nType, nSeries, nHien1, nAn1,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim3(nIndex, nType, nSeries, nHien1, nAn1,nHien2)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
-local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim4, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim4(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
-local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim5, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim5(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
-local nctth3 = %tbHienAnKim[1]["tbThuottinh"][nHien3][1]
-local tbThuottinh = %tbHienAnKim[2]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimkim6, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimkim6(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3 )
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnKim[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnKim[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnKim[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnKim[2]["tbThuottinh"][nAn2][1]
-local nctth3 = %tbHienAnKim[1]["tbThuottinh"][nHien3][1]
-local nctta3 = %tbHienAnKim[2]["tbThuottinh"][nAn3][1]
-local tbThuottinh = %tbHienAnKim[1]["tbThuottinh"]
-local nHeChon = "Kim"
-local tbOpt = {}
-tinsert(tbOpt, {"Tao Do", laydotimmaxopt10, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3}})
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow>"..nctta3.."<color>", tbOpt)
-end
---------------------------------------------MoC-----------------------
-function laydotimmoc1(nIndex, nType, nSeries, nHien1)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctth1.." <color>.")
-local nHeChon = "M«c"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc2, {nIndex, nType, nSeries, nHien1, i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh Èn 1:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmoc2(nIndex, nType, nSeries, nHien1, nAn1)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..nctta1.." <color>.")
-local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
-local nHeChon = "M«c"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc3, {nIndex, nType, nSeries, nHien1, nAn1,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmoc3(nIndex, nType, nSeries, nHien1, nAn1,nHien2)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
-local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
-local nHeChon = "M«c"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc4, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmoc4(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
-local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
-local nHeChon = "M«c"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc5, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow><Ch­a chän ><color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmoc5(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3)
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
-local nctth3 = %tbHienAnMoc[1]["tbThuottinh"][nHien3][1]
-local tbThuottinh = %tbHienAnMoc[2]["tbThuottinh"]
-local nHeChon = "M«c"
-local tbOpt = {}
-for i=1, getn(tbThuottinh) do
-tinsert(tbOpt, {tbThuottinh[i][1], laydotimmoc6, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,i}})
-end
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow><Ch­a chän ><color>", tbOpt)
-end
-function laydotimmoc6(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3 )
-local ncName = %tbDoTimMaxOpt[nType]["szName"]
-local ncType = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local nctth1 = %tbHienAnMoc[1]["tbThuottinh"][nHien1][1]
-local nctta1 = %tbHienAnMoc[2]["tbThuottinh"][nAn1][1]
-local nctth2 = %tbHienAnMoc[1]["tbThuottinh"][nHien2][1]
-local nctta2 = %tbHienAnMoc[2]["tbThuottinh"][nAn2][1]
-local nctth3 = %tbHienAnMoc[1]["tbThuottinh"][nHien3][1]
-local nctta3 = %tbHienAnMoc[2]["tbThuottinh"][nAn3][1]
-local tbThuottinh = %tbHienAnMoc[1]["tbThuottinh"]
-local nHeChon = "M«c"
-local tbOpt = {}
-tinsert(tbOpt, {"Tao Do", laydotimmaxopt10, {nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3}})
-tinsert(tbOpt, {"Tho¸t."})
-CreateNewSayEx(LENHBAI_ADMIN.."Xin mêi lùa chän thuét tÝnh hiÖn 2:\n<pic=137>Lo¹i trang bÞ: <color=yellow>"..ncName.."<color>\n<pic=137>Trang bÞ: <color=yellow>"..ncType.."<color>\n<pic=137>HÖ: <color=yellow>"..nHeChon.."<color>\n<pic=137>Dßng hiÖn 1: <color=yellow>"..nctth1.."<color>\n<pic=137>Dßng Èn 1: <color=yellow>"..nctta1.."<color>\n<pic=137>Dßng hiÖn 2: <color=yellow>"..nctth2.."<color>\n<pic=137>Dßng Èn 2: <color=yellow>"..nctta2.."<color>\n<pic=137>Dßng hiÖn 3: <color=yellow>"..nctth3.."<color>\n<pic=137>Dßng Èn 3: <color=yellow>"..nctta3.."<color>", tbOpt)
-end
-tbDoHe =
-{
-[0]=
-{
-szDohe = "%tbHienAnKim",
-},
-[1]=
-{
-szDohe = "%tbHienAnMoc",
-},
-[2]=
-{
-szDohe = "tbHienAnThuy",
-},
-[3]=
-{
-szDohe = "tbHienAnHoa",
-},
-[4]=
-{
-szDohe = "tbHienAnTho",
-},
-}
------------------END MOC--------------
-function laydotimmaxopt10(nIndex, nType, nSeries, nHien1, nAn1,nHien2,nAn2,nHien3,nAn3)
-local tbEquipSelect = %tbDoTimMaxOpt[nType]["tbEquip"][nIndex][1]
-local tbChon1 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][2])
-local tbChon2 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][3])
-local tbChon3 = tonumber(%tbDoTimMaxOpt[nType]["tbEquip"][nIndex][4])
-local nch1, nca1, nch2, nca2, nch3, nca3
-local tbHienAn
-if nSeries == 0 then
-    tbHienAn = {tbThuottinh = {}} 
-    if tbHienAnKim then
-        tbHienAn = tbHienAnKim
-    end
-elseif nSeries == 1 then
-    tbHienAn = {tbThuottinh = {}} 
-    if tbHienAnMoc then
-        tbHienAn = tbHienAnMoc
-    end
-end
-if tbHienAn then
-    nch1 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien1] and tbHienAn[1]["tbThuottinh"][nHien1][2] or nil
-    nca1 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn1] and tbHienAn[2]["tbThuottinh"][nAn1][2] or nil
-    nch2 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien2] and tbHienAn[1]["tbThuottinh"][nHien2][2] or nil
-    nca2 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn2] and tbHienAn[2]["tbThuottinh"][nAn2][2] or nil
-    nch3 = tbHienAn[1] and tbHienAn[1]["tbThuottinh"] and tbHienAn[1]["tbThuottinh"][nHien3] and tbHienAn[1]["tbThuottinh"][nHien3][2] or nil
-    nca3 = tbHienAn[2] and tbHienAn[2]["tbThuottinh"] and tbHienAn[2]["tbThuottinh"][nAn3] and tbHienAn[2]["tbThuottinh"][nAn3][2] or nil
-else
-    nch1, nca1, nch2, nca2, nch3, nca3 = nil, nil, nil, nil, nil, nil
-end
-AddQualityItem(2, tbChon1, tbChon2, tbChon3, 10, nSeries, 0, nch1, nca1, nch2, nca2, nch3, nca3)
-Msg2Player("NhËn ®­¬c trang bÞ <color=yellow> "..tbEquipSelect.." <color>.")
-end
-	

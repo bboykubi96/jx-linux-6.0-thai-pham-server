@@ -1,17 +1,18 @@
-Include("\\script\\task\\newtask\\newtask_head.lua")
+-- Edit by giangleloi, them ham add tu dong khi dung manh 1000 tam SHXT
 
-function main(nItemIdx)
-	local _,_,detail = GetItemProp(nItemIdx)
-	local nWorldMaps = nt_getTask(1027) -- ¿´¿´Íæ¼ÒÉíÉÏÓÐ¶àÉÙ¸öÉ½ºÓÉçð¢Í¼
-	if (detail == 440) then
-		-- ¸øÍæ¼ÒÔö¼Ó100¸öÉ½ºÓÉçð¢Í¼²ÐÆ¬
-		nWorldMaps = nWorldMaps + 100;
-		nt_setTask(1027,nWorldMaps);
-		Msg2Player("B¹n nhËn ®­îc 100 m¶nh b¶n ®å S¬n Hµ X· T¾c! HiÖn t¹i b¹n cã tæng céng"..nWorldMaps.." m¶nh b¶n ®å S¬n Hµ X· T¾c.");
-	elseif (detail == 2514) then
-		-- ¸øÍæ¼ÒÔö¼Ó1000¸öÉ½ºÓÉçð¢Í¼²ÐÆ¬
-		nWorldMaps = nWorldMaps + 1000;
-		nt_setTask(1027,nWorldMaps);
-		Msg2Player("§¹i hiÖp nhËn ®­îc 1000 m¶nh b¶n ®å s¬n hµ x· t¾c! Tæng céng cã "..nWorldMaps.." m¶nh b¶n ®å S¬n Hµ X· T¾c.");
-	end
+Include("\\script\\task\\newtask\\newtask_head.lua")
+WORLDAPS_ITEM    =          -- ID Nhung vat pham co cong dung cong them ban do SHXT
+    {                    -- Cau truc [ID ITEM] = {So diem}
+        [440]    = {1000}, 
+        [2514]    = {1000},
+    }
+    
+function main(nItemIndex)
+    local nWorldMaps = nt_getTask(1027) -- Task luu thong tin manh ban do son ha xa tac
+    local nG, nD, nP = GetItemProp(nItemIndex)
+    local GItem = WORLDAPS_ITEM[nP]
+    nWorldMaps = nWorldMaps + GItem[1];
+    nt_setTask(1027,nWorldMaps);
+    Msg2Player("B¹n nhËn ®­îc "..GItem[1].." m¶nh b¶n ®å S¬n Hµ X· T¾c! HiÖn t¹i b¹n cã tæng céng "..nWorldMaps.." m¶nh b¶n ®å S¬n Hµ X· T¾c.");
+    return 0
 end

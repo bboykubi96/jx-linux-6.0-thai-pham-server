@@ -6,8 +6,8 @@ function main(nItemIndex)
 
 	--dofile("script/item/vsd/lenhbaivsd.lua")
 	--dofile("script/global/g7vn/g7configall.lua")
-		if GetLevel() < 90 then
-		Say("Trªn cÊp 90 míi lªn ®­îc vi s¬n ®¶o.")
+	if 1==1 then
+	Say("H·y ®Õn T©y S¬n Th«n, t×m T©y S¬n TiÓu NhÞ  ®Ó lªn §¶o nhÐ")
 		return 1;
 	end
 	if divisondao == 0 then

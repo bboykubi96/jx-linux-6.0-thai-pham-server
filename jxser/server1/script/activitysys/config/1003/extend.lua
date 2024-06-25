@@ -13,67 +13,54 @@ local tbUseTTHT_AdditionalAward = {
 	[200] = {szName = "§iÓm kinh nghiÖm", nExp=12000000},
 	[300] = {szName = "§iÓm kinh nghiÖm", nExp=14000000},
 	[400] = {szName = "§iÓm kinh nghiÖm", nExp=16000000},
-	[500] = {
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,186},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,187},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,188},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,189},nCount=1,nRate=25,nQuality = 1},
-
-		},
+	[500] = {szName = "§iÓm kinh nghiÖm", nExp=18000000},
 	[600] = {szName = "§iÓm kinh nghiÖm", nExp=20000000},
 	[700] = {szName = "§iÓm kinh nghiÖm", nExp=20000000},
 	[800] = {szName = "§iÓm kinh nghiÖm", nExp=20000000},
 	[900] = {szName = "§iÓm kinh nghiÖm", nExp=20000000},
-	[1000] = {
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,190},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,191},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,192},nCount=1,nRate=25,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,193},nCount=1,nRate=25,nQuality = 1},
-
-		}, 
+	[1000] = {szName = "§iÓm kinh nghiÖm", nExp=20000000},
 	[1100] = {szName = "§iÓm kinh nghiÖm", nExp=25000000},
 	[1200] = {szName = "§iÓm kinh nghiÖm", nExp=25000000},
-	[1300] = {
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,159},nCount=1,nRate=20,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,160},nCount=1,nRate=20,nQuality = 1},	
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,161},nCount=1,nRate=20,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,162},nCount=1,nRate=20,nQuality = 1},
-			{szName="Trang bÞ hiÖp cèt",tbProp={0,163},nCount=1,nRate=20,nQuality = 1},
-		},
+	[1300] = {szName = "§iÓm kinh nghiÖm", nExp=25000000},
 }
 
 local tbUseTTHT_ItemAward = {
-	{szName="Tiªn th¶o l«",tbProp={6,1,71,1,0,0},nCount=1,nRate=1},
-	{szName="Tiªn th¶o l« ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=1,nRate=1},
-	{szName="TTK",tbProp={6,1,22,1,0,0},nCount=1,nRate=0.1},
-	{szName="VLMT",tbProp={6,1,26,1,0,0},nCount=1,nRate=0.1},
-	{szName="phan thuong",tbProp={6,1,random(122,125),1,0,0},nCount=1,nRate=2},
-	{szName = "ChiÕu d¹", tbProp={0,10,5,5,0,0},nCount=1,nRate=0.1},
-	{szName = "Tinh hång b¶o th¹ch",tbProp={4,353,1,1,0,0},nCount=1,nRate=0.4},--2 vien
-	{szName = "Tö thñy tinh",tbProp={4,239,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Lôc thñy tinh",tbProp={4,240,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Lam thñy tinh",tbProp={4,238,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,771,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,772,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,773,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,774,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,775,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,776,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,777,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "Manh hoang kim",tbProp={4,778,1,1,0,0},nCount=1,nRate=0.1},
-	{szName = "§iÓm Kinh NghiÖm", nExp=500000,nRate=1},
-	{szName = "§iÓm Kinh NghiÖm", nExp=600000,nRate=2},
-	{szName = "§iÓm Kinh NghiÖm", nExp=700000,nRate=3},
-	{szName = "§iÓm Kinh NghiÖm", nExp=800000,nRate=10},
-	{szName = "§iÓm Kinh NghiÖm", nExp=1000000,nRate=25},
+	{szName="Ngò Hµnh Kú Th¹ch",tbProp={6,1,2125,1,0,0},nCount=1,nRate=26.35},
+	{szName="§å Phæ Tö M·ng Kh«i",tbProp={6,1,2714,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Y",tbProp={6,1,2715,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Yªu §¸i",tbProp={6,1,2717,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Hé UyÓn",tbProp={6,1,2718,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Béi",tbProp={6,1,2720,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Hµi",tbProp={6,1,2716,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng H¹ng Liªn",tbProp={6,1,2719,1,0,0},nCount=1,nRate=0.3},
+	{szName="§å Phæ Tö M·ng Th­îng Giíi ChØ",tbProp={6,1,2721,1,0,0},nCount=1,nRate=0.15},
+	{szName="§å Phæ Tö M·ng H¹ Giíi ChØ",tbProp={6,1,2722,1,0,0},nCount=1,nRate=0.15},
+	{szName="§å Phæ Tö M·ng KhÝ Giíi",tbProp={6,1,2723,1,0,0},nCount=1,nRate=0.15},
+	{szName="Cµn Kh«n Song TuyÖt Béi",tbProp={6,1,2219,1,0,0},nCount=1,nRate=0.1,nExpiredTime=43200},
+	{szName="Tö M·ng LÖnh",tbProp={6,1,2350,1,0,0},nCount=1,nRate=0.1},
+	{szName="Hçn Nguyªn Linh Lé",tbProp={6,1,2312,1,0,0},nCount=1,nRate=0.4},
+	{szName="ThÇn Hµnh Phï",tbProp={6,1,1266,1,0,0},nCount=1,nRate=0.1,nExpiredTime=43200},
+	{szName="Håi thiªn t¸i t¹o lÔ bao",tbProp={6,1,2527,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
+	{szName="B¾c §Èu truyÒn c«ng thuËt",tbProp={6,1,1672,1,0,0},nCount=1,nRate=0.3},
+	{szName="Tiªn Th¶o Lé ®Æc biÖt",tbProp={6,1,1181,1,0,0},nCount=1,nRate=3},
+	{szName="Thiªn tinh b¹ch c©u hoµn",tbProp={6,1,2183,1,0,0},nCount=1,nRate=0.3,nExpiredTime=20160},
+	{szName="B¹ch C©u Hoµn ®Æc biÖt",tbProp={6,1,1157,1,0,0},nCount=1,nRate=0.3,nExpiredTime=20160},
+	{szName="S¸t Thñ Gi¶n lÔ hép",tbProp={6,1,2339,1,0,0},nCount=1,nRate=0.5,nExpiredTime=20160},
+	{szName="Phi tèc hoµn lÔ bao",tbProp={6,1,2520,1,0,0},nCount=1,nRate=5,nExpiredTime=43200},
+	{szName="§¹i lùc hoµn lÔ bao",tbProp={6,1,2517,1,0,0},nCount=1,nRate=5,nExpiredTime=43200},
+	{szName="H¶i long ch©u",tbProp={6,1,2115,1,0,0},nCount=1,nRate=0.5,nExpiredTime=20160},
+	{szName="Viªm §Õ LÖnh",tbProp={6,1,1617,1,0,0},nCount=1,nRate=0.5,nExpiredTime=20160},
+	{szName="Tèng Kim Chiªu Binh LÔ Bao",tbProp={6,1,30084,1,0,0},nCount=1,nRate=0.5,nExpiredTime=20160},
+	{szName = "§iÓm Kinh NghiÖm", nExp=25000000,nRate=1},
+	{szName = "§iÓm Kinh NghiÖm", nExp=20000000,nRate=2},
+	{szName = "§iÓm Kinh NghiÖm", nExp=15000000,nRate=3},
+	{szName = "§iÓm Kinh NghiÖm", nExp=10000000,nRate=10},
+	{szName = "§iÓm Kinh NghiÖm", nExp=6000000,nRate=25},
+	{szName="DÞ Dung BÝ ThuËt",tbProp={6,1,2951,1,0,0},nCount=1,nRate=0.5,nExpiredTime=20160},
 	{szName="KÝch C«ng Trî Lùc Hoµn",tbProp={6,1,2952,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
 	{szName="¢m D­¬ng Ho¹t HuyÕt §¬n",tbProp={6,1,2953,1,0,0},nCount=1,nRate=1,nExpiredTime=20160},
-	{szName = "Than hanh phu", tbProp = {6, 1, 1266, 1,0,0}, nCount = 1,nRate=0.1,nExpiredTime=60*24*30},
-	{szName = "§¹i thµnh bÝ kÝp 90",tbProp={6,1,2424,1,0,0},nCount=1,nRate=0.1},
-	{szName = "BÝ kÝp 90",tbProp={6,1,random(27,28),1,0,0},nCount=1,nRate=0.1},
-	{szName = "BÝ kÝp 90",tbProp={6,1,random(33,43),1,0,0},nCount=1,nRate=0.1},
-	{szName = "BÝ kÝp 90",tbProp={6,1,random(45,59),1,0,0},nCount=1,nRate=0.1},
-
+	{szName="Hoµn Hån §¬n",tbProp={6,1,2837,1,0,0},nCount=1,nRate=5},
+	{szName="Tiªu Diªu T¸n",tbProp={6,1,2831,1,0,0},nCount=1,nRate=5},
 }
 
 function pActivity:InitNpc()
@@ -127,14 +114,14 @@ function pActivity:CheckGiveRedRoseLimit(nCount)
 end
 
 function pActivity:GiveRedRose(nCount)
-	local tbAward = {szName = "§iÓm kinh nghiÖm", nExp=200000}
+	local tbAward = {szName = "§iÓm kinh nghiÖm", nExp=500000}
 	for i = 1, nCount do
 		if %tbVNG_BitTask_Lib:isMaxBitTaskValue(%tbGiveRedRoseLimit) == 1 then
 			return nil
 		end
 		%tbVNG_BitTask_Lib:addTask(%tbGiveRedRoseLimit, 1)
 		tbAwardTemplet:Give(tbAward, 1, {"EventVuLanBaoHieu", "TangHoaHongDo"})		
-		tbVngTransLog:Write(%strTranLogFolder, %nPromotionID, "TangHoaHongDo", "200000 ®iÓm kinh nghiÖm", 1)
+		tbVngTransLog:Write(%strTranLogFolder, %nPromotionID, "TangHoaHongDo", "500000 ®iÓm kinh nghiÖm", 1)
 	end
 end
 
@@ -147,7 +134,7 @@ function pActivity:TTHT_Limit()
 end
 
 function pActivity:Use_TTHT()
-	local tbExpAward = {szName = "§iÓm kinh nghiÖm", nExp=1500000}
+	local tbExpAward = {szName = "§iÓm kinh nghiÖm", nExp=5000000}
 	%tbVNG_BitTask_Lib:addTask(%tbUseTTHTLimit, 1)	
 	tbAwardTemplet:Give(tbExpAward, 1, {"EventVuLanBaoHieu", "SuDungThuyTuuHoTienNhanKinhNghiem"})
 	--PhÇn th­ëng item

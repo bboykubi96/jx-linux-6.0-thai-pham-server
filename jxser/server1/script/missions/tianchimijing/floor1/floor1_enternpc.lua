@@ -16,17 +16,7 @@ tbEnterPosConfigPath = {
 	[9] = "\\settings\\maps\\tianchimijing\\floor1\\enter9.txt"							
 	}
 
-Include("\\script\\global\\g7vn\\g7configall.lua")
-	
 function main()
-		--dofile("script/missions/tianchimijing/floor1/floor1_enternpc.lua")
-		--dofile("script/global/g7vn/g7configall.lua")
-
-		if(thientrimatcanh == 0) then
-			Say("TÝnh n¨ng Thiªn Tr× MËt C¶nh t¹m thêi ch­a më.")
-			return 1;
-		end
-
 		local nNpcIndex = GetLastDiagNpc()
 		local szNpcName = GetNpcName(nNpcIndex)
 		local tbDailog = DailogClass:new(szNpcName)
@@ -45,7 +35,7 @@ function Realize()
 	if GetTeamSize() >= 2 then
 		tinsert(tbOpt, {"KiÓm tra ®iÒu kiÖn tæ ®éi", VnCheckTeamCondition, {1, 1}})
 	end
-	tinsert(tbOpt, {"Hay lµ th«i nhÐ"})
+	tinsert(tbOpt, {"Hay lµ th«i  nhÐ"})
 	CreateNewSayEx(szTitle, tbOpt)
 end
 
@@ -75,7 +65,7 @@ end
 
 function DealWithNotCaption()
 	local tbOpt = {}
-	local szTitle = "<#><npc> ThiÕu hiÖp ng­¬i kh«ng ph¶i lµ ®éi tr­ëng, hay lµ mêi ®éi tr­ëng cña ng­¬i ®Õn ®©y nhÐ"
+	local szTitle = "<#><npc> ThiÕu hiÖp ng­¬I kh«ng ph¶i lµ ®éi tr­ëng, hay lµ mêi ®éi tr­ëng cña ng­¬i ®Õn ®©y nhÐ"
 	tinsert(tbOpt, {"§­îc råi."})
 	CreateNewSayEx(szTitle, tbOpt)
 end

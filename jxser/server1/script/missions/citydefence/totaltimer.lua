@@ -1,12 +1,12 @@
 Include("\\script\\missions\\citydefence\\head.lua")
 
-function OnTimer()
+function OnTimer() 
 
-State = GetMissionV(MS_STATE) ;
-if (State == 0) then
-return
-end;
+State = GetMissionV(MS_STATE) ; 
+if (State == 0) then 
+return 
+end; 
 
-SetMissionV(MS_STATE,3);
-CloseMission(MISSIONID)
+SetMissionV(MS_STATE,3); 
+CloseMission(MISSIONID) 
 end;

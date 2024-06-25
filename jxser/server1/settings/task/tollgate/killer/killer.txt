@@ -123,7 +123,7 @@ Id	BossName	BossInfo
 122	L¹c NhÜ Kim	trong B¨ng Hµ ®éng (206,199) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 123	M¹c Nam Tróc	trong B¨ng Hµ ®éng (212,207) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 124	TÇn Tö Du	trong B¨ng Hµ ®éng (229,210) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
-125	C« V« Th­êng	trong B¨ng Hµ ®éng (218,187) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
+125	C« V« Th­êng	trong Nh¹n Th¹ch ®éng (218,187) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 126	LiÔu Tø Gia	trong Nh¹n Th¹ch ®éng (231,201) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 127	Thi §¹i ThiÕu	trong Nh¹n Th¹ch ®éng (219,201) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 128	T«n V¨n B­u 	trong Nh¹n Th¹ch ®éng (209,196) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
@@ -139,7 +139,7 @@ Id	BossName	BossInfo
 138	Viªn Thiªn Thä 	trong tÇng 3 D­îc V­¬ng ®éng (191,203) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 139	Nh¹c Th­îng C«n	trong tÇng 3 D­îc V­¬ng ®éng (205,195) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 140	Chiªm Phóc V©n	trong tÇng 3 D­îc V­¬ng ®éng (204,203) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
-141	Gi¶ Giíi Nh©n	trong tÇng 3 D­îc V­¬ng ®éng (205,204) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
+141	Gi¶ Giíi Nh©n	trong TiÕn Cóc ®éng (205,204) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 142	TrÞnh Cöu NhËt	trong TiÕn Cóc ®éng (205,191) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 143	Chu Së B¸ 	trong TiÕn Cóc ®éng (217,200) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 144	Trang Minh Trung	trong TiÕn Cóc ®éng (201,197) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
@@ -155,7 +155,7 @@ Id	BossName	BossInfo
 154	Liªn H×nh Th¸i	ë Tr­êng B¹ch nam (185,171) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 155	Bµo TriÖt s¬n 	ë Tr­êng B¹ch nam (161,163) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 156	V¹n Hå Tinh	ë Tr­êng B¹ch nam (139,160) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
-157	Trö Thiªn MÉn	ë Tr­êng B¹ch nam (152,171) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
+157	Trö Thiªn MÉn	ë M¹c Cao QuËt (152,171) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 158	§o¹n L¨ng NguyÖt	ë M¹c Cao QuËt (215,172) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 159	T¶  DËt Minh	ë M¹c Cao QuËt (159,171) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!
 160	NhËm Th­¬ng Khung	ë M¹c Cao QuËt (241,172) . Ta kh«ng tin ng­¬i th¾ng ®­îc h¾n!

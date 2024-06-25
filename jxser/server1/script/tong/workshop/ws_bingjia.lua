@@ -40,7 +40,7 @@ function ws_main(nTongID, nWorkshopID)
 	if (GetProductRegion() == "cn") then
 		tinsert(aryszContent, "NhËn Tö kim cµo/#use_zijingao("..nTongID..","..nWor);
 	elseif(GetProductRegion() == "vn") then
-		--tinsert(aryszContent, "NhËn lÖnh bµi gäi Boss/#use_g_4_ok("..nTongID..","..nWorkshopID..")");
+--		tinsert(aryszContent, "NhËn lÖnh bµi gäi Boss/#use_g_4_ok("..nTongID..","..nWorkshopID..")");
 	end;
 	
 	tinsert(aryszContent, "Kh«ng cÇn ®©u/cancel");
@@ -216,8 +216,8 @@ function use_g_4_ok(nTongID, nWorkshopID)
 		return 0;
 	end
 	local nLevel = TWS_GetUseLevel(nTongID, nWorkshopID)
-	Say("<#>Tæng qu¶n Binh gi¸p ph­êng: CÇn sö dông <color=water>"..aLevelLingPaiPrice[nLevel].."<color> v¹n ng©n s¸ch kiÕn thiÕt bang ®Ó nhËn 1 lÖnh bµi gäi Boss, ng­¬i ®ång ý kh«ng?", 2,
-		"TiÕp nhËn/#use_g_4_ok2".."("..nTongID..","..nWorkshopID..")", "Hñy bá /cancel")
+---	Say("<#>Tæng qu¶n Binh gi¸p ph­êng: CÇn sö dông <color=water>"..aLevelLingPaiPrice[nLevel].."<color> v¹n ng©n s¸ch kiÕn thiÕt bang ®Ó nhËn 1 lÖnh bµi gäi Boss, ng­¬i ®ång ý kh«ng?", 2,
+	--	"TiÕp nhËn/#use_g_4_ok2".."("..nTongID..","..nWorkshopID..")", "Hñy bá /cancel")
 end
 
 function use_g_4_ok2(nTongID, nWorkshopID)

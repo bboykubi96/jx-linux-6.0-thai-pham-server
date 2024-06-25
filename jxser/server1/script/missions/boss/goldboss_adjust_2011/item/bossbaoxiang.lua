@@ -1,3 +1,8 @@
+-- ÎÄ¼şÃû¡¡£ºbossbaoxiang.lua
+-- ´´½¨Õß¡¡£ºwangjingjun
+-- ÄÚÈİ¡¡¡¡£ºµÀ¾ßboss±¦ÏäÊ¹ÓÃ½Å±¾
+-- ´´½¨Ê±¼ä£º2011-08-29 11:44:06
+
 Include("\\script\\lib\\awardtemplet.lua")
 
 local tbAward = 
@@ -31,6 +36,7 @@ function main(nIndexItem)
 	nWidth = 1
 	nHeight = 1
 	nFreeItemCellLimit = 1
+	-- ÅĞ¶¨ÈçÒâÔ¿³×ÊÇ·ñ´æÔÚ
 	local nCount = CalcItemCount(3, 6, 1, 2744, -1) 
 	if nCount == 0 then
 		Say("CÇn cã ch×a khãa Nh­ ı míi cã thÓ më B¶o R­¬ng Boss!", 1, "§ãng/no")
@@ -43,7 +49,7 @@ function main(nIndexItem)
 		return 1
 	end
 	
-	ConsumeItem(3, 1, 6, 1, 2744, -1)
+	ConsumeItem(3, 1, 6, 1, 2744, -1)	-- ÏûºÄÈçÒâÔ¿³×
 	tbAwardTemplet:Give(%tbAward, 1, {"GoldBoss", "use_bossBox"})
 	
 	return 0

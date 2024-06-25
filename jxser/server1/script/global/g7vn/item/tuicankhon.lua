@@ -91,7 +91,7 @@ function main(nIndexItem)
 				{szName = "Tiªn Th¶o Lé ®Æc biÖt",											tbProp={6,1,1181,1,0,0},nCount=15,nBindState = -2,nRate=25,},
 				{szName = "NÕn B¸t tr©n phóc nguyÖt",										tbProp = {6, 1, 1817, 1, 0, 0},nCount=7,nRate=1,nBindState = -2,nRate=15,},	
 				{szName = "MÆt n¹ v­¬ng gi¶",														tbProp={0,11,561,1,0,0},nCount=1,nBindState = -2,nExpiredTime=60*24*15,nRate=15,},
-				{szName = "Cµn kh«n song tuyÖt béi",										tbProp = {6,1,2219,1,0,0},nBindState = -2,nCount=1,nRate=15},
+			--	{szName = "Cµn kh«n song tuyÖt béi",										tbProp = {6,1,2219,1,0,0},nBindState = -2,nCount=1,nRate=15},
 				{szName = "NhÊt kû cµn kh«n phï",											tbProp = {6,1,2126,1,0,0},nBindState = -2,nCount=1,nRate=15},
 				{szName = "Phiªn Vò ",																tbProp={0,10,7,1,0,0},nCount=1,nRate=15,nExpiredTime=60*24*30,nBindState = -2},
 		}
