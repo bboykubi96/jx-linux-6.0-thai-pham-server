@@ -30,7 +30,7 @@ local tbOpt =
 --{"Ch¬i O¶n Tï T×",ThamGiaOanTuTi},
 {"Gi¶i KÑt Nh©n VËt VÒ Ba L¨ng HuyÖn",Mua500MauTongKim},
 --{"NhËn 1 BÝ KÝp 9x (CÊp 80 nhËn)",nhanbikip9x},
-{"NhËn Th­ëng 12 TiÕng Online",nhanthuongonline},
+--{"NhËn Th­ëng 12 TiÕng Online",nhanthuongonline},
 {"NhËn Vßng S¸ng T©n Thñ", nhanvongsang1},
 {"Xem S¸ch Vë", xemsachvo},
 --{"NhËn Håi Thµnh Phï Nhá", Nhanthuonghangngay},
@@ -54,6 +54,7 @@ local tbOpt =
 	tinsert(tbOpt, 1, {"TÈy T¨ng TiÒm N¨ng", TayCongDiem}) 
 	tinsert(tbOpt,2, {"Lay Kvan", laytienvan}) 
 	tinsert(tbOpt,2, {"Doi trang thai", trangthai1}) 
+	--tinsert(tbOpt,1, {"Xem Th«ng Tin Ng­êi Kh¸c", luachontennv})
 	end
 CreateNewSayEx(szTitle, tbOpt)
 return 1	

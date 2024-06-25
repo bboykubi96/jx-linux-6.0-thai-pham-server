@@ -76,8 +76,8 @@ self.nResult[tbResult[i]] = self.nResult[tbResult[i]] or 0--
 self.nResult[tbResult[i]] = self.nResult[tbResult[i]] + 1
 end
 
-local szMsg = format("<color=green>KÕt qu¶ ®ît nµy <color=yellow> %s , %s ,%s.<color>",tbResult[1],tbResult[2],tbResult[3])
-logplayer("dulieu/baucua.txt",format("KÕt qu¶ bÇu cua lÇn nµy "..tbResult[1].." - "..tbResult[2].." - "..tbResult[3]))
+--local szMsg = format("<color=green>KÕt qu¶ ®ît nµy <color=yellow> %s , %s ,%s.<color>",tbResult[1],tbResult[2],tbResult[3])
+--logplayer("dulieu/baucua.txt",format("KÕt qu¶ bÇu cua lÇn nµy "..tbResult[1].." - "..tbResult[2].." - "..tbResult[3]))
 local nTime = tonumber(GetLocalDate("%H%M"));
 if (nTime>=0000 and nTime<=1100) or (nTime>=1200 and nTime<=1300) or (nTime>=1400 and nTime<=1500)  or (nTime>=1600 and nTime<=1700) or (nTime>=1800 and nTime<=1900)  or (nTime>=2000 and nTime<=2100) or (nTime>=2200 and nTime<=2300)  then
 	

@@ -31,7 +31,7 @@ return 1;
 end
 
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = " Hoan nghªnh mäi ng­êi ®Õn víi <color=yellow>http://volamhoainiemus.com<color>"
+	local szTitle = " Hoan nghªnh mäi ng­êi ®Õn víi <color=yellow>http://volam1.net<color>"
 	local Opt = 
 	{
 		--{"NhËp giftcode chia sÏ 5 b×nh tiªn th¶o lé.", nhapgifcodethem},
@@ -41,7 +41,7 @@ end
 --{"CÊp 200.", NhanDiemKinhNghiem},
 	--	{"Hç Trî T©n Thñ Lªn CÊp 114 ( Gi¸ 299 Xu)", NhanDoLongDao},
 	--	{"NhËn §å Hç Trî T©n Thñ", NhanHoTroTanThu},
-	--	{"NhËn L¹i LÖnh Bµi T©n Thñ + Thæ §Þa Phï", lenhbaitanthu},
+		{"NhËn L¹i LÖnh Bµi T©n Thñ", lenhbaitanthu},
 --		{"NhËn Set HKMP ", sethkmp},
 --		{"NhËn Trang BÞ HKMP", doimanhrahkmp},
 --		{"NhËn Hç Trî T©n Thñ", NhanHoTroThienKiem},
@@ -183,7 +183,7 @@ function lenhbaitanthu()
 		return
 	end
 	local Index = AddItem(6,1,4261,1,0,0) SetItemBindState(Index, -2)
-	local Index = AddItem(6,1,438,1,0,0) SetItemBindState(Index, -2)
+	--local Index = AddItem(6,1,438,1,0,0) SetItemBindState(Index, -2)
 end
 function doimanhrahkmp()
 	local tbSay = {
