@@ -12,49 +12,17 @@ Include("\\script\\event\\storm\\logout.lua")	--Storm
 Include("\\script\\misc\\vngpromotion\\ipbonus\\ipbonus_2_head.lua");
 Include("\\script\\global\\playerlist.lua")
 Include("\\script\\global\\logout_head.lua")
-Include("\\script\\fwcloud\\nguyetcadao\\logout_nguyet_ca.lua")
-Include("\\script\\rank\\xephang.lua")
-Include("\\script\\rank\\vngtop10.lua")
-Include("\\script\\rank\\vngglobalvar.lua")
-IncludeLib("RELAYLADDER");
-IncludeLib("FILESYS")
-Include("\\script\\vng_lib\\files_lib.lua")
-Include("\\script\\lib\\remoteexc.lua")
+--Include("\\script\\t9team\\t9_hwid_head.lua")
+Include("\\script\\miniskill\\init_miniskill.lua")
 
-function setonline()
-nServer = GetExtPoint(2)
---Msg2Player(nServer)
-if nServer < 2 then
-AddExtPoint(2,2)
-end
-end
-
+Include("\\script\\global\\g7vn\\limitaccountperip.lua");
+Include("\\script\\global\\quanlygame\\sukien\\vantieubanghoi\\vantieubanghoi.lua")
 
 function main()
-if GetTask(5566) > 0 then
-SetTask(5566,0)
-RemoteExc("\\script\\hwid_s3\\hwid_s3.lua", "hwid_s3:Remove_Count", {GetName()})
-end
-
---setonline()
---DynamicExecuteByPlayer(PlayerIndex, "\\script\\worldrank\\xephang.lua", "XepHang") -- xep hang luu xuong
-tbTop10:LuuDSNhanVat()
-tbTop10:SapXepDSXepHang()
-XepHang()
-if GetTaskTemp(150) == 1 then	---- set lai cho nguyet ca dao--
-SetDeathScript("")
-RestoreOwnFeature()
-ForbitSyncName(PIdx2NpcIdx(PlayerIndex), 0)
-SetFightState(0)
-	LeaveTeam()
-	SetPunish(1);	-- khong len pk
-	SetPKFlag(0)	-- chuyen pk chien dau
-	ForbidChangePK(0);	-- khong duoc doi pk
-	SetTaskTemp(150,0)
-logout_ncd()
-end
-
-
+	del_timer_mns()
+dofile("script/global/logout.lua")
+	LimitAccountPerIP:Logout()
+--	dologouttk()
 	if GetTask(5859) > 0 then
 	AddTieuBang1()
 	SetTask(5859,0)

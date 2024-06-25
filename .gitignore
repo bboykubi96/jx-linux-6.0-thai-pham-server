@@ -35,6 +35,7 @@ jxser/server1/servershutdown_log
 storage/
 jxser/server1/dulieu/rank.txt
 jxser/server1/worldrank/subcribers.txt
+<<<<<<< HEAD
 server1/Logs/*.txt
 server1/Logs/*/*.txt
 jxser/server1/script/???????/*
@@ -64,3 +65,5 @@ jxser/server1/script/????????/*
 jxser/server1/settings/??????.xls
 jxser/server1/settings/battles/maps/river/???2.txt
 jxser/server1/settings/npcres_simple/*
+=======
+>>>>>>> b8407b43c8d182fbeb523e6a204305afa2868f0f

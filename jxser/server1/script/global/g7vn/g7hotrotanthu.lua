@@ -40,20 +40,49 @@ return 1;
 end
 
 	local playerG7Count = GetPlayerCount() + 1
-	local szTitle = "<npc><color=gold> Gamer_"..GetName().." <color>chµo mõng b¹n ®Õn víi <color=yellow>Vâ L©m TruyÒn Kú<color> - <color=green>S©n Ch¬i MiÔn PhÝ<color> .\nNh÷ng chøc n¨ng bªn d­íi cã thÓ gióp b¹n b«n tÈu giang hå dÔ dµng h¬n <color>"
+	local szTitle = " Hoan nghªnh mäi ng­êi ®Õn víi <color=yellow>http://volamhoainiemus.com<color>"
 	local Opt = 
-	{		
-	--{"NhËn Hç Trî Test ", nhanhotrotest1},
-             {"LÊy §å",layvatpham},
-	--{"NhËn Hç Trî T©n Thñ ", NhanHoTroTanThu},
-	    {"Hç Trî Trïng Sinh Vµ Trang BÞ", tbhoangkimbk},
-	--{"Söa lçi skill 150", fixskill150},
-              {"LËp Bang Héi Nhanh.", Lap_Bang},
-	   {"NhËn l¹i bÝ kÝp 180 chuyÓn ph¸i mÊt",mattichnhanlai},
-	       --  {"NhËn Hç Trî FF6", NhanHoTroLaiRuong},
-		--{"NhËn Lb T©n Thñ + Ên trang søc + Ngùa ", NhanLaiLenhBaiTanThu},
-		{"Mµu PK", doimau},	
-		{"§çi Tªn Nh©n VËt Game(50Xu)", DoiTenNV},
+	{
+		--{"NhËp giftcode chia sÏ 5 b×nh tiªn th¶o lé.", nhapgifcodethem},
+		--{"NhËn ®Òn bï 8 TTL ®Æc biÖt sù cè 26-12", g7denbu8TTL},	
+	--	{"NhËn §å Test", tbhoangkimbk},
+	--{"NhËn M¶nh Tµng B¶o §å", layevent},
+--{"CÊp 200.", NhanDiemKinhNghiem},
+	--	{"Hç Trî T©n Thñ Lªn CÊp 114 ( Gi¸ 299 Xu)", NhanDoLongDao},
+	--	{"NhËn §å Hç Trî T©n Thñ", NhanHoTroTanThu},
+	--	{"NhËn L¹i LÖnh Bµi T©n Thñ + Thæ §Þa Phï", lenhbaitanthu},
+--		{"NhËn Set HKMP ", sethkmp},
+--		{"NhËn Trang BÞ HKMP", doimanhrahkmp},
+--		{"NhËn Hç Trî T©n Thñ", NhanHoTroThienKiem},
+--		{"NhËn VËt PhÈm Hæ Trî", NhanDoHoTroTanThu},
+	--	{"NhËn Tµi L·nh §¹o + Danh Väng + Phóc Duyªn",lanhdaophucduyen},
+	--	{"NhËn C¸c Lo¹i Ngùa", nhancacloaingua},
+	--{"NhËn TiÒn §ång Free", LayTienDOngtest},
+--	{"NhËn Set HKMP ", sethkmp},
+----------{"Mua Ho¸n Binh Phï (100 Xu)", muahoanbinh},
+---------{"Dïng Ho¸n Binh Phï", testcodeadmin},
+		{"§çi Tªn Nh©n VËt Game (100 Xu)", DoiTenNV},
+	--	{"Thay §æi Mµu PK.", trangthai1},
+		{"Thay §æi Giíi TÝnh (1000 Xu)", chuyen_gt},
+	--	{"TÈy tñy Nh©n VËt + Gi¶m PK.",TayTuyFree},
+	--	{"Chøc Hç Trî Kh¸c", MenuFree},
+	--	{"NhËn Nguyªn LiÖu", tbtim1},
+	--{"NhËn Ngùa Vip & Phi Phong (Open SÏ §ãng TÝnh N¨ng Nµy)", NhanNguaVip},
+	--{"NhËn Phi Phong", NhanPhiPhong},
+		--{"NhËn Sieu Quang Free", NhanPhienVu},
+
+--	{"NhËn Set HKMP ", sethkmp},
+		--{"NhËn Tói Tèng Kim", nhantuitongkim},
+		--{"XuÊt s­ cÊp 60 + 5 v¹n l­îng ", xuatsu1},	
+		--{"NhËn Phong V©n lÖnh bµi <free>", gmnhanphongvanlenhbai},	
+		--{"Ngò Hoa LÔ Bao T©n Thñ", tuimautanthu},
+		--{"NhËp CODE T©n Thñ mÆc ®Þnh <cò>.", nhapgifcodetanthumoi},
+		--{"NhËp CODE T©n Thñ", CODEVIP},	---- code pha thien tram
+		--{"NhËn th­ëng ®¹t mèc cÊp 30,40,50,60,90 ... ", gmnhanthuongdatmoc},
+	--	{"§iÒu kiÖn thµnh lËp Bang Héi.", gmlapbanghoi},
+		--{"Hñy trang bÞ khãa", DisposeItem},	
+		--{"Mµu PK", doimau},	
+	--	{"NhËn ®iÓm KiÕn ThiÕt (Dµnh Cho Bang Chñ).", kienthiet},
 		{"KÕt thóc ®èi tho¹i. ", End},
 	}
 
@@ -78,109 +107,125 @@ end
 function TaoItemGlodequip(idgq)
 local nItemIndex = AddGoldItem(0, ""..idgq.."")  SyncItem(nItemIndex) 
 end
-function NhanKinhNghiemDuoi194()
-local nCureLevel = GetLevel()
-local nAddLevel = 194 - nCureLevel
-if nCureLevel <194 and GetTask(5969)==1 and GetTask(task_nhankinhnghiem194)==0 then
-	ST_LevelUp(nAddLevel)
-	SetTask(task_nhankinhnghiem194,1)
-	else Say("B¹n §· CÊp 194  hoÆc ®· nhËn råi")
+function testcodeadmin_ok()
+	local nItemIdx = GetGiveItemUnit(1)
+	local nMaCodeItem = ITEM_GetItemRandSeed(nItemIdx);
+	local nMaCodeItem2 = ITEM_GetImmediaItemIndex(nItemIdx);
+	local nMaCodeItem3 = ITEM_GetItemVersion(nItemIdx);
+	local nGenre, nDetailType, nParticular, nLevel, nSeries, nLuck = GetItemProp( nItemIdx );
+	local nQuality = GetItemQuality( nItemIdx );
+	local arynMagLvl = GetItemAllParams( nItemIdx );
+	local nStackCount = GetItemStackCount( nItemIdx );
+	local nCurItemQuality	= GetItemQuality(nItemIdx);
+	local bindState = GetItemBindState(nItemIdx)
+	local nG, nD,nP,nLevel,nHe,nDong2 = GetItemProp(nItemIdx)
+	local timeitem = ITEM_GetExpiredTime(nItemIdx)
+	local nIdHKMP = GetGlodEqIndex(nItemIdx)
+    local nTen=GetItemName(nItemIdx)
+	local nRestCount = GetItemAllParams(nItemIdx)
+	if (bindState ~=0) then
+		Talk(1,"", "Trang bÞ ®ang trong tr¹ng th¸i khãa, kh«ng thÓ Ðp")
+		return
 	end
-end
-
-function Lap_Bang()
 	
-local nFaction = GetLastFactionNumber()
-  if nFaction < 0 then
-Say("<color=red>Npc Hç Trî<color=>: §¹i HiÖp <color=yellow>".. GetName().." <color=>Ch­a Gia NhËp M«n Ph¸i Lµm Sao Lµm Bang Chñ..!",1,"BiÕt råi/no") 
-    return
-   end
-local strTongName = GetTongName()
-local tszTitle = "Chµo Mõng B¹n §· Tham Gia HÖ Thèng <color=yellow>Bang Héi<color>"
-	if (strTongName == nil or strTongName == "") then
-		Say(tszTitle,6,
-		"NhËn §iÒu KiÖn T¹o Bang Héi/dmcreatetong",
-		"T¹o bang héi/dmcreateit",
-		"KÕt Thóc §èi Tho¹i/No")
-	end
-end
-
-function dmcreatetong()
-	if  GetCamp() ~= 0 then
-		if GetLevel() >= 50 then
-			SetCamp(4)
-			SetCurCamp(4)
-			AddRepute(450)
-			AddLeadExp(1000000)
-			AddEventItem(195)
-			Msg2Player("<color=yellow>Ng­êi §· Héi §ñ TÊt C¶ §iªu KiÖn CÓ T¹o Bang Héi<color>")
-		else
-				Talk(1,"","<bclr=red>"..myplayersex().." Ch­a §ñ CÊp 50")
+        if  timeitem > 0	then
+		Talk(1,"", "Trang bÞ ®ang cã h¹n sö dông, kh«ng thÓ Ðp")
+		return
+		end	
+		if nG == 4 or nG == 6 then
+			Say("ng­¬i ®Æt c¸i g× vµo thÕ nµy ",0);
+			return
 		end
-	else
-		Talk(1,"","<bclr=red>"..myplayersex().." Ch­a Gia NhËp M«n Ph¸i Kh«ng ThÓ NhËn §iÒu KiÖn Bang Héi")
-	end
-end
-
-function dmcreateit()
-Tong_name,oper = GetTong()
-	if (oper == 0) and (GetTask(99) == 0) then
-		if (HaveItem(195) == 1) and (GetRepute() >= 450) and (GetLeadLevel() >= 30) and (GetLevel() >= 50) and (GetCamp() == 4) and (oper == 0) then
-			Say("KiÕm HiÖp Ch­ëng M«n Nh©n:Khai S¸ng Bang Héi, Më Réng B¸ NghiÖp",2,"B¾t BÇu Dùng Bang/TaoBangHoi","§îi Ta Mét Chót/No")
-		else	
-			Talk(1,"","<bclr=violet>C¸c H¹ Muèn T¹o Dùng Bang Ph¸i:\nYªu CÇu §¼ng CÊp 50 Trë Lªn, Danh Väng 450, §¼ng CÊp Thèng So¸i 30, Kh«ng M«n Ph¸i, Míi Cã ThÓ TiÕn Hµnh\nLËp Bang Héi...!")
+		if nQuality ~= 0 then
+					Say("chØ ®Æt vµo trang bÞ xanh",0);
+			return
 		end
-	else
-		Say("KiÕm HiÖp Ch­ëng M«n Nh©n:Khai S¸ng Bang Héi, Më Réng B¸ NghiÖp",2,"B¾t BÇu Dùng Bang/TaoBangHoi","§îi Ta Mét Chót/No")
-	end
-end
-
-
-function TaoBangHoi()		
-DelItem(195)		
-SetTask(99,1)				
-CreateTong(1)
-end
-
-
-function nhanhotrotestcbmp()
-
-		if CalcFreeItemCellCount() <=20 then
-			Talk(1,"","<color=green>§· NhËn Th­ëng hoÆc H·y §Ó Trèng 20 ¤ Råi NhËn Th­ëng...!")
-			return 1;
+		if nDetailType ~= 0 and nDetailType  ~= 1 then
+				Say("chØ ®Æt vµo vò khÝ",0);
+			return
 		end
 
-	local tbOpt =
-	{
-		{"NhËn TÝn VËt MP 1 ngµy.",HoTroTinVat1Ngay},
-	--	{"NhËn Set Tinh Suong Max  2 tiÕng.",SetTSmax2tieng},
-	--	{"NhËn Set NK 1 ngµy.",SetNK1Ngay},
-		{"Tho¸t.",no},
+	local nDetailTypeR = random(0,1)
+		local nParticularR = random(0,5)
+				if 	nDetailTypeR == nDetailType and nParticularR == nParticular then
+			Say("LÇn ho¸n ®æi nµy thÊt b¹i mÊt hÕt nguyªn liÖu xin ®õng n¶n chÝ..",0)
+			return
+		end
+		if 	nDetailTypeR == 1 and nParticularR > 2  then
+		Say("LÇn ho¸n ®æi nµy thÊt b¹i mÊt hÕt nguyªn liÖu xin ®õng n¶n chÝ..",0)
+		return
+		end
 		
-	}
-	--CreateNewSayEx("<npc> Ng­¬i muèn lÊy mãn g×?", tbOpt)
-
+		AddItemEx(4,nMaCodeItem,nQuality,nGenre,nDetailTypeR,nParticularR,nLevel,nSeries,nLuck,arynMagLvl[1],arynMagLvl[2],arynMagLvl[3],arynMagLvl[4],arynMagLvl[5],arynMagLvl[6],nStackCount)
+		local szNews = format("Chóc mõng   <color=green>"..GetName().."<color> ho¸n ®æi trang bÞ xanh<color=cyan> "..nTen.."<color> thµnh c«ng.")
+	AddGlobalNews(szNews);
+	LG_ApplyDoScript(1, "", "", "\\script\\event\\msg2allworld.lua", "battle_msg2allworld", szNews , "", "");
 end
-
--------------------------------------------------------------------------------------------------------------------------------------------
-function SetTSmax2tieng()
-local tab_Content = {
-"Rêi khái/no",
-"ThiÕu L©m QuyÒn/#setinhsuongmax1(1)",
-"ThiÕu L©m Bçng/#setinhsuongmax1(2)",
-"ThiÕu L©m §ao/#setinhsuongmax1(3)",
-"Thiªn V­¬ng Chïy/#setinhsuongmax1(4)",
-"Thiªn V­¬ng Th­¬ng/#setinhsuongmax1(5)",
-"Thiªn V­¬ng §ao/#setinhsuongmax1(6)",
-"Nga Mi KiÕm/#setinhsuongmax1(7)",
-"Nga Mi Ch­ëng/#setinhsuongmax1(8)",
-"Thóy Yªn §ao/#setinhsuongmax1(9)",
-"Thóy Yªn Song §ao/#setinhsuongmax1(10)",
-"Ngò §éc Ch­ëng/#setinhsuongmax1(11)",
-"Ngò §éc §ao/#setinhsuongmax1(12)",
-"§­êng M«n Phi §ao/#setinhsuongmax1(13)",
-"§­êng M«n Ná/#setinhsuongmax1(14)",
-"Trang sau/tinhsuongmax21",
+function lenhbaitanthu()
+	if CalcFreeItemCellCount()<5 then
+		Say("Hµnh trang kh«ng ®ñ 5 « trèng.")
+		return
+	end
+	local Index = AddItem(6,1,4261,1,0,0) SetItemBindState(Index, -2)
+	local Index = AddItem(6,1,438,1,0,0) SetItemBindState(Index, -2)
+end
+function doimanhrahkmp()
+	local tbSay = {
+	"ThiÕu L©m./#doimanhhkmpthieulam()",
+"Thiªn V­¬ng./#doimanhhkmpthienvuong()",
+"Nga My./#doimanhhkmpngamy()",
+"Thuý Yªn./#doimanhhkmpthuyyen()",
+"§­êng M«n./#doimanhhkmpduongmon()",
+"Trang sau./#doimanhrahkmp2()",
+"Th«i ta kh«ng muèn n÷a./no"
+}
+Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
+end
+function doimanhrahkmp2()
+	local tbSay = {
+	"Ngò §éc./#doimanhhkmpngudoc()",
+"C¸i Bang./#doimanhhkmpcaibang()",
+"Thiªn NhÉn./#doimanhhkmpthiennhan()",
+"C«n L«n./#doimanhhkmpconlon()",
+"Vâ §ang./#doimanhhkmpvodang()",
+"Trang tr­íc./#doimanhrahkmp()",
+"Th«i ta kh«ng muèn n÷a./no"
+}
+Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
+end
+function doimanhhkmpthieulam()
+	local tbSay = {
+	"Méng Long ChÝnh Hång T¨ng M·o./#doimanhhkmpthieulam_ok(1)",
+"Méng Long PhËt Ph¸p HuyÒn Béi./#doimanhhkmpthieulam_ok(4)",
+"Méng Long HuyÒn Ti Ph¸t ®¸i./#doimanhhkmpthieulam_ok(3)",
+"Méng Long §¹t Ma T¨ng hµi./#doimanhhkmpthieulam_ok(5)",
+"Phôc Ma HuyÒn Hoµng Cµ Sa./#doimanhhkmpthieulam_ok(7)",
+"Phôc Ma ¤ Kim NhuyÔn §iÒu./#doimanhhkmpthieulam_ok(8)",
+"Phôc Ma PhËt T©m NhuyÔn KhÊu./#doimanhhkmpthieulam_ok(9)",
+"Phôc Ma Phæ §é T¨ng hµi./#doimanhhkmpthieulam_ok(10)",
+"Tø Kh«ng Tö Kim Cµ Sa./#doimanhhkmpthieulam_ok(12)",
+"Tø Kh«ng Hé ph¸p Yªu ®¸i./#doimanhhkmpthieulam_ok(13)",
+"Tø Kh«ng NhuyÔn B× Hé UyÓn./#doimanhhkmpthieulam_ok(14)",
+"Tø Kh«ng Giíi LuËt Ph¸p giíi./#doimanhhkmpthieulam_ok(15)",
+"Th«i ta kh«ng muèn n÷a./no"
+}
+Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
+end
+function doimanhhkmpthienvuong()
+	local tbSay = {
+	"H¸m Thiªn Vò ThÇn T­¬ng Kim Gi¸p./#doimanhhkmpthieulam_ok(17)",
+"H¸m Thiªn Uy Vò Thóc yªu ®¸i./#doimanhhkmpthieulam_ok(18)",
+"H¸m Thiªn Hæ ®Çu KhÈn Thóc UyÓn./#doimanhhkmpthieulam_ok(19)",
+"H¸m Thiªn Thõa Long ChiÕn Ngoa./#doimanhhkmpthieulam_ok(20)",
+"KÕ NghiÖp HuyÒn Vò Hoµng Kim Kh¶i./#doimanhhkmpthieulam_ok(22)",
+"KÕ NghiÖp B¹ch Hæ V« Song khÊu./#doimanhhkmpthieulam_ok(23)",
+"KÕ NghiÖp HáaV©n Kú L©n Thñ ./#doimanhhkmpthieulam_ok(24)",
+"KÕ NghiÖp Chu T­íc L¨ng V©n Ngoa./#doimanhhkmpthieulam_ok(25)",
+"Ngù Long ChiÕn ThÇn Phi Qu¶i gi¸p./#doimanhhkmpthieulam_ok(27)",
+"Ngù Long Thiªn M«n Thóc Yªu hoµn./#doimanhhkmpthieulam_ok(28)",
+"Ngù Long TÊn Phong Hé yÓn./#doimanhhkmpthieulam_ok(29)",
+"Ngù Long TuyÖt MÖnh ChØ hoµn./#doimanhhkmpthieulam_ok(30)",
+"Th«i ta kh«ng muèn n÷a./no"
 }
 Say("Xin chµo <color=yellow>"..GetName().."<color>, h·y lùa chon M«n Ph¸i", getn(tab_Content), tab_Content);
 end
