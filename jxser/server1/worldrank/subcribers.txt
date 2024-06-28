@@ -1,3 +1,6 @@
 Name	TransLife	CurrentLevel	CurrentExp	CurrentExpPercent
+eqweqweq	5	150	0	0
 hoasonn	0	200	0	0
 testhoason	0	150	0	0
+testtttt	5	150	1e-09	0
+123456	5	1	0	0

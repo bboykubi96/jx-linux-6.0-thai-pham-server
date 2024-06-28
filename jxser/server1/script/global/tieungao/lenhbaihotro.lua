@@ -20,522 +20,60 @@ local szTitle =  "B¹n §ang Cã <color=red>"..GetTask(747).."<color> §iÓm TÝch Lòy
 
 local tbOpt = 
 {
---{"NhËn Hç Trî T©n Thñ",NhanHoTroTanThu},
---{"Xem Th«ng Tin Ng­êi Kh¸c", luachontennv},
---{"Chøc N¨ng Më Khãa §å §· §Ýnh.", MoKhoaDinh },
---{"Khãa VËt PhÈm",KhoaVatPham},
---{"NhËn Trang BÞ HKMP",doimanhrahkmp},
---{"Ch¬i O¶n Tï T×",ThamGiaOanTuTi},
-{"Gi¶i KÑt Nh©n VËt VÒ Ba L¨ng HuyÖn",Mua500MauTongKim},
---{"NhËn 1 BÝ KÝp 9x (CÊp 80 nhËn)",nhanbikip9x},
-{"NhËn Th­ëng 12 TiÕng Online",nhanthuongonline},
-{"NhËn Vßng S¸ng T©n Thñ", nhanvongsang1},
-{"Xem S¸ch Vë", xemsachvo},
---{"NhËn Håi Thµnh Phï Nhá", Nhanthuonghangngay},
---{"NhËn Th­ëng H»ng Ngµy", testdo},
---{"NhËn VËt PhÈm Hæ Trî", NhanDoHoTroTanThu},
---{"NhËn Tµi L·nh §¹o Vµ Danh Väng",lanhdao},
---{"Mua 1 Tói tÝch lòy Tèng Kim(10k §iÓm)",MuaTuiTichLuyTongKim},
---{"NhËn Trang BÞ Hç Trî",NhanDoHoTro},
-{"Tiªu Hñy VËt PhÈm",huyVPkhoa},
---{"TÈy T¨ng TiÒm N¨ng", TayCongDiem},
---{"LÊy 50 ngµn v¹n.", laytienvan},
---{"NhËn Phi Tèc LÖnh Bµi.", NhanChienCo },
---{"Häc L¹i Khinh C«ng.", AddMagic(210,1) },
+--{"Move Vinh Lac Tran.", goto_ba_lang},
 
---{"NhËn Khiªu chiÕn lÖnh.", NhanKhieuChienLenh },
---{"Chøc N¨ng Më Khãa §å §· §Ýnh.", MoKhoaDinh },
---{"Tra TiÒm N¨ng Ng­êi Kh¸c", NhapTenNguoiCanXem},
+
+{"Mua m¸u xu khãa.", ShopXuKhoaLeQuan},
+
+{"Mua M¸u B»ng TiÒn V¹n",MuaTuiMauTienVan},
+{"Chøc N¨ng Më Khãa §å §· §Ýnh.", MoKhoaDinh },
+{"KÝch ho¹t l¹i vßng s¸ng bÞ LAG.", kichhoat},
+{"NhËn Tµi L·nh §¹o Vµ Danh Väng",lanhdao},
+{"NhËn Khiªu chiÕn lÖnh.", NhanKhieuChienLenh },
+{"Tiªu Hñy VËt PhÈm",huyVPkhoa},
+--{"Shop TiÒn V¹n",ShopTienVan},
+--{"NhËn Hç Trî T©n Thñ",NhanHoTroTanThu},
+--{"Ch¬i O¶n Tï T×",ThamGiaOanTuTi},
+--{"Mua 10 Cµn Kh«n T¹o Hãa §an(500 §iÓm Tèng Kim)",MuaCanKhonTaoHoaDan},
+--{"Mua 1 Tói tÝch lòy Tèng Kim(11000 §iÓm Tèng Kim)",MuaTuiTichLuyTongKim},
+
+--{"Admin test",sonht},
+
+--{"TÈy T¨ng TiÒm N¨ng", TayCongDiem},
+--{"10 ngµn v¹n.", laytienvan},
+--{"Häc L¹i Khinh C«ng.", AddMagic(210,1) },
+--{"NhËn Phi Tèc LÖnh Bµi.", NhanChienCo },
+
+
 {"Tho¸t"},
 }
-	if GetAccount() == "testgame4" then
-	tinsert(tbOpt, 1, {"TÈy T¨ng TiÒm N¨ng", TayCongDiem}) 
-	tinsert(tbOpt,2, {"Lay Kvan", laytienvan}) 
-	tinsert(tbOpt,2, {"Doi trang thai", trangthai1}) 
-	end
+
+if GetSkillState(1502) > 0 or GetSkillState(1503) > 0 or GetSkillState(1504) > 0 or GetSkillState(1505) > 0 then 
+tinsert(tbOpt, 1, {"KÝch ho¹t vßng s¸ng liªn ®Êu", kickhoatvongsangliendau}) 
+end
+
+if GetAccount()  == "" or GetAccount() =="" or GetAccount() =="" then
+		--tinsert(tbOpt, 1, {"Chøc N¨ng Më Khãa §å §· §Ýnh", MoKhoaDinh}) 
+			
+		tinsert(tbOpt, 1, {"ADM Move=>CTC...", vitri_congthanh}) 
+		tinsert(tbOpt, 2, {"Thay §æi Tr¹ng Th¸i", trangthai}) 
+
+end
+
+
 CreateNewSayEx(szTitle, tbOpt)
+
 return 1	
 end
 
-function nhanthuongonline()
-	OnlineAward_SummaryOnlineTime()
-OnlineAward_StartTime()
---UseTownPortal(0)
---IsDisabledUseTownP()=0
---Msg2Player(IsDisabledUseTownP() )
-local nHour, nMin, nSec = OnlineAward_ShowTime()
-	local nDate = tonumber(GetLocalDate("%m%d"))
-	if ( GetTask(3077) ~= nDate ) then
-		SetTask(3077, nDate)
-		SetTask(3078, 0)
-	end
-if nHour>=12 and GetTask(3078)==0 then
-	FuYuan_Start();
-		FuYuan_Add( 5 );
-		AddRepute(5)
-	SetTask(3078,1)
-else
-	Say("B¹n ch­a online ®ñ 12 tiÕng hoÆc ®· nhËn th­ëng råi.")
-	return
-end
-end
-function nhanbikip9x()
-	if GetLevel()>=80 then
-		if GetTask(3031)==0 then
-			SetTask(3031,1)
-				local award1111  ={
-{
 
-		{szName="BÝ Kip 9x",tbProp={6,1,2426,1,1},nCount=1,nBindState=-2},
-	},
-	
-}
-tbAwardTemplet:GiveAwardByList(award1111, "PhÇn Th­ëng");
-		else
-		Say("Mçi nh©n vËt chØ nhËn ®­îc 1 lÇn duy nhÊt.")
-		return
-		end
-	else
-		Say("CÊp ®é 80 míi nhËn ®­îc.")
-		return
-	end
-
-end
-function xemsachvo()
-	Msg2Player("<color=green>§¹i hiÖp ®É sö dông:\n"..GetTask(80)..": Vâ L©m MËt TÞch\n"..GetTask(81)..": TÈy Tñy Kinh<color>")
-end	
-function trangthai22()
-local tbSay = {}
-tinsert(tbSay,"GM Èn Th©n.../GManthan")
-tinsert(tbSay,"GM HiÖn Th©n.../XoaSkillGM")
-tinsert(tbSay,"Nh©n VËt Ch÷ Tr¾ng./mautrang")
-tinsert(tbSay,"ChiÕn §Êu/ChienDau")
-tinsert(tbSay,"Phi ChiÕn §Êu/PhiChienDau")
-tinsert(tbSay,"Tho¸t/no")
-Say("Xin chµo <color=yellow>"..GetName().."<color>, H·y chän tr¹ng th¸i mµ b¹n muèn !", getn(tbSay), tbSay)
-end
-function mautrang()
-SetCurCamp(0)
-SetCamp(0)
+function mokhoa1()
+	--ResetBox:ConfirmResetBox()
+	SetTask(3000,2)
 end
 
-function ChienDau()
-SetFightState(1)
-end
+---------------------------------------------------------------
 
-function PhiChienDau()
-SetFightState(0)
-end
-function GManthan()
-AddMagic(732,20)
-AddMagic(733,20)
-Msg2Player("<color=pink>Chóc Mõng B¹n §· Häc §­îc Skill GM...")
-end
-
-function XoaSkillGM()
-DelMagic(732,20)
-DelMagic(733,20)
-DelMagic(1003,20)
-DelMagic(1310,20)
-Msg2Player("B¹n §· Xãa Kü N¨ng GM Thµnh C«ng")
-end
-
-function nhanvongsang1()
-	if GetLevel()>=79 then
-		Say("ChØ nhËn ®­îc ®Õn cÊp 80")
-		return
-	end
-	if GetSkillState(1995)>=1 then
-		RemoveSkillState(1995,20,3,1555200,0) --559872000 (old number)
-	end
-		PlayerFunLib:AddSkillState(1995,20,3,18*60*60*24,0)
-end
- 
-function trangthai1()
-	local tbOpt =
-	{
-		{"ChÝnh ph¸i - Mµu Vµng", mauvang},
-		{"Trung lËp - Mµu Xanh", mauxanh},
-		{"Tµ ph¸i - Mµu TÝm", mautim},
-		{"S¸t Thñ - Mµu ®á xuÊt x­", maudo},
-		{"Tho¸t/0"},
-	}
-	CreateNewSayEx("<npc>Xin Chän Mµu", tbOpt)
-end
-function mauvang()
-		SetCurCamp(1)
-		SetCamp(1)
-		SetPKFlag(4)
-		ForbidEnmity(1)
-		SetFightState(2)
-		SetPunish(1)
-end
-function mautim()
-		SetCurCamp(2)
-		SetCamp(2)		
-		SetPKFlag(4)
-		ForbidEnmity(1)
-		SetFightState(2)
-		SetPunish(0)
-end
-function mauxanh()
-		SetCurCamp(3)
-		SetCamp(3)		
-		ForbidEnmity(1)
-		SetPunish(0)
-end
-function maudo()
-		SetCurCamp(4)
-		SetCamp(4)		
-		ForbidEnmity(1)
-		SetPunish(0)
-end
-function testdo()
-local nDate2 = tonumber(GetLocalDate("%Y%m%d"));
-	local award1111  ={
-{
-
-		{szName="Tói m¸u t©n thñ",tbProp={6,1,4461,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-		{szName="S¸t Thñ Gi¶n",tbProp={6,1,400,90,random(0,4),0},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-		{szName="LÖnh bµi Vi S¬n §¶o",tbProp={6,1,2432,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-		{szName="Viªm §Õ LÖnh",tbProp={6,1,1617,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-		{szName="LÖnh bµi Phong L¨ng §é",tbProp={4,489,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-	},
-	
-}
-tbAwardTemplet:GiveAwardByList(award1111, "PhÇn Th­ëng");
-end
-	function Nhanthuonghangngay()
-	if CalcFreeItemCellCount()<20 then
-	Say("Hµnh trang kh«ng ®ñ 20 « trèng.")
-	return
-end
-local nDate2 = tonumber(GetLocalDate("%Y%m%d"));
-	local award1111  ={
-{
-
-	--	{szName="Tói m¸u t©n thñ",tbProp={6,1,4461,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-	--	{szName="S¸t Thñ Gi¶n",tbProp={6,1,400,90,random(0,4),0},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
---		{szName="LÖnh bµi Vi S¬n §¶o",tbProp={6,1,2432,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-	--	{szName="Viªm §Õ LÖnh",tbProp={6,1,1617,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-	--	{szName="LÖnh bµi Phong L¨ng §é",tbProp={4,489,1,1},nCount=1,nBindState=-2,nExpiredTime=nDate2+1},
-		{szName="Håi thµnh phï (nhá)",tbProp={6,1,1082,1,1},nCount=1,nBindState=-2,nExpiredTime=30*24*60},
-	},
-	
-}
-tbAwardTemplet:GiveAwardByList(award1111, "PhÇn Th­ëng");
-	
-	end
-function chucnangmod()
-	local tbSay = {
-	"Move TK -- CTC./#vitri_congthanh()",
-"Tµn H×nh./#GManthan()",
-"HiÖn H×nh./#XoaSkillGM()",
-"ChÝnh Ph¸i./#mauvang()",
-"Tµ Ph¸i./#mautim()",
-"Trung LËp./#mauxanh()",
-"S¸t Thñ./#maudo()",
-"Ch÷ Tr¾ng./#mautrang()",
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function mautrang()
-SetCurCamp(0)
-SetCamp(0)
-end
-function mauvang()
-SetCurCamp(1)
-SetCamp(1)
-end
-function mautim()
-SetCurCamp(2)
-SetCamp(2) 
-end
-function mauxanh()
-SetCurCamp(3)
-SetCamp(3) 
-end
-function maudo()
-SetCurCamp(4)
-SetCamp(4) 
-end
-function GManthan()
-AddMagic(732,20)
-AddMagic(733,20)
-Msg2Player("<color=pink>Chóc Mõng B¹n §· Häc §­îc Skill GM...")
-end
-
-function XoaSkillGM()
-DelMagic(732,20)
-DelMagic(733,20)
-DelMagic(1003.20)
-DelMagic(1310.20)
-Msg2Player("B¹n §· Xãa Kü N¨ng GM Thµnh C«ng")
-end
-function vitri_congthanh()
-local tab_Content = {
-		"Tèng - Kim/goto_tongkim",
-		"L©m An/goto_lam_an",
-		"BiÖn Kinh/goto_bien_kinh",		
-		"Thµnh §«/goto_thanh_do",
-		"T­¬ng D­¬ng/goto_tuong_duong",
-		"Ph­îng T­êng/goto_phuong_tuong",
-		"D­¬ng Ch©u/goto_duong_chau",
-		"§¹i Lý/goto_dai_ly",
-		"Ba L¨ng HuyÖn/goto_ba_lang",
-		
-		"KÕt thóc..!/No"
-	}
-	Say("ThÇn hµnh phï, ®i ®Õn n¬i ng­¬i muèn.", getn(tab_Content), tab_Content);
-end
-function goto_lam_an()
-SetFightState(1)
-NewWorld(930,1750,3394)
-end
-function goto_bien_kinh()
-SetFightState(1)
-NewWorld(927,1749,3388)
-end
-function goto_thanh_do()
-SetFightState(1)
-NewWorld(926,1712,3300)
-end
-function goto_tuong_duong()
-SetFightState(1)
-NewWorld(931,1710,3303)
-end
-function goto_phuong_tuong()
-SetFightState(1)
-NewWorld(929,1764,3513)
-end
-function goto_duong_chau()
-SetFightState(1)
-NewWorld(932,1728,3302)
-end
-function goto_dai_ly()
-SetFightState(1)
-NewWorld(928,1727,3295)
-end
-function goto_tongkim()
-SetFightState(0)
-NewWorld(380,1568,3195)
-end
-function goto_ba_lang()
-SetFightState(0)
-NewWorld(53,1598,3191)
-end
-function doimanhrahkmp()
-	local tbSay = {
-	"ThiÕu L©m./#doimanhhkmpthieulam()",
-"Thiªn V­¬ng./#doimanhhkmpthienvuong()",
-"Nga My./#doimanhhkmpngamy()",
-"Thuý Yªn./#doimanhhkmpthuyyen()",
-"§­êng M«n./#doimanhhkmpduongmon()",
-"Trang sau./#doimanhrahkmp2()",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhrahkmp2()
-	local tbSay = {
-	"Ngò §éc./#doimanhhkmpngudoc()",
-"C¸i Bang./#doimanhhkmpcaibang()",
-"Thiªn NhÉn./#doimanhhkmpthiennhan()",
-"C«n L«n./#doimanhhkmpconlon()",
-"Vâ §ang./#doimanhhkmpvodang()",
-"Trang tr­íc./#doimanhrahkmp()",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpthieulam()
-	local tbSay = {
-	"Méng Long ChÝnh Hång T¨ng M·o./#doimanhhkmpthieulam_ok(1)",
-"Méng Long PhËt Ph¸p HuyÒn Béi./#doimanhhkmpthieulam_ok(4)",
-"Méng Long HuyÒn Ti Ph¸t ®¸i./#doimanhhkmpthieulam_ok(3)",
-"Méng Long §¹t Ma T¨ng hµi./#doimanhhkmpthieulam_ok(5)",
-"Phôc Ma HuyÒn Hoµng Cµ Sa./#doimanhhkmpthieulam_ok(7)",
-"Phôc Ma ¤ Kim NhuyÔn §iÒu./#doimanhhkmpthieulam_ok(8)",
-"Phôc Ma PhËt T©m NhuyÔn KhÊu./#doimanhhkmpthieulam_ok(9)",
-"Phôc Ma Phæ §é T¨ng hµi./#doimanhhkmpthieulam_ok(10)",
-"Tø Kh«ng Tö Kim Cµ Sa./#doimanhhkmpthieulam_ok(12)",
-"Tø Kh«ng Hé ph¸p Yªu ®¸i./#doimanhhkmpthieulam_ok(13)",
-"Tø Kh«ng NhuyÔn B× Hé UyÓn./#doimanhhkmpthieulam_ok(14)",
-"Tø Kh«ng Giíi LuËt Ph¸p giíi./#doimanhhkmpthieulam_ok(15)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpthienvuong()
-	local tbSay = {
-	"H¸m Thiªn Vò ThÇn T­¬ng Kim Gi¸p./#doimanhhkmpthieulam_ok(17)",
-"H¸m Thiªn Uy Vò Thóc yªu ®¸i./#doimanhhkmpthieulam_ok(18)",
-"H¸m Thiªn Hæ ®Çu KhÈn Thóc UyÓn./#doimanhhkmpthieulam_ok(19)",
-"H¸m Thiªn Thõa Long ChiÕn Ngoa./#doimanhhkmpthieulam_ok(20)",
-"KÕ NghiÖp HuyÒn Vò Hoµng Kim Kh¶i./#doimanhhkmpthieulam_ok(22)",
-"KÕ NghiÖp B¹ch Hæ V« Song khÊu./#doimanhhkmpthieulam_ok(23)",
-"KÕ NghiÖp HáaV©n Kú L©n Thñ ./#doimanhhkmpthieulam_ok(24)",
-"KÕ NghiÖp Chu T­íc L¨ng V©n Ngoa./#doimanhhkmpthieulam_ok(25)",
-"Ngù Long ChiÕn ThÇn Phi Qu¶i gi¸p./#doimanhhkmpthieulam_ok(27)",
-"Ngù Long Thiªn M«n Thóc Yªu hoµn./#doimanhhkmpthieulam_ok(28)",
-"Ngù Long TÊn Phong Hé yÓn./#doimanhhkmpthieulam_ok(29)",
-"Ngù Long TuyÖt MÖnh ChØ hoµn./#doimanhhkmpthieulam_ok(30)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpngamy()
-	local tbSay = {
-	"V« Gian Thanh Phong Truy Y./#doimanhhkmpthieulam_ok(32)",
-"V« Gian PhÊt V©n Ti ®¸i./#doimanhhkmpthieulam_ok(33)",
-"V« Gian CÇm VËn Hé UyÓn./#doimanhhkmpthieulam_ok(34)",
-"V« Gian B¹ch Ngäc Bµn ChØ ./#doimanhhkmpthieulam_ok(35)",
-"V« Ma Tö Kh©m Cµ Sa./#doimanhhkmpthieulam_ok(37)",
-"V« Ma B¨ng Tinh ChØ Hoµn./#doimanhhkmpthieulam_ok(38)",
-"V« Ma Ma Ni qu¸n./#doimanhhkmpthieulam_ok(36)",
-"V« Ma Hång Truy NhuyÔn Th¸p hµi./#doimanhhkmpthieulam_ok(40)",
-"V« TrÇn Thanh T©m H­íng ThiÖn Ch©u./#doimanhhkmpthieulam_ok(42)",
-"V« TrÇn Tõ Bi Ngäc Ban ChØ./#doimanhhkmpthieulam_ok(43)",
-"V« TrÇn PhËt T©m Tõ H÷u Yªu Phèi./#doimanhhkmpthieulam_ok(44)",
-"V« TrÇn PhËt Quang ChØ Hoµn./#doimanhhkmpthieulam_ok(45)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpthuyyen()
-	local tbSay = {
-	"Tª Hoµng TuÖ T©m Khinh Sa Y./#doimanhhkmpthieulam_ok(47)",
-"Tª Hoµng Phong TuyÕt B¹ch V©n Thóc §¸i./#doimanhhkmpthieulam_ok(48)",
-"Tª Hoµng B¨ng Tung CÈm uyÓn./#doimanhhkmpthieulam_ok(49)",
-"Tª Hoµng Thóy Ngäc ChØ Hoµn./#doimanhhkmpthieulam_ok(50)",
-"BÝch H¶i Hoµn Ch©u Vò Liªn./#doimanhhkmpthieulam_ok(52)",
-"BÝch H¶i Hång Linh Kim Ti ®¸i./#doimanhhkmpthieulam_ok(53)",
-"BÝch H¶i Hång L¨ng Ba./#doimanhhkmpthieulam_ok(54)",
-"BÝch H¶i Khiªn TÕ ChØ hoµn./#doimanhhkmpthieulam_ok(55)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpngudoc()
-	local tbSay = {
-	"U Lung XÝch YÕt MËt trang./#doimanhhkmpthieulam_ok(57)",
-"U Lung Thanh Ng« TriÒn yªu./#doimanhhkmpthieulam_ok(58)",
-"U Lung Ng©n ThÒm Hé UyÓn./#doimanhhkmpthieulam_ok(59)",
-"U Lung MÆc Thï NhuyÔn Lý./#doimanhhkmpthieulam_ok(60)",
-"Minh ¶o U §éc ¸m Y./#doimanhhkmpthieulam_ok(62)",
-"Minh ¶o §éc YÕt ChØ Hoµn./#doimanhhkmpthieulam_ok(63)",
-"Minh ¶o Hñ Cèt Hé uyÓn./#doimanhhkmpthieulam_ok(64)",
-"Minh ¶o Song Hoµn Xµ Hµi./#doimanhhkmpthieulam_ok(65)",
-"Chó Ph­îc DiÖt L«i C¶nh Phï ./#doimanhhkmpthieulam_ok(67)",
-"Chó Ph­îc U ¶o ChØ Hoµn./#doimanhhkmpthieulam_ok(68)",
-"Chó Ph­îc Xuyªn T©m §éc UyÓn./#doimanhhkmpthieulam_ok(69)",
-"Chó Ph­îc B¨ng Háa Thùc Cèt Ngoa./#doimanhhkmpthieulam_ok(70)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpduongmon()
-	local tbSay = {
-	"B¨ng Hµn HuyÒn Y Thóc Gi¸p./#doimanhhkmpthieulam_ok(72)",
-"B¨ng Hµn T©m TiÔn Yªu KhÊu./#doimanhhkmpthieulam_ok(73)",
-"B¨ng Hµn HuyÒn Thiªn B¨ng Háa Béi./#doimanhhkmpthieulam_ok(74)",
-"B¨ng Hµn NguyÖt ¶nh Ngoa./#doimanhhkmpthieulam_ok(75)",
-"Thiªn Quang §Þnh T©m Ng­ng ThÇn Phï ./#doimanhhkmpthieulam_ok(77)",
-"Thiªn Quang S©m La Thóc §¸i./#doimanhhkmpthieulam_ok(78)",
-"Thiªn Quang Song B¹o Hµn ThiÕt Tr¹c./#doimanhhkmpthieulam_ok(79)",
-"Thiªn Quang Thóc Thiªn Ph­îc §Þa Hoµn./#doimanhhkmpthieulam_ok(80)",
-
-"Trang Sau./#doimanhhkmpduongmon2()",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpduongmon2()
-	local tbSay = {
-"S©m Hoang KimTiÒn Liªn Hoµn Gi¸p./#doimanhhkmpthieulam_ok(82)",
-"S©m Hoang Hån Gi¶o Yªu Thóc./#doimanhhkmpthieulam_ok(83)",
-"S©m Hoang HuyÒn ThiÕt T­¬ng Ngäc Béi./#doimanhhkmpthieulam_ok(84)",
-"S©m Hoang Tinh VÉn Phi Lý./#doimanhhkmpthieulam_ok(85)",
-"§Þa Ph¸ch Ngò hµnh Liªn Hoµn Qu¸n./#doimanhhkmpthieulam_ok(86)",
-"§Þa Ph¸ch H¾c DiÖm Xung Thiªn Liªn./#doimanhhkmpthieulam_ok(87)",
-"§Þa Ph¸ch TÝch LÞch L«i Háa Giíi./#doimanhhkmpthieulam_ok(88)",
-"§Þa Ph¸ch KhÊu T©m tr¹c./#doimanhhkmpthieulam_ok(89)",
-"§Þa Ph¸ch §Þa Hµnh Thiªn Lý Ngoa./#doimanhhkmpthieulam_ok(90)",
-"Trang Tr­íc./#doimanhhkmpduongmon()",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpcaibang()
-	local tbSay = {
-	"§ång Cõu Phi Long §Çu hoµn./#doimanhhkmpthieulam_ok(91)",
-"§ång Cõu Gi¸ng Long C¸i Y./#doimanhhkmpthieulam_ok(92)",
-"§ång Cõu TiÒm Long Yªu §¸i./#doimanhhkmpthieulam_ok(93)",
-"§ång Cõu KiÕn Long Ban ChØ ./#doimanhhkmpthieulam_ok(95)",
-"§Þch Kh¸i Cöu §¹i C¸i Y./#doimanhhkmpthieulam_ok(97)",
-"§Þch Kh¸i TriÒn M·ng yªu ®¸i./#doimanhhkmpthieulam_ok(98)",
-"§Þch Kh¸i CÈu TÝch B× Hé uyÓn./#doimanhhkmpthieulam_ok(99)",
-"§Þch Kh¸i Th¶o Gian Th¹ch giíi./#doimanhhkmpthieulam_ok(100)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpthiennhan()
-	local tbSay = {
-	"Ma S¸t Tµn D­¬ng ¶nh HuyÕt Gi¸p./#doimanhhkmpthieulam_ok(102)",
-"Ma S¸t XÝch Ký Táa Yªu KhÊu./#doimanhhkmpthieulam_ok(103)",
-"Ma S¸t Cö Háa Liªu Thiªn uyÓn./#doimanhhkmpthieulam_ok(104)",
-"Ma S¸t V©n Long Thæ Ch©u giíi./#doimanhhkmpthieulam_ok(105)",
-"Ma Hoµng Kim Gi¸p Kh«i./#doimanhhkmpthieulam_ok(106)",
-"Ma Hoµng ¸n XuÊt Hæ H¹ng Khuyªn./#doimanhhkmpthieulam_ok(107)",
-"Ma Hoµng Khª Cèc Thóc yªu ®¸i./#doimanhhkmpthieulam_ok(108)",
-"Ma Hoµng HuyÕt Y Thó Tr¹c./#doimanhhkmpthieulam_ok(109)",
-"Ma Hoµng §¨ng §¹p Ngoa./#doimanhhkmpthieulam_ok(110)",
-"Ma ThÞ LiÖt DiÖm Qu¸n MiÖn./#doimanhhkmpthieulam_ok(111)",
-"Ma ThÞ LÖ Ma PhÖ T©m Liªn./#doimanhhkmpthieulam_ok(112)",
-"Ma ThÞ NghiÖp Háa U Minh Giíi./#doimanhhkmpthieulam_ok(113)",
-"Ma ThÞ HuyÕt Ngäc ThÊt S¸t Béi./#doimanhhkmpthieulam_ok(114)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpvodang()
-	local tbSay = {
-	"L¨ng Nh¹c V« Ng· ®¹o bµo./#doimanhhkmpthieulam_ok(117)",
-"L¨ng Nh¹c Né L«i Giíi./#doimanhhkmpthieulam_ok(118)",
-"L¨ng Nh¹c V« Cùc HuyÒn Ngäc Béi./#doimanhhkmpthieulam_ok(119)",
-"L¨ng Nh¹c Thiªn §Þa HuyÒn Hoµng giíi./#doimanhhkmpthieulam_ok(120)",
-"CËp Phong Tam Thanh Phï./#doimanhhkmpthieulam_ok(122)",
-"CËp Phong HuyÒn Ti Tam §o¹n cÈm./#doimanhhkmpthieulam_ok(123)",
-"CËp Phong Thóy Ngäc HuyÒn Hoµng Béi./#doimanhhkmpthieulam_ok(124)",
-"CËp Phong Thanh Tïng Ph¸p giíi./#doimanhhkmpthieulam_ok(125)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpconlon()
-	local tbSay = {
-	"S­¬ng Tinh Ng¹o S­¬ng ®¹o bµo./#doimanhhkmpthieulam_ok(127)",
-"S­¬ng Tinh Thanh Phong Lò ®¸i./#doimanhhkmpthieulam_ok(128)",
-"S­¬ng Tinh Thiªn Tinh B¨ng Tinh thñ ./#doimanhhkmpthieulam_ok(129)",
-"S­¬ng Tinh Phong B¹o chØ hoµn./#doimanhhkmpthieulam_ok(130)",
-"L«i Khung Thiªn §Þa Hé phï ./#doimanhhkmpthieulam_ok(132)",
-"L«i Khung Phong L«i Thanh CÈm ®¸i./#doimanhhkmpthieulam_ok(133)",
-"L«i Khung Linh Ngäc UÈn L«i./#doimanhhkmpthieulam_ok(134)",
-"L«i Khung Cöu Thiªn DÉn L«i giíi./#doimanhhkmpthieulam_ok(135)",
-"Vô ¶o Ki B¸n phï chó./#doimanhhkmpthieulam_ok(137)",
-"Vô ¶o Thóc T©m chØ hoµn./#doimanhhkmpthieulam_ok(138)",
-"Vô ¶o Thanh ¶nh HuyÒn Ngäc Béi./#doimanhhkmpthieulam_ok(139)",
-"Vô ¶o Tung Phong TuyÕt ¶nh ngoa./#doimanhhkmpthieulam_ok(140)",
-"Th«i ta kh«ng muèn n÷a./no"
-}
-Say("B¹n chän chøc n¨ng nµo ?",getn(tbSay),tbSay)
-end
-function doimanhhkmpthieulam_ok(idchon)
-
-		tbAwardTemplet:GiveAwardByList({{szName = "",tbProp={0,idchon},nQuality=1,nCount=10},}, "test", 1);
-		
-end
 -------------------------------------------mo do dinh trong ruong ----------------------
 function MoKhoaDinh() 
 	if (GetBoxLockState() ~= 0) then

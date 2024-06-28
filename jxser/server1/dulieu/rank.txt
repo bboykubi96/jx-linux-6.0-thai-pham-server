@@ -1,13 +1,12 @@
 [Rank]
-testtt	=1
-	=2
-	=3
-	=4
-	=5
-	=6
-	=7
-	=8
-	=9
-	=10
-hoasonn	=11
-testhoason	=12
+eqweqweq	=1
+testtttt	=2
+123456	=3
+hoasonn	=4
+tieudaoo	=5
+wqewqeqeqe	=6
+testngamy	=7
+fgfgfgf	=8
+testtt	=9
+wqeqweqq	=10
+testhoason	=11
